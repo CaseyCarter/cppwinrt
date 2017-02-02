@@ -154,15 +154,15 @@ struct WINRT_EBO impl_IWebAuthenticationCoreManagerStatics
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> GetTokenSilentlyAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::Security::Credentials::WebAccount & webAccount) const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request) const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::Security::Credentials::WebAccount & webAccount) const;
-    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> FindAccountAsync(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref webAccountId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_ref webAccountProviderId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> FindAccountAsync(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view webAccountId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_view webAccountProviderId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_view webAccountProviderId, hstring_view authority) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IWebAuthenticationCoreManagerStatics2
 {
-    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority, const Windows::System::User & user) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_view webAccountProviderId, hstring_view authority, const Windows::System::User & user) const;
 };
 
 template <typename D>
@@ -182,7 +182,7 @@ struct WINRT_EBO impl_IWebProviderError
 template <typename D>
 struct WINRT_EBO impl_IWebProviderErrorFactory
 {
-    Windows::Security::Authentication::Web::Core::WebProviderError Create(uint32_t errorCode, hstring_ref errorMessage) const;
+    Windows::Security::Authentication::Web::Core::WebProviderError Create(uint32_t errorCode, hstring_view errorMessage) const;
 };
 
 template <typename D>
@@ -204,10 +204,10 @@ struct WINRT_EBO impl_IWebTokenRequest2
 template <typename D>
 struct WINRT_EBO impl_IWebTokenRequestFactory
 {
-    Windows::Security::Authentication::Web::Core::WebTokenRequest Create(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId) const;
-    Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithPromptType(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) const;
+    Windows::Security::Authentication::Web::Core::WebTokenRequest Create(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope, hstring_view clientId) const;
+    Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithPromptType(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope, hstring_view clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) const;
     Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithProvider(const Windows::Security::Credentials::WebAccountProvider & provider) const;
-    Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithScope(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope) const;
+    Windows::Security::Authentication::Web::Core::WebTokenRequest CreateWithScope(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope) const;
 };
 
 template <typename D>
@@ -231,9 +231,9 @@ struct WINRT_EBO impl_IWebTokenResponse
 template <typename D>
 struct WINRT_EBO impl_IWebTokenResponseFactory
 {
-    Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithToken(hstring_ref token) const;
-    Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithTokenAndAccount(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount) const;
-    Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithTokenAccountAndError(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Core::WebProviderError & error) const;
+    Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithToken(hstring_view token) const;
+    Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithTokenAndAccount(hstring_view token, const Windows::Security::Credentials::WebAccount & webAccount) const;
+    Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithTokenAccountAndError(hstring_view token, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Core::WebProviderError & error) const;
 };
 
 }

@@ -105,7 +105,7 @@ struct WINRT_EBO impl_IUserDataAccount
 {
     hstring Id() const;
     hstring UserDisplayName() const;
-    void UserDisplayName(hstring_ref value) const;
+    void UserDisplayName(hstring_view value) const;
     Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess OtherAppReadAccess() const;
     void OtherAppReadAccess(Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Icon() const;
@@ -131,7 +131,7 @@ struct WINRT_EBO impl_IUserDataAccount3
 {
     Windows::Foundation::Collections::IVector<hstring> ExplictReadAccessPackageFamilyNames() const;
     hstring DisplayName() const;
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
 };
 
 template <typename D>
@@ -146,8 +146,8 @@ struct WINRT_EBO impl_IUserDataAccountManagerStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType) const;
     Windows::Foundation::IAsyncOperation<hstring> ShowAddAccountAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds contentKinds) const;
-    Windows::Foundation::IAsyncAction ShowAccountSettingsAsync(hstring_ref id) const;
-    Windows::Foundation::IAsyncAction ShowAccountErrorResolverAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncAction ShowAccountSettingsAsync(hstring_view id) const;
+    Windows::Foundation::IAsyncAction ShowAccountErrorResolverAsync(hstring_view id) const;
 };
 
 template <typename D>
@@ -160,14 +160,14 @@ template <typename D>
 struct WINRT_EBO impl_IUserDataAccountStore
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::UserDataAccount>> FindAccountsAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> GetAccountAsync(hstring_ref id) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> CreateAccountAsync(hstring_ref userDisplayName) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> GetAccountAsync(hstring_view id) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> CreateAccountAsync(hstring_view userDisplayName) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IUserDataAccountStore2
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> CreateAccountAsync(hstring_ref userDisplayName, hstring_ref packageRelativeAppId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> CreateAccountAsync(hstring_view userDisplayName, hstring_view packageRelativeAppId) const;
     event_token StoreChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> & handler) const;
     using StoreChanged_revoker = event_revoker<IUserDataAccountStore2>;
     StoreChanged_revoker StoreChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> & handler) const;

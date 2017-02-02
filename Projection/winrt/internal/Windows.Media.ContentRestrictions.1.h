@@ -77,9 +77,9 @@ template <typename D>
 struct WINRT_EBO impl_IRatedContentDescription
 {
     hstring Id() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Image() const;
     void Image(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     Windows::Media::ContentRestrictions::RatedContentCategory Category() const;
@@ -91,7 +91,7 @@ struct WINRT_EBO impl_IRatedContentDescription
 template <typename D>
 struct WINRT_EBO impl_IRatedContentDescriptionFactory
 {
-    Windows::Media::ContentRestrictions::RatedContentDescription Create(hstring_ref id, hstring_ref title, Windows::Media::ContentRestrictions::RatedContentCategory category) const;
+    Windows::Media::ContentRestrictions::RatedContentDescription Create(hstring_view id, hstring_view title, Windows::Media::ContentRestrictions::RatedContentCategory category) const;
 };
 
 template <typename D>

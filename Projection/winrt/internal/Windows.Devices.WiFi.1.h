@@ -87,7 +87,7 @@ struct WINRT_EBO impl_IWiFiAdapter
     void AvailableNetworksChanged(event_token eventCookie) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, const Windows::Security::Credentials::PasswordCredential & passwordCredential) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, const Windows::Security::Credentials::PasswordCredential & passwordCredential, hstring_ref ssid) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, const Windows::Security::Credentials::PasswordCredential & passwordCredential, hstring_view ssid) const;
     void Disconnect() const;
 };
 
@@ -96,7 +96,7 @@ struct WINRT_EBO impl_IWiFiAdapterStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAdapter>> FindAllAdaptersAsync() const;
     hstring GetDeviceSelector() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> FromIdAsync(hstring_view deviceId) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::WiFi::WiFiAccessStatus> RequestAccessAsync() const;
 };
 

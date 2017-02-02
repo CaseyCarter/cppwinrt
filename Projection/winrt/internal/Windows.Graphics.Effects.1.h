@@ -33,7 +33,7 @@ template <typename D>
 struct WINRT_EBO impl_IGraphicsEffect
 {
     hstring Name() const;
-    void Name(hstring_ref name) const;
+    void Name(hstring_view name) const;
 };
 
 template <typename D>

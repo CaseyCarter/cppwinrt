@@ -284,7 +284,7 @@ struct WINRT_EBO impl_IBluetoothDevice3
 template <typename D>
 struct WINRT_EBO impl_IBluetoothDeviceStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromIdAsync(hstring_view deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromHostNameAsync(const Windows::Networking::HostName & hostName) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromBluetoothAddressAsync(uint64_t address) const;
     hstring GetDeviceSelector() const;
@@ -295,7 +295,7 @@ struct WINRT_EBO impl_IBluetoothDeviceStatics2
 {
     hstring GetDeviceSelectorFromPairingState(bool pairingState) const;
     hstring GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const;
-    hstring GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const;
+    hstring GetDeviceSelectorFromDeviceName(hstring_view deviceName) const;
     hstring GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress) const;
     hstring GetDeviceSelectorFromClassOfDevice(const Windows::Devices::Bluetooth::BluetoothClassOfDevice & classOfDevice) const;
 };
@@ -409,7 +409,7 @@ struct WINRT_EBO impl_IBluetoothLEDevice2
 template <typename D>
 struct WINRT_EBO impl_IBluetoothLEDeviceStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromIdAsync(hstring_view deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromBluetoothAddressAsync(uint64_t bluetoothAddress) const;
     hstring GetDeviceSelector() const;
 };
@@ -419,7 +419,7 @@ struct WINRT_EBO impl_IBluetoothLEDeviceStatics2
 {
     hstring GetDeviceSelectorFromPairingState(bool pairingState) const;
     hstring GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const;
-    hstring GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const;
+    hstring GetDeviceSelectorFromDeviceName(hstring_view deviceName) const;
     hstring GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress) const;
     hstring GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const;
     hstring GetDeviceSelectorFromAppearance(const Windows::Devices::Bluetooth::BluetoothLEAppearance & appearance) const;

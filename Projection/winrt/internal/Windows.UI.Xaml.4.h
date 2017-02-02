@@ -294,7 +294,7 @@ public:
 
     using IFrameworkElementOverrides2 = winrt::Windows::UI::Xaml::IFrameworkElementOverrides2;
 
-    bool GoToElementStateCore(hstring_ref stateName, bool useTransitions)
+    bool GoToElementStateCore(hstring_view stateName, bool useTransitions)
     {
         return shim().as<IFrameworkElementOverrides2>().GoToElementStateCore(stateName, useTransitions);
     }
@@ -392,7 +392,7 @@ public:
 
     using IVisualStateManagerOverrides = winrt::Windows::UI::Xaml::IVisualStateManagerOverrides;
 
-    bool GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_ref stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions)
+    bool GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_view stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions)
     {
         return shim().as<IVisualStateManagerOverrides>().GoToStateCore(control, templateRoot, stateName, group, state, useTransitions);
     }

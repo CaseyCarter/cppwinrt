@@ -509,7 +509,7 @@ template <typename D> hstring impl_IDateTimeFormatter<D>::NumeralSystem() const
     return value;
 }
 
-template <typename D> void impl_IDateTimeFormatter<D>::NumeralSystem(hstring_ref value) const
+template <typename D> void impl_IDateTimeFormatter<D>::NumeralSystem(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDateTimeFormatter)->put_NumeralSystem(get(value)));
 }
@@ -598,21 +598,21 @@ template <typename D> hstring impl_IDateTimeFormatter<D>::ResolvedGeographicRegi
     return value;
 }
 
-template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormatter impl_IDateTimeFormatterFactory<D>::CreateDateTimeFormatter(hstring_ref formatTemplate) const
+template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormatter impl_IDateTimeFormatterFactory<D>::CreateDateTimeFormatter(hstring_view formatTemplate) const
 {
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter result { nullptr };
     check_hresult(WINRT_SHIM(IDateTimeFormatterFactory)->abi_CreateDateTimeFormatter(get(formatTemplate), put(result)));
     return result;
 }
 
-template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormatter impl_IDateTimeFormatterFactory<D>::CreateDateTimeFormatterLanguages(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages) const
+template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormatter impl_IDateTimeFormatterFactory<D>::CreateDateTimeFormatterLanguages(hstring_view formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages) const
 {
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter result { nullptr };
     check_hresult(WINRT_SHIM(IDateTimeFormatterFactory)->abi_CreateDateTimeFormatterLanguages(get(formatTemplate), get(languages), put(result)));
     return result;
 }
 
-template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormatter impl_IDateTimeFormatterFactory<D>::CreateDateTimeFormatterContext(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion, hstring_ref calendar, hstring_ref clock) const
+template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormatter impl_IDateTimeFormatterFactory<D>::CreateDateTimeFormatterContext(hstring_view formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion, hstring_view calendar, hstring_view clock) const
 {
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter result { nullptr };
     check_hresult(WINRT_SHIM(IDateTimeFormatterFactory)->abi_CreateDateTimeFormatterContext(get(formatTemplate), get(languages), get(geographicRegion), get(calendar), get(clock), put(result)));
@@ -640,7 +640,7 @@ template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormat
     return result;
 }
 
-template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormatter impl_IDateTimeFormatterFactory<D>::CreateDateTimeFormatterDateTimeContext(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion, hstring_ref calendar, hstring_ref clock) const
+template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormatter impl_IDateTimeFormatterFactory<D>::CreateDateTimeFormatterDateTimeContext(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion, hstring_view calendar, hstring_view clock) const
 {
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter result { nullptr };
     check_hresult(WINRT_SHIM(IDateTimeFormatterFactory)->abi_CreateDateTimeFormatterDateTimeContext(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, get(languages), get(geographicRegion), get(calendar), get(clock), put(result)));
@@ -675,22 +675,22 @@ template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormat
     return value;
 }
 
-template <typename D> hstring impl_IDateTimeFormatter2<D>::Format(const Windows::Foundation::DateTime & datetime, hstring_ref timeZoneId) const
+template <typename D> hstring impl_IDateTimeFormatter2<D>::Format(const Windows::Foundation::DateTime & datetime, hstring_view timeZoneId) const
 {
     hstring result;
     check_hresult(WINRT_SHIM(IDateTimeFormatter2)->abi_FormatUsingTimeZone(get(datetime), get(timeZoneId), put(result)));
     return result;
 }
 
-inline DateTimeFormatter::DateTimeFormatter(hstring_ref formatTemplate) :
+inline DateTimeFormatter::DateTimeFormatter(hstring_view formatTemplate) :
     DateTimeFormatter(get_activation_factory<DateTimeFormatter, IDateTimeFormatterFactory>().CreateDateTimeFormatter(formatTemplate))
 {}
 
-inline DateTimeFormatter::DateTimeFormatter(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages) :
+inline DateTimeFormatter::DateTimeFormatter(hstring_view formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages) :
     DateTimeFormatter(get_activation_factory<DateTimeFormatter, IDateTimeFormatterFactory>().CreateDateTimeFormatterLanguages(formatTemplate, languages))
 {}
 
-inline DateTimeFormatter::DateTimeFormatter(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion, hstring_ref calendar, hstring_ref clock) :
+inline DateTimeFormatter::DateTimeFormatter(hstring_view formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion, hstring_view calendar, hstring_view clock) :
     DateTimeFormatter(get_activation_factory<DateTimeFormatter, IDateTimeFormatterFactory>().CreateDateTimeFormatterContext(formatTemplate, languages, geographicRegion, calendar, clock))
 {}
 
@@ -706,7 +706,7 @@ inline DateTimeFormatter::DateTimeFormatter(Windows::Globalization::DateTimeForm
     DateTimeFormatter(get_activation_factory<DateTimeFormatter, IDateTimeFormatterFactory>().CreateDateTimeFormatterDateTimeLanguages(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages))
 {}
 
-inline DateTimeFormatter::DateTimeFormatter(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion, hstring_ref calendar, hstring_ref clock) :
+inline DateTimeFormatter::DateTimeFormatter(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion, hstring_view calendar, hstring_view clock) :
     DateTimeFormatter(get_activation_factory<DateTimeFormatter, IDateTimeFormatterFactory>().CreateDateTimeFormatterDateTimeContext(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages, geographicRegion, calendar, clock))
 {}
 

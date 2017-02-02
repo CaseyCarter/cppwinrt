@@ -233,8 +233,8 @@ template <typename D>
 struct WINRT_EBO impl_ISpatialAnchorStore
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor> GetAllSavedAnchors() const;
-    bool TrySave(hstring_ref id, const Windows::Perception::Spatial::SpatialAnchor & anchor) const;
-    void Remove(hstring_ref id) const;
+    bool TrySave(hstring_view id, const Windows::Perception::Spatial::SpatialAnchor & anchor) const;
+    void Remove(hstring_view id) const;
     void Clear() const;
 };
 

@@ -37,14 +37,14 @@ struct produce<D, Windows::Management::Core::IApplicationDataManagerStatics> : p
 
 namespace Windows::Management::Core {
 
-template <typename D> Windows::Storage::ApplicationData impl_IApplicationDataManagerStatics<D>::CreateForPackageFamily(hstring_ref packageFamilyName) const
+template <typename D> Windows::Storage::ApplicationData impl_IApplicationDataManagerStatics<D>::CreateForPackageFamily(hstring_view packageFamilyName) const
 {
     Windows::Storage::ApplicationData applicationData { nullptr };
     check_hresult(WINRT_SHIM(IApplicationDataManagerStatics)->abi_CreateForPackageFamily(get(packageFamilyName), put(applicationData)));
     return applicationData;
 }
 
-inline Windows::Storage::ApplicationData ApplicationDataManager::CreateForPackageFamily(hstring_ref packageFamilyName)
+inline Windows::Storage::ApplicationData ApplicationDataManager::CreateForPackageFamily(hstring_view packageFamilyName)
 {
     return get_activation_factory<ApplicationDataManager, IApplicationDataManagerStatics>().CreateForPackageFamily(packageFamilyName);
 }

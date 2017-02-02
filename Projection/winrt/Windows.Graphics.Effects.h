@@ -57,7 +57,7 @@ template <typename D> hstring impl_IGraphicsEffect<D>::Name() const
     return name;
 }
 
-template <typename D> void impl_IGraphicsEffect<D>::Name(hstring_ref name) const
+template <typename D> void impl_IGraphicsEffect<D>::Name(hstring_view name) const
 {
     check_hresult(WINRT_SHIM(IGraphicsEffect)->put_Name(get(name)));
 }

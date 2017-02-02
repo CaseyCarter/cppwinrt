@@ -629,14 +629,14 @@ template <typename D> Windows::Data::Json::JsonObject impl_IJsonValue<D>::GetObj
     return returnValue;
 }
 
-template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Data::Json::JsonValue jsonValue { nullptr };
     check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_Parse(get(input), put(jsonValue)));
     return jsonValue;
 }
 
-template <typename D> bool impl_IJsonValueStatics<D>::TryParse(hstring_ref input, Windows::Data::Json::JsonValue & result) const
+template <typename D> bool impl_IJsonValueStatics<D>::TryParse(hstring_view input, Windows::Data::Json::JsonValue & result) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_TryParse(get(input), put(result), &succeeded));
@@ -657,7 +657,7 @@ template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics<D>::
     return jsonValue;
 }
 
-template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics<D>::CreateStringValue(hstring_ref input) const
+template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics<D>::CreateStringValue(hstring_view input) const
 {
     Windows::Data::Json::JsonValue jsonValue { nullptr };
     check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_CreateStringValue(get(input), put(jsonValue)));
@@ -671,103 +671,103 @@ template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics2<D>:
     return jsonValue;
 }
 
-template <typename D> Windows::Data::Json::JsonValue impl_IJsonObject<D>::GetNamedValue(hstring_ref name) const
+template <typename D> Windows::Data::Json::JsonValue impl_IJsonObject<D>::GetNamedValue(hstring_view name) const
 {
     Windows::Data::Json::JsonValue returnValue { nullptr };
     check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedValue(get(name), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> void impl_IJsonObject<D>::SetNamedValue(hstring_ref name, const Windows::Data::Json::IJsonValue & value) const
+template <typename D> void impl_IJsonObject<D>::SetNamedValue(hstring_view name, const Windows::Data::Json::IJsonValue & value) const
 {
     check_hresult(WINRT_SHIM(IJsonObject)->abi_SetNamedValue(get(name), get(value)));
 }
 
-template <typename D> Windows::Data::Json::JsonObject impl_IJsonObject<D>::GetNamedObject(hstring_ref name) const
+template <typename D> Windows::Data::Json::JsonObject impl_IJsonObject<D>::GetNamedObject(hstring_view name) const
 {
     Windows::Data::Json::JsonObject returnValue { nullptr };
     check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedObject(get(name), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::Data::Json::JsonArray impl_IJsonObject<D>::GetNamedArray(hstring_ref name) const
+template <typename D> Windows::Data::Json::JsonArray impl_IJsonObject<D>::GetNamedArray(hstring_view name) const
 {
     Windows::Data::Json::JsonArray returnValue { nullptr };
     check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedArray(get(name), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> hstring impl_IJsonObject<D>::GetNamedString(hstring_ref name) const
+template <typename D> hstring impl_IJsonObject<D>::GetNamedString(hstring_view name) const
 {
     hstring returnValue;
     check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedString(get(name), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> double impl_IJsonObject<D>::GetNamedNumber(hstring_ref name) const
+template <typename D> double impl_IJsonObject<D>::GetNamedNumber(hstring_view name) const
 {
     double returnValue {};
     check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedNumber(get(name), &returnValue));
     return returnValue;
 }
 
-template <typename D> bool impl_IJsonObject<D>::GetNamedBoolean(hstring_ref name) const
+template <typename D> bool impl_IJsonObject<D>::GetNamedBoolean(hstring_view name) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedBoolean(get(name), &returnValue));
     return returnValue;
 }
 
-template <typename D> Windows::Data::Json::JsonValue impl_IJsonObjectWithDefaultValues<D>::GetNamedValue(hstring_ref name, const Windows::Data::Json::JsonValue & defaultValue) const
+template <typename D> Windows::Data::Json::JsonValue impl_IJsonObjectWithDefaultValues<D>::GetNamedValue(hstring_view name, const Windows::Data::Json::JsonValue & defaultValue) const
 {
     Windows::Data::Json::JsonValue returnValue { nullptr };
     check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedValueOrDefault(get(name), get(defaultValue), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::Data::Json::JsonObject impl_IJsonObjectWithDefaultValues<D>::GetNamedObject(hstring_ref name, const Windows::Data::Json::JsonObject & defaultValue) const
+template <typename D> Windows::Data::Json::JsonObject impl_IJsonObjectWithDefaultValues<D>::GetNamedObject(hstring_view name, const Windows::Data::Json::JsonObject & defaultValue) const
 {
     Windows::Data::Json::JsonObject returnValue { nullptr };
     check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedObjectOrDefault(get(name), get(defaultValue), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> hstring impl_IJsonObjectWithDefaultValues<D>::GetNamedString(hstring_ref name, hstring_ref defaultValue) const
+template <typename D> hstring impl_IJsonObjectWithDefaultValues<D>::GetNamedString(hstring_view name, hstring_view defaultValue) const
 {
     hstring returnValue;
     check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedStringOrDefault(get(name), get(defaultValue), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::Data::Json::JsonArray impl_IJsonObjectWithDefaultValues<D>::GetNamedArray(hstring_ref name, const Windows::Data::Json::JsonArray & defaultValue) const
+template <typename D> Windows::Data::Json::JsonArray impl_IJsonObjectWithDefaultValues<D>::GetNamedArray(hstring_view name, const Windows::Data::Json::JsonArray & defaultValue) const
 {
     Windows::Data::Json::JsonArray returnValue { nullptr };
     check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedArrayOrDefault(get(name), get(defaultValue), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> double impl_IJsonObjectWithDefaultValues<D>::GetNamedNumber(hstring_ref name, double defaultValue) const
+template <typename D> double impl_IJsonObjectWithDefaultValues<D>::GetNamedNumber(hstring_view name, double defaultValue) const
 {
     double returnValue {};
     check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedNumberOrDefault(get(name), defaultValue, &returnValue));
     return returnValue;
 }
 
-template <typename D> bool impl_IJsonObjectWithDefaultValues<D>::GetNamedBoolean(hstring_ref name, bool defaultValue) const
+template <typename D> bool impl_IJsonObjectWithDefaultValues<D>::GetNamedBoolean(hstring_view name, bool defaultValue) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedBooleanOrDefault(get(name), defaultValue, &returnValue));
     return returnValue;
 }
 
-template <typename D> Windows::Data::Json::JsonObject impl_IJsonObjectStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Data::Json::JsonObject impl_IJsonObjectStatics<D>::Parse(hstring_view input) const
 {
     Windows::Data::Json::JsonObject jsonObject { nullptr };
     check_hresult(WINRT_SHIM(IJsonObjectStatics)->abi_Parse(get(input), put(jsonObject)));
     return jsonObject;
 }
 
-template <typename D> bool impl_IJsonObjectStatics<D>::TryParse(hstring_ref input, Windows::Data::Json::JsonObject & result) const
+template <typename D> bool impl_IJsonObjectStatics<D>::TryParse(hstring_view input, Windows::Data::Json::JsonObject & result) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IJsonObjectStatics)->abi_TryParse(get(input), put(result), &succeeded));
@@ -809,14 +809,14 @@ template <typename D> bool impl_IJsonArray<D>::GetBooleanAt(uint32_t index) cons
     return returnValue;
 }
 
-template <typename D> Windows::Data::Json::JsonArray impl_IJsonArrayStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Data::Json::JsonArray impl_IJsonArrayStatics<D>::Parse(hstring_view input) const
 {
     Windows::Data::Json::JsonArray jsonArray { nullptr };
     check_hresult(WINRT_SHIM(IJsonArrayStatics)->abi_Parse(get(input), put(jsonArray)));
     return jsonArray;
 }
 
-template <typename D> bool impl_IJsonArrayStatics<D>::TryParse(hstring_ref input, Windows::Data::Json::JsonArray & result) const
+template <typename D> bool impl_IJsonArrayStatics<D>::TryParse(hstring_view input, Windows::Data::Json::JsonArray & result) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IJsonArrayStatics)->abi_TryParse(get(input), put(result), &succeeded));
@@ -834,12 +834,12 @@ inline JsonArray::JsonArray() :
     JsonArray(activate_instance<JsonArray>())
 {}
 
-inline Windows::Data::Json::JsonArray JsonArray::Parse(hstring_ref input)
+inline Windows::Data::Json::JsonArray JsonArray::Parse(hstring_view input)
 {
     return get_activation_factory<JsonArray, IJsonArrayStatics>().Parse(input);
 }
 
-inline bool JsonArray::TryParse(hstring_ref input, Windows::Data::Json::JsonArray & result)
+inline bool JsonArray::TryParse(hstring_view input, Windows::Data::Json::JsonArray & result)
 {
     return get_activation_factory<JsonArray, IJsonArrayStatics>().TryParse(input, result);
 }
@@ -853,22 +853,22 @@ inline JsonObject::JsonObject() :
     JsonObject(activate_instance<JsonObject>())
 {}
 
-inline Windows::Data::Json::JsonObject JsonObject::Parse(hstring_ref input)
+inline Windows::Data::Json::JsonObject JsonObject::Parse(hstring_view input)
 {
     return get_activation_factory<JsonObject, IJsonObjectStatics>().Parse(input);
 }
 
-inline bool JsonObject::TryParse(hstring_ref input, Windows::Data::Json::JsonObject & result)
+inline bool JsonObject::TryParse(hstring_view input, Windows::Data::Json::JsonObject & result)
 {
     return get_activation_factory<JsonObject, IJsonObjectStatics>().TryParse(input, result);
 }
 
-inline Windows::Data::Json::JsonValue JsonValue::Parse(hstring_ref input)
+inline Windows::Data::Json::JsonValue JsonValue::Parse(hstring_view input)
 {
     return get_activation_factory<JsonValue, IJsonValueStatics>().Parse(input);
 }
 
-inline bool JsonValue::TryParse(hstring_ref input, Windows::Data::Json::JsonValue & result)
+inline bool JsonValue::TryParse(hstring_view input, Windows::Data::Json::JsonValue & result)
 {
     return get_activation_factory<JsonValue, IJsonValueStatics>().TryParse(input, result);
 }
@@ -883,7 +883,7 @@ inline Windows::Data::Json::JsonValue JsonValue::CreateNumberValue(double input)
     return get_activation_factory<JsonValue, IJsonValueStatics>().CreateNumberValue(input);
 }
 
-inline Windows::Data::Json::JsonValue JsonValue::CreateStringValue(hstring_ref input)
+inline Windows::Data::Json::JsonValue JsonValue::CreateStringValue(hstring_view input)
 {
     return get_activation_factory<JsonValue, IJsonValueStatics>().CreateStringValue(input);
 }

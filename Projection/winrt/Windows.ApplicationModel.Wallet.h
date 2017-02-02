@@ -1560,7 +1560,7 @@ template <typename D> hstring impl_IWalletItemCustomProperty<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IWalletItemCustomProperty<D>::Name(hstring_ref value) const
+template <typename D> void impl_IWalletItemCustomProperty<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletItemCustomProperty)->put_Name(get(value)));
 }
@@ -1572,7 +1572,7 @@ template <typename D> hstring impl_IWalletItemCustomProperty<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_IWalletItemCustomProperty<D>::Value(hstring_ref value) const
+template <typename D> void impl_IWalletItemCustomProperty<D>::Value(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletItemCustomProperty)->put_Value(get(value)));
 }
@@ -1620,7 +1620,7 @@ template <typename D> hstring impl_IWalletVerb<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IWalletVerb<D>::Name(hstring_ref value) const
+template <typename D> void impl_IWalletVerb<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletVerb)->put_Name(get(value)));
 }
@@ -1632,7 +1632,7 @@ template <typename D> hstring impl_IWalletItem<D>::DisplayName() const
     return value;
 }
 
-template <typename D> void impl_IWalletItem<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IWalletItem<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletItem)->put_DisplayName(get(value)));
 }
@@ -1663,7 +1663,7 @@ template <typename D> hstring impl_IWalletItem<D>::IssuerDisplayName() const
     return value;
 }
 
-template <typename D> void impl_IWalletItem<D>::IssuerDisplayName(hstring_ref value) const
+template <typename D> void impl_IWalletItem<D>::IssuerDisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletItem)->put_IssuerDisplayName(get(value)));
 }
@@ -1754,7 +1754,7 @@ template <typename D> hstring impl_IWalletItem<D>::DisplayMessage() const
     return value;
 }
 
-template <typename D> void impl_IWalletItem<D>::DisplayMessage(hstring_ref value) const
+template <typename D> void impl_IWalletItem<D>::DisplayMessage(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletItem)->put_DisplayMessage(get(value)));
 }
@@ -1778,7 +1778,7 @@ template <typename D> hstring impl_IWalletItem<D>::LogoText() const
     return value;
 }
 
-template <typename D> void impl_IWalletItem<D>::LogoText(hstring_ref value) const
+template <typename D> void impl_IWalletItem<D>::LogoText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletItem)->put_LogoText(get(value)));
 }
@@ -1898,7 +1898,7 @@ template <typename D> hstring impl_IWalletItem<D>::RelevantDateDisplayMessage() 
     return value;
 }
 
-template <typename D> void impl_IWalletItem<D>::RelevantDateDisplayMessage(hstring_ref value) const
+template <typename D> void impl_IWalletItem<D>::RelevantDateDisplayMessage(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletItem)->put_RelevantDateDisplayMessage(get(value)));
 }
@@ -1950,7 +1950,7 @@ template <typename D> hstring impl_IWalletTransaction<D>::Description() const
     return value;
 }
 
-template <typename D> void impl_IWalletTransaction<D>::Description(hstring_ref value) const
+template <typename D> void impl_IWalletTransaction<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletTransaction)->put_Description(get(value)));
 }
@@ -1962,7 +1962,7 @@ template <typename D> hstring impl_IWalletTransaction<D>::DisplayAmount() const
     return value;
 }
 
-template <typename D> void impl_IWalletTransaction<D>::DisplayAmount(hstring_ref value) const
+template <typename D> void impl_IWalletTransaction<D>::DisplayAmount(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletTransaction)->put_DisplayAmount(get(value)));
 }
@@ -1986,7 +1986,7 @@ template <typename D> hstring impl_IWalletTransaction<D>::DisplayLocation() cons
     return value;
 }
 
-template <typename D> void impl_IWalletTransaction<D>::DisplayLocation(hstring_ref value) const
+template <typename D> void impl_IWalletTransaction<D>::DisplayLocation(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletTransaction)->put_DisplayLocation(get(value)));
 }
@@ -2034,12 +2034,12 @@ template <typename D> hstring impl_IWalletRelevantLocation<D>::DisplayMessage() 
     return value;
 }
 
-template <typename D> void impl_IWalletRelevantLocation<D>::DisplayMessage(hstring_ref value) const
+template <typename D> void impl_IWalletRelevantLocation<D>::DisplayMessage(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWalletRelevantLocation)->put_DisplayMessage(get(value)));
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::AddAsync(hstring_ref id, const Windows::ApplicationModel::Wallet::WalletItem & item) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::AddAsync(hstring_view id, const Windows::ApplicationModel::Wallet::WalletItem & item) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IWalletItemStore)->abi_AddAsync(get(id), get(item), put(operation)));
@@ -2053,7 +2053,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> impl_IWalletItemStore<D>::GetWalletItemAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> impl_IWalletItemStore<D>::GetWalletItemAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> operation;
     check_hresult(WINRT_SHIM(IWalletItemStore)->abi_GetWalletItemAsync(get(id), put(operation)));
@@ -2081,7 +2081,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::DeleteAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::DeleteAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IWalletItemStore)->abi_DeleteAsync(get(id), put(operation)));
@@ -2095,7 +2095,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::ShowAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::ShowAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IWalletItemStore)->abi_ShowItemAsync(get(id), put(operation)));
@@ -2133,28 +2133,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
     return operation;
 }
 
-template <typename D> Windows::ApplicationModel::Wallet::WalletItemCustomProperty impl_IWalletItemCustomPropertyFactory<D>::CreateWalletItemCustomProperty(hstring_ref name, hstring_ref value) const
+template <typename D> Windows::ApplicationModel::Wallet::WalletItemCustomProperty impl_IWalletItemCustomPropertyFactory<D>::CreateWalletItemCustomProperty(hstring_view name, hstring_view value) const
 {
     Windows::ApplicationModel::Wallet::WalletItemCustomProperty walletItemCustomProperty { nullptr };
     check_hresult(WINRT_SHIM(IWalletItemCustomPropertyFactory)->abi_CreateWalletItemCustomProperty(get(name), get(value), put(walletItemCustomProperty)));
     return walletItemCustomProperty;
 }
 
-template <typename D> Windows::ApplicationModel::Wallet::WalletVerb impl_IWalletVerbFactory<D>::CreateWalletVerb(hstring_ref name) const
+template <typename D> Windows::ApplicationModel::Wallet::WalletVerb impl_IWalletVerbFactory<D>::CreateWalletVerb(hstring_view name) const
 {
     Windows::ApplicationModel::Wallet::WalletVerb WalletVerb { nullptr };
     check_hresult(WINRT_SHIM(IWalletVerbFactory)->abi_CreateWalletVerb(get(name), put(WalletVerb)));
     return WalletVerb;
 }
 
-template <typename D> Windows::ApplicationModel::Wallet::WalletItem impl_IWalletItemFactory<D>::CreateWalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring_ref displayName) const
+template <typename D> Windows::ApplicationModel::Wallet::WalletItem impl_IWalletItemFactory<D>::CreateWalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring_view displayName) const
 {
     Windows::ApplicationModel::Wallet::WalletItem walletItem { nullptr };
     check_hresult(WINRT_SHIM(IWalletItemFactory)->abi_CreateWalletItem(kind, get(displayName), put(walletItem)));
     return walletItem;
 }
 
-template <typename D> Windows::ApplicationModel::Wallet::WalletBarcode impl_IWalletBarcodeFactory<D>::CreateWalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring_ref value) const
+template <typename D> Windows::ApplicationModel::Wallet::WalletBarcode impl_IWalletBarcodeFactory<D>::CreateWalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring_view value) const
 {
     Windows::ApplicationModel::Wallet::WalletBarcode barcode { nullptr };
     check_hresult(WINRT_SHIM(IWalletBarcodeFactory)->abi_CreateWalletBarcode(symbology, get(value), put(barcode)));
@@ -2168,7 +2168,7 @@ template <typename D> Windows::ApplicationModel::Wallet::WalletBarcode impl_IWal
     return barcode;
 }
 
-inline WalletBarcode::WalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring_ref value) :
+inline WalletBarcode::WalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring_view value) :
     WalletBarcode(get_activation_factory<WalletBarcode, IWalletBarcodeFactory>().CreateWalletBarcode(symbology, value))
 {}
 
@@ -2176,11 +2176,11 @@ inline WalletBarcode::WalletBarcode(const Windows::Storage::Streams::IRandomAcce
     WalletBarcode(get_activation_factory<WalletBarcode, IWalletBarcodeFactory>().CreateCustomWalletBarcode(streamToBarcodeImage))
 {}
 
-inline WalletItem::WalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring_ref displayName) :
+inline WalletItem::WalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring_view displayName) :
     WalletItem(get_activation_factory<WalletItem, IWalletItemFactory>().CreateWalletItem(kind, displayName))
 {}
 
-inline WalletItemCustomProperty::WalletItemCustomProperty(hstring_ref name, hstring_ref value) :
+inline WalletItemCustomProperty::WalletItemCustomProperty(hstring_view name, hstring_view value) :
     WalletItemCustomProperty(get_activation_factory<WalletItemCustomProperty, IWalletItemCustomPropertyFactory>().CreateWalletItemCustomProperty(name, value))
 {}
 
@@ -2197,7 +2197,7 @@ inline WalletTransaction::WalletTransaction() :
     WalletTransaction(activate_instance<WalletTransaction>())
 {}
 
-inline WalletVerb::WalletVerb(hstring_ref name) :
+inline WalletVerb::WalletVerb(hstring_view name) :
     WalletVerb(get_activation_factory<WalletVerb, IWalletVerbFactory>().CreateWalletVerb(name))
 {}
 

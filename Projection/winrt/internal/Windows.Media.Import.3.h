@@ -77,7 +77,7 @@ struct WINRT_EBO PhotoImportSource :
     Windows::Media::Import::IPhotoImportSource
 {
     PhotoImportSource(std::nullptr_t) noexcept {}
-    static Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> FromIdAsync(hstring_ref sourceId);
+    static Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> FromIdAsync(hstring_view sourceId);
     static Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> FromFolderAsync(const Windows::Storage::IStorageFolder & sourceRootFolder);
 };
 

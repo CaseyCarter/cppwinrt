@@ -50,9 +50,9 @@ namespace Windows::ApplicationModel::Contacts::Provider {
 template <typename D>
 struct WINRT_EBO impl_IContactPickerUI
 {
-    Windows::ApplicationModel::Contacts::Provider::AddContactResult AddContact(hstring_ref id, const Windows::ApplicationModel::Contacts::Contact & contact) const;
-    void RemoveContact(hstring_ref id) const;
-    bool ContainsContact(hstring_ref id) const;
+    Windows::ApplicationModel::Contacts::Provider::AddContactResult AddContact(hstring_view id, const Windows::ApplicationModel::Contacts::Contact & contact) const;
+    void RemoveContact(hstring_view id) const;
+    bool ContainsContact(hstring_view id) const;
     Windows::Foundation::Collections::IVectorView<hstring> DesiredFields() const;
     Windows::ApplicationModel::Contacts::ContactSelectionMode SelectionMode() const;
     event_token ContactRemoved(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI, Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs> & handler) const;

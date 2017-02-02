@@ -192,7 +192,7 @@ template <typename D> hstring impl_IExtendedExecutionSession<D>::Description() c
     return value;
 }
 
-template <typename D> void impl_IExtendedExecutionSession<D>::Description(hstring_ref value) const
+template <typename D> void impl_IExtendedExecutionSession<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IExtendedExecutionSession)->put_Description(get(value)));
 }

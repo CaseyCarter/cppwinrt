@@ -456,9 +456,9 @@ template <typename D>
 struct WINRT_EBO impl_IAdaptiveNotificationText
 {
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     hstring Language() const;
-    void Language(hstring_ref value) const;
+    void Language(hstring_view value) const;
 };
 
 template <typename D>
@@ -479,8 +479,8 @@ template <typename D>
 struct WINRT_EBO impl_IBadgeUpdateManagerForUser
 {
     Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication() const;
-    Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication(hstring_ref applicationId) const;
-    Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId) const;
+    Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication(hstring_view applicationId) const;
+    Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForSecondaryTile(hstring_view tileId) const;
     Windows::System::User User() const;
 };
 
@@ -488,8 +488,8 @@ template <typename D>
 struct WINRT_EBO impl_IBadgeUpdateManagerStatics
 {
     Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication() const;
-    Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication(hstring_ref applicationId) const;
-    Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId) const;
+    Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication(hstring_view applicationId) const;
+    Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForSecondaryTile(hstring_view tileId) const;
     Windows::Data::Xml::Dom::XmlDocument GetTemplateContent(Windows::UI::Notifications::BadgeTemplateType type) const;
 };
 
@@ -563,9 +563,9 @@ template <typename D>
 struct WINRT_EBO impl_INotificationBinding
 {
     hstring Template() const;
-    void Template(hstring_ref value) const;
+    void Template(hstring_view value) const;
     hstring Language() const;
-    void Language(hstring_ref value) const;
+    void Language(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, hstring> Hints() const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::AdaptiveNotificationText> GetTextElements() const;
 };
@@ -574,9 +574,9 @@ template <typename D>
 struct WINRT_EBO impl_INotificationVisual
 {
     hstring Language() const;
-    void Language(hstring_ref value) const;
+    void Language(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::UI::Notifications::NotificationBinding> Bindings() const;
-    Windows::UI::Notifications::NotificationBinding GetBinding(hstring_ref templateName) const;
+    Windows::UI::Notifications::NotificationBinding GetBinding(hstring_view templateName) const;
 };
 
 template <typename D>
@@ -586,9 +586,9 @@ struct WINRT_EBO impl_IScheduledTileNotification
     Windows::Foundation::DateTime DeliveryTime() const;
     void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
-    void Tag(hstring_ref value) const;
+    void Tag(hstring_view value) const;
     hstring Tag() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     hstring Id() const;
 };
 
@@ -605,16 +605,16 @@ struct WINRT_EBO impl_IScheduledToastNotification
     Windows::Foundation::DateTime DeliveryTime() const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> SnoozeInterval() const;
     uint32_t MaximumSnoozeCount() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     hstring Id() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IScheduledToastNotification2
 {
-    void Tag(hstring_ref value) const;
+    void Tag(hstring_view value) const;
     hstring Tag() const;
-    void Group(hstring_ref value) const;
+    void Group(hstring_view value) const;
     hstring Group() const;
     void SuppressPopup(bool value) const;
     bool SuppressPopup() const;
@@ -626,7 +626,7 @@ struct WINRT_EBO impl_IScheduledToastNotification3
     Windows::UI::Notifications::NotificationMirroring NotificationMirroring() const;
     void NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) const;
     hstring RemoteId() const;
-    void RemoteId(hstring_ref value) const;
+    void RemoteId(hstring_view value) const;
 };
 
 template <typename D>
@@ -660,8 +660,8 @@ template <typename D>
 struct WINRT_EBO impl_ITileFlyoutUpdateManagerStatics
 {
     Windows::UI::Notifications::TileFlyoutUpdater CreateTileFlyoutUpdaterForApplication() const;
-    Windows::UI::Notifications::TileFlyoutUpdater CreateTileFlyoutUpdaterForApplication(hstring_ref applicationId) const;
-    Windows::UI::Notifications::TileFlyoutUpdater CreateTileFlyoutUpdaterForSecondaryTile(hstring_ref tileId) const;
+    Windows::UI::Notifications::TileFlyoutUpdater CreateTileFlyoutUpdaterForApplication(hstring_view applicationId) const;
+    Windows::UI::Notifications::TileFlyoutUpdater CreateTileFlyoutUpdaterForSecondaryTile(hstring_view tileId) const;
     Windows::Data::Xml::Dom::XmlDocument GetTemplateContent(Windows::UI::Notifications::TileFlyoutTemplateType type) const;
 };
 
@@ -682,7 +682,7 @@ struct WINRT_EBO impl_ITileNotification
     Windows::Data::Xml::Dom::XmlDocument Content() const;
     void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
-    void Tag(hstring_ref value) const;
+    void Tag(hstring_view value) const;
     hstring Tag() const;
 };
 
@@ -696,8 +696,8 @@ template <typename D>
 struct WINRT_EBO impl_ITileUpdateManagerForUser
 {
     Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplicationForUser() const;
-    Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplication(hstring_ref applicationId) const;
-    Windows::UI::Notifications::TileUpdater CreateTileUpdaterForSecondaryTile(hstring_ref tileId) const;
+    Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplication(hstring_view applicationId) const;
+    Windows::UI::Notifications::TileUpdater CreateTileUpdaterForSecondaryTile(hstring_view tileId) const;
     Windows::System::User User() const;
 };
 
@@ -705,8 +705,8 @@ template <typename D>
 struct WINRT_EBO impl_ITileUpdateManagerStatics
 {
     Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplication() const;
-    Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplication(hstring_ref applicationId) const;
-    Windows::UI::Notifications::TileUpdater CreateTileUpdaterForSecondaryTile(hstring_ref tileId) const;
+    Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplication(hstring_view applicationId) const;
+    Windows::UI::Notifications::TileUpdater CreateTileUpdaterForSecondaryTile(hstring_view tileId) const;
     Windows::Data::Xml::Dom::XmlDocument GetTemplateContent(Windows::UI::Notifications::TileTemplateType type) const;
 };
 
@@ -782,9 +782,9 @@ struct WINRT_EBO impl_IToastNotification
 template <typename D>
 struct WINRT_EBO impl_IToastNotification2
 {
-    void Tag(hstring_ref value) const;
+    void Tag(hstring_view value) const;
     hstring Tag() const;
-    void Group(hstring_ref value) const;
+    void Group(hstring_view value) const;
     hstring Group() const;
     void SuppressPopup(bool value) const;
     bool SuppressPopup() const;
@@ -796,7 +796,7 @@ struct WINRT_EBO impl_IToastNotification3
     Windows::UI::Notifications::NotificationMirroring NotificationMirroring() const;
     void NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) const;
     hstring RemoteId() const;
-    void RemoteId(hstring_ref value) const;
+    void RemoteId(hstring_view value) const;
 };
 
 template <typename D>
@@ -815,20 +815,20 @@ struct WINRT_EBO impl_IToastNotificationFactory
 template <typename D>
 struct WINRT_EBO impl_IToastNotificationHistory
 {
-    void RemoveGroup(hstring_ref group) const;
-    void RemoveGroup(hstring_ref group, hstring_ref applicationId) const;
-    void Remove(hstring_ref tag, hstring_ref group, hstring_ref applicationId) const;
-    void Remove(hstring_ref tag, hstring_ref group) const;
-    void Remove(hstring_ref tag) const;
+    void RemoveGroup(hstring_view group) const;
+    void RemoveGroup(hstring_view group, hstring_view applicationId) const;
+    void Remove(hstring_view tag, hstring_view group, hstring_view applicationId) const;
+    void Remove(hstring_view tag, hstring_view group) const;
+    void Remove(hstring_view tag) const;
     void Clear() const;
-    void Clear(hstring_ref applicationId) const;
+    void Clear(hstring_view applicationId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IToastNotificationHistory2
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> GetHistory() const;
-    Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> GetHistory(hstring_ref applicationId) const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> GetHistory(hstring_view applicationId) const;
 };
 
 template <typename D>
@@ -841,7 +841,7 @@ template <typename D>
 struct WINRT_EBO impl_IToastNotificationManagerForUser
 {
     Windows::UI::Notifications::ToastNotifier CreateToastNotifier() const;
-    Windows::UI::Notifications::ToastNotifier CreateToastNotifier(hstring_ref applicationId) const;
+    Windows::UI::Notifications::ToastNotifier CreateToastNotifier(hstring_view applicationId) const;
     Windows::UI::Notifications::ToastNotificationHistory History() const;
     Windows::System::User User() const;
 };
@@ -850,7 +850,7 @@ template <typename D>
 struct WINRT_EBO impl_IToastNotificationManagerStatics
 {
     Windows::UI::Notifications::ToastNotifier CreateToastNotifier() const;
-    Windows::UI::Notifications::ToastNotifier CreateToastNotifier(hstring_ref applicationId) const;
+    Windows::UI::Notifications::ToastNotifier CreateToastNotifier(hstring_view applicationId) const;
     Windows::Data::Xml::Dom::XmlDocument GetTemplateContent(Windows::UI::Notifications::ToastTemplateType type) const;
 };
 

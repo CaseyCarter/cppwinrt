@@ -13,7 +13,7 @@ using namespace winrt;
 
 TEST_CASE("include, generic")
 {
-    hstring prop = hstring_ref(L"fakeproperty");
+    hstring prop = hstring_view(L"fakeproperty");
     Windows::Graphics::Imaging::BitmapPropertySet properties;
     Windows::Graphics::Imaging::BitmapTypedValue val(properties.as<winrt::Windows::IInspectable>(), winrt::Windows::Foundation::PropertyType::Inspectable);
     
@@ -50,7 +50,7 @@ public:
     void Timeout(uint32_t) { throw winrt::hresult_not_implemented(); };
     bool BypassCacheOnRetrieve() { throw winrt::hresult_not_implemented(); };
     void BypassCacheOnRetrieve(bool) { throw winrt::hresult_not_implemented(); };
-    void SetRequestHeader(hstring_ref, hstring_ref) { throw winrt::hresult_not_implemented(); };
+    void SetRequestHeader(hstring_view, hstring_view) { throw winrt::hresult_not_implemented(); };
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationFeed, Windows::Web::Syndication::RetrievalProgress> RetrieveFeedAsync(const Windows::Foundation::Uri &) { throw winrt::hresult_not_implemented(); };
 };
 

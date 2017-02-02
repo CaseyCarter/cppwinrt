@@ -15,7 +15,7 @@ struct WINRT_EBO Radio :
     Radio(std::nullptr_t) noexcept {}
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>> GetRadiosAsync();
     static hstring GetDeviceSelector();
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> FromIdAsync(hstring_ref deviceId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> FromIdAsync(hstring_view deviceId);
     static Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> RequestAccessAsync();
 };
 

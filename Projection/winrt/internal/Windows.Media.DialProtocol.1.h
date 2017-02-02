@@ -102,7 +102,7 @@ template <typename D>
 struct WINRT_EBO impl_IDialApp
 {
     hstring AppName() const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Media::DialProtocol::DialAppLaunchResult> RequestLaunchAsync(hstring_ref appArgument) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Media::DialProtocol::DialAppLaunchResult> RequestLaunchAsync(hstring_view appArgument) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::DialProtocol::DialAppStopResult> StopAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialAppStateDetails> GetAppStateAsync() const;
 };
@@ -118,7 +118,7 @@ template <typename D>
 struct WINRT_EBO impl_IDialDevice
 {
     hstring Id() const;
-    Windows::Media::DialProtocol::DialApp GetDialApp(hstring_ref appName) const;
+    Windows::Media::DialProtocol::DialApp GetDialApp(hstring_view appName) const;
 };
 
 template <typename D>
@@ -168,8 +168,8 @@ struct WINRT_EBO impl_IDialDeviceSelectedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IDialDeviceStatics
 {
-    hstring GetDeviceSelector(hstring_ref appName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> FromIdAsync(hstring_ref value) const;
+    hstring GetDeviceSelector(hstring_view appName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> FromIdAsync(hstring_view value) const;
     Windows::Foundation::IAsyncOperation<bool> DeviceInfoSupportsDialAsync(const Windows::Devices::Enumeration::DeviceInformation & device) const;
 };
 

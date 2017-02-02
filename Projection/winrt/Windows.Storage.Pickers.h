@@ -739,7 +739,7 @@ template <typename D> hstring impl_IFileOpenPicker<D>::SettingsIdentifier() cons
     return value;
 }
 
-template <typename D> void impl_IFileOpenPicker<D>::SettingsIdentifier(hstring_ref value) const
+template <typename D> void impl_IFileOpenPicker<D>::SettingsIdentifier(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileOpenPicker)->put_SettingsIdentifier(get(value)));
 }
@@ -763,7 +763,7 @@ template <typename D> hstring impl_IFileOpenPicker<D>::CommitButtonText() const
     return value;
 }
 
-template <typename D> void impl_IFileOpenPicker<D>::CommitButtonText(hstring_ref value) const
+template <typename D> void impl_IFileOpenPicker<D>::CommitButtonText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileOpenPicker)->put_CommitButtonText(get(value)));
 }
@@ -806,7 +806,7 @@ template <typename D> void impl_IFileOpenPicker2<D>::PickMultipleFilesAndContinu
     check_hresult(WINRT_SHIM(IFileOpenPicker2)->abi_PickMultipleFilesAndContinue());
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IFileOpenPickerWithOperationId<D>::PickSingleFileAsync(hstring_ref pickerOperationId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IFileOpenPickerWithOperationId<D>::PickSingleFileAsync(hstring_view pickerOperationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> pickSingleFileOperation;
     check_hresult(WINRT_SHIM(IFileOpenPickerWithOperationId)->abi_PickSingleFileAsync(get(pickerOperationId), put(pickSingleFileOperation)));
@@ -827,7 +827,7 @@ template <typename D> hstring impl_IFileSavePicker<D>::SettingsIdentifier() cons
     return value;
 }
 
-template <typename D> void impl_IFileSavePicker<D>::SettingsIdentifier(hstring_ref value) const
+template <typename D> void impl_IFileSavePicker<D>::SettingsIdentifier(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileSavePicker)->put_SettingsIdentifier(get(value)));
 }
@@ -851,7 +851,7 @@ template <typename D> hstring impl_IFileSavePicker<D>::CommitButtonText() const
     return value;
 }
 
-template <typename D> void impl_IFileSavePicker<D>::CommitButtonText(hstring_ref value) const
+template <typename D> void impl_IFileSavePicker<D>::CommitButtonText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileSavePicker)->put_CommitButtonText(get(value)));
 }
@@ -870,7 +870,7 @@ template <typename D> hstring impl_IFileSavePicker<D>::DefaultFileExtension() co
     return value;
 }
 
-template <typename D> void impl_IFileSavePicker<D>::DefaultFileExtension(hstring_ref value) const
+template <typename D> void impl_IFileSavePicker<D>::DefaultFileExtension(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileSavePicker)->put_DefaultFileExtension(get(value)));
 }
@@ -894,7 +894,7 @@ template <typename D> hstring impl_IFileSavePicker<D>::SuggestedFileName() const
     return value;
 }
 
-template <typename D> void impl_IFileSavePicker<D>::SuggestedFileName(hstring_ref value) const
+template <typename D> void impl_IFileSavePicker<D>::SuggestedFileName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileSavePicker)->put_SuggestedFileName(get(value)));
 }
@@ -925,7 +925,7 @@ template <typename D> hstring impl_IFileSavePicker3<D>::EnterpriseId() const
     return value;
 }
 
-template <typename D> void impl_IFileSavePicker3<D>::EnterpriseId(hstring_ref value) const
+template <typename D> void impl_IFileSavePicker3<D>::EnterpriseId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileSavePicker3)->put_EnterpriseId(get(value)));
 }
@@ -949,7 +949,7 @@ template <typename D> hstring impl_IFolderPicker<D>::SettingsIdentifier() const
     return value;
 }
 
-template <typename D> void impl_IFolderPicker<D>::SettingsIdentifier(hstring_ref value) const
+template <typename D> void impl_IFolderPicker<D>::SettingsIdentifier(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFolderPicker)->put_SettingsIdentifier(get(value)));
 }
@@ -973,7 +973,7 @@ template <typename D> hstring impl_IFolderPicker<D>::CommitButtonText() const
     return value;
 }
 
-template <typename D> void impl_IFolderPicker<D>::CommitButtonText(hstring_ref value) const
+template <typename D> void impl_IFolderPicker<D>::CommitButtonText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFolderPicker)->put_CommitButtonText(get(value)));
 }

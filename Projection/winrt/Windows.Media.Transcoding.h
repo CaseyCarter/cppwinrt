@@ -397,22 +397,22 @@ template <typename D> bool impl_IMediaTranscoder<D>::HardwareAccelerationEnabled
     return value;
 }
 
-template <typename D> void impl_IMediaTranscoder<D>::AddAudioEffect(hstring_ref activatableClassId) const
+template <typename D> void impl_IMediaTranscoder<D>::AddAudioEffect(hstring_view activatableClassId) const
 {
     check_hresult(WINRT_SHIM(IMediaTranscoder)->abi_AddAudioEffect(get(activatableClassId)));
 }
 
-template <typename D> void impl_IMediaTranscoder<D>::AddAudioEffect(hstring_ref activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const
+template <typename D> void impl_IMediaTranscoder<D>::AddAudioEffect(hstring_view activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
     check_hresult(WINRT_SHIM(IMediaTranscoder)->abi_AddAudioEffectWithSettings(get(activatableClassId), effectRequired, get(configuration)));
 }
 
-template <typename D> void impl_IMediaTranscoder<D>::AddVideoEffect(hstring_ref activatableClassId) const
+template <typename D> void impl_IMediaTranscoder<D>::AddVideoEffect(hstring_view activatableClassId) const
 {
     check_hresult(WINRT_SHIM(IMediaTranscoder)->abi_AddVideoEffect(get(activatableClassId)));
 }
 
-template <typename D> void impl_IMediaTranscoder<D>::AddVideoEffect(hstring_ref activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const
+template <typename D> void impl_IMediaTranscoder<D>::AddVideoEffect(hstring_view activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
     check_hresult(WINRT_SHIM(IMediaTranscoder)->abi_AddVideoEffectWithSettings(get(activatableClassId), effectRequired, get(configuration)));
 }

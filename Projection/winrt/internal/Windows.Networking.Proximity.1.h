@@ -181,11 +181,11 @@ struct WINRT_EBO impl_IPeerFinderStatics
     bool AllowWiFiDirect() const;
     void AllowWiFiDirect(bool value) const;
     hstring DisplayName() const;
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     Windows::Networking::Proximity::PeerDiscoveryTypes SupportedDiscoveryTypes() const;
     Windows::Foundation::Collections::IMap<hstring, hstring> AlternateIdentities() const;
     void Start() const;
-    void Start(hstring_ref peerMessage) const;
+    void Start(hstring_view peerMessage) const;
     void Stop() const;
     event_token TriggeredConnectionStateChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler) const;
     using TriggeredConnectionStateChanged_revoker = event_revoker<IPeerFinderStatics>;
@@ -260,11 +260,11 @@ struct WINRT_EBO impl_IPeerWatcher
 template <typename D>
 struct WINRT_EBO impl_IProximityDevice
 {
-    int64_t SubscribeForMessage(hstring_ref messageType, const Windows::Networking::Proximity::MessageReceivedHandler & messageReceivedHandler) const;
-    int64_t PublishMessage(hstring_ref messageType, hstring_ref message) const;
-    int64_t PublishMessage(hstring_ref messageType, hstring_ref message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const;
-    int64_t PublishBinaryMessage(hstring_ref messageType, const Windows::Storage::Streams::IBuffer & message) const;
-    int64_t PublishBinaryMessage(hstring_ref messageType, const Windows::Storage::Streams::IBuffer & message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const;
+    int64_t SubscribeForMessage(hstring_view messageType, const Windows::Networking::Proximity::MessageReceivedHandler & messageReceivedHandler) const;
+    int64_t PublishMessage(hstring_view messageType, hstring_view message) const;
+    int64_t PublishMessage(hstring_view messageType, hstring_view message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const;
+    int64_t PublishBinaryMessage(hstring_view messageType, const Windows::Storage::Streams::IBuffer & message) const;
+    int64_t PublishBinaryMessage(hstring_view messageType, const Windows::Storage::Streams::IBuffer & message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const;
     int64_t PublishUriMessage(const Windows::Foundation::Uri & message) const;
     int64_t PublishUriMessage(const Windows::Foundation::Uri & message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const;
     void StopSubscribingForMessage(int64_t subscriptionId) const;
@@ -287,7 +287,7 @@ struct WINRT_EBO impl_IProximityDeviceStatics
 {
     hstring GetDeviceSelector() const;
     Windows::Networking::Proximity::ProximityDevice GetDefault() const;
-    Windows::Networking::Proximity::ProximityDevice FromId(hstring_ref deviceId) const;
+    Windows::Networking::Proximity::ProximityDevice FromId(hstring_view deviceId) const;
 };
 
 template <typename D>

@@ -493,7 +493,7 @@ template <typename D> Windows::Graphics::Printing::OptionDetails::PrintOptionTyp
     return value;
 }
 
-template <typename D> void impl_IPrintOptionDetails<D>::ErrorText(hstring_ref value) const
+template <typename D> void impl_IPrintOptionDetails<D>::ErrorText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPrintOptionDetails)->put_ErrorText(get(value)));
 }
@@ -559,7 +559,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::IIn
     return value;
 }
 
-template <typename D> void impl_IPrintCustomOptionDetails<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IPrintCustomOptionDetails<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPrintCustomOptionDetails)->put_DisplayName(get(value)));
 }
@@ -590,7 +590,7 @@ template <typename D> hstring impl_IPrintCustomItemDetails<D>::ItemId() const
     return value;
 }
 
-template <typename D> void impl_IPrintCustomItemDetails<D>::ItemDisplayName(hstring_ref value) const
+template <typename D> void impl_IPrintCustomItemDetails<D>::ItemDisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->put_ItemDisplayName(get(value)));
 }
@@ -602,7 +602,7 @@ template <typename D> hstring impl_IPrintCustomItemDetails<D>::ItemDisplayName()
     return value;
 }
 
-template <typename D> void impl_IPrintCustomItemListOptionDetails<D>::AddItem(hstring_ref itemId, hstring_ref displayName) const
+template <typename D> void impl_IPrintCustomItemListOptionDetails<D>::AddItem(hstring_view itemId, hstring_view displayName) const
 {
     check_hresult(WINRT_SHIM(IPrintCustomItemListOptionDetails)->abi_AddItem(get(itemId), get(displayName)));
 }
@@ -621,14 +621,14 @@ template <typename D> Windows::Foundation::Collections::IMapView<hstring, Window
     return value;
 }
 
-template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails impl_IPrintTaskOptionDetails<D>::CreateItemListOption(hstring_ref optionId, hstring_ref displayName) const
+template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails impl_IPrintTaskOptionDetails<D>::CreateItemListOption(hstring_view optionId, hstring_view displayName) const
 {
     Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails itemListOption { nullptr };
     check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->abi_CreateItemListOption(get(optionId), get(displayName), put(itemListOption)));
     return itemListOption;
 }
 
-template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails impl_IPrintTaskOptionDetails<D>::CreateTextOption(hstring_ref optionId, hstring_ref displayName) const
+template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails impl_IPrintTaskOptionDetails<D>::CreateTextOption(hstring_view optionId, hstring_view displayName) const
 {
     Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails textOption { nullptr };
     check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->abi_CreateTextOption(get(optionId), get(displayName), put(textOption)));

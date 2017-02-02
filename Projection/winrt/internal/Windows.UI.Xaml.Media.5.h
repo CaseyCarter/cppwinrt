@@ -44,7 +44,7 @@ template <typename D, typename ... Interfaces> struct FontFamilyT :
 
 protected:
 
-    FontFamilyT(hstring_ref familyName)
+    FontFamilyT(hstring_view familyName)
     {
         get_activation_factory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, *this, this->m_inner);
     }

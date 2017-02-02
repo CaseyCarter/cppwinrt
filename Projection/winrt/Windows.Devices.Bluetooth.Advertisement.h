@@ -1298,7 +1298,7 @@ template <typename D> hstring impl_IBluetoothLEAdvertisement<D>::LocalName() con
     return value;
 }
 
-template <typename D> void impl_IBluetoothLEAdvertisement<D>::LocalName(hstring_ref value) const
+template <typename D> void impl_IBluetoothLEAdvertisement<D>::LocalName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IBluetoothLEAdvertisement)->put_LocalName(get(value)));
 }

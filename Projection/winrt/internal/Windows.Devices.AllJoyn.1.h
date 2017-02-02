@@ -383,20 +383,20 @@ struct WINRT_EBO impl_IAllJoynAboutData
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
     hstring DefaultAppName() const;
-    void DefaultAppName(hstring_ref value) const;
+    void DefaultAppName(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, hstring> AppNames() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> DateOfManufacture() const;
     void DateOfManufacture(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     hstring DefaultDescription() const;
-    void DefaultDescription(hstring_ref value) const;
+    void DefaultDescription(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, hstring> Descriptions() const;
     hstring DefaultManufacturer() const;
-    void DefaultManufacturer(hstring_ref value) const;
+    void DefaultManufacturer(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, hstring> Manufacturers() const;
     hstring ModelNumber() const;
-    void ModelNumber(hstring_ref value) const;
+    void ModelNumber(hstring_view value) const;
     hstring SoftwareVersion() const;
-    void SoftwareVersion(hstring_ref value) const;
+    void SoftwareVersion(hstring_view value) const;
     Windows::Foundation::Uri SupportUrl() const;
     void SupportUrl(const Windows::Foundation::Uri & value) const;
     GUID AppId() const;
@@ -427,8 +427,8 @@ struct WINRT_EBO impl_IAllJoynAboutDataView
 template <typename D>
 struct WINRT_EBO impl_IAllJoynAboutDataViewStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetDataBySessionPortAsync(hstring_view uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetDataBySessionPortAsync(hstring_view uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language) const;
 };
 
 template <typename D>
@@ -451,7 +451,7 @@ struct WINRT_EBO impl_IAllJoynAcceptSessionJoinerEventArgs
 template <typename D>
 struct WINRT_EBO impl_IAllJoynAcceptSessionJoinerEventArgsFactory
 {
-    Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs Create(hstring_ref uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) const;
+    Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs Create(hstring_view uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) const;
 };
 
 template <typename D>
@@ -469,7 +469,7 @@ struct WINRT_EBO impl_IAllJoynBusAttachment
     hstring ConnectionSpecification() const;
     Windows::Devices::AllJoyn::AllJoynBusAttachmentState State() const;
     hstring UniqueName() const;
-    Windows::Foundation::IAsyncOperation<int32_t> PingAsync(hstring_ref uniqueName) const;
+    Windows::Foundation::IAsyncOperation<int32_t> PingAsync(hstring_view uniqueName) const;
     void Connect() const;
     void Disconnect() const;
     event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> & handler) const;
@@ -509,7 +509,7 @@ struct WINRT_EBO impl_IAllJoynBusAttachment2
 template <typename D>
 struct WINRT_EBO impl_IAllJoynBusAttachmentFactory
 {
-    Windows::Devices::AllJoyn::AllJoynBusAttachment Create(hstring_ref connectionSpecification) const;
+    Windows::Devices::AllJoyn::AllJoynBusAttachment Create(hstring_view connectionSpecification) const;
 };
 
 template <typename D>
@@ -543,8 +543,8 @@ struct WINRT_EBO impl_IAllJoynBusObject
 template <typename D>
 struct WINRT_EBO impl_IAllJoynBusObjectFactory
 {
-    Windows::Devices::AllJoyn::AllJoynBusObject Create(hstring_ref objectPath) const;
-    Windows::Devices::AllJoyn::AllJoynBusObject CreateWithBusAttachment(hstring_ref objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const;
+    Windows::Devices::AllJoyn::AllJoynBusObject Create(hstring_view objectPath) const;
+    Windows::Devices::AllJoyn::AllJoynBusObject CreateWithBusAttachment(hstring_view objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const;
 };
 
 template <typename D>
@@ -603,7 +603,7 @@ struct WINRT_EBO impl_IAllJoynMessageInfo
 template <typename D>
 struct WINRT_EBO impl_IAllJoynMessageInfoFactory
 {
-    Windows::Devices::AllJoyn::AllJoynMessageInfo Create(hstring_ref senderUniqueName) const;
+    Windows::Devices::AllJoyn::AllJoynMessageInfo Create(hstring_view senderUniqueName) const;
 };
 
 template <typename D>
@@ -635,7 +635,7 @@ struct WINRT_EBO impl_IAllJoynServiceInfo
 template <typename D>
 struct WINRT_EBO impl_IAllJoynServiceInfoFactory
 {
-    Windows::Devices::AllJoyn::AllJoynServiceInfo Create(hstring_ref uniqueName, hstring_ref objectPath, uint16_t sessionPort) const;
+    Windows::Devices::AllJoyn::AllJoynServiceInfo Create(hstring_view uniqueName, hstring_view objectPath, uint16_t sessionPort) const;
 };
 
 template <typename D>
@@ -647,13 +647,13 @@ struct WINRT_EBO impl_IAllJoynServiceInfoRemovedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IAllJoynServiceInfoRemovedEventArgsFactory
 {
-    Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs Create(hstring_ref uniqueName) const;
+    Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs Create(hstring_view uniqueName) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IAllJoynServiceInfoStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> FromIdAsync(hstring_view deviceId) const;
 };
 
 template <typename D>
@@ -661,7 +661,7 @@ struct WINRT_EBO impl_IAllJoynSession
 {
     int32_t Id() const;
     int32_t Status() const;
-    Windows::Foundation::IAsyncOperation<int32_t> RemoveMemberAsync(hstring_ref uniqueName) const;
+    Windows::Foundation::IAsyncOperation<int32_t> RemoveMemberAsync(hstring_view uniqueName) const;
     event_token MemberAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> & handler) const;
     using MemberAdded_revoker = event_revoker<IAllJoynSession>;
     MemberAdded_revoker MemberAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> & handler) const;
@@ -709,7 +709,7 @@ struct WINRT_EBO impl_IAllJoynSessionMemberAddedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IAllJoynSessionMemberAddedEventArgsFactory
 {
-    Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs Create(hstring_ref uniqueName) const;
+    Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs Create(hstring_view uniqueName) const;
 };
 
 template <typename D>
@@ -721,7 +721,7 @@ struct WINRT_EBO impl_IAllJoynSessionMemberRemovedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IAllJoynSessionMemberRemovedEventArgsFactory
 {
-    Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs Create(hstring_ref uniqueName) const;
+    Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs Create(hstring_view uniqueName) const;
 };
 
 template <typename D>

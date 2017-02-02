@@ -1071,14 +1071,14 @@ template <typename D> Windows::IInspectable impl_IXamlType<D>::ActivateInstance(
     return instance;
 }
 
-template <typename D> Windows::IInspectable impl_IXamlType<D>::CreateFromString(hstring_ref value) const
+template <typename D> Windows::IInspectable impl_IXamlType<D>::CreateFromString(hstring_view value) const
 {
     Windows::IInspectable instance;
     check_hresult(WINRT_SHIM(IXamlType)->abi_CreateFromString(get(value), put(instance)));
     return instance;
 }
 
-template <typename D> Windows::UI::Xaml::Markup::IXamlMember impl_IXamlType<D>::GetMember(hstring_ref name) const
+template <typename D> Windows::UI::Xaml::Markup::IXamlMember impl_IXamlType<D>::GetMember(hstring_view name) const
 {
     Windows::UI::Xaml::Markup::IXamlMember xamlMember;
     check_hresult(WINRT_SHIM(IXamlType)->abi_GetMember(get(name), put(xamlMember)));
@@ -1107,7 +1107,7 @@ template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlMetadataPro
     return xamlType;
 }
 
-template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlMetadataProvider<D>::GetXamlType(hstring_ref fullName) const
+template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlMetadataProvider<D>::GetXamlType(hstring_view fullName) const
 {
     Windows::UI::Xaml::Markup::IXamlType xamlType;
     check_hresult(WINRT_SHIM(IXamlMetadataProvider)->abi_GetXamlTypeByFullName(get(fullName), put(xamlType)));
@@ -1128,14 +1128,14 @@ template <typename D> Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformatio
     return returnValue;
 }
 
-template <typename D> Windows::IInspectable impl_IXamlReaderStatics<D>::Load(hstring_ref xaml) const
+template <typename D> Windows::IInspectable impl_IXamlReaderStatics<D>::Load(hstring_view xaml) const
 {
     Windows::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IXamlReaderStatics)->abi_Load(get(xaml), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::IInspectable impl_IXamlReaderStatics<D>::LoadWithInitialTemplateValidation(hstring_ref xaml) const
+template <typename D> Windows::IInspectable impl_IXamlReaderStatics<D>::LoadWithInitialTemplateValidation(hstring_view xaml) const
 {
     Windows::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IXamlReaderStatics)->abi_LoadWithInitialTemplateValidation(get(xaml), put(returnValue)));
@@ -1188,7 +1188,7 @@ template <typename D> Windows::IInspectable impl_IXamlBindingHelperStatics<D>::C
     return returnValue;
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_ref value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromString(get(dependencyObject), get(propertyToSet), get(value)));
 }
@@ -1308,7 +1308,7 @@ inline Windows::IInspectable XamlBindingHelper::ConvertValue(const Windows::UI::
     return get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().ConvertValue(type, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_ref value)
+inline void XamlBindingHelper::SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_view value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromString(dependencyObject, propertyToSet, value);
 }
@@ -1393,12 +1393,12 @@ inline void XamlBindingHelper::SetPropertyFromObject(const Windows::IInspectable
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromObject(dependencyObject, propertyToSet, value);
 }
 
-inline Windows::IInspectable XamlReader::Load(hstring_ref xaml)
+inline Windows::IInspectable XamlReader::Load(hstring_view xaml)
 {
     return get_activation_factory<XamlReader, IXamlReaderStatics>().Load(xaml);
 }
 
-inline Windows::IInspectable XamlReader::LoadWithInitialTemplateValidation(hstring_ref xaml)
+inline Windows::IInspectable XamlReader::LoadWithInitialTemplateValidation(hstring_view xaml)
 {
     return get_activation_factory<XamlReader, IXamlReaderStatics>().LoadWithInitialTemplateValidation(xaml);
 }

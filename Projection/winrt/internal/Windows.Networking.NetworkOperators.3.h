@@ -14,7 +14,7 @@ struct WINRT_EBO HotspotAuthenticationContext :
     impl::require<HotspotAuthenticationContext, Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2>
 {
     HotspotAuthenticationContext(std::nullptr_t) noexcept {}
-    static bool TryGetAuthenticationContext(hstring_ref evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context);
+    static bool TryGetAuthenticationContext(hstring_view evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context);
 };
 
 struct WINRT_EBO HotspotAuthenticationEventDetails :
@@ -70,7 +70,7 @@ struct WINRT_EBO MobileBroadbandAccount :
 {
     MobileBroadbandAccount(std::nullptr_t) noexcept {}
     static Windows::Foundation::Collections::IVectorView<hstring> AvailableNetworkAccountIds();
-    static Windows::Networking::NetworkOperators::MobileBroadbandAccount CreateFromNetworkAccountId(hstring_ref networkAccountId);
+    static Windows::Networking::NetworkOperators::MobileBroadbandAccount CreateFromNetworkAccountId(hstring_view networkAccountId);
 };
 
 struct WINRT_EBO MobileBroadbandAccountEventArgs :
@@ -146,7 +146,7 @@ struct WINRT_EBO MobileBroadbandModem :
 {
     MobileBroadbandModem(std::nullptr_t) noexcept {}
     static hstring GetDeviceSelector();
-    static Windows::Networking::NetworkOperators::MobileBroadbandModem FromId(hstring_ref deviceId);
+    static Windows::Networking::NetworkOperators::MobileBroadbandModem FromId(hstring_view deviceId);
     static Windows::Networking::NetworkOperators::MobileBroadbandModem GetDefault();
 };
 
@@ -265,8 +265,8 @@ struct WINRT_EBO NetworkOperatorTetheringManager :
     impl::require<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager>
 {
     NetworkOperatorTetheringManager(std::nullptr_t) noexcept {}
-    static Windows::Networking::NetworkOperators::TetheringCapability GetTetheringCapability(hstring_ref networkAccountId);
-    static Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager CreateFromNetworkAccountId(hstring_ref networkAccountId);
+    static Windows::Networking::NetworkOperators::TetheringCapability GetTetheringCapability(hstring_view networkAccountId);
+    static Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager CreateFromNetworkAccountId(hstring_view networkAccountId);
     static Windows::Networking::NetworkOperators::TetheringCapability GetTetheringCapabilityFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile);
     static Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile);
     static Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile, const Windows::Networking::Connectivity::NetworkAdapter & adapter);
@@ -295,14 +295,14 @@ struct WINRT_EBO ProvisioningAgent :
 {
     ProvisioningAgent(std::nullptr_t) noexcept {}
     ProvisioningAgent();
-    static Windows::Networking::NetworkOperators::ProvisioningAgent CreateFromNetworkAccountId(hstring_ref networkAccountId);
+    static Windows::Networking::NetworkOperators::ProvisioningAgent CreateFromNetworkAccountId(hstring_view networkAccountId);
 };
 
 struct WINRT_EBO UssdMessage :
     Windows::Networking::NetworkOperators::IUssdMessage
 {
     UssdMessage(std::nullptr_t) noexcept {}
-    UssdMessage(hstring_ref messageText);
+    UssdMessage(hstring_view messageText);
 };
 
 struct WINRT_EBO UssdReply :
@@ -315,8 +315,8 @@ struct WINRT_EBO UssdSession :
     Windows::Networking::NetworkOperators::IUssdSession
 {
     UssdSession(std::nullptr_t) noexcept {}
-    static Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkAccountId(hstring_ref networkAccountId);
-    static Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkInterfaceId(hstring_ref networkInterfaceId);
+    static Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkAccountId(hstring_view networkAccountId);
+    static Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkInterfaceId(hstring_view networkInterfaceId);
 };
 
 }

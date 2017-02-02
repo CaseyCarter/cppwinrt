@@ -57,7 +57,7 @@ struct WINRT_EBO impl_IRadioStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>> GetRadiosAsync() const;
     hstring GetDeviceSelector() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> FromIdAsync(hstring_view deviceId) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> RequestAccessAsync() const;
 };
 

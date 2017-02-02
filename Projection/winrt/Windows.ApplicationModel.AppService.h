@@ -539,7 +539,7 @@ template <typename D> Windows::ApplicationModel::AppService::AppServiceResponseS
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_IAppServiceCatalogStatics<D>::FindAppServiceProvidersAsync(hstring_ref appServiceName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_IAppServiceCatalogStatics<D>::FindAppServiceProvidersAsync(hstring_view appServiceName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
     check_hresult(WINRT_SHIM(IAppServiceCatalogStatics)->abi_FindAppServiceProvidersAsync(get(appServiceName), put(operation)));
@@ -553,7 +553,7 @@ template <typename D> hstring impl_IAppServiceConnection<D>::AppServiceName() co
     return value;
 }
 
-template <typename D> void impl_IAppServiceConnection<D>::AppServiceName(hstring_ref value) const
+template <typename D> void impl_IAppServiceConnection<D>::AppServiceName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppServiceConnection)->put_AppServiceName(get(value)));
 }
@@ -565,7 +565,7 @@ template <typename D> hstring impl_IAppServiceConnection<D>::PackageFamilyName()
     return value;
 }
 
-template <typename D> void impl_IAppServiceConnection<D>::PackageFamilyName(hstring_ref value) const
+template <typename D> void impl_IAppServiceConnection<D>::PackageFamilyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppServiceConnection)->put_PackageFamilyName(get(value)));
 }
@@ -618,7 +618,7 @@ template <typename D> void impl_IAppServiceConnection<D>::ServiceClosed(event_to
     check_hresult(WINRT_SHIM(IAppServiceConnection)->remove_ServiceClosed(token));
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> AppServiceCatalog::FindAppServiceProvidersAsync(hstring_ref appServiceName)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> AppServiceCatalog::FindAppServiceProvidersAsync(hstring_view appServiceName)
 {
     return get_activation_factory<AppServiceCatalog, IAppServiceCatalogStatics>().FindAppServiceProvidersAsync(appServiceName);
 }

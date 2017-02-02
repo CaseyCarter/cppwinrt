@@ -970,7 +970,7 @@ template <typename D> void impl_IFrameworkView<D>::SetWindow(const Windows::UI::
     check_hresult(WINRT_SHIM(IFrameworkView)->abi_SetWindow(get(window)));
 }
 
-template <typename D> void impl_IFrameworkView<D>::Load(hstring_ref entryPoint) const
+template <typename D> void impl_IFrameworkView<D>::Load(hstring_view entryPoint) const
 {
     check_hresult(WINRT_SHIM(IFrameworkView)->abi_Load(get(entryPoint)));
 }
@@ -1152,7 +1152,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::App
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Core::CoreApplicationView impl_ICoreImmersiveApplication<D>::CreateNewView(hstring_ref runtimeType, hstring_ref entryPoint) const
+template <typename D> Windows::ApplicationModel::Core::CoreApplicationView impl_ICoreImmersiveApplication<D>::CreateNewView(hstring_view runtimeType, hstring_view entryPoint) const
 {
     Windows::ApplicationModel::Core::CoreApplicationView view { nullptr };
     check_hresult(WINRT_SHIM(ICoreImmersiveApplication)->abi_CreateNewView(get(runtimeType), get(entryPoint), put(view)));
@@ -1535,7 +1535,7 @@ inline Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::
     return get_activation_factory<CoreApplication, ICoreImmersiveApplication>().Views();
 }
 
-inline Windows::ApplicationModel::Core::CoreApplicationView CoreApplication::CreateNewView(hstring_ref runtimeType, hstring_ref entryPoint)
+inline Windows::ApplicationModel::Core::CoreApplicationView CoreApplication::CreateNewView(hstring_view runtimeType, hstring_view entryPoint)
 {
     return get_activation_factory<CoreApplication, ICoreImmersiveApplication>().CreateNewView(runtimeType, entryPoint);
 }

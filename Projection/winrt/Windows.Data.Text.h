@@ -939,28 +939,28 @@ struct produce<D, Windows::Data::Text::IWordsSegmenterFactory> : produce_base<D,
 
 namespace Windows::Data::Text {
 
-template <typename D> Windows::Data::Text::SemanticTextQuery impl_ISemanticTextQueryFactory<D>::Create(hstring_ref aqsFilter) const
+template <typename D> Windows::Data::Text::SemanticTextQuery impl_ISemanticTextQueryFactory<D>::Create(hstring_view aqsFilter) const
 {
     Windows::Data::Text::SemanticTextQuery result { nullptr };
     check_hresult(WINRT_SHIM(ISemanticTextQueryFactory)->abi_Create(get(aqsFilter), put(result)));
     return result;
 }
 
-template <typename D> Windows::Data::Text::SemanticTextQuery impl_ISemanticTextQueryFactory<D>::CreateWithLanguage(hstring_ref aqsFilter, hstring_ref filterLanguage) const
+template <typename D> Windows::Data::Text::SemanticTextQuery impl_ISemanticTextQueryFactory<D>::CreateWithLanguage(hstring_view aqsFilter, hstring_view filterLanguage) const
 {
     Windows::Data::Text::SemanticTextQuery result { nullptr };
     check_hresult(WINRT_SHIM(ISemanticTextQueryFactory)->abi_CreateWithLanguage(get(aqsFilter), get(filterLanguage), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> impl_ISemanticTextQuery<D>::Find(hstring_ref content) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> impl_ISemanticTextQuery<D>::Find(hstring_view content) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> result;
     check_hresult(WINRT_SHIM(ISemanticTextQuery)->abi_Find(get(content), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> impl_ISemanticTextQuery<D>::FindInProperty(hstring_ref propertyContent, hstring_ref propertyName) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> impl_ISemanticTextQuery<D>::FindInProperty(hstring_view propertyContent, hstring_view propertyName) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> result;
     check_hresult(WINRT_SHIM(ISemanticTextQuery)->abi_FindInProperty(get(propertyContent), get(propertyName), put(result)));
@@ -1147,26 +1147,26 @@ template <typename D> hstring impl_IWordsSegmenter<D>::ResolvedLanguage() const
     return value;
 }
 
-template <typename D> Windows::Data::Text::WordSegment impl_IWordsSegmenter<D>::GetTokenAt(hstring_ref text, uint32_t startIndex) const
+template <typename D> Windows::Data::Text::WordSegment impl_IWordsSegmenter<D>::GetTokenAt(hstring_view text, uint32_t startIndex) const
 {
     Windows::Data::Text::WordSegment result { nullptr };
     check_hresult(WINRT_SHIM(IWordsSegmenter)->abi_GetTokenAt(get(text), startIndex, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> impl_IWordsSegmenter<D>::GetTokens(hstring_ref text) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> impl_IWordsSegmenter<D>::GetTokens(hstring_view text) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> result;
     check_hresult(WINRT_SHIM(IWordsSegmenter)->abi_GetTokens(get(text), put(result)));
     return result;
 }
 
-template <typename D> void impl_IWordsSegmenter<D>::Tokenize(hstring_ref text, uint32_t startIndex, const Windows::Data::Text::WordSegmentsTokenizingHandler & handler) const
+template <typename D> void impl_IWordsSegmenter<D>::Tokenize(hstring_view text, uint32_t startIndex, const Windows::Data::Text::WordSegmentsTokenizingHandler & handler) const
 {
     check_hresult(WINRT_SHIM(IWordsSegmenter)->abi_Tokenize(get(text), startIndex, get(handler)));
 }
 
-template <typename D> Windows::Data::Text::WordsSegmenter impl_IWordsSegmenterFactory<D>::CreateWithLanguage(hstring_ref language) const
+template <typename D> Windows::Data::Text::WordsSegmenter impl_IWordsSegmenterFactory<D>::CreateWithLanguage(hstring_view language) const
 {
     Windows::Data::Text::WordsSegmenter result { nullptr };
     check_hresult(WINRT_SHIM(IWordsSegmenterFactory)->abi_CreateWithLanguage(get(language), put(result)));
@@ -1180,26 +1180,26 @@ template <typename D> hstring impl_ISelectableWordsSegmenter<D>::ResolvedLanguag
     return value;
 }
 
-template <typename D> Windows::Data::Text::SelectableWordSegment impl_ISelectableWordsSegmenter<D>::GetTokenAt(hstring_ref text, uint32_t startIndex) const
+template <typename D> Windows::Data::Text::SelectableWordSegment impl_ISelectableWordsSegmenter<D>::GetTokenAt(hstring_view text, uint32_t startIndex) const
 {
     Windows::Data::Text::SelectableWordSegment result { nullptr };
     check_hresult(WINRT_SHIM(ISelectableWordsSegmenter)->abi_GetTokenAt(get(text), startIndex, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> impl_ISelectableWordsSegmenter<D>::GetTokens(hstring_ref text) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> impl_ISelectableWordsSegmenter<D>::GetTokens(hstring_view text) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> result;
     check_hresult(WINRT_SHIM(ISelectableWordsSegmenter)->abi_GetTokens(get(text), put(result)));
     return result;
 }
 
-template <typename D> void impl_ISelectableWordsSegmenter<D>::Tokenize(hstring_ref text, uint32_t startIndex, const Windows::Data::Text::SelectableWordSegmentsTokenizingHandler & handler) const
+template <typename D> void impl_ISelectableWordsSegmenter<D>::Tokenize(hstring_view text, uint32_t startIndex, const Windows::Data::Text::SelectableWordSegmentsTokenizingHandler & handler) const
 {
     check_hresult(WINRT_SHIM(ISelectableWordsSegmenter)->abi_Tokenize(get(text), startIndex, get(handler)));
 }
 
-template <typename D> Windows::Data::Text::SelectableWordsSegmenter impl_ISelectableWordsSegmenterFactory<D>::CreateWithLanguage(hstring_ref language) const
+template <typename D> Windows::Data::Text::SelectableWordsSegmenter impl_ISelectableWordsSegmenterFactory<D>::CreateWithLanguage(hstring_view language) const
 {
     Windows::Data::Text::SelectableWordsSegmenter result { nullptr };
     check_hresult(WINRT_SHIM(ISelectableWordsSegmenterFactory)->abi_CreateWithLanguage(get(language), put(result)));
@@ -1220,21 +1220,21 @@ template <typename D> bool impl_ITextPredictionGenerator<D>::LanguageAvailableBu
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextPredictionGenerator<D>::GetCandidatesAsync(hstring_ref input) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextPredictionGenerator<D>::GetCandidatesAsync(hstring_view input) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
     check_hresult(WINRT_SHIM(ITextPredictionGenerator)->abi_GetCandidatesAsync(get(input), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextPredictionGenerator<D>::GetCandidatesAsync(hstring_ref input, uint32_t maxCandidates) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextPredictionGenerator<D>::GetCandidatesAsync(hstring_view input, uint32_t maxCandidates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
     check_hresult(WINRT_SHIM(ITextPredictionGenerator)->abi_GetCandidatesWithMaxCountAsync(get(input), maxCandidates, put(result)));
     return result;
 }
 
-template <typename D> Windows::Data::Text::TextPredictionGenerator impl_ITextPredictionGeneratorFactory<D>::Create(hstring_ref languageTag) const
+template <typename D> Windows::Data::Text::TextPredictionGenerator impl_ITextPredictionGeneratorFactory<D>::Create(hstring_view languageTag) const
 {
     Windows::Data::Text::TextPredictionGenerator result { nullptr };
     check_hresult(WINRT_SHIM(ITextPredictionGeneratorFactory)->abi_Create(get(languageTag), put(result)));
@@ -1255,21 +1255,21 @@ template <typename D> bool impl_ITextConversionGenerator<D>::LanguageAvailableBu
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextConversionGenerator<D>::GetCandidatesAsync(hstring_ref input) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextConversionGenerator<D>::GetCandidatesAsync(hstring_view input) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
     check_hresult(WINRT_SHIM(ITextConversionGenerator)->abi_GetCandidatesAsync(get(input), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextConversionGenerator<D>::GetCandidatesAsync(hstring_ref input, uint32_t maxCandidates) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextConversionGenerator<D>::GetCandidatesAsync(hstring_view input, uint32_t maxCandidates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
     check_hresult(WINRT_SHIM(ITextConversionGenerator)->abi_GetCandidatesWithMaxCountAsync(get(input), maxCandidates, put(result)));
     return result;
 }
 
-template <typename D> Windows::Data::Text::TextConversionGenerator impl_ITextConversionGeneratorFactory<D>::Create(hstring_ref languageTag) const
+template <typename D> Windows::Data::Text::TextConversionGenerator impl_ITextConversionGeneratorFactory<D>::Create(hstring_view languageTag) const
 {
     Windows::Data::Text::TextConversionGenerator result { nullptr };
     check_hresult(WINRT_SHIM(ITextConversionGeneratorFactory)->abi_Create(get(languageTag), put(result)));
@@ -1290,14 +1290,14 @@ template <typename D> bool impl_ITextReverseConversionGenerator<D>::LanguageAvai
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ITextReverseConversionGenerator<D>::ConvertBackAsync(hstring_ref input) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ITextReverseConversionGenerator<D>::ConvertBackAsync(hstring_view input) const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
     check_hresult(WINRT_SHIM(ITextReverseConversionGenerator)->abi_ConvertBackAsync(get(input), put(result)));
     return result;
 }
 
-template <typename D> Windows::Data::Text::TextReverseConversionGenerator impl_ITextReverseConversionGeneratorFactory<D>::Create(hstring_ref languageTag) const
+template <typename D> Windows::Data::Text::TextReverseConversionGenerator impl_ITextReverseConversionGeneratorFactory<D>::Create(hstring_view languageTag) const
 {
     Windows::Data::Text::TextReverseConversionGenerator result { nullptr };
     check_hresult(WINRT_SHIM(ITextReverseConversionGeneratorFactory)->abi_Create(get(languageTag), put(result)));
@@ -1318,34 +1318,34 @@ template <typename D> hstring impl_ITextPhoneme<D>::ReadingText() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> impl_ITextReverseConversionGenerator2<D>::GetPhonemesAsync(hstring_ref input) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> impl_ITextReverseConversionGenerator2<D>::GetPhonemesAsync(hstring_view input) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> result;
     check_hresult(WINRT_SHIM(ITextReverseConversionGenerator2)->abi_GetPhonemesAsync(get(input), put(result)));
     return result;
 }
 
-inline SelectableWordsSegmenter::SelectableWordsSegmenter(hstring_ref language) :
+inline SelectableWordsSegmenter::SelectableWordsSegmenter(hstring_view language) :
     SelectableWordsSegmenter(get_activation_factory<SelectableWordsSegmenter, ISelectableWordsSegmenterFactory>().CreateWithLanguage(language))
 {}
 
-inline SemanticTextQuery::SemanticTextQuery(hstring_ref aqsFilter) :
+inline SemanticTextQuery::SemanticTextQuery(hstring_view aqsFilter) :
     SemanticTextQuery(get_activation_factory<SemanticTextQuery, ISemanticTextQueryFactory>().Create(aqsFilter))
 {}
 
-inline SemanticTextQuery::SemanticTextQuery(hstring_ref aqsFilter, hstring_ref filterLanguage) :
+inline SemanticTextQuery::SemanticTextQuery(hstring_view aqsFilter, hstring_view filterLanguage) :
     SemanticTextQuery(get_activation_factory<SemanticTextQuery, ISemanticTextQueryFactory>().CreateWithLanguage(aqsFilter, filterLanguage))
 {}
 
-inline TextConversionGenerator::TextConversionGenerator(hstring_ref languageTag) :
+inline TextConversionGenerator::TextConversionGenerator(hstring_view languageTag) :
     TextConversionGenerator(get_activation_factory<TextConversionGenerator, ITextConversionGeneratorFactory>().Create(languageTag))
 {}
 
-inline TextPredictionGenerator::TextPredictionGenerator(hstring_ref languageTag) :
+inline TextPredictionGenerator::TextPredictionGenerator(hstring_view languageTag) :
     TextPredictionGenerator(get_activation_factory<TextPredictionGenerator, ITextPredictionGeneratorFactory>().Create(languageTag))
 {}
 
-inline TextReverseConversionGenerator::TextReverseConversionGenerator(hstring_ref languageTag) :
+inline TextReverseConversionGenerator::TextReverseConversionGenerator(hstring_view languageTag) :
     TextReverseConversionGenerator(get_activation_factory<TextReverseConversionGenerator, ITextReverseConversionGeneratorFactory>().Create(languageTag))
 {}
 
@@ -1434,7 +1434,7 @@ inline Windows::Data::Text::UnicodeGeneralCategory UnicodeCharacters::GetGeneral
     return get_activation_factory<UnicodeCharacters, IUnicodeCharactersStatics>().GetGeneralCategory(codepoint);
 }
 
-inline WordsSegmenter::WordsSegmenter(hstring_ref language) :
+inline WordsSegmenter::WordsSegmenter(hstring_view language) :
     WordsSegmenter(get_activation_factory<WordsSegmenter, IWordsSegmenterFactory>().CreateWithLanguage(language))
 {}
 

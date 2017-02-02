@@ -43,7 +43,7 @@ struct WINRT_EBO impl_ICharacterGrouping
 template <typename D>
 struct WINRT_EBO impl_ICharacterGroupings
 {
-    hstring Lookup(hstring_ref text) const;
+    hstring Lookup(hstring_view text) const;
 };
 
 }

@@ -267,7 +267,7 @@ struct WINRT_EBO impl_IXmlAttribute
     hstring Name() const;
     bool Specified() const;
     hstring Value() const;
-    void Value(hstring_ref value) const;
+    void Value(hstring_view value) const;
 };
 
 template <typename D>
@@ -279,13 +279,13 @@ template <typename D>
 struct WINRT_EBO impl_IXmlCharacterData
 {
     hstring Data() const;
-    void Data(hstring_ref value) const;
+    void Data(hstring_view value) const;
     uint32_t Length() const;
     hstring SubstringData(uint32_t offset, uint32_t count) const;
-    void AppendData(hstring_ref data) const;
-    void InsertData(uint32_t offset, hstring_ref data) const;
+    void AppendData(hstring_view data) const;
+    void InsertData(uint32_t offset, hstring_view data) const;
     void DeleteData(uint32_t offset, uint32_t count) const;
-    void ReplaceData(uint32_t offset, uint32_t count, hstring_ref data) const;
+    void ReplaceData(uint32_t offset, uint32_t count, hstring_view data) const;
 };
 
 template <typename D>
@@ -299,19 +299,19 @@ struct WINRT_EBO impl_IXmlDocument
     Windows::Data::Xml::Dom::XmlDocumentType Doctype() const;
     Windows::Data::Xml::Dom::XmlDomImplementation Implementation() const;
     Windows::Data::Xml::Dom::XmlElement DocumentElement() const;
-    Windows::Data::Xml::Dom::XmlElement CreateElement(hstring_ref tagName) const;
+    Windows::Data::Xml::Dom::XmlElement CreateElement(hstring_view tagName) const;
     Windows::Data::Xml::Dom::XmlDocumentFragment CreateDocumentFragment() const;
-    Windows::Data::Xml::Dom::XmlText CreateTextNode(hstring_ref data) const;
-    Windows::Data::Xml::Dom::XmlComment CreateComment(hstring_ref data) const;
-    Windows::Data::Xml::Dom::XmlProcessingInstruction CreateProcessingInstruction(hstring_ref target, hstring_ref data) const;
-    Windows::Data::Xml::Dom::XmlAttribute CreateAttribute(hstring_ref name) const;
-    Windows::Data::Xml::Dom::XmlEntityReference CreateEntityReference(hstring_ref name) const;
-    Windows::Data::Xml::Dom::XmlNodeList GetElementsByTagName(hstring_ref tagName) const;
-    Windows::Data::Xml::Dom::XmlCDataSection CreateCDataSection(hstring_ref data) const;
+    Windows::Data::Xml::Dom::XmlText CreateTextNode(hstring_view data) const;
+    Windows::Data::Xml::Dom::XmlComment CreateComment(hstring_view data) const;
+    Windows::Data::Xml::Dom::XmlProcessingInstruction CreateProcessingInstruction(hstring_view target, hstring_view data) const;
+    Windows::Data::Xml::Dom::XmlAttribute CreateAttribute(hstring_view name) const;
+    Windows::Data::Xml::Dom::XmlEntityReference CreateEntityReference(hstring_view name) const;
+    Windows::Data::Xml::Dom::XmlNodeList GetElementsByTagName(hstring_view tagName) const;
+    Windows::Data::Xml::Dom::XmlCDataSection CreateCDataSection(hstring_view data) const;
     hstring DocumentUri() const;
-    Windows::Data::Xml::Dom::XmlAttribute CreateAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref qualifiedName) const;
-    Windows::Data::Xml::Dom::XmlElement CreateElementNS(const Windows::IInspectable & namespaceUri, hstring_ref qualifiedName) const;
-    Windows::Data::Xml::Dom::XmlElement GetElementById(hstring_ref elementId) const;
+    Windows::Data::Xml::Dom::XmlAttribute CreateAttributeNS(const Windows::IInspectable & namespaceUri, hstring_view qualifiedName) const;
+    Windows::Data::Xml::Dom::XmlElement CreateElementNS(const Windows::IInspectable & namespaceUri, hstring_view qualifiedName) const;
+    Windows::Data::Xml::Dom::XmlElement GetElementById(hstring_view elementId) const;
     Windows::Data::Xml::Dom::IXmlNode ImportNode(const Windows::Data::Xml::Dom::IXmlNode & node, bool deep) const;
 };
 
@@ -323,8 +323,8 @@ struct WINRT_EBO impl_IXmlDocumentFragment
 template <typename D>
 struct WINRT_EBO impl_IXmlDocumentIO
 {
-    void LoadXml(hstring_ref xml) const;
-    void LoadXml(hstring_ref xml, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const;
+    void LoadXml(hstring_view xml) const;
+    void LoadXml(hstring_view xml, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const;
     Windows::Foundation::IAsyncAction SaveToFileAsync(const Windows::Storage::IStorageFile & file) const;
 };
 
@@ -355,25 +355,25 @@ struct WINRT_EBO impl_IXmlDocumentType
 template <typename D>
 struct WINRT_EBO impl_IXmlDomImplementation
 {
-    bool HasFeature(hstring_ref feature, const Windows::IInspectable & version) const;
+    bool HasFeature(hstring_view feature, const Windows::IInspectable & version) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IXmlElement
 {
     hstring TagName() const;
-    hstring GetAttribute(hstring_ref attributeName) const;
-    void SetAttribute(hstring_ref attributeName, hstring_ref attributeValue) const;
-    void RemoveAttribute(hstring_ref attributeName) const;
-    Windows::Data::Xml::Dom::XmlAttribute GetAttributeNode(hstring_ref attributeName) const;
+    hstring GetAttribute(hstring_view attributeName) const;
+    void SetAttribute(hstring_view attributeName, hstring_view attributeValue) const;
+    void RemoveAttribute(hstring_view attributeName) const;
+    Windows::Data::Xml::Dom::XmlAttribute GetAttributeNode(hstring_view attributeName) const;
     Windows::Data::Xml::Dom::XmlAttribute SetAttributeNode(const Windows::Data::Xml::Dom::XmlAttribute & newAttribute) const;
     Windows::Data::Xml::Dom::XmlAttribute RemoveAttributeNode(const Windows::Data::Xml::Dom::XmlAttribute & attributeNode) const;
-    Windows::Data::Xml::Dom::XmlNodeList GetElementsByTagName(hstring_ref tagName) const;
-    void SetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref qualifiedName, hstring_ref value) const;
-    hstring GetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref localName) const;
-    void RemoveAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref localName) const;
+    Windows::Data::Xml::Dom::XmlNodeList GetElementsByTagName(hstring_view tagName) const;
+    void SetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_view qualifiedName, hstring_view value) const;
+    hstring GetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_view localName) const;
+    void RemoveAttributeNS(const Windows::IInspectable & namespaceUri, hstring_view localName) const;
     Windows::Data::Xml::Dom::XmlAttribute SetAttributeNodeNS(const Windows::Data::Xml::Dom::XmlAttribute & newAttribute) const;
-    Windows::Data::Xml::Dom::XmlAttribute GetAttributeNodeNS(const Windows::IInspectable & namespaceUri, hstring_ref localName) const;
+    Windows::Data::Xml::Dom::XmlAttribute GetAttributeNodeNS(const Windows::IInspectable & namespaceUri, hstring_view localName) const;
 };
 
 template <typename D>
@@ -401,11 +401,11 @@ struct WINRT_EBO impl_IXmlNamedNodeMap
 {
     uint32_t Length() const;
     Windows::Data::Xml::Dom::IXmlNode Item(uint32_t index) const;
-    Windows::Data::Xml::Dom::IXmlNode GetNamedItem(hstring_ref name) const;
+    Windows::Data::Xml::Dom::IXmlNode GetNamedItem(hstring_view name) const;
     Windows::Data::Xml::Dom::IXmlNode SetNamedItem(const Windows::Data::Xml::Dom::IXmlNode & node) const;
-    Windows::Data::Xml::Dom::IXmlNode RemoveNamedItem(hstring_ref name) const;
-    Windows::Data::Xml::Dom::IXmlNode GetNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_ref name) const;
-    Windows::Data::Xml::Dom::IXmlNode RemoveNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_ref name) const;
+    Windows::Data::Xml::Dom::IXmlNode RemoveNamedItem(hstring_view name) const;
+    Windows::Data::Xml::Dom::IXmlNode GetNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_view name) const;
+    Windows::Data::Xml::Dom::IXmlNode RemoveNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_view name) const;
     Windows::Data::Xml::Dom::IXmlNode SetNamedItemNS(const Windows::Data::Xml::Dom::IXmlNode & node) const;
 };
 
@@ -447,10 +447,10 @@ struct WINRT_EBO impl_IXmlNodeList
 template <typename D>
 struct WINRT_EBO impl_IXmlNodeSelector
 {
-    Windows::Data::Xml::Dom::IXmlNode SelectSingleNode(hstring_ref xpath) const;
-    Windows::Data::Xml::Dom::XmlNodeList SelectNodes(hstring_ref xpath) const;
-    Windows::Data::Xml::Dom::IXmlNode SelectSingleNodeNS(hstring_ref xpath, const Windows::IInspectable & namespaces) const;
-    Windows::Data::Xml::Dom::XmlNodeList SelectNodesNS(hstring_ref xpath, const Windows::IInspectable & namespaces) const;
+    Windows::Data::Xml::Dom::IXmlNode SelectSingleNode(hstring_view xpath) const;
+    Windows::Data::Xml::Dom::XmlNodeList SelectNodes(hstring_view xpath) const;
+    Windows::Data::Xml::Dom::IXmlNode SelectSingleNodeNS(hstring_view xpath, const Windows::IInspectable & namespaces) const;
+    Windows::Data::Xml::Dom::XmlNodeList SelectNodesNS(hstring_view xpath, const Windows::IInspectable & namespaces) const;
 };
 
 template <typename D>
@@ -458,7 +458,7 @@ struct WINRT_EBO impl_IXmlNodeSerializer
 {
     hstring GetXml() const;
     hstring InnerText() const;
-    void InnerText(hstring_ref value) const;
+    void InnerText(hstring_view value) const;
 };
 
 template <typename D>
@@ -466,7 +466,7 @@ struct WINRT_EBO impl_IXmlProcessingInstruction
 {
     hstring Target() const;
     hstring Data() const;
-    void Data(hstring_ref value) const;
+    void Data(hstring_view value) const;
 };
 
 template <typename D>

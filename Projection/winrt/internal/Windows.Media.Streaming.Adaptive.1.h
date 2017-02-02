@@ -284,7 +284,7 @@ struct WINRT_EBO impl_IAdaptiveMediaSourceDownloadResult
     Windows::Storage::Streams::IBuffer Buffer() const;
     void Buffer(const Windows::Storage::Streams::IBuffer & value) const;
     hstring ContentType() const;
-    void ContentType(hstring_ref value) const;
+    void ContentType(hstring_view value) const;
     uint32_t ExtendedStatus() const;
     void ExtendedStatus(uint32_t value) const;
 };
@@ -309,11 +309,11 @@ struct WINRT_EBO impl_IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IAdaptiveMediaSourceStatics
 {
-    bool IsContentTypeSupported(hstring_ref contentType) const;
+    bool IsContentTypeSupported(hstring_view contentType) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> CreateFromUriAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> CreateFromUriAsync(const Windows::Foundation::Uri & uri, const Windows::Web::Http::HttpClient & httpClient) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_ref contentType) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_ref contentType, const Windows::Web::Http::HttpClient & httpClient) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_view contentType) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_view contentType, const Windows::Web::Http::HttpClient & httpClient) const;
 };
 
 }

@@ -204,11 +204,11 @@ struct WINRT_EBO impl_IJumpListItem
     hstring Arguments() const;
     bool RemovedByUser() const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
     hstring DisplayName() const;
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     hstring GroupName() const;
-    void GroupName(hstring_ref value) const;
+    void GroupName(hstring_view value) const;
     Windows::Foundation::Uri Logo() const;
     void Logo(const Windows::Foundation::Uri & value) const;
 };
@@ -216,7 +216,7 @@ struct WINRT_EBO impl_IJumpListItem
 template <typename D>
 struct WINRT_EBO impl_IJumpListItemStatics
 {
-    Windows::UI::StartScreen::JumpListItem CreateWithArguments(hstring_ref arguments, hstring_ref displayName) const;
+    Windows::UI::StartScreen::JumpListItem CreateWithArguments(hstring_view arguments, hstring_view displayName) const;
     Windows::UI::StartScreen::JumpListItem CreateSeparator() const;
 };
 
@@ -230,13 +230,13 @@ struct WINRT_EBO impl_IJumpListStatics
 template <typename D>
 struct WINRT_EBO impl_ISecondaryTile
 {
-    void TileId(hstring_ref value) const;
+    void TileId(hstring_view value) const;
     hstring TileId() const;
-    void Arguments(hstring_ref value) const;
+    void Arguments(hstring_view value) const;
     hstring Arguments() const;
-    void ShortName(hstring_ref value) const;
+    void ShortName(hstring_view value) const;
     hstring ShortName() const;
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     hstring DisplayName() const;
     void Logo(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri Logo() const;
@@ -268,7 +268,7 @@ struct WINRT_EBO impl_ISecondaryTile
 template <typename D>
 struct WINRT_EBO impl_ISecondaryTile2
 {
-    void PhoneticName(hstring_ref value) const;
+    void PhoneticName(hstring_view value) const;
     hstring PhoneticName() const;
     Windows::UI::StartScreen::SecondaryTileVisualElements VisualElements() const;
     void RoamingEnabled(bool value) const;
@@ -282,23 +282,23 @@ struct WINRT_EBO impl_ISecondaryTile2
 template <typename D>
 struct WINRT_EBO impl_ISecondaryTileFactory
 {
-    Windows::UI::StartScreen::SecondaryTile CreateTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) const;
-    Windows::UI::StartScreen::SecondaryTile CreateWideTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) const;
-    Windows::UI::StartScreen::SecondaryTile CreateWithId(hstring_ref tileId) const;
+    Windows::UI::StartScreen::SecondaryTile CreateTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) const;
+    Windows::UI::StartScreen::SecondaryTile CreateWideTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) const;
+    Windows::UI::StartScreen::SecondaryTile CreateWithId(hstring_view tileId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISecondaryTileFactory2
 {
-    Windows::UI::StartScreen::SecondaryTile CreateMinimalTile(hstring_ref tileId, hstring_ref displayName, hstring_ref arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) const;
+    Windows::UI::StartScreen::SecondaryTile CreateMinimalTile(hstring_view tileId, hstring_view displayName, hstring_view arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISecondaryTileStatics
 {
-    bool Exists(hstring_ref tileId) const;
+    bool Exists(hstring_view tileId) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> FindAllAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> FindAllAsync(hstring_ref applicationId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> FindAllAsync(hstring_view applicationId) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> FindAllForPackageAsync() const;
 };
 

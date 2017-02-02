@@ -188,7 +188,7 @@ struct WINRT_EBO impl_IBluetoothLEAdvertisement
     Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> Flags() const;
     void Flags(const Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> & value) const;
     hstring LocalName() const;
-    void LocalName(hstring_ref value) const;
+    void LocalName(hstring_view value) const;
     Windows::Foundation::Collections::IVector<GUID> ServiceUuids() const;
     Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> ManufacturerData() const;
     Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> DataSections() const;

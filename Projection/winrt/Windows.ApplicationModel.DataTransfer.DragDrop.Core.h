@@ -596,7 +596,7 @@ template <typename D> hstring impl_ICoreDragUIOverride<D>::Caption() const
     return value;
 }
 
-template <typename D> void impl_ICoreDragUIOverride<D>::Caption(hstring_ref value) const
+template <typename D> void impl_ICoreDragUIOverride<D>::Caption(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICoreDragUIOverride)->put_Caption(get(value)));
 }

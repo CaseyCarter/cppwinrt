@@ -58,11 +58,11 @@ template <typename D>
 struct WINRT_EBO impl_IQuickLink
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::Storage::Streams::RandomAccessStreamReference Thumbnail() const;
     void Thumbnail(const Windows::Storage::Streams::RandomAccessStreamReference & value) const;
     hstring Id() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> SupportedDataFormats() const;
     Windows::Foundation::Collections::IVector<hstring> SupportedFileTypes() const;
 };
@@ -78,7 +78,7 @@ struct WINRT_EBO impl_IShareOperation
     void ReportSubmittedBackgroundTask() const;
     void ReportCompleted(const Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink & quicklink) const;
     void ReportCompleted() const;
-    void ReportError(hstring_ref value) const;
+    void ReportError(hstring_view value) const;
 };
 
 template <typename D>

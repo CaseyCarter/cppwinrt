@@ -141,9 +141,9 @@ template <typename D>
 struct WINRT_EBO impl_ISpiDeviceStatics
 {
     hstring GetDeviceSelector() const;
-    hstring GetDeviceSelector(hstring_ref friendlyName) const;
-    Windows::Devices::Spi::SpiBusInfo GetBusInfo(hstring_ref busId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiDevice> FromIdAsync(hstring_ref busId, const Windows::Devices::Spi::SpiConnectionSettings & settings) const;
+    hstring GetDeviceSelector(hstring_view friendlyName) const;
+    Windows::Devices::Spi::SpiBusInfo GetBusInfo(hstring_view busId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiDevice> FromIdAsync(hstring_view busId, const Windows::Devices::Spi::SpiConnectionSettings & settings) const;
 };
 
 }

@@ -27,11 +27,11 @@ struct CertificateEnrollmentManager
 {
     CertificateEnrollmentManager() = delete;
     static Windows::Foundation::IAsyncOperation<hstring> CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request);
-    static Windows::Foundation::IAsyncAction InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption);
-    static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName);
+    static Windows::Foundation::IAsyncAction InstallCertificateAsync(hstring_view certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption);
+    static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName);
     static Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager UserCertificateEnrollmentManager();
-    static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider);
-    static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters);
+    static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName, hstring_view keyStorageProvider);
+    static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_view pfxData, hstring_view password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters);
 };
 
 struct WINRT_EBO CertificateKeyUsages :
@@ -71,8 +71,8 @@ struct CertificateStores
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> FindAllAsync(const Windows::Security::Cryptography::Certificates::CertificateQuery & query);
     static Windows::Security::Cryptography::Certificates::CertificateStore TrustedRootCertificationAuthorities();
     static Windows::Security::Cryptography::Certificates::CertificateStore IntermediateCertificationAuthorities();
-    static Windows::Security::Cryptography::Certificates::CertificateStore GetStoreByName(hstring_ref storeName);
-    static Windows::Security::Cryptography::Certificates::UserCertificateStore GetUserStoreByName(hstring_ref storeName);
+    static Windows::Security::Cryptography::Certificates::CertificateStore GetStoreByName(hstring_view storeName);
+    static Windows::Security::Cryptography::Certificates::UserCertificateStore GetUserStoreByName(hstring_view storeName);
 };
 
 struct WINRT_EBO ChainBuildingParameters :
@@ -136,9 +136,9 @@ struct KeyAlgorithmNames
 struct KeyAttestationHelper
 {
     KeyAttestationHelper() = delete;
-    static Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential);
-    static hstring GetTpmAttestationCredentialId(hstring_ref credential);
-    static Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential, hstring_ref containerName);
+    static Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_view credential);
+    static hstring GetTpmAttestationCredentialId(hstring_view credential);
+    static Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_view credential, hstring_view containerName);
 };
 
 struct KeyStorageProviderNames

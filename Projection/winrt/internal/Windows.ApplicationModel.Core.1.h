@@ -286,7 +286,7 @@ template <typename D>
 struct WINRT_EBO impl_ICoreImmersiveApplication
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::CoreApplicationView> Views() const;
-    Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(hstring_ref runtimeType, hstring_ref entryPoint) const;
+    Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(hstring_view runtimeType, hstring_view entryPoint) const;
     Windows::ApplicationModel::Core::CoreApplicationView MainView() const;
 };
 
@@ -307,7 +307,7 @@ struct WINRT_EBO impl_IFrameworkView
 {
     void Initialize(const Windows::ApplicationModel::Core::CoreApplicationView & applicationView) const;
     void SetWindow(const Windows::UI::Core::CoreWindow & window) const;
-    void Load(hstring_ref entryPoint) const;
+    void Load(hstring_view entryPoint) const;
     void Run() const;
     void Uninitialize() const;
 };

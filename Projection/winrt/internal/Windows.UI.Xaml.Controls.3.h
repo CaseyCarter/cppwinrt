@@ -1585,7 +1585,7 @@ struct WINRT_EBO ListViewPersistenceHelper :
 {
     ListViewPersistenceHelper(std::nullptr_t) noexcept {}
     static hstring GetRelativeScrollPosition(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, const Windows::UI::Xaml::Controls::ListViewItemToKeyHandler & itemToKeyHandler);
-    static Windows::Foundation::IAsyncAction SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_ref relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler);
+    static Windows::Foundation::IAsyncAction SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_view relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler);
 };
 
 struct WINRT_EBO MediaElement :

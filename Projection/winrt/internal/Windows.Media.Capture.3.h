@@ -133,10 +133,10 @@ struct WINRT_EBO MediaCapture :
 {
     MediaCapture(std::nullptr_t) noexcept {}
     MediaCapture();
-    static bool IsVideoProfileSupported(hstring_ref videoDeviceId);
-    static Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindAllVideoProfiles(hstring_ref videoDeviceId);
-    static Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindConcurrentProfiles(hstring_ref videoDeviceId);
-    static Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindKnownVideoProfiles(hstring_ref videoDeviceId, Windows::Media::Capture::KnownVideoProfile name);
+    static bool IsVideoProfileSupported(hstring_view videoDeviceId);
+    static Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindAllVideoProfiles(hstring_view videoDeviceId);
+    static Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindConcurrentProfiles(hstring_view videoDeviceId);
+    static Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindKnownVideoProfiles(hstring_view videoDeviceId, Windows::Media::Capture::KnownVideoProfile name);
 };
 
 struct WINRT_EBO MediaCaptureFailedEventArgs :

@@ -453,8 +453,8 @@ struct WINRT_EBO DependencyProperty :
 {
     DependencyProperty(std::nullptr_t) noexcept {}
     static Windows::IInspectable UnsetValue();
-    static Windows::UI::Xaml::DependencyProperty Register(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata);
-    static Windows::UI::Xaml::DependencyProperty RegisterAttached(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata);
+    static Windows::UI::Xaml::DependencyProperty Register(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata);
+    static Windows::UI::Xaml::DependencyProperty RegisterAttached(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata);
 };
 
 struct WINRT_EBO DependencyPropertyChangedEventArgs :
@@ -657,7 +657,7 @@ struct WINRT_EBO PropertyPath :
     impl::require<PropertyPath, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
 {
     PropertyPath(std::nullptr_t) noexcept {}
-    PropertyPath(hstring_ref path);
+    PropertyPath(hstring_view path);
 };
 
 struct WINRT_EBO RectHelper :
@@ -917,7 +917,7 @@ struct WINRT_EBO VisualStateManager :
     static Windows::UI::Xaml::DependencyProperty CustomVisualStateManagerProperty();
     static Windows::UI::Xaml::VisualStateManager GetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj);
     static void SetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj, const Windows::UI::Xaml::VisualStateManager & value);
-    static bool GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_ref stateName, bool useTransitions);
+    static bool GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_view stateName, bool useTransitions);
 };
 
 struct WINRT_EBO VisualTransition :

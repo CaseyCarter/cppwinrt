@@ -52,7 +52,7 @@ namespace Windows::ApplicationModel::Resources {
 template <typename D>
 struct WINRT_EBO impl_IResourceLoader
 {
-    hstring GetString(hstring_ref resource) const;
+    hstring GetString(hstring_view resource) const;
 };
 
 template <typename D>
@@ -64,7 +64,7 @@ struct WINRT_EBO impl_IResourceLoader2
 template <typename D>
 struct WINRT_EBO impl_IResourceLoaderFactory
 {
-    Windows::ApplicationModel::Resources::ResourceLoader CreateResourceLoaderByName(hstring_ref name) const;
+    Windows::ApplicationModel::Resources::ResourceLoader CreateResourceLoaderByName(hstring_view name) const;
 };
 
 template <typename D>
@@ -77,9 +77,9 @@ template <typename D>
 struct WINRT_EBO impl_IResourceLoaderStatics2
 {
     Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView() const;
-    Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView(hstring_ref name) const;
+    Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView(hstring_view name) const;
     Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse() const;
-    Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse(hstring_ref name) const;
+    Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse(hstring_view name) const;
 };
 
 }

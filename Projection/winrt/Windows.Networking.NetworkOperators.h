@@ -3245,7 +3245,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
     return ppAccountIds;
 }
 
-template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandAccount impl_IMobileBroadbandAccountStatics<D>::CreateFromNetworkAccountId(hstring_ref networkAccountId) const
+template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandAccount impl_IMobileBroadbandAccountStatics<D>::CreateFromNetworkAccountId(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandAccount ppAccount { nullptr };
     check_hresult(WINRT_SHIM(IMobileBroadbandAccountStatics)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ppAccount)));
@@ -3502,7 +3502,7 @@ template <typename D> hstring impl_INetworkOperatorTetheringAccessPointConfigura
     return value;
 }
 
-template <typename D> void impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Ssid(hstring_ref value) const
+template <typename D> void impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Ssid(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->put_Ssid(get(value)));
 }
@@ -3514,7 +3514,7 @@ template <typename D> hstring impl_INetworkOperatorTetheringAccessPointConfigura
     return value;
 }
 
-template <typename D> void impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Passphrase(hstring_ref value) const
+template <typename D> void impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Passphrase(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->put_Passphrase(get(value)));
 }
@@ -3533,14 +3533,14 @@ template <typename D> hstring impl_INetworkOperatorTetheringOperationResult<D>::
     return value;
 }
 
-template <typename D> Windows::Networking::NetworkOperators::TetheringCapability impl_INetworkOperatorTetheringManagerStatics<D>::GetTetheringCapability(hstring_ref networkAccountId) const
+template <typename D> Windows::Networking::NetworkOperators::TetheringCapability impl_INetworkOperatorTetheringManagerStatics<D>::GetTetheringCapability(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::TetheringCapability value {};
     check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics)->abi_GetTetheringCapability(get(networkAccountId), &value));
     return value;
 }
 
-template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager impl_INetworkOperatorTetheringManagerStatics<D>::CreateFromNetworkAccountId(hstring_ref networkAccountId) const
+template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager impl_INetworkOperatorTetheringManagerStatics<D>::CreateFromNetworkAccountId(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager ppManager { nullptr };
     check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ppManager)));
@@ -3775,7 +3775,7 @@ template <typename D> hstring impl_IMobileBroadbandModemStatics<D>::GetDeviceSel
     return value;
 }
 
-template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandModem impl_IMobileBroadbandModemStatics<D>::FromId(hstring_ref deviceId) const
+template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandModem impl_IMobileBroadbandModemStatics<D>::FromId(hstring_view deviceId) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandModem value { nullptr };
     check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_FromId(get(deviceId), put(value)));
@@ -3957,35 +3957,35 @@ template <typename D> uint32_t impl_IMobileBroadbandPin<D>::AttemptsRemaining() 
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::EnableAsync(hstring_ref currentPin) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::EnableAsync(hstring_view currentPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
     check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_EnableAsync(get(currentPin), put(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::DisableAsync(hstring_ref currentPin) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::DisableAsync(hstring_view currentPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
     check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_DisableAsync(get(currentPin), put(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::EnterAsync(hstring_ref currentPin) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::EnterAsync(hstring_view currentPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
     check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_EnterAsync(get(currentPin), put(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::ChangeAsync(hstring_ref currentPin, hstring_ref newPin) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::ChangeAsync(hstring_view currentPin, hstring_view newPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
     check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_ChangeAsync(get(currentPin), get(newPin), put(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::UnblockAsync(hstring_ref pinUnblockKey, hstring_ref newPin) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::UnblockAsync(hstring_view pinUnblockKey, hstring_view newPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
     check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_UnblockAsync(get(pinUnblockKey), get(newPin), put(asyncInfo)));
@@ -4425,7 +4425,7 @@ template <typename D> hstring impl_IHotspotAuthenticationEventDetails<D>::EventT
     return value;
 }
 
-template <typename D> bool impl_IHotspotAuthenticationContextStatics<D>::TryGetAuthenticationContext(hstring_ref evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context) const
+template <typename D> bool impl_IHotspotAuthenticationContextStatics<D>::TryGetAuthenticationContext(hstring_view evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context) const
 {
     bool isValid {};
     check_hresult(WINRT_SHIM(IHotspotAuthenticationContextStatics)->abi_TryGetAuthenticationContext(get(evenToken), put(context), &isValid));
@@ -4467,7 +4467,7 @@ template <typename D> Windows::Foundation::Uri impl_IHotspotAuthenticationContex
     return value;
 }
 
-template <typename D> void impl_IHotspotAuthenticationContext<D>::IssueCredentials(hstring_ref userName, hstring_ref password, hstring_ref extraParameters, bool markAsManualConnectOnFailure) const
+template <typename D> void impl_IHotspotAuthenticationContext<D>::IssueCredentials(hstring_view userName, hstring_view password, hstring_view extraParameters, bool markAsManualConnectOnFailure) const
 {
     check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_IssueCredentials(get(userName), get(password), get(extraParameters), markAsManualConnectOnFailure));
 }
@@ -4482,7 +4482,7 @@ template <typename D> void impl_IHotspotAuthenticationContext<D>::SkipAuthentica
     check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_SkipAuthentication());
 }
 
-template <typename D> void impl_IHotspotAuthenticationContext<D>::TriggerAttentionRequired(hstring_ref packageRelativeApplicationId, hstring_ref applicationParameters) const
+template <typename D> void impl_IHotspotAuthenticationContext<D>::TriggerAttentionRequired(hstring_view packageRelativeApplicationId, hstring_view applicationParameters) const
 {
     check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_TriggerAttentionRequired(get(packageRelativeApplicationId), get(applicationParameters)));
 }
@@ -4515,7 +4515,7 @@ template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IHotspotCredenti
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> impl_IHotspotAuthenticationContext2<D>::IssueCredentialsAsync(hstring_ref userName, hstring_ref password, hstring_ref extraParameters, bool markAsManualConnectOnFailure) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> impl_IHotspotAuthenticationContext2<D>::IssueCredentialsAsync(hstring_view userName, hstring_view password, hstring_view extraParameters, bool markAsManualConnectOnFailure) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> asyncInfo;
     check_hresult(WINRT_SHIM(IHotspotAuthenticationContext2)->abi_IssueCredentialsAsync(get(userName), get(password), get(extraParameters), markAsManualConnectOnFailure, put(asyncInfo)));
@@ -4546,21 +4546,21 @@ template <typename D> void impl_IProvisionedProfile<D>::UpdateUsage(const Window
     check_hresult(WINRT_SHIM(IProvisionedProfile)->abi_UpdateUsage(get(value)));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> impl_IProvisioningAgent<D>::ProvisionFromXmlDocumentAsync(hstring_ref provisioningXmlDocument) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> impl_IProvisioningAgent<D>::ProvisionFromXmlDocumentAsync(hstring_view provisioningXmlDocument) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> asyncInfo;
     check_hresult(WINRT_SHIM(IProvisioningAgent)->abi_ProvisionFromXmlDocumentAsync(get(provisioningXmlDocument), put(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Networking::NetworkOperators::ProvisionedProfile impl_IProvisioningAgent<D>::GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, hstring_ref profileName) const
+template <typename D> Windows::Networking::NetworkOperators::ProvisionedProfile impl_IProvisioningAgent<D>::GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, hstring_view profileName) const
 {
     Windows::Networking::NetworkOperators::ProvisionedProfile provisionedProfile { nullptr };
     check_hresult(WINRT_SHIM(IProvisioningAgent)->abi_GetProvisionedProfile(mediaType, get(profileName), put(provisionedProfile)));
     return provisionedProfile;
 }
 
-template <typename D> Windows::Networking::NetworkOperators::ProvisioningAgent impl_IProvisioningAgentStaticMethods<D>::CreateFromNetworkAccountId(hstring_ref networkAccountId) const
+template <typename D> Windows::Networking::NetworkOperators::ProvisioningAgent impl_IProvisioningAgentStaticMethods<D>::CreateFromNetworkAccountId(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::ProvisioningAgent provisioningAgent { nullptr };
     check_hresult(WINRT_SHIM(IProvisioningAgentStaticMethods)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(provisioningAgent)));
@@ -4598,12 +4598,12 @@ template <typename D> hstring impl_IUssdMessage<D>::PayloadAsText() const
     return value;
 }
 
-template <typename D> void impl_IUssdMessage<D>::PayloadAsText(hstring_ref value) const
+template <typename D> void impl_IUssdMessage<D>::PayloadAsText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IUssdMessage)->put_PayloadAsText(get(value)));
 }
 
-template <typename D> Windows::Networking::NetworkOperators::UssdMessage impl_IUssdMessageFactory<D>::CreateMessage(hstring_ref messageText) const
+template <typename D> Windows::Networking::NetworkOperators::UssdMessage impl_IUssdMessageFactory<D>::CreateMessage(hstring_view messageText) const
 {
     Windows::Networking::NetworkOperators::UssdMessage ussdMessage { nullptr };
     check_hresult(WINRT_SHIM(IUssdMessageFactory)->abi_CreateMessage(get(messageText), put(ussdMessage)));
@@ -4636,21 +4636,21 @@ template <typename D> void impl_IUssdSession<D>::Close() const
     check_hresult(WINRT_SHIM(IUssdSession)->abi_Close());
 }
 
-template <typename D> Windows::Networking::NetworkOperators::UssdSession impl_IUssdSessionStatics<D>::CreateFromNetworkAccountId(hstring_ref networkAccountId) const
+template <typename D> Windows::Networking::NetworkOperators::UssdSession impl_IUssdSessionStatics<D>::CreateFromNetworkAccountId(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::UssdSession ussdSession { nullptr };
     check_hresult(WINRT_SHIM(IUssdSessionStatics)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ussdSession)));
     return ussdSession;
 }
 
-template <typename D> Windows::Networking::NetworkOperators::UssdSession impl_IUssdSessionStatics<D>::CreateFromNetworkInterfaceId(hstring_ref networkInterfaceId) const
+template <typename D> Windows::Networking::NetworkOperators::UssdSession impl_IUssdSessionStatics<D>::CreateFromNetworkInterfaceId(hstring_view networkInterfaceId) const
 {
     Windows::Networking::NetworkOperators::UssdSession ussdSession { nullptr };
     check_hresult(WINRT_SHIM(IUssdSessionStatics)->abi_CreateFromNetworkInterfaceId(get(networkInterfaceId), put(ussdSession)));
     return ussdSession;
 }
 
-inline bool HotspotAuthenticationContext::TryGetAuthenticationContext(hstring_ref evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context)
+inline bool HotspotAuthenticationContext::TryGetAuthenticationContext(hstring_view evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context)
 {
     return get_activation_factory<HotspotAuthenticationContext, IHotspotAuthenticationContextStatics>().TryGetAuthenticationContext(evenToken, context);
 }
@@ -4735,7 +4735,7 @@ inline Windows::Foundation::Collections::IVectorView<hstring> MobileBroadbandAcc
     return get_activation_factory<MobileBroadbandAccount, IMobileBroadbandAccountStatics>().AvailableNetworkAccountIds();
 }
 
-inline Windows::Networking::NetworkOperators::MobileBroadbandAccount MobileBroadbandAccount::CreateFromNetworkAccountId(hstring_ref networkAccountId)
+inline Windows::Networking::NetworkOperators::MobileBroadbandAccount MobileBroadbandAccount::CreateFromNetworkAccountId(hstring_view networkAccountId)
 {
     return get_activation_factory<MobileBroadbandAccount, IMobileBroadbandAccountStatics>().CreateFromNetworkAccountId(networkAccountId);
 }
@@ -4749,7 +4749,7 @@ inline hstring MobileBroadbandModem::GetDeviceSelector()
     return get_activation_factory<MobileBroadbandModem, IMobileBroadbandModemStatics>().GetDeviceSelector();
 }
 
-inline Windows::Networking::NetworkOperators::MobileBroadbandModem MobileBroadbandModem::FromId(hstring_ref deviceId)
+inline Windows::Networking::NetworkOperators::MobileBroadbandModem MobileBroadbandModem::FromId(hstring_view deviceId)
 {
     return get_activation_factory<MobileBroadbandModem, IMobileBroadbandModemStatics>().FromId(deviceId);
 }
@@ -4763,12 +4763,12 @@ inline NetworkOperatorTetheringAccessPointConfiguration::NetworkOperatorTetherin
     NetworkOperatorTetheringAccessPointConfiguration(activate_instance<NetworkOperatorTetheringAccessPointConfiguration>())
 {}
 
-inline Windows::Networking::NetworkOperators::TetheringCapability NetworkOperatorTetheringManager::GetTetheringCapability(hstring_ref networkAccountId)
+inline Windows::Networking::NetworkOperators::TetheringCapability NetworkOperatorTetheringManager::GetTetheringCapability(hstring_view networkAccountId)
 {
     return get_activation_factory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics>().GetTetheringCapability(networkAccountId);
 }
 
-inline Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager NetworkOperatorTetheringManager::CreateFromNetworkAccountId(hstring_ref networkAccountId)
+inline Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager NetworkOperatorTetheringManager::CreateFromNetworkAccountId(hstring_view networkAccountId)
 {
     return get_activation_factory<NetworkOperatorTetheringManager, INetworkOperatorTetheringManagerStatics>().CreateFromNetworkAccountId(networkAccountId);
 }
@@ -4792,21 +4792,21 @@ inline ProvisioningAgent::ProvisioningAgent() :
     ProvisioningAgent(activate_instance<ProvisioningAgent>())
 {}
 
-inline Windows::Networking::NetworkOperators::ProvisioningAgent ProvisioningAgent::CreateFromNetworkAccountId(hstring_ref networkAccountId)
+inline Windows::Networking::NetworkOperators::ProvisioningAgent ProvisioningAgent::CreateFromNetworkAccountId(hstring_view networkAccountId)
 {
     return get_activation_factory<ProvisioningAgent, IProvisioningAgentStaticMethods>().CreateFromNetworkAccountId(networkAccountId);
 }
 
-inline UssdMessage::UssdMessage(hstring_ref messageText) :
+inline UssdMessage::UssdMessage(hstring_view messageText) :
     UssdMessage(get_activation_factory<UssdMessage, IUssdMessageFactory>().CreateMessage(messageText))
 {}
 
-inline Windows::Networking::NetworkOperators::UssdSession UssdSession::CreateFromNetworkAccountId(hstring_ref networkAccountId)
+inline Windows::Networking::NetworkOperators::UssdSession UssdSession::CreateFromNetworkAccountId(hstring_view networkAccountId)
 {
     return get_activation_factory<UssdSession, IUssdSessionStatics>().CreateFromNetworkAccountId(networkAccountId);
 }
 
-inline Windows::Networking::NetworkOperators::UssdSession UssdSession::CreateFromNetworkInterfaceId(hstring_ref networkInterfaceId)
+inline Windows::Networking::NetworkOperators::UssdSession UssdSession::CreateFromNetworkInterfaceId(hstring_view networkInterfaceId)
 {
     return get_activation_factory<UssdSession, IUssdSessionStatics>().CreateFromNetworkInterfaceId(networkInterfaceId);
 }

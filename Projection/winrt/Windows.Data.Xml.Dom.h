@@ -1783,28 +1783,28 @@ struct produce<D, Windows::Data::Xml::Dom::IXmlText> : produce_base<D, Windows::
 
 namespace Windows::Data::Xml::Dom {
 
-template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNodeSelector<D>::SelectSingleNode(hstring_ref xpath) const
+template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNodeSelector<D>::SelectSingleNode(hstring_view xpath) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
     check_hresult(WINRT_SHIM(IXmlNodeSelector)->abi_SelectSingleNode(get(xpath), put(node)));
     return node;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlNodeSelector<D>::SelectNodes(hstring_ref xpath) const
+template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlNodeSelector<D>::SelectNodes(hstring_view xpath) const
 {
     Windows::Data::Xml::Dom::XmlNodeList nodelist { nullptr };
     check_hresult(WINRT_SHIM(IXmlNodeSelector)->abi_SelectNodes(get(xpath), put(nodelist)));
     return nodelist;
 }
 
-template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNodeSelector<D>::SelectSingleNodeNS(hstring_ref xpath, const Windows::IInspectable & namespaces) const
+template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNodeSelector<D>::SelectSingleNodeNS(hstring_view xpath, const Windows::IInspectable & namespaces) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
     check_hresult(WINRT_SHIM(IXmlNodeSelector)->abi_SelectSingleNodeNS(get(xpath), get(namespaces), put(node)));
     return node;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlNodeSelector<D>::SelectNodesNS(hstring_ref xpath, const Windows::IInspectable & namespaces) const
+template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlNodeSelector<D>::SelectNodesNS(hstring_view xpath, const Windows::IInspectable & namespaces) const
 {
     Windows::Data::Xml::Dom::XmlNodeList nodelist { nullptr };
     check_hresult(WINRT_SHIM(IXmlNodeSelector)->abi_SelectNodesNS(get(xpath), get(namespaces), put(nodelist)));
@@ -1825,7 +1825,7 @@ template <typename D> hstring impl_IXmlNodeSerializer<D>::InnerText() const
     return value;
 }
 
-template <typename D> void impl_IXmlNodeSerializer<D>::InnerText(hstring_ref value) const
+template <typename D> void impl_IXmlNodeSerializer<D>::InnerText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IXmlNodeSerializer)->put_InnerText(get(value)));
 }
@@ -1985,7 +1985,7 @@ template <typename D> void impl_IXmlNode<D>::Prefix(const Windows::IInspectable 
     check_hresult(WINRT_SHIM(IXmlNode)->put_Prefix(get(value)));
 }
 
-template <typename D> bool impl_IXmlDomImplementation<D>::HasFeature(hstring_ref feature, const Windows::IInspectable & version) const
+template <typename D> bool impl_IXmlDomImplementation<D>::HasFeature(hstring_view feature, const Windows::IInspectable & version) const
 {
     bool featureSupported {};
     check_hresult(WINRT_SHIM(IXmlDomImplementation)->abi_HasFeature(get(feature), get(version), &featureSupported));
@@ -2034,7 +2034,7 @@ template <typename D> hstring impl_IXmlAttribute<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_IXmlAttribute<D>::Value(hstring_ref value) const
+template <typename D> void impl_IXmlAttribute<D>::Value(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IXmlAttribute)->put_Value(get(value)));
 }
@@ -2046,24 +2046,24 @@ template <typename D> hstring impl_IXmlElement<D>::TagName() const
     return value;
 }
 
-template <typename D> hstring impl_IXmlElement<D>::GetAttribute(hstring_ref attributeName) const
+template <typename D> hstring impl_IXmlElement<D>::GetAttribute(hstring_view attributeName) const
 {
     hstring attributeValue;
     check_hresult(WINRT_SHIM(IXmlElement)->abi_GetAttribute(get(attributeName), put(attributeValue)));
     return attributeValue;
 }
 
-template <typename D> void impl_IXmlElement<D>::SetAttribute(hstring_ref attributeName, hstring_ref attributeValue) const
+template <typename D> void impl_IXmlElement<D>::SetAttribute(hstring_view attributeName, hstring_view attributeValue) const
 {
     check_hresult(WINRT_SHIM(IXmlElement)->abi_SetAttribute(get(attributeName), get(attributeValue)));
 }
 
-template <typename D> void impl_IXmlElement<D>::RemoveAttribute(hstring_ref attributeName) const
+template <typename D> void impl_IXmlElement<D>::RemoveAttribute(hstring_view attributeName) const
 {
     check_hresult(WINRT_SHIM(IXmlElement)->abi_RemoveAttribute(get(attributeName)));
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>::GetAttributeNode(hstring_ref attributeName) const
+template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>::GetAttributeNode(hstring_view attributeName) const
 {
     Windows::Data::Xml::Dom::XmlAttribute attributeNode { nullptr };
     check_hresult(WINRT_SHIM(IXmlElement)->abi_GetAttributeNode(get(attributeName), put(attributeNode)));
@@ -2084,26 +2084,26 @@ template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>:
     return removedAttribute;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlElement<D>::GetElementsByTagName(hstring_ref tagName) const
+template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlElement<D>::GetElementsByTagName(hstring_view tagName) const
 {
     Windows::Data::Xml::Dom::XmlNodeList elements { nullptr };
     check_hresult(WINRT_SHIM(IXmlElement)->abi_GetElementsByTagName(get(tagName), put(elements)));
     return elements;
 }
 
-template <typename D> void impl_IXmlElement<D>::SetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref qualifiedName, hstring_ref value) const
+template <typename D> void impl_IXmlElement<D>::SetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_view qualifiedName, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IXmlElement)->abi_SetAttributeNS(get(namespaceUri), get(qualifiedName), get(value)));
 }
 
-template <typename D> hstring impl_IXmlElement<D>::GetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref localName) const
+template <typename D> hstring impl_IXmlElement<D>::GetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_view localName) const
 {
     hstring value;
     check_hresult(WINRT_SHIM(IXmlElement)->abi_GetAttributeNS(get(namespaceUri), get(localName), put(value)));
     return value;
 }
 
-template <typename D> void impl_IXmlElement<D>::RemoveAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref localName) const
+template <typename D> void impl_IXmlElement<D>::RemoveAttributeNS(const Windows::IInspectable & namespaceUri, hstring_view localName) const
 {
     check_hresult(WINRT_SHIM(IXmlElement)->abi_RemoveAttributeNS(get(namespaceUri), get(localName)));
 }
@@ -2115,7 +2115,7 @@ template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>:
     return previousAttribute;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>::GetAttributeNodeNS(const Windows::IInspectable & namespaceUri, hstring_ref localName) const
+template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>::GetAttributeNodeNS(const Windows::IInspectable & namespaceUri, hstring_view localName) const
 {
     Windows::Data::Xml::Dom::XmlAttribute previousAttribute { nullptr };
     check_hresult(WINRT_SHIM(IXmlElement)->abi_GetAttributeNodeNS(get(namespaceUri), get(localName), put(previousAttribute)));
@@ -2171,7 +2171,7 @@ template <typename D> hstring impl_IXmlProcessingInstruction<D>::Data() const
     return value;
 }
 
-template <typename D> void impl_IXmlProcessingInstruction<D>::Data(hstring_ref value) const
+template <typename D> void impl_IXmlProcessingInstruction<D>::Data(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IXmlProcessingInstruction)->put_Data(get(value)));
 }
@@ -2183,7 +2183,7 @@ template <typename D> hstring impl_IXmlCharacterData<D>::Data() const
     return value;
 }
 
-template <typename D> void impl_IXmlCharacterData<D>::Data(hstring_ref value) const
+template <typename D> void impl_IXmlCharacterData<D>::Data(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IXmlCharacterData)->put_Data(get(value)));
 }
@@ -2202,12 +2202,12 @@ template <typename D> hstring impl_IXmlCharacterData<D>::SubstringData(uint32_t 
     return data;
 }
 
-template <typename D> void impl_IXmlCharacterData<D>::AppendData(hstring_ref data) const
+template <typename D> void impl_IXmlCharacterData<D>::AppendData(hstring_view data) const
 {
     check_hresult(WINRT_SHIM(IXmlCharacterData)->abi_AppendData(get(data)));
 }
 
-template <typename D> void impl_IXmlCharacterData<D>::InsertData(uint32_t offset, hstring_ref data) const
+template <typename D> void impl_IXmlCharacterData<D>::InsertData(uint32_t offset, hstring_view data) const
 {
     check_hresult(WINRT_SHIM(IXmlCharacterData)->abi_InsertData(offset, get(data)));
 }
@@ -2217,7 +2217,7 @@ template <typename D> void impl_IXmlCharacterData<D>::DeleteData(uint32_t offset
     check_hresult(WINRT_SHIM(IXmlCharacterData)->abi_DeleteData(offset, count));
 }
 
-template <typename D> void impl_IXmlCharacterData<D>::ReplaceData(uint32_t offset, uint32_t count, hstring_ref data) const
+template <typename D> void impl_IXmlCharacterData<D>::ReplaceData(uint32_t offset, uint32_t count, hstring_view data) const
 {
     check_hresult(WINRT_SHIM(IXmlCharacterData)->abi_ReplaceData(offset, count, get(data)));
 }
@@ -2250,7 +2250,7 @@ template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::
     return value;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::CreateElement(hstring_ref tagName) const
+template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::CreateElement(hstring_view tagName) const
 {
     Windows::Data::Xml::Dom::XmlElement newElement { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_CreateElement(get(tagName), put(newElement)));
@@ -2264,49 +2264,49 @@ template <typename D> Windows::Data::Xml::Dom::XmlDocumentFragment impl_IXmlDocu
     return newDocumentFragment;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlText impl_IXmlDocument<D>::CreateTextNode(hstring_ref data) const
+template <typename D> Windows::Data::Xml::Dom::XmlText impl_IXmlDocument<D>::CreateTextNode(hstring_view data) const
 {
     Windows::Data::Xml::Dom::XmlText newTextNode { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_CreateTextNode(get(data), put(newTextNode)));
     return newTextNode;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlComment impl_IXmlDocument<D>::CreateComment(hstring_ref data) const
+template <typename D> Windows::Data::Xml::Dom::XmlComment impl_IXmlDocument<D>::CreateComment(hstring_view data) const
 {
     Windows::Data::Xml::Dom::XmlComment newComment { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_CreateComment(get(data), put(newComment)));
     return newComment;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlProcessingInstruction impl_IXmlDocument<D>::CreateProcessingInstruction(hstring_ref target, hstring_ref data) const
+template <typename D> Windows::Data::Xml::Dom::XmlProcessingInstruction impl_IXmlDocument<D>::CreateProcessingInstruction(hstring_view target, hstring_view data) const
 {
     Windows::Data::Xml::Dom::XmlProcessingInstruction newProcessingInstruction { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_CreateProcessingInstruction(get(target), get(data), put(newProcessingInstruction)));
     return newProcessingInstruction;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlDocument<D>::CreateAttribute(hstring_ref name) const
+template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlDocument<D>::CreateAttribute(hstring_view name) const
 {
     Windows::Data::Xml::Dom::XmlAttribute newAttribute { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_CreateAttribute(get(name), put(newAttribute)));
     return newAttribute;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlEntityReference impl_IXmlDocument<D>::CreateEntityReference(hstring_ref name) const
+template <typename D> Windows::Data::Xml::Dom::XmlEntityReference impl_IXmlDocument<D>::CreateEntityReference(hstring_view name) const
 {
     Windows::Data::Xml::Dom::XmlEntityReference newEntityReference { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_CreateEntityReference(get(name), put(newEntityReference)));
     return newEntityReference;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlDocument<D>::GetElementsByTagName(hstring_ref tagName) const
+template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlDocument<D>::GetElementsByTagName(hstring_view tagName) const
 {
     Windows::Data::Xml::Dom::XmlNodeList elements { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_GetElementsByTagName(get(tagName), put(elements)));
     return elements;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlCDataSection impl_IXmlDocument<D>::CreateCDataSection(hstring_ref data) const
+template <typename D> Windows::Data::Xml::Dom::XmlCDataSection impl_IXmlDocument<D>::CreateCDataSection(hstring_view data) const
 {
     Windows::Data::Xml::Dom::XmlCDataSection newCDataSection { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_CreateCDataSection(get(data), put(newCDataSection)));
@@ -2320,21 +2320,21 @@ template <typename D> hstring impl_IXmlDocument<D>::DocumentUri() const
     return value;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlDocument<D>::CreateAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref qualifiedName) const
+template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlDocument<D>::CreateAttributeNS(const Windows::IInspectable & namespaceUri, hstring_view qualifiedName) const
 {
     Windows::Data::Xml::Dom::XmlAttribute newAttribute { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_CreateAttributeNS(get(namespaceUri), get(qualifiedName), put(newAttribute)));
     return newAttribute;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::CreateElementNS(const Windows::IInspectable & namespaceUri, hstring_ref qualifiedName) const
+template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::CreateElementNS(const Windows::IInspectable & namespaceUri, hstring_view qualifiedName) const
 {
     Windows::Data::Xml::Dom::XmlElement newElement { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_CreateElementNS(get(namespaceUri), get(qualifiedName), put(newElement)));
     return newElement;
 }
 
-template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::GetElementById(hstring_ref elementId) const
+template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::GetElementById(hstring_view elementId) const
 {
     Windows::Data::Xml::Dom::XmlElement element { nullptr };
     check_hresult(WINRT_SHIM(IXmlDocument)->abi_GetElementById(get(elementId), put(element)));
@@ -2362,7 +2362,7 @@ template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>
     return node;
 }
 
-template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::GetNamedItem(hstring_ref name) const
+template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::GetNamedItem(hstring_view name) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
     check_hresult(WINRT_SHIM(IXmlNamedNodeMap)->abi_GetNamedItem(get(name), put(node)));
@@ -2376,21 +2376,21 @@ template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>
     return previousNode;
 }
 
-template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::RemoveNamedItem(hstring_ref name) const
+template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::RemoveNamedItem(hstring_view name) const
 {
     Windows::Data::Xml::Dom::IXmlNode previousNode;
     check_hresult(WINRT_SHIM(IXmlNamedNodeMap)->abi_RemoveNamedItem(get(name), put(previousNode)));
     return previousNode;
 }
 
-template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::GetNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_ref name) const
+template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::GetNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_view name) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
     check_hresult(WINRT_SHIM(IXmlNamedNodeMap)->abi_GetNamedItemNS(get(namespaceUri), get(name), put(node)));
     return node;
 }
 
-template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::RemoveNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_ref name) const
+template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::RemoveNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_view name) const
 {
     Windows::Data::Xml::Dom::IXmlNode previousNode;
     check_hresult(WINRT_SHIM(IXmlNamedNodeMap)->abi_RemoveNamedItemNS(get(namespaceUri), get(name), put(previousNode)));
@@ -2478,12 +2478,12 @@ template <typename D> void impl_IXmlLoadSettings<D>::ElementContentWhiteSpace(bo
     check_hresult(WINRT_SHIM(IXmlLoadSettings)->put_ElementContentWhiteSpace(value));
 }
 
-template <typename D> void impl_IXmlDocumentIO<D>::LoadXml(hstring_ref xml) const
+template <typename D> void impl_IXmlDocumentIO<D>::LoadXml(hstring_view xml) const
 {
     check_hresult(WINRT_SHIM(IXmlDocumentIO)->abi_LoadXml(get(xml)));
 }
 
-template <typename D> void impl_IXmlDocumentIO<D>::LoadXml(hstring_ref xml, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const
+template <typename D> void impl_IXmlDocumentIO<D>::LoadXml(hstring_view xml, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const
 {
     check_hresult(WINRT_SHIM(IXmlDocumentIO)->abi_LoadXmlWithSettings(get(xml), get(loadSettings)));
 }

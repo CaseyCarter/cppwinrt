@@ -1956,7 +1956,7 @@ template <typename D> hstring impl_ISmsTextMessage2<D>::To() const
     return value;
 }
 
-template <typename D> void impl_ISmsTextMessage2<D>::To(hstring_ref value) const
+template <typename D> void impl_ISmsTextMessage2<D>::To(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISmsTextMessage2)->put_To(get(value)));
 }
@@ -1975,7 +1975,7 @@ template <typename D> hstring impl_ISmsTextMessage2<D>::Body() const
     return value;
 }
 
-template <typename D> void impl_ISmsTextMessage2<D>::Body(hstring_ref value) const
+template <typename D> void impl_ISmsTextMessage2<D>::Body(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISmsTextMessage2)->put_Body(get(value)));
 }
@@ -1999,7 +1999,7 @@ template <typename D> hstring impl_ISmsTextMessage2<D>::CallbackNumber() const
     return value;
 }
 
-template <typename D> void impl_ISmsTextMessage2<D>::CallbackNumber(hstring_ref value) const
+template <typename D> void impl_ISmsTextMessage2<D>::CallbackNumber(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISmsTextMessage2)->put_CallbackNumber(get(value)));
 }
@@ -2105,7 +2105,7 @@ template <typename D> hstring impl_ISmsAppMessage<D>::To() const
     return value;
 }
 
-template <typename D> void impl_ISmsAppMessage<D>::To(hstring_ref value) const
+template <typename D> void impl_ISmsAppMessage<D>::To(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISmsAppMessage)->put_To(get(value)));
 }
@@ -2124,7 +2124,7 @@ template <typename D> hstring impl_ISmsAppMessage<D>::Body() const
     return value;
 }
 
-template <typename D> void impl_ISmsAppMessage<D>::Body(hstring_ref value) const
+template <typename D> void impl_ISmsAppMessage<D>::Body(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISmsAppMessage)->put_Body(get(value)));
 }
@@ -2136,7 +2136,7 @@ template <typename D> hstring impl_ISmsAppMessage<D>::CallbackNumber() const
     return value;
 }
 
-template <typename D> void impl_ISmsAppMessage<D>::CallbackNumber(hstring_ref value) const
+template <typename D> void impl_ISmsAppMessage<D>::CallbackNumber(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISmsAppMessage)->put_CallbackNumber(get(value)));
 }
@@ -2428,7 +2428,7 @@ template <typename D> hstring impl_ISmsDevice2Statics<D>::GetDeviceSelector() co
     return value;
 }
 
-template <typename D> Windows::Devices::Sms::SmsDevice2 impl_ISmsDevice2Statics<D>::FromId(hstring_ref deviceId) const
+template <typename D> Windows::Devices::Sms::SmsDevice2 impl_ISmsDevice2Statics<D>::FromId(hstring_view deviceId) const
 {
     Windows::Devices::Sms::SmsDevice2 value { nullptr };
     check_hresult(WINRT_SHIM(ISmsDevice2Statics)->abi_FromId(get(deviceId), put(value)));
@@ -2442,7 +2442,7 @@ template <typename D> Windows::Devices::Sms::SmsDevice2 impl_ISmsDevice2Statics<
     return value;
 }
 
-template <typename D> Windows::Devices::Sms::SmsDevice2 impl_ISmsDevice2Statics<D>::FromParentId(hstring_ref parentDeviceId) const
+template <typename D> Windows::Devices::Sms::SmsDevice2 impl_ISmsDevice2Statics<D>::FromParentId(hstring_view parentDeviceId) const
 {
     Windows::Devices::Sms::SmsDevice2 value { nullptr };
     check_hresult(WINRT_SHIM(ISmsDevice2Statics)->abi_FromParentId(get(parentDeviceId), put(value)));
@@ -2456,7 +2456,7 @@ template <typename D> hstring impl_ISmsDevice2<D>::SmscAddress() const
     return value;
 }
 
-template <typename D> void impl_ISmsDevice2<D>::SmscAddress(hstring_ref value) const
+template <typename D> void impl_ISmsDevice2<D>::SmscAddress(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISmsDevice2)->put_SmscAddress(get(value)));
 }
@@ -2717,7 +2717,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
     return value;
 }
 
-template <typename D> Windows::Devices::Sms::SmsMessageRegistration impl_ISmsMessageRegistrationStatics<D>::Register(hstring_ref id, const Windows::Devices::Sms::SmsFilterRules & filterRules) const
+template <typename D> Windows::Devices::Sms::SmsMessageRegistration impl_ISmsMessageRegistrationStatics<D>::Register(hstring_view id, const Windows::Devices::Sms::SmsFilterRules & filterRules) const
 {
     Windows::Devices::Sms::SmsMessageRegistration value { nullptr };
     check_hresult(WINRT_SHIM(ISmsMessageRegistrationStatics)->abi_Register(get(id), get(filterRules), put(value)));
@@ -2762,7 +2762,7 @@ inline hstring SmsDevice2::GetDeviceSelector()
     return get_activation_factory<SmsDevice2, ISmsDevice2Statics>().GetDeviceSelector();
 }
 
-inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::FromId(hstring_ref deviceId)
+inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::FromId(hstring_view deviceId)
 {
     return get_activation_factory<SmsDevice2, ISmsDevice2Statics>().FromId(deviceId);
 }
@@ -2772,7 +2772,7 @@ inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::GetDefault()
     return get_activation_factory<SmsDevice2, ISmsDevice2Statics>().GetDefault();
 }
 
-inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::FromParentId(hstring_ref parentDeviceId)
+inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::FromParentId(hstring_view parentDeviceId)
 {
     return get_activation_factory<SmsDevice2, ISmsDevice2Statics>().FromParentId(parentDeviceId);
 }
@@ -2790,7 +2790,7 @@ inline Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsM
     return get_activation_factory<SmsMessageRegistration, ISmsMessageRegistrationStatics>().AllRegistrations();
 }
 
-inline Windows::Devices::Sms::SmsMessageRegistration SmsMessageRegistration::Register(hstring_ref id, const Windows::Devices::Sms::SmsFilterRules & filterRules)
+inline Windows::Devices::Sms::SmsMessageRegistration SmsMessageRegistration::Register(hstring_view id, const Windows::Devices::Sms::SmsFilterRules & filterRules)
 {
     return get_activation_factory<SmsMessageRegistration, ISmsMessageRegistrationStatics>().Register(id, filterRules);
 }

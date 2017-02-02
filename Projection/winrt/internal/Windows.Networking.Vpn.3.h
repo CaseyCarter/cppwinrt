@@ -13,7 +13,7 @@ struct WINRT_EBO VpnAppId :
     Windows::Networking::Vpn::IVpnAppId
 {
     VpnAppId(std::nullptr_t) noexcept {}
-    VpnAppId(Windows::Networking::Vpn::VpnAppIdType type, hstring_ref value);
+    VpnAppId(Windows::Networking::Vpn::VpnAppIdType type, hstring_view value);
 };
 
 struct WINRT_EBO VpnChannel :
@@ -124,7 +124,7 @@ struct WINRT_EBO VpnDomainNameInfo :
     impl::require<VpnDomainNameInfo, Windows::Networking::Vpn::IVpnDomainNameInfo2>
 {
     VpnDomainNameInfo(std::nullptr_t) noexcept {}
-    VpnDomainNameInfo(hstring_ref name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList);
+    VpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList);
 };
 
 struct WINRT_EBO VpnInterfaceId :
@@ -152,7 +152,7 @@ struct WINRT_EBO VpnNamespaceInfo :
     Windows::Networking::Vpn::IVpnNamespaceInfo
 {
     VpnNamespaceInfo(std::nullptr_t) noexcept {}
-    VpnNamespaceInfo(hstring_ref name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList);
+    VpnNamespaceInfo(hstring_view name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList);
 };
 
 struct WINRT_EBO VpnNativeProfile :

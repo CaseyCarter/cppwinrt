@@ -515,7 +515,7 @@ template <typename D> hstring impl_IDialApp<D>::AppName() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::DialProtocol::DialAppLaunchResult> impl_IDialApp<D>::RequestLaunchAsync(hstring_ref appArgument) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::DialProtocol::DialAppLaunchResult> impl_IDialApp<D>::RequestLaunchAsync(hstring_view appArgument) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::DialProtocol::DialAppLaunchResult> value;
     check_hresult(WINRT_SHIM(IDialApp)->abi_RequestLaunchAsync(get(appArgument), put(value)));
@@ -543,7 +543,7 @@ template <typename D> hstring impl_IDialDevice<D>::Id() const
     return value;
 }
 
-template <typename D> Windows::Media::DialProtocol::DialApp impl_IDialDevice<D>::GetDialApp(hstring_ref appName) const
+template <typename D> Windows::Media::DialProtocol::DialApp impl_IDialDevice<D>::GetDialApp(hstring_view appName) const
 {
     Windows::Media::DialProtocol::DialApp value { nullptr };
     check_hresult(WINRT_SHIM(IDialDevice)->abi_GetDialApp(get(appName), put(value)));
@@ -564,14 +564,14 @@ template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference im
     return value;
 }
 
-template <typename D> hstring impl_IDialDeviceStatics<D>::GetDeviceSelector(hstring_ref appName) const
+template <typename D> hstring impl_IDialDeviceStatics<D>::GetDeviceSelector(hstring_view appName) const
 {
     hstring selector;
     check_hresult(WINRT_SHIM(IDialDeviceStatics)->abi_GetDeviceSelector(get(appName), put(selector)));
     return selector;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> impl_IDialDeviceStatics<D>::FromIdAsync(hstring_ref value) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> impl_IDialDeviceStatics<D>::FromIdAsync(hstring_view value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> operation;
     check_hresult(WINRT_SHIM(IDialDeviceStatics)->abi_FromIdAsync(get(value), put(operation)));
@@ -705,12 +705,12 @@ template <typename D> void impl_IDialDevicePicker<D>::SetDisplayStatus(const Win
     check_hresult(WINRT_SHIM(IDialDevicePicker)->abi_SetDisplayStatus(get(device), status));
 }
 
-inline hstring DialDevice::GetDeviceSelector(hstring_ref appName)
+inline hstring DialDevice::GetDeviceSelector(hstring_view appName)
 {
     return get_activation_factory<DialDevice, IDialDeviceStatics>().GetDeviceSelector(appName);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> DialDevice::FromIdAsync(hstring_ref value)
+inline Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> DialDevice::FromIdAsync(hstring_view value)
 {
     return get_activation_factory<DialDevice, IDialDeviceStatics>().FromIdAsync(value);
 }

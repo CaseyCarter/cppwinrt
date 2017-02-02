@@ -374,14 +374,14 @@ template <typename D> hstring impl_IOnlineIdServiceTicketRequest<D>::Policy() co
     return value;
 }
 
-template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest impl_IOnlineIdServiceTicketRequestFactory<D>::CreateOnlineIdServiceTicketRequest(hstring_ref service, hstring_ref policy) const
+template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest impl_IOnlineIdServiceTicketRequestFactory<D>::CreateOnlineIdServiceTicketRequest(hstring_view service, hstring_view policy) const
 {
     Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest onlineIdServiceTicketRequest { nullptr };
     check_hresult(WINRT_SHIM(IOnlineIdServiceTicketRequestFactory)->abi_CreateOnlineIdServiceTicketRequest(get(service), get(policy), put(onlineIdServiceTicketRequest)));
     return onlineIdServiceTicketRequest;
 }
 
-template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest impl_IOnlineIdServiceTicketRequestFactory<D>::CreateOnlineIdServiceTicketRequestAdvanced(hstring_ref service) const
+template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest impl_IOnlineIdServiceTicketRequestFactory<D>::CreateOnlineIdServiceTicketRequestAdvanced(hstring_view service) const
 {
     Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest onlineIdServiceTicketRequest { nullptr };
     check_hresult(WINRT_SHIM(IOnlineIdServiceTicketRequestFactory)->abi_CreateOnlineIdServiceTicketRequestAdvanced(get(service), put(onlineIdServiceTicketRequest)));
@@ -516,11 +516,11 @@ inline OnlineIdAuthenticator::OnlineIdAuthenticator() :
     OnlineIdAuthenticator(activate_instance<OnlineIdAuthenticator>())
 {}
 
-inline OnlineIdServiceTicketRequest::OnlineIdServiceTicketRequest(hstring_ref service, hstring_ref policy) :
+inline OnlineIdServiceTicketRequest::OnlineIdServiceTicketRequest(hstring_view service, hstring_view policy) :
     OnlineIdServiceTicketRequest(get_activation_factory<OnlineIdServiceTicketRequest, IOnlineIdServiceTicketRequestFactory>().CreateOnlineIdServiceTicketRequest(service, policy))
 {}
 
-inline OnlineIdServiceTicketRequest::OnlineIdServiceTicketRequest(hstring_ref service) :
+inline OnlineIdServiceTicketRequest::OnlineIdServiceTicketRequest(hstring_view service) :
     OnlineIdServiceTicketRequest(get_activation_factory<OnlineIdServiceTicketRequest, IOnlineIdServiceTicketRequestFactory>().CreateOnlineIdServiceTicketRequestAdvanced(service))
 {}
 

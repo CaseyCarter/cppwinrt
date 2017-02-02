@@ -789,7 +789,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProviderFactory> : 
 
 namespace Windows::Security::Credentials {
 
-template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountFactory<D>::CreateWebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_ref userName, Windows::Security::Credentials::WebAccountState state) const
+template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountFactory<D>::CreateWebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_view userName, Windows::Security::Credentials::WebAccountState state) const
 {
     Windows::Security::Credentials::WebAccount instance { nullptr };
     check_hresult(WINRT_SHIM(IWebAccountFactory)->abi_CreateWebAccount(get(webAccountProvider), get(userName), state, put(instance)));
@@ -845,14 +845,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccount2<D>::Si
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccount2<D>::SignOutAsync(hstring_ref clientId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccount2<D>::SignOutAsync(hstring_view clientId) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IWebAccount2)->abi_SignOutWithClientIdAsync(get(clientId), put(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebAccountProviderFactory<D>::CreateWebAccountProvider(hstring_ref id, hstring_ref displayName, const Windows::Foundation::Uri & iconUri) const
+template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebAccountProviderFactory<D>::CreateWebAccountProvider(hstring_view id, hstring_view displayName, const Windows::Foundation::Uri & iconUri) const
 {
     Windows::Security::Credentials::WebAccountProvider instance { nullptr };
     check_hresult(WINRT_SHIM(IWebAccountProviderFactory)->abi_CreateWebAccountProvider(get(id), get(displayName), get(iconUri), put(instance)));
@@ -915,21 +915,21 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IKeyCredentialManag
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> impl_IKeyCredentialManagerStatics<D>::RequestCreateAsync(hstring_ref name, Windows::Security::Credentials::KeyCredentialCreationOption option) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> impl_IKeyCredentialManagerStatics<D>::RequestCreateAsync(hstring_view name, Windows::Security::Credentials::KeyCredentialCreationOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> value;
     check_hresult(WINRT_SHIM(IKeyCredentialManagerStatics)->abi_RequestCreateAsync(get(name), option, put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> impl_IKeyCredentialManagerStatics<D>::OpenAsync(hstring_ref name) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> impl_IKeyCredentialManagerStatics<D>::OpenAsync(hstring_view name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> value;
     check_hresult(WINRT_SHIM(IKeyCredentialManagerStatics)->abi_OpenAsync(get(name), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IKeyCredentialManagerStatics<D>::DeleteAsync(hstring_ref name) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IKeyCredentialManagerStatics<D>::DeleteAsync(hstring_view name) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IKeyCredentialManagerStatics)->abi_DeleteAsync(get(name), put(operation)));
@@ -1027,7 +1027,7 @@ template <typename D> hstring impl_IPasswordCredential<D>::Resource() const
     return resource;
 }
 
-template <typename D> void impl_IPasswordCredential<D>::Resource(hstring_ref resource) const
+template <typename D> void impl_IPasswordCredential<D>::Resource(hstring_view resource) const
 {
     check_hresult(WINRT_SHIM(IPasswordCredential)->put_Resource(get(resource)));
 }
@@ -1039,7 +1039,7 @@ template <typename D> hstring impl_IPasswordCredential<D>::UserName() const
     return userName;
 }
 
-template <typename D> void impl_IPasswordCredential<D>::UserName(hstring_ref userName) const
+template <typename D> void impl_IPasswordCredential<D>::UserName(hstring_view userName) const
 {
     check_hresult(WINRT_SHIM(IPasswordCredential)->put_UserName(get(userName)));
 }
@@ -1051,7 +1051,7 @@ template <typename D> hstring impl_IPasswordCredential<D>::Password() const
     return password;
 }
 
-template <typename D> void impl_IPasswordCredential<D>::Password(hstring_ref password) const
+template <typename D> void impl_IPasswordCredential<D>::Password(hstring_view password) const
 {
     check_hresult(WINRT_SHIM(IPasswordCredential)->put_Password(get(password)));
 }
@@ -1068,7 +1068,7 @@ template <typename D> Windows::Foundation::Collections::IPropertySet impl_IPassw
     return props;
 }
 
-template <typename D> Windows::Security::Credentials::PasswordCredential impl_ICredentialFactory<D>::CreatePasswordCredential(hstring_ref resource, hstring_ref userName, hstring_ref password) const
+template <typename D> Windows::Security::Credentials::PasswordCredential impl_ICredentialFactory<D>::CreatePasswordCredential(hstring_view resource, hstring_view userName, hstring_view password) const
 {
     Windows::Security::Credentials::PasswordCredential credential { nullptr };
     check_hresult(WINRT_SHIM(ICredentialFactory)->abi_CreatePasswordCredential(get(resource), get(userName), get(password), put(credential)));
@@ -1085,21 +1085,21 @@ template <typename D> void impl_IPasswordVault<D>::Remove(const Windows::Securit
     check_hresult(WINRT_SHIM(IPasswordVault)->abi_Remove(get(credential)));
 }
 
-template <typename D> Windows::Security::Credentials::PasswordCredential impl_IPasswordVault<D>::Retrieve(hstring_ref resource, hstring_ref userName) const
+template <typename D> Windows::Security::Credentials::PasswordCredential impl_IPasswordVault<D>::Retrieve(hstring_view resource, hstring_view userName) const
 {
     Windows::Security::Credentials::PasswordCredential credential { nullptr };
     check_hresult(WINRT_SHIM(IPasswordVault)->abi_Retrieve(get(resource), get(userName), put(credential)));
     return credential;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> impl_IPasswordVault<D>::FindAllByResource(hstring_ref resource) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> impl_IPasswordVault<D>::FindAllByResource(hstring_view resource) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> credentials;
     check_hresult(WINRT_SHIM(IPasswordVault)->abi_FindAllByResource(get(resource), put(credentials)));
     return credentials;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> impl_IPasswordVault<D>::FindAllByUserName(hstring_ref userName) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> impl_IPasswordVault<D>::FindAllByUserName(hstring_view userName) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> credentials;
     check_hresult(WINRT_SHIM(IPasswordVault)->abi_FindAllByUserName(get(userName), put(credentials)));
@@ -1123,17 +1123,17 @@ inline Windows::Foundation::IAsyncAction KeyCredentialManager::RenewAttestationA
     return get_activation_factory<KeyCredentialManager, IKeyCredentialManagerStatics>().RenewAttestationAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> KeyCredentialManager::RequestCreateAsync(hstring_ref name, Windows::Security::Credentials::KeyCredentialCreationOption option)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> KeyCredentialManager::RequestCreateAsync(hstring_view name, Windows::Security::Credentials::KeyCredentialCreationOption option)
 {
     return get_activation_factory<KeyCredentialManager, IKeyCredentialManagerStatics>().RequestCreateAsync(name, option);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> KeyCredentialManager::OpenAsync(hstring_ref name)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> KeyCredentialManager::OpenAsync(hstring_view name)
 {
     return get_activation_factory<KeyCredentialManager, IKeyCredentialManagerStatics>().OpenAsync(name);
 }
 
-inline Windows::Foundation::IAsyncAction KeyCredentialManager::DeleteAsync(hstring_ref name)
+inline Windows::Foundation::IAsyncAction KeyCredentialManager::DeleteAsync(hstring_view name)
 {
     return get_activation_factory<KeyCredentialManager, IKeyCredentialManagerStatics>().DeleteAsync(name);
 }
@@ -1142,7 +1142,7 @@ inline PasswordCredential::PasswordCredential() :
     PasswordCredential(activate_instance<PasswordCredential>())
 {}
 
-inline PasswordCredential::PasswordCredential(hstring_ref resource, hstring_ref userName, hstring_ref password) :
+inline PasswordCredential::PasswordCredential(hstring_view resource, hstring_view userName, hstring_view password) :
     PasswordCredential(get_activation_factory<PasswordCredential, ICredentialFactory>().CreatePasswordCredential(resource, userName, password))
 {}
 
@@ -1154,11 +1154,11 @@ inline PasswordVault::PasswordVault() :
     PasswordVault(activate_instance<PasswordVault>())
 {}
 
-inline WebAccount::WebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_ref userName, Windows::Security::Credentials::WebAccountState state) :
+inline WebAccount::WebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_view userName, Windows::Security::Credentials::WebAccountState state) :
     WebAccount(get_activation_factory<WebAccount, IWebAccountFactory>().CreateWebAccount(webAccountProvider, userName, state))
 {}
 
-inline WebAccountProvider::WebAccountProvider(hstring_ref id, hstring_ref displayName, const Windows::Foundation::Uri & iconUri) :
+inline WebAccountProvider::WebAccountProvider(hstring_view id, hstring_view displayName, const Windows::Foundation::Uri & iconUri) :
     WebAccountProvider(get_activation_factory<WebAccountProvider, IWebAccountProviderFactory>().CreateWebAccountProvider(id, displayName, iconUri))
 {}
 

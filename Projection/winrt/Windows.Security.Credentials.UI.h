@@ -494,7 +494,7 @@ struct produce<D, Windows::Security::Credentials::UI::IUserConsentVerifierStatic
 
 namespace Windows::Security::Credentials::UI {
 
-template <typename D> void impl_ICredentialPickerOptions<D>::Caption(hstring_ref value) const
+template <typename D> void impl_ICredentialPickerOptions<D>::Caption(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_Caption(get(value)));
 }
@@ -506,7 +506,7 @@ template <typename D> hstring impl_ICredentialPickerOptions<D>::Caption() const
     return value;
 }
 
-template <typename D> void impl_ICredentialPickerOptions<D>::Message(hstring_ref value) const
+template <typename D> void impl_ICredentialPickerOptions<D>::Message(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_Message(get(value)));
 }
@@ -530,7 +530,7 @@ template <typename D> uint32_t impl_ICredentialPickerOptions<D>::ErrorCode() con
     return value;
 }
 
-template <typename D> void impl_ICredentialPickerOptions<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_ICredentialPickerOptions<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_TargetName(get(value)));
 }
@@ -554,7 +554,7 @@ template <typename D> Windows::Security::Credentials::UI::AuthenticationProtocol
     return value;
 }
 
-template <typename D> void impl_ICredentialPickerOptions<D>::CustomAuthenticationProtocol(hstring_ref value) const
+template <typename D> void impl_ICredentialPickerOptions<D>::CustomAuthenticationProtocol(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_CustomAuthenticationProtocol(get(value)));
 }
@@ -621,14 +621,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cr
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(hstring_ref targetName, hstring_ref message) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(hstring_view targetName, hstring_view message) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> operation;
     check_hresult(WINRT_SHIM(ICredentialPickerStatics)->abi_PickWithMessageAsync(get(targetName), get(message), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(hstring_ref targetName, hstring_ref message, hstring_ref caption) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(hstring_view targetName, hstring_view message, hstring_view caption) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> operation;
     check_hresult(WINRT_SHIM(ICredentialPickerStatics)->abi_PickWithCaptionAsync(get(targetName), get(message), get(caption), put(operation)));
@@ -691,7 +691,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Secur
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> impl_IUserConsentVerifierStatics<D>::RequestVerificationAsync(hstring_ref message) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> impl_IUserConsentVerifierStatics<D>::RequestVerificationAsync(hstring_view message) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> result;
     check_hresult(WINRT_SHIM(IUserConsentVerifierStatics)->abi_RequestVerificationAsync(get(message), put(result)));
@@ -703,12 +703,12 @@ inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::
     return get_activation_factory<CredentialPicker, ICredentialPickerStatics>().PickAsync(options);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(hstring_ref targetName, hstring_ref message)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(hstring_view targetName, hstring_view message)
 {
     return get_activation_factory<CredentialPicker, ICredentialPickerStatics>().PickAsync(targetName, message);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(hstring_ref targetName, hstring_ref message, hstring_ref caption)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(hstring_view targetName, hstring_view message, hstring_view caption)
 {
     return get_activation_factory<CredentialPicker, ICredentialPickerStatics>().PickAsync(targetName, message, caption);
 }
@@ -722,7 +722,7 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credential
     return get_activation_factory<UserConsentVerifier, IUserConsentVerifierStatics>().CheckAvailabilityAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> UserConsentVerifier::RequestVerificationAsync(hstring_ref message)
+inline Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> UserConsentVerifier::RequestVerificationAsync(hstring_view message)
 {
     return get_activation_factory<UserConsentVerifier, IUserConsentVerifierStatics>().RequestVerificationAsync(message);
 }

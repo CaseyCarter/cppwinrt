@@ -62,9 +62,9 @@ struct WINRT_EBO WiFiDirectDevice :
 {
     WiFiDirectDevice(std::nullptr_t) noexcept {}
     static hstring GetDeviceSelector();
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_ref deviceId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_view deviceId);
     static hstring GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_ref deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_view deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters);
 };
 
 struct WINRT_EBO WiFiDirectInformationElement :

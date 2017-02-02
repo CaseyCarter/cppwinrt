@@ -416,7 +416,7 @@ struct WINRT_EBO PickerFlyoutBase :
     PickerFlyoutBase(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::DependencyProperty TitleProperty();
     static hstring GetTitle(const Windows::UI::Xaml::DependencyObject & element);
-    static void SetTitle(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value);
+    static void SetTitle(const Windows::UI::Xaml::DependencyObject & element, hstring_view value);
 };
 
 struct WINRT_EBO PivotHeaderItem :

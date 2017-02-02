@@ -3159,7 +3159,7 @@ template <typename D> void impl_ITextDocument<D>::SetDefaultParagraphFormat(cons
     check_hresult(WINRT_SHIM(ITextDocument)->abi_SetDefaultParagraphFormat(get(value)));
 }
 
-template <typename D> void impl_ITextDocument<D>::SetText(Windows::UI::Text::TextSetOptions options, hstring_ref value) const
+template <typename D> void impl_ITextDocument<D>::SetText(Windows::UI::Text::TextSetOptions options, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextDocument)->abi_SetText(options, get(value)));
 }
@@ -3243,7 +3243,7 @@ template <typename D> hstring impl_ITextRange<D>::Link() const
     return value;
 }
 
-template <typename D> void impl_ITextRange<D>::Link(hstring_ref value) const
+template <typename D> void impl_ITextRange<D>::Link(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextRange)->put_Link(get(value)));
 }
@@ -3286,7 +3286,7 @@ template <typename D> hstring impl_ITextRange<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_ITextRange<D>::Text(hstring_ref value) const
+template <typename D> void impl_ITextRange<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextRange)->put_Text(get(value)));
 }
@@ -3339,7 +3339,7 @@ template <typename D> int32_t impl_ITextRange<D>::Expand(Windows::UI::Text::Text
     return delta;
 }
 
-template <typename D> int32_t impl_ITextRange<D>::FindText(hstring_ref value, int32_t scanLength, Windows::UI::Text::FindOptions options) const
+template <typename D> int32_t impl_ITextRange<D>::FindText(hstring_view value, int32_t scanLength, Windows::UI::Text::FindOptions options) const
 {
     int32_t length {};
     check_hresult(WINRT_SHIM(ITextRange)->abi_FindText(get(value), scanLength, options, &length));
@@ -3392,7 +3392,7 @@ template <typename D> bool impl_ITextRange<D>::InRange(const Windows::UI::Text::
     return value;
 }
 
-template <typename D> void impl_ITextRange<D>::InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, hstring_ref alternateText, const Windows::Storage::Streams::IRandomAccessStream & value) const
+template <typename D> void impl_ITextRange<D>::InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, hstring_view alternateText, const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
     check_hresult(WINRT_SHIM(ITextRange)->abi_InsertImage(width, height, ascent, verticalAlign, get(alternateText), get(value)));
 }
@@ -3462,7 +3462,7 @@ template <typename D> void impl_ITextRange<D>::SetRange(int32_t startPosition, i
     check_hresult(WINRT_SHIM(ITextRange)->abi_SetRange(startPosition, endPosition));
 }
 
-template <typename D> void impl_ITextRange<D>::SetText(Windows::UI::Text::TextSetOptions options, hstring_ref value) const
+template <typename D> void impl_ITextRange<D>::SetText(Windows::UI::Text::TextSetOptions options, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextRange)->abi_SetText(options, get(value)));
 }
@@ -3540,7 +3540,7 @@ template <typename D> int32_t impl_ITextSelection<D>::MoveUp(Windows::UI::Text::
     return delta;
 }
 
-template <typename D> void impl_ITextSelection<D>::TypeText(hstring_ref value) const
+template <typename D> void impl_ITextSelection<D>::TypeText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextSelection)->abi_TypeText(get(value)));
 }
@@ -3660,7 +3660,7 @@ template <typename D> hstring impl_ITextCharacterFormat<D>::LanguageTag() const
     return value;
 }
 
-template <typename D> void impl_ITextCharacterFormat<D>::LanguageTag(hstring_ref value) const
+template <typename D> void impl_ITextCharacterFormat<D>::LanguageTag(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_LanguageTag(get(value)));
 }
@@ -3679,7 +3679,7 @@ template <typename D> hstring impl_ITextCharacterFormat<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_ITextCharacterFormat<D>::Name(hstring_ref value) const
+template <typename D> void impl_ITextCharacterFormat<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_Name(get(value)));
 }

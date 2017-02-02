@@ -82,14 +82,14 @@ template <typename D>
 struct WINRT_EBO impl_IMessageDialog
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::UI::Popups::IUICommand> Commands() const;
     uint32_t DefaultCommandIndex() const;
     void DefaultCommandIndex(uint32_t value) const;
     uint32_t CancelCommandIndex() const;
     void CancelCommandIndex(uint32_t value) const;
     hstring Content() const;
-    void Content(hstring_ref value) const;
+    void Content(hstring_view value) const;
     Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ShowAsync() const;
     Windows::UI::Popups::MessageDialogOptions Options() const;
     void Options(Windows::UI::Popups::MessageDialogOptions value) const;
@@ -98,8 +98,8 @@ struct WINRT_EBO impl_IMessageDialog
 template <typename D>
 struct WINRT_EBO impl_IMessageDialogFactory
 {
-    Windows::UI::Popups::MessageDialog Create(hstring_ref content) const;
-    Windows::UI::Popups::MessageDialog CreateWithTitle(hstring_ref content, hstring_ref title) const;
+    Windows::UI::Popups::MessageDialog Create(hstring_view content) const;
+    Windows::UI::Popups::MessageDialog CreateWithTitle(hstring_view content, hstring_view title) const;
 };
 
 template <typename D>
@@ -115,7 +115,7 @@ template <typename D>
 struct WINRT_EBO impl_IUICommand
 {
     hstring Label() const;
-    void Label(hstring_ref value) const;
+    void Label(hstring_view value) const;
     Windows::UI::Popups::UICommandInvokedHandler Invoked() const;
     void Invoked(const Windows::UI::Popups::UICommandInvokedHandler & value) const;
     Windows::IInspectable Id() const;
@@ -125,9 +125,9 @@ struct WINRT_EBO impl_IUICommand
 template <typename D>
 struct WINRT_EBO impl_IUICommandFactory
 {
-    Windows::UI::Popups::UICommand Create(hstring_ref label) const;
-    Windows::UI::Popups::UICommand CreateWithHandler(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action) const;
-    Windows::UI::Popups::UICommand CreateWithHandlerAndId(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) const;
+    Windows::UI::Popups::UICommand Create(hstring_view label) const;
+    Windows::UI::Popups::UICommand CreateWithHandler(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action) const;
+    Windows::UI::Popups::UICommand CreateWithHandlerAndId(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) const;
 };
 
 }

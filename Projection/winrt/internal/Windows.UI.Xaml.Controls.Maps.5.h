@@ -35,7 +35,7 @@ protected:
         get_activation_factory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(*this, this->m_inner);
     }
 
-    HttpMapTileDataSourceT(hstring_ref uriFormatString)
+    HttpMapTileDataSourceT(hstring_view uriFormatString)
     {
         get_activation_factory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, *this, this->m_inner);
     }
@@ -54,7 +54,7 @@ protected:
         get_activation_factory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(*this, this->m_inner);
     }
 
-    LocalMapTileDataSourceT(hstring_ref uriFormatString)
+    LocalMapTileDataSourceT(hstring_view uriFormatString)
     {
         get_activation_factory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, *this, this->m_inner);
     }

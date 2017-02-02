@@ -6169,21 +6169,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAggregate
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IAggregateContactManager2<D>::SetRemoteIdentificationInformationAsync(hstring_ref contactListId, hstring_ref remoteSourceId, hstring_ref accountId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IAggregateContactManager2<D>::SetRemoteIdentificationInformationAsync(hstring_view contactListId, hstring_view remoteSourceId, hstring_view accountId) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IAggregateContactManager2)->abi_SetRemoteIdentificationInformationAsync(get(contactListId), get(remoteSourceId), get(accountId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IContactAnnotationStore<D>::FindContactIdsByEmailAsync(hstring_ref emailAddress) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IContactAnnotationStore<D>::FindContactIdsByEmailAsync(hstring_view emailAddress) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> contactIds;
     check_hresult(WINRT_SHIM(IContactAnnotationStore)->abi_FindContactIdsByEmailAsync(get(emailAddress), put(contactIds)));
     return contactIds;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IContactAnnotationStore<D>::FindContactIdsByPhoneNumberAsync(hstring_ref phoneNumber) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IContactAnnotationStore<D>::FindContactIdsByPhoneNumberAsync(hstring_view phoneNumber) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> contactIds;
     check_hresult(WINRT_SHIM(IContactAnnotationStore)->abi_FindContactIdsByPhoneNumberAsync(get(phoneNumber), put(contactIds)));
@@ -6211,14 +6211,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> impl_IContactAnnotationStore<D>::CreateAnnotationListAsync(hstring_ref userDataAccountId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> impl_IContactAnnotationStore<D>::CreateAnnotationListAsync(hstring_view userDataAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> value;
     check_hresult(WINRT_SHIM(IContactAnnotationStore)->abi_CreateAnnotationListInAccountAsync(get(userDataAccountId), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> impl_IContactAnnotationStore<D>::GetAnnotationListAsync(hstring_ref annotationListId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> impl_IContactAnnotationStore<D>::GetAnnotationListAsync(hstring_view annotationListId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> value;
     check_hresult(WINRT_SHIM(IContactAnnotationStore)->abi_GetAnnotationListAsync(get(annotationListId), put(value)));
@@ -6267,14 +6267,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IContactAn
     return ppResult;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation> impl_IContactAnnotationList<D>::GetAnnotationAsync(hstring_ref annotationId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation> impl_IContactAnnotationList<D>::GetAnnotationAsync(hstring_view annotationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation> annotation;
     check_hresult(WINRT_SHIM(IContactAnnotationList)->abi_GetAnnotationAsync(get(annotationId), put(annotation)));
     return annotation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> impl_IContactAnnotationList<D>::FindAnnotationsByRemoteIdAsync(hstring_ref remoteId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> impl_IContactAnnotationList<D>::FindAnnotationsByRemoteIdAsync(hstring_view remoteId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> annotations;
     check_hresult(WINRT_SHIM(IContactAnnotationList)->abi_FindAnnotationsByRemoteIdAsync(get(remoteId), put(annotations)));
@@ -6316,7 +6316,7 @@ template <typename D> hstring impl_IContactAnnotation<D>::ContactId() const
     return value;
 }
 
-template <typename D> void impl_IContactAnnotation<D>::ContactId(hstring_ref value) const
+template <typename D> void impl_IContactAnnotation<D>::ContactId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactAnnotation)->put_ContactId(get(value)));
 }
@@ -6328,7 +6328,7 @@ template <typename D> hstring impl_IContactAnnotation<D>::RemoteId() const
     return value;
 }
 
-template <typename D> void impl_IContactAnnotation<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_IContactAnnotation<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactAnnotation)->put_RemoteId(get(value)));
 }
@@ -6366,14 +6366,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return contacts;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> impl_IContactStore<D>::FindContactsAsync(hstring_ref searchText) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> impl_IContactStore<D>::FindContactsAsync(hstring_view searchText) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> contacts;
     check_hresult(WINRT_SHIM(IContactStore)->abi_FindContactsWithSearchTextAsync(get(searchText), put(contacts)));
     return contacts;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactStore<D>::GetContactAsync(hstring_ref contactId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactStore<D>::GetContactAsync(hstring_view contactId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> contacts;
     check_hresult(WINRT_SHIM(IContactStore)->abi_GetContactAsync(get(contactId), put(contacts)));
@@ -6418,14 +6418,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> impl_IContactStore2<D>::GetContactListAsync(hstring_ref contactListId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> impl_IContactStore2<D>::GetContactListAsync(hstring_view contactListId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> value;
     check_hresult(WINRT_SHIM(IContactStore2)->abi_GetContactListAsync(get(contactListId), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> impl_IContactStore2<D>::CreateContactListAsync(hstring_ref displayName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> impl_IContactStore2<D>::CreateContactListAsync(hstring_view displayName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> value;
     check_hresult(WINRT_SHIM(IContactStore2)->abi_CreateContactListAsync(get(displayName), put(value)));
@@ -6453,7 +6453,7 @@ template <typename D> Windows::ApplicationModel::Contacts::ContactReader impl_IC
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> impl_IContactStore2<D>::CreateContactListAsync(hstring_ref displayName, hstring_ref userDataAccountId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> impl_IContactStore2<D>::CreateContactListAsync(hstring_view displayName, hstring_view userDataAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> value;
     check_hresult(WINRT_SHIM(IContactStore2)->abi_CreateContactListInAccountAsync(get(displayName), get(userDataAccountId), put(value)));
@@ -6474,7 +6474,7 @@ template <typename D> hstring impl_IContactList<D>::DisplayName() const
     return value;
 }
 
-template <typename D> void impl_IContactList<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IContactList<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactList)->put_DisplayName(get(value)));
 }
@@ -6581,7 +6581,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IContactList<D>::De
     return returnValue;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactList<D>::GetContactFromRemoteIdAsync(hstring_ref remoteId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactList<D>::GetContactFromRemoteIdAsync(hstring_view remoteId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> contact;
     check_hresult(WINRT_SHIM(IContactList)->abi_GetContactFromRemoteIdAsync(get(remoteId), put(contact)));
@@ -6623,7 +6623,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IContactList<D>::De
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactList<D>::GetContactAsync(hstring_ref contactId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactList<D>::GetContactAsync(hstring_view contactId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> contacts;
     check_hresult(WINRT_SHIM(IContactList)->abi_GetContactAsync(get(contactId), put(contacts)));
@@ -7052,7 +7052,7 @@ template <typename D> hstring impl_IContactConnectedServiceAccount<D>::Id() cons
     return value;
 }
 
-template <typename D> void impl_IContactConnectedServiceAccount<D>::Id(hstring_ref value) const
+template <typename D> void impl_IContactConnectedServiceAccount<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactConnectedServiceAccount)->put_Id(get(value)));
 }
@@ -7064,7 +7064,7 @@ template <typename D> hstring impl_IContactConnectedServiceAccount<D>::ServiceNa
     return value;
 }
 
-template <typename D> void impl_IContactConnectedServiceAccount<D>::ServiceName(hstring_ref value) const
+template <typename D> void impl_IContactConnectedServiceAccount<D>::ServiceName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactConnectedServiceAccount)->put_ServiceName(get(value)));
 }
@@ -7076,7 +7076,7 @@ template <typename D> hstring impl_IContactSignificantOther<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IContactSignificantOther<D>::Name(hstring_ref value) const
+template <typename D> void impl_IContactSignificantOther<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactSignificantOther)->put_Name(get(value)));
 }
@@ -7088,7 +7088,7 @@ template <typename D> hstring impl_IContactSignificantOther<D>::Description() co
     return value;
 }
 
-template <typename D> void impl_IContactSignificantOther<D>::Description(hstring_ref value) const
+template <typename D> void impl_IContactSignificantOther<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactSignificantOther)->put_Description(get(value)));
 }
@@ -7124,7 +7124,7 @@ template <typename D> hstring impl_IContactWebsite<D>::Description() const
     return value;
 }
 
-template <typename D> void impl_IContactWebsite<D>::Description(hstring_ref value) const
+template <typename D> void impl_IContactWebsite<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactWebsite)->put_Description(get(value)));
 }
@@ -7136,7 +7136,7 @@ template <typename D> hstring impl_IContactWebsite2<D>::RawValue() const
     return value;
 }
 
-template <typename D> void impl_IContactWebsite2<D>::RawValue(hstring_ref value) const
+template <typename D> void impl_IContactWebsite2<D>::RawValue(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactWebsite2)->put_RawValue(get(value)));
 }
@@ -7148,7 +7148,7 @@ template <typename D> hstring impl_IContactEmail<D>::Address() const
     return value;
 }
 
-template <typename D> void impl_IContactEmail<D>::Address(hstring_ref value) const
+template <typename D> void impl_IContactEmail<D>::Address(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactEmail)->put_Address(get(value)));
 }
@@ -7172,7 +7172,7 @@ template <typename D> hstring impl_IContactEmail<D>::Description() const
     return value;
 }
 
-template <typename D> void impl_IContactEmail<D>::Description(hstring_ref value) const
+template <typename D> void impl_IContactEmail<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactEmail)->put_Description(get(value)));
 }
@@ -7184,7 +7184,7 @@ template <typename D> hstring impl_IContactPhone<D>::Number() const
     return value;
 }
 
-template <typename D> void impl_IContactPhone<D>::Number(hstring_ref value) const
+template <typename D> void impl_IContactPhone<D>::Number(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactPhone)->put_Number(get(value)));
 }
@@ -7208,7 +7208,7 @@ template <typename D> hstring impl_IContactPhone<D>::Description() const
     return value;
 }
 
-template <typename D> void impl_IContactPhone<D>::Description(hstring_ref value) const
+template <typename D> void impl_IContactPhone<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactPhone)->put_Description(get(value)));
 }
@@ -7220,7 +7220,7 @@ template <typename D> hstring impl_IContactAddress<D>::StreetAddress() const
     return value;
 }
 
-template <typename D> void impl_IContactAddress<D>::StreetAddress(hstring_ref value) const
+template <typename D> void impl_IContactAddress<D>::StreetAddress(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactAddress)->put_StreetAddress(get(value)));
 }
@@ -7232,7 +7232,7 @@ template <typename D> hstring impl_IContactAddress<D>::Locality() const
     return value;
 }
 
-template <typename D> void impl_IContactAddress<D>::Locality(hstring_ref value) const
+template <typename D> void impl_IContactAddress<D>::Locality(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactAddress)->put_Locality(get(value)));
 }
@@ -7244,7 +7244,7 @@ template <typename D> hstring impl_IContactAddress<D>::Region() const
     return value;
 }
 
-template <typename D> void impl_IContactAddress<D>::Region(hstring_ref value) const
+template <typename D> void impl_IContactAddress<D>::Region(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactAddress)->put_Region(get(value)));
 }
@@ -7256,7 +7256,7 @@ template <typename D> hstring impl_IContactAddress<D>::Country() const
     return value;
 }
 
-template <typename D> void impl_IContactAddress<D>::Country(hstring_ref value) const
+template <typename D> void impl_IContactAddress<D>::Country(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactAddress)->put_Country(get(value)));
 }
@@ -7268,7 +7268,7 @@ template <typename D> hstring impl_IContactAddress<D>::PostalCode() const
     return value;
 }
 
-template <typename D> void impl_IContactAddress<D>::PostalCode(hstring_ref value) const
+template <typename D> void impl_IContactAddress<D>::PostalCode(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactAddress)->put_PostalCode(get(value)));
 }
@@ -7292,7 +7292,7 @@ template <typename D> hstring impl_IContactAddress<D>::Description() const
     return value;
 }
 
-template <typename D> void impl_IContactAddress<D>::Description(hstring_ref value) const
+template <typename D> void impl_IContactAddress<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactAddress)->put_Description(get(value)));
 }
@@ -7352,7 +7352,7 @@ template <typename D> hstring impl_IContactDate<D>::Description() const
     return value;
 }
 
-template <typename D> void impl_IContactDate<D>::Description(hstring_ref value) const
+template <typename D> void impl_IContactDate<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactDate)->put_Description(get(value)));
 }
@@ -7364,7 +7364,7 @@ template <typename D> hstring impl_IContactJobInfo<D>::CompanyName() const
     return value;
 }
 
-template <typename D> void impl_IContactJobInfo<D>::CompanyName(hstring_ref value) const
+template <typename D> void impl_IContactJobInfo<D>::CompanyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactJobInfo)->put_CompanyName(get(value)));
 }
@@ -7376,7 +7376,7 @@ template <typename D> hstring impl_IContactJobInfo<D>::CompanyYomiName() const
     return value;
 }
 
-template <typename D> void impl_IContactJobInfo<D>::CompanyYomiName(hstring_ref value) const
+template <typename D> void impl_IContactJobInfo<D>::CompanyYomiName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactJobInfo)->put_CompanyYomiName(get(value)));
 }
@@ -7388,7 +7388,7 @@ template <typename D> hstring impl_IContactJobInfo<D>::Department() const
     return value;
 }
 
-template <typename D> void impl_IContactJobInfo<D>::Department(hstring_ref value) const
+template <typename D> void impl_IContactJobInfo<D>::Department(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactJobInfo)->put_Department(get(value)));
 }
@@ -7400,7 +7400,7 @@ template <typename D> hstring impl_IContactJobInfo<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IContactJobInfo<D>::Title(hstring_ref value) const
+template <typename D> void impl_IContactJobInfo<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactJobInfo)->put_Title(get(value)));
 }
@@ -7412,7 +7412,7 @@ template <typename D> hstring impl_IContactJobInfo<D>::Manager() const
     return value;
 }
 
-template <typename D> void impl_IContactJobInfo<D>::Manager(hstring_ref value) const
+template <typename D> void impl_IContactJobInfo<D>::Manager(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactJobInfo)->put_Manager(get(value)));
 }
@@ -7424,7 +7424,7 @@ template <typename D> hstring impl_IContactJobInfo<D>::Office() const
     return value;
 }
 
-template <typename D> void impl_IContactJobInfo<D>::Office(hstring_ref value) const
+template <typename D> void impl_IContactJobInfo<D>::Office(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactJobInfo)->put_Office(get(value)));
 }
@@ -7436,7 +7436,7 @@ template <typename D> hstring impl_IContactJobInfo<D>::CompanyAddress() const
     return value;
 }
 
-template <typename D> void impl_IContactJobInfo<D>::CompanyAddress(hstring_ref value) const
+template <typename D> void impl_IContactJobInfo<D>::CompanyAddress(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactJobInfo)->put_CompanyAddress(get(value)));
 }
@@ -7448,7 +7448,7 @@ template <typename D> hstring impl_IContactJobInfo<D>::Description() const
     return value;
 }
 
-template <typename D> void impl_IContactJobInfo<D>::Description(hstring_ref value) const
+template <typename D> void impl_IContactJobInfo<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactJobInfo)->put_Description(get(value)));
 }
@@ -7460,7 +7460,7 @@ template <typename D> hstring impl_IContact<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IContact<D>::Name(hstring_ref value) const
+template <typename D> void impl_IContact<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContact)->put_Name(get(value)));
 }
@@ -7519,7 +7519,7 @@ template <typename D> hstring impl_IContactName<D>::FirstName() const
     return value;
 }
 
-template <typename D> void impl_IContactName<D>::FirstName(hstring_ref value) const
+template <typename D> void impl_IContactName<D>::FirstName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactName)->put_FirstName(get(value)));
 }
@@ -7531,7 +7531,7 @@ template <typename D> hstring impl_IContactName<D>::LastName() const
     return value;
 }
 
-template <typename D> void impl_IContactName<D>::LastName(hstring_ref value) const
+template <typename D> void impl_IContactName<D>::LastName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactName)->put_LastName(get(value)));
 }
@@ -7543,7 +7543,7 @@ template <typename D> hstring impl_IContactName<D>::MiddleName() const
     return value;
 }
 
-template <typename D> void impl_IContactName<D>::MiddleName(hstring_ref value) const
+template <typename D> void impl_IContactName<D>::MiddleName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactName)->put_MiddleName(get(value)));
 }
@@ -7555,7 +7555,7 @@ template <typename D> hstring impl_IContactName<D>::YomiGivenName() const
     return value;
 }
 
-template <typename D> void impl_IContactName<D>::YomiGivenName(hstring_ref value) const
+template <typename D> void impl_IContactName<D>::YomiGivenName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactName)->put_YomiGivenName(get(value)));
 }
@@ -7567,7 +7567,7 @@ template <typename D> hstring impl_IContactName<D>::YomiFamilyName() const
     return value;
 }
 
-template <typename D> void impl_IContactName<D>::YomiFamilyName(hstring_ref value) const
+template <typename D> void impl_IContactName<D>::YomiFamilyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactName)->put_YomiFamilyName(get(value)));
 }
@@ -7579,7 +7579,7 @@ template <typename D> hstring impl_IContactName<D>::HonorificNameSuffix() const
     return value;
 }
 
-template <typename D> void impl_IContactName<D>::HonorificNameSuffix(hstring_ref value) const
+template <typename D> void impl_IContactName<D>::HonorificNameSuffix(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactName)->put_HonorificNameSuffix(get(value)));
 }
@@ -7591,7 +7591,7 @@ template <typename D> hstring impl_IContactName<D>::HonorificNamePrefix() const
     return value;
 }
 
-template <typename D> void impl_IContactName<D>::HonorificNamePrefix(hstring_ref value) const
+template <typename D> void impl_IContactName<D>::HonorificNamePrefix(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactName)->put_HonorificNamePrefix(get(value)));
 }
@@ -7617,7 +7617,7 @@ template <typename D> hstring impl_IContact2<D>::Id() const
     return value;
 }
 
-template <typename D> void impl_IContact2<D>::Id(hstring_ref value) const
+template <typename D> void impl_IContact2<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContact2)->put_Id(get(value)));
 }
@@ -7629,7 +7629,7 @@ template <typename D> hstring impl_IContact2<D>::Notes() const
     return value;
 }
 
-template <typename D> void impl_IContact2<D>::Notes(hstring_ref value) const
+template <typename D> void impl_IContact2<D>::Notes(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContact2)->put_Notes(get(value)));
 }
@@ -7744,7 +7744,7 @@ template <typename D> hstring impl_IContact3<D>::RemoteId() const
     return value;
 }
 
-template <typename D> void impl_IContact3<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_IContact3<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContact3)->put_RemoteId(get(value)));
 }
@@ -7756,7 +7756,7 @@ template <typename D> hstring impl_IContact3<D>::RingToneToken() const
     return value;
 }
 
-template <typename D> void impl_IContact3<D>::RingToneToken(hstring_ref value) const
+template <typename D> void impl_IContact3<D>::RingToneToken(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContact3)->put_RingToneToken(get(value)));
 }
@@ -7801,7 +7801,7 @@ template <typename D> hstring impl_IContact3<D>::TextToneToken() const
     return value;
 }
 
-template <typename D> void impl_IContact3<D>::TextToneToken(hstring_ref value) const
+template <typename D> void impl_IContact3<D>::TextToneToken(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContact3)->put_TextToneToken(get(value)));
 }
@@ -7827,7 +7827,7 @@ template <typename D> hstring impl_IContact3<D>::DisplayNameOverride() const
     return value;
 }
 
-template <typename D> void impl_IContact3<D>::DisplayNameOverride(hstring_ref value) const
+template <typename D> void impl_IContact3<D>::DisplayNameOverride(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContact3)->put_DisplayNameOverride(get(value)));
 }
@@ -7839,7 +7839,7 @@ template <typename D> hstring impl_IContact3<D>::Nickname() const
     return value;
 }
 
-template <typename D> void impl_IContact3<D>::Nickname(hstring_ref value) const
+template <typename D> void impl_IContact3<D>::Nickname(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContact3)->put_Nickname(get(value)));
 }
@@ -7944,7 +7944,7 @@ template <typename D> hstring impl_IContactQueryTextSearch<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_IContactQueryTextSearch<D>::Text(hstring_ref value) const
+template <typename D> void impl_IContactQueryTextSearch<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactQueryTextSearch)->put_Text(get(value)));
 }
@@ -7961,14 +7961,14 @@ template <typename D> void impl_IContactQueryTextSearch<D>::SearchScope(Windows:
     check_hresult(WINRT_SHIM(IContactQueryTextSearch)->put_SearchScope(value));
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactQueryOptions impl_IContactQueryOptionsFactory<D>::CreateWithText(hstring_ref text) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactQueryOptions impl_IContactQueryOptionsFactory<D>::CreateWithText(hstring_view text) const
 {
     Windows::ApplicationModel::Contacts::ContactQueryOptions result { nullptr };
     check_hresult(WINRT_SHIM(IContactQueryOptionsFactory)->abi_CreateWithText(get(text), put(result)));
     return result;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactQueryOptions impl_IContactQueryOptionsFactory<D>::CreateWithTextAndFields(hstring_ref text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactQueryOptions impl_IContactQueryOptionsFactory<D>::CreateWithTextAndFields(hstring_view text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) const
 {
     Windows::ApplicationModel::Contacts::ContactQueryOptions result { nullptr };
     check_hresult(WINRT_SHIM(IContactQueryOptionsFactory)->abi_CreateWithTextAndFields(get(text), fields, put(result)));
@@ -8200,7 +8200,7 @@ template <typename D> hstring impl_IKnownContactFieldStatics<D>::InstantMessage(
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactFieldType impl_IKnownContactFieldStatics<D>::ConvertNameToType(hstring_ref name) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactFieldType impl_IKnownContactFieldStatics<D>::ConvertNameToType(hstring_view name) const
 {
     Windows::ApplicationModel::Contacts::ContactFieldType type {};
     check_hresult(WINRT_SHIM(IKnownContactFieldStatics)->abi_ConvertNameToType(get(name), &type));
@@ -8263,70 +8263,70 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::App
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> impl_IContactInformation<D>::QueryCustomFields(hstring_ref customName) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> impl_IContactInformation<D>::QueryCustomFields(hstring_view customName) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> value;
     check_hresult(WINRT_SHIM(IContactInformation)->abi_QueryCustomFields(get(customName), put(value)));
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactField impl_IContactFieldFactory<D>::CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactField impl_IContactFieldFactory<D>::CreateField(hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type) const
 {
     Windows::ApplicationModel::Contacts::ContactField field { nullptr };
     check_hresult(WINRT_SHIM(IContactFieldFactory)->abi_CreateField_Default(get(value), type, put(field)));
     return field;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactField impl_IContactFieldFactory<D>::CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactField impl_IContactFieldFactory<D>::CreateField(hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
 {
     Windows::ApplicationModel::Contacts::ContactField field { nullptr };
     check_hresult(WINRT_SHIM(IContactFieldFactory)->abi_CreateField_Category(get(value), type, category, put(field)));
     return field;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactField impl_IContactFieldFactory<D>::CreateField(hstring_ref name, hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactField impl_IContactFieldFactory<D>::CreateField(hstring_view name, hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
 {
     Windows::ApplicationModel::Contacts::ContactField field { nullptr };
     check_hresult(WINRT_SHIM(IContactFieldFactory)->abi_CreateField_Custom(get(name), get(value), type, category, put(field)));
     return field;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactLocationField impl_IContactLocationFieldFactory<D>::CreateLocation(hstring_ref unstructuredAddress) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactLocationField impl_IContactLocationFieldFactory<D>::CreateLocation(hstring_view unstructuredAddress) const
 {
     Windows::ApplicationModel::Contacts::ContactLocationField field { nullptr };
     check_hresult(WINRT_SHIM(IContactLocationFieldFactory)->abi_CreateLocation_Default(get(unstructuredAddress), put(field)));
     return field;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactLocationField impl_IContactLocationFieldFactory<D>::CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactLocationField impl_IContactLocationFieldFactory<D>::CreateLocation(hstring_view unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
 {
     Windows::ApplicationModel::Contacts::ContactLocationField field { nullptr };
     check_hresult(WINRT_SHIM(IContactLocationFieldFactory)->abi_CreateLocation_Category(get(unstructuredAddress), category, put(field)));
     return field;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactLocationField impl_IContactLocationFieldFactory<D>::CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref street, hstring_ref city, hstring_ref region, hstring_ref country, hstring_ref postalCode) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactLocationField impl_IContactLocationFieldFactory<D>::CreateLocation(hstring_view unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_view street, hstring_view city, hstring_view region, hstring_view country, hstring_view postalCode) const
 {
     Windows::ApplicationModel::Contacts::ContactLocationField field { nullptr };
     check_hresult(WINRT_SHIM(IContactLocationFieldFactory)->abi_CreateLocation_All(get(unstructuredAddress), category, get(street), get(city), get(region), get(country), get(postalCode), put(field)));
     return field;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactInstantMessageField impl_IContactInstantMessageFieldFactory<D>::CreateInstantMessage(hstring_ref userName) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactInstantMessageField impl_IContactInstantMessageFieldFactory<D>::CreateInstantMessage(hstring_view userName) const
 {
     Windows::ApplicationModel::Contacts::ContactInstantMessageField field { nullptr };
     check_hresult(WINRT_SHIM(IContactInstantMessageFieldFactory)->abi_CreateInstantMessage_Default(get(userName), put(field)));
     return field;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactInstantMessageField impl_IContactInstantMessageFieldFactory<D>::CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactInstantMessageField impl_IContactInstantMessageFieldFactory<D>::CreateInstantMessage(hstring_view userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
 {
     Windows::ApplicationModel::Contacts::ContactInstantMessageField field { nullptr };
     check_hresult(WINRT_SHIM(IContactInstantMessageFieldFactory)->abi_CreateInstantMessage_Category(get(userName), category, put(field)));
     return field;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::ContactInstantMessageField impl_IContactInstantMessageFieldFactory<D>::CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref service, hstring_ref displayText, const Windows::Foundation::Uri & verb) const
+template <typename D> Windows::ApplicationModel::Contacts::ContactInstantMessageField impl_IContactInstantMessageFieldFactory<D>::CreateInstantMessage(hstring_view userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_view service, hstring_view displayText, const Windows::Foundation::Uri & verb) const
 {
     Windows::ApplicationModel::Contacts::ContactInstantMessageField field { nullptr };
     check_hresult(WINRT_SHIM(IContactInstantMessageFieldFactory)->abi_CreateInstantMessage_All(get(userName), category, get(service), get(displayText), get(verb), put(field)));
@@ -8340,7 +8340,7 @@ template <typename D> hstring impl_IContactPicker<D>::CommitButtonText() const
     return value;
 }
 
-template <typename D> void impl_IContactPicker<D>::CommitButtonText(hstring_ref value) const
+template <typename D> void impl_IContactPicker<D>::CommitButtonText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContactPicker)->put_CommitButtonText(get(value)));
 }
@@ -8432,15 +8432,15 @@ inline ContactEmail::ContactEmail() :
     ContactEmail(activate_instance<ContactEmail>())
 {}
 
-inline ContactField::ContactField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type) :
+inline ContactField::ContactField(hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type) :
     ContactField(get_activation_factory<ContactField, IContactFieldFactory>().CreateField(value, type))
 {}
 
-inline ContactField::ContactField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
+inline ContactField::ContactField(hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
     ContactField(get_activation_factory<ContactField, IContactFieldFactory>().CreateField(value, type, category))
 {}
 
-inline ContactField::ContactField(hstring_ref name, hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
+inline ContactField::ContactField(hstring_view name, hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
     ContactField(get_activation_factory<ContactField, IContactFieldFactory>().CreateField(name, value, type, category))
 {}
 
@@ -8448,15 +8448,15 @@ inline ContactFieldFactory::ContactFieldFactory() :
     ContactFieldFactory(activate_instance<ContactFieldFactory>())
 {}
 
-inline ContactInstantMessageField::ContactInstantMessageField(hstring_ref userName) :
+inline ContactInstantMessageField::ContactInstantMessageField(hstring_view userName) :
     ContactInstantMessageField(get_activation_factory<ContactInstantMessageField, IContactInstantMessageFieldFactory>().CreateInstantMessage(userName))
 {}
 
-inline ContactInstantMessageField::ContactInstantMessageField(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
+inline ContactInstantMessageField::ContactInstantMessageField(hstring_view userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
     ContactInstantMessageField(get_activation_factory<ContactInstantMessageField, IContactInstantMessageFieldFactory>().CreateInstantMessage(userName, category))
 {}
 
-inline ContactInstantMessageField::ContactInstantMessageField(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref service, hstring_ref displayText, const Windows::Foundation::Uri & verb) :
+inline ContactInstantMessageField::ContactInstantMessageField(hstring_view userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_view service, hstring_view displayText, const Windows::Foundation::Uri & verb) :
     ContactInstantMessageField(get_activation_factory<ContactInstantMessageField, IContactInstantMessageFieldFactory>().CreateInstantMessage(userName, category, service, displayText, verb))
 {}
 
@@ -8489,15 +8489,15 @@ inline hstring ContactLaunchActionVerbs::VideoCall()
     return get_activation_factory<ContactLaunchActionVerbs, IContactLaunchActionVerbsStatics>().VideoCall();
 }
 
-inline ContactLocationField::ContactLocationField(hstring_ref unstructuredAddress) :
+inline ContactLocationField::ContactLocationField(hstring_view unstructuredAddress) :
     ContactLocationField(get_activation_factory<ContactLocationField, IContactLocationFieldFactory>().CreateLocation(unstructuredAddress))
 {}
 
-inline ContactLocationField::ContactLocationField(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
+inline ContactLocationField::ContactLocationField(hstring_view unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) :
     ContactLocationField(get_activation_factory<ContactLocationField, IContactLocationFieldFactory>().CreateLocation(unstructuredAddress, category))
 {}
 
-inline ContactLocationField::ContactLocationField(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref street, hstring_ref city, hstring_ref region, hstring_ref country, hstring_ref postalCode) :
+inline ContactLocationField::ContactLocationField(hstring_view unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_view street, hstring_view city, hstring_view region, hstring_view country, hstring_view postalCode) :
     ContactLocationField(get_activation_factory<ContactLocationField, IContactLocationFieldFactory>().CreateLocation(unstructuredAddress, category, street, city, region, country, postalCode))
 {}
 
@@ -8608,11 +8608,11 @@ inline ContactQueryOptions::ContactQueryOptions() :
     ContactQueryOptions(activate_instance<ContactQueryOptions>())
 {}
 
-inline ContactQueryOptions::ContactQueryOptions(hstring_ref text) :
+inline ContactQueryOptions::ContactQueryOptions(hstring_view text) :
     ContactQueryOptions(get_activation_factory<ContactQueryOptions, IContactQueryOptionsFactory>().CreateWithText(text))
 {}
 
-inline ContactQueryOptions::ContactQueryOptions(hstring_ref text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) :
+inline ContactQueryOptions::ContactQueryOptions(hstring_view text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) :
     ContactQueryOptions(get_activation_factory<ContactQueryOptions, IContactQueryOptionsFactory>().CreateWithTextAndFields(text, fields))
 {}
 
@@ -8648,7 +8648,7 @@ inline hstring KnownContactField::InstantMessage()
     return get_activation_factory<KnownContactField, IKnownContactFieldStatics>().InstantMessage();
 }
 
-inline Windows::ApplicationModel::Contacts::ContactFieldType KnownContactField::ConvertNameToType(hstring_ref name)
+inline Windows::ApplicationModel::Contacts::ContactFieldType KnownContactField::ConvertNameToType(hstring_view name)
 {
     return get_activation_factory<KnownContactField, IKnownContactFieldStatics>().ConvertNameToType(name);
 }

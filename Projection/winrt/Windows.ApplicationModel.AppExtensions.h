@@ -519,7 +519,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
 
 namespace Windows::ApplicationModel::AppExtensions {
 
-template <typename D> Windows::ApplicationModel::AppExtensions::AppExtensionCatalog impl_IAppExtensionCatalogStatics<D>::Open(hstring_ref appExtensionName) const
+template <typename D> Windows::ApplicationModel::AppExtensions::AppExtensionCatalog impl_IAppExtensionCatalogStatics<D>::Open(hstring_view appExtensionName) const
 {
     Windows::ApplicationModel::AppExtensions::AppExtensionCatalog value { nullptr };
     check_hresult(WINRT_SHIM(IAppExtensionCatalogStatics)->abi_Open(get(appExtensionName), put(value)));
@@ -533,7 +533,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppExtensionCatalog<D>::RequestRemovePackageAsync(hstring_ref packageFullName) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppExtensionCatalog<D>::RequestRemovePackageAsync(hstring_view packageFullName) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppExtensionCatalog)->abi_RequestRemovePackageAsync(get(packageFullName), put(operation)));
@@ -758,7 +758,7 @@ template <typename D> Windows::ApplicationModel::Package impl_IAppExtensionPacka
     return value;
 }
 
-inline Windows::ApplicationModel::AppExtensions::AppExtensionCatalog AppExtensionCatalog::Open(hstring_ref appExtensionName)
+inline Windows::ApplicationModel::AppExtensions::AppExtensionCatalog AppExtensionCatalog::Open(hstring_view appExtensionName)
 {
     return get_activation_factory<AppExtensionCatalog, IAppExtensionCatalogStatics>().Open(appExtensionName);
 }

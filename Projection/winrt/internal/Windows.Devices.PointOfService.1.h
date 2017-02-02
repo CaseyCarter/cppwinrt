@@ -757,7 +757,7 @@ struct WINRT_EBO impl_IBarcodeScanner
     Windows::Foundation::IAsyncOperation<bool> IsSymbologySupportedAsync(uint32_t barcodeSymbology) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> RetrieveStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
     Windows::Foundation::Collections::IVectorView<hstring> GetSupportedProfiles() const;
-    bool IsProfileSupported(hstring_ref profile) const;
+    bool IsProfileSupported(hstring_view profile) const;
     event_token StatusUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::BarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs> & handler) const;
     using StatusUpdated_revoker = event_revoker<IBarcodeScanner>;
     StatusUpdated_revoker StatusUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::BarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs> & handler) const;
@@ -817,7 +817,7 @@ template <typename D>
 struct WINRT_EBO impl_IBarcodeScannerStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> GetDefaultAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
@@ -996,7 +996,7 @@ template <typename D>
 struct WINRT_EBO impl_ICashDrawerStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> GetDefaultAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
@@ -1028,7 +1028,7 @@ struct WINRT_EBO impl_IClaimedBarcodeScanner
     Windows::Foundation::IAsyncAction SetActiveSymbologiesAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & symbologies) const;
     Windows::Foundation::IAsyncAction ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
     Windows::Foundation::IAsyncAction UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const;
-    Windows::Foundation::IAsyncAction SetActiveProfileAsync(hstring_ref profile) const;
+    Windows::Foundation::IAsyncAction SetActiveProfileAsync(hstring_view profile) const;
     event_token DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> & handler) const;
     using DataReceived_revoker = event_revoker<IClaimedBarcodeScanner>;
     DataReceived_revoker DataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> & handler) const;
@@ -1110,7 +1110,7 @@ struct WINRT_EBO impl_IClaimedMagneticStripeReader
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> RetrieveDeviceAuthenticationDataAsync() const;
     Windows::Foundation::IAsyncAction AuthenticateDeviceAsync(array_ref<const uint8_t> responseToken) const;
     Windows::Foundation::IAsyncAction DeAuthenticateDeviceAsync(array_ref<const uint8_t> responseToken) const;
-    Windows::Foundation::IAsyncAction UpdateKeyAsync(hstring_ref key, hstring_ref keyName) const;
+    Windows::Foundation::IAsyncAction UpdateKeyAsync(hstring_view key, hstring_view keyName) const;
     Windows::Foundation::IAsyncAction ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
     Windows::Foundation::IAsyncAction UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const;
     event_token BankCardDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> & handler) const;
@@ -1211,7 +1211,7 @@ struct WINRT_EBO impl_ICommonClaimedPosPrinterStation
     bool IsHeadCleaning() const;
     bool IsPaperEmpty() const;
     bool IsReadyToPrint() const;
-    bool ValidateData(hstring_ref data) const;
+    bool ValidateData(hstring_view data) const;
 };
 
 template <typename D>
@@ -1368,7 +1368,7 @@ template <typename D>
 struct WINRT_EBO impl_IMagneticStripeReaderStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> GetDefaultAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
@@ -1436,8 +1436,8 @@ struct WINRT_EBO impl_IPosPrinterCharacterSetIdsStatics
 template <typename D>
 struct WINRT_EBO impl_IPosPrinterJob
 {
-    void Print(hstring_ref data) const;
-    void PrintLine(hstring_ref data) const;
+    void Print(hstring_view data) const;
+    void PrintLine(hstring_view data) const;
     void PrintLine() const;
     Windows::Foundation::IAsyncOperation<bool> ExecuteAsync() const;
 };
@@ -1451,7 +1451,7 @@ template <typename D>
 struct WINRT_EBO impl_IPosPrinterStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> GetDefaultAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
@@ -1479,9 +1479,9 @@ struct WINRT_EBO impl_IReceiptOrSlipJob
     void SetCustomAlignedBitmap(uint32_t bitmapNumber, const Windows::Graphics::Imaging::BitmapFrame & bitmap, uint32_t alignmentDistance) const;
     void SetCustomAlignedBitmap(uint32_t bitmapNumber, const Windows::Graphics::Imaging::BitmapFrame & bitmap, uint32_t alignmentDistance, uint32_t width) const;
     void PrintSavedBitmap(uint32_t bitmapNumber) const;
-    void DrawRuledLine(hstring_ref positionList, Windows::Devices::PointOfService::PosPrinterLineDirection lineDirection, uint32_t lineWidth, Windows::Devices::PointOfService::PosPrinterLineStyle lineStyle, uint32_t lineColor) const;
-    void PrintBarcode(hstring_ref data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, Windows::Devices::PointOfService::PosPrinterAlignment alignment) const;
-    void PrintBarcodeCustomAlign(hstring_ref data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, uint32_t alignmentDistance) const;
+    void DrawRuledLine(hstring_view positionList, Windows::Devices::PointOfService::PosPrinterLineDirection lineDirection, uint32_t lineWidth, Windows::Devices::PointOfService::PosPrinterLineStyle lineStyle, uint32_t lineColor) const;
+    void PrintBarcode(hstring_view data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, Windows::Devices::PointOfService::PosPrinterAlignment alignment) const;
+    void PrintBarcodeCustomAlign(hstring_view data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, uint32_t alignmentDistance) const;
     void PrintBitmap(const Windows::Graphics::Imaging::BitmapFrame & bitmap, Windows::Devices::PointOfService::PosPrinterAlignment alignment) const;
     void PrintBitmap(const Windows::Graphics::Imaging::BitmapFrame & bitmap, Windows::Devices::PointOfService::PosPrinterAlignment alignment, uint32_t width) const;
     void PrintCustomAlignedBitmap(const Windows::Graphics::Imaging::BitmapFrame & bitmap, uint32_t alignmentDistance) const;

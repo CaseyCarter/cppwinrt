@@ -3262,7 +3262,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetAccelerat
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics<D>::SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics<D>::SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetAcceleratorKey(get(element), get(value)));
 }
@@ -3281,7 +3281,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetAccessKey
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics<D>::SetAccessKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics<D>::SetAccessKey(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetAccessKey(get(element), get(value)));
 }
@@ -3300,7 +3300,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetAutomatio
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics<D>::SetAutomationId(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics<D>::SetAutomationId(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetAutomationId(get(element), get(value)));
 }
@@ -3319,7 +3319,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetHelpText(
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics<D>::SetHelpText(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics<D>::SetHelpText(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetHelpText(get(element), get(value)));
 }
@@ -3357,7 +3357,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetItemStatu
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics<D>::SetItemStatus(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics<D>::SetItemStatus(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetItemStatus(get(element), get(value)));
 }
@@ -3376,7 +3376,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetItemType(
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics<D>::SetItemType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics<D>::SetItemType(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetItemType(get(element), get(value)));
 }
@@ -3414,7 +3414,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetName(cons
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics<D>::SetName(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics<D>::SetName(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetName(get(element), get(value)));
 }
@@ -3575,7 +3575,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics4<D>::GetLocalize
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics4<D>::SetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics4<D>::SetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics4)->abi_SetLocalizedLandmarkType(get(element), get(value)));
 }
@@ -3632,7 +3632,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics5<D>::GetFullDesc
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics5<D>::SetFullDescription(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics5<D>::SetFullDescription(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_SetFullDescription(get(element), get(value)));
 }
@@ -3651,7 +3651,7 @@ template <typename D> hstring impl_IAutomationPropertiesStatics5<D>::GetLocalize
     return value;
 }
 
-template <typename D> void impl_IAutomationPropertiesStatics5<D>::SetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IAutomationPropertiesStatics5<D>::SetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_SetLocalizedControlType(get(element), get(value)));
 }
@@ -4435,7 +4435,7 @@ inline hstring AutomationProperties::GetAcceleratorKey(const Windows::UI::Xaml::
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetAcceleratorKey(element);
 }
 
-inline void AutomationProperties::SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetAcceleratorKey(element, value);
 }
@@ -4450,7 +4450,7 @@ inline hstring AutomationProperties::GetAccessKey(const Windows::UI::Xaml::Depen
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetAccessKey(element);
 }
 
-inline void AutomationProperties::SetAccessKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetAccessKey(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetAccessKey(element, value);
 }
@@ -4465,7 +4465,7 @@ inline hstring AutomationProperties::GetAutomationId(const Windows::UI::Xaml::De
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetAutomationId(element);
 }
 
-inline void AutomationProperties::SetAutomationId(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetAutomationId(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetAutomationId(element, value);
 }
@@ -4480,7 +4480,7 @@ inline hstring AutomationProperties::GetHelpText(const Windows::UI::Xaml::Depend
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetHelpText(element);
 }
 
-inline void AutomationProperties::SetHelpText(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetHelpText(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetHelpText(element, value);
 }
@@ -4510,7 +4510,7 @@ inline hstring AutomationProperties::GetItemStatus(const Windows::UI::Xaml::Depe
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetItemStatus(element);
 }
 
-inline void AutomationProperties::SetItemStatus(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetItemStatus(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetItemStatus(element, value);
 }
@@ -4525,7 +4525,7 @@ inline hstring AutomationProperties::GetItemType(const Windows::UI::Xaml::Depend
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetItemType(element);
 }
 
-inline void AutomationProperties::SetItemType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetItemType(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetItemType(element, value);
 }
@@ -4555,7 +4555,7 @@ inline hstring AutomationProperties::GetName(const Windows::UI::Xaml::Dependency
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().GetName(element);
 }
 
-inline void AutomationProperties::SetName(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetName(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().SetName(element, value);
 }
@@ -4680,7 +4680,7 @@ inline hstring AutomationProperties::GetLocalizedLandmarkType(const Windows::UI:
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics4>().GetLocalizedLandmarkType(element);
 }
 
-inline void AutomationProperties::SetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics4>().SetLocalizedLandmarkType(element, value);
 }
@@ -4725,7 +4725,7 @@ inline hstring AutomationProperties::GetFullDescription(const Windows::UI::Xaml:
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetFullDescription(element);
 }
 
-inline void AutomationProperties::SetFullDescription(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetFullDescription(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().SetFullDescription(element, value);
 }
@@ -4740,7 +4740,7 @@ inline hstring AutomationProperties::GetLocalizedControlType(const Windows::UI::
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetLocalizedControlType(element);
 }
 
-inline void AutomationProperties::SetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void AutomationProperties::SetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().SetLocalizedControlType(element, value);
 }

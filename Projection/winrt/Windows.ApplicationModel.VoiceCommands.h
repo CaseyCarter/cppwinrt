@@ -887,7 +887,7 @@ template <typename D> hstring impl_IVoiceCommandDefinition<D>::Name() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandDefinition<D>::SetPhraseListAsync(hstring_ref phraseListName, const Windows::Foundation::Collections::IIterable<hstring> & phraseList) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandDefinition<D>::SetPhraseListAsync(hstring_view phraseListName, const Windows::Foundation::Collections::IIterable<hstring> & phraseList) const
 {
     Windows::Foundation::IAsyncAction updateAction;
     check_hresult(WINRT_SHIM(IVoiceCommandDefinition)->abi_SetPhraseListAsync(get(phraseListName), get(phraseList), put(updateAction)));
@@ -901,7 +901,7 @@ template <typename D> hstring impl_IVoiceCommandContentTile<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IVoiceCommandContentTile<D>::Title(hstring_ref value) const
+template <typename D> void impl_IVoiceCommandContentTile<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVoiceCommandContentTile)->put_Title(get(value)));
 }
@@ -913,7 +913,7 @@ template <typename D> hstring impl_IVoiceCommandContentTile<D>::TextLine1() cons
     return value;
 }
 
-template <typename D> void impl_IVoiceCommandContentTile<D>::TextLine1(hstring_ref value) const
+template <typename D> void impl_IVoiceCommandContentTile<D>::TextLine1(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVoiceCommandContentTile)->put_TextLine1(get(value)));
 }
@@ -925,7 +925,7 @@ template <typename D> hstring impl_IVoiceCommandContentTile<D>::TextLine2() cons
     return value;
 }
 
-template <typename D> void impl_IVoiceCommandContentTile<D>::TextLine2(hstring_ref value) const
+template <typename D> void impl_IVoiceCommandContentTile<D>::TextLine2(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVoiceCommandContentTile)->put_TextLine2(get(value)));
 }
@@ -937,7 +937,7 @@ template <typename D> hstring impl_IVoiceCommandContentTile<D>::TextLine3() cons
     return value;
 }
 
-template <typename D> void impl_IVoiceCommandContentTile<D>::TextLine3(hstring_ref value) const
+template <typename D> void impl_IVoiceCommandContentTile<D>::TextLine3(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVoiceCommandContentTile)->put_TextLine3(get(value)));
 }
@@ -973,7 +973,7 @@ template <typename D> hstring impl_IVoiceCommandContentTile<D>::AppLaunchArgumen
     return value;
 }
 
-template <typename D> void impl_IVoiceCommandContentTile<D>::AppLaunchArgument(hstring_ref value) const
+template <typename D> void impl_IVoiceCommandContentTile<D>::AppLaunchArgument(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVoiceCommandContentTile)->put_AppLaunchArgument(get(value)));
 }
@@ -997,7 +997,7 @@ template <typename D> hstring impl_IVoiceCommandUserMessage<D>::DisplayMessage()
     return value;
 }
 
-template <typename D> void impl_IVoiceCommandUserMessage<D>::DisplayMessage(hstring_ref value) const
+template <typename D> void impl_IVoiceCommandUserMessage<D>::DisplayMessage(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVoiceCommandUserMessage)->put_DisplayMessage(get(value)));
 }
@@ -1009,7 +1009,7 @@ template <typename D> hstring impl_IVoiceCommandUserMessage<D>::SpokenMessage() 
     return value;
 }
 
-template <typename D> void impl_IVoiceCommandUserMessage<D>::SpokenMessage(hstring_ref value) const
+template <typename D> void impl_IVoiceCommandUserMessage<D>::SpokenMessage(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVoiceCommandUserMessage)->put_SpokenMessage(get(value)));
 }
@@ -1202,7 +1202,7 @@ template <typename D> hstring impl_IVoiceCommandResponse<D>::AppLaunchArgument()
     return value;
 }
 
-template <typename D> void impl_IVoiceCommandResponse<D>::AppLaunchArgument(hstring_ref value) const
+template <typename D> void impl_IVoiceCommandResponse<D>::AppLaunchArgument(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVoiceCommandResponse)->put_AppLaunchArgument(get(value)));
 }

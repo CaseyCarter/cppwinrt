@@ -458,7 +458,7 @@ template <typename D> hstring impl_IMessageDialog<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IMessageDialog<D>::Title(hstring_ref value) const
+template <typename D> void impl_IMessageDialog<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMessageDialog)->put_Title(get(value)));
 }
@@ -501,7 +501,7 @@ template <typename D> hstring impl_IMessageDialog<D>::Content() const
     return value;
 }
 
-template <typename D> void impl_IMessageDialog<D>::Content(hstring_ref value) const
+template <typename D> void impl_IMessageDialog<D>::Content(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMessageDialog)->put_Content(get(value)));
 }
@@ -525,14 +525,14 @@ template <typename D> void impl_IMessageDialog<D>::Options(Windows::UI::Popups::
     check_hresult(WINRT_SHIM(IMessageDialog)->put_Options(value));
 }
 
-template <typename D> Windows::UI::Popups::MessageDialog impl_IMessageDialogFactory<D>::Create(hstring_ref content) const
+template <typename D> Windows::UI::Popups::MessageDialog impl_IMessageDialogFactory<D>::Create(hstring_view content) const
 {
     Windows::UI::Popups::MessageDialog messageDialog { nullptr };
     check_hresult(WINRT_SHIM(IMessageDialogFactory)->abi_Create(get(content), put(messageDialog)));
     return messageDialog;
 }
 
-template <typename D> Windows::UI::Popups::MessageDialog impl_IMessageDialogFactory<D>::CreateWithTitle(hstring_ref content, hstring_ref title) const
+template <typename D> Windows::UI::Popups::MessageDialog impl_IMessageDialogFactory<D>::CreateWithTitle(hstring_view content, hstring_view title) const
 {
     Windows::UI::Popups::MessageDialog messageDialog { nullptr };
     check_hresult(WINRT_SHIM(IMessageDialogFactory)->abi_CreateWithTitle(get(content), get(title), put(messageDialog)));
@@ -546,7 +546,7 @@ template <typename D> hstring impl_IUICommand<D>::Label() const
     return value;
 }
 
-template <typename D> void impl_IUICommand<D>::Label(hstring_ref value) const
+template <typename D> void impl_IUICommand<D>::Label(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IUICommand)->put_Label(get(value)));
 }
@@ -575,21 +575,21 @@ template <typename D> void impl_IUICommand<D>::Id(const Windows::IInspectable & 
     check_hresult(WINRT_SHIM(IUICommand)->put_Id(get(value)));
 }
 
-template <typename D> Windows::UI::Popups::UICommand impl_IUICommandFactory<D>::Create(hstring_ref label) const
+template <typename D> Windows::UI::Popups::UICommand impl_IUICommandFactory<D>::Create(hstring_view label) const
 {
     Windows::UI::Popups::UICommand instance { nullptr };
     check_hresult(WINRT_SHIM(IUICommandFactory)->abi_Create(get(label), put(instance)));
     return instance;
 }
 
-template <typename D> Windows::UI::Popups::UICommand impl_IUICommandFactory<D>::CreateWithHandler(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action) const
+template <typename D> Windows::UI::Popups::UICommand impl_IUICommandFactory<D>::CreateWithHandler(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action) const
 {
     Windows::UI::Popups::UICommand instance { nullptr };
     check_hresult(WINRT_SHIM(IUICommandFactory)->abi_CreateWithHandler(get(label), get(action), put(instance)));
     return instance;
 }
 
-template <typename D> Windows::UI::Popups::UICommand impl_IUICommandFactory<D>::CreateWithHandlerAndId(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) const
+template <typename D> Windows::UI::Popups::UICommand impl_IUICommandFactory<D>::CreateWithHandlerAndId(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) const
 {
     Windows::UI::Popups::UICommand instance { nullptr };
     check_hresult(WINRT_SHIM(IUICommandFactory)->abi_CreateWithHandlerAndId(get(label), get(action), get(commandId), put(instance)));
@@ -624,11 +624,11 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::UI::Popups::
     return asyncOperation;
 }
 
-inline MessageDialog::MessageDialog(hstring_ref content) :
+inline MessageDialog::MessageDialog(hstring_view content) :
     MessageDialog(get_activation_factory<MessageDialog, IMessageDialogFactory>().Create(content))
 {}
 
-inline MessageDialog::MessageDialog(hstring_ref content, hstring_ref title) :
+inline MessageDialog::MessageDialog(hstring_view content, hstring_view title) :
     MessageDialog(get_activation_factory<MessageDialog, IMessageDialogFactory>().CreateWithTitle(content, title))
 {}
 
@@ -640,15 +640,15 @@ inline UICommand::UICommand() :
     UICommand(activate_instance<UICommand>())
 {}
 
-inline UICommand::UICommand(hstring_ref label) :
+inline UICommand::UICommand(hstring_view label) :
     UICommand(get_activation_factory<UICommand, IUICommandFactory>().Create(label))
 {}
 
-inline UICommand::UICommand(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action) :
+inline UICommand::UICommand(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action) :
     UICommand(get_activation_factory<UICommand, IUICommandFactory>().CreateWithHandler(label, action))
 {}
 
-inline UICommand::UICommand(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) :
+inline UICommand::UICommand(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) :
     UICommand(get_activation_factory<UICommand, IUICommandFactory>().CreateWithHandlerAndId(label, action, commandId))
 {}
 

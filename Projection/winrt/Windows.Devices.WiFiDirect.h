@@ -797,7 +797,7 @@ template <typename D> hstring impl_IWiFiDirectDeviceStatics<D>::GetDeviceSelecto
     return deviceSelector;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> impl_IWiFiDirectDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> impl_IWiFiDirectDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> asyncOp;
     check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics)->abi_FromIdAsync(get(deviceId), put(asyncOp)));
@@ -811,7 +811,7 @@ template <typename D> hstring impl_IWiFiDirectDeviceStatics2<D>::GetDeviceSelect
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> impl_IWiFiDirectDeviceStatics2<D>::FromIdAsync(hstring_ref deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> impl_IWiFiDirectDeviceStatics2<D>::FromIdAsync(hstring_view deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> result;
     check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics2)->abi_FromIdAsync(get(deviceId), get(connectionParameters), put(result)));
@@ -887,7 +887,7 @@ template <typename D> hstring impl_IWiFiDirectLegacySettings<D>::Ssid() const
     return value;
 }
 
-template <typename D> void impl_IWiFiDirectLegacySettings<D>::Ssid(hstring_ref value) const
+template <typename D> void impl_IWiFiDirectLegacySettings<D>::Ssid(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWiFiDirectLegacySettings)->put_Ssid(get(value)));
 }
@@ -1138,7 +1138,7 @@ inline hstring WiFiDirectDevice::GetDeviceSelector()
     return get_activation_factory<WiFiDirectDevice, IWiFiDirectDeviceStatics>().GetDeviceSelector();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> WiFiDirectDevice::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> WiFiDirectDevice::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<WiFiDirectDevice, IWiFiDirectDeviceStatics>().FromIdAsync(deviceId);
 }
@@ -1148,7 +1148,7 @@ inline hstring WiFiDirectDevice::GetDeviceSelector(Windows::Devices::WiFiDirect:
     return get_activation_factory<WiFiDirectDevice, IWiFiDirectDeviceStatics2>().GetDeviceSelector(type);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> WiFiDirectDevice::FromIdAsync(hstring_ref deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> WiFiDirectDevice::FromIdAsync(hstring_view deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters)
 {
     return get_activation_factory<WiFiDirectDevice, IWiFiDirectDeviceStatics2>().FromIdAsync(deviceId, connectionParameters);
 }

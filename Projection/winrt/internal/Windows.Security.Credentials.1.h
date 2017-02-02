@@ -147,7 +147,7 @@ namespace Windows::Security::Credentials {
 template <typename D>
 struct WINRT_EBO impl_ICredentialFactory
 {
-    Windows::Security::Credentials::PasswordCredential CreatePasswordCredential(hstring_ref resource, hstring_ref userName, hstring_ref password) const;
+    Windows::Security::Credentials::PasswordCredential CreatePasswordCredential(hstring_view resource, hstring_view userName, hstring_view password) const;
 };
 
 template <typename D>
@@ -173,9 +173,9 @@ struct WINRT_EBO impl_IKeyCredentialManagerStatics
 {
     Windows::Foundation::IAsyncOperation<bool> IsSupportedAsync() const;
     Windows::Foundation::IAsyncAction RenewAttestationAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> RequestCreateAsync(hstring_ref name, Windows::Security::Credentials::KeyCredentialCreationOption option) const;
-    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> OpenAsync(hstring_ref name) const;
-    Windows::Foundation::IAsyncAction DeleteAsync(hstring_ref name) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> RequestCreateAsync(hstring_view name, Windows::Security::Credentials::KeyCredentialCreationOption option) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> OpenAsync(hstring_view name) const;
+    Windows::Foundation::IAsyncAction DeleteAsync(hstring_view name) const;
 };
 
 template <typename D>
@@ -196,11 +196,11 @@ template <typename D>
 struct WINRT_EBO impl_IPasswordCredential
 {
     hstring Resource() const;
-    void Resource(hstring_ref resource) const;
+    void Resource(hstring_view resource) const;
     hstring UserName() const;
-    void UserName(hstring_ref userName) const;
+    void UserName(hstring_view userName) const;
     hstring Password() const;
-    void Password(hstring_ref password) const;
+    void Password(hstring_view password) const;
     void RetrievePassword() const;
     Windows::Foundation::Collections::IPropertySet Properties() const;
 };
@@ -210,9 +210,9 @@ struct WINRT_EBO impl_IPasswordVault
 {
     void Add(const Windows::Security::Credentials::PasswordCredential & credential) const;
     void Remove(const Windows::Security::Credentials::PasswordCredential & credential) const;
-    Windows::Security::Credentials::PasswordCredential Retrieve(hstring_ref resource, hstring_ref userName) const;
-    Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByResource(hstring_ref resource) const;
-    Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByUserName(hstring_ref userName) const;
+    Windows::Security::Credentials::PasswordCredential Retrieve(hstring_view resource, hstring_view userName) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByResource(hstring_view resource) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByUserName(hstring_view userName) const;
     Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> RetrieveAll() const;
 };
 
@@ -231,13 +231,13 @@ struct WINRT_EBO impl_IWebAccount2
     Windows::Foundation::Collections::IMapView<hstring, hstring> Properties() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize) const;
     Windows::Foundation::IAsyncAction SignOutAsync() const;
-    Windows::Foundation::IAsyncAction SignOutAsync(hstring_ref clientId) const;
+    Windows::Foundation::IAsyncAction SignOutAsync(hstring_view clientId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IWebAccountFactory
 {
-    Windows::Security::Credentials::WebAccount CreateWebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_ref userName, Windows::Security::Credentials::WebAccountState state) const;
+    Windows::Security::Credentials::WebAccount CreateWebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_view userName, Windows::Security::Credentials::WebAccountState state) const;
 };
 
 template <typename D>
@@ -264,7 +264,7 @@ struct WINRT_EBO impl_IWebAccountProvider3
 template <typename D>
 struct WINRT_EBO impl_IWebAccountProviderFactory
 {
-    Windows::Security::Credentials::WebAccountProvider CreateWebAccountProvider(hstring_ref id, hstring_ref displayName, const Windows::Foundation::Uri & iconUri) const;
+    Windows::Security::Credentials::WebAccountProvider CreateWebAccountProvider(hstring_view id, hstring_view displayName, const Windows::Foundation::Uri & iconUri) const;
 };
 
 }

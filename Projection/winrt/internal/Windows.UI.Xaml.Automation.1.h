@@ -577,31 +577,31 @@ struct WINRT_EBO impl_IAutomationPropertiesStatics
 {
     Windows::UI::Xaml::DependencyProperty AcceleratorKeyProperty() const;
     hstring GetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
     Windows::UI::Xaml::DependencyProperty AccessKeyProperty() const;
     hstring GetAccessKey(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetAccessKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetAccessKey(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
     Windows::UI::Xaml::DependencyProperty AutomationIdProperty() const;
     hstring GetAutomationId(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetAutomationId(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetAutomationId(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
     Windows::UI::Xaml::DependencyProperty HelpTextProperty() const;
     hstring GetHelpText(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetHelpText(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetHelpText(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
     Windows::UI::Xaml::DependencyProperty IsRequiredForFormProperty() const;
     bool GetIsRequiredForForm(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetIsRequiredForForm(const Windows::UI::Xaml::DependencyObject & element, bool value) const;
     Windows::UI::Xaml::DependencyProperty ItemStatusProperty() const;
     hstring GetItemStatus(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetItemStatus(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetItemStatus(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
     Windows::UI::Xaml::DependencyProperty ItemTypeProperty() const;
     hstring GetItemType(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetItemType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetItemType(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
     Windows::UI::Xaml::DependencyProperty LabeledByProperty() const;
     Windows::UI::Xaml::UIElement GetLabeledBy(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetLabeledBy(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::UIElement & value) const;
     Windows::UI::Xaml::DependencyProperty NameProperty() const;
     hstring GetName(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetName(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetName(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
     Windows::UI::Xaml::DependencyProperty LiveSettingProperty() const;
     Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting GetLiveSetting(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetLiveSetting(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting value) const;
@@ -641,7 +641,7 @@ struct WINRT_EBO impl_IAutomationPropertiesStatics4
     void SetLandmarkType(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType value) const;
     Windows::UI::Xaml::DependencyProperty LocalizedLandmarkTypeProperty() const;
     hstring GetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
 };
 
 template <typename D>
@@ -655,10 +655,10 @@ struct WINRT_EBO impl_IAutomationPropertiesStatics5
     void SetIsDataValidForForm(const Windows::UI::Xaml::DependencyObject & element, bool value) const;
     Windows::UI::Xaml::DependencyProperty FullDescriptionProperty() const;
     hstring GetFullDescription(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetFullDescription(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetFullDescription(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
     Windows::UI::Xaml::DependencyProperty LocalizedControlTypeProperty() const;
     hstring GetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
     Windows::UI::Xaml::DependencyProperty DescribedByProperty() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> GetDescribedBy(const Windows::UI::Xaml::DependencyObject & element) const;
     Windows::UI::Xaml::DependencyProperty FlowsToProperty() const;

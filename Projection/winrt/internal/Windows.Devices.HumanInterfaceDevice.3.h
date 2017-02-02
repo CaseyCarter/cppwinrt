@@ -34,7 +34,7 @@ struct WINRT_EBO HidDevice :
     HidDevice(std::nullptr_t) noexcept {}
     static hstring GetDeviceSelector(uint16_t usagePage, uint16_t usageId);
     static hstring GetDeviceSelector(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> FromIdAsync(hstring_ref deviceId, Windows::Storage::FileAccessMode accessMode);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> FromIdAsync(hstring_view deviceId, Windows::Storage::FileAccessMode accessMode);
 };
 
 struct WINRT_EBO HidFeatureReport :

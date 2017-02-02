@@ -1004,7 +1004,7 @@ template <typename D> hstring impl_IHtmlPrintDocumentSource<D>::PageRange() cons
     return pstrPageRange;
 }
 
-template <typename D> bool impl_IHtmlPrintDocumentSource<D>::TrySetPageRange(hstring_ref strPageRange) const
+template <typename D> bool impl_IHtmlPrintDocumentSource<D>::TrySetPageRange(hstring_view strPageRange) const
 {
     bool pfSuccess {};
     check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->abi_TrySetPageRange(get(strPageRange), &pfSuccess));

@@ -1259,8 +1259,8 @@ struct WINRT_EBO impl_IConnectedAnimationService
     void DefaultDuration(const Windows::Foundation::TimeSpan & value) const;
     Windows::UI::Composition::CompositionEasingFunction DefaultEasingFunction() const;
     void DefaultEasingFunction(const Windows::UI::Composition::CompositionEasingFunction & value) const;
-    Windows::UI::Xaml::Media::Animation::ConnectedAnimation PrepareToAnimate(hstring_ref key, const Windows::UI::Xaml::UIElement & source) const;
-    Windows::UI::Xaml::Media::Animation::ConnectedAnimation GetAnimation(hstring_ref key) const;
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimation PrepareToAnimate(hstring_view key, const Windows::UI::Xaml::UIElement & source) const;
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimation GetAnimation(hstring_view key) const;
 };
 
 template <typename D>
@@ -1397,7 +1397,7 @@ template <typename D>
 struct WINRT_EBO impl_IDragItemThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
 };
 
 template <typename D>
@@ -1410,7 +1410,7 @@ template <typename D>
 struct WINRT_EBO impl_IDragOverThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
     double ToOffset() const;
     void ToOffset(double value) const;
     Windows::UI::Xaml::Controls::Primitives::AnimationDirection Direction() const;
@@ -1434,11 +1434,11 @@ template <typename D>
 struct WINRT_EBO impl_IDrillInThemeAnimation
 {
     hstring EntranceTargetName() const;
-    void EntranceTargetName(hstring_ref value) const;
+    void EntranceTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject EntranceTarget() const;
     void EntranceTarget(const Windows::UI::Xaml::DependencyObject & value) const;
     hstring ExitTargetName() const;
-    void ExitTargetName(hstring_ref value) const;
+    void ExitTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject ExitTarget() const;
     void ExitTarget(const Windows::UI::Xaml::DependencyObject & value) const;
 };
@@ -1456,11 +1456,11 @@ template <typename D>
 struct WINRT_EBO impl_IDrillOutThemeAnimation
 {
     hstring EntranceTargetName() const;
-    void EntranceTargetName(hstring_ref value) const;
+    void EntranceTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject EntranceTarget() const;
     void EntranceTarget(const Windows::UI::Xaml::DependencyObject & value) const;
     hstring ExitTargetName() const;
-    void ExitTargetName(hstring_ref value) const;
+    void ExitTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject ExitTarget() const;
     void ExitTarget(const Windows::UI::Xaml::DependencyObject & value) const;
 };
@@ -1478,7 +1478,7 @@ template <typename D>
 struct WINRT_EBO impl_IDropTargetItemThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
 };
 
 template <typename D>
@@ -1623,7 +1623,7 @@ template <typename D>
 struct WINRT_EBO impl_IFadeInThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
 };
 
 template <typename D>
@@ -1636,7 +1636,7 @@ template <typename D>
 struct WINRT_EBO impl_IFadeOutThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
 };
 
 template <typename D>
@@ -1708,7 +1708,7 @@ template <typename D>
 struct WINRT_EBO impl_INavigationTransitionInfoOverrides
 {
     hstring GetNavigationStateCore() const;
-    void SetNavigationStateCore(hstring_ref navigationState) const;
+    void SetNavigationStateCore(hstring_view navigationState) const;
 };
 
 template <typename D>
@@ -1825,7 +1825,7 @@ template <typename D>
 struct WINRT_EBO impl_IPointerDownThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
 };
 
 template <typename D>
@@ -1838,7 +1838,7 @@ template <typename D>
 struct WINRT_EBO impl_IPointerUpThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
 };
 
 template <typename D>
@@ -1851,7 +1851,7 @@ template <typename D>
 struct WINRT_EBO impl_IPopInThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
     double FromHorizontalOffset() const;
     void FromHorizontalOffset(double value) const;
     double FromVerticalOffset() const;
@@ -1870,7 +1870,7 @@ template <typename D>
 struct WINRT_EBO impl_IPopOutThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
 };
 
 template <typename D>
@@ -1948,7 +1948,7 @@ template <typename D>
 struct WINRT_EBO impl_IRepositionThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
     double FromHorizontalOffset() const;
     void FromHorizontalOffset(double value) const;
     double FromVerticalOffset() const;
@@ -2034,15 +2034,15 @@ template <typename D>
 struct WINRT_EBO impl_ISplitCloseThemeAnimation
 {
     hstring OpenedTargetName() const;
-    void OpenedTargetName(hstring_ref value) const;
+    void OpenedTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject OpenedTarget() const;
     void OpenedTarget(const Windows::UI::Xaml::DependencyObject & value) const;
     hstring ClosedTargetName() const;
-    void ClosedTargetName(hstring_ref value) const;
+    void ClosedTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject ClosedTarget() const;
     void ClosedTarget(const Windows::UI::Xaml::DependencyObject & value) const;
     hstring ContentTargetName() const;
-    void ContentTargetName(hstring_ref value) const;
+    void ContentTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject ContentTarget() const;
     void ContentTarget(const Windows::UI::Xaml::DependencyObject & value) const;
     double OpenedLength() const;
@@ -2077,15 +2077,15 @@ template <typename D>
 struct WINRT_EBO impl_ISplitOpenThemeAnimation
 {
     hstring OpenedTargetName() const;
-    void OpenedTargetName(hstring_ref value) const;
+    void OpenedTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject OpenedTarget() const;
     void OpenedTarget(const Windows::UI::Xaml::DependencyObject & value) const;
     hstring ClosedTargetName() const;
-    void ClosedTargetName(hstring_ref value) const;
+    void ClosedTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject ClosedTarget() const;
     void ClosedTarget(const Windows::UI::Xaml::DependencyObject & value) const;
     hstring ContentTargetName() const;
-    void ContentTargetName(hstring_ref value) const;
+    void ContentTargetName(hstring_view value) const;
     Windows::UI::Xaml::DependencyObject ContentTarget() const;
     void ContentTarget(const Windows::UI::Xaml::DependencyObject & value) const;
     double OpenedLength() const;
@@ -2136,10 +2136,10 @@ struct WINRT_EBO impl_IStoryboardStatics
 {
     Windows::UI::Xaml::DependencyProperty TargetPropertyProperty() const;
     hstring GetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element) const;
-    void SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref path) const;
+    void SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view path) const;
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
     hstring GetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element) const;
-    void SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref name) const;
+    void SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view name) const;
     void SetTarget(const Windows::UI::Xaml::Media::Animation::Timeline & timeline, const Windows::UI::Xaml::DependencyObject & target) const;
 };
 
@@ -2152,7 +2152,7 @@ template <typename D>
 struct WINRT_EBO impl_ISwipeBackThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
     double FromHorizontalOffset() const;
     void FromHorizontalOffset(double value) const;
     double FromVerticalOffset() const;
@@ -2171,7 +2171,7 @@ template <typename D>
 struct WINRT_EBO impl_ISwipeHintThemeAnimation
 {
     hstring TargetName() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
     double ToHorizontalOffset() const;
     void ToHorizontalOffset(double value) const;
     double ToVerticalOffset() const;

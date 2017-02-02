@@ -163,7 +163,7 @@ struct WINRT_EBO impl_IWiFiDirectService
     void SessionDeferred(event_token token) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo> GetProvisioningInfoAsync(Windows::Devices::WiFiDirect::Services::WiFiDirectServiceConfigurationMethod selectedConfigurationMethod) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> ConnectAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> ConnectAsync(hstring_ref pin) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> ConnectAsync(hstring_view pin) const;
 };
 
 template <typename D>
@@ -199,7 +199,7 @@ struct WINRT_EBO impl_IWiFiDirectServiceAdvertiser
     AdvertisementStatusChanged_revoker AdvertisementStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::IInspectable> & handler) const;
     void AdvertisementStatusChanged(event_token token) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> ConnectAsync(const Windows::Devices::Enumeration::DeviceInformation & deviceInfo) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> ConnectAsync(const Windows::Devices::Enumeration::DeviceInformation & deviceInfo, hstring_ref pin) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> ConnectAsync(const Windows::Devices::Enumeration::DeviceInformation & deviceInfo, hstring_view pin) const;
     void Start() const;
     void Stop() const;
 };
@@ -207,7 +207,7 @@ struct WINRT_EBO impl_IWiFiDirectServiceAdvertiser
 template <typename D>
 struct WINRT_EBO impl_IWiFiDirectServiceAdvertiserFactory
 {
-    Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser CreateWiFiDirectServiceAdvertiser(hstring_ref serviceName) const;
+    Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser CreateWiFiDirectServiceAdvertiser(hstring_view serviceName) const;
 };
 
 template <typename D>
@@ -277,9 +277,9 @@ struct WINRT_EBO impl_IWiFiDirectServiceSessionRequestedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IWiFiDirectServiceStatics
 {
-    hstring GetSelector(hstring_ref serviceName) const;
-    hstring GetSelector(hstring_ref serviceName, const Windows::Storage::Streams::IBuffer & serviceInfoFilter) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectService> FromIdAsync(hstring_ref deviceId) const;
+    hstring GetSelector(hstring_view serviceName) const;
+    hstring GetSelector(hstring_view serviceName, const Windows::Storage::Streams::IBuffer & serviceInfoFilter) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectService> FromIdAsync(hstring_view deviceId) const;
 };
 
 }

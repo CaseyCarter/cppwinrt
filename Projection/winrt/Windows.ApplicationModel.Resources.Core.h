@@ -769,14 +769,14 @@ template <typename D> void impl_IResourceManager<D>::UnloadPriFiles(const Window
     check_hresult(WINRT_SHIM(IResourceManager)->abi_UnloadPriFiles(get(files)));
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::NamedResource> impl_IResourceManager2<D>::GetAllNamedResourcesForPackage(hstring_ref packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::NamedResource> impl_IResourceManager2<D>::GetAllNamedResourcesForPackage(hstring_view packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::NamedResource> table;
     check_hresult(WINRT_SHIM(IResourceManager2)->abi_GetAllNamedResourcesForPackage(get(packageName), get(resourceLayoutInfo), put(table)));
     return table;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceMap> impl_IResourceManager2<D>::GetAllSubtreesForPackage(hstring_ref packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceMap> impl_IResourceManager2<D>::GetAllSubtreesForPackage(hstring_view packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceMap> table;
     check_hresult(WINRT_SHIM(IResourceManager2)->abi_GetAllSubtreesForPackage(get(packageName), get(resourceLayoutInfo), put(table)));
@@ -790,7 +790,7 @@ template <typename D> Windows::ApplicationModel::Resources::Core::ResourceManage
     return value;
 }
 
-template <typename D> bool impl_IResourceManagerStatics<D>::IsResourceReference(hstring_ref resourceReference) const
+template <typename D> bool impl_IResourceManagerStatics<D>::IsResourceReference(hstring_view resourceReference) const
 {
     bool isReference {};
     check_hresult(WINRT_SHIM(IResourceManagerStatics)->abi_IsResourceReference(get(resourceReference), &isReference));
@@ -887,7 +887,7 @@ template <typename D> Windows::ApplicationModel::Resources::Core::ResourceContex
     return value;
 }
 
-template <typename D> void impl_IResourceContextStatics2<D>::SetGlobalQualifierValue(hstring_ref key, hstring_ref value) const
+template <typename D> void impl_IResourceContextStatics2<D>::SetGlobalQualifierValue(hstring_view key, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IResourceContextStatics2)->abi_SetGlobalQualifierValue(get(key), get(value)));
 }
@@ -909,7 +909,7 @@ template <typename D> Windows::ApplicationModel::Resources::Core::ResourceContex
     return loader;
 }
 
-template <typename D> void impl_IResourceContextStatics3<D>::SetGlobalQualifierValue(hstring_ref key, hstring_ref value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence) const
+template <typename D> void impl_IResourceContextStatics3<D>::SetGlobalQualifierValue(hstring_view key, hstring_view value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence) const
 {
     check_hresult(WINRT_SHIM(IResourceContextStatics3)->abi_SetGlobalQualifierValueWithPersistence(get(key), get(value), persistence));
 }
@@ -956,7 +956,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Sto
     return operation;
 }
 
-template <typename D> hstring impl_IResourceCandidate<D>::GetQualifierValue(hstring_ref qualifierName) const
+template <typename D> hstring impl_IResourceCandidate<D>::GetQualifierValue(hstring_view qualifierName) const
 {
     hstring value;
     check_hresult(WINRT_SHIM(IResourceCandidate)->abi_GetQualifierValue(get(qualifierName), put(value)));
@@ -1019,21 +1019,21 @@ template <typename D> Windows::Foundation::Uri impl_IResourceMap<D>::Uri() const
     return uri;
 }
 
-template <typename D> Windows::ApplicationModel::Resources::Core::ResourceCandidate impl_IResourceMap<D>::GetValue(hstring_ref resource) const
+template <typename D> Windows::ApplicationModel::Resources::Core::ResourceCandidate impl_IResourceMap<D>::GetValue(hstring_view resource) const
 {
     Windows::ApplicationModel::Resources::Core::ResourceCandidate value { nullptr };
     check_hresult(WINRT_SHIM(IResourceMap)->abi_GetValue(get(resource), put(value)));
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Resources::Core::ResourceCandidate impl_IResourceMap<D>::GetValue(hstring_ref resource, const Windows::ApplicationModel::Resources::Core::ResourceContext & context) const
+template <typename D> Windows::ApplicationModel::Resources::Core::ResourceCandidate impl_IResourceMap<D>::GetValue(hstring_view resource, const Windows::ApplicationModel::Resources::Core::ResourceContext & context) const
 {
     Windows::ApplicationModel::Resources::Core::ResourceCandidate value { nullptr };
     check_hresult(WINRT_SHIM(IResourceMap)->abi_GetValueForContext(get(resource), get(context), put(value)));
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Resources::Core::ResourceMap impl_IResourceMap<D>::GetSubtree(hstring_ref reference) const
+template <typename D> Windows::ApplicationModel::Resources::Core::ResourceMap impl_IResourceMap<D>::GetSubtree(hstring_view reference) const
 {
     Windows::ApplicationModel::Resources::Core::ResourceMap map { nullptr };
     check_hresult(WINRT_SHIM(IResourceMap)->abi_GetSubtree(get(reference), put(map)));
@@ -1054,7 +1054,7 @@ inline Windows::ApplicationModel::Resources::Core::ResourceContext ResourceConte
     return get_activation_factory<ResourceContext, IResourceContextStatics2>().GetForCurrentView();
 }
 
-inline void ResourceContext::SetGlobalQualifierValue(hstring_ref key, hstring_ref value)
+inline void ResourceContext::SetGlobalQualifierValue(hstring_view key, hstring_view value)
 {
     get_activation_factory<ResourceContext, IResourceContextStatics2>().SetGlobalQualifierValue(key, value);
 }
@@ -1074,7 +1074,7 @@ inline Windows::ApplicationModel::Resources::Core::ResourceContext ResourceConte
     return get_activation_factory<ResourceContext, IResourceContextStatics2>().GetForViewIndependentUse();
 }
 
-inline void ResourceContext::SetGlobalQualifierValue(hstring_ref key, hstring_ref value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence)
+inline void ResourceContext::SetGlobalQualifierValue(hstring_view key, hstring_view value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence)
 {
     get_activation_factory<ResourceContext, IResourceContextStatics3>().SetGlobalQualifierValue(key, value, persistence);
 }
@@ -1084,7 +1084,7 @@ inline Windows::ApplicationModel::Resources::Core::ResourceManager ResourceManag
     return get_activation_factory<ResourceManager, IResourceManagerStatics>().Current();
 }
 
-inline bool ResourceManager::IsResourceReference(hstring_ref resourceReference)
+inline bool ResourceManager::IsResourceReference(hstring_view resourceReference)
 {
     return get_activation_factory<ResourceManager, IResourceManagerStatics>().IsResourceReference(resourceReference);
 }

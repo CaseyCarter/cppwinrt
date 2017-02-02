@@ -171,7 +171,7 @@ struct WINRT_EBO impl_IResourceCandidate
     bool IsDefault() const;
     hstring ValueAsString() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetValueAsFileAsync() const;
-    hstring GetQualifierValue(hstring_ref qualifierName) const;
+    hstring GetQualifierValue(hstring_view qualifierName) const;
 };
 
 template <typename D>
@@ -202,7 +202,7 @@ template <typename D>
 struct WINRT_EBO impl_IResourceContextStatics2
 {
     Windows::ApplicationModel::Resources::Core::ResourceContext GetForCurrentView() const;
-    void SetGlobalQualifierValue(hstring_ref key, hstring_ref value) const;
+    void SetGlobalQualifierValue(hstring_view key, hstring_view value) const;
     void ResetGlobalQualifierValues() const;
     void ResetGlobalQualifierValues(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames) const;
     Windows::ApplicationModel::Resources::Core::ResourceContext GetForViewIndependentUse() const;
@@ -211,7 +211,7 @@ struct WINRT_EBO impl_IResourceContextStatics2
 template <typename D>
 struct WINRT_EBO impl_IResourceContextStatics3
 {
-    void SetGlobalQualifierValue(hstring_ref key, hstring_ref value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence) const;
+    void SetGlobalQualifierValue(hstring_view key, hstring_view value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence) const;
 };
 
 template <typename D>
@@ -227,24 +227,24 @@ struct WINRT_EBO impl_IResourceManager
 template <typename D>
 struct WINRT_EBO impl_IResourceManager2
 {
-    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::NamedResource> GetAllNamedResourcesForPackage(hstring_ref packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const;
-    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceMap> GetAllSubtreesForPackage(hstring_ref packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::NamedResource> GetAllNamedResourcesForPackage(hstring_view packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceMap> GetAllSubtreesForPackage(hstring_view packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IResourceManagerStatics
 {
     Windows::ApplicationModel::Resources::Core::ResourceManager Current() const;
-    bool IsResourceReference(hstring_ref resourceReference) const;
+    bool IsResourceReference(hstring_view resourceReference) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IResourceMap
 {
     Windows::Foundation::Uri Uri() const;
-    Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_ref resource) const;
-    Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_ref resource, const Windows::ApplicationModel::Resources::Core::ResourceContext & context) const;
-    Windows::ApplicationModel::Resources::Core::ResourceMap GetSubtree(hstring_ref reference) const;
+    Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_view resource) const;
+    Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_view resource, const Windows::ApplicationModel::Resources::Core::ResourceContext & context) const;
+    Windows::ApplicationModel::Resources::Core::ResourceMap GetSubtree(hstring_view reference) const;
 };
 
 template <typename D>

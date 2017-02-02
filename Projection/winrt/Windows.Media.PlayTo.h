@@ -1734,7 +1734,7 @@ template <typename D> hstring impl_IPlayToReceiver<D>::FriendlyName() const
     return value;
 }
 
-template <typename D> void impl_IPlayToReceiver<D>::FriendlyName(hstring_ref value) const
+template <typename D> void impl_IPlayToReceiver<D>::FriendlyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPlayToReceiver)->put_FriendlyName(get(value)));
 }
@@ -1979,7 +1979,7 @@ template <typename D> Windows::Foundation::DateTime impl_IPlayToSourceRequest<D>
     return value;
 }
 
-template <typename D> void impl_IPlayToSourceRequest<D>::DisplayErrorString(hstring_ref errorString) const
+template <typename D> void impl_IPlayToSourceRequest<D>::DisplayErrorString(hstring_view errorString) const
 {
     check_hresult(WINRT_SHIM(IPlayToSourceRequest)->abi_DisplayErrorString(get(errorString)));
 }

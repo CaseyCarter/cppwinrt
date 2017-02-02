@@ -3608,12 +3608,12 @@ template <typename D> void impl_IHttpContentHeaderCollection<D>::LastModified(co
     check_hresult(WINRT_SHIM(IHttpContentHeaderCollection)->put_LastModified(get(value)));
 }
 
-template <typename D> void impl_IHttpContentHeaderCollection<D>::Append(hstring_ref name, hstring_ref value) const
+template <typename D> void impl_IHttpContentHeaderCollection<D>::Append(hstring_view name, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentHeaderCollection)->abi_Append(get(name), get(value)));
 }
 
-template <typename D> bool impl_IHttpContentHeaderCollection<D>::TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const
+template <typename D> bool impl_IHttpContentHeaderCollection<D>::TryAppendWithoutValidation(hstring_view name, hstring_view value) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpContentHeaderCollection)->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
@@ -3700,7 +3700,7 @@ template <typename D> hstring impl_IHttpRequestHeaderCollection<D>::From() const
     return value;
 }
 
-template <typename D> void impl_IHttpRequestHeaderCollection<D>::From(hstring_ref value) const
+template <typename D> void impl_IHttpRequestHeaderCollection<D>::From(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpRequestHeaderCollection)->put_From(get(value)));
 }
@@ -3791,12 +3791,12 @@ template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValueCol
     return value;
 }
 
-template <typename D> void impl_IHttpRequestHeaderCollection<D>::Append(hstring_ref name, hstring_ref value) const
+template <typename D> void impl_IHttpRequestHeaderCollection<D>::Append(hstring_view name, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpRequestHeaderCollection)->abi_Append(get(name), get(value)));
 }
 
-template <typename D> bool impl_IHttpRequestHeaderCollection<D>::TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const
+template <typename D> bool impl_IHttpRequestHeaderCollection<D>::TryAppendWithoutValidation(hstring_view name, hstring_view value) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpRequestHeaderCollection)->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
@@ -3893,12 +3893,12 @@ template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValueColle
     return value;
 }
 
-template <typename D> void impl_IHttpResponseHeaderCollection<D>::Append(hstring_ref name, hstring_ref value) const
+template <typename D> void impl_IHttpResponseHeaderCollection<D>::Append(hstring_view name, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpResponseHeaderCollection)->abi_Append(get(name), get(value)));
 }
 
-template <typename D> bool impl_IHttpResponseHeaderCollection<D>::TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const
+template <typename D> bool impl_IHttpResponseHeaderCollection<D>::TryAppendWithoutValidation(hstring_view name, hstring_view value) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpResponseHeaderCollection)->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
@@ -3953,40 +3953,40 @@ template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::Sha
     check_hresult(WINRT_SHIM(IHttpCacheDirectiveHeaderValueCollection)->put_SharedMaxAge(get(value)));
 }
 
-template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpCacheDirectiveHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpCacheDirectiveHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpCacheDirectiveHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpCacheDirectiveHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl_IHttpChallengeHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl_IHttpChallengeHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpChallengeHeaderValue challengeHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpChallengeHeaderValueStatics)->abi_Parse(get(input), put(challengeHeaderValue)));
     return challengeHeaderValue;
 }
 
-template <typename D> bool impl_IHttpChallengeHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue) const
+template <typename D> bool impl_IHttpChallengeHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpChallengeHeaderValueStatics)->abi_TryParse(get(input), put(challengeHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl_IHttpChallengeHeaderValueFactory<D>::CreateFromScheme(hstring_ref scheme) const
+template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl_IHttpChallengeHeaderValueFactory<D>::CreateFromScheme(hstring_view scheme) const
 {
     Windows::Web::Http::Headers::HttpChallengeHeaderValue challengeHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpChallengeHeaderValueFactory)->abi_CreateFromScheme(get(scheme), put(challengeHeaderValue)));
     return challengeHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl_IHttpChallengeHeaderValueFactory<D>::CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const
+template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl_IHttpChallengeHeaderValueFactory<D>::CreateFromSchemeWithToken(hstring_view scheme, hstring_view token) const
 {
     Windows::Web::Http::Headers::HttpChallengeHeaderValue challengeHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpChallengeHeaderValueFactory)->abi_CreateFromSchemeWithToken(get(scheme), get(token), put(challengeHeaderValue)));
@@ -4014,40 +4014,40 @@ template <typename D> hstring impl_IHttpChallengeHeaderValue<D>::Token() const
     return value;
 }
 
-template <typename D> void impl_IHttpChallengeHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpChallengeHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpChallengeHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpChallengeHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpChallengeHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpChallengeHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpCredentialsHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpCredentialsHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue credentialsHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpCredentialsHeaderValueStatics)->abi_Parse(get(input), put(credentialsHeaderValue)));
     return credentialsHeaderValue;
 }
 
-template <typename D> bool impl_IHttpCredentialsHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue) const
+template <typename D> bool impl_IHttpCredentialsHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpCredentialsHeaderValueStatics)->abi_TryParse(get(input), put(credentialsHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpCredentialsHeaderValueFactory<D>::CreateFromScheme(hstring_ref scheme) const
+template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpCredentialsHeaderValueFactory<D>::CreateFromScheme(hstring_view scheme) const
 {
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue credentialsHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpCredentialsHeaderValueFactory)->abi_CreateFromScheme(get(scheme), put(credentialsHeaderValue)));
     return credentialsHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpCredentialsHeaderValueFactory<D>::CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const
+template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpCredentialsHeaderValueFactory<D>::CreateFromSchemeWithToken(hstring_view scheme, hstring_view token) const
 {
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue credentialsHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpCredentialsHeaderValueFactory)->abi_CreateFromSchemeWithToken(get(scheme), get(token), put(credentialsHeaderValue)));
@@ -4075,21 +4075,21 @@ template <typename D> hstring impl_IHttpCredentialsHeaderValue<D>::Token() const
     return value;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue impl_IHttpConnectionOptionHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue impl_IHttpConnectionOptionHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue connectionOptionHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpConnectionOptionHeaderValueStatics)->abi_Parse(get(input), put(connectionOptionHeaderValue)));
     return connectionOptionHeaderValue;
 }
 
-template <typename D> bool impl_IHttpConnectionOptionHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue) const
+template <typename D> bool impl_IHttpConnectionOptionHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpConnectionOptionHeaderValueStatics)->abi_TryParse(get(input), put(connectionOptionHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue impl_IHttpConnectionOptionHeaderValueFactory<D>::Create(hstring_ref token) const
+template <typename D> Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue impl_IHttpConnectionOptionHeaderValueFactory<D>::Create(hstring_view token) const
 {
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue connectionOptionHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpConnectionOptionHeaderValueFactory)->abi_Create(get(token), put(connectionOptionHeaderValue)));
@@ -4103,33 +4103,33 @@ template <typename D> hstring impl_IHttpConnectionOptionHeaderValue<D>::Token() 
     return value;
 }
 
-template <typename D> void impl_IHttpConnectionOptionHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpConnectionOptionHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpConnectionOptionHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpConnectionOptionHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpConnectionOptionHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpConnectionOptionHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpContentCodingHeaderValue impl_IHttpContentCodingHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpContentCodingHeaderValue impl_IHttpContentCodingHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpContentCodingHeaderValue contentCodingHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpContentCodingHeaderValueStatics)->abi_Parse(get(input), put(contentCodingHeaderValue)));
     return contentCodingHeaderValue;
 }
 
-template <typename D> bool impl_IHttpContentCodingHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue) const
+template <typename D> bool impl_IHttpContentCodingHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpContentCodingHeaderValueStatics)->abi_TryParse(get(input), put(contentCodingHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpContentCodingHeaderValue impl_IHttpContentCodingHeaderValueFactory<D>::Create(hstring_ref contentCoding) const
+template <typename D> Windows::Web::Http::Headers::HttpContentCodingHeaderValue impl_IHttpContentCodingHeaderValueFactory<D>::Create(hstring_view contentCoding) const
 {
     Windows::Web::Http::Headers::HttpContentCodingHeaderValue contentCodingHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpContentCodingHeaderValueFactory)->abi_Create(get(contentCoding), put(contentCodingHeaderValue)));
@@ -4143,33 +4143,33 @@ template <typename D> hstring impl_IHttpContentCodingHeaderValue<D>::ContentCodi
     return value;
 }
 
-template <typename D> void impl_IHttpContentCodingHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpContentCodingHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpContentCodingHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpContentCodingHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpContentCodingHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpContentCodingHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpContentDispositionHeaderValue impl_IHttpContentDispositionHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpContentDispositionHeaderValue impl_IHttpContentDispositionHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpContentDispositionHeaderValue contentDispositionHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpContentDispositionHeaderValueStatics)->abi_Parse(get(input), put(contentDispositionHeaderValue)));
     return contentDispositionHeaderValue;
 }
 
-template <typename D> bool impl_IHttpContentDispositionHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue) const
+template <typename D> bool impl_IHttpContentDispositionHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpContentDispositionHeaderValueStatics)->abi_TryParse(get(input), put(contentDispositionHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpContentDispositionHeaderValue impl_IHttpContentDispositionHeaderValueFactory<D>::Create(hstring_ref dispositionType) const
+template <typename D> Windows::Web::Http::Headers::HttpContentDispositionHeaderValue impl_IHttpContentDispositionHeaderValueFactory<D>::Create(hstring_view dispositionType) const
 {
     Windows::Web::Http::Headers::HttpContentDispositionHeaderValue contentDispositionHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpContentDispositionHeaderValueFactory)->abi_Create(get(dispositionType), put(contentDispositionHeaderValue)));
@@ -4183,7 +4183,7 @@ template <typename D> hstring impl_IHttpContentDispositionHeaderValue<D>::Dispos
     return value;
 }
 
-template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::DispositionType(hstring_ref value) const
+template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::DispositionType(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentDispositionHeaderValue)->put_DispositionType(get(value)));
 }
@@ -4195,7 +4195,7 @@ template <typename D> hstring impl_IHttpContentDispositionHeaderValue<D>::FileNa
     return value;
 }
 
-template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::FileName(hstring_ref value) const
+template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::FileName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentDispositionHeaderValue)->put_FileName(get(value)));
 }
@@ -4207,7 +4207,7 @@ template <typename D> hstring impl_IHttpContentDispositionHeaderValue<D>::FileNa
     return value;
 }
 
-template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::FileNameStar(hstring_ref value) const
+template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::FileNameStar(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentDispositionHeaderValue)->put_FileNameStar(get(value)));
 }
@@ -4219,7 +4219,7 @@ template <typename D> hstring impl_IHttpContentDispositionHeaderValue<D>::Name()
     return value;
 }
 
-template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::Name(hstring_ref value) const
+template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentDispositionHeaderValue)->put_Name(get(value)));
 }
@@ -4243,14 +4243,14 @@ template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::Size(cons
     check_hresult(WINRT_SHIM(IHttpContentDispositionHeaderValue)->put_Size(get(value)));
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpContentRangeHeaderValue impl_IHttpContentRangeHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpContentRangeHeaderValue impl_IHttpContentRangeHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue contentRangeHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpContentRangeHeaderValueStatics)->abi_Parse(get(input), put(contentRangeHeaderValue)));
     return contentRangeHeaderValue;
 }
 
-template <typename D> bool impl_IHttpContentRangeHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue) const
+template <typename D> bool impl_IHttpContentRangeHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpContentRangeHeaderValueStatics)->abi_TryParse(get(input), put(contentRangeHeaderValue), &succeeded));
@@ -4306,33 +4306,33 @@ template <typename D> hstring impl_IHttpContentRangeHeaderValue<D>::Unit() const
     return value;
 }
 
-template <typename D> void impl_IHttpContentRangeHeaderValue<D>::Unit(hstring_ref value) const
+template <typename D> void impl_IHttpContentRangeHeaderValue<D>::Unit(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentRangeHeaderValue)->put_Unit(get(value)));
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValue impl_IHttpCookiePairHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValue impl_IHttpCookiePairHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpCookiePairHeaderValue cookiePairHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpCookiePairHeaderValueStatics)->abi_Parse(get(input), put(cookiePairHeaderValue)));
     return cookiePairHeaderValue;
 }
 
-template <typename D> bool impl_IHttpCookiePairHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue) const
+template <typename D> bool impl_IHttpCookiePairHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpCookiePairHeaderValueStatics)->abi_TryParse(get(input), put(cookiePairHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValue impl_IHttpCookiePairHeaderValueFactory<D>::CreateFromName(hstring_ref name) const
+template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValue impl_IHttpCookiePairHeaderValueFactory<D>::CreateFromName(hstring_view name) const
 {
     Windows::Web::Http::Headers::HttpCookiePairHeaderValue cookiePairHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpCookiePairHeaderValueFactory)->abi_CreateFromName(get(name), put(cookiePairHeaderValue)));
     return cookiePairHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValue impl_IHttpCookiePairHeaderValueFactory<D>::CreateFromNameWithValue(hstring_ref name, hstring_ref value) const
+template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValue impl_IHttpCookiePairHeaderValueFactory<D>::CreateFromNameWithValue(hstring_view name, hstring_view value) const
 {
     Windows::Web::Http::Headers::HttpCookiePairHeaderValue cookiePairHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpCookiePairHeaderValueFactory)->abi_CreateFromNameWithValue(get(name), get(value), put(cookiePairHeaderValue)));
@@ -4353,31 +4353,31 @@ template <typename D> hstring impl_IHttpCookiePairHeaderValue<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_IHttpCookiePairHeaderValue<D>::Value(hstring_ref value) const
+template <typename D> void impl_IHttpCookiePairHeaderValue<D>::Value(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpCookiePairHeaderValue)->put_Value(get(value)));
 }
 
-template <typename D> void impl_IHttpCookiePairHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpCookiePairHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpCookiePairHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpCookiePairHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpCookiePairHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpCookiePairHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue impl_IHttpDateOrDeltaHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue impl_IHttpDateOrDeltaHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue dateOrDeltaHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpDateOrDeltaHeaderValueStatics)->abi_Parse(get(input), put(dateOrDeltaHeaderValue)));
     return dateOrDeltaHeaderValue;
 }
 
-template <typename D> bool impl_IHttpDateOrDeltaHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue) const
+template <typename D> bool impl_IHttpDateOrDeltaHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpDateOrDeltaHeaderValueStatics)->abi_TryParse(get(input), put(dateOrDeltaHeaderValue), &succeeded));
@@ -4398,28 +4398,28 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValue impl_IHttpExpectationHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValue impl_IHttpExpectationHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpExpectationHeaderValue expectationHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpExpectationHeaderValueStatics)->abi_Parse(get(input), put(expectationHeaderValue)));
     return expectationHeaderValue;
 }
 
-template <typename D> bool impl_IHttpExpectationHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue) const
+template <typename D> bool impl_IHttpExpectationHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpExpectationHeaderValueStatics)->abi_TryParse(get(input), put(expectationHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValue impl_IHttpExpectationHeaderValueFactory<D>::CreateFromName(hstring_ref name) const
+template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValue impl_IHttpExpectationHeaderValueFactory<D>::CreateFromName(hstring_view name) const
 {
     Windows::Web::Http::Headers::HttpExpectationHeaderValue expectationHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpExpectationHeaderValueFactory)->abi_CreateFromName(get(name), put(expectationHeaderValue)));
     return expectationHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValue impl_IHttpExpectationHeaderValueFactory<D>::CreateFromNameWithValue(hstring_ref name, hstring_ref value) const
+template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValue impl_IHttpExpectationHeaderValueFactory<D>::CreateFromNameWithValue(hstring_view name, hstring_view value) const
 {
     Windows::Web::Http::Headers::HttpExpectationHeaderValue expectationHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpExpectationHeaderValueFactory)->abi_CreateFromNameWithValue(get(name), get(value), put(expectationHeaderValue)));
@@ -4440,7 +4440,7 @@ template <typename D> hstring impl_IHttpExpectationHeaderValue<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_IHttpExpectationHeaderValue<D>::Value(hstring_ref value) const
+template <typename D> void impl_IHttpExpectationHeaderValue<D>::Value(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpExpectationHeaderValue)->put_Value(get(value)));
 }
@@ -4452,52 +4452,52 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Ht
     return value;
 }
 
-template <typename D> void impl_IHttpExpectationHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpExpectationHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpExpectationHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpExpectationHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpExpectationHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpExpectationHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> void impl_IHttpLanguageHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpLanguageHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpLanguageHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpLanguageHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpLanguageHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpLanguageHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue impl_IHttpLanguageRangeWithQualityHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue impl_IHttpLanguageRangeWithQualityHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue languageRangeWithQualityHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpLanguageRangeWithQualityHeaderValueStatics)->abi_Parse(get(input), put(languageRangeWithQualityHeaderValue)));
     return languageRangeWithQualityHeaderValue;
 }
 
-template <typename D> bool impl_IHttpLanguageRangeWithQualityHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue) const
+template <typename D> bool impl_IHttpLanguageRangeWithQualityHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpLanguageRangeWithQualityHeaderValueStatics)->abi_TryParse(get(input), put(languageRangeWithQualityHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue impl_IHttpLanguageRangeWithQualityHeaderValueFactory<D>::CreateFromLanguageRange(hstring_ref languageRange) const
+template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue impl_IHttpLanguageRangeWithQualityHeaderValueFactory<D>::CreateFromLanguageRange(hstring_view languageRange) const
 {
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue languageRangeWithQualityHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpLanguageRangeWithQualityHeaderValueFactory)->abi_CreateFromLanguageRange(get(languageRange), put(languageRangeWithQualityHeaderValue)));
     return languageRangeWithQualityHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue impl_IHttpLanguageRangeWithQualityHeaderValueFactory<D>::CreateFromLanguageRangeWithQuality(hstring_ref languageRange, double quality) const
+template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue impl_IHttpLanguageRangeWithQualityHeaderValueFactory<D>::CreateFromLanguageRangeWithQuality(hstring_view languageRange, double quality) const
 {
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue languageRangeWithQualityHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpLanguageRangeWithQualityHeaderValueFactory)->abi_CreateFromLanguageRangeWithQuality(get(languageRange), quality, put(languageRangeWithQualityHeaderValue)));
@@ -4518,33 +4518,33 @@ template <typename D> Windows::Foundation::IReference<double> impl_IHttpLanguage
     return value;
 }
 
-template <typename D> void impl_IHttpLanguageRangeWithQualityHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpLanguageRangeWithQualityHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpLanguageRangeWithQualityHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpLanguageRangeWithQualityHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpLanguageRangeWithQualityHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpLanguageRangeWithQualityHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpMediaTypeHeaderValue impl_IHttpMediaTypeHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpMediaTypeHeaderValue impl_IHttpMediaTypeHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeHeaderValue mediaTypeHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpMediaTypeHeaderValueStatics)->abi_Parse(get(input), put(mediaTypeHeaderValue)));
     return mediaTypeHeaderValue;
 }
 
-template <typename D> bool impl_IHttpMediaTypeHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue) const
+template <typename D> bool impl_IHttpMediaTypeHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpMediaTypeHeaderValueStatics)->abi_TryParse(get(input), put(mediaTypeHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpMediaTypeHeaderValue impl_IHttpMediaTypeHeaderValueFactory<D>::Create(hstring_ref mediaType) const
+template <typename D> Windows::Web::Http::Headers::HttpMediaTypeHeaderValue impl_IHttpMediaTypeHeaderValueFactory<D>::Create(hstring_view mediaType) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeHeaderValue mediaTypeHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpMediaTypeHeaderValueFactory)->abi_Create(get(mediaType), put(mediaTypeHeaderValue)));
@@ -4558,7 +4558,7 @@ template <typename D> hstring impl_IHttpMediaTypeHeaderValue<D>::CharSet() const
     return value;
 }
 
-template <typename D> void impl_IHttpMediaTypeHeaderValue<D>::CharSet(hstring_ref value) const
+template <typename D> void impl_IHttpMediaTypeHeaderValue<D>::CharSet(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpMediaTypeHeaderValue)->put_CharSet(get(value)));
 }
@@ -4570,7 +4570,7 @@ template <typename D> hstring impl_IHttpMediaTypeHeaderValue<D>::MediaType() con
     return value;
 }
 
-template <typename D> void impl_IHttpMediaTypeHeaderValue<D>::MediaType(hstring_ref value) const
+template <typename D> void impl_IHttpMediaTypeHeaderValue<D>::MediaType(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpMediaTypeHeaderValue)->put_MediaType(get(value)));
 }
@@ -4582,28 +4582,28 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Ht
     return value;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue impl_IHttpMediaTypeWithQualityHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue impl_IHttpMediaTypeWithQualityHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue mediaTypeWithQualityHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValueStatics)->abi_Parse(get(input), put(mediaTypeWithQualityHeaderValue)));
     return mediaTypeWithQualityHeaderValue;
 }
 
-template <typename D> bool impl_IHttpMediaTypeWithQualityHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue) const
+template <typename D> bool impl_IHttpMediaTypeWithQualityHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValueStatics)->abi_TryParse(get(input), put(mediaTypeWithQualityHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue impl_IHttpMediaTypeWithQualityHeaderValueFactory<D>::CreateFromMediaType(hstring_ref mediaType) const
+template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue impl_IHttpMediaTypeWithQualityHeaderValueFactory<D>::CreateFromMediaType(hstring_view mediaType) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue mediaTypeWithQualityHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValueFactory)->abi_CreateFromMediaType(get(mediaType), put(mediaTypeWithQualityHeaderValue)));
     return mediaTypeWithQualityHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue impl_IHttpMediaTypeWithQualityHeaderValueFactory<D>::CreateFromMediaTypeWithQuality(hstring_ref mediaType, double quality) const
+template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue impl_IHttpMediaTypeWithQualityHeaderValueFactory<D>::CreateFromMediaTypeWithQuality(hstring_view mediaType, double quality) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue mediaTypeWithQualityHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValueFactory)->abi_CreateFromMediaTypeWithQuality(get(mediaType), quality, put(mediaTypeWithQualityHeaderValue)));
@@ -4617,7 +4617,7 @@ template <typename D> hstring impl_IHttpMediaTypeWithQualityHeaderValue<D>::Char
     return value;
 }
 
-template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::CharSet(hstring_ref value) const
+template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::CharSet(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValue)->put_CharSet(get(value)));
 }
@@ -4629,7 +4629,7 @@ template <typename D> hstring impl_IHttpMediaTypeWithQualityHeaderValue<D>::Medi
     return value;
 }
 
-template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::MediaType(hstring_ref value) const
+template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::MediaType(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValue)->put_MediaType(get(value)));
 }
@@ -4653,52 +4653,52 @@ template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::Quality
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValue)->put_Quality(get(value)));
 }
 
-template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpMediaTypeWithQualityHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpMediaTypeWithQualityHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> void impl_IHttpMethodHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpMethodHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpMethodHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpMethodHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpMethodHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpMethodHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl_IHttpNameValueHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl_IHttpNameValueHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpNameValueHeaderValue nameValueHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpNameValueHeaderValueStatics)->abi_Parse(get(input), put(nameValueHeaderValue)));
     return nameValueHeaderValue;
 }
 
-template <typename D> bool impl_IHttpNameValueHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue) const
+template <typename D> bool impl_IHttpNameValueHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpNameValueHeaderValueStatics)->abi_TryParse(get(input), put(nameValueHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl_IHttpNameValueHeaderValueFactory<D>::CreateFromName(hstring_ref name) const
+template <typename D> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl_IHttpNameValueHeaderValueFactory<D>::CreateFromName(hstring_view name) const
 {
     Windows::Web::Http::Headers::HttpNameValueHeaderValue nameValueHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpNameValueHeaderValueFactory)->abi_CreateFromName(get(name), put(nameValueHeaderValue)));
     return nameValueHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl_IHttpNameValueHeaderValueFactory<D>::CreateFromNameWithValue(hstring_ref name, hstring_ref value) const
+template <typename D> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl_IHttpNameValueHeaderValueFactory<D>::CreateFromNameWithValue(hstring_view name, hstring_view value) const
 {
     Windows::Web::Http::Headers::HttpNameValueHeaderValue nameValueHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpNameValueHeaderValueFactory)->abi_CreateFromNameWithValue(get(name), get(value), put(nameValueHeaderValue)));
@@ -4719,33 +4719,33 @@ template <typename D> hstring impl_IHttpNameValueHeaderValue<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_IHttpNameValueHeaderValue<D>::Value(hstring_ref value) const
+template <typename D> void impl_IHttpNameValueHeaderValue<D>::Value(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpNameValueHeaderValue)->put_Value(get(value)));
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpProductHeaderValue productHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpProductHeaderValueStatics)->abi_Parse(get(input), put(productHeaderValue)));
     return productHeaderValue;
 }
 
-template <typename D> bool impl_IHttpProductHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue) const
+template <typename D> bool impl_IHttpProductHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpProductHeaderValueStatics)->abi_TryParse(get(input), put(productHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductHeaderValueFactory<D>::CreateFromName(hstring_ref productName) const
+template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductHeaderValueFactory<D>::CreateFromName(hstring_view productName) const
 {
     Windows::Web::Http::Headers::HttpProductHeaderValue productHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpProductHeaderValueFactory)->abi_CreateFromName(get(productName), put(productHeaderValue)));
     return productHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductHeaderValueFactory<D>::CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const
+template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductHeaderValueFactory<D>::CreateFromNameWithVersion(hstring_view productName, hstring_view productVersion) const
 {
     Windows::Web::Http::Headers::HttpProductHeaderValue productHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpProductHeaderValueFactory)->abi_CreateFromNameWithVersion(get(productName), get(productVersion), put(productHeaderValue)));
@@ -4766,28 +4766,28 @@ template <typename D> hstring impl_IHttpProductHeaderValue<D>::Version() const
     return value;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValue impl_IHttpProductInfoHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValue impl_IHttpProductInfoHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpProductInfoHeaderValue productInfoHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpProductInfoHeaderValueStatics)->abi_Parse(get(input), put(productInfoHeaderValue)));
     return productInfoHeaderValue;
 }
 
-template <typename D> bool impl_IHttpProductInfoHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue) const
+template <typename D> bool impl_IHttpProductInfoHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpProductInfoHeaderValueStatics)->abi_TryParse(get(input), put(productInfoHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValue impl_IHttpProductInfoHeaderValueFactory<D>::CreateFromComment(hstring_ref productComment) const
+template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValue impl_IHttpProductInfoHeaderValueFactory<D>::CreateFromComment(hstring_view productComment) const
 {
     Windows::Web::Http::Headers::HttpProductInfoHeaderValue productInfoHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpProductInfoHeaderValueFactory)->abi_CreateFromComment(get(productComment), put(productInfoHeaderValue)));
     return productInfoHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValue impl_IHttpProductInfoHeaderValueFactory<D>::CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const
+template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValue impl_IHttpProductInfoHeaderValueFactory<D>::CreateFromNameWithVersion(hstring_view productName, hstring_view productVersion) const
 {
     Windows::Web::Http::Headers::HttpProductInfoHeaderValue productInfoHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpProductInfoHeaderValueFactory)->abi_CreateFromNameWithVersion(get(productName), get(productVersion), put(productInfoHeaderValue)));
@@ -4808,40 +4808,40 @@ template <typename D> hstring impl_IHttpProductInfoHeaderValue<D>::Comment() con
     return value;
 }
 
-template <typename D> void impl_IHttpProductInfoHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpProductInfoHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpProductInfoHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpProductInfoHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpProductInfoHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpProductInfoHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue impl_IHttpContentCodingWithQualityHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue impl_IHttpContentCodingWithQualityHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue contentCodingWithQualityHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpContentCodingWithQualityHeaderValueStatics)->abi_Parse(get(input), put(contentCodingWithQualityHeaderValue)));
     return contentCodingWithQualityHeaderValue;
 }
 
-template <typename D> bool impl_IHttpContentCodingWithQualityHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue) const
+template <typename D> bool impl_IHttpContentCodingWithQualityHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpContentCodingWithQualityHeaderValueStatics)->abi_TryParse(get(input), put(contentCodingWithQualityHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue impl_IHttpContentCodingWithQualityHeaderValueFactory<D>::CreateFromValue(hstring_ref contentCoding) const
+template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue impl_IHttpContentCodingWithQualityHeaderValueFactory<D>::CreateFromValue(hstring_view contentCoding) const
 {
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue contentCodingWithQualityHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpContentCodingWithQualityHeaderValueFactory)->abi_CreateFromValue(get(contentCoding), put(contentCodingWithQualityHeaderValue)));
     return contentCodingWithQualityHeaderValue;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue impl_IHttpContentCodingWithQualityHeaderValueFactory<D>::CreateFromValueWithQuality(hstring_ref contentCoding, double quality) const
+template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue impl_IHttpContentCodingWithQualityHeaderValueFactory<D>::CreateFromValueWithQuality(hstring_view contentCoding, double quality) const
 {
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue contentCodingWithQualityHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpContentCodingWithQualityHeaderValueFactory)->abi_CreateFromValueWithQuality(get(contentCoding), quality, put(contentCodingWithQualityHeaderValue)));
@@ -4862,33 +4862,33 @@ template <typename D> Windows::Foundation::IReference<double> impl_IHttpContentC
     return value;
 }
 
-template <typename D> void impl_IHttpContentCodingWithQualityHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpContentCodingWithQualityHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpContentCodingWithQualityHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpContentCodingWithQualityHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpContentCodingWithQualityHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpContentCodingWithQualityHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpTransferCodingHeaderValue impl_IHttpTransferCodingHeaderValueStatics<D>::Parse(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpTransferCodingHeaderValue impl_IHttpTransferCodingHeaderValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValue transferCodingHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpTransferCodingHeaderValueStatics)->abi_Parse(get(input), put(transferCodingHeaderValue)));
     return transferCodingHeaderValue;
 }
 
-template <typename D> bool impl_IHttpTransferCodingHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue) const
+template <typename D> bool impl_IHttpTransferCodingHeaderValueStatics<D>::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpTransferCodingHeaderValueStatics)->abi_TryParse(get(input), put(transferCodingHeaderValue), &succeeded));
     return succeeded;
 }
 
-template <typename D> Windows::Web::Http::Headers::HttpTransferCodingHeaderValue impl_IHttpTransferCodingHeaderValueFactory<D>::Create(hstring_ref input) const
+template <typename D> Windows::Web::Http::Headers::HttpTransferCodingHeaderValue impl_IHttpTransferCodingHeaderValueFactory<D>::Create(hstring_view input) const
 {
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValue transferCodingHeaderValue { nullptr };
     check_hresult(WINRT_SHIM(IHttpTransferCodingHeaderValueFactory)->abi_Create(get(input), put(transferCodingHeaderValue)));
@@ -4909,92 +4909,92 @@ template <typename D> hstring impl_IHttpTransferCodingHeaderValue<D>::Value() co
     return value;
 }
 
-template <typename D> void impl_IHttpTransferCodingHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
+template <typename D> void impl_IHttpTransferCodingHeaderValueCollection<D>::ParseAdd(hstring_view input) const
 {
     check_hresult(WINRT_SHIM(IHttpTransferCodingHeaderValueCollection)->abi_ParseAdd(get(input)));
 }
 
-template <typename D> bool impl_IHttpTransferCodingHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
+template <typename D> bool impl_IHttpTransferCodingHeaderValueCollection<D>::TryParseAdd(hstring_view input) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(IHttpTransferCodingHeaderValueCollection)->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
-inline HttpChallengeHeaderValue::HttpChallengeHeaderValue(hstring_ref scheme) :
+inline HttpChallengeHeaderValue::HttpChallengeHeaderValue(hstring_view scheme) :
     HttpChallengeHeaderValue(get_activation_factory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueFactory>().CreateFromScheme(scheme))
 {}
 
-inline HttpChallengeHeaderValue::HttpChallengeHeaderValue(hstring_ref scheme, hstring_ref token) :
+inline HttpChallengeHeaderValue::HttpChallengeHeaderValue(hstring_view scheme, hstring_view token) :
     HttpChallengeHeaderValue(get_activation_factory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueFactory>().CreateFromSchemeWithToken(scheme, token))
 {}
 
-inline Windows::Web::Http::Headers::HttpChallengeHeaderValue HttpChallengeHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpChallengeHeaderValue HttpChallengeHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpChallengeHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue)
+inline bool HttpChallengeHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue)
 {
     return get_activation_factory<HttpChallengeHeaderValue, IHttpChallengeHeaderValueStatics>().TryParse(input, challengeHeaderValue);
 }
 
-inline HttpConnectionOptionHeaderValue::HttpConnectionOptionHeaderValue(hstring_ref token) :
+inline HttpConnectionOptionHeaderValue::HttpConnectionOptionHeaderValue(hstring_view token) :
     HttpConnectionOptionHeaderValue(get_activation_factory<HttpConnectionOptionHeaderValue, IHttpConnectionOptionHeaderValueFactory>().Create(token))
 {}
 
-inline Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue HttpConnectionOptionHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue HttpConnectionOptionHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpConnectionOptionHeaderValue, IHttpConnectionOptionHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpConnectionOptionHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue)
+inline bool HttpConnectionOptionHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue)
 {
     return get_activation_factory<HttpConnectionOptionHeaderValue, IHttpConnectionOptionHeaderValueStatics>().TryParse(input, connectionOptionHeaderValue);
 }
 
-inline HttpContentCodingHeaderValue::HttpContentCodingHeaderValue(hstring_ref contentCoding) :
+inline HttpContentCodingHeaderValue::HttpContentCodingHeaderValue(hstring_view contentCoding) :
     HttpContentCodingHeaderValue(get_activation_factory<HttpContentCodingHeaderValue, IHttpContentCodingHeaderValueFactory>().Create(contentCoding))
 {}
 
-inline Windows::Web::Http::Headers::HttpContentCodingHeaderValue HttpContentCodingHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpContentCodingHeaderValue HttpContentCodingHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpContentCodingHeaderValue, IHttpContentCodingHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpContentCodingHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue)
+inline bool HttpContentCodingHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue)
 {
     return get_activation_factory<HttpContentCodingHeaderValue, IHttpContentCodingHeaderValueStatics>().TryParse(input, contentCodingHeaderValue);
 }
 
-inline HttpContentCodingWithQualityHeaderValue::HttpContentCodingWithQualityHeaderValue(hstring_ref contentCoding) :
+inline HttpContentCodingWithQualityHeaderValue::HttpContentCodingWithQualityHeaderValue(hstring_view contentCoding) :
     HttpContentCodingWithQualityHeaderValue(get_activation_factory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueFactory>().CreateFromValue(contentCoding))
 {}
 
-inline HttpContentCodingWithQualityHeaderValue::HttpContentCodingWithQualityHeaderValue(hstring_ref contentCoding, double quality) :
+inline HttpContentCodingWithQualityHeaderValue::HttpContentCodingWithQualityHeaderValue(hstring_view contentCoding, double quality) :
     HttpContentCodingWithQualityHeaderValue(get_activation_factory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueFactory>().CreateFromValueWithQuality(contentCoding, quality))
 {}
 
-inline Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue HttpContentCodingWithQualityHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue HttpContentCodingWithQualityHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpContentCodingWithQualityHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue)
+inline bool HttpContentCodingWithQualityHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue)
 {
     return get_activation_factory<HttpContentCodingWithQualityHeaderValue, IHttpContentCodingWithQualityHeaderValueStatics>().TryParse(input, contentCodingWithQualityHeaderValue);
 }
 
-inline HttpContentDispositionHeaderValue::HttpContentDispositionHeaderValue(hstring_ref dispositionType) :
+inline HttpContentDispositionHeaderValue::HttpContentDispositionHeaderValue(hstring_view dispositionType) :
     HttpContentDispositionHeaderValue(get_activation_factory<HttpContentDispositionHeaderValue, IHttpContentDispositionHeaderValueFactory>().Create(dispositionType))
 {}
 
-inline Windows::Web::Http::Headers::HttpContentDispositionHeaderValue HttpContentDispositionHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpContentDispositionHeaderValue HttpContentDispositionHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpContentDispositionHeaderValue, IHttpContentDispositionHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpContentDispositionHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue)
+inline bool HttpContentDispositionHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue)
 {
     return get_activation_factory<HttpContentDispositionHeaderValue, IHttpContentDispositionHeaderValueStatics>().TryParse(input, contentDispositionHeaderValue);
 }
@@ -5015,194 +5015,194 @@ inline HttpContentRangeHeaderValue::HttpContentRangeHeaderValue(uint64_t from, u
     HttpContentRangeHeaderValue(get_activation_factory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueFactory>().CreateFromRangeWithLength(from, to, length))
 {}
 
-inline Windows::Web::Http::Headers::HttpContentRangeHeaderValue HttpContentRangeHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpContentRangeHeaderValue HttpContentRangeHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpContentRangeHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue)
+inline bool HttpContentRangeHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue)
 {
     return get_activation_factory<HttpContentRangeHeaderValue, IHttpContentRangeHeaderValueStatics>().TryParse(input, contentRangeHeaderValue);
 }
 
-inline HttpCookiePairHeaderValue::HttpCookiePairHeaderValue(hstring_ref name) :
+inline HttpCookiePairHeaderValue::HttpCookiePairHeaderValue(hstring_view name) :
     HttpCookiePairHeaderValue(get_activation_factory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueFactory>().CreateFromName(name))
 {}
 
-inline HttpCookiePairHeaderValue::HttpCookiePairHeaderValue(hstring_ref name, hstring_ref value) :
+inline HttpCookiePairHeaderValue::HttpCookiePairHeaderValue(hstring_view name, hstring_view value) :
     HttpCookiePairHeaderValue(get_activation_factory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueFactory>().CreateFromNameWithValue(name, value))
 {}
 
-inline Windows::Web::Http::Headers::HttpCookiePairHeaderValue HttpCookiePairHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpCookiePairHeaderValue HttpCookiePairHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpCookiePairHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue)
+inline bool HttpCookiePairHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue)
 {
     return get_activation_factory<HttpCookiePairHeaderValue, IHttpCookiePairHeaderValueStatics>().TryParse(input, cookiePairHeaderValue);
 }
 
-inline HttpCredentialsHeaderValue::HttpCredentialsHeaderValue(hstring_ref scheme) :
+inline HttpCredentialsHeaderValue::HttpCredentialsHeaderValue(hstring_view scheme) :
     HttpCredentialsHeaderValue(get_activation_factory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueFactory>().CreateFromScheme(scheme))
 {}
 
-inline HttpCredentialsHeaderValue::HttpCredentialsHeaderValue(hstring_ref scheme, hstring_ref token) :
+inline HttpCredentialsHeaderValue::HttpCredentialsHeaderValue(hstring_view scheme, hstring_view token) :
     HttpCredentialsHeaderValue(get_activation_factory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueFactory>().CreateFromSchemeWithToken(scheme, token))
 {}
 
-inline Windows::Web::Http::Headers::HttpCredentialsHeaderValue HttpCredentialsHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpCredentialsHeaderValue HttpCredentialsHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpCredentialsHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue)
+inline bool HttpCredentialsHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue)
 {
     return get_activation_factory<HttpCredentialsHeaderValue, IHttpCredentialsHeaderValueStatics>().TryParse(input, credentialsHeaderValue);
 }
 
-inline Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue HttpDateOrDeltaHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue HttpDateOrDeltaHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpDateOrDeltaHeaderValue, IHttpDateOrDeltaHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpDateOrDeltaHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue)
+inline bool HttpDateOrDeltaHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue)
 {
     return get_activation_factory<HttpDateOrDeltaHeaderValue, IHttpDateOrDeltaHeaderValueStatics>().TryParse(input, dateOrDeltaHeaderValue);
 }
 
-inline HttpExpectationHeaderValue::HttpExpectationHeaderValue(hstring_ref name) :
+inline HttpExpectationHeaderValue::HttpExpectationHeaderValue(hstring_view name) :
     HttpExpectationHeaderValue(get_activation_factory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueFactory>().CreateFromName(name))
 {}
 
-inline HttpExpectationHeaderValue::HttpExpectationHeaderValue(hstring_ref name, hstring_ref value) :
+inline HttpExpectationHeaderValue::HttpExpectationHeaderValue(hstring_view name, hstring_view value) :
     HttpExpectationHeaderValue(get_activation_factory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueFactory>().CreateFromNameWithValue(name, value))
 {}
 
-inline Windows::Web::Http::Headers::HttpExpectationHeaderValue HttpExpectationHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpExpectationHeaderValue HttpExpectationHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpExpectationHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue)
+inline bool HttpExpectationHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue)
 {
     return get_activation_factory<HttpExpectationHeaderValue, IHttpExpectationHeaderValueStatics>().TryParse(input, expectationHeaderValue);
 }
 
-inline HttpLanguageRangeWithQualityHeaderValue::HttpLanguageRangeWithQualityHeaderValue(hstring_ref languageRange) :
+inline HttpLanguageRangeWithQualityHeaderValue::HttpLanguageRangeWithQualityHeaderValue(hstring_view languageRange) :
     HttpLanguageRangeWithQualityHeaderValue(get_activation_factory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueFactory>().CreateFromLanguageRange(languageRange))
 {}
 
-inline HttpLanguageRangeWithQualityHeaderValue::HttpLanguageRangeWithQualityHeaderValue(hstring_ref languageRange, double quality) :
+inline HttpLanguageRangeWithQualityHeaderValue::HttpLanguageRangeWithQualityHeaderValue(hstring_view languageRange, double quality) :
     HttpLanguageRangeWithQualityHeaderValue(get_activation_factory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueFactory>().CreateFromLanguageRangeWithQuality(languageRange, quality))
 {}
 
-inline Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue HttpLanguageRangeWithQualityHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue HttpLanguageRangeWithQualityHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpLanguageRangeWithQualityHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue)
+inline bool HttpLanguageRangeWithQualityHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue)
 {
     return get_activation_factory<HttpLanguageRangeWithQualityHeaderValue, IHttpLanguageRangeWithQualityHeaderValueStatics>().TryParse(input, languageRangeWithQualityHeaderValue);
 }
 
-inline HttpMediaTypeHeaderValue::HttpMediaTypeHeaderValue(hstring_ref mediaType) :
+inline HttpMediaTypeHeaderValue::HttpMediaTypeHeaderValue(hstring_view mediaType) :
     HttpMediaTypeHeaderValue(get_activation_factory<HttpMediaTypeHeaderValue, IHttpMediaTypeHeaderValueFactory>().Create(mediaType))
 {}
 
-inline Windows::Web::Http::Headers::HttpMediaTypeHeaderValue HttpMediaTypeHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpMediaTypeHeaderValue HttpMediaTypeHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpMediaTypeHeaderValue, IHttpMediaTypeHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpMediaTypeHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue)
+inline bool HttpMediaTypeHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue)
 {
     return get_activation_factory<HttpMediaTypeHeaderValue, IHttpMediaTypeHeaderValueStatics>().TryParse(input, mediaTypeHeaderValue);
 }
 
-inline HttpMediaTypeWithQualityHeaderValue::HttpMediaTypeWithQualityHeaderValue(hstring_ref mediaType) :
+inline HttpMediaTypeWithQualityHeaderValue::HttpMediaTypeWithQualityHeaderValue(hstring_view mediaType) :
     HttpMediaTypeWithQualityHeaderValue(get_activation_factory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueFactory>().CreateFromMediaType(mediaType))
 {}
 
-inline HttpMediaTypeWithQualityHeaderValue::HttpMediaTypeWithQualityHeaderValue(hstring_ref mediaType, double quality) :
+inline HttpMediaTypeWithQualityHeaderValue::HttpMediaTypeWithQualityHeaderValue(hstring_view mediaType, double quality) :
     HttpMediaTypeWithQualityHeaderValue(get_activation_factory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueFactory>().CreateFromMediaTypeWithQuality(mediaType, quality))
 {}
 
-inline Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue HttpMediaTypeWithQualityHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue HttpMediaTypeWithQualityHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpMediaTypeWithQualityHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue)
+inline bool HttpMediaTypeWithQualityHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue)
 {
     return get_activation_factory<HttpMediaTypeWithQualityHeaderValue, IHttpMediaTypeWithQualityHeaderValueStatics>().TryParse(input, mediaTypeWithQualityHeaderValue);
 }
 
-inline HttpNameValueHeaderValue::HttpNameValueHeaderValue(hstring_ref name) :
+inline HttpNameValueHeaderValue::HttpNameValueHeaderValue(hstring_view name) :
     HttpNameValueHeaderValue(get_activation_factory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueFactory>().CreateFromName(name))
 {}
 
-inline HttpNameValueHeaderValue::HttpNameValueHeaderValue(hstring_ref name, hstring_ref value) :
+inline HttpNameValueHeaderValue::HttpNameValueHeaderValue(hstring_view name, hstring_view value) :
     HttpNameValueHeaderValue(get_activation_factory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueFactory>().CreateFromNameWithValue(name, value))
 {}
 
-inline Windows::Web::Http::Headers::HttpNameValueHeaderValue HttpNameValueHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpNameValueHeaderValue HttpNameValueHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpNameValueHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue)
+inline bool HttpNameValueHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue)
 {
     return get_activation_factory<HttpNameValueHeaderValue, IHttpNameValueHeaderValueStatics>().TryParse(input, nameValueHeaderValue);
 }
 
-inline HttpProductHeaderValue::HttpProductHeaderValue(hstring_ref productName) :
+inline HttpProductHeaderValue::HttpProductHeaderValue(hstring_view productName) :
     HttpProductHeaderValue(get_activation_factory<HttpProductHeaderValue, IHttpProductHeaderValueFactory>().CreateFromName(productName))
 {}
 
-inline HttpProductHeaderValue::HttpProductHeaderValue(hstring_ref productName, hstring_ref productVersion) :
+inline HttpProductHeaderValue::HttpProductHeaderValue(hstring_view productName, hstring_view productVersion) :
     HttpProductHeaderValue(get_activation_factory<HttpProductHeaderValue, IHttpProductHeaderValueFactory>().CreateFromNameWithVersion(productName, productVersion))
 {}
 
-inline Windows::Web::Http::Headers::HttpProductHeaderValue HttpProductHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpProductHeaderValue HttpProductHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpProductHeaderValue, IHttpProductHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpProductHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue)
+inline bool HttpProductHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue)
 {
     return get_activation_factory<HttpProductHeaderValue, IHttpProductHeaderValueStatics>().TryParse(input, productHeaderValue);
 }
 
-inline HttpProductInfoHeaderValue::HttpProductInfoHeaderValue(hstring_ref productComment) :
+inline HttpProductInfoHeaderValue::HttpProductInfoHeaderValue(hstring_view productComment) :
     HttpProductInfoHeaderValue(get_activation_factory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueFactory>().CreateFromComment(productComment))
 {}
 
-inline HttpProductInfoHeaderValue::HttpProductInfoHeaderValue(hstring_ref productName, hstring_ref productVersion) :
+inline HttpProductInfoHeaderValue::HttpProductInfoHeaderValue(hstring_view productName, hstring_view productVersion) :
     HttpProductInfoHeaderValue(get_activation_factory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueFactory>().CreateFromNameWithVersion(productName, productVersion))
 {}
 
-inline Windows::Web::Http::Headers::HttpProductInfoHeaderValue HttpProductInfoHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpProductInfoHeaderValue HttpProductInfoHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpProductInfoHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue)
+inline bool HttpProductInfoHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue)
 {
     return get_activation_factory<HttpProductInfoHeaderValue, IHttpProductInfoHeaderValueStatics>().TryParse(input, productInfoHeaderValue);
 }
 
-inline HttpTransferCodingHeaderValue::HttpTransferCodingHeaderValue(hstring_ref input) :
+inline HttpTransferCodingHeaderValue::HttpTransferCodingHeaderValue(hstring_view input) :
     HttpTransferCodingHeaderValue(get_activation_factory<HttpTransferCodingHeaderValue, IHttpTransferCodingHeaderValueFactory>().Create(input))
 {}
 
-inline Windows::Web::Http::Headers::HttpTransferCodingHeaderValue HttpTransferCodingHeaderValue::Parse(hstring_ref input)
+inline Windows::Web::Http::Headers::HttpTransferCodingHeaderValue HttpTransferCodingHeaderValue::Parse(hstring_view input)
 {
     return get_activation_factory<HttpTransferCodingHeaderValue, IHttpTransferCodingHeaderValueStatics>().Parse(input);
 }
 
-inline bool HttpTransferCodingHeaderValue::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue)
+inline bool HttpTransferCodingHeaderValue::TryParse(hstring_view input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue)
 {
     return get_activation_factory<HttpTransferCodingHeaderValue, IHttpTransferCodingHeaderValueStatics>().TryParse(input, transferCodingHeaderValue);
 }

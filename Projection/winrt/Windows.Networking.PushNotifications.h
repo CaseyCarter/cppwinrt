@@ -356,14 +356,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerStatics<D>::CreatePushNotificationChannelForApplicationAsync(hstring_ref applicationId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerStatics<D>::CreatePushNotificationChannelForApplicationAsync(hstring_view applicationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
     check_hresult(WINRT_SHIM(IPushNotificationChannelManagerStatics)->abi_CreatePushNotificationChannelForApplicationAsyncWithId(get(applicationId), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerStatics<D>::CreatePushNotificationChannelForSecondaryTileAsync(hstring_ref tileId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerStatics<D>::CreatePushNotificationChannelForSecondaryTileAsync(hstring_view tileId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
     check_hresult(WINRT_SHIM(IPushNotificationChannelManagerStatics)->abi_CreatePushNotificationChannelForSecondaryTileAsync(get(tileId), put(operation)));
@@ -384,14 +384,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerForUser<D>::CreatePushNotificationChannelForApplicationAsync(hstring_ref applicationId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerForUser<D>::CreatePushNotificationChannelForApplicationAsync(hstring_view applicationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
     check_hresult(WINRT_SHIM(IPushNotificationChannelManagerForUser)->abi_CreatePushNotificationChannelForApplicationAsyncWithId(get(applicationId), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerForUser<D>::CreatePushNotificationChannelForSecondaryTileAsync(hstring_ref tileId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerForUser<D>::CreatePushNotificationChannelForSecondaryTileAsync(hstring_view tileId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
     check_hresult(WINRT_SHIM(IPushNotificationChannelManagerForUser)->abi_CreatePushNotificationChannelForSecondaryTileAsync(get(tileId), put(operation)));
@@ -500,12 +500,12 @@ inline Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotificatio
     return get_activation_factory<PushNotificationChannelManager, IPushNotificationChannelManagerStatics>().CreatePushNotificationChannelForApplicationAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> PushNotificationChannelManager::CreatePushNotificationChannelForApplicationAsync(hstring_ref applicationId)
+inline Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> PushNotificationChannelManager::CreatePushNotificationChannelForApplicationAsync(hstring_view applicationId)
 {
     return get_activation_factory<PushNotificationChannelManager, IPushNotificationChannelManagerStatics>().CreatePushNotificationChannelForApplicationAsync(applicationId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> PushNotificationChannelManager::CreatePushNotificationChannelForSecondaryTileAsync(hstring_ref tileId)
+inline Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> PushNotificationChannelManager::CreatePushNotificationChannelForSecondaryTileAsync(hstring_view tileId)
 {
     return get_activation_factory<PushNotificationChannelManager, IPushNotificationChannelManagerStatics>().CreatePushNotificationChannelForSecondaryTileAsync(tileId);
 }

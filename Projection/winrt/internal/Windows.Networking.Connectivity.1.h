@@ -328,13 +328,13 @@ template <typename D>
 struct WINRT_EBO impl_ICellularApnContext
 {
     hstring ProviderId() const;
-    void ProviderId(hstring_ref value) const;
+    void ProviderId(hstring_view value) const;
     hstring AccessPointName() const;
-    void AccessPointName(hstring_ref value) const;
+    void AccessPointName(hstring_view value) const;
     hstring UserName() const;
-    void UserName(hstring_ref value) const;
+    void UserName(hstring_view value) const;
     hstring Password() const;
-    void Password(hstring_ref value) const;
+    void Password(hstring_view value) const;
     bool IsCompressionEnabled() const;
     void IsCompressionEnabled(bool value) const;
     Windows::Networking::Connectivity::CellularApnAuthenticationType AuthenticationType() const;

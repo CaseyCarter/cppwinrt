@@ -72,10 +72,10 @@ struct WINRT_EBO impl_IMediaTranscoder
     bool AlwaysReencode() const;
     void HardwareAccelerationEnabled(bool value) const;
     bool HardwareAccelerationEnabled() const;
-    void AddAudioEffect(hstring_ref activatableClassId) const;
-    void AddAudioEffect(hstring_ref activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const;
-    void AddVideoEffect(hstring_ref activatableClassId) const;
-    void AddVideoEffect(hstring_ref activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const;
+    void AddAudioEffect(hstring_view activatableClassId) const;
+    void AddAudioEffect(hstring_view activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const;
+    void AddVideoEffect(hstring_view activatableClassId) const;
+    void AddVideoEffect(hstring_view activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const;
     void ClearEffects() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> PrepareFileTranscodeAsync(const Windows::Storage::IStorageFile & source, const Windows::Storage::IStorageFile & destination, const Windows::Media::MediaProperties::MediaEncodingProfile & profile) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> PrepareStreamTranscodeAsync(const Windows::Storage::Streams::IRandomAccessStream & source, const Windows::Storage::Streams::IRandomAccessStream & destination, const Windows::Media::MediaProperties::MediaEncodingProfile & profile) const;

@@ -298,35 +298,35 @@ template <typename D>
 struct WINRT_EBO impl_ISyndicationAttribute
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     hstring Namespace() const;
-    void Namespace(hstring_ref value) const;
+    void Namespace(hstring_view value) const;
     hstring Value() const;
-    void Value(hstring_ref value) const;
+    void Value(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationAttributeFactory
 {
-    Windows::Web::Syndication::SyndicationAttribute CreateSyndicationAttribute(hstring_ref attributeName, hstring_ref attributeNamespace, hstring_ref attributeValue) const;
+    Windows::Web::Syndication::SyndicationAttribute CreateSyndicationAttribute(hstring_view attributeName, hstring_view attributeNamespace, hstring_view attributeValue) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationCategory
 {
     hstring Label() const;
-    void Label(hstring_ref value) const;
+    void Label(hstring_view value) const;
     hstring Scheme() const;
-    void Scheme(hstring_ref value) const;
+    void Scheme(hstring_view value) const;
     hstring Term() const;
-    void Term(hstring_ref value) const;
+    void Term(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationCategoryFactory
 {
-    Windows::Web::Syndication::SyndicationCategory CreateSyndicationCategory(hstring_ref term) const;
-    Windows::Web::Syndication::SyndicationCategory CreateSyndicationCategoryEx(hstring_ref term, hstring_ref scheme, hstring_ref label) const;
+    Windows::Web::Syndication::SyndicationCategory CreateSyndicationCategory(hstring_view term) const;
+    Windows::Web::Syndication::SyndicationCategory CreateSyndicationCategoryEx(hstring_view term, hstring_view scheme, hstring_view label) const;
 };
 
 template <typename D>
@@ -342,7 +342,7 @@ struct WINRT_EBO impl_ISyndicationClient
     void Timeout(uint32_t value) const;
     bool BypassCacheOnRetrieve() const;
     void BypassCacheOnRetrieve(bool value) const;
-    void SetRequestHeader(hstring_ref name, hstring_ref value) const;
+    void SetRequestHeader(hstring_view name, hstring_view value) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationFeed, Windows::Web::Syndication::RetrievalProgress> RetrieveFeedAsync(const Windows::Foundation::Uri & uri) const;
 };
 
@@ -362,7 +362,7 @@ struct WINRT_EBO impl_ISyndicationContent
 template <typename D>
 struct WINRT_EBO impl_ISyndicationContentFactory
 {
-    Windows::Web::Syndication::SyndicationContent CreateSyndicationContent(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) const;
+    Windows::Web::Syndication::SyndicationContent CreateSyndicationContent(hstring_view text, Windows::Web::Syndication::SyndicationTextType type) const;
     Windows::Web::Syndication::SyndicationContent CreateSyndicationContentWithSourceUri(const Windows::Foundation::Uri & sourceUri) const;
 };
 
@@ -383,7 +383,7 @@ struct WINRT_EBO impl_ISyndicationFeed
     Windows::Foundation::Uri IconUri() const;
     void IconUri(const Windows::Foundation::Uri & value) const;
     hstring Id() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationItem> Items() const;
     Windows::Foundation::DateTime LastUpdatedTime() const;
     void LastUpdatedTime(const Windows::Foundation::DateTime & value) const;
@@ -401,31 +401,31 @@ struct WINRT_EBO impl_ISyndicationFeed
     Windows::Foundation::Uri NextUri() const;
     Windows::Foundation::Uri PreviousUri() const;
     Windows::Web::Syndication::SyndicationFormat SourceFormat() const;
-    void Load(hstring_ref feed) const;
+    void Load(hstring_view feed) const;
     void LoadFromXml(const Windows::Data::Xml::Dom::XmlDocument & feedDocument) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationFeedFactory
 {
-    Windows::Web::Syndication::SyndicationFeed CreateSyndicationFeed(hstring_ref title, hstring_ref subtitle, const Windows::Foundation::Uri & uri) const;
+    Windows::Web::Syndication::SyndicationFeed CreateSyndicationFeed(hstring_view title, hstring_view subtitle, const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationGenerator
 {
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     Windows::Foundation::Uri Uri() const;
     void Uri(const Windows::Foundation::Uri & value) const;
     hstring Version() const;
-    void Version(hstring_ref value) const;
+    void Version(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationGeneratorFactory
 {
-    Windows::Web::Syndication::SyndicationGenerator CreateSyndicationGenerator(hstring_ref text) const;
+    Windows::Web::Syndication::SyndicationGenerator CreateSyndicationGenerator(hstring_view text) const;
 };
 
 template <typename D>
@@ -437,7 +437,7 @@ struct WINRT_EBO impl_ISyndicationItem
     Windows::Web::Syndication::SyndicationContent Content() const;
     void Content(const Windows::Web::Syndication::SyndicationContent & value) const;
     hstring Id() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     Windows::Foundation::DateTime LastUpdatedTime() const;
     void LastUpdatedTime(const Windows::Foundation::DateTime & value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationLink> Links() const;
@@ -457,14 +457,14 @@ struct WINRT_EBO impl_ISyndicationItem
     Windows::Foundation::Uri EditMediaUri() const;
     hstring ETag() const;
     Windows::Foundation::Uri ItemUri() const;
-    void Load(hstring_ref item) const;
+    void Load(hstring_view item) const;
     void LoadFromXml(const Windows::Data::Xml::Dom::XmlDocument & itemDocument) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationItemFactory
 {
-    Windows::Web::Syndication::SyndicationItem CreateSyndicationItem(hstring_ref title, const Windows::Web::Syndication::SyndicationContent & content, const Windows::Foundation::Uri & uri) const;
+    Windows::Web::Syndication::SyndicationItem CreateSyndicationItem(hstring_view title, const Windows::Web::Syndication::SyndicationContent & content, const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>
@@ -473,35 +473,35 @@ struct WINRT_EBO impl_ISyndicationLink
     uint32_t Length() const;
     void Length(uint32_t value) const;
     hstring MediaType() const;
-    void MediaType(hstring_ref value) const;
+    void MediaType(hstring_view value) const;
     hstring Relationship() const;
-    void Relationship(hstring_ref value) const;
+    void Relationship(hstring_view value) const;
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::Foundation::Uri Uri() const;
     void Uri(const Windows::Foundation::Uri & value) const;
     hstring ResourceLanguage() const;
-    void ResourceLanguage(hstring_ref value) const;
+    void ResourceLanguage(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationLinkFactory
 {
     Windows::Web::Syndication::SyndicationLink CreateSyndicationLink(const Windows::Foundation::Uri & uri) const;
-    Windows::Web::Syndication::SyndicationLink CreateSyndicationLinkEx(const Windows::Foundation::Uri & uri, hstring_ref relationship, hstring_ref title, hstring_ref mediaType, uint32_t length) const;
+    Windows::Web::Syndication::SyndicationLink CreateSyndicationLinkEx(const Windows::Foundation::Uri & uri, hstring_view relationship, hstring_view title, hstring_view mediaType, uint32_t length) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationNode
 {
     hstring NodeName() const;
-    void NodeName(hstring_ref value) const;
+    void NodeName(hstring_view value) const;
     hstring NodeNamespace() const;
-    void NodeNamespace(hstring_ref value) const;
+    void NodeNamespace(hstring_view value) const;
     hstring NodeValue() const;
-    void NodeValue(hstring_ref value) const;
+    void NodeValue(hstring_view value) const;
     hstring Language() const;
-    void Language(hstring_ref value) const;
+    void Language(hstring_view value) const;
     Windows::Foundation::Uri BaseUri() const;
     void BaseUri(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationAttribute> AttributeExtensions() const;
@@ -512,16 +512,16 @@ struct WINRT_EBO impl_ISyndicationNode
 template <typename D>
 struct WINRT_EBO impl_ISyndicationNodeFactory
 {
-    Windows::Web::Syndication::SyndicationNode CreateSyndicationNode(hstring_ref nodeName, hstring_ref nodeNamespace, hstring_ref nodeValue) const;
+    Windows::Web::Syndication::SyndicationNode CreateSyndicationNode(hstring_view nodeName, hstring_view nodeNamespace, hstring_view nodeValue) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationPerson
 {
     hstring Email() const;
-    void Email(hstring_ref value) const;
+    void Email(hstring_view value) const;
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     Windows::Foundation::Uri Uri() const;
     void Uri(const Windows::Foundation::Uri & value) const;
 };
@@ -529,17 +529,17 @@ struct WINRT_EBO impl_ISyndicationPerson
 template <typename D>
 struct WINRT_EBO impl_ISyndicationPersonFactory
 {
-    Windows::Web::Syndication::SyndicationPerson CreateSyndicationPerson(hstring_ref name) const;
-    Windows::Web::Syndication::SyndicationPerson CreateSyndicationPersonEx(hstring_ref name, hstring_ref email, const Windows::Foundation::Uri & uri) const;
+    Windows::Web::Syndication::SyndicationPerson CreateSyndicationPerson(hstring_view name) const;
+    Windows::Web::Syndication::SyndicationPerson CreateSyndicationPersonEx(hstring_view name, hstring_view email, const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISyndicationText
 {
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     hstring Type() const;
-    void Type(hstring_ref value) const;
+    void Type(hstring_view value) const;
     Windows::Data::Xml::Dom::XmlDocument Xml() const;
     void Xml(const Windows::Data::Xml::Dom::XmlDocument & value) const;
 };
@@ -547,8 +547,8 @@ struct WINRT_EBO impl_ISyndicationText
 template <typename D>
 struct WINRT_EBO impl_ISyndicationTextFactory
 {
-    Windows::Web::Syndication::SyndicationText CreateSyndicationText(hstring_ref text) const;
-    Windows::Web::Syndication::SyndicationText CreateSyndicationTextEx(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) const;
+    Windows::Web::Syndication::SyndicationText CreateSyndicationText(hstring_view text) const;
+    Windows::Web::Syndication::SyndicationText CreateSyndicationTextEx(hstring_view text, Windows::Web::Syndication::SyndicationTextType type) const;
 };
 
 }

@@ -491,9 +491,9 @@ template <typename D>
 struct WINRT_EBO impl_IGlyphs
 {
     hstring UnicodeString() const;
-    void UnicodeString(hstring_ref value) const;
+    void UnicodeString(hstring_view value) const;
     hstring Indices() const;
-    void Indices(hstring_ref value) const;
+    void Indices(hstring_view value) const;
     Windows::Foundation::Uri FontUri() const;
     void FontUri(const Windows::Foundation::Uri & value) const;
     Windows::UI::Xaml::Media::StyleSimulations StyleSimulations() const;
@@ -643,7 +643,7 @@ template <typename D>
 struct WINRT_EBO impl_IRun
 {
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     Windows::UI::Xaml::FlowDirection FlowDirection() const;
     void FlowDirection(Windows::UI::Xaml::FlowDirection value) const;
 };
@@ -686,12 +686,12 @@ struct WINRT_EBO impl_ITextElement
     Windows::UI::Xaml::Media::Brush Foreground() const;
     void Foreground(const Windows::UI::Xaml::Media::Brush & value) const;
     hstring Language() const;
-    void Language(hstring_ref value) const;
+    void Language(hstring_view value) const;
     Windows::UI::Xaml::Documents::TextPointer ContentStart() const;
     Windows::UI::Xaml::Documents::TextPointer ContentEnd() const;
     Windows::UI::Xaml::Documents::TextPointer ElementStart() const;
     Windows::UI::Xaml::Documents::TextPointer ElementEnd() const;
-    Windows::IInspectable FindName(hstring_ref name) const;
+    Windows::IInspectable FindName(hstring_view name) const;
 };
 
 template <typename D>
@@ -707,7 +707,7 @@ struct WINRT_EBO impl_ITextElement3
     bool AllowFocusOnInteraction() const;
     void AllowFocusOnInteraction(bool value) const;
     hstring AccessKey() const;
-    void AccessKey(hstring_ref value) const;
+    void AccessKey(hstring_view value) const;
     bool ExitDisplayModeOnAccessKeyInvoked() const;
     void ExitDisplayModeOnAccessKeyInvoked(bool value) const;
 };

@@ -456,8 +456,8 @@ struct WINRT_EBO impl_IAdvancedPhotoControl
 template <typename D>
 struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController
 {
-    void SetDeviceProperty(hstring_ref propertyId, const Windows::IInspectable & propertyValue) const;
-    Windows::IInspectable GetDeviceProperty(hstring_ref propertyId) const;
+    void SetDeviceProperty(hstring_view propertyId, const Windows::IInspectable & propertyValue) const;
+    Windows::IInspectable GetDeviceProperty(hstring_view propertyId) const;
 };
 
 template <typename D>

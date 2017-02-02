@@ -84,7 +84,7 @@ struct WINRT_EBO impl_ILocalContentSuggestionSettings
     void Enabled(bool value) const;
     bool Enabled() const;
     Windows::Foundation::Collections::IVector<Windows::Storage::StorageFolder> Locations() const;
-    void AqsFilter(hstring_ref value) const;
+    void AqsFilter(hstring_view value) const;
     hstring AqsFilter() const;
     Windows::Foundation::Collections::IVector<hstring> PropertiesToMatch() const;
 };
@@ -115,10 +115,10 @@ template <typename D>
 struct WINRT_EBO impl_ISearchSuggestionCollection
 {
     uint32_t Size() const;
-    void AppendQuerySuggestion(hstring_ref text) const;
+    void AppendQuerySuggestion(hstring_view text) const;
     void AppendQuerySuggestions(const Windows::Foundation::Collections::IIterable<hstring> & suggestions) const;
-    void AppendResultSuggestion(hstring_ref text, hstring_ref detailText, hstring_ref tag, const Windows::Storage::Streams::IRandomAccessStreamReference & image, hstring_ref imageAlternateText) const;
-    void AppendSearchSeparator(hstring_ref label) const;
+    void AppendResultSuggestion(hstring_view text, hstring_view detailText, hstring_view tag, const Windows::Storage::Streams::IRandomAccessStreamReference & image, hstring_view imageAlternateText) const;
+    void AppendSearchSeparator(hstring_view label) const;
 };
 
 template <typename D>

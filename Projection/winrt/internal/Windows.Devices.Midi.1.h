@@ -254,7 +254,7 @@ struct WINRT_EBO impl_IMidiInPort
 template <typename D>
 struct WINRT_EBO impl_IMidiInPortStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
@@ -311,7 +311,7 @@ struct WINRT_EBO impl_IMidiOutPort
 template <typename D>
 struct WINRT_EBO impl_IMidiOutPortStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
 };
 

@@ -77,7 +77,7 @@ template <typename D, typename ... Interfaces> struct PropertyChangedEventArgsT 
 
 protected:
 
-    PropertyChangedEventArgsT(hstring_ref name)
+    PropertyChangedEventArgsT(hstring_view name)
     {
         get_activation_factory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, *this, this->m_inner);
     }

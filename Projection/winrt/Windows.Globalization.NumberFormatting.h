@@ -1072,21 +1072,21 @@ template <typename D> hstring impl_INumberFormatter2<D>::FormatDouble(double val
     return result;
 }
 
-template <typename D> Windows::Foundation::IReference<int64_t> impl_INumberParser<D>::ParseInt(hstring_ref text) const
+template <typename D> Windows::Foundation::IReference<int64_t> impl_INumberParser<D>::ParseInt(hstring_view text) const
 {
     Windows::Foundation::IReference<int64_t> result;
     check_hresult(WINRT_SHIM(INumberParser)->abi_ParseInt(get(text), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IReference<uint64_t> impl_INumberParser<D>::ParseUInt(hstring_ref text) const
+template <typename D> Windows::Foundation::IReference<uint64_t> impl_INumberParser<D>::ParseUInt(hstring_view text) const
 {
     Windows::Foundation::IReference<uint64_t> result;
     check_hresult(WINRT_SHIM(INumberParser)->abi_ParseUInt(get(text), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IReference<double> impl_INumberParser<D>::ParseDouble(hstring_ref text) const
+template <typename D> Windows::Foundation::IReference<double> impl_INumberParser<D>::ParseDouble(hstring_view text) const
 {
     Windows::Foundation::IReference<double> result;
     check_hresult(WINRT_SHIM(INumberParser)->abi_ParseDouble(get(text), put(result)));
@@ -1162,7 +1162,7 @@ template <typename D> hstring impl_INumberFormatterOptions<D>::NumeralSystem() c
     return value;
 }
 
-template <typename D> void impl_INumberFormatterOptions<D>::NumeralSystem(hstring_ref value) const
+template <typename D> void impl_INumberFormatterOptions<D>::NumeralSystem(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(INumberFormatterOptions)->put_NumeralSystem(get(value)));
 }
@@ -1217,35 +1217,35 @@ template <typename D> void impl_ISignedZeroOption<D>::IsZeroSigned(bool value) c
     check_hresult(WINRT_SHIM(ISignedZeroOption)->put_IsZeroSigned(value));
 }
 
-template <typename D> Windows::Globalization::NumberFormatting::DecimalFormatter impl_IDecimalFormatterFactory<D>::CreateDecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const
+template <typename D> Windows::Globalization::NumberFormatting::DecimalFormatter impl_IDecimalFormatterFactory<D>::CreateDecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::DecimalFormatter result { nullptr };
     check_hresult(WINRT_SHIM(IDecimalFormatterFactory)->abi_CreateDecimalFormatter(get(languages), get(geographicRegion), put(result)));
     return result;
 }
 
-template <typename D> Windows::Globalization::NumberFormatting::PercentFormatter impl_IPercentFormatterFactory<D>::CreatePercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const
+template <typename D> Windows::Globalization::NumberFormatting::PercentFormatter impl_IPercentFormatterFactory<D>::CreatePercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::PercentFormatter result { nullptr };
     check_hresult(WINRT_SHIM(IPercentFormatterFactory)->abi_CreatePercentFormatter(get(languages), get(geographicRegion), put(result)));
     return result;
 }
 
-template <typename D> Windows::Globalization::NumberFormatting::PermilleFormatter impl_IPermilleFormatterFactory<D>::CreatePermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const
+template <typename D> Windows::Globalization::NumberFormatting::PermilleFormatter impl_IPermilleFormatterFactory<D>::CreatePermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::PermilleFormatter result { nullptr };
     check_hresult(WINRT_SHIM(IPermilleFormatterFactory)->abi_CreatePermilleFormatter(get(languages), get(geographicRegion), put(result)));
     return result;
 }
 
-template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatter impl_ICurrencyFormatterFactory<D>::CreateCurrencyFormatterCode(hstring_ref currencyCode) const
+template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatter impl_ICurrencyFormatterFactory<D>::CreateCurrencyFormatterCode(hstring_view currencyCode) const
 {
     Windows::Globalization::NumberFormatting::CurrencyFormatter result { nullptr };
     check_hresult(WINRT_SHIM(ICurrencyFormatterFactory)->abi_CreateCurrencyFormatterCode(get(currencyCode), put(result)));
     return result;
 }
 
-template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatter impl_ICurrencyFormatterFactory<D>::CreateCurrencyFormatterCodeContext(hstring_ref currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const
+template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatter impl_ICurrencyFormatterFactory<D>::CreateCurrencyFormatterCodeContext(hstring_view currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::CurrencyFormatter result { nullptr };
     check_hresult(WINRT_SHIM(ICurrencyFormatterFactory)->abi_CreateCurrencyFormatterCodeContext(get(currencyCode), get(languages), get(geographicRegion), put(result)));
@@ -1259,7 +1259,7 @@ template <typename D> hstring impl_ICurrencyFormatter<D>::Currency() const
     return value;
 }
 
-template <typename D> void impl_ICurrencyFormatter<D>::Currency(hstring_ref value) const
+template <typename D> void impl_ICurrencyFormatter<D>::Currency(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICurrencyFormatter)->put_Currency(get(value)));
 }
@@ -1309,23 +1309,23 @@ template <typename D> hstring impl_INumeralSystemTranslator<D>::NumeralSystem() 
     return value;
 }
 
-template <typename D> void impl_INumeralSystemTranslator<D>::NumeralSystem(hstring_ref value) const
+template <typename D> void impl_INumeralSystemTranslator<D>::NumeralSystem(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(INumeralSystemTranslator)->put_NumeralSystem(get(value)));
 }
 
-template <typename D> hstring impl_INumeralSystemTranslator<D>::TranslateNumerals(hstring_ref value) const
+template <typename D> hstring impl_INumeralSystemTranslator<D>::TranslateNumerals(hstring_view value) const
 {
     hstring result;
     check_hresult(WINRT_SHIM(INumeralSystemTranslator)->abi_TranslateNumerals(get(value), put(result)));
     return result;
 }
 
-inline CurrencyFormatter::CurrencyFormatter(hstring_ref currencyCode) :
+inline CurrencyFormatter::CurrencyFormatter(hstring_view currencyCode) :
     CurrencyFormatter(get_activation_factory<CurrencyFormatter, ICurrencyFormatterFactory>().CreateCurrencyFormatterCode(currencyCode))
 {}
 
-inline CurrencyFormatter::CurrencyFormatter(hstring_ref currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) :
+inline CurrencyFormatter::CurrencyFormatter(hstring_view currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) :
     CurrencyFormatter(get_activation_factory<CurrencyFormatter, ICurrencyFormatterFactory>().CreateCurrencyFormatterCodeContext(currencyCode, languages, geographicRegion))
 {}
 
@@ -1333,7 +1333,7 @@ inline DecimalFormatter::DecimalFormatter() :
     DecimalFormatter(activate_instance<DecimalFormatter>())
 {}
 
-inline DecimalFormatter::DecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) :
+inline DecimalFormatter::DecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) :
     DecimalFormatter(get_activation_factory<DecimalFormatter, IDecimalFormatterFactory>().CreateDecimalFormatter(languages, geographicRegion))
 {}
 
@@ -1353,7 +1353,7 @@ inline PercentFormatter::PercentFormatter() :
     PercentFormatter(activate_instance<PercentFormatter>())
 {}
 
-inline PercentFormatter::PercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) :
+inline PercentFormatter::PercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) :
     PercentFormatter(get_activation_factory<PercentFormatter, IPercentFormatterFactory>().CreatePercentFormatter(languages, geographicRegion))
 {}
 
@@ -1361,7 +1361,7 @@ inline PermilleFormatter::PermilleFormatter() :
     PermilleFormatter(activate_instance<PermilleFormatter>())
 {}
 
-inline PermilleFormatter::PermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) :
+inline PermilleFormatter::PermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) :
     PermilleFormatter(get_activation_factory<PermilleFormatter, IPermilleFormatterFactory>().CreatePermilleFormatter(languages, geographicRegion))
 {}
 

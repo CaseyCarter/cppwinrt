@@ -470,13 +470,13 @@ struct WINRT_EBO impl_IVpnAppId
     Windows::Networking::Vpn::VpnAppIdType Type() const;
     void Type(Windows::Networking::Vpn::VpnAppIdType value) const;
     hstring Value() const;
-    void Value(hstring_ref value) const;
+    void Value(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IVpnAppIdFactory
 {
-    Windows::Networking::Vpn::VpnAppId Create(Windows::Networking::Vpn::VpnAppIdType type, hstring_ref value) const;
+    Windows::Networking::Vpn::VpnAppId Create(Windows::Networking::Vpn::VpnAppIdType type, hstring_view value) const;
 };
 
 template <typename D>
@@ -487,7 +487,7 @@ struct WINRT_EBO impl_IVpnChannel
     void Stop() const;
     Windows::Networking::Vpn::VpnPickedCredential RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
     void RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, Windows::Networking::Vpn::VpnPacketBuffer & vpnPacketBuffer) const;
-    void LogDiagnosticMessage(hstring_ref message) const;
+    void LogDiagnosticMessage(hstring_view message) const;
     uint32_t Id() const;
     Windows::Networking::Vpn::VpnChannelConfiguration Configuration() const;
     event_token ActivityChange(const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> & handler) const;
@@ -498,7 +498,7 @@ struct WINRT_EBO impl_IVpnChannel
     Windows::IInspectable PlugInContext() const;
     Windows::Networking::Vpn::VpnSystemHealth SystemHealth() const;
     void RequestCustomPrompt(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> & customPrompt) const;
-    void SetErrorMessage(hstring_ref message) const;
+    void SetErrorMessage(hstring_view message) const;
     void SetAllowedSslTlsVersions(const Windows::IInspectable & tunnelTransport, bool useTls12) const;
 };
 
@@ -517,7 +517,7 @@ struct WINRT_EBO impl_IVpnChannel2
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType) const;
-    void TerminateConnection(hstring_ref message) const;
+    void TerminateConnection(hstring_view message) const;
     void StartWithTrafficFilter(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv4List, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const;
 };
 
@@ -581,7 +581,7 @@ struct WINRT_EBO impl_IVpnCustomComboBox
 template <typename D>
 struct WINRT_EBO impl_IVpnCustomEditBox
 {
-    void DefaultText(hstring_ref value) const;
+    void DefaultText(hstring_view value) const;
     hstring DefaultText() const;
     void NoEcho(bool value) const;
     bool NoEcho() const;
@@ -596,7 +596,7 @@ struct WINRT_EBO impl_IVpnCustomErrorBox
 template <typename D>
 struct WINRT_EBO impl_IVpnCustomPrompt
 {
-    void Label(hstring_ref value) const;
+    void Label(hstring_view value) const;
     hstring Label() const;
     void Compulsory(bool value) const;
     bool Compulsory() const;
@@ -615,7 +615,7 @@ struct WINRT_EBO impl_IVpnCustomPromptBooleanInput
 template <typename D>
 struct WINRT_EBO impl_IVpnCustomPromptElement
 {
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     hstring DisplayName() const;
     void Compulsory(bool value) const;
     bool Compulsory() const;
@@ -633,14 +633,14 @@ struct WINRT_EBO impl_IVpnCustomPromptOptionSelector
 template <typename D>
 struct WINRT_EBO impl_IVpnCustomPromptText
 {
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     hstring Text() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IVpnCustomPromptTextInput
 {
-    void PlaceholderText(hstring_ref value) const;
+    void PlaceholderText(hstring_view value) const;
     hstring PlaceholderText() const;
     void IsTextHidden(bool value) const;
     bool IsTextHidden() const;
@@ -650,7 +650,7 @@ struct WINRT_EBO impl_IVpnCustomPromptTextInput
 template <typename D>
 struct WINRT_EBO impl_IVpnCustomTextBox
 {
-    void DisplayText(hstring_ref value) const;
+    void DisplayText(hstring_view value) const;
     hstring DisplayText() const;
 };
 
@@ -682,7 +682,7 @@ struct WINRT_EBO impl_IVpnDomainNameInfo2
 template <typename D>
 struct WINRT_EBO impl_IVpnDomainNameInfoFactory
 {
-    Windows::Networking::Vpn::VpnDomainNameInfo CreateVpnDomainNameInfo(hstring_ref name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) const;
+    Windows::Networking::Vpn::VpnDomainNameInfo CreateVpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) const;
 };
 
 template <typename D>
@@ -700,9 +700,9 @@ struct WINRT_EBO impl_IVpnInterfaceIdFactory
 template <typename D>
 struct WINRT_EBO impl_IVpnManagementAgent
 {
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> AddProfileFromXmlAsync(hstring_ref xml) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> AddProfileFromXmlAsync(hstring_view xml) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> AddProfileFromObjectAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> UpdateProfileFromXmlAsync(hstring_ref xml) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> UpdateProfileFromXmlAsync(hstring_view xml) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> UpdateProfileFromObjectAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>> GetProfilesAsync() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> DeleteProfileAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const;
@@ -723,7 +723,7 @@ struct WINRT_EBO impl_IVpnNamespaceAssignment
 template <typename D>
 struct WINRT_EBO impl_IVpnNamespaceInfo
 {
-    void Namespace(hstring_ref value) const;
+    void Namespace(hstring_view value) const;
     hstring Namespace() const;
     void DnsServers(const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & value) const;
     Windows::Foundation::Collections::IVector<Windows::Networking::HostName> DnsServers() const;
@@ -734,7 +734,7 @@ struct WINRT_EBO impl_IVpnNamespaceInfo
 template <typename D>
 struct WINRT_EBO impl_IVpnNamespaceInfoFactory
 {
-    Windows::Networking::Vpn::VpnNamespaceInfo CreateVpnNamespaceInfo(hstring_ref name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) const;
+    Windows::Networking::Vpn::VpnNamespaceInfo CreateVpnNamespaceInfo(hstring_view name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) const;
 };
 
 template <typename D>
@@ -750,7 +750,7 @@ struct WINRT_EBO impl_IVpnNativeProfile
     Windows::Networking::Vpn::VpnAuthenticationMethod TunnelAuthenticationMethod() const;
     void TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) const;
     hstring EapConfiguration() const;
-    void EapConfiguration(hstring_ref value) const;
+    void EapConfiguration(hstring_view value) const;
 };
 
 template <typename D>
@@ -828,9 +828,9 @@ struct WINRT_EBO impl_IVpnPlugInProfile
 {
     Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ServerUris() const;
     hstring CustomConfiguration() const;
-    void CustomConfiguration(hstring_ref value) const;
+    void CustomConfiguration(hstring_view value) const;
     hstring VpnPluginPackageFamilyName() const;
-    void VpnPluginPackageFamilyName(hstring_ref value) const;
+    void VpnPluginPackageFamilyName(hstring_view value) const;
 };
 
 template <typename D>
@@ -845,7 +845,7 @@ template <typename D>
 struct WINRT_EBO impl_IVpnProfile
 {
     hstring ProfileName() const;
-    void ProfileName(hstring_ref value) const;
+    void ProfileName(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId> AppTriggers() const;
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> Routes() const;
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> DomainNameInfoList() const;

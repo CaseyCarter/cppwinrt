@@ -65,22 +65,22 @@ struct WINRT_EBO SelectableWordsSegmenter :
     Windows::Data::Text::ISelectableWordsSegmenter
 {
     SelectableWordsSegmenter(std::nullptr_t) noexcept {}
-    SelectableWordsSegmenter(hstring_ref language);
+    SelectableWordsSegmenter(hstring_view language);
 };
 
 struct WINRT_EBO SemanticTextQuery :
     Windows::Data::Text::ISemanticTextQuery
 {
     SemanticTextQuery(std::nullptr_t) noexcept {}
-    SemanticTextQuery(hstring_ref aqsFilter);
-    SemanticTextQuery(hstring_ref aqsFilter, hstring_ref filterLanguage);
+    SemanticTextQuery(hstring_view aqsFilter);
+    SemanticTextQuery(hstring_view aqsFilter, hstring_view filterLanguage);
 };
 
 struct WINRT_EBO TextConversionGenerator :
     Windows::Data::Text::ITextConversionGenerator
 {
     TextConversionGenerator(std::nullptr_t) noexcept {}
-    TextConversionGenerator(hstring_ref languageTag);
+    TextConversionGenerator(hstring_view languageTag);
 };
 
 struct WINRT_EBO TextPhoneme :
@@ -93,7 +93,7 @@ struct WINRT_EBO TextPredictionGenerator :
     Windows::Data::Text::ITextPredictionGenerator
 {
     TextPredictionGenerator(std::nullptr_t) noexcept {}
-    TextPredictionGenerator(hstring_ref languageTag);
+    TextPredictionGenerator(hstring_view languageTag);
 };
 
 struct WINRT_EBO TextReverseConversionGenerator :
@@ -101,7 +101,7 @@ struct WINRT_EBO TextReverseConversionGenerator :
     impl::require<TextReverseConversionGenerator, Windows::Data::Text::ITextReverseConversionGenerator2>
 {
     TextReverseConversionGenerator(std::nullptr_t) noexcept {}
-    TextReverseConversionGenerator(hstring_ref languageTag);
+    TextReverseConversionGenerator(hstring_view languageTag);
 };
 
 struct UnicodeCharacters
@@ -136,7 +136,7 @@ struct WINRT_EBO WordsSegmenter :
     Windows::Data::Text::IWordsSegmenter
 {
     WordsSegmenter(std::nullptr_t) noexcept {}
-    WordsSegmenter(hstring_ref language);
+    WordsSegmenter(hstring_view language);
 };
 
 }

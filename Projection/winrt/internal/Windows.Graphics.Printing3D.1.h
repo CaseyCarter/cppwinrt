@@ -424,7 +424,7 @@ struct WINRT_EBO impl_IPrint3DTaskCompletedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IPrint3DTaskRequest
 {
-    Windows::Graphics::Printing3D::Print3DTask CreateTask(hstring_ref title, hstring_ref printerId, const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler & handler) const;
+    Windows::Graphics::Printing3D::Print3DTask CreateTask(hstring_view title, hstring_view printerId, const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler & handler) const;
 };
 
 template <typename D>
@@ -470,7 +470,7 @@ template <typename D>
 struct WINRT_EBO impl_IPrinting3DBaseMaterial
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     Windows::Graphics::Printing3D::Printing3DColorMaterial Color() const;
     void Color(const Windows::Graphics::Printing3D::Printing3DColorMaterial & value) const;
 };
@@ -533,9 +533,9 @@ struct WINRT_EBO impl_IPrinting3DComponent
     Windows::Graphics::Printing3D::Printing3DObjectType Type() const;
     void Type(Windows::Graphics::Printing3D::Printing3DObjectType value) const;
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     hstring PartNumber() const;
-    void PartNumber(hstring_ref value) const;
+    void PartNumber(hstring_view value) const;
 };
 
 template <typename D>
@@ -644,7 +644,7 @@ struct WINRT_EBO impl_IPrinting3DModel
     Windows::Graphics::Printing3D::Printing3DComponent Build() const;
     void Build(const Windows::Graphics::Printing3D::Printing3DComponent & value) const;
     hstring Version() const;
-    void Version(hstring_ref value) const;
+    void Version(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> RequiredExtensions() const;
     Windows::Foundation::Collections::IMap<hstring, hstring> Metadata() const;
     Windows::Foundation::IAsyncAction RepairAsync() const;
@@ -730,7 +730,7 @@ struct WINRT_EBO impl_IPrinting3DTextureResource
     Windows::Storage::Streams::IRandomAccessStreamWithContentType TextureData() const;
     void TextureData(const Windows::Storage::Streams::IRandomAccessStreamWithContentType & value) const;
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
 };
 
 }

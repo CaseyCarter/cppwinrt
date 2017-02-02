@@ -333,7 +333,7 @@ struct WINRT_EBO impl_IMediaEncodingProperties
 {
     Windows::Media::MediaProperties::MediaPropertySet Properties() const;
     hstring Type() const;
-    void Subtype(hstring_ref value) const;
+    void Subtype(hstring_view value) const;
     hstring Subtype() const;
 };
 
@@ -434,7 +434,7 @@ struct WINRT_EBO impl_IVideoEncodingPropertiesStatics
 {
     Windows::Media::MediaProperties::VideoEncodingProperties CreateH264() const;
     Windows::Media::MediaProperties::VideoEncodingProperties CreateMpeg2() const;
-    Windows::Media::MediaProperties::VideoEncodingProperties CreateUncompressed(hstring_ref subtype, uint32_t width, uint32_t height) const;
+    Windows::Media::MediaProperties::VideoEncodingProperties CreateUncompressed(hstring_view subtype, uint32_t width, uint32_t height) const;
 };
 
 }

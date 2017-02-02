@@ -4373,14 +4373,14 @@ template <typename D> bool impl_IRadialControllerMenu<D>::TrySelectPreviouslySel
     return result;
 }
 
-template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialControllerMenuItemStatics<D>::CreateFromIcon(hstring_ref displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon) const
+template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialControllerMenuItemStatics<D>::CreateFromIcon(hstring_view displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon) const
 {
     Windows::UI::Input::RadialControllerMenuItem result { nullptr };
     check_hresult(WINRT_SHIM(IRadialControllerMenuItemStatics)->abi_CreateFromIcon(get(displayText), get(icon), put(result)));
     return result;
 }
 
-template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialControllerMenuItemStatics<D>::CreateFromKnownIcon(hstring_ref displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value) const
+template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialControllerMenuItemStatics<D>::CreateFromKnownIcon(hstring_view displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value) const
 {
     Windows::UI::Input::RadialControllerMenuItem result { nullptr };
     check_hresult(WINRT_SHIM(IRadialControllerMenuItemStatics)->abi_CreateFromKnownIcon(get(displayText), value, put(result)));
@@ -4501,12 +4501,12 @@ inline Windows::UI::Input::RadialControllerConfiguration RadialControllerConfigu
     return get_activation_factory<RadialControllerConfiguration, IRadialControllerConfigurationStatics>().GetForCurrentView();
 }
 
-inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromIcon(hstring_ref displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon)
+inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromIcon(hstring_view displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon)
 {
     return get_activation_factory<RadialControllerMenuItem, IRadialControllerMenuItemStatics>().CreateFromIcon(displayText, icon);
 }
 
-inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromKnownIcon(hstring_ref displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value)
+inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromKnownIcon(hstring_view displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value)
 {
     return get_activation_factory<RadialControllerMenuItem, IRadialControllerMenuItemStatics>().CreateFromKnownIcon(displayText, value);
 }

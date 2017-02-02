@@ -556,7 +556,7 @@ template <typename D> hstring impl_IUserDataAccount<D>::UserDisplayName() const
     return value;
 }
 
-template <typename D> void impl_IUserDataAccount<D>::UserDisplayName(hstring_ref value) const
+template <typename D> void impl_IUserDataAccount<D>::UserDisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IUserDataAccount)->put_UserDisplayName(get(value)));
 }
@@ -664,7 +664,7 @@ template <typename D> hstring impl_IUserDataAccount3<D>::DisplayName() const
     return value;
 }
 
-template <typename D> void impl_IUserDataAccount3<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IUserDataAccount3<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IUserDataAccount3)->put_DisplayName(get(value)));
 }
@@ -676,21 +676,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore<D>::GetAccountAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore<D>::GetAccountAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> result;
     check_hresult(WINRT_SHIM(IUserDataAccountStore)->abi_GetAccountAsync(get(id), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore<D>::CreateAccountAsync(hstring_ref userDisplayName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore<D>::CreateAccountAsync(hstring_view userDisplayName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> result;
     check_hresult(WINRT_SHIM(IUserDataAccountStore)->abi_CreateAccountAsync(get(userDisplayName), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore2<D>::CreateAccountAsync(hstring_ref userDisplayName, hstring_ref packageRelativeAppId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore2<D>::CreateAccountAsync(hstring_view userDisplayName, hstring_view packageRelativeAppId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> result;
     check_hresult(WINRT_SHIM(IUserDataAccountStore2)->abi_CreateAccountWithPackageRelativeAppIdAsync(get(userDisplayName), get(packageRelativeAppId), put(result)));
@@ -728,14 +728,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IUserDa
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountManagerStatics<D>::ShowAccountSettingsAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountManagerStatics<D>::ShowAccountSettingsAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IUserDataAccountManagerStatics)->abi_ShowAccountSettingsAsync(get(id), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountManagerStatics<D>::ShowAccountErrorResolverAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountManagerStatics<D>::ShowAccountErrorResolverAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IUserDataAccountManagerStatics)->abi_ShowAccountErrorResolverAsync(get(id), put(result)));
@@ -780,12 +780,12 @@ inline Windows::Foundation::IAsyncOperation<hstring> UserDataAccountManager::Sho
     return get_activation_factory<UserDataAccountManager, IUserDataAccountManagerStatics>().ShowAddAccountAsync(contentKinds);
 }
 
-inline Windows::Foundation::IAsyncAction UserDataAccountManager::ShowAccountSettingsAsync(hstring_ref id)
+inline Windows::Foundation::IAsyncAction UserDataAccountManager::ShowAccountSettingsAsync(hstring_view id)
 {
     return get_activation_factory<UserDataAccountManager, IUserDataAccountManagerStatics>().ShowAccountSettingsAsync(id);
 }
 
-inline Windows::Foundation::IAsyncAction UserDataAccountManager::ShowAccountErrorResolverAsync(hstring_ref id)
+inline Windows::Foundation::IAsyncAction UserDataAccountManager::ShowAccountErrorResolverAsync(hstring_view id)
 {
     return get_activation_factory<UserDataAccountManager, IUserDataAccountManagerStatics>().ShowAccountErrorResolverAsync(id);
 }

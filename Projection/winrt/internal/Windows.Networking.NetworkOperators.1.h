@@ -538,22 +538,22 @@ struct WINRT_EBO impl_IHotspotAuthenticationContext
     Windows::Foundation::Uri RedirectMessageUrl() const;
     Windows::Data::Xml::Dom::XmlDocument RedirectMessageXml() const;
     Windows::Foundation::Uri AuthenticationUrl() const;
-    void IssueCredentials(hstring_ref userName, hstring_ref password, hstring_ref extraParameters, bool markAsManualConnectOnFailure) const;
+    void IssueCredentials(hstring_view userName, hstring_view password, hstring_view extraParameters, bool markAsManualConnectOnFailure) const;
     void AbortAuthentication(bool markAsManual) const;
     void SkipAuthentication() const;
-    void TriggerAttentionRequired(hstring_ref packageRelativeApplicationId, hstring_ref applicationParameters) const;
+    void TriggerAttentionRequired(hstring_view packageRelativeApplicationId, hstring_view applicationParameters) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHotspotAuthenticationContext2
 {
-    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> IssueCredentialsAsync(hstring_ref userName, hstring_ref password, hstring_ref extraParameters, bool markAsManualConnectOnFailure) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> IssueCredentialsAsync(hstring_view userName, hstring_view password, hstring_view extraParameters, bool markAsManualConnectOnFailure) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHotspotAuthenticationContextStatics
 {
-    bool TryGetAuthenticationContext(hstring_ref evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context) const;
+    bool TryGetAuthenticationContext(hstring_view evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context) const;
 };
 
 template <typename D>
@@ -632,7 +632,7 @@ template <typename D>
 struct WINRT_EBO impl_IMobileBroadbandAccountStatics
 {
     Windows::Foundation::Collections::IVectorView<hstring> AvailableNetworkAccountIds() const;
-    Windows::Networking::NetworkOperators::MobileBroadbandAccount CreateFromNetworkAccountId(hstring_ref networkAccountId) const;
+    Windows::Networking::NetworkOperators::MobileBroadbandAccount CreateFromNetworkAccountId(hstring_view networkAccountId) const;
 };
 
 template <typename D>
@@ -782,7 +782,7 @@ template <typename D>
 struct WINRT_EBO impl_IMobileBroadbandModemStatics
 {
     hstring GetDeviceSelector() const;
-    Windows::Networking::NetworkOperators::MobileBroadbandModem FromId(hstring_ref deviceId) const;
+    Windows::Networking::NetworkOperators::MobileBroadbandModem FromId(hstring_view deviceId) const;
     Windows::Networking::NetworkOperators::MobileBroadbandModem GetDefault() const;
 };
 
@@ -831,11 +831,11 @@ struct WINRT_EBO impl_IMobileBroadbandPin
     uint32_t MaxLength() const;
     uint32_t MinLength() const;
     uint32_t AttemptsRemaining() const;
-    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> EnableAsync(hstring_ref currentPin) const;
-    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> DisableAsync(hstring_ref currentPin) const;
-    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> EnterAsync(hstring_ref currentPin) const;
-    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> ChangeAsync(hstring_ref currentPin, hstring_ref newPin) const;
-    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> UnblockAsync(hstring_ref pinUnblockKey, hstring_ref newPin) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> EnableAsync(hstring_view currentPin) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> DisableAsync(hstring_view currentPin) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> EnterAsync(hstring_view currentPin) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> ChangeAsync(hstring_view currentPin, hstring_view newPin) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> UnblockAsync(hstring_view pinUnblockKey, hstring_view newPin) const;
 };
 
 template <typename D>
@@ -924,9 +924,9 @@ template <typename D>
 struct WINRT_EBO impl_INetworkOperatorTetheringAccessPointConfiguration
 {
     hstring Ssid() const;
-    void Ssid(hstring_ref value) const;
+    void Ssid(hstring_view value) const;
     hstring Passphrase() const;
-    void Passphrase(hstring_ref value) const;
+    void Passphrase(hstring_view value) const;
 };
 
 template <typename D>
@@ -957,8 +957,8 @@ struct WINRT_EBO impl_INetworkOperatorTetheringManager
 template <typename D>
 struct WINRT_EBO impl_INetworkOperatorTetheringManagerStatics
 {
-    Windows::Networking::NetworkOperators::TetheringCapability GetTetheringCapability(hstring_ref networkAccountId) const;
-    Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager CreateFromNetworkAccountId(hstring_ref networkAccountId) const;
+    Windows::Networking::NetworkOperators::TetheringCapability GetTetheringCapability(hstring_view networkAccountId) const;
+    Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager CreateFromNetworkAccountId(hstring_view networkAccountId) const;
 };
 
 template <typename D>
@@ -998,14 +998,14 @@ struct WINRT_EBO impl_IProvisionedProfile
 template <typename D>
 struct WINRT_EBO impl_IProvisioningAgent
 {
-    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> ProvisionFromXmlDocumentAsync(hstring_ref provisioningXmlDocument) const;
-    Windows::Networking::NetworkOperators::ProvisionedProfile GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, hstring_ref profileName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> ProvisionFromXmlDocumentAsync(hstring_view provisioningXmlDocument) const;
+    Windows::Networking::NetworkOperators::ProvisionedProfile GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, hstring_view profileName) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IProvisioningAgentStaticMethods
 {
-    Windows::Networking::NetworkOperators::ProvisioningAgent CreateFromNetworkAccountId(hstring_ref networkAccountId) const;
+    Windows::Networking::NetworkOperators::ProvisioningAgent CreateFromNetworkAccountId(hstring_view networkAccountId) const;
 };
 
 template <typename D>
@@ -1016,13 +1016,13 @@ struct WINRT_EBO impl_IUssdMessage
     com_array<uint8_t> GetPayload() const;
     void SetPayload(array_ref<const uint8_t> value) const;
     hstring PayloadAsText() const;
-    void PayloadAsText(hstring_ref value) const;
+    void PayloadAsText(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IUssdMessageFactory
 {
-    Windows::Networking::NetworkOperators::UssdMessage CreateMessage(hstring_ref messageText) const;
+    Windows::Networking::NetworkOperators::UssdMessage CreateMessage(hstring_view messageText) const;
 };
 
 template <typename D>
@@ -1042,8 +1042,8 @@ struct WINRT_EBO impl_IUssdSession
 template <typename D>
 struct WINRT_EBO impl_IUssdSessionStatics
 {
-    Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkAccountId(hstring_ref networkAccountId) const;
-    Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkInterfaceId(hstring_ref networkInterfaceId) const;
+    Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkAccountId(hstring_view networkAccountId) const;
+    Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkInterfaceId(hstring_view networkInterfaceId) const;
 };
 
 }

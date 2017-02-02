@@ -673,7 +673,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
     return services;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> impl_IRfcommDeviceServiceStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> impl_IRfcommDeviceServiceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> asyncOp;
     check_hresult(WINRT_SHIM(IRfcommDeviceServiceStatics)->abi_FromIdAsync(get(deviceId), put(asyncOp)));
@@ -821,7 +821,7 @@ template <typename D> void impl_IRfcommServiceProvider2<D>::StartAdvertising(con
     check_hresult(WINRT_SHIM(IRfcommServiceProvider2)->abi_StartAdvertisingWithRadioDiscoverability(get(listener), radioDiscoverable));
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> RfcommDeviceService::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> RfcommDeviceService::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<RfcommDeviceService, IRfcommDeviceServiceStatics>().FromIdAsync(deviceId);
 }

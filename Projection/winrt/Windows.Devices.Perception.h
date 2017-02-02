@@ -3953,7 +3953,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> impl_IPerceptionInfraredFrameSourceStatics<D>::FromIdAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> impl_IPerceptionInfraredFrameSourceStatics<D>::FromIdAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> result;
     check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_FromIdAsync(get(id), put(result)));
@@ -3981,7 +3981,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> impl_IPerceptionDepthFrameSourceStatics<D>::FromIdAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> impl_IPerceptionDepthFrameSourceStatics<D>::FromIdAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> result;
     check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_FromIdAsync(get(id), put(result)));
@@ -4009,7 +4009,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> impl_IPerceptionColorFrameSourceStatics<D>::FromIdAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> impl_IPerceptionColorFrameSourceStatics<D>::FromIdAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> result;
     check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_FromIdAsync(get(id), put(result)));
@@ -4192,21 +4192,21 @@ template <typename D> Windows::Devices::Perception::PerceptionControlSession imp
     return value;
 }
 
-template <typename D> bool impl_IPerceptionColorFrameSource<D>::CanControlIndependentlyFrom(hstring_ref targetId) const
+template <typename D> bool impl_IPerceptionColorFrameSource<D>::CanControlIndependentlyFrom(hstring_view targetId) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_CanControlIndependentlyFrom(get(targetId), &result));
     return result;
 }
 
-template <typename D> bool impl_IPerceptionColorFrameSource<D>::IsCorrelatedWith(hstring_ref targetId) const
+template <typename D> bool impl_IPerceptionColorFrameSource<D>::IsCorrelatedWith(hstring_view targetId) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_IsCorrelatedWith(get(targetId), &result));
     return result;
 }
 
-template <typename D> bool impl_IPerceptionColorFrameSource<D>::TryGetTransformTo(hstring_ref targetId, Windows::Foundation::Numerics::float4x4 & result) const
+template <typename D> bool impl_IPerceptionColorFrameSource<D>::TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const
 {
     bool hasResult {};
     check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
@@ -4220,7 +4220,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Per
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionColorFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_ref targetSourceId, const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionColorFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetSourceId, const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> result;
     check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetSourceId), get(correlatedDepthFrameSource), put(result)));
@@ -4417,21 +4417,21 @@ template <typename D> Windows::Devices::Perception::PerceptionControlSession imp
     return result;
 }
 
-template <typename D> bool impl_IPerceptionDepthFrameSource<D>::CanControlIndependentlyFrom(hstring_ref targetId) const
+template <typename D> bool impl_IPerceptionDepthFrameSource<D>::CanControlIndependentlyFrom(hstring_view targetId) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_CanControlIndependentlyFrom(get(targetId), &result));
     return result;
 }
 
-template <typename D> bool impl_IPerceptionDepthFrameSource<D>::IsCorrelatedWith(hstring_ref targetId) const
+template <typename D> bool impl_IPerceptionDepthFrameSource<D>::IsCorrelatedWith(hstring_view targetId) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_IsCorrelatedWith(get(targetId), &result));
     return result;
 }
 
-template <typename D> bool impl_IPerceptionDepthFrameSource<D>::TryGetTransformTo(hstring_ref targetId, Windows::Foundation::Numerics::float4x4 & result) const
+template <typename D> bool impl_IPerceptionDepthFrameSource<D>::TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const
 {
     bool hasResult {};
     check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
@@ -4445,7 +4445,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Per
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionDepthFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_ref targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionDepthFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> result;
     check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetId), get(depthFrameSourceToMapWith), put(result)));
@@ -4642,21 +4642,21 @@ template <typename D> Windows::Devices::Perception::PerceptionControlSession imp
     return result;
 }
 
-template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::CanControlIndependentlyFrom(hstring_ref targetId) const
+template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::CanControlIndependentlyFrom(hstring_view targetId) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_CanControlIndependentlyFrom(get(targetId), &result));
     return result;
 }
 
-template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::IsCorrelatedWith(hstring_ref targetId) const
+template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::IsCorrelatedWith(hstring_view targetId) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_IsCorrelatedWith(get(targetId), &result));
     return result;
 }
 
-template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::TryGetTransformTo(hstring_ref targetId, Windows::Foundation::Numerics::float4x4 & result) const
+template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const
 {
     bool hasResult {};
     check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
@@ -4670,7 +4670,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Per
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionInfraredFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_ref targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionInfraredFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> result;
     check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetId), get(depthFrameSourceToMapWith), put(result)));
@@ -4851,7 +4851,7 @@ template <typename D> void impl_IPerceptionControlSession<D>::ControlLost(event_
     check_hresult(WINRT_SHIM(IPerceptionControlSession)->remove_ControlLost(token));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionControlSession<D>::TrySetPropertyAsync(hstring_ref name, const Windows::IInspectable & value) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionControlSession<D>::TrySetPropertyAsync(hstring_view name, const Windows::IInspectable & value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
     check_hresult(WINRT_SHIM(IPerceptionControlSession)->abi_TrySetPropertyAsync(get(name), get(value), put(result)));
@@ -5178,7 +5178,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().FindAllAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> PerceptionColorFrameSource::FromIdAsync(hstring_ref id)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> PerceptionColorFrameSource::FromIdAsync(hstring_view id)
 {
     return get_activation_factory<PerceptionColorFrameSource, IPerceptionColorFrameSourceStatics>().FromIdAsync(id);
 }
@@ -5198,7 +5198,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().FindAllAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> PerceptionDepthFrameSource::FromIdAsync(hstring_ref id)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> PerceptionDepthFrameSource::FromIdAsync(hstring_view id)
 {
     return get_activation_factory<PerceptionDepthFrameSource, IPerceptionDepthFrameSourceStatics>().FromIdAsync(id);
 }
@@ -5218,7 +5218,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().FindAllAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> PerceptionInfraredFrameSource::FromIdAsync(hstring_ref id)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> PerceptionInfraredFrameSource::FromIdAsync(hstring_view id)
 {
     return get_activation_factory<PerceptionInfraredFrameSource, IPerceptionInfraredFrameSourceStatics>().FromIdAsync(id);
 }

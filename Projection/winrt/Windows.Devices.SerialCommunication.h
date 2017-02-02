@@ -593,7 +593,7 @@ template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelector() 
     return value;
 }
 
-template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelector(hstring_ref portName) const
+template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelector(hstring_view portName) const
 {
     hstring result;
     check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_GetDeviceSelectorFromPortName(get(portName), put(result)));
@@ -607,7 +607,7 @@ template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelectorFro
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> impl_ISerialDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> impl_ISerialDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> result;
     check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_FromIdAsync(get(deviceId), put(result)));
@@ -850,7 +850,7 @@ inline hstring SerialDevice::GetDeviceSelector()
     return get_activation_factory<SerialDevice, ISerialDeviceStatics>().GetDeviceSelector();
 }
 
-inline hstring SerialDevice::GetDeviceSelector(hstring_ref portName)
+inline hstring SerialDevice::GetDeviceSelector(hstring_view portName)
 {
     return get_activation_factory<SerialDevice, ISerialDeviceStatics>().GetDeviceSelector(portName);
 }
@@ -860,7 +860,7 @@ inline hstring SerialDevice::GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, u
     return get_activation_factory<SerialDevice, ISerialDeviceStatics>().GetDeviceSelectorFromUsbVidPid(vendorId, productId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> SerialDevice::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> SerialDevice::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<SerialDevice, ISerialDeviceStatics>().FromIdAsync(deviceId);
 }

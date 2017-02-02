@@ -118,11 +118,11 @@ struct WINRT_EBO impl_IFileOpenPicker
     Windows::Storage::Pickers::PickerViewMode ViewMode() const;
     void ViewMode(Windows::Storage::Pickers::PickerViewMode value) const;
     hstring SettingsIdentifier() const;
-    void SettingsIdentifier(hstring_ref value) const;
+    void SettingsIdentifier(hstring_view value) const;
     Windows::Storage::Pickers::PickerLocationId SuggestedStartLocation() const;
     void SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) const;
     hstring CommitButtonText() const;
-    void CommitButtonText(hstring_ref value) const;
+    void CommitButtonText(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> FileTypeFilter() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> PickSingleFileAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> PickMultipleFilesAsync() const;
@@ -145,25 +145,25 @@ struct WINRT_EBO impl_IFileOpenPickerStatics
 template <typename D>
 struct WINRT_EBO impl_IFileOpenPickerWithOperationId
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> PickSingleFileAsync(hstring_ref pickerOperationId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> PickSingleFileAsync(hstring_view pickerOperationId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IFileSavePicker
 {
     hstring SettingsIdentifier() const;
-    void SettingsIdentifier(hstring_ref value) const;
+    void SettingsIdentifier(hstring_view value) const;
     Windows::Storage::Pickers::PickerLocationId SuggestedStartLocation() const;
     void SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) const;
     hstring CommitButtonText() const;
-    void CommitButtonText(hstring_ref value) const;
+    void CommitButtonText(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>> FileTypeChoices() const;
     hstring DefaultFileExtension() const;
-    void DefaultFileExtension(hstring_ref value) const;
+    void DefaultFileExtension(hstring_view value) const;
     Windows::Storage::StorageFile SuggestedSaveFile() const;
     void SuggestedSaveFile(const Windows::Storage::StorageFile & value) const;
     hstring SuggestedFileName() const;
-    void SuggestedFileName(hstring_ref value) const;
+    void SuggestedFileName(hstring_view value) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> PickSaveFileAsync() const;
 };
 
@@ -178,7 +178,7 @@ template <typename D>
 struct WINRT_EBO impl_IFileSavePicker3
 {
     hstring EnterpriseId() const;
-    void EnterpriseId(hstring_ref value) const;
+    void EnterpriseId(hstring_view value) const;
 };
 
 template <typename D>
@@ -187,11 +187,11 @@ struct WINRT_EBO impl_IFolderPicker
     Windows::Storage::Pickers::PickerViewMode ViewMode() const;
     void ViewMode(Windows::Storage::Pickers::PickerViewMode value) const;
     hstring SettingsIdentifier() const;
-    void SettingsIdentifier(hstring_ref value) const;
+    void SettingsIdentifier(hstring_view value) const;
     Windows::Storage::Pickers::PickerLocationId SuggestedStartLocation() const;
     void SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) const;
     hstring CommitButtonText() const;
-    void CommitButtonText(hstring_ref value) const;
+    void CommitButtonText(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> FileTypeFilter() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> PickSingleFolderAsync() const;
 };

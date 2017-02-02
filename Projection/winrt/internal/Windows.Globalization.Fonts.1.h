@@ -80,7 +80,7 @@ struct WINRT_EBO impl_ILanguageFontGroup
 template <typename D>
 struct WINRT_EBO impl_ILanguageFontGroupFactory
 {
-    Windows::Globalization::Fonts::LanguageFontGroup CreateLanguageFontGroup(hstring_ref languageTag) const;
+    Windows::Globalization::Fonts::LanguageFontGroup CreateLanguageFontGroup(hstring_view languageTag) const;
 };
 
 }

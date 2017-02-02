@@ -38,7 +38,7 @@ struct WINRT_EBO impl_IApplicationDataManager
 template <typename D>
 struct WINRT_EBO impl_IApplicationDataManagerStatics
 {
-    Windows::Storage::ApplicationData CreateForPackageFamily(hstring_ref packageFamilyName) const;
+    Windows::Storage::ApplicationData CreateForPackageFamily(hstring_view packageFamilyName) const;
 };
 
 }

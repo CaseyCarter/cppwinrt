@@ -2852,7 +2852,7 @@ template <typename D> Windows::Foundation::Diagnostics::CausalityTraceLevel impl
     return value;
 }
 
-template <typename D> void impl_IAsyncCausalityTracerStatics<D>::TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring_ref operationName, uint64_t relatedContext) const
+template <typename D> void impl_IAsyncCausalityTracerStatics<D>::TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring_view operationName, uint64_t relatedContext) const
 {
     check_hresult(WINRT_SHIM(IAsyncCausalityTracerStatics)->abi_TraceOperationCreation(traceLevel, source, platformId, operationId, get(operationName), relatedContext));
 }
@@ -3037,12 +3037,12 @@ template <typename D> void impl_ILoggingFields<D>::Clear() const
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_Clear());
 }
 
-template <typename D> void impl_ILoggingFields<D>::BeginStruct(hstring_ref name) const
+template <typename D> void impl_ILoggingFields<D>::BeginStruct(hstring_view name) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_BeginStruct(get(name)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::BeginStruct(hstring_ref name, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::BeginStruct(hstring_view name, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_BeginStructWithTags(get(name), tags));
 }
@@ -3052,557 +3052,557 @@ template <typename D> void impl_ILoggingFields<D>::EndStruct() const
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_EndStruct());
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddEmpty(hstring_ref name) const
+template <typename D> void impl_ILoggingFields<D>::AddEmpty(hstring_view name) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddEmpty(get(name)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddEmpty(hstring_ref name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddEmpty(hstring_view name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddEmptyWithFormat(get(name), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddEmpty(hstring_ref name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddEmpty(hstring_view name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddEmptyWithFormatAndTags(get(name), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_ref name, uint8_t value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_view name, uint8_t value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_ref name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_view name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8WithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_ref name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_view name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_ref name, array_ref<const uint8_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_ref<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_ref name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_ref name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_ref name, int16_t value) const
+template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_view name, int16_t value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_ref name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_view name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16WithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_ref name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_view name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_ref name, array_ref<const int16_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_ref<const int16_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_ref name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_ref name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_ref name, uint16_t value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_view name, uint16_t value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_ref name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_view name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16WithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_ref name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_view name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_ref name, array_ref<const uint16_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_ref<const uint16_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_ref name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_ref name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_ref name, int32_t value) const
+template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_view name, int32_t value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_ref name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_view name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32WithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_ref name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_view name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_ref name, array_ref<const int32_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_ref<const int32_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_ref name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_ref name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_ref name, uint32_t value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_view name, uint32_t value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_ref name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_view name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32WithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_ref name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_view name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_ref name, array_ref<const uint32_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_ref<const uint32_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_ref name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_ref name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_ref name, int64_t value) const
+template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_view name, int64_t value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_ref name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_view name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64WithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_ref name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_view name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_ref name, array_ref<const int64_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_ref<const int64_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_ref name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_ref name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_ref name, uint64_t value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_view name, uint64_t value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_ref name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_view name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64WithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_ref name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_view name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_ref name, array_ref<const uint64_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_ref<const uint64_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_ref name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_ref name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_ref name, float value) const
+template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_view name, float value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingle(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_ref name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_view name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleWithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_ref name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_view name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleWithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_ref name, array_ref<const float> value) const
+template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_ref<const float> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_ref name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_ref name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_ref name, double value) const
+template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_view name, double value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDouble(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_ref name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_view name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleWithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_ref name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_view name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleWithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_ref name, array_ref<const double> value) const
+template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_ref<const double> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_ref name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_ref name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_ref name, wchar_t value) const
+template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_view name, wchar_t value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_ref name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_view name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16WithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_ref name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_view name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_ref name, array_ref<const wchar_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_ref<const wchar_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_ref name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_ref name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_ref name, bool value) const
+template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_view name, bool value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBoolean(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_ref name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_view name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanWithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_ref name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_view name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanWithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_ref name, array_ref<const bool> value) const
+template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_ref<const bool> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_ref name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_ref name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddString(hstring_ref name, hstring_ref value) const
+template <typename D> void impl_ILoggingFields<D>::AddString(hstring_view name, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddString(get(name), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddString(hstring_ref name, hstring_ref value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddString(hstring_view name, hstring_view value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringWithFormat(get(name), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddString(hstring_ref name, hstring_ref value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddString(hstring_view name, hstring_view value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_ref name, array_ref<const hstring> value) const
+template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_ref<const hstring> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_ref name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_ref name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_ref name, GUID value) const
+template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_view name, GUID value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuid(get(name), value));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_ref name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_view name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidWithFormat(get(name), value, format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_ref name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_view name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidWithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_ref name, array_ref<const GUID> value) const
+template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_ref<const GUID> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_ref name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_ref name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_ref name, const Windows::Foundation::DateTime & value) const
+template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_view name, const Windows::Foundation::DateTime & value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTime(get(name), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_ref name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_view name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeWithFormat(get(name), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_ref name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_view name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_ref name, array_ref<const Windows::Foundation::DateTime> value) const
+template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_ref<const Windows::Foundation::DateTime> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_ref name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_ref name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_ref name, const Windows::Foundation::TimeSpan & value) const
+template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_view name, const Windows::Foundation::TimeSpan & value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpan(get(name), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_ref name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_view name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanWithFormat(get(name), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_ref name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_view name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_ref name, array_ref<const Windows::Foundation::TimeSpan> value) const
+template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_ref<const Windows::Foundation::TimeSpan> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_ref name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_ref name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_ref name, const Windows::Foundation::Point & value) const
+template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_view name, const Windows::Foundation::Point & value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPoint(get(name), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_ref name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_view name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointWithFormat(get(name), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_ref name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_view name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_ref name, array_ref<const Windows::Foundation::Point> value) const
+template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_ref<const Windows::Foundation::Point> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_ref name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_ref name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_ref name, const Windows::Foundation::Size & value) const
+template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_view name, const Windows::Foundation::Size & value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSize(get(name), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_ref name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_view name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeWithFormat(get(name), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_ref name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_view name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_ref name, array_ref<const Windows::Foundation::Size> value) const
+template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_ref<const Windows::Foundation::Size> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_ref name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_ref name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_ref name, const Windows::Foundation::Rect & value) const
+template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_view name, const Windows::Foundation::Rect & value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRect(get(name), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_ref name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_view name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectWithFormat(get(name), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_ref name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_view name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_ref name, array_ref<const Windows::Foundation::Rect> value) const
+template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_ref<const Windows::Foundation::Rect> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_ref name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_ref name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3628,48 +3628,48 @@ template <typename D> bool impl_ILoggingTarget<D>::IsEnabled(Windows::Foundation
     return result;
 }
 
-template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_ref eventName) const
+template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_view eventName) const
 {
     check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEvent(get(eventName)));
 }
 
-template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_ref eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const
+template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_view eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const
 {
     check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEventWithFields(get(eventName), get(fields)));
 }
 
-template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_ref eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const
+template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_view eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
     check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEventWithFieldsAndLevel(get(eventName), get(fields), level));
 }
 
-template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_ref eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const
+template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_view eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const
 {
     check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEventWithFieldsAndOptions(get(eventName), get(fields), level, get(options)));
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_ref startEventName) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_view startEventName) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity result { nullptr };
     check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivity(get(startEventName), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_ref startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_view startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity result { nullptr };
     check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivityWithFields(get(startEventName), get(fields), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_ref startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_view startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity result { nullptr };
     check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivityWithFieldsAndLevel(get(startEventName), get(fields), level, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_ref startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_view startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity result { nullptr };
     check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivityWithFieldsAndOptions(get(startEventName), get(fields), level, get(options), put(result)));
@@ -3697,22 +3697,22 @@ template <typename D> Windows::Foundation::Diagnostics::LoggingLevel impl_ILoggi
     return value;
 }
 
-template <typename D> void impl_ILoggingChannel<D>::LogMessage(hstring_ref eventString) const
+template <typename D> void impl_ILoggingChannel<D>::LogMessage(hstring_view eventString) const
 {
     check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogMessage(get(eventString)));
 }
 
-template <typename D> void impl_ILoggingChannel<D>::LogMessage(hstring_ref eventString, Windows::Foundation::Diagnostics::LoggingLevel level) const
+template <typename D> void impl_ILoggingChannel<D>::LogMessage(hstring_view eventString, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
     check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogMessageWithLevel(get(eventString), level));
 }
 
-template <typename D> void impl_ILoggingChannel<D>::LogValuePair(hstring_ref value1, int32_t value2) const
+template <typename D> void impl_ILoggingChannel<D>::LogValuePair(hstring_view value1, int32_t value2) const
 {
     check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogValuePair(get(value1), value2));
 }
 
-template <typename D> void impl_ILoggingChannel<D>::LogValuePair(hstring_ref value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) const
+template <typename D> void impl_ILoggingChannel<D>::LogValuePair(hstring_view value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
     check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogValuePairWithLevel(get(value1), value2, level));
 }
@@ -3741,21 +3741,21 @@ template <typename D> GUID impl_ILoggingChannel2<D>::Id() const
     return value;
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingChannelFactory<D>::Create(hstring_ref name) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingChannelFactory<D>::Create(hstring_view name) const
 {
     Windows::Foundation::Diagnostics::LoggingChannel result { nullptr };
     check_hresult(WINRT_SHIM(ILoggingChannelFactory)->abi_Create(get(name), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingChannelFactory2<D>::CreateWithOptions(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingChannelFactory2<D>::CreateWithOptions(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) const
 {
     Windows::Foundation::Diagnostics::LoggingChannel result { nullptr };
     check_hresult(WINRT_SHIM(ILoggingChannelFactory2)->abi_CreateWithOptions(get(name), get(options), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingChannelFactory2<D>::CreateWithOptionsAndId(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingChannelFactory2<D>::CreateWithOptionsAndId(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) const
 {
     Windows::Foundation::Diagnostics::LoggingChannel result { nullptr };
     check_hresult(WINRT_SHIM(ILoggingChannelFactory2)->abi_CreateWithOptionsAndId(get(name), get(options), id, put(result)));
@@ -3783,29 +3783,29 @@ template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILog
     return value;
 }
 
-template <typename D> void impl_ILoggingActivity2<D>::StopActivity(hstring_ref stopEventName) const
+template <typename D> void impl_ILoggingActivity2<D>::StopActivity(hstring_view stopEventName) const
 {
     check_hresult(WINRT_SHIM(ILoggingActivity2)->abi_StopActivity(get(stopEventName)));
 }
 
-template <typename D> void impl_ILoggingActivity2<D>::StopActivity(hstring_ref stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const
+template <typename D> void impl_ILoggingActivity2<D>::StopActivity(hstring_view stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const
 {
     check_hresult(WINRT_SHIM(ILoggingActivity2)->abi_StopActivityWithFields(get(stopEventName), get(fields)));
 }
 
-template <typename D> void impl_ILoggingActivity2<D>::StopActivity(hstring_ref stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, const Windows::Foundation::Diagnostics::LoggingOptions & options) const
+template <typename D> void impl_ILoggingActivity2<D>::StopActivity(hstring_view stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, const Windows::Foundation::Diagnostics::LoggingOptions & options) const
 {
     check_hresult(WINRT_SHIM(ILoggingActivity2)->abi_StopActivityWithFieldsAndOptions(get(stopEventName), get(fields), get(options)));
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingActivityFactory<D>::CreateLoggingActivity(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingActivityFactory<D>::CreateLoggingActivity(hstring_view activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity loggingActivity { nullptr };
     check_hresult(WINRT_SHIM(ILoggingActivityFactory)->abi_CreateLoggingActivity(get(activityName), get(loggingChannel), put(loggingActivity)));
     return loggingActivity;
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingActivityFactory<D>::CreateLoggingActivityWithLevel(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingActivityFactory<D>::CreateLoggingActivityWithLevel(hstring_view activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity loggingActivity { nullptr };
     check_hresult(WINRT_SHIM(ILoggingActivityFactory)->abi_CreateLoggingActivityWithLevel(get(activityName), get(loggingChannel), level, put(loggingActivity)));
@@ -3819,7 +3819,7 @@ template <typename D> hstring impl_ILoggingSession<D>::Name() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_ILoggingSession<D>::SaveToFileAsync(const Windows::Storage::IStorageFolder & folder, hstring_ref fileName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_ILoggingSession<D>::SaveToFileAsync(const Windows::Storage::IStorageFolder & folder, hstring_view fileName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(ILoggingSession)->abi_SaveToFileAsync(get(folder), get(fileName), put(operation)));
@@ -3841,7 +3841,7 @@ template <typename D> void impl_ILoggingSession<D>::RemoveLoggingChannel(const W
     check_hresult(WINRT_SHIM(ILoggingSession)->abi_RemoveLoggingChannel(get(loggingChannel)));
 }
 
-template <typename D> Windows::Foundation::Diagnostics::LoggingSession impl_ILoggingSessionFactory<D>::Create(hstring_ref name) const
+template <typename D> Windows::Foundation::Diagnostics::LoggingSession impl_ILoggingSessionFactory<D>::Create(hstring_view name) const
 {
     Windows::Foundation::Diagnostics::LoggingSession result { nullptr };
     check_hresult(WINRT_SHIM(ILoggingSessionFactory)->abi_Create(get(name), put(result)));
@@ -3901,14 +3901,14 @@ template <typename D> void impl_IFileLoggingSession<D>::LogFileGenerated(event_t
     check_hresult(WINRT_SHIM(IFileLoggingSession)->remove_LogFileGenerated(token));
 }
 
-template <typename D> Windows::Foundation::Diagnostics::FileLoggingSession impl_IFileLoggingSessionFactory<D>::Create(hstring_ref name) const
+template <typename D> Windows::Foundation::Diagnostics::FileLoggingSession impl_IFileLoggingSessionFactory<D>::Create(hstring_view name) const
 {
     Windows::Foundation::Diagnostics::FileLoggingSession result { nullptr };
     check_hresult(WINRT_SHIM(IFileLoggingSessionFactory)->abi_Create(get(name), put(result)));
     return result;
 }
 
-inline void AsyncCausalityTracer::TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring_ref operationName, uint64_t relatedContext)
+inline void AsyncCausalityTracer::TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring_view operationName, uint64_t relatedContext)
 {
     get_activation_factory<AsyncCausalityTracer, IAsyncCausalityTracerStatics>().TraceOperationCreation(traceLevel, source, platformId, operationId, operationName, relatedContext);
 }
@@ -3954,27 +3954,27 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Diagnostics::Er
     return get_activation_factory<ErrorDetails, IErrorDetailsStatics>().CreateFromHResultAsync(errorCode);
 }
 
-inline FileLoggingSession::FileLoggingSession(hstring_ref name) :
+inline FileLoggingSession::FileLoggingSession(hstring_view name) :
     FileLoggingSession(get_activation_factory<FileLoggingSession, IFileLoggingSessionFactory>().Create(name))
 {}
 
-inline LoggingActivity::LoggingActivity(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) :
+inline LoggingActivity::LoggingActivity(hstring_view activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) :
     LoggingActivity(get_activation_factory<LoggingActivity, ILoggingActivityFactory>().CreateLoggingActivity(activityName, loggingChannel))
 {}
 
-inline LoggingActivity::LoggingActivity(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) :
+inline LoggingActivity::LoggingActivity(hstring_view activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) :
     LoggingActivity(get_activation_factory<LoggingActivity, ILoggingActivityFactory>().CreateLoggingActivityWithLevel(activityName, loggingChannel, level))
 {}
 
-inline LoggingChannel::LoggingChannel(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) :
+inline LoggingChannel::LoggingChannel(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) :
     LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory2>().CreateWithOptions(name, options))
 {}
 
-inline LoggingChannel::LoggingChannel(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) :
+inline LoggingChannel::LoggingChannel(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) :
     LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory2>().CreateWithOptionsAndId(name, options, id))
 {}
 
-inline LoggingChannel::LoggingChannel(hstring_ref name) :
+inline LoggingChannel::LoggingChannel(hstring_view name) :
     LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory>().Create(name))
 {}
 
@@ -3998,7 +3998,7 @@ inline LoggingOptions::LoggingOptions(int64_t keywords) :
     LoggingOptions(get_activation_factory<LoggingOptions, ILoggingOptionsFactory>().CreateWithKeywords(keywords))
 {}
 
-inline LoggingSession::LoggingSession(hstring_ref name) :
+inline LoggingSession::LoggingSession(hstring_view name) :
     LoggingSession(get_activation_factory<LoggingSession, ILoggingSessionFactory>().Create(name))
 {}
 

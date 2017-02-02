@@ -82,7 +82,7 @@ template <typename D> hstring impl_ICharacterGrouping<D>::Label() const
     return value;
 }
 
-template <typename D> hstring impl_ICharacterGroupings<D>::Lookup(hstring_ref text) const
+template <typename D> hstring impl_ICharacterGroupings<D>::Lookup(hstring_view text) const
 {
     hstring result;
     check_hresult(WINRT_SHIM(ICharacterGroupings)->abi_Lookup(get(text), put(result)));

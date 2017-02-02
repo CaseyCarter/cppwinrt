@@ -2119,7 +2119,7 @@ template <typename D> void impl_IPhotoImportStorageMedium<D>::Refresh() const
     check_hresult(WINRT_SHIM(IPhotoImportStorageMedium)->abi_Refresh());
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> impl_IPhotoImportSourceStatics<D>::FromIdAsync(hstring_ref sourceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> impl_IPhotoImportSourceStatics<D>::FromIdAsync(hstring_view sourceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> operation;
     check_hresult(WINRT_SHIM(IPhotoImportSourceStatics)->abi_FromIdAsync(get(sourceId), put(operation)));
@@ -2302,7 +2302,7 @@ template <typename D> Windows::Media::Import::PhotoImportSubfolderCreationMode i
     return value;
 }
 
-template <typename D> void impl_IPhotoImportSession<D>::DestinationFileNamePrefix(hstring_ref value) const
+template <typename D> void impl_IPhotoImportSession<D>::DestinationFileNamePrefix(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPhotoImportSession)->put_DestinationFileNamePrefix(get(value)));
 }
@@ -2944,7 +2944,7 @@ inline Windows::Foundation::Collections::IVectorView<Windows::Media::Import::Pho
     return get_activation_factory<PhotoImportManager, IPhotoImportManagerStatics>().GetPendingOperations();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> PhotoImportSource::FromIdAsync(hstring_ref sourceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> PhotoImportSource::FromIdAsync(hstring_view sourceId)
 {
     return get_activation_factory<PhotoImportSource, IPhotoImportSourceStatics>().FromIdAsync(sourceId);
 }

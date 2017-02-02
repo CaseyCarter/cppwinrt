@@ -450,12 +450,12 @@ struct WINRT_EBO impl_IDatagramSocket
     Windows::Networking::Sockets::DatagramSocketControl Control() const;
     Windows::Networking::Sockets::DatagramSocketInformation Information() const;
     Windows::Storage::Streams::IOutputStream OutputStream() const;
-    Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const;
+    Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const;
     Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::EndpointPair & endpointPair) const;
-    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName) const;
-    Windows::Foundation::IAsyncAction BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName) const;
+    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_view localServiceName) const;
+    Windows::Foundation::IAsyncAction BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_view localServiceName) const;
     void JoinMulticastGroup(const Windows::Networking::HostName & host) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> GetOutputStreamAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> GetOutputStreamAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> GetOutputStreamAsync(const Windows::Networking::EndpointPair & endpointPair) const;
     event_token MessageReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> & eventHandler) const;
     using MessageReceived_revoker = event_revoker<IDatagramSocket>;
@@ -466,7 +466,7 @@ struct WINRT_EBO impl_IDatagramSocket
 template <typename D>
 struct WINRT_EBO impl_IDatagramSocket2
 {
-    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
+    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_view localServiceName, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
 };
 
 template <typename D>
@@ -475,9 +475,9 @@ struct WINRT_EBO impl_IDatagramSocket3
     Windows::Foundation::IAsyncAction CancelIOAsync() const;
     void EnableTransferOwnership(GUID taskId) const;
     void EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const;
-    void TransferOwnership(hstring_ref socketId) const;
-    void TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const;
-    void TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const;
+    void TransferOwnership(hstring_view socketId) const;
+    void TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const;
+    void TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const;
 };
 
 template <typename D>
@@ -527,8 +527,8 @@ struct WINRT_EBO impl_IDatagramSocketMessageReceivedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IDatagramSocketStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const;
 };
 
 template <typename D>
@@ -619,16 +619,16 @@ struct WINRT_EBO impl_IStreamSocket
     Windows::Storage::Streams::IInputStream InputStream() const;
     Windows::Storage::Streams::IOutputStream OutputStream() const;
     Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::EndpointPair & endpointPair) const;
-    Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const;
+    Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const;
     Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::EndpointPair & endpointPair, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
-    Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
+    Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
     Windows::Foundation::IAsyncAction UpgradeToSslAsync(Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::HostName & validationHostName) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IStreamSocket2
 {
-    Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
+    Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
 };
 
 template <typename D>
@@ -637,9 +637,9 @@ struct WINRT_EBO impl_IStreamSocket3
     Windows::Foundation::IAsyncAction CancelIOAsync() const;
     void EnableTransferOwnership(GUID taskId) const;
     void EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const;
-    void TransferOwnership(hstring_ref socketId) const;
-    void TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const;
-    void TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const;
+    void TransferOwnership(hstring_view socketId) const;
+    void TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const;
+    void TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const;
 };
 
 template <typename D>
@@ -701,8 +701,8 @@ struct WINRT_EBO impl_IStreamSocketListener
 {
     Windows::Networking::Sockets::StreamSocketListenerControl Control() const;
     Windows::Networking::Sockets::StreamSocketListenerInformation Information() const;
-    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName) const;
-    Windows::Foundation::IAsyncAction BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName) const;
+    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_view localServiceName) const;
+    Windows::Foundation::IAsyncAction BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_view localServiceName) const;
     event_token ConnectionReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> & eventHandler) const;
     using ConnectionReceived_revoker = event_revoker<IStreamSocketListener>;
     ConnectionReceived_revoker ConnectionReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> & eventHandler) const;
@@ -712,8 +712,8 @@ struct WINRT_EBO impl_IStreamSocketListener
 template <typename D>
 struct WINRT_EBO impl_IStreamSocketListener2
 {
-    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
-    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
+    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_view localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
+    Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_view localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
 };
 
 template <typename D>
@@ -722,8 +722,8 @@ struct WINRT_EBO impl_IStreamSocketListener3
     Windows::Foundation::IAsyncAction CancelIOAsync() const;
     void EnableTransferOwnership(GUID taskId) const;
     void EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const;
-    void TransferOwnership(hstring_ref socketId) const;
-    void TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const;
+    void TransferOwnership(hstring_view socketId) const;
+    void TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const;
 };
 
 template <typename D>
@@ -761,8 +761,8 @@ struct WINRT_EBO impl_IStreamSocketListenerInformation
 template <typename D>
 struct WINRT_EBO impl_IStreamSocketStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const;
 };
 
 template <typename D>
@@ -794,12 +794,12 @@ struct WINRT_EBO impl_IWebSocket
 {
     Windows::Storage::Streams::IOutputStream OutputStream() const;
     Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Foundation::Uri & uri) const;
-    void SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const;
+    void SetRequestHeader(hstring_view headerName, hstring_view headerValue) const;
     event_token Closed(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> & eventHandler) const;
     using Closed_revoker = event_revoker<IWebSocket>;
     Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> & eventHandler) const;
     void Closed(event_token eventCookie) const;
-    void Close(uint16_t code, hstring_ref reason) const;
+    void Close(uint16_t code, hstring_view reason) const;
 };
 
 template <typename D>

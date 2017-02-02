@@ -1054,7 +1054,7 @@ struct ListViewKeyToItemHandler : Windows::IUnknown
     template <typename L> ListViewKeyToItemHandler(L lambda);
     template <typename F> ListViewKeyToItemHandler (F * function);
     template <typename O, typename M> ListViewKeyToItemHandler(O * object, M method);
-    Windows::Foundation::IAsyncOperation<Windows::IInspectable> operator()(hstring_ref key) const;
+    Windows::Foundation::IAsyncOperation<Windows::IInspectable> operator()(hstring_view key) const;
 };
 
 struct NotifyEventHandler : Windows::IUnknown

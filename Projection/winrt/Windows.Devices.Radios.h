@@ -183,7 +183,7 @@ template <typename D> hstring impl_IRadioStatics<D>::GetDeviceSelector() const
     return deviceSelector;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> impl_IRadioStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> impl_IRadioStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> value;
     check_hresult(WINRT_SHIM(IRadioStatics)->abi_FromIdAsync(get(deviceId), put(value)));
@@ -252,7 +252,7 @@ inline hstring Radio::GetDeviceSelector()
     return get_activation_factory<Radio, IRadioStatics>().GetDeviceSelector();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> Radio::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> Radio::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<Radio, IRadioStatics>().FromIdAsync(deviceId);
 }

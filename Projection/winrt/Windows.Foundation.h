@@ -2146,7 +2146,7 @@ template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::Creat
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateString(hstring_ref value) const
+template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateString(hstring_view value) const
 {
     Windows::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateString(get(value), put(propertyValue)));
@@ -2466,7 +2466,7 @@ template <typename D> bool impl_IUriRuntimeClass<D>::Equals(const Windows::Found
     return value;
 }
 
-template <typename D> Windows::Foundation::Uri impl_IUriRuntimeClass<D>::CombineUri(hstring_ref relativeUri) const
+template <typename D> Windows::Foundation::Uri impl_IUriRuntimeClass<D>::CombineUri(hstring_view relativeUri) const
 {
     Windows::Foundation::Uri instance { nullptr };
     check_hresult(WINRT_SHIM(IUriRuntimeClass)->abi_CombineUri(get(relativeUri), put(instance)));
@@ -2487,28 +2487,28 @@ template <typename D> hstring impl_IUriRuntimeClassWithAbsoluteCanonicalUri<D>::
     return value;
 }
 
-template <typename D> hstring impl_IUriEscapeStatics<D>::UnescapeComponent(hstring_ref toUnescape) const
+template <typename D> hstring impl_IUriEscapeStatics<D>::UnescapeComponent(hstring_view toUnescape) const
 {
     hstring value;
     check_hresult(WINRT_SHIM(IUriEscapeStatics)->abi_UnescapeComponent(get(toUnescape), put(value)));
     return value;
 }
 
-template <typename D> hstring impl_IUriEscapeStatics<D>::EscapeComponent(hstring_ref toEscape) const
+template <typename D> hstring impl_IUriEscapeStatics<D>::EscapeComponent(hstring_view toEscape) const
 {
     hstring value;
     check_hresult(WINRT_SHIM(IUriEscapeStatics)->abi_EscapeComponent(get(toEscape), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::Uri impl_IUriRuntimeClassFactory<D>::CreateUri(hstring_ref uri) const
+template <typename D> Windows::Foundation::Uri impl_IUriRuntimeClassFactory<D>::CreateUri(hstring_view uri) const
 {
     Windows::Foundation::Uri instance { nullptr };
     check_hresult(WINRT_SHIM(IUriRuntimeClassFactory)->abi_CreateUri(get(uri), put(instance)));
     return instance;
 }
 
-template <typename D> Windows::Foundation::Uri impl_IUriRuntimeClassFactory<D>::CreateWithRelativeUri(hstring_ref baseUri, hstring_ref relativeUri) const
+template <typename D> Windows::Foundation::Uri impl_IUriRuntimeClassFactory<D>::CreateWithRelativeUri(hstring_view baseUri, hstring_view relativeUri) const
 {
     Windows::Foundation::Uri instance { nullptr };
     check_hresult(WINRT_SHIM(IUriRuntimeClassFactory)->abi_CreateWithRelativeUri(get(baseUri), get(relativeUri), put(instance)));
@@ -2529,21 +2529,21 @@ template <typename D> hstring impl_IWwwFormUrlDecoderEntry<D>::Value() const
     return value;
 }
 
-template <typename D> hstring impl_IWwwFormUrlDecoderRuntimeClass<D>::GetFirstValueByName(hstring_ref name) const
+template <typename D> hstring impl_IWwwFormUrlDecoderRuntimeClass<D>::GetFirstValueByName(hstring_view name) const
 {
     hstring phstrValue;
     check_hresult(WINRT_SHIM(IWwwFormUrlDecoderRuntimeClass)->abi_GetFirstValueByName(get(name), put(phstrValue)));
     return phstrValue;
 }
 
-template <typename D> Windows::Foundation::WwwFormUrlDecoder impl_IWwwFormUrlDecoderRuntimeClassFactory<D>::CreateWwwFormUrlDecoder(hstring_ref query) const
+template <typename D> Windows::Foundation::WwwFormUrlDecoder impl_IWwwFormUrlDecoderRuntimeClassFactory<D>::CreateWwwFormUrlDecoder(hstring_view query) const
 {
     Windows::Foundation::WwwFormUrlDecoder instance { nullptr };
     check_hresult(WINRT_SHIM(IWwwFormUrlDecoderRuntimeClassFactory)->abi_CreateWwwFormUrlDecoder(get(query), put(instance)));
     return instance;
 }
 
-template <typename D> Windows::IInspectable impl_IGetActivationFactory<D>::GetActivationFactory(hstring_ref activatableClassId) const
+template <typename D> Windows::IInspectable impl_IGetActivationFactory<D>::GetActivationFactory(hstring_view activatableClassId) const
 {
     Windows::IInspectable factory;
     check_hresult(WINRT_SHIM(IGetActivationFactory)->abi_GetActivationFactory(get(activatableClassId), put(factory)));
@@ -2656,7 +2656,7 @@ inline Windows::IInspectable PropertyValue::CreateBoolean(bool value)
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateBoolean(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateString(hstring_ref value)
+inline Windows::IInspectable PropertyValue::CreateString(hstring_view value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateString(value);
 }
@@ -2791,25 +2791,25 @@ inline Windows::IInspectable PropertyValue::CreateRectArray(array_ref<const Wind
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateRectArray(value);
 }
 
-inline Uri::Uri(hstring_ref uri) :
+inline Uri::Uri(hstring_view uri) :
     Uri(get_activation_factory<Uri, IUriRuntimeClassFactory>().CreateUri(uri))
 {}
 
-inline Uri::Uri(hstring_ref baseUri, hstring_ref relativeUri) :
+inline Uri::Uri(hstring_view baseUri, hstring_view relativeUri) :
     Uri(get_activation_factory<Uri, IUriRuntimeClassFactory>().CreateWithRelativeUri(baseUri, relativeUri))
 {}
 
-inline hstring Uri::UnescapeComponent(hstring_ref toUnescape)
+inline hstring Uri::UnescapeComponent(hstring_view toUnescape)
 {
     return get_activation_factory<Uri, IUriEscapeStatics>().UnescapeComponent(toUnescape);
 }
 
-inline hstring Uri::EscapeComponent(hstring_ref toEscape)
+inline hstring Uri::EscapeComponent(hstring_view toEscape)
 {
     return get_activation_factory<Uri, IUriEscapeStatics>().EscapeComponent(toEscape);
 }
 
-inline WwwFormUrlDecoder::WwwFormUrlDecoder(hstring_ref query) :
+inline WwwFormUrlDecoder::WwwFormUrlDecoder(hstring_view query) :
     WwwFormUrlDecoder(get_activation_factory<WwwFormUrlDecoder, IWwwFormUrlDecoderRuntimeClassFactory>().CreateWwwFormUrlDecoder(query))
 {}
 

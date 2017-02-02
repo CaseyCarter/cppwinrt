@@ -22,7 +22,7 @@ public:
         return shim().as<INavigationTransitionInfoOverrides>().GetNavigationStateCore();
     }
 
-    void SetNavigationStateCore(hstring_ref navigationState)
+    void SetNavigationStateCore(hstring_view navigationState)
     {
         shim().as<INavigationTransitionInfoOverrides>().SetNavigationStateCore(navigationState);
     }

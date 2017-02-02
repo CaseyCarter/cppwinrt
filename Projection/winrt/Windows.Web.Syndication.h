@@ -2184,7 +2184,7 @@ template <typename D> hstring impl_ISyndicationAttribute<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationAttribute<D>::Name(hstring_ref value) const
+template <typename D> void impl_ISyndicationAttribute<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationAttribute)->put_Name(get(value)));
 }
@@ -2196,7 +2196,7 @@ template <typename D> hstring impl_ISyndicationAttribute<D>::Namespace() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationAttribute<D>::Namespace(hstring_ref value) const
+template <typename D> void impl_ISyndicationAttribute<D>::Namespace(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationAttribute)->put_Namespace(get(value)));
 }
@@ -2208,12 +2208,12 @@ template <typename D> hstring impl_ISyndicationAttribute<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationAttribute<D>::Value(hstring_ref value) const
+template <typename D> void impl_ISyndicationAttribute<D>::Value(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationAttribute)->put_Value(get(value)));
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationAttribute impl_ISyndicationAttributeFactory<D>::CreateSyndicationAttribute(hstring_ref attributeName, hstring_ref attributeNamespace, hstring_ref attributeValue) const
+template <typename D> Windows::Web::Syndication::SyndicationAttribute impl_ISyndicationAttributeFactory<D>::CreateSyndicationAttribute(hstring_view attributeName, hstring_view attributeNamespace, hstring_view attributeValue) const
 {
     Windows::Web::Syndication::SyndicationAttribute syndicationAttribute { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationAttributeFactory)->abi_CreateSyndicationAttribute(get(attributeName), get(attributeNamespace), get(attributeValue), put(syndicationAttribute)));
@@ -2227,7 +2227,7 @@ template <typename D> hstring impl_ISyndicationNode<D>::NodeName() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationNode<D>::NodeName(hstring_ref value) const
+template <typename D> void impl_ISyndicationNode<D>::NodeName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationNode)->put_NodeName(get(value)));
 }
@@ -2239,7 +2239,7 @@ template <typename D> hstring impl_ISyndicationNode<D>::NodeNamespace() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationNode<D>::NodeNamespace(hstring_ref value) const
+template <typename D> void impl_ISyndicationNode<D>::NodeNamespace(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationNode)->put_NodeNamespace(get(value)));
 }
@@ -2251,7 +2251,7 @@ template <typename D> hstring impl_ISyndicationNode<D>::NodeValue() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationNode<D>::NodeValue(hstring_ref value) const
+template <typename D> void impl_ISyndicationNode<D>::NodeValue(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationNode)->put_NodeValue(get(value)));
 }
@@ -2263,7 +2263,7 @@ template <typename D> hstring impl_ISyndicationNode<D>::Language() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationNode<D>::Language(hstring_ref value) const
+template <typename D> void impl_ISyndicationNode<D>::Language(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationNode)->put_Language(get(value)));
 }
@@ -2301,7 +2301,7 @@ template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_ISyndicationNode
     return xmlDocument;
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationNode impl_ISyndicationNodeFactory<D>::CreateSyndicationNode(hstring_ref nodeName, hstring_ref nodeNamespace, hstring_ref nodeValue) const
+template <typename D> Windows::Web::Syndication::SyndicationNode impl_ISyndicationNodeFactory<D>::CreateSyndicationNode(hstring_view nodeName, hstring_view nodeNamespace, hstring_view nodeValue) const
 {
     Windows::Web::Syndication::SyndicationNode node { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationNodeFactory)->abi_CreateSyndicationNode(get(nodeName), get(nodeNamespace), get(nodeValue), put(node)));
@@ -2315,7 +2315,7 @@ template <typename D> hstring impl_ISyndicationGenerator<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationGenerator<D>::Text(hstring_ref value) const
+template <typename D> void impl_ISyndicationGenerator<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationGenerator)->put_Text(get(value)));
 }
@@ -2339,12 +2339,12 @@ template <typename D> hstring impl_ISyndicationGenerator<D>::Version() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationGenerator<D>::Version(hstring_ref value) const
+template <typename D> void impl_ISyndicationGenerator<D>::Version(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationGenerator)->put_Version(get(value)));
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationGenerator impl_ISyndicationGeneratorFactory<D>::CreateSyndicationGenerator(hstring_ref text) const
+template <typename D> Windows::Web::Syndication::SyndicationGenerator impl_ISyndicationGeneratorFactory<D>::CreateSyndicationGenerator(hstring_view text) const
 {
     Windows::Web::Syndication::SyndicationGenerator generator { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationGeneratorFactory)->abi_CreateSyndicationGenerator(get(text), put(generator)));
@@ -2358,7 +2358,7 @@ template <typename D> hstring impl_ISyndicationText<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationText<D>::Text(hstring_ref value) const
+template <typename D> void impl_ISyndicationText<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationText)->put_Text(get(value)));
 }
@@ -2370,7 +2370,7 @@ template <typename D> hstring impl_ISyndicationText<D>::Type() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationText<D>::Type(hstring_ref value) const
+template <typename D> void impl_ISyndicationText<D>::Type(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationText)->put_Type(get(value)));
 }
@@ -2387,14 +2387,14 @@ template <typename D> void impl_ISyndicationText<D>::Xml(const Windows::Data::Xm
     check_hresult(WINRT_SHIM(ISyndicationText)->put_Xml(get(value)));
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationText impl_ISyndicationTextFactory<D>::CreateSyndicationText(hstring_ref text) const
+template <typename D> Windows::Web::Syndication::SyndicationText impl_ISyndicationTextFactory<D>::CreateSyndicationText(hstring_view text) const
 {
     Windows::Web::Syndication::SyndicationText syndicationText { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationTextFactory)->abi_CreateSyndicationText(get(text), put(syndicationText)));
     return syndicationText;
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationText impl_ISyndicationTextFactory<D>::CreateSyndicationTextEx(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) const
+template <typename D> Windows::Web::Syndication::SyndicationText impl_ISyndicationTextFactory<D>::CreateSyndicationTextEx(hstring_view text, Windows::Web::Syndication::SyndicationTextType type) const
 {
     Windows::Web::Syndication::SyndicationText syndicationText { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationTextFactory)->abi_CreateSyndicationTextEx(get(text), type, put(syndicationText)));
@@ -2413,7 +2413,7 @@ template <typename D> void impl_ISyndicationContent<D>::SourceUri(const Windows:
     check_hresult(WINRT_SHIM(ISyndicationContent)->put_SourceUri(get(value)));
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationContent impl_ISyndicationContentFactory<D>::CreateSyndicationContent(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) const
+template <typename D> Windows::Web::Syndication::SyndicationContent impl_ISyndicationContentFactory<D>::CreateSyndicationContent(hstring_view text, Windows::Web::Syndication::SyndicationTextType type) const
 {
     Windows::Web::Syndication::SyndicationContent content { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationContentFactory)->abi_CreateSyndicationContent(get(text), type, put(content)));
@@ -2446,7 +2446,7 @@ template <typename D> hstring impl_ISyndicationLink<D>::MediaType() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationLink<D>::MediaType(hstring_ref value) const
+template <typename D> void impl_ISyndicationLink<D>::MediaType(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationLink)->put_MediaType(get(value)));
 }
@@ -2458,7 +2458,7 @@ template <typename D> hstring impl_ISyndicationLink<D>::Relationship() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationLink<D>::Relationship(hstring_ref value) const
+template <typename D> void impl_ISyndicationLink<D>::Relationship(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationLink)->put_Relationship(get(value)));
 }
@@ -2470,7 +2470,7 @@ template <typename D> hstring impl_ISyndicationLink<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationLink<D>::Title(hstring_ref value) const
+template <typename D> void impl_ISyndicationLink<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationLink)->put_Title(get(value)));
 }
@@ -2494,7 +2494,7 @@ template <typename D> hstring impl_ISyndicationLink<D>::ResourceLanguage() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationLink<D>::ResourceLanguage(hstring_ref value) const
+template <typename D> void impl_ISyndicationLink<D>::ResourceLanguage(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationLink)->put_ResourceLanguage(get(value)));
 }
@@ -2506,7 +2506,7 @@ template <typename D> Windows::Web::Syndication::SyndicationLink impl_ISyndicati
     return link;
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationLink impl_ISyndicationLinkFactory<D>::CreateSyndicationLinkEx(const Windows::Foundation::Uri & uri, hstring_ref relationship, hstring_ref title, hstring_ref mediaType, uint32_t length) const
+template <typename D> Windows::Web::Syndication::SyndicationLink impl_ISyndicationLinkFactory<D>::CreateSyndicationLinkEx(const Windows::Foundation::Uri & uri, hstring_view relationship, hstring_view title, hstring_view mediaType, uint32_t length) const
 {
     Windows::Web::Syndication::SyndicationLink link { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationLinkFactory)->abi_CreateSyndicationLinkEx(get(uri), get(relationship), get(title), get(mediaType), length, put(link)));
@@ -2520,7 +2520,7 @@ template <typename D> hstring impl_ISyndicationPerson<D>::Email() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationPerson<D>::Email(hstring_ref value) const
+template <typename D> void impl_ISyndicationPerson<D>::Email(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationPerson)->put_Email(get(value)));
 }
@@ -2532,7 +2532,7 @@ template <typename D> hstring impl_ISyndicationPerson<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationPerson<D>::Name(hstring_ref value) const
+template <typename D> void impl_ISyndicationPerson<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationPerson)->put_Name(get(value)));
 }
@@ -2549,14 +2549,14 @@ template <typename D> void impl_ISyndicationPerson<D>::Uri(const Windows::Founda
     check_hresult(WINRT_SHIM(ISyndicationPerson)->put_Uri(get(value)));
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationPerson impl_ISyndicationPersonFactory<D>::CreateSyndicationPerson(hstring_ref name) const
+template <typename D> Windows::Web::Syndication::SyndicationPerson impl_ISyndicationPersonFactory<D>::CreateSyndicationPerson(hstring_view name) const
 {
     Windows::Web::Syndication::SyndicationPerson person { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationPersonFactory)->abi_CreateSyndicationPerson(get(name), put(person)));
     return person;
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationPerson impl_ISyndicationPersonFactory<D>::CreateSyndicationPersonEx(hstring_ref name, hstring_ref email, const Windows::Foundation::Uri & uri) const
+template <typename D> Windows::Web::Syndication::SyndicationPerson impl_ISyndicationPersonFactory<D>::CreateSyndicationPersonEx(hstring_view name, hstring_view email, const Windows::Foundation::Uri & uri) const
 {
     Windows::Web::Syndication::SyndicationPerson person { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationPersonFactory)->abi_CreateSyndicationPersonEx(get(name), get(email), get(uri), put(person)));
@@ -2570,7 +2570,7 @@ template <typename D> hstring impl_ISyndicationCategory<D>::Label() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationCategory<D>::Label(hstring_ref value) const
+template <typename D> void impl_ISyndicationCategory<D>::Label(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationCategory)->put_Label(get(value)));
 }
@@ -2582,7 +2582,7 @@ template <typename D> hstring impl_ISyndicationCategory<D>::Scheme() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationCategory<D>::Scheme(hstring_ref value) const
+template <typename D> void impl_ISyndicationCategory<D>::Scheme(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationCategory)->put_Scheme(get(value)));
 }
@@ -2594,19 +2594,19 @@ template <typename D> hstring impl_ISyndicationCategory<D>::Term() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationCategory<D>::Term(hstring_ref value) const
+template <typename D> void impl_ISyndicationCategory<D>::Term(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationCategory)->put_Term(get(value)));
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationCategory impl_ISyndicationCategoryFactory<D>::CreateSyndicationCategory(hstring_ref term) const
+template <typename D> Windows::Web::Syndication::SyndicationCategory impl_ISyndicationCategoryFactory<D>::CreateSyndicationCategory(hstring_view term) const
 {
     Windows::Web::Syndication::SyndicationCategory category { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationCategoryFactory)->abi_CreateSyndicationCategory(get(term), put(category)));
     return category;
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationCategory impl_ISyndicationCategoryFactory<D>::CreateSyndicationCategoryEx(hstring_ref term, hstring_ref scheme, hstring_ref label) const
+template <typename D> Windows::Web::Syndication::SyndicationCategory impl_ISyndicationCategoryFactory<D>::CreateSyndicationCategoryEx(hstring_view term, hstring_view scheme, hstring_view label) const
 {
     Windows::Web::Syndication::SyndicationCategory category { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationCategoryFactory)->abi_CreateSyndicationCategoryEx(get(term), get(scheme), get(label), put(category)));
@@ -2653,7 +2653,7 @@ template <typename D> hstring impl_ISyndicationItem<D>::Id() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationItem<D>::Id(hstring_ref value) const
+template <typename D> void impl_ISyndicationItem<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationItem)->put_Id(get(value)));
 }
@@ -2777,7 +2777,7 @@ template <typename D> Windows::Foundation::Uri impl_ISyndicationItem<D>::ItemUri
     return value;
 }
 
-template <typename D> void impl_ISyndicationItem<D>::Load(hstring_ref item) const
+template <typename D> void impl_ISyndicationItem<D>::Load(hstring_view item) const
 {
     check_hresult(WINRT_SHIM(ISyndicationItem)->abi_Load(get(item)));
 }
@@ -2787,7 +2787,7 @@ template <typename D> void impl_ISyndicationItem<D>::LoadFromXml(const Windows::
     check_hresult(WINRT_SHIM(ISyndicationItem)->abi_LoadFromXml(get(itemDocument)));
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationItem impl_ISyndicationItemFactory<D>::CreateSyndicationItem(hstring_ref title, const Windows::Web::Syndication::SyndicationContent & content, const Windows::Foundation::Uri & uri) const
+template <typename D> Windows::Web::Syndication::SyndicationItem impl_ISyndicationItemFactory<D>::CreateSyndicationItem(hstring_view title, const Windows::Web::Syndication::SyndicationContent & content, const Windows::Foundation::Uri & uri) const
 {
     Windows::Web::Syndication::SyndicationItem item { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationItemFactory)->abi_CreateSyndicationItem(get(title), get(content), get(uri), put(item)));
@@ -2846,7 +2846,7 @@ template <typename D> hstring impl_ISyndicationFeed<D>::Id() const
     return value;
 }
 
-template <typename D> void impl_ISyndicationFeed<D>::Id(hstring_ref value) const
+template <typename D> void impl_ISyndicationFeed<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationFeed)->put_Id(get(value)));
 }
@@ -2960,7 +2960,7 @@ template <typename D> Windows::Web::Syndication::SyndicationFormat impl_ISyndica
     return value;
 }
 
-template <typename D> void impl_ISyndicationFeed<D>::Load(hstring_ref feed) const
+template <typename D> void impl_ISyndicationFeed<D>::Load(hstring_view feed) const
 {
     check_hresult(WINRT_SHIM(ISyndicationFeed)->abi_Load(get(feed)));
 }
@@ -2970,7 +2970,7 @@ template <typename D> void impl_ISyndicationFeed<D>::LoadFromXml(const Windows::
     check_hresult(WINRT_SHIM(ISyndicationFeed)->abi_LoadFromXml(get(feedDocument)));
 }
 
-template <typename D> Windows::Web::Syndication::SyndicationFeed impl_ISyndicationFeedFactory<D>::CreateSyndicationFeed(hstring_ref title, hstring_ref subtitle, const Windows::Foundation::Uri & uri) const
+template <typename D> Windows::Web::Syndication::SyndicationFeed impl_ISyndicationFeedFactory<D>::CreateSyndicationFeed(hstring_view title, hstring_view subtitle, const Windows::Foundation::Uri & uri) const
 {
     Windows::Web::Syndication::SyndicationFeed feed { nullptr };
     check_hresult(WINRT_SHIM(ISyndicationFeedFactory)->abi_CreateSyndicationFeed(get(title), get(subtitle), get(uri), put(feed)));
@@ -3037,7 +3037,7 @@ template <typename D> void impl_ISyndicationClient<D>::BypassCacheOnRetrieve(boo
     check_hresult(WINRT_SHIM(ISyndicationClient)->put_BypassCacheOnRetrieve(value));
 }
 
-template <typename D> void impl_ISyndicationClient<D>::SetRequestHeader(hstring_ref name, hstring_ref value) const
+template <typename D> void impl_ISyndicationClient<D>::SetRequestHeader(hstring_view name, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISyndicationClient)->abi_SetRequestHeader(get(name), get(value)));
 }
@@ -3067,7 +3067,7 @@ inline SyndicationAttribute::SyndicationAttribute() :
     SyndicationAttribute(activate_instance<SyndicationAttribute>())
 {}
 
-inline SyndicationAttribute::SyndicationAttribute(hstring_ref attributeName, hstring_ref attributeNamespace, hstring_ref attributeValue) :
+inline SyndicationAttribute::SyndicationAttribute(hstring_view attributeName, hstring_view attributeNamespace, hstring_view attributeValue) :
     SyndicationAttribute(get_activation_factory<SyndicationAttribute, ISyndicationAttributeFactory>().CreateSyndicationAttribute(attributeName, attributeNamespace, attributeValue))
 {}
 
@@ -3075,11 +3075,11 @@ inline SyndicationCategory::SyndicationCategory() :
     SyndicationCategory(activate_instance<SyndicationCategory>())
 {}
 
-inline SyndicationCategory::SyndicationCategory(hstring_ref term) :
+inline SyndicationCategory::SyndicationCategory(hstring_view term) :
     SyndicationCategory(get_activation_factory<SyndicationCategory, ISyndicationCategoryFactory>().CreateSyndicationCategory(term))
 {}
 
-inline SyndicationCategory::SyndicationCategory(hstring_ref term, hstring_ref scheme, hstring_ref label) :
+inline SyndicationCategory::SyndicationCategory(hstring_view term, hstring_view scheme, hstring_view label) :
     SyndicationCategory(get_activation_factory<SyndicationCategory, ISyndicationCategoryFactory>().CreateSyndicationCategoryEx(term, scheme, label))
 {}
 
@@ -3095,7 +3095,7 @@ inline SyndicationContent::SyndicationContent() :
     SyndicationContent(activate_instance<SyndicationContent>())
 {}
 
-inline SyndicationContent::SyndicationContent(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) :
+inline SyndicationContent::SyndicationContent(hstring_view text, Windows::Web::Syndication::SyndicationTextType type) :
     SyndicationContent(get_activation_factory<SyndicationContent, ISyndicationContentFactory>().CreateSyndicationContent(text, type))
 {}
 
@@ -3112,7 +3112,7 @@ inline SyndicationFeed::SyndicationFeed() :
     SyndicationFeed(activate_instance<SyndicationFeed>())
 {}
 
-inline SyndicationFeed::SyndicationFeed(hstring_ref title, hstring_ref subtitle, const Windows::Foundation::Uri & uri) :
+inline SyndicationFeed::SyndicationFeed(hstring_view title, hstring_view subtitle, const Windows::Foundation::Uri & uri) :
     SyndicationFeed(get_activation_factory<SyndicationFeed, ISyndicationFeedFactory>().CreateSyndicationFeed(title, subtitle, uri))
 {}
 
@@ -3120,7 +3120,7 @@ inline SyndicationGenerator::SyndicationGenerator() :
     SyndicationGenerator(activate_instance<SyndicationGenerator>())
 {}
 
-inline SyndicationGenerator::SyndicationGenerator(hstring_ref text) :
+inline SyndicationGenerator::SyndicationGenerator(hstring_view text) :
     SyndicationGenerator(get_activation_factory<SyndicationGenerator, ISyndicationGeneratorFactory>().CreateSyndicationGenerator(text))
 {}
 
@@ -3128,7 +3128,7 @@ inline SyndicationItem::SyndicationItem() :
     SyndicationItem(activate_instance<SyndicationItem>())
 {}
 
-inline SyndicationItem::SyndicationItem(hstring_ref title, const Windows::Web::Syndication::SyndicationContent & content, const Windows::Foundation::Uri & uri) :
+inline SyndicationItem::SyndicationItem(hstring_view title, const Windows::Web::Syndication::SyndicationContent & content, const Windows::Foundation::Uri & uri) :
     SyndicationItem(get_activation_factory<SyndicationItem, ISyndicationItemFactory>().CreateSyndicationItem(title, content, uri))
 {}
 
@@ -3140,7 +3140,7 @@ inline SyndicationLink::SyndicationLink(const Windows::Foundation::Uri & uri) :
     SyndicationLink(get_activation_factory<SyndicationLink, ISyndicationLinkFactory>().CreateSyndicationLink(uri))
 {}
 
-inline SyndicationLink::SyndicationLink(const Windows::Foundation::Uri & uri, hstring_ref relationship, hstring_ref title, hstring_ref mediaType, uint32_t length) :
+inline SyndicationLink::SyndicationLink(const Windows::Foundation::Uri & uri, hstring_view relationship, hstring_view title, hstring_view mediaType, uint32_t length) :
     SyndicationLink(get_activation_factory<SyndicationLink, ISyndicationLinkFactory>().CreateSyndicationLinkEx(uri, relationship, title, mediaType, length))
 {}
 
@@ -3148,7 +3148,7 @@ inline SyndicationNode::SyndicationNode() :
     SyndicationNode(activate_instance<SyndicationNode>())
 {}
 
-inline SyndicationNode::SyndicationNode(hstring_ref nodeName, hstring_ref nodeNamespace, hstring_ref nodeValue) :
+inline SyndicationNode::SyndicationNode(hstring_view nodeName, hstring_view nodeNamespace, hstring_view nodeValue) :
     SyndicationNode(get_activation_factory<SyndicationNode, ISyndicationNodeFactory>().CreateSyndicationNode(nodeName, nodeNamespace, nodeValue))
 {}
 
@@ -3156,11 +3156,11 @@ inline SyndicationPerson::SyndicationPerson() :
     SyndicationPerson(activate_instance<SyndicationPerson>())
 {}
 
-inline SyndicationPerson::SyndicationPerson(hstring_ref name) :
+inline SyndicationPerson::SyndicationPerson(hstring_view name) :
     SyndicationPerson(get_activation_factory<SyndicationPerson, ISyndicationPersonFactory>().CreateSyndicationPerson(name))
 {}
 
-inline SyndicationPerson::SyndicationPerson(hstring_ref name, hstring_ref email, const Windows::Foundation::Uri & uri) :
+inline SyndicationPerson::SyndicationPerson(hstring_view name, hstring_view email, const Windows::Foundation::Uri & uri) :
     SyndicationPerson(get_activation_factory<SyndicationPerson, ISyndicationPersonFactory>().CreateSyndicationPersonEx(name, email, uri))
 {}
 
@@ -3168,11 +3168,11 @@ inline SyndicationText::SyndicationText() :
     SyndicationText(activate_instance<SyndicationText>())
 {}
 
-inline SyndicationText::SyndicationText(hstring_ref text) :
+inline SyndicationText::SyndicationText(hstring_view text) :
     SyndicationText(get_activation_factory<SyndicationText, ISyndicationTextFactory>().CreateSyndicationText(text))
 {}
 
-inline SyndicationText::SyndicationText(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) :
+inline SyndicationText::SyndicationText(hstring_view text, Windows::Web::Syndication::SyndicationTextType type) :
     SyndicationText(get_activation_factory<SyndicationText, ISyndicationTextFactory>().CreateSyndicationTextEx(text, type))
 {}
 

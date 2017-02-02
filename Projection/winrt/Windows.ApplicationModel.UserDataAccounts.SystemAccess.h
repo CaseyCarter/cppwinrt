@@ -1364,7 +1364,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration<D>::AccountName()
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration<D>::AccountName(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration<D>::AccountName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_AccountName(get(value)));
 }
@@ -1376,7 +1376,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration<D>::DeviceAccount
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration<D>::DeviceAccountTypeId(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration<D>::DeviceAccountTypeId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_DeviceAccountTypeId(get(value)));
 }
@@ -1400,7 +1400,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration<D>::EmailAddress(
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration<D>::EmailAddress(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration<D>::EmailAddress(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_EmailAddress(get(value)));
 }
@@ -1412,7 +1412,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration<D>::Domain() cons
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration<D>::Domain(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration<D>::Domain(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_Domain(get(value)));
 }
@@ -1460,7 +1460,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration<D>::IncomingServe
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerAddress(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerAddress(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_IncomingServerAddress(get(value)));
 }
@@ -1496,7 +1496,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration<D>::IncomingServe
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerUsername(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerUsername(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_IncomingServerUsername(get(value)));
 }
@@ -1508,7 +1508,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration<D>::OutgoingServe
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerAddress(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerAddress(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_OutgoingServerAddress(get(value)));
 }
@@ -1544,7 +1544,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration<D>::OutgoingServe
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerUsername(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerUsername(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_OutgoingServerUsername(get(value)));
 }
@@ -1580,7 +1580,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::OAuthRefresh
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration2<D>::OAuthRefreshToken(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration2<D>::OAuthRefreshToken(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_OAuthRefreshToken(get(value)));
 }
@@ -1635,7 +1635,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::SsoAccountId
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration2<D>::SsoAccountId(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration2<D>::SsoAccountId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_SsoAccountId(get(value)));
 }
@@ -1714,7 +1714,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::Authenticati
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration2<D>::AuthenticationCertificateId(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration2<D>::AuthenticationCertificateId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_AuthenticationCertificateId(get(value)));
 }
@@ -1822,7 +1822,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::IncomingServ
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration2<D>::IncomingServerCertificateHash(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration2<D>::IncomingServerCertificateHash(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_IncomingServerCertificateHash(get(value)));
 }
@@ -1870,7 +1870,7 @@ template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::OutgoingServ
     return value;
 }
 
-template <typename D> void impl_IDeviceAccountConfiguration2<D>::OutgoingServerCertificateHash(hstring_ref value) const
+template <typename D> void impl_IDeviceAccountConfiguration2<D>::OutgoingServerCertificateHash(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_OutgoingServerCertificateHash(get(value)));
 }
@@ -1894,7 +1894,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountSystemAccessManagerStatics2<D>::SuppressLocalAccountWithAccountAsync(hstring_ref userDataAccountId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountSystemAccessManagerStatics2<D>::SuppressLocalAccountWithAccountAsync(hstring_view userDataAccountId) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_SuppressLocalAccountWithAccountAsync(get(userDataAccountId), put(result)));
@@ -1908,14 +1908,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IUserDa
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountSystemAccessManagerStatics2<D>::DeleteDeviceAccountAsync(hstring_ref accountId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountSystemAccessManagerStatics2<D>::DeleteDeviceAccountAsync(hstring_view accountId) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_DeleteDeviceAccountAsync(get(accountId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> impl_IUserDataAccountSystemAccessManagerStatics2<D>::GetDeviceAccountConfigurationAsync(hstring_ref accountId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> impl_IUserDataAccountSystemAccessManagerStatics2<D>::GetDeviceAccountConfigurationAsync(hstring_view accountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> result;
     check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_GetDeviceAccountConfigurationAsync(get(accountId), put(result)));
@@ -1931,7 +1931,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics>().AddAndShowDeviceAccountsAsync(accounts);
 }
 
-inline Windows::Foundation::IAsyncAction UserDataAccountSystemAccessManager::SuppressLocalAccountWithAccountAsync(hstring_ref userDataAccountId)
+inline Windows::Foundation::IAsyncAction UserDataAccountSystemAccessManager::SuppressLocalAccountWithAccountAsync(hstring_view userDataAccountId)
 {
     return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().SuppressLocalAccountWithAccountAsync(userDataAccountId);
 }
@@ -1941,12 +1941,12 @@ inline Windows::Foundation::IAsyncOperation<hstring> UserDataAccountSystemAccess
     return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().CreateDeviceAccountAsync(account);
 }
 
-inline Windows::Foundation::IAsyncAction UserDataAccountSystemAccessManager::DeleteDeviceAccountAsync(hstring_ref accountId)
+inline Windows::Foundation::IAsyncAction UserDataAccountSystemAccessManager::DeleteDeviceAccountAsync(hstring_view accountId)
 {
     return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().DeleteDeviceAccountAsync(accountId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> UserDataAccountSystemAccessManager::GetDeviceAccountConfigurationAsync(hstring_ref accountId)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> UserDataAccountSystemAccessManager::GetDeviceAccountConfigurationAsync(hstring_view accountId)
 {
     return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics2>().GetDeviceAccountConfigurationAsync(accountId);
 }

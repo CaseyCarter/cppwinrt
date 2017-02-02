@@ -2452,7 +2452,7 @@ template <typename D> void impl_IPrint3DTaskSourceRequestedArgs<D>::SetSource(co
     check_hresult(WINRT_SHIM(IPrint3DTaskSourceRequestedArgs)->abi_SetSource(get(source)));
 }
 
-template <typename D> Windows::Graphics::Printing3D::Print3DTask impl_IPrint3DTaskRequest<D>::CreateTask(hstring_ref title, hstring_ref printerId, const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler & handler) const
+template <typename D> Windows::Graphics::Printing3D::Print3DTask impl_IPrint3DTaskRequest<D>::CreateTask(hstring_view title, hstring_view printerId, const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler & handler) const
 {
     Windows::Graphics::Printing3D::Print3DTask result { nullptr };
     check_hresult(WINRT_SHIM(IPrint3DTaskRequest)->abi_CreateTask(get(title), get(printerId), get(handler), put(result)));
@@ -2693,7 +2693,7 @@ template <typename D> hstring impl_IPrinting3DTextureResource<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IPrinting3DTextureResource<D>::Name(hstring_ref value) const
+template <typename D> void impl_IPrinting3DTextureResource<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPrinting3DTextureResource)->put_Name(get(value)));
 }
@@ -2772,7 +2772,7 @@ template <typename D> hstring impl_IPrinting3DComponent<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IPrinting3DComponent<D>::Name(hstring_ref value) const
+template <typename D> void impl_IPrinting3DComponent<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPrinting3DComponent)->put_Name(get(value)));
 }
@@ -2784,7 +2784,7 @@ template <typename D> hstring impl_IPrinting3DComponent<D>::PartNumber() const
     return value;
 }
 
-template <typename D> void impl_IPrinting3DComponent<D>::PartNumber(hstring_ref value) const
+template <typename D> void impl_IPrinting3DComponent<D>::PartNumber(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPrinting3DComponent)->put_PartNumber(get(value)));
 }
@@ -2810,7 +2810,7 @@ template <typename D> hstring impl_IPrinting3DBaseMaterial<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IPrinting3DBaseMaterial<D>::Name(hstring_ref value) const
+template <typename D> void impl_IPrinting3DBaseMaterial<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPrinting3DBaseMaterial)->put_Name(get(value)));
 }
@@ -3164,7 +3164,7 @@ template <typename D> hstring impl_IPrinting3DModel<D>::Version() const
     return value;
 }
 
-template <typename D> void impl_IPrinting3DModel<D>::Version(hstring_ref value) const
+template <typename D> void impl_IPrinting3DModel<D>::Version(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPrinting3DModel)->put_Version(get(value)));
 }

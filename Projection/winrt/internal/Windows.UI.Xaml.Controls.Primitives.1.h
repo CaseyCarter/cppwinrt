@@ -1655,7 +1655,7 @@ struct WINRT_EBO impl_IPickerFlyoutBaseStatics
 {
     Windows::UI::Xaml::DependencyProperty TitleProperty() const;
     hstring GetTitle(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetTitle(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    void SetTitle(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const;
 };
 
 template <typename D>
@@ -1871,7 +1871,7 @@ struct WINRT_EBO impl_ISelector
     Windows::IInspectable SelectedValue() const;
     void SelectedValue(const Windows::IInspectable & value) const;
     hstring SelectedValuePath() const;
-    void SelectedValuePath(hstring_ref value) const;
+    void SelectedValuePath(hstring_view value) const;
     Windows::Foundation::IReference<bool> IsSynchronizedWithCurrentItem() const;
     void IsSynchronizedWithCurrentItem(const Windows::Foundation::IReference<bool> & value) const;
     event_token SelectionChanged(const Windows::UI::Xaml::Controls::SelectionChangedEventHandler & value) const;

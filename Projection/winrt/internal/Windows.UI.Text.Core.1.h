@@ -243,7 +243,7 @@ template <typename D>
 struct WINRT_EBO impl_ICoreTextEditContext
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     Windows::UI::Text::Core::CoreTextInputScope InputScope() const;
     void InputScope(Windows::UI::Text::Core::CoreTextInputScope value) const;
     bool IsReadOnly() const;
@@ -394,7 +394,7 @@ struct WINRT_EBO impl_ICoreTextTextRequest
 {
     Windows::UI::Text::Core::CoreTextRange Range() const;
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     bool IsCanceled() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };

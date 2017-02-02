@@ -336,7 +336,7 @@ template <typename D> hstring impl_IRatedContentDescription<D>::Id() const
     return value;
 }
 
-template <typename D> void impl_IRatedContentDescription<D>::Id(hstring_ref value) const
+template <typename D> void impl_IRatedContentDescription<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Id(get(value)));
 }
@@ -348,7 +348,7 @@ template <typename D> hstring impl_IRatedContentDescription<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IRatedContentDescription<D>::Title(hstring_ref value) const
+template <typename D> void impl_IRatedContentDescription<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Title(get(value)));
 }
@@ -389,7 +389,7 @@ template <typename D> void impl_IRatedContentDescription<D>::Ratings(const Windo
     check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Ratings(get(value)));
 }
 
-template <typename D> Windows::Media::ContentRestrictions::RatedContentDescription impl_IRatedContentDescriptionFactory<D>::Create(hstring_ref id, hstring_ref title, Windows::Media::ContentRestrictions::RatedContentCategory category) const
+template <typename D> Windows::Media::ContentRestrictions::RatedContentDescription impl_IRatedContentDescriptionFactory<D>::Create(hstring_view id, hstring_view title, Windows::Media::ContentRestrictions::RatedContentCategory category) const
 {
     Windows::Media::ContentRestrictions::RatedContentDescription RatedContentDescription { nullptr };
     check_hresult(WINRT_SHIM(IRatedContentDescriptionFactory)->abi_Create(get(id), get(title), category, put(RatedContentDescription)));
@@ -462,7 +462,7 @@ template <typename D> Windows::Media::ContentRestrictions::RatedContentRestricti
     return ratedContentRestrictions;
 }
 
-inline RatedContentDescription::RatedContentDescription(hstring_ref id, hstring_ref title, Windows::Media::ContentRestrictions::RatedContentCategory category) :
+inline RatedContentDescription::RatedContentDescription(hstring_view id, hstring_view title, Windows::Media::ContentRestrictions::RatedContentCategory category) :
     RatedContentDescription(get_activation_factory<RatedContentDescription, IRatedContentDescriptionFactory>().Create(id, title, category))
 {}
 

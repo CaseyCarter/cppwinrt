@@ -683,7 +683,7 @@ template <typename D> Windows::ApplicationModel::Store::Preview::StorePreviewPro
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> impl_IStorePreview<D>::RequestProductPurchaseByProductIdAndSkuIdAsync(hstring_ref productId, hstring_ref skuId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> impl_IStorePreview<D>::RequestProductPurchaseByProductIdAndSkuIdAsync(hstring_view productId, hstring_view skuId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> requestPurchaseBySkuIdOperation;
     check_hresult(WINRT_SHIM(IStorePreview)->abi_RequestProductPurchaseByProductIdAndSkuIdAsync(get(productId), get(skuId), put(requestPurchaseBySkuIdOperation)));
@@ -725,22 +725,22 @@ template <typename D> hstring impl_IStoreHardwareManufacturerInfo<D>::Manufactur
     return value;
 }
 
-template <typename D> void impl_IStoreConfigurationStatics<D>::SetSystemConfiguration(hstring_ref catalogHardwareManufacturerId, hstring_ref catalogStoreContentModifierId, const Windows::Foundation::DateTime & systemConfigurationExpiration, hstring_ref catalogHardwareDescriptor) const
+template <typename D> void impl_IStoreConfigurationStatics<D>::SetSystemConfiguration(hstring_view catalogHardwareManufacturerId, hstring_view catalogStoreContentModifierId, const Windows::Foundation::DateTime & systemConfigurationExpiration, hstring_view catalogHardwareDescriptor) const
 {
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics)->abi_SetSystemConfiguration(get(catalogHardwareManufacturerId), get(catalogStoreContentModifierId), get(systemConfigurationExpiration), get(catalogHardwareDescriptor)));
 }
 
-template <typename D> void impl_IStoreConfigurationStatics<D>::SetMobileOperatorConfiguration(hstring_ref mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes) const
+template <typename D> void impl_IStoreConfigurationStatics<D>::SetMobileOperatorConfiguration(hstring_view mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes) const
 {
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics)->abi_SetMobileOperatorConfiguration(get(mobileOperatorId), appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes));
 }
 
-template <typename D> void impl_IStoreConfigurationStatics<D>::SetStoreWebAccountId(hstring_ref webAccountId) const
+template <typename D> void impl_IStoreConfigurationStatics<D>::SetStoreWebAccountId(hstring_view webAccountId) const
 {
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics)->abi_SetStoreWebAccountId(get(webAccountId)));
 }
 
-template <typename D> bool impl_IStoreConfigurationStatics<D>::IsStoreWebAccountId(hstring_ref webAccountId) const
+template <typename D> bool impl_IStoreConfigurationStatics<D>::IsStoreWebAccountId(hstring_view webAccountId) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics)->abi_IsStoreWebAccountId(get(webAccountId), &value));
@@ -794,12 +794,12 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
     return operation;
 }
 
-template <typename D> void impl_IStoreConfigurationStatics3<D>::SetStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId) const
+template <typename D> void impl_IStoreConfigurationStatics3<D>::SetStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId) const
 {
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics3)->abi_SetStoreWebAccountIdForUser(get(user), get(webAccountId)));
 }
 
-template <typename D> bool impl_IStoreConfigurationStatics3<D>::IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId) const
+template <typename D> bool impl_IStoreConfigurationStatics3<D>::IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics3)->abi_IsStoreWebAccountIdForUser(get(user), get(webAccountId), &value));
@@ -818,22 +818,22 @@ template <typename D> void impl_IStoreConfigurationStatics3<D>::SetPurchasePromp
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics3)->abi_SetPurchasePromptingPolicyForUser(get(user), get(value)));
 }
 
-inline void StoreConfiguration::SetSystemConfiguration(hstring_ref catalogHardwareManufacturerId, hstring_ref catalogStoreContentModifierId, const Windows::Foundation::DateTime & systemConfigurationExpiration, hstring_ref catalogHardwareDescriptor)
+inline void StoreConfiguration::SetSystemConfiguration(hstring_view catalogHardwareManufacturerId, hstring_view catalogStoreContentModifierId, const Windows::Foundation::DateTime & systemConfigurationExpiration, hstring_view catalogHardwareDescriptor)
 {
     get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().SetSystemConfiguration(catalogHardwareManufacturerId, catalogStoreContentModifierId, systemConfigurationExpiration, catalogHardwareDescriptor);
 }
 
-inline void StoreConfiguration::SetMobileOperatorConfiguration(hstring_ref mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes)
+inline void StoreConfiguration::SetMobileOperatorConfiguration(hstring_view mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes)
 {
     get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().SetMobileOperatorConfiguration(mobileOperatorId, appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes);
 }
 
-inline void StoreConfiguration::SetStoreWebAccountId(hstring_ref webAccountId)
+inline void StoreConfiguration::SetStoreWebAccountId(hstring_view webAccountId)
 {
     get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().SetStoreWebAccountId(webAccountId);
 }
 
-inline bool StoreConfiguration::IsStoreWebAccountId(hstring_ref webAccountId)
+inline bool StoreConfiguration::IsStoreWebAccountId(hstring_view webAccountId)
 {
     return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().IsStoreWebAccountId(webAccountId);
 }
@@ -873,12 +873,12 @@ inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAc
     return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().GetStoreLogDataAsync(options);
 }
 
-inline void StoreConfiguration::SetStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId)
+inline void StoreConfiguration::SetStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId)
 {
     get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().SetStoreWebAccountIdForUser(user, webAccountId);
 }
 
-inline bool StoreConfiguration::IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId)
+inline bool StoreConfiguration::IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId)
 {
     return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().IsStoreWebAccountIdForUser(user, webAccountId);
 }
@@ -893,7 +893,7 @@ inline void StoreConfiguration::SetPurchasePromptingPolicyForUser(const Windows:
     get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().SetPurchasePromptingPolicyForUser(user, value);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> StorePreview::RequestProductPurchaseByProductIdAndSkuIdAsync(hstring_ref productId, hstring_ref skuId)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> StorePreview::RequestProductPurchaseByProductIdAndSkuIdAsync(hstring_view productId, hstring_view skuId)
 {
     return get_activation_factory<StorePreview, IStorePreview>().RequestProductPurchaseByProductIdAndSkuIdAsync(productId, skuId);
 }

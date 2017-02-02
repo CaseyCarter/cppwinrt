@@ -1345,7 +1345,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurren
     return requestAppPurchaseOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentApp<D>::RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentApp<D>::RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt) const
 {
     Windows::Foundation::IAsyncOperation<hstring> requestProductPurchaseOperation;
     check_hresult(WINRT_SHIM(ICurrentApp)->abi_RequestProductPurchaseAsync(get(productId), includeReceipt, put(requestProductPurchaseOperation)));
@@ -1366,28 +1366,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurren
     return appReceiptOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentApp<D>::GetProductReceiptAsync(hstring_ref productId) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentApp<D>::GetProductReceiptAsync(hstring_view productId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> getProductReceiptOperation;
     check_hresult(WINRT_SHIM(ICurrentApp)->abi_GetProductReceiptAsync(get(productId), put(getProductReceiptOperation)));
     return getProductReceiptOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> impl_ICurrentAppWithConsumables<D>::ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> impl_ICurrentAppWithConsumables<D>::ReportConsumableFulfillmentAsync(hstring_view productId, GUID transactionId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> reportConsumableFulfillmentOperation;
     check_hresult(WINRT_SHIM(ICurrentAppWithConsumables)->abi_ReportConsumableFulfillmentAsync(get(productId), transactionId, put(reportConsumableFulfillmentOperation)));
     return reportConsumableFulfillmentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> impl_ICurrentAppWithConsumables<D>::RequestProductPurchaseAsync(hstring_ref productId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> impl_ICurrentAppWithConsumables<D>::RequestProductPurchaseAsync(hstring_view productId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> requestProductPurchaseWithResultsOperation;
     check_hresult(WINRT_SHIM(ICurrentAppWithConsumables)->abi_RequestProductPurchaseWithResultsAsync(get(productId), put(requestProductPurchaseWithResultsOperation)));
     return requestProductPurchaseWithResultsOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> impl_ICurrentAppWithConsumables<D>::RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> impl_ICurrentAppWithConsumables<D>::RequestProductPurchaseAsync(hstring_view productId, hstring_view offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> requestProductPurchaseWithDisplayPropertiesOperation;
     check_hresult(WINRT_SHIM(ICurrentAppWithConsumables)->abi_RequestProductPurchaseWithDisplayPropertiesAsync(get(productId), get(offerId), get(displayProperties), put(requestProductPurchaseWithDisplayPropertiesOperation)));
@@ -1408,14 +1408,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurren
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentApp2Statics<D>::GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentApp2Statics<D>::GetCustomerPurchaseIdAsync(hstring_view serviceTicket, hstring_view publisherUserId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(ICurrentApp2Statics)->abi_GetCustomerPurchaseIdAsync(get(serviceTicket), get(publisherUserId), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentApp2Statics<D>::GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentApp2Statics<D>::GetCustomerCollectionsIdAsync(hstring_view serviceTicket, hstring_view publisherUserId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(ICurrentApp2Statics)->abi_GetCustomerCollectionsIdAsync(get(serviceTicket), get(publisherUserId), put(operation)));
@@ -1450,7 +1450,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurren
     return requestAppPurchaseOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentAppSimulator<D>::RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentAppSimulator<D>::RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt) const
 {
     Windows::Foundation::IAsyncOperation<hstring> requestProductPurchaseOperation;
     check_hresult(WINRT_SHIM(ICurrentAppSimulator)->abi_RequestProductPurchaseAsync(get(productId), includeReceipt, put(requestProductPurchaseOperation)));
@@ -1471,7 +1471,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurren
     return appReceiptOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentAppSimulator<D>::GetProductReceiptAsync(hstring_ref productId) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurrentAppSimulator<D>::GetProductReceiptAsync(hstring_view productId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> getProductReceiptOperation;
     check_hresult(WINRT_SHIM(ICurrentAppSimulator)->abi_GetProductReceiptAsync(get(productId), put(getProductReceiptOperation)));
@@ -1492,21 +1492,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICurren
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> impl_ICurrentAppSimulatorWithConsumables<D>::ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> impl_ICurrentAppSimulatorWithConsumables<D>::ReportConsumableFulfillmentAsync(hstring_view productId, GUID transactionId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> reportConsumableFulfillmentOperation;
     check_hresult(WINRT_SHIM(ICurrentAppSimulatorWithConsumables)->abi_ReportConsumableFulfillmentAsync(get(productId), transactionId, put(reportConsumableFulfillmentOperation)));
     return reportConsumableFulfillmentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> impl_ICurrentAppSimulatorWithConsumables<D>::RequestProductPurchaseAsync(hstring_ref productId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> impl_ICurrentAppSimulatorWithConsumables<D>::RequestProductPurchaseAsync(hstring_view productId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> requestProductPurchaseWithResultsOperation;
     check_hresult(WINRT_SHIM(ICurrentAppSimulatorWithConsumables)->abi_RequestProductPurchaseWithResultsAsync(get(productId), put(requestProductPurchaseWithResultsOperation)));
     return requestProductPurchaseWithResultsOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> impl_ICurrentAppSimulatorWithConsumables<D>::RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> impl_ICurrentAppSimulatorWithConsumables<D>::RequestProductPurchaseAsync(hstring_view productId, hstring_view offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> requestProductPurchaseWithDisplayPropertiesOperation;
     check_hresult(WINRT_SHIM(ICurrentAppSimulatorWithConsumables)->abi_RequestProductPurchaseWithDisplayPropertiesAsync(get(productId), get(offerId), get(displayProperties), put(requestProductPurchaseWithDisplayPropertiesOperation)));
@@ -1754,7 +1754,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
     return loadListingOperation;
 }
 
-template <typename D> void impl_ICurrentAppStaticsWithFiltering<D>::ReportProductFulfillment(hstring_ref productId) const
+template <typename D> void impl_ICurrentAppStaticsWithFiltering<D>::ReportProductFulfillment(hstring_view productId) const
 {
     check_hresult(WINRT_SHIM(ICurrentAppStaticsWithFiltering)->abi_ReportProductFulfillment(get(productId)));
 }
@@ -1843,7 +1843,7 @@ template <typename D> hstring impl_IProductPurchaseDisplayProperties<D>::Name() 
     return value;
 }
 
-template <typename D> void impl_IProductPurchaseDisplayProperties<D>::Name(hstring_ref value) const
+template <typename D> void impl_IProductPurchaseDisplayProperties<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IProductPurchaseDisplayProperties)->put_Name(get(value)));
 }
@@ -1855,7 +1855,7 @@ template <typename D> hstring impl_IProductPurchaseDisplayProperties<D>::Descrip
     return value;
 }
 
-template <typename D> void impl_IProductPurchaseDisplayProperties<D>::Description(hstring_ref value) const
+template <typename D> void impl_IProductPurchaseDisplayProperties<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IProductPurchaseDisplayProperties)->put_Description(get(value)));
 }
@@ -1872,7 +1872,7 @@ template <typename D> void impl_IProductPurchaseDisplayProperties<D>::Image(cons
     check_hresult(WINRT_SHIM(IProductPurchaseDisplayProperties)->put_Image(get(value)));
 }
 
-template <typename D> Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties impl_IProductPurchaseDisplayPropertiesFactory<D>::CreateProductPurchaseDisplayProperties(hstring_ref name) const
+template <typename D> Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties impl_IProductPurchaseDisplayPropertiesFactory<D>::CreateProductPurchaseDisplayProperties(hstring_view name) const
 {
     Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties displayProperties { nullptr };
     check_hresult(WINRT_SHIM(IProductPurchaseDisplayPropertiesFactory)->abi_CreateProductPurchaseDisplayProperties(get(name), put(displayProperties)));
@@ -1899,7 +1899,7 @@ inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::RequestAppPurch
     return get_activation_factory<CurrentApp, ICurrentApp>().RequestAppPurchaseAsync(includeReceipt);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt)
+inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt)
 {
     return get_activation_factory<CurrentApp, ICurrentApp>().RequestProductPurchaseAsync(productId, includeReceipt);
 }
@@ -1914,17 +1914,17 @@ inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetAppReceiptAs
     return get_activation_factory<CurrentApp, ICurrentApp>().GetAppReceiptAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetProductReceiptAsync(hstring_ref productId)
+inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetProductReceiptAsync(hstring_view productId)
 {
     return get_activation_factory<CurrentApp, ICurrentApp>().GetProductReceiptAsync(productId);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId)
+inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetCustomerPurchaseIdAsync(hstring_view serviceTicket, hstring_view publisherUserId)
 {
     return get_activation_factory<CurrentApp, ICurrentApp2Statics>().GetCustomerPurchaseIdAsync(serviceTicket, publisherUserId);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId)
+inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetCustomerCollectionsIdAsync(hstring_view serviceTicket, hstring_view publisherUserId)
 {
     return get_activation_factory<CurrentApp, ICurrentApp2Statics>().GetCustomerCollectionsIdAsync(serviceTicket, publisherUserId);
 }
@@ -1939,7 +1939,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Li
     return get_activation_factory<CurrentApp, ICurrentAppStaticsWithFiltering>().LoadListingInformationByKeywordsAsync(keywords);
 }
 
-inline void CurrentApp::ReportProductFulfillment(hstring_ref productId)
+inline void CurrentApp::ReportProductFulfillment(hstring_view productId)
 {
     get_activation_factory<CurrentApp, ICurrentAppStaticsWithFiltering>().ReportProductFulfillment(productId);
 }
@@ -1949,17 +1949,17 @@ inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetAppPurchaseC
     return get_activation_factory<CurrentApp, ICurrentAppWithCampaignId>().GetAppPurchaseCampaignIdAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> CurrentApp::ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId)
+inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> CurrentApp::ReportConsumableFulfillmentAsync(hstring_view productId, GUID transactionId)
 {
     return get_activation_factory<CurrentApp, ICurrentAppWithConsumables>().ReportConsumableFulfillmentAsync(productId, transactionId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentApp::RequestProductPurchaseAsync(hstring_ref productId)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentApp::RequestProductPurchaseAsync(hstring_view productId)
 {
     return get_activation_factory<CurrentApp, ICurrentAppWithConsumables>().RequestProductPurchaseAsync(productId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentApp::RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentApp::RequestProductPurchaseAsync(hstring_view productId, hstring_view offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties)
 {
     return get_activation_factory<CurrentApp, ICurrentAppWithConsumables>().RequestProductPurchaseAsync(productId, offerId, displayProperties);
 }
@@ -1989,7 +1989,7 @@ inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::Reques
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().RequestAppPurchaseAsync(includeReceipt);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt)
+inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt)
 {
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().RequestProductPurchaseAsync(productId, includeReceipt);
 }
@@ -2004,7 +2004,7 @@ inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::GetApp
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().GetAppReceiptAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::GetProductReceiptAsync(hstring_ref productId)
+inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::GetProductReceiptAsync(hstring_view productId)
 {
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().GetProductReceiptAsync(productId);
 }
@@ -2029,17 +2029,17 @@ inline Windows::Foundation::IAsyncOperation<hstring> CurrentAppSimulator::GetApp
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorWithCampaignId>().GetAppPurchaseCampaignIdAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> CurrentAppSimulator::ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId)
+inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> CurrentAppSimulator::ReportConsumableFulfillmentAsync(hstring_view productId, GUID transactionId)
 {
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().ReportConsumableFulfillmentAsync(productId, transactionId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentAppSimulator::RequestProductPurchaseAsync(hstring_ref productId)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentAppSimulator::RequestProductPurchaseAsync(hstring_view productId)
 {
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().RequestProductPurchaseAsync(productId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentAppSimulator::RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> CurrentAppSimulator::RequestProductPurchaseAsync(hstring_view productId, hstring_view offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties)
 {
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorWithConsumables>().RequestProductPurchaseAsync(productId, offerId, displayProperties);
 }
@@ -2053,7 +2053,7 @@ inline ProductPurchaseDisplayProperties::ProductPurchaseDisplayProperties() :
     ProductPurchaseDisplayProperties(activate_instance<ProductPurchaseDisplayProperties>())
 {}
 
-inline ProductPurchaseDisplayProperties::ProductPurchaseDisplayProperties(hstring_ref name) :
+inline ProductPurchaseDisplayProperties::ProductPurchaseDisplayProperties(hstring_view name) :
     ProductPurchaseDisplayProperties(get_activation_factory<ProductPurchaseDisplayProperties, IProductPurchaseDisplayPropertiesFactory>().CreateProductPurchaseDisplayProperties(name))
 {}
 

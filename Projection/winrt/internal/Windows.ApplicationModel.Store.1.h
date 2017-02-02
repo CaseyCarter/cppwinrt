@@ -211,17 +211,17 @@ struct WINRT_EBO impl_ICurrentApp
     Windows::Foundation::Uri LinkUri() const;
     GUID AppId() const;
     Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt) const;
-    Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt) const;
+    Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync() const;
-    Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_ref productId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_view productId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ICurrentApp2Statics
 {
-    Windows::Foundation::IAsyncOperation<hstring> GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
-    Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetCustomerPurchaseIdAsync(hstring_view serviceTicket, hstring_view publisherUserId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(hstring_view serviceTicket, hstring_view publisherUserId) const;
 };
 
 template <typename D>
@@ -231,10 +231,10 @@ struct WINRT_EBO impl_ICurrentAppSimulator
     Windows::Foundation::Uri LinkUri() const;
     GUID AppId() const;
     Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt) const;
-    Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt) const;
+    Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync() const;
-    Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_ref productId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_view productId) const;
     Windows::Foundation::IAsyncAction ReloadSimulatorAsync(const Windows::Storage::StorageFile & simulatorSettingsFile) const;
 };
 
@@ -254,9 +254,9 @@ struct WINRT_EBO impl_ICurrentAppSimulatorWithCampaignId
 template <typename D>
 struct WINRT_EBO impl_ICurrentAppSimulatorWithConsumables
 {
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_view productId, GUID transactionId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_view productId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_view productId, hstring_view offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::UnfulfilledConsumable>> GetUnfulfilledConsumablesAsync() const;
 };
 
@@ -265,7 +265,7 @@ struct WINRT_EBO impl_ICurrentAppStaticsWithFiltering
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords) const;
-    void ReportProductFulfillment(hstring_ref productId) const;
+    void ReportProductFulfillment(hstring_view productId) const;
 };
 
 template <typename D>
@@ -277,9 +277,9 @@ struct WINRT_EBO impl_ICurrentAppWithCampaignId
 template <typename D>
 struct WINRT_EBO impl_ICurrentAppWithConsumables
 {
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_view productId, GUID transactionId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_view productId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_view productId, hstring_view offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::UnfulfilledConsumable>> GetUnfulfilledConsumablesAsync() const;
 };
 
@@ -367,9 +367,9 @@ template <typename D>
 struct WINRT_EBO impl_IProductPurchaseDisplayProperties
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
     Windows::Foundation::Uri Image() const;
     void Image(const Windows::Foundation::Uri & value) const;
 };
@@ -377,7 +377,7 @@ struct WINRT_EBO impl_IProductPurchaseDisplayProperties
 template <typename D>
 struct WINRT_EBO impl_IProductPurchaseDisplayPropertiesFactory
 {
-    Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties CreateProductPurchaseDisplayProperties(hstring_ref name) const;
+    Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties CreateProductPurchaseDisplayProperties(hstring_view name) const;
 };
 
 template <typename D>

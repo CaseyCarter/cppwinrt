@@ -458,7 +458,7 @@ struct WINRT_EBO impl_ISpreadsheetItemProvider
 template <typename D>
 struct WINRT_EBO impl_ISpreadsheetProvider
 {
-    Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple GetItemByName(hstring_ref name) const;
+    Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple GetItemByName(hstring_view name) const;
 };
 
 template <typename D>
@@ -535,7 +535,7 @@ struct WINRT_EBO impl_ITextRangeProvider
     int32_t CompareEndpoints(Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint endpoint, const Windows::UI::Xaml::Automation::Provider::ITextRangeProvider & textRangeProvider, Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint targetEndpoint) const;
     void ExpandToEnclosingUnit(Windows::UI::Xaml::Automation::Text::TextUnit unit) const;
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider FindAttribute(int32_t attributeId, const Windows::IInspectable & value, bool backward) const;
-    Windows::UI::Xaml::Automation::Provider::ITextRangeProvider FindText(hstring_ref text, bool backward, bool ignoreCase) const;
+    Windows::UI::Xaml::Automation::Provider::ITextRangeProvider FindText(hstring_view text, bool backward, bool ignoreCase) const;
     Windows::IInspectable GetAttributeValue(int32_t attributeId) const;
     void GetBoundingRectangles(com_array<double> & returnValue) const;
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple GetEnclosingElement() const;
@@ -590,7 +590,7 @@ struct WINRT_EBO impl_IValueProvider
 {
     bool IsReadOnly() const;
     hstring Value() const;
-    void SetValue(hstring_ref value) const;
+    void SetValue(hstring_view value) const;
 };
 
 template <typename D>

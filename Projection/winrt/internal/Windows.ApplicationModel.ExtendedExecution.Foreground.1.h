@@ -49,7 +49,7 @@ template <typename D>
 struct WINRT_EBO impl_IExtendedExecutionForegroundSession
 {
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
     event_token Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const;
     using Revoked_revoker = event_revoker<IExtendedExecutionForegroundSession>;
     Revoked_revoker Revoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const;

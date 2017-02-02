@@ -115,8 +115,8 @@ struct WINRT_EBO DataTransferManager :
 struct HtmlFormatHelper
 {
     HtmlFormatHelper() = delete;
-    static hstring GetStaticFragment(hstring_ref htmlFormat);
-    static hstring CreateHtmlFormat(hstring_ref htmlFragment);
+    static hstring GetStaticFragment(hstring_view htmlFormat);
+    static hstring CreateHtmlFormat(hstring_view htmlFragment);
 };
 
 struct WINRT_EBO OperationCompletedEventArgs :
@@ -130,8 +130,8 @@ struct SharedStorageAccessManager
 {
     SharedStorageAccessManager() = delete;
     static hstring AddFile(const Windows::Storage::IStorageFile & file);
-    static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(hstring_ref token);
-    static void RemoveFile(hstring_ref token);
+    static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(hstring_view token);
+    static void RemoveFile(hstring_view token);
 };
 
 struct StandardDataFormats

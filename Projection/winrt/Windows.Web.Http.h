@@ -1562,7 +1562,7 @@ template <typename D> Windows::Web::Http::HttpCookieCollection impl_IHttpCookieM
     return value;
 }
 
-template <typename D> Windows::Web::Http::HttpCookie impl_IHttpCookieFactory<D>::Create(hstring_ref name, hstring_ref domain, hstring_ref path) const
+template <typename D> Windows::Web::Http::HttpCookie impl_IHttpCookieFactory<D>::Create(hstring_view name, hstring_view domain, hstring_view path) const
 {
     Windows::Web::Http::HttpCookie cookie { nullptr };
     check_hresult(WINRT_SHIM(IHttpCookieFactory)->abi_Create(get(name), get(domain), get(path), put(cookie)));
@@ -1633,7 +1633,7 @@ template <typename D> hstring impl_IHttpCookie<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_IHttpCookie<D>::Value(hstring_ref value) const
+template <typename D> void impl_IHttpCookie<D>::Value(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpCookie)->put_Value(get(value)));
 }
@@ -1687,7 +1687,7 @@ template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodStatics<D>:
     return value;
 }
 
-template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodFactory<D>::Create(hstring_ref method) const
+template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodFactory<D>::Create(hstring_view method) const
 {
     Windows::Web::Http::HttpMethod httpMethod { nullptr };
     check_hresult(WINRT_SHIM(IHttpMethodFactory)->abi_Create(get(method), put(httpMethod)));
@@ -1833,7 +1833,7 @@ template <typename D> hstring impl_IHttpResponseMessage<D>::ReasonPhrase() const
     return value;
 }
 
-template <typename D> void impl_IHttpResponseMessage<D>::ReasonPhrase(hstring_ref value) const
+template <typename D> void impl_IHttpResponseMessage<D>::ReasonPhrase(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpResponseMessage)->put_ReasonPhrase(get(value)));
 }
@@ -1893,21 +1893,21 @@ template <typename D> Windows::Web::Http::HttpResponseMessage impl_IHttpResponse
     return httpResponseMessage;
 }
 
-template <typename D> Windows::Web::Http::HttpStringContent impl_IHttpStringContentFactory<D>::CreateFromString(hstring_ref content) const
+template <typename D> Windows::Web::Http::HttpStringContent impl_IHttpStringContentFactory<D>::CreateFromString(hstring_view content) const
 {
     Windows::Web::Http::HttpStringContent stringContent { nullptr };
     check_hresult(WINRT_SHIM(IHttpStringContentFactory)->abi_CreateFromString(get(content), put(stringContent)));
     return stringContent;
 }
 
-template <typename D> Windows::Web::Http::HttpStringContent impl_IHttpStringContentFactory<D>::CreateFromStringWithEncoding(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Web::Http::HttpStringContent impl_IHttpStringContentFactory<D>::CreateFromStringWithEncoding(hstring_view content, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Web::Http::HttpStringContent stringContent { nullptr };
     check_hresult(WINRT_SHIM(IHttpStringContentFactory)->abi_CreateFromStringWithEncoding(get(content), encoding, put(stringContent)));
     return stringContent;
 }
 
-template <typename D> Windows::Web::Http::HttpStringContent impl_IHttpStringContentFactory<D>::CreateFromStringWithEncodingAndMediaType(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_ref mediaType) const
+template <typename D> Windows::Web::Http::HttpStringContent impl_IHttpStringContentFactory<D>::CreateFromStringWithEncodingAndMediaType(hstring_view content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_view mediaType) const
 {
     Windows::Web::Http::HttpStringContent stringContent { nullptr };
     check_hresult(WINRT_SHIM(IHttpStringContentFactory)->abi_CreateFromStringWithEncodingAndMediaType(get(content), encoding, get(mediaType), put(stringContent)));
@@ -1942,14 +1942,14 @@ template <typename D> Windows::Web::Http::HttpFormUrlEncodedContent impl_IHttpFo
     return formUrlEncodedContent;
 }
 
-template <typename D> Windows::Web::Http::HttpMultipartContent impl_IHttpMultipartContentFactory<D>::CreateWithSubtype(hstring_ref subtype) const
+template <typename D> Windows::Web::Http::HttpMultipartContent impl_IHttpMultipartContentFactory<D>::CreateWithSubtype(hstring_view subtype) const
 {
     Windows::Web::Http::HttpMultipartContent multipartContent { nullptr };
     check_hresult(WINRT_SHIM(IHttpMultipartContentFactory)->abi_CreateWithSubtype(get(subtype), put(multipartContent)));
     return multipartContent;
 }
 
-template <typename D> Windows::Web::Http::HttpMultipartContent impl_IHttpMultipartContentFactory<D>::CreateWithSubtypeAndBoundary(hstring_ref subtype, hstring_ref boundary) const
+template <typename D> Windows::Web::Http::HttpMultipartContent impl_IHttpMultipartContentFactory<D>::CreateWithSubtypeAndBoundary(hstring_view subtype, hstring_view boundary) const
 {
     Windows::Web::Http::HttpMultipartContent multipartContent { nullptr };
     check_hresult(WINRT_SHIM(IHttpMultipartContentFactory)->abi_CreateWithSubtypeAndBoundary(get(subtype), get(boundary), put(multipartContent)));
@@ -1961,7 +1961,7 @@ template <typename D> void impl_IHttpMultipartContent<D>::Add(const Windows::Web
     check_hresult(WINRT_SHIM(IHttpMultipartContent)->abi_Add(get(content)));
 }
 
-template <typename D> Windows::Web::Http::HttpMultipartFormDataContent impl_IHttpMultipartFormDataContentFactory<D>::CreateWithBoundary(hstring_ref boundary) const
+template <typename D> Windows::Web::Http::HttpMultipartFormDataContent impl_IHttpMultipartFormDataContentFactory<D>::CreateWithBoundary(hstring_view boundary) const
 {
     Windows::Web::Http::HttpMultipartFormDataContent multipartFormDataContent { nullptr };
     check_hresult(WINRT_SHIM(IHttpMultipartFormDataContentFactory)->abi_CreateWithBoundary(get(boundary), put(multipartFormDataContent)));
@@ -1973,12 +1973,12 @@ template <typename D> void impl_IHttpMultipartFormDataContent<D>::Add(const Wind
     check_hresult(WINRT_SHIM(IHttpMultipartFormDataContent)->abi_Add(get(content)));
 }
 
-template <typename D> void impl_IHttpMultipartFormDataContent<D>::Add(const Windows::Web::Http::IHttpContent & content, hstring_ref name) const
+template <typename D> void impl_IHttpMultipartFormDataContent<D>::Add(const Windows::Web::Http::IHttpContent & content, hstring_view name) const
 {
     check_hresult(WINRT_SHIM(IHttpMultipartFormDataContent)->abi_AddWithName(get(content), get(name)));
 }
 
-template <typename D> void impl_IHttpMultipartFormDataContent<D>::Add(const Windows::Web::Http::IHttpContent & content, hstring_ref name, hstring_ref fileName) const
+template <typename D> void impl_IHttpMultipartFormDataContent<D>::Add(const Windows::Web::Http::IHttpContent & content, hstring_view name, hstring_view fileName) const
 {
     check_hresult(WINRT_SHIM(IHttpMultipartFormDataContent)->abi_AddWithNameAndFileName(get(content), get(name), get(fileName)));
 }
@@ -1999,7 +1999,7 @@ inline HttpClient::HttpClient(const Windows::Web::Http::Filters::IHttpFilter & f
     HttpClient(get_activation_factory<HttpClient, IHttpClientFactory>().Create(filter))
 {}
 
-inline HttpCookie::HttpCookie(hstring_ref name, hstring_ref domain, hstring_ref path) :
+inline HttpCookie::HttpCookie(hstring_view name, hstring_view domain, hstring_view path) :
     HttpCookie(get_activation_factory<HttpCookie, IHttpCookieFactory>().Create(name, domain, path))
 {}
 
@@ -2007,7 +2007,7 @@ inline HttpFormUrlEncodedContent::HttpFormUrlEncodedContent(const Windows::Found
     HttpFormUrlEncodedContent(get_activation_factory<HttpFormUrlEncodedContent, IHttpFormUrlEncodedContentFactory>().Create(content))
 {}
 
-inline HttpMethod::HttpMethod(hstring_ref method) :
+inline HttpMethod::HttpMethod(hstring_view method) :
     HttpMethod(get_activation_factory<HttpMethod, IHttpMethodFactory>().Create(method))
 {}
 
@@ -2050,11 +2050,11 @@ inline HttpMultipartContent::HttpMultipartContent() :
     HttpMultipartContent(activate_instance<HttpMultipartContent>())
 {}
 
-inline HttpMultipartContent::HttpMultipartContent(hstring_ref subtype) :
+inline HttpMultipartContent::HttpMultipartContent(hstring_view subtype) :
     HttpMultipartContent(get_activation_factory<HttpMultipartContent, IHttpMultipartContentFactory>().CreateWithSubtype(subtype))
 {}
 
-inline HttpMultipartContent::HttpMultipartContent(hstring_ref subtype, hstring_ref boundary) :
+inline HttpMultipartContent::HttpMultipartContent(hstring_view subtype, hstring_view boundary) :
     HttpMultipartContent(get_activation_factory<HttpMultipartContent, IHttpMultipartContentFactory>().CreateWithSubtypeAndBoundary(subtype, boundary))
 {}
 
@@ -2062,7 +2062,7 @@ inline HttpMultipartFormDataContent::HttpMultipartFormDataContent() :
     HttpMultipartFormDataContent(activate_instance<HttpMultipartFormDataContent>())
 {}
 
-inline HttpMultipartFormDataContent::HttpMultipartFormDataContent(hstring_ref boundary) :
+inline HttpMultipartFormDataContent::HttpMultipartFormDataContent(hstring_view boundary) :
     HttpMultipartFormDataContent(get_activation_factory<HttpMultipartFormDataContent, IHttpMultipartFormDataContentFactory>().CreateWithBoundary(boundary))
 {}
 
@@ -2086,15 +2086,15 @@ inline HttpStreamContent::HttpStreamContent(const Windows::Storage::Streams::IIn
     HttpStreamContent(get_activation_factory<HttpStreamContent, IHttpStreamContentFactory>().CreateFromInputStream(content))
 {}
 
-inline HttpStringContent::HttpStringContent(hstring_ref content) :
+inline HttpStringContent::HttpStringContent(hstring_view content) :
     HttpStringContent(get_activation_factory<HttpStringContent, IHttpStringContentFactory>().CreateFromString(content))
 {}
 
-inline HttpStringContent::HttpStringContent(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding) :
+inline HttpStringContent::HttpStringContent(hstring_view content, Windows::Storage::Streams::UnicodeEncoding encoding) :
     HttpStringContent(get_activation_factory<HttpStringContent, IHttpStringContentFactory>().CreateFromStringWithEncoding(content, encoding))
 {}
 
-inline HttpStringContent::HttpStringContent(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_ref mediaType) :
+inline HttpStringContent::HttpStringContent(hstring_view content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_view mediaType) :
     HttpStringContent(get_activation_factory<HttpStringContent, IHttpStringContentFactory>().CreateFromStringWithEncodingAndMediaType(content, encoding, mediaType))
 {}
 

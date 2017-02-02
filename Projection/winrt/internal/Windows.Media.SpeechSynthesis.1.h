@@ -71,8 +71,8 @@ struct WINRT_EBO impl_ISpeechSynthesisStream
 template <typename D>
 struct WINRT_EBO impl_ISpeechSynthesizer
 {
-    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeTextToStreamAsync(hstring_ref text) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeSsmlToStreamAsync(hstring_ref Ssml) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeTextToStreamAsync(hstring_view text) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeSsmlToStreamAsync(hstring_view Ssml) const;
     void Voice(const Windows::Media::SpeechSynthesis::VoiceInformation & value) const;
     Windows::Media::SpeechSynthesis::VoiceInformation Voice() const;
 };

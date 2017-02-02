@@ -14,7 +14,7 @@ struct WINRT_EBO ContentIndexer :
     impl::require<ContentIndexer, Windows::Storage::Search::IContentIndexerQueryOperations>
 {
     ContentIndexer(std::nullptr_t) noexcept {}
-    static Windows::Storage::Search::ContentIndexer GetIndexer(hstring_ref indexName);
+    static Windows::Storage::Search::ContentIndexer GetIndexer(hstring_view indexName);
     static Windows::Storage::Search::ContentIndexer GetIndexer();
 };
 

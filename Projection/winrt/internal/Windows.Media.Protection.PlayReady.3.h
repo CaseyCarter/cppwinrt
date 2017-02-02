@@ -55,7 +55,7 @@ struct WINRT_EBO NDTCPMessenger :
     Windows::Media::Protection::PlayReady::INDMessenger
 {
     NDTCPMessenger(std::nullptr_t) noexcept {}
-    NDTCPMessenger(hstring_ref remoteHostName, uint32_t remoteHostPort);
+    NDTCPMessenger(hstring_view remoteHostName, uint32_t remoteHostPort);
 };
 
 struct WINRT_EBO PlayReadyContentHeader :
@@ -63,10 +63,10 @@ struct WINRT_EBO PlayReadyContentHeader :
     impl::require<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader2>
 {
     PlayReadyContentHeader(std::nullptr_t) noexcept {}
-    PlayReadyContentHeader(array_ref<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId);
-    PlayReadyContentHeader(GUID contentKeyId, hstring_ref contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId);
+    PlayReadyContentHeader(array_ref<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId);
+    PlayReadyContentHeader(GUID contentKeyId, hstring_view contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId);
     PlayReadyContentHeader(array_ref<const uint8_t> headerBytes);
-    PlayReadyContentHeader(uint32_t dwFlags, array_ref<const GUID> contentKeyIds, array_ref<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId);
+    PlayReadyContentHeader(uint32_t dwFlags, array_ref<const GUID> contentKeyIds, array_ref<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId);
 };
 
 struct PlayReadyContentResolver

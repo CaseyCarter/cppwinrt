@@ -257,7 +257,7 @@ struct WINRT_EBO PlaybackMediaMarker :
 {
     PlaybackMediaMarker(std::nullptr_t) noexcept {}
     PlaybackMediaMarker(const Windows::Foundation::TimeSpan & value);
-    PlaybackMediaMarker(const Windows::Foundation::TimeSpan & value, hstring_ref mediaMarketType, hstring_ref text);
+    PlaybackMediaMarker(const Windows::Foundation::TimeSpan & value, hstring_view mediaMarketType, hstring_view text);
 };
 
 struct WINRT_EBO PlaybackMediaMarkerReachedEventArgs :

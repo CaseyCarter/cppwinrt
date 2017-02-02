@@ -446,7 +446,7 @@ struct WINRT_EBO impl_IPackageWithMetadata
 {
     Windows::Foundation::DateTime InstallDate() const;
     hstring GetThumbnailToken() const;
-    void Launch(hstring_ref parameters) const;
+    void Launch(hstring_view parameters) const;
 };
 
 template <typename D>

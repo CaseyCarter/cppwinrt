@@ -127,7 +127,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IDataProtectionProv
     return value;
 }
 
-template <typename D> Windows::Security::Cryptography::DataProtection::DataProtectionProvider impl_IDataProtectionProviderFactory<D>::CreateOverloadExplicit(hstring_ref protectionDescriptor) const
+template <typename D> Windows::Security::Cryptography::DataProtection::DataProtectionProvider impl_IDataProtectionProviderFactory<D>::CreateOverloadExplicit(hstring_view protectionDescriptor) const
 {
     Windows::Security::Cryptography::DataProtection::DataProtectionProvider value { nullptr };
     check_hresult(WINRT_SHIM(IDataProtectionProviderFactory)->abi_CreateOverloadExplicit(get(protectionDescriptor), put(value)));
@@ -138,7 +138,7 @@ inline DataProtectionProvider::DataProtectionProvider() :
     DataProtectionProvider(activate_instance<DataProtectionProvider>())
 {}
 
-inline DataProtectionProvider::DataProtectionProvider(hstring_ref protectionDescriptor) :
+inline DataProtectionProvider::DataProtectionProvider(hstring_view protectionDescriptor) :
     DataProtectionProvider(get_activation_factory<DataProtectionProvider, IDataProtectionProviderFactory>().CreateOverloadExplicit(protectionDescriptor))
 {}
 

@@ -1374,7 +1374,7 @@ template <typename D> hstring impl_ICoreTextTextRequest<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_ICoreTextTextRequest<D>::Text(hstring_ref value) const
+template <typename D> void impl_ICoreTextTextRequest<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICoreTextTextRequest)->put_Text(get(value)));
 }
@@ -1706,7 +1706,7 @@ template <typename D> hstring impl_ICoreTextEditContext<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_ICoreTextEditContext<D>::Name(hstring_ref value) const
+template <typename D> void impl_ICoreTextEditContext<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICoreTextEditContext)->put_Name(get(value)));
 }

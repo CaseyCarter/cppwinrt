@@ -195,7 +195,7 @@ template <typename O, typename M> ListViewKeyToItemHandler::ListViewKeyToItemHan
     ListViewKeyToItemHandler([=](auto && ... args) { return ((*object).*(method))(args ...); })
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::IInspectable> ListViewKeyToItemHandler::operator()(hstring_ref key) const
+inline Windows::Foundation::IAsyncOperation<Windows::IInspectable> ListViewKeyToItemHandler::operator()(hstring_view key) const
 {
     Windows::Foundation::IAsyncOperation<Windows::IInspectable> returnValue;
     check_hresult((*(abi<ListViewKeyToItemHandler> **)this)->abi_Invoke(get(key), put(returnValue)));
@@ -47612,7 +47612,7 @@ template <typename D> hstring impl_ITextBlock<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_ITextBlock<D>::Text(hstring_ref value) const
+template <typename D> void impl_ITextBlock<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextBlock)->put_Text(get(value)));
 }
@@ -48471,7 +48471,7 @@ template <typename D> hstring impl_IItemsControl<D>::DisplayMemberPath() const
     return value;
 }
 
-template <typename D> void impl_IItemsControl<D>::DisplayMemberPath(hstring_ref value) const
+template <typename D> void impl_IItemsControl<D>::DisplayMemberPath(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IItemsControl)->put_DisplayMemberPath(get(value)));
 }
@@ -49191,7 +49191,7 @@ template <typename D> hstring impl_IPasswordBox<D>::Password() const
     return value;
 }
 
-template <typename D> void impl_IPasswordBox<D>::Password(hstring_ref value) const
+template <typename D> void impl_IPasswordBox<D>::Password(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPasswordBox)->put_Password(get(value)));
 }
@@ -49203,7 +49203,7 @@ template <typename D> hstring impl_IPasswordBox<D>::PasswordChar() const
     return value;
 }
 
-template <typename D> void impl_IPasswordBox<D>::PasswordChar(hstring_ref value) const
+template <typename D> void impl_IPasswordBox<D>::PasswordChar(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPasswordBox)->put_PasswordChar(get(value)));
 }
@@ -49330,7 +49330,7 @@ template <typename D> hstring impl_IPasswordBox2<D>::PlaceholderText() const
     return value;
 }
 
-template <typename D> void impl_IPasswordBox2<D>::PlaceholderText(hstring_ref value) const
+template <typename D> void impl_IPasswordBox2<D>::PlaceholderText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPasswordBox2)->put_PlaceholderText(get(value)));
 }
@@ -50110,7 +50110,7 @@ template <typename D> hstring impl_IRichEditBox2<D>::PlaceholderText() const
     return value;
 }
 
-template <typename D> void impl_IRichEditBox2<D>::PlaceholderText(hstring_ref value) const
+template <typename D> void impl_IRichEditBox2<D>::PlaceholderText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IRichEditBox2)->put_PlaceholderText(get(value)));
 }
@@ -50621,7 +50621,7 @@ template <typename D> hstring impl_ITextBox<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_ITextBox<D>::Text(hstring_ref value) const
+template <typename D> void impl_ITextBox<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextBox)->put_Text(get(value)));
 }
@@ -50633,7 +50633,7 @@ template <typename D> hstring impl_ITextBox<D>::SelectedText() const
     return value;
 }
 
-template <typename D> void impl_ITextBox<D>::SelectedText(hstring_ref value) const
+template <typename D> void impl_ITextBox<D>::SelectedText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextBox)->put_SelectedText(get(value)));
 }
@@ -50927,7 +50927,7 @@ template <typename D> hstring impl_ITextBox2<D>::PlaceholderText() const
     return value;
 }
 
-template <typename D> void impl_ITextBox2<D>::PlaceholderText(hstring_ref value) const
+template <typename D> void impl_ITextBox2<D>::PlaceholderText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextBox2)->put_PlaceholderText(get(value)));
 }
@@ -51634,7 +51634,7 @@ template <typename D> hstring impl_ISettingsFlyout<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_ISettingsFlyout<D>::Title(hstring_ref value) const
+template <typename D> void impl_ISettingsFlyout<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISettingsFlyout)->put_Title(get(value)));
 }
@@ -52289,7 +52289,7 @@ template <typename D> hstring impl_IComboBox2<D>::PlaceholderText() const
     return value;
 }
 
-template <typename D> void impl_IComboBox2<D>::PlaceholderText(hstring_ref value) const
+template <typename D> void impl_IComboBox2<D>::PlaceholderText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IComboBox2)->put_PlaceholderText(get(value)));
 }
@@ -53125,7 +53125,7 @@ template <typename D> hstring impl_IRadioButton<D>::GroupName() const
     return value;
 }
 
-template <typename D> void impl_IRadioButton<D>::GroupName(hstring_ref value) const
+template <typename D> void impl_IRadioButton<D>::GroupName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IRadioButton)->put_GroupName(get(value)));
 }
@@ -53331,7 +53331,7 @@ template <typename D> hstring impl_IListViewPersistenceHelperStatics<D>::GetRela
     return returnValue;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IListViewPersistenceHelperStatics<D>::SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_ref relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IListViewPersistenceHelperStatics<D>::SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_view relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler) const
 {
     Windows::Foundation::IAsyncAction returnValue;
     check_hresult(WINRT_SHIM(IListViewPersistenceHelperStatics)->abi_SetRelativeScrollPositionAsync(get(listViewBase), get(relativeScrollPosition), get(keyToItemHandler), put(returnValue)));
@@ -54440,14 +54440,14 @@ template <typename D> void impl_IMediaElement<D>::Pause() const
     check_hresult(WINRT_SHIM(IMediaElement)->abi_Pause());
 }
 
-template <typename D> Windows::UI::Xaml::Media::MediaCanPlayResponse impl_IMediaElement<D>::CanPlayType(hstring_ref type) const
+template <typename D> Windows::UI::Xaml::Media::MediaCanPlayResponse impl_IMediaElement<D>::CanPlayType(hstring_view type) const
 {
     Windows::UI::Xaml::Media::MediaCanPlayResponse returnValue {};
     check_hresult(WINRT_SHIM(IMediaElement)->abi_CanPlayType(get(type), &returnValue));
     return returnValue;
 }
 
-template <typename D> void impl_IMediaElement<D>::SetSource(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref mimeType) const
+template <typename D> void impl_IMediaElement<D>::SetSource(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view mimeType) const
 {
     check_hresult(WINRT_SHIM(IMediaElement)->abi_SetSource(get(stream), get(mimeType)));
 }
@@ -54459,12 +54459,12 @@ template <typename D> hstring impl_IMediaElement<D>::GetAudioStreamLanguage(cons
     return returnValue;
 }
 
-template <typename D> void impl_IMediaElement<D>::AddAudioEffect(hstring_ref effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const
+template <typename D> void impl_IMediaElement<D>::AddAudioEffect(hstring_view effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const
 {
     check_hresult(WINRT_SHIM(IMediaElement)->abi_AddAudioEffect(get(effectID), effectOptional, get(effectConfiguration)));
 }
 
-template <typename D> void impl_IMediaElement<D>::AddVideoEffect(hstring_ref effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const
+template <typename D> void impl_IMediaElement<D>::AddVideoEffect(hstring_view effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const
 {
     check_hresult(WINRT_SHIM(IMediaElement)->abi_AddVideoEffect(get(effectID), effectOptional, get(effectConfiguration)));
 }
@@ -54980,7 +54980,7 @@ template <typename D> void impl_IWebView<D>::NavigationFailed(event_token token)
     check_hresult(WINRT_SHIM(IWebView)->remove_NavigationFailed(token));
 }
 
-template <typename D> hstring impl_IWebView<D>::InvokeScript(hstring_ref scriptName, array_ref<const hstring> arguments) const
+template <typename D> hstring impl_IWebView<D>::InvokeScript(hstring_view scriptName, array_ref<const hstring> arguments) const
 {
     hstring returnValue;
     check_hresult(WINRT_SHIM(IWebView)->abi_InvokeScript(get(scriptName), arguments.size(), get(arguments), put(returnValue)));
@@ -54992,7 +54992,7 @@ template <typename D> void impl_IWebView<D>::Navigate(const Windows::Foundation:
     check_hresult(WINRT_SHIM(IWebView)->abi_Navigate(get(source)));
 }
 
-template <typename D> void impl_IWebView<D>::NavigateToString(hstring_ref text) const
+template <typename D> void impl_IWebView<D>::NavigateToString(hstring_view text) const
 {
     check_hresult(WINRT_SHIM(IWebView)->abi_NavigateToString(get(text)));
 }
@@ -55124,7 +55124,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IWebView2<D>::Captu
     return returnValue;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IWebView2<D>::InvokeScriptAsync(hstring_ref scriptName, const Windows::Foundation::Collections::IIterable<hstring> & arguments) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IWebView2<D>::InvokeScriptAsync(hstring_view scriptName, const Windows::Foundation::Collections::IIterable<hstring> & arguments) const
 {
     Windows::Foundation::IAsyncOperation<hstring> returnValue;
     check_hresult(WINRT_SHIM(IWebView2)->abi_InvokeScriptAsync(get(scriptName), get(arguments), put(returnValue)));
@@ -55143,7 +55143,7 @@ template <typename D> void impl_IWebView2<D>::NavigateToLocalStreamUri(const Win
     check_hresult(WINRT_SHIM(IWebView2)->abi_NavigateToLocalStreamUri(get(source), get(streamResolver)));
 }
 
-template <typename D> Windows::Foundation::Uri impl_IWebView2<D>::BuildLocalStreamUri(hstring_ref contentIdentifier, hstring_ref relativePath) const
+template <typename D> Windows::Foundation::Uri impl_IWebView2<D>::BuildLocalStreamUri(hstring_view contentIdentifier, hstring_view relativePath) const
 {
     Windows::Foundation::Uri returnValue { nullptr };
     check_hresult(WINRT_SHIM(IWebView2)->abi_BuildLocalStreamUri(get(contentIdentifier), get(relativePath), put(returnValue)));
@@ -55441,7 +55441,7 @@ template <typename D> void impl_IWebView4<D>::PermissionRequested(event_token to
     check_hresult(WINRT_SHIM(IWebView4)->remove_PermissionRequested(token));
 }
 
-template <typename D> void impl_IWebView4<D>::AddWebAllowedObject(hstring_ref name, const Windows::IInspectable & pObject) const
+template <typename D> void impl_IWebView4<D>::AddWebAllowedObject(hstring_view name, const Windows::IInspectable & pObject) const
 {
     check_hresult(WINRT_SHIM(IWebView4)->abi_AddWebAllowedObject(get(name), get(pObject)));
 }
@@ -55557,7 +55557,7 @@ template <typename D> hstring impl_IWebViewBrush<D>::SourceName() const
     return value;
 }
 
-template <typename D> void impl_IWebViewBrush<D>::SourceName(hstring_ref value) const
+template <typename D> void impl_IWebViewBrush<D>::SourceName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IWebViewBrush)->put_SourceName(get(value)));
 }
@@ -55664,7 +55664,7 @@ template <typename D> hstring impl_ICalendarDatePicker<D>::DateFormat() const
     return value;
 }
 
-template <typename D> void impl_ICalendarDatePicker<D>::DateFormat(hstring_ref value) const
+template <typename D> void impl_ICalendarDatePicker<D>::DateFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICalendarDatePicker)->put_DateFormat(get(value)));
 }
@@ -55676,7 +55676,7 @@ template <typename D> hstring impl_ICalendarDatePicker<D>::PlaceholderText() con
     return value;
 }
 
-template <typename D> void impl_ICalendarDatePicker<D>::PlaceholderText(hstring_ref value) const
+template <typename D> void impl_ICalendarDatePicker<D>::PlaceholderText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICalendarDatePicker)->put_PlaceholderText(get(value)));
 }
@@ -55784,7 +55784,7 @@ template <typename D> hstring impl_ICalendarDatePicker<D>::DayOfWeekFormat() con
     return value;
 }
 
-template <typename D> void impl_ICalendarDatePicker<D>::DayOfWeekFormat(hstring_ref value) const
+template <typename D> void impl_ICalendarDatePicker<D>::DayOfWeekFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICalendarDatePicker)->put_DayOfWeekFormat(get(value)));
 }
@@ -55796,7 +55796,7 @@ template <typename D> hstring impl_ICalendarDatePicker<D>::CalendarIdentifier() 
     return value;
 }
 
-template <typename D> void impl_ICalendarDatePicker<D>::CalendarIdentifier(hstring_ref value) const
+template <typename D> void impl_ICalendarDatePicker<D>::CalendarIdentifier(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICalendarDatePicker)->put_CalendarIdentifier(get(value)));
 }
@@ -56048,7 +56048,7 @@ template <typename D> hstring impl_ICalendarView<D>::CalendarIdentifier() const
     return value;
 }
 
-template <typename D> void impl_ICalendarView<D>::CalendarIdentifier(hstring_ref value) const
+template <typename D> void impl_ICalendarView<D>::CalendarIdentifier(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICalendarView)->put_CalendarIdentifier(get(value)));
 }
@@ -56060,7 +56060,7 @@ template <typename D> hstring impl_ICalendarView<D>::DayOfWeekFormat() const
     return value;
 }
 
-template <typename D> void impl_ICalendarView<D>::DayOfWeekFormat(hstring_ref value) const
+template <typename D> void impl_ICalendarView<D>::DayOfWeekFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICalendarView)->put_DayOfWeekFormat(get(value)));
 }
@@ -57127,7 +57127,7 @@ template <typename D> hstring impl_IDatePicker<D>::CalendarIdentifier() const
     return value;
 }
 
-template <typename D> void impl_IDatePicker<D>::CalendarIdentifier(hstring_ref value) const
+template <typename D> void impl_IDatePicker<D>::CalendarIdentifier(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePicker)->put_CalendarIdentifier(get(value)));
 }
@@ -57187,7 +57187,7 @@ template <typename D> hstring impl_IDatePicker<D>::DayFormat() const
     return value;
 }
 
-template <typename D> void impl_IDatePicker<D>::DayFormat(hstring_ref value) const
+template <typename D> void impl_IDatePicker<D>::DayFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePicker)->put_DayFormat(get(value)));
 }
@@ -57199,7 +57199,7 @@ template <typename D> hstring impl_IDatePicker<D>::MonthFormat() const
     return value;
 }
 
-template <typename D> void impl_IDatePicker<D>::MonthFormat(hstring_ref value) const
+template <typename D> void impl_IDatePicker<D>::MonthFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePicker)->put_MonthFormat(get(value)));
 }
@@ -57211,7 +57211,7 @@ template <typename D> hstring impl_IDatePicker<D>::YearFormat() const
     return value;
 }
 
-template <typename D> void impl_IDatePicker<D>::YearFormat(hstring_ref value) const
+template <typename D> void impl_IDatePicker<D>::YearFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePicker)->put_YearFormat(get(value)));
 }
@@ -57393,7 +57393,7 @@ template <typename D> hstring impl_IFontIcon<D>::Glyph() const
     return value;
 }
 
-template <typename D> void impl_IFontIcon<D>::Glyph(hstring_ref value) const
+template <typename D> void impl_IFontIcon<D>::Glyph(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFontIcon)->put_Glyph(get(value)));
 }
@@ -58454,7 +58454,7 @@ template <typename D> hstring impl_ISearchBox<D>::SearchHistoryContext() const
     return value;
 }
 
-template <typename D> void impl_ISearchBox<D>::SearchHistoryContext(hstring_ref value) const
+template <typename D> void impl_ISearchBox<D>::SearchHistoryContext(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISearchBox)->put_SearchHistoryContext(get(value)));
 }
@@ -58466,7 +58466,7 @@ template <typename D> hstring impl_ISearchBox<D>::PlaceholderText() const
     return value;
 }
 
-template <typename D> void impl_ISearchBox<D>::PlaceholderText(hstring_ref value) const
+template <typename D> void impl_ISearchBox<D>::PlaceholderText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISearchBox)->put_PlaceholderText(get(value)));
 }
@@ -58478,7 +58478,7 @@ template <typename D> hstring impl_ISearchBox<D>::QueryText() const
     return value;
 }
 
-template <typename D> void impl_ISearchBox<D>::QueryText(hstring_ref value) const
+template <typename D> void impl_ISearchBox<D>::QueryText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISearchBox)->put_QueryText(get(value)));
 }
@@ -58929,7 +58929,7 @@ template <typename D> hstring impl_ITimePicker<D>::ClockIdentifier() const
     return value;
 }
 
-template <typename D> void impl_ITimePicker<D>::ClockIdentifier(hstring_ref value) const
+template <typename D> void impl_ITimePicker<D>::ClockIdentifier(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITimePicker)->put_ClockIdentifier(get(value)));
 }
@@ -59245,7 +59245,7 @@ template <typename D> hstring impl_IAutoSuggestBox<D>::TextMemberPath() const
     return value;
 }
 
-template <typename D> void impl_IAutoSuggestBox<D>::TextMemberPath(hstring_ref value) const
+template <typename D> void impl_IAutoSuggestBox<D>::TextMemberPath(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutoSuggestBox)->put_TextMemberPath(get(value)));
 }
@@ -59257,7 +59257,7 @@ template <typename D> hstring impl_IAutoSuggestBox<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_IAutoSuggestBox<D>::Text(hstring_ref value) const
+template <typename D> void impl_IAutoSuggestBox<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutoSuggestBox)->put_Text(get(value)));
 }
@@ -59281,7 +59281,7 @@ template <typename D> hstring impl_IAutoSuggestBox<D>::PlaceholderText() const
     return value;
 }
 
-template <typename D> void impl_IAutoSuggestBox<D>::PlaceholderText(hstring_ref value) const
+template <typename D> void impl_IAutoSuggestBox<D>::PlaceholderText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAutoSuggestBox)->put_PlaceholderText(get(value)));
 }
@@ -59524,7 +59524,7 @@ template <typename D> hstring impl_IContentDialog<D>::PrimaryButtonText() const
     return value;
 }
 
-template <typename D> void impl_IContentDialog<D>::PrimaryButtonText(hstring_ref value) const
+template <typename D> void impl_IContentDialog<D>::PrimaryButtonText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContentDialog)->put_PrimaryButtonText(get(value)));
 }
@@ -59536,7 +59536,7 @@ template <typename D> hstring impl_IContentDialog<D>::SecondaryButtonText() cons
     return value;
 }
 
-template <typename D> void impl_IContentDialog<D>::SecondaryButtonText(hstring_ref value) const
+template <typename D> void impl_IContentDialog<D>::SecondaryButtonText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IContentDialog)->put_SecondaryButtonText(get(value)));
 }
@@ -59945,7 +59945,7 @@ template <typename D> hstring impl_IFrame<D>::GetNavigationState() const
     return returnValue;
 }
 
-template <typename D> void impl_IFrame<D>::SetNavigationState(hstring_ref navigationState) const
+template <typename D> void impl_IFrame<D>::SetNavigationState(hstring_view navigationState) const
 {
     check_hresult(WINRT_SHIM(IFrame)->abi_SetNavigationState(get(navigationState)));
 }
@@ -60046,7 +60046,7 @@ template <typename D> hstring impl_IMenuFlyoutItem<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_IMenuFlyoutItem<D>::Text(hstring_ref value) const
+template <typename D> void impl_IMenuFlyoutItem<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMenuFlyoutItem)->put_Text(get(value)));
 }
@@ -60155,7 +60155,7 @@ template <typename D> hstring impl_IMenuFlyoutSubItem<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_IMenuFlyoutSubItem<D>::Text(hstring_ref value) const
+template <typename D> void impl_IMenuFlyoutSubItem<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMenuFlyoutSubItem)->put_Text(get(value)));
 }
@@ -61544,7 +61544,7 @@ template <typename D> hstring impl_IAppBarButton<D>::Label() const
     return value;
 }
 
-template <typename D> void impl_IAppBarButton<D>::Label(hstring_ref value) const
+template <typename D> void impl_IAppBarButton<D>::Label(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppBarButton)->put_Label(get(value)));
 }
@@ -61629,7 +61629,7 @@ template <typename D> hstring impl_IAppBarToggleButton<D>::Label() const
     return value;
 }
 
-template <typename D> void impl_IAppBarToggleButton<D>::Label(hstring_ref value) const
+template <typename D> void impl_IAppBarToggleButton<D>::Label(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppBarToggleButton)->put_Label(get(value)));
 }
@@ -62124,7 +62124,7 @@ template <typename D> void impl_IControlProtected<D>::DefaultStyleKey(const Wind
     check_hresult(WINRT_SHIM(IControlProtected)->put_DefaultStyleKey(get(value)));
 }
 
-template <typename D> Windows::UI::Xaml::DependencyObject impl_IControlProtected<D>::GetTemplateChild(hstring_ref childName) const
+template <typename D> Windows::UI::Xaml::DependencyObject impl_IControlProtected<D>::GetTemplateChild(hstring_view childName) const
 {
     Windows::UI::Xaml::DependencyObject returnValue { nullptr };
     check_hresult(WINRT_SHIM(IControlProtected)->abi_GetTemplateChild(get(childName), put(returnValue)));
@@ -63063,7 +63063,7 @@ template <typename D> hstring impl_IDatePickerFlyoutItem<D>::PrimaryText() const
     return value;
 }
 
-template <typename D> void impl_IDatePickerFlyoutItem<D>::PrimaryText(hstring_ref value) const
+template <typename D> void impl_IDatePickerFlyoutItem<D>::PrimaryText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePickerFlyoutItem)->put_PrimaryText(get(value)));
 }
@@ -63075,7 +63075,7 @@ template <typename D> hstring impl_IDatePickerFlyoutItem<D>::SecondaryText() con
     return value;
 }
 
-template <typename D> void impl_IDatePickerFlyoutItem<D>::SecondaryText(hstring_ref value) const
+template <typename D> void impl_IDatePickerFlyoutItem<D>::SecondaryText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePickerFlyoutItem)->put_SecondaryText(get(value)));
 }
@@ -63129,7 +63129,7 @@ template <typename D> hstring impl_IDatePickerFlyout<D>::CalendarIdentifier() co
     return value;
 }
 
-template <typename D> void impl_IDatePickerFlyout<D>::CalendarIdentifier(hstring_ref value) const
+template <typename D> void impl_IDatePickerFlyout<D>::CalendarIdentifier(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePickerFlyout)->put_CalendarIdentifier(get(value)));
 }
@@ -63286,7 +63286,7 @@ template <typename D> hstring impl_IDatePickerFlyout2<D>::DayFormat() const
     return value;
 }
 
-template <typename D> void impl_IDatePickerFlyout2<D>::DayFormat(hstring_ref value) const
+template <typename D> void impl_IDatePickerFlyout2<D>::DayFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePickerFlyout2)->put_DayFormat(get(value)));
 }
@@ -63298,7 +63298,7 @@ template <typename D> hstring impl_IDatePickerFlyout2<D>::MonthFormat() const
     return value;
 }
 
-template <typename D> void impl_IDatePickerFlyout2<D>::MonthFormat(hstring_ref value) const
+template <typename D> void impl_IDatePickerFlyout2<D>::MonthFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePickerFlyout2)->put_MonthFormat(get(value)));
 }
@@ -63310,7 +63310,7 @@ template <typename D> hstring impl_IDatePickerFlyout2<D>::YearFormat() const
     return value;
 }
 
-template <typename D> void impl_IDatePickerFlyout2<D>::YearFormat(hstring_ref value) const
+template <typename D> void impl_IDatePickerFlyout2<D>::YearFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDatePickerFlyout2)->put_YearFormat(get(value)));
 }
@@ -63367,7 +63367,7 @@ template <typename D> hstring impl_IListPickerFlyout<D>::DisplayMemberPath() con
     return value;
 }
 
-template <typename D> void impl_IListPickerFlyout<D>::DisplayMemberPath(hstring_ref value) const
+template <typename D> void impl_IListPickerFlyout<D>::DisplayMemberPath(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IListPickerFlyout)->put_DisplayMemberPath(get(value)));
 }
@@ -63427,7 +63427,7 @@ template <typename D> hstring impl_IListPickerFlyout<D>::SelectedValuePath() con
     return value;
 }
 
-template <typename D> void impl_IListPickerFlyout<D>::SelectedValuePath(hstring_ref value) const
+template <typename D> void impl_IListPickerFlyout<D>::SelectedValuePath(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IListPickerFlyout)->put_SelectedValuePath(get(value)));
 }
@@ -63588,7 +63588,7 @@ template <typename D> hstring impl_ITimePickerFlyout<D>::ClockIdentifier() const
     return value;
 }
 
-template <typename D> void impl_ITimePickerFlyout<D>::ClockIdentifier(hstring_ref value) const
+template <typename D> void impl_ITimePickerFlyout<D>::ClockIdentifier(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITimePickerFlyout)->put_ClockIdentifier(get(value)));
 }
@@ -66285,7 +66285,7 @@ inline hstring ListViewPersistenceHelper::GetRelativeScrollPosition(const Window
     return get_activation_factory<ListViewPersistenceHelper, IListViewPersistenceHelperStatics>().GetRelativeScrollPosition(listViewBase, itemToKeyHandler);
 }
 
-inline Windows::Foundation::IAsyncAction ListViewPersistenceHelper::SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_ref relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler)
+inline Windows::Foundation::IAsyncAction ListViewPersistenceHelper::SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_view relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler)
 {
     return get_activation_factory<ListViewPersistenceHelper, IListViewPersistenceHelperStatics>().SetRelativeScrollPositionAsync(listViewBase, relativeScrollPosition, keyToItemHandler);
 }

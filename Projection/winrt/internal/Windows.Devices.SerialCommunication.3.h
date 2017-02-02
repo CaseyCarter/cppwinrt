@@ -26,9 +26,9 @@ struct WINRT_EBO SerialDevice :
 {
     SerialDevice(std::nullptr_t) noexcept {}
     static hstring GetDeviceSelector();
-    static hstring GetDeviceSelector(hstring_ref portName);
+    static hstring GetDeviceSelector(hstring_view portName);
     static hstring GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> FromIdAsync(hstring_ref deviceId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> FromIdAsync(hstring_view deviceId);
 };
 
 }

@@ -44,10 +44,10 @@ struct WINRT_EBO SignalNotifier :
     Windows::System::Threading::Core::ISignalNotifier
 {
     SignalNotifier(std::nullptr_t) noexcept {}
-    static Windows::System::Threading::Core::SignalNotifier AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler);
-    static Windows::System::Threading::Core::SignalNotifier AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout);
-    static Windows::System::Threading::Core::SignalNotifier AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler);
-    static Windows::System::Threading::Core::SignalNotifier AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout);
+    static Windows::System::Threading::Core::SignalNotifier AttachToEvent(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler);
+    static Windows::System::Threading::Core::SignalNotifier AttachToEvent(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout);
+    static Windows::System::Threading::Core::SignalNotifier AttachToSemaphore(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler);
+    static Windows::System::Threading::Core::SignalNotifier AttachToSemaphore(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout);
 };
 
 }

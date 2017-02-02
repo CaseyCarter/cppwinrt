@@ -322,7 +322,7 @@ namespace Windows::Foundation::Diagnostics {
 template <typename D>
 struct WINRT_EBO impl_IAsyncCausalityTracerStatics
 {
-    void TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring_ref operationName, uint64_t relatedContext) const;
+    void TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring_view operationName, uint64_t relatedContext) const;
     void TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::AsyncStatus status) const;
     void TraceOperationRelation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalityRelation relation) const;
     void TraceSynchronousWorkStart(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalitySynchronousWork work) const;
@@ -371,7 +371,7 @@ struct WINRT_EBO impl_IFileLoggingSession
 template <typename D>
 struct WINRT_EBO impl_IFileLoggingSessionFactory
 {
-    Windows::Foundation::Diagnostics::FileLoggingSession Create(hstring_ref name) const;
+    Windows::Foundation::Diagnostics::FileLoggingSession Create(hstring_view name) const;
 };
 
 template <typename D>
@@ -391,16 +391,16 @@ template <typename D>
 struct WINRT_EBO impl_ILoggingActivity2
 {
     Windows::Foundation::Diagnostics::LoggingChannel Channel() const;
-    void StopActivity(hstring_ref stopEventName) const;
-    void StopActivity(hstring_ref stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const;
-    void StopActivity(hstring_ref stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, const Windows::Foundation::Diagnostics::LoggingOptions & options) const;
+    void StopActivity(hstring_view stopEventName) const;
+    void StopActivity(hstring_view stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const;
+    void StopActivity(hstring_view stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, const Windows::Foundation::Diagnostics::LoggingOptions & options) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ILoggingActivityFactory
 {
-    Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivity(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const;
-    Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivityWithLevel(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+    Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivity(hstring_view activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const;
+    Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivityWithLevel(hstring_view activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) const;
 };
 
 template <typename D>
@@ -409,10 +409,10 @@ struct WINRT_EBO impl_ILoggingChannel
     hstring Name() const;
     bool Enabled() const;
     Windows::Foundation::Diagnostics::LoggingLevel Level() const;
-    void LogMessage(hstring_ref eventString) const;
-    void LogMessage(hstring_ref eventString, Windows::Foundation::Diagnostics::LoggingLevel level) const;
-    void LogValuePair(hstring_ref value1, int32_t value2) const;
-    void LogValuePair(hstring_ref value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+    void LogMessage(hstring_view eventString) const;
+    void LogMessage(hstring_view eventString, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+    void LogValuePair(hstring_view value1, int32_t value2) const;
+    void LogValuePair(hstring_view value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) const;
     event_token LoggingEnabled(const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> & handler) const;
     using LoggingEnabled_revoker = event_revoker<ILoggingChannel>;
     LoggingEnabled_revoker LoggingEnabled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> & handler) const;
@@ -428,14 +428,14 @@ struct WINRT_EBO impl_ILoggingChannel2
 template <typename D>
 struct WINRT_EBO impl_ILoggingChannelFactory
 {
-    Windows::Foundation::Diagnostics::LoggingChannel Create(hstring_ref name) const;
+    Windows::Foundation::Diagnostics::LoggingChannel Create(hstring_view name) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ILoggingChannelFactory2
 {
-    Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptions(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) const;
-    Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptionsAndId(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) const;
+    Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptions(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) const;
+    Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptionsAndId(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) const;
 };
 
 template <typename D>
@@ -455,120 +455,120 @@ template <typename D>
 struct WINRT_EBO impl_ILoggingFields
 {
     void Clear() const;
-    void BeginStruct(hstring_ref name) const;
-    void BeginStruct(hstring_ref name, int32_t tags) const;
+    void BeginStruct(hstring_view name) const;
+    void BeginStruct(hstring_view name, int32_t tags) const;
     void EndStruct() const;
-    void AddEmpty(hstring_ref name) const;
-    void AddEmpty(hstring_ref name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddEmpty(hstring_ref name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddUInt8(hstring_ref name, uint8_t value) const;
-    void AddUInt8(hstring_ref name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddUInt8(hstring_ref name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddUInt8Array(hstring_ref name, array_ref<const uint8_t> value) const;
-    void AddUInt8Array(hstring_ref name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddUInt8Array(hstring_ref name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddInt16(hstring_ref name, int16_t value) const;
-    void AddInt16(hstring_ref name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddInt16(hstring_ref name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddInt16Array(hstring_ref name, array_ref<const int16_t> value) const;
-    void AddInt16Array(hstring_ref name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddInt16Array(hstring_ref name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddUInt16(hstring_ref name, uint16_t value) const;
-    void AddUInt16(hstring_ref name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddUInt16(hstring_ref name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddUInt16Array(hstring_ref name, array_ref<const uint16_t> value) const;
-    void AddUInt16Array(hstring_ref name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddUInt16Array(hstring_ref name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddInt32(hstring_ref name, int32_t value) const;
-    void AddInt32(hstring_ref name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddInt32(hstring_ref name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddInt32Array(hstring_ref name, array_ref<const int32_t> value) const;
-    void AddInt32Array(hstring_ref name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddInt32Array(hstring_ref name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddUInt32(hstring_ref name, uint32_t value) const;
-    void AddUInt32(hstring_ref name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddUInt32(hstring_ref name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddUInt32Array(hstring_ref name, array_ref<const uint32_t> value) const;
-    void AddUInt32Array(hstring_ref name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddUInt32Array(hstring_ref name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddInt64(hstring_ref name, int64_t value) const;
-    void AddInt64(hstring_ref name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddInt64(hstring_ref name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddInt64Array(hstring_ref name, array_ref<const int64_t> value) const;
-    void AddInt64Array(hstring_ref name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddInt64Array(hstring_ref name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddUInt64(hstring_ref name, uint64_t value) const;
-    void AddUInt64(hstring_ref name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddUInt64(hstring_ref name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddUInt64Array(hstring_ref name, array_ref<const uint64_t> value) const;
-    void AddUInt64Array(hstring_ref name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddUInt64Array(hstring_ref name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddSingle(hstring_ref name, float value) const;
-    void AddSingle(hstring_ref name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddSingle(hstring_ref name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddSingleArray(hstring_ref name, array_ref<const float> value) const;
-    void AddSingleArray(hstring_ref name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddSingleArray(hstring_ref name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddDouble(hstring_ref name, double value) const;
-    void AddDouble(hstring_ref name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddDouble(hstring_ref name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddDoubleArray(hstring_ref name, array_ref<const double> value) const;
-    void AddDoubleArray(hstring_ref name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddDoubleArray(hstring_ref name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddChar16(hstring_ref name, wchar_t value) const;
-    void AddChar16(hstring_ref name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddChar16(hstring_ref name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddChar16Array(hstring_ref name, array_ref<const wchar_t> value) const;
-    void AddChar16Array(hstring_ref name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddChar16Array(hstring_ref name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddBoolean(hstring_ref name, bool value) const;
-    void AddBoolean(hstring_ref name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddBoolean(hstring_ref name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddBooleanArray(hstring_ref name, array_ref<const bool> value) const;
-    void AddBooleanArray(hstring_ref name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddBooleanArray(hstring_ref name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddString(hstring_ref name, hstring_ref value) const;
-    void AddString(hstring_ref name, hstring_ref value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddString(hstring_ref name, hstring_ref value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddStringArray(hstring_ref name, array_ref<const hstring> value) const;
-    void AddStringArray(hstring_ref name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddStringArray(hstring_ref name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddGuid(hstring_ref name, GUID value) const;
-    void AddGuid(hstring_ref name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddGuid(hstring_ref name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddGuidArray(hstring_ref name, array_ref<const GUID> value) const;
-    void AddGuidArray(hstring_ref name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddGuidArray(hstring_ref name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddDateTime(hstring_ref name, const Windows::Foundation::DateTime & value) const;
-    void AddDateTime(hstring_ref name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddDateTime(hstring_ref name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddDateTimeArray(hstring_ref name, array_ref<const Windows::Foundation::DateTime> value) const;
-    void AddDateTimeArray(hstring_ref name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddDateTimeArray(hstring_ref name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddTimeSpan(hstring_ref name, const Windows::Foundation::TimeSpan & value) const;
-    void AddTimeSpan(hstring_ref name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddTimeSpan(hstring_ref name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddTimeSpanArray(hstring_ref name, array_ref<const Windows::Foundation::TimeSpan> value) const;
-    void AddTimeSpanArray(hstring_ref name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddTimeSpanArray(hstring_ref name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddPoint(hstring_ref name, const Windows::Foundation::Point & value) const;
-    void AddPoint(hstring_ref name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddPoint(hstring_ref name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddPointArray(hstring_ref name, array_ref<const Windows::Foundation::Point> value) const;
-    void AddPointArray(hstring_ref name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddPointArray(hstring_ref name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddSize(hstring_ref name, const Windows::Foundation::Size & value) const;
-    void AddSize(hstring_ref name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddSize(hstring_ref name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddSizeArray(hstring_ref name, array_ref<const Windows::Foundation::Size> value) const;
-    void AddSizeArray(hstring_ref name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddSizeArray(hstring_ref name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddRect(hstring_ref name, const Windows::Foundation::Rect & value) const;
-    void AddRect(hstring_ref name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddRect(hstring_ref name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
-    void AddRectArray(hstring_ref name, array_ref<const Windows::Foundation::Rect> value) const;
-    void AddRectArray(hstring_ref name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
-    void AddRectArray(hstring_ref name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddEmpty(hstring_view name) const;
+    void AddEmpty(hstring_view name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddEmpty(hstring_view name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddUInt8(hstring_view name, uint8_t value) const;
+    void AddUInt8(hstring_view name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddUInt8(hstring_view name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddUInt8Array(hstring_view name, array_ref<const uint8_t> value) const;
+    void AddUInt8Array(hstring_view name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddUInt8Array(hstring_view name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddInt16(hstring_view name, int16_t value) const;
+    void AddInt16(hstring_view name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddInt16(hstring_view name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddInt16Array(hstring_view name, array_ref<const int16_t> value) const;
+    void AddInt16Array(hstring_view name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddInt16Array(hstring_view name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddUInt16(hstring_view name, uint16_t value) const;
+    void AddUInt16(hstring_view name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddUInt16(hstring_view name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddUInt16Array(hstring_view name, array_ref<const uint16_t> value) const;
+    void AddUInt16Array(hstring_view name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddUInt16Array(hstring_view name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddInt32(hstring_view name, int32_t value) const;
+    void AddInt32(hstring_view name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddInt32(hstring_view name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddInt32Array(hstring_view name, array_ref<const int32_t> value) const;
+    void AddInt32Array(hstring_view name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddInt32Array(hstring_view name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddUInt32(hstring_view name, uint32_t value) const;
+    void AddUInt32(hstring_view name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddUInt32(hstring_view name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddUInt32Array(hstring_view name, array_ref<const uint32_t> value) const;
+    void AddUInt32Array(hstring_view name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddUInt32Array(hstring_view name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddInt64(hstring_view name, int64_t value) const;
+    void AddInt64(hstring_view name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddInt64(hstring_view name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddInt64Array(hstring_view name, array_ref<const int64_t> value) const;
+    void AddInt64Array(hstring_view name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddInt64Array(hstring_view name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddUInt64(hstring_view name, uint64_t value) const;
+    void AddUInt64(hstring_view name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddUInt64(hstring_view name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddUInt64Array(hstring_view name, array_ref<const uint64_t> value) const;
+    void AddUInt64Array(hstring_view name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddUInt64Array(hstring_view name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddSingle(hstring_view name, float value) const;
+    void AddSingle(hstring_view name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddSingle(hstring_view name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddSingleArray(hstring_view name, array_ref<const float> value) const;
+    void AddSingleArray(hstring_view name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddSingleArray(hstring_view name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddDouble(hstring_view name, double value) const;
+    void AddDouble(hstring_view name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddDouble(hstring_view name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddDoubleArray(hstring_view name, array_ref<const double> value) const;
+    void AddDoubleArray(hstring_view name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddDoubleArray(hstring_view name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddChar16(hstring_view name, wchar_t value) const;
+    void AddChar16(hstring_view name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddChar16(hstring_view name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddChar16Array(hstring_view name, array_ref<const wchar_t> value) const;
+    void AddChar16Array(hstring_view name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddChar16Array(hstring_view name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddBoolean(hstring_view name, bool value) const;
+    void AddBoolean(hstring_view name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddBoolean(hstring_view name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddBooleanArray(hstring_view name, array_ref<const bool> value) const;
+    void AddBooleanArray(hstring_view name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddBooleanArray(hstring_view name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddString(hstring_view name, hstring_view value) const;
+    void AddString(hstring_view name, hstring_view value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddString(hstring_view name, hstring_view value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddStringArray(hstring_view name, array_ref<const hstring> value) const;
+    void AddStringArray(hstring_view name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddStringArray(hstring_view name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddGuid(hstring_view name, GUID value) const;
+    void AddGuid(hstring_view name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddGuid(hstring_view name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddGuidArray(hstring_view name, array_ref<const GUID> value) const;
+    void AddGuidArray(hstring_view name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddGuidArray(hstring_view name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddDateTime(hstring_view name, const Windows::Foundation::DateTime & value) const;
+    void AddDateTime(hstring_view name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddDateTime(hstring_view name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddDateTimeArray(hstring_view name, array_ref<const Windows::Foundation::DateTime> value) const;
+    void AddDateTimeArray(hstring_view name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddDateTimeArray(hstring_view name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddTimeSpan(hstring_view name, const Windows::Foundation::TimeSpan & value) const;
+    void AddTimeSpan(hstring_view name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddTimeSpan(hstring_view name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddTimeSpanArray(hstring_view name, array_ref<const Windows::Foundation::TimeSpan> value) const;
+    void AddTimeSpanArray(hstring_view name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddTimeSpanArray(hstring_view name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddPoint(hstring_view name, const Windows::Foundation::Point & value) const;
+    void AddPoint(hstring_view name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddPoint(hstring_view name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddPointArray(hstring_view name, array_ref<const Windows::Foundation::Point> value) const;
+    void AddPointArray(hstring_view name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddPointArray(hstring_view name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddSize(hstring_view name, const Windows::Foundation::Size & value) const;
+    void AddSize(hstring_view name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddSize(hstring_view name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddSizeArray(hstring_view name, array_ref<const Windows::Foundation::Size> value) const;
+    void AddSizeArray(hstring_view name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddSizeArray(hstring_view name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddRect(hstring_view name, const Windows::Foundation::Rect & value) const;
+    void AddRect(hstring_view name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddRect(hstring_view name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
+    void AddRectArray(hstring_view name, array_ref<const Windows::Foundation::Rect> value) const;
+    void AddRectArray(hstring_view name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const;
+    void AddRectArray(hstring_view name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const;
 };
 
 template <typename D>
@@ -598,7 +598,7 @@ template <typename D>
 struct WINRT_EBO impl_ILoggingSession
 {
     hstring Name() const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> SaveToFileAsync(const Windows::Storage::IStorageFolder & folder, hstring_ref fileName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> SaveToFileAsync(const Windows::Storage::IStorageFolder & folder, hstring_view fileName) const;
     void AddLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const;
     void AddLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) const;
     void RemoveLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const;
@@ -607,7 +607,7 @@ struct WINRT_EBO impl_ILoggingSession
 template <typename D>
 struct WINRT_EBO impl_ILoggingSessionFactory
 {
-    Windows::Foundation::Diagnostics::LoggingSession Create(hstring_ref name) const;
+    Windows::Foundation::Diagnostics::LoggingSession Create(hstring_view name) const;
 };
 
 template <typename D>
@@ -616,14 +616,14 @@ struct WINRT_EBO impl_ILoggingTarget
     bool IsEnabled() const;
     bool IsEnabled(Windows::Foundation::Diagnostics::LoggingLevel level) const;
     bool IsEnabled(Windows::Foundation::Diagnostics::LoggingLevel level, int64_t keywords) const;
-    void LogEvent(hstring_ref eventName) const;
-    void LogEvent(hstring_ref eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const;
-    void LogEvent(hstring_ref eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const;
-    void LogEvent(hstring_ref eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const;
-    Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_ref startEventName) const;
-    Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_ref startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const;
-    Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_ref startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const;
-    Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_ref startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const;
+    void LogEvent(hstring_view eventName) const;
+    void LogEvent(hstring_view eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const;
+    void LogEvent(hstring_view eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+    void LogEvent(hstring_view eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const;
+    Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_view startEventName) const;
+    Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_view startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const;
+    Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_view startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const;
+    Windows::Foundation::Diagnostics::LoggingActivity StartActivity(hstring_view startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const;
 };
 
 template <typename D>

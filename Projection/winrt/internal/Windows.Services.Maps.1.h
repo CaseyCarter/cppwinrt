@@ -234,8 +234,8 @@ template <typename D>
 struct WINRT_EBO impl_IMapLocationFinderStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_view searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_view searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount) const;
 };
 
 template <typename D>
@@ -348,7 +348,7 @@ struct WINRT_EBO impl_IMapRouteManeuver2
 template <typename D>
 struct WINRT_EBO impl_IMapServiceStatics
 {
-    void ServiceToken(hstring_ref value) const;
+    void ServiceToken(hstring_view value) const;
     hstring ServiceToken() const;
 };
 

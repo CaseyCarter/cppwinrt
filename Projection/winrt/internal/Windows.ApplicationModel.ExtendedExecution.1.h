@@ -53,7 +53,7 @@ struct WINRT_EBO impl_IExtendedExecutionSession
     Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason Reason() const;
     void Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
     uint32_t PercentProgress() const;
     void PercentProgress(uint32_t value) const;
     event_token Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> & handler) const;

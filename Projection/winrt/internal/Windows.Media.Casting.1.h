@@ -181,7 +181,7 @@ struct WINRT_EBO impl_ICastingDeviceStatics
 {
     hstring GetDeviceSelector(Windows::Media::Casting::CastingPlaybackTypes type) const;
     Windows::Foundation::IAsyncOperation<hstring> GetDeviceSelectorFromCastingSourceAsync(const Windows::Media::Casting::CastingSource & castingSource) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> FromIdAsync(hstring_ref value) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> FromIdAsync(hstring_view value) const;
     Windows::Foundation::IAsyncOperation<bool> DeviceInfoSupportsCastingAsync(const Windows::Devices::Enumeration::DeviceInformation & device) const;
 };
 

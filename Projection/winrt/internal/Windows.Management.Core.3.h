@@ -13,7 +13,7 @@ struct WINRT_EBO ApplicationDataManager :
     Windows::Management::Core::IApplicationDataManager
 {
     ApplicationDataManager(std::nullptr_t) noexcept {}
-    static Windows::Storage::ApplicationData CreateForPackageFamily(hstring_ref packageFamilyName);
+    static Windows::Storage::ApplicationData CreateForPackageFamily(hstring_view packageFamilyName);
 };
 
 }

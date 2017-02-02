@@ -700,7 +700,7 @@ template <typename D>
 struct WINRT_EBO impl_IHttpMapTileDataSource
 {
     hstring UriFormatString() const;
-    void UriFormatString(hstring_ref value) const;
+    void UriFormatString(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, hstring> AdditionalRequestHeaders() const;
     bool AllowCaching() const;
     void AllowCaching(bool value) const;
@@ -714,14 +714,14 @@ template <typename D>
 struct WINRT_EBO impl_IHttpMapTileDataSourceFactory
 {
     Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
-    Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource CreateInstanceWithUriFormatString(hstring_ref uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource CreateInstanceWithUriFormatString(hstring_view uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ILocalMapTileDataSource
 {
     hstring UriFormatString() const;
-    void UriFormatString(hstring_ref value) const;
+    void UriFormatString(hstring_view value) const;
     event_token UriRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs> & value) const;
     using UriRequested_revoker = event_revoker<ILocalMapTileDataSource>;
     UriRequested_revoker UriRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs> & value) const;
@@ -732,7 +732,7 @@ template <typename D>
 struct WINRT_EBO impl_ILocalMapTileDataSourceFactory
 {
     Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
-    Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource CreateInstanceWithUriFormatString(hstring_ref uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource CreateInstanceWithUriFormatString(hstring_view uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -799,7 +799,7 @@ struct WINRT_EBO impl_IMapControl
     void LandmarksVisible(bool value) const;
     Windows::UI::Xaml::Controls::Maps::MapLoadingStatus LoadingStatus() const;
     hstring MapServiceToken() const;
-    void MapServiceToken(hstring_ref value) const;
+    void MapServiceToken(hstring_view value) const;
     double MaxZoomLevel() const;
     double MinZoomLevel() const;
     bool PedestrianFeaturesVisible() const;
@@ -1083,7 +1083,7 @@ struct WINRT_EBO impl_IMapIcon
     Windows::Devices::Geolocation::Geopoint Location() const;
     void Location(const Windows::Devices::Geolocation::Geopoint & value) const;
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::Foundation::Point NormalizedAnchorPoint() const;
     void NormalizedAnchorPoint(const Windows::Foundation::Point & value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Image() const;

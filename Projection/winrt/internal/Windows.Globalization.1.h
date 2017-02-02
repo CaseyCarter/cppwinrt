@@ -457,7 +457,7 @@ template <typename D>
 struct WINRT_EBO impl_IApplicationLanguagesStatics
 {
     hstring PrimaryLanguageOverride() const;
-    void PrimaryLanguageOverride(hstring_ref value) const;
+    void PrimaryLanguageOverride(hstring_view value) const;
     Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
     Windows::Foundation::Collections::IVectorView<hstring> ManifestLanguages() const;
 };
@@ -470,11 +470,11 @@ struct WINRT_EBO impl_ICalendar
     void SetToMax() const;
     Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
     hstring NumeralSystem() const;
-    void NumeralSystem(hstring_ref value) const;
+    void NumeralSystem(hstring_view value) const;
     hstring GetCalendarSystem() const;
-    void ChangeCalendarSystem(hstring_ref value) const;
+    void ChangeCalendarSystem(hstring_view value) const;
     hstring GetClock() const;
-    void ChangeClock(hstring_ref value) const;
+    void ChangeClock(hstring_view value) const;
     Windows::Foundation::DateTime GetDateTime() const;
     void SetDateTime(const Windows::Foundation::DateTime & value) const;
     void SetToNow() const;
@@ -569,13 +569,13 @@ template <typename D>
 struct WINRT_EBO impl_ICalendarFactory
 {
     Windows::Globalization::Calendar CreateCalendarDefaultCalendarAndClock(const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
-    Windows::Globalization::Calendar CreateCalendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock) const;
+    Windows::Globalization::Calendar CreateCalendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ICalendarFactory2
 {
-    Windows::Globalization::Calendar CreateCalendarWithTimeZone(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId) const;
+    Windows::Globalization::Calendar CreateCalendarWithTimeZone(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) const;
 };
 
 template <typename D>
@@ -792,13 +792,13 @@ struct WINRT_EBO impl_IGeographicRegion
 template <typename D>
 struct WINRT_EBO impl_IGeographicRegionFactory
 {
-    Windows::Globalization::GeographicRegion CreateGeographicRegion(hstring_ref geographicRegionCode) const;
+    Windows::Globalization::GeographicRegion CreateGeographicRegion(hstring_view geographicRegionCode) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IGeographicRegionStatics
 {
-    bool IsSupported(hstring_ref geographicRegionCode) const;
+    bool IsSupported(hstring_view geographicRegionCode) const;
 };
 
 template <typename D>
@@ -813,26 +813,26 @@ struct WINRT_EBO impl_ILanguage
 template <typename D>
 struct WINRT_EBO impl_ILanguageExtensionSubtags
 {
-    Windows::Foundation::Collections::IVectorView<hstring> GetExtensionSubtags(hstring_ref singleton) const;
+    Windows::Foundation::Collections::IVectorView<hstring> GetExtensionSubtags(hstring_view singleton) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ILanguageFactory
 {
-    Windows::Globalization::Language CreateLanguage(hstring_ref languageTag) const;
+    Windows::Globalization::Language CreateLanguage(hstring_view languageTag) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ILanguageStatics
 {
-    bool IsWellFormed(hstring_ref languageTag) const;
+    bool IsWellFormed(hstring_view languageTag) const;
     hstring CurrentInputMethodLanguageTag() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ILanguageStatics2
 {
-    bool TrySetInputMethodLanguageTag(hstring_ref languageTag) const;
+    bool TrySetInputMethodLanguageTag(hstring_view languageTag) const;
 };
 
 template <typename D>
@@ -897,7 +897,7 @@ template <typename D>
 struct WINRT_EBO impl_ITimeZoneOnCalendar
 {
     hstring GetTimeZone() const;
-    void ChangeTimeZone(hstring_ref timeZoneId) const;
+    void ChangeTimeZone(hstring_view timeZoneId) const;
     hstring TimeZoneAsString() const;
     hstring TimeZoneAsString(int32_t idealLength) const;
 };

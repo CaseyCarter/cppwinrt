@@ -77,7 +77,7 @@ template <typename D>
 struct WINRT_EBO impl_ILampStatics
 {
     hstring GetDeviceSelector() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> FromIdAsync(hstring_view deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> GetDefaultAsync() const;
 };
 

@@ -17,7 +17,7 @@ struct WINRT_EBO BackgroundDownloader :
     BackgroundDownloader();
     BackgroundDownloader(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync();
-    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(hstring_ref group);
+    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(hstring_view group);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group);
     static Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedDownloadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> & operations);
 };
@@ -40,8 +40,8 @@ struct WINRT_EBO BackgroundTransferContentPart :
 {
     BackgroundTransferContentPart(std::nullptr_t) noexcept {}
     BackgroundTransferContentPart();
-    BackgroundTransferContentPart(hstring_ref name);
-    BackgroundTransferContentPart(hstring_ref name, hstring_ref fileName);
+    BackgroundTransferContentPart(hstring_view name);
+    BackgroundTransferContentPart(hstring_view name, hstring_view fileName);
 };
 
 struct BackgroundTransferError
@@ -54,7 +54,7 @@ struct WINRT_EBO BackgroundTransferGroup :
     Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup
 {
     BackgroundTransferGroup(std::nullptr_t) noexcept {}
-    static Windows::Networking::BackgroundTransfer::BackgroundTransferGroup CreateGroup(hstring_ref name);
+    static Windows::Networking::BackgroundTransfer::BackgroundTransferGroup CreateGroup(hstring_view name);
 };
 
 struct WINRT_EBO BackgroundUploader :
@@ -65,7 +65,7 @@ struct WINRT_EBO BackgroundUploader :
     BackgroundUploader();
     BackgroundUploader(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync();
-    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(hstring_ref group);
+    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(hstring_view group);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group);
     static Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedUploadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> & operations);
 };

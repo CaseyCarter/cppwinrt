@@ -68,7 +68,7 @@ struct WINRT_EBO PerceptionCorrelation :
     Windows::Devices::Perception::Provider::IPerceptionCorrelation
 {
     PerceptionCorrelation(std::nullptr_t) noexcept {}
-    PerceptionCorrelation(hstring_ref targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation);
+    PerceptionCorrelation(hstring_view targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation);
 };
 
 struct WINRT_EBO PerceptionCorrelationGroup :

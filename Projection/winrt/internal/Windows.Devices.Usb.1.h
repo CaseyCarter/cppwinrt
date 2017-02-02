@@ -432,7 +432,7 @@ struct WINRT_EBO impl_IUsbDeviceStatics
     hstring GetDeviceSelector(GUID winUsbInterfaceClass) const;
     hstring GetDeviceSelector(uint32_t vendorId, uint32_t productId) const;
     hstring GetDeviceClassSelector(const Windows::Devices::Usb::UsbDeviceClass & usbClass) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> FromIdAsync(hstring_view deviceId) const;
 };
 
 template <typename D>

@@ -161,19 +161,19 @@ template <typename D>
 struct WINRT_EBO impl_IVoiceCommandContentTile
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     hstring TextLine1() const;
-    void TextLine1(hstring_ref value) const;
+    void TextLine1(hstring_view value) const;
     hstring TextLine2() const;
-    void TextLine2(hstring_ref value) const;
+    void TextLine2(hstring_view value) const;
     hstring TextLine3() const;
-    void TextLine3(hstring_ref value) const;
+    void TextLine3(hstring_view value) const;
     Windows::Storage::IStorageFile Image() const;
     void Image(const Windows::Storage::IStorageFile & value) const;
     Windows::IInspectable AppContext() const;
     void AppContext(const Windows::IInspectable & value) const;
     hstring AppLaunchArgument() const;
-    void AppLaunchArgument(hstring_ref value) const;
+    void AppLaunchArgument(hstring_view value) const;
     Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType ContentTileType() const;
     void ContentTileType(Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType value) const;
 };
@@ -183,7 +183,7 @@ struct WINRT_EBO impl_IVoiceCommandDefinition
 {
     hstring Language() const;
     hstring Name() const;
-    Windows::Foundation::IAsyncAction SetPhraseListAsync(hstring_ref phraseListName, const Windows::Foundation::Collections::IIterable<hstring> & phraseList) const;
+    Windows::Foundation::IAsyncAction SetPhraseListAsync(hstring_view phraseListName, const Windows::Foundation::Collections::IIterable<hstring> & phraseList) const;
 };
 
 template <typename D>
@@ -207,7 +207,7 @@ struct WINRT_EBO impl_IVoiceCommandResponse
     Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage RepeatMessage() const;
     void RepeatMessage(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & value) const;
     hstring AppLaunchArgument() const;
-    void AppLaunchArgument(hstring_ref value) const;
+    void AppLaunchArgument(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> VoiceCommandContentTiles() const;
 };
 
@@ -248,9 +248,9 @@ template <typename D>
 struct WINRT_EBO impl_IVoiceCommandUserMessage
 {
     hstring DisplayMessage() const;
-    void DisplayMessage(hstring_ref value) const;
+    void DisplayMessage(hstring_view value) const;
     hstring SpokenMessage() const;
-    void SpokenMessage(hstring_ref value) const;
+    void SpokenMessage(hstring_view value) const;
 };
 
 }

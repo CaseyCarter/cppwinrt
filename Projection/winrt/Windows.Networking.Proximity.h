@@ -1149,35 +1149,35 @@ template <typename D> hstring impl_IProximityMessage<D>::DataAsString() const
     return value;
 }
 
-template <typename D> int64_t impl_IProximityDevice<D>::SubscribeForMessage(hstring_ref messageType, const Windows::Networking::Proximity::MessageReceivedHandler & messageReceivedHandler) const
+template <typename D> int64_t impl_IProximityDevice<D>::SubscribeForMessage(hstring_view messageType, const Windows::Networking::Proximity::MessageReceivedHandler & messageReceivedHandler) const
 {
     int64_t subscriptionId {};
     check_hresult(WINRT_SHIM(IProximityDevice)->abi_SubscribeForMessage(get(messageType), get(messageReceivedHandler), &subscriptionId));
     return subscriptionId;
 }
 
-template <typename D> int64_t impl_IProximityDevice<D>::PublishMessage(hstring_ref messageType, hstring_ref message) const
+template <typename D> int64_t impl_IProximityDevice<D>::PublishMessage(hstring_view messageType, hstring_view message) const
 {
     int64_t messageId {};
     check_hresult(WINRT_SHIM(IProximityDevice)->abi_PublishMessage(get(messageType), get(message), &messageId));
     return messageId;
 }
 
-template <typename D> int64_t impl_IProximityDevice<D>::PublishMessage(hstring_ref messageType, hstring_ref message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const
+template <typename D> int64_t impl_IProximityDevice<D>::PublishMessage(hstring_view messageType, hstring_view message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const
 {
     int64_t messageId {};
     check_hresult(WINRT_SHIM(IProximityDevice)->abi_PublishMessageWithCallback(get(messageType), get(message), get(messageTransmittedHandler), &messageId));
     return messageId;
 }
 
-template <typename D> int64_t impl_IProximityDevice<D>::PublishBinaryMessage(hstring_ref messageType, const Windows::Storage::Streams::IBuffer & message) const
+template <typename D> int64_t impl_IProximityDevice<D>::PublishBinaryMessage(hstring_view messageType, const Windows::Storage::Streams::IBuffer & message) const
 {
     int64_t messageId {};
     check_hresult(WINRT_SHIM(IProximityDevice)->abi_PublishBinaryMessage(get(messageType), get(message), &messageId));
     return messageId;
 }
 
-template <typename D> int64_t impl_IProximityDevice<D>::PublishBinaryMessage(hstring_ref messageType, const Windows::Storage::Streams::IBuffer & message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const
+template <typename D> int64_t impl_IProximityDevice<D>::PublishBinaryMessage(hstring_view messageType, const Windows::Storage::Streams::IBuffer & message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const
 {
     int64_t messageId {};
     check_hresult(WINRT_SHIM(IProximityDevice)->abi_PublishBinaryMessageWithCallback(get(messageType), get(message), get(messageTransmittedHandler), &messageId));
@@ -1277,7 +1277,7 @@ template <typename D> Windows::Networking::Proximity::ProximityDevice impl_IProx
     return proximityDevice;
 }
 
-template <typename D> Windows::Networking::Proximity::ProximityDevice impl_IProximityDeviceStatics<D>::FromId(hstring_ref deviceId) const
+template <typename D> Windows::Networking::Proximity::ProximityDevice impl_IProximityDeviceStatics<D>::FromId(hstring_view deviceId) const
 {
     Windows::Networking::Proximity::ProximityDevice proximityDevice { nullptr };
     check_hresult(WINRT_SHIM(IProximityDeviceStatics)->abi_FromId(get(deviceId), put(proximityDevice)));
@@ -1492,7 +1492,7 @@ template <typename D> hstring impl_IPeerFinderStatics<D>::DisplayName() const
     return value;
 }
 
-template <typename D> void impl_IPeerFinderStatics<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IPeerFinderStatics<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPeerFinderStatics)->put_DisplayName(get(value)));
 }
@@ -1516,7 +1516,7 @@ template <typename D> void impl_IPeerFinderStatics<D>::Start() const
     check_hresult(WINRT_SHIM(IPeerFinderStatics)->abi_Start());
 }
 
-template <typename D> void impl_IPeerFinderStatics<D>::Start(hstring_ref peerMessage) const
+template <typename D> void impl_IPeerFinderStatics<D>::Start(hstring_view peerMessage) const
 {
     check_hresult(WINRT_SHIM(IPeerFinderStatics)->abi_StartWithMessage(get(peerMessage)));
 }
@@ -1640,7 +1640,7 @@ inline hstring PeerFinder::DisplayName()
     return get_activation_factory<PeerFinder, IPeerFinderStatics>().DisplayName();
 }
 
-inline void PeerFinder::DisplayName(hstring_ref value)
+inline void PeerFinder::DisplayName(hstring_view value)
 {
     get_activation_factory<PeerFinder, IPeerFinderStatics>().DisplayName(value);
 }
@@ -1660,7 +1660,7 @@ inline void PeerFinder::Start()
     get_activation_factory<PeerFinder, IPeerFinderStatics>().Start();
 }
 
-inline void PeerFinder::Start(hstring_ref peerMessage)
+inline void PeerFinder::Start(hstring_view peerMessage)
 {
     get_activation_factory<PeerFinder, IPeerFinderStatics>().Start(peerMessage);
 }
@@ -1747,7 +1747,7 @@ inline Windows::Networking::Proximity::ProximityDevice ProximityDevice::GetDefau
     return get_activation_factory<ProximityDevice, IProximityDeviceStatics>().GetDefault();
 }
 
-inline Windows::Networking::Proximity::ProximityDevice ProximityDevice::FromId(hstring_ref deviceId)
+inline Windows::Networking::Proximity::ProximityDevice ProximityDevice::FromId(hstring_view deviceId)
 {
     return get_activation_factory<ProximityDevice, IProximityDeviceStatics>().FromId(deviceId);
 }

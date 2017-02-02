@@ -69,7 +69,7 @@ struct WINRT_EBO impl_IUserDataAccountProviderAddAccountOperation
 {
     Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds ContentKinds() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> PartnerAccountInfos() const;
-    void ReportCompleted(hstring_ref userDataAccountId) const;
+    void ReportCompleted(hstring_view userDataAccountId) const;
 };
 
 template <typename D>

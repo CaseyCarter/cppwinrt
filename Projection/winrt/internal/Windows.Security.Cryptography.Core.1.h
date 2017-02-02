@@ -373,14 +373,14 @@ struct WINRT_EBO impl_IAsymmetricKeyAlgorithmProvider
 template <typename D>
 struct WINRT_EBO impl_IAsymmetricKeyAlgorithmProvider2
 {
-    Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveName(hstring_ref curveName) const;
+    Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveName(hstring_view curveName) const;
     Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveParameters(array_ref<const uint8_t> parameters) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IAsymmetricKeyAlgorithmProviderStatics
 {
-    Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
+    Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_view algorithm) const;
 };
 
 template <typename D>
@@ -495,7 +495,7 @@ struct WINRT_EBO impl_IHashAlgorithmProvider
 template <typename D>
 struct WINRT_EBO impl_IHashAlgorithmProviderStatics
 {
-    Windows::Security::Cryptography::Core::HashAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
+    Windows::Security::Cryptography::Core::HashAlgorithmProvider OpenAlgorithm(hstring_view algorithm) const;
 };
 
 template <typename D>
@@ -545,7 +545,7 @@ struct WINRT_EBO impl_IKeyDerivationAlgorithmProvider
 template <typename D>
 struct WINRT_EBO impl_IKeyDerivationAlgorithmProviderStatics
 {
-    Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
+    Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider OpenAlgorithm(hstring_view algorithm) const;
 };
 
 template <typename D>
@@ -605,14 +605,14 @@ struct WINRT_EBO impl_IMacAlgorithmProvider2
 template <typename D>
 struct WINRT_EBO impl_IMacAlgorithmProviderStatics
 {
-    Windows::Security::Cryptography::Core::MacAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
+    Windows::Security::Cryptography::Core::MacAlgorithmProvider OpenAlgorithm(hstring_view algorithm) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPersistedKeyProviderStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> OpenKeyPairFromCertificateAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
-    Windows::Security::Cryptography::Core::CryptographicKey OpenPublicKeyFromCertificate(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> OpenKeyPairFromCertificateAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_view hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
+    Windows::Security::Cryptography::Core::CryptographicKey OpenPublicKeyFromCertificate(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_view hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
 };
 
 template <typename D>
@@ -650,7 +650,7 @@ struct WINRT_EBO impl_ISymmetricKeyAlgorithmProvider
 template <typename D>
 struct WINRT_EBO impl_ISymmetricKeyAlgorithmProviderStatics
 {
-    Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
+    Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_view algorithm) const;
 };
 
 }

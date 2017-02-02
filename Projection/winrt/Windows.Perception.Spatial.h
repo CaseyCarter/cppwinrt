@@ -932,14 +932,14 @@ template <typename D> Windows::Foundation::Collections::IMapView<hstring, Window
     return value;
 }
 
-template <typename D> bool impl_ISpatialAnchorStore<D>::TrySave(hstring_ref id, const Windows::Perception::Spatial::SpatialAnchor & anchor) const
+template <typename D> bool impl_ISpatialAnchorStore<D>::TrySave(hstring_view id, const Windows::Perception::Spatial::SpatialAnchor & anchor) const
 {
     bool succeeded {};
     check_hresult(WINRT_SHIM(ISpatialAnchorStore)->abi_TrySave(get(id), get(anchor), &succeeded));
     return succeeded;
 }
 
-template <typename D> void impl_ISpatialAnchorStore<D>::Remove(hstring_ref id) const
+template <typename D> void impl_ISpatialAnchorStore<D>::Remove(hstring_view id) const
 {
     check_hresult(WINRT_SHIM(ISpatialAnchorStore)->abi_Remove(get(id)));
 }

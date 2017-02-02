@@ -32,14 +32,14 @@ struct produce<D, Windows::Data::Html::IHtmlUtilities> : produce_base<D, Windows
 
 namespace Windows::Data::Html {
 
-template <typename D> hstring impl_IHtmlUtilities<D>::ConvertToText(hstring_ref html) const
+template <typename D> hstring impl_IHtmlUtilities<D>::ConvertToText(hstring_view html) const
 {
     hstring text;
     check_hresult(WINRT_SHIM(IHtmlUtilities)->abi_ConvertToText(get(html), put(text)));
     return text;
 }
 
-inline hstring HtmlUtilities::ConvertToText(hstring_ref html)
+inline hstring HtmlUtilities::ConvertToText(hstring_view html)
 {
     return get_activation_factory<HtmlUtilities, IHtmlUtilities>().ConvertToText(html);
 }

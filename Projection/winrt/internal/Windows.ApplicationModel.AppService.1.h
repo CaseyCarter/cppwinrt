@@ -101,7 +101,7 @@ namespace Windows::ApplicationModel::AppService {
 template <typename D>
 struct WINRT_EBO impl_IAppServiceCatalogStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindAppServiceProvidersAsync(hstring_ref appServiceName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindAppServiceProvidersAsync(hstring_view appServiceName) const;
 };
 
 template <typename D>
@@ -114,9 +114,9 @@ template <typename D>
 struct WINRT_EBO impl_IAppServiceConnection
 {
     hstring AppServiceName() const;
-    void AppServiceName(hstring_ref value) const;
+    void AppServiceName(hstring_view value) const;
     hstring PackageFamilyName() const;
-    void PackageFamilyName(hstring_ref value) const;
+    void PackageFamilyName(hstring_view value) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> OpenAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse> SendMessageAsync(const Windows::Foundation::Collections::ValueSet & message) const;
     event_token RequestReceived(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> & handler) const;

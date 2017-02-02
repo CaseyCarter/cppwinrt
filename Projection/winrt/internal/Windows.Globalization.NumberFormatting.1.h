@@ -163,7 +163,7 @@ template <typename D>
 struct WINRT_EBO impl_ICurrencyFormatter
 {
     hstring Currency() const;
-    void Currency(hstring_ref value) const;
+    void Currency(hstring_view value) const;
 };
 
 template <typename D>
@@ -177,14 +177,14 @@ struct WINRT_EBO impl_ICurrencyFormatter2
 template <typename D>
 struct WINRT_EBO impl_ICurrencyFormatterFactory
 {
-    Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCode(hstring_ref currencyCode) const;
-    Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCodeContext(hstring_ref currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
+    Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCode(hstring_view currencyCode) const;
+    Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCodeContext(hstring_view currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDecimalFormatterFactory
 {
-    Windows::Globalization::NumberFormatting::DecimalFormatter CreateDecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
+    Windows::Globalization::NumberFormatting::DecimalFormatter CreateDecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const;
 };
 
 template <typename D>
@@ -226,7 +226,7 @@ struct WINRT_EBO impl_INumberFormatterOptions
     bool IsDecimalPointAlwaysDisplayed() const;
     void IsDecimalPointAlwaysDisplayed(bool value) const;
     hstring NumeralSystem() const;
-    void NumeralSystem(hstring_ref value) const;
+    void NumeralSystem(hstring_view value) const;
     hstring ResolvedLanguage() const;
     hstring ResolvedGeographicRegion() const;
 };
@@ -234,9 +234,9 @@ struct WINRT_EBO impl_INumberFormatterOptions
 template <typename D>
 struct WINRT_EBO impl_INumberParser
 {
-    Windows::Foundation::IReference<int64_t> ParseInt(hstring_ref text) const;
-    Windows::Foundation::IReference<uint64_t> ParseUInt(hstring_ref text) const;
-    Windows::Foundation::IReference<double> ParseDouble(hstring_ref text) const;
+    Windows::Foundation::IReference<int64_t> ParseInt(hstring_view text) const;
+    Windows::Foundation::IReference<uint64_t> ParseUInt(hstring_view text) const;
+    Windows::Foundation::IReference<double> ParseDouble(hstring_view text) const;
 };
 
 template <typename D>
@@ -263,8 +263,8 @@ struct WINRT_EBO impl_INumeralSystemTranslator
     Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
     hstring ResolvedLanguage() const;
     hstring NumeralSystem() const;
-    void NumeralSystem(hstring_ref value) const;
-    hstring TranslateNumerals(hstring_ref value) const;
+    void NumeralSystem(hstring_view value) const;
+    hstring TranslateNumerals(hstring_view value) const;
 };
 
 template <typename D>
@@ -276,13 +276,13 @@ struct WINRT_EBO impl_INumeralSystemTranslatorFactory
 template <typename D>
 struct WINRT_EBO impl_IPercentFormatterFactory
 {
-    Windows::Globalization::NumberFormatting::PercentFormatter CreatePercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
+    Windows::Globalization::NumberFormatting::PercentFormatter CreatePercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPermilleFormatterFactory
 {
-    Windows::Globalization::NumberFormatting::PermilleFormatter CreatePermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
+    Windows::Globalization::NumberFormatting::PermilleFormatter CreatePermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const;
 };
 
 template <typename D>

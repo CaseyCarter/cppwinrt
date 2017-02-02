@@ -587,7 +587,7 @@ struct WINRT_EBO impl_INDStreamParserNotifier
 template <typename D>
 struct WINRT_EBO impl_INDTCPMessengerFactory
 {
-    Windows::Media::Protection::PlayReady::NDTCPMessenger CreateInstance(hstring_ref remoteHostName, uint32_t remoteHostPort) const;
+    Windows::Media::Protection::PlayReady::NDTCPMessenger CreateInstance(hstring_view remoteHostName, uint32_t remoteHostPort) const;
 };
 
 template <typename D>
@@ -631,15 +631,15 @@ struct WINRT_EBO impl_IPlayReadyContentHeader2
 template <typename D>
 struct WINRT_EBO impl_IPlayReadyContentHeaderFactory
 {
-    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromWindowsMediaDrmHeader(array_ref<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) const;
-    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromComponents(GUID contentKeyId, hstring_ref contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) const;
+    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromWindowsMediaDrmHeader(array_ref<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) const;
+    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromComponents(GUID contentKeyId, hstring_view contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) const;
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromPlayReadyHeader(array_ref<const uint8_t> headerBytes) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayReadyContentHeaderFactory2
 {
-    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromComponents2(uint32_t dwFlags, array_ref<const GUID> contentKeyIds, array_ref<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) const;
+    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromComponents2(uint32_t dwFlags, array_ref<const GUID> contentKeyIds, array_ref<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) const;
 };
 
 template <typename D>
@@ -670,7 +670,7 @@ struct WINRT_EBO impl_IPlayReadyDomainJoinServiceRequest
     GUID DomainAccountId() const;
     void DomainAccountId(GUID value) const;
     hstring DomainFriendlyName() const;
-    void DomainFriendlyName(hstring_ref value) const;
+    void DomainFriendlyName(hstring_view value) const;
     GUID DomainServiceId() const;
     void DomainServiceId(GUID value) const;
 };
@@ -789,7 +789,7 @@ struct WINRT_EBO impl_IPlayReadyServiceRequest
     void Uri(const Windows::Foundation::Uri & value) const;
     hstring ResponseCustomData() const;
     hstring ChallengeCustomData() const;
-    void ChallengeCustomData(hstring_ref value) const;
+    void ChallengeCustomData(hstring_view value) const;
     Windows::Foundation::IAsyncAction BeginServiceRequest() const;
     Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest NextServiceRequest() const;
     Windows::Media::Protection::PlayReady::PlayReadySoapMessage GenerateManualEnablingChallenge() const;

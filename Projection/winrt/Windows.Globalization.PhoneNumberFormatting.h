@@ -399,68 +399,68 @@ template <typename D> hstring impl_IPhoneNumberFormatter<D>::Format(const Window
     return result;
 }
 
-template <typename D> hstring impl_IPhoneNumberFormatter<D>::FormatPartialString(hstring_ref number) const
+template <typename D> hstring impl_IPhoneNumberFormatter<D>::FormatPartialString(hstring_view number) const
 {
     hstring result;
     check_hresult(WINRT_SHIM(IPhoneNumberFormatter)->abi_FormatPartialString(get(number), put(result)));
     return result;
 }
 
-template <typename D> hstring impl_IPhoneNumberFormatter<D>::FormatString(hstring_ref number) const
+template <typename D> hstring impl_IPhoneNumberFormatter<D>::FormatString(hstring_view number) const
 {
     hstring result;
     check_hresult(WINRT_SHIM(IPhoneNumberFormatter)->abi_FormatString(get(number), put(result)));
     return result;
 }
 
-template <typename D> hstring impl_IPhoneNumberFormatter<D>::FormatStringWithLeftToRightMarkers(hstring_ref number) const
+template <typename D> hstring impl_IPhoneNumberFormatter<D>::FormatStringWithLeftToRightMarkers(hstring_view number) const
 {
     hstring result;
     check_hresult(WINRT_SHIM(IPhoneNumberFormatter)->abi_FormatStringWithLeftToRightMarkers(get(number), put(result)));
     return result;
 }
 
-template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo impl_IPhoneNumberInfoFactory<D>::Create(hstring_ref number) const
+template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo impl_IPhoneNumberInfoFactory<D>::Create(hstring_view number) const
 {
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo result { nullptr };
     check_hresult(WINRT_SHIM(IPhoneNumberInfoFactory)->abi_Create(get(number), put(result)));
     return result;
 }
 
-template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult impl_IPhoneNumberInfoStatics<D>::TryParse(hstring_ref input, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const
+template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult impl_IPhoneNumberInfoStatics<D>::TryParse(hstring_view input, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const
 {
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult result {};
     check_hresult(WINRT_SHIM(IPhoneNumberInfoStatics)->abi_TryParse(get(input), put(phoneNumber), &result));
     return result;
 }
 
-template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult impl_IPhoneNumberInfoStatics<D>::TryParse(hstring_ref input, hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const
+template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult impl_IPhoneNumberInfoStatics<D>::TryParse(hstring_view input, hstring_view regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const
 {
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult result {};
     check_hresult(WINRT_SHIM(IPhoneNumberInfoStatics)->abi_TryParseWithRegion(get(input), get(regionCode), put(phoneNumber), &result));
     return result;
 }
 
-template <typename D> void impl_IPhoneNumberFormatterStatics<D>::TryCreate(hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & phoneNumber) const
+template <typename D> void impl_IPhoneNumberFormatterStatics<D>::TryCreate(hstring_view regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & phoneNumber) const
 {
     check_hresult(WINRT_SHIM(IPhoneNumberFormatterStatics)->abi_TryCreate(get(regionCode), put(phoneNumber)));
 }
 
-template <typename D> int32_t impl_IPhoneNumberFormatterStatics<D>::GetCountryCodeForRegion(hstring_ref regionCode) const
+template <typename D> int32_t impl_IPhoneNumberFormatterStatics<D>::GetCountryCodeForRegion(hstring_view regionCode) const
 {
     int32_t result {};
     check_hresult(WINRT_SHIM(IPhoneNumberFormatterStatics)->abi_GetCountryCodeForRegion(get(regionCode), &result));
     return result;
 }
 
-template <typename D> hstring impl_IPhoneNumberFormatterStatics<D>::GetNationalDirectDialingPrefixForRegion(hstring_ref regionCode, bool stripNonDigit) const
+template <typename D> hstring impl_IPhoneNumberFormatterStatics<D>::GetNationalDirectDialingPrefixForRegion(hstring_view regionCode, bool stripNonDigit) const
 {
     hstring result;
     check_hresult(WINRT_SHIM(IPhoneNumberFormatterStatics)->abi_GetNationalDirectDialingPrefixForRegion(get(regionCode), stripNonDigit, put(result)));
     return result;
 }
 
-template <typename D> hstring impl_IPhoneNumberFormatterStatics<D>::WrapWithLeftToRightMarkers(hstring_ref number) const
+template <typename D> hstring impl_IPhoneNumberFormatterStatics<D>::WrapWithLeftToRightMarkers(hstring_view number) const
 {
     hstring result;
     check_hresult(WINRT_SHIM(IPhoneNumberFormatterStatics)->abi_WrapWithLeftToRightMarkers(get(number), put(result)));
@@ -471,36 +471,36 @@ inline PhoneNumberFormatter::PhoneNumberFormatter() :
     PhoneNumberFormatter(activate_instance<PhoneNumberFormatter>())
 {}
 
-inline void PhoneNumberFormatter::TryCreate(hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & phoneNumber)
+inline void PhoneNumberFormatter::TryCreate(hstring_view regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & phoneNumber)
 {
     get_activation_factory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().TryCreate(regionCode, phoneNumber);
 }
 
-inline int32_t PhoneNumberFormatter::GetCountryCodeForRegion(hstring_ref regionCode)
+inline int32_t PhoneNumberFormatter::GetCountryCodeForRegion(hstring_view regionCode)
 {
     return get_activation_factory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().GetCountryCodeForRegion(regionCode);
 }
 
-inline hstring PhoneNumberFormatter::GetNationalDirectDialingPrefixForRegion(hstring_ref regionCode, bool stripNonDigit)
+inline hstring PhoneNumberFormatter::GetNationalDirectDialingPrefixForRegion(hstring_view regionCode, bool stripNonDigit)
 {
     return get_activation_factory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().GetNationalDirectDialingPrefixForRegion(regionCode, stripNonDigit);
 }
 
-inline hstring PhoneNumberFormatter::WrapWithLeftToRightMarkers(hstring_ref number)
+inline hstring PhoneNumberFormatter::WrapWithLeftToRightMarkers(hstring_view number)
 {
     return get_activation_factory<PhoneNumberFormatter, IPhoneNumberFormatterStatics>().WrapWithLeftToRightMarkers(number);
 }
 
-inline PhoneNumberInfo::PhoneNumberInfo(hstring_ref number) :
+inline PhoneNumberInfo::PhoneNumberInfo(hstring_view number) :
     PhoneNumberInfo(get_activation_factory<PhoneNumberInfo, IPhoneNumberInfoFactory>().Create(number))
 {}
 
-inline Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult PhoneNumberInfo::TryParse(hstring_ref input, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber)
+inline Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult PhoneNumberInfo::TryParse(hstring_view input, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber)
 {
     return get_activation_factory<PhoneNumberInfo, IPhoneNumberInfoStatics>().TryParse(input, phoneNumber);
 }
 
-inline Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult PhoneNumberInfo::TryParse(hstring_ref input, hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber)
+inline Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult PhoneNumberInfo::TryParse(hstring_view input, hstring_view regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber)
 {
     return get_activation_factory<PhoneNumberInfo, IPhoneNumberInfoStatics>().TryParse(input, regionCode, phoneNumber);
 }

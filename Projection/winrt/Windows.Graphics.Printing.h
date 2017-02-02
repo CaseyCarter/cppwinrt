@@ -1863,7 +1863,7 @@ template <typename D> Windows::Foundation::DateTime impl_IPrintTaskRequest<D>::D
     return value;
 }
 
-template <typename D> Windows::Graphics::Printing::PrintTask impl_IPrintTaskRequest<D>::CreatePrintTask(hstring_ref title, const Windows::Graphics::Printing::PrintTaskSourceRequestedHandler & handler) const
+template <typename D> Windows::Graphics::Printing::PrintTask impl_IPrintTaskRequest<D>::CreatePrintTask(hstring_view title, const Windows::Graphics::Printing::PrintTaskSourceRequestedHandler & handler) const
 {
     Windows::Graphics::Printing::PrintTask task { nullptr };
     check_hresult(WINRT_SHIM(IPrintTaskRequest)->abi_CreatePrintTask(get(title), get(handler), put(task)));

@@ -348,9 +348,9 @@ template <typename D>
 struct WINRT_EBO impl_IImageDisplayProperties
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     hstring Subtitle() const;
-    void Subtitle(hstring_ref value) const;
+    void Subtitle(hstring_view value) const;
 };
 
 template <typename D>
@@ -362,18 +362,18 @@ struct WINRT_EBO impl_IMediaExtension
 template <typename D>
 struct WINRT_EBO impl_IMediaExtensionManager
 {
-    void RegisterSchemeHandler(hstring_ref activatableClassId, hstring_ref scheme) const;
-    void RegisterSchemeHandler(hstring_ref activatableClassId, hstring_ref scheme, const Windows::Foundation::Collections::IPropertySet & configuration) const;
-    void RegisterByteStreamHandler(hstring_ref activatableClassId, hstring_ref fileExtension, hstring_ref mimeType) const;
-    void RegisterByteStreamHandler(hstring_ref activatableClassId, hstring_ref fileExtension, hstring_ref mimeType, const Windows::Foundation::Collections::IPropertySet & configuration) const;
-    void RegisterAudioDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const;
-    void RegisterAudioDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const;
-    void RegisterAudioEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const;
-    void RegisterAudioEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const;
-    void RegisterVideoDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const;
-    void RegisterVideoDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const;
-    void RegisterVideoEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const;
-    void RegisterVideoEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const;
+    void RegisterSchemeHandler(hstring_view activatableClassId, hstring_view scheme) const;
+    void RegisterSchemeHandler(hstring_view activatableClassId, hstring_view scheme, const Windows::Foundation::Collections::IPropertySet & configuration) const;
+    void RegisterByteStreamHandler(hstring_view activatableClassId, hstring_view fileExtension, hstring_view mimeType) const;
+    void RegisterByteStreamHandler(hstring_view activatableClassId, hstring_view fileExtension, hstring_view mimeType, const Windows::Foundation::Collections::IPropertySet & configuration) const;
+    void RegisterAudioDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const;
+    void RegisterAudioDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const;
+    void RegisterAudioEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const;
+    void RegisterAudioEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const;
+    void RegisterVideoDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const;
+    void RegisterVideoDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const;
+    void RegisterVideoEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const;
+    void RegisterVideoEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const;
 };
 
 template <typename D>
@@ -443,18 +443,18 @@ template <typename D>
 struct WINRT_EBO impl_IMusicDisplayProperties
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     hstring AlbumArtist() const;
-    void AlbumArtist(hstring_ref value) const;
+    void AlbumArtist(hstring_view value) const;
     hstring Artist() const;
-    void Artist(hstring_ref value) const;
+    void Artist(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IMusicDisplayProperties2
 {
     hstring AlbumTitle() const;
-    void AlbumTitle(hstring_ref value) const;
+    void AlbumTitle(hstring_view value) const;
     uint32_t TrackNumber() const;
     void TrackNumber(uint32_t value) const;
     Windows::Foundation::Collections::IVector<hstring> Genres() const;
@@ -564,7 +564,7 @@ struct WINRT_EBO impl_ISystemMediaTransportControlsDisplayUpdater
     Windows::Media::MediaPlaybackType Type() const;
     void Type(Windows::Media::MediaPlaybackType value) const;
     hstring AppMediaId() const;
-    void AppMediaId(hstring_ref value) const;
+    void AppMediaId(hstring_view value) const;
     Windows::Storage::Streams::RandomAccessStreamReference Thumbnail() const;
     void Thumbnail(const Windows::Storage::Streams::RandomAccessStreamReference & value) const;
     Windows::Media::MusicDisplayProperties MusicProperties() const;
@@ -606,9 +606,9 @@ template <typename D>
 struct WINRT_EBO impl_IVideoDisplayProperties
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     hstring Subtitle() const;
-    void Subtitle(hstring_ref value) const;
+    void Subtitle(hstring_view value) const;
 };
 
 template <typename D>

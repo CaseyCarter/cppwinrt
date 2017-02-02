@@ -98,11 +98,11 @@ struct BackgroundExecutionManager
 {
     BackgroundExecutionManager() = delete;
     static Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync();
-    static Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(hstring_ref applicationId);
+    static Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(hstring_view applicationId);
     static void RemoveAccess();
-    static void RemoveAccess(hstring_ref applicationId);
+    static void RemoveAccess(hstring_view applicationId);
     static Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus();
-    static Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus(hstring_ref applicationId);
+    static Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus(hstring_view applicationId);
 };
 
 struct WINRT_EBO BackgroundTaskBuilder :
@@ -205,14 +205,14 @@ struct WINRT_EBO DeviceConnectionChangeTrigger :
     Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger
 {
     DeviceConnectionChangeTrigger(std::nullptr_t) noexcept {}
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(hstring_ref deviceId);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(hstring_view deviceId);
 };
 
 struct WINRT_EBO DeviceManufacturerNotificationTrigger :
     Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger
 {
     DeviceManufacturerNotificationTrigger(std::nullptr_t) noexcept {}
-    DeviceManufacturerNotificationTrigger(hstring_ref triggerQualifier, bool oneShot);
+    DeviceManufacturerNotificationTrigger(hstring_view triggerQualifier, bool oneShot);
 };
 
 struct WINRT_EBO DeviceServicingTrigger :
@@ -309,7 +309,7 @@ struct WINRT_EBO NetworkOperatorNotificationTrigger :
     Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger
 {
     NetworkOperatorNotificationTrigger(std::nullptr_t) noexcept {}
-    NetworkOperatorNotificationTrigger(hstring_ref networkAccountId);
+    NetworkOperatorNotificationTrigger(hstring_view networkAccountId);
 };
 
 struct WINRT_EBO PushNotificationTrigger :
@@ -317,7 +317,7 @@ struct WINRT_EBO PushNotificationTrigger :
 {
     PushNotificationTrigger(std::nullptr_t) noexcept {}
     PushNotificationTrigger();
-    PushNotificationTrigger(hstring_ref applicationId);
+    PushNotificationTrigger(hstring_view applicationId);
 };
 
 struct WINRT_EBO RcsEndUserMessageAvailableTrigger :
@@ -397,7 +397,7 @@ struct WINRT_EBO ToastNotificationActionTrigger :
 {
     ToastNotificationActionTrigger(std::nullptr_t) noexcept {}
     ToastNotificationActionTrigger();
-    ToastNotificationActionTrigger(hstring_ref applicationId);
+    ToastNotificationActionTrigger(hstring_view applicationId);
 };
 
 struct WINRT_EBO ToastNotificationHistoryChangedTrigger :
@@ -405,7 +405,7 @@ struct WINRT_EBO ToastNotificationHistoryChangedTrigger :
 {
     ToastNotificationHistoryChangedTrigger(std::nullptr_t) noexcept {}
     ToastNotificationHistoryChangedTrigger();
-    ToastNotificationHistoryChangedTrigger(hstring_ref applicationId);
+    ToastNotificationHistoryChangedTrigger(hstring_view applicationId);
 };
 
 struct WINRT_EBO UserNotificationChangedTrigger :

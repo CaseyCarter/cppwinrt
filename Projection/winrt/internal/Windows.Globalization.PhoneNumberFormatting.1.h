@@ -67,18 +67,18 @@ struct WINRT_EBO impl_IPhoneNumberFormatter
 {
     hstring Format(const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & number) const;
     hstring Format(const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & number, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormat numberFormat) const;
-    hstring FormatPartialString(hstring_ref number) const;
-    hstring FormatString(hstring_ref number) const;
-    hstring FormatStringWithLeftToRightMarkers(hstring_ref number) const;
+    hstring FormatPartialString(hstring_view number) const;
+    hstring FormatString(hstring_view number) const;
+    hstring FormatStringWithLeftToRightMarkers(hstring_view number) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPhoneNumberFormatterStatics
 {
-    void TryCreate(hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & phoneNumber) const;
-    int32_t GetCountryCodeForRegion(hstring_ref regionCode) const;
-    hstring GetNationalDirectDialingPrefixForRegion(hstring_ref regionCode, bool stripNonDigit) const;
-    hstring WrapWithLeftToRightMarkers(hstring_ref number) const;
+    void TryCreate(hstring_view regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & phoneNumber) const;
+    int32_t GetCountryCodeForRegion(hstring_view regionCode) const;
+    hstring GetNationalDirectDialingPrefixForRegion(hstring_view regionCode, bool stripNonDigit) const;
+    hstring WrapWithLeftToRightMarkers(hstring_view number) const;
 };
 
 template <typename D>
@@ -97,14 +97,14 @@ struct WINRT_EBO impl_IPhoneNumberInfo
 template <typename D>
 struct WINRT_EBO impl_IPhoneNumberInfoFactory
 {
-    Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo Create(hstring_ref number) const;
+    Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo Create(hstring_view number) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPhoneNumberInfoStatics
 {
-    Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult TryParse(hstring_ref input, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const;
-    Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult TryParse(hstring_ref input, hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const;
+    Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult TryParse(hstring_view input, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const;
+    Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult TryParse(hstring_view input, hstring_view regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const;
 };
 
 }

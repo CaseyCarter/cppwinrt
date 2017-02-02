@@ -10,7 +10,7 @@ struct Stringable : implements<Stringable, IStringable>
     hstring m_value;
     bool * m_destroyed = nullptr;
 
-    Stringable(hstring_ref value, bool * destroyed = nullptr) :
+    Stringable(hstring_view value, bool * destroyed = nullptr) :
         m_value(value),
         m_destroyed(destroyed)
     {

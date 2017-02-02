@@ -60,7 +60,7 @@ struct PropertyValue
     static Windows::IInspectable CreateDouble(double value);
     static Windows::IInspectable CreateChar16(wchar_t value);
     static Windows::IInspectable CreateBoolean(bool value);
-    static Windows::IInspectable CreateString(hstring_ref value);
+    static Windows::IInspectable CreateString(hstring_view value);
     static Windows::IInspectable CreateInspectable(const Windows::IInspectable & value);
     static Windows::IInspectable CreateGuid(GUID value);
     static Windows::IInspectable CreateDateTime(const Windows::Foundation::DateTime & value);
@@ -94,17 +94,17 @@ struct WINRT_EBO Uri :
     impl::require<Uri, Windows::Foundation::IStringable, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri>
 {
     Uri(std::nullptr_t) noexcept {}
-    Uri(hstring_ref uri);
-    Uri(hstring_ref baseUri, hstring_ref relativeUri);
-    static hstring UnescapeComponent(hstring_ref toUnescape);
-    static hstring EscapeComponent(hstring_ref toEscape);
+    Uri(hstring_view uri);
+    Uri(hstring_view baseUri, hstring_view relativeUri);
+    static hstring UnescapeComponent(hstring_view toUnescape);
+    static hstring EscapeComponent(hstring_view toEscape);
 };
 
 struct WINRT_EBO WwwFormUrlDecoder :
     Windows::Foundation::IWwwFormUrlDecoderRuntimeClass
 {
     WwwFormUrlDecoder(std::nullptr_t) noexcept {}
-    WwwFormUrlDecoder(hstring_ref query);
+    WwwFormUrlDecoder(hstring_view query);
 };
 
 struct WINRT_EBO WwwFormUrlDecoderEntry :

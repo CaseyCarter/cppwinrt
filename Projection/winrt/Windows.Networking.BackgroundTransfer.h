@@ -1567,7 +1567,7 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation2> : 
 
 namespace Windows::Networking::BackgroundTransfer {
 
-template <typename D> void impl_IBackgroundTransferBase<D>::SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const
+template <typename D> void impl_IBackgroundTransferBase<D>::SetRequestHeader(hstring_view headerName, hstring_view headerValue) const
 {
     check_hresult(WINRT_SHIM(IBackgroundTransferBase)->abi_SetRequestHeader(get(headerName), get(headerValue)));
 }
@@ -1603,7 +1603,7 @@ template <typename D> hstring impl_IBackgroundTransferBase<D>::Method() const
     return value;
 }
 
-template <typename D> void impl_IBackgroundTransferBase<D>::Method(hstring_ref value) const
+template <typename D> void impl_IBackgroundTransferBase<D>::Method(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IBackgroundTransferBase)->put_Method(get(value)));
 }
@@ -1615,7 +1615,7 @@ template <typename D> hstring impl_IBackgroundTransferBase<D>::Group() const
     return value;
 }
 
-template <typename D> void impl_IBackgroundTransferBase<D>::Group(hstring_ref value) const
+template <typename D> void impl_IBackgroundTransferBase<D>::Group(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IBackgroundTransferBase)->put_Group(get(value)));
 }
@@ -1762,14 +1762,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_ref subType) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_view subType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> operation;
     check_hresult(WINRT_SHIM(IBackgroundUploader)->abi_CreateUploadWithSubTypeAsync(get(uri), get(parts), get(subType), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_ref subType, hstring_ref boundary) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_view subType, hstring_view boundary) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> operation;
     check_hresult(WINRT_SHIM(IBackgroundUploader)->abi_CreateUploadWithSubTypeAndBoundaryAsync(get(uri), get(parts), get(subType), get(boundary), put(operation)));
@@ -2003,7 +2003,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> impl_IBackgroundDownloaderStaticMethods<D>::GetCurrentDownloadsAsync(hstring_ref group) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> impl_IBackgroundDownloaderStaticMethods<D>::GetCurrentDownloadsAsync(hstring_view group) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> operation;
     check_hresult(WINRT_SHIM(IBackgroundDownloaderStaticMethods)->abi_GetCurrentDownloadsForGroupAsync(get(group), put(operation)));
@@ -2031,7 +2031,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> impl_IBackgroundUploaderStaticMethods<D>::GetCurrentUploadsAsync(hstring_ref group) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> impl_IBackgroundUploaderStaticMethods<D>::GetCurrentUploadsAsync(hstring_view group) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> operation;
     check_hresult(WINRT_SHIM(IBackgroundUploaderStaticMethods)->abi_GetCurrentUploadsForGroupAsync(get(group), put(operation)));
@@ -2080,12 +2080,12 @@ template <typename D> Windows::Web::WebErrorStatus impl_IBackgroundTransferError
     return status;
 }
 
-template <typename D> void impl_IBackgroundTransferContentPart<D>::SetHeader(hstring_ref headerName, hstring_ref headerValue) const
+template <typename D> void impl_IBackgroundTransferContentPart<D>::SetHeader(hstring_view headerName, hstring_view headerValue) const
 {
     check_hresult(WINRT_SHIM(IBackgroundTransferContentPart)->abi_SetHeader(get(headerName), get(headerValue)));
 }
 
-template <typename D> void impl_IBackgroundTransferContentPart<D>::SetText(hstring_ref value) const
+template <typename D> void impl_IBackgroundTransferContentPart<D>::SetText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IBackgroundTransferContentPart)->abi_SetText(get(value)));
 }
@@ -2095,14 +2095,14 @@ template <typename D> void impl_IBackgroundTransferContentPart<D>::SetFile(const
     check_hresult(WINRT_SHIM(IBackgroundTransferContentPart)->abi_SetFile(get(value)));
 }
 
-template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart impl_IBackgroundTransferContentPartFactory<D>::CreateWithName(hstring_ref name) const
+template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart impl_IBackgroundTransferContentPartFactory<D>::CreateWithName(hstring_view name) const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart value { nullptr };
     check_hresult(WINRT_SHIM(IBackgroundTransferContentPartFactory)->abi_CreateWithName(get(name), put(value)));
     return value;
 }
 
-template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart impl_IBackgroundTransferContentPartFactory<D>::CreateWithNameAndFileName(hstring_ref name, hstring_ref fileName) const
+template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart impl_IBackgroundTransferContentPartFactory<D>::CreateWithNameAndFileName(hstring_view name, hstring_view fileName) const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart value { nullptr };
     check_hresult(WINRT_SHIM(IBackgroundTransferContentPartFactory)->abi_CreateWithNameAndFileName(get(name), get(fileName), put(value)));
@@ -2128,7 +2128,7 @@ template <typename D> void impl_IBackgroundTransferGroup<D>::TransferBehavior(Wi
     check_hresult(WINRT_SHIM(IBackgroundTransferGroup)->put_TransferBehavior(value));
 }
 
-template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferGroup impl_IBackgroundTransferGroupStatics<D>::CreateGroup(hstring_ref name) const
+template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferGroup impl_IBackgroundTransferGroupStatics<D>::CreateGroup(hstring_view name) const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup value { nullptr };
     check_hresult(WINRT_SHIM(IBackgroundTransferGroupStatics)->abi_CreateGroup(get(name), put(value)));
@@ -2207,7 +2207,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<BackgroundDownloader, IBackgroundDownloaderStaticMethods>().GetCurrentDownloadsAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> BackgroundDownloader::GetCurrentDownloadsAsync(hstring_ref group)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> BackgroundDownloader::GetCurrentDownloadsAsync(hstring_view group)
 {
     return get_activation_factory<BackgroundDownloader, IBackgroundDownloaderStaticMethods>().GetCurrentDownloadsAsync(group);
 }
@@ -2230,11 +2230,11 @@ inline BackgroundTransferContentPart::BackgroundTransferContentPart() :
     BackgroundTransferContentPart(activate_instance<BackgroundTransferContentPart>())
 {}
 
-inline BackgroundTransferContentPart::BackgroundTransferContentPart(hstring_ref name) :
+inline BackgroundTransferContentPart::BackgroundTransferContentPart(hstring_view name) :
     BackgroundTransferContentPart(get_activation_factory<BackgroundTransferContentPart, IBackgroundTransferContentPartFactory>().CreateWithName(name))
 {}
 
-inline BackgroundTransferContentPart::BackgroundTransferContentPart(hstring_ref name, hstring_ref fileName) :
+inline BackgroundTransferContentPart::BackgroundTransferContentPart(hstring_view name, hstring_view fileName) :
     BackgroundTransferContentPart(get_activation_factory<BackgroundTransferContentPart, IBackgroundTransferContentPartFactory>().CreateWithNameAndFileName(name, fileName))
 {}
 
@@ -2243,7 +2243,7 @@ inline Windows::Web::WebErrorStatus BackgroundTransferError::GetStatus(int32_t h
     return get_activation_factory<BackgroundTransferError, IBackgroundTransferErrorStaticMethods>().GetStatus(hresult);
 }
 
-inline Windows::Networking::BackgroundTransfer::BackgroundTransferGroup BackgroundTransferGroup::CreateGroup(hstring_ref name)
+inline Windows::Networking::BackgroundTransfer::BackgroundTransferGroup BackgroundTransferGroup::CreateGroup(hstring_view name)
 {
     return get_activation_factory<BackgroundTransferGroup, IBackgroundTransferGroupStatics>().CreateGroup(name);
 }
@@ -2261,7 +2261,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<BackgroundUploader, IBackgroundUploaderStaticMethods>().GetCurrentUploadsAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> BackgroundUploader::GetCurrentUploadsAsync(hstring_ref group)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> BackgroundUploader::GetCurrentUploadsAsync(hstring_view group)
 {
     return get_activation_factory<BackgroundUploader, IBackgroundUploaderStaticMethods>().GetCurrentUploadsAsync(group);
 }

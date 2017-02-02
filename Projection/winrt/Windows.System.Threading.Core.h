@@ -201,28 +201,28 @@ struct produce<D, Windows::System::Threading::Core::ISignalNotifierStatics> : pr
 
 namespace Windows::System::Threading::Core {
 
-template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler) const
+template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToEvent(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler) const
 {
     Windows::System::Threading::Core::SignalNotifier signalNotifier { nullptr };
     check_hresult(WINRT_SHIM(ISignalNotifierStatics)->abi_AttachToEvent(get(name), get(handler), put(signalNotifier)));
     return signalNotifier;
 }
 
-template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout) const
+template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToEvent(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout) const
 {
     Windows::System::Threading::Core::SignalNotifier signalNotifier { nullptr };
     check_hresult(WINRT_SHIM(ISignalNotifierStatics)->abi_AttachToEventWithTimeout(get(name), get(handler), get(timeout), put(signalNotifier)));
     return signalNotifier;
 }
 
-template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler) const
+template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToSemaphore(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler) const
 {
     Windows::System::Threading::Core::SignalNotifier signalNotifier { nullptr };
     check_hresult(WINRT_SHIM(ISignalNotifierStatics)->abi_AttachToSemaphore(get(name), get(handler), put(signalNotifier)));
     return signalNotifier;
 }
 
-template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout) const
+template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToSemaphore(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout) const
 {
     Windows::System::Threading::Core::SignalNotifier signalNotifier { nullptr };
     check_hresult(WINRT_SHIM(ISignalNotifierStatics)->abi_AttachToSemaphoreWithTimeout(get(name), get(handler), get(timeout), put(signalNotifier)));
@@ -279,22 +279,22 @@ inline PreallocatedWorkItem::PreallocatedWorkItem(const Windows::System::Threadi
     PreallocatedWorkItem(get_activation_factory<PreallocatedWorkItem, IPreallocatedWorkItemFactory>().CreateWorkItemWithPriorityAndOptions(handler, priority, options))
 {}
 
-inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler)
+inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToEvent(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler)
 {
     return get_activation_factory<SignalNotifier, ISignalNotifierStatics>().AttachToEvent(name, handler);
 }
 
-inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout)
+inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToEvent(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout)
 {
     return get_activation_factory<SignalNotifier, ISignalNotifierStatics>().AttachToEvent(name, handler, timeout);
 }
 
-inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler)
+inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToSemaphore(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler)
 {
     return get_activation_factory<SignalNotifier, ISignalNotifierStatics>().AttachToSemaphore(name, handler);
 }
 
-inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout)
+inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachToSemaphore(hstring_view name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout)
 {
     return get_activation_factory<SignalNotifier, ISignalNotifierStatics>().AttachToSemaphore(name, handler, timeout);
 }

@@ -307,7 +307,7 @@ struct WINRT_EBO impl_IDeviceAccessInformation
 template <typename D>
 struct WINRT_EBO impl_IDeviceAccessInformationStatics
 {
-    Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(hstring_ref deviceId) const;
+    Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(hstring_view deviceId) const;
     Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClassId(GUID deviceClassId) const;
     Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
 };
@@ -384,25 +384,25 @@ struct WINRT_EBO impl_IDeviceInformationPairingStatics
 template <typename D>
 struct WINRT_EBO impl_IDeviceInformationStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
     Windows::Devices::Enumeration::DeviceWatcher CreateWatcher() const;
     Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
-    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter) const;
-    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter) const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDeviceInformationStatics2
 {
     hstring GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
-    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
 };
 
 template <typename D>
@@ -425,7 +425,7 @@ struct WINRT_EBO impl_IDevicePairingRequestedEventArgs
     Windows::Devices::Enumeration::DevicePairingKinds PairingKind() const;
     hstring Pin() const;
     void Accept() const;
-    void Accept(hstring_ref pin) const;
+    void Accept(hstring_view pin) const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
@@ -464,14 +464,14 @@ struct WINRT_EBO impl_IDevicePicker
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> PickSingleDeviceAsync(const Windows::Foundation::Rect & selection) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> PickSingleDeviceAsync(const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement placement) const;
     void Hide() const;
-    void SetDisplayStatus(const Windows::Devices::Enumeration::DeviceInformation & device, hstring_ref status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) const;
+    void SetDisplayStatus(const Windows::Devices::Enumeration::DeviceInformation & device, hstring_view status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDevicePickerAppearance
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::UI::Color ForegroundColor() const;
     void ForegroundColor(const Windows::UI::Color & value) const;
     Windows::UI::Color BackgroundColor() const;

@@ -1334,7 +1334,7 @@ struct produce<D, Windows::Storage::Search::IValueAndLanguage> : produce_base<D,
 
 namespace Windows::Storage::Search {
 
-template <typename D> Windows::Storage::Search::ContentIndexer impl_IContentIndexerStatics<D>::GetIndexer(hstring_ref indexName) const
+template <typename D> Windows::Storage::Search::ContentIndexer impl_IContentIndexerStatics<D>::GetIndexer(hstring_view indexName) const
 {
     Windows::Storage::Search::ContentIndexer index { nullptr };
     check_hresult(WINRT_SHIM(IContentIndexerStatics)->abi_GetIndexerWithName(get(indexName), put(index)));
@@ -1355,7 +1355,7 @@ template <typename D> hstring impl_IIndexableContent<D>::Id() const
     return value;
 }
 
-template <typename D> void impl_IIndexableContent<D>::Id(hstring_ref value) const
+template <typename D> void impl_IIndexableContent<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IIndexableContent)->put_Id(get(value)));
 }
@@ -1386,7 +1386,7 @@ template <typename D> hstring impl_IIndexableContent<D>::StreamContentType() con
     return value;
 }
 
-template <typename D> void impl_IIndexableContent<D>::StreamContentType(hstring_ref value) const
+template <typename D> void impl_IIndexableContent<D>::StreamContentType(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IIndexableContent)->put_StreamContentType(get(value)));
 }
@@ -1405,7 +1405,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IContentIndexer<D>:
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IContentIndexer<D>::DeleteAsync(hstring_ref contentId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IContentIndexer<D>::DeleteAsync(hstring_view contentId) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IContentIndexer)->abi_DeleteAsync(get(contentId), put(operation)));
@@ -1426,7 +1426,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IContentIndexer<D>:
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> impl_IContentIndexer<D>::RetrievePropertiesAsync(hstring_ref contentId, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> impl_IContentIndexer<D>::RetrievePropertiesAsync(hstring_view contentId, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> operation;
     check_hresult(WINRT_SHIM(IContentIndexer)->abi_RetrievePropertiesAsync(get(contentId), get(propertiesToRetrieve), put(operation)));
@@ -1447,7 +1447,7 @@ template <typename D> hstring impl_IValueAndLanguage<D>::Language() const
     return value;
 }
 
-template <typename D> void impl_IValueAndLanguage<D>::Language(hstring_ref value) const
+template <typename D> void impl_IValueAndLanguage<D>::Language(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IValueAndLanguage)->put_Language(get(value)));
 }
@@ -1464,21 +1464,21 @@ template <typename D> void impl_IValueAndLanguage<D>::Value(const Windows::IInsp
     check_hresult(WINRT_SHIM(IValueAndLanguage)->put_Value(get(value)));
 }
 
-template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_ref searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve, const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> & sortOrder, hstring_ref searchFilterLanguage) const
+template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_view searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve, const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> & sortOrder, hstring_view searchFilterLanguage) const
 {
     Windows::Storage::Search::ContentIndexerQuery query { nullptr };
     check_hresult(WINRT_SHIM(IContentIndexerQueryOperations)->abi_CreateQueryWithSortOrderAndLanguage(get(searchFilter), get(propertiesToRetrieve), get(sortOrder), get(searchFilterLanguage), put(query)));
     return query;
 }
 
-template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_ref searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve, const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> & sortOrder) const
+template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_view searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve, const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> & sortOrder) const
 {
     Windows::Storage::Search::ContentIndexerQuery query { nullptr };
     check_hresult(WINRT_SHIM(IContentIndexerQueryOperations)->abi_CreateQueryWithSortOrder(get(searchFilter), get(propertiesToRetrieve), get(sortOrder), put(query)));
     return query;
 }
 
-template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_ref searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
+template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_view searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
 {
     Windows::Storage::Search::ContentIndexerQuery query { nullptr };
     check_hresult(WINRT_SHIM(IContentIndexerQueryOperations)->abi_CreateQuery(get(searchFilter), get(propertiesToRetrieve), put(query)));
@@ -1553,7 +1553,7 @@ template <typename D> hstring impl_IQueryOptions<D>::ApplicationSearchFilter() c
     return value;
 }
 
-template <typename D> void impl_IQueryOptions<D>::ApplicationSearchFilter(hstring_ref value) const
+template <typename D> void impl_IQueryOptions<D>::ApplicationSearchFilter(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IQueryOptions)->put_ApplicationSearchFilter(get(value)));
 }
@@ -1565,7 +1565,7 @@ template <typename D> hstring impl_IQueryOptions<D>::UserSearchFilter() const
     return value;
 }
 
-template <typename D> void impl_IQueryOptions<D>::UserSearchFilter(hstring_ref value) const
+template <typename D> void impl_IQueryOptions<D>::UserSearchFilter(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IQueryOptions)->put_UserSearchFilter(get(value)));
 }
@@ -1577,7 +1577,7 @@ template <typename D> hstring impl_IQueryOptions<D>::Language() const
     return value;
 }
 
-template <typename D> void impl_IQueryOptions<D>::Language(hstring_ref value) const
+template <typename D> void impl_IQueryOptions<D>::Language(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IQueryOptions)->put_Language(get(value)));
 }
@@ -1622,7 +1622,7 @@ template <typename D> hstring impl_IQueryOptions<D>::SaveToString() const
     return value;
 }
 
-template <typename D> void impl_IQueryOptions<D>::LoadFromString(hstring_ref value) const
+template <typename D> void impl_IQueryOptions<D>::LoadFromString(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IQueryOptions)->abi_LoadFromString(get(value)));
 }
@@ -1907,7 +1907,7 @@ template <typename D> Windows::Storage::Search::StorageItemQueryResult impl_ISto
     return result;
 }
 
-inline Windows::Storage::Search::ContentIndexer ContentIndexer::GetIndexer(hstring_ref indexName)
+inline Windows::Storage::Search::ContentIndexer ContentIndexer::GetIndexer(hstring_view indexName)
 {
     return get_activation_factory<ContentIndexer, IContentIndexerStatics>().GetIndexer(indexName);
 }

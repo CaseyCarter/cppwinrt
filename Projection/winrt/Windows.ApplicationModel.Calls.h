@@ -1630,7 +1630,7 @@ template <typename D> hstring impl_IVoipPhoneCall<D>::ContactName() const
     return value;
 }
 
-template <typename D> void impl_IVoipPhoneCall<D>::ContactName(hstring_ref value) const
+template <typename D> void impl_IVoipPhoneCall<D>::ContactName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVoipPhoneCall)->put_ContactName(get(value)));
 }
@@ -1671,7 +1671,7 @@ template <typename D> bool impl_IMuteChangeEventArgs<D>::Muted() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> impl_IVoipCallCoordinator<D>::ReserveCallResourcesAsync(hstring_ref taskEntryPoint) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> impl_IVoipCallCoordinator<D>::ReserveCallResourcesAsync(hstring_view taskEntryPoint) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> operation;
     check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_ReserveCallResourcesAsync(get(taskEntryPoint), put(operation)));
@@ -1695,14 +1695,14 @@ template <typename D> void impl_IVoipCallCoordinator<D>::MuteStateChanged(event_
     check_hresult(WINRT_SHIM(IVoipCallCoordinator)->remove_MuteStateChanged(token));
 }
 
-template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestNewIncomingCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, const Windows::Foundation::Uri & contactImage, hstring_ref serviceName, const Windows::Foundation::Uri & brandingImage, hstring_ref callDetails, const Windows::Foundation::Uri & ringtone, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media, const Windows::Foundation::TimeSpan & ringTimeout) const
+template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestNewIncomingCall(hstring_view context, hstring_view contactName, hstring_view contactNumber, const Windows::Foundation::Uri & contactImage, hstring_view serviceName, const Windows::Foundation::Uri & brandingImage, hstring_view callDetails, const Windows::Foundation::Uri & ringtone, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media, const Windows::Foundation::TimeSpan & ringTimeout) const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCall call { nullptr };
     check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_RequestNewIncomingCall(get(context), get(contactName), get(contactNumber), get(contactImage), get(serviceName), get(brandingImage), get(callDetails), get(ringtone), media, get(ringTimeout), put(call)));
     return call;
 }
 
-template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestNewOutgoingCall(hstring_ref context, hstring_ref contactName, hstring_ref serviceName, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media) const
+template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestNewOutgoingCall(hstring_view context, hstring_view contactName, hstring_view serviceName, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media) const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCall call { nullptr };
     check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_RequestNewOutgoingCall(get(context), get(contactName), get(serviceName), media, put(call)));
@@ -1719,14 +1719,14 @@ template <typename D> void impl_IVoipCallCoordinator<D>::NotifyUnmuted() const
     check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_NotifyUnmuted());
 }
 
-template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, hstring_ref context, hstring_ref contactName, hstring_ref serviceName) const
+template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, hstring_view context, hstring_view contactName, hstring_view serviceName) const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCall call { nullptr };
     check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_RequestOutgoingUpgradeToVideoCall(callUpgradeGuid, get(context), get(contactName), get(serviceName), put(call)));
     return call;
 }
 
-template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestIncomingUpgradeToVideoCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, const Windows::Foundation::Uri & contactImage, hstring_ref serviceName, const Windows::Foundation::Uri & brandingImage, hstring_ref callDetails, const Windows::Foundation::Uri & ringtone, const Windows::Foundation::TimeSpan & ringTimeout) const
+template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestIncomingUpgradeToVideoCall(hstring_view context, hstring_view contactName, hstring_view contactNumber, const Windows::Foundation::Uri & contactImage, hstring_view serviceName, const Windows::Foundation::Uri & brandingImage, hstring_view callDetails, const Windows::Foundation::Uri & ringtone, const Windows::Foundation::TimeSpan & ringTimeout) const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCall call { nullptr };
     check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_RequestIncomingUpgradeToVideoCall(get(context), get(contactName), get(contactNumber), get(contactImage), get(serviceName), get(brandingImage), get(callDetails), get(ringtone), get(ringTimeout), put(call)));
@@ -1908,7 +1908,7 @@ template <typename D> hstring impl_IPhoneCallHistoryEntry<D>::RemoteId() const
     return value;
 }
 
-template <typename D> void impl_IPhoneCallHistoryEntry<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_IPhoneCallHistoryEntry<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_RemoteId(get(value)));
 }
@@ -1927,7 +1927,7 @@ template <typename D> hstring impl_IPhoneCallHistoryEntry<D>::SourceId() const
     return value;
 }
 
-template <typename D> void impl_IPhoneCallHistoryEntry<D>::SourceId(hstring_ref value) const
+template <typename D> void impl_IPhoneCallHistoryEntry<D>::SourceId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_SourceId(get(value)));
 }
@@ -1963,7 +1963,7 @@ template <typename D> hstring impl_IPhoneCallHistoryEntryAddress<D>::ContactId()
     return value;
 }
 
-template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::ContactId(hstring_ref value) const
+template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::ContactId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->put_ContactId(get(value)));
 }
@@ -1975,7 +1975,7 @@ template <typename D> hstring impl_IPhoneCallHistoryEntryAddress<D>::DisplayName
     return value;
 }
 
-template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->put_DisplayName(get(value)));
 }
@@ -1987,7 +1987,7 @@ template <typename D> hstring impl_IPhoneCallHistoryEntryAddress<D>::RawAddress(
     return value;
 }
 
-template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::RawAddress(hstring_ref value) const
+template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::RawAddress(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->put_RawAddress(get(value)));
 }
@@ -2004,7 +2004,7 @@ template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::RawAddressKind
     check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->put_RawAddressKind(value));
 }
 
-template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress impl_IPhoneCallHistoryEntryAddressFactory<D>::Create(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) const
+template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress impl_IPhoneCallHistoryEntryAddressFactory<D>::Create(hstring_view rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress result { nullptr };
     check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddressFactory)->abi_Create(get(rawAddress), rawAddressKind, put(result)));
@@ -2037,7 +2037,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> impl_IPhoneCallHistoryStore<D>::GetEntryAsync(hstring_ref callHistoryEntryId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> impl_IPhoneCallHistoryStore<D>::GetEntryAsync(hstring_view callHistoryEntryId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> result;
     check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_GetEntryAsync(get(callHistoryEntryId), put(result)));
@@ -2157,7 +2157,7 @@ inline PhoneCallHistoryEntryAddress::PhoneCallHistoryEntryAddress() :
     PhoneCallHistoryEntryAddress(activate_instance<PhoneCallHistoryEntryAddress>())
 {}
 
-inline PhoneCallHistoryEntryAddress::PhoneCallHistoryEntryAddress(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) :
+inline PhoneCallHistoryEntryAddress::PhoneCallHistoryEntryAddress(hstring_view rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) :
     PhoneCallHistoryEntryAddress(get_activation_factory<PhoneCallHistoryEntryAddress, IPhoneCallHistoryEntryAddressFactory>().Create(rawAddress, rawAddressKind))
 {}
 

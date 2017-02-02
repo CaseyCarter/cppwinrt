@@ -333,7 +333,7 @@ template <typename D>
 struct WINRT_EBO impl_IBackgroundDownloaderStaticMethods
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(hstring_ref group) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(hstring_view group) const;
 };
 
 template <typename D>
@@ -351,15 +351,15 @@ struct WINRT_EBO impl_IBackgroundDownloaderUserConsent
 template <typename D>
 struct WINRT_EBO impl_IBackgroundTransferBase
 {
-    void SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const;
+    void SetRequestHeader(hstring_view headerName, hstring_view headerValue) const;
     Windows::Security::Credentials::PasswordCredential ServerCredential() const;
     void ServerCredential(const Windows::Security::Credentials::PasswordCredential & credential) const;
     Windows::Security::Credentials::PasswordCredential ProxyCredential() const;
     void ProxyCredential(const Windows::Security::Credentials::PasswordCredential & credential) const;
     hstring Method() const;
-    void Method(hstring_ref value) const;
+    void Method(hstring_view value) const;
     hstring Group() const;
-    void Group(hstring_ref value) const;
+    void Group(hstring_view value) const;
     Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy CostPolicy() const;
     void CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) const;
 };
@@ -382,16 +382,16 @@ struct WINRT_EBO impl_IBackgroundTransferCompletionGroupTriggerDetails
 template <typename D>
 struct WINRT_EBO impl_IBackgroundTransferContentPart
 {
-    void SetHeader(hstring_ref headerName, hstring_ref headerValue) const;
-    void SetText(hstring_ref value) const;
+    void SetHeader(hstring_view headerName, hstring_view headerValue) const;
+    void SetText(hstring_view value) const;
     void SetFile(const Windows::Storage::IStorageFile & value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IBackgroundTransferContentPartFactory
 {
-    Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart CreateWithName(hstring_ref name) const;
-    Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart CreateWithNameAndFileName(hstring_ref name, hstring_ref fileName) const;
+    Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart CreateWithName(hstring_view name) const;
+    Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart CreateWithNameAndFileName(hstring_view name, hstring_view fileName) const;
 };
 
 template <typename D>
@@ -411,7 +411,7 @@ struct WINRT_EBO impl_IBackgroundTransferGroup
 template <typename D>
 struct WINRT_EBO impl_IBackgroundTransferGroupStatics
 {
-    Windows::Networking::BackgroundTransfer::BackgroundTransferGroup CreateGroup(hstring_ref name) const;
+    Windows::Networking::BackgroundTransfer::BackgroundTransferGroup CreateGroup(hstring_view name) const;
 };
 
 template <typename D>
@@ -440,8 +440,8 @@ struct WINRT_EBO impl_IBackgroundUploader
     Windows::Networking::BackgroundTransfer::UploadOperation CreateUpload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & sourceFile) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadFromStreamAsync(const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IInputStream & sourceStream) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts) const;
-    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_ref subType) const;
-    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_ref subType, hstring_ref boundary) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_view subType) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_view subType, hstring_view boundary) const;
 };
 
 template <typename D>
@@ -475,7 +475,7 @@ template <typename D>
 struct WINRT_EBO impl_IBackgroundUploaderStaticMethods
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(hstring_ref group) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(hstring_view group) const;
 };
 
 template <typename D>

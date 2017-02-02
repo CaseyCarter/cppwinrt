@@ -9236,7 +9236,7 @@ template <typename D> hstring impl_ISelector<D>::SelectedValuePath() const
     return value;
 }
 
-template <typename D> void impl_ISelector<D>::SelectedValuePath(hstring_ref value) const
+template <typename D> void impl_ISelector<D>::SelectedValuePath(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISelector)->put_SelectedValuePath(get(value)));
 }
@@ -11039,7 +11039,7 @@ template <typename D> hstring impl_IPickerFlyoutBaseStatics<D>::GetTitle(const W
     return value;
 }
 
-template <typename D> void impl_IPickerFlyoutBaseStatics<D>::SetTitle(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
+template <typename D> void impl_IPickerFlyoutBaseStatics<D>::SetTitle(const Windows::UI::Xaml::DependencyObject & element, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPickerFlyoutBaseStatics)->abi_SetTitle(get(element), get(value)));
 }
@@ -11656,7 +11656,7 @@ inline hstring PickerFlyoutBase::GetTitle(const Windows::UI::Xaml::DependencyObj
     return get_activation_factory<PickerFlyoutBase, IPickerFlyoutBaseStatics>().GetTitle(element);
 }
 
-inline void PickerFlyoutBase::SetTitle(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value)
+inline void PickerFlyoutBase::SetTitle(const Windows::UI::Xaml::DependencyObject & element, hstring_view value)
 {
     get_activation_factory<PickerFlyoutBase, IPickerFlyoutBaseStatics>().SetTitle(element, value);
 }

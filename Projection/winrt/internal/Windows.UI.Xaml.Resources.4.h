@@ -17,7 +17,7 @@ public:
 
     using ICustomXamlResourceLoaderOverrides = winrt::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides;
 
-    Windows::IInspectable GetResource(hstring_ref resourceId, hstring_ref objectType, hstring_ref propertyName, hstring_ref propertyType)
+    Windows::IInspectable GetResource(hstring_view resourceId, hstring_view objectType, hstring_view propertyName, hstring_view propertyType)
     {
         return shim().as<ICustomXamlResourceLoaderOverrides>().GetResource(resourceId, objectType, propertyName, propertyType);
     }

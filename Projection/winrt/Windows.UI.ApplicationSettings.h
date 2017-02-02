@@ -543,7 +543,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountProviderCommandFa
 
 namespace Windows::UI::ApplicationSettings {
 
-template <typename D> Windows::UI::ApplicationSettings::SettingsCommand impl_ISettingsCommandFactory<D>::CreateSettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & handler) const
+template <typename D> Windows::UI::ApplicationSettings::SettingsCommand impl_ISettingsCommandFactory<D>::CreateSettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & handler) const
 {
     Windows::UI::ApplicationSettings::SettingsCommand instance { nullptr };
     check_hresult(WINRT_SHIM(ISettingsCommandFactory)->abi_CreateSettingsCommand(get(settingsCommandId), get(label), get(handler), put(instance)));
@@ -681,7 +681,7 @@ template <typename D> hstring impl_IAccountsSettingsPaneCommandsRequestedEventAr
     return value;
 }
 
-template <typename D> void impl_IAccountsSettingsPaneCommandsRequestedEventArgs<D>::HeaderText(hstring_ref value) const
+template <typename D> void impl_IAccountsSettingsPaneCommandsRequestedEventArgs<D>::HeaderText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAccountsSettingsPaneCommandsRequestedEventArgs)->put_HeaderText(get(value)));
 }
@@ -764,7 +764,7 @@ inline CredentialCommand::CredentialCommand(const Windows::Security::Credentials
     CredentialCommand(get_activation_factory<CredentialCommand, ICredentialCommandFactory>().CreateCredentialCommandWithHandler(passwordCredential, deleted))
 {}
 
-inline SettingsCommand::SettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & handler) :
+inline SettingsCommand::SettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & handler) :
     SettingsCommand(get_activation_factory<SettingsCommand, ISettingsCommandFactory>().CreateSettingsCommand(settingsCommandId, label, handler))
 {}
 

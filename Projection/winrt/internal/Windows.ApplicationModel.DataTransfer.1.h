@@ -302,13 +302,13 @@ struct WINRT_EBO impl_IDataPackage
     using Destroyed_revoker = event_revoker<IDataPackage>;
     Destroyed_revoker Destroyed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> & handler) const;
     void Destroyed(event_token eventCookie) const;
-    void SetData(hstring_ref formatId, const Windows::IInspectable & value) const;
-    void SetDataProvider(hstring_ref formatId, const Windows::ApplicationModel::DataTransfer::DataProviderHandler & delayRenderer) const;
-    void SetText(hstring_ref value) const;
+    void SetData(hstring_view formatId, const Windows::IInspectable & value) const;
+    void SetDataProvider(hstring_view formatId, const Windows::ApplicationModel::DataTransfer::DataProviderHandler & delayRenderer) const;
+    void SetText(hstring_view value) const;
     void SetUri(const Windows::Foundation::Uri & value) const;
-    void SetHtmlFormat(hstring_ref value) const;
+    void SetHtmlFormat(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, Windows::Storage::Streams::RandomAccessStreamReference> ResourceMap() const;
-    void SetRtf(hstring_ref value) const;
+    void SetRtf(hstring_view value) const;
     void SetBitmap(const Windows::Storage::Streams::RandomAccessStreamReference & value) const;
     void SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value) const;
     void SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value, bool readOnly) const;
@@ -325,14 +325,14 @@ template <typename D>
 struct WINRT_EBO impl_IDataPackagePropertySet
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
     void Thumbnail(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     Windows::Foundation::Collections::IVector<hstring> FileTypes() const;
     hstring ApplicationName() const;
-    void ApplicationName(hstring_ref value) const;
+    void ApplicationName(hstring_view value) const;
     Windows::Foundation::Uri ApplicationListingUri() const;
     void ApplicationListingUri(const Windows::Foundation::Uri & value) const;
 };
@@ -345,7 +345,7 @@ struct WINRT_EBO impl_IDataPackagePropertySet2
     Windows::Foundation::Uri ContentSourceApplicationLink() const;
     void ContentSourceApplicationLink(const Windows::Foundation::Uri & value) const;
     hstring PackageFamilyName() const;
-    void PackageFamilyName(hstring_ref value) const;
+    void PackageFamilyName(hstring_view value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Square30x30Logo() const;
     void Square30x30Logo(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     Windows::UI::Color LogoBackgroundColor() const;
@@ -356,7 +356,7 @@ template <typename D>
 struct WINRT_EBO impl_IDataPackagePropertySet3
 {
     hstring EnterpriseId() const;
-    void EnterpriseId(hstring_ref value) const;
+    void EnterpriseId(hstring_view value) const;
 };
 
 template <typename D>
@@ -393,10 +393,10 @@ struct WINRT_EBO impl_IDataPackageView
     Windows::ApplicationModel::DataTransfer::DataPackageOperation RequestedOperation() const;
     void ReportOperationCompleted(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const;
     Windows::Foundation::Collections::IVectorView<hstring> AvailableFormats() const;
-    bool Contains(hstring_ref formatId) const;
-    Windows::Foundation::IAsyncOperation<Windows::IInspectable> GetDataAsync(hstring_ref formatId) const;
+    bool Contains(hstring_view formatId) const;
+    Windows::Foundation::IAsyncOperation<Windows::IInspectable> GetDataAsync(hstring_view formatId) const;
     Windows::Foundation::IAsyncOperation<hstring> GetTextAsync() const;
-    Windows::Foundation::IAsyncOperation<hstring> GetTextAsync(hstring_ref formatId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetTextAsync(hstring_view formatId) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> GetUriAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetHtmlFormatAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::RandomAccessStreamReference>> GetResourceMapAsync() const;
@@ -416,14 +416,14 @@ template <typename D>
 struct WINRT_EBO impl_IDataPackageView3
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync() const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(hstring_ref enterpriseId) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(hstring_view enterpriseId) const;
     Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult UnlockAndAssumeEnterpriseIdentity() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDataPackageView4
 {
-    void SetAcceptedFormatId(hstring_ref formatId) const;
+    void SetAcceptedFormatId(hstring_view formatId) const;
 };
 
 template <typename D>
@@ -447,7 +447,7 @@ struct WINRT_EBO impl_IDataRequest
     Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
     void Data(const Windows::ApplicationModel::DataTransfer::DataPackage & value) const;
     Windows::Foundation::DateTime Deadline() const;
-    void FailWithDisplayText(hstring_ref value) const;
+    void FailWithDisplayText(hstring_view value) const;
     Windows::ApplicationModel::DataTransfer::DataRequestDeferral GetDeferral() const;
 };
 
@@ -492,8 +492,8 @@ struct WINRT_EBO impl_IDataTransferManagerStatics2
 template <typename D>
 struct WINRT_EBO impl_IHtmlFormatHelperStatics
 {
-    hstring GetStaticFragment(hstring_ref htmlFormat) const;
-    hstring CreateHtmlFormat(hstring_ref htmlFragment) const;
+    hstring GetStaticFragment(hstring_view htmlFormat) const;
+    hstring CreateHtmlFormat(hstring_view htmlFragment) const;
 };
 
 template <typename D>
@@ -512,8 +512,8 @@ template <typename D>
 struct WINRT_EBO impl_ISharedStorageAccessManagerStatics
 {
     hstring AddFile(const Windows::Storage::IStorageFile & file) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(hstring_ref token) const;
-    void RemoveFile(hstring_ref token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(hstring_view token) const;
+    void RemoveFile(hstring_view token) const;
 };
 
 template <typename D>

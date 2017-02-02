@@ -6191,7 +6191,7 @@ template <typename D> hstring impl_IHttpMapTileDataSource<D>::UriFormatString() 
     return value;
 }
 
-template <typename D> void impl_IHttpMapTileDataSource<D>::UriFormatString(hstring_ref value) const
+template <typename D> void impl_IHttpMapTileDataSource<D>::UriFormatString(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IHttpMapTileDataSource)->put_UriFormatString(get(value)));
 }
@@ -6239,7 +6239,7 @@ template <typename D> Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource i
     return instance;
 }
 
-template <typename D> Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource impl_IHttpMapTileDataSourceFactory<D>::CreateInstanceWithUriFormatString(hstring_ref uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource impl_IHttpMapTileDataSourceFactory<D>::CreateInstanceWithUriFormatString(hstring_view uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource instance { nullptr };
     check_hresult(WINRT_SHIM(IHttpMapTileDataSourceFactory)->abi_CreateInstanceWithUriFormatString(get(uriFormatString), get(outer), put(inner), put(instance)));
@@ -6253,7 +6253,7 @@ template <typename D> hstring impl_ILocalMapTileDataSource<D>::UriFormatString()
     return value;
 }
 
-template <typename D> void impl_ILocalMapTileDataSource<D>::UriFormatString(hstring_ref value) const
+template <typename D> void impl_ILocalMapTileDataSource<D>::UriFormatString(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ILocalMapTileDataSource)->put_UriFormatString(get(value)));
 }
@@ -6282,7 +6282,7 @@ template <typename D> Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource 
     return instance;
 }
 
-template <typename D> Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource impl_ILocalMapTileDataSourceFactory<D>::CreateInstanceWithUriFormatString(hstring_ref uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource impl_ILocalMapTileDataSourceFactory<D>::CreateInstanceWithUriFormatString(hstring_view uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource instance { nullptr };
     check_hresult(WINRT_SHIM(ILocalMapTileDataSourceFactory)->abi_CreateInstanceWithUriFormatString(get(uriFormatString), get(outer), put(inner), put(instance)));
@@ -6308,7 +6308,7 @@ template <typename D> hstring impl_IMapIcon<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IMapIcon<D>::Title(hstring_ref value) const
+template <typename D> void impl_IMapIcon<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMapIcon)->put_Title(get(value)));
 }
@@ -6694,7 +6694,7 @@ template <typename D> hstring impl_IMapControl<D>::MapServiceToken() const
     return value;
 }
 
-template <typename D> void impl_IMapControl<D>::MapServiceToken(hstring_ref value) const
+template <typename D> void impl_IMapControl<D>::MapServiceToken(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMapControl)->put_MapServiceToken(get(value)));
 }
@@ -7660,7 +7660,7 @@ inline HttpMapTileDataSource::HttpMapTileDataSource()
     impl_move(get_activation_factory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstance(outer, inner));
 }
 
-inline HttpMapTileDataSource::HttpMapTileDataSource(hstring_ref uriFormatString)
+inline HttpMapTileDataSource::HttpMapTileDataSource(hstring_view uriFormatString)
 {
     Windows::IInspectable outer, inner;
     impl_move(get_activation_factory<HttpMapTileDataSource, IHttpMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, outer, inner));
@@ -7672,7 +7672,7 @@ inline LocalMapTileDataSource::LocalMapTileDataSource()
     impl_move(get_activation_factory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstance(outer, inner));
 }
 
-inline LocalMapTileDataSource::LocalMapTileDataSource(hstring_ref uriFormatString)
+inline LocalMapTileDataSource::LocalMapTileDataSource(hstring_view uriFormatString)
 {
     Windows::IInspectable outer, inner;
     impl_move(get_activation_factory<LocalMapTileDataSource, ILocalMapTileDataSourceFactory>().CreateInstanceWithUriFormatString(uriFormatString, outer, inner));

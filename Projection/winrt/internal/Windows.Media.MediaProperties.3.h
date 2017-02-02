@@ -148,7 +148,7 @@ struct WINRT_EBO VideoEncodingProperties :
     VideoEncodingProperties();
     static Windows::Media::MediaProperties::VideoEncodingProperties CreateH264();
     static Windows::Media::MediaProperties::VideoEncodingProperties CreateMpeg2();
-    static Windows::Media::MediaProperties::VideoEncodingProperties CreateUncompressed(hstring_ref subtype, uint32_t width, uint32_t height);
+    static Windows::Media::MediaProperties::VideoEncodingProperties CreateUncompressed(hstring_view subtype, uint32_t width, uint32_t height);
 };
 
 }

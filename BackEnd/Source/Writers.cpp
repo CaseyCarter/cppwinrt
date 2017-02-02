@@ -442,7 +442,7 @@ static void WriteParameter(Output & out, Parameter const & param)
         {
             if (param.Category == TypeCategory::String)
             {
-                Write(out, "hstring_ref %", param.Name);
+                Write(out, "hstring_view %", param.Name);
             }
             else if (param.Category == TypeCategory::Structure || param.Category == TypeCategory::Interface)
             {

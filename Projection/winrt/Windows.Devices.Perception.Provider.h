@@ -960,7 +960,7 @@ template <typename D> hstring impl_IPerceptionFrameProviderInfo<D>::Id() const
     return value;
 }
 
-template <typename D> void impl_IPerceptionFrameProviderInfo<D>::Id(hstring_ref value) const
+template <typename D> void impl_IPerceptionFrameProviderInfo<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPerceptionFrameProviderInfo)->put_Id(get(value)));
 }
@@ -972,7 +972,7 @@ template <typename D> hstring impl_IPerceptionFrameProviderInfo<D>::DisplayName(
     return value;
 }
 
-template <typename D> void impl_IPerceptionFrameProviderInfo<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IPerceptionFrameProviderInfo<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPerceptionFrameProviderInfo)->put_DisplayName(get(value)));
 }
@@ -984,7 +984,7 @@ template <typename D> hstring impl_IPerceptionFrameProviderInfo<D>::DeviceKind()
     return value;
 }
 
-template <typename D> void impl_IPerceptionFrameProviderInfo<D>::DeviceKind(hstring_ref value) const
+template <typename D> void impl_IPerceptionFrameProviderInfo<D>::DeviceKind(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPerceptionFrameProviderInfo)->put_DeviceKind(get(value)));
 }
@@ -996,7 +996,7 @@ template <typename D> hstring impl_IPerceptionFrameProviderInfo<D>::FrameKind() 
     return value;
 }
 
-template <typename D> void impl_IPerceptionFrameProviderInfo<D>::FrameKind(hstring_ref value) const
+template <typename D> void impl_IPerceptionFrameProviderInfo<D>::FrameKind(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPerceptionFrameProviderInfo)->put_FrameKind(get(value)));
 }
@@ -1041,7 +1041,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
     return value;
 }
 
-template <typename D> Windows::Devices::Perception::Provider::PerceptionCorrelation impl_IPerceptionCorrelationFactory<D>::Create(hstring_ref targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const
+template <typename D> Windows::Devices::Perception::Provider::PerceptionCorrelation impl_IPerceptionCorrelationFactory<D>::Create(hstring_view targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const
 {
     Windows::Devices::Perception::Provider::PerceptionCorrelation result { nullptr };
     check_hresult(WINRT_SHIM(IPerceptionCorrelationFactory)->abi_Create(get(targetId), get(position), get(orientation), put(result)));
@@ -1225,7 +1225,7 @@ inline PerceptionControlGroup::PerceptionControlGroup(const Windows::Foundation:
     PerceptionControlGroup(get_activation_factory<PerceptionControlGroup, IPerceptionControlGroupFactory>().Create(ids))
 {}
 
-inline PerceptionCorrelation::PerceptionCorrelation(hstring_ref targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) :
+inline PerceptionCorrelation::PerceptionCorrelation(hstring_view targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) :
     PerceptionCorrelation(get_activation_factory<PerceptionCorrelation, IPerceptionCorrelationFactory>().Create(targetId, position, orientation))
 {}
 

@@ -2018,7 +2018,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Appli
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> impl_IBackgroundExecutionManagerStatics<D>::RequestAccessAsync(hstring_ref applicationId) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> impl_IBackgroundExecutionManagerStatics<D>::RequestAccessAsync(hstring_view applicationId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> operation;
     check_hresult(WINRT_SHIM(IBackgroundExecutionManagerStatics)->abi_RequestAccessForApplicationAsync(get(applicationId), put(operation)));
@@ -2030,7 +2030,7 @@ template <typename D> void impl_IBackgroundExecutionManagerStatics<D>::RemoveAcc
     check_hresult(WINRT_SHIM(IBackgroundExecutionManagerStatics)->abi_RemoveAccess());
 }
 
-template <typename D> void impl_IBackgroundExecutionManagerStatics<D>::RemoveAccess(hstring_ref applicationId) const
+template <typename D> void impl_IBackgroundExecutionManagerStatics<D>::RemoveAccess(hstring_view applicationId) const
 {
     check_hresult(WINRT_SHIM(IBackgroundExecutionManagerStatics)->abi_RemoveAccessForApplication(get(applicationId)));
 }
@@ -2042,7 +2042,7 @@ template <typename D> Windows::ApplicationModel::Background::BackgroundAccessSta
     return status;
 }
 
-template <typename D> Windows::ApplicationModel::Background::BackgroundAccessStatus impl_IBackgroundExecutionManagerStatics<D>::GetAccessStatus(hstring_ref applicationId) const
+template <typename D> Windows::ApplicationModel::Background::BackgroundAccessStatus impl_IBackgroundExecutionManagerStatics<D>::GetAccessStatus(hstring_view applicationId) const
 {
     Windows::ApplicationModel::Background::BackgroundAccessStatus status {};
     check_hresult(WINRT_SHIM(IBackgroundExecutionManagerStatics)->abi_GetAccessStatusForApplication(get(applicationId), &status));
@@ -2239,7 +2239,7 @@ template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::
     return tasks;
 }
 
-template <typename D> void impl_IBackgroundTaskBuilder<D>::TaskEntryPoint(hstring_ref value) const
+template <typename D> void impl_IBackgroundTaskBuilder<D>::TaskEntryPoint(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IBackgroundTaskBuilder)->put_TaskEntryPoint(get(value)));
 }
@@ -2261,7 +2261,7 @@ template <typename D> void impl_IBackgroundTaskBuilder<D>::AddCondition(const Wi
     check_hresult(WINRT_SHIM(IBackgroundTaskBuilder)->abi_AddCondition(get(condition)));
 }
 
-template <typename D> void impl_IBackgroundTaskBuilder<D>::Name(hstring_ref value) const
+template <typename D> void impl_IBackgroundTaskBuilder<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IBackgroundTaskBuilder)->put_Name(get(value)));
 }
@@ -2407,7 +2407,7 @@ template <typename D> hstring impl_INetworkOperatorNotificationTrigger<D>::Netwo
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger impl_INetworkOperatorNotificationTriggerFactory<D>::Create(hstring_ref networkAccountId) const
+template <typename D> Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger impl_INetworkOperatorNotificationTriggerFactory<D>::Create(hstring_view networkAccountId) const
 {
     Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger trigger { nullptr };
     check_hresult(WINRT_SHIM(INetworkOperatorNotificationTriggerFactory)->abi_Create(get(networkAccountId), put(trigger)));
@@ -2428,7 +2428,7 @@ template <typename D> bool impl_IDeviceManufacturerNotificationTrigger<D>::OneSh
     return oneShot;
 }
 
-template <typename D> Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger impl_IDeviceManufacturerNotificationTriggerFactory<D>::Create(hstring_ref triggerQualifier, bool oneShot) const
+template <typename D> Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger impl_IDeviceManufacturerNotificationTriggerFactory<D>::Create(hstring_view triggerQualifier, bool oneShot) const
 {
     Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger trigger { nullptr };
     check_hresult(WINRT_SHIM(IDeviceManufacturerNotificationTriggerFactory)->abi_Create(get(triggerQualifier), oneShot, put(trigger)));
@@ -2498,28 +2498,28 @@ template <typename D> Windows::ApplicationModel::Background::MaintenanceTrigger 
     return trigger;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceUseTrigger<D>::RequestAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceUseTrigger<D>::RequestAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> result;
     check_hresult(WINRT_SHIM(IDeviceUseTrigger)->abi_RequestAsyncSimple(get(deviceId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceUseTrigger<D>::RequestAsync(hstring_ref deviceId, hstring_ref arguments) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceUseTrigger<D>::RequestAsync(hstring_view deviceId, hstring_view arguments) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> result;
     check_hresult(WINRT_SHIM(IDeviceUseTrigger)->abi_RequestAsyncWithArguments(get(deviceId), get(arguments), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceServicingTrigger<D>::RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceServicingTrigger<D>::RequestAsync(hstring_view deviceId, const Windows::Foundation::TimeSpan & expectedDuration) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> result;
     check_hresult(WINRT_SHIM(IDeviceServicingTrigger)->abi_RequestAsyncSimple(get(deviceId), get(expectedDuration), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceServicingTrigger<D>::RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration, hstring_ref arguments) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceServicingTrigger<D>::RequestAsync(hstring_view deviceId, const Windows::Foundation::TimeSpan & expectedDuration, hstring_view arguments) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> result;
     check_hresult(WINRT_SHIM(IDeviceServicingTrigger)->abi_RequestAsyncWithArguments(get(deviceId), get(expectedDuration), get(arguments), put(result)));
@@ -2602,7 +2602,7 @@ template <typename D> void impl_IDeviceConnectionChangeTrigger<D>::MaintainConne
     check_hresult(WINRT_SHIM(IDeviceConnectionChangeTrigger)->put_MaintainConnection(value));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> impl_IDeviceConnectionChangeTriggerStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> impl_IDeviceConnectionChangeTriggerStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> deviceChangeTrigger;
     check_hresult(WINRT_SHIM(IDeviceConnectionChangeTriggerStatics)->abi_FromIdAsync(get(deviceId), put(deviceChangeTrigger)));
@@ -2745,21 +2745,21 @@ template <typename D> bool impl_ISocketActivityTrigger<D>::IsWakeFromLowPowerSup
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Background::PushNotificationTrigger impl_IPushNotificationTriggerFactory<D>::Create(hstring_ref applicationId) const
+template <typename D> Windows::ApplicationModel::Background::PushNotificationTrigger impl_IPushNotificationTriggerFactory<D>::Create(hstring_view applicationId) const
 {
     Windows::ApplicationModel::Background::PushNotificationTrigger trigger { nullptr };
     check_hresult(WINRT_SHIM(IPushNotificationTriggerFactory)->abi_Create(get(applicationId), put(trigger)));
     return trigger;
 }
 
-template <typename D> Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger impl_IToastNotificationHistoryChangedTriggerFactory<D>::Create(hstring_ref applicationId) const
+template <typename D> Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger impl_IToastNotificationHistoryChangedTriggerFactory<D>::Create(hstring_view applicationId) const
 {
     Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger trigger { nullptr };
     check_hresult(WINRT_SHIM(IToastNotificationHistoryChangedTriggerFactory)->abi_Create(get(applicationId), put(trigger)));
     return trigger;
 }
 
-template <typename D> Windows::ApplicationModel::Background::ToastNotificationActionTrigger impl_IToastNotificationActionTriggerFactory<D>::Create(hstring_ref applicationId) const
+template <typename D> Windows::ApplicationModel::Background::ToastNotificationActionTrigger impl_IToastNotificationActionTriggerFactory<D>::Create(hstring_view applicationId) const
 {
     Windows::ApplicationModel::Background::ToastNotificationActionTrigger trigger { nullptr };
     check_hresult(WINRT_SHIM(IToastNotificationActionTriggerFactory)->abi_Create(get(applicationId), put(trigger)));
@@ -2790,7 +2790,7 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Ba
     return get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RequestAccessAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> BackgroundExecutionManager::RequestAccessAsync(hstring_ref applicationId)
+inline Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> BackgroundExecutionManager::RequestAccessAsync(hstring_view applicationId)
 {
     return get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RequestAccessAsync(applicationId);
 }
@@ -2800,7 +2800,7 @@ inline void BackgroundExecutionManager::RemoveAccess()
     get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RemoveAccess();
 }
 
-inline void BackgroundExecutionManager::RemoveAccess(hstring_ref applicationId)
+inline void BackgroundExecutionManager::RemoveAccess(hstring_view applicationId)
 {
     get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().RemoveAccess(applicationId);
 }
@@ -2810,7 +2810,7 @@ inline Windows::ApplicationModel::Background::BackgroundAccessStatus BackgroundE
     return get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().GetAccessStatus();
 }
 
-inline Windows::ApplicationModel::Background::BackgroundAccessStatus BackgroundExecutionManager::GetAccessStatus(hstring_ref applicationId)
+inline Windows::ApplicationModel::Background::BackgroundAccessStatus BackgroundExecutionManager::GetAccessStatus(hstring_view applicationId)
 {
     return get_activation_factory<BackgroundExecutionManager, IBackgroundExecutionManagerStatics>().GetAccessStatus(applicationId);
 }
@@ -2861,12 +2861,12 @@ inline ContentPrefetchTrigger::ContentPrefetchTrigger(const Windows::Foundation:
     ContentPrefetchTrigger(get_activation_factory<ContentPrefetchTrigger, IContentPrefetchTriggerFactory>().Create(waitInterval))
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> DeviceConnectionChangeTrigger::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> DeviceConnectionChangeTrigger::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<DeviceConnectionChangeTrigger, IDeviceConnectionChangeTriggerStatics>().FromIdAsync(deviceId);
 }
 
-inline DeviceManufacturerNotificationTrigger::DeviceManufacturerNotificationTrigger(hstring_ref triggerQualifier, bool oneShot) :
+inline DeviceManufacturerNotificationTrigger::DeviceManufacturerNotificationTrigger(hstring_view triggerQualifier, bool oneShot) :
     DeviceManufacturerNotificationTrigger(get_activation_factory<DeviceManufacturerNotificationTrigger, IDeviceManufacturerNotificationTriggerFactory>().Create(triggerQualifier, oneShot))
 {}
 
@@ -2918,7 +2918,7 @@ inline NetworkOperatorHotspotAuthenticationTrigger::NetworkOperatorHotspotAuthen
     NetworkOperatorHotspotAuthenticationTrigger(activate_instance<NetworkOperatorHotspotAuthenticationTrigger>())
 {}
 
-inline NetworkOperatorNotificationTrigger::NetworkOperatorNotificationTrigger(hstring_ref networkAccountId) :
+inline NetworkOperatorNotificationTrigger::NetworkOperatorNotificationTrigger(hstring_view networkAccountId) :
     NetworkOperatorNotificationTrigger(get_activation_factory<NetworkOperatorNotificationTrigger, INetworkOperatorNotificationTriggerFactory>().Create(networkAccountId))
 {}
 
@@ -2926,7 +2926,7 @@ inline PushNotificationTrigger::PushNotificationTrigger() :
     PushNotificationTrigger(activate_instance<PushNotificationTrigger>())
 {}
 
-inline PushNotificationTrigger::PushNotificationTrigger(hstring_ref applicationId) :
+inline PushNotificationTrigger::PushNotificationTrigger(hstring_view applicationId) :
     PushNotificationTrigger(get_activation_factory<PushNotificationTrigger, IPushNotificationTriggerFactory>().Create(applicationId))
 {}
 
@@ -2980,7 +2980,7 @@ inline ToastNotificationActionTrigger::ToastNotificationActionTrigger() :
     ToastNotificationActionTrigger(activate_instance<ToastNotificationActionTrigger>())
 {}
 
-inline ToastNotificationActionTrigger::ToastNotificationActionTrigger(hstring_ref applicationId) :
+inline ToastNotificationActionTrigger::ToastNotificationActionTrigger(hstring_view applicationId) :
     ToastNotificationActionTrigger(get_activation_factory<ToastNotificationActionTrigger, IToastNotificationActionTriggerFactory>().Create(applicationId))
 {}
 
@@ -2988,7 +2988,7 @@ inline ToastNotificationHistoryChangedTrigger::ToastNotificationHistoryChangedTr
     ToastNotificationHistoryChangedTrigger(activate_instance<ToastNotificationHistoryChangedTrigger>())
 {}
 
-inline ToastNotificationHistoryChangedTrigger::ToastNotificationHistoryChangedTrigger(hstring_ref applicationId) :
+inline ToastNotificationHistoryChangedTrigger::ToastNotificationHistoryChangedTrigger(hstring_view applicationId) :
     ToastNotificationHistoryChangedTrigger(get_activation_factory<ToastNotificationHistoryChangedTrigger, IToastNotificationHistoryChangedTriggerFactory>().Create(applicationId))
 {}
 

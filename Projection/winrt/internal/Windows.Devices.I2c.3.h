@@ -29,8 +29,8 @@ struct WINRT_EBO I2cDevice :
 {
     I2cDevice(std::nullptr_t) noexcept {}
     static hstring GetDeviceSelector();
-    static hstring GetDeviceSelector(hstring_ref friendlyName);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> FromIdAsync(hstring_ref deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings);
+    static hstring GetDeviceSelector(hstring_view friendlyName);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> FromIdAsync(hstring_view deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings);
 };
 
 }

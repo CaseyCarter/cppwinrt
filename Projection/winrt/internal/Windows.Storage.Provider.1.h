@@ -77,14 +77,14 @@ namespace Windows::Storage::Provider {
 template <typename D>
 struct WINRT_EBO impl_ICachedFileUpdaterStatics
 {
-    void SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const;
+    void SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_view contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ICachedFileUpdaterUI
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::Storage::Provider::CachedFileTarget UpdateTarget() const;
     event_token FileUpdateRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs> & handler) const;
     using FileUpdateRequested_revoker = event_revoker<ICachedFileUpdaterUI>;
@@ -119,7 +119,7 @@ template <typename D>
 struct WINRT_EBO impl_IFileUpdateRequest2
 {
     hstring UserInputNeededMessage() const;
-    void UserInputNeededMessage(hstring_ref value) const;
+    void UserInputNeededMessage(hstring_view value) const;
 };
 
 template <typename D>

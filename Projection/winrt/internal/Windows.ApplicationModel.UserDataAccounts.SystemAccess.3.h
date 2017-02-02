@@ -21,10 +21,10 @@ struct UserDataAccountSystemAccessManager
 {
     UserDataAccountSystemAccessManager() = delete;
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> AddAndShowDeviceAccountsAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> & accounts);
-    static Windows::Foundation::IAsyncAction SuppressLocalAccountWithAccountAsync(hstring_ref userDataAccountId);
+    static Windows::Foundation::IAsyncAction SuppressLocalAccountWithAccountAsync(hstring_view userDataAccountId);
     static Windows::Foundation::IAsyncOperation<hstring> CreateDeviceAccountAsync(const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration & account);
-    static Windows::Foundation::IAsyncAction DeleteDeviceAccountAsync(hstring_ref accountId);
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> GetDeviceAccountConfigurationAsync(hstring_ref accountId);
+    static Windows::Foundation::IAsyncAction DeleteDeviceAccountAsync(hstring_view accountId);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> GetDeviceAccountConfigurationAsync(hstring_view accountId);
 };
 
 }

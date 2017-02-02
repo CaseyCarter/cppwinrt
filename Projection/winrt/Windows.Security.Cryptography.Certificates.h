@@ -2970,7 +2970,7 @@ template <typename D> hstring impl_ICertificateRequestProperties<D>::Subject() c
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties<D>::Subject(hstring_ref value) const
+template <typename D> void impl_ICertificateRequestProperties<D>::Subject(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_Subject(get(value)));
 }
@@ -2982,7 +2982,7 @@ template <typename D> hstring impl_ICertificateRequestProperties<D>::KeyAlgorith
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties<D>::KeyAlgorithmName(hstring_ref value) const
+template <typename D> void impl_ICertificateRequestProperties<D>::KeyAlgorithmName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_KeyAlgorithmName(get(value)));
 }
@@ -3006,7 +3006,7 @@ template <typename D> hstring impl_ICertificateRequestProperties<D>::FriendlyNam
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties<D>::FriendlyName(hstring_ref value) const
+template <typename D> void impl_ICertificateRequestProperties<D>::FriendlyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_FriendlyName(get(value)));
 }
@@ -3018,7 +3018,7 @@ template <typename D> hstring impl_ICertificateRequestProperties<D>::HashAlgorit
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties<D>::HashAlgorithmName(hstring_ref value) const
+template <typename D> void impl_ICertificateRequestProperties<D>::HashAlgorithmName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_HashAlgorithmName(get(value)));
 }
@@ -3066,7 +3066,7 @@ template <typename D> hstring impl_ICertificateRequestProperties<D>::KeyStorageP
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties<D>::KeyStorageProviderName(hstring_ref value) const
+template <typename D> void impl_ICertificateRequestProperties<D>::KeyStorageProviderName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_KeyStorageProviderName(get(value)));
 }
@@ -3078,7 +3078,7 @@ template <typename D> hstring impl_ICertificateRequestProperties2<D>::SmartcardR
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties2<D>::SmartcardReaderName(hstring_ref value) const
+template <typename D> void impl_ICertificateRequestProperties2<D>::SmartcardReaderName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->put_SmartcardReaderName(get(value)));
 }
@@ -3114,7 +3114,7 @@ template <typename D> hstring impl_ICertificateRequestProperties3<D>::CurveName(
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties3<D>::CurveName(hstring_ref value) const
+template <typename D> void impl_ICertificateRequestProperties3<D>::CurveName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_CurveName(get(value)));
 }
@@ -3138,7 +3138,7 @@ template <typename D> hstring impl_ICertificateRequestProperties3<D>::ContainerN
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties3<D>::ContainerNamePrefix(hstring_ref value) const
+template <typename D> void impl_ICertificateRequestProperties3<D>::ContainerNamePrefix(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_ContainerNamePrefix(get(value)));
 }
@@ -3150,7 +3150,7 @@ template <typename D> hstring impl_ICertificateRequestProperties3<D>::ContainerN
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties3<D>::ContainerName(hstring_ref value) const
+template <typename D> void impl_ICertificateRequestProperties3<D>::ContainerName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_ContainerName(get(value)));
 }
@@ -3174,14 +3174,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICertif
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics<D>::InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const
+template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics<D>::InstallCertificateAsync(hstring_view certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const
 {
     Windows::Foundation::IAsyncAction value;
     check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics)->abi_InstallCertificateAsync(get(certificate), installOption, put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName) const
 {
     Windows::Foundation::IAsyncAction value;
     check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics)->abi_ImportPfxDataAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), put(value)));
@@ -3195,35 +3195,35 @@ template <typename D> Windows::Security::Cryptography::Certificates::UserCertifi
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics2<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider) const
+template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics2<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName, hstring_view keyStorageProvider) const
 {
     Windows::Foundation::IAsyncAction value;
     check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics2)->abi_ImportPfxDataToKspAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), get(keyStorageProvider), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics3<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const
+template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics3<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const
 {
     Windows::Foundation::IAsyncAction value;
     check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics3)->abi_ImportPfxDataToKspWithParametersAsync(get(pfxData), get(password), get(pfxImportParameters), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IKeyAttestationHelperStatics<D>::DecryptTpmAttestationCredentialAsync(hstring_ref credential) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IKeyAttestationHelperStatics<D>::DecryptTpmAttestationCredentialAsync(hstring_view credential) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
     check_hresult(WINRT_SHIM(IKeyAttestationHelperStatics)->abi_DecryptTpmAttestationCredentialAsync(get(credential), put(value)));
     return value;
 }
 
-template <typename D> hstring impl_IKeyAttestationHelperStatics<D>::GetTpmAttestationCredentialId(hstring_ref credential) const
+template <typename D> hstring impl_IKeyAttestationHelperStatics<D>::GetTpmAttestationCredentialId(hstring_view credential) const
 {
     hstring value;
     check_hresult(WINRT_SHIM(IKeyAttestationHelperStatics)->abi_GetTpmAttestationCredentialId(get(credential), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IKeyAttestationHelperStatics2<D>::DecryptTpmAttestationCredentialAsync(hstring_ref credential, hstring_ref containerName) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IKeyAttestationHelperStatics2<D>::DecryptTpmAttestationCredentialAsync(hstring_view credential, hstring_view containerName) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
     check_hresult(WINRT_SHIM(IKeyAttestationHelperStatics2)->abi_DecryptTpmAttestationCredentialWithContainerNameAsync(get(credential), get(containerName), put(value)));
@@ -3258,14 +3258,14 @@ template <typename D> Windows::Security::Cryptography::Certificates::Certificate
     return value;
 }
 
-template <typename D> Windows::Security::Cryptography::Certificates::CertificateStore impl_ICertificateStoresStatics<D>::GetStoreByName(hstring_ref storeName) const
+template <typename D> Windows::Security::Cryptography::Certificates::CertificateStore impl_ICertificateStoresStatics<D>::GetStoreByName(hstring_view storeName) const
 {
     Windows::Security::Cryptography::Certificates::CertificateStore value { nullptr };
     check_hresult(WINRT_SHIM(ICertificateStoresStatics)->abi_GetStoreByName(get(storeName), put(value)));
     return value;
 }
 
-template <typename D> Windows::Security::Cryptography::Certificates::UserCertificateStore impl_ICertificateStoresStatics2<D>::GetUserStoreByName(hstring_ref storeName) const
+template <typename D> Windows::Security::Cryptography::Certificates::UserCertificateStore impl_ICertificateStoresStatics2<D>::GetUserStoreByName(hstring_view storeName) const
 {
     Windows::Security::Cryptography::Certificates::UserCertificateStore result { nullptr };
     check_hresult(WINRT_SHIM(ICertificateStoresStatics2)->abi_GetUserStoreByName(get(storeName), put(result)));
@@ -3279,28 +3279,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IUserCe
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::InstallCertificateAsync(hstring_view certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const
 {
     Windows::Foundation::IAsyncAction value;
     check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_InstallCertificateAsync(get(certificate), installOption, put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName) const
 {
     Windows::Foundation::IAsyncAction value;
     check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_ImportPfxDataAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName, hstring_view keyStorageProvider) const
 {
     Windows::Foundation::IAsyncAction value;
     check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_ImportPfxDataToKspAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), get(keyStorageProvider), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager2<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager2<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const
 {
     Windows::Foundation::IAsyncAction value;
     check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager2)->abi_ImportPfxDataToKspWithParametersAsync(get(pfxData), get(password), get(pfxImportParameters), put(value)));
@@ -3576,7 +3576,7 @@ template <typename D> hstring impl_ICertificateQuery<D>::IssuerName() const
     return value;
 }
 
-template <typename D> void impl_ICertificateQuery<D>::IssuerName(hstring_ref value) const
+template <typename D> void impl_ICertificateQuery<D>::IssuerName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateQuery)->put_IssuerName(get(value)));
 }
@@ -3588,7 +3588,7 @@ template <typename D> hstring impl_ICertificateQuery<D>::FriendlyName() const
     return value;
 }
 
-template <typename D> void impl_ICertificateQuery<D>::FriendlyName(hstring_ref value) const
+template <typename D> void impl_ICertificateQuery<D>::FriendlyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateQuery)->put_FriendlyName(get(value)));
 }
@@ -3648,7 +3648,7 @@ template <typename D> hstring impl_ICertificateQuery2<D>::StoreName() const
     return value;
 }
 
-template <typename D> void impl_ICertificateQuery2<D>::StoreName(hstring_ref value) const
+template <typename D> void impl_ICertificateQuery2<D>::StoreName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificateQuery2)->put_StoreName(get(value)));
 }
@@ -3702,7 +3702,7 @@ template <typename D> com_array<uint8_t> impl_ICertificate<D>::GetHashValue() co
     return value;
 }
 
-template <typename D> com_array<uint8_t> impl_ICertificate<D>::GetHashValue(hstring_ref hashAlgorithmName) const
+template <typename D> com_array<uint8_t> impl_ICertificate<D>::GetHashValue(hstring_view hashAlgorithmName) const
 {
     com_array<uint8_t> value {};
     check_hresult(WINRT_SHIM(ICertificate)->abi_GetHashValueWithAlgorithm(get(hashAlgorithmName), put_size(value), put(value)));
@@ -3765,7 +3765,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
     return value;
 }
 
-template <typename D> void impl_ICertificate<D>::FriendlyName(hstring_ref value) const
+template <typename D> void impl_ICertificate<D>::FriendlyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICertificate)->put_FriendlyName(get(value)));
 }
@@ -3887,7 +3887,7 @@ template <typename D> hstring impl_ICmsSignerInfo<D>::HashAlgorithmName() const
     return value;
 }
 
-template <typename D> void impl_ICmsSignerInfo<D>::HashAlgorithmName(hstring_ref value) const
+template <typename D> void impl_ICmsSignerInfo<D>::HashAlgorithmName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICmsSignerInfo)->put_HashAlgorithmName(get(value)));
 }
@@ -3984,7 +3984,7 @@ template <typename D> hstring impl_IPfxImportParameters<D>::FriendlyName() const
     return value;
 }
 
-template <typename D> void impl_IPfxImportParameters<D>::FriendlyName(hstring_ref value) const
+template <typename D> void impl_IPfxImportParameters<D>::FriendlyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPfxImportParameters)->put_FriendlyName(get(value)));
 }
@@ -3996,7 +3996,7 @@ template <typename D> hstring impl_IPfxImportParameters<D>::KeyStorageProviderNa
     return value;
 }
 
-template <typename D> void impl_IPfxImportParameters<D>::KeyStorageProviderName(hstring_ref value) const
+template <typename D> void impl_IPfxImportParameters<D>::KeyStorageProviderName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPfxImportParameters)->put_KeyStorageProviderName(get(value)));
 }
@@ -4008,7 +4008,7 @@ template <typename D> hstring impl_IPfxImportParameters<D>::ContainerNamePrefix(
     return value;
 }
 
-template <typename D> void impl_IPfxImportParameters<D>::ContainerNamePrefix(hstring_ref value) const
+template <typename D> void impl_IPfxImportParameters<D>::ContainerNamePrefix(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPfxImportParameters)->put_ContainerNamePrefix(get(value)));
 }
@@ -4020,7 +4020,7 @@ template <typename D> hstring impl_IPfxImportParameters<D>::ReaderName() const
     return value;
 }
 
-template <typename D> void impl_IPfxImportParameters<D>::ReaderName(hstring_ref value) const
+template <typename D> void impl_IPfxImportParameters<D>::ReaderName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPfxImportParameters)->put_ReaderName(get(value)));
 }
@@ -4207,12 +4207,12 @@ inline Windows::Foundation::IAsyncOperation<hstring> CertificateEnrollmentManage
     return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics>().CreateRequestAsync(request);
 }
 
-inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption)
+inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::InstallCertificateAsync(hstring_view certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption)
 {
     return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics>().InstallCertificateAsync(certificate, installOption);
 }
 
-inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName)
+inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName)
 {
     return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics>().ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName);
 }
@@ -4222,12 +4222,12 @@ inline Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentM
     return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics2>().UserCertificateEnrollmentManager();
 }
 
-inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider)
+inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName, hstring_view keyStorageProvider)
 {
     return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics2>().ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, keyStorageProvider);
 }
 
-inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters)
+inline Windows::Foundation::IAsyncAction CertificateEnrollmentManager::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters)
 {
     return get_activation_factory<CertificateEnrollmentManager, ICertificateEnrollmentManagerStatics3>().ImportPfxDataAsync(pfxData, password, pfxImportParameters);
 }
@@ -4264,12 +4264,12 @@ inline Windows::Security::Cryptography::Certificates::CertificateStore Certifica
     return get_activation_factory<CertificateStores, ICertificateStoresStatics>().IntermediateCertificationAuthorities();
 }
 
-inline Windows::Security::Cryptography::Certificates::CertificateStore CertificateStores::GetStoreByName(hstring_ref storeName)
+inline Windows::Security::Cryptography::Certificates::CertificateStore CertificateStores::GetStoreByName(hstring_view storeName)
 {
     return get_activation_factory<CertificateStores, ICertificateStoresStatics>().GetStoreByName(storeName);
 }
 
-inline Windows::Security::Cryptography::Certificates::UserCertificateStore CertificateStores::GetUserStoreByName(hstring_ref storeName)
+inline Windows::Security::Cryptography::Certificates::UserCertificateStore CertificateStores::GetUserStoreByName(hstring_view storeName)
 {
     return get_activation_factory<CertificateStores, ICertificateStoresStatics2>().GetUserStoreByName(storeName);
 }
@@ -4354,17 +4354,17 @@ inline hstring KeyAlgorithmNames::Ecdh()
     return get_activation_factory<KeyAlgorithmNames, IKeyAlgorithmNamesStatics2>().Ecdh();
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> KeyAttestationHelper::DecryptTpmAttestationCredentialAsync(hstring_ref credential)
+inline Windows::Foundation::IAsyncOperation<hstring> KeyAttestationHelper::DecryptTpmAttestationCredentialAsync(hstring_view credential)
 {
     return get_activation_factory<KeyAttestationHelper, IKeyAttestationHelperStatics>().DecryptTpmAttestationCredentialAsync(credential);
 }
 
-inline hstring KeyAttestationHelper::GetTpmAttestationCredentialId(hstring_ref credential)
+inline hstring KeyAttestationHelper::GetTpmAttestationCredentialId(hstring_view credential)
 {
     return get_activation_factory<KeyAttestationHelper, IKeyAttestationHelperStatics>().GetTpmAttestationCredentialId(credential);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> KeyAttestationHelper::DecryptTpmAttestationCredentialAsync(hstring_ref credential, hstring_ref containerName)
+inline Windows::Foundation::IAsyncOperation<hstring> KeyAttestationHelper::DecryptTpmAttestationCredentialAsync(hstring_view credential, hstring_view containerName)
 {
     return get_activation_factory<KeyAttestationHelper, IKeyAttestationHelperStatics2>().DecryptTpmAttestationCredentialAsync(credential, containerName);
 }

@@ -168,10 +168,10 @@ struct WINRT_EBO impl_IDocumentProperties
 {
     Windows::Foundation::Collections::IVector<hstring> Author() const;
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> Keywords() const;
     hstring Comment() const;
-    void Comment(hstring_ref value) const;
+    void Comment(hstring_view value) const;
 };
 
 template <typename D>
@@ -193,13 +193,13 @@ struct WINRT_EBO impl_IImageProperties
     uint32_t Width() const;
     uint32_t Height() const;
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::Foundation::IReference<double> Latitude() const;
     Windows::Foundation::IReference<double> Longitude() const;
     hstring CameraManufacturer() const;
-    void CameraManufacturer(hstring_ref value) const;
+    void CameraManufacturer(hstring_view value) const;
     hstring CameraModel() const;
-    void CameraModel(hstring_ref value) const;
+    void CameraModel(hstring_view value) const;
     Windows::Storage::FileProperties::PhotoOrientation Orientation() const;
     Windows::Foundation::Collections::IVectorView<hstring> PeopleNames() const;
 };
@@ -208,27 +208,27 @@ template <typename D>
 struct WINRT_EBO impl_IMusicProperties
 {
     hstring Album() const;
-    void Album(hstring_ref value) const;
+    void Album(hstring_view value) const;
     hstring Artist() const;
-    void Artist(hstring_ref value) const;
+    void Artist(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> Genre() const;
     uint32_t TrackNumber() const;
     void TrackNumber(uint32_t value) const;
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     uint32_t Rating() const;
     void Rating(uint32_t value) const;
     Windows::Foundation::TimeSpan Duration() const;
     uint32_t Bitrate() const;
     hstring AlbumArtist() const;
-    void AlbumArtist(hstring_ref value) const;
+    void AlbumArtist(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> Composers() const;
     Windows::Foundation::Collections::IVector<hstring> Conductors() const;
     hstring Subtitle() const;
-    void Subtitle(hstring_ref value) const;
+    void Subtitle(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> Producers() const;
     hstring Publisher() const;
-    void Publisher(hstring_ref value) const;
+    void Publisher(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> Writers() const;
     uint32_t Year() const;
     void Year(uint32_t value) const;
@@ -272,12 +272,12 @@ struct WINRT_EBO impl_IVideoProperties
     Windows::Foundation::IReference<double> Latitude() const;
     Windows::Foundation::IReference<double> Longitude() const;
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     hstring Subtitle() const;
-    void Subtitle(hstring_ref value) const;
+    void Subtitle(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> Producers() const;
     hstring Publisher() const;
-    void Publisher(hstring_ref value) const;
+    void Publisher(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> Writers() const;
     uint32_t Year() const;
     void Year(uint32_t value) const;

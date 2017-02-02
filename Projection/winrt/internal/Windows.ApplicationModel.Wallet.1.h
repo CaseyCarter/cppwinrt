@@ -197,7 +197,7 @@ struct WINRT_EBO impl_IWalletBarcode
 template <typename D>
 struct WINRT_EBO impl_IWalletBarcodeFactory
 {
-    Windows::ApplicationModel::Wallet::WalletBarcode CreateWalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring_ref value) const;
+    Windows::ApplicationModel::Wallet::WalletBarcode CreateWalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring_view value) const;
     Windows::ApplicationModel::Wallet::WalletBarcode CreateCustomWalletBarcode(const Windows::Storage::Streams::IRandomAccessStreamReference & streamToBarcodeImage) const;
 };
 
@@ -205,12 +205,12 @@ template <typename D>
 struct WINRT_EBO impl_IWalletItem
 {
     hstring DisplayName() const;
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     hstring Id() const;
     bool IsAcknowledged() const;
     void IsAcknowledged(bool value) const;
     hstring IssuerDisplayName() const;
-    void IssuerDisplayName(hstring_ref value) const;
+    void IssuerDisplayName(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> LastUpdated() const;
     void LastUpdated(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::ApplicationModel::Wallet::WalletItemKind Kind() const;
@@ -225,11 +225,11 @@ struct WINRT_EBO impl_IWalletItem
     Windows::Storage::Streams::IRandomAccessStreamReference Logo99x99() const;
     void Logo99x99(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     hstring DisplayMessage() const;
-    void DisplayMessage(hstring_ref value) const;
+    void DisplayMessage(hstring_view value) const;
     bool IsDisplayMessageLaunchable() const;
     void IsDisplayMessageLaunchable(bool value) const;
     hstring LogoText() const;
-    void LogoText(hstring_ref value) const;
+    void LogoText(hstring_view value) const;
     Windows::UI::Color HeaderColor() const;
     void HeaderColor(const Windows::UI::Color & value) const;
     Windows::UI::Color BodyColor() const;
@@ -249,7 +249,7 @@ struct WINRT_EBO impl_IWalletItem
     Windows::Foundation::IReference<Windows::Foundation::DateTime> RelevantDate() const;
     void RelevantDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     hstring RelevantDateDisplayMessage() const;
-    void RelevantDateDisplayMessage(hstring_ref value) const;
+    void RelevantDateDisplayMessage(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletTransaction> TransactionHistory() const;
     Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletRelevantLocation> RelevantLocations() const;
     bool IsMoreTransactionHistoryLaunchable() const;
@@ -262,9 +262,9 @@ template <typename D>
 struct WINRT_EBO impl_IWalletItemCustomProperty
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     hstring Value() const;
-    void Value(hstring_ref value) const;
+    void Value(hstring_view value) const;
     bool AutoDetectLinks() const;
     void AutoDetectLinks(bool value) const;
     Windows::ApplicationModel::Wallet::WalletDetailViewPosition DetailViewPosition() const;
@@ -276,27 +276,27 @@ struct WINRT_EBO impl_IWalletItemCustomProperty
 template <typename D>
 struct WINRT_EBO impl_IWalletItemCustomPropertyFactory
 {
-    Windows::ApplicationModel::Wallet::WalletItemCustomProperty CreateWalletItemCustomProperty(hstring_ref name, hstring_ref value) const;
+    Windows::ApplicationModel::Wallet::WalletItemCustomProperty CreateWalletItemCustomProperty(hstring_view name, hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IWalletItemFactory
 {
-    Windows::ApplicationModel::Wallet::WalletItem CreateWalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring_ref displayName) const;
+    Windows::ApplicationModel::Wallet::WalletItem CreateWalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring_view displayName) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IWalletItemStore
 {
-    Windows::Foundation::IAsyncAction AddAsync(hstring_ref id, const Windows::ApplicationModel::Wallet::WalletItem & item) const;
+    Windows::Foundation::IAsyncAction AddAsync(hstring_view id, const Windows::ApplicationModel::Wallet::WalletItem & item) const;
     Windows::Foundation::IAsyncAction ClearAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> GetWalletItemAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> GetWalletItemAsync(hstring_view id) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> GetItemsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> GetItemsAsync(Windows::ApplicationModel::Wallet::WalletItemKind kind) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> ImportItemAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & stream) const;
-    Windows::Foundation::IAsyncAction DeleteAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncAction DeleteAsync(hstring_view id) const;
     Windows::Foundation::IAsyncAction ShowAsync() const;
-    Windows::Foundation::IAsyncAction ShowAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncAction ShowAsync(hstring_view id) const;
     Windows::Foundation::IAsyncAction UpdateAsync(const Windows::ApplicationModel::Wallet::WalletItem & item) const;
 };
 
@@ -321,20 +321,20 @@ struct WINRT_EBO impl_IWalletRelevantLocation
     Windows::Devices::Geolocation::BasicGeoposition Position() const;
     void Position(const Windows::Devices::Geolocation::BasicGeoposition & value) const;
     hstring DisplayMessage() const;
-    void DisplayMessage(hstring_ref value) const;
+    void DisplayMessage(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IWalletTransaction
 {
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
     hstring DisplayAmount() const;
-    void DisplayAmount(hstring_ref value) const;
+    void DisplayAmount(hstring_view value) const;
     bool IgnoreTimeOfDay() const;
     void IgnoreTimeOfDay(bool value) const;
     hstring DisplayLocation() const;
-    void DisplayLocation(hstring_ref value) const;
+    void DisplayLocation(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> TransactionDate() const;
     void TransactionDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     bool IsLaunchable() const;
@@ -345,13 +345,13 @@ template <typename D>
 struct WINRT_EBO impl_IWalletVerb
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IWalletVerbFactory
 {
-    Windows::ApplicationModel::Wallet::WalletVerb CreateWalletVerb(hstring_ref name) const;
+    Windows::ApplicationModel::Wallet::WalletVerb CreateWalletVerb(hstring_view name) const;
 };
 
 }

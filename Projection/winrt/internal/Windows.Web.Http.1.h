@@ -310,13 +310,13 @@ struct WINRT_EBO impl_IHttpCookie
     bool Secure() const;
     void Secure(bool value) const;
     hstring Value() const;
-    void Value(hstring_ref value) const;
+    void Value(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpCookieFactory
 {
-    Windows::Web::Http::HttpCookie Create(hstring_ref name, hstring_ref domain, hstring_ref path) const;
+    Windows::Web::Http::HttpCookie Create(hstring_view name, hstring_view domain, hstring_view path) const;
 };
 
 template <typename D>
@@ -343,7 +343,7 @@ struct WINRT_EBO impl_IHttpMethod
 template <typename D>
 struct WINRT_EBO impl_IHttpMethodFactory
 {
-    Windows::Web::Http::HttpMethod Create(hstring_ref method) const;
+    Windows::Web::Http::HttpMethod Create(hstring_view method) const;
 };
 
 template <typename D>
@@ -367,22 +367,22 @@ struct WINRT_EBO impl_IHttpMultipartContent
 template <typename D>
 struct WINRT_EBO impl_IHttpMultipartContentFactory
 {
-    Windows::Web::Http::HttpMultipartContent CreateWithSubtype(hstring_ref subtype) const;
-    Windows::Web::Http::HttpMultipartContent CreateWithSubtypeAndBoundary(hstring_ref subtype, hstring_ref boundary) const;
+    Windows::Web::Http::HttpMultipartContent CreateWithSubtype(hstring_view subtype) const;
+    Windows::Web::Http::HttpMultipartContent CreateWithSubtypeAndBoundary(hstring_view subtype, hstring_view boundary) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpMultipartFormDataContent
 {
     void Add(const Windows::Web::Http::IHttpContent & content) const;
-    void Add(const Windows::Web::Http::IHttpContent & content, hstring_ref name) const;
-    void Add(const Windows::Web::Http::IHttpContent & content, hstring_ref name, hstring_ref fileName) const;
+    void Add(const Windows::Web::Http::IHttpContent & content, hstring_view name) const;
+    void Add(const Windows::Web::Http::IHttpContent & content, hstring_view name, hstring_view fileName) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpMultipartFormDataContentFactory
 {
-    Windows::Web::Http::HttpMultipartFormDataContent CreateWithBoundary(hstring_ref boundary) const;
+    Windows::Web::Http::HttpMultipartFormDataContent CreateWithBoundary(hstring_view boundary) const;
 };
 
 template <typename D>
@@ -413,7 +413,7 @@ struct WINRT_EBO impl_IHttpResponseMessage
     Windows::Web::Http::Headers::HttpResponseHeaderCollection Headers() const;
     bool IsSuccessStatusCode() const;
     hstring ReasonPhrase() const;
-    void ReasonPhrase(hstring_ref value) const;
+    void ReasonPhrase(hstring_view value) const;
     Windows::Web::Http::HttpRequestMessage RequestMessage() const;
     void RequestMessage(const Windows::Web::Http::HttpRequestMessage & value) const;
     Windows::Web::Http::HttpResponseMessageSource Source() const;
@@ -440,9 +440,9 @@ struct WINRT_EBO impl_IHttpStreamContentFactory
 template <typename D>
 struct WINRT_EBO impl_IHttpStringContentFactory
 {
-    Windows::Web::Http::HttpStringContent CreateFromString(hstring_ref content) const;
-    Windows::Web::Http::HttpStringContent CreateFromStringWithEncoding(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-    Windows::Web::Http::HttpStringContent CreateFromStringWithEncodingAndMediaType(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_ref mediaType) const;
+    Windows::Web::Http::HttpStringContent CreateFromString(hstring_view content) const;
+    Windows::Web::Http::HttpStringContent CreateFromStringWithEncoding(hstring_view content, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+    Windows::Web::Http::HttpStringContent CreateFromStringWithEncodingAndMediaType(hstring_view content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_view mediaType) const;
 };
 
 template <typename D>

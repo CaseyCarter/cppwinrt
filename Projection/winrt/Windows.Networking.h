@@ -283,7 +283,7 @@ struct produce<D, Windows::Networking::IHostNameStatics> : produce_base<D, Windo
 
 namespace Windows::Networking {
 
-template <typename D> int32_t impl_IHostNameStatics<D>::Compare(hstring_ref value1, hstring_ref value2) const
+template <typename D> int32_t impl_IHostNameStatics<D>::Compare(hstring_view value1, hstring_view value2) const
 {
     int32_t result {};
     check_hresult(WINRT_SHIM(IHostNameStatics)->abi_Compare(get(value1), get(value2), &result));
@@ -332,7 +332,7 @@ template <typename D> bool impl_IHostName<D>::IsEqual(const Windows::Networking:
     return isEqual;
 }
 
-template <typename D> Windows::Networking::HostName impl_IHostNameFactory<D>::CreateHostName(hstring_ref hostName) const
+template <typename D> Windows::Networking::HostName impl_IHostNameFactory<D>::CreateHostName(hstring_view hostName) const
 {
     Windows::Networking::HostName value { nullptr };
     check_hresult(WINRT_SHIM(IHostNameFactory)->abi_CreateHostName(get(hostName), put(value)));
@@ -358,7 +358,7 @@ template <typename D> hstring impl_IEndpointPair<D>::LocalServiceName() const
     return value;
 }
 
-template <typename D> void impl_IEndpointPair<D>::LocalServiceName(hstring_ref value) const
+template <typename D> void impl_IEndpointPair<D>::LocalServiceName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEndpointPair)->put_LocalServiceName(get(value)));
 }
@@ -382,27 +382,27 @@ template <typename D> hstring impl_IEndpointPair<D>::RemoteServiceName() const
     return value;
 }
 
-template <typename D> void impl_IEndpointPair<D>::RemoteServiceName(hstring_ref value) const
+template <typename D> void impl_IEndpointPair<D>::RemoteServiceName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEndpointPair)->put_RemoteServiceName(get(value)));
 }
 
-template <typename D> Windows::Networking::EndpointPair impl_IEndpointPairFactory<D>::CreateEndpointPair(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName, const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
+template <typename D> Windows::Networking::EndpointPair impl_IEndpointPairFactory<D>::CreateEndpointPair(const Windows::Networking::HostName & localHostName, hstring_view localServiceName, const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const
 {
     Windows::Networking::EndpointPair value { nullptr };
     check_hresult(WINRT_SHIM(IEndpointPairFactory)->abi_CreateEndpointPair(get(localHostName), get(localServiceName), get(remoteHostName), get(remoteServiceName), put(value)));
     return value;
 }
 
-inline EndpointPair::EndpointPair(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName, const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) :
+inline EndpointPair::EndpointPair(const Windows::Networking::HostName & localHostName, hstring_view localServiceName, const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) :
     EndpointPair(get_activation_factory<EndpointPair, IEndpointPairFactory>().CreateEndpointPair(localHostName, localServiceName, remoteHostName, remoteServiceName))
 {}
 
-inline HostName::HostName(hstring_ref hostName) :
+inline HostName::HostName(hstring_view hostName) :
     HostName(get_activation_factory<HostName, IHostNameFactory>().CreateHostName(hostName))
 {}
 
-inline int32_t HostName::Compare(hstring_ref value1, hstring_ref value2)
+inline int32_t HostName::Compare(hstring_view value1, hstring_view value2)
 {
     return get_activation_factory<HostName, IHostNameStatics>().Compare(value1, value2);
 }

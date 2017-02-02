@@ -757,7 +757,7 @@ struct WINRT_EBO impl_IActivitySensorStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> GetDefaultAsync() const;
     hstring GetDeviceSelector() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> FromIdAsync(hstring_view deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime, const Windows::Foundation::TimeSpan & duration) const;
 };
@@ -1195,7 +1195,7 @@ struct WINRT_EBO impl_IPedometerReadingChangedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IPedometerStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> FromIdAsync(hstring_view deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> GetDefaultAsync() const;
     hstring GetDeviceSelector() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime) const;
@@ -1246,7 +1246,7 @@ template <typename D>
 struct WINRT_EBO impl_IProximitySensorStatics
 {
     hstring GetDeviceSelector() const;
-    Windows::Devices::Sensors::ProximitySensor FromId(hstring_ref sensorId) const;
+    Windows::Devices::Sensors::ProximitySensor FromId(hstring_view sensorId) const;
 };
 
 template <typename D>

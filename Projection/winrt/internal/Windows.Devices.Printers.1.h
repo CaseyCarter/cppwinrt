@@ -51,7 +51,7 @@ struct WINRT_EBO impl_IPrint3DDevice
 template <typename D>
 struct WINRT_EBO impl_IPrint3DDeviceStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
 };
 

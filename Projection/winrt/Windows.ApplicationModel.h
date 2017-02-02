@@ -1544,7 +1544,7 @@ template <typename D> hstring impl_IPackageWithMetadata<D>::GetThumbnailToken() 
     return value;
 }
 
-template <typename D> void impl_IPackageWithMetadata<D>::Launch(hstring_ref parameters) const
+template <typename D> void impl_IPackageWithMetadata<D>::Launch(hstring_view parameters) const
 {
     check_hresult(WINRT_SHIM(IPackageWithMetadata)->abi_Launch(get(parameters)));
 }

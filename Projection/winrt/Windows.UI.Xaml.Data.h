@@ -1655,14 +1655,14 @@ template <typename D> bool impl_ICustomProperty<D>::CanRead() const
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Data::ICustomProperty impl_ICustomPropertyProvider<D>::GetCustomProperty(hstring_ref name) const
+template <typename D> Windows::UI::Xaml::Data::ICustomProperty impl_ICustomPropertyProvider<D>::GetCustomProperty(hstring_view name) const
 {
     Windows::UI::Xaml::Data::ICustomProperty returnValue;
     check_hresult(WINRT_SHIM(ICustomPropertyProvider)->abi_GetCustomProperty(get(name), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::UI::Xaml::Data::ICustomProperty impl_ICustomPropertyProvider<D>::GetIndexedProperty(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & type) const
+template <typename D> Windows::UI::Xaml::Data::ICustomProperty impl_ICustomPropertyProvider<D>::GetIndexedProperty(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & type) const
 {
     Windows::UI::Xaml::Data::ICustomProperty returnValue;
     check_hresult(WINRT_SHIM(ICustomPropertyProvider)->abi_GetIndexedProperty(get(name), get(type), put(returnValue)));
@@ -1714,14 +1714,14 @@ template <typename D> bool impl_ISupportIncrementalLoading<D>::HasMoreItems() co
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IValueConverter<D>::Convert(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_ref language) const
+template <typename D> Windows::IInspectable impl_IValueConverter<D>::Convert(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_view language) const
 {
     Windows::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IValueConverter)->abi_Convert(get(value), get(targetType), get(parameter), get(language), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::IInspectable impl_IValueConverter<D>::ConvertBack(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_ref language) const
+template <typename D> Windows::IInspectable impl_IValueConverter<D>::ConvertBack(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_view language) const
 {
     Windows::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IValueConverter)->abi_ConvertBack(get(value), get(targetType), get(parameter), get(language), put(returnValue)));
@@ -1773,7 +1773,7 @@ template <typename D> hstring impl_IPropertyChangedEventArgs<D>::PropertyName() 
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Data::PropertyChangedEventArgs impl_IPropertyChangedEventArgsFactory<D>::CreateInstance(hstring_ref name, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Data::PropertyChangedEventArgs impl_IPropertyChangedEventArgsFactory<D>::CreateInstance(hstring_view name, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Data::PropertyChangedEventArgs instance { nullptr };
     check_hresult(WINRT_SHIM(IPropertyChangedEventArgsFactory)->abi_CreateInstance(get(name), get(outer), put(inner), put(instance)));
@@ -1880,7 +1880,7 @@ template <typename D> hstring impl_IBinding<D>::ElementName() const
     return value;
 }
 
-template <typename D> void impl_IBinding<D>::ElementName(hstring_ref value) const
+template <typename D> void impl_IBinding<D>::ElementName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IBinding)->put_ElementName(get(value)));
 }
@@ -1916,7 +1916,7 @@ template <typename D> hstring impl_IBinding<D>::ConverterLanguage() const
     return value;
 }
 
-template <typename D> void impl_IBinding<D>::ConverterLanguage(hstring_ref value) const
+template <typename D> void impl_IBinding<D>::ConverterLanguage(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IBinding)->put_ConverterLanguage(get(value)));
 }
@@ -2268,7 +2268,7 @@ inline ItemIndexRange::ItemIndexRange(int32_t firstIndex, uint32_t length)
     impl_move(get_activation_factory<ItemIndexRange, IItemIndexRangeFactory>().CreateInstance(firstIndex, length, outer, inner));
 }
 
-inline PropertyChangedEventArgs::PropertyChangedEventArgs(hstring_ref name)
+inline PropertyChangedEventArgs::PropertyChangedEventArgs(hstring_view name)
 {
     Windows::IInspectable outer, inner;
     impl_move(get_activation_factory<PropertyChangedEventArgs, IPropertyChangedEventArgsFactory>().CreateInstance(name, outer, inner));

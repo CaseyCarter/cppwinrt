@@ -548,28 +548,28 @@ template <typename D> Windows::Security::Authentication::Identity::Core::Microso
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::GetOneTimePassCodeAsync(hstring_ref userAccountId, uint32_t codeLength) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::GetOneTimePassCodeAsync(hstring_view userAccountId, uint32_t codeLength) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo> asyncOperation;
     check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_GetOneTimePassCodeAsync(get(userAccountId), codeLength, put(asyncOperation)));
     return asyncOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::AddDeviceAsync(hstring_ref userAccountId, hstring_ref authenticationToken, hstring_ref wnsChannelId) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::AddDeviceAsync(hstring_view userAccountId, hstring_view authenticationToken, hstring_view wnsChannelId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
     check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_AddDeviceAsync(get(userAccountId), get(authenticationToken), get(wnsChannelId), put(asyncOperation)));
     return asyncOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::RemoveDeviceAsync(hstring_ref userAccountId) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::RemoveDeviceAsync(hstring_view userAccountId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
     check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_RemoveDeviceAsync(get(userAccountId), put(asyncOperation)));
     return asyncOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::UpdateWnsChannelAsync(hstring_ref userAccountId, hstring_ref channelUri) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::UpdateWnsChannelAsync(hstring_view userAccountId, hstring_view channelUri) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
     check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_UpdateWnsChannelAsync(get(userAccountId), get(channelUri), put(asyncOperation)));
@@ -597,7 +597,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Secur
     return asyncOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::ApproveSessionAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, hstring_ref userAccountId, hstring_ref sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::ApproveSessionAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, hstring_view userAccountId, hstring_view sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
     check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_ApproveSessionAsync(sessionAuthentictionStatus, get(userAccountId), get(sessionId), sessionAuthenticationType, put(asyncOperation)));
@@ -611,7 +611,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Secur
     return asyncOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::DenySessionAsync(hstring_ref userAccountId, hstring_ref sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::DenySessionAsync(hstring_view userAccountId, hstring_view sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
     check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_DenySessionAsync(get(userAccountId), get(sessionId), sessionAuthenticationType, put(asyncOperation)));

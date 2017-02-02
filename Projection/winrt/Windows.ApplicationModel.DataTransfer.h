@@ -1986,7 +1986,7 @@ template <typename D> hstring impl_IDataPackagePropertySet<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IDataPackagePropertySet<D>::Title(hstring_ref value) const
+template <typename D> void impl_IDataPackagePropertySet<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDataPackagePropertySet)->put_Title(get(value)));
 }
@@ -1998,7 +1998,7 @@ template <typename D> hstring impl_IDataPackagePropertySet<D>::Description() con
     return value;
 }
 
-template <typename D> void impl_IDataPackagePropertySet<D>::Description(hstring_ref value) const
+template <typename D> void impl_IDataPackagePropertySet<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDataPackagePropertySet)->put_Description(get(value)));
 }
@@ -2029,7 +2029,7 @@ template <typename D> hstring impl_IDataPackagePropertySet<D>::ApplicationName()
     return value;
 }
 
-template <typename D> void impl_IDataPackagePropertySet<D>::ApplicationName(hstring_ref value) const
+template <typename D> void impl_IDataPackagePropertySet<D>::ApplicationName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDataPackagePropertySet)->put_ApplicationName(get(value)));
 }
@@ -2077,7 +2077,7 @@ template <typename D> hstring impl_IDataPackagePropertySet2<D>::PackageFamilyNam
     return value;
 }
 
-template <typename D> void impl_IDataPackagePropertySet2<D>::PackageFamilyName(hstring_ref value) const
+template <typename D> void impl_IDataPackagePropertySet2<D>::PackageFamilyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDataPackagePropertySet2)->put_PackageFamilyName(get(value)));
 }
@@ -2113,7 +2113,7 @@ template <typename D> hstring impl_IDataPackagePropertySet3<D>::EnterpriseId() c
     return value;
 }
 
-template <typename D> void impl_IDataPackagePropertySet3<D>::EnterpriseId(hstring_ref value) const
+template <typename D> void impl_IDataPackagePropertySet3<D>::EnterpriseId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDataPackagePropertySet3)->put_EnterpriseId(get(value)));
 }
@@ -2189,14 +2189,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
     return formatIds;
 }
 
-template <typename D> bool impl_IDataPackageView<D>::Contains(hstring_ref formatId) const
+template <typename D> bool impl_IDataPackageView<D>::Contains(hstring_view formatId) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IDataPackageView)->abi_Contains(get(formatId), &value));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::IInspectable> impl_IDataPackageView<D>::GetDataAsync(hstring_ref formatId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::IInspectable> impl_IDataPackageView<D>::GetDataAsync(hstring_view formatId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::IInspectable> operation;
     check_hresult(WINRT_SHIM(IDataPackageView)->abi_GetDataAsync(get(formatId), put(operation)));
@@ -2210,7 +2210,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IDataPa
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IDataPackageView<D>::GetTextAsync(hstring_ref formatId) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IDataPackageView<D>::GetTextAsync(hstring_view formatId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(IDataPackageView)->abi_GetCustomTextAsync(get(formatId), put(operation)));
@@ -2280,7 +2280,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Secur
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> impl_IDataPackageView3<D>::RequestAccessAsync(hstring_ref enterpriseId) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> impl_IDataPackageView3<D>::RequestAccessAsync(hstring_view enterpriseId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> operation;
     check_hresult(WINRT_SHIM(IDataPackageView3)->abi_RequestAccessWithEnterpriseIdAsync(get(enterpriseId), put(operation)));
@@ -2294,7 +2294,7 @@ template <typename D> Windows::Security::EnterpriseData::ProtectionPolicyEvaluat
     return result;
 }
 
-template <typename D> void impl_IDataPackageView4<D>::SetAcceptedFormatId(hstring_ref formatId) const
+template <typename D> void impl_IDataPackageView4<D>::SetAcceptedFormatId(hstring_view formatId) const
 {
     check_hresult(WINRT_SHIM(IDataPackageView4)->abi_SetAcceptedFormatId(get(formatId)));
 }
@@ -2359,17 +2359,17 @@ template <typename D> void impl_IDataPackage<D>::Destroyed(event_token eventCook
     check_hresult(WINRT_SHIM(IDataPackage)->remove_Destroyed(eventCookie));
 }
 
-template <typename D> void impl_IDataPackage<D>::SetData(hstring_ref formatId, const Windows::IInspectable & value) const
+template <typename D> void impl_IDataPackage<D>::SetData(hstring_view formatId, const Windows::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetData(get(formatId), get(value)));
 }
 
-template <typename D> void impl_IDataPackage<D>::SetDataProvider(hstring_ref formatId, const Windows::ApplicationModel::DataTransfer::DataProviderHandler & delayRenderer) const
+template <typename D> void impl_IDataPackage<D>::SetDataProvider(hstring_view formatId, const Windows::ApplicationModel::DataTransfer::DataProviderHandler & delayRenderer) const
 {
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetDataProvider(get(formatId), get(delayRenderer)));
 }
 
-template <typename D> void impl_IDataPackage<D>::SetText(hstring_ref value) const
+template <typename D> void impl_IDataPackage<D>::SetText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetText(get(value)));
 }
@@ -2379,7 +2379,7 @@ template <typename D> void impl_IDataPackage<D>::SetUri(const Windows::Foundatio
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetUri(get(value)));
 }
 
-template <typename D> void impl_IDataPackage<D>::SetHtmlFormat(hstring_ref value) const
+template <typename D> void impl_IDataPackage<D>::SetHtmlFormat(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetHtmlFormat(get(value)));
 }
@@ -2391,7 +2391,7 @@ template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::S
     return value;
 }
 
-template <typename D> void impl_IDataPackage<D>::SetRtf(hstring_ref value) const
+template <typename D> void impl_IDataPackage<D>::SetRtf(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetRtf(get(value)));
 }
@@ -2421,14 +2421,14 @@ template <typename D> void impl_IDataPackage2<D>::SetWebLink(const Windows::Foun
     check_hresult(WINRT_SHIM(IDataPackage2)->abi_SetWebLink(get(value)));
 }
 
-template <typename D> hstring impl_IHtmlFormatHelperStatics<D>::GetStaticFragment(hstring_ref htmlFormat) const
+template <typename D> hstring impl_IHtmlFormatHelperStatics<D>::GetStaticFragment(hstring_view htmlFormat) const
 {
     hstring htmlFragment;
     check_hresult(WINRT_SHIM(IHtmlFormatHelperStatics)->abi_GetStaticFragment(get(htmlFormat), put(htmlFragment)));
     return htmlFragment;
 }
 
-template <typename D> hstring impl_IHtmlFormatHelperStatics<D>::CreateHtmlFormat(hstring_ref htmlFragment) const
+template <typename D> hstring impl_IHtmlFormatHelperStatics<D>::CreateHtmlFormat(hstring_view htmlFragment) const
 {
     hstring htmlFormat;
     check_hresult(WINRT_SHIM(IHtmlFormatHelperStatics)->abi_CreateHtmlFormat(get(htmlFragment), put(htmlFormat)));
@@ -2498,7 +2498,7 @@ template <typename D> Windows::Foundation::DateTime impl_IDataRequest<D>::Deadli
     return value;
 }
 
-template <typename D> void impl_IDataRequest<D>::FailWithDisplayText(hstring_ref value) const
+template <typename D> void impl_IDataRequest<D>::FailWithDisplayText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDataRequest)->abi_FailWithDisplayText(get(value)));
 }
@@ -2584,14 +2584,14 @@ template <typename D> hstring impl_ISharedStorageAccessManagerStatics<D>::AddFil
     return outToken;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_ISharedStorageAccessManagerStatics<D>::RedeemTokenForFileAsync(hstring_ref token) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_ISharedStorageAccessManagerStatics<D>::RedeemTokenForFileAsync(hstring_view token) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(ISharedStorageAccessManagerStatics)->abi_RedeemTokenForFileAsync(get(token), put(operation)));
     return operation;
 }
 
-template <typename D> void impl_ISharedStorageAccessManagerStatics<D>::RemoveFile(hstring_ref token) const
+template <typename D> void impl_ISharedStorageAccessManagerStatics<D>::RemoveFile(hstring_view token) const
 {
     check_hresult(WINRT_SHIM(ISharedStorageAccessManagerStatics)->abi_RemoveFile(get(token)));
 }
@@ -2651,12 +2651,12 @@ inline bool DataTransferManager::IsSupported()
     return get_activation_factory<DataTransferManager, IDataTransferManagerStatics2>().IsSupported();
 }
 
-inline hstring HtmlFormatHelper::GetStaticFragment(hstring_ref htmlFormat)
+inline hstring HtmlFormatHelper::GetStaticFragment(hstring_view htmlFormat)
 {
     return get_activation_factory<HtmlFormatHelper, IHtmlFormatHelperStatics>().GetStaticFragment(htmlFormat);
 }
 
-inline hstring HtmlFormatHelper::CreateHtmlFormat(hstring_ref htmlFragment)
+inline hstring HtmlFormatHelper::CreateHtmlFormat(hstring_view htmlFragment)
 {
     return get_activation_factory<HtmlFormatHelper, IHtmlFormatHelperStatics>().CreateHtmlFormat(htmlFragment);
 }
@@ -2666,12 +2666,12 @@ inline hstring SharedStorageAccessManager::AddFile(const Windows::Storage::IStor
     return get_activation_factory<SharedStorageAccessManager, ISharedStorageAccessManagerStatics>().AddFile(file);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> SharedStorageAccessManager::RedeemTokenForFileAsync(hstring_ref token)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> SharedStorageAccessManager::RedeemTokenForFileAsync(hstring_view token)
 {
     return get_activation_factory<SharedStorageAccessManager, ISharedStorageAccessManagerStatics>().RedeemTokenForFileAsync(token);
 }
 
-inline void SharedStorageAccessManager::RemoveFile(hstring_ref token)
+inline void SharedStorageAccessManager::RemoveFile(hstring_view token)
 {
     get_activation_factory<SharedStorageAccessManager, ISharedStorageAccessManagerStatics>().RemoveFile(token);
 }

@@ -353,7 +353,7 @@ template <typename D> hstring impl_ICachedFileUpdaterUI<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_ICachedFileUpdaterUI<D>::Title(hstring_ref value) const
+template <typename D> void impl_ICachedFileUpdaterUI<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->put_Title(get(value)));
 }
@@ -477,17 +477,17 @@ template <typename D> hstring impl_IFileUpdateRequest2<D>::UserInputNeededMessag
     return value;
 }
 
-template <typename D> void impl_IFileUpdateRequest2<D>::UserInputNeededMessage(hstring_ref value) const
+template <typename D> void impl_IFileUpdateRequest2<D>::UserInputNeededMessage(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileUpdateRequest2)->put_UserInputNeededMessage(get(value)));
 }
 
-template <typename D> void impl_ICachedFileUpdaterStatics<D>::SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const
+template <typename D> void impl_ICachedFileUpdaterStatics<D>::SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_view contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const
 {
     check_hresult(WINRT_SHIM(ICachedFileUpdaterStatics)->abi_SetUpdateInformation(get(file), get(contentId), readMode, writeMode, options));
 }
 
-inline void CachedFileUpdater::SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options)
+inline void CachedFileUpdater::SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_view contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options)
 {
     get_activation_factory<CachedFileUpdater, ICachedFileUpdaterStatics>().SetUpdateInformation(file, contentId, readMode, writeMode, options);
 }

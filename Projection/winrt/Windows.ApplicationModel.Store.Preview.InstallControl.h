@@ -1021,17 +1021,17 @@ template <typename D> void impl_IAppInstallItem<D>::StatusChanged(event_token to
     check_hresult(WINRT_SHIM(IAppInstallItem)->remove_StatusChanged(token));
 }
 
-template <typename D> void impl_IAppInstallItem2<D>::Cancel(hstring_ref correlationVector) const
+template <typename D> void impl_IAppInstallItem2<D>::Cancel(hstring_view correlationVector) const
 {
     check_hresult(WINRT_SHIM(IAppInstallItem2)->abi_CancelWithTelemetry(get(correlationVector)));
 }
 
-template <typename D> void impl_IAppInstallItem2<D>::Pause(hstring_ref correlationVector) const
+template <typename D> void impl_IAppInstallItem2<D>::Pause(hstring_view correlationVector) const
 {
     check_hresult(WINRT_SHIM(IAppInstallItem2)->abi_PauseWithTelemetry(get(correlationVector)));
 }
 
-template <typename D> void impl_IAppInstallItem2<D>::Restart(hstring_ref correlationVector) const
+template <typename D> void impl_IAppInstallItem2<D>::Restart(hstring_view correlationVector) const
 {
     check_hresult(WINRT_SHIM(IAppInstallItem2)->abi_RestartWithTelemetry(get(correlationVector)));
 }
@@ -1050,17 +1050,17 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::App
     return value;
 }
 
-template <typename D> void impl_IAppInstallManager<D>::Cancel(hstring_ref productId) const
+template <typename D> void impl_IAppInstallManager<D>::Cancel(hstring_view productId) const
 {
     check_hresult(WINRT_SHIM(IAppInstallManager)->abi_Cancel(get(productId)));
 }
 
-template <typename D> void impl_IAppInstallManager<D>::Pause(hstring_ref productId) const
+template <typename D> void impl_IAppInstallManager<D>::Pause(hstring_view productId) const
 {
     check_hresult(WINRT_SHIM(IAppInstallManager)->abi_Pause(get(productId)));
 }
 
-template <typename D> void impl_IAppInstallManager<D>::Restart(hstring_ref productId) const
+template <typename D> void impl_IAppInstallManager<D>::Restart(hstring_view productId) const
 {
     check_hresult(WINRT_SHIM(IAppInstallManager)->abi_Restart(get(productId)));
 }
@@ -1118,33 +1118,33 @@ template <typename D> hstring impl_IAppInstallManager<D>::AcquisitionIdentity() 
     return value;
 }
 
-template <typename D> void impl_IAppInstallManager<D>::AcquisitionIdentity(hstring_ref value) const
+template <typename D> void impl_IAppInstallManager<D>::AcquisitionIdentity(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppInstallManager)->put_AcquisitionIdentity(get(value)));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager<D>::GetIsApplicableAsync(hstring_ref productId, hstring_ref skuId) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager<D>::GetIsApplicableAsync(hstring_view productId, hstring_view skuId) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager)->abi_GetIsApplicableAsync(get(productId), get(skuId), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager<D>::StartAppInstallAsync(hstring_ref productId, hstring_ref skuId, bool repair, bool forceUseOfNonRemovableStorage) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager<D>::StartAppInstallAsync(hstring_view productId, hstring_view skuId, bool repair, bool forceUseOfNonRemovableStorage) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager)->abi_StartAppInstallAsync(get(productId), get(skuId), repair, forceUseOfNonRemovableStorage, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager<D>::UpdateAppByPackageFamilyNameAsync(hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager<D>::UpdateAppByPackageFamilyNameAsync(hstring_view packageFamilyName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager)->abi_UpdateAppByPackageFamilyNameAsync(get(packageFamilyName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager<D>::SearchForUpdatesAsync(hstring_ref productId, hstring_ref skuId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager<D>::SearchForUpdatesAsync(hstring_view productId, hstring_view skuId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager)->abi_SearchForUpdatesAsync(get(productId), get(skuId), put(operation)));
@@ -1158,120 +1158,120 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager<D>::IsStoreBlockedByPolicyAsync(hstring_ref storeClientName, hstring_ref storeClientPublisher) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager<D>::IsStoreBlockedByPolicyAsync(hstring_view storeClientName, hstring_view storeClientPublisher) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager)->abi_IsStoreBlockedByPolicyAsync(get(storeClientName), get(storeClientPublisher), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager<D>::GetIsAppAllowedToInstallAsync(hstring_ref productId) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager<D>::GetIsAppAllowedToInstallAsync(hstring_view productId) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager)->abi_GetIsAppAllowedToInstallAsync(get(productId), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager2<D>::StartAppInstallAsync(hstring_ref productId, hstring_ref skuId, bool repair, bool forceUseOfNonRemovableStorage, hstring_ref catalogId, hstring_ref bundleId, hstring_ref correlationVector) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager2<D>::StartAppInstallAsync(hstring_view productId, hstring_view skuId, bool repair, bool forceUseOfNonRemovableStorage, hstring_view catalogId, hstring_view bundleId, hstring_view correlationVector) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager2)->abi_StartAppInstallWithTelemetryAsync(get(productId), get(skuId), repair, forceUseOfNonRemovableStorage, get(catalogId), get(bundleId), get(correlationVector), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager2<D>::UpdateAppByPackageFamilyNameAsync(hstring_ref packageFamilyName, hstring_ref correlationVector) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager2<D>::UpdateAppByPackageFamilyNameAsync(hstring_view packageFamilyName, hstring_view correlationVector) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager2)->abi_UpdateAppByPackageFamilyNameWithTelemetryAsync(get(packageFamilyName), get(correlationVector), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager2<D>::SearchForUpdatesAsync(hstring_ref productId, hstring_ref skuId, hstring_ref catalogId, hstring_ref correlationVector) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager2<D>::SearchForUpdatesAsync(hstring_view productId, hstring_view skuId, hstring_view catalogId, hstring_view correlationVector) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager2)->abi_SearchForUpdatesWithTelemetryAsync(get(productId), get(skuId), get(catalogId), get(correlationVector), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> impl_IAppInstallManager2<D>::SearchForAllUpdatesAsync(hstring_ref correlationVector) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> impl_IAppInstallManager2<D>::SearchForAllUpdatesAsync(hstring_view correlationVector) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager2)->abi_SearchForAllUpdatesWithTelemetryAsync(get(correlationVector), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager2<D>::GetIsAppAllowedToInstallAsync(hstring_ref productId, hstring_ref skuId, hstring_ref catalogId, hstring_ref correlationVector) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager2<D>::GetIsAppAllowedToInstallAsync(hstring_view productId, hstring_view skuId, hstring_view catalogId, hstring_view correlationVector) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager2)->abi_GetIsAppAllowedToInstallWithTelemetryAsync(get(productId), get(skuId), get(catalogId), get(correlationVector), put(operation)));
     return operation;
 }
 
-template <typename D> void impl_IAppInstallManager2<D>::Cancel(hstring_ref productId, hstring_ref correlationVector) const
+template <typename D> void impl_IAppInstallManager2<D>::Cancel(hstring_view productId, hstring_view correlationVector) const
 {
     check_hresult(WINRT_SHIM(IAppInstallManager2)->abi_CancelWithTelemetry(get(productId), get(correlationVector)));
 }
 
-template <typename D> void impl_IAppInstallManager2<D>::Pause(hstring_ref productId, hstring_ref correlationVector) const
+template <typename D> void impl_IAppInstallManager2<D>::Pause(hstring_view productId, hstring_view correlationVector) const
 {
     check_hresult(WINRT_SHIM(IAppInstallManager2)->abi_PauseWithTelemetry(get(productId), get(correlationVector)));
 }
 
-template <typename D> void impl_IAppInstallManager2<D>::Restart(hstring_ref productId, hstring_ref correlationVector) const
+template <typename D> void impl_IAppInstallManager2<D>::Restart(hstring_view productId, hstring_view correlationVector) const
 {
     check_hresult(WINRT_SHIM(IAppInstallManager2)->abi_RestartWithTelemetry(get(productId), get(correlationVector)));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> impl_IAppInstallManager3<D>::StartProductInstallAsync(hstring_ref productId, hstring_ref catalogId, hstring_ref flightId, hstring_ref clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring_ref correlationVector, const Windows::Management::Deployment::PackageVolume & targetVolume) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> impl_IAppInstallManager3<D>::StartProductInstallAsync(hstring_view productId, hstring_view catalogId, hstring_view flightId, hstring_view clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring_view correlationVector, const Windows::Management::Deployment::PackageVolume & targetVolume) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager3)->abi_StartProductInstallAsync(get(productId), get(catalogId), get(flightId), get(clientId), repair, forceUseOfNonRemovableStorage, get(correlationVector), get(targetVolume), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> impl_IAppInstallManager3<D>::StartProductInstallForUserAsync(const Windows::System::User & user, hstring_ref productId, hstring_ref catalogId, hstring_ref flightId, hstring_ref clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring_ref correlationVector, const Windows::Management::Deployment::PackageVolume & targetVolume) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> impl_IAppInstallManager3<D>::StartProductInstallForUserAsync(const Windows::System::User & user, hstring_view productId, hstring_view catalogId, hstring_view flightId, hstring_view clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring_view correlationVector, const Windows::Management::Deployment::PackageVolume & targetVolume) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager3)->abi_StartProductInstallForUserAsync(get(user), get(productId), get(catalogId), get(flightId), get(clientId), repair, forceUseOfNonRemovableStorage, get(correlationVector), get(targetVolume), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager3<D>::UpdateAppByPackageFamilyNameForUserAsync(const Windows::System::User & user, hstring_ref packageFamilyName, hstring_ref correlationVector) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager3<D>::UpdateAppByPackageFamilyNameForUserAsync(const Windows::System::User & user, hstring_view packageFamilyName, hstring_view correlationVector) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager3)->abi_UpdateAppByPackageFamilyNameForUserAsync(get(user), get(packageFamilyName), get(correlationVector), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager3<D>::SearchForUpdatesForUserAsync(const Windows::System::User & user, hstring_ref productId, hstring_ref skuId, hstring_ref catalogId, hstring_ref correlationVector) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager3<D>::SearchForUpdatesForUserAsync(const Windows::System::User & user, hstring_view productId, hstring_view skuId, hstring_view catalogId, hstring_view correlationVector) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager3)->abi_SearchForUpdatesForUserAsync(get(user), get(productId), get(skuId), get(catalogId), get(correlationVector), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> impl_IAppInstallManager3<D>::SearchForAllUpdatesForUserAsync(const Windows::System::User & user, hstring_ref correlationVector) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> impl_IAppInstallManager3<D>::SearchForAllUpdatesForUserAsync(const Windows::System::User & user, hstring_view correlationVector) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager3)->abi_SearchForAllUpdatesForUserAsync(get(user), get(correlationVector), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager3<D>::GetIsAppAllowedToInstallForUserAsync(const Windows::System::User & user, hstring_ref productId, hstring_ref skuId, hstring_ref catalogId, hstring_ref correlationVector) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager3<D>::GetIsAppAllowedToInstallForUserAsync(const Windows::System::User & user, hstring_view productId, hstring_view skuId, hstring_view catalogId, hstring_view correlationVector) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager3)->abi_GetIsAppAllowedToInstallForUserAsync(get(user), get(productId), get(skuId), get(catalogId), get(correlationVector), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager3<D>::GetIsApplicableForUserAsync(const Windows::System::User & user, hstring_ref productId, hstring_ref skuId) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppInstallManager3<D>::GetIsApplicableForUserAsync(const Windows::System::User & user, hstring_view productId, hstring_view skuId) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppInstallManager3)->abi_GetIsApplicableForUserAsync(get(user), get(productId), get(skuId), put(operation)));
     return operation;
 }
 
-template <typename D> void impl_IAppInstallManager3<D>::MoveToFrontOfDownloadQueue(hstring_ref productId, hstring_ref correlationVector) const
+template <typename D> void impl_IAppInstallManager3<D>::MoveToFrontOfDownloadQueue(hstring_view productId, hstring_view correlationVector) const
 {
     check_hresult(WINRT_SHIM(IAppInstallManager3)->abi_MoveToFrontOfDownloadQueue(get(productId), get(correlationVector)));
 }

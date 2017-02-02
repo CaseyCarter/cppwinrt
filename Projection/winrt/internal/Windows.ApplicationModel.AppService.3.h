@@ -12,7 +12,7 @@ namespace Windows::ApplicationModel::AppService {
 struct AppServiceCatalog
 {
     AppServiceCatalog() = delete;
-    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindAppServiceProvidersAsync(hstring_ref appServiceName);
+    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindAppServiceProvidersAsync(hstring_view appServiceName);
 };
 
 struct WINRT_EBO AppServiceClosedEventArgs :

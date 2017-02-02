@@ -148,7 +148,7 @@ struct WINRT_EBO impl_IAccountsSettingsPaneCommandsRequestedEventArgs
     Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::CredentialCommand> CredentialCommands() const;
     Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::SettingsCommand> Commands() const;
     hstring HeaderText() const;
-    void HeaderText(hstring_ref value) const;
+    void HeaderText(hstring_view value) const;
     Windows::UI::ApplicationSettings::AccountsSettingsPaneEventDeferral GetDeferral() const;
 };
 
@@ -189,7 +189,7 @@ struct WINRT_EBO impl_ICredentialCommandFactory
 template <typename D>
 struct WINRT_EBO impl_ISettingsCommandFactory
 {
-    Windows::UI::ApplicationSettings::SettingsCommand CreateSettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & handler) const;
+    Windows::UI::ApplicationSettings::SettingsCommand CreateSettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & handler) const;
 };
 
 template <typename D>

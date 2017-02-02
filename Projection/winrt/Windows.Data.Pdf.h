@@ -686,7 +686,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::P
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> impl_IPdfDocumentStatics<D>::LoadFromFileAsync(const Windows::Storage::IStorageFile & file, hstring_ref password) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> impl_IPdfDocumentStatics<D>::LoadFromFileAsync(const Windows::Storage::IStorageFile & file, hstring_view password) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> asyncInfo;
     check_hresult(WINRT_SHIM(IPdfDocumentStatics)->abi_LoadFromFileWithPasswordAsync(get(file), get(password), put(asyncInfo)));
@@ -700,7 +700,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::P
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> impl_IPdfDocumentStatics<D>::LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream, hstring_ref password) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> impl_IPdfDocumentStatics<D>::LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream, hstring_view password) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> asyncInfo;
     check_hresult(WINRT_SHIM(IPdfDocumentStatics)->abi_LoadFromStreamWithPasswordAsync(get(inputStream), get(password), put(asyncInfo)));
@@ -712,7 +712,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> Pdf
     return get_activation_factory<PdfDocument, IPdfDocumentStatics>().LoadFromFileAsync(file);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> PdfDocument::LoadFromFileAsync(const Windows::Storage::IStorageFile & file, hstring_ref password)
+inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> PdfDocument::LoadFromFileAsync(const Windows::Storage::IStorageFile & file, hstring_view password)
 {
     return get_activation_factory<PdfDocument, IPdfDocumentStatics>().LoadFromFileAsync(file, password);
 }
@@ -722,7 +722,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> Pdf
     return get_activation_factory<PdfDocument, IPdfDocumentStatics>().LoadFromStreamAsync(inputStream);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> PdfDocument::LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream, hstring_ref password)
+inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> PdfDocument::LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream, hstring_view password)
 {
     return get_activation_factory<PdfDocument, IPdfDocumentStatics>().LoadFromStreamAsync(inputStream, password);
 }

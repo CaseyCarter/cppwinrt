@@ -54,7 +54,7 @@ struct WINRT_EBO impl_ICustomXamlResourceLoaderFactory
 template <typename D>
 struct WINRT_EBO impl_ICustomXamlResourceLoaderOverrides
 {
-    Windows::IInspectable GetResource(hstring_ref resourceId, hstring_ref objectType, hstring_ref propertyName, hstring_ref propertyType) const;
+    Windows::IInspectable GetResource(hstring_view resourceId, hstring_view objectType, hstring_view propertyName, hstring_view propertyType) const;
 };
 
 template <typename D>

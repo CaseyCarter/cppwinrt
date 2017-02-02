@@ -158,122 +158,122 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
 
 namespace Windows::Foundation::Metadata {
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsTypePresent(hstring_ref typeName) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsTypePresent(hstring_view typeName) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsTypePresent(get(typeName), &value));
     return value;
 }
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsMethodPresent(hstring_ref typeName, hstring_ref methodName) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsMethodPresent(hstring_view typeName, hstring_view methodName) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsMethodPresent(get(typeName), get(methodName), &value));
     return value;
 }
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsMethodPresent(hstring_ref typeName, hstring_ref methodName, uint32_t inputParameterCount) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsMethodPresent(hstring_view typeName, hstring_view methodName, uint32_t inputParameterCount) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsMethodPresentWithArity(get(typeName), get(methodName), inputParameterCount, &value));
     return value;
 }
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsEventPresent(hstring_ref typeName, hstring_ref eventName) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsEventPresent(hstring_view typeName, hstring_view eventName) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsEventPresent(get(typeName), get(eventName), &value));
     return value;
 }
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsPropertyPresent(hstring_ref typeName, hstring_ref propertyName) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsPropertyPresent(hstring_view typeName, hstring_view propertyName) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsPropertyPresent(get(typeName), get(propertyName), &value));
     return value;
 }
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsReadOnlyPropertyPresent(hstring_ref typeName, hstring_ref propertyName) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsReadOnlyPropertyPresent(hstring_view typeName, hstring_view propertyName) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsReadOnlyPropertyPresent(get(typeName), get(propertyName), &value));
     return value;
 }
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsWriteablePropertyPresent(hstring_ref typeName, hstring_ref propertyName) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsWriteablePropertyPresent(hstring_view typeName, hstring_view propertyName) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsWriteablePropertyPresent(get(typeName), get(propertyName), &value));
     return value;
 }
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsEnumNamedValuePresent(hstring_ref enumTypeName, hstring_ref valueName) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsEnumNamedValuePresent(hstring_view enumTypeName, hstring_view valueName) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsEnumNamedValuePresent(get(enumTypeName), get(valueName), &value));
     return value;
 }
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsApiContractPresent(hstring_ref contractName, uint16_t majorVersion) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsApiContractPresent(hstring_view contractName, uint16_t majorVersion) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsApiContractPresentByMajor(get(contractName), majorVersion, &value));
     return value;
 }
 
-template <typename D> bool impl_IApiInformationStatics<D>::IsApiContractPresent(hstring_ref contractName, uint16_t majorVersion, uint16_t minorVersion) const
+template <typename D> bool impl_IApiInformationStatics<D>::IsApiContractPresent(hstring_view contractName, uint16_t majorVersion, uint16_t minorVersion) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsApiContractPresentByMajorAndMinor(get(contractName), majorVersion, minorVersion, &value));
     return value;
 }
 
-inline bool ApiInformation::IsTypePresent(hstring_ref typeName)
+inline bool ApiInformation::IsTypePresent(hstring_view typeName)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsTypePresent(typeName);
 }
 
-inline bool ApiInformation::IsMethodPresent(hstring_ref typeName, hstring_ref methodName)
+inline bool ApiInformation::IsMethodPresent(hstring_view typeName, hstring_view methodName)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsMethodPresent(typeName, methodName);
 }
 
-inline bool ApiInformation::IsMethodPresent(hstring_ref typeName, hstring_ref methodName, uint32_t inputParameterCount)
+inline bool ApiInformation::IsMethodPresent(hstring_view typeName, hstring_view methodName, uint32_t inputParameterCount)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsMethodPresent(typeName, methodName, inputParameterCount);
 }
 
-inline bool ApiInformation::IsEventPresent(hstring_ref typeName, hstring_ref eventName)
+inline bool ApiInformation::IsEventPresent(hstring_view typeName, hstring_view eventName)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsEventPresent(typeName, eventName);
 }
 
-inline bool ApiInformation::IsPropertyPresent(hstring_ref typeName, hstring_ref propertyName)
+inline bool ApiInformation::IsPropertyPresent(hstring_view typeName, hstring_view propertyName)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsPropertyPresent(typeName, propertyName);
 }
 
-inline bool ApiInformation::IsReadOnlyPropertyPresent(hstring_ref typeName, hstring_ref propertyName)
+inline bool ApiInformation::IsReadOnlyPropertyPresent(hstring_view typeName, hstring_view propertyName)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsReadOnlyPropertyPresent(typeName, propertyName);
 }
 
-inline bool ApiInformation::IsWriteablePropertyPresent(hstring_ref typeName, hstring_ref propertyName)
+inline bool ApiInformation::IsWriteablePropertyPresent(hstring_view typeName, hstring_view propertyName)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsWriteablePropertyPresent(typeName, propertyName);
 }
 
-inline bool ApiInformation::IsEnumNamedValuePresent(hstring_ref enumTypeName, hstring_ref valueName)
+inline bool ApiInformation::IsEnumNamedValuePresent(hstring_view enumTypeName, hstring_view valueName)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsEnumNamedValuePresent(enumTypeName, valueName);
 }
 
-inline bool ApiInformation::IsApiContractPresent(hstring_ref contractName, uint16_t majorVersion)
+inline bool ApiInformation::IsApiContractPresent(hstring_view contractName, uint16_t majorVersion)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsApiContractPresent(contractName, majorVersion);
 }
 
-inline bool ApiInformation::IsApiContractPresent(hstring_ref contractName, uint16_t majorVersion, uint16_t minorVersion)
+inline bool ApiInformation::IsApiContractPresent(hstring_view contractName, uint16_t majorVersion, uint16_t minorVersion)
 {
     return get_activation_factory<ApiInformation, IApiInformationStatics>().IsApiContractPresent(contractName, majorVersion, minorVersion);
 }

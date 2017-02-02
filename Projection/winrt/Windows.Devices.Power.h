@@ -278,7 +278,7 @@ template <typename D> Windows::Devices::Power::Battery impl_IBatteryStatics<D>::
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> impl_IBatteryStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> impl_IBatteryStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> result;
     check_hresult(WINRT_SHIM(IBatteryStatics)->abi_FromIdAsync(get(deviceId), put(result)));
@@ -297,7 +297,7 @@ inline Windows::Devices::Power::Battery Battery::AggregateBattery()
     return get_activation_factory<Battery, IBatteryStatics>().AggregateBattery();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> Battery::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> Battery::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<Battery, IBatteryStatics>().FromIdAsync(deviceId);
 }

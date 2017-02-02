@@ -2458,7 +2458,7 @@ template <typename D> com_array<Windows::UI::Xaml::Automation::AnnotationType> i
     return returnValue;
 }
 
-template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_ISpreadsheetProvider<D>::GetItemByName(hstring_ref name) const
+template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_ISpreadsheetProvider<D>::GetItemByName(hstring_view name) const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple returnValue { nullptr };
     check_hresult(WINRT_SHIM(ISpreadsheetProvider)->abi_GetItemByName(get(name), put(returnValue)));
@@ -2606,7 +2606,7 @@ template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvide
     return returnValue;
 }
 
-template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextRangeProvider<D>::FindText(hstring_ref text, bool backward, bool ignoreCase) const
+template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextRangeProvider<D>::FindText(hstring_view text, bool backward, bool ignoreCase) const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
     check_hresult(WINRT_SHIM(ITextRangeProvider)->abi_FindText(get(text), backward, ignoreCase, put(returnValue)));
@@ -2846,7 +2846,7 @@ template <typename D> hstring impl_IValueProvider<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_IValueProvider<D>::SetValue(hstring_ref value) const
+template <typename D> void impl_IValueProvider<D>::SetValue(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IValueProvider)->abi_SetValue(get(value)));
 }

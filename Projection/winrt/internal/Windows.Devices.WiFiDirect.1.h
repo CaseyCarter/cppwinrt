@@ -245,14 +245,14 @@ template <typename D>
 struct WINRT_EBO impl_IWiFiDirectDeviceStatics
 {
     hstring GetDeviceSelector() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_view deviceId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IWiFiDirectDeviceStatics2
 {
     hstring GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_ref deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_view deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters) const;
 };
 
 template <typename D>
@@ -279,7 +279,7 @@ struct WINRT_EBO impl_IWiFiDirectLegacySettings
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
     hstring Ssid() const;
-    void Ssid(hstring_ref value) const;
+    void Ssid(hstring_view value) const;
     Windows::Security::Credentials::PasswordCredential Passphrase() const;
     void Passphrase(const Windows::Security::Credentials::PasswordCredential & value) const;
 };

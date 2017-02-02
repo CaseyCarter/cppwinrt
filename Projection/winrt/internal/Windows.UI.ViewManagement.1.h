@@ -315,7 +315,7 @@ struct WINRT_EBO impl_IApplicationView
     bool IsOnLockScreen() const;
     bool IsScreenCaptureEnabled() const;
     void IsScreenCaptureEnabled(bool value) const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     hstring Title() const;
     int32_t Id() const;
     event_token Consolidated(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> & handler) const;

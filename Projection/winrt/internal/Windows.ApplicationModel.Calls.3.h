@@ -45,7 +45,7 @@ struct WINRT_EBO PhoneCallHistoryEntryAddress :
 {
     PhoneCallHistoryEntryAddress(std::nullptr_t) noexcept {}
     PhoneCallHistoryEntryAddress();
-    PhoneCallHistoryEntryAddress(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind);
+    PhoneCallHistoryEntryAddress(hstring_view rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind);
 };
 
 struct WINRT_EBO PhoneCallHistoryEntryQueryOptions :

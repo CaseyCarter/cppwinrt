@@ -215,7 +215,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::App
     return value;
 }
 
-template <typename D> void impl_IUserDataAccountProviderAddAccountOperation<D>::ReportCompleted(hstring_ref userDataAccountId) const
+template <typename D> void impl_IUserDataAccountProviderAddAccountOperation<D>::ReportCompleted(hstring_view userDataAccountId) const
 {
     check_hresult(WINRT_SHIM(IUserDataAccountProviderAddAccountOperation)->abi_ReportCompleted(get(userDataAccountId)));
 }

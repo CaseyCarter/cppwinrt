@@ -295,7 +295,7 @@ template <typename D> hstring impl_IQuickLink<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IQuickLink<D>::Title(hstring_ref value) const
+template <typename D> void impl_IQuickLink<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IQuickLink)->put_Title(get(value)));
 }
@@ -319,7 +319,7 @@ template <typename D> hstring impl_IQuickLink<D>::Id() const
     return value;
 }
 
-template <typename D> void impl_IQuickLink<D>::Id(hstring_ref value) const
+template <typename D> void impl_IQuickLink<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IQuickLink)->put_Id(get(value)));
 }
@@ -382,7 +382,7 @@ template <typename D> void impl_IShareOperation<D>::ReportCompleted() const
     check_hresult(WINRT_SHIM(IShareOperation)->abi_ReportCompleted());
 }
 
-template <typename D> void impl_IShareOperation<D>::ReportError(hstring_ref value) const
+template <typename D> void impl_IShareOperation<D>::ReportError(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IShareOperation)->abi_ReportError(get(value)));
 }

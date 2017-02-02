@@ -359,20 +359,20 @@ struct WINRT_EBO impl_ILauncherOptions
     void DisplayApplicationPicker(bool value) const;
     Windows::System::LauncherUIOptions UI() const;
     hstring PreferredApplicationPackageFamilyName() const;
-    void PreferredApplicationPackageFamilyName(hstring_ref value) const;
+    void PreferredApplicationPackageFamilyName(hstring_view value) const;
     hstring PreferredApplicationDisplayName() const;
-    void PreferredApplicationDisplayName(hstring_ref value) const;
+    void PreferredApplicationDisplayName(hstring_view value) const;
     Windows::Foundation::Uri FallbackUri() const;
     void FallbackUri(const Windows::Foundation::Uri & value) const;
     hstring ContentType() const;
-    void ContentType(hstring_ref value) const;
+    void ContentType(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ILauncherOptions2
 {
     hstring TargetApplicationPackageFamilyName() const;
-    void TargetApplicationPackageFamilyName(hstring_ref value) const;
+    void TargetApplicationPackageFamilyName(hstring_view value) const;
     Windows::Storage::Search::StorageFileQueryResult NeighboringFilesQuery() const;
     void NeighboringFilesQuery(const Windows::Storage::Search::StorageFileQueryResult & value) const;
 };
@@ -400,12 +400,12 @@ struct WINRT_EBO impl_ILauncherStatics2
     Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
     Windows::Foundation::IAsyncOperation<bool> LaunchUriAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_ref packageFamilyName) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_view packageFamilyName) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(const Windows::Storage::StorageFile & file) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(const Windows::Storage::StorageFile & file, hstring_ref packageFamilyName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_ref scheme) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_ref scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindFileHandlersAsync(hstring_ref extension) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(const Windows::Storage::StorageFile & file, hstring_view packageFamilyName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_view scheme) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_view scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindFileHandlersAsync(hstring_view extension) const;
 };
 
 template <typename D>
@@ -419,7 +419,7 @@ template <typename D>
 struct WINRT_EBO impl_ILauncherStatics4
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_ref packageFamilyName) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_view packageFamilyName) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindAppUriHandlersAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const;
@@ -514,7 +514,7 @@ struct WINRT_EBO impl_IUser
     hstring NonRoamableId() const;
     Windows::System::UserAuthenticationStatus AuthenticationStatus() const;
     Windows::System::UserType Type() const;
-    Windows::Foundation::IAsyncOperation<Windows::IInspectable> GetPropertyAsync(hstring_ref value) const;
+    Windows::Foundation::IAsyncOperation<Windows::IInspectable> GetPropertyAsync(hstring_view value) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> GetPropertiesAsync(const Windows::Foundation::Collections::IVectorView<hstring> & values) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> GetPictureAsync(Windows::System::UserPictureSize desiredSize) const;
 };
@@ -551,7 +551,7 @@ struct WINRT_EBO impl_IUserDeviceAssociationChangedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IUserDeviceAssociationStatics
 {
-    Windows::System::User FindUserFromDeviceId(hstring_ref deviceId) const;
+    Windows::System::User FindUserFromDeviceId(hstring_view deviceId) const;
     event_token UserDeviceAssociationChanged(const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> & handler) const;
     using UserDeviceAssociationChanged_revoker = event_revoker<IUserDeviceAssociationStatics>;
     UserDeviceAssociationChanged_revoker UserDeviceAssociationChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> & handler) const;
@@ -581,7 +581,7 @@ struct WINRT_EBO impl_IUserStatics
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync(Windows::System::UserType type) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync(Windows::System::UserType type, Windows::System::UserAuthenticationStatus status) const;
-    Windows::System::User GetFromId(hstring_ref nonRoamableId) const;
+    Windows::System::User GetFromId(hstring_view nonRoamableId) const;
 };
 
 template <typename D>

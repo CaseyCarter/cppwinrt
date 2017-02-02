@@ -4508,7 +4508,7 @@ template <typename D> hstring impl_IActivitySensorStatics<D>::GetDeviceSelector(
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> impl_IActivitySensorStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> impl_IActivitySensorStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> result;
     check_hresult(WINRT_SHIM(IActivitySensorStatics)->abi_FromIdAsync(get(deviceId), put(result)));
@@ -4743,7 +4743,7 @@ template <typename D> Windows::Devices::Sensors::PedometerReading impl_IPedomete
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> impl_IPedometerStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> impl_IPedometerStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> operation;
     check_hresult(WINRT_SHIM(IPedometerStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
@@ -4856,7 +4856,7 @@ template <typename D> hstring impl_IProximitySensorStatics<D>::GetDeviceSelector
     return value;
 }
 
-template <typename D> Windows::Devices::Sensors::ProximitySensor impl_IProximitySensorStatics<D>::FromId(hstring_ref sensorId) const
+template <typename D> Windows::Devices::Sensors::ProximitySensor impl_IProximitySensorStatics<D>::FromId(hstring_view sensorId) const
 {
     Windows::Devices::Sensors::ProximitySensor result { nullptr };
     check_hresult(WINRT_SHIM(IProximitySensorStatics)->abi_FromId(get(sensorId), put(result)));
@@ -5055,7 +5055,7 @@ inline hstring ActivitySensor::GetDeviceSelector()
     return get_activation_factory<ActivitySensor, IActivitySensorStatics>().GetDeviceSelector();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> ActivitySensor::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> ActivitySensor::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<ActivitySensor, IActivitySensorStatics>().FromIdAsync(deviceId);
 }
@@ -5135,7 +5135,7 @@ inline Windows::Devices::Sensors::OrientationSensor OrientationSensor::GetDefaul
     return get_activation_factory<OrientationSensor, IOrientationSensorStatics3>().GetDefault(sensorReadingType, optimizationGoal);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> Pedometer::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> Pedometer::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<Pedometer, IPedometerStatics>().FromIdAsync(deviceId);
 }
@@ -5174,7 +5174,7 @@ inline hstring ProximitySensor::GetDeviceSelector()
     return get_activation_factory<ProximitySensor, IProximitySensorStatics>().GetDeviceSelector();
 }
 
-inline Windows::Devices::Sensors::ProximitySensor ProximitySensor::FromId(hstring_ref sensorId)
+inline Windows::Devices::Sensors::ProximitySensor ProximitySensor::FromId(hstring_view sensorId)
 {
     return get_activation_factory<ProximitySensor, IProximitySensorStatics>().FromId(sensorId);
 }

@@ -809,8 +809,8 @@ struct WINRT_EBO impl_IRadialControllerMenuItem
 template <typename D>
 struct WINRT_EBO impl_IRadialControllerMenuItemStatics
 {
-    Windows::UI::Input::RadialControllerMenuItem CreateFromIcon(hstring_ref displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon) const;
-    Windows::UI::Input::RadialControllerMenuItem CreateFromKnownIcon(hstring_ref displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value) const;
+    Windows::UI::Input::RadialControllerMenuItem CreateFromIcon(hstring_view displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon) const;
+    Windows::UI::Input::RadialControllerMenuItem CreateFromKnownIcon(hstring_view displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value) const;
 };
 
 template <typename D>

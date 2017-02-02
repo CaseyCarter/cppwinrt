@@ -26,8 +26,8 @@ struct MapLocationFinder
 {
     MapLocationFinder() = delete;
     static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint);
-    static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint);
-    static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount);
+    static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_view searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint);
+    static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_view searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount);
     static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint, Windows::Services::Maps::MapLocationDesiredAccuracy accuracy);
 };
 
@@ -97,7 +97,7 @@ struct WINRT_EBO MapRouteManeuver :
 struct MapService
 {
     MapService() = delete;
-    static void ServiceToken(hstring_ref value);
+    static void ServiceToken(hstring_view value);
     static hstring ServiceToken();
     static hstring WorldViewRegionCode();
     static hstring DataAttributions();

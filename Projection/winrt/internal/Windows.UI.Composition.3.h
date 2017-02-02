@@ -125,7 +125,7 @@ struct WINRT_EBO CompositionEffectSourceParameter :
     Windows::UI::Composition::ICompositionEffectSourceParameter
 {
     CompositionEffectSourceParameter(std::nullptr_t) noexcept {}
-    CompositionEffectSourceParameter(hstring_ref name);
+    CompositionEffectSourceParameter(hstring_view name);
 };
 
 struct WINRT_EBO CompositionGraphicsDevice :

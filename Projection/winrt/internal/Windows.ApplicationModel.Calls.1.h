@@ -251,10 +251,10 @@ struct WINRT_EBO impl_IPhoneCallHistoryEntry
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryOtherAppReadAccess OtherAppReadAccess() const;
     void OtherAppReadAccess(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryOtherAppReadAccess value) const;
     hstring RemoteId() const;
-    void RemoteId(hstring_ref value) const;
+    void RemoteId(hstring_view value) const;
     hstring SourceDisplayName() const;
     hstring SourceId() const;
-    void SourceId(hstring_ref value) const;
+    void SourceId(hstring_view value) const;
     Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind SourceIdKind() const;
     void SourceIdKind(Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind value) const;
     Windows::Foundation::DateTime StartTime() const;
@@ -265,11 +265,11 @@ template <typename D>
 struct WINRT_EBO impl_IPhoneCallHistoryEntryAddress
 {
     hstring ContactId() const;
-    void ContactId(hstring_ref value) const;
+    void ContactId(hstring_view value) const;
     hstring DisplayName() const;
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     hstring RawAddress() const;
-    void RawAddress(hstring_ref value) const;
+    void RawAddress(hstring_view value) const;
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind RawAddressKind() const;
     void RawAddressKind(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind value) const;
 };
@@ -277,7 +277,7 @@ struct WINRT_EBO impl_IPhoneCallHistoryEntryAddress
 template <typename D>
 struct WINRT_EBO impl_IPhoneCallHistoryEntryAddressFactory
 {
-    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Create(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) const;
+    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Create(hstring_view rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) const;
 };
 
 template <typename D>
@@ -316,7 +316,7 @@ struct WINRT_EBO impl_IPhoneCallHistoryManagerStatics2
 template <typename D>
 struct WINRT_EBO impl_IPhoneCallHistoryStore
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> GetEntryAsync(hstring_ref callHistoryEntryId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> GetEntryAsync(hstring_view callHistoryEntryId) const;
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader GetEntryReader() const;
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader GetEntryReader(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions & queryOptions) const;
     Windows::Foundation::IAsyncAction SaveEntryAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const;
@@ -333,17 +333,17 @@ struct WINRT_EBO impl_IPhoneCallHistoryStore
 template <typename D>
 struct WINRT_EBO impl_IVoipCallCoordinator
 {
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> ReserveCallResourcesAsync(hstring_ref taskEntryPoint) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> ReserveCallResourcesAsync(hstring_view taskEntryPoint) const;
     event_token MuteStateChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipCallCoordinator, Windows::ApplicationModel::Calls::MuteChangeEventArgs> & muteChangeHandler) const;
     using MuteStateChanged_revoker = event_revoker<IVoipCallCoordinator>;
     MuteStateChanged_revoker MuteStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipCallCoordinator, Windows::ApplicationModel::Calls::MuteChangeEventArgs> & muteChangeHandler) const;
     void MuteStateChanged(event_token token) const;
-    Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewIncomingCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, const Windows::Foundation::Uri & contactImage, hstring_ref serviceName, const Windows::Foundation::Uri & brandingImage, hstring_ref callDetails, const Windows::Foundation::Uri & ringtone, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media, const Windows::Foundation::TimeSpan & ringTimeout) const;
-    Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewOutgoingCall(hstring_ref context, hstring_ref contactName, hstring_ref serviceName, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media) const;
+    Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewIncomingCall(hstring_view context, hstring_view contactName, hstring_view contactNumber, const Windows::Foundation::Uri & contactImage, hstring_view serviceName, const Windows::Foundation::Uri & brandingImage, hstring_view callDetails, const Windows::Foundation::Uri & ringtone, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media, const Windows::Foundation::TimeSpan & ringTimeout) const;
+    Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewOutgoingCall(hstring_view context, hstring_view contactName, hstring_view serviceName, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media) const;
     void NotifyMuted() const;
     void NotifyUnmuted() const;
-    Windows::ApplicationModel::Calls::VoipPhoneCall RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, hstring_ref context, hstring_ref contactName, hstring_ref serviceName) const;
-    Windows::ApplicationModel::Calls::VoipPhoneCall RequestIncomingUpgradeToVideoCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, const Windows::Foundation::Uri & contactImage, hstring_ref serviceName, const Windows::Foundation::Uri & brandingImage, hstring_ref callDetails, const Windows::Foundation::Uri & ringtone, const Windows::Foundation::TimeSpan & ringTimeout) const;
+    Windows::ApplicationModel::Calls::VoipPhoneCall RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, hstring_view context, hstring_view contactName, hstring_view serviceName) const;
+    Windows::ApplicationModel::Calls::VoipPhoneCall RequestIncomingUpgradeToVideoCall(hstring_view context, hstring_view contactName, hstring_view contactNumber, const Windows::Foundation::Uri & contactImage, hstring_view serviceName, const Windows::Foundation::Uri & brandingImage, hstring_view callDetails, const Windows::Foundation::Uri & ringtone, const Windows::Foundation::TimeSpan & ringTimeout) const;
     void TerminateCellularCall(GUID callUpgradeGuid) const;
     void CancelUpgrade(GUID callUpgradeGuid) const;
 };
@@ -381,7 +381,7 @@ struct WINRT_EBO impl_IVoipPhoneCall
     void NotifyCallActive() const;
     void NotifyCallEnded() const;
     hstring ContactName() const;
-    void ContactName(hstring_ref value) const;
+    void ContactName(hstring_view value) const;
     Windows::Foundation::DateTime StartTime() const;
     void StartTime(const Windows::Foundation::DateTime & value) const;
     Windows::ApplicationModel::Calls::VoipPhoneCallMedia CallMedia() const;

@@ -27,7 +27,7 @@ struct WINRT_EBO CastingDevice :
     CastingDevice(std::nullptr_t) noexcept {}
     static hstring GetDeviceSelector(Windows::Media::Casting::CastingPlaybackTypes type);
     static Windows::Foundation::IAsyncOperation<hstring> GetDeviceSelectorFromCastingSourceAsync(const Windows::Media::Casting::CastingSource & castingSource);
-    static Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> FromIdAsync(hstring_ref value);
+    static Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> FromIdAsync(hstring_view value);
     static Windows::Foundation::IAsyncOperation<bool> DeviceInfoSupportsCastingAsync(const Windows::Devices::Enumeration::DeviceInformation & device);
 };
 

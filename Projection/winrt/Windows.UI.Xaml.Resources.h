@@ -92,7 +92,7 @@ struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderStatics
 
 namespace Windows::UI::Xaml::Resources {
 
-template <typename D> Windows::IInspectable impl_ICustomXamlResourceLoaderOverrides<D>::GetResource(hstring_ref resourceId, hstring_ref objectType, hstring_ref propertyName, hstring_ref propertyType) const
+template <typename D> Windows::IInspectable impl_ICustomXamlResourceLoaderOverrides<D>::GetResource(hstring_view resourceId, hstring_view objectType, hstring_view propertyName, hstring_view propertyType) const
 {
     Windows::IInspectable returnValue;
     check_hresult(WINRT_SHIM(ICustomXamlResourceLoaderOverrides)->abi_GetResource(get(resourceId), get(objectType), get(propertyName), get(propertyType), put(returnValue)));

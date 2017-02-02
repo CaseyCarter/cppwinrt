@@ -1135,7 +1135,7 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::RemovePackageAsync(hstring_ref packageFullName) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::RemovePackageAsync(hstring_view packageFullName) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_RemovePackageAsync(get(packageFullName), put(deploymentOperation)));
@@ -1163,75 +1163,75 @@ template <typename D> Windows::Foundation::Collections::IIterable<Windows::Appli
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackagesForUser(hstring_ref userSecurityId) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackagesForUser(hstring_view userSecurityId) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_FindPackagesByUserSecurityId(get(userSecurityId), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackages(hstring_ref packageName, hstring_ref packagePublisher) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackages(hstring_view packageName, hstring_view packagePublisher) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_FindPackagesByNamePublisher(get(packageName), get(packagePublisher), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackagesForUser(hstring_ref userSecurityId, hstring_ref packageName, hstring_ref packagePublisher) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackagesForUser(hstring_view userSecurityId, hstring_view packageName, hstring_view packagePublisher) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_FindPackagesByUserSecurityIdNamePublisher(get(userSecurityId), get(packageName), get(packagePublisher), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageUserInformation> impl_IPackageManager<D>::FindUsers(hstring_ref packageFullName) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageUserInformation> impl_IPackageManager<D>::FindUsers(hstring_view packageFullName) const
 {
     Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageUserInformation> users;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_FindUsers(get(packageFullName), put(users)));
     return users;
 }
 
-template <typename D> void impl_IPackageManager<D>::SetPackageState(hstring_ref packageFullName, Windows::Management::Deployment::PackageState packageState) const
+template <typename D> void impl_IPackageManager<D>::SetPackageState(hstring_view packageFullName, Windows::Management::Deployment::PackageState packageState) const
 {
     check_hresult(WINRT_SHIM(IPackageManager)->abi_SetPackageState(get(packageFullName), packageState));
 }
 
-template <typename D> Windows::ApplicationModel::Package impl_IPackageManager<D>::FindPackage(hstring_ref packageFullName) const
+template <typename D> Windows::ApplicationModel::Package impl_IPackageManager<D>::FindPackage(hstring_view packageFullName) const
 {
     Windows::ApplicationModel::Package packageInformation { nullptr };
     check_hresult(WINRT_SHIM(IPackageManager)->abi_FindPackageByPackageFullName(get(packageFullName), put(packageInformation)));
     return packageInformation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::CleanupPackageForUserAsync(hstring_ref packageName, hstring_ref userSecurityId) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::CleanupPackageForUserAsync(hstring_view packageName, hstring_view userSecurityId) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_CleanupPackageForUserAsync(get(packageName), get(userSecurityId), put(deploymentOperation)));
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackages(hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackages(hstring_view packageFamilyName) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_FindPackagesByPackageFamilyName(get(packageFamilyName), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackagesForUser(hstring_ref userSecurityId, hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager<D>::FindPackagesForUser(hstring_view userSecurityId, hstring_view packageFamilyName) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_FindPackagesByUserSecurityIdPackageFamilyName(get(userSecurityId), get(packageFamilyName), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::ApplicationModel::Package impl_IPackageManager<D>::FindPackageForUser(hstring_ref userSecurityId, hstring_ref packageFullName) const
+template <typename D> Windows::ApplicationModel::Package impl_IPackageManager<D>::FindPackageForUser(hstring_view userSecurityId, hstring_view packageFullName) const
 {
     Windows::ApplicationModel::Package packageInformation { nullptr };
     check_hresult(WINRT_SHIM(IPackageManager)->abi_FindPackageByUserSecurityIdPackageFullName(get(userSecurityId), get(packageFullName), put(packageInformation)));
     return packageInformation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::RemovePackageAsync(hstring_ref packageFullName, Windows::Management::Deployment::RemovalOptions removalOptions) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::RemovePackageAsync(hstring_view packageFullName, Windows::Management::Deployment::RemovalOptions removalOptions) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_RemovePackageWithOptionsAsync(get(packageFullName), removalOptions, put(deploymentOperation)));
@@ -1245,7 +1245,7 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::RegisterPackageByFullNameAsync(hstring_ref mainPackageFullName, const Windows::Foundation::Collections::IIterable<hstring> & dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::RegisterPackageByFullNameAsync(hstring_view mainPackageFullName, const Windows::Foundation::Collections::IIterable<hstring> & dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_RegisterPackageByFullNameAsync(get(mainPackageFullName), get(dependencyPackageFullNames), deploymentOptions, put(deploymentOperation)));
@@ -1259,49 +1259,49 @@ template <typename D> Windows::Foundation::Collections::IIterable<Windows::Appli
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesForUserWithPackageTypes(hstring_view userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_FindPackagesByUserSecurityIdWithPackageTypes(get(userSecurityId), packageTypes, put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesWithPackageTypes(hstring_ref packageName, hstring_ref packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesWithPackageTypes(hstring_view packageName, hstring_view packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_FindPackagesByNamePublisherWithPackageTypes(get(packageName), get(packagePublisher), packageTypes, put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, hstring_ref packageName, hstring_ref packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesForUserWithPackageTypes(hstring_view userSecurityId, hstring_view packageName, hstring_view packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(get(userSecurityId), get(packageName), get(packagePublisher), packageTypes, put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesWithPackageTypes(hstring_ref packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesWithPackageTypes(hstring_view packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_FindPackagesByPackageFamilyNameWithPackageTypes(get(packageFamilyName), packageTypes, put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, hstring_ref packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes) const
+template <typename D> Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> impl_IPackageManager2<D>::FindPackagesForUserWithPackageTypes(hstring_view userSecurityId, hstring_view packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes) const
 {
     Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes(get(userSecurityId), get(packageFamilyName), packageTypes, put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::StageUserDataAsync(hstring_ref packageFullName) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::StageUserDataAsync(hstring_view packageFullName) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_StageUserDataAsync(get(packageFullName), put(deploymentOperation)));
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Management::Deployment::PackageVolume> impl_IPackageManager3<D>::AddPackageVolumeAsync(hstring_ref packageStorePath) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Management::Deployment::PackageVolume> impl_IPackageManager3<D>::AddPackageVolumeAsync(hstring_view packageStorePath) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Management::Deployment::PackageVolume> packageVolume;
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_AddPackageVolumeAsync(get(packageStorePath), put(packageVolume)));
@@ -1315,7 +1315,7 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return deploymentOperation;
 }
 
-template <typename D> void impl_IPackageManager3<D>::ClearPackageStatus(hstring_ref packageFullName, Windows::Management::Deployment::PackageStatus status) const
+template <typename D> void impl_IPackageManager3<D>::ClearPackageStatus(hstring_view packageFullName, Windows::Management::Deployment::PackageStatus status) const
 {
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_ClearPackageStatus(get(packageFullName), status));
 }
@@ -1327,7 +1327,7 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return deploymentOperation;
 }
 
-template <typename D> Windows::Management::Deployment::PackageVolume impl_IPackageManager3<D>::FindPackageVolume(hstring_ref volumeName) const
+template <typename D> Windows::Management::Deployment::PackageVolume impl_IPackageManager3<D>::FindPackageVolume(hstring_view volumeName) const
 {
     Windows::Management::Deployment::PackageVolume volume { nullptr };
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_FindPackageVolumeByName(get(volumeName), put(volume)));
@@ -1348,7 +1348,7 @@ template <typename D> Windows::Management::Deployment::PackageVolume impl_IPacka
     return volume;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::MovePackageToVolumeAsync(hstring_ref packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::MovePackageToVolumeAsync(hstring_view packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_MovePackageToVolumeAsync(get(packageFullName), deploymentOptions, get(targetVolume), put(deploymentOperation)));
@@ -1367,7 +1367,7 @@ template <typename D> void impl_IPackageManager3<D>::SetDefaultPackageVolume(con
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_SetDefaultPackageVolume(get(volume)));
 }
 
-template <typename D> void impl_IPackageManager3<D>::SetPackageStatus(hstring_ref packageFullName, Windows::Management::Deployment::PackageStatus status) const
+template <typename D> void impl_IPackageManager3<D>::SetPackageStatus(hstring_view packageFullName, Windows::Management::Deployment::PackageStatus status) const
 {
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_SetPackageStatus(get(packageFullName), status));
 }
@@ -1393,7 +1393,7 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::StageUserDataAsync(hstring_ref packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::StageUserDataAsync(hstring_view packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_StageUserDataWithOptionsAsync(get(packageFullName), deploymentOptions, put(deploymentOperation)));
@@ -1456,14 +1456,14 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Applica
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackages(hstring_ref packageName, hstring_ref packagePublisher) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackages(hstring_view packageName, hstring_view packagePublisher) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByNamePublisher(get(packageName), get(packagePublisher), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackages(hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackages(hstring_view packageFamilyName) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByPackageFamilyName(get(packageFamilyName), put(packageCollection)));
@@ -1477,70 +1477,70 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Applica
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, hstring_ref packageName, hstring_ref packagePublisher) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, hstring_view packageName, hstring_view packagePublisher) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByNamePublisherWithPackagesTypes(packageTypes, get(packageName), get(packagePublisher), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, hstring_view packageFamilyName) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByPackageFamilyNameWithPackageTypes(packageTypes, get(packageFamilyName), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackage(hstring_ref packageFullName) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackage(hstring_view packageFullName) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackageByPackageFullName(get(packageFullName), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUser(hstring_ref userSecurityId) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUser(hstring_view userSecurityId) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByUserSecurityId(get(userSecurityId), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUser(hstring_ref userSecurityId, hstring_ref packageName, hstring_ref packagePublisher) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUser(hstring_view userSecurityId, hstring_view packageName, hstring_view packagePublisher) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByUserSecurityIdNamePublisher(get(userSecurityId), get(packageName), get(packagePublisher), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUser(hstring_ref userSecurityId, hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUser(hstring_view userSecurityId, hstring_view packageFamilyName) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByUserSecurityIdPackageFamilyName(get(userSecurityId), get(packageFamilyName), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUserWithPackageTypes(hstring_view userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByUserSecurityIdWithPackageTypes(get(userSecurityId), packageTypes, put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, hstring_ref packageName, hstring_ref packagePublisher) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUserWithPackageTypes(hstring_view userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, hstring_view packageName, hstring_view packagePublisher) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(get(userSecurityId), packageTypes, get(packageName), get(packagePublisher), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackagesForUserWithPackageTypes(hstring_view userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, hstring_view packageFamilyName) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes(get(userSecurityId), packageTypes, get(packageFamilyName), put(packageCollection)));
     return packageCollection;
 }
 
-template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackageForUser(hstring_ref userSecurityId, hstring_ref packageFullName) const
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> impl_IPackageVolume<D>::FindPackageForUser(hstring_view userSecurityId, hstring_view packageFullName) const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> packageCollection;
     check_hresult(WINRT_SHIM(IPackageVolume)->abi_FindPackageByUserSecurityIdPackageFullName(get(userSecurityId), get(packageFullName), put(packageCollection)));

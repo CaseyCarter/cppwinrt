@@ -194,7 +194,7 @@ struct WINRT_EBO impl_IPerceptionCorrelation
 template <typename D>
 struct WINRT_EBO impl_IPerceptionCorrelationFactory
 {
-    Windows::Devices::Perception::Provider::PerceptionCorrelation Create(hstring_ref targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const;
+    Windows::Devices::Perception::Provider::PerceptionCorrelation Create(hstring_view targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const;
 };
 
 template <typename D>
@@ -245,13 +245,13 @@ template <typename D>
 struct WINRT_EBO impl_IPerceptionFrameProviderInfo
 {
     hstring Id() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     hstring DisplayName() const;
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     hstring DeviceKind() const;
-    void DeviceKind(hstring_ref value) const;
+    void DeviceKind(hstring_view value) const;
     hstring FrameKind() const;
-    void FrameKind(hstring_ref value) const;
+    void FrameKind(hstring_view value) const;
     bool Hidden() const;
     void Hidden(bool value) const;
 };

@@ -355,7 +355,7 @@ template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguage
     return value;
 }
 
-template <typename D> Windows::Globalization::Fonts::LanguageFontGroup impl_ILanguageFontGroupFactory<D>::CreateLanguageFontGroup(hstring_ref languageTag) const
+template <typename D> Windows::Globalization::Fonts::LanguageFontGroup impl_ILanguageFontGroupFactory<D>::CreateLanguageFontGroup(hstring_view languageTag) const
 {
     Windows::Globalization::Fonts::LanguageFontGroup recommendedFonts { nullptr };
     check_hresult(WINRT_SHIM(ILanguageFontGroupFactory)->abi_CreateLanguageFontGroup(get(languageTag), put(recommendedFonts)));
@@ -397,7 +397,7 @@ template <typename D> double impl_ILanguageFont<D>::ScaleFactor() const
     return scale;
 }
 
-inline LanguageFontGroup::LanguageFontGroup(hstring_ref languageTag) :
+inline LanguageFontGroup::LanguageFontGroup(hstring_view languageTag) :
     LanguageFontGroup(get_activation_factory<LanguageFontGroup, ILanguageFontGroupFactory>().CreateLanguageFontGroup(languageTag))
 {}
 

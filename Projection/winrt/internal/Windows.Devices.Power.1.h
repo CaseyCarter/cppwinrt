@@ -72,7 +72,7 @@ template <typename D>
 struct WINRT_EBO impl_IBatteryStatics
 {
     Windows::Devices::Power::Battery AggregateBattery() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
 };
 

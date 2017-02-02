@@ -116,20 +116,20 @@ template <typename D>
 struct WINRT_EBO impl_IPrintCustomItemDetails
 {
     hstring ItemId() const;
-    void ItemDisplayName(hstring_ref value) const;
+    void ItemDisplayName(hstring_view value) const;
     hstring ItemDisplayName() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPrintCustomItemListOptionDetails
 {
-    void AddItem(hstring_ref itemId, hstring_ref displayName) const;
+    void AddItem(hstring_view itemId, hstring_view displayName) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPrintCustomOptionDetails
 {
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     hstring DisplayName() const;
 };
 
@@ -158,7 +158,7 @@ struct WINRT_EBO impl_IPrintOptionDetails
 {
     hstring OptionId() const;
     Windows::Graphics::Printing::OptionDetails::PrintOptionType OptionType() const;
-    void ErrorText(hstring_ref value) const;
+    void ErrorText(hstring_view value) const;
     hstring ErrorText() const;
     void State(Windows::Graphics::Printing::OptionDetails::PrintOptionStates value) const;
     Windows::Graphics::Printing::OptionDetails::PrintOptionStates State() const;
@@ -176,8 +176,8 @@ template <typename D>
 struct WINRT_EBO impl_IPrintTaskOptionDetails
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> Options() const;
-    Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails CreateItemListOption(hstring_ref optionId, hstring_ref displayName) const;
-    Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails CreateTextOption(hstring_ref optionId, hstring_ref displayName) const;
+    Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails CreateItemListOption(hstring_view optionId, hstring_view displayName) const;
+    Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails CreateTextOption(hstring_view optionId, hstring_view displayName) const;
     event_token OptionChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> & eventHandler) const;
     using OptionChanged_revoker = event_revoker<IPrintTaskOptionDetails>;
     OptionChanged_revoker OptionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> & eventHandler) const;

@@ -22,7 +22,7 @@ struct WINRT_EBO DnssdServiceInstance :
     impl::require<DnssdServiceInstance, Windows::Foundation::IStringable>
 {
     DnssdServiceInstance(std::nullptr_t) noexcept {}
-    DnssdServiceInstance(hstring_ref dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port);
+    DnssdServiceInstance(hstring_view dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port);
 };
 
 struct WINRT_EBO DnssdServiceInstanceCollection :

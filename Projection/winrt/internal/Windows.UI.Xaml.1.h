@@ -1571,8 +1571,8 @@ template <typename D>
 struct WINRT_EBO impl_IDependencyPropertyStatics
 {
     Windows::IInspectable UnsetValue() const;
-    Windows::UI::Xaml::DependencyProperty Register(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata) const;
-    Windows::UI::Xaml::DependencyProperty RegisterAttached(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata) const;
+    Windows::UI::Xaml::DependencyProperty Register(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata) const;
+    Windows::UI::Xaml::DependencyProperty RegisterAttached(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata) const;
 };
 
 template <typename D>
@@ -1660,7 +1660,7 @@ template <typename D>
 struct WINRT_EBO impl_IDragUIOverride
 {
     hstring Caption() const;
-    void Caption(hstring_ref value) const;
+    void Caption(hstring_view value) const;
     bool IsContentVisible() const;
     void IsContentVisible(bool value) const;
     bool IsCaptionVisible() const;
@@ -1741,7 +1741,7 @@ struct WINRT_EBO impl_IFrameworkElement
     Windows::IInspectable Tag() const;
     void Tag(const Windows::IInspectable & value) const;
     hstring Language() const;
-    void Language(hstring_ref value) const;
+    void Language(hstring_view value) const;
     double ActualWidth() const;
     double ActualHeight() const;
     double Width() const;
@@ -1763,7 +1763,7 @@ struct WINRT_EBO impl_IFrameworkElement
     Windows::UI::Xaml::Thickness Margin() const;
     void Margin(const Windows::UI::Xaml::Thickness & value) const;
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     Windows::Foundation::Uri BaseUri() const;
     Windows::IInspectable DataContext() const;
     void DataContext(const Windows::IInspectable & value) const;
@@ -1788,7 +1788,7 @@ struct WINRT_EBO impl_IFrameworkElement
     using LayoutUpdated_revoker = event_revoker<IFrameworkElement>;
     LayoutUpdated_revoker LayoutUpdated(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
     void LayoutUpdated(event_token token) const;
-    Windows::IInspectable FindName(hstring_ref name) const;
+    Windows::IInspectable FindName(hstring_view name) const;
     void SetBinding(const Windows::UI::Xaml::DependencyProperty & dp, const Windows::UI::Xaml::Data::BindingBase & binding) const;
 };
 
@@ -1849,7 +1849,7 @@ struct WINRT_EBO impl_IFrameworkElementOverrides
 template <typename D>
 struct WINRT_EBO impl_IFrameworkElementOverrides2
 {
-    bool GoToElementStateCore(hstring_ref stateName, bool useTransitions) const;
+    bool GoToElementStateCore(hstring_view stateName, bool useTransitions) const;
 };
 
 template <typename D>
@@ -1979,7 +1979,7 @@ struct WINRT_EBO impl_IPropertyPath
 template <typename D>
 struct WINRT_EBO impl_IPropertyPathFactory
 {
-    Windows::UI::Xaml::PropertyPath CreateInstance(hstring_ref path) const;
+    Windows::UI::Xaml::PropertyPath CreateInstance(hstring_view path) const;
 };
 
 template <typename D>
@@ -2382,7 +2382,7 @@ struct WINRT_EBO impl_IUIElement4
     Windows::UI::Xaml::DependencyObject AccessKeyScopeOwner() const;
     void AccessKeyScopeOwner(const Windows::UI::Xaml::DependencyObject & value) const;
     hstring AccessKey() const;
-    void AccessKey(hstring_ref value) const;
+    void AccessKey(hstring_view value) const;
     event_token ContextRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> & value) const;
     using ContextRequested_revoker = event_revoker<IUIElement4>;
     ContextRequested_revoker ContextRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> & value) const;
@@ -2553,7 +2553,7 @@ struct WINRT_EBO impl_IVisualStateManagerFactory
 template <typename D>
 struct WINRT_EBO impl_IVisualStateManagerOverrides
 {
-    bool GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_ref stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions) const;
+    bool GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_view stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions) const;
 };
 
 template <typename D>
@@ -2570,7 +2570,7 @@ struct WINRT_EBO impl_IVisualStateManagerStatics
     Windows::UI::Xaml::DependencyProperty CustomVisualStateManagerProperty() const;
     Windows::UI::Xaml::VisualStateManager GetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj) const;
     void SetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj, const Windows::UI::Xaml::VisualStateManager & value) const;
-    bool GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_ref stateName, bool useTransitions) const;
+    bool GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_view stateName, bool useTransitions) const;
 };
 
 template <typename D>
@@ -2581,9 +2581,9 @@ struct WINRT_EBO impl_IVisualTransition
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase GeneratedEasingFunction() const;
     void GeneratedEasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
     hstring To() const;
-    void To(hstring_ref value) const;
+    void To(hstring_view value) const;
     hstring From() const;
-    void From(hstring_ref value) const;
+    void From(hstring_view value) const;
     Windows::UI::Xaml::Media::Animation::Storyboard Storyboard() const;
     void Storyboard(const Windows::UI::Xaml::Media::Animation::Storyboard & value) const;
 };

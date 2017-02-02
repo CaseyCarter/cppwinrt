@@ -2512,7 +2512,7 @@ template <typename D> hstring impl_IMusicDisplayProperties<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IMusicDisplayProperties<D>::Title(hstring_ref value) const
+template <typename D> void impl_IMusicDisplayProperties<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicDisplayProperties)->put_Title(get(value)));
 }
@@ -2524,7 +2524,7 @@ template <typename D> hstring impl_IMusicDisplayProperties<D>::AlbumArtist() con
     return value;
 }
 
-template <typename D> void impl_IMusicDisplayProperties<D>::AlbumArtist(hstring_ref value) const
+template <typename D> void impl_IMusicDisplayProperties<D>::AlbumArtist(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicDisplayProperties)->put_AlbumArtist(get(value)));
 }
@@ -2536,7 +2536,7 @@ template <typename D> hstring impl_IMusicDisplayProperties<D>::Artist() const
     return value;
 }
 
-template <typename D> void impl_IMusicDisplayProperties<D>::Artist(hstring_ref value) const
+template <typename D> void impl_IMusicDisplayProperties<D>::Artist(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicDisplayProperties)->put_Artist(get(value)));
 }
@@ -2548,7 +2548,7 @@ template <typename D> hstring impl_IMusicDisplayProperties2<D>::AlbumTitle() con
     return value;
 }
 
-template <typename D> void impl_IMusicDisplayProperties2<D>::AlbumTitle(hstring_ref value) const
+template <typename D> void impl_IMusicDisplayProperties2<D>::AlbumTitle(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicDisplayProperties2)->put_AlbumTitle(get(value)));
 }
@@ -2591,7 +2591,7 @@ template <typename D> hstring impl_IVideoDisplayProperties<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IVideoDisplayProperties<D>::Title(hstring_ref value) const
+template <typename D> void impl_IVideoDisplayProperties<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVideoDisplayProperties)->put_Title(get(value)));
 }
@@ -2603,7 +2603,7 @@ template <typename D> hstring impl_IVideoDisplayProperties<D>::Subtitle() const
     return value;
 }
 
-template <typename D> void impl_IVideoDisplayProperties<D>::Subtitle(hstring_ref value) const
+template <typename D> void impl_IVideoDisplayProperties<D>::Subtitle(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVideoDisplayProperties)->put_Subtitle(get(value)));
 }
@@ -2622,7 +2622,7 @@ template <typename D> hstring impl_IImageDisplayProperties<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IImageDisplayProperties<D>::Title(hstring_ref value) const
+template <typename D> void impl_IImageDisplayProperties<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IImageDisplayProperties)->put_Title(get(value)));
 }
@@ -2634,7 +2634,7 @@ template <typename D> hstring impl_IImageDisplayProperties<D>::Subtitle() const
     return value;
 }
 
-template <typename D> void impl_IImageDisplayProperties<D>::Subtitle(hstring_ref value) const
+template <typename D> void impl_IImageDisplayProperties<D>::Subtitle(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IImageDisplayProperties)->put_Subtitle(get(value)));
 }
@@ -2658,7 +2658,7 @@ template <typename D> hstring impl_ISystemMediaTransportControlsDisplayUpdater<D
     return value;
 }
 
-template <typename D> void impl_ISystemMediaTransportControlsDisplayUpdater<D>::AppMediaId(hstring_ref value) const
+template <typename D> void impl_ISystemMediaTransportControlsDisplayUpdater<D>::AppMediaId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->put_AppMediaId(get(value)));
 }
@@ -3068,62 +3068,62 @@ template <typename D> void impl_IMediaExtension<D>::SetProperties(const Windows:
     check_hresult(WINRT_SHIM(IMediaExtension)->abi_SetProperties(get(configuration)));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_ref activatableClassId, hstring_ref scheme) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_view activatableClassId, hstring_view scheme) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterSchemeHandler(get(activatableClassId), get(scheme)));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_ref activatableClassId, hstring_ref scheme, const Windows::Foundation::Collections::IPropertySet & configuration) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_view activatableClassId, hstring_view scheme, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterSchemeHandlerWithSettings(get(activatableClassId), get(scheme), get(configuration)));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_ref activatableClassId, hstring_ref fileExtension, hstring_ref mimeType) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_view activatableClassId, hstring_view fileExtension, hstring_view mimeType) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterByteStreamHandler(get(activatableClassId), get(fileExtension), get(mimeType)));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_ref activatableClassId, hstring_ref fileExtension, hstring_ref mimeType, const Windows::Foundation::Collections::IPropertySet & configuration) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_view activatableClassId, hstring_view fileExtension, hstring_view mimeType, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterByteStreamHandlerWithSettings(get(activatableClassId), get(fileExtension), get(mimeType), get(configuration)));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioDecoder(get(activatableClassId), inputSubtype, outputSubtype));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioDecoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioEncoder(get(activatableClassId), inputSubtype, outputSubtype));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioEncoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoDecoder(get(activatableClassId), inputSubtype, outputSubtype));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoDecoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoEncoder(get(activatableClassId), inputSubtype, outputSubtype));
 }
 
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
     check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoEncoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
 }

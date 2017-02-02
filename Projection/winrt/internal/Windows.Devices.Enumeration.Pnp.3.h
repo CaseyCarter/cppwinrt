@@ -13,11 +13,11 @@ struct WINRT_EBO PnpObject :
     Windows::Devices::Enumeration::Pnp::IPnpObject
 {
     PnpObject(std::nullptr_t) noexcept {}
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObject> CreateFromIdAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, hstring_ref id, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObject> CreateFromIdAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, hstring_view id, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObjectCollection> FindAllAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObjectCollection> FindAllAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties, hstring_ref aqsFilter);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObjectCollection> FindAllAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties, hstring_view aqsFilter);
     static Windows::Devices::Enumeration::Pnp::PnpObjectWatcher CreateWatcher(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties);
-    static Windows::Devices::Enumeration::Pnp::PnpObjectWatcher CreateWatcher(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties, hstring_ref aqsFilter);
+    static Windows::Devices::Enumeration::Pnp::PnpObjectWatcher CreateWatcher(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties, hstring_view aqsFilter);
 };
 
 struct WINRT_EBO PnpObjectCollection :

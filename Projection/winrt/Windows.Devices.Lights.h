@@ -236,7 +236,7 @@ template <typename D> hstring impl_ILampStatics<D>::GetDeviceSelector() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> impl_ILampStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> impl_ILampStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> operation;
     check_hresult(WINRT_SHIM(ILampStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
@@ -329,7 +329,7 @@ inline hstring Lamp::GetDeviceSelector()
     return get_activation_factory<Lamp, ILampStatics>().GetDeviceSelector();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> Lamp::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> Lamp::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<Lamp, ILampStatics>().FromIdAsync(deviceId);
 }

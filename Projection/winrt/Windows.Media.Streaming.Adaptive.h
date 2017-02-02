@@ -1201,7 +1201,7 @@ template <typename D> Windows::Web::Http::HttpResponseMessage impl_IAdaptiveMedi
     return value;
 }
 
-template <typename D> bool impl_IAdaptiveMediaSourceStatics<D>::IsContentTypeSupported(hstring_ref contentType) const
+template <typename D> bool impl_IAdaptiveMediaSourceStatics<D>::IsContentTypeSupported(hstring_view contentType) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(IAdaptiveMediaSourceStatics)->abi_IsContentTypeSupported(get(contentType), &result));
@@ -1222,14 +1222,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Strea
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> impl_IAdaptiveMediaSourceStatics<D>::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_ref contentType) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> impl_IAdaptiveMediaSourceStatics<D>::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_view contentType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> result;
     check_hresult(WINRT_SHIM(IAdaptiveMediaSourceStatics)->abi_CreateFromStreamAsync(get(stream), get(uri), get(contentType), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> impl_IAdaptiveMediaSourceStatics<D>::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_ref contentType, const Windows::Web::Http::HttpClient & httpClient) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> impl_IAdaptiveMediaSourceStatics<D>::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_view contentType, const Windows::Web::Http::HttpClient & httpClient) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> result;
     check_hresult(WINRT_SHIM(IAdaptiveMediaSourceStatics)->abi_CreateFromStreamWithDownloaderAsync(get(stream), get(uri), get(contentType), get(httpClient), put(result)));
@@ -1586,7 +1586,7 @@ template <typename D> hstring impl_IAdaptiveMediaSourceDownloadResult<D>::Conten
     return value;
 }
 
-template <typename D> void impl_IAdaptiveMediaSourceDownloadResult<D>::ContentType(hstring_ref value) const
+template <typename D> void impl_IAdaptiveMediaSourceDownloadResult<D>::ContentType(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAdaptiveMediaSourceDownloadResult)->put_ContentType(get(value)));
 }
@@ -1702,7 +1702,7 @@ template <typename D> Windows::Web::Http::HttpResponseMessage impl_IAdaptiveMedi
     return value;
 }
 
-inline bool AdaptiveMediaSource::IsContentTypeSupported(hstring_ref contentType)
+inline bool AdaptiveMediaSource::IsContentTypeSupported(hstring_view contentType)
 {
     return get_activation_factory<AdaptiveMediaSource, IAdaptiveMediaSourceStatics>().IsContentTypeSupported(contentType);
 }
@@ -1717,12 +1717,12 @@ inline Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive:
     return get_activation_factory<AdaptiveMediaSource, IAdaptiveMediaSourceStatics>().CreateFromUriAsync(uri, httpClient);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> AdaptiveMediaSource::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_ref contentType)
+inline Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> AdaptiveMediaSource::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_view contentType)
 {
     return get_activation_factory<AdaptiveMediaSource, IAdaptiveMediaSourceStatics>().CreateFromStreamAsync(stream, uri, contentType);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> AdaptiveMediaSource::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_ref contentType, const Windows::Web::Http::HttpClient & httpClient)
+inline Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> AdaptiveMediaSource::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, const Windows::Foundation::Uri & uri, hstring_view contentType, const Windows::Web::Http::HttpClient & httpClient)
 {
     return get_activation_factory<AdaptiveMediaSource, IAdaptiveMediaSourceStatics>().CreateFromStreamAsync(stream, uri, contentType, httpClient);
 }

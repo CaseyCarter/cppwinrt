@@ -258,7 +258,7 @@ struct WINRT_EBO impl_IDeferralFactory
 template <typename D>
 struct WINRT_EBO impl_IGetActivationFactory
 {
-    Windows::IInspectable GetActivationFactory(hstring_ref activatableClassId) const;
+    Windows::IInspectable GetActivationFactory(hstring_view activatableClassId) const;
 };
 
 template <typename D>
@@ -342,7 +342,7 @@ struct WINRT_EBO impl_IPropertyValueStatics
     Windows::IInspectable CreateDouble(double value) const;
     Windows::IInspectable CreateChar16(wchar_t value) const;
     Windows::IInspectable CreateBoolean(bool value) const;
-    Windows::IInspectable CreateString(hstring_ref value) const;
+    Windows::IInspectable CreateString(hstring_view value) const;
     Windows::IInspectable CreateInspectable(const Windows::IInspectable & value) const;
     Windows::IInspectable CreateGuid(GUID value) const;
     Windows::IInspectable CreateDateTime(const Windows::Foundation::DateTime & value) const;
@@ -380,8 +380,8 @@ struct WINRT_EBO impl_IStringable
 template <typename D>
 struct WINRT_EBO impl_IUriEscapeStatics
 {
-    hstring UnescapeComponent(hstring_ref toUnescape) const;
-    hstring EscapeComponent(hstring_ref toEscape) const;
+    hstring UnescapeComponent(hstring_view toUnescape) const;
+    hstring EscapeComponent(hstring_view toEscape) const;
 };
 
 template <typename D>
@@ -403,14 +403,14 @@ struct WINRT_EBO impl_IUriRuntimeClass
     int32_t Port() const;
     bool Suspicious() const;
     bool Equals(const Windows::Foundation::Uri & pUri) const;
-    Windows::Foundation::Uri CombineUri(hstring_ref relativeUri) const;
+    Windows::Foundation::Uri CombineUri(hstring_view relativeUri) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IUriRuntimeClassFactory
 {
-    Windows::Foundation::Uri CreateUri(hstring_ref uri) const;
-    Windows::Foundation::Uri CreateWithRelativeUri(hstring_ref baseUri, hstring_ref relativeUri) const;
+    Windows::Foundation::Uri CreateUri(hstring_view uri) const;
+    Windows::Foundation::Uri CreateWithRelativeUri(hstring_view baseUri, hstring_view relativeUri) const;
 };
 
 template <typename D>
@@ -430,13 +430,13 @@ struct WINRT_EBO impl_IWwwFormUrlDecoderEntry
 template <typename D>
 struct WINRT_EBO impl_IWwwFormUrlDecoderRuntimeClass
 {
-    hstring GetFirstValueByName(hstring_ref name) const;
+    hstring GetFirstValueByName(hstring_view name) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IWwwFormUrlDecoderRuntimeClassFactory
 {
-    Windows::Foundation::WwwFormUrlDecoder CreateWwwFormUrlDecoder(hstring_ref query) const;
+    Windows::Foundation::WwwFormUrlDecoder CreateWwwFormUrlDecoder(hstring_view query) const;
 };
 
 }

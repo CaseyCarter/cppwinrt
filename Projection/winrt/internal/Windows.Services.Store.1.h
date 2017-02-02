@@ -388,8 +388,8 @@ struct WINRT_EBO impl_IStoreContext
     using OfflineLicensesChanged_revoker = event_revoker<IStoreContext>;
     OfflineLicensesChanged_revoker OfflineLicensesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> & handler) const;
     void OfflineLicensesChanged(event_token token) const;
-    Windows::Foundation::IAsyncOperation<hstring> GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
-    Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetCustomerPurchaseIdAsync(hstring_view serviceTicket, hstring_view publisherUserId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(hstring_view serviceTicket, hstring_view publisherUserId) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAppLicense> GetAppLicenseAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult> GetStoreProductForCurrentAppAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetStoreProductsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, const Windows::Foundation::Collections::IIterable<hstring> & storeIds) const;
@@ -397,11 +397,11 @@ struct WINRT_EBO impl_IStoreContext
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetAssociatedStoreProductsWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetUserCollectionAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetUserCollectionWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> ReportConsumableFulfillmentAsync(hstring_ref productStoreId, uint32_t quantity, GUID trackingId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> GetConsumableBalanceRemainingAsync(hstring_ref productStoreId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> ReportConsumableFulfillmentAsync(hstring_view productStoreId, uint32_t quantity, GUID trackingId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> GetConsumableBalanceRemainingAsync(hstring_view productStoreId) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAcquireLicenseResult> AcquireStoreLicenseForOptionalPackageAsync(const Windows::ApplicationModel::Package & optionalPackage) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(hstring_ref storeId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(hstring_ref storeId, const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(hstring_view storeId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(hstring_view storeId, const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdate>> GetAppAndOptionalStorePackageUpdatesAsync() const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadAndInstallStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const;
@@ -522,15 +522,15 @@ template <typename D>
 struct WINRT_EBO impl_IStorePurchaseProperties
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     hstring ExtendedJsonData() const;
-    void ExtendedJsonData(hstring_ref value) const;
+    void ExtendedJsonData(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IStorePurchasePropertiesFactory
 {
-    Windows::Services::Store::StorePurchaseProperties Create(hstring_ref name) const;
+    Windows::Services::Store::StorePurchaseProperties Create(hstring_view name) const;
 };
 
 template <typename D>
@@ -543,7 +543,7 @@ struct WINRT_EBO impl_IStorePurchaseResult
 template <typename D>
 struct WINRT_EBO impl_IStoreRequestHelperStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_ref parametersAsJson) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_view parametersAsJson) const;
 };
 
 template <typename D>

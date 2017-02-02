@@ -237,7 +237,7 @@ struct WINRT_EBO impl_IHidDeviceStatics
 {
     hstring GetDeviceSelector(uint16_t usagePage, uint16_t usageId) const;
     hstring GetDeviceSelector(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> FromIdAsync(hstring_ref deviceId, Windows::Storage::FileAccessMode accessMode) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> FromIdAsync(hstring_view deviceId, Windows::Storage::FileAccessMode accessMode) const;
 };
 
 template <typename D>

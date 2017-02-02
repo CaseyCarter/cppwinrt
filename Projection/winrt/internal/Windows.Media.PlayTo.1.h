@@ -330,7 +330,7 @@ struct WINRT_EBO impl_IPlayToReceiver
     void NotifyError() const;
     void NotifyStopped() const;
     hstring FriendlyName() const;
-    void FriendlyName(hstring_ref value) const;
+    void FriendlyName(hstring_view value) const;
     void SupportsImage(bool value) const;
     bool SupportsImage() const;
     void SupportsAudio(bool value) const;
@@ -361,7 +361,7 @@ template <typename D>
 struct WINRT_EBO impl_IPlayToSourceRequest
 {
     Windows::Foundation::DateTime Deadline() const;
-    void DisplayErrorString(hstring_ref errorString) const;
+    void DisplayErrorString(hstring_view errorString) const;
     Windows::Media::PlayTo::PlayToSourceDeferral GetDeferral() const;
     void SetSource(const Windows::Media::PlayTo::PlayToSource & value) const;
 };

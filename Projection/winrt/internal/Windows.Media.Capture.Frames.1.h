@@ -267,8 +267,8 @@ struct WINRT_EBO impl_IMediaFrameSource
 template <typename D>
 struct WINRT_EBO impl_IMediaFrameSourceController
 {
-    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> GetPropertyAsync(hstring_ref propertyId) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> SetPropertyAsync(hstring_ref propertyId, const Windows::IInspectable & propertyValue) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> GetPropertyAsync(hstring_view propertyId) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> SetPropertyAsync(hstring_view propertyId, const Windows::IInspectable & propertyValue) const;
     Windows::Media::Devices::VideoDeviceController VideoDeviceController() const;
 };
 
@@ -291,7 +291,7 @@ template <typename D>
 struct WINRT_EBO impl_IMediaFrameSourceGroupStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameSourceGroup>> FindAllAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> FromIdAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> FromIdAsync(hstring_view id) const;
     hstring GetDeviceSelector() const;
 };
 

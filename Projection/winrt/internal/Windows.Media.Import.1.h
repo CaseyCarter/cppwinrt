@@ -397,7 +397,7 @@ struct WINRT_EBO impl_IPhotoImportSession
     bool AppendSessionDateToDestinationFolder() const;
     void SubfolderCreationMode(Windows::Media::Import::PhotoImportSubfolderCreationMode value) const;
     Windows::Media::Import::PhotoImportSubfolderCreationMode SubfolderCreationMode() const;
-    void DestinationFileNamePrefix(hstring_ref value) const;
+    void DestinationFileNamePrefix(hstring_view value) const;
     hstring DestinationFileNamePrefix() const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t> FindItemsAsync(Windows::Media::Import::PhotoImportContentTypeFilter contentTypeFilter, Windows::Media::Import::PhotoImportItemSelectionMode itemSelectionMode) const;
 };
@@ -444,7 +444,7 @@ struct WINRT_EBO impl_IPhotoImportSource
 template <typename D>
 struct WINRT_EBO impl_IPhotoImportSourceStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> FromIdAsync(hstring_ref sourceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> FromIdAsync(hstring_view sourceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> FromFolderAsync(const Windows::Storage::IStorageFolder & sourceRootFolder) const;
 };
 

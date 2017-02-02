@@ -158,7 +158,7 @@ struct WINRT_EBO impl_ICoreDragUIOverride
     bool IsContentVisible() const;
     void IsContentVisible(bool value) const;
     hstring Caption() const;
-    void Caption(hstring_ref value) const;
+    void Caption(hstring_view value) const;
     bool IsCaptionVisible() const;
     void IsCaptionVisible(bool value) const;
     bool IsGlyphVisible() const;

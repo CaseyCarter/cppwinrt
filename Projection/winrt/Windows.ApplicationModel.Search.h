@@ -388,7 +388,7 @@ template <typename D> uint32_t impl_ISearchSuggestionCollection<D>::Size() const
     return value;
 }
 
-template <typename D> void impl_ISearchSuggestionCollection<D>::AppendQuerySuggestion(hstring_ref text) const
+template <typename D> void impl_ISearchSuggestionCollection<D>::AppendQuerySuggestion(hstring_view text) const
 {
     check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendQuerySuggestion(get(text)));
 }
@@ -398,12 +398,12 @@ template <typename D> void impl_ISearchSuggestionCollection<D>::AppendQuerySugge
     check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendQuerySuggestions(get(suggestions)));
 }
 
-template <typename D> void impl_ISearchSuggestionCollection<D>::AppendResultSuggestion(hstring_ref text, hstring_ref detailText, hstring_ref tag, const Windows::Storage::Streams::IRandomAccessStreamReference & image, hstring_ref imageAlternateText) const
+template <typename D> void impl_ISearchSuggestionCollection<D>::AppendResultSuggestion(hstring_view text, hstring_view detailText, hstring_view tag, const Windows::Storage::Streams::IRandomAccessStreamReference & image, hstring_view imageAlternateText) const
 {
     check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendResultSuggestion(get(text), get(detailText), get(tag), get(image), get(imageAlternateText)));
 }
 
-template <typename D> void impl_ISearchSuggestionCollection<D>::AppendSearchSeparator(hstring_ref label) const
+template <typename D> void impl_ISearchSuggestionCollection<D>::AppendSearchSeparator(hstring_view label) const
 {
     check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendSearchSeparator(get(label)));
 }
@@ -427,7 +427,7 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Storage
     return value;
 }
 
-template <typename D> void impl_ILocalContentSuggestionSettings<D>::AqsFilter(hstring_ref value) const
+template <typename D> void impl_ILocalContentSuggestionSettings<D>::AqsFilter(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ILocalContentSuggestionSettings)->put_AqsFilter(get(value)));
 }

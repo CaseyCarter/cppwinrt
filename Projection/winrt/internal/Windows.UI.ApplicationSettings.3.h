@@ -101,7 +101,7 @@ struct WINRT_EBO SettingsCommand :
     Windows::UI::Popups::IUICommand
 {
     SettingsCommand(std::nullptr_t) noexcept {}
-    SettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & handler);
+    SettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & handler);
     static Windows::UI::ApplicationSettings::SettingsCommand AccountsCommand();
 };
 

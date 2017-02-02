@@ -41,7 +41,7 @@ struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Win
 template <typename Class, typename Interface>
 Interface get_agile_activation_factory()
 {
-    hstring_ref classId(impl::traits<Class>::name());
+    hstring_view classId(impl::traits<Class>::name());
 
     Interface factory;
     check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
@@ -57,7 +57,7 @@ Interface get_agile_activation_factory()
 template <typename Class, typename Interface>
 Interface get_activation_factory()
 {
-    hstring_ref classId(impl::traits<Class>::name());
+    hstring_view classId(impl::traits<Class>::name());
 
     Interface factory;
     check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));

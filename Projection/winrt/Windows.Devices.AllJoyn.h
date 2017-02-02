@@ -2644,7 +2644,7 @@ template <typename D> hstring impl_IAllJoynBusAttachment<D>::UniqueName() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IAllJoynBusAttachment<D>::PingAsync(hstring_ref uniqueName) const
+template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IAllJoynBusAttachment<D>::PingAsync(hstring_view uniqueName) const
 {
     Windows::Foundation::IAsyncOperation<int32_t> operation;
     check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->abi_PingAsync(get(uniqueName), put(operation)));
@@ -2965,7 +2965,7 @@ template <typename D> bool impl_IAllJoynAuthenticationCompleteEventArgs<D>::Succ
     return value;
 }
 
-template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment impl_IAllJoynBusAttachmentFactory<D>::Create(hstring_ref connectionSpecification) const
+template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment impl_IAllJoynBusAttachmentFactory<D>::Create(hstring_view connectionSpecification) const
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachment result { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynBusAttachmentFactory)->abi_Create(get(connectionSpecification), put(result)));
@@ -2986,7 +2986,7 @@ template <typename D> int32_t impl_IAllJoynSession<D>::Status() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IAllJoynSession<D>::RemoveMemberAsync(hstring_ref uniqueName) const
+template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IAllJoynSession<D>::RemoveMemberAsync(hstring_view uniqueName) const
 {
     Windows::Foundation::IAsyncOperation<int32_t> operation;
     check_hresult(WINRT_SHIM(IAllJoynSession)->abi_RemoveMemberAsync(get(uniqueName), put(operation)));
@@ -3109,14 +3109,14 @@ template <typename D> void impl_IAllJoynBusObject<D>::Stopped(event_token token)
     check_hresult(WINRT_SHIM(IAllJoynBusObject)->remove_Stopped(token));
 }
 
-template <typename D> Windows::Devices::AllJoyn::AllJoynBusObject impl_IAllJoynBusObjectFactory<D>::Create(hstring_ref objectPath) const
+template <typename D> Windows::Devices::AllJoyn::AllJoynBusObject impl_IAllJoynBusObjectFactory<D>::Create(hstring_view objectPath) const
 {
     Windows::Devices::AllJoyn::AllJoynBusObject result { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynBusObjectFactory)->abi_Create(get(objectPath), put(result)));
     return result;
 }
 
-template <typename D> Windows::Devices::AllJoyn::AllJoynBusObject impl_IAllJoynBusObjectFactory<D>::CreateWithBusAttachment(hstring_ref objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const
+template <typename D> Windows::Devices::AllJoyn::AllJoynBusObject impl_IAllJoynBusObjectFactory<D>::CreateWithBusAttachment(hstring_view objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const
 {
     Windows::Devices::AllJoyn::AllJoynBusObject result { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynBusObjectFactory)->abi_CreateWithBusAttachment(get(objectPath), get(busAttachment), put(result)));
@@ -3144,28 +3144,28 @@ template <typename D> uint16_t impl_IAllJoynServiceInfo<D>::SessionPort() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> impl_IAllJoynServiceInfoStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> impl_IAllJoynServiceInfoStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> operation;
     check_hresult(WINRT_SHIM(IAllJoynServiceInfoStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Devices::AllJoyn::AllJoynServiceInfo impl_IAllJoynServiceInfoFactory<D>::Create(hstring_ref uniqueName, hstring_ref objectPath, uint16_t sessionPort) const
+template <typename D> Windows::Devices::AllJoyn::AllJoynServiceInfo impl_IAllJoynServiceInfoFactory<D>::Create(hstring_view uniqueName, hstring_view objectPath, uint16_t sessionPort) const
 {
     Windows::Devices::AllJoyn::AllJoynServiceInfo result { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynServiceInfoFactory)->abi_Create(get(uniqueName), get(objectPath), sessionPort, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynAboutDataViewStatics<D>::GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynAboutDataViewStatics<D>::GetDataBySessionPortAsync(hstring_view uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
     check_hresult(WINRT_SHIM(IAllJoynAboutDataViewStatics)->abi_GetDataBySessionPortAsync(get(uniqueName), get(busAttachment), sessionPort, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynAboutDataViewStatics<D>::GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynAboutDataViewStatics<D>::GetDataBySessionPortAsync(hstring_view uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
     check_hresult(WINRT_SHIM(IAllJoynAboutDataViewStatics)->abi_GetDataBySessionPortWithLanguageAsync(get(uniqueName), get(busAttachment), sessionPort, get(language), put(operation)));
@@ -3303,7 +3303,7 @@ template <typename D> hstring impl_IAllJoynAboutData<D>::DefaultAppName() const
     return value;
 }
 
-template <typename D> void impl_IAllJoynAboutData<D>::DefaultAppName(hstring_ref value) const
+template <typename D> void impl_IAllJoynAboutData<D>::DefaultAppName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultAppName(get(value)));
 }
@@ -3334,7 +3334,7 @@ template <typename D> hstring impl_IAllJoynAboutData<D>::DefaultDescription() co
     return value;
 }
 
-template <typename D> void impl_IAllJoynAboutData<D>::DefaultDescription(hstring_ref value) const
+template <typename D> void impl_IAllJoynAboutData<D>::DefaultDescription(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultDescription(get(value)));
 }
@@ -3353,7 +3353,7 @@ template <typename D> hstring impl_IAllJoynAboutData<D>::DefaultManufacturer() c
     return value;
 }
 
-template <typename D> void impl_IAllJoynAboutData<D>::DefaultManufacturer(hstring_ref value) const
+template <typename D> void impl_IAllJoynAboutData<D>::DefaultManufacturer(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultManufacturer(get(value)));
 }
@@ -3372,7 +3372,7 @@ template <typename D> hstring impl_IAllJoynAboutData<D>::ModelNumber() const
     return value;
 }
 
-template <typename D> void impl_IAllJoynAboutData<D>::ModelNumber(hstring_ref value) const
+template <typename D> void impl_IAllJoynAboutData<D>::ModelNumber(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_ModelNumber(get(value)));
 }
@@ -3384,7 +3384,7 @@ template <typename D> hstring impl_IAllJoynAboutData<D>::SoftwareVersion() const
     return value;
 }
 
-template <typename D> void impl_IAllJoynAboutData<D>::SoftwareVersion(hstring_ref value) const
+template <typename D> void impl_IAllJoynAboutData<D>::SoftwareVersion(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_SoftwareVersion(get(value)));
 }
@@ -3458,7 +3458,7 @@ template <typename D> void impl_IAllJoynAcceptSessionJoiner<D>::Accept() const
     check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoiner)->abi_Accept());
 }
 
-template <typename D> Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs impl_IAllJoynAcceptSessionJoinerEventArgsFactory<D>::Create(hstring_ref uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) const
+template <typename D> Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs impl_IAllJoynAcceptSessionJoinerEventArgsFactory<D>::Create(hstring_view uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) const
 {
     Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs result { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgsFactory)->abi_Create(get(uniqueName), sessionPort, trafficType, proximity, get(acceptSessionJoiner), put(result)));
@@ -3472,7 +3472,7 @@ template <typename D> hstring impl_IAllJoynSessionMemberAddedEventArgs<D>::Uniqu
     return value;
 }
 
-template <typename D> Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs impl_IAllJoynSessionMemberAddedEventArgsFactory<D>::Create(hstring_ref uniqueName) const
+template <typename D> Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs impl_IAllJoynSessionMemberAddedEventArgsFactory<D>::Create(hstring_view uniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs result { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynSessionMemberAddedEventArgsFactory)->abi_Create(get(uniqueName), put(result)));
@@ -3486,7 +3486,7 @@ template <typename D> hstring impl_IAllJoynSessionMemberRemovedEventArgs<D>::Uni
     return value;
 }
 
-template <typename D> Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs impl_IAllJoynSessionMemberRemovedEventArgsFactory<D>::Create(hstring_ref uniqueName) const
+template <typename D> Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs impl_IAllJoynSessionMemberRemovedEventArgsFactory<D>::Create(hstring_view uniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs result { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynSessionMemberRemovedEventArgsFactory)->abi_Create(get(uniqueName), put(result)));
@@ -3570,7 +3570,7 @@ template <typename D> hstring impl_IAllJoynServiceInfoRemovedEventArgs<D>::Uniqu
     return value;
 }
 
-template <typename D> Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs impl_IAllJoynServiceInfoRemovedEventArgsFactory<D>::Create(hstring_ref uniqueName) const
+template <typename D> Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs impl_IAllJoynServiceInfoRemovedEventArgsFactory<D>::Create(hstring_view uniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs result { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynServiceInfoRemovedEventArgsFactory)->abi_Create(get(uniqueName), put(result)));
@@ -3584,24 +3584,24 @@ template <typename D> hstring impl_IAllJoynMessageInfo<D>::SenderUniqueName() co
     return value;
 }
 
-template <typename D> Windows::Devices::AllJoyn::AllJoynMessageInfo impl_IAllJoynMessageInfoFactory<D>::Create(hstring_ref senderUniqueName) const
+template <typename D> Windows::Devices::AllJoyn::AllJoynMessageInfo impl_IAllJoynMessageInfoFactory<D>::Create(hstring_view senderUniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynMessageInfo result { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynMessageInfoFactory)->abi_Create(get(senderUniqueName), put(result)));
     return result;
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> AllJoynAboutDataView::GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> AllJoynAboutDataView::GetDataBySessionPortAsync(hstring_view uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort)
 {
     return get_activation_factory<AllJoynAboutDataView, IAllJoynAboutDataViewStatics>().GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> AllJoynAboutDataView::GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> AllJoynAboutDataView::GetDataBySessionPortAsync(hstring_view uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language)
 {
     return get_activation_factory<AllJoynAboutDataView, IAllJoynAboutDataViewStatics>().GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, language);
 }
 
-inline AllJoynAcceptSessionJoinerEventArgs::AllJoynAcceptSessionJoinerEventArgs(hstring_ref uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) :
+inline AllJoynAcceptSessionJoinerEventArgs::AllJoynAcceptSessionJoinerEventArgs(hstring_view uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) :
     AllJoynAcceptSessionJoinerEventArgs(get_activation_factory<AllJoynAcceptSessionJoinerEventArgs, IAllJoynAcceptSessionJoinerEventArgsFactory>().Create(uniqueName, sessionPort, trafficType, proximity, acceptSessionJoiner))
 {}
 
@@ -3609,7 +3609,7 @@ inline AllJoynBusAttachment::AllJoynBusAttachment() :
     AllJoynBusAttachment(activate_instance<AllJoynBusAttachment>())
 {}
 
-inline AllJoynBusAttachment::AllJoynBusAttachment(hstring_ref connectionSpecification) :
+inline AllJoynBusAttachment::AllJoynBusAttachment(hstring_view connectionSpecification) :
     AllJoynBusAttachment(get_activation_factory<AllJoynBusAttachment, IAllJoynBusAttachmentFactory>().Create(connectionSpecification))
 {}
 
@@ -3627,11 +3627,11 @@ inline AllJoynBusObject::AllJoynBusObject() :
     AllJoynBusObject(activate_instance<AllJoynBusObject>())
 {}
 
-inline AllJoynBusObject::AllJoynBusObject(hstring_ref objectPath) :
+inline AllJoynBusObject::AllJoynBusObject(hstring_view objectPath) :
     AllJoynBusObject(get_activation_factory<AllJoynBusObject, IAllJoynBusObjectFactory>().Create(objectPath))
 {}
 
-inline AllJoynBusObject::AllJoynBusObject(hstring_ref objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) :
+inline AllJoynBusObject::AllJoynBusObject(hstring_view objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) :
     AllJoynBusObject(get_activation_factory<AllJoynBusObject, IAllJoynBusObjectFactory>().CreateWithBusAttachment(objectPath, busAttachment))
 {}
 
@@ -3639,7 +3639,7 @@ inline AllJoynBusObjectStoppedEventArgs::AllJoynBusObjectStoppedEventArgs(int32_
     AllJoynBusObjectStoppedEventArgs(get_activation_factory<AllJoynBusObjectStoppedEventArgs, IAllJoynBusObjectStoppedEventArgsFactory>().Create(status))
 {}
 
-inline AllJoynMessageInfo::AllJoynMessageInfo(hstring_ref senderUniqueName) :
+inline AllJoynMessageInfo::AllJoynMessageInfo(hstring_view senderUniqueName) :
     AllJoynMessageInfo(get_activation_factory<AllJoynMessageInfo, IAllJoynMessageInfoFactory>().Create(senderUniqueName))
 {}
 
@@ -3647,16 +3647,16 @@ inline AllJoynProducerStoppedEventArgs::AllJoynProducerStoppedEventArgs(int32_t 
     AllJoynProducerStoppedEventArgs(get_activation_factory<AllJoynProducerStoppedEventArgs, IAllJoynProducerStoppedEventArgsFactory>().Create(status))
 {}
 
-inline AllJoynServiceInfo::AllJoynServiceInfo(hstring_ref uniqueName, hstring_ref objectPath, uint16_t sessionPort) :
+inline AllJoynServiceInfo::AllJoynServiceInfo(hstring_view uniqueName, hstring_view objectPath, uint16_t sessionPort) :
     AllJoynServiceInfo(get_activation_factory<AllJoynServiceInfo, IAllJoynServiceInfoFactory>().Create(uniqueName, objectPath, sessionPort))
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> AllJoynServiceInfo::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> AllJoynServiceInfo::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<AllJoynServiceInfo, IAllJoynServiceInfoStatics>().FromIdAsync(deviceId);
 }
 
-inline AllJoynServiceInfoRemovedEventArgs::AllJoynServiceInfoRemovedEventArgs(hstring_ref uniqueName) :
+inline AllJoynServiceInfoRemovedEventArgs::AllJoynServiceInfoRemovedEventArgs(hstring_view uniqueName) :
     AllJoynServiceInfoRemovedEventArgs(get_activation_factory<AllJoynServiceInfoRemovedEventArgs, IAllJoynServiceInfoRemovedEventArgsFactory>().Create(uniqueName))
 {}
 
@@ -3678,11 +3678,11 @@ inline AllJoynSessionLostEventArgs::AllJoynSessionLostEventArgs(Windows::Devices
     AllJoynSessionLostEventArgs(get_activation_factory<AllJoynSessionLostEventArgs, IAllJoynSessionLostEventArgsFactory>().Create(reason))
 {}
 
-inline AllJoynSessionMemberAddedEventArgs::AllJoynSessionMemberAddedEventArgs(hstring_ref uniqueName) :
+inline AllJoynSessionMemberAddedEventArgs::AllJoynSessionMemberAddedEventArgs(hstring_view uniqueName) :
     AllJoynSessionMemberAddedEventArgs(get_activation_factory<AllJoynSessionMemberAddedEventArgs, IAllJoynSessionMemberAddedEventArgsFactory>().Create(uniqueName))
 {}
 
-inline AllJoynSessionMemberRemovedEventArgs::AllJoynSessionMemberRemovedEventArgs(hstring_ref uniqueName) :
+inline AllJoynSessionMemberRemovedEventArgs::AllJoynSessionMemberRemovedEventArgs(hstring_view uniqueName) :
     AllJoynSessionMemberRemovedEventArgs(get_activation_factory<AllJoynSessionMemberRemovedEventArgs, IAllJoynSessionMemberRemovedEventArgsFactory>().Create(uniqueName))
 {}
 

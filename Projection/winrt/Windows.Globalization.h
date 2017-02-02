@@ -6863,14 +6863,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
     return value;
 }
 
-template <typename D> Windows::Globalization::GeographicRegion impl_IGeographicRegionFactory<D>::CreateGeographicRegion(hstring_ref geographicRegionCode) const
+template <typename D> Windows::Globalization::GeographicRegion impl_IGeographicRegionFactory<D>::CreateGeographicRegion(hstring_view geographicRegionCode) const
 {
     Windows::Globalization::GeographicRegion result { nullptr };
     check_hresult(WINRT_SHIM(IGeographicRegionFactory)->abi_CreateGeographicRegion(get(geographicRegionCode), put(result)));
     return result;
 }
 
-template <typename D> bool impl_IGeographicRegionStatics<D>::IsSupported(hstring_ref geographicRegionCode) const
+template <typename D> bool impl_IGeographicRegionStatics<D>::IsSupported(hstring_view geographicRegionCode) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(IGeographicRegionStatics)->abi_IsSupported(get(geographicRegionCode), &result));
@@ -6905,21 +6905,21 @@ template <typename D> hstring impl_ILanguage<D>::Script() const
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ILanguageExtensionSubtags<D>::GetExtensionSubtags(hstring_ref singleton) const
+template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ILanguageExtensionSubtags<D>::GetExtensionSubtags(hstring_view singleton) const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
     check_hresult(WINRT_SHIM(ILanguageExtensionSubtags)->abi_GetExtensionSubtags(get(singleton), put(value)));
     return value;
 }
 
-template <typename D> Windows::Globalization::Language impl_ILanguageFactory<D>::CreateLanguage(hstring_ref languageTag) const
+template <typename D> Windows::Globalization::Language impl_ILanguageFactory<D>::CreateLanguage(hstring_view languageTag) const
 {
     Windows::Globalization::Language result { nullptr };
     check_hresult(WINRT_SHIM(ILanguageFactory)->abi_CreateLanguage(get(languageTag), put(result)));
     return result;
 }
 
-template <typename D> bool impl_ILanguageStatics<D>::IsWellFormed(hstring_ref languageTag) const
+template <typename D> bool impl_ILanguageStatics<D>::IsWellFormed(hstring_view languageTag) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(ILanguageStatics)->abi_IsWellFormed(get(languageTag), &result));
@@ -6933,7 +6933,7 @@ template <typename D> hstring impl_ILanguageStatics<D>::CurrentInputMethodLangua
     return value;
 }
 
-template <typename D> bool impl_ILanguageStatics2<D>::TrySetInputMethodLanguageTag(hstring_ref languageTag) const
+template <typename D> bool impl_ILanguageStatics2<D>::TrySetInputMethodLanguageTag(hstring_view languageTag) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(ILanguageStatics2)->abi_TrySetInputMethodLanguageTag(get(languageTag), &result));
@@ -6971,7 +6971,7 @@ template <typename D> hstring impl_ICalendar<D>::NumeralSystem() const
     return value;
 }
 
-template <typename D> void impl_ICalendar<D>::NumeralSystem(hstring_ref value) const
+template <typename D> void impl_ICalendar<D>::NumeralSystem(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICalendar)->put_NumeralSystem(get(value)));
 }
@@ -6983,7 +6983,7 @@ template <typename D> hstring impl_ICalendar<D>::GetCalendarSystem() const
     return value;
 }
 
-template <typename D> void impl_ICalendar<D>::ChangeCalendarSystem(hstring_ref value) const
+template <typename D> void impl_ICalendar<D>::ChangeCalendarSystem(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICalendar)->abi_ChangeCalendarSystem(get(value)));
 }
@@ -6995,7 +6995,7 @@ template <typename D> hstring impl_ICalendar<D>::GetClock() const
     return value;
 }
 
-template <typename D> void impl_ICalendar<D>::ChangeClock(hstring_ref value) const
+template <typename D> void impl_ICalendar<D>::ChangeClock(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICalendar)->abi_ChangeClock(get(value)));
 }
@@ -7572,7 +7572,7 @@ template <typename D> bool impl_ICalendar<D>::IsDaylightSavingTime() const
     return value;
 }
 
-template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory2<D>::CreateCalendarWithTimeZone(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId) const
+template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory2<D>::CreateCalendarWithTimeZone(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) const
 {
     Windows::Globalization::Calendar result { nullptr };
     check_hresult(WINRT_SHIM(ICalendarFactory2)->abi_CreateCalendarWithTimeZone(get(languages), get(calendar), get(clock), get(timeZoneId), put(result)));
@@ -7586,7 +7586,7 @@ template <typename D> hstring impl_ITimeZoneOnCalendar<D>::GetTimeZone() const
     return value;
 }
 
-template <typename D> void impl_ITimeZoneOnCalendar<D>::ChangeTimeZone(hstring_ref timeZoneId) const
+template <typename D> void impl_ITimeZoneOnCalendar<D>::ChangeTimeZone(hstring_view timeZoneId) const
 {
     check_hresult(WINRT_SHIM(ITimeZoneOnCalendar)->abi_ChangeTimeZone(get(timeZoneId)));
 }
@@ -7612,7 +7612,7 @@ template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory<D>:
     return result;
 }
 
-template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory<D>::CreateCalendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock) const
+template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory<D>::CreateCalendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock) const
 {
     Windows::Globalization::Calendar result { nullptr };
     check_hresult(WINRT_SHIM(ICalendarFactory)->abi_CreateCalendar(get(languages), get(calendar), get(clock), put(result)));
@@ -7626,7 +7626,7 @@ template <typename D> hstring impl_IApplicationLanguagesStatics<D>::PrimaryLangu
     return value;
 }
 
-template <typename D> void impl_IApplicationLanguagesStatics<D>::PrimaryLanguageOverride(hstring_ref value) const
+template <typename D> void impl_IApplicationLanguagesStatics<D>::PrimaryLanguageOverride(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IApplicationLanguagesStatics)->put_PrimaryLanguageOverride(get(value)));
 }
@@ -7650,7 +7650,7 @@ inline hstring ApplicationLanguages::PrimaryLanguageOverride()
     return get_activation_factory<ApplicationLanguages, IApplicationLanguagesStatics>().PrimaryLanguageOverride();
 }
 
-inline void ApplicationLanguages::PrimaryLanguageOverride(hstring_ref value)
+inline void ApplicationLanguages::PrimaryLanguageOverride(hstring_view value)
 {
     get_activation_factory<ApplicationLanguages, IApplicationLanguagesStatics>().PrimaryLanguageOverride(value);
 }
@@ -7669,7 +7669,7 @@ inline Calendar::Calendar() :
     Calendar(activate_instance<Calendar>())
 {}
 
-inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId) :
+inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) :
     Calendar(get_activation_factory<Calendar, ICalendarFactory2>().CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId))
 {}
 
@@ -7677,7 +7677,7 @@ inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstr
     Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendarDefaultCalendarAndClock(languages))
 {}
 
-inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock) :
+inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock) :
     Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendar(languages, calendar, clock))
 {}
 
@@ -8555,20 +8555,20 @@ inline GeographicRegion::GeographicRegion() :
     GeographicRegion(activate_instance<GeographicRegion>())
 {}
 
-inline GeographicRegion::GeographicRegion(hstring_ref geographicRegionCode) :
+inline GeographicRegion::GeographicRegion(hstring_view geographicRegionCode) :
     GeographicRegion(get_activation_factory<GeographicRegion, IGeographicRegionFactory>().CreateGeographicRegion(geographicRegionCode))
 {}
 
-inline bool GeographicRegion::IsSupported(hstring_ref geographicRegionCode)
+inline bool GeographicRegion::IsSupported(hstring_view geographicRegionCode)
 {
     return get_activation_factory<GeographicRegion, IGeographicRegionStatics>().IsSupported(geographicRegionCode);
 }
 
-inline Language::Language(hstring_ref languageTag) :
+inline Language::Language(hstring_view languageTag) :
     Language(get_activation_factory<Language, ILanguageFactory>().CreateLanguage(languageTag))
 {}
 
-inline bool Language::IsWellFormed(hstring_ref languageTag)
+inline bool Language::IsWellFormed(hstring_view languageTag)
 {
     return get_activation_factory<Language, ILanguageStatics>().IsWellFormed(languageTag);
 }
@@ -8578,7 +8578,7 @@ inline hstring Language::CurrentInputMethodLanguageTag()
     return get_activation_factory<Language, ILanguageStatics>().CurrentInputMethodLanguageTag();
 }
 
-inline bool Language::TrySetInputMethodLanguageTag(hstring_ref languageTag)
+inline bool Language::TrySetInputMethodLanguageTag(hstring_view languageTag)
 {
     return get_activation_factory<Language, ILanguageStatics2>().TrySetInputMethodLanguageTag(languageTag);
 }

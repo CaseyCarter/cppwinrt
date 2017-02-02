@@ -1336,7 +1336,7 @@ template <typename D> hstring impl_IHidDeviceStatics<D>::GetDeviceSelector(uint1
     return selector;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> impl_IHidDeviceStatics<D>::FromIdAsync(hstring_ref deviceId, Windows::Storage::FileAccessMode accessMode) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> impl_IHidDeviceStatics<D>::FromIdAsync(hstring_view deviceId, Windows::Storage::FileAccessMode accessMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> hidDevice;
     check_hresult(WINRT_SHIM(IHidDeviceStatics)->abi_FromIdAsync(get(deviceId), accessMode, put(hidDevice)));
@@ -1934,7 +1934,7 @@ inline hstring HidDevice::GetDeviceSelector(uint16_t usagePage, uint16_t usageId
     return get_activation_factory<HidDevice, IHidDeviceStatics>().GetDeviceSelector(usagePage, usageId, vendorId, productId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> HidDevice::FromIdAsync(hstring_ref deviceId, Windows::Storage::FileAccessMode accessMode)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> HidDevice::FromIdAsync(hstring_view deviceId, Windows::Storage::FileAccessMode accessMode)
 {
     return get_activation_factory<HidDevice, IHidDeviceStatics>().FromIdAsync(deviceId, accessMode);
 }

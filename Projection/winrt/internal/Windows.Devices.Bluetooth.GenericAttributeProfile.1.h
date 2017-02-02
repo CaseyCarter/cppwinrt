@@ -480,7 +480,7 @@ struct WINRT_EBO impl_IGattDeviceService2
 template <typename D>
 struct WINRT_EBO impl_IGattDeviceServiceStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelectorFromUuid(GUID serviceUuid) const;
     hstring GetDeviceSelectorFromShortId(uint16_t serviceShortId) const;
     GUID ConvertShortIdToUuid(uint16_t shortId) const;

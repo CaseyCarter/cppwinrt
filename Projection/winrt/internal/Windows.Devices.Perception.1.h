@@ -572,11 +572,11 @@ struct WINRT_EBO impl_IPerceptionColorFrameSource
     Windows::Devices::Perception::PerceptionVideoProfile VideoProfile() const;
     Windows::Media::Devices::Core::CameraIntrinsics CameraIntrinsics() const;
     Windows::Devices::Perception::PerceptionControlSession AcquireControlSession() const;
-    bool CanControlIndependentlyFrom(hstring_ref targetId) const;
-    bool IsCorrelatedWith(hstring_ref targetId) const;
-    bool TryGetTransformTo(hstring_ref targetId, Windows::Foundation::Numerics::float4x4 & result) const;
+    bool CanControlIndependentlyFrom(hstring_view targetId) const;
+    bool IsCorrelatedWith(hstring_view targetId) const;
+    bool TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_ref targetSourceId, const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetSourceId, const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const;
     Windows::Devices::Perception::PerceptionColorFrameReader OpenReader() const;
 };
@@ -604,7 +604,7 @@ struct WINRT_EBO impl_IPerceptionColorFrameSourceStatics
 {
     Windows::Devices::Perception::PerceptionColorFrameSourceWatcher CreateWatcher() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>> FindAllAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> FromIdAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> FromIdAsync(hstring_view id) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> RequestAccessAsync() const;
 };
 
@@ -639,7 +639,7 @@ struct WINRT_EBO impl_IPerceptionControlSession
     using ControlLost_revoker = event_revoker<IPerceptionControlSession>;
     ControlLost_revoker ControlLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> & handler) const;
     void ControlLost(event_token token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetPropertyAsync(hstring_ref name, const Windows::IInspectable & value) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetPropertyAsync(hstring_view name, const Windows::IInspectable & value) const;
 };
 
 template <typename D>
@@ -721,11 +721,11 @@ struct WINRT_EBO impl_IPerceptionDepthFrameSource
     Windows::Devices::Perception::PerceptionVideoProfile VideoProfile() const;
     Windows::Media::Devices::Core::CameraIntrinsics CameraIntrinsics() const;
     Windows::Devices::Perception::PerceptionControlSession AcquireControlSession() const;
-    bool CanControlIndependentlyFrom(hstring_ref targetId) const;
-    bool IsCorrelatedWith(hstring_ref targetId) const;
-    bool TryGetTransformTo(hstring_ref targetId, Windows::Foundation::Numerics::float4x4 & result) const;
+    bool CanControlIndependentlyFrom(hstring_view targetId) const;
+    bool IsCorrelatedWith(hstring_view targetId) const;
+    bool TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_ref targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const;
     Windows::Devices::Perception::PerceptionDepthFrameReader OpenReader() const;
 };
@@ -753,7 +753,7 @@ struct WINRT_EBO impl_IPerceptionDepthFrameSourceStatics
 {
     Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher CreateWatcher() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>> FindAllAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> FromIdAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> FromIdAsync(hstring_view id) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> RequestAccessAsync() const;
 };
 
@@ -856,11 +856,11 @@ struct WINRT_EBO impl_IPerceptionInfraredFrameSource
     Windows::Devices::Perception::PerceptionVideoProfile VideoProfile() const;
     Windows::Media::Devices::Core::CameraIntrinsics CameraIntrinsics() const;
     Windows::Devices::Perception::PerceptionControlSession AcquireControlSession() const;
-    bool CanControlIndependentlyFrom(hstring_ref targetId) const;
-    bool IsCorrelatedWith(hstring_ref targetId) const;
-    bool TryGetTransformTo(hstring_ref targetId, Windows::Foundation::Numerics::float4x4 & result) const;
+    bool CanControlIndependentlyFrom(hstring_view targetId) const;
+    bool IsCorrelatedWith(hstring_view targetId) const;
+    bool TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_ref targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const;
     Windows::Devices::Perception::PerceptionInfraredFrameReader OpenReader() const;
 };
@@ -888,7 +888,7 @@ struct WINRT_EBO impl_IPerceptionInfraredFrameSourceStatics
 {
     Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher CreateWatcher() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>> FindAllAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> FromIdAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> FromIdAsync(hstring_view id) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> RequestAccessAsync() const;
 };
 

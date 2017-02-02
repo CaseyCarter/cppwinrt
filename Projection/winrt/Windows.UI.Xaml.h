@@ -9382,14 +9382,14 @@ template <typename D> Windows::IInspectable impl_IDependencyPropertyStatics<D>::
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDependencyPropertyStatics<D>::Register(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata) const
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDependencyPropertyStatics<D>::Register(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata) const
 {
     Windows::UI::Xaml::DependencyProperty returnValue { nullptr };
     check_hresult(WINRT_SHIM(IDependencyPropertyStatics)->abi_Register(get(name), get(propertyType), get(ownerType), get(typeMetadata), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDependencyPropertyStatics<D>::RegisterAttached(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata) const
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDependencyPropertyStatics<D>::RegisterAttached(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata) const
 {
     Windows::UI::Xaml::DependencyProperty returnValue { nullptr };
     check_hresult(WINRT_SHIM(IDependencyPropertyStatics)->abi_RegisterAttached(get(name), get(propertyType), get(ownerType), get(defaultMetadata), put(returnValue)));
@@ -9454,7 +9454,7 @@ template <typename D> hstring impl_IDragUIOverride<D>::Caption() const
     return value;
 }
 
-template <typename D> void impl_IDragUIOverride<D>::Caption(hstring_ref value) const
+template <typename D> void impl_IDragUIOverride<D>::Caption(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDragUIOverride)->put_Caption(get(value)));
 }
@@ -10021,7 +10021,7 @@ template <typename D> hstring impl_IPropertyPath<D>::Path() const
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::PropertyPath impl_IPropertyPathFactory<D>::CreateInstance(hstring_ref path) const
+template <typename D> Windows::UI::Xaml::PropertyPath impl_IPropertyPathFactory<D>::CreateInstance(hstring_view path) const
 {
     Windows::UI::Xaml::PropertyPath instance { nullptr };
     check_hresult(WINRT_SHIM(IPropertyPathFactory)->abi_CreateInstance(get(path), put(instance)));
@@ -11307,7 +11307,7 @@ template <typename D> hstring impl_IUIElement4<D>::AccessKey() const
     return value;
 }
 
-template <typename D> void impl_IUIElement4<D>::AccessKey(hstring_ref value) const
+template <typename D> void impl_IUIElement4<D>::AccessKey(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IUIElement4)->put_AccessKey(get(value)));
 }
@@ -11527,7 +11527,7 @@ template <typename D> void impl_IVisualStateGroup<D>::CurrentStateChanging(event
     check_hresult(WINRT_SHIM(IVisualStateGroup)->remove_CurrentStateChanging(token));
 }
 
-template <typename D> bool impl_IVisualStateManagerOverrides<D>::GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_ref stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions) const
+template <typename D> bool impl_IVisualStateManagerOverrides<D>::GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_view stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(IVisualStateManagerOverrides)->abi_GoToStateCore(get(control), get(templateRoot), get(stateName), get(group), get(state), useTransitions, &returnValue));
@@ -11570,7 +11570,7 @@ template <typename D> void impl_IVisualStateManagerStatics<D>::SetCustomVisualSt
     check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_SetCustomVisualStateManager(get(obj), get(value)));
 }
 
-template <typename D> bool impl_IVisualStateManagerStatics<D>::GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_ref stateName, bool useTransitions) const
+template <typename D> bool impl_IVisualStateManagerStatics<D>::GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_view stateName, bool useTransitions) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_GoToState(get(control), get(stateName), useTransitions, &returnValue));
@@ -11615,7 +11615,7 @@ template <typename D> hstring impl_IVisualTransition<D>::To() const
     return value;
 }
 
-template <typename D> void impl_IVisualTransition<D>::To(hstring_ref value) const
+template <typename D> void impl_IVisualTransition<D>::To(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVisualTransition)->put_To(get(value)));
 }
@@ -11627,7 +11627,7 @@ template <typename D> hstring impl_IVisualTransition<D>::From() const
     return value;
 }
 
-template <typename D> void impl_IVisualTransition<D>::From(hstring_ref value) const
+template <typename D> void impl_IVisualTransition<D>::From(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVisualTransition)->put_From(get(value)));
 }
@@ -11753,7 +11753,7 @@ template <typename D> hstring impl_IFrameworkElement<D>::Language() const
     return value;
 }
 
-template <typename D> void impl_IFrameworkElement<D>::Language(hstring_ref value) const
+template <typename D> void impl_IFrameworkElement<D>::Language(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFrameworkElement)->put_Language(get(value)));
 }
@@ -11887,7 +11887,7 @@ template <typename D> hstring impl_IFrameworkElement<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IFrameworkElement<D>::Name(hstring_ref value) const
+template <typename D> void impl_IFrameworkElement<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFrameworkElement)->put_Name(get(value)));
 }
@@ -12010,7 +12010,7 @@ template <typename D> void impl_IFrameworkElement<D>::LayoutUpdated(event_token 
     check_hresult(WINRT_SHIM(IFrameworkElement)->remove_LayoutUpdated(token));
 }
 
-template <typename D> Windows::IInspectable impl_IFrameworkElement<D>::FindName(hstring_ref name) const
+template <typename D> Windows::IInspectable impl_IFrameworkElement<D>::FindName(hstring_view name) const
 {
     Windows::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IFrameworkElement)->abi_FindName(get(name), put(returnValue)));
@@ -12203,7 +12203,7 @@ template <typename D> Windows::UI::Xaml::Data::BindingExpression impl_IFramework
     return returnValue;
 }
 
-template <typename D> bool impl_IFrameworkElementOverrides2<D>::GoToElementStateCore(hstring_ref stateName, bool useTransitions) const
+template <typename D> bool impl_IFrameworkElementOverrides2<D>::GoToElementStateCore(hstring_view stateName, bool useTransitions) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(IFrameworkElementOverrides2)->abi_GoToElementStateCore(get(stateName), useTransitions, &returnValue));
@@ -13022,12 +13022,12 @@ inline Windows::IInspectable DependencyProperty::UnsetValue()
     return get_activation_factory<DependencyProperty, IDependencyPropertyStatics>().UnsetValue();
 }
 
-inline Windows::UI::Xaml::DependencyProperty DependencyProperty::Register(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata)
+inline Windows::UI::Xaml::DependencyProperty DependencyProperty::Register(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata)
 {
     return get_activation_factory<DependencyProperty, IDependencyPropertyStatics>().Register(name, propertyType, ownerType, typeMetadata);
 }
 
-inline Windows::UI::Xaml::DependencyProperty DependencyProperty::RegisterAttached(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata)
+inline Windows::UI::Xaml::DependencyProperty DependencyProperty::RegisterAttached(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata)
 {
     return get_activation_factory<DependencyProperty, IDependencyPropertyStatics>().RegisterAttached(name, propertyType, ownerType, defaultMetadata);
 }
@@ -13312,7 +13312,7 @@ inline Windows::UI::Xaml::PropertyMetadata PropertyMetadata::Create(const Window
     return get_activation_factory<PropertyMetadata, IPropertyMetadataStatics>().Create(createDefaultValueCallback, propertyChangedCallback);
 }
 
-inline PropertyPath::PropertyPath(hstring_ref path) :
+inline PropertyPath::PropertyPath(hstring_view path) :
     PropertyPath(get_activation_factory<PropertyPath, IPropertyPathFactory>().CreateInstance(path))
 {}
 
@@ -13752,7 +13752,7 @@ inline void VisualStateManager::SetCustomVisualStateManager(const Windows::UI::X
     get_activation_factory<VisualStateManager, IVisualStateManagerStatics>().SetCustomVisualStateManager(obj, value);
 }
 
-inline bool VisualStateManager::GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_ref stateName, bool useTransitions)
+inline bool VisualStateManager::GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_view stateName, bool useTransitions)
 {
     return get_activation_factory<VisualStateManager, IVisualStateManagerStatics>().GoToState(control, stateName, useTransitions);
 }

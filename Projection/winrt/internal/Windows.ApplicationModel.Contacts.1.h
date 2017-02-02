@@ -699,14 +699,14 @@ struct WINRT_EBO impl_IAggregateContactManager
 template <typename D>
 struct WINRT_EBO impl_IAggregateContactManager2
 {
-    Windows::Foundation::IAsyncAction SetRemoteIdentificationInformationAsync(hstring_ref contactListId, hstring_ref remoteSourceId, hstring_ref accountId) const;
+    Windows::Foundation::IAsyncAction SetRemoteIdentificationInformationAsync(hstring_view contactListId, hstring_view remoteSourceId, hstring_view accountId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IContact
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
     void Thumbnail(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::IContactField> Fields() const;
@@ -716,9 +716,9 @@ template <typename D>
 struct WINRT_EBO impl_IContact2
 {
     hstring Id() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     hstring Notes() const;
-    void Notes(hstring_ref value) const;
+    void Notes(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactPhone> Phones() const;
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactEmail> Emails() const;
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactAddress> Addresses() const;
@@ -740,22 +740,22 @@ struct WINRT_EBO impl_IContact3
     bool IsMe() const;
     hstring AggregateId() const;
     hstring RemoteId() const;
-    void RemoteId(hstring_ref value) const;
+    void RemoteId(hstring_view value) const;
     hstring RingToneToken() const;
-    void RingToneToken(hstring_ref value) const;
+    void RingToneToken(hstring_view value) const;
     bool IsDisplayPictureManuallySet() const;
     Windows::Storage::Streams::IRandomAccessStreamReference LargeDisplayPicture() const;
     Windows::Storage::Streams::IRandomAccessStreamReference SmallDisplayPicture() const;
     Windows::Storage::Streams::IRandomAccessStreamReference SourceDisplayPicture() const;
     void SourceDisplayPicture(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     hstring TextToneToken() const;
-    void TextToneToken(hstring_ref value) const;
+    void TextToneToken(hstring_view value) const;
     bool IsAggregate() const;
     hstring FullName() const;
     hstring DisplayNameOverride() const;
-    void DisplayNameOverride(hstring_ref value) const;
+    void DisplayNameOverride(hstring_view value) const;
     hstring Nickname() const;
-    void Nickname(hstring_ref value) const;
+    void Nickname(hstring_view value) const;
     hstring SortName() const;
 };
 
@@ -763,19 +763,19 @@ template <typename D>
 struct WINRT_EBO impl_IContactAddress
 {
     hstring StreetAddress() const;
-    void StreetAddress(hstring_ref value) const;
+    void StreetAddress(hstring_view value) const;
     hstring Locality() const;
-    void Locality(hstring_ref value) const;
+    void Locality(hstring_view value) const;
     hstring Region() const;
-    void Region(hstring_ref value) const;
+    void Region(hstring_view value) const;
     hstring Country() const;
-    void Country(hstring_ref value) const;
+    void Country(hstring_view value) const;
     hstring PostalCode() const;
-    void PostalCode(hstring_ref value) const;
+    void PostalCode(hstring_view value) const;
     Windows::ApplicationModel::Contacts::ContactAddressKind Kind() const;
     void Kind(Windows::ApplicationModel::Contacts::ContactAddressKind value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
 };
 
 template <typename D>
@@ -784,9 +784,9 @@ struct WINRT_EBO impl_IContactAnnotation
     hstring Id() const;
     hstring AnnotationListId() const;
     hstring ContactId() const;
-    void ContactId(hstring_ref value) const;
+    void ContactId(hstring_view value) const;
     hstring RemoteId() const;
-    void RemoteId(hstring_ref value) const;
+    void RemoteId(hstring_view value) const;
     Windows::ApplicationModel::Contacts::ContactAnnotationOperations SupportedOperations() const;
     void SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) const;
     bool IsDisabled() const;
@@ -801,8 +801,8 @@ struct WINRT_EBO impl_IContactAnnotationList
     hstring UserDataAccountId() const;
     Windows::Foundation::IAsyncAction DeleteAsync() const;
     Windows::Foundation::IAsyncOperation<bool> TrySaveAnnotationAsync(const Windows::ApplicationModel::Contacts::ContactAnnotation & annotation) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation> GetAnnotationAsync(hstring_ref annotationId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsByRemoteIdAsync(hstring_ref remoteId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation> GetAnnotationAsync(hstring_view annotationId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsByRemoteIdAsync(hstring_view remoteId) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsAsync() const;
     Windows::Foundation::IAsyncAction DeleteAnnotationAsync(const Windows::ApplicationModel::Contacts::ContactAnnotation & annotation) const;
 };
@@ -810,13 +810,13 @@ struct WINRT_EBO impl_IContactAnnotationList
 template <typename D>
 struct WINRT_EBO impl_IContactAnnotationStore
 {
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindContactIdsByEmailAsync(hstring_ref emailAddress) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindContactIdsByPhoneNumberAsync(hstring_ref phoneNumber) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindContactIdsByEmailAsync(hstring_view emailAddress) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindContactIdsByPhoneNumberAsync(hstring_view phoneNumber) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsForContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const;
     Windows::Foundation::IAsyncAction DisableAnnotationAsync(const Windows::ApplicationModel::Contacts::ContactAnnotation & annotation) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> CreateAnnotationListAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> CreateAnnotationListAsync(hstring_ref userDataAccountId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> GetAnnotationListAsync(hstring_ref annotationListId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> CreateAnnotationListAsync(hstring_view userDataAccountId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> GetAnnotationListAsync(hstring_view annotationListId) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>> FindAnnotationListsAsync() const;
 };
 
@@ -887,9 +887,9 @@ template <typename D>
 struct WINRT_EBO impl_IContactConnectedServiceAccount
 {
     hstring Id() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     hstring ServiceName() const;
-    void ServiceName(hstring_ref value) const;
+    void ServiceName(hstring_view value) const;
 };
 
 template <typename D>
@@ -904,18 +904,18 @@ struct WINRT_EBO impl_IContactDate
     Windows::ApplicationModel::Contacts::ContactDateKind Kind() const;
     void Kind(Windows::ApplicationModel::Contacts::ContactDateKind value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IContactEmail
 {
     hstring Address() const;
-    void Address(hstring_ref value) const;
+    void Address(hstring_view value) const;
     Windows::ApplicationModel::Contacts::ContactEmailKind Kind() const;
     void Kind(Windows::ApplicationModel::Contacts::ContactEmailKind value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
 };
 
 template <typename D>
@@ -930,9 +930,9 @@ struct WINRT_EBO impl_IContactField
 template <typename D>
 struct WINRT_EBO impl_IContactFieldFactory
 {
-    Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type) const;
-    Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
-    Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_ref name, hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
+    Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type) const;
+    Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
+    Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_view name, hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
 };
 
 template <typename D>
@@ -945,7 +945,7 @@ struct WINRT_EBO impl_IContactInformation
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactLocationField> Locations() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInstantMessageField> InstantMessages() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> CustomFields() const;
-    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> QueryCustomFields(hstring_ref customName) const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> QueryCustomFields(hstring_view customName) const;
 };
 
 template <typename D>
@@ -960,30 +960,30 @@ struct WINRT_EBO impl_IContactInstantMessageField
 template <typename D>
 struct WINRT_EBO impl_IContactInstantMessageFieldFactory
 {
-    Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_ref userName) const;
-    Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
-    Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref service, hstring_ref displayText, const Windows::Foundation::Uri & verb) const;
+    Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_view userName) const;
+    Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_view userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
+    Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_view userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_view service, hstring_view displayText, const Windows::Foundation::Uri & verb) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IContactJobInfo
 {
     hstring CompanyName() const;
-    void CompanyName(hstring_ref value) const;
+    void CompanyName(hstring_view value) const;
     hstring CompanyYomiName() const;
-    void CompanyYomiName(hstring_ref value) const;
+    void CompanyYomiName(hstring_view value) const;
     hstring Department() const;
-    void Department(hstring_ref value) const;
+    void Department(hstring_view value) const;
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     hstring Manager() const;
-    void Manager(hstring_ref value) const;
+    void Manager(hstring_view value) const;
     hstring Office() const;
-    void Office(hstring_ref value) const;
+    void Office(hstring_view value) const;
     hstring CompanyAddress() const;
-    void CompanyAddress(hstring_ref value) const;
+    void CompanyAddress(hstring_view value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
 };
 
 template <typename D>
@@ -1001,7 +1001,7 @@ struct WINRT_EBO impl_IContactList
 {
     hstring Id() const;
     hstring DisplayName() const;
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     hstring SourceDisplayName() const;
     bool IsHidden() const;
     void IsHidden(bool value) const;
@@ -1019,13 +1019,13 @@ struct WINRT_EBO impl_IContactList
     void ContactChanged(event_token value) const;
     Windows::Foundation::IAsyncAction SaveAsync() const;
     Windows::Foundation::IAsyncAction DeleteAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactFromRemoteIdAsync(hstring_ref remoteId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactFromRemoteIdAsync(hstring_view remoteId) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetMeContactAsync() const;
     Windows::ApplicationModel::Contacts::ContactReader GetContactReader() const;
     Windows::ApplicationModel::Contacts::ContactReader GetContactReader(const Windows::ApplicationModel::Contacts::ContactQueryOptions & options) const;
     Windows::Foundation::IAsyncAction SaveContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const;
     Windows::Foundation::IAsyncAction DeleteContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactAsync(hstring_ref contactId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactAsync(hstring_view contactId) const;
 };
 
 template <typename D>
@@ -1132,9 +1132,9 @@ struct WINRT_EBO impl_IContactLocationField
 template <typename D>
 struct WINRT_EBO impl_IContactLocationFieldFactory
 {
-    Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_ref unstructuredAddress) const;
-    Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
-    Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref street, hstring_ref city, hstring_ref region, hstring_ref country, hstring_ref postalCode) const;
+    Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_view unstructuredAddress) const;
+    Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_view unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
+    Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_view unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_view street, hstring_view city, hstring_view region, hstring_view country, hstring_view postalCode) const;
 };
 
 template <typename D>
@@ -1203,19 +1203,19 @@ template <typename D>
 struct WINRT_EBO impl_IContactName
 {
     hstring FirstName() const;
-    void FirstName(hstring_ref value) const;
+    void FirstName(hstring_view value) const;
     hstring LastName() const;
-    void LastName(hstring_ref value) const;
+    void LastName(hstring_view value) const;
     hstring MiddleName() const;
-    void MiddleName(hstring_ref value) const;
+    void MiddleName(hstring_view value) const;
     hstring YomiGivenName() const;
-    void YomiGivenName(hstring_ref value) const;
+    void YomiGivenName(hstring_view value) const;
     hstring YomiFamilyName() const;
-    void YomiFamilyName(hstring_ref value) const;
+    void YomiFamilyName(hstring_view value) const;
     hstring HonorificNameSuffix() const;
-    void HonorificNameSuffix(hstring_ref value) const;
+    void HonorificNameSuffix(hstring_view value) const;
     hstring HonorificNamePrefix() const;
-    void HonorificNamePrefix(hstring_ref value) const;
+    void HonorificNamePrefix(hstring_view value) const;
     hstring DisplayName() const;
     hstring YomiDisplayName() const;
 };
@@ -1224,18 +1224,18 @@ template <typename D>
 struct WINRT_EBO impl_IContactPhone
 {
     hstring Number() const;
-    void Number(hstring_ref value) const;
+    void Number(hstring_view value) const;
     Windows::ApplicationModel::Contacts::ContactPhoneKind Kind() const;
     void Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IContactPicker
 {
     hstring CommitButtonText() const;
-    void CommitButtonText(hstring_ref value) const;
+    void CommitButtonText(hstring_view value) const;
     Windows::ApplicationModel::Contacts::ContactSelectionMode SelectionMode() const;
     void SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode value) const;
     Windows::Foundation::Collections::IVector<hstring> DesiredFields() const;
@@ -1268,8 +1268,8 @@ struct WINRT_EBO impl_IContactQueryOptions
 template <typename D>
 struct WINRT_EBO impl_IContactQueryOptionsFactory
 {
-    Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithText(hstring_ref text) const;
-    Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithTextAndFields(hstring_ref text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) const;
+    Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithText(hstring_view text) const;
+    Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithTextAndFields(hstring_view text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) const;
 };
 
 template <typename D>
@@ -1278,7 +1278,7 @@ struct WINRT_EBO impl_IContactQueryTextSearch
     Windows::ApplicationModel::Contacts::ContactQuerySearchFields Fields() const;
     void Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields value) const;
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     Windows::ApplicationModel::Contacts::ContactQuerySearchScope SearchScope() const;
     void SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope value) const;
 };
@@ -1294,9 +1294,9 @@ template <typename D>
 struct WINRT_EBO impl_IContactSignificantOther
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
 };
 
 template <typename D>
@@ -1310,8 +1310,8 @@ template <typename D>
 struct WINRT_EBO impl_IContactStore
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> FindContactsAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> FindContactsAsync(hstring_ref searchText) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactAsync(hstring_ref contactId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> FindContactsAsync(hstring_view searchText) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactAsync(hstring_view contactId) const;
 };
 
 template <typename D>
@@ -1324,12 +1324,12 @@ struct WINRT_EBO impl_IContactStore2
     void ContactChanged(event_token value) const;
     Windows::ApplicationModel::Contacts::AggregateContactManager AggregateContactManager() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactList>> FindContactListsAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> GetContactListAsync(hstring_ref contactListId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> CreateContactListAsync(hstring_ref displayName) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> GetContactListAsync(hstring_view contactListId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> CreateContactListAsync(hstring_view displayName) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetMeContactAsync() const;
     Windows::ApplicationModel::Contacts::ContactReader GetContactReader() const;
     Windows::ApplicationModel::Contacts::ContactReader GetContactReader(const Windows::ApplicationModel::Contacts::ContactQueryOptions & options) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> CreateContactListAsync(hstring_ref displayName, hstring_ref userDataAccountId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> CreateContactListAsync(hstring_view displayName, hstring_view userDataAccountId) const;
 };
 
 template <typename D>
@@ -1343,14 +1343,14 @@ struct WINRT_EBO impl_IContactWebsite
     Windows::Foundation::Uri Uri() const;
     void Uri(const Windows::Foundation::Uri & value) const;
     hstring Description() const;
-    void Description(hstring_ref value) const;
+    void Description(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IContactWebsite2
 {
     hstring RawValue() const;
-    void RawValue(hstring_ref value) const;
+    void RawValue(hstring_view value) const;
 };
 
 template <typename D>
@@ -1367,7 +1367,7 @@ struct WINRT_EBO impl_IKnownContactFieldStatics
     hstring PhoneNumber() const;
     hstring Location() const;
     hstring InstantMessage() const;
-    Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(hstring_ref name) const;
+    Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(hstring_view name) const;
     hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type) const;
 };
 

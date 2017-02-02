@@ -26,7 +26,7 @@ struct WINRT_EBO XamlBindingHelper :
     static void SuspendRendering(const Windows::UI::Xaml::UIElement & target);
     static void ResumeRendering(const Windows::UI::Xaml::UIElement & target);
     static Windows::IInspectable ConvertValue(const Windows::UI::Xaml::Interop::TypeName & type, const Windows::IInspectable & value);
-    static void SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_ref value);
+    static void SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_view value);
     static void SetPropertyFromBoolean(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, bool value);
     static void SetPropertyFromChar16(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, wchar_t value);
     static void SetPropertyFromDateTime(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::DateTime & value);
@@ -49,8 +49,8 @@ struct WINRT_EBO XamlReader :
     Windows::UI::Xaml::Markup::IXamlReader
 {
     XamlReader(std::nullptr_t) noexcept {}
-    static Windows::IInspectable Load(hstring_ref xaml);
-    static Windows::IInspectable LoadWithInitialTemplateValidation(hstring_ref xaml);
+    static Windows::IInspectable Load(hstring_view xaml);
+    static Windows::IInspectable LoadWithInitialTemplateValidation(hstring_view xaml);
 };
 
 }

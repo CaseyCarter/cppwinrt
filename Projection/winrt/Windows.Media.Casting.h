@@ -780,7 +780,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICastin
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> impl_ICastingDeviceStatics<D>::FromIdAsync(hstring_ref value) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> impl_ICastingDeviceStatics<D>::FromIdAsync(hstring_view value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> operation;
     check_hresult(WINRT_SHIM(ICastingDeviceStatics)->abi_FromIdAsync(get(value), put(operation)));
@@ -917,7 +917,7 @@ inline Windows::Foundation::IAsyncOperation<hstring> CastingDevice::GetDeviceSel
     return get_activation_factory<CastingDevice, ICastingDeviceStatics>().GetDeviceSelectorFromCastingSourceAsync(castingSource);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> CastingDevice::FromIdAsync(hstring_ref value)
+inline Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> CastingDevice::FromIdAsync(hstring_view value)
 {
     return get_activation_factory<CastingDevice, ICastingDeviceStatics>().FromIdAsync(value);
 }

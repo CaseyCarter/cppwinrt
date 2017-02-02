@@ -132,9 +132,9 @@ template <typename D>
 struct WINRT_EBO impl_ISocialFeedContent
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     hstring Message() const;
-    void Message(hstring_ref value) const;
+    void Message(hstring_view value) const;
     Windows::Foundation::Uri TargetUri() const;
     void TargetUri(const Windows::Foundation::Uri & value) const;
 };
@@ -157,7 +157,7 @@ struct WINRT_EBO impl_ISocialFeedItem
     int32_t BadgeCountValue() const;
     void BadgeCountValue(int32_t value) const;
     hstring RemoteId() const;
-    void RemoteId(hstring_ref value) const;
+    void RemoteId(hstring_view value) const;
     Windows::ApplicationModel::SocialInfo::SocialFeedChildItem ChildItem() const;
     void ChildItem(const Windows::ApplicationModel::SocialInfo::SocialFeedChildItem & value) const;
     Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle Style() const;
@@ -194,11 +194,11 @@ template <typename D>
 struct WINRT_EBO impl_ISocialUserInfo
 {
     hstring DisplayName() const;
-    void DisplayName(hstring_ref value) const;
+    void DisplayName(hstring_view value) const;
     hstring UserName() const;
-    void UserName(hstring_ref value) const;
+    void UserName(hstring_view value) const;
     hstring RemoteId() const;
-    void RemoteId(hstring_ref value) const;
+    void RemoteId(hstring_view value) const;
     Windows::Foundation::Uri TargetUri() const;
     void TargetUri(const Windows::Foundation::Uri & value) const;
 };

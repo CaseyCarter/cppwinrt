@@ -1577,14 +1577,14 @@ template <typename D> void impl_IDataWriter<D>::WriteTimeSpan(const Windows::Fou
     check_hresult(WINRT_SHIM(IDataWriter)->abi_WriteTimeSpan(get(value)));
 }
 
-template <typename D> uint32_t impl_IDataWriter<D>::WriteString(hstring_ref value) const
+template <typename D> uint32_t impl_IDataWriter<D>::WriteString(hstring_view value) const
 {
     uint32_t codeUnitCount {};
     check_hresult(WINRT_SHIM(IDataWriter)->abi_WriteString(get(value), &codeUnitCount));
     return codeUnitCount;
 }
 
-template <typename D> uint32_t impl_IDataWriter<D>::MeasureString(hstring_ref value) const
+template <typename D> uint32_t impl_IDataWriter<D>::MeasureString(hstring_view value) const
 {
     uint32_t codeUnitCount {};
     check_hresult(WINRT_SHIM(IDataWriter)->abi_MeasureString(get(value), &codeUnitCount));

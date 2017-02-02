@@ -290,13 +290,13 @@ struct WINRT_EBO impl_IBinding
     Windows::UI::Xaml::Data::RelativeSource RelativeSource() const;
     void RelativeSource(const Windows::UI::Xaml::Data::RelativeSource & value) const;
     hstring ElementName() const;
-    void ElementName(hstring_ref value) const;
+    void ElementName(hstring_view value) const;
     Windows::UI::Xaml::Data::IValueConverter Converter() const;
     void Converter(const Windows::UI::Xaml::Data::IValueConverter & value) const;
     Windows::IInspectable ConverterParameter() const;
     void ConverterParameter(const Windows::IInspectable & value) const;
     hstring ConverterLanguage() const;
-    void ConverterLanguage(hstring_ref value) const;
+    void ConverterLanguage(hstring_view value) const;
 };
 
 template <typename D>
@@ -452,8 +452,8 @@ struct WINRT_EBO impl_ICustomProperty
 template <typename D>
 struct WINRT_EBO impl_ICustomPropertyProvider
 {
-    Windows::UI::Xaml::Data::ICustomProperty GetCustomProperty(hstring_ref name) const;
-    Windows::UI::Xaml::Data::ICustomProperty GetIndexedProperty(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & type) const;
+    Windows::UI::Xaml::Data::ICustomProperty GetCustomProperty(hstring_view name) const;
+    Windows::UI::Xaml::Data::ICustomProperty GetIndexedProperty(hstring_view name, const Windows::UI::Xaml::Interop::TypeName & type) const;
     hstring GetStringRepresentation() const;
     Windows::UI::Xaml::Interop::TypeName Type() const;
 };
@@ -496,7 +496,7 @@ struct WINRT_EBO impl_IPropertyChangedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IPropertyChangedEventArgsFactory
 {
-    Windows::UI::Xaml::Data::PropertyChangedEventArgs CreateInstance(hstring_ref name, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Data::PropertyChangedEventArgs CreateInstance(hstring_view name, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -531,8 +531,8 @@ struct WINRT_EBO impl_ISupportIncrementalLoading
 template <typename D>
 struct WINRT_EBO impl_IValueConverter
 {
-    Windows::IInspectable Convert(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_ref language) const;
-    Windows::IInspectable ConvertBack(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_ref language) const;
+    Windows::IInspectable Convert(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_view language) const;
+    Windows::IInspectable ConvertBack(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_view language) const;
 };
 
 }

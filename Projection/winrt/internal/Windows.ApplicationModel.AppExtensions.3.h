@@ -19,7 +19,7 @@ struct WINRT_EBO AppExtensionCatalog :
     Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
 {
     AppExtensionCatalog(std::nullptr_t) noexcept {}
-    static Windows::ApplicationModel::AppExtensions::AppExtensionCatalog Open(hstring_ref appExtensionName);
+    static Windows::ApplicationModel::AppExtensions::AppExtensionCatalog Open(hstring_view appExtensionName);
 };
 
 struct WINRT_EBO AppExtensionPackageInstalledEventArgs :

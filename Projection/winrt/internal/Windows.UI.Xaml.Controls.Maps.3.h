@@ -25,7 +25,7 @@ struct WINRT_EBO HttpMapTileDataSource :
 {
     HttpMapTileDataSource(std::nullptr_t) noexcept {}
     HttpMapTileDataSource();
-    HttpMapTileDataSource(hstring_ref uriFormatString);
+    HttpMapTileDataSource(hstring_view uriFormatString);
 };
 
 struct WINRT_EBO LocalMapTileDataSource :
@@ -35,7 +35,7 @@ struct WINRT_EBO LocalMapTileDataSource :
 {
     LocalMapTileDataSource(std::nullptr_t) noexcept {}
     LocalMapTileDataSource();
-    LocalMapTileDataSource(hstring_ref uriFormatString);
+    LocalMapTileDataSource(hstring_view uriFormatString);
 };
 
 struct WINRT_EBO MapActualCameraChangedEventArgs :

@@ -1867,7 +1867,7 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
 
 namespace Windows::Devices::Bluetooth {
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> impl_IBluetoothDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> impl_IBluetoothDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> operation;
     check_hresult(WINRT_SHIM(IBluetoothDeviceStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
@@ -1909,7 +1909,7 @@ template <typename D> hstring impl_IBluetoothDeviceStatics2<D>::GetDeviceSelecto
     return deviceSelector;
 }
 
-template <typename D> hstring impl_IBluetoothDeviceStatics2<D>::GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const
+template <typename D> hstring impl_IBluetoothDeviceStatics2<D>::GetDeviceSelectorFromDeviceName(hstring_view deviceName) const
 {
     hstring deviceSelector;
     check_hresult(WINRT_SHIM(IBluetoothDeviceStatics2)->abi_GetDeviceSelectorFromDeviceName(get(deviceName), put(deviceSelector)));
@@ -2585,7 +2585,7 @@ template <typename D> Windows::Devices::Bluetooth::BluetoothAddressType impl_IBl
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
     check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
@@ -2620,7 +2620,7 @@ template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelec
     return deviceSelector;
 }
 
-template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const
+template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromDeviceName(hstring_view deviceName) const
 {
     hstring deviceSelector;
     check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromDeviceName(get(deviceName), put(deviceSelector)));
@@ -2755,7 +2755,7 @@ inline Windows::Devices::Bluetooth::BluetoothClassOfDevice BluetoothClassOfDevic
     return get_activation_factory<BluetoothClassOfDevice, IBluetoothClassOfDeviceStatics>().FromParts(majorClass, minorClass, serviceCapabilities);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> BluetoothDevice::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> BluetoothDevice::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics>().FromIdAsync(deviceId);
 }
@@ -2785,7 +2785,7 @@ inline hstring BluetoothDevice::GetDeviceSelectorFromConnectionStatus(Windows::D
     return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromConnectionStatus(connectionStatus);
 }
 
-inline hstring BluetoothDevice::GetDeviceSelectorFromDeviceName(hstring_ref deviceName)
+inline hstring BluetoothDevice::GetDeviceSelectorFromDeviceName(hstring_view deviceName)
 {
     return get_activation_factory<BluetoothDevice, IBluetoothDeviceStatics2>().GetDeviceSelectorFromDeviceName(deviceName);
 }
@@ -3060,7 +3060,7 @@ inline uint16_t BluetoothLEAppearanceSubcategories::LocationNavigationPod()
     return get_activation_factory<BluetoothLEAppearanceSubcategories, IBluetoothLEAppearanceSubcategoriesStatics>().LocationNavigationPod();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> BluetoothLEDevice::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> BluetoothLEDevice::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics>().FromIdAsync(deviceId);
 }
@@ -3085,7 +3085,7 @@ inline hstring BluetoothLEDevice::GetDeviceSelectorFromConnectionStatus(Windows:
     return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromConnectionStatus(connectionStatus);
 }
 
-inline hstring BluetoothLEDevice::GetDeviceSelectorFromDeviceName(hstring_ref deviceName)
+inline hstring BluetoothLEDevice::GetDeviceSelectorFromDeviceName(hstring_view deviceName)
 {
     return get_activation_factory<BluetoothLEDevice, IBluetoothLEDeviceStatics2>().GetDeviceSelectorFromDeviceName(deviceName);
 }

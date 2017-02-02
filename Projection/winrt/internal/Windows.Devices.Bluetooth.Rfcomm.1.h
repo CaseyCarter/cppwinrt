@@ -139,7 +139,7 @@ struct WINRT_EBO impl_IRfcommDeviceService3
 template <typename D>
 struct WINRT_EBO impl_IRfcommDeviceServiceStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId) const;
 };
 

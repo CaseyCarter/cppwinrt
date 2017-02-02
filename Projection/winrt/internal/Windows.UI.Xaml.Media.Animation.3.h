@@ -791,10 +791,10 @@ struct WINRT_EBO Storyboard :
     Storyboard();
     static Windows::UI::Xaml::DependencyProperty TargetPropertyProperty();
     static hstring GetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element);
-    static void SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref path);
+    static void SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view path);
     static Windows::UI::Xaml::DependencyProperty TargetNameProperty();
     static hstring GetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element);
-    static void SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref name);
+    static void SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view name);
     static void SetTarget(const Windows::UI::Xaml::Media::Animation::Timeline & timeline, const Windows::UI::Xaml::DependencyObject & target);
 };
 

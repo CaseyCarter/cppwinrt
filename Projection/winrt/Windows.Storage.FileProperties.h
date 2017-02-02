@@ -1406,7 +1406,7 @@ template <typename D> hstring impl_IMusicProperties<D>::Album() const
     return value;
 }
 
-template <typename D> void impl_IMusicProperties<D>::Album(hstring_ref value) const
+template <typename D> void impl_IMusicProperties<D>::Album(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicProperties)->put_Album(get(value)));
 }
@@ -1418,7 +1418,7 @@ template <typename D> hstring impl_IMusicProperties<D>::Artist() const
     return value;
 }
 
-template <typename D> void impl_IMusicProperties<D>::Artist(hstring_ref value) const
+template <typename D> void impl_IMusicProperties<D>::Artist(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicProperties)->put_Artist(get(value)));
 }
@@ -1449,7 +1449,7 @@ template <typename D> hstring impl_IMusicProperties<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IMusicProperties<D>::Title(hstring_ref value) const
+template <typename D> void impl_IMusicProperties<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicProperties)->put_Title(get(value)));
 }
@@ -1487,7 +1487,7 @@ template <typename D> hstring impl_IMusicProperties<D>::AlbumArtist() const
     return value;
 }
 
-template <typename D> void impl_IMusicProperties<D>::AlbumArtist(hstring_ref value) const
+template <typename D> void impl_IMusicProperties<D>::AlbumArtist(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicProperties)->put_AlbumArtist(get(value)));
 }
@@ -1513,7 +1513,7 @@ template <typename D> hstring impl_IMusicProperties<D>::Subtitle() const
     return value;
 }
 
-template <typename D> void impl_IMusicProperties<D>::Subtitle(hstring_ref value) const
+template <typename D> void impl_IMusicProperties<D>::Subtitle(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicProperties)->put_Subtitle(get(value)));
 }
@@ -1532,7 +1532,7 @@ template <typename D> hstring impl_IMusicProperties<D>::Publisher() const
     return value;
 }
 
-template <typename D> void impl_IMusicProperties<D>::Publisher(hstring_ref value) const
+template <typename D> void impl_IMusicProperties<D>::Publisher(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMusicProperties)->put_Publisher(get(value)));
 }
@@ -1608,7 +1608,7 @@ template <typename D> hstring impl_IImageProperties<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IImageProperties<D>::Title(hstring_ref value) const
+template <typename D> void impl_IImageProperties<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IImageProperties)->put_Title(get(value)));
 }
@@ -1634,7 +1634,7 @@ template <typename D> hstring impl_IImageProperties<D>::CameraManufacturer() con
     return value;
 }
 
-template <typename D> void impl_IImageProperties<D>::CameraManufacturer(hstring_ref value) const
+template <typename D> void impl_IImageProperties<D>::CameraManufacturer(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IImageProperties)->put_CameraManufacturer(get(value)));
 }
@@ -1646,7 +1646,7 @@ template <typename D> hstring impl_IImageProperties<D>::CameraModel() const
     return value;
 }
 
-template <typename D> void impl_IImageProperties<D>::CameraModel(hstring_ref value) const
+template <typename D> void impl_IImageProperties<D>::CameraModel(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IImageProperties)->put_CameraModel(get(value)));
 }
@@ -1726,7 +1726,7 @@ template <typename D> hstring impl_IVideoProperties<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IVideoProperties<D>::Title(hstring_ref value) const
+template <typename D> void impl_IVideoProperties<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVideoProperties)->put_Title(get(value)));
 }
@@ -1738,7 +1738,7 @@ template <typename D> hstring impl_IVideoProperties<D>::Subtitle() const
     return value;
 }
 
-template <typename D> void impl_IVideoProperties<D>::Subtitle(hstring_ref value) const
+template <typename D> void impl_IVideoProperties<D>::Subtitle(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVideoProperties)->put_Subtitle(get(value)));
 }
@@ -1757,7 +1757,7 @@ template <typename D> hstring impl_IVideoProperties<D>::Publisher() const
     return value;
 }
 
-template <typename D> void impl_IVideoProperties<D>::Publisher(hstring_ref value) const
+template <typename D> void impl_IVideoProperties<D>::Publisher(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVideoProperties)->put_Publisher(get(value)));
 }
@@ -1816,7 +1816,7 @@ template <typename D> hstring impl_IDocumentProperties<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IDocumentProperties<D>::Title(hstring_ref value) const
+template <typename D> void impl_IDocumentProperties<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDocumentProperties)->put_Title(get(value)));
 }
@@ -1835,7 +1835,7 @@ template <typename D> hstring impl_IDocumentProperties<D>::Comment() const
     return value;
 }
 
-template <typename D> void impl_IDocumentProperties<D>::Comment(hstring_ref value) const
+template <typename D> void impl_IDocumentProperties<D>::Comment(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDocumentProperties)->put_Comment(get(value)));
 }

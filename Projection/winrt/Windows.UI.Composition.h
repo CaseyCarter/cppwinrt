@@ -5112,57 +5112,57 @@ template <typename D> void impl_ICompositionAnimation<D>::ClearAllParameters() c
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_ClearAllParameters());
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::ClearParameter(hstring_ref key) const
+template <typename D> void impl_ICompositionAnimation<D>::ClearParameter(hstring_view key) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_ClearParameter(get(key)));
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::SetColorParameter(hstring_ref key, const Windows::UI::Color & value) const
+template <typename D> void impl_ICompositionAnimation<D>::SetColorParameter(hstring_view key, const Windows::UI::Color & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_SetColorParameter(get(key), get(value)));
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::SetMatrix3x2Parameter(hstring_ref key, const Windows::Foundation::Numerics::float3x2 & value) const
+template <typename D> void impl_ICompositionAnimation<D>::SetMatrix3x2Parameter(hstring_view key, const Windows::Foundation::Numerics::float3x2 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_SetMatrix3x2Parameter(get(key), get(value)));
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::SetMatrix4x4Parameter(hstring_ref key, const Windows::Foundation::Numerics::float4x4 & value) const
+template <typename D> void impl_ICompositionAnimation<D>::SetMatrix4x4Parameter(hstring_view key, const Windows::Foundation::Numerics::float4x4 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_SetMatrix4x4Parameter(get(key), get(value)));
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::SetQuaternionParameter(hstring_ref key, const Windows::Foundation::Numerics::quaternion & value) const
+template <typename D> void impl_ICompositionAnimation<D>::SetQuaternionParameter(hstring_view key, const Windows::Foundation::Numerics::quaternion & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_SetQuaternionParameter(get(key), get(value)));
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::SetReferenceParameter(hstring_ref key, const Windows::UI::Composition::CompositionObject & compositionObject) const
+template <typename D> void impl_ICompositionAnimation<D>::SetReferenceParameter(hstring_view key, const Windows::UI::Composition::CompositionObject & compositionObject) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_SetReferenceParameter(get(key), get(compositionObject)));
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::SetScalarParameter(hstring_ref key, float value) const
+template <typename D> void impl_ICompositionAnimation<D>::SetScalarParameter(hstring_view key, float value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_SetScalarParameter(get(key), value));
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::SetVector2Parameter(hstring_ref key, const Windows::Foundation::Numerics::float2 & value) const
+template <typename D> void impl_ICompositionAnimation<D>::SetVector2Parameter(hstring_view key, const Windows::Foundation::Numerics::float2 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_SetVector2Parameter(get(key), get(value)));
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::SetVector3Parameter(hstring_ref key, const Windows::Foundation::Numerics::float3 & value) const
+template <typename D> void impl_ICompositionAnimation<D>::SetVector3Parameter(hstring_view key, const Windows::Foundation::Numerics::float3 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_SetVector3Parameter(get(key), get(value)));
 }
 
-template <typename D> void impl_ICompositionAnimation<D>::SetVector4Parameter(hstring_ref key, const Windows::Foundation::Numerics::float4 & value) const
+template <typename D> void impl_ICompositionAnimation<D>::SetVector4Parameter(hstring_view key, const Windows::Foundation::Numerics::float4 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation)->abi_SetVector4Parameter(get(key), get(value)));
 }
 
-template <typename D> void impl_ICompositionAnimation2<D>::SetBooleanParameter(hstring_ref key, bool value) const
+template <typename D> void impl_ICompositionAnimation2<D>::SetBooleanParameter(hstring_view key, bool value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation2)->abi_SetBooleanParameter(get(key), value));
 }
@@ -5174,7 +5174,7 @@ template <typename D> hstring impl_ICompositionAnimation2<D>::Target() const
     return value;
 }
 
-template <typename D> void impl_ICompositionAnimation2<D>::Target(hstring_ref value) const
+template <typename D> void impl_ICompositionAnimation2<D>::Target(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICompositionAnimation2)->put_Target(get(value)));
 }
@@ -5349,14 +5349,14 @@ template <typename D> Windows::Foundation::Size impl_ICompositionDrawingSurface<
     return value;
 }
 
-template <typename D> Windows::UI::Composition::CompositionBrush impl_ICompositionEffectBrush<D>::GetSourceParameter(hstring_ref name) const
+template <typename D> Windows::UI::Composition::CompositionBrush impl_ICompositionEffectBrush<D>::GetSourceParameter(hstring_view name) const
 {
     Windows::UI::Composition::CompositionBrush result { nullptr };
     check_hresult(WINRT_SHIM(ICompositionEffectBrush)->abi_GetSourceParameter(get(name), put(result)));
     return result;
 }
 
-template <typename D> void impl_ICompositionEffectBrush<D>::SetSourceParameter(hstring_ref name, const Windows::UI::Composition::CompositionBrush & source) const
+template <typename D> void impl_ICompositionEffectBrush<D>::SetSourceParameter(hstring_view name, const Windows::UI::Composition::CompositionBrush & source) const
 {
     check_hresult(WINRT_SHIM(ICompositionEffectBrush)->abi_SetSourceParameter(get(name), get(source)));
 }
@@ -5389,7 +5389,7 @@ template <typename D> hstring impl_ICompositionEffectSourceParameter<D>::Name() 
     return value;
 }
 
-template <typename D> Windows::UI::Composition::CompositionEffectSourceParameter impl_ICompositionEffectSourceParameterFactory<D>::Create(hstring_ref name) const
+template <typename D> Windows::UI::Composition::CompositionEffectSourceParameter impl_ICompositionEffectSourceParameterFactory<D>::Create(hstring_view name) const
 {
     Windows::UI::Composition::CompositionEffectSourceParameter instance { nullptr };
     check_hresult(WINRT_SHIM(ICompositionEffectSourceParameterFactory)->abi_Create(get(name), put(instance)));
@@ -5612,12 +5612,12 @@ template <typename D> Windows::UI::Composition::CompositionPropertySet impl_ICom
     return value;
 }
 
-template <typename D> void impl_ICompositionObject<D>::StartAnimation(hstring_ref propertyName, const Windows::UI::Composition::CompositionAnimation & animation) const
+template <typename D> void impl_ICompositionObject<D>::StartAnimation(hstring_view propertyName, const Windows::UI::Composition::CompositionAnimation & animation) const
 {
     check_hresult(WINRT_SHIM(ICompositionObject)->abi_StartAnimation(get(propertyName), get(animation)));
 }
 
-template <typename D> void impl_ICompositionObject<D>::StopAnimation(hstring_ref propertyName) const
+template <typename D> void impl_ICompositionObject<D>::StopAnimation(hstring_view propertyName) const
 {
     check_hresult(WINRT_SHIM(ICompositionObject)->abi_StopAnimation(get(propertyName)));
 }
@@ -5629,7 +5629,7 @@ template <typename D> hstring impl_ICompositionObject2<D>::Comment() const
     return value;
 }
 
-template <typename D> void impl_ICompositionObject2<D>::Comment(hstring_ref value) const
+template <typename D> void impl_ICompositionObject2<D>::Comment(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICompositionObject2)->put_Comment(get(value)));
 }
@@ -5656,108 +5656,108 @@ template <typename D> void impl_ICompositionObject2<D>::StopAnimationGroup(const
     check_hresult(WINRT_SHIM(ICompositionObject2)->abi_StopAnimationGroup(get(value)));
 }
 
-template <typename D> void impl_ICompositionPropertySet<D>::InsertColor(hstring_ref propertyName, const Windows::UI::Color & value) const
+template <typename D> void impl_ICompositionPropertySet<D>::InsertColor(hstring_view propertyName, const Windows::UI::Color & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_InsertColor(get(propertyName), get(value)));
 }
 
-template <typename D> void impl_ICompositionPropertySet<D>::InsertMatrix3x2(hstring_ref propertyName, const Windows::Foundation::Numerics::float3x2 & value) const
+template <typename D> void impl_ICompositionPropertySet<D>::InsertMatrix3x2(hstring_view propertyName, const Windows::Foundation::Numerics::float3x2 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_InsertMatrix3x2(get(propertyName), get(value)));
 }
 
-template <typename D> void impl_ICompositionPropertySet<D>::InsertMatrix4x4(hstring_ref propertyName, const Windows::Foundation::Numerics::float4x4 & value) const
+template <typename D> void impl_ICompositionPropertySet<D>::InsertMatrix4x4(hstring_view propertyName, const Windows::Foundation::Numerics::float4x4 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_InsertMatrix4x4(get(propertyName), get(value)));
 }
 
-template <typename D> void impl_ICompositionPropertySet<D>::InsertQuaternion(hstring_ref propertyName, const Windows::Foundation::Numerics::quaternion & value) const
+template <typename D> void impl_ICompositionPropertySet<D>::InsertQuaternion(hstring_view propertyName, const Windows::Foundation::Numerics::quaternion & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_InsertQuaternion(get(propertyName), get(value)));
 }
 
-template <typename D> void impl_ICompositionPropertySet<D>::InsertScalar(hstring_ref propertyName, float value) const
+template <typename D> void impl_ICompositionPropertySet<D>::InsertScalar(hstring_view propertyName, float value) const
 {
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_InsertScalar(get(propertyName), value));
 }
 
-template <typename D> void impl_ICompositionPropertySet<D>::InsertVector2(hstring_ref propertyName, const Windows::Foundation::Numerics::float2 & value) const
+template <typename D> void impl_ICompositionPropertySet<D>::InsertVector2(hstring_view propertyName, const Windows::Foundation::Numerics::float2 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_InsertVector2(get(propertyName), get(value)));
 }
 
-template <typename D> void impl_ICompositionPropertySet<D>::InsertVector3(hstring_ref propertyName, const Windows::Foundation::Numerics::float3 & value) const
+template <typename D> void impl_ICompositionPropertySet<D>::InsertVector3(hstring_view propertyName, const Windows::Foundation::Numerics::float3 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_InsertVector3(get(propertyName), get(value)));
 }
 
-template <typename D> void impl_ICompositionPropertySet<D>::InsertVector4(hstring_ref propertyName, const Windows::Foundation::Numerics::float4 & value) const
+template <typename D> void impl_ICompositionPropertySet<D>::InsertVector4(hstring_view propertyName, const Windows::Foundation::Numerics::float4 & value) const
 {
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_InsertVector4(get(propertyName), get(value)));
 }
 
-template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetColor(hstring_ref propertyName, Windows::UI::Color & value) const
+template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetColor(hstring_view propertyName, Windows::UI::Color & value) const
 {
     Windows::UI::Composition::CompositionGetValueStatus result {};
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_TryGetColor(get(propertyName), put(value), &result));
     return result;
 }
 
-template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetMatrix3x2(hstring_ref propertyName, Windows::Foundation::Numerics::float3x2 & value) const
+template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetMatrix3x2(hstring_view propertyName, Windows::Foundation::Numerics::float3x2 & value) const
 {
     Windows::UI::Composition::CompositionGetValueStatus result {};
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_TryGetMatrix3x2(get(propertyName), put(value), &result));
     return result;
 }
 
-template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetMatrix4x4(hstring_ref propertyName, Windows::Foundation::Numerics::float4x4 & value) const
+template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetMatrix4x4(hstring_view propertyName, Windows::Foundation::Numerics::float4x4 & value) const
 {
     Windows::UI::Composition::CompositionGetValueStatus result {};
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_TryGetMatrix4x4(get(propertyName), put(value), &result));
     return result;
 }
 
-template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetQuaternion(hstring_ref propertyName, Windows::Foundation::Numerics::quaternion & value) const
+template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetQuaternion(hstring_view propertyName, Windows::Foundation::Numerics::quaternion & value) const
 {
     Windows::UI::Composition::CompositionGetValueStatus result {};
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_TryGetQuaternion(get(propertyName), put(value), &result));
     return result;
 }
 
-template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetScalar(hstring_ref propertyName, float & value) const
+template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetScalar(hstring_view propertyName, float & value) const
 {
     Windows::UI::Composition::CompositionGetValueStatus result {};
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_TryGetScalar(get(propertyName), &value, &result));
     return result;
 }
 
-template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetVector2(hstring_ref propertyName, Windows::Foundation::Numerics::float2 & value) const
+template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetVector2(hstring_view propertyName, Windows::Foundation::Numerics::float2 & value) const
 {
     Windows::UI::Composition::CompositionGetValueStatus result {};
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_TryGetVector2(get(propertyName), put(value), &result));
     return result;
 }
 
-template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetVector3(hstring_ref propertyName, Windows::Foundation::Numerics::float3 & value) const
+template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetVector3(hstring_view propertyName, Windows::Foundation::Numerics::float3 & value) const
 {
     Windows::UI::Composition::CompositionGetValueStatus result {};
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_TryGetVector3(get(propertyName), put(value), &result));
     return result;
 }
 
-template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetVector4(hstring_ref propertyName, Windows::Foundation::Numerics::float4 & value) const
+template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet<D>::TryGetVector4(hstring_view propertyName, Windows::Foundation::Numerics::float4 & value) const
 {
     Windows::UI::Composition::CompositionGetValueStatus result {};
     check_hresult(WINRT_SHIM(ICompositionPropertySet)->abi_TryGetVector4(get(propertyName), put(value), &result));
     return result;
 }
 
-template <typename D> void impl_ICompositionPropertySet2<D>::InsertBoolean(hstring_ref propertyName, bool value) const
+template <typename D> void impl_ICompositionPropertySet2<D>::InsertBoolean(hstring_view propertyName, bool value) const
 {
     check_hresult(WINRT_SHIM(ICompositionPropertySet2)->abi_InsertBoolean(get(propertyName), value));
 }
 
-template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet2<D>::TryGetBoolean(hstring_ref propertyName, bool & value) const
+template <typename D> Windows::UI::Composition::CompositionGetValueStatus impl_ICompositionPropertySet2<D>::TryGetBoolean(hstring_view propertyName, bool & value) const
 {
     Windows::UI::Composition::CompositionGetValueStatus result {};
     check_hresult(WINRT_SHIM(ICompositionPropertySet2)->abi_TryGetBoolean(get(propertyName), &value, &result));
@@ -6022,7 +6022,7 @@ template <typename D> Windows::UI::Composition::ExpressionAnimation impl_ICompos
     return result;
 }
 
-template <typename D> Windows::UI::Composition::ExpressionAnimation impl_ICompositor<D>::CreateExpressionAnimation(hstring_ref expression) const
+template <typename D> Windows::UI::Composition::ExpressionAnimation impl_ICompositor<D>::CreateExpressionAnimation(hstring_view expression) const
 {
     Windows::UI::Composition::ExpressionAnimation result { nullptr };
     check_hresult(WINRT_SHIM(ICompositor)->abi_CreateExpressionAnimationWithExpression(get(expression), put(result)));
@@ -6349,7 +6349,7 @@ template <typename D> hstring impl_IExpressionAnimation<D>::Expression() const
     return value;
 }
 
-template <typename D> void impl_IExpressionAnimation<D>::Expression(hstring_ref value) const
+template <typename D> void impl_IExpressionAnimation<D>::Expression(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IExpressionAnimation)->put_Expression(get(value)));
 }
@@ -6469,12 +6469,12 @@ template <typename D> void impl_IKeyFrameAnimation<D>::StopBehavior(Windows::UI:
     check_hresult(WINRT_SHIM(IKeyFrameAnimation)->put_StopBehavior(value));
 }
 
-template <typename D> void impl_IKeyFrameAnimation<D>::InsertExpressionKeyFrame(float normalizedProgressKey, hstring_ref value) const
+template <typename D> void impl_IKeyFrameAnimation<D>::InsertExpressionKeyFrame(float normalizedProgressKey, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IKeyFrameAnimation)->abi_InsertExpressionKeyFrame(normalizedProgressKey, get(value)));
 }
 
-template <typename D> void impl_IKeyFrameAnimation<D>::InsertExpressionKeyFrame(float normalizedProgressKey, hstring_ref value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const
+template <typename D> void impl_IKeyFrameAnimation<D>::InsertExpressionKeyFrame(float normalizedProgressKey, hstring_view value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const
 {
     check_hresult(WINRT_SHIM(IKeyFrameAnimation)->abi_InsertExpressionKeyFrameWithEasingFunction(normalizedProgressKey, get(value), get(easingFunction)));
 }
@@ -7118,7 +7118,7 @@ template <typename D> void impl_IVisualUnorderedCollection<D>::RemoveAll() const
     check_hresult(WINRT_SHIM(IVisualUnorderedCollection)->abi_RemoveAll());
 }
 
-inline CompositionEffectSourceParameter::CompositionEffectSourceParameter(hstring_ref name) :
+inline CompositionEffectSourceParameter::CompositionEffectSourceParameter(hstring_view name) :
     CompositionEffectSourceParameter(get_activation_factory<CompositionEffectSourceParameter, ICompositionEffectSourceParameterFactory>().Create(name))
 {}
 

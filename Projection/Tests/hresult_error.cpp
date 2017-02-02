@@ -102,7 +102,7 @@ TEST_CASE("hresult,restricted,producing")
 
     try
     {
-        WINRT_RoOriginateError(E_INVALIDARG, get(hstring_ref(L"Correctly matched error info")));
+        WINRT_RoOriginateError(E_INVALIDARG, get(hstring_view(L"Correctly matched error info")));
         throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)
@@ -113,7 +113,7 @@ TEST_CASE("hresult,restricted,producing")
 
     try
     {
-        WINRT_RoOriginateError(E_FAIL, get(hstring_ref(L"Incorrectly matched error info")));
+        WINRT_RoOriginateError(E_FAIL, get(hstring_view(L"Incorrectly matched error info")));
         throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)

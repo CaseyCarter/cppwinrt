@@ -213,7 +213,7 @@ template <typename D> hstring impl_ICustomSensorStatics<D>::GetDeviceSelector(GU
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> impl_ICustomSensorStatics<D>::FromIdAsync(hstring_ref sensorId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> impl_ICustomSensorStatics<D>::FromIdAsync(hstring_view sensorId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> result;
     check_hresult(WINRT_SHIM(ICustomSensorStatics)->abi_FromIdAsync(get(sensorId), put(result)));
@@ -296,7 +296,7 @@ inline hstring CustomSensor::GetDeviceSelector(GUID interfaceId)
     return get_activation_factory<CustomSensor, ICustomSensorStatics>().GetDeviceSelector(interfaceId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> CustomSensor::FromIdAsync(hstring_ref sensorId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> CustomSensor::FromIdAsync(hstring_view sensorId)
 {
     return get_activation_factory<CustomSensor, ICustomSensorStatics>().FromIdAsync(sensorId);
 }

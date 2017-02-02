@@ -386,71 +386,71 @@ template <typename D> hstring impl_IStorageItemAccessList<D>::Add(const Windows:
     return token;
 }
 
-template <typename D> hstring impl_IStorageItemAccessList<D>::Add(const Windows::Storage::IStorageItem & file, hstring_ref metadata) const
+template <typename D> hstring impl_IStorageItemAccessList<D>::Add(const Windows::Storage::IStorageItem & file, hstring_view metadata) const
 {
     hstring token;
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_Add(get(file), get(metadata), put(token)));
     return token;
 }
 
-template <typename D> void impl_IStorageItemAccessList<D>::AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file) const
+template <typename D> void impl_IStorageItemAccessList<D>::AddOrReplace(hstring_view token, const Windows::Storage::IStorageItem & file) const
 {
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_AddOrReplaceOverloadDefaultMetadata(get(token), get(file)));
 }
 
-template <typename D> void impl_IStorageItemAccessList<D>::AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file, hstring_ref metadata) const
+template <typename D> void impl_IStorageItemAccessList<D>::AddOrReplace(hstring_view token, const Windows::Storage::IStorageItem & file, hstring_view metadata) const
 {
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_AddOrReplace(get(token), get(file), get(metadata)));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageItemAccessList<D>::GetItemAsync(hstring_ref token) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageItemAccessList<D>::GetItemAsync(hstring_view token) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> operation;
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_GetItemAsync(get(token), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageItemAccessList<D>::GetFileAsync(hstring_ref token) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageItemAccessList<D>::GetFileAsync(hstring_view token) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_GetFileAsync(get(token), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageItemAccessList<D>::GetFolderAsync(hstring_ref token) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageItemAccessList<D>::GetFolderAsync(hstring_view token) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_GetFolderAsync(get(token), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageItemAccessList<D>::GetItemAsync(hstring_ref token, Windows::Storage::AccessCache::AccessCacheOptions options) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageItemAccessList<D>::GetItemAsync(hstring_view token, Windows::Storage::AccessCache::AccessCacheOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> operation;
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_GetItemWithOptionsAsync(get(token), options, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageItemAccessList<D>::GetFileAsync(hstring_ref token, Windows::Storage::AccessCache::AccessCacheOptions options) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageItemAccessList<D>::GetFileAsync(hstring_view token, Windows::Storage::AccessCache::AccessCacheOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_GetFileWithOptionsAsync(get(token), options, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageItemAccessList<D>::GetFolderAsync(hstring_ref token, Windows::Storage::AccessCache::AccessCacheOptions options) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageItemAccessList<D>::GetFolderAsync(hstring_view token, Windows::Storage::AccessCache::AccessCacheOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_GetFolderWithOptionsAsync(get(token), options, put(operation)));
     return operation;
 }
 
-template <typename D> void impl_IStorageItemAccessList<D>::Remove(hstring_ref token) const
+template <typename D> void impl_IStorageItemAccessList<D>::Remove(hstring_view token) const
 {
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_Remove(get(token)));
 }
 
-template <typename D> bool impl_IStorageItemAccessList<D>::ContainsItem(hstring_ref token) const
+template <typename D> bool impl_IStorageItemAccessList<D>::ContainsItem(hstring_view token) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IStorageItemAccessList)->abi_ContainsItem(get(token), &value));
@@ -500,14 +500,14 @@ template <typename D> void impl_IStorageItemMostRecentlyUsedList<D>::ItemRemoved
     check_hresult(WINRT_SHIM(IStorageItemMostRecentlyUsedList)->remove_ItemRemoved(eventCookie));
 }
 
-template <typename D> hstring impl_IStorageItemMostRecentlyUsedList2<D>::Add(const Windows::Storage::IStorageItem & file, hstring_ref metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const
+template <typename D> hstring impl_IStorageItemMostRecentlyUsedList2<D>::Add(const Windows::Storage::IStorageItem & file, hstring_view metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const
 {
     hstring token;
     check_hresult(WINRT_SHIM(IStorageItemMostRecentlyUsedList2)->abi_AddWithMetadataAndVisibility(get(file), get(metadata), visibility, put(token)));
     return token;
 }
 
-template <typename D> void impl_IStorageItemMostRecentlyUsedList2<D>::AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file, hstring_ref metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const
+template <typename D> void impl_IStorageItemMostRecentlyUsedList2<D>::AddOrReplace(hstring_view token, const Windows::Storage::IStorageItem & file, hstring_view metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const
 {
     check_hresult(WINRT_SHIM(IStorageItemMostRecentlyUsedList2)->abi_AddOrReplaceWithMetadataAndVisibility(get(token), get(file), get(metadata), visibility));
 }

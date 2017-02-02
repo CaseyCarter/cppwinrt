@@ -268,7 +268,7 @@ struct WINRT_EBO impl_ISpeechRecognitionConstraint
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
     hstring Tag() const;
-    void Tag(hstring_ref value) const;
+    void Tag(hstring_view value) const;
     Windows::Media::SpeechRecognition::SpeechRecognitionConstraintType Type() const;
     Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability Probability() const;
     void Probability(Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability value) const;
@@ -284,7 +284,7 @@ template <typename D>
 struct WINRT_EBO impl_ISpeechRecognitionGrammarFileConstraintFactory
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint Create(const Windows::Storage::StorageFile & file) const;
-    Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint CreateWithTag(const Windows::Storage::StorageFile & file, hstring_ref tag) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint CreateWithTag(const Windows::Storage::StorageFile & file, hstring_view tag) const;
 };
 
 template <typename D>
@@ -309,7 +309,7 @@ template <typename D>
 struct WINRT_EBO impl_ISpeechRecognitionListConstraintFactory
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint Create(const Windows::Foundation::Collections::IIterable<hstring> & commands) const;
-    Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint CreateWithTag(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_ref tag) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint CreateWithTag(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_view tag) const;
 };
 
 template <typename D>
@@ -354,8 +354,8 @@ struct WINRT_EBO impl_ISpeechRecognitionTopicConstraint
 template <typename D>
 struct WINRT_EBO impl_ISpeechRecognitionTopicConstraintFactory
 {
-    Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint) const;
-    Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint, hstring_ref tag) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_view topicHint) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_view topicHint, hstring_view tag) const;
 };
 
 template <typename D>
@@ -430,9 +430,9 @@ template <typename D>
 struct WINRT_EBO impl_ISpeechRecognizerUIOptions
 {
     hstring ExampleText() const;
-    void ExampleText(hstring_ref value) const;
+    void ExampleText(hstring_view value) const;
     hstring AudiblePrompt() const;
-    void AudiblePrompt(hstring_ref value) const;
+    void AudiblePrompt(hstring_view value) const;
     bool IsReadBackEnabled() const;
     void IsReadBackEnabled(bool value) const;
     bool ShowConfirmation() const;

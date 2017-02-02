@@ -2292,7 +2292,7 @@ template <typename D> Windows::System::UserType impl_IUser<D>::Type() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::IInspectable> impl_IUser<D>::GetPropertyAsync(hstring_ref value) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::IInspectable> impl_IUser<D>::GetPropertyAsync(hstring_view value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::IInspectable> operation;
     check_hresult(WINRT_SHIM(IUser)->abi_GetPropertyAsync(get(value), put(operation)));
@@ -2341,7 +2341,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::System::User impl_IUserStatics<D>::GetFromId(hstring_ref nonRoamableId) const
+template <typename D> Windows::System::User impl_IUserStatics<D>::GetFromId(hstring_view nonRoamableId) const
 {
     Windows::System::User value { nullptr };
     check_hresult(WINRT_SHIM(IUserStatics)->abi_GetFromId(get(nonRoamableId), put(value)));
@@ -2646,7 +2646,7 @@ template <typename D> Windows::System::User impl_IUserDeviceAssociationChangedEv
     return value;
 }
 
-template <typename D> Windows::System::User impl_IUserDeviceAssociationStatics<D>::FindUserFromDeviceId(hstring_ref deviceId) const
+template <typename D> Windows::System::User impl_IUserDeviceAssociationStatics<D>::FindUserFromDeviceId(hstring_view deviceId) const
 {
     Windows::System::User user { nullptr };
     check_hresult(WINRT_SHIM(IUserDeviceAssociationStatics)->abi_FindUserFromDeviceId(get(deviceId), put(user)));
@@ -2758,7 +2758,7 @@ template <typename D> hstring impl_ILauncherOptions<D>::PreferredApplicationPack
     return value;
 }
 
-template <typename D> void impl_ILauncherOptions<D>::PreferredApplicationPackageFamilyName(hstring_ref value) const
+template <typename D> void impl_ILauncherOptions<D>::PreferredApplicationPackageFamilyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ILauncherOptions)->put_PreferredApplicationPackageFamilyName(get(value)));
 }
@@ -2770,7 +2770,7 @@ template <typename D> hstring impl_ILauncherOptions<D>::PreferredApplicationDisp
     return value;
 }
 
-template <typename D> void impl_ILauncherOptions<D>::PreferredApplicationDisplayName(hstring_ref value) const
+template <typename D> void impl_ILauncherOptions<D>::PreferredApplicationDisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ILauncherOptions)->put_PreferredApplicationDisplayName(get(value)));
 }
@@ -2794,7 +2794,7 @@ template <typename D> hstring impl_ILauncherOptions<D>::ContentType() const
     return value;
 }
 
-template <typename D> void impl_ILauncherOptions<D>::ContentType(hstring_ref value) const
+template <typename D> void impl_ILauncherOptions<D>::ContentType(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ILauncherOptions)->put_ContentType(get(value)));
 }
@@ -2806,7 +2806,7 @@ template <typename D> hstring impl_ILauncherOptions2<D>::TargetApplicationPackag
     return value;
 }
 
-template <typename D> void impl_ILauncherOptions2<D>::TargetApplicationPackageFamilyName(hstring_ref value) const
+template <typename D> void impl_ILauncherOptions2<D>::TargetApplicationPackageFamilyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ILauncherOptions2)->put_TargetApplicationPackageFamilyName(get(value)));
 }
@@ -2929,7 +2929,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Syste
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics2<D>::QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics2<D>::QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_view packageFamilyName) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> operation;
     check_hresult(WINRT_SHIM(ILauncherStatics2)->abi_QueryUriSupportWithPackageFamilyNameAsync(get(uri), launchQuerySupportType, get(packageFamilyName), put(operation)));
@@ -2943,28 +2943,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Syste
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics2<D>::QueryFileSupportAsync(const Windows::Storage::StorageFile & file, hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics2<D>::QueryFileSupportAsync(const Windows::Storage::StorageFile & file, hstring_view packageFamilyName) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> operation;
     check_hresult(WINRT_SHIM(ILauncherStatics2)->abi_QueryFileSupportWithPackageFamilyNameAsync(get(file), get(packageFamilyName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics2<D>::FindUriSchemeHandlersAsync(hstring_ref scheme) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics2<D>::FindUriSchemeHandlersAsync(hstring_view scheme) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
     check_hresult(WINRT_SHIM(ILauncherStatics2)->abi_FindUriSchemeHandlersAsync(get(scheme), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics2<D>::FindUriSchemeHandlersAsync(hstring_ref scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics2<D>::FindUriSchemeHandlersAsync(hstring_view scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
     check_hresult(WINRT_SHIM(ILauncherStatics2)->abi_FindUriSchemeHandlersWithLaunchUriTypeAsync(get(scheme), launchQuerySupportType, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics2<D>::FindFileHandlersAsync(hstring_ref extension) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics2<D>::FindFileHandlersAsync(hstring_view extension) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
     check_hresult(WINRT_SHIM(ILauncherStatics2)->abi_FindFileHandlersAsync(get(extension), put(operation)));
@@ -2992,7 +2992,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Syste
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics4<D>::QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_ref packageFamilyName) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics4<D>::QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_view packageFamilyName) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> operation;
     check_hresult(WINRT_SHIM(ILauncherStatics4)->abi_QueryAppUriSupportWithPackageFamilyNameAsync(get(uri), get(packageFamilyName), put(operation)));
@@ -3151,7 +3151,7 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQueryS
     return get_activation_factory<Launcher, ILauncherStatics2>().QueryUriSupportAsync(uri, launchQuerySupportType);
 }
 
-inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_ref packageFamilyName)
+inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_view packageFamilyName)
 {
     return get_activation_factory<Launcher, ILauncherStatics2>().QueryUriSupportAsync(uri, launchQuerySupportType, packageFamilyName);
 }
@@ -3161,22 +3161,22 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQueryS
     return get_activation_factory<Launcher, ILauncherStatics2>().QueryFileSupportAsync(file);
 }
 
-inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryFileSupportAsync(const Windows::Storage::StorageFile & file, hstring_ref packageFamilyName)
+inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryFileSupportAsync(const Windows::Storage::StorageFile & file, hstring_view packageFamilyName)
 {
     return get_activation_factory<Launcher, ILauncherStatics2>().QueryFileSupportAsync(file, packageFamilyName);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindUriSchemeHandlersAsync(hstring_ref scheme)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindUriSchemeHandlersAsync(hstring_view scheme)
 {
     return get_activation_factory<Launcher, ILauncherStatics2>().FindUriSchemeHandlersAsync(scheme);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindUriSchemeHandlersAsync(hstring_ref scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindUriSchemeHandlersAsync(hstring_view scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType)
 {
     return get_activation_factory<Launcher, ILauncherStatics2>().FindUriSchemeHandlersAsync(scheme, launchQuerySupportType);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindFileHandlersAsync(hstring_ref extension)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> Launcher::FindFileHandlersAsync(hstring_view extension)
 {
     return get_activation_factory<Launcher, ILauncherStatics2>().FindFileHandlersAsync(extension);
 }
@@ -3196,7 +3196,7 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQueryS
     return get_activation_factory<Launcher, ILauncherStatics4>().QueryAppUriSupportAsync(uri);
 }
 
-inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_ref packageFamilyName)
+inline Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> Launcher::QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_view packageFamilyName)
 {
     return get_activation_factory<Launcher, ILauncherStatics4>().QueryAppUriSupportAsync(uri, packageFamilyName);
 }
@@ -3352,12 +3352,12 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<User, IUserStatics>().FindAllAsync(type, status);
 }
 
-inline Windows::System::User User::GetFromId(hstring_ref nonRoamableId)
+inline Windows::System::User User::GetFromId(hstring_view nonRoamableId)
 {
     return get_activation_factory<User, IUserStatics>().GetFromId(nonRoamableId);
 }
 
-inline Windows::System::User UserDeviceAssociation::FindUserFromDeviceId(hstring_ref deviceId)
+inline Windows::System::User UserDeviceAssociation::FindUserFromDeviceId(hstring_view deviceId)
 {
     return get_activation_factory<UserDeviceAssociation, IUserDeviceAssociationStatics>().FindUserFromDeviceId(deviceId);
 }

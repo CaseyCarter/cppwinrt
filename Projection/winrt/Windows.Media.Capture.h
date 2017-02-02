@@ -3488,7 +3488,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Med
     return value;
 }
 
-template <typename D> void impl_IMediaCaptureInitializationSettings<D>::AudioDeviceId(hstring_ref value) const
+template <typename D> void impl_IMediaCaptureInitializationSettings<D>::AudioDeviceId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMediaCaptureInitializationSettings)->put_AudioDeviceId(get(value)));
 }
@@ -3500,7 +3500,7 @@ template <typename D> hstring impl_IMediaCaptureInitializationSettings<D>::Audio
     return value;
 }
 
-template <typename D> void impl_IMediaCaptureInitializationSettings<D>::VideoDeviceId(hstring_ref value) const
+template <typename D> void impl_IMediaCaptureInitializationSettings<D>::VideoDeviceId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMediaCaptureInitializationSettings)->put_VideoDeviceId(get(value)));
 }
@@ -3668,28 +3668,28 @@ template <typename D> void impl_IMediaCaptureInitializationSettings5<D>::MemoryP
     check_hresult(WINRT_SHIM(IMediaCaptureInitializationSettings5)->put_MemoryPreference(value));
 }
 
-template <typename D> bool impl_IMediaCaptureStatics<D>::IsVideoProfileSupported(hstring_ref videoDeviceId) const
+template <typename D> bool impl_IMediaCaptureStatics<D>::IsVideoProfileSupported(hstring_view videoDeviceId) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IMediaCaptureStatics)->abi_IsVideoProfileSupported(get(videoDeviceId), &value));
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> impl_IMediaCaptureStatics<D>::FindAllVideoProfiles(hstring_ref videoDeviceId) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> impl_IMediaCaptureStatics<D>::FindAllVideoProfiles(hstring_view videoDeviceId) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> value;
     check_hresult(WINRT_SHIM(IMediaCaptureStatics)->abi_FindAllVideoProfiles(get(videoDeviceId), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> impl_IMediaCaptureStatics<D>::FindConcurrentProfiles(hstring_ref videoDeviceId) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> impl_IMediaCaptureStatics<D>::FindConcurrentProfiles(hstring_view videoDeviceId) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> value;
     check_hresult(WINRT_SHIM(IMediaCaptureStatics)->abi_FindConcurrentProfiles(get(videoDeviceId), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> impl_IMediaCaptureStatics<D>::FindKnownVideoProfiles(hstring_ref videoDeviceId, Windows::Media::Capture::KnownVideoProfile name) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> impl_IMediaCaptureStatics<D>::FindKnownVideoProfiles(hstring_view videoDeviceId, Windows::Media::Capture::KnownVideoProfile name) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> value;
     check_hresult(WINRT_SHIM(IMediaCaptureStatics)->abi_FindKnownVideoProfiles(get(videoDeviceId), name, put(value)));
@@ -3731,7 +3731,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCapture<D>::S
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCapture<D>::StartRecordToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_ref customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCapture<D>::StartRecordToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_view customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IMediaCapture)->abi_StartRecordToCustomSinkIdAsync(get(encodingProfile), get(customSinkActivationId), get(customSinkSettings), put(asyncInfo)));
@@ -3759,7 +3759,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCapture<D>::C
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCapture<D>::AddEffectAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, hstring_ref effectActivationID, const Windows::Foundation::Collections::IPropertySet & effectSettings) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCapture<D>::AddEffectAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, hstring_view effectActivationID, const Windows::Foundation::Collections::IPropertySet & effectSettings) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IMediaCapture)->abi_AddEffectAsync(mediaStreamType, get(effectActivationID), get(effectSettings), put(asyncInfo)));
@@ -3897,7 +3897,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Captu
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> impl_IMediaCapture2<D>::PrepareLowLagRecordToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_ref customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> impl_IMediaCapture2<D>::PrepareLowLagRecordToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_view customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> operation;
     check_hresult(WINRT_SHIM(IMediaCapture2)->abi_PrepareLowLagRecordToCustomSinkIdAsync(get(encodingProfile), get(customSinkActivationId), get(customSinkSettings), put(operation)));
@@ -4098,14 +4098,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Captu
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> impl_IMediaCapture5<D>::CreateFrameReaderAsync(const Windows::Media::Capture::Frames::MediaFrameSource & inputSource, hstring_ref outputSubtype) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> impl_IMediaCapture5<D>::CreateFrameReaderAsync(const Windows::Media::Capture::Frames::MediaFrameSource & inputSource, hstring_view outputSubtype) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> value;
     check_hresult(WINRT_SHIM(IMediaCapture5)->abi_CreateFrameReaderWithSubtypeAsync(get(inputSource), get(outputSubtype), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> impl_IMediaCapture5<D>::CreateFrameReaderAsync(const Windows::Media::Capture::Frames::MediaFrameSource & inputSource, hstring_ref outputSubtype, const Windows::Graphics::Imaging::BitmapSize & outputSize) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> impl_IMediaCapture5<D>::CreateFrameReaderAsync(const Windows::Media::Capture::Frames::MediaFrameSource & inputSource, hstring_view outputSubtype, const Windows::Graphics::Imaging::BitmapSize & outputSize) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> value;
     check_hresult(WINRT_SHIM(IMediaCapture5)->abi_CreateFrameReaderWithSubtypeAndSizeAsync(get(inputSource), get(outputSubtype), get(outputSize), put(value)));
@@ -4506,7 +4506,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCaptureVideoP
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCaptureVideoPreview<D>::StartPreviewToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_ref customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCaptureVideoPreview<D>::StartPreviewToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_view customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IMediaCaptureVideoPreview)->abi_StartPreviewToCustomSinkIdAsync(get(encodingProfile), get(customSinkActivationId), get(customSinkSettings), put(asyncInfo)));
@@ -4659,22 +4659,22 @@ inline MediaCapture::MediaCapture() :
     MediaCapture(activate_instance<MediaCapture>())
 {}
 
-inline bool MediaCapture::IsVideoProfileSupported(hstring_ref videoDeviceId)
+inline bool MediaCapture::IsVideoProfileSupported(hstring_view videoDeviceId)
 {
     return get_activation_factory<MediaCapture, IMediaCaptureStatics>().IsVideoProfileSupported(videoDeviceId);
 }
 
-inline Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> MediaCapture::FindAllVideoProfiles(hstring_ref videoDeviceId)
+inline Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> MediaCapture::FindAllVideoProfiles(hstring_view videoDeviceId)
 {
     return get_activation_factory<MediaCapture, IMediaCaptureStatics>().FindAllVideoProfiles(videoDeviceId);
 }
 
-inline Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> MediaCapture::FindConcurrentProfiles(hstring_ref videoDeviceId)
+inline Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> MediaCapture::FindConcurrentProfiles(hstring_view videoDeviceId)
 {
     return get_activation_factory<MediaCapture, IMediaCaptureStatics>().FindConcurrentProfiles(videoDeviceId);
 }
 
-inline Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> MediaCapture::FindKnownVideoProfiles(hstring_ref videoDeviceId, Windows::Media::Capture::KnownVideoProfile name)
+inline Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> MediaCapture::FindKnownVideoProfiles(hstring_view videoDeviceId, Windows::Media::Capture::KnownVideoProfile name)
 {
     return get_activation_factory<MediaCapture, IMediaCaptureStatics>().FindKnownVideoProfiles(videoDeviceId, name);
 }

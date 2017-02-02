@@ -7541,7 +7541,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Poi
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> impl_IBarcodeScannerStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> impl_IBarcodeScannerStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> result;
     check_hresult(WINRT_SHIM(IBarcodeScannerStatics)->abi_FromIdAsync(get(deviceId), put(result)));
@@ -7611,7 +7611,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
     return value;
 }
 
-template <typename D> bool impl_IBarcodeScanner<D>::IsProfileSupported(hstring_ref profile) const
+template <typename D> bool impl_IBarcodeScanner<D>::IsProfileSupported(hstring_view profile) const
 {
     bool isSupported {};
     check_hresult(WINRT_SHIM(IBarcodeScanner)->abi_IsProfileSupported(get(profile), &isSupported));
@@ -8118,7 +8118,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Poi
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> impl_IMagneticStripeReaderStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> impl_IMagneticStripeReaderStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> result;
     check_hresult(WINRT_SHIM(IMagneticStripeReaderStatics)->abi_FromIdAsync(get(deviceId), put(result)));
@@ -8513,7 +8513,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Poi
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> impl_IPosPrinterStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> impl_IPosPrinterStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> result;
     check_hresult(WINRT_SHIM(IPosPrinterStatics)->abi_FromIdAsync(get(deviceId), put(result)));
@@ -8600,12 +8600,12 @@ template <typename D> void impl_IPosPrinter<D>::StatusUpdated(event_token token)
     check_hresult(WINRT_SHIM(IPosPrinter)->remove_StatusUpdated(token));
 }
 
-template <typename D> void impl_IPosPrinterJob<D>::Print(hstring_ref data) const
+template <typename D> void impl_IPosPrinterJob<D>::Print(hstring_view data) const
 {
     check_hresult(WINRT_SHIM(IPosPrinterJob)->abi_Print(get(data)));
 }
 
-template <typename D> void impl_IPosPrinterJob<D>::PrintLine(hstring_ref data) const
+template <typename D> void impl_IPosPrinterJob<D>::PrintLine(hstring_view data) const
 {
     check_hresult(WINRT_SHIM(IPosPrinterJob)->abi_PrintLine(get(data)));
 }
@@ -8662,17 +8662,17 @@ template <typename D> void impl_IReceiptOrSlipJob<D>::PrintSavedBitmap(uint32_t 
     check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintSavedBitmap(bitmapNumber));
 }
 
-template <typename D> void impl_IReceiptOrSlipJob<D>::DrawRuledLine(hstring_ref positionList, Windows::Devices::PointOfService::PosPrinterLineDirection lineDirection, uint32_t lineWidth, Windows::Devices::PointOfService::PosPrinterLineStyle lineStyle, uint32_t lineColor) const
+template <typename D> void impl_IReceiptOrSlipJob<D>::DrawRuledLine(hstring_view positionList, Windows::Devices::PointOfService::PosPrinterLineDirection lineDirection, uint32_t lineWidth, Windows::Devices::PointOfService::PosPrinterLineStyle lineStyle, uint32_t lineColor) const
 {
     check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_DrawRuledLine(get(positionList), lineDirection, lineWidth, lineStyle, lineColor));
 }
 
-template <typename D> void impl_IReceiptOrSlipJob<D>::PrintBarcode(hstring_ref data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, Windows::Devices::PointOfService::PosPrinterAlignment alignment) const
+template <typename D> void impl_IReceiptOrSlipJob<D>::PrintBarcode(hstring_view data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, Windows::Devices::PointOfService::PosPrinterAlignment alignment) const
 {
     check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintBarcode(get(data), symbology, height, width, textPosition, alignment));
 }
 
-template <typename D> void impl_IReceiptOrSlipJob<D>::PrintBarcodeCustomAlign(hstring_ref data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, uint32_t alignmentDistance) const
+template <typename D> void impl_IReceiptOrSlipJob<D>::PrintBarcodeCustomAlign(hstring_view data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, uint32_t alignmentDistance) const
 {
     check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintBarcodeCustomAlign(get(data), symbology, height, width, textPosition, alignmentDistance));
 }
@@ -8828,7 +8828,7 @@ template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::IsReadyToPri
     return value;
 }
 
-template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::ValidateData(hstring_ref data) const
+template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::ValidateData(hstring_view data) const
 {
     bool result {};
     check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->abi_ValidateData(get(data), &result));
@@ -9080,7 +9080,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Poi
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> impl_ICashDrawerStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> impl_ICashDrawerStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> result;
     check_hresult(WINRT_SHIM(ICashDrawerStatics)->abi_FromIdAsync(get(deviceId), put(result)));
@@ -9317,7 +9317,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScan
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveProfileAsync(hstring_ref profile) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveProfileAsync(hstring_view profile) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_SetActiveProfileAsync(get(profile), put(result)));
@@ -9566,7 +9566,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStr
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateKeyAsync(hstring_ref key, hstring_ref keyName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateKeyAsync(hstring_view key, hstring_view keyName) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_UpdateKeyAsync(get(key), get(keyName), put(result)));
@@ -9894,7 +9894,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::Ba
     return get_activation_factory<BarcodeScanner, IBarcodeScannerStatics>().GetDefaultAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> BarcodeScanner::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> BarcodeScanner::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<BarcodeScanner, IBarcodeScannerStatics>().FromIdAsync(deviceId);
 }
@@ -10379,7 +10379,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::Ca
     return get_activation_factory<CashDrawer, ICashDrawerStatics>().GetDefaultAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> CashDrawer::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> CashDrawer::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<CashDrawer, ICashDrawerStatics>().FromIdAsync(deviceId);
 }
@@ -10394,7 +10394,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::Ma
     return get_activation_factory<MagneticStripeReader, IMagneticStripeReaderStatics>().GetDefaultAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> MagneticStripeReader::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> MagneticStripeReader::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<MagneticStripeReader, IMagneticStripeReaderStatics>().FromIdAsync(deviceId);
 }
@@ -10444,7 +10444,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::Po
     return get_activation_factory<PosPrinter, IPosPrinterStatics>().GetDefaultAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> PosPrinter::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> PosPrinter::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<PosPrinter, IPosPrinterStatics>().FromIdAsync(deviceId);
 }

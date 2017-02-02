@@ -14,7 +14,7 @@ struct WINRT_EBO Lamp :
 {
     Lamp(std::nullptr_t) noexcept {}
     static hstring GetDeviceSelector();
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> FromIdAsync(hstring_ref deviceId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> FromIdAsync(hstring_view deviceId);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> GetDefaultAsync();
 };
 

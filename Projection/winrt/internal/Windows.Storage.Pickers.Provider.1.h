@@ -105,15 +105,15 @@ namespace Windows::Storage::Pickers::Provider {
 template <typename D>
 struct WINRT_EBO impl_IFileOpenPickerUI
 {
-    Windows::Storage::Pickers::Provider::AddFileResult AddFile(hstring_ref id, const Windows::Storage::IStorageFile & file) const;
-    void RemoveFile(hstring_ref id) const;
-    bool ContainsFile(hstring_ref id) const;
+    Windows::Storage::Pickers::Provider::AddFileResult AddFile(hstring_view id, const Windows::Storage::IStorageFile & file) const;
+    void RemoveFile(hstring_view id) const;
+    bool ContainsFile(hstring_view id) const;
     bool CanAddFile(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::Collections::IVectorView<hstring> AllowedFileTypes() const;
     Windows::Storage::Pickers::Provider::FileSelectionMode SelectionMode() const;
     hstring SettingsIdentifier() const;
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     event_token FileRemoved(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> & handler) const;
     using FileRemoved_revoker = event_revoker<IFileOpenPickerUI>;
     FileRemoved_revoker FileRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> & handler) const;
@@ -134,11 +134,11 @@ template <typename D>
 struct WINRT_EBO impl_IFileSavePickerUI
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::Foundation::Collections::IVectorView<hstring> AllowedFileTypes() const;
     hstring SettingsIdentifier() const;
     hstring FileName() const;
-    Windows::Storage::Pickers::Provider::SetFileNameResult TrySetFileName(hstring_ref value) const;
+    Windows::Storage::Pickers::Provider::SetFileNameResult TrySetFileName(hstring_view value) const;
     event_token FileNameChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> & handler) const;
     using FileNameChanged_revoker = event_revoker<IFileSavePickerUI>;
     FileNameChanged_revoker FileNameChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> & handler) const;

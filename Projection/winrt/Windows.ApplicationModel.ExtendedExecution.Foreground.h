@@ -152,7 +152,7 @@ template <typename D> hstring impl_IExtendedExecutionForegroundSession<D>::Descr
     return value;
 }
 
-template <typename D> void impl_IExtendedExecutionForegroundSession<D>::Description(hstring_ref value) const
+template <typename D> void impl_IExtendedExecutionForegroundSession<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->put_Description(get(value)));
 }

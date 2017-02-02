@@ -138,9 +138,9 @@ template <typename D>
 struct WINRT_EBO impl_ISerialDeviceStatics
 {
     hstring GetDeviceSelector() const;
-    hstring GetDeviceSelector(hstring_ref portName) const;
+    hstring GetDeviceSelector(hstring_view portName) const;
     hstring GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> FromIdAsync(hstring_view deviceId) const;
 };
 
 }

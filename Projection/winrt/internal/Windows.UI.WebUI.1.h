@@ -214,7 +214,7 @@ struct WINRT_EBO impl_IHtmlPrintDocumentSource
     float PercentScale() const;
     void PercentScale(float scalePercent) const;
     hstring PageRange() const;
-    bool TrySetPageRange(hstring_ref strPageRange) const;
+    bool TrySetPageRange(hstring_view strPageRange) const;
 };
 
 template <typename D>

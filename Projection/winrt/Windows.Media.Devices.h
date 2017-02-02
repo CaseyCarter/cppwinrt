@@ -4911,12 +4911,12 @@ template <typename D> bool impl_IMediaDeviceControlCapabilities<D>::AutoModeSupp
     return value;
 }
 
-template <typename D> void impl_IAdvancedVideoCaptureDeviceController<D>::SetDeviceProperty(hstring_ref propertyId, const Windows::IInspectable & propertyValue) const
+template <typename D> void impl_IAdvancedVideoCaptureDeviceController<D>::SetDeviceProperty(hstring_view propertyId, const Windows::IInspectable & propertyValue) const
 {
     check_hresult(WINRT_SHIM(IAdvancedVideoCaptureDeviceController)->abi_SetDeviceProperty(get(propertyId), get(propertyValue)));
 }
 
-template <typename D> Windows::IInspectable impl_IAdvancedVideoCaptureDeviceController<D>::GetDeviceProperty(hstring_ref propertyId) const
+template <typename D> Windows::IInspectable impl_IAdvancedVideoCaptureDeviceController<D>::GetDeviceProperty(hstring_view propertyId) const
 {
     Windows::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IAdvancedVideoCaptureDeviceController)->abi_GetDeviceProperty(get(propertyId), put(propertyValue)));

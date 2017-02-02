@@ -1859,7 +1859,7 @@ template <typename D> hstring impl_IMediaEncodingProperties<D>::Type() const
     return value;
 }
 
-template <typename D> void impl_IMediaEncodingProperties<D>::Subtype(hstring_ref value) const
+template <typename D> void impl_IMediaEncodingProperties<D>::Subtype(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMediaEncodingProperties)->put_Subtype(get(value)));
 }
@@ -2442,7 +2442,7 @@ template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties i
     return value;
 }
 
-template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IVideoEncodingPropertiesStatics<D>::CreateUncompressed(hstring_ref subtype, uint32_t width, uint32_t height) const
+template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IVideoEncodingPropertiesStatics<D>::CreateUncompressed(hstring_view subtype, uint32_t width, uint32_t height) const
 {
     Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
     check_hresult(WINRT_SHIM(IVideoEncodingPropertiesStatics)->abi_CreateUncompressed(get(subtype), width, height, put(value)));
@@ -3011,7 +3011,7 @@ inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingPro
     return get_activation_factory<VideoEncodingProperties, IVideoEncodingPropertiesStatics>().CreateMpeg2();
 }
 
-inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateUncompressed(hstring_ref subtype, uint32_t width, uint32_t height)
+inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateUncompressed(hstring_view subtype, uint32_t width, uint32_t height)
 {
     return get_activation_factory<VideoEncodingProperties, IVideoEncodingPropertiesStatics>().CreateUncompressed(subtype, width, height);
 }

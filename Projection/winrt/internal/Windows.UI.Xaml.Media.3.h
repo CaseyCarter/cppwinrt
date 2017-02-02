@@ -165,7 +165,7 @@ struct WINRT_EBO FontFamily :
     Windows::UI::Xaml::Media::IFontFamily
 {
     FontFamily(std::nullptr_t) noexcept {}
-    FontFamily(hstring_ref familyName);
+    FontFamily(hstring_view familyName);
     static Windows::UI::Xaml::Media::FontFamily XamlAutoFontFamily();
 };
 

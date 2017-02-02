@@ -1511,7 +1511,7 @@ template <typename D> hstring impl_IJumpListItem<D>::Description() const
     return value;
 }
 
-template <typename D> void impl_IJumpListItem<D>::Description(hstring_ref value) const
+template <typename D> void impl_IJumpListItem<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IJumpListItem)->put_Description(get(value)));
 }
@@ -1523,7 +1523,7 @@ template <typename D> hstring impl_IJumpListItem<D>::DisplayName() const
     return value;
 }
 
-template <typename D> void impl_IJumpListItem<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IJumpListItem<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IJumpListItem)->put_DisplayName(get(value)));
 }
@@ -1535,7 +1535,7 @@ template <typename D> hstring impl_IJumpListItem<D>::GroupName() const
     return value;
 }
 
-template <typename D> void impl_IJumpListItem<D>::GroupName(hstring_ref value) const
+template <typename D> void impl_IJumpListItem<D>::GroupName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IJumpListItem)->put_GroupName(get(value)));
 }
@@ -1552,7 +1552,7 @@ template <typename D> void impl_IJumpListItem<D>::Logo(const Windows::Foundation
     check_hresult(WINRT_SHIM(IJumpListItem)->put_Logo(get(value)));
 }
 
-template <typename D> Windows::UI::StartScreen::JumpListItem impl_IJumpListItemStatics<D>::CreateWithArguments(hstring_ref arguments, hstring_ref displayName) const
+template <typename D> Windows::UI::StartScreen::JumpListItem impl_IJumpListItemStatics<D>::CreateWithArguments(hstring_view arguments, hstring_view displayName) const
 {
     Windows::UI::StartScreen::JumpListItem result { nullptr };
     check_hresult(WINRT_SHIM(IJumpListItemStatics)->abi_CreateWithArguments(get(arguments), get(displayName), put(result)));
@@ -1606,7 +1606,7 @@ template <typename D> bool impl_IJumpListStatics<D>::IsSupported() const
     return result;
 }
 
-template <typename D> void impl_ISecondaryTile<D>::TileId(hstring_ref value) const
+template <typename D> void impl_ISecondaryTile<D>::TileId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISecondaryTile)->put_TileId(get(value)));
 }
@@ -1618,7 +1618,7 @@ template <typename D> hstring impl_ISecondaryTile<D>::TileId() const
     return value;
 }
 
-template <typename D> void impl_ISecondaryTile<D>::Arguments(hstring_ref value) const
+template <typename D> void impl_ISecondaryTile<D>::Arguments(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISecondaryTile)->put_Arguments(get(value)));
 }
@@ -1630,7 +1630,7 @@ template <typename D> hstring impl_ISecondaryTile<D>::Arguments() const
     return value;
 }
 
-template <typename D> void impl_ISecondaryTile<D>::ShortName(hstring_ref value) const
+template <typename D> void impl_ISecondaryTile<D>::ShortName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISecondaryTile)->put_ShortName(get(value)));
 }
@@ -1642,7 +1642,7 @@ template <typename D> hstring impl_ISecondaryTile<D>::ShortName() const
     return value;
 }
 
-template <typename D> void impl_ISecondaryTile<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_ISecondaryTile<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISecondaryTile)->put_DisplayName(get(value)));
 }
@@ -1813,7 +1813,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondary
     return operation;
 }
 
-template <typename D> void impl_ISecondaryTile2<D>::PhoneticName(hstring_ref value) const
+template <typename D> void impl_ISecondaryTile2<D>::PhoneticName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISecondaryTile2)->put_PhoneticName(get(value)));
 }
@@ -2005,35 +2005,35 @@ template <typename D> Windows::Foundation::Uri impl_ISecondaryTileVisualElements
     return value;
 }
 
-template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory<D>::CreateTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) const
+template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory<D>::CreateTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) const
 {
     Windows::UI::StartScreen::SecondaryTile value { nullptr };
     check_hresult(WINRT_SHIM(ISecondaryTileFactory)->abi_CreateTile(get(tileId), get(shortName), get(displayName), get(arguments), tileOptions, get(logoReference), put(value)));
     return value;
 }
 
-template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory<D>::CreateWideTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) const
+template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory<D>::CreateWideTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) const
 {
     Windows::UI::StartScreen::SecondaryTile value { nullptr };
     check_hresult(WINRT_SHIM(ISecondaryTileFactory)->abi_CreateWideTile(get(tileId), get(shortName), get(displayName), get(arguments), tileOptions, get(logoReference), get(wideLogoReference), put(value)));
     return value;
 }
 
-template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory<D>::CreateWithId(hstring_ref tileId) const
+template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory<D>::CreateWithId(hstring_view tileId) const
 {
     Windows::UI::StartScreen::SecondaryTile value { nullptr };
     check_hresult(WINRT_SHIM(ISecondaryTileFactory)->abi_CreateWithId(get(tileId), put(value)));
     return value;
 }
 
-template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory2<D>::CreateMinimalTile(hstring_ref tileId, hstring_ref displayName, hstring_ref arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) const
+template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory2<D>::CreateMinimalTile(hstring_view tileId, hstring_view displayName, hstring_view arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) const
 {
     Windows::UI::StartScreen::SecondaryTile value { nullptr };
     check_hresult(WINRT_SHIM(ISecondaryTileFactory2)->abi_CreateMinimalTile(get(tileId), get(displayName), get(arguments), get(square150x150Logo), desiredSize, put(value)));
     return value;
 }
 
-template <typename D> bool impl_ISecondaryTileStatics<D>::Exists(hstring_ref tileId) const
+template <typename D> bool impl_ISecondaryTileStatics<D>::Exists(hstring_view tileId) const
 {
     bool exists {};
     check_hresult(WINRT_SHIM(ISecondaryTileStatics)->abi_Exists(get(tileId), &exists));
@@ -2047,7 +2047,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> impl_ISecondaryTileStatics<D>::FindAllAsync(hstring_ref applicationId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> impl_ISecondaryTileStatics<D>::FindAllAsync(hstring_view applicationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> operation;
     check_hresult(WINRT_SHIM(ISecondaryTileStatics)->abi_FindAllForApplicationAsync(get(applicationId), put(operation)));
@@ -2111,7 +2111,7 @@ inline bool JumpList::IsSupported()
     return get_activation_factory<JumpList, IJumpListStatics>().IsSupported();
 }
 
-inline Windows::UI::StartScreen::JumpListItem JumpListItem::CreateWithArguments(hstring_ref arguments, hstring_ref displayName)
+inline Windows::UI::StartScreen::JumpListItem JumpListItem::CreateWithArguments(hstring_view arguments, hstring_view displayName)
 {
     return get_activation_factory<JumpListItem, IJumpListItemStatics>().CreateWithArguments(arguments, displayName);
 }
@@ -2125,23 +2125,23 @@ inline SecondaryTile::SecondaryTile() :
     SecondaryTile(activate_instance<SecondaryTile>())
 {}
 
-inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) :
+inline SecondaryTile::SecondaryTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) :
     SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory>().CreateTile(tileId, shortName, displayName, arguments, tileOptions, logoReference))
 {}
 
-inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) :
+inline SecondaryTile::SecondaryTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) :
     SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory>().CreateWideTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, wideLogoReference))
 {}
 
-inline SecondaryTile::SecondaryTile(hstring_ref tileId) :
+inline SecondaryTile::SecondaryTile(hstring_view tileId) :
     SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory>().CreateWithId(tileId))
 {}
 
-inline SecondaryTile::SecondaryTile(hstring_ref tileId, hstring_ref displayName, hstring_ref arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) :
+inline SecondaryTile::SecondaryTile(hstring_view tileId, hstring_view displayName, hstring_view arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) :
     SecondaryTile(get_activation_factory<SecondaryTile, ISecondaryTileFactory2>().CreateMinimalTile(tileId, displayName, arguments, square150x150Logo, desiredSize))
 {}
 
-inline bool SecondaryTile::Exists(hstring_ref tileId)
+inline bool SecondaryTile::Exists(hstring_view tileId)
 {
     return get_activation_factory<SecondaryTile, ISecondaryTileStatics>().Exists(tileId);
 }
@@ -2151,7 +2151,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<SecondaryTile, ISecondaryTileStatics>().FindAllAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> SecondaryTile::FindAllAsync(hstring_ref applicationId)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> SecondaryTile::FindAllAsync(hstring_view applicationId)
 {
     return get_activation_factory<SecondaryTile, ISecondaryTileStatics>().FindAllAsync(applicationId);
 }

@@ -822,7 +822,7 @@ struct hstring_traits : handle_traits<HSTRING>
 
 }
 
-struct hstring_ref;
+struct hstring_view;
 
 struct hstring
 {
@@ -840,7 +840,7 @@ struct hstring
     hstring & operator=(hstring && value) noexcept;
 
     hstring(const std::wstring & value);
-    hstring(hstring_ref value);
+    hstring(hstring_view value);
     hstring(const wchar_t * value);
     hstring(const wchar_t * value, size_type size);
 
@@ -888,7 +888,7 @@ private:
     handle<impl::hstring_traits> m_handle;
 };
 
-struct hstring_ref
+struct hstring_view
 {
     using value_type = wchar_t;
     using size_type = uint32_t;
@@ -897,10 +897,10 @@ struct hstring_ref
     using const_iterator = const_pointer;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-    hstring_ref(const std::wstring & value) noexcept;
-    hstring_ref(const hstring & value) noexcept;
-    hstring_ref(const wchar_t * value) noexcept;
-    explicit hstring_ref(HSTRING value) noexcept;
+    hstring_view(const std::wstring & value) noexcept;
+    hstring_view(const hstring & value) noexcept;
+    hstring_view(const wchar_t * value) noexcept;
+    explicit hstring_view(HSTRING value) noexcept;
 
     operator std::wstring() const;
 
@@ -920,14 +920,14 @@ struct hstring_ref
     bool empty() const noexcept;
     size_type size() const noexcept;
 
-    friend HSTRING impl_get(hstring_ref string) noexcept
+    friend HSTRING impl_get(hstring_view string) noexcept
     {
         return string.m_handle;
     }
 
 private:
 
-    hstring_ref(const wchar_t * value, size_type size) noexcept;
+    hstring_view(const wchar_t * value, size_type size) noexcept;
 
     HSTRING m_handle;
     HSTRING_HEADER m_header;
@@ -975,14 +975,14 @@ template <> struct accessors<hstring>
     }
 };
 
-template <> struct accessors<hstring_ref>
+template <> struct accessors<hstring_view>
 {
-    static HSTRING get(hstring_ref object) noexcept
+    static HSTRING get(hstring_view object) noexcept
     {
         return impl_get(object);
     }
 
-    static HSTRING detach(hstring_ref object)
+    static HSTRING detach(hstring_view object)
     {
         return duplicate_string(get(object));
     }
@@ -1006,7 +1006,7 @@ template <> struct accessors<std::wstring>
 
 }
 
-inline bool embedded_null(hstring_ref value) noexcept
+inline bool embedded_null(hstring_view value) noexcept
 {
     return impl::embedded_null(get(value));
 }
@@ -1043,7 +1043,7 @@ inline hstring::hstring(const std::wstring & value) :
     hstring(value.c_str(), static_cast<size_type>(value.size()))
 {}
 
-inline hstring::hstring(hstring_ref value) :
+inline hstring::hstring(hstring_view value) :
     m_handle(impl::duplicate_string(get(value)))
 {}
 
@@ -1145,71 +1145,71 @@ inline hstring::size_type hstring::size() const noexcept
     return WindowsGetStringLen(get(m_handle));
 }
 
-inline hstring_ref::hstring_ref(const std::wstring & value) noexcept :
-    hstring_ref(value.c_str(), static_cast<size_type>(value.size()))
+inline hstring_view::hstring_view(const std::wstring & value) noexcept :
+    hstring_view(value.c_str(), static_cast<size_type>(value.size()))
 {}
 
-inline hstring_ref::hstring_ref(const hstring & value) noexcept :
+inline hstring_view::hstring_view(const hstring & value) noexcept :
     m_handle(get(value))
 {}
 
-inline hstring_ref::hstring_ref(const wchar_t * const value) noexcept :
-    hstring_ref(value, static_cast<size_type>(wcslen(value)))
+inline hstring_view::hstring_view(const wchar_t * const value) noexcept :
+    hstring_view(value, static_cast<size_type>(wcslen(value)))
 {}
 
-inline hstring_ref::hstring_ref(const wchar_t * const value, const size_type size) noexcept
+inline hstring_view::hstring_view(const wchar_t * const value, const size_type size) noexcept
 {
     WINRT_VERIFY_(S_OK, WindowsCreateStringReference(value, size, &m_header, &m_handle));
 }
 
-inline hstring_ref::hstring_ref(HSTRING value) noexcept :
+inline hstring_view::hstring_view(HSTRING value) noexcept :
     m_handle(value)
 {}
 
-inline hstring_ref::operator std::wstring() const
+inline hstring_view::operator std::wstring() const
 {
     return std::wstring(begin(), end());
 }
 
-inline hstring_ref::const_reference hstring_ref::operator[](const size_type pos) const noexcept
+inline hstring_view::const_reference hstring_view::operator[](const size_type pos) const noexcept
 {
     WINRT_ASSERT(pos < size());
     return *(begin() + pos);
 }
 
-inline hstring_ref::const_reference hstring_ref::front() const noexcept
+inline hstring_view::const_reference hstring_view::front() const noexcept
 {
     WINRT_ASSERT(!empty());
     return *begin();
 }
 
-inline hstring_ref::const_reference hstring_ref::back() const noexcept
+inline hstring_view::const_reference hstring_view::back() const noexcept
 {
     WINRT_ASSERT(!empty());
     return *(end() - 1);
 }
 
-inline hstring_ref::const_pointer hstring_ref::data() const noexcept
+inline hstring_view::const_pointer hstring_view::data() const noexcept
 {
     return begin();
 }
 
-inline hstring_ref::const_pointer hstring_ref::c_str() const noexcept
+inline hstring_view::const_pointer hstring_view::c_str() const noexcept
 {
     return begin();
 }
 
-inline hstring_ref::const_iterator hstring_ref::begin() const noexcept
+inline hstring_view::const_iterator hstring_view::begin() const noexcept
 {
     return WindowsGetStringRawBuffer(m_handle, nullptr);
 }
 
-inline hstring_ref::const_iterator hstring_ref::cbegin() const noexcept
+inline hstring_view::const_iterator hstring_view::cbegin() const noexcept
 {
     return begin();
 }
 
-inline hstring_ref::const_iterator hstring_ref::end() const noexcept
+inline hstring_view::const_iterator hstring_view::end() const noexcept
 {
     uint32_t length = 0;
     const_pointer buffer = WindowsGetStringRawBuffer(m_handle, &length);
@@ -1217,52 +1217,52 @@ inline hstring_ref::const_iterator hstring_ref::end() const noexcept
     return buffer + length;
 }
 
-inline hstring_ref::const_iterator hstring_ref::cend() const noexcept
+inline hstring_view::const_iterator hstring_view::cend() const noexcept
 {
     return end();
 }
 
-inline hstring_ref::const_reverse_iterator hstring_ref::rbegin() const noexcept
+inline hstring_view::const_reverse_iterator hstring_view::rbegin() const noexcept
 {
     return const_reverse_iterator(end());
 }
 
-inline hstring_ref::const_reverse_iterator hstring_ref::crbegin() const noexcept
+inline hstring_view::const_reverse_iterator hstring_view::crbegin() const noexcept
 {
     return rbegin();
 }
 
-inline hstring_ref::const_reverse_iterator hstring_ref::rend() const noexcept
+inline hstring_view::const_reverse_iterator hstring_view::rend() const noexcept
 {
     return const_reverse_iterator(begin());
 }
 
-inline hstring_ref::const_reverse_iterator hstring_ref::crend() const noexcept
+inline hstring_view::const_reverse_iterator hstring_view::crend() const noexcept
 {
     return rend();
 }
 
-inline bool hstring_ref::empty() const noexcept
+inline bool hstring_view::empty() const noexcept
 {
     return 0 == size();
 }
 
-inline hstring_ref::size_type hstring_ref::size() const noexcept
+inline hstring_view::size_type hstring_view::size() const noexcept
 {
     return WindowsGetStringLen(m_handle);
 }
 
-inline bool operator==(hstring_ref left, hstring_ref right) noexcept
+inline bool operator==(hstring_view left, hstring_view right) noexcept
 {
     return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(hstring_ref left, const hstring & right) noexcept
+inline bool operator==(hstring_view left, const hstring & right) noexcept
 {
     return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(const hstring & left, hstring_ref right) noexcept
+inline bool operator==(const hstring & left, hstring_view right) noexcept
 {
     return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
@@ -1272,22 +1272,22 @@ inline bool operator==(const hstring & left, const hstring & right) noexcept
     return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(hstring_ref left, const wchar_t * const right) noexcept
+inline bool operator==(hstring_view left, const wchar_t * const right) noexcept
 {
     return std::equal(left.begin(), left.end(), right, right + wcslen(right));
 }
 
-inline bool operator==(const wchar_t * const left, hstring_ref right) noexcept
+inline bool operator==(const wchar_t * const left, hstring_view right) noexcept
 {
     return std::equal(left, left + wcslen(left), right.begin(), right.end());
 }
 
-inline bool operator==(hstring_ref left, const std::wstring & right) noexcept
+inline bool operator==(hstring_view left, const std::wstring & right) noexcept
 {
     return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator==(const std::wstring & left, hstring_ref right) noexcept
+inline bool operator==(const std::wstring & left, hstring_view right) noexcept
 {
     return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
@@ -1312,17 +1312,17 @@ inline bool operator==(const std::wstring & left, const hstring & right) noexcep
     return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring_ref left, hstring_ref right) noexcept
+inline bool operator<(hstring_view left, hstring_view right) noexcept
 {
     return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring_ref left, const hstring & right) noexcept
+inline bool operator<(hstring_view left, const hstring & right) noexcept
 {
     return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(const hstring & left, hstring_ref right) noexcept
+inline bool operator<(const hstring & left, hstring_view right) noexcept
 {
     return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
@@ -1332,22 +1332,22 @@ inline bool operator<(const hstring & left, const hstring & right) noexcept
     return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(hstring_ref left, const wchar_t * const right) noexcept
+inline bool operator<(hstring_view left, const wchar_t * const right) noexcept
 {
     return std::lexicographical_compare(left.begin(), left.end(), right, right + wcslen(right));
 }
 
-inline bool operator<(const wchar_t * const left, hstring_ref right) noexcept
+inline bool operator<(const wchar_t * const left, hstring_view right) noexcept
 {
     return std::lexicographical_compare(left, left + wcslen(left), right.begin(), right.end());
 }
 
-inline bool operator<(hstring_ref left, const std::wstring & right) noexcept
+inline bool operator<(hstring_view left, const std::wstring & right) noexcept
 {
     return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator<(const std::wstring & left, hstring_ref right) noexcept
+inline bool operator<(const std::wstring & left, hstring_view right) noexcept
 {
     return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
@@ -1372,40 +1372,40 @@ inline bool operator<(const std::wstring & left, const hstring & right) noexcept
     return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-inline bool operator!=(hstring_ref left, hstring_ref right) noexcept { return !(left == right); }
-inline bool operator >(hstring_ref left, hstring_ref right) noexcept { return right < left; }
-inline bool operator<=(hstring_ref left, hstring_ref right) noexcept { return !(right < left); }
-inline bool operator>=(hstring_ref left, hstring_ref right) noexcept { return !(left < right); }
+inline bool operator!=(hstring_view left, hstring_view right) noexcept { return !(left == right); }
+inline bool operator >(hstring_view left, hstring_view right) noexcept { return right < left; }
+inline bool operator<=(hstring_view left, hstring_view right) noexcept { return !(right < left); }
+inline bool operator>=(hstring_view left, hstring_view right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring_ref left, const wchar_t * const right) noexcept { return !(left == right); }
-inline bool operator >(hstring_ref left, const wchar_t * const right) noexcept { return right < left; }
-inline bool operator<=(hstring_ref left, const wchar_t * const right) noexcept { return !(right < left); }
-inline bool operator>=(hstring_ref left, const wchar_t * const right) noexcept { return !(left < right); }
+inline bool operator!=(hstring_view left, const wchar_t * const right) noexcept { return !(left == right); }
+inline bool operator >(hstring_view left, const wchar_t * const right) noexcept { return right < left; }
+inline bool operator<=(hstring_view left, const wchar_t * const right) noexcept { return !(right < left); }
+inline bool operator>=(hstring_view left, const wchar_t * const right) noexcept { return !(left < right); }
 
-inline bool operator!=(const wchar_t * const left, hstring_ref right) noexcept { return !(left == right); }
-inline bool operator >(const wchar_t * const left, hstring_ref right) noexcept { return right < left; }
-inline bool operator<=(const wchar_t * const left, hstring_ref right) noexcept { return !(right < left); }
-inline bool operator>=(const wchar_t * const left, hstring_ref right) noexcept { return !(left < right); }
+inline bool operator!=(const wchar_t * const left, hstring_view right) noexcept { return !(left == right); }
+inline bool operator >(const wchar_t * const left, hstring_view right) noexcept { return right < left; }
+inline bool operator<=(const wchar_t * const left, hstring_view right) noexcept { return !(right < left); }
+inline bool operator>=(const wchar_t * const left, hstring_view right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring_ref left, const std::wstring & right) noexcept { return !(left == right); }
-inline bool operator >(hstring_ref left, const std::wstring & right) noexcept { return right < left; }
-inline bool operator<=(hstring_ref left, const std::wstring & right) noexcept { return !(right < left); }
-inline bool operator>=(hstring_ref left, const std::wstring & right) noexcept { return !(left < right); }
+inline bool operator!=(hstring_view left, const std::wstring & right) noexcept { return !(left == right); }
+inline bool operator >(hstring_view left, const std::wstring & right) noexcept { return right < left; }
+inline bool operator<=(hstring_view left, const std::wstring & right) noexcept { return !(right < left); }
+inline bool operator>=(hstring_view left, const std::wstring & right) noexcept { return !(left < right); }
 
-inline bool operator!=(const std::wstring & left, hstring_ref right) noexcept { return !(left == right); }
-inline bool operator >(const std::wstring & left, hstring_ref right) noexcept { return right < left; }
-inline bool operator<=(const std::wstring & left, hstring_ref right) noexcept { return !(right < left); }
-inline bool operator>=(const std::wstring & left, hstring_ref right) noexcept { return !(left < right); }
+inline bool operator!=(const std::wstring & left, hstring_view right) noexcept { return !(left == right); }
+inline bool operator >(const std::wstring & left, hstring_view right) noexcept { return right < left; }
+inline bool operator<=(const std::wstring & left, hstring_view right) noexcept { return !(right < left); }
+inline bool operator>=(const std::wstring & left, hstring_view right) noexcept { return !(left < right); }
 
-inline bool operator!=(hstring_ref left, const hstring & right) noexcept { return !(left == right); }
-inline bool operator >(hstring_ref left, const hstring & right) noexcept { return right < left; }
-inline bool operator<=(hstring_ref left, const hstring & right) noexcept { return !(right < left); }
-inline bool operator>=(hstring_ref left, const hstring & right) noexcept { return !(left < right); }
+inline bool operator!=(hstring_view left, const hstring & right) noexcept { return !(left == right); }
+inline bool operator >(hstring_view left, const hstring & right) noexcept { return right < left; }
+inline bool operator<=(hstring_view left, const hstring & right) noexcept { return !(right < left); }
+inline bool operator>=(hstring_view left, const hstring & right) noexcept { return !(left < right); }
 
-inline bool operator!=(const hstring & left, hstring_ref right) noexcept { return !(left == right); }
-inline bool operator >(const hstring & left, hstring_ref right) noexcept { return right < left; }
-inline bool operator<=(const hstring & left, hstring_ref right) noexcept { return !(right < left); }
-inline bool operator>=(const hstring & left, hstring_ref right) noexcept { return !(left < right); }
+inline bool operator!=(const hstring & left, hstring_view right) noexcept { return !(left == right); }
+inline bool operator >(const hstring & left, hstring_view right) noexcept { return right < left; }
+inline bool operator<=(const hstring & left, hstring_view right) noexcept { return !(right < left); }
+inline bool operator>=(const hstring & left, hstring_view right) noexcept { return !(left < right); }
 
 inline bool operator!=(const hstring & left, const hstring & right) noexcept { return !(left == right); }
 inline bool operator >(const hstring & left, const hstring & right) noexcept { return right < left; }
@@ -1481,7 +1481,7 @@ struct hresult_error
         WINRT_GetRestrictedErrorInfo(put(m_info));
     }
 
-    hresult_error(const HRESULT code, hstring_ref message) noexcept :
+    hresult_error(const HRESULT code, hstring_view message) noexcept :
         m_code(code)
     {
         WINRT_RoOriginateError(code, get(message));
@@ -1563,91 +1563,91 @@ private:
 struct hresult_access_denied : hresult_error
 {
     hresult_access_denied() : hresult_error(E_ACCESSDENIED) {}
-    hresult_access_denied(hstring_ref message) : hresult_error(E_ACCESSDENIED, message) {}
+    hresult_access_denied(hstring_view message) : hresult_error(E_ACCESSDENIED, message) {}
     hresult_access_denied(from_abi_t) : hresult_error(E_ACCESSDENIED, from_abi) {}
 };
 
 struct hresult_wrong_thread : hresult_error
 {
     hresult_wrong_thread() : hresult_error(RPC_E_WRONG_THREAD) {}
-    hresult_wrong_thread(hstring_ref message) : hresult_error(RPC_E_WRONG_THREAD, message) {}
+    hresult_wrong_thread(hstring_view message) : hresult_error(RPC_E_WRONG_THREAD, message) {}
     hresult_wrong_thread(from_abi_t) : hresult_error(RPC_E_WRONG_THREAD, from_abi) {}
 };
 
 struct hresult_not_implemented : hresult_error
 {
     hresult_not_implemented() : hresult_error(E_NOTIMPL) {}
-    hresult_not_implemented(hstring_ref message) : hresult_error(E_NOTIMPL, message) {}
+    hresult_not_implemented(hstring_view message) : hresult_error(E_NOTIMPL, message) {}
     hresult_not_implemented(from_abi_t) : hresult_error(E_NOTIMPL, from_abi) {}
 };
 
 struct hresult_invalid_argument : hresult_error
 {
     hresult_invalid_argument() : hresult_error(E_INVALIDARG) {}
-    hresult_invalid_argument(hstring_ref message) : hresult_error(E_INVALIDARG, message) {}
+    hresult_invalid_argument(hstring_view message) : hresult_error(E_INVALIDARG, message) {}
     hresult_invalid_argument(from_abi_t) : hresult_error(E_INVALIDARG, from_abi) {}
 };
 
 struct hresult_out_of_bounds : hresult_error
 {
     hresult_out_of_bounds() : hresult_error(E_BOUNDS) {}
-    hresult_out_of_bounds(hstring_ref message) : hresult_error(E_BOUNDS, message) {}
+    hresult_out_of_bounds(hstring_view message) : hresult_error(E_BOUNDS, message) {}
     hresult_out_of_bounds(from_abi_t) : hresult_error(E_BOUNDS, from_abi) {}
 };
 
 struct hresult_no_interface : hresult_error
 {
     hresult_no_interface() : hresult_error(E_NOINTERFACE) {}
-    hresult_no_interface(hstring_ref message) : hresult_error(E_NOINTERFACE, message) {}
+    hresult_no_interface(hstring_view message) : hresult_error(E_NOINTERFACE, message) {}
     hresult_no_interface(from_abi_t) : hresult_error(E_NOINTERFACE, from_abi) {}
 };
 
 struct hresult_disconnected : hresult_error
 {
     hresult_disconnected() : hresult_error(RPC_E_DISCONNECTED) {}
-    hresult_disconnected(hstring_ref message) : hresult_error(RPC_E_DISCONNECTED, message) {}
+    hresult_disconnected(hstring_view message) : hresult_error(RPC_E_DISCONNECTED, message) {}
     hresult_disconnected(from_abi_t) : hresult_error(RPC_E_DISCONNECTED, from_abi) {}
 };
 
 struct hresult_class_not_available : hresult_error
 {
     hresult_class_not_available() : hresult_error(CLASS_E_CLASSNOTAVAILABLE) {}
-    hresult_class_not_available(hstring_ref message) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, message) {}
+    hresult_class_not_available(hstring_view message) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, message) {}
     hresult_class_not_available(from_abi_t) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, from_abi) {}
 };
 
 struct hresult_changed_state : hresult_error
 {
     hresult_changed_state() : hresult_error(E_CHANGED_STATE) {}
-    hresult_changed_state(hstring_ref message) : hresult_error(E_CHANGED_STATE, message) {}
+    hresult_changed_state(hstring_view message) : hresult_error(E_CHANGED_STATE, message) {}
     hresult_changed_state(from_abi_t) : hresult_error(E_CHANGED_STATE, from_abi) {}
 };
 
 struct hresult_illegal_method_call : hresult_error
 {
     hresult_illegal_method_call() : hresult_error(E_ILLEGAL_METHOD_CALL) {}
-    hresult_illegal_method_call(hstring_ref message) : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
+    hresult_illegal_method_call(hstring_view message) : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
     hresult_illegal_method_call(from_abi_t) : hresult_error(E_ILLEGAL_METHOD_CALL, from_abi) {}
 };
 
 struct hresult_illegal_state_change : hresult_error
 {
     hresult_illegal_state_change() : hresult_error(E_ILLEGAL_STATE_CHANGE) {}
-    hresult_illegal_state_change(hstring_ref message) : hresult_error(E_ILLEGAL_STATE_CHANGE, message) {}
+    hresult_illegal_state_change(hstring_view message) : hresult_error(E_ILLEGAL_STATE_CHANGE, message) {}
     hresult_illegal_state_change(from_abi_t) : hresult_error(E_ILLEGAL_STATE_CHANGE, from_abi) {}
 };
 
 struct hresult_illegal_delegate_assignment : hresult_error
 {
     hresult_illegal_delegate_assignment() : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT) {}
-    hresult_illegal_delegate_assignment(hstring_ref message) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, message) {}
+    hresult_illegal_delegate_assignment(hstring_view message) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, message) {}
     hresult_illegal_delegate_assignment(from_abi_t) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, from_abi) {}
 };
 
 struct hresult_canceled : hresult_error
 {
     hresult_canceled() : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED)) {}
-    hresult_canceled(hstring_ref message) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
+    hresult_canceled(hstring_view message) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
     hresult_canceled(from_abi_t) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), from_abi) {}
 };
  
@@ -4021,7 +4021,7 @@ struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Win
 template <typename Class, typename Interface>
 Interface get_agile_activation_factory()
 {
-    hstring_ref classId(impl::traits<Class>::name());
+    hstring_view classId(impl::traits<Class>::name());
 
     Interface factory;
     check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
@@ -4037,7 +4037,7 @@ Interface get_agile_activation_factory()
 template <typename Class, typename Interface>
 Interface get_activation_factory()
 {
-    hstring_ref classId(impl::traits<Class>::name());
+    hstring_view classId(impl::traits<Class>::name());
 
     Interface factory;
     check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
@@ -4260,7 +4260,7 @@ template <typename T> struct traits<Windows::Foundation::IReference<T>>
 };
 
 template <typename D, typename T>
-struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<abi<T>>>
+struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<T>>
 {
     HRESULT __stdcall get_Value(abi_arg_out<T> value) noexcept final
     {

@@ -2988,14 +2988,14 @@ template <typename D> void impl_IDatagramSocketControl3<D>::MulticastOnly(bool v
     check_hresult(WINRT_SHIM(IDatagramSocketControl3)->put_MulticastOnly(value));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IDatagramSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IDatagramSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> operation;
     check_hresult(WINRT_SHIM(IDatagramSocketStatics)->abi_GetEndpointPairsAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IDatagramSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IDatagramSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> operation;
     check_hresult(WINRT_SHIM(IDatagramSocketStatics)->abi_GetEndpointPairsWithSortOptionsAsync(get(remoteHostName), get(remoteServiceName), sortOptions, put(operation)));
@@ -3023,7 +3023,7 @@ template <typename D> Windows::Storage::Streams::IOutputStream impl_IDatagramSoc
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IDatagramSocket)->abi_ConnectAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
@@ -3037,14 +3037,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>:
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::BindServiceNameAsync(hstring_ref localServiceName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::BindServiceNameAsync(hstring_view localServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IDatagramSocket)->abi_BindServiceNameAsync(get(localServiceName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_view localServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IDatagramSocket)->abi_BindEndpointAsync(get(localHostName), get(localServiceName), put(operation)));
@@ -3056,7 +3056,7 @@ template <typename D> void impl_IDatagramSocket<D>::JoinMulticastGroup(const Win
     check_hresult(WINRT_SHIM(IDatagramSocket)->abi_JoinMulticastGroup(get(host)));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> impl_IDatagramSocket<D>::GetOutputStreamAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> impl_IDatagramSocket<D>::GetOutputStreamAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> value;
     check_hresult(WINRT_SHIM(IDatagramSocket)->abi_GetOutputStreamAsync(get(remoteHostName), get(remoteServiceName), put(value)));
@@ -3087,7 +3087,7 @@ template <typename D> void impl_IDatagramSocket<D>::MessageReceived(event_token 
     check_hresult(WINRT_SHIM(IDatagramSocket)->remove_MessageReceived(eventCookie));
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket2<D>::BindServiceNameAsync(hstring_ref localServiceName, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket2<D>::BindServiceNameAsync(hstring_view localServiceName, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IDatagramSocket2)->abi_BindServiceNameAndAdapterAsync(get(localServiceName), get(adapter), put(operation)));
@@ -3111,17 +3111,17 @@ template <typename D> void impl_IDatagramSocket3<D>::EnableTransferOwnership(GUI
     check_hresult(WINRT_SHIM(IDatagramSocket3)->abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
 }
 
-template <typename D> void impl_IDatagramSocket3<D>::TransferOwnership(hstring_ref socketId) const
+template <typename D> void impl_IDatagramSocket3<D>::TransferOwnership(hstring_view socketId) const
 {
     check_hresult(WINRT_SHIM(IDatagramSocket3)->abi_TransferOwnership(get(socketId)));
 }
 
-template <typename D> void impl_IDatagramSocket3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const
+template <typename D> void impl_IDatagramSocket3<D>::TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const
 {
     check_hresult(WINRT_SHIM(IDatagramSocket3)->abi_TransferOwnershipWithContext(get(socketId), get(data)));
 }
 
-template <typename D> void impl_IDatagramSocket3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const
+template <typename D> void impl_IDatagramSocket3<D>::TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const
 {
     check_hresult(WINRT_SHIM(IDatagramSocket3)->abi_TransferOwnershipWithContextAndKeepAliveTime(get(socketId), get(data), get(keepAliveTime)));
 }
@@ -3350,7 +3350,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::C
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStreamSocket)->abi_ConnectAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
@@ -3364,7 +3364,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::C
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStreamSocket)->abi_ConnectWithProtectionLevelAsync(get(remoteHostName), get(remoteServiceName), protectionLevel, put(operation)));
@@ -3378,7 +3378,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::U
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket2<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket2<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStreamSocket2)->abi_ConnectWithProtectionLevelAndAdapterAsync(get(remoteHostName), get(remoteServiceName), protectionLevel, get(adapter), put(operation)));
@@ -3402,29 +3402,29 @@ template <typename D> void impl_IStreamSocket3<D>::EnableTransferOwnership(GUID 
     check_hresult(WINRT_SHIM(IStreamSocket3)->abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
 }
 
-template <typename D> void impl_IStreamSocket3<D>::TransferOwnership(hstring_ref socketId) const
+template <typename D> void impl_IStreamSocket3<D>::TransferOwnership(hstring_view socketId) const
 {
     check_hresult(WINRT_SHIM(IStreamSocket3)->abi_TransferOwnership(get(socketId)));
 }
 
-template <typename D> void impl_IStreamSocket3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const
+template <typename D> void impl_IStreamSocket3<D>::TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const
 {
     check_hresult(WINRT_SHIM(IStreamSocket3)->abi_TransferOwnershipWithContext(get(socketId), get(data)));
 }
 
-template <typename D> void impl_IStreamSocket3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const
+template <typename D> void impl_IStreamSocket3<D>::TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const
 {
     check_hresult(WINRT_SHIM(IStreamSocket3)->abi_TransferOwnershipWithContextAndKeepAliveTime(get(socketId), get(data), get(keepAliveTime)));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IStreamSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IStreamSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> operation;
     check_hresult(WINRT_SHIM(IStreamSocketStatics)->abi_GetEndpointPairsAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IStreamSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IStreamSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> operation;
     check_hresult(WINRT_SHIM(IStreamSocketStatics)->abi_GetEndpointPairsWithSortOptionsAsync(get(remoteHostName), get(remoteServiceName), sortOptions, put(operation)));
@@ -3519,14 +3519,14 @@ template <typename D> Windows::Networking::Sockets::StreamSocketListenerInformat
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener<D>::BindServiceNameAsync(hstring_ref localServiceName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener<D>::BindServiceNameAsync(hstring_view localServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStreamSocketListener)->abi_BindServiceNameAsync(get(localServiceName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener<D>::BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener<D>::BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_view localServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStreamSocketListener)->abi_BindEndpointAsync(get(localHostName), get(localServiceName), put(operation)));
@@ -3550,14 +3550,14 @@ template <typename D> void impl_IStreamSocketListener<D>::ConnectionReceived(eve
     check_hresult(WINRT_SHIM(IStreamSocketListener)->remove_ConnectionReceived(eventCookie));
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener2<D>::BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener2<D>::BindServiceNameAsync(hstring_view localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStreamSocketListener2)->abi_BindServiceNameWithProtectionLevelAsync(get(localServiceName), protectionLevel, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener2<D>::BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener2<D>::BindServiceNameAsync(hstring_view localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStreamSocketListener2)->abi_BindServiceNameWithProtectionLevelAndAdapterAsync(get(localServiceName), protectionLevel, get(adapter), put(operation)));
@@ -3581,12 +3581,12 @@ template <typename D> void impl_IStreamSocketListener3<D>::EnableTransferOwnersh
     check_hresult(WINRT_SHIM(IStreamSocketListener3)->abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
 }
 
-template <typename D> void impl_IStreamSocketListener3<D>::TransferOwnership(hstring_ref socketId) const
+template <typename D> void impl_IStreamSocketListener3<D>::TransferOwnership(hstring_view socketId) const
 {
     check_hresult(WINRT_SHIM(IStreamSocketListener3)->abi_TransferOwnership(get(socketId)));
 }
 
-template <typename D> void impl_IStreamSocketListener3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const
+template <typename D> void impl_IStreamSocketListener3<D>::TransferOwnership(hstring_view socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const
 {
     check_hresult(WINRT_SHIM(IStreamSocketListener3)->abi_TransferOwnershipWithContext(get(socketId), get(data)));
 }
@@ -3744,7 +3744,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IWebSocket<D>::Conn
     return operation;
 }
 
-template <typename D> void impl_IWebSocket<D>::SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const
+template <typename D> void impl_IWebSocket<D>::SetRequestHeader(hstring_view headerName, hstring_view headerValue) const
 {
     check_hresult(WINRT_SHIM(IWebSocket)->abi_SetRequestHeader(get(headerName), get(headerValue)));
 }
@@ -3766,7 +3766,7 @@ template <typename D> void impl_IWebSocket<D>::Closed(event_token eventCookie) c
     check_hresult(WINRT_SHIM(IWebSocket)->remove_Closed(eventCookie));
 }
 
-template <typename D> void impl_IWebSocket<D>::Close(uint16_t code, hstring_ref reason) const
+template <typename D> void impl_IWebSocket<D>::Close(uint16_t code, hstring_view reason) const
 {
     check_hresult(WINRT_SHIM(IWebSocket)->abi_CloseWithStatus(code, get(reason)));
 }
@@ -3911,12 +3911,12 @@ inline DatagramSocket::DatagramSocket() :
     DatagramSocket(activate_instance<DatagramSocket>())
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> DatagramSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> DatagramSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName)
 {
     return get_activation_factory<DatagramSocket, IDatagramSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> DatagramSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> DatagramSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions)
 {
     return get_activation_factory<DatagramSocket, IDatagramSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions);
 }
@@ -3943,12 +3943,12 @@ inline StreamSocket::StreamSocket() :
     StreamSocket(activate_instance<StreamSocket>())
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> StreamSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> StreamSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName)
 {
     return get_activation_factory<StreamSocket, IStreamSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> StreamSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> StreamSocket::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_view remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions)
 {
     return get_activation_factory<StreamSocket, IStreamSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions);
 }

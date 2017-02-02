@@ -5026,7 +5026,7 @@ template <typename D> hstring impl_IFontFamily<D>::Source() const
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::FontFamily impl_IFontFamilyFactory<D>::CreateInstanceWithName(hstring_ref familyName, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::FontFamily impl_IFontFamilyFactory<D>::CreateInstanceWithName(hstring_view familyName, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::FontFamily instance { nullptr };
     check_hresult(WINRT_SHIM(IFontFamilyFactory)->abi_CreateInstanceWithName(get(familyName), get(outer), put(inner), put(instance)));
@@ -5252,7 +5252,7 @@ template <typename D> hstring impl_ITimelineMarker<D>::Type() const
     return value;
 }
 
-template <typename D> void impl_ITimelineMarker<D>::Type(hstring_ref value) const
+template <typename D> void impl_ITimelineMarker<D>::Type(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITimelineMarker)->put_Type(get(value)));
 }
@@ -5264,7 +5264,7 @@ template <typename D> hstring impl_ITimelineMarker<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_ITimelineMarker<D>::Text(hstring_ref value) const
+template <typename D> void impl_ITimelineMarker<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITimelineMarker)->put_Text(get(value)));
 }
@@ -7042,7 +7042,7 @@ inline Windows::UI::Xaml::DependencyProperty EllipseGeometry::RadiusYProperty()
     return get_activation_factory<EllipseGeometry, IEllipseGeometryStatics>().RadiusYProperty();
 }
 
-inline FontFamily::FontFamily(hstring_ref familyName)
+inline FontFamily::FontFamily(hstring_view familyName)
 {
     Windows::IInspectable outer, inner;
     impl_move(get_activation_factory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, outer, inner));

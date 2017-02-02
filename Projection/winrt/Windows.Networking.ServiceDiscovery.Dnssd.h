@@ -527,7 +527,7 @@ template <typename D> bool impl_IDnssdRegistrationResult<D>::HasInstanceNameChan
     return value;
 }
 
-template <typename D> Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance impl_IDnssdServiceInstanceFactory<D>::Create(hstring_ref dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port) const
+template <typename D> Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance impl_IDnssdServiceInstanceFactory<D>::Create(hstring_view dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port) const
 {
     Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance result { nullptr };
     check_hresult(WINRT_SHIM(IDnssdServiceInstanceFactory)->abi_Create(get(dnssdServiceInstanceName), get(hostName), port, put(result)));
@@ -541,7 +541,7 @@ template <typename D> hstring impl_IDnssdServiceInstance<D>::DnssdServiceInstanc
     return value;
 }
 
-template <typename D> void impl_IDnssdServiceInstance<D>::DnssdServiceInstanceName(hstring_ref value) const
+template <typename D> void impl_IDnssdServiceInstance<D>::DnssdServiceInstanceName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDnssdServiceInstance)->put_DnssdServiceInstanceName(get(value)));
 }
@@ -633,7 +633,7 @@ inline DnssdRegistrationResult::DnssdRegistrationResult() :
     DnssdRegistrationResult(activate_instance<DnssdRegistrationResult>())
 {}
 
-inline DnssdServiceInstance::DnssdServiceInstance(hstring_ref dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port) :
+inline DnssdServiceInstance::DnssdServiceInstance(hstring_view dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port) :
     DnssdServiceInstance(get_activation_factory<DnssdServiceInstance, IDnssdServiceInstanceFactory>().Create(dnssdServiceInstanceName, hostName, port))
 {}
 

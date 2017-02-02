@@ -5518,7 +5518,7 @@ template <typename D>
 struct WINRT_EBO impl_IAppBarButton
 {
     hstring Label() const;
-    void Label(hstring_ref value) const;
+    void Label(hstring_view value) const;
     Windows::UI::Xaml::Controls::IconElement Icon() const;
     void Icon(const Windows::UI::Xaml::Controls::IconElement & value) const;
 };
@@ -5619,7 +5619,7 @@ template <typename D>
 struct WINRT_EBO impl_IAppBarToggleButton
 {
     hstring Label() const;
-    void Label(hstring_ref value) const;
+    void Label(hstring_view value) const;
     Windows::UI::Xaml::Controls::IconElement Icon() const;
     void Icon(const Windows::UI::Xaml::Controls::IconElement & value) const;
 };
@@ -5661,13 +5661,13 @@ struct WINRT_EBO impl_IAutoSuggestBox
     bool IsSuggestionListOpen() const;
     void IsSuggestionListOpen(bool value) const;
     hstring TextMemberPath() const;
-    void TextMemberPath(hstring_ref value) const;
+    void TextMemberPath(hstring_view value) const;
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     bool UpdateTextOnSelect() const;
     void UpdateTextOnSelect(bool value) const;
     hstring PlaceholderText() const;
-    void PlaceholderText(hstring_ref value) const;
+    void PlaceholderText(hstring_view value) const;
     Windows::IInspectable Header() const;
     void Header(const Windows::IInspectable & value) const;
     bool AutoMaximizeSuggestionArea() const;
@@ -5843,9 +5843,9 @@ struct WINRT_EBO impl_ICalendarDatePicker
     bool IsCalendarOpen() const;
     void IsCalendarOpen(bool value) const;
     hstring DateFormat() const;
-    void DateFormat(hstring_ref value) const;
+    void DateFormat(hstring_view value) const;
     hstring PlaceholderText() const;
-    void PlaceholderText(hstring_ref value) const;
+    void PlaceholderText(hstring_view value) const;
     Windows::IInspectable Header() const;
     void Header(const Windows::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
@@ -5863,9 +5863,9 @@ struct WINRT_EBO impl_ICalendarDatePicker
     Windows::Globalization::DayOfWeek FirstDayOfWeek() const;
     void FirstDayOfWeek(Windows::Globalization::DayOfWeek value) const;
     hstring DayOfWeekFormat() const;
-    void DayOfWeekFormat(hstring_ref value) const;
+    void DayOfWeekFormat(hstring_view value) const;
     hstring CalendarIdentifier() const;
-    void CalendarIdentifier(hstring_ref value) const;
+    void CalendarIdentifier(hstring_view value) const;
     bool IsOutOfScopeEnabled() const;
     void IsOutOfScopeEnabled(bool value) const;
     bool IsGroupLabelVisible() const;
@@ -5941,9 +5941,9 @@ template <typename D>
 struct WINRT_EBO impl_ICalendarView
 {
     hstring CalendarIdentifier() const;
-    void CalendarIdentifier(hstring_ref value) const;
+    void CalendarIdentifier(hstring_view value) const;
     hstring DayOfWeekFormat() const;
-    void DayOfWeekFormat(hstring_ref value) const;
+    void DayOfWeekFormat(hstring_view value) const;
     bool IsGroupLabelVisible() const;
     void IsGroupLabelVisible(bool value) const;
     Windows::UI::Xaml::Controls::CalendarViewDisplayMode DisplayMode() const;
@@ -6290,7 +6290,7 @@ struct WINRT_EBO impl_IComboBox2
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring PlaceholderText() const;
-    void PlaceholderText(hstring_ref value) const;
+    void PlaceholderText(hstring_view value) const;
 };
 
 template <typename D>
@@ -6497,9 +6497,9 @@ struct WINRT_EBO impl_IContentDialog
     bool FullSizeDesired() const;
     void FullSizeDesired(bool value) const;
     hstring PrimaryButtonText() const;
-    void PrimaryButtonText(hstring_ref value) const;
+    void PrimaryButtonText(hstring_view value) const;
     hstring SecondaryButtonText() const;
-    void SecondaryButtonText(hstring_ref value) const;
+    void SecondaryButtonText(hstring_view value) const;
     Windows::UI::Xaml::Input::ICommand PrimaryButtonCommand() const;
     void PrimaryButtonCommand(const Windows::UI::Xaml::Input::ICommand & value) const;
     Windows::UI::Xaml::Input::ICommand SecondaryButtonCommand() const;
@@ -6868,7 +6868,7 @@ struct WINRT_EBO impl_IControlProtected
 {
     Windows::IInspectable DefaultStyleKey() const;
     void DefaultStyleKey(const Windows::IInspectable & value) const;
-    Windows::UI::Xaml::DependencyObject GetTemplateChild(hstring_ref childName) const;
+    Windows::UI::Xaml::DependencyObject GetTemplateChild(hstring_view childName) const;
 };
 
 template <typename D>
@@ -6976,7 +6976,7 @@ struct WINRT_EBO impl_IDatePicker
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring CalendarIdentifier() const;
-    void CalendarIdentifier(hstring_ref value) const;
+    void CalendarIdentifier(hstring_view value) const;
     Windows::Foundation::DateTime Date() const;
     void Date(const Windows::Foundation::DateTime & value) const;
     bool DayVisible() const;
@@ -6986,11 +6986,11 @@ struct WINRT_EBO impl_IDatePicker
     bool YearVisible() const;
     void YearVisible(bool value) const;
     hstring DayFormat() const;
-    void DayFormat(hstring_ref value) const;
+    void DayFormat(hstring_view value) const;
     hstring MonthFormat() const;
-    void MonthFormat(hstring_ref value) const;
+    void MonthFormat(hstring_view value) const;
     hstring YearFormat() const;
-    void YearFormat(hstring_ref value) const;
+    void YearFormat(hstring_view value) const;
     Windows::Foundation::DateTime MinYear() const;
     void MinYear(const Windows::Foundation::DateTime & value) const;
     Windows::Foundation::DateTime MaxYear() const;
@@ -7020,7 +7020,7 @@ template <typename D>
 struct WINRT_EBO impl_IDatePickerFlyout
 {
     hstring CalendarIdentifier() const;
-    void CalendarIdentifier(hstring_ref value) const;
+    void CalendarIdentifier(hstring_view value) const;
     Windows::Foundation::DateTime Date() const;
     void Date(const Windows::Foundation::DateTime & value) const;
     bool DayVisible() const;
@@ -7044,20 +7044,20 @@ template <typename D>
 struct WINRT_EBO impl_IDatePickerFlyout2
 {
     hstring DayFormat() const;
-    void DayFormat(hstring_ref value) const;
+    void DayFormat(hstring_view value) const;
     hstring MonthFormat() const;
-    void MonthFormat(hstring_ref value) const;
+    void MonthFormat(hstring_view value) const;
     hstring YearFormat() const;
-    void YearFormat(hstring_ref value) const;
+    void YearFormat(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDatePickerFlyoutItem
 {
     hstring PrimaryText() const;
-    void PrimaryText(hstring_ref value) const;
+    void PrimaryText(hstring_view value) const;
     hstring SecondaryText() const;
-    void SecondaryText(hstring_ref value) const;
+    void SecondaryText(hstring_view value) const;
 };
 
 template <typename D>
@@ -7227,7 +7227,7 @@ template <typename D>
 struct WINRT_EBO impl_IFontIcon
 {
     hstring Glyph() const;
-    void Glyph(hstring_ref value) const;
+    void Glyph(hstring_view value) const;
     double FontSize() const;
     void FontSize(double value) const;
     Windows::UI::Xaml::Media::FontFamily FontFamily() const;
@@ -7311,7 +7311,7 @@ struct WINRT_EBO impl_IFrame
     void GoForward() const;
     bool Navigate(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter) const;
     hstring GetNavigationState() const;
-    void SetNavigationState(hstring_ref navigationState) const;
+    void SetNavigationState(hstring_view navigationState) const;
 };
 
 template <typename D>
@@ -7983,7 +7983,7 @@ struct WINRT_EBO impl_IItemsControl
     Windows::UI::Xaml::Controls::ItemsPanelTemplate ItemsPanel() const;
     void ItemsPanel(const Windows::UI::Xaml::Controls::ItemsPanelTemplate & value) const;
     hstring DisplayMemberPath() const;
-    void DisplayMemberPath(hstring_ref value) const;
+    void DisplayMemberPath(hstring_view value) const;
     Windows::UI::Xaml::Style ItemContainerStyle() const;
     void ItemContainerStyle(const Windows::UI::Xaml::Style & value) const;
     Windows::UI::Xaml::Controls::StyleSelector ItemContainerStyleSelector() const;
@@ -8245,7 +8245,7 @@ struct WINRT_EBO impl_IListPickerFlyout
     Windows::UI::Xaml::DataTemplate ItemTemplate() const;
     void ItemTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring DisplayMemberPath() const;
-    void DisplayMemberPath(hstring_ref value) const;
+    void DisplayMemberPath(hstring_view value) const;
     Windows::UI::Xaml::Controls::ListPickerFlyoutSelectionMode SelectionMode() const;
     void SelectionMode(Windows::UI::Xaml::Controls::ListPickerFlyoutSelectionMode value) const;
     int32_t SelectedIndex() const;
@@ -8255,7 +8255,7 @@ struct WINRT_EBO impl_IListPickerFlyout
     Windows::IInspectable SelectedValue() const;
     void SelectedValue(const Windows::IInspectable & value) const;
     hstring SelectedValuePath() const;
-    void SelectedValuePath(hstring_ref value) const;
+    void SelectedValuePath(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::IInspectable> SelectedItems() const;
     event_token ItemsPicked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListPickerFlyout, Windows::UI::Xaml::Controls::ItemsPickedEventArgs> & value) const;
     using ItemsPicked_revoker = event_revoker<IListPickerFlyout>;
@@ -8482,7 +8482,7 @@ template <typename D>
 struct WINRT_EBO impl_IListViewPersistenceHelperStatics
 {
     hstring GetRelativeScrollPosition(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, const Windows::UI::Xaml::Controls::ListViewItemToKeyHandler & itemToKeyHandler) const;
-    Windows::Foundation::IAsyncAction SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_ref relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler) const;
+    Windows::Foundation::IAsyncAction SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_view relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler) const;
 };
 
 template <typename D>
@@ -8581,11 +8581,11 @@ struct WINRT_EBO impl_IMediaElement
     void Stop() const;
     void Play() const;
     void Pause() const;
-    Windows::UI::Xaml::Media::MediaCanPlayResponse CanPlayType(hstring_ref type) const;
-    void SetSource(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref mimeType) const;
+    Windows::UI::Xaml::Media::MediaCanPlayResponse CanPlayType(hstring_view type) const;
+    void SetSource(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view mimeType) const;
     hstring GetAudioStreamLanguage(const Windows::Foundation::IReference<int32_t> & index) const;
-    void AddAudioEffect(hstring_ref effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
-    void AddVideoEffect(hstring_ref effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
+    void AddAudioEffect(hstring_view effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
+    void AddVideoEffect(hstring_view effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
     void RemoveAllEffects() const;
     Windows::UI::Xaml::Media::Stereo3DVideoPackingMode ActualStereo3DVideoPackingMode() const;
 };
@@ -8867,7 +8867,7 @@ template <typename D>
 struct WINRT_EBO impl_IMenuFlyoutItem
 {
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     Windows::UI::Xaml::Input::ICommand Command() const;
     void Command(const Windows::UI::Xaml::Input::ICommand & value) const;
     Windows::IInspectable CommandParameter() const;
@@ -8941,7 +8941,7 @@ struct WINRT_EBO impl_IMenuFlyoutSubItem
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::MenuFlyoutItemBase> Items() const;
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
 };
 
 template <typename D>
@@ -9031,9 +9031,9 @@ template <typename D>
 struct WINRT_EBO impl_IPasswordBox
 {
     hstring Password() const;
-    void Password(hstring_ref value) const;
+    void Password(hstring_view value) const;
     hstring PasswordChar() const;
-    void PasswordChar(hstring_ref value) const;
+    void PasswordChar(hstring_view value) const;
     bool IsPasswordRevealButtonEnabled() const;
     void IsPasswordRevealButtonEnabled(bool value) const;
     int32_t MaxLength() const;
@@ -9057,7 +9057,7 @@ struct WINRT_EBO impl_IPasswordBox2
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring PlaceholderText() const;
-    void PlaceholderText(hstring_ref value) const;
+    void PlaceholderText(hstring_view value) const;
     Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColor() const;
     void SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
     bool PreventKeyboardDisplayOnProgrammaticFocus() const;
@@ -9321,7 +9321,7 @@ template <typename D>
 struct WINRT_EBO impl_IRadioButton
 {
     hstring GroupName() const;
-    void GroupName(hstring_ref value) const;
+    void GroupName(hstring_view value) const;
 };
 
 template <typename D>
@@ -9452,7 +9452,7 @@ struct WINRT_EBO impl_IRichEditBox2
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring PlaceholderText() const;
-    void PlaceholderText(hstring_ref value) const;
+    void PlaceholderText(hstring_view value) const;
     Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColor() const;
     void SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
     bool PreventKeyboardDisplayOnProgrammaticFocus() const;
@@ -9958,11 +9958,11 @@ struct WINRT_EBO impl_ISearchBox
     bool SearchHistoryEnabled() const;
     void SearchHistoryEnabled(bool value) const;
     hstring SearchHistoryContext() const;
-    void SearchHistoryContext(hstring_ref value) const;
+    void SearchHistoryContext(hstring_view value) const;
     hstring PlaceholderText() const;
-    void PlaceholderText(hstring_ref value) const;
+    void PlaceholderText(hstring_view value) const;
     hstring QueryText() const;
-    void QueryText(hstring_ref value) const;
+    void QueryText(hstring_view value) const;
     bool FocusOnKeyboardInput() const;
     void FocusOnKeyboardInput(bool value) const;
     bool ChooseSuggestionOnEnter() const;
@@ -10141,7 +10141,7 @@ template <typename D>
 struct WINRT_EBO impl_ISettingsFlyout
 {
     hstring Title() const;
-    void Title(hstring_ref value) const;
+    void Title(hstring_view value) const;
     Windows::UI::Xaml::Media::Brush HeaderBackground() const;
     void HeaderBackground(const Windows::UI::Xaml::Media::Brush & value) const;
     Windows::UI::Xaml::Media::Brush HeaderForeground() const;
@@ -10449,7 +10449,7 @@ struct WINRT_EBO impl_ITextBlock
     Windows::UI::Xaml::TextAlignment TextAlignment() const;
     void TextAlignment(Windows::UI::Xaml::TextAlignment value) const;
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     Windows::UI::Xaml::Documents::InlineCollection Inlines() const;
     Windows::UI::Xaml::Thickness Padding() const;
     void Padding(const Windows::UI::Xaml::Thickness & value) const;
@@ -10550,9 +10550,9 @@ template <typename D>
 struct WINRT_EBO impl_ITextBox
 {
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     hstring SelectedText() const;
-    void SelectedText(hstring_ref value) const;
+    void SelectedText(hstring_view value) const;
     int32_t SelectionLength() const;
     void SelectionLength(int32_t value) const;
     int32_t SelectionStart() const;
@@ -10598,7 +10598,7 @@ struct WINRT_EBO impl_ITextBox2
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring PlaceholderText() const;
-    void PlaceholderText(hstring_ref value) const;
+    void PlaceholderText(hstring_view value) const;
     Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColor() const;
     void SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
     bool PreventKeyboardDisplayOnProgrammaticFocus() const;
@@ -10737,7 +10737,7 @@ struct WINRT_EBO impl_ITimePicker
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring ClockIdentifier() const;
-    void ClockIdentifier(hstring_ref value) const;
+    void ClockIdentifier(hstring_view value) const;
     int32_t MinuteIncrement() const;
     void MinuteIncrement(int32_t value) const;
     Windows::Foundation::TimeSpan Time() const;
@@ -10765,7 +10765,7 @@ template <typename D>
 struct WINRT_EBO impl_ITimePickerFlyout
 {
     hstring ClockIdentifier() const;
-    void ClockIdentifier(hstring_ref value) const;
+    void ClockIdentifier(hstring_view value) const;
     Windows::Foundation::TimeSpan Time() const;
     void Time(const Windows::Foundation::TimeSpan & value) const;
     int32_t MinuteIncrement() const;
@@ -11091,9 +11091,9 @@ struct WINRT_EBO impl_IWebView
     using NavigationFailed_revoker = event_revoker<IWebView>;
     NavigationFailed_revoker NavigationFailed(auto_revoke_t, const Windows::UI::Xaml::Controls::WebViewNavigationFailedEventHandler & value) const;
     void NavigationFailed(event_token token) const;
-    hstring InvokeScript(hstring_ref scriptName, array_ref<const hstring> arguments) const;
+    hstring InvokeScript(hstring_view scriptName, array_ref<const hstring> arguments) const;
     void Navigate(const Windows::Foundation::Uri & source) const;
-    void NavigateToString(hstring_ref text) const;
+    void NavigateToString(hstring_view text) const;
 };
 
 template <typename D>
@@ -11119,10 +11119,10 @@ struct WINRT_EBO impl_IWebView2
     void Refresh() const;
     void Stop() const;
     Windows::Foundation::IAsyncAction CapturePreviewToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
-    Windows::Foundation::IAsyncOperation<hstring> InvokeScriptAsync(hstring_ref scriptName, const Windows::Foundation::Collections::IIterable<hstring> & arguments) const;
+    Windows::Foundation::IAsyncOperation<hstring> InvokeScriptAsync(hstring_view scriptName, const Windows::Foundation::Collections::IIterable<hstring> & arguments) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::DataPackage> CaptureSelectedContentToDataPackageAsync() const;
     void NavigateToLocalStreamUri(const Windows::Foundation::Uri & source, const Windows::Web::IUriToStreamResolver & streamResolver) const;
-    Windows::Foundation::Uri BuildLocalStreamUri(hstring_ref contentIdentifier, hstring_ref relativePath) const;
+    Windows::Foundation::Uri BuildLocalStreamUri(hstring_view contentIdentifier, hstring_view relativePath) const;
     Windows::UI::Color DefaultBackgroundColor() const;
     void DefaultBackgroundColor(const Windows::UI::Color & value) const;
     event_token NavigationCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs> & value) const;
@@ -11189,7 +11189,7 @@ struct WINRT_EBO impl_IWebView4
     using PermissionRequested_revoker = event_revoker<IWebView4>;
     PermissionRequested_revoker PermissionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewPermissionRequestedEventArgs> & value) const;
     void PermissionRequested(event_token token) const;
-    void AddWebAllowedObject(hstring_ref name, const Windows::IInspectable & pObject) const;
+    void AddWebAllowedObject(hstring_view name, const Windows::IInspectable & pObject) const;
     Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest DeferredPermissionRequestById(uint32_t id) const;
 };
 
@@ -11210,7 +11210,7 @@ template <typename D>
 struct WINRT_EBO impl_IWebViewBrush
 {
     hstring SourceName() const;
-    void SourceName(hstring_ref value) const;
+    void SourceName(hstring_view value) const;
     void Redraw() const;
     void SetSource(const Windows::UI::Xaml::Controls::WebView & source) const;
 };

@@ -1111,7 +1111,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> impl_IMediaFrameSourceGroupStatics<D>::FromIdAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> impl_IMediaFrameSourceGroupStatics<D>::FromIdAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> value;
     check_hresult(WINRT_SHIM(IMediaFrameSourceGroupStatics)->abi_FromIdAsync(get(id), put(value)));
@@ -1271,14 +1271,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IMediaFrameReader<D
     return action;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> impl_IMediaFrameSourceController<D>::GetPropertyAsync(hstring_ref propertyId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> impl_IMediaFrameSourceController<D>::GetPropertyAsync(hstring_view propertyId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> value;
     check_hresult(WINRT_SHIM(IMediaFrameSourceController)->abi_GetPropertyAsync(get(propertyId), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> impl_IMediaFrameSourceController<D>::SetPropertyAsync(hstring_ref propertyId, const Windows::IInspectable & propertyValue) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> impl_IMediaFrameSourceController<D>::SetPropertyAsync(hstring_view propertyId, const Windows::IInspectable & propertyValue) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> value;
     check_hresult(WINRT_SHIM(IMediaFrameSourceController)->abi_SetPropertyAsync(get(propertyId), get(propertyValue), put(value)));
@@ -1563,7 +1563,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics>().FindAllAsync();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> MediaFrameSourceGroup::FromIdAsync(hstring_ref id)
+inline Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> MediaFrameSourceGroup::FromIdAsync(hstring_view id)
 {
     return get_activation_factory<MediaFrameSourceGroup, IMediaFrameSourceGroupStatics>().FromIdAsync(id);
 }

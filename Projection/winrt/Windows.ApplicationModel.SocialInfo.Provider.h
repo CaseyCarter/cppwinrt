@@ -392,26 +392,26 @@ template <typename D> void impl_ISocialDashboardItemUpdater<D>::TargetUri(const 
     check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->put_TargetUri(get(value)));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> impl_ISocialInfoProviderManagerStatics<D>::CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_ref ownerRemoteId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> impl_ISocialInfoProviderManagerStatics<D>::CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_view ownerRemoteId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> operation;
     check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_CreateSocialFeedUpdaterAsync(kind, mode, get(ownerRemoteId), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> impl_ISocialInfoProviderManagerStatics<D>::CreateDashboardItemUpdaterAsync(hstring_ref ownerRemoteId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> impl_ISocialInfoProviderManagerStatics<D>::CreateDashboardItemUpdaterAsync(hstring_view ownerRemoteId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> operation;
     check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_CreateDashboardItemUpdaterAsync(get(ownerRemoteId), put(operation)));
     return operation;
 }
 
-template <typename D> void impl_ISocialInfoProviderManagerStatics<D>::UpdateBadgeCountValue(hstring_ref itemRemoteId, int32_t newCount) const
+template <typename D> void impl_ISocialInfoProviderManagerStatics<D>::UpdateBadgeCountValue(hstring_view itemRemoteId, int32_t newCount) const
 {
     check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_UpdateBadgeCountValue(get(itemRemoteId), newCount));
 }
 
-template <typename D> void impl_ISocialInfoProviderManagerStatics<D>::ReportNewContentAvailable(hstring_ref contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind) const
+template <typename D> void impl_ISocialInfoProviderManagerStatics<D>::ReportNewContentAvailable(hstring_view contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind) const
 {
     check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_ReportNewContentAvailable(get(contactRemoteId), kind));
 }
@@ -430,22 +430,22 @@ template <typename D> Windows::Foundation::IAsyncAction impl_ISocialInfoProvider
     return operation;
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> SocialInfoProviderManager::CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_ref ownerRemoteId)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> SocialInfoProviderManager::CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_view ownerRemoteId)
 {
     return get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().CreateSocialFeedUpdaterAsync(kind, mode, ownerRemoteId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> SocialInfoProviderManager::CreateDashboardItemUpdaterAsync(hstring_ref ownerRemoteId)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> SocialInfoProviderManager::CreateDashboardItemUpdaterAsync(hstring_view ownerRemoteId)
 {
     return get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().CreateDashboardItemUpdaterAsync(ownerRemoteId);
 }
 
-inline void SocialInfoProviderManager::UpdateBadgeCountValue(hstring_ref itemRemoteId, int32_t newCount)
+inline void SocialInfoProviderManager::UpdateBadgeCountValue(hstring_view itemRemoteId, int32_t newCount)
 {
     get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().UpdateBadgeCountValue(itemRemoteId, newCount);
 }
 
-inline void SocialInfoProviderManager::ReportNewContentAvailable(hstring_ref contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind)
+inline void SocialInfoProviderManager::ReportNewContentAvailable(hstring_view contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind)
 {
     get_activation_factory<SocialInfoProviderManager, ISocialInfoProviderManagerStatics>().ReportNewContentAvailable(contactRemoteId, kind);
 }

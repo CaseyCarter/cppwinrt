@@ -3222,7 +3222,7 @@ template <typename D> void impl_IVpnPlugIn<D>::Decapsulate(const Windows::Networ
     check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Decapsulate(get(channel), get(encapBuffer), get(decapsulatedPackets), get(controlPacketsToSend)));
 }
 
-template <typename D> void impl_IVpnCustomPrompt<D>::Label(hstring_ref value) const
+template <typename D> void impl_IVpnCustomPrompt<D>::Label(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnCustomPrompt)->put_Label(get(value)));
 }
@@ -3258,7 +3258,7 @@ template <typename D> bool impl_IVpnCustomPrompt<D>::Bordered() const
     return value;
 }
 
-template <typename D> void impl_IVpnCustomEditBox<D>::DefaultText(hstring_ref value) const
+template <typename D> void impl_IVpnCustomEditBox<D>::DefaultText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnCustomEditBox)->put_DefaultText(get(value)));
 }
@@ -3308,7 +3308,7 @@ template <typename D> uint32_t impl_IVpnCustomComboBox<D>::Selected() const
     return value;
 }
 
-template <typename D> void impl_IVpnCustomTextBox<D>::DisplayText(hstring_ref value) const
+template <typename D> void impl_IVpnCustomTextBox<D>::DisplayText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnCustomTextBox)->put_DisplayText(get(value)));
 }
@@ -3430,14 +3430,14 @@ template <typename D> bool impl_IVpnRouteAssignment<D>::ExcludeLocalSubnets() co
     return value;
 }
 
-template <typename D> Windows::Networking::Vpn::VpnNamespaceInfo impl_IVpnNamespaceInfoFactory<D>::CreateVpnNamespaceInfo(hstring_ref name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) const
+template <typename D> Windows::Networking::Vpn::VpnNamespaceInfo impl_IVpnNamespaceInfoFactory<D>::CreateVpnNamespaceInfo(hstring_view name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) const
 {
     Windows::Networking::Vpn::VpnNamespaceInfo namespaceInfo { nullptr };
     check_hresult(WINRT_SHIM(IVpnNamespaceInfoFactory)->abi_CreateVpnNamespaceInfo(get(name), get(dnsServerList), get(proxyServerList), put(namespaceInfo)));
     return namespaceInfo;
 }
 
-template <typename D> void impl_IVpnNamespaceInfo<D>::Namespace(hstring_ref value) const
+template <typename D> void impl_IVpnNamespaceInfo<D>::Namespace(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_Namespace(get(value)));
 }
@@ -3627,7 +3627,7 @@ template <typename D> void impl_IVpnChannel<D>::RequestVpnPacketBuffer(Windows::
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestVpnPacketBuffer(type, put(vpnPacketBuffer)));
 }
 
-template <typename D> void impl_IVpnChannel<D>::LogDiagnosticMessage(hstring_ref message) const
+template <typename D> void impl_IVpnChannel<D>::LogDiagnosticMessage(hstring_view message) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_LogDiagnosticMessage(get(message)));
 }
@@ -3687,7 +3687,7 @@ template <typename D> void impl_IVpnChannel<D>::RequestCustomPrompt(const Window
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestCustomPrompt(get(customPrompt)));
 }
 
-template <typename D> void impl_IVpnChannel<D>::SetErrorMessage(hstring_ref message) const
+template <typename D> void impl_IVpnChannel<D>::SetErrorMessage(hstring_view message) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetErrorMessage(get(message)));
 }
@@ -3766,7 +3766,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::
     return credential;
 }
 
-template <typename D> void impl_IVpnChannel2<D>::TerminateConnection(hstring_ref message) const
+template <typename D> void impl_IVpnChannel2<D>::TerminateConnection(hstring_view message) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_TerminateConnection(get(message)));
 }
@@ -3776,7 +3776,7 @@ template <typename D> void impl_IVpnChannel2<D>::StartWithTrafficFilter(const Wi
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithTrafficFilter(get(assignedClientIpv4List), get(assignedClientIpv6List), get(vpnInterfaceId), get(assignedRoutes), get(assignedNamespace), mtuSize, maxFrameSize, reserved, get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport), get(assignedTrafficFilters)));
 }
 
-template <typename D> void impl_IVpnCustomPromptElement<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IVpnCustomPromptElement<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->put_DisplayName(get(value)));
 }
@@ -3934,7 +3934,7 @@ template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketB
     return nextVpnPacketBuffer;
 }
 
-template <typename D> void impl_IVpnCustomPromptTextInput<D>::PlaceholderText(hstring_ref value) const
+template <typename D> void impl_IVpnCustomPromptTextInput<D>::PlaceholderText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->put_PlaceholderText(get(value)));
 }
@@ -3998,7 +3998,7 @@ template <typename D> bool impl_IVpnCustomPromptBooleanInput<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_IVpnCustomPromptText<D>::Text(hstring_ref value) const
+template <typename D> void impl_IVpnCustomPromptText<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnCustomPromptText)->put_Text(get(value)));
 }
@@ -4017,7 +4017,7 @@ template <typename D> Windows::Networking::Vpn::VpnChannelActivityEventType impl
     return value;
 }
 
-template <typename D> Windows::Networking::Vpn::VpnDomainNameInfo impl_IVpnDomainNameInfoFactory<D>::CreateVpnDomainNameInfo(hstring_ref name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) const
+template <typename D> Windows::Networking::Vpn::VpnDomainNameInfo impl_IVpnDomainNameInfoFactory<D>::CreateVpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) const
 {
     Windows::Networking::Vpn::VpnDomainNameInfo domainNameInfo { nullptr };
     check_hresult(WINRT_SHIM(IVpnDomainNameInfoFactory)->abi_CreateVpnDomainNameInfo(get(name), nameType, get(dnsServerList), get(proxyServerList), put(domainNameInfo)));
@@ -4088,7 +4088,7 @@ template <typename D> Windows::Foundation::Uri impl_IVpnDomainNameAssignment<D>:
     return value;
 }
 
-template <typename D> Windows::Networking::Vpn::VpnAppId impl_IVpnAppIdFactory<D>::Create(Windows::Networking::Vpn::VpnAppIdType type, hstring_ref value) const
+template <typename D> Windows::Networking::Vpn::VpnAppId impl_IVpnAppIdFactory<D>::Create(Windows::Networking::Vpn::VpnAppIdType type, hstring_view value) const
 {
     Windows::Networking::Vpn::VpnAppId result { nullptr };
     check_hresult(WINRT_SHIM(IVpnAppIdFactory)->abi_Create(type, get(value), put(result)));
@@ -4114,7 +4114,7 @@ template <typename D> hstring impl_IVpnAppId<D>::Value() const
     return value;
 }
 
-template <typename D> void impl_IVpnAppId<D>::Value(hstring_ref value) const
+template <typename D> void impl_IVpnAppId<D>::Value(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnAppId)->put_Value(get(value)));
 }
@@ -4235,7 +4235,7 @@ template <typename D> hstring impl_IVpnProfile<D>::ProfileName() const
     return value;
 }
 
-template <typename D> void impl_IVpnProfile<D>::ProfileName(hstring_ref value) const
+template <typename D> void impl_IVpnProfile<D>::ProfileName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnProfile)->put_ProfileName(get(value)));
 }
@@ -4306,7 +4306,7 @@ template <typename D> hstring impl_IVpnPlugInProfile<D>::CustomConfiguration() c
     return value;
 }
 
-template <typename D> void impl_IVpnPlugInProfile<D>::CustomConfiguration(hstring_ref value) const
+template <typename D> void impl_IVpnPlugInProfile<D>::CustomConfiguration(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnPlugInProfile)->put_CustomConfiguration(get(value)));
 }
@@ -4318,7 +4318,7 @@ template <typename D> hstring impl_IVpnPlugInProfile<D>::VpnPluginPackageFamilyN
     return value;
 }
 
-template <typename D> void impl_IVpnPlugInProfile<D>::VpnPluginPackageFamilyName(hstring_ref value) const
+template <typename D> void impl_IVpnPlugInProfile<D>::VpnPluginPackageFamilyName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnPlugInProfile)->put_VpnPluginPackageFamilyName(get(value)));
 }
@@ -4404,7 +4404,7 @@ template <typename D> hstring impl_IVpnNativeProfile<D>::EapConfiguration() cons
     return Value;
 }
 
-template <typename D> void impl_IVpnNativeProfile<D>::EapConfiguration(hstring_ref value) const
+template <typename D> void impl_IVpnNativeProfile<D>::EapConfiguration(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IVpnNativeProfile)->put_EapConfiguration(get(value)));
 }
@@ -4428,7 +4428,7 @@ template <typename D> Windows::Networking::Vpn::VpnManagementConnectionStatus im
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::AddProfileFromXmlAsync(hstring_ref xml) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::AddProfileFromXmlAsync(hstring_view xml) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
     check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_AddProfileFromXmlAsync(get(xml), put(operation)));
@@ -4442,7 +4442,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Netwo
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::UpdateProfileFromXmlAsync(hstring_ref xml) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::UpdateProfileFromXmlAsync(hstring_view xml) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
     check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_UpdateProfileFromXmlAsync(get(xml), put(operation)));
@@ -4491,7 +4491,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Netwo
     return operation;
 }
 
-inline VpnAppId::VpnAppId(Windows::Networking::Vpn::VpnAppIdType type, hstring_ref value) :
+inline VpnAppId::VpnAppId(Windows::Networking::Vpn::VpnAppIdType type, hstring_view value) :
     VpnAppId(get_activation_factory<VpnAppId, IVpnAppIdFactory>().Create(type, value))
 {}
 
@@ -4540,7 +4540,7 @@ inline VpnDomainNameAssignment::VpnDomainNameAssignment() :
     VpnDomainNameAssignment(activate_instance<VpnDomainNameAssignment>())
 {}
 
-inline VpnDomainNameInfo::VpnDomainNameInfo(hstring_ref name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) :
+inline VpnDomainNameInfo::VpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) :
     VpnDomainNameInfo(get_activation_factory<VpnDomainNameInfo, IVpnDomainNameInfoFactory>().CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList))
 {}
 
@@ -4556,7 +4556,7 @@ inline VpnNamespaceAssignment::VpnNamespaceAssignment() :
     VpnNamespaceAssignment(activate_instance<VpnNamespaceAssignment>())
 {}
 
-inline VpnNamespaceInfo::VpnNamespaceInfo(hstring_ref name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) :
+inline VpnNamespaceInfo::VpnNamespaceInfo(hstring_view name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) :
     VpnNamespaceInfo(get_activation_factory<VpnNamespaceInfo, IVpnNamespaceInfoFactory>().CreateVpnNamespaceInfo(name, dnsServerList, proxyServerList))
 {}
 

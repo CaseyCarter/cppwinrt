@@ -1206,14 +1206,14 @@ struct WINRT_EBO impl_IMediaPlayerDataReceivedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IMediaPlayerEffects
 {
-    void AddAudioEffect(hstring_ref activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & configuration) const;
+    void AddAudioEffect(hstring_view activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & configuration) const;
     void RemoveAllEffects() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IMediaPlayerEffects2
 {
-    void AddVideoEffect(hstring_ref activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
+    void AddVideoEffect(hstring_view activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
 };
 
 template <typename D>
@@ -1267,7 +1267,7 @@ template <typename D>
 struct WINRT_EBO impl_IPlaybackMediaMarkerFactory
 {
     Windows::Media::Playback::PlaybackMediaMarker CreateFromTime(const Windows::Foundation::TimeSpan & value) const;
-    Windows::Media::Playback::PlaybackMediaMarker Create(const Windows::Foundation::TimeSpan & value, hstring_ref mediaMarketType, hstring_ref text) const;
+    Windows::Media::Playback::PlaybackMediaMarker Create(const Windows::Foundation::TimeSpan & value, hstring_view mediaMarketType, hstring_view text) const;
 };
 
 template <typename D>

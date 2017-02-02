@@ -3472,56 +3472,56 @@ template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersSavedPic
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics<D>::CreateFileAsync(hstring_ref desiredName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics<D>::CreateFileAsync(hstring_view desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IDownloadsFolderStatics)->abi_CreateFileAsync(get(desiredName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics<D>::CreateFolderAsync(hstring_ref desiredName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics<D>::CreateFolderAsync(hstring_view desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IDownloadsFolderStatics)->abi_CreateFolderAsync(get(desiredName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics<D>::CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics<D>::CreateFileAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IDownloadsFolderStatics)->abi_CreateFileWithCollisionOptionAsync(get(desiredName), option, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics<D>::CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics<D>::CreateFolderAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IDownloadsFolderStatics)->abi_CreateFolderWithCollisionOptionAsync(get(desiredName), option, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics2<D>::CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics2<D>::CreateFileForUserAsync(const Windows::System::User & user, hstring_view desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IDownloadsFolderStatics2)->abi_CreateFileForUserAsync(get(user), get(desiredName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics2<D>::CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics2<D>::CreateFolderForUserAsync(const Windows::System::User & user, hstring_view desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IDownloadsFolderStatics2)->abi_CreateFolderForUserAsync(get(user), get(desiredName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics2<D>::CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics2<D>::CreateFileForUserAsync(const Windows::System::User & user, hstring_view desiredName, Windows::Storage::CreationCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IDownloadsFolderStatics2)->abi_CreateFileForUserWithCollisionOptionAsync(get(user), get(desiredName), option, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics2<D>::CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics2<D>::CreateFolderForUserAsync(const Windows::System::User & user, hstring_view desiredName, Windows::Storage::CreationCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IDownloadsFolderStatics2)->abi_CreateFolderForUserWithCollisionOptionAsync(get(user), get(desiredName), option, put(operation)));
@@ -3563,14 +3563,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::ISt
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItem<D>::RenameAsync(hstring_ref desiredName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItem<D>::RenameAsync(hstring_view desiredName) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStorageItem)->abi_RenameAsyncOverloadDefaultOptions(get(desiredName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItem<D>::RenameAsync(hstring_ref desiredName, Windows::Storage::NameCollisionOption option) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItem<D>::RenameAsync(hstring_view desiredName, Windows::Storage::NameCollisionOption option) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStorageItem)->abi_RenameAsync(get(desiredName), option, put(operation)));
@@ -3669,7 +3669,7 @@ template <typename D> void impl_IStreamedFileDataRequest<D>::FailAndClose(Window
     check_hresult(WINRT_SHIM(IStreamedFileDataRequest)->abi_FailAndClose(failureMode));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::GetFileFromPathAsync(hstring_ref path) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::GetFileFromPathAsync(hstring_view path) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageFileStatics)->abi_GetFileFromPathAsync(get(path), put(operation)));
@@ -3683,7 +3683,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Sto
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::CreateStreamedFileAsync(hstring_ref displayNameWithExtension, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::CreateStreamedFileAsync(hstring_view displayNameWithExtension, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageFileStatics)->abi_CreateStreamedFileAsync(get(displayNameWithExtension), get(dataRequested), get(thumbnail), put(operation)));
@@ -3697,7 +3697,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Sto
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::CreateStreamedFileFromUriAsync(hstring_ref displayNameWithExtension, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::CreateStreamedFileFromUriAsync(hstring_view displayNameWithExtension, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageFileStatics)->abi_CreateStreamedFileFromUriAsync(get(displayNameWithExtension), get(uri), get(thumbnail), put(operation)));
@@ -3711,49 +3711,49 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Sto
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFolder<D>::CreateFileAsync(hstring_ref desiredName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFolder<D>::CreateFileAsync(hstring_view desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageFolder)->abi_CreateFileAsyncOverloadDefaultOptions(get(desiredName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFolder<D>::CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption options) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFolder<D>::CreateFileAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageFolder)->abi_CreateFileAsync(get(desiredName), options, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolder<D>::CreateFolderAsync(hstring_ref desiredName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolder<D>::CreateFolderAsync(hstring_view desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IStorageFolder)->abi_CreateFolderAsyncOverloadDefaultOptions(get(desiredName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolder<D>::CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption options) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolder<D>::CreateFolderAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IStorageFolder)->abi_CreateFolderAsync(get(desiredName), options, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFolder<D>::GetFileAsync(hstring_ref name) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFolder<D>::GetFileAsync(hstring_view name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageFolder)->abi_GetFileAsync(get(name), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolder<D>::GetFolderAsync(hstring_ref name) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolder<D>::GetFolderAsync(hstring_view name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IStorageFolder)->abi_GetFolderAsync(get(name), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageFolder<D>::GetItemAsync(hstring_ref name) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageFolder<D>::GetItemAsync(hstring_view name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> operation;
     check_hresult(WINRT_SHIM(IStorageFolder)->abi_GetItemAsync(get(name), put(operation)));
@@ -3816,14 +3816,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Sto
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFile<D>::CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFile<D>::CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_view desiredNewName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageFile)->abi_CopyOverloadDefaultOptions(get(destinationFolder), get(desiredNewName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFile<D>::CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName, Windows::Storage::NameCollisionOption option) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFile<D>::CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_view desiredNewName, Windows::Storage::NameCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
     check_hresult(WINRT_SHIM(IStorageFile)->abi_CopyOverload(get(destinationFolder), get(desiredNewName), option, put(operation)));
@@ -3844,14 +3844,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::Mo
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_view desiredNewName) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStorageFile)->abi_MoveOverloadDefaultOptions(get(destinationFolder), get(desiredNewName), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName, Windows::Storage::NameCollisionOption option) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_view desiredNewName, Windows::Storage::NameCollisionOption option) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStorageFile)->abi_MoveOverload(get(destinationFolder), get(desiredNewName), option, put(operation)));
@@ -3865,7 +3865,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::Mo
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolderStatics<D>::GetFolderFromPathAsync(hstring_ref path) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolderStatics<D>::GetFolderFromPathAsync(hstring_view path) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
     check_hresult(WINRT_SHIM(IStorageFolderStatics)->abi_GetFolderFromPathAsync(get(path), put(operation)));
@@ -3984,7 +3984,7 @@ template <typename D> hstring impl_IStorageProvider<D>::DisplayName() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageFolder2<D>::TryGetItemAsync(hstring_ref name) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageFolder2<D>::TryGetItemAsync(hstring_view name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> operation;
     check_hresult(WINRT_SHIM(IStorageFolder2)->abi_TryGetItemAsync(get(name), put(operation)));
@@ -4019,28 +4019,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IFileIO
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents) const
 {
     Windows::Foundation::IAsyncAction textOperation;
     check_hresult(WINRT_SHIM(IFileIOStatics)->abi_WriteTextAsync(get(file), get(contents), put(textOperation)));
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction textOperation;
     check_hresult(WINRT_SHIM(IFileIOStatics)->abi_WriteTextWithEncodingAsync(get(file), get(contents), encoding, put(textOperation)));
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents) const
 {
     Windows::Foundation::IAsyncAction textOperation;
     check_hresult(WINRT_SHIM(IFileIOStatics)->abi_AppendTextAsync(get(file), get(contents), put(textOperation)));
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction textOperation;
     check_hresult(WINRT_SHIM(IFileIOStatics)->abi_AppendTextWithEncodingAsync(get(file), get(contents), encoding, put(textOperation)));
@@ -4110,105 +4110,105 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPathIOStatics<D>::ReadTextAsync(hstring_ref absolutePath) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPathIOStatics<D>::ReadTextAsync(hstring_view absolutePath) const
 {
     Windows::Foundation::IAsyncOperation<hstring> textOperation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_ReadTextAsync(get(absolutePath), put(textOperation)));
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPathIOStatics<D>::ReadTextAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPathIOStatics<D>::ReadTextAsync(hstring_view absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncOperation<hstring> textOperation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_ReadTextWithEncodingAsync(get(absolutePath), encoding, put(textOperation)));
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteTextAsync(hstring_ref absolutePath, hstring_ref contents) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteTextAsync(hstring_view absolutePath, hstring_view contents) const
 {
     Windows::Foundation::IAsyncAction textOperation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_WriteTextAsync(get(absolutePath), get(contents), put(textOperation)));
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteTextAsync(hstring_view absolutePath, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction textOperation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_WriteTextWithEncodingAsync(get(absolutePath), get(contents), encoding, put(textOperation)));
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendTextAsync(hstring_ref absolutePath, hstring_ref contents) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendTextAsync(hstring_view absolutePath, hstring_view contents) const
 {
     Windows::Foundation::IAsyncAction textOperation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_AppendTextAsync(get(absolutePath), get(contents), put(textOperation)));
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendTextAsync(hstring_view absolutePath, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction textOperation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_AppendTextWithEncodingAsync(get(absolutePath), get(contents), encoding, put(textOperation)));
     return textOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> impl_IPathIOStatics<D>::ReadLinesAsync(hstring_ref absolutePath) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> impl_IPathIOStatics<D>::ReadLinesAsync(hstring_view absolutePath) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> linesOperation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_ReadLinesAsync(get(absolutePath), put(linesOperation)));
     return linesOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> impl_IPathIOStatics<D>::ReadLinesAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> impl_IPathIOStatics<D>::ReadLinesAsync(hstring_view absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> linesOperation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_ReadLinesWithEncodingAsync(get(absolutePath), encoding, put(linesOperation)));
     return linesOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_WriteLinesAsync(get(absolutePath), get(lines), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_WriteLinesWithEncodingAsync(get(absolutePath), get(lines), encoding, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_AppendLinesAsync(get(absolutePath), get(lines), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_AppendLinesWithEncodingAsync(get(absolutePath), get(lines), encoding, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IPathIOStatics<D>::ReadBufferAsync(hstring_ref absolutePath) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IPathIOStatics<D>::ReadBufferAsync(hstring_view absolutePath) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_ReadBufferAsync(get(absolutePath), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteBufferAsync(hstring_ref absolutePath, const Windows::Storage::Streams::IBuffer & buffer) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteBufferAsync(hstring_view absolutePath, const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_WriteBufferAsync(get(absolutePath), get(buffer), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteBytesAsync(hstring_ref absolutePath, array_ref<const uint8_t> buffer) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteBytesAsync(hstring_view absolutePath, array_ref<const uint8_t> buffer) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_WriteBytesAsync(get(absolutePath), buffer.size(), get(buffer), put(operation)));
@@ -4648,14 +4648,14 @@ template <typename D> Windows::Storage::StorageFolder impl_IApplicationData2<D>:
     return value;
 }
 
-template <typename D> Windows::Storage::StorageFolder impl_IApplicationData3<D>::GetPublisherCacheFolder(hstring_ref folderName) const
+template <typename D> Windows::Storage::StorageFolder impl_IApplicationData3<D>::GetPublisherCacheFolder(hstring_view folderName) const
 {
     Windows::Storage::StorageFolder value { nullptr };
     check_hresult(WINRT_SHIM(IApplicationData3)->abi_GetPublisherCacheFolder(get(folderName), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IApplicationData3<D>::ClearPublisherCacheFolderAsync(hstring_ref folderName) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IApplicationData3<D>::ClearPublisherCacheFolderAsync(hstring_view folderName) const
 {
     Windows::Foundation::IAsyncAction clearOperation;
     check_hresult(WINRT_SHIM(IApplicationData3)->abi_ClearPublisherCacheFolderAsync(get(folderName), put(clearOperation)));
@@ -4723,14 +4723,14 @@ template <typename D> Windows::Foundation::Collections::IMapView<hstring, Window
     return value;
 }
 
-template <typename D> Windows::Storage::ApplicationDataContainer impl_IApplicationDataContainer<D>::CreateContainer(hstring_ref name, Windows::Storage::ApplicationDataCreateDisposition disposition) const
+template <typename D> Windows::Storage::ApplicationDataContainer impl_IApplicationDataContainer<D>::CreateContainer(hstring_view name, Windows::Storage::ApplicationDataCreateDisposition disposition) const
 {
     Windows::Storage::ApplicationDataContainer container { nullptr };
     check_hresult(WINRT_SHIM(IApplicationDataContainer)->abi_CreateContainer(get(name), disposition, put(container)));
     return container;
 }
 
-template <typename D> void impl_IApplicationDataContainer<D>::DeleteContainer(hstring_ref name) const
+template <typename D> void impl_IApplicationDataContainer<D>::DeleteContainer(hstring_view name) const
 {
     check_hresult(WINRT_SHIM(IApplicationDataContainer)->abi_DeleteContainer(get(name)));
 }
@@ -4759,42 +4759,42 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Provider::F
     return get_activation_factory<CachedFileManager, ICachedFileManagerStatics>().CompleteUpdatesAsync(file);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileAsync(hstring_ref desiredName)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileAsync(hstring_view desiredName)
 {
     return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics>().CreateFileAsync(desiredName);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderAsync(hstring_ref desiredName)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderAsync(hstring_view desiredName)
 {
     return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics>().CreateFolderAsync(desiredName);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption option)
 {
     return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics>().CreateFileAsync(desiredName, option);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption option)
 {
     return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics>().CreateFolderAsync(desiredName, option);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileForUserAsync(const Windows::System::User & user, hstring_view desiredName)
 {
     return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFileForUserAsync(user, desiredName);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderForUserAsync(const Windows::System::User & user, hstring_view desiredName)
 {
     return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFolderForUserAsync(user, desiredName);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> DownloadsFolder::CreateFileForUserAsync(const Windows::System::User & user, hstring_view desiredName, Windows::Storage::CreationCollisionOption option)
 {
     return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFileForUserAsync(user, desiredName, option);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> DownloadsFolder::CreateFolderForUserAsync(const Windows::System::User & user, hstring_view desiredName, Windows::Storage::CreationCollisionOption option)
 {
     return get_activation_factory<DownloadsFolder, IDownloadsFolderStatics2>().CreateFolderForUserAsync(user, desiredName, option);
 }
@@ -4809,22 +4809,22 @@ inline Windows::Foundation::IAsyncOperation<hstring> FileIO::ReadTextAsync(const
     return get_activation_factory<FileIO, IFileIOStatics>().ReadTextAsync(file, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction FileIO::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents)
+inline Windows::Foundation::IAsyncAction FileIO::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents)
 {
     return get_activation_factory<FileIO, IFileIOStatics>().WriteTextAsync(file, contents);
 }
 
-inline Windows::Foundation::IAsyncAction FileIO::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction FileIO::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<FileIO, IFileIOStatics>().WriteTextAsync(file, contents, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction FileIO::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents)
+inline Windows::Foundation::IAsyncAction FileIO::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents)
 {
     return get_activation_factory<FileIO, IFileIOStatics>().AppendTextAsync(file, contents);
 }
 
-inline Windows::Foundation::IAsyncAction FileIO::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction FileIO::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<FileIO, IFileIOStatics>().AppendTextAsync(file, contents, encoding);
 }
@@ -4944,82 +4944,82 @@ inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> Kno
     return get_activation_factory<KnownFolders, IKnownFoldersStatics3>().GetFolderForUserAsync(user, folderId);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> PathIO::ReadTextAsync(hstring_ref absolutePath)
+inline Windows::Foundation::IAsyncOperation<hstring> PathIO::ReadTextAsync(hstring_view absolutePath)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().ReadTextAsync(absolutePath);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> PathIO::ReadTextAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncOperation<hstring> PathIO::ReadTextAsync(hstring_view absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().ReadTextAsync(absolutePath, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::WriteTextAsync(hstring_ref absolutePath, hstring_ref contents)
+inline Windows::Foundation::IAsyncAction PathIO::WriteTextAsync(hstring_view absolutePath, hstring_view contents)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().WriteTextAsync(absolutePath, contents);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::WriteTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction PathIO::WriteTextAsync(hstring_view absolutePath, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().WriteTextAsync(absolutePath, contents, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::AppendTextAsync(hstring_ref absolutePath, hstring_ref contents)
+inline Windows::Foundation::IAsyncAction PathIO::AppendTextAsync(hstring_view absolutePath, hstring_view contents)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().AppendTextAsync(absolutePath, contents);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::AppendTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction PathIO::AppendTextAsync(hstring_view absolutePath, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().AppendTextAsync(absolutePath, contents, encoding);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> PathIO::ReadLinesAsync(hstring_ref absolutePath)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> PathIO::ReadLinesAsync(hstring_view absolutePath)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().ReadLinesAsync(absolutePath);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> PathIO::ReadLinesAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> PathIO::ReadLinesAsync(hstring_view absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().ReadLinesAsync(absolutePath, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines)
+inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().WriteLinesAsync(absolutePath, lines);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().WriteLinesAsync(absolutePath, lines, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines)
+inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().AppendLinesAsync(absolutePath, lines);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().AppendLinesAsync(absolutePath, lines, encoding);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> PathIO::ReadBufferAsync(hstring_ref absolutePath)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> PathIO::ReadBufferAsync(hstring_view absolutePath)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().ReadBufferAsync(absolutePath);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::WriteBufferAsync(hstring_ref absolutePath, const Windows::Storage::Streams::IBuffer & buffer)
+inline Windows::Foundation::IAsyncAction PathIO::WriteBufferAsync(hstring_view absolutePath, const Windows::Storage::Streams::IBuffer & buffer)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().WriteBufferAsync(absolutePath, buffer);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::WriteBytesAsync(hstring_ref absolutePath, array_ref<const uint8_t> buffer)
+inline Windows::Foundation::IAsyncAction PathIO::WriteBytesAsync(hstring_view absolutePath, array_ref<const uint8_t> buffer)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().WriteBytesAsync(absolutePath, buffer);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::GetFileFromPathAsync(hstring_ref path)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::GetFileFromPathAsync(hstring_view path)
 {
     return get_activation_factory<StorageFile, IStorageFileStatics>().GetFileFromPathAsync(path);
 }
@@ -5029,7 +5029,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> Stora
     return get_activation_factory<StorageFile, IStorageFileStatics>().GetFileFromApplicationUriAsync(uri);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::CreateStreamedFileAsync(hstring_ref displayNameWithExtension, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::CreateStreamedFileAsync(hstring_view displayNameWithExtension, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail)
 {
     return get_activation_factory<StorageFile, IStorageFileStatics>().CreateStreamedFileAsync(displayNameWithExtension, dataRequested, thumbnail);
 }
@@ -5039,7 +5039,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> Stora
     return get_activation_factory<StorageFile, IStorageFileStatics>().ReplaceWithStreamedFileAsync(fileToReplace, dataRequested, thumbnail);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::CreateStreamedFileFromUriAsync(hstring_ref displayNameWithExtension, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> StorageFile::CreateStreamedFileFromUriAsync(hstring_view displayNameWithExtension, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail)
 {
     return get_activation_factory<StorageFile, IStorageFileStatics>().CreateStreamedFileFromUriAsync(displayNameWithExtension, uri, thumbnail);
 }
@@ -5049,7 +5049,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> Stora
     return get_activation_factory<StorageFile, IStorageFileStatics>().ReplaceWithStreamedFileFromUriAsync(fileToReplace, uri, thumbnail);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> StorageFolder::GetFolderFromPathAsync(hstring_ref path)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> StorageFolder::GetFolderFromPathAsync(hstring_view path)
 {
     return get_activation_factory<StorageFolder, IStorageFolderStatics>().GetFolderFromPathAsync(path);
 }

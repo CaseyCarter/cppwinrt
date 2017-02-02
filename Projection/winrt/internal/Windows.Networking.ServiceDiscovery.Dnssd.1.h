@@ -85,7 +85,7 @@ template <typename D>
 struct WINRT_EBO impl_IDnssdServiceInstance
 {
     hstring DnssdServiceInstanceName() const;
-    void DnssdServiceInstanceName(hstring_ref value) const;
+    void DnssdServiceInstanceName(hstring_view value) const;
     Windows::Networking::HostName HostName() const;
     void HostName(const Windows::Networking::HostName & value) const;
     uint16_t Port() const;
@@ -104,7 +104,7 @@ struct WINRT_EBO impl_IDnssdServiceInstance
 template <typename D>
 struct WINRT_EBO impl_IDnssdServiceInstanceFactory
 {
-    Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance Create(hstring_ref dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port) const;
+    Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance Create(hstring_view dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port) const;
 };
 
 template <typename D>

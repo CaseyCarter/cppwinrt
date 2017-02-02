@@ -34,7 +34,7 @@ struct hstring_traits : handle_traits<HSTRING>
 
 }
 
-struct hstring_ref;
+struct hstring_view;
 
 struct hstring
 {
@@ -52,7 +52,7 @@ struct hstring
     hstring & operator=(hstring && value) noexcept;
 
     hstring(const std::wstring & value);
-    hstring(hstring_ref value);
+    hstring(hstring_view value);
     hstring(const wchar_t * value);
     hstring(const wchar_t * value, size_type size);
 
@@ -100,7 +100,7 @@ private:
     handle<impl::hstring_traits> m_handle;
 };
 
-struct hstring_ref
+struct hstring_view
 {
     using value_type = wchar_t;
     using size_type = uint32_t;
@@ -109,10 +109,10 @@ struct hstring_ref
     using const_iterator = const_pointer;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-    hstring_ref(const std::wstring & value) noexcept;
-    hstring_ref(const hstring & value) noexcept;
-    hstring_ref(const wchar_t * value) noexcept;
-    explicit hstring_ref(HSTRING value) noexcept;
+    hstring_view(const std::wstring & value) noexcept;
+    hstring_view(const hstring & value) noexcept;
+    hstring_view(const wchar_t * value) noexcept;
+    explicit hstring_view(HSTRING value) noexcept;
 
     operator std::wstring() const;
 
@@ -132,14 +132,14 @@ struct hstring_ref
     bool empty() const noexcept;
     size_type size() const noexcept;
 
-    friend HSTRING impl_get(hstring_ref string) noexcept
+    friend HSTRING impl_get(hstring_view string) noexcept
     {
         return string.m_handle;
     }
 
 private:
 
-    hstring_ref(const wchar_t * value, size_type size) noexcept;
+    hstring_view(const wchar_t * value, size_type size) noexcept;
 
     HSTRING m_handle;
     HSTRING_HEADER m_header;
@@ -187,14 +187,14 @@ template <> struct accessors<hstring>
     }
 };
 
-template <> struct accessors<hstring_ref>
+template <> struct accessors<hstring_view>
 {
-    static HSTRING get(hstring_ref object) noexcept
+    static HSTRING get(hstring_view object) noexcept
     {
         return impl_get(object);
     }
 
-    static HSTRING detach(hstring_ref object)
+    static HSTRING detach(hstring_view object)
     {
         return duplicate_string(get(object));
     }
@@ -218,7 +218,7 @@ template <> struct accessors<std::wstring>
 
 }
 
-inline bool embedded_null(hstring_ref value) noexcept
+inline bool embedded_null(hstring_view value) noexcept
 {
     return impl::embedded_null(get(value));
 }

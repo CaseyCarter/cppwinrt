@@ -527,11 +527,11 @@ template <typename D>
 struct WINRT_EBO impl_IBackgroundExecutionManagerStatics
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync() const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(hstring_ref applicationId) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(hstring_view applicationId) const;
     void RemoveAccess() const;
-    void RemoveAccess(hstring_ref applicationId) const;
+    void RemoveAccess(hstring_view applicationId) const;
     Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus() const;
-    Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus(hstring_ref applicationId) const;
+    Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus(hstring_view applicationId) const;
 };
 
 template <typename D>
@@ -543,11 +543,11 @@ struct WINRT_EBO impl_IBackgroundTask
 template <typename D>
 struct WINRT_EBO impl_IBackgroundTaskBuilder
 {
-    void TaskEntryPoint(hstring_ref value) const;
+    void TaskEntryPoint(hstring_view value) const;
     hstring TaskEntryPoint() const;
     void SetTrigger(const Windows::ApplicationModel::Background::IBackgroundTrigger & trigger) const;
     void AddCondition(const Windows::ApplicationModel::Background::IBackgroundCondition & condition) const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     hstring Name() const;
     Windows::ApplicationModel::Background::BackgroundTaskRegistration Register() const;
 };
@@ -724,7 +724,7 @@ struct WINRT_EBO impl_IDeviceConnectionChangeTrigger
 template <typename D>
 struct WINRT_EBO impl_IDeviceConnectionChangeTriggerStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(hstring_view deviceId) const;
 };
 
 template <typename D>
@@ -737,21 +737,21 @@ struct WINRT_EBO impl_IDeviceManufacturerNotificationTrigger
 template <typename D>
 struct WINRT_EBO impl_IDeviceManufacturerNotificationTriggerFactory
 {
-    Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger Create(hstring_ref triggerQualifier, bool oneShot) const;
+    Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger Create(hstring_view triggerQualifier, bool oneShot) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDeviceServicingTrigger
 {
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration, hstring_ref arguments) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_view deviceId, const Windows::Foundation::TimeSpan & expectedDuration) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_view deviceId, const Windows::Foundation::TimeSpan & expectedDuration, hstring_view arguments) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDeviceUseTrigger
 {
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, hstring_ref arguments) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_view deviceId) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_view deviceId, hstring_view arguments) const;
 };
 
 template <typename D>
@@ -822,13 +822,13 @@ struct WINRT_EBO impl_INetworkOperatorNotificationTrigger
 template <typename D>
 struct WINRT_EBO impl_INetworkOperatorNotificationTriggerFactory
 {
-    Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger Create(hstring_ref networkAccountId) const;
+    Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger Create(hstring_view networkAccountId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPushNotificationTriggerFactory
 {
-    Windows::ApplicationModel::Background::PushNotificationTrigger Create(hstring_ref applicationId) const;
+    Windows::ApplicationModel::Background::PushNotificationTrigger Create(hstring_view applicationId) const;
 };
 
 template <typename D>
@@ -930,13 +930,13 @@ struct WINRT_EBO impl_ITimeTriggerFactory
 template <typename D>
 struct WINRT_EBO impl_IToastNotificationActionTriggerFactory
 {
-    Windows::ApplicationModel::Background::ToastNotificationActionTrigger Create(hstring_ref applicationId) const;
+    Windows::ApplicationModel::Background::ToastNotificationActionTrigger Create(hstring_view applicationId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IToastNotificationHistoryChangedTriggerFactory
 {
-    Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger Create(hstring_ref applicationId) const;
+    Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger Create(hstring_view applicationId) const;
 };
 
 template <typename D>

@@ -26,8 +26,8 @@ struct WINRT_EBO OnlineIdServiceTicketRequest :
     Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest
 {
     OnlineIdServiceTicketRequest(std::nullptr_t) noexcept {}
-    OnlineIdServiceTicketRequest(hstring_ref service, hstring_ref policy);
-    OnlineIdServiceTicketRequest(hstring_ref service);
+    OnlineIdServiceTicketRequest(hstring_view service, hstring_view policy);
+    OnlineIdServiceTicketRequest(hstring_view service);
 };
 
 struct WINRT_EBO SignOutUserOperation :

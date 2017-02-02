@@ -12,7 +12,7 @@ namespace Windows::Data::Html {
 struct HtmlUtilities
 {
     HtmlUtilities() = delete;
-    static hstring ConvertToText(hstring_ref html);
+    static hstring ConvertToText(hstring_view html);
 };
 
 }

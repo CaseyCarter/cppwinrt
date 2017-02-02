@@ -394,14 +394,14 @@ template <typename D> hstring impl_II2cDeviceStatics<D>::GetDeviceSelector() con
     return value;
 }
 
-template <typename D> hstring impl_II2cDeviceStatics<D>::GetDeviceSelector(hstring_ref friendlyName) const
+template <typename D> hstring impl_II2cDeviceStatics<D>::GetDeviceSelector(hstring_view friendlyName) const
 {
     hstring value;
     check_hresult(WINRT_SHIM(II2cDeviceStatics)->abi_GetDeviceSelectorFromFriendlyName(get(friendlyName), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> impl_II2cDeviceStatics<D>::FromIdAsync(hstring_ref deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> impl_II2cDeviceStatics<D>::FromIdAsync(hstring_view deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> operation;
     check_hresult(WINRT_SHIM(II2cDeviceStatics)->abi_FromIdAsync(get(deviceId), get(settings), put(operation)));
@@ -498,12 +498,12 @@ inline hstring I2cDevice::GetDeviceSelector()
     return get_activation_factory<I2cDevice, II2cDeviceStatics>().GetDeviceSelector();
 }
 
-inline hstring I2cDevice::GetDeviceSelector(hstring_ref friendlyName)
+inline hstring I2cDevice::GetDeviceSelector(hstring_view friendlyName)
 {
     return get_activation_factory<I2cDevice, II2cDeviceStatics>().GetDeviceSelector(friendlyName);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> I2cDevice::FromIdAsync(hstring_ref deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> I2cDevice::FromIdAsync(hstring_view deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings)
 {
     return get_activation_factory<I2cDevice, II2cDeviceStatics>().FromIdAsync(deviceId, settings);
 }

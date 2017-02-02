@@ -982,7 +982,7 @@ struct WINRT_EBO impl_IFontFamily
 template <typename D>
 struct WINRT_EBO impl_IFontFamilyFactory
 {
-    Windows::UI::Xaml::Media::FontFamily CreateInstanceWithName(hstring_ref familyName, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::FontFamily CreateInstanceWithName(hstring_view familyName, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -1535,9 +1535,9 @@ struct WINRT_EBO impl_ITimelineMarker
     Windows::Foundation::TimeSpan Time() const;
     void Time(const Windows::Foundation::TimeSpan & value) const;
     hstring Type() const;
-    void Type(hstring_ref value) const;
+    void Type(hstring_view value) const;
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
 };
 
 template <typename D>

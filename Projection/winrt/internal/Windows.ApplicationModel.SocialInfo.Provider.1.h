@@ -83,10 +83,10 @@ struct WINRT_EBO impl_ISocialFeedUpdater
 template <typename D>
 struct WINRT_EBO impl_ISocialInfoProviderManagerStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_ref ownerRemoteId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> CreateDashboardItemUpdaterAsync(hstring_ref ownerRemoteId) const;
-    void UpdateBadgeCountValue(hstring_ref itemRemoteId, int32_t newCount) const;
-    void ReportNewContentAvailable(hstring_ref contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_view ownerRemoteId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> CreateDashboardItemUpdaterAsync(hstring_view ownerRemoteId) const;
+    void UpdateBadgeCountValue(hstring_view itemRemoteId, int32_t newCount) const;
+    void ReportNewContentAvailable(hstring_view contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind) const;
     Windows::Foundation::IAsyncOperation<bool> ProvisionAsync() const;
     Windows::Foundation::IAsyncAction DeprovisionAsync() const;
 };

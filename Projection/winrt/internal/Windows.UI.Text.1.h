@@ -319,10 +319,10 @@ struct WINRT_EBO impl_ITextCharacterFormat
     float Kerning() const;
     void Kerning(float value) const;
     hstring LanguageTag() const;
-    void LanguageTag(hstring_ref value) const;
+    void LanguageTag(hstring_view value) const;
     Windows::UI::Text::LinkType LinkType() const;
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     Windows::UI::Text::FormatEffect Outline() const;
     void Outline(Windows::UI::Text::FormatEffect value) const;
     float Position() const;
@@ -393,7 +393,7 @@ struct WINRT_EBO impl_ITextDocument
     void SaveToStream(Windows::UI::Text::TextGetOptions options, const Windows::Storage::Streams::IRandomAccessStream & value) const;
     void SetDefaultCharacterFormat(const Windows::UI::Text::ITextCharacterFormat & value) const;
     void SetDefaultParagraphFormat(const Windows::UI::Text::ITextParagraphFormat & value) const;
-    void SetText(Windows::UI::Text::TextSetOptions options, hstring_ref value) const;
+    void SetText(Windows::UI::Text::TextSetOptions options, hstring_view value) const;
     void Undo() const;
 };
 
@@ -465,14 +465,14 @@ struct WINRT_EBO impl_ITextRange
     void Gravity(Windows::UI::Text::RangeGravity value) const;
     int32_t Length() const;
     hstring Link() const;
-    void Link(hstring_ref value) const;
+    void Link(hstring_view value) const;
     Windows::UI::Text::ITextParagraphFormat ParagraphFormat() const;
     void ParagraphFormat(const Windows::UI::Text::ITextParagraphFormat & value) const;
     int32_t StartPosition() const;
     void StartPosition(int32_t value) const;
     int32_t StoryLength() const;
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     bool CanPaste(int32_t format) const;
     void ChangeCase(Windows::UI::Text::LetterCase value) const;
     void Collapse(bool value) const;
@@ -481,7 +481,7 @@ struct WINRT_EBO impl_ITextRange
     int32_t Delete(Windows::UI::Text::TextRangeUnit unit, int32_t count) const;
     int32_t EndOf(Windows::UI::Text::TextRangeUnit unit, bool extend) const;
     int32_t Expand(Windows::UI::Text::TextRangeUnit unit) const;
-    int32_t FindText(hstring_ref value, int32_t scanLength, Windows::UI::Text::FindOptions options) const;
+    int32_t FindText(hstring_view value, int32_t scanLength, Windows::UI::Text::FindOptions options) const;
     void GetCharacterUtf32(uint32_t & value, int32_t offset) const;
     Windows::UI::Text::ITextRange GetClone() const;
     int32_t GetIndex(Windows::UI::Text::TextRangeUnit unit) const;
@@ -490,7 +490,7 @@ struct WINRT_EBO impl_ITextRange
     void GetText(Windows::UI::Text::TextGetOptions options, hstring & value) const;
     void GetTextViaStream(Windows::UI::Text::TextGetOptions options, const Windows::Storage::Streams::IRandomAccessStream & value) const;
     bool InRange(const Windows::UI::Text::ITextRange & range) const;
-    void InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, hstring_ref alternateText, const Windows::Storage::Streams::IRandomAccessStream & value) const;
+    void InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, hstring_view alternateText, const Windows::Storage::Streams::IRandomAccessStream & value) const;
     bool InStory(const Windows::UI::Text::ITextRange & range) const;
     bool IsEqual(const Windows::UI::Text::ITextRange & range) const;
     int32_t Move(Windows::UI::Text::TextRangeUnit unit, int32_t count) const;
@@ -502,7 +502,7 @@ struct WINRT_EBO impl_ITextRange
     void SetIndex(Windows::UI::Text::TextRangeUnit unit, int32_t index, bool extend) const;
     void SetPoint(const Windows::Foundation::Point & point, Windows::UI::Text::PointOptions options, bool extend) const;
     void SetRange(int32_t startPosition, int32_t endPosition) const;
-    void SetText(Windows::UI::Text::TextSetOptions options, hstring_ref value) const;
+    void SetText(Windows::UI::Text::TextSetOptions options, hstring_view value) const;
     void SetTextViaStream(Windows::UI::Text::TextSetOptions options, const Windows::Storage::Streams::IRandomAccessStream & value) const;
     int32_t StartOf(Windows::UI::Text::TextRangeUnit unit, bool extend) const;
 };
@@ -519,7 +519,7 @@ struct WINRT_EBO impl_ITextSelection
     int32_t MoveLeft(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend) const;
     int32_t MoveRight(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend) const;
     int32_t MoveUp(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend) const;
-    void TypeText(hstring_ref value) const;
+    void TypeText(hstring_view value) const;
 };
 
 }

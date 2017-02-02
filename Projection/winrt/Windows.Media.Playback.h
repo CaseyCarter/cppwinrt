@@ -4841,7 +4841,7 @@ template <typename D> Windows::Media::Playback::PlaybackMediaMarker impl_IPlayba
     return marker;
 }
 
-template <typename D> Windows::Media::Playback::PlaybackMediaMarker impl_IPlaybackMediaMarkerFactory<D>::Create(const Windows::Foundation::TimeSpan & value, hstring_ref mediaMarketType, hstring_ref text) const
+template <typename D> Windows::Media::Playback::PlaybackMediaMarker impl_IPlaybackMediaMarkerFactory<D>::Create(const Windows::Foundation::TimeSpan & value, hstring_view mediaMarketType, hstring_view text) const
 {
     Windows::Media::Playback::PlaybackMediaMarker marker { nullptr };
     check_hresult(WINRT_SHIM(IPlaybackMediaMarkerFactory)->abi_Create(get(value), get(mediaMarketType), get(text), put(marker)));
@@ -5727,7 +5727,7 @@ template <typename D> void impl_IMediaPlayerSource2<D>::Source(const Windows::Me
     check_hresult(WINRT_SHIM(IMediaPlayerSource2)->put_Source(get(value)));
 }
 
-template <typename D> void impl_IMediaPlayerEffects<D>::AddAudioEffect(hstring_ref activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & configuration) const
+template <typename D> void impl_IMediaPlayerEffects<D>::AddAudioEffect(hstring_view activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
     check_hresult(WINRT_SHIM(IMediaPlayerEffects)->abi_AddAudioEffect(get(activatableClassId), effectOptional, get(configuration)));
 }
@@ -5737,7 +5737,7 @@ template <typename D> void impl_IMediaPlayerEffects<D>::RemoveAllEffects() const
     check_hresult(WINRT_SHIM(IMediaPlayerEffects)->abi_RemoveAllEffects());
 }
 
-template <typename D> void impl_IMediaPlayerEffects2<D>::AddVideoEffect(hstring_ref activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const
+template <typename D> void impl_IMediaPlayerEffects2<D>::AddVideoEffect(hstring_view activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const
 {
     check_hresult(WINRT_SHIM(IMediaPlayerEffects2)->abi_AddVideoEffect(get(activatableClassId), effectOptional, get(effectConfiguration)));
 }
@@ -7152,7 +7152,7 @@ inline PlaybackMediaMarker::PlaybackMediaMarker(const Windows::Foundation::TimeS
     PlaybackMediaMarker(get_activation_factory<PlaybackMediaMarker, IPlaybackMediaMarkerFactory>().CreateFromTime(value))
 {}
 
-inline PlaybackMediaMarker::PlaybackMediaMarker(const Windows::Foundation::TimeSpan & value, hstring_ref mediaMarketType, hstring_ref text) :
+inline PlaybackMediaMarker::PlaybackMediaMarker(const Windows::Foundation::TimeSpan & value, hstring_view mediaMarketType, hstring_view text) :
     PlaybackMediaMarker(get_activation_factory<PlaybackMediaMarker, IPlaybackMediaMarkerFactory>().Create(value, mediaMarketType, text))
 {}
 

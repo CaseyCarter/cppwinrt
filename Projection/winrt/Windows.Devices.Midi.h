@@ -1157,7 +1157,7 @@ template <typename D> Windows::Devices::Midi::IMidiMessage impl_IMidiMessageRece
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> impl_IMidiInPortStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> impl_IMidiInPortStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> value;
     check_hresult(WINRT_SHIM(IMidiInPortStatics)->abi_FromIdAsync(get(deviceId), put(value)));
@@ -1171,7 +1171,7 @@ template <typename D> hstring impl_IMidiInPortStatics<D>::GetDeviceSelector() co
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> impl_IMidiOutPortStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> impl_IMidiOutPortStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> value;
     check_hresult(WINRT_SHIM(IMidiOutPortStatics)->abi_FromIdAsync(get(deviceId), put(value)));
@@ -1282,7 +1282,7 @@ inline MidiControlChangeMessage::MidiControlChangeMessage(uint8_t channel, uint8
     MidiControlChangeMessage(get_activation_factory<MidiControlChangeMessage, IMidiControlChangeMessageFactory>().CreateMidiControlChangeMessage(channel, controller, controlValue))
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> MidiInPort::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> MidiInPort::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<MidiInPort, IMidiInPortStatics>().FromIdAsync(deviceId);
 }
@@ -1300,7 +1300,7 @@ inline MidiNoteOnMessage::MidiNoteOnMessage(uint8_t channel, uint8_t note, uint8
     MidiNoteOnMessage(get_activation_factory<MidiNoteOnMessage, IMidiNoteOnMessageFactory>().CreateMidiNoteOnMessage(channel, note, velocity))
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> MidiOutPort::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> MidiOutPort::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<MidiOutPort, IMidiOutPortStatics>().FromIdAsync(deviceId);
 }

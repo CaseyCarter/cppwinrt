@@ -101,11 +101,11 @@ struct PeerFinder
     static bool AllowWiFiDirect();
     static void AllowWiFiDirect(bool value);
     static hstring DisplayName();
-    static void DisplayName(hstring_ref value);
+    static void DisplayName(hstring_view value);
     static Windows::Networking::Proximity::PeerDiscoveryTypes SupportedDiscoveryTypes();
     static Windows::Foundation::Collections::IMap<hstring, hstring> AlternateIdentities();
     static void Start();
-    static void Start(hstring_ref peerMessage);
+    static void Start(hstring_view peerMessage);
     static void Stop();
     static event_token TriggeredConnectionStateChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler);
     using TriggeredConnectionStateChanged_revoker = factory_event_revoker<IPeerFinderStatics>;
@@ -143,7 +143,7 @@ struct WINRT_EBO ProximityDevice :
     ProximityDevice(std::nullptr_t) noexcept {}
     static hstring GetDeviceSelector();
     static Windows::Networking::Proximity::ProximityDevice GetDefault();
-    static Windows::Networking::Proximity::ProximityDevice FromId(hstring_ref deviceId);
+    static Windows::Networking::Proximity::ProximityDevice FromId(hstring_view deviceId);
 };
 
 struct WINRT_EBO ProximityMessage :

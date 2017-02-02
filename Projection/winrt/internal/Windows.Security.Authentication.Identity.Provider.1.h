@@ -102,7 +102,7 @@ struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthentication
     Windows::Storage::Streams::IBuffer DeviceNonce() const;
     Windows::Storage::Streams::IBuffer DeviceConfigurationData() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorFinishAuthenticationStatus> FinishAuthenticationAsync(const Windows::Storage::Streams::IBuffer & deviceHmac, const Windows::Storage::Streams::IBuffer & sessionHmac) const;
-    Windows::Foundation::IAsyncAction AbortAuthenticationAsync(hstring_ref errorLogMessage) const;
+    Windows::Foundation::IAsyncAction AbortAuthenticationAsync(hstring_view errorLogMessage) const;
 };
 
 template <typename D>
@@ -129,8 +129,8 @@ struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationStageInfo
 template <typename D>
 struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationStatics
 {
-    Windows::Foundation::IAsyncAction ShowNotificationMessageAsync(hstring_ref deviceName, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationMessage message) const;
-    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult> StartAuthenticationAsync(hstring_ref deviceId, const Windows::Storage::Streams::IBuffer & serviceAuthenticationNonce) const;
+    Windows::Foundation::IAsyncAction ShowNotificationMessageAsync(hstring_view deviceName, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationMessage message) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult> StartAuthenticationAsync(hstring_view deviceId, const Windows::Storage::Streams::IBuffer & serviceAuthenticationNonce) const;
     event_token AuthenticationStageChanged(const Windows::Foundation::EventHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs> & handler) const;
     using AuthenticationStageChanged_revoker = event_revoker<ISecondaryAuthenticationFactorAuthenticationStatics>;
     AuthenticationStageChanged_revoker AuthenticationStageChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs> & handler) const;
@@ -151,7 +151,7 @@ template <typename D>
 struct WINRT_EBO impl_ISecondaryAuthenticationFactorRegistration
 {
     Windows::Foundation::IAsyncAction FinishRegisteringDeviceAsync(const Windows::Storage::Streams::IBuffer & deviceConfigurationData) const;
-    Windows::Foundation::IAsyncAction AbortRegisteringDeviceAsync(hstring_ref errorLogMessage) const;
+    Windows::Foundation::IAsyncAction AbortRegisteringDeviceAsync(hstring_view errorLogMessage) const;
 };
 
 template <typename D>
@@ -164,10 +164,10 @@ struct WINRT_EBO impl_ISecondaryAuthenticationFactorRegistrationResult
 template <typename D>
 struct WINRT_EBO impl_ISecondaryAuthenticationFactorRegistrationStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult> RequestStartRegisteringDeviceAsync(hstring_ref deviceId, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceCapabilities capabilities, hstring_ref deviceFriendlyName, hstring_ref deviceModelNumber, const Windows::Storage::Streams::IBuffer & deviceKey, const Windows::Storage::Streams::IBuffer & mutualAuthenticationKey) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult> RequestStartRegisteringDeviceAsync(hstring_view deviceId, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceCapabilities capabilities, hstring_view deviceFriendlyName, hstring_view deviceModelNumber, const Windows::Storage::Streams::IBuffer & deviceKey, const Windows::Storage::Streams::IBuffer & mutualAuthenticationKey) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo>> FindAllRegisteredDeviceInfoAsync(Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceFindScope queryType) const;
-    Windows::Foundation::IAsyncAction UnregisterDeviceAsync(hstring_ref deviceId) const;
-    Windows::Foundation::IAsyncAction UpdateDeviceConfigurationDataAsync(hstring_ref deviceId, const Windows::Storage::Streams::IBuffer & deviceConfigurationData) const;
+    Windows::Foundation::IAsyncAction UnregisterDeviceAsync(hstring_view deviceId) const;
+    Windows::Foundation::IAsyncAction UpdateDeviceConfigurationDataAsync(hstring_view deviceId, const Windows::Storage::Streams::IBuffer & deviceConfigurationData) const;
 };
 
 }

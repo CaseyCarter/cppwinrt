@@ -13,7 +13,7 @@ struct WINRT_EBO Print3DDevice :
     Windows::Devices::Printers::IPrint3DDevice
 {
     Print3DDevice(std::nullptr_t) noexcept {}
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> FromIdAsync(hstring_ref deviceId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> FromIdAsync(hstring_view deviceId);
     static hstring GetDeviceSelector();
 };
 

@@ -2587,7 +2587,7 @@ template <typename D> hstring impl_ICellularApnContext<D>::ProviderId() const
     return value;
 }
 
-template <typename D> void impl_ICellularApnContext<D>::ProviderId(hstring_ref value) const
+template <typename D> void impl_ICellularApnContext<D>::ProviderId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICellularApnContext)->put_ProviderId(get(value)));
 }
@@ -2599,7 +2599,7 @@ template <typename D> hstring impl_ICellularApnContext<D>::AccessPointName() con
     return value;
 }
 
-template <typename D> void impl_ICellularApnContext<D>::AccessPointName(hstring_ref value) const
+template <typename D> void impl_ICellularApnContext<D>::AccessPointName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICellularApnContext)->put_AccessPointName(get(value)));
 }
@@ -2611,7 +2611,7 @@ template <typename D> hstring impl_ICellularApnContext<D>::UserName() const
     return value;
 }
 
-template <typename D> void impl_ICellularApnContext<D>::UserName(hstring_ref value) const
+template <typename D> void impl_ICellularApnContext<D>::UserName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICellularApnContext)->put_UserName(get(value)));
 }
@@ -2623,7 +2623,7 @@ template <typename D> hstring impl_ICellularApnContext<D>::Password() const
     return value;
 }
 
-template <typename D> void impl_ICellularApnContext<D>::Password(hstring_ref value) const
+template <typename D> void impl_ICellularApnContext<D>::Password(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ICellularApnContext)->put_Password(get(value)));
 }

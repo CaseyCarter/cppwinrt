@@ -725,14 +725,14 @@ template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccoun
     return value;
 }
 
-template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::Create(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId) const
+template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::Create(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope, hstring_view clientId) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequest webTokenRequest { nullptr };
     check_hresult(WINRT_SHIM(IWebTokenRequestFactory)->abi_Create(get(provider), get(scope), get(clientId), put(webTokenRequest)));
     return webTokenRequest;
 }
 
-template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::CreateWithPromptType(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) const
+template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::CreateWithPromptType(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope, hstring_view clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequest webTokenRequest { nullptr };
     check_hresult(WINRT_SHIM(IWebTokenRequestFactory)->abi_CreateWithPromptType(get(provider), get(scope), get(clientId), promptType, put(webTokenRequest)));
@@ -746,7 +746,7 @@ template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequ
     return webTokenRequest;
 }
 
-template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::CreateWithScope(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope) const
+template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::CreateWithScope(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequest webTokenRequest { nullptr };
     check_hresult(WINRT_SHIM(IWebTokenRequestFactory)->abi_CreateWithScope(get(provider), get(scope), put(webTokenRequest)));
@@ -781,28 +781,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Au
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAuthenticationCoreManagerStatics<D>::FindAccountAsync(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref webAccountId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAuthenticationCoreManagerStatics<D>::FindAccountAsync(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view webAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> asyncInfo;
     check_hresult(WINRT_SHIM(IWebAuthenticationCoreManagerStatics)->abi_FindAccountAsync(get(provider), get(webAccountId), put(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> impl_IWebAuthenticationCoreManagerStatics<D>::FindAccountProviderAsync(hstring_ref webAccountProviderId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> impl_IWebAuthenticationCoreManagerStatics<D>::FindAccountProviderAsync(hstring_view webAccountProviderId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> asyncInfo;
     check_hresult(WINRT_SHIM(IWebAuthenticationCoreManagerStatics)->abi_FindAccountProviderAsync(get(webAccountProviderId), put(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> impl_IWebAuthenticationCoreManagerStatics<D>::FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> impl_IWebAuthenticationCoreManagerStatics<D>::FindAccountProviderAsync(hstring_view webAccountProviderId, hstring_view authority) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> asyncInfo;
     check_hresult(WINRT_SHIM(IWebAuthenticationCoreManagerStatics)->abi_FindAccountProviderWithAuthorityAsync(get(webAccountProviderId), get(authority), put(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> impl_IWebAuthenticationCoreManagerStatics2<D>::FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority, const Windows::System::User & user) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> impl_IWebAuthenticationCoreManagerStatics2<D>::FindAccountProviderAsync(hstring_view webAccountProviderId, hstring_view authority, const Windows::System::User & user) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> asyncInfo;
     check_hresult(WINRT_SHIM(IWebAuthenticationCoreManagerStatics2)->abi_FindAccountProviderWithAuthorityForUserAsync(get(webAccountProviderId), get(authority), get(user), put(asyncInfo)));
@@ -888,7 +888,7 @@ template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> i
     return value;
 }
 
-template <typename D> Windows::Security::Authentication::Web::Core::WebProviderError impl_IWebProviderErrorFactory<D>::Create(uint32_t errorCode, hstring_ref errorMessage) const
+template <typename D> Windows::Security::Authentication::Web::Core::WebProviderError impl_IWebProviderErrorFactory<D>::Create(uint32_t errorCode, hstring_view errorMessage) const
 {
     Windows::Security::Authentication::Web::Core::WebProviderError webProviderError { nullptr };
     check_hresult(WINRT_SHIM(IWebProviderErrorFactory)->abi_Create(errorCode, get(errorMessage), put(webProviderError)));
@@ -951,21 +951,21 @@ template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> i
     return value;
 }
 
-template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebTokenResponseFactory<D>::CreateWithToken(hstring_ref token) const
+template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebTokenResponseFactory<D>::CreateWithToken(hstring_view token) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenResponse webTokenResponse { nullptr };
     check_hresult(WINRT_SHIM(IWebTokenResponseFactory)->abi_CreateWithToken(get(token), put(webTokenResponse)));
     return webTokenResponse;
 }
 
-template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebTokenResponseFactory<D>::CreateWithTokenAndAccount(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount) const
+template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebTokenResponseFactory<D>::CreateWithTokenAndAccount(hstring_view token, const Windows::Security::Credentials::WebAccount & webAccount) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenResponse webTokenResponse { nullptr };
     check_hresult(WINRT_SHIM(IWebTokenResponseFactory)->abi_CreateWithTokenAndAccount(get(token), get(webAccount), put(webTokenResponse)));
     return webTokenResponse;
 }
 
-template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebTokenResponseFactory<D>::CreateWithTokenAccountAndError(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Core::WebProviderError & error) const
+template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebTokenResponseFactory<D>::CreateWithTokenAccountAndError(hstring_view token, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Core::WebProviderError & error) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenResponse webTokenResponse { nullptr };
     check_hresult(WINRT_SHIM(IWebTokenResponseFactory)->abi_CreateWithTokenAccountAndError(get(token), get(webAccount), get(error), put(webTokenResponse)));
@@ -992,22 +992,22 @@ inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::W
     return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().RequestTokenAsync(request, webAccount);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAuthenticationCoreManager::FindAccountAsync(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref webAccountId)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAuthenticationCoreManager::FindAccountAsync(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view webAccountId)
 {
     return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().FindAccountAsync(provider, webAccountId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> WebAuthenticationCoreManager::FindAccountProviderAsync(hstring_ref webAccountProviderId)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> WebAuthenticationCoreManager::FindAccountProviderAsync(hstring_view webAccountProviderId)
 {
     return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().FindAccountProviderAsync(webAccountProviderId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> WebAuthenticationCoreManager::FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> WebAuthenticationCoreManager::FindAccountProviderAsync(hstring_view webAccountProviderId, hstring_view authority)
 {
     return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics>().FindAccountProviderAsync(webAccountProviderId, authority);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> WebAuthenticationCoreManager::FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority, const Windows::System::User & user)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> WebAuthenticationCoreManager::FindAccountProviderAsync(hstring_view webAccountProviderId, hstring_view authority, const Windows::System::User & user)
 {
     return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics2>().FindAccountProviderAsync(webAccountProviderId, authority, user);
 }
@@ -1017,15 +1017,15 @@ inline Windows::Security::Authentication::Web::Core::WebAccountMonitor WebAuthen
     return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics3>().CreateWebAccountMonitor(webAccounts);
 }
 
-inline WebProviderError::WebProviderError(uint32_t errorCode, hstring_ref errorMessage) :
+inline WebProviderError::WebProviderError(uint32_t errorCode, hstring_view errorMessage) :
     WebProviderError(get_activation_factory<WebProviderError, IWebProviderErrorFactory>().Create(errorCode, errorMessage))
 {}
 
-inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId) :
+inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope, hstring_view clientId) :
     WebTokenRequest(get_activation_factory<WebTokenRequest, IWebTokenRequestFactory>().Create(provider, scope, clientId))
 {}
 
-inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) :
+inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope, hstring_view clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) :
     WebTokenRequest(get_activation_factory<WebTokenRequest, IWebTokenRequestFactory>().CreateWithPromptType(provider, scope, clientId, promptType))
 {}
 
@@ -1033,7 +1033,7 @@ inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::We
     WebTokenRequest(get_activation_factory<WebTokenRequest, IWebTokenRequestFactory>().CreateWithProvider(provider))
 {}
 
-inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope) :
+inline WebTokenRequest::WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope) :
     WebTokenRequest(get_activation_factory<WebTokenRequest, IWebTokenRequestFactory>().CreateWithScope(provider, scope))
 {}
 
@@ -1041,15 +1041,15 @@ inline WebTokenResponse::WebTokenResponse() :
     WebTokenResponse(activate_instance<WebTokenResponse>())
 {}
 
-inline WebTokenResponse::WebTokenResponse(hstring_ref token) :
+inline WebTokenResponse::WebTokenResponse(hstring_view token) :
     WebTokenResponse(get_activation_factory<WebTokenResponse, IWebTokenResponseFactory>().CreateWithToken(token))
 {}
 
-inline WebTokenResponse::WebTokenResponse(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount) :
+inline WebTokenResponse::WebTokenResponse(hstring_view token, const Windows::Security::Credentials::WebAccount & webAccount) :
     WebTokenResponse(get_activation_factory<WebTokenResponse, IWebTokenResponseFactory>().CreateWithTokenAndAccount(token, webAccount))
 {}
 
-inline WebTokenResponse::WebTokenResponse(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Core::WebProviderError & error) :
+inline WebTokenResponse::WebTokenResponse(hstring_view token, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Core::WebProviderError & error) :
     WebTokenResponse(get_activation_factory<WebTokenResponse, IWebTokenResponseFactory>().CreateWithTokenAccountAndError(token, webAccount, error))
 {}
 

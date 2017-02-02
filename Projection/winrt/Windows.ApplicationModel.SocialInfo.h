@@ -960,7 +960,7 @@ template <typename D> hstring impl_ISocialFeedContent<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_ISocialFeedContent<D>::Title(hstring_ref value) const
+template <typename D> void impl_ISocialFeedContent<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISocialFeedContent)->put_Title(get(value)));
 }
@@ -972,7 +972,7 @@ template <typename D> hstring impl_ISocialFeedContent<D>::Message() const
     return value;
 }
 
-template <typename D> void impl_ISocialFeedContent<D>::Message(hstring_ref value) const
+template <typename D> void impl_ISocialFeedContent<D>::Message(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISocialFeedContent)->put_Message(get(value)));
 }
@@ -996,7 +996,7 @@ template <typename D> hstring impl_ISocialUserInfo<D>::DisplayName() const
     return value;
 }
 
-template <typename D> void impl_ISocialUserInfo<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_ISocialUserInfo<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISocialUserInfo)->put_DisplayName(get(value)));
 }
@@ -1008,7 +1008,7 @@ template <typename D> hstring impl_ISocialUserInfo<D>::UserName() const
     return value;
 }
 
-template <typename D> void impl_ISocialUserInfo<D>::UserName(hstring_ref value) const
+template <typename D> void impl_ISocialUserInfo<D>::UserName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISocialUserInfo)->put_UserName(get(value)));
 }
@@ -1020,7 +1020,7 @@ template <typename D> hstring impl_ISocialUserInfo<D>::RemoteId() const
     return value;
 }
 
-template <typename D> void impl_ISocialUserInfo<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_ISocialUserInfo<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISocialUserInfo)->put_RemoteId(get(value)));
 }
@@ -1132,7 +1132,7 @@ template <typename D> hstring impl_ISocialFeedItem<D>::RemoteId() const
     return value;
 }
 
-template <typename D> void impl_ISocialFeedItem<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_ISocialFeedItem<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISocialFeedItem)->put_RemoteId(get(value)));
 }

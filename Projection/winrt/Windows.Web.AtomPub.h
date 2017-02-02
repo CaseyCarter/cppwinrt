@@ -394,21 +394,21 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::CreateResourceAsync(const Windows::Foundation::Uri & uri, hstring_ref description, const Windows::Web::Syndication::SyndicationItem & item) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::CreateResourceAsync(const Windows::Foundation::Uri & uri, hstring_view description, const Windows::Web::Syndication::SyndicationItem & item) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> operation;
     check_hresult(WINRT_SHIM(IAtomPubClient)->abi_CreateResourceAsync(get(uri), get(description), get(item), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::CreateMediaResourceAsync(const Windows::Foundation::Uri & uri, hstring_ref mediaType, hstring_ref description, const Windows::Storage::Streams::IInputStream & mediaStream) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::CreateMediaResourceAsync(const Windows::Foundation::Uri & uri, hstring_view mediaType, hstring_view description, const Windows::Storage::Streams::IInputStream & mediaStream) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> operation;
     check_hresult(WINRT_SHIM(IAtomPubClient)->abi_CreateMediaResourceAsync(get(uri), get(mediaType), get(description), get(mediaStream), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::UpdateMediaResourceAsync(const Windows::Foundation::Uri & uri, hstring_ref mediaType, const Windows::Storage::Streams::IInputStream & mediaStream) const
+template <typename D> Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::UpdateMediaResourceAsync(const Windows::Foundation::Uri & uri, hstring_view mediaType, const Windows::Storage::Streams::IInputStream & mediaStream) const
 {
     Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> operation;
     check_hresult(WINRT_SHIM(IAtomPubClient)->abi_UpdateMediaResourceAsync(get(uri), get(mediaType), get(mediaStream), put(operation)));

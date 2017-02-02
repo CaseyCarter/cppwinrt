@@ -4943,7 +4943,7 @@ template <typename D> bool impl_IMediaStreamDescriptor<D>::IsSelected() const
     return selected;
 }
 
-template <typename D> void impl_IMediaStreamDescriptor<D>::Name(hstring_ref value) const
+template <typename D> void impl_IMediaStreamDescriptor<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMediaStreamDescriptor)->put_Name(get(value)));
 }
@@ -4955,7 +4955,7 @@ template <typename D> hstring impl_IMediaStreamDescriptor<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IMediaStreamDescriptor<D>::Language(hstring_ref value) const
+template <typename D> void impl_IMediaStreamDescriptor<D>::Language(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMediaStreamDescriptor)->put_Language(get(value)));
 }
@@ -5494,7 +5494,7 @@ template <typename D> Windows::Foundation::TimeSpan impl_IMediaStreamSourceSampl
     return value;
 }
 
-template <typename D> bool impl_IMseStreamSourceStatics<D>::IsContentTypeSupported(hstring_ref contentType) const
+template <typename D> bool impl_IMseStreamSourceStatics<D>::IsContentTypeSupported(hstring_view contentType) const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IMseStreamSourceStatics)->abi_IsContentTypeSupported(get(contentType), &value));
@@ -5585,7 +5585,7 @@ template <typename D> void impl_IMseStreamSource<D>::Duration(const Windows::Fou
     check_hresult(WINRT_SHIM(IMseStreamSource)->put_Duration(get(value)));
 }
 
-template <typename D> Windows::Media::Core::MseSourceBuffer impl_IMseStreamSource<D>::AddSourceBuffer(hstring_ref mimeType) const
+template <typename D> Windows::Media::Core::MseSourceBuffer impl_IMseStreamSource<D>::AddSourceBuffer(hstring_view mimeType) const
 {
     Windows::Media::Core::MseSourceBuffer buffer { nullptr };
     check_hresult(WINRT_SHIM(IMseStreamSource)->abi_AddSourceBuffer(get(mimeType), put(buffer)));
@@ -6083,14 +6083,14 @@ template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics
     return result;
 }
 
-template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref contentType) const
+template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view contentType) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
     check_hresult(WINRT_SHIM(IMediaSourceStatics)->abi_CreateFromStream(get(stream), get(contentType), put(result)));
     return result;
 }
 
-template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_ref contentType) const
+template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_view contentType) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
     check_hresult(WINRT_SHIM(IMediaSourceStatics)->abi_CreateFromStreamReference(get(stream), get(contentType), put(result)));
@@ -6135,7 +6135,7 @@ template <typename D> hstring impl_IMediaBinder<D>::Token() const
     return value;
 }
 
-template <typename D> void impl_IMediaBinder<D>::Token(hstring_ref value) const
+template <typename D> void impl_IMediaBinder<D>::Token(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMediaBinder)->put_Token(get(value)));
 }
@@ -6183,12 +6183,12 @@ template <typename D> void impl_IMediaBindingEventArgs<D>::SetUri(const Windows:
     check_hresult(WINRT_SHIM(IMediaBindingEventArgs)->abi_SetUri(get(uri)));
 }
 
-template <typename D> void impl_IMediaBindingEventArgs<D>::SetStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref contentType) const
+template <typename D> void impl_IMediaBindingEventArgs<D>::SetStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view contentType) const
 {
     check_hresult(WINRT_SHIM(IMediaBindingEventArgs)->abi_SetStream(get(stream), get(contentType)));
 }
 
-template <typename D> void impl_IMediaBindingEventArgs<D>::SetStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_ref contentType) const
+template <typename D> void impl_IMediaBindingEventArgs<D>::SetStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_view contentType) const
 {
     check_hresult(WINRT_SHIM(IMediaBindingEventArgs)->abi_SetStreamReference(get(stream), get(contentType)));
 }
@@ -6298,7 +6298,7 @@ template <typename D> Windows::Foundation::TimeSpan impl_IMediaCue<D>::Duration(
     return value;
 }
 
-template <typename D> void impl_IMediaCue<D>::Id(hstring_ref value) const
+template <typename D> void impl_IMediaCue<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMediaCue)->put_Id(get(value)));
 }
@@ -6348,7 +6348,7 @@ template <typename D> hstring impl_ITimedTextRegion<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_ITimedTextRegion<D>::Name(hstring_ref value) const
+template <typename D> void impl_ITimedTextRegion<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Name(get(value)));
 }
@@ -6492,7 +6492,7 @@ template <typename D> hstring impl_ITimedTextStyle<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_ITimedTextStyle<D>::Name(hstring_ref value) const
+template <typename D> void impl_ITimedTextStyle<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITimedTextStyle)->put_Name(get(value)));
 }
@@ -6504,7 +6504,7 @@ template <typename D> hstring impl_ITimedTextStyle<D>::FontFamily() const
     return value;
 }
 
-template <typename D> void impl_ITimedTextStyle<D>::FontFamily(hstring_ref value) const
+template <typename D> void impl_ITimedTextStyle<D>::FontFamily(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITimedTextStyle)->put_FontFamily(get(value)));
 }
@@ -6672,7 +6672,7 @@ template <typename D> hstring impl_ITimedTextLine<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_ITimedTextLine<D>::Text(hstring_ref value) const
+template <typename D> void impl_ITimedTextLine<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITimedTextLine)->put_Text(get(value)));
 }
@@ -6734,7 +6734,7 @@ template <typename D> Windows::Media::Core::MediaTrackKind impl_IMediaTrack<D>::
     return value;
 }
 
-template <typename D> void impl_IMediaTrack<D>::Label(hstring_ref value) const
+template <typename D> void impl_IMediaTrack<D>::Label(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMediaTrack)->put_Label(get(value)));
 }
@@ -6786,7 +6786,7 @@ template <typename D> Windows::Storage::Streams::IBuffer impl_IDataCue<D>::Data(
     return value;
 }
 
-template <typename D> Windows::Media::Core::TimedMetadataTrack impl_ITimedMetadataTrackFactory<D>::Create(hstring_ref id, hstring_ref language, Windows::Media::Core::TimedMetadataKind kind) const
+template <typename D> Windows::Media::Core::TimedMetadataTrack impl_ITimedMetadataTrackFactory<D>::Create(hstring_view id, hstring_view language, Windows::Media::Core::TimedMetadataKind kind) const
 {
     Windows::Media::Core::TimedMetadataTrack value { nullptr };
     check_hresult(WINRT_SHIM(ITimedMetadataTrackFactory)->abi_Create(get(id), get(language), kind, put(value)));
@@ -6927,14 +6927,14 @@ template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourc
     return value;
 }
 
-template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref defaultLanguage) const
+template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view defaultLanguage) const
 {
     Windows::Media::Core::TimedTextSource value { nullptr };
     check_hresult(WINRT_SHIM(ITimedTextSourceStatics)->abi_CreateFromStreamWithLanguage(get(stream), get(defaultLanguage), put(value)));
     return value;
 }
 
-template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics<D>::CreateFromUri(const Windows::Foundation::Uri & uri, hstring_ref defaultLanguage) const
+template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics<D>::CreateFromUri(const Windows::Foundation::Uri & uri, hstring_view defaultLanguage) const
 {
     Windows::Media::Core::TimedTextSource value { nullptr };
     check_hresult(WINRT_SHIM(ITimedTextSourceStatics)->abi_CreateFromUriWithLanguage(get(uri), get(defaultLanguage), put(value)));
@@ -7142,12 +7142,12 @@ inline Windows::Media::Core::MediaSource MediaSource::CreateFromStorageFile(cons
     return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromStorageFile(file);
 }
 
-inline Windows::Media::Core::MediaSource MediaSource::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref contentType)
+inline Windows::Media::Core::MediaSource MediaSource::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view contentType)
 {
     return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromStream(stream, contentType);
 }
 
-inline Windows::Media::Core::MediaSource MediaSource::CreateFromStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_ref contentType)
+inline Windows::Media::Core::MediaSource MediaSource::CreateFromStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_view contentType)
 {
     return get_activation_factory<MediaSource, IMediaSourceStatics>().CreateFromStreamReference(stream, contentType);
 }
@@ -7184,7 +7184,7 @@ inline MseStreamSource::MseStreamSource() :
     MseStreamSource(activate_instance<MseStreamSource>())
 {}
 
-inline bool MseStreamSource::IsContentTypeSupported(hstring_ref contentType)
+inline bool MseStreamSource::IsContentTypeSupported(hstring_view contentType)
 {
     return get_activation_factory<MseStreamSource, IMseStreamSourceStatics>().IsContentTypeSupported(contentType);
 }
@@ -7193,7 +7193,7 @@ inline SceneAnalysisEffectDefinition::SceneAnalysisEffectDefinition() :
     SceneAnalysisEffectDefinition(activate_instance<SceneAnalysisEffectDefinition>())
 {}
 
-inline TimedMetadataTrack::TimedMetadataTrack(hstring_ref id, hstring_ref language, Windows::Media::Core::TimedMetadataKind kind) :
+inline TimedMetadataTrack::TimedMetadataTrack(hstring_view id, hstring_view language, Windows::Media::Core::TimedMetadataKind kind) :
     TimedMetadataTrack(get_activation_factory<TimedMetadataTrack, ITimedMetadataTrackFactory>().Create(id, language, kind))
 {}
 
@@ -7219,12 +7219,12 @@ inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromUri(cons
     return get_activation_factory<TimedTextSource, ITimedTextSourceStatics>().CreateFromUri(uri);
 }
 
-inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref defaultLanguage)
+inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view defaultLanguage)
 {
     return get_activation_factory<TimedTextSource, ITimedTextSourceStatics>().CreateFromStream(stream, defaultLanguage);
 }
 
-inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromUri(const Windows::Foundation::Uri & uri, hstring_ref defaultLanguage)
+inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromUri(const Windows::Foundation::Uri & uri, hstring_view defaultLanguage)
 {
     return get_activation_factory<TimedTextSource, ITimedTextSourceStatics>().CreateFromUri(uri, defaultLanguage);
 }

@@ -207,17 +207,17 @@ struct WINRT_EBO impl_IAudioEffectDefinition
 template <typename D>
 struct WINRT_EBO impl_IAudioEffectDefinitionFactory
 {
-    Windows::Media::Effects::AudioEffectDefinition Create(hstring_ref activatableClassId) const;
-    Windows::Media::Effects::AudioEffectDefinition CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const;
+    Windows::Media::Effects::AudioEffectDefinition Create(hstring_view activatableClassId) const;
+    Windows::Media::Effects::AudioEffectDefinition CreateWithProperties(hstring_view activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IAudioEffectsManagerStatics
 {
-    Windows::Media::Effects::AudioRenderEffectsManager CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category) const;
-    Windows::Media::Effects::AudioRenderEffectsManager CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode) const;
-    Windows::Media::Effects::AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category) const;
-    Windows::Media::Effects::AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode) const;
+    Windows::Media::Effects::AudioRenderEffectsManager CreateAudioRenderEffectsManager(hstring_view deviceId, Windows::Media::Render::AudioRenderCategory category) const;
+    Windows::Media::Effects::AudioRenderEffectsManager CreateAudioRenderEffectsManager(hstring_view deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode) const;
+    Windows::Media::Effects::AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(hstring_view deviceId, Windows::Media::Capture::MediaCategory category) const;
+    Windows::Media::Effects::AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(hstring_view deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode) const;
 };
 
 template <typename D>
@@ -305,8 +305,8 @@ struct WINRT_EBO impl_IVideoCompositorDefinition
 template <typename D>
 struct WINRT_EBO impl_IVideoCompositorDefinitionFactory
 {
-    Windows::Media::Effects::VideoCompositorDefinition Create(hstring_ref activatableClassId) const;
-    Windows::Media::Effects::VideoCompositorDefinition CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const;
+    Windows::Media::Effects::VideoCompositorDefinition Create(hstring_view activatableClassId) const;
+    Windows::Media::Effects::VideoCompositorDefinition CreateWithProperties(hstring_view activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const;
 };
 
 template <typename D>
@@ -319,8 +319,8 @@ struct WINRT_EBO impl_IVideoEffectDefinition
 template <typename D>
 struct WINRT_EBO impl_IVideoEffectDefinitionFactory
 {
-    Windows::Media::Effects::VideoEffectDefinition Create(hstring_ref activatableClassId) const;
-    Windows::Media::Effects::VideoEffectDefinition CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const;
+    Windows::Media::Effects::VideoEffectDefinition Create(hstring_view activatableClassId) const;
+    Windows::Media::Effects::VideoEffectDefinition CreateWithProperties(hstring_view activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const;
 };
 
 template <typename D>

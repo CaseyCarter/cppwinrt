@@ -216,7 +216,7 @@ struct WINRT_EBO impl_IXamlBindingHelperStatics
     void SuspendRendering(const Windows::UI::Xaml::UIElement & target) const;
     void ResumeRendering(const Windows::UI::Xaml::UIElement & target) const;
     Windows::IInspectable ConvertValue(const Windows::UI::Xaml::Interop::TypeName & type, const Windows::IInspectable & value) const;
-    void SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_ref value) const;
+    void SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_view value) const;
     void SetPropertyFromBoolean(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, bool value) const;
     void SetPropertyFromChar16(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, wchar_t value) const;
     void SetPropertyFromDateTime(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::DateTime & value) const;
@@ -252,7 +252,7 @@ template <typename D>
 struct WINRT_EBO impl_IXamlMetadataProvider
 {
     Windows::UI::Xaml::Markup::IXamlType GetXamlType(const Windows::UI::Xaml::Interop::TypeName & type) const;
-    Windows::UI::Xaml::Markup::IXamlType GetXamlType(hstring_ref fullName) const;
+    Windows::UI::Xaml::Markup::IXamlType GetXamlType(hstring_view fullName) const;
     com_array<Windows::UI::Xaml::Markup::XmlnsDefinition> GetXmlnsDefinitions() const;
 };
 
@@ -264,8 +264,8 @@ struct WINRT_EBO impl_IXamlReader
 template <typename D>
 struct WINRT_EBO impl_IXamlReaderStatics
 {
-    Windows::IInspectable Load(hstring_ref xaml) const;
-    Windows::IInspectable LoadWithInitialTemplateValidation(hstring_ref xaml) const;
+    Windows::IInspectable Load(hstring_view xaml) const;
+    Windows::IInspectable LoadWithInitialTemplateValidation(hstring_view xaml) const;
 };
 
 template <typename D>
@@ -284,8 +284,8 @@ struct WINRT_EBO impl_IXamlType
     Windows::UI::Xaml::Markup::IXamlType KeyType() const;
     Windows::UI::Xaml::Interop::TypeName UnderlyingType() const;
     Windows::IInspectable ActivateInstance() const;
-    Windows::IInspectable CreateFromString(hstring_ref value) const;
-    Windows::UI::Xaml::Markup::IXamlMember GetMember(hstring_ref name) const;
+    Windows::IInspectable CreateFromString(hstring_view value) const;
+    Windows::UI::Xaml::Markup::IXamlMember GetMember(hstring_view name) const;
     void AddToVector(const Windows::IInspectable & instance, const Windows::IInspectable & value) const;
     void AddToMap(const Windows::IInspectable & instance, const Windows::IInspectable & key, const Windows::IInspectable & value) const;
     void RunInitializer() const;

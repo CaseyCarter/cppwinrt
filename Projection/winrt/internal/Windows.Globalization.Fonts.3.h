@@ -19,7 +19,7 @@ struct WINRT_EBO LanguageFontGroup :
     Windows::Globalization::Fonts::ILanguageFontGroup
 {
     LanguageFontGroup(std::nullptr_t) noexcept {}
-    LanguageFontGroup(hstring_ref languageTag);
+    LanguageFontGroup(hstring_view languageTag);
 };
 
 }

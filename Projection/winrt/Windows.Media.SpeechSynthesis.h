@@ -268,14 +268,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Med
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> impl_ISpeechSynthesizer<D>::SynthesizeTextToStreamAsync(hstring_ref text) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> impl_ISpeechSynthesizer<D>::SynthesizeTextToStreamAsync(hstring_view text) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> operation;
     check_hresult(WINRT_SHIM(ISpeechSynthesizer)->abi_SynthesizeTextToStreamAsync(get(text), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> impl_ISpeechSynthesizer<D>::SynthesizeSsmlToStreamAsync(hstring_ref Ssml) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> impl_ISpeechSynthesizer<D>::SynthesizeSsmlToStreamAsync(hstring_view Ssml) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> operation;
     check_hresult(WINRT_SHIM(ISpeechSynthesizer)->abi_SynthesizeSsmlToStreamAsync(get(Ssml), put(operation)));

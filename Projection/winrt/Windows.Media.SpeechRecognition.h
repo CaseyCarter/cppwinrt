@@ -1342,7 +1342,7 @@ template <typename D> hstring impl_ISpeechRecognizerUIOptions<D>::ExampleText() 
     return value;
 }
 
-template <typename D> void impl_ISpeechRecognizerUIOptions<D>::ExampleText(hstring_ref value) const
+template <typename D> void impl_ISpeechRecognizerUIOptions<D>::ExampleText(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISpeechRecognizerUIOptions)->put_ExampleText(get(value)));
 }
@@ -1354,7 +1354,7 @@ template <typename D> hstring impl_ISpeechRecognizerUIOptions<D>::AudiblePrompt(
     return value;
 }
 
-template <typename D> void impl_ISpeechRecognizerUIOptions<D>::AudiblePrompt(hstring_ref value) const
+template <typename D> void impl_ISpeechRecognizerUIOptions<D>::AudiblePrompt(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISpeechRecognizerUIOptions)->put_AudiblePrompt(get(value)));
 }
@@ -1458,7 +1458,7 @@ template <typename D> hstring impl_ISpeechRecognitionConstraint<D>::Tag() const
     return value;
 }
 
-template <typename D> void impl_ISpeechRecognitionConstraint<D>::Tag(hstring_ref value) const
+template <typename D> void impl_ISpeechRecognitionConstraint<D>::Tag(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISpeechRecognitionConstraint)->put_Tag(get(value)));
 }
@@ -1517,14 +1517,14 @@ template <typename D> hstring impl_ISpeechRecognitionTopicConstraint<D>::TopicHi
     return value;
 }
 
-template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint impl_ISpeechRecognitionTopicConstraintFactory<D>::Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint) const
+template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint impl_ISpeechRecognitionTopicConstraintFactory<D>::Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_view topicHint) const
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint constraint { nullptr };
     check_hresult(WINRT_SHIM(ISpeechRecognitionTopicConstraintFactory)->abi_Create(scenario, get(topicHint), put(constraint)));
     return constraint;
 }
 
-template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint impl_ISpeechRecognitionTopicConstraintFactory<D>::CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint, hstring_ref tag) const
+template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint impl_ISpeechRecognitionTopicConstraintFactory<D>::CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_view topicHint, hstring_view tag) const
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint constraint { nullptr };
     check_hresult(WINRT_SHIM(ISpeechRecognitionTopicConstraintFactory)->abi_CreateWithTag(scenario, get(topicHint), get(tag), put(constraint)));
@@ -1545,7 +1545,7 @@ template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionListCo
     return constraint;
 }
 
-template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint impl_ISpeechRecognitionListConstraintFactory<D>::CreateWithTag(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_ref tag) const
+template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint impl_ISpeechRecognitionListConstraintFactory<D>::CreateWithTag(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_view tag) const
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint constraint { nullptr };
     check_hresult(WINRT_SHIM(ISpeechRecognitionListConstraintFactory)->abi_CreateWithTag(get(commands), get(tag), put(constraint)));
@@ -1566,7 +1566,7 @@ template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionGramma
     return constraint;
 }
 
-template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint impl_ISpeechRecognitionGrammarFileConstraintFactory<D>::CreateWithTag(const Windows::Storage::StorageFile & file, hstring_ref tag) const
+template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint impl_ISpeechRecognitionGrammarFileConstraintFactory<D>::CreateWithTag(const Windows::Storage::StorageFile & file, hstring_view tag) const
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint constraint { nullptr };
     check_hresult(WINRT_SHIM(ISpeechRecognitionGrammarFileConstraintFactory)->abi_CreateWithTag(get(file), get(tag), put(constraint)));
@@ -1854,7 +1854,7 @@ inline SpeechRecognitionGrammarFileConstraint::SpeechRecognitionGrammarFileConst
     SpeechRecognitionGrammarFileConstraint(get_activation_factory<SpeechRecognitionGrammarFileConstraint, ISpeechRecognitionGrammarFileConstraintFactory>().Create(file))
 {}
 
-inline SpeechRecognitionGrammarFileConstraint::SpeechRecognitionGrammarFileConstraint(const Windows::Storage::StorageFile & file, hstring_ref tag) :
+inline SpeechRecognitionGrammarFileConstraint::SpeechRecognitionGrammarFileConstraint(const Windows::Storage::StorageFile & file, hstring_view tag) :
     SpeechRecognitionGrammarFileConstraint(get_activation_factory<SpeechRecognitionGrammarFileConstraint, ISpeechRecognitionGrammarFileConstraintFactory>().CreateWithTag(file, tag))
 {}
 
@@ -1862,15 +1862,15 @@ inline SpeechRecognitionListConstraint::SpeechRecognitionListConstraint(const Wi
     SpeechRecognitionListConstraint(get_activation_factory<SpeechRecognitionListConstraint, ISpeechRecognitionListConstraintFactory>().Create(commands))
 {}
 
-inline SpeechRecognitionListConstraint::SpeechRecognitionListConstraint(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_ref tag) :
+inline SpeechRecognitionListConstraint::SpeechRecognitionListConstraint(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_view tag) :
     SpeechRecognitionListConstraint(get_activation_factory<SpeechRecognitionListConstraint, ISpeechRecognitionListConstraintFactory>().CreateWithTag(commands, tag))
 {}
 
-inline SpeechRecognitionTopicConstraint::SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint) :
+inline SpeechRecognitionTopicConstraint::SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_view topicHint) :
     SpeechRecognitionTopicConstraint(get_activation_factory<SpeechRecognitionTopicConstraint, ISpeechRecognitionTopicConstraintFactory>().Create(scenario, topicHint))
 {}
 
-inline SpeechRecognitionTopicConstraint::SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint, hstring_ref tag) :
+inline SpeechRecognitionTopicConstraint::SpeechRecognitionTopicConstraint(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_view topicHint, hstring_view tag) :
     SpeechRecognitionTopicConstraint(get_activation_factory<SpeechRecognitionTopicConstraint, ISpeechRecognitionTopicConstraintFactory>().CreateWithTag(scenario, topicHint, tag))
 {}
 

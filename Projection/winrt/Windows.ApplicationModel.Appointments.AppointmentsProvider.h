@@ -463,7 +463,7 @@ template <typename D> hstring impl_IAddAppointmentOperation<D>::SourcePackageFam
     return value;
 }
 
-template <typename D> void impl_IAddAppointmentOperation<D>::ReportCompleted(hstring_ref itemId) const
+template <typename D> void impl_IAddAppointmentOperation<D>::ReportCompleted(hstring_view itemId) const
 {
     check_hresult(WINRT_SHIM(IAddAppointmentOperation)->abi_ReportCompleted(get(itemId)));
 }
@@ -473,7 +473,7 @@ template <typename D> void impl_IAddAppointmentOperation<D>::ReportCanceled() co
     check_hresult(WINRT_SHIM(IAddAppointmentOperation)->abi_ReportCanceled());
 }
 
-template <typename D> void impl_IAddAppointmentOperation<D>::ReportError(hstring_ref value) const
+template <typename D> void impl_IAddAppointmentOperation<D>::ReportError(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAddAppointmentOperation)->abi_ReportError(get(value)));
 }
@@ -511,7 +511,7 @@ template <typename D> hstring impl_IReplaceAppointmentOperation<D>::SourcePackag
     return value;
 }
 
-template <typename D> void impl_IReplaceAppointmentOperation<D>::ReportCompleted(hstring_ref itemId) const
+template <typename D> void impl_IReplaceAppointmentOperation<D>::ReportCompleted(hstring_view itemId) const
 {
     check_hresult(WINRT_SHIM(IReplaceAppointmentOperation)->abi_ReportCompleted(get(itemId)));
 }
@@ -521,7 +521,7 @@ template <typename D> void impl_IReplaceAppointmentOperation<D>::ReportCanceled(
     check_hresult(WINRT_SHIM(IReplaceAppointmentOperation)->abi_ReportCanceled());
 }
 
-template <typename D> void impl_IReplaceAppointmentOperation<D>::ReportError(hstring_ref value) const
+template <typename D> void impl_IReplaceAppointmentOperation<D>::ReportError(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IReplaceAppointmentOperation)->abi_ReportError(get(value)));
 }
@@ -562,7 +562,7 @@ template <typename D> void impl_IRemoveAppointmentOperation<D>::ReportCanceled()
     check_hresult(WINRT_SHIM(IRemoveAppointmentOperation)->abi_ReportCanceled());
 }
 
-template <typename D> void impl_IRemoveAppointmentOperation<D>::ReportError(hstring_ref value) const
+template <typename D> void impl_IRemoveAppointmentOperation<D>::ReportError(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IRemoveAppointmentOperation)->abi_ReportError(get(value)));
 }

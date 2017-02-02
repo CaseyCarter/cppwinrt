@@ -179,19 +179,19 @@ template <typename D> hstring impl_IContactRemovedEventArgs<D>::Id() const
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Contacts::Provider::AddContactResult impl_IContactPickerUI<D>::AddContact(hstring_ref id, const Windows::ApplicationModel::Contacts::Contact & contact) const
+template <typename D> Windows::ApplicationModel::Contacts::Provider::AddContactResult impl_IContactPickerUI<D>::AddContact(hstring_view id, const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::ApplicationModel::Contacts::Provider::AddContactResult result {};
     check_hresult(WINRT_SHIM(IContactPickerUI)->abi_AddContact(get(id), get(contact), &result));
     return result;
 }
 
-template <typename D> void impl_IContactPickerUI<D>::RemoveContact(hstring_ref id) const
+template <typename D> void impl_IContactPickerUI<D>::RemoveContact(hstring_view id) const
 {
     check_hresult(WINRT_SHIM(IContactPickerUI)->abi_RemoveContact(get(id)));
 }
 
-template <typename D> bool impl_IContactPickerUI<D>::ContainsContact(hstring_ref id) const
+template <typename D> bool impl_IContactPickerUI<D>::ContainsContact(hstring_view id) const
 {
     bool isContained {};
     check_hresult(WINRT_SHIM(IContactPickerUI)->abi_ContainsContact(get(id), &isContained));

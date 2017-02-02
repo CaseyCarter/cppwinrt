@@ -14,7 +14,7 @@ struct WINRT_EBO Battery :
 {
     Battery(std::nullptr_t) noexcept {}
     static Windows::Devices::Power::Battery AggregateBattery();
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> FromIdAsync(hstring_ref deviceId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> FromIdAsync(hstring_view deviceId);
     static hstring GetDeviceSelector();
 };
 

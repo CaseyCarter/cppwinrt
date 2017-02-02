@@ -870,7 +870,7 @@ struct WINRT_EBO impl_IMediaBinder
     Binding_revoker Binding(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBinder, Windows::Media::Core::MediaBindingEventArgs> & handler) const;
     void Binding(event_token token) const;
     hstring Token() const;
-    void Token(hstring_ref value) const;
+    void Token(hstring_view value) const;
     Windows::Media::Core::MediaSource Source() const;
 };
 
@@ -884,8 +884,8 @@ struct WINRT_EBO impl_IMediaBindingEventArgs
     Windows::Media::Core::MediaBinder MediaBinder() const;
     Windows::Foundation::Deferral GetDeferral() const;
     void SetUri(const Windows::Foundation::Uri & uri) const;
-    void SetStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref contentType) const;
-    void SetStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_ref contentType) const;
+    void SetStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view contentType) const;
+    void SetStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_view contentType) const;
 };
 
 template <typename D>
@@ -895,7 +895,7 @@ struct WINRT_EBO impl_IMediaCue
     Windows::Foundation::TimeSpan StartTime() const;
     void Duration(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::TimeSpan Duration() const;
-    void Id(hstring_ref value) const;
+    void Id(hstring_view value) const;
     hstring Id() const;
 };
 
@@ -962,8 +962,8 @@ struct WINRT_EBO impl_IMediaSourceStatics
     Windows::Media::Core::MediaSource CreateFromMseStreamSource(const Windows::Media::Core::MseStreamSource & mediaSource) const;
     Windows::Media::Core::MediaSource CreateFromIMediaSource(const Windows::Media::Core::IMediaSource & mediaSource) const;
     Windows::Media::Core::MediaSource CreateFromStorageFile(const Windows::Storage::IStorageFile & file) const;
-    Windows::Media::Core::MediaSource CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref contentType) const;
-    Windows::Media::Core::MediaSource CreateFromStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_ref contentType) const;
+    Windows::Media::Core::MediaSource CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view contentType) const;
+    Windows::Media::Core::MediaSource CreateFromStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_view contentType) const;
     Windows::Media::Core::MediaSource CreateFromUri(const Windows::Foundation::Uri & uri) const;
 };
 
@@ -977,9 +977,9 @@ template <typename D>
 struct WINRT_EBO impl_IMediaStreamDescriptor
 {
     bool IsSelected() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     hstring Name() const;
-    void Language(hstring_ref value) const;
+    void Language(hstring_view value) const;
     hstring Language() const;
 };
 
@@ -1165,7 +1165,7 @@ struct WINRT_EBO impl_IMediaTrack
     hstring Id() const;
     hstring Language() const;
     Windows::Media::Core::MediaTrackKind TrackKind() const;
-    void Label(hstring_ref value) const;
+    void Label(hstring_view value) const;
     hstring Label() const;
 };
 
@@ -1243,7 +1243,7 @@ struct WINRT_EBO impl_IMseStreamSource
     Windows::Media::Core::MseReadyState ReadyState() const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Duration() const;
     void Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
-    Windows::Media::Core::MseSourceBuffer AddSourceBuffer(hstring_ref mimeType) const;
+    Windows::Media::Core::MseSourceBuffer AddSourceBuffer(hstring_view mimeType) const;
     void RemoveSourceBuffer(const Windows::Media::Core::MseSourceBuffer & buffer) const;
     void EndOfStream(Windows::Media::Core::MseEndOfStreamStatus status) const;
 };
@@ -1251,7 +1251,7 @@ struct WINRT_EBO impl_IMseStreamSource
 template <typename D>
 struct WINRT_EBO impl_IMseStreamSourceStatics
 {
-    bool IsContentTypeSupported(hstring_ref contentType) const;
+    bool IsContentTypeSupported(hstring_view contentType) const;
 };
 
 template <typename D>
@@ -1330,7 +1330,7 @@ struct WINRT_EBO impl_ITimedMetadataTrackError
 template <typename D>
 struct WINRT_EBO impl_ITimedMetadataTrackFactory
 {
-    Windows::Media::Core::TimedMetadataTrack Create(hstring_ref id, hstring_ref language, Windows::Media::Core::TimedMetadataKind kind) const;
+    Windows::Media::Core::TimedMetadataTrack Create(hstring_view id, hstring_view language, Windows::Media::Core::TimedMetadataKind kind) const;
 };
 
 template <typename D>
@@ -1353,7 +1353,7 @@ template <typename D>
 struct WINRT_EBO impl_ITimedTextLine
 {
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextSubformat> Subformats() const;
 };
 
@@ -1361,7 +1361,7 @@ template <typename D>
 struct WINRT_EBO impl_ITimedTextRegion
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     Windows::Media::Core::TimedTextPoint Position() const;
     void Position(const Windows::Media::Core::TimedTextPoint & value) const;
     Windows::Media::Core::TimedTextSize Extent() const;
@@ -1407,17 +1407,17 @@ struct WINRT_EBO impl_ITimedTextSourceStatics
 {
     Windows::Media::Core::TimedTextSource CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
     Windows::Media::Core::TimedTextSource CreateFromUri(const Windows::Foundation::Uri & uri) const;
-    Windows::Media::Core::TimedTextSource CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref defaultLanguage) const;
-    Windows::Media::Core::TimedTextSource CreateFromUri(const Windows::Foundation::Uri & uri, hstring_ref defaultLanguage) const;
+    Windows::Media::Core::TimedTextSource CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view defaultLanguage) const;
+    Windows::Media::Core::TimedTextSource CreateFromUri(const Windows::Foundation::Uri & uri, hstring_view defaultLanguage) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ITimedTextStyle
 {
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     hstring FontFamily() const;
-    void FontFamily(hstring_ref value) const;
+    void FontFamily(hstring_view value) const;
     Windows::Media::Core::TimedTextDouble FontSize() const;
     void FontSize(const Windows::Media::Core::TimedTextDouble & value) const;
     Windows::Media::Core::TimedTextWeight FontWeight() const;

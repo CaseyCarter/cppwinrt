@@ -14,7 +14,7 @@ struct WINRT_EBO DataProtectionProvider :
 {
     DataProtectionProvider(std::nullptr_t) noexcept {}
     DataProtectionProvider();
-    DataProtectionProvider(hstring_ref protectionDescriptor);
+    DataProtectionProvider(hstring_view protectionDescriptor);
 };
 
 }

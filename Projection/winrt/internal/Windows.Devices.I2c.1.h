@@ -133,8 +133,8 @@ template <typename D>
 struct WINRT_EBO impl_II2cDeviceStatics
 {
     hstring GetDeviceSelector() const;
-    hstring GetDeviceSelector(hstring_ref friendlyName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> FromIdAsync(hstring_ref deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings) const;
+    hstring GetDeviceSelector(hstring_view friendlyName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> FromIdAsync(hstring_view deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings) const;
 };
 
 }

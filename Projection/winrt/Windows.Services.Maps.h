@@ -1596,14 +1596,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Ma
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> impl_IMapLocationFinderStatics<D>::FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> impl_IMapLocationFinderStatics<D>::FindLocationsAsync(hstring_view searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> result;
     check_hresult(WINRT_SHIM(IMapLocationFinderStatics)->abi_FindLocationsAsync(get(searchText), get(referencePoint), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> impl_IMapLocationFinderStatics<D>::FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> impl_IMapLocationFinderStatics<D>::FindLocationsAsync(hstring_view searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> result;
     check_hresult(WINRT_SHIM(IMapLocationFinderStatics)->abi_FindLocationsWithMaxCountAsync(get(searchText), get(referencePoint), maxCount, put(result)));
@@ -1694,7 +1694,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Ma
     return result;
 }
 
-template <typename D> void impl_IMapServiceStatics<D>::ServiceToken(hstring_ref value) const
+template <typename D> void impl_IMapServiceStatics<D>::ServiceToken(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMapServiceStatics)->put_ServiceToken(get(value)));
 }
@@ -1735,12 +1735,12 @@ inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocation
     return get_activation_factory<MapLocationFinder, IMapLocationFinderStatics>().FindLocationsAtAsync(queryPoint);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> MapLocationFinder::FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint)
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> MapLocationFinder::FindLocationsAsync(hstring_view searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint)
 {
     return get_activation_factory<MapLocationFinder, IMapLocationFinderStatics>().FindLocationsAsync(searchText, referencePoint);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> MapLocationFinder::FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount)
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> MapLocationFinder::FindLocationsAsync(hstring_view searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount)
 {
     return get_activation_factory<MapLocationFinder, IMapLocationFinderStatics>().FindLocationsAsync(searchText, referencePoint, maxCount);
 }
@@ -1819,7 +1819,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFin
     return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics2>().GetDrivingRouteAsync(startPoint, endPoint, options);
 }
 
-inline void MapService::ServiceToken(hstring_ref value)
+inline void MapService::ServiceToken(hstring_view value)
 {
     get_activation_factory<MapService, IMapServiceStatics>().ServiceToken(value);
 }

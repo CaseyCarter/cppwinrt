@@ -118,7 +118,7 @@ struct produce<D, Windows::Devices::Printers::IPrintSchema> : produce_base<D, Wi
 
 namespace Windows::Devices::Printers {
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> impl_IPrint3DDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> impl_IPrint3DDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> operation;
     check_hresult(WINRT_SHIM(IPrint3DDeviceStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
@@ -160,7 +160,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
     return operation;
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> Print3DDevice::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> Print3DDevice::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<Print3DDevice, IPrint3DDeviceStatics>().FromIdAsync(deviceId);
 }

@@ -5642,42 +5642,42 @@ template <typename D> Windows::ApplicationModel::Email::EmailMessageReader impl_
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> impl_IEmailStore<D>::GetMailboxAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> impl_IEmailStore<D>::GetMailboxAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> result;
     check_hresult(WINRT_SHIM(IEmailStore)->abi_GetMailboxAsync(get(id), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation> impl_IEmailStore<D>::GetConversationAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation> impl_IEmailStore<D>::GetConversationAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation> result;
     check_hresult(WINRT_SHIM(IEmailStore)->abi_GetConversationAsync(get(id), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> impl_IEmailStore<D>::GetFolderAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> impl_IEmailStore<D>::GetFolderAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> result;
     check_hresult(WINRT_SHIM(IEmailStore)->abi_GetFolderAsync(get(id), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> impl_IEmailStore<D>::GetMessageAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> impl_IEmailStore<D>::GetMessageAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> result;
     check_hresult(WINRT_SHIM(IEmailStore)->abi_GetMessageAsync(get(id), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> impl_IEmailStore<D>::CreateMailboxAsync(hstring_ref accountName, hstring_ref accountAddress) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> impl_IEmailStore<D>::CreateMailboxAsync(hstring_view accountName, hstring_view accountAddress) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> result;
     check_hresult(WINRT_SHIM(IEmailStore)->abi_CreateMailboxAsync(get(accountName), get(accountAddress), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> impl_IEmailStore<D>::CreateMailboxAsync(hstring_ref accountName, hstring_ref accountAddress, hstring_ref userDataAccountId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> impl_IEmailStore<D>::CreateMailboxAsync(hstring_view accountName, hstring_view accountAddress, hstring_view userDataAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> result;
     check_hresult(WINRT_SHIM(IEmailStore)->abi_CreateMailboxInAccountAsync(get(accountName), get(accountAddress), get(userDataAccountId), put(result)));
@@ -5691,7 +5691,7 @@ template <typename D> hstring impl_IEmailRecipient<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IEmailRecipient<D>::Name(hstring_ref value) const
+template <typename D> void impl_IEmailRecipient<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailRecipient)->put_Name(get(value)));
 }
@@ -5703,19 +5703,19 @@ template <typename D> hstring impl_IEmailRecipient<D>::Address() const
     return value;
 }
 
-template <typename D> void impl_IEmailRecipient<D>::Address(hstring_ref value) const
+template <typename D> void impl_IEmailRecipient<D>::Address(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailRecipient)->put_Address(get(value)));
 }
 
-template <typename D> Windows::ApplicationModel::Email::EmailRecipient impl_IEmailRecipientFactory<D>::Create(hstring_ref address) const
+template <typename D> Windows::ApplicationModel::Email::EmailRecipient impl_IEmailRecipientFactory<D>::Create(hstring_view address) const
 {
     Windows::ApplicationModel::Email::EmailRecipient result { nullptr };
     check_hresult(WINRT_SHIM(IEmailRecipientFactory)->abi_Create(get(address), put(result)));
     return result;
 }
 
-template <typename D> Windows::ApplicationModel::Email::EmailRecipient impl_IEmailRecipientFactory<D>::CreateWithName(hstring_ref address, hstring_ref name) const
+template <typename D> Windows::ApplicationModel::Email::EmailRecipient impl_IEmailRecipientFactory<D>::CreateWithName(hstring_view address, hstring_view name) const
 {
     Windows::ApplicationModel::Email::EmailRecipient result { nullptr };
     check_hresult(WINRT_SHIM(IEmailRecipientFactory)->abi_CreateWithName(get(address), get(name), put(result)));
@@ -5729,7 +5729,7 @@ template <typename D> hstring impl_IEmailIrmTemplate<D>::Id() const
     return value;
 }
 
-template <typename D> void impl_IEmailIrmTemplate<D>::Id(hstring_ref value) const
+template <typename D> void impl_IEmailIrmTemplate<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailIrmTemplate)->put_Id(get(value)));
 }
@@ -5741,7 +5741,7 @@ template <typename D> hstring impl_IEmailIrmTemplate<D>::Description() const
     return value;
 }
 
-template <typename D> void impl_IEmailIrmTemplate<D>::Description(hstring_ref value) const
+template <typename D> void impl_IEmailIrmTemplate<D>::Description(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailIrmTemplate)->put_Description(get(value)));
 }
@@ -5753,12 +5753,12 @@ template <typename D> hstring impl_IEmailIrmTemplate<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IEmailIrmTemplate<D>::Name(hstring_ref value) const
+template <typename D> void impl_IEmailIrmTemplate<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailIrmTemplate)->put_Name(get(value)));
 }
 
-template <typename D> Windows::ApplicationModel::Email::EmailIrmTemplate impl_IEmailIrmTemplateFactory<D>::Create(hstring_ref id, hstring_ref name, hstring_ref description) const
+template <typename D> Windows::ApplicationModel::Email::EmailIrmTemplate impl_IEmailIrmTemplateFactory<D>::Create(hstring_view id, hstring_view name, hstring_view description) const
 {
     Windows::ApplicationModel::Email::EmailIrmTemplate result { nullptr };
     check_hresult(WINRT_SHIM(IEmailIrmTemplateFactory)->abi_Create(get(id), get(name), get(description), put(result)));
@@ -5923,7 +5923,7 @@ template <typename D> hstring impl_IEmailMessage<D>::Subject() const
     return value;
 }
 
-template <typename D> void impl_IEmailMessage<D>::Subject(hstring_ref value) const
+template <typename D> void impl_IEmailMessage<D>::Subject(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMessage)->put_Subject(get(value)));
 }
@@ -5935,7 +5935,7 @@ template <typename D> hstring impl_IEmailMessage<D>::Body() const
     return value;
 }
 
-template <typename D> void impl_IEmailMessage<D>::Body(hstring_ref value) const
+template <typename D> void impl_IEmailMessage<D>::Body(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMessage)->put_Body(get(value)));
 }
@@ -5982,7 +5982,7 @@ template <typename D> hstring impl_IEmailMessage2<D>::RemoteId() const
     return value;
 }
 
-template <typename D> void impl_IEmailMessage2<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_IEmailMessage2<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMessage2)->put_RemoteId(get(value)));
 }
@@ -6153,7 +6153,7 @@ template <typename D> hstring impl_IEmailMessage2<D>::MessageClass() const
     return value;
 }
 
-template <typename D> void impl_IEmailMessage2<D>::MessageClass(hstring_ref value) const
+template <typename D> void impl_IEmailMessage2<D>::MessageClass(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMessage2)->put_MessageClass(get(value)));
 }
@@ -6184,7 +6184,7 @@ template <typename D> hstring impl_IEmailMessage2<D>::Preview() const
     return value;
 }
 
-template <typename D> void impl_IEmailMessage2<D>::Preview(hstring_ref value) const
+template <typename D> void impl_IEmailMessage2<D>::Preview(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMessage2)->put_Preview(get(value)));
 }
@@ -6280,7 +6280,7 @@ template <typename D> hstring impl_IEmailAttachment<D>::FileName() const
     return value;
 }
 
-template <typename D> void impl_IEmailAttachment<D>::FileName(hstring_ref value) const
+template <typename D> void impl_IEmailAttachment<D>::FileName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailAttachment)->put_FileName(get(value)));
 }
@@ -6311,7 +6311,7 @@ template <typename D> hstring impl_IEmailAttachment2<D>::ContentId() const
     return value;
 }
 
-template <typename D> void impl_IEmailAttachment2<D>::ContentId(hstring_ref value) const
+template <typename D> void impl_IEmailAttachment2<D>::ContentId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailAttachment2)->put_ContentId(get(value)));
 }
@@ -6323,7 +6323,7 @@ template <typename D> hstring impl_IEmailAttachment2<D>::ContentLocation() const
     return value;
 }
 
-template <typename D> void impl_IEmailAttachment2<D>::ContentLocation(hstring_ref value) const
+template <typename D> void impl_IEmailAttachment2<D>::ContentLocation(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailAttachment2)->put_ContentLocation(get(value)));
 }
@@ -6378,19 +6378,19 @@ template <typename D> hstring impl_IEmailAttachment2<D>::MimeType() const
     return value;
 }
 
-template <typename D> void impl_IEmailAttachment2<D>::MimeType(hstring_ref value) const
+template <typename D> void impl_IEmailAttachment2<D>::MimeType(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailAttachment2)->put_MimeType(get(value)));
 }
 
-template <typename D> Windows::ApplicationModel::Email::EmailAttachment impl_IEmailAttachmentFactory<D>::Create(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) const
+template <typename D> Windows::ApplicationModel::Email::EmailAttachment impl_IEmailAttachmentFactory<D>::Create(hstring_view fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) const
 {
     Windows::ApplicationModel::Email::EmailAttachment result { nullptr };
     check_hresult(WINRT_SHIM(IEmailAttachmentFactory)->abi_Create(get(fileName), get(data), put(result)));
     return result;
 }
 
-template <typename D> Windows::ApplicationModel::Email::EmailAttachment impl_IEmailAttachmentFactory2<D>::Create(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_ref mimeType) const
+template <typename D> Windows::ApplicationModel::Email::EmailAttachment impl_IEmailAttachmentFactory2<D>::Create(hstring_view fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_view mimeType) const
 {
     Windows::ApplicationModel::Email::EmailAttachment result { nullptr };
     check_hresult(WINRT_SHIM(IEmailAttachmentFactory2)->abi_Create(get(fileName), get(data), get(mimeType), put(result)));
@@ -6670,7 +6670,7 @@ template <typename D> hstring impl_IEmailMailbox<D>::DisplayName() const
     return value;
 }
 
-template <typename D> void impl_IEmailMailbox<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IEmailMailbox<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMailbox)->put_DisplayName(get(value)));
 }
@@ -6703,7 +6703,7 @@ template <typename D> hstring impl_IEmailMailbox<D>::MailAddress() const
     return value;
 }
 
-template <typename D> void impl_IEmailMailbox<D>::MailAddress(hstring_ref value) const
+template <typename D> void impl_IEmailMailbox<D>::MailAddress(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMailbox)->put_MailAddress(get(value)));
 }
@@ -6802,21 +6802,21 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::D
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation> impl_IEmailMailbox<D>::GetConversationAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation> impl_IEmailMailbox<D>::GetConversationAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_GetConversationAsync(get(id), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> impl_IEmailMailbox<D>::GetFolderAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> impl_IEmailMailbox<D>::GetFolderAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_GetFolderAsync(get(id), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> impl_IEmailMailbox<D>::GetMessageAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> impl_IEmailMailbox<D>::GetMessageAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_GetMessageAsync(get(id), put(result)));
@@ -6837,63 +6837,63 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::S
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::MarkMessageAsSeenAsync(hstring_ref messageId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::MarkMessageAsSeenAsync(hstring_view messageId) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_MarkMessageAsSeenAsync(get(messageId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::MarkFolderAsSeenAsync(hstring_ref folderId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::MarkFolderAsSeenAsync(hstring_view folderId) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_MarkFolderAsSeenAsync(get(folderId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::MarkMessageReadAsync(hstring_ref messageId, bool isRead) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::MarkMessageReadAsync(hstring_view messageId, bool isRead) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_MarkMessageReadAsync(get(messageId), isRead, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::ChangeMessageFlagStateAsync(hstring_ref messageId, Windows::ApplicationModel::Email::EmailFlagState flagState) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::ChangeMessageFlagStateAsync(hstring_view messageId, Windows::ApplicationModel::Email::EmailFlagState flagState) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_ChangeMessageFlagStateAsync(get(messageId), flagState, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryMoveMessageAsync(hstring_ref messageId, hstring_ref newParentFolderId) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryMoveMessageAsync(hstring_view messageId, hstring_view newParentFolderId) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_TryMoveMessageAsync(get(messageId), get(newParentFolderId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryMoveFolderAsync(hstring_ref folderId, hstring_ref newParentFolderId) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryMoveFolderAsync(hstring_view folderId, hstring_view newParentFolderId) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_TryMoveFolderAsync(get(folderId), get(newParentFolderId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryMoveFolderAsync(hstring_ref folderId, hstring_ref newParentFolderId, hstring_ref newFolderName) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryMoveFolderAsync(hstring_view folderId, hstring_view newParentFolderId, hstring_view newFolderName) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_TryMoveFolderWithNewNameAsync(get(folderId), get(newParentFolderId), get(newFolderName), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::DeleteMessageAsync(hstring_ref messageId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::DeleteMessageAsync(hstring_view messageId) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_DeleteMessageAsync(get(messageId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::MarkFolderSyncEnabledAsync(hstring_ref folderId, bool isSyncEnabled) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::MarkFolderSyncEnabledAsync(hstring_view folderId, bool isSyncEnabled) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_MarkFolderSyncEnabledAsync(get(folderId), isSyncEnabled, put(result)));
@@ -6914,42 +6914,42 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::S
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::DownloadMessageAsync(hstring_ref messageId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::DownloadMessageAsync(hstring_view messageId) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_DownloadMessageAsync(get(messageId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::DownloadAttachmentAsync(hstring_ref attachmentId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailbox<D>::DownloadAttachmentAsync(hstring_view attachmentId) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_DownloadAttachmentAsync(get(attachmentId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> impl_IEmailMailbox<D>::CreateResponseMessageAsync(hstring_ref messageId, Windows::ApplicationModel::Email::EmailMessageResponseKind responseType, hstring_ref subject, Windows::ApplicationModel::Email::EmailMessageBodyKind responseHeaderType, hstring_ref responseHeader) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> impl_IEmailMailbox<D>::CreateResponseMessageAsync(hstring_view messageId, Windows::ApplicationModel::Email::EmailMessageResponseKind responseType, hstring_view subject, Windows::ApplicationModel::Email::EmailMessageBodyKind responseHeaderType, hstring_view responseHeader) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_CreateResponseMessageAsync(get(messageId), responseType, get(subject), responseHeaderType, get(responseHeader), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryUpdateMeetingResponseAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, Windows::ApplicationModel::Email::EmailMeetingResponseType response, hstring_ref subject, hstring_ref comment, bool sendUpdate) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryUpdateMeetingResponseAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, Windows::ApplicationModel::Email::EmailMeetingResponseType response, hstring_view subject, hstring_view comment, bool sendUpdate) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_TryUpdateMeetingResponseAsync(get(meeting), response, get(subject), get(comment), sendUpdate, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryForwardMeetingAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipient> & recipients, hstring_ref subject, Windows::ApplicationModel::Email::EmailMessageBodyKind forwardHeaderType, hstring_ref forwardHeader, hstring_ref comment) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryForwardMeetingAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipient> & recipients, hstring_view subject, Windows::ApplicationModel::Email::EmailMessageBodyKind forwardHeaderType, hstring_view forwardHeader, hstring_view comment) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_TryForwardMeetingAsync(get(meeting), get(recipients), get(subject), forwardHeaderType, get(forwardHeader), get(comment), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryProposeNewTimeForMeetingAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, const Windows::Foundation::DateTime & newStartTime, const Windows::Foundation::TimeSpan & newDuration, hstring_ref subject, hstring_ref comment) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryProposeNewTimeForMeetingAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, const Windows::Foundation::DateTime & newStartTime, const Windows::Foundation::TimeSpan & newDuration, hstring_view subject, hstring_view comment) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_TryProposeNewTimeForMeetingAsync(get(meeting), get(newStartTime), get(newDuration), get(subject), get(comment), put(result)));
@@ -7029,21 +7029,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxEmptyFolderStatus> impl_IEmailMailbox3<D>::TryEmptyFolderAsync(hstring_ref folderId) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxEmptyFolderStatus> impl_IEmailMailbox3<D>::TryEmptyFolderAsync(hstring_view folderId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxEmptyFolderStatus> result;
     check_hresult(WINRT_SHIM(IEmailMailbox3)->abi_TryEmptyFolderAsync(get(folderId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult> impl_IEmailMailbox3<D>::TryCreateFolderAsync(hstring_ref parentFolderId, hstring_ref name) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult> impl_IEmailMailbox3<D>::TryCreateFolderAsync(hstring_view parentFolderId, hstring_view name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult> result;
     check_hresult(WINRT_SHIM(IEmailMailbox3)->abi_TryCreateFolderAsync(get(parentFolderId), get(name), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus> impl_IEmailMailbox3<D>::TryDeleteFolderAsync(hstring_ref folderId) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus> impl_IEmailMailbox3<D>::TryDeleteFolderAsync(hstring_view folderId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus> result;
     check_hresult(WINRT_SHIM(IEmailMailbox3)->abi_TryDeleteFolderAsync(get(folderId), put(result)));
@@ -7183,7 +7183,7 @@ template <typename D> hstring impl_IEmailMailboxAutoReply<D>::Response() const
     return value;
 }
 
-template <typename D> void impl_IEmailMailboxAutoReply<D>::Response(hstring_ref value) const
+template <typename D> void impl_IEmailMailboxAutoReply<D>::Response(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMailboxAutoReply)->put_Response(get(value)));
 }
@@ -7262,7 +7262,7 @@ template <typename D> hstring impl_IEmailFolder<D>::RemoteId() const
     return value;
 }
 
-template <typename D> void impl_IEmailFolder<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_IEmailFolder<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailFolder)->put_RemoteId(get(value)));
 }
@@ -7288,7 +7288,7 @@ template <typename D> hstring impl_IEmailFolder<D>::DisplayName() const
     return value;
 }
 
-template <typename D> void impl_IEmailFolder<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IEmailFolder<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailFolder)->put_DisplayName(get(value)));
 }
@@ -7324,7 +7324,7 @@ template <typename D> Windows::ApplicationModel::Email::EmailSpecialFolderKind i
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> impl_IEmailFolder<D>::CreateFolderAsync(hstring_ref name) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> impl_IEmailFolder<D>::CreateFolderAsync(hstring_view name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> result;
     check_hresult(WINRT_SHIM(IEmailFolder)->abi_CreateFolderAsync(get(name), put(result)));
@@ -7359,7 +7359,7 @@ template <typename D> Windows::ApplicationModel::Email::EmailConversationReader 
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> impl_IEmailFolder<D>::GetMessageAsync(hstring_ref id) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> impl_IEmailFolder<D>::GetMessageAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> result;
     check_hresult(WINRT_SHIM(IEmailFolder)->abi_GetMessageAsync(get(id), put(result)));
@@ -7394,7 +7394,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailFold
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailFolder<D>::TryMoveAsync(const Windows::ApplicationModel::Email::EmailFolder & newParentFolder, hstring_ref newFolderName) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailFolder<D>::TryMoveAsync(const Windows::ApplicationModel::Email::EmailFolder & newParentFolder, hstring_view newFolderName) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IEmailFolder)->abi_TryMoveWithNewNameAsync(get(newParentFolder), get(newFolderName), put(result)));
@@ -7565,19 +7565,19 @@ template <typename D> hstring impl_IEmailQueryTextSearch<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_IEmailQueryTextSearch<D>::Text(hstring_ref value) const
+template <typename D> void impl_IEmailQueryTextSearch<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailQueryTextSearch)->put_Text(get(value)));
 }
 
-template <typename D> Windows::ApplicationModel::Email::EmailQueryOptions impl_IEmailQueryOptionsFactory<D>::CreateWithText(hstring_ref text) const
+template <typename D> Windows::ApplicationModel::Email::EmailQueryOptions impl_IEmailQueryOptionsFactory<D>::CreateWithText(hstring_view text) const
 {
     Windows::ApplicationModel::Email::EmailQueryOptions result { nullptr };
     check_hresult(WINRT_SHIM(IEmailQueryOptionsFactory)->abi_CreateWithText(get(text), put(result)));
     return result;
 }
 
-template <typename D> Windows::ApplicationModel::Email::EmailQueryOptions impl_IEmailQueryOptionsFactory<D>::CreateWithTextAndFields(hstring_ref text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields) const
+template <typename D> Windows::ApplicationModel::Email::EmailQueryOptions impl_IEmailQueryOptionsFactory<D>::CreateWithTextAndFields(hstring_view text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields) const
 {
     Windows::ApplicationModel::Email::EmailQueryOptions result { nullptr };
     check_hresult(WINRT_SHIM(IEmailQueryOptionsFactory)->abi_CreateWithTextAndFields(get(text), fields, put(result)));
@@ -7764,7 +7764,7 @@ template <typename D> hstring impl_IEmailMeetingInfo<D>::AppointmentRoamingId() 
     return value;
 }
 
-template <typename D> void impl_IEmailMeetingInfo<D>::AppointmentRoamingId(hstring_ref value) const
+template <typename D> void impl_IEmailMeetingInfo<D>::AppointmentRoamingId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMeetingInfo)->put_AppointmentRoamingId(get(value)));
 }
@@ -7824,7 +7824,7 @@ template <typename D> hstring impl_IEmailMeetingInfo<D>::Location() const
     return value;
 }
 
-template <typename D> void impl_IEmailMeetingInfo<D>::Location(hstring_ref value) const
+template <typename D> void impl_IEmailMeetingInfo<D>::Location(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IEmailMeetingInfo)->put_Location(get(value)));
 }
@@ -7940,11 +7940,11 @@ inline EmailAttachment::EmailAttachment() :
     EmailAttachment(activate_instance<EmailAttachment>())
 {}
 
-inline EmailAttachment::EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) :
+inline EmailAttachment::EmailAttachment(hstring_view fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) :
     EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory>().Create(fileName, data))
 {}
 
-inline EmailAttachment::EmailAttachment(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_ref mimeType) :
+inline EmailAttachment::EmailAttachment(hstring_view fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_view mimeType) :
     EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory2>().Create(fileName, data, mimeType))
 {}
 
@@ -7960,7 +7960,7 @@ inline EmailIrmTemplate::EmailIrmTemplate() :
     EmailIrmTemplate(activate_instance<EmailIrmTemplate>())
 {}
 
-inline EmailIrmTemplate::EmailIrmTemplate(hstring_ref id, hstring_ref name, hstring_ref description) :
+inline EmailIrmTemplate::EmailIrmTemplate(hstring_view id, hstring_view name, hstring_view description) :
     EmailIrmTemplate(get_activation_factory<EmailIrmTemplate, IEmailIrmTemplateFactory>().Create(id, name, description))
 {}
 
@@ -7995,11 +7995,11 @@ inline EmailQueryOptions::EmailQueryOptions() :
     EmailQueryOptions(activate_instance<EmailQueryOptions>())
 {}
 
-inline EmailQueryOptions::EmailQueryOptions(hstring_ref text) :
+inline EmailQueryOptions::EmailQueryOptions(hstring_view text) :
     EmailQueryOptions(get_activation_factory<EmailQueryOptions, IEmailQueryOptionsFactory>().CreateWithText(text))
 {}
 
-inline EmailQueryOptions::EmailQueryOptions(hstring_ref text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields) :
+inline EmailQueryOptions::EmailQueryOptions(hstring_view text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields) :
     EmailQueryOptions(get_activation_factory<EmailQueryOptions, IEmailQueryOptionsFactory>().CreateWithTextAndFields(text, fields))
 {}
 
@@ -8007,11 +8007,11 @@ inline EmailRecipient::EmailRecipient() :
     EmailRecipient(activate_instance<EmailRecipient>())
 {}
 
-inline EmailRecipient::EmailRecipient(hstring_ref address) :
+inline EmailRecipient::EmailRecipient(hstring_view address) :
     EmailRecipient(get_activation_factory<EmailRecipient, IEmailRecipientFactory>().Create(address))
 {}
 
-inline EmailRecipient::EmailRecipient(hstring_ref address, hstring_ref name) :
+inline EmailRecipient::EmailRecipient(hstring_view address, hstring_view name) :
     EmailRecipient(get_activation_factory<EmailRecipient, IEmailRecipientFactory>().CreateWithName(address, name))
 {}
 

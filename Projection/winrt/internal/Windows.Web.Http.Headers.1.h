@@ -553,8 +553,8 @@ struct WINRT_EBO impl_IHttpCacheDirectiveHeaderValueCollection
     void MinFresh(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> SharedMaxAge() const;
     void SharedMaxAge(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
@@ -568,22 +568,22 @@ struct WINRT_EBO impl_IHttpChallengeHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpChallengeHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpChallengeHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromScheme(hstring_ref scheme) const;
-    Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const;
+    Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromScheme(hstring_view scheme) const;
+    Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromSchemeWithToken(hstring_view scheme, hstring_view token) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpChallengeHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpChallengeHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue) const;
+    Windows::Web::Http::Headers::HttpChallengeHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue) const;
 };
 
 template <typename D>
@@ -595,21 +595,21 @@ struct WINRT_EBO impl_IHttpConnectionOptionHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpConnectionOptionHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpConnectionOptionHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Create(hstring_ref token) const;
+    Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Create(hstring_view token) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpConnectionOptionHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue) const;
+    Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue) const;
 };
 
 template <typename D>
@@ -621,21 +621,21 @@ struct WINRT_EBO impl_IHttpContentCodingHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpContentCodingHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpContentCodingHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpContentCodingHeaderValue Create(hstring_ref contentCoding) const;
+    Windows::Web::Http::Headers::HttpContentCodingHeaderValue Create(hstring_view contentCoding) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpContentCodingHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpContentCodingHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue) const;
+    Windows::Web::Http::Headers::HttpContentCodingHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue) const;
 };
 
 template <typename D>
@@ -648,35 +648,35 @@ struct WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValue(hstring_ref contentCoding) const;
-    Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValueWithQuality(hstring_ref contentCoding, double quality) const;
+    Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValue(hstring_view contentCoding) const;
+    Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValueWithQuality(hstring_view contentCoding, double quality) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue) const;
+    Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpContentDispositionHeaderValue
 {
     hstring DispositionType() const;
-    void DispositionType(hstring_ref value) const;
+    void DispositionType(hstring_view value) const;
     hstring FileName() const;
-    void FileName(hstring_ref value) const;
+    void FileName(hstring_view value) const;
     hstring FileNameStar() const;
-    void FileNameStar(hstring_ref value) const;
+    void FileNameStar(hstring_view value) const;
     hstring Name() const;
-    void Name(hstring_ref value) const;
+    void Name(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
     Windows::Foundation::IReference<uint64_t> Size() const;
     void Size(const Windows::Foundation::IReference<uint64_t> & value) const;
@@ -685,14 +685,14 @@ struct WINRT_EBO impl_IHttpContentDispositionHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpContentDispositionHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Create(hstring_ref dispositionType) const;
+    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Create(hstring_view dispositionType) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpContentDispositionHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue) const;
+    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue) const;
 };
 
 template <typename D>
@@ -716,8 +716,8 @@ struct WINRT_EBO impl_IHttpContentHeaderCollection
     void Expires(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> LastModified() const;
     void LastModified(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
-    void Append(hstring_ref name, hstring_ref value) const;
-    bool TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const;
+    void Append(hstring_view name, hstring_view value) const;
+    bool TryAppendWithoutValidation(hstring_view name, hstring_view value) const;
 };
 
 template <typename D>
@@ -727,7 +727,7 @@ struct WINRT_EBO impl_IHttpContentRangeHeaderValue
     Windows::Foundation::IReference<uint64_t> LastBytePosition() const;
     Windows::Foundation::IReference<uint64_t> Length() const;
     hstring Unit() const;
-    void Unit(hstring_ref value) const;
+    void Unit(hstring_view value) const;
 };
 
 template <typename D>
@@ -741,8 +741,8 @@ struct WINRT_EBO impl_IHttpContentRangeHeaderValueFactory
 template <typename D>
 struct WINRT_EBO impl_IHttpContentRangeHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpContentRangeHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue) const;
+    Windows::Web::Http::Headers::HttpContentRangeHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue) const;
 };
 
 template <typename D>
@@ -750,28 +750,28 @@ struct WINRT_EBO impl_IHttpCookiePairHeaderValue
 {
     hstring Name() const;
     hstring Value() const;
-    void Value(hstring_ref value) const;
+    void Value(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpCookiePairHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpCookiePairHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromName(hstring_ref name) const;
-    Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromNameWithValue(hstring_ref name, hstring_ref value) const;
+    Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromName(hstring_view name) const;
+    Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromNameWithValue(hstring_view name, hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpCookiePairHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpCookiePairHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue) const;
+    Windows::Web::Http::Headers::HttpCookiePairHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue) const;
 };
 
 template <typename D>
@@ -785,15 +785,15 @@ struct WINRT_EBO impl_IHttpCredentialsHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpCredentialsHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromScheme(hstring_ref scheme) const;
-    Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const;
+    Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromScheme(hstring_view scheme) const;
+    Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromSchemeWithToken(hstring_view scheme, hstring_view token) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpCredentialsHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpCredentialsHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue) const;
+    Windows::Web::Http::Headers::HttpCredentialsHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue) const;
 };
 
 template <typename D>
@@ -806,8 +806,8 @@ struct WINRT_EBO impl_IHttpDateOrDeltaHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpDateOrDeltaHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue) const;
+    Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue) const;
 };
 
 template <typename D>
@@ -815,36 +815,36 @@ struct WINRT_EBO impl_IHttpExpectationHeaderValue
 {
     hstring Name() const;
     hstring Value() const;
-    void Value(hstring_ref value) const;
+    void Value(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpExpectationHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpExpectationHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromName(hstring_ref name) const;
-    Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromNameWithValue(hstring_ref name, hstring_ref value) const;
+    Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromName(hstring_view name) const;
+    Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromNameWithValue(hstring_view name, hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpExpectationHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpExpectationHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue) const;
+    Windows::Web::Http::Headers::HttpExpectationHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpLanguageHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
@@ -857,54 +857,54 @@ struct WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRange(hstring_ref languageRange) const;
-    Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRangeWithQuality(hstring_ref languageRange, double quality) const;
+    Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRange(hstring_view languageRange) const;
+    Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRangeWithQuality(hstring_view languageRange, double quality) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue) const;
+    Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpMediaTypeHeaderValue
 {
     hstring CharSet() const;
-    void CharSet(hstring_ref value) const;
+    void CharSet(hstring_view value) const;
     hstring MediaType() const;
-    void MediaType(hstring_ref value) const;
+    void MediaType(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpMediaTypeHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Create(hstring_ref mediaType) const;
+    Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Create(hstring_view mediaType) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpMediaTypeHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue) const;
+    Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValue
 {
     hstring CharSet() const;
-    void CharSet(hstring_ref value) const;
+    void CharSet(hstring_view value) const;
     hstring MediaType() const;
-    void MediaType(hstring_ref value) const;
+    void MediaType(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
     Windows::Foundation::IReference<double> Quality() const;
     void Quality(const Windows::Foundation::IReference<double> & value) const;
@@ -913,29 +913,29 @@ struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaType(hstring_ref mediaType) const;
-    Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaTypeWithQuality(hstring_ref mediaType, double quality) const;
+    Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaType(hstring_view mediaType) const;
+    Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaTypeWithQuality(hstring_view mediaType, double quality) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue) const;
+    Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpMethodHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
@@ -943,21 +943,21 @@ struct WINRT_EBO impl_IHttpNameValueHeaderValue
 {
     hstring Name() const;
     hstring Value() const;
-    void Value(hstring_ref value) const;
+    void Value(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpNameValueHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromName(hstring_ref name) const;
-    Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromNameWithValue(hstring_ref name, hstring_ref value) const;
+    Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromName(hstring_view name) const;
+    Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromNameWithValue(hstring_view name, hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpNameValueHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpNameValueHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue) const;
+    Windows::Web::Http::Headers::HttpNameValueHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue) const;
 };
 
 template <typename D>
@@ -970,15 +970,15 @@ struct WINRT_EBO impl_IHttpProductHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpProductHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromName(hstring_ref productName) const;
-    Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const;
+    Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromName(hstring_view productName) const;
+    Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromNameWithVersion(hstring_view productName, hstring_view productVersion) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpProductHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpProductHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue) const;
+    Windows::Web::Http::Headers::HttpProductHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue) const;
 };
 
 template <typename D>
@@ -991,22 +991,22 @@ struct WINRT_EBO impl_IHttpProductInfoHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpProductInfoHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpProductInfoHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromComment(hstring_ref productComment) const;
-    Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const;
+    Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromComment(hstring_view productComment) const;
+    Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromNameWithVersion(hstring_view productName, hstring_view productVersion) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpProductInfoHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpProductInfoHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue) const;
+    Windows::Web::Http::Headers::HttpProductInfoHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue) const;
 };
 
 template <typename D>
@@ -1024,7 +1024,7 @@ struct WINRT_EBO impl_IHttpRequestHeaderCollection
     void Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::Web::Http::Headers::HttpExpectationHeaderValueCollection Expect() const;
     hstring From() const;
-    void From(hstring_ref value) const;
+    void From(hstring_view value) const;
     Windows::Networking::HostName Host() const;
     void Host(const Windows::Networking::HostName & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> IfModifiedSince() const;
@@ -1039,8 +1039,8 @@ struct WINRT_EBO impl_IHttpRequestHeaderCollection
     void Referer(const Windows::Foundation::Uri & value) const;
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection TransferEncoding() const;
     Windows::Web::Http::Headers::HttpProductInfoHeaderValueCollection UserAgent() const;
-    void Append(hstring_ref name, hstring_ref value) const;
-    bool TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const;
+    void Append(hstring_view name, hstring_view value) const;
+    bool TryAppendWithoutValidation(hstring_view name, hstring_view value) const;
 };
 
 template <typename D>
@@ -1060,8 +1060,8 @@ struct WINRT_EBO impl_IHttpResponseHeaderCollection
     void RetryAfter(const Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & value) const;
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection TransferEncoding() const;
     Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection WwwAuthenticate() const;
-    void Append(hstring_ref name, hstring_ref value) const;
-    bool TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const;
+    void Append(hstring_view name, hstring_view value) const;
+    bool TryAppendWithoutValidation(hstring_view name, hstring_view value) const;
 };
 
 template <typename D>
@@ -1074,21 +1074,21 @@ struct WINRT_EBO impl_IHttpTransferCodingHeaderValue
 template <typename D>
 struct WINRT_EBO impl_IHttpTransferCodingHeaderValueCollection
 {
-    void ParseAdd(hstring_ref input) const;
-    bool TryParseAdd(hstring_ref input) const;
+    void ParseAdd(hstring_view input) const;
+    bool TryParseAdd(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpTransferCodingHeaderValueFactory
 {
-    Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Create(hstring_ref input) const;
+    Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Create(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHttpTransferCodingHeaderValueStatics
 {
-    Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Parse(hstring_ref input) const;
-    bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue) const;
+    Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Parse(hstring_view input) const;
+    bool TryParse(hstring_view input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue) const;
 };
 
 }

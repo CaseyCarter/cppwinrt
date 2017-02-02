@@ -100,8 +100,8 @@ struct WINRT_EBO impl_IOnlineIdServiceTicketRequest
 template <typename D>
 struct WINRT_EBO impl_IOnlineIdServiceTicketRequestFactory
 {
-    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequest(hstring_ref service, hstring_ref policy) const;
-    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequestAdvanced(hstring_ref service) const;
+    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequest(hstring_view service, hstring_view policy) const;
+    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequestAdvanced(hstring_view service) const;
 };
 
 template <typename D>

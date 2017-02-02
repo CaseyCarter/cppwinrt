@@ -492,8 +492,8 @@ struct WINRT_EBO impl_IApplicationData2
 template <typename D>
 struct WINRT_EBO impl_IApplicationData3
 {
-    Windows::Storage::StorageFolder GetPublisherCacheFolder(hstring_ref folderName) const;
-    Windows::Foundation::IAsyncAction ClearPublisherCacheFolderAsync(hstring_ref folderName) const;
+    Windows::Storage::StorageFolder GetPublisherCacheFolder(hstring_view folderName) const;
+    Windows::Foundation::IAsyncAction ClearPublisherCacheFolderAsync(hstring_view folderName) const;
     Windows::Storage::StorageFolder SharedLocalFolder() const;
 };
 
@@ -504,8 +504,8 @@ struct WINRT_EBO impl_IApplicationDataContainer
     Windows::Storage::ApplicationDataLocality Locality() const;
     Windows::Foundation::Collections::IPropertySet Values() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::ApplicationDataContainer> Containers() const;
-    Windows::Storage::ApplicationDataContainer CreateContainer(hstring_ref name, Windows::Storage::ApplicationDataCreateDisposition disposition) const;
-    void DeleteContainer(hstring_ref name) const;
+    Windows::Storage::ApplicationDataContainer CreateContainer(hstring_view name, Windows::Storage::ApplicationDataCreateDisposition disposition) const;
+    void DeleteContainer(hstring_view name) const;
 };
 
 template <typename D>
@@ -530,19 +530,19 @@ struct WINRT_EBO impl_ICachedFileManagerStatics
 template <typename D>
 struct WINRT_EBO impl_IDownloadsFolderStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_view desiredName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_view desiredName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption option) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption option) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDownloadsFolderStatics2
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(const Windows::System::User & user, hstring_view desiredName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(const Windows::System::User & user, hstring_view desiredName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(const Windows::System::User & user, hstring_view desiredName, Windows::Storage::CreationCollisionOption option) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(const Windows::System::User & user, hstring_view desiredName, Windows::Storage::CreationCollisionOption option) const;
 };
 
 template <typename D>
@@ -550,10 +550,10 @@ struct WINRT_EBO impl_IFileIOStatics
 {
     Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(const Windows::Storage::IStorageFile & file, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-    Windows::Foundation::IAsyncAction WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents) const;
-    Windows::Foundation::IAsyncAction WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-    Windows::Foundation::IAsyncAction AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents) const;
-    Windows::Foundation::IAsyncAction AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+    Windows::Foundation::IAsyncAction WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents) const;
+    Windows::Foundation::IAsyncAction WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+    Windows::Foundation::IAsyncAction AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents) const;
+    Windows::Foundation::IAsyncAction AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(const Windows::Storage::IStorageFile & file, Windows::Storage::Streams::UnicodeEncoding encoding) const;
     Windows::Foundation::IAsyncAction WriteLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines) const;
@@ -612,21 +612,21 @@ struct WINRT_EBO impl_IKnownFoldersStatics3
 template <typename D>
 struct WINRT_EBO impl_IPathIOStatics
 {
-    Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_ref absolutePath) const;
-    Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-    Windows::Foundation::IAsyncAction WriteTextAsync(hstring_ref absolutePath, hstring_ref contents) const;
-    Windows::Foundation::IAsyncAction WriteTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-    Windows::Foundation::IAsyncAction AppendTextAsync(hstring_ref absolutePath, hstring_ref contents) const;
-    Windows::Foundation::IAsyncAction AppendTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(hstring_ref absolutePath) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-    Windows::Foundation::IAsyncAction WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const;
-    Windows::Foundation::IAsyncAction WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-    Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const;
-    Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(hstring_ref absolutePath) const;
-    Windows::Foundation::IAsyncAction WriteBufferAsync(hstring_ref absolutePath, const Windows::Storage::Streams::IBuffer & buffer) const;
-    Windows::Foundation::IAsyncAction WriteBytesAsync(hstring_ref absolutePath, array_ref<const uint8_t> buffer) const;
+    Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_view absolutePath) const;
+    Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_view absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+    Windows::Foundation::IAsyncAction WriteTextAsync(hstring_view absolutePath, hstring_view contents) const;
+    Windows::Foundation::IAsyncAction WriteTextAsync(hstring_view absolutePath, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+    Windows::Foundation::IAsyncAction AppendTextAsync(hstring_view absolutePath, hstring_view contents) const;
+    Windows::Foundation::IAsyncAction AppendTextAsync(hstring_view absolutePath, hstring_view contents, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(hstring_view absolutePath) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> ReadLinesAsync(hstring_view absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+    Windows::Foundation::IAsyncAction WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const;
+    Windows::Foundation::IAsyncAction WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+    Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const;
+    Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(hstring_view absolutePath) const;
+    Windows::Foundation::IAsyncAction WriteBufferAsync(hstring_view absolutePath, const Windows::Storage::Streams::IBuffer & buffer) const;
+    Windows::Foundation::IAsyncAction WriteBytesAsync(hstring_view absolutePath, array_ref<const uint8_t> buffer) const;
 };
 
 template <typename D>
@@ -651,12 +651,12 @@ struct WINRT_EBO impl_IStorageFile
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> OpenAsync(Windows::Storage::FileAccessMode accessMode) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> OpenTransactedWriteAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName, Windows::Storage::NameCollisionOption option) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_view desiredNewName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_view desiredNewName, Windows::Storage::NameCollisionOption option) const;
     Windows::Foundation::IAsyncAction CopyAndReplaceAsync(const Windows::Storage::IStorageFile & fileToReplace) const;
     Windows::Foundation::IAsyncAction MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder) const;
-    Windows::Foundation::IAsyncAction MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName) const;
-    Windows::Foundation::IAsyncAction MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName, Windows::Storage::NameCollisionOption option) const;
+    Windows::Foundation::IAsyncAction MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_view desiredNewName) const;
+    Windows::Foundation::IAsyncAction MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_view desiredNewName, Windows::Storage::NameCollisionOption option) const;
     Windows::Foundation::IAsyncAction MoveAndReplaceAsync(const Windows::Storage::IStorageFile & fileToReplace) const;
 };
 
@@ -676,24 +676,24 @@ struct WINRT_EBO impl_IStorageFilePropertiesWithAvailability
 template <typename D>
 struct WINRT_EBO impl_IStorageFileStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromPathAsync(hstring_ref path) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromPathAsync(hstring_view path) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromApplicationUriAsync(const Windows::Foundation::Uri & uri) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(hstring_ref displayNameWithExtension, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(hstring_view displayNameWithExtension, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ReplaceWithStreamedFileAsync(const Windows::Storage::IStorageFile & fileToReplace, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileFromUriAsync(hstring_ref displayNameWithExtension, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileFromUriAsync(hstring_view displayNameWithExtension, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ReplaceWithStreamedFileFromUriAsync(const Windows::Storage::IStorageFile & fileToReplace, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IStorageFolder
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption options) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption options) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(hstring_ref name) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(hstring_ref name) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(hstring_ref name) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_view desiredName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption options) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_view desiredName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_view desiredName, Windows::Storage::CreationCollisionOption options) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(hstring_view name) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(hstring_view name) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(hstring_view name) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> GetFilesAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFolder>> GetFoldersAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> GetItemsAsync() const;
@@ -702,20 +702,20 @@ struct WINRT_EBO impl_IStorageFolder
 template <typename D>
 struct WINRT_EBO impl_IStorageFolder2
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> TryGetItemAsync(hstring_ref name) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> TryGetItemAsync(hstring_view name) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IStorageFolderStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderFromPathAsync(hstring_ref path) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderFromPathAsync(hstring_view path) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IStorageItem
 {
-    Windows::Foundation::IAsyncAction RenameAsync(hstring_ref desiredName) const;
-    Windows::Foundation::IAsyncAction RenameAsync(hstring_ref desiredName, Windows::Storage::NameCollisionOption option) const;
+    Windows::Foundation::IAsyncAction RenameAsync(hstring_view desiredName) const;
+    Windows::Foundation::IAsyncAction RenameAsync(hstring_view desiredName, Windows::Storage::NameCollisionOption option) const;
     Windows::Foundation::IAsyncAction DeleteAsync() const;
     Windows::Foundation::IAsyncAction DeleteAsync(Windows::Storage::StorageDeleteOption option) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::BasicProperties> GetBasicPropertiesAsync() const;

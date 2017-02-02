@@ -385,28 +385,28 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceStateChang
 
 namespace Windows::Devices::Geolocation::Geofencing {
 
-template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::Create(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape) const
+template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::Create(hstring_view id, const Windows::Devices::Geolocation::IGeoshape & geoshape) const
 {
     Windows::Devices::Geolocation::Geofencing::Geofence geofence { nullptr };
     check_hresult(WINRT_SHIM(IGeofenceFactory)->abi_Create(get(id), get(geoshape), put(geofence)));
     return geofence;
 }
 
-template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::CreateWithMonitorStates(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse) const
+template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::CreateWithMonitorStates(hstring_view id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse) const
 {
     Windows::Devices::Geolocation::Geofencing::Geofence geofence { nullptr };
     check_hresult(WINRT_SHIM(IGeofenceFactory)->abi_CreateWithMonitorStates(get(id), get(geoshape), monitoredStates, singleUse, put(geofence)));
     return geofence;
 }
 
-template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::CreateWithMonitorStatesAndDwellTime(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime) const
+template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::CreateWithMonitorStatesAndDwellTime(hstring_view id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime) const
 {
     Windows::Devices::Geolocation::Geofencing::Geofence geofence { nullptr };
     check_hresult(WINRT_SHIM(IGeofenceFactory)->abi_CreateWithMonitorStatesAndDwellTime(get(id), get(geoshape), monitoredStates, singleUse, get(dwellTime), put(geofence)));
     return geofence;
 }
 
-template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::CreateWithMonitorStatesDwellTimeStartTimeAndDuration(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime, const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration) const
+template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::CreateWithMonitorStatesDwellTimeStartTimeAndDuration(hstring_view id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime, const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration) const
 {
     Windows::Devices::Geolocation::Geofencing::Geofence geofence { nullptr };
     check_hresult(WINRT_SHIM(IGeofenceFactory)->abi_CreateWithMonitorStatesDwellTimeStartTimeAndDuration(get(id), get(geoshape), monitoredStates, singleUse, get(dwellTime), get(startTime), get(duration), put(geofence)));
@@ -559,19 +559,19 @@ template <typename D> void impl_IGeofenceMonitor<D>::StatusChanged(event_token t
     check_hresult(WINRT_SHIM(IGeofenceMonitor)->remove_StatusChanged(token));
 }
 
-inline Geofence::Geofence(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape) :
+inline Geofence::Geofence(hstring_view id, const Windows::Devices::Geolocation::IGeoshape & geoshape) :
     Geofence(get_activation_factory<Geofence, IGeofenceFactory>().Create(id, geoshape))
 {}
 
-inline Geofence::Geofence(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse) :
+inline Geofence::Geofence(hstring_view id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse) :
     Geofence(get_activation_factory<Geofence, IGeofenceFactory>().CreateWithMonitorStates(id, geoshape, monitoredStates, singleUse))
 {}
 
-inline Geofence::Geofence(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime) :
+inline Geofence::Geofence(hstring_view id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime) :
     Geofence(get_activation_factory<Geofence, IGeofenceFactory>().CreateWithMonitorStatesAndDwellTime(id, geoshape, monitoredStates, singleUse, dwellTime))
 {}
 
-inline Geofence::Geofence(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime, const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration) :
+inline Geofence::Geofence(hstring_view id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime, const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration) :
     Geofence(get_activation_factory<Geofence, IGeofenceFactory>().CreateWithMonitorStatesDwellTimeStartTimeAndDuration(id, geoshape, monitoredStates, singleUse, dwellTime, startTime, duration))
 {}
 

@@ -4867,7 +4867,7 @@ template <typename D> hstring impl_ITextElement<D>::Language() const
     return value;
 }
 
-template <typename D> void impl_ITextElement<D>::Language(hstring_ref value) const
+template <typename D> void impl_ITextElement<D>::Language(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextElement)->put_Language(get(value)));
 }
@@ -4900,7 +4900,7 @@ template <typename D> Windows::UI::Xaml::Documents::TextPointer impl_ITextElemen
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_ITextElement<D>::FindName(hstring_ref name) const
+template <typename D> Windows::IInspectable impl_ITextElement<D>::FindName(hstring_view name) const
 {
     Windows::IInspectable returnValue;
     check_hresult(WINRT_SHIM(ITextElement)->abi_FindName(get(name), put(returnValue)));
@@ -5006,7 +5006,7 @@ template <typename D> hstring impl_ITextElement3<D>::AccessKey() const
     return value;
 }
 
-template <typename D> void impl_ITextElement3<D>::AccessKey(hstring_ref value) const
+template <typename D> void impl_ITextElement3<D>::AccessKey(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITextElement3)->put_AccessKey(get(value)));
 }
@@ -5179,7 +5179,7 @@ template <typename D> hstring impl_IRun<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_IRun<D>::Text(hstring_ref value) const
+template <typename D> void impl_IRun<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IRun)->put_Text(get(value)));
 }
@@ -5229,7 +5229,7 @@ template <typename D> hstring impl_IGlyphs<D>::UnicodeString() const
     return value;
 }
 
-template <typename D> void impl_IGlyphs<D>::UnicodeString(hstring_ref value) const
+template <typename D> void impl_IGlyphs<D>::UnicodeString(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IGlyphs)->put_UnicodeString(get(value)));
 }
@@ -5241,7 +5241,7 @@ template <typename D> hstring impl_IGlyphs<D>::Indices() const
     return value;
 }
 
-template <typename D> void impl_IGlyphs<D>::Indices(hstring_ref value) const
+template <typename D> void impl_IGlyphs<D>::Indices(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IGlyphs)->put_Indices(get(value)));
 }

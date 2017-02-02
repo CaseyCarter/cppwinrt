@@ -190,7 +190,7 @@ struct WINRT_EBO impl_IMediaProtectionServiceRequest
 template <typename D>
 struct WINRT_EBO impl_IProtectionCapabilities
 {
-    Windows::Media::Protection::ProtectionCapabilityResult IsTypeSupported(hstring_ref type, hstring_ref keySystem) const;
+    Windows::Media::Protection::ProtectionCapabilityResult IsTypeSupported(hstring_view type, hstring_view keySystem) const;
 };
 
 template <typename D>

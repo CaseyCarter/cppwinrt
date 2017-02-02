@@ -215,7 +215,7 @@ template <typename D> void impl_ICryptographicBufferStatics<D>::CopyToByteArray(
     check_hresult(WINRT_SHIM(ICryptographicBufferStatics)->abi_CopyToByteArray(get(buffer), put_size(value), put(value)));
 }
 
-template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::DecodeFromHexString(hstring_ref value) const
+template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::DecodeFromHexString(hstring_view value) const
 {
     Windows::Storage::Streams::IBuffer buffer;
     check_hresult(WINRT_SHIM(ICryptographicBufferStatics)->abi_DecodeFromHexString(get(value), put(buffer)));
@@ -229,7 +229,7 @@ template <typename D> hstring impl_ICryptographicBufferStatics<D>::EncodeToHexSt
     return value;
 }
 
-template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::DecodeFromBase64String(hstring_ref value) const
+template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::DecodeFromBase64String(hstring_view value) const
 {
     Windows::Storage::Streams::IBuffer buffer;
     check_hresult(WINRT_SHIM(ICryptographicBufferStatics)->abi_DecodeFromBase64String(get(value), put(buffer)));
@@ -243,7 +243,7 @@ template <typename D> hstring impl_ICryptographicBufferStatics<D>::EncodeToBase6
     return value;
 }
 
-template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::ConvertStringToBinary(hstring_ref value, Windows::Security::Cryptography::BinaryStringEncoding encoding) const
+template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::ConvertStringToBinary(hstring_view value, Windows::Security::Cryptography::BinaryStringEncoding encoding) const
 {
     Windows::Storage::Streams::IBuffer buffer;
     check_hresult(WINRT_SHIM(ICryptographicBufferStatics)->abi_ConvertStringToBinary(get(value), encoding, put(buffer)));
@@ -282,7 +282,7 @@ inline void CryptographicBuffer::CopyToByteArray(const Windows::Storage::Streams
     get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().CopyToByteArray(buffer, value);
 }
 
-inline Windows::Storage::Streams::IBuffer CryptographicBuffer::DecodeFromHexString(hstring_ref value)
+inline Windows::Storage::Streams::IBuffer CryptographicBuffer::DecodeFromHexString(hstring_view value)
 {
     return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().DecodeFromHexString(value);
 }
@@ -292,7 +292,7 @@ inline hstring CryptographicBuffer::EncodeToHexString(const Windows::Storage::St
     return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().EncodeToHexString(buffer);
 }
 
-inline Windows::Storage::Streams::IBuffer CryptographicBuffer::DecodeFromBase64String(hstring_ref value)
+inline Windows::Storage::Streams::IBuffer CryptographicBuffer::DecodeFromBase64String(hstring_view value)
 {
     return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().DecodeFromBase64String(value);
 }
@@ -302,7 +302,7 @@ inline hstring CryptographicBuffer::EncodeToBase64String(const Windows::Storage:
     return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().EncodeToBase64String(buffer);
 }
 
-inline Windows::Storage::Streams::IBuffer CryptographicBuffer::ConvertStringToBinary(hstring_ref value, Windows::Security::Cryptography::BinaryStringEncoding encoding)
+inline Windows::Storage::Streams::IBuffer CryptographicBuffer::ConvertStringToBinary(hstring_view value, Windows::Security::Cryptography::BinaryStringEncoding encoding)
 {
     return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().ConvertStringToBinary(value, encoding);
 }

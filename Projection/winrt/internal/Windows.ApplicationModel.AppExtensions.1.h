@@ -110,7 +110,7 @@ template <typename D>
 struct WINRT_EBO impl_IAppExtensionCatalog
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension>> FindAllAsync() const;
-    Windows::Foundation::IAsyncOperation<bool> RequestRemovePackageAsync(hstring_ref packageFullName) const;
+    Windows::Foundation::IAsyncOperation<bool> RequestRemovePackageAsync(hstring_view packageFullName) const;
     event_token PackageInstalled(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs> & handler) const;
     using PackageInstalled_revoker = event_revoker<IAppExtensionCatalog>;
     PackageInstalled_revoker PackageInstalled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs> & handler) const;
@@ -136,7 +136,7 @@ struct WINRT_EBO impl_IAppExtensionCatalog
 template <typename D>
 struct WINRT_EBO impl_IAppExtensionCatalogStatics
 {
-    Windows::ApplicationModel::AppExtensions::AppExtensionCatalog Open(hstring_ref appExtensionName) const;
+    Windows::ApplicationModel::AppExtensions::AppExtensionCatalog Open(hstring_view appExtensionName) const;
 };
 
 template <typename D>

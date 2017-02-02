@@ -116,17 +116,17 @@ template <typename D>
 struct WINRT_EBO impl_IStorageItemAccessList
 {
     hstring Add(const Windows::Storage::IStorageItem & file) const;
-    hstring Add(const Windows::Storage::IStorageItem & file, hstring_ref metadata) const;
-    void AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file) const;
-    void AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file, hstring_ref metadata) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(hstring_ref token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(hstring_ref token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(hstring_ref token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(hstring_ref token, Windows::Storage::AccessCache::AccessCacheOptions options) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(hstring_ref token, Windows::Storage::AccessCache::AccessCacheOptions options) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(hstring_ref token, Windows::Storage::AccessCache::AccessCacheOptions options) const;
-    void Remove(hstring_ref token) const;
-    bool ContainsItem(hstring_ref token) const;
+    hstring Add(const Windows::Storage::IStorageItem & file, hstring_view metadata) const;
+    void AddOrReplace(hstring_view token, const Windows::Storage::IStorageItem & file) const;
+    void AddOrReplace(hstring_view token, const Windows::Storage::IStorageItem & file, hstring_view metadata) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(hstring_view token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(hstring_view token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(hstring_view token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(hstring_view token, Windows::Storage::AccessCache::AccessCacheOptions options) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(hstring_view token, Windows::Storage::AccessCache::AccessCacheOptions options) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(hstring_view token, Windows::Storage::AccessCache::AccessCacheOptions options) const;
+    void Remove(hstring_view token) const;
+    bool ContainsItem(hstring_view token) const;
     void Clear() const;
     bool CheckAccess(const Windows::Storage::IStorageItem & file) const;
     Windows::Storage::AccessCache::AccessListEntryView Entries() const;
@@ -145,8 +145,8 @@ struct WINRT_EBO impl_IStorageItemMostRecentlyUsedList
 template <typename D>
 struct WINRT_EBO impl_IStorageItemMostRecentlyUsedList2
 {
-    hstring Add(const Windows::Storage::IStorageItem & file, hstring_ref metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const;
-    void AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file, hstring_ref metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const;
+    hstring Add(const Windows::Storage::IStorageItem & file, hstring_view metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const;
+    void AddOrReplace(hstring_view token, const Windows::Storage::IStorageItem & file, hstring_view metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const;
 };
 
 }

@@ -2275,7 +2275,7 @@ template <typename D> hstring impl_IStorePurchaseProperties<D>::Name() const
     return value;
 }
 
-template <typename D> void impl_IStorePurchaseProperties<D>::Name(hstring_ref value) const
+template <typename D> void impl_IStorePurchaseProperties<D>::Name(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IStorePurchaseProperties)->put_Name(get(value)));
 }
@@ -2287,12 +2287,12 @@ template <typename D> hstring impl_IStorePurchaseProperties<D>::ExtendedJsonData
     return value;
 }
 
-template <typename D> void impl_IStorePurchaseProperties<D>::ExtendedJsonData(hstring_ref value) const
+template <typename D> void impl_IStorePurchaseProperties<D>::ExtendedJsonData(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IStorePurchaseProperties)->put_ExtendedJsonData(get(value)));
 }
 
-template <typename D> Windows::Services::Store::StorePurchaseProperties impl_IStorePurchasePropertiesFactory<D>::Create(hstring_ref name) const
+template <typename D> Windows::Services::Store::StorePurchaseProperties impl_IStorePurchasePropertiesFactory<D>::Create(hstring_view name) const
 {
     Windows::Services::Store::StorePurchaseProperties storePurchaseProperties { nullptr };
     check_hresult(WINRT_SHIM(IStorePurchasePropertiesFactory)->abi_Create(get(name), put(storePurchaseProperties)));
@@ -2978,7 +2978,7 @@ template <typename D> Windows::Services::Store::StoreContext impl_IStoreContextS
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> impl_IStoreRequestHelperStatics<D>::SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_ref parametersAsJson) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> impl_IStoreRequestHelperStatics<D>::SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_view parametersAsJson) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> operation;
     check_hresult(WINRT_SHIM(IStoreRequestHelperStatics)->abi_SendRequestAsync(get(context), requestKind, get(parametersAsJson), put(operation)));
@@ -3009,14 +3009,14 @@ template <typename D> void impl_IStoreContext<D>::OfflineLicensesChanged(event_t
     check_hresult(WINRT_SHIM(IStoreContext)->remove_OfflineLicensesChanged(token));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IStoreContext<D>::GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IStoreContext<D>::GetCustomerPurchaseIdAsync(hstring_view serviceTicket, hstring_view publisherUserId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_GetCustomerPurchaseIdAsync(get(serviceTicket), get(publisherUserId), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IStoreContext<D>::GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IStoreContext<D>::GetCustomerCollectionsIdAsync(hstring_view serviceTicket, hstring_view publisherUserId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_GetCustomerCollectionsIdAsync(get(serviceTicket), get(publisherUserId), put(operation)));
@@ -3072,14 +3072,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::St
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> impl_IStoreContext<D>::ReportConsumableFulfillmentAsync(hstring_ref productStoreId, uint32_t quantity, GUID trackingId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> impl_IStoreContext<D>::ReportConsumableFulfillmentAsync(hstring_view productStoreId, uint32_t quantity, GUID trackingId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_ReportConsumableFulfillmentAsync(get(productStoreId), quantity, trackingId, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> impl_IStoreContext<D>::GetConsumableBalanceRemainingAsync(hstring_ref productStoreId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> impl_IStoreContext<D>::GetConsumableBalanceRemainingAsync(hstring_view productStoreId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_GetConsumableBalanceRemainingAsync(get(productStoreId), put(operation)));
@@ -3093,14 +3093,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::St
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreContext<D>::RequestPurchaseAsync(hstring_ref storeId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreContext<D>::RequestPurchaseAsync(hstring_view storeId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_RequestPurchaseAsync(get(storeId), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreContext<D>::RequestPurchaseAsync(hstring_ref storeId, const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreContext<D>::RequestPurchaseAsync(hstring_view storeId, const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_RequestPurchaseWithPurchasePropertiesAsync(get(storeId), get(storePurchaseProperties), put(operation)));
@@ -3227,11 +3227,11 @@ inline StorePurchaseProperties::StorePurchaseProperties() :
     StorePurchaseProperties(activate_instance<StorePurchaseProperties>())
 {}
 
-inline StorePurchaseProperties::StorePurchaseProperties(hstring_ref name) :
+inline StorePurchaseProperties::StorePurchaseProperties(hstring_view name) :
     StorePurchaseProperties(get_activation_factory<StorePurchaseProperties, IStorePurchasePropertiesFactory>().Create(name))
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> StoreRequestHelper::SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_ref parametersAsJson)
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> StoreRequestHelper::SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_view parametersAsJson)
 {
     return get_activation_factory<StoreRequestHelper, IStoreRequestHelperStatics>().SendRequestAsync(context, requestKind, parametersAsJson);
 }

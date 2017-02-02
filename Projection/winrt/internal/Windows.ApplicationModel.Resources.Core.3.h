@@ -35,11 +35,11 @@ struct WINRT_EBO ResourceContext :
     ResourceContext();
     static Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result);
     static Windows::ApplicationModel::Resources::Core::ResourceContext GetForCurrentView();
-    static void SetGlobalQualifierValue(hstring_ref key, hstring_ref value);
+    static void SetGlobalQualifierValue(hstring_view key, hstring_view value);
     static void ResetGlobalQualifierValues();
     static void ResetGlobalQualifierValues(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames);
     static Windows::ApplicationModel::Resources::Core::ResourceContext GetForViewIndependentUse();
-    static void SetGlobalQualifierValue(hstring_ref key, hstring_ref value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence);
+    static void SetGlobalQualifierValue(hstring_view key, hstring_view value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence);
 };
 
 struct WINRT_EBO ResourceContextLanguagesVectorView :
@@ -54,7 +54,7 @@ struct WINRT_EBO ResourceManager :
 {
     ResourceManager(std::nullptr_t) noexcept {}
     static Windows::ApplicationModel::Resources::Core::ResourceManager Current();
-    static bool IsResourceReference(hstring_ref resourceReference);
+    static bool IsResourceReference(hstring_view resourceReference);
 };
 
 struct WINRT_EBO ResourceMap :

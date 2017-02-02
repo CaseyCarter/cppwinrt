@@ -21,8 +21,8 @@ struct UserDataAccountManager
     UserDataAccountManager() = delete;
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType);
     static Windows::Foundation::IAsyncOperation<hstring> ShowAddAccountAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds contentKinds);
-    static Windows::Foundation::IAsyncAction ShowAccountSettingsAsync(hstring_ref id);
-    static Windows::Foundation::IAsyncAction ShowAccountErrorResolverAsync(hstring_ref id);
+    static Windows::Foundation::IAsyncAction ShowAccountSettingsAsync(hstring_view id);
+    static Windows::Foundation::IAsyncAction ShowAccountErrorResolverAsync(hstring_view id);
     static Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser GetForUser(const Windows::System::User & user);
 };
 

@@ -35,8 +35,8 @@ struct WINRT_EBO MessageDialog :
     Windows::UI::Popups::IMessageDialog
 {
     MessageDialog(std::nullptr_t) noexcept {}
-    MessageDialog(hstring_ref content);
-    MessageDialog(hstring_ref content, hstring_ref title);
+    MessageDialog(hstring_view content);
+    MessageDialog(hstring_view content, hstring_view title);
 };
 
 struct WINRT_EBO PopupMenu :
@@ -51,9 +51,9 @@ struct WINRT_EBO UICommand :
 {
     UICommand(std::nullptr_t) noexcept {}
     UICommand();
-    UICommand(hstring_ref label);
-    UICommand(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action);
-    UICommand(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId);
+    UICommand(hstring_view label);
+    UICommand(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action);
+    UICommand(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId);
 };
 
 struct WINRT_EBO UICommandSeparator :

@@ -6727,7 +6727,7 @@ template <typename D> hstring impl_INavigationTransitionInfoOverrides<D>::GetNav
     return returnValue;
 }
 
-template <typename D> void impl_INavigationTransitionInfoOverrides<D>::SetNavigationStateCore(hstring_ref navigationState) const
+template <typename D> void impl_INavigationTransitionInfoOverrides<D>::SetNavigationStateCore(hstring_view navigationState) const
 {
     check_hresult(WINRT_SHIM(INavigationTransitionInfoOverrides)->abi_SetNavigationStateCore(get(navigationState)));
 }
@@ -7342,7 +7342,7 @@ template <typename D> hstring impl_IDragItemThemeAnimation<D>::TargetName() cons
     return value;
 }
 
-template <typename D> void impl_IDragItemThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IDragItemThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDragItemThemeAnimation)->put_TargetName(get(value)));
 }
@@ -7361,7 +7361,7 @@ template <typename D> hstring impl_IDragOverThemeAnimation<D>::TargetName() cons
     return value;
 }
 
-template <typename D> void impl_IDragOverThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IDragOverThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDragOverThemeAnimation)->put_TargetName(get(value)));
 }
@@ -7418,7 +7418,7 @@ template <typename D> hstring impl_IDrillInThemeAnimation<D>::EntranceTargetName
     return value;
 }
 
-template <typename D> void impl_IDrillInThemeAnimation<D>::EntranceTargetName(hstring_ref value) const
+template <typename D> void impl_IDrillInThemeAnimation<D>::EntranceTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDrillInThemeAnimation)->put_EntranceTargetName(get(value)));
 }
@@ -7442,7 +7442,7 @@ template <typename D> hstring impl_IDrillInThemeAnimation<D>::ExitTargetName() c
     return value;
 }
 
-template <typename D> void impl_IDrillInThemeAnimation<D>::ExitTargetName(hstring_ref value) const
+template <typename D> void impl_IDrillInThemeAnimation<D>::ExitTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDrillInThemeAnimation)->put_ExitTargetName(get(value)));
 }
@@ -7494,7 +7494,7 @@ template <typename D> hstring impl_IDrillOutThemeAnimation<D>::EntranceTargetNam
     return value;
 }
 
-template <typename D> void impl_IDrillOutThemeAnimation<D>::EntranceTargetName(hstring_ref value) const
+template <typename D> void impl_IDrillOutThemeAnimation<D>::EntranceTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDrillOutThemeAnimation)->put_EntranceTargetName(get(value)));
 }
@@ -7518,7 +7518,7 @@ template <typename D> hstring impl_IDrillOutThemeAnimation<D>::ExitTargetName() 
     return value;
 }
 
-template <typename D> void impl_IDrillOutThemeAnimation<D>::ExitTargetName(hstring_ref value) const
+template <typename D> void impl_IDrillOutThemeAnimation<D>::ExitTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDrillOutThemeAnimation)->put_ExitTargetName(get(value)));
 }
@@ -7570,7 +7570,7 @@ template <typename D> hstring impl_IDropTargetItemThemeAnimation<D>::TargetName(
     return value;
 }
 
-template <typename D> void impl_IDropTargetItemThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IDropTargetItemThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IDropTargetItemThemeAnimation)->put_TargetName(get(value)));
 }
@@ -7779,7 +7779,7 @@ template <typename D> hstring impl_IFadeInThemeAnimation<D>::TargetName() const
     return value;
 }
 
-template <typename D> void impl_IFadeInThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IFadeInThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFadeInThemeAnimation)->put_TargetName(get(value)));
 }
@@ -7798,7 +7798,7 @@ template <typename D> hstring impl_IFadeOutThemeAnimation<D>::TargetName() const
     return value;
 }
 
-template <typename D> void impl_IFadeOutThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IFadeOutThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFadeOutThemeAnimation)->put_TargetName(get(value)));
 }
@@ -7983,7 +7983,7 @@ template <typename D> hstring impl_IPointerDownThemeAnimation<D>::TargetName() c
     return value;
 }
 
-template <typename D> void impl_IPointerDownThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IPointerDownThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPointerDownThemeAnimation)->put_TargetName(get(value)));
 }
@@ -8002,7 +8002,7 @@ template <typename D> hstring impl_IPointerUpThemeAnimation<D>::TargetName() con
     return value;
 }
 
-template <typename D> void impl_IPointerUpThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IPointerUpThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPointerUpThemeAnimation)->put_TargetName(get(value)));
 }
@@ -8021,7 +8021,7 @@ template <typename D> hstring impl_IPopInThemeAnimation<D>::TargetName() const
     return value;
 }
 
-template <typename D> void impl_IPopInThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IPopInThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPopInThemeAnimation)->put_TargetName(get(value)));
 }
@@ -8078,7 +8078,7 @@ template <typename D> hstring impl_IPopOutThemeAnimation<D>::TargetName() const
     return value;
 }
 
-template <typename D> void impl_IPopOutThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IPopOutThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IPopOutThemeAnimation)->put_TargetName(get(value)));
 }
@@ -8154,7 +8154,7 @@ template <typename D> hstring impl_IRepositionThemeAnimation<D>::TargetName() co
     return value;
 }
 
-template <typename D> void impl_IRepositionThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_IRepositionThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IRepositionThemeAnimation)->put_TargetName(get(value)));
 }
@@ -8287,7 +8287,7 @@ template <typename D> hstring impl_ISplitCloseThemeAnimation<D>::OpenedTargetNam
     return value;
 }
 
-template <typename D> void impl_ISplitCloseThemeAnimation<D>::OpenedTargetName(hstring_ref value) const
+template <typename D> void impl_ISplitCloseThemeAnimation<D>::OpenedTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISplitCloseThemeAnimation)->put_OpenedTargetName(get(value)));
 }
@@ -8311,7 +8311,7 @@ template <typename D> hstring impl_ISplitCloseThemeAnimation<D>::ClosedTargetNam
     return value;
 }
 
-template <typename D> void impl_ISplitCloseThemeAnimation<D>::ClosedTargetName(hstring_ref value) const
+template <typename D> void impl_ISplitCloseThemeAnimation<D>::ClosedTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISplitCloseThemeAnimation)->put_ClosedTargetName(get(value)));
 }
@@ -8335,7 +8335,7 @@ template <typename D> hstring impl_ISplitCloseThemeAnimation<D>::ContentTargetNa
     return value;
 }
 
-template <typename D> void impl_ISplitCloseThemeAnimation<D>::ContentTargetName(hstring_ref value) const
+template <typename D> void impl_ISplitCloseThemeAnimation<D>::ContentTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISplitCloseThemeAnimation)->put_ContentTargetName(get(value)));
 }
@@ -8496,7 +8496,7 @@ template <typename D> hstring impl_ISplitOpenThemeAnimation<D>::OpenedTargetName
     return value;
 }
 
-template <typename D> void impl_ISplitOpenThemeAnimation<D>::OpenedTargetName(hstring_ref value) const
+template <typename D> void impl_ISplitOpenThemeAnimation<D>::OpenedTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISplitOpenThemeAnimation)->put_OpenedTargetName(get(value)));
 }
@@ -8520,7 +8520,7 @@ template <typename D> hstring impl_ISplitOpenThemeAnimation<D>::ClosedTargetName
     return value;
 }
 
-template <typename D> void impl_ISplitOpenThemeAnimation<D>::ClosedTargetName(hstring_ref value) const
+template <typename D> void impl_ISplitOpenThemeAnimation<D>::ClosedTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISplitOpenThemeAnimation)->put_ClosedTargetName(get(value)));
 }
@@ -8544,7 +8544,7 @@ template <typename D> hstring impl_ISplitOpenThemeAnimation<D>::ContentTargetNam
     return value;
 }
 
-template <typename D> void impl_ISplitOpenThemeAnimation<D>::ContentTargetName(hstring_ref value) const
+template <typename D> void impl_ISplitOpenThemeAnimation<D>::ContentTargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISplitOpenThemeAnimation)->put_ContentTargetName(get(value)));
 }
@@ -8768,7 +8768,7 @@ template <typename D> hstring impl_IStoryboardStatics<D>::GetTargetProperty(cons
     return path;
 }
 
-template <typename D> void impl_IStoryboardStatics<D>::SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref path) const
+template <typename D> void impl_IStoryboardStatics<D>::SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view path) const
 {
     check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_SetTargetProperty(get(element), get(path)));
 }
@@ -8787,7 +8787,7 @@ template <typename D> hstring impl_IStoryboardStatics<D>::GetTargetName(const Wi
     return name;
 }
 
-template <typename D> void impl_IStoryboardStatics<D>::SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref name) const
+template <typename D> void impl_IStoryboardStatics<D>::SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view name) const
 {
     check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_SetTargetName(get(element), get(name)));
 }
@@ -8804,7 +8804,7 @@ template <typename D> hstring impl_ISwipeBackThemeAnimation<D>::TargetName() con
     return value;
 }
 
-template <typename D> void impl_ISwipeBackThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_ISwipeBackThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISwipeBackThemeAnimation)->put_TargetName(get(value)));
 }
@@ -8861,7 +8861,7 @@ template <typename D> hstring impl_ISwipeHintThemeAnimation<D>::TargetName() con
     return value;
 }
 
-template <typename D> void impl_ISwipeHintThemeAnimation<D>::TargetName(hstring_ref value) const
+template <typename D> void impl_ISwipeHintThemeAnimation<D>::TargetName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ISwipeHintThemeAnimation)->put_TargetName(get(value)));
 }
@@ -8964,14 +8964,14 @@ template <typename D> void impl_IConnectedAnimationService<D>::DefaultEasingFunc
     check_hresult(WINRT_SHIM(IConnectedAnimationService)->put_DefaultEasingFunction(get(value)));
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimation impl_IConnectedAnimationService<D>::PrepareToAnimate(hstring_ref key, const Windows::UI::Xaml::UIElement & source) const
+template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimation impl_IConnectedAnimationService<D>::PrepareToAnimate(hstring_view key, const Windows::UI::Xaml::UIElement & source) const
 {
     Windows::UI::Xaml::Media::Animation::ConnectedAnimation returnValue { nullptr };
     check_hresult(WINRT_SHIM(IConnectedAnimationService)->abi_PrepareToAnimate(get(key), get(source), put(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimation impl_IConnectedAnimationService<D>::GetAnimation(hstring_ref key) const
+template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimation impl_IConnectedAnimationService<D>::GetAnimation(hstring_view key) const
 {
     Windows::UI::Xaml::Media::Animation::ConnectedAnimation returnValue { nullptr };
     check_hresult(WINRT_SHIM(IConnectedAnimationService)->abi_GetAnimation(get(key), put(returnValue)));
@@ -10031,7 +10031,7 @@ inline hstring Storyboard::GetTargetProperty(const Windows::UI::Xaml::Media::Ani
     return get_activation_factory<Storyboard, IStoryboardStatics>().GetTargetProperty(element);
 }
 
-inline void Storyboard::SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref path)
+inline void Storyboard::SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view path)
 {
     get_activation_factory<Storyboard, IStoryboardStatics>().SetTargetProperty(element, path);
 }
@@ -10046,7 +10046,7 @@ inline hstring Storyboard::GetTargetName(const Windows::UI::Xaml::Media::Animati
     return get_activation_factory<Storyboard, IStoryboardStatics>().GetTargetName(element);
 }
 
-inline void Storyboard::SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref name)
+inline void Storyboard::SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view name)
 {
     get_activation_factory<Storyboard, IStoryboardStatics>().SetTargetName(element, name);
 }

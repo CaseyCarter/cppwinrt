@@ -1,5 +1,7 @@
 #pragma once
 
+#define NOMINMAX
+
 #pragma comment(lib, "windowsapp") 
 
 #include "winrt\Windows.Foundation.Diagnostics.h"

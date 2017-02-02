@@ -204,29 +204,29 @@ template <typename D>
 struct WINRT_EBO impl_ISelectableWordsSegmenter
 {
     hstring ResolvedLanguage() const;
-    Windows::Data::Text::SelectableWordSegment GetTokenAt(hstring_ref text, uint32_t startIndex) const;
-    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> GetTokens(hstring_ref text) const;
-    void Tokenize(hstring_ref text, uint32_t startIndex, const Windows::Data::Text::SelectableWordSegmentsTokenizingHandler & handler) const;
+    Windows::Data::Text::SelectableWordSegment GetTokenAt(hstring_view text, uint32_t startIndex) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> GetTokens(hstring_view text) const;
+    void Tokenize(hstring_view text, uint32_t startIndex, const Windows::Data::Text::SelectableWordSegmentsTokenizingHandler & handler) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISelectableWordsSegmenterFactory
 {
-    Windows::Data::Text::SelectableWordsSegmenter CreateWithLanguage(hstring_ref language) const;
+    Windows::Data::Text::SelectableWordsSegmenter CreateWithLanguage(hstring_view language) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISemanticTextQuery
 {
-    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> Find(hstring_ref content) const;
-    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> FindInProperty(hstring_ref propertyContent, hstring_ref propertyName) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> Find(hstring_view content) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> FindInProperty(hstring_view propertyContent, hstring_view propertyName) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISemanticTextQueryFactory
 {
-    Windows::Data::Text::SemanticTextQuery Create(hstring_ref aqsFilter) const;
-    Windows::Data::Text::SemanticTextQuery CreateWithLanguage(hstring_ref aqsFilter, hstring_ref filterLanguage) const;
+    Windows::Data::Text::SemanticTextQuery Create(hstring_view aqsFilter) const;
+    Windows::Data::Text::SemanticTextQuery CreateWithLanguage(hstring_view aqsFilter, hstring_view filterLanguage) const;
 };
 
 template <typename D>
@@ -234,14 +234,14 @@ struct WINRT_EBO impl_ITextConversionGenerator
 {
     hstring ResolvedLanguage() const;
     bool LanguageAvailableButNotInstalled() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input, uint32_t maxCandidates) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_view input) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_view input, uint32_t maxCandidates) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ITextConversionGeneratorFactory
 {
-    Windows::Data::Text::TextConversionGenerator Create(hstring_ref languageTag) const;
+    Windows::Data::Text::TextConversionGenerator Create(hstring_view languageTag) const;
 };
 
 template <typename D>
@@ -256,14 +256,14 @@ struct WINRT_EBO impl_ITextPredictionGenerator
 {
     hstring ResolvedLanguage() const;
     bool LanguageAvailableButNotInstalled() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input, uint32_t maxCandidates) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_view input) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_view input, uint32_t maxCandidates) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ITextPredictionGeneratorFactory
 {
-    Windows::Data::Text::TextPredictionGenerator Create(hstring_ref languageTag) const;
+    Windows::Data::Text::TextPredictionGenerator Create(hstring_view languageTag) const;
 };
 
 template <typename D>
@@ -271,19 +271,19 @@ struct WINRT_EBO impl_ITextReverseConversionGenerator
 {
     hstring ResolvedLanguage() const;
     bool LanguageAvailableButNotInstalled() const;
-    Windows::Foundation::IAsyncOperation<hstring> ConvertBackAsync(hstring_ref input) const;
+    Windows::Foundation::IAsyncOperation<hstring> ConvertBackAsync(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ITextReverseConversionGenerator2
 {
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> GetPhonemesAsync(hstring_ref input) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> GetPhonemesAsync(hstring_view input) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ITextReverseConversionGeneratorFactory
 {
-    Windows::Data::Text::TextReverseConversionGenerator Create(hstring_ref languageTag) const;
+    Windows::Data::Text::TextReverseConversionGenerator Create(hstring_view languageTag) const;
 };
 
 template <typename D>
@@ -320,15 +320,15 @@ template <typename D>
 struct WINRT_EBO impl_IWordsSegmenter
 {
     hstring ResolvedLanguage() const;
-    Windows::Data::Text::WordSegment GetTokenAt(hstring_ref text, uint32_t startIndex) const;
-    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> GetTokens(hstring_ref text) const;
-    void Tokenize(hstring_ref text, uint32_t startIndex, const Windows::Data::Text::WordSegmentsTokenizingHandler & handler) const;
+    Windows::Data::Text::WordSegment GetTokenAt(hstring_view text, uint32_t startIndex) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> GetTokens(hstring_view text) const;
+    void Tokenize(hstring_view text, uint32_t startIndex, const Windows::Data::Text::WordSegmentsTokenizingHandler & handler) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IWordsSegmenterFactory
 {
-    Windows::Data::Text::WordsSegmenter CreateWithLanguage(hstring_ref language) const;
+    Windows::Data::Text::WordsSegmenter CreateWithLanguage(hstring_view language) const;
 };
 
 }

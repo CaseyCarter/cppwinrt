@@ -15,12 +15,12 @@ struct WINRT_EBO ResourceLoader :
 {
     ResourceLoader(std::nullptr_t) noexcept {}
     ResourceLoader();
-    ResourceLoader(hstring_ref name);
+    ResourceLoader(hstring_view name);
     static hstring GetStringForReference(const Windows::Foundation::Uri & uri);
     static Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView();
-    static Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView(hstring_ref name);
+    static Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView(hstring_view name);
     static Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse();
-    static Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse(hstring_ref name);
+    static Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse(hstring_view name);
 };
 
 }

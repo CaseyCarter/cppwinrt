@@ -253,12 +253,12 @@ struct WINRT_EBO impl_ISmsAppMessage
 {
     Windows::Foundation::DateTime Timestamp() const;
     hstring To() const;
-    void To(hstring_ref value) const;
+    void To(hstring_view value) const;
     hstring From() const;
     hstring Body() const;
-    void Body(hstring_ref value) const;
+    void Body(hstring_view value) const;
     hstring CallbackNumber() const;
-    void CallbackNumber(hstring_ref value) const;
+    void CallbackNumber(hstring_view value) const;
     bool IsDeliveryNotificationEnabled() const;
     void IsDeliveryNotificationEnabled(bool value) const;
     int32_t RetryAttemptCount() const;
@@ -294,7 +294,7 @@ template <typename D>
 struct WINRT_EBO impl_ISmsDevice2
 {
     hstring SmscAddress() const;
-    void SmscAddress(hstring_ref value) const;
+    void SmscAddress(hstring_view value) const;
     hstring DeviceId() const;
     hstring ParentDeviceId() const;
     hstring AccountPhoneNumber() const;
@@ -312,9 +312,9 @@ template <typename D>
 struct WINRT_EBO impl_ISmsDevice2Statics
 {
     hstring GetDeviceSelector() const;
-    Windows::Devices::Sms::SmsDevice2 FromId(hstring_ref deviceId) const;
+    Windows::Devices::Sms::SmsDevice2 FromId(hstring_view deviceId) const;
     Windows::Devices::Sms::SmsDevice2 GetDefault() const;
-    Windows::Devices::Sms::SmsDevice2 FromParentId(hstring_ref parentDeviceId) const;
+    Windows::Devices::Sms::SmsDevice2 FromParentId(hstring_view parentDeviceId) const;
 };
 
 template <typename D>
@@ -394,7 +394,7 @@ template <typename D>
 struct WINRT_EBO impl_ISmsMessageRegistrationStatics
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> AllRegistrations() const;
-    Windows::Devices::Sms::SmsMessageRegistration Register(hstring_ref id, const Windows::Devices::Sms::SmsFilterRules & filterRules) const;
+    Windows::Devices::Sms::SmsMessageRegistration Register(hstring_view id, const Windows::Devices::Sms::SmsFilterRules & filterRules) const;
 };
 
 template <typename D>
@@ -426,14 +426,14 @@ struct WINRT_EBO impl_ISmsTextMessage2
 {
     Windows::Foundation::DateTime Timestamp() const;
     hstring To() const;
-    void To(hstring_ref value) const;
+    void To(hstring_view value) const;
     hstring From() const;
     hstring Body() const;
-    void Body(hstring_ref value) const;
+    void Body(hstring_view value) const;
     Windows::Devices::Sms::SmsEncoding Encoding() const;
     void Encoding(Windows::Devices::Sms::SmsEncoding value) const;
     hstring CallbackNumber() const;
-    void CallbackNumber(hstring_ref value) const;
+    void CallbackNumber(hstring_view value) const;
     bool IsDeliveryNotificationEnabled() const;
     void IsDeliveryNotificationEnabled(bool value) const;
     int32_t RetryAttemptCount() const;

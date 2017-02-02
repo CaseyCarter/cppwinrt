@@ -549,19 +549,19 @@ template <typename D> hstring impl_IFileRemovedEventArgs<D>::Id() const
     return value;
 }
 
-template <typename D> Windows::Storage::Pickers::Provider::AddFileResult impl_IFileOpenPickerUI<D>::AddFile(hstring_ref id, const Windows::Storage::IStorageFile & file) const
+template <typename D> Windows::Storage::Pickers::Provider::AddFileResult impl_IFileOpenPickerUI<D>::AddFile(hstring_view id, const Windows::Storage::IStorageFile & file) const
 {
     Windows::Storage::Pickers::Provider::AddFileResult addResult {};
     check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_AddFile(get(id), get(file), &addResult));
     return addResult;
 }
 
-template <typename D> void impl_IFileOpenPickerUI<D>::RemoveFile(hstring_ref id) const
+template <typename D> void impl_IFileOpenPickerUI<D>::RemoveFile(hstring_view id) const
 {
     check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_RemoveFile(get(id)));
 }
 
-template <typename D> bool impl_IFileOpenPickerUI<D>::ContainsFile(hstring_ref id) const
+template <typename D> bool impl_IFileOpenPickerUI<D>::ContainsFile(hstring_view id) const
 {
     bool isContained {};
     check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_ContainsFile(get(id), &isContained));
@@ -603,7 +603,7 @@ template <typename D> hstring impl_IFileOpenPickerUI<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IFileOpenPickerUI<D>::Title(hstring_ref value) const
+template <typename D> void impl_IFileOpenPickerUI<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileOpenPickerUI)->put_Title(get(value)));
 }
@@ -682,7 +682,7 @@ template <typename D> hstring impl_IFileSavePickerUI<D>::Title() const
     return value;
 }
 
-template <typename D> void impl_IFileSavePickerUI<D>::Title(hstring_ref value) const
+template <typename D> void impl_IFileSavePickerUI<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IFileSavePickerUI)->put_Title(get(value)));
 }
@@ -708,7 +708,7 @@ template <typename D> hstring impl_IFileSavePickerUI<D>::FileName() const
     return value;
 }
 
-template <typename D> Windows::Storage::Pickers::Provider::SetFileNameResult impl_IFileSavePickerUI<D>::TrySetFileName(hstring_ref value) const
+template <typename D> Windows::Storage::Pickers::Provider::SetFileNameResult impl_IFileSavePickerUI<D>::TrySetFileName(hstring_view value) const
 {
     Windows::Storage::Pickers::Provider::SetFileNameResult result {};
     check_hresult(WINRT_SHIM(IFileSavePickerUI)->abi_TrySetFileName(get(value), &result));

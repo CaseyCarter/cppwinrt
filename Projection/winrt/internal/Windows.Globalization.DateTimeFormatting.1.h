@@ -76,7 +76,7 @@ struct WINRT_EBO impl_IDateTimeFormatter
     hstring Calendar() const;
     hstring Clock() const;
     hstring NumeralSystem() const;
-    void NumeralSystem(hstring_ref value) const;
+    void NumeralSystem(hstring_view value) const;
     Windows::Foundation::Collections::IVectorView<hstring> Patterns() const;
     hstring Template() const;
     hstring Format(const Windows::Foundation::DateTime & value) const;
@@ -94,19 +94,19 @@ struct WINRT_EBO impl_IDateTimeFormatter
 template <typename D>
 struct WINRT_EBO impl_IDateTimeFormatter2
 {
-    hstring Format(const Windows::Foundation::DateTime & datetime, hstring_ref timeZoneId) const;
+    hstring Format(const Windows::Foundation::DateTime & datetime, hstring_view timeZoneId) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDateTimeFormatterFactory
 {
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatter(hstring_ref formatTemplate) const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterLanguages(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterContext(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion, hstring_ref calendar, hstring_ref clock) const;
+    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatter(hstring_view formatTemplate) const;
+    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterLanguages(hstring_view formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
+    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterContext(hstring_view formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion, hstring_view calendar, hstring_view clock) const;
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterDate(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat) const;
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterTime(Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat) const;
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterDateTimeLanguages(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterDateTimeContext(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion, hstring_ref calendar, hstring_ref clock) const;
+    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterDateTimeContext(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion, hstring_view calendar, hstring_view clock) const;
 };
 
 template <typename D>

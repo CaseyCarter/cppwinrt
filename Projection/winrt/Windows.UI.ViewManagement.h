@@ -2150,7 +2150,7 @@ template <typename D> void impl_IApplicationView<D>::IsScreenCaptureEnabled(bool
     check_hresult(WINRT_SHIM(IApplicationView)->put_IsScreenCaptureEnabled(value));
 }
 
-template <typename D> void impl_IApplicationView<D>::Title(hstring_ref value) const
+template <typename D> void impl_IApplicationView<D>::Title(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IApplicationView)->put_Title(get(value)));
 }

@@ -84,7 +84,7 @@ template <typename D>
 struct WINRT_EBO impl_ICustomSensorStatics
 {
     hstring GetDeviceSelector(GUID interfaceId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> FromIdAsync(hstring_ref sensorId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> FromIdAsync(hstring_view sensorId) const;
 };
 
 }

@@ -711,24 +711,24 @@ template <typename D>
 struct WINRT_EBO impl_ICompositionAnimation
 {
     void ClearAllParameters() const;
-    void ClearParameter(hstring_ref key) const;
-    void SetColorParameter(hstring_ref key, const Windows::UI::Color & value) const;
-    void SetMatrix3x2Parameter(hstring_ref key, const Windows::Foundation::Numerics::float3x2 & value) const;
-    void SetMatrix4x4Parameter(hstring_ref key, const Windows::Foundation::Numerics::float4x4 & value) const;
-    void SetQuaternionParameter(hstring_ref key, const Windows::Foundation::Numerics::quaternion & value) const;
-    void SetReferenceParameter(hstring_ref key, const Windows::UI::Composition::CompositionObject & compositionObject) const;
-    void SetScalarParameter(hstring_ref key, float value) const;
-    void SetVector2Parameter(hstring_ref key, const Windows::Foundation::Numerics::float2 & value) const;
-    void SetVector3Parameter(hstring_ref key, const Windows::Foundation::Numerics::float3 & value) const;
-    void SetVector4Parameter(hstring_ref key, const Windows::Foundation::Numerics::float4 & value) const;
+    void ClearParameter(hstring_view key) const;
+    void SetColorParameter(hstring_view key, const Windows::UI::Color & value) const;
+    void SetMatrix3x2Parameter(hstring_view key, const Windows::Foundation::Numerics::float3x2 & value) const;
+    void SetMatrix4x4Parameter(hstring_view key, const Windows::Foundation::Numerics::float4x4 & value) const;
+    void SetQuaternionParameter(hstring_view key, const Windows::Foundation::Numerics::quaternion & value) const;
+    void SetReferenceParameter(hstring_view key, const Windows::UI::Composition::CompositionObject & compositionObject) const;
+    void SetScalarParameter(hstring_view key, float value) const;
+    void SetVector2Parameter(hstring_view key, const Windows::Foundation::Numerics::float2 & value) const;
+    void SetVector3Parameter(hstring_view key, const Windows::Foundation::Numerics::float3 & value) const;
+    void SetVector4Parameter(hstring_view key, const Windows::Foundation::Numerics::float4 & value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ICompositionAnimation2
 {
-    void SetBooleanParameter(hstring_ref key, bool value) const;
+    void SetBooleanParameter(hstring_view key, bool value) const;
     hstring Target() const;
-    void Target(hstring_ref value) const;
+    void Target(hstring_view value) const;
 };
 
 template <typename D>
@@ -838,8 +838,8 @@ struct WINRT_EBO impl_ICompositionEasingFunctionFactory
 template <typename D>
 struct WINRT_EBO impl_ICompositionEffectBrush
 {
-    Windows::UI::Composition::CompositionBrush GetSourceParameter(hstring_ref name) const;
-    void SetSourceParameter(hstring_ref name, const Windows::UI::Composition::CompositionBrush & source) const;
+    Windows::UI::Composition::CompositionBrush GetSourceParameter(hstring_view name) const;
+    void SetSourceParameter(hstring_view name, const Windows::UI::Composition::CompositionBrush & source) const;
 };
 
 template <typename D>
@@ -859,7 +859,7 @@ struct WINRT_EBO impl_ICompositionEffectSourceParameter
 template <typename D>
 struct WINRT_EBO impl_ICompositionEffectSourceParameterFactory
 {
-    Windows::UI::Composition::CompositionEffectSourceParameter Create(hstring_ref name) const;
+    Windows::UI::Composition::CompositionEffectSourceParameter Create(hstring_view name) const;
 };
 
 template <typename D>
@@ -927,15 +927,15 @@ struct WINRT_EBO impl_ICompositionObject
     Windows::UI::Composition::Compositor Compositor() const;
     Windows::UI::Core::CoreDispatcher Dispatcher() const;
     Windows::UI::Composition::CompositionPropertySet Properties() const;
-    void StartAnimation(hstring_ref propertyName, const Windows::UI::Composition::CompositionAnimation & animation) const;
-    void StopAnimation(hstring_ref propertyName) const;
+    void StartAnimation(hstring_view propertyName, const Windows::UI::Composition::CompositionAnimation & animation) const;
+    void StopAnimation(hstring_view propertyName) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ICompositionObject2
 {
     hstring Comment() const;
-    void Comment(hstring_ref value) const;
+    void Comment(hstring_view value) const;
     Windows::UI::Composition::ImplicitAnimationCollection ImplicitAnimations() const;
     void ImplicitAnimations(const Windows::UI::Composition::ImplicitAnimationCollection & value) const;
     void StartAnimationGroup(const Windows::UI::Composition::ICompositionAnimationBase & value) const;
@@ -950,29 +950,29 @@ struct WINRT_EBO impl_ICompositionObjectFactory
 template <typename D>
 struct WINRT_EBO impl_ICompositionPropertySet
 {
-    void InsertColor(hstring_ref propertyName, const Windows::UI::Color & value) const;
-    void InsertMatrix3x2(hstring_ref propertyName, const Windows::Foundation::Numerics::float3x2 & value) const;
-    void InsertMatrix4x4(hstring_ref propertyName, const Windows::Foundation::Numerics::float4x4 & value) const;
-    void InsertQuaternion(hstring_ref propertyName, const Windows::Foundation::Numerics::quaternion & value) const;
-    void InsertScalar(hstring_ref propertyName, float value) const;
-    void InsertVector2(hstring_ref propertyName, const Windows::Foundation::Numerics::float2 & value) const;
-    void InsertVector3(hstring_ref propertyName, const Windows::Foundation::Numerics::float3 & value) const;
-    void InsertVector4(hstring_ref propertyName, const Windows::Foundation::Numerics::float4 & value) const;
-    Windows::UI::Composition::CompositionGetValueStatus TryGetColor(hstring_ref propertyName, Windows::UI::Color & value) const;
-    Windows::UI::Composition::CompositionGetValueStatus TryGetMatrix3x2(hstring_ref propertyName, Windows::Foundation::Numerics::float3x2 & value) const;
-    Windows::UI::Composition::CompositionGetValueStatus TryGetMatrix4x4(hstring_ref propertyName, Windows::Foundation::Numerics::float4x4 & value) const;
-    Windows::UI::Composition::CompositionGetValueStatus TryGetQuaternion(hstring_ref propertyName, Windows::Foundation::Numerics::quaternion & value) const;
-    Windows::UI::Composition::CompositionGetValueStatus TryGetScalar(hstring_ref propertyName, float & value) const;
-    Windows::UI::Composition::CompositionGetValueStatus TryGetVector2(hstring_ref propertyName, Windows::Foundation::Numerics::float2 & value) const;
-    Windows::UI::Composition::CompositionGetValueStatus TryGetVector3(hstring_ref propertyName, Windows::Foundation::Numerics::float3 & value) const;
-    Windows::UI::Composition::CompositionGetValueStatus TryGetVector4(hstring_ref propertyName, Windows::Foundation::Numerics::float4 & value) const;
+    void InsertColor(hstring_view propertyName, const Windows::UI::Color & value) const;
+    void InsertMatrix3x2(hstring_view propertyName, const Windows::Foundation::Numerics::float3x2 & value) const;
+    void InsertMatrix4x4(hstring_view propertyName, const Windows::Foundation::Numerics::float4x4 & value) const;
+    void InsertQuaternion(hstring_view propertyName, const Windows::Foundation::Numerics::quaternion & value) const;
+    void InsertScalar(hstring_view propertyName, float value) const;
+    void InsertVector2(hstring_view propertyName, const Windows::Foundation::Numerics::float2 & value) const;
+    void InsertVector3(hstring_view propertyName, const Windows::Foundation::Numerics::float3 & value) const;
+    void InsertVector4(hstring_view propertyName, const Windows::Foundation::Numerics::float4 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetColor(hstring_view propertyName, Windows::UI::Color & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetMatrix3x2(hstring_view propertyName, Windows::Foundation::Numerics::float3x2 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetMatrix4x4(hstring_view propertyName, Windows::Foundation::Numerics::float4x4 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetQuaternion(hstring_view propertyName, Windows::Foundation::Numerics::quaternion & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetScalar(hstring_view propertyName, float & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetVector2(hstring_view propertyName, Windows::Foundation::Numerics::float2 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetVector3(hstring_view propertyName, Windows::Foundation::Numerics::float3 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetVector4(hstring_view propertyName, Windows::Foundation::Numerics::float4 & value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ICompositionPropertySet2
 {
-    void InsertBoolean(hstring_ref propertyName, bool value) const;
-    Windows::UI::Composition::CompositionGetValueStatus TryGetBoolean(hstring_ref propertyName, bool & value) const;
+    void InsertBoolean(hstring_view propertyName, bool value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetBoolean(hstring_view propertyName, bool & value) const;
 };
 
 template <typename D>
@@ -1056,7 +1056,7 @@ struct WINRT_EBO impl_ICompositor
     Windows::UI::Composition::CompositionEffectFactory CreateEffectFactory(const Windows::Graphics::Effects::IGraphicsEffect & graphicsEffect) const;
     Windows::UI::Composition::CompositionEffectFactory CreateEffectFactory(const Windows::Graphics::Effects::IGraphicsEffect & graphicsEffect, const Windows::Foundation::Collections::IIterable<hstring> & animatableProperties) const;
     Windows::UI::Composition::ExpressionAnimation CreateExpressionAnimation() const;
-    Windows::UI::Composition::ExpressionAnimation CreateExpressionAnimation(hstring_ref expression) const;
+    Windows::UI::Composition::ExpressionAnimation CreateExpressionAnimation(hstring_view expression) const;
     Windows::UI::Composition::InsetClip CreateInsetClip() const;
     Windows::UI::Composition::InsetClip CreateInsetClip(float leftInset, float topInset, float rightInset, float bottomInset) const;
     Windows::UI::Composition::LinearEasingFunction CreateLinearEasingFunction() const;
@@ -1140,7 +1140,7 @@ template <typename D>
 struct WINRT_EBO impl_IExpressionAnimation
 {
     hstring Expression() const;
-    void Expression(hstring_ref value) const;
+    void Expression(hstring_view value) const;
 };
 
 template <typename D>
@@ -1175,8 +1175,8 @@ struct WINRT_EBO impl_IKeyFrameAnimation
     int32_t KeyFrameCount() const;
     Windows::UI::Composition::AnimationStopBehavior StopBehavior() const;
     void StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) const;
-    void InsertExpressionKeyFrame(float normalizedProgressKey, hstring_ref value) const;
-    void InsertExpressionKeyFrame(float normalizedProgressKey, hstring_ref value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
+    void InsertExpressionKeyFrame(float normalizedProgressKey, hstring_view value) const;
+    void InsertExpressionKeyFrame(float normalizedProgressKey, hstring_view value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
 };
 
 template <typename D>

@@ -2786,7 +2786,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattVal
 
 namespace Windows::Devices::Bluetooth::GenericAttributeProfile {
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> impl_IGattDeviceServiceStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> impl_IGattDeviceServiceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> gattDeviceService;
     check_hresult(WINRT_SHIM(IGattDeviceServiceStatics)->abi_FromIdAsync(get(deviceId), put(gattDeviceService)));
@@ -4558,7 +4558,7 @@ inline GUID GattDescriptorUuids::ServerCharacteristicConfiguration()
     return get_activation_factory<GattDescriptorUuids, IGattDescriptorUuidsStatics>().ServerCharacteristicConfiguration();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattDeviceService::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattDeviceService::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<GattDeviceService, IGattDeviceServiceStatics>().FromIdAsync(deviceId);
 }

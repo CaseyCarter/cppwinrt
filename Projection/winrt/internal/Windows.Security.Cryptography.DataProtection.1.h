@@ -49,7 +49,7 @@ struct WINRT_EBO impl_IDataProtectionProvider
 template <typename D>
 struct WINRT_EBO impl_IDataProtectionProviderFactory
 {
-    Windows::Security::Cryptography::DataProtection::DataProtectionProvider CreateOverloadExplicit(hstring_ref protectionDescriptor) const;
+    Windows::Security::Cryptography::DataProtection::DataProtectionProvider CreateOverloadExplicit(hstring_view protectionDescriptor) const;
 };
 
 }

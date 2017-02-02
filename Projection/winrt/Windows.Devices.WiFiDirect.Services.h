@@ -1103,7 +1103,7 @@ template <typename D> Windows::Devices::WiFiDirect::Services::WiFiDirectServiceS
     return value;
 }
 
-template <typename D> Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser impl_IWiFiDirectServiceAdvertiserFactory<D>::CreateWiFiDirectServiceAdvertiser(hstring_ref serviceName) const
+template <typename D> Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser impl_IWiFiDirectServiceAdvertiserFactory<D>::CreateWiFiDirectServiceAdvertiser(hstring_view serviceName) const
 {
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser result { nullptr };
     check_hresult(WINRT_SHIM(IWiFiDirectServiceAdvertiserFactory)->abi_CreateWiFiDirectServiceAdvertiser(get(serviceName), put(result)));
@@ -1275,7 +1275,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiF
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> impl_IWiFiDirectServiceAdvertiser<D>::ConnectAsync(const Windows::Devices::Enumeration::DeviceInformation & deviceInfo, hstring_ref pin) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> impl_IWiFiDirectServiceAdvertiser<D>::ConnectAsync(const Windows::Devices::Enumeration::DeviceInformation & deviceInfo, hstring_view pin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> result;
     check_hresult(WINRT_SHIM(IWiFiDirectServiceAdvertiser)->abi_ConnectAsyncWithPin(get(deviceInfo), get(pin), put(result)));
@@ -1292,21 +1292,21 @@ template <typename D> void impl_IWiFiDirectServiceAdvertiser<D>::Stop() const
     check_hresult(WINRT_SHIM(IWiFiDirectServiceAdvertiser)->abi_Stop());
 }
 
-template <typename D> hstring impl_IWiFiDirectServiceStatics<D>::GetSelector(hstring_ref serviceName) const
+template <typename D> hstring impl_IWiFiDirectServiceStatics<D>::GetSelector(hstring_view serviceName) const
 {
     hstring serviceSelector;
     check_hresult(WINRT_SHIM(IWiFiDirectServiceStatics)->abi_GetSelector(get(serviceName), put(serviceSelector)));
     return serviceSelector;
 }
 
-template <typename D> hstring impl_IWiFiDirectServiceStatics<D>::GetSelector(hstring_ref serviceName, const Windows::Storage::Streams::IBuffer & serviceInfoFilter) const
+template <typename D> hstring impl_IWiFiDirectServiceStatics<D>::GetSelector(hstring_view serviceName, const Windows::Storage::Streams::IBuffer & serviceInfoFilter) const
 {
     hstring serviceSelector;
     check_hresult(WINRT_SHIM(IWiFiDirectServiceStatics)->abi_GetSelectorWithFilter(get(serviceName), get(serviceInfoFilter), put(serviceSelector)));
     return serviceSelector;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectService> impl_IWiFiDirectServiceStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectService> impl_IWiFiDirectServiceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectService> asyncOp;
     check_hresult(WINRT_SHIM(IWiFiDirectServiceStatics)->abi_FromIdAsync(get(deviceId), put(asyncOp)));
@@ -1389,7 +1389,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiF
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> impl_IWiFiDirectService<D>::ConnectAsync(hstring_ref pin) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> impl_IWiFiDirectService<D>::ConnectAsync(hstring_view pin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> result;
     check_hresult(WINRT_SHIM(IWiFiDirectService)->abi_ConnectAsyncWithPin(get(pin), put(result)));
@@ -1521,22 +1521,22 @@ template <typename D> void impl_IWiFiDirectServiceSession<D>::RemotePortAdded(ev
     check_hresult(WINRT_SHIM(IWiFiDirectServiceSession)->remove_RemotePortAdded(token));
 }
 
-inline hstring WiFiDirectService::GetSelector(hstring_ref serviceName)
+inline hstring WiFiDirectService::GetSelector(hstring_view serviceName)
 {
     return get_activation_factory<WiFiDirectService, IWiFiDirectServiceStatics>().GetSelector(serviceName);
 }
 
-inline hstring WiFiDirectService::GetSelector(hstring_ref serviceName, const Windows::Storage::Streams::IBuffer & serviceInfoFilter)
+inline hstring WiFiDirectService::GetSelector(hstring_view serviceName, const Windows::Storage::Streams::IBuffer & serviceInfoFilter)
 {
     return get_activation_factory<WiFiDirectService, IWiFiDirectServiceStatics>().GetSelector(serviceName, serviceInfoFilter);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectService> WiFiDirectService::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectService> WiFiDirectService::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<WiFiDirectService, IWiFiDirectServiceStatics>().FromIdAsync(deviceId);
 }
 
-inline WiFiDirectServiceAdvertiser::WiFiDirectServiceAdvertiser(hstring_ref serviceName) :
+inline WiFiDirectServiceAdvertiser::WiFiDirectServiceAdvertiser(hstring_view serviceName) :
     WiFiDirectServiceAdvertiser(get_activation_factory<WiFiDirectServiceAdvertiser, IWiFiDirectServiceAdvertiserFactory>().CreateWiFiDirectServiceAdvertiser(serviceName))
 {}
 

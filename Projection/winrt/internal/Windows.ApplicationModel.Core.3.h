@@ -56,7 +56,7 @@ struct CoreApplication
     static void IncrementApplicationUseCount();
     static void DecrementApplicationUseCount();
     static Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::CoreApplicationView> Views();
-    static Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(hstring_ref runtimeType, hstring_ref entryPoint);
+    static Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(hstring_view runtimeType, hstring_view entryPoint);
     static Windows::ApplicationModel::Core::CoreApplicationView MainView();
     static Windows::ApplicationModel::Core::CoreApplicationView CreateNewView();
     static Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(const Windows::ApplicationModel::Core::IFrameworkViewSource & viewSource);

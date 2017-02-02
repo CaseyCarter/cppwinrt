@@ -2273,7 +2273,7 @@ template <typename D> hstring impl_IUsbDeviceStatics<D>::GetDeviceClassSelector(
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> impl_IUsbDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> impl_IUsbDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> operation;
     check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
@@ -2951,7 +2951,7 @@ inline hstring UsbDevice::GetDeviceClassSelector(const Windows::Devices::Usb::Us
     return get_activation_factory<UsbDevice, IUsbDeviceStatics>().GetDeviceClassSelector(usbClass);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> UsbDevice::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> UsbDevice::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<UsbDevice, IUsbDeviceStatics>().FromIdAsync(deviceId);
 }

@@ -120,7 +120,7 @@ struct WINRT_EBO PropertyChangedEventArgs :
     Windows::UI::Xaml::Data::IPropertyChangedEventArgs
 {
     PropertyChangedEventArgs(std::nullptr_t) noexcept {}
-    PropertyChangedEventArgs(hstring_ref name);
+    PropertyChangedEventArgs(hstring_view name);
 };
 
 struct WINRT_EBO RelativeSource :

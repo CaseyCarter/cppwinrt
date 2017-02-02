@@ -74,17 +74,17 @@ namespace Windows::Security::Credentials::UI {
 template <typename D>
 struct WINRT_EBO impl_ICredentialPickerOptions
 {
-    void Caption(hstring_ref value) const;
+    void Caption(hstring_view value) const;
     hstring Caption() const;
-    void Message(hstring_ref value) const;
+    void Message(hstring_view value) const;
     hstring Message() const;
     void ErrorCode(uint32_t value) const;
     uint32_t ErrorCode() const;
-    void TargetName(hstring_ref value) const;
+    void TargetName(hstring_view value) const;
     hstring TargetName() const;
     void AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol value) const;
     Windows::Security::Credentials::UI::AuthenticationProtocol AuthenticationProtocol() const;
-    void CustomAuthenticationProtocol(hstring_ref value) const;
+    void CustomAuthenticationProtocol(hstring_view value) const;
     hstring CustomAuthenticationProtocol() const;
     void PreviousCredential(const Windows::Storage::Streams::IBuffer & value) const;
     Windows::Storage::Streams::IBuffer PreviousCredential() const;
@@ -112,15 +112,15 @@ template <typename D>
 struct WINRT_EBO impl_ICredentialPickerStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(const Windows::Security::Credentials::UI::CredentialPickerOptions & options) const;
-    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(hstring_ref targetName, hstring_ref message) const;
-    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(hstring_ref targetName, hstring_ref message, hstring_ref caption) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(hstring_view targetName, hstring_view message) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(hstring_view targetName, hstring_view message, hstring_view caption) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IUserConsentVerifierStatics
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability> CheckAvailabilityAsync() const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> RequestVerificationAsync(hstring_ref message) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> RequestVerificationAsync(hstring_view message) const;
 };
 
 }

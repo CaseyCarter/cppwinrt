@@ -3635,42 +3635,42 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppoin
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerStatics<D>::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerStatics<D>::ShowReplaceAppointmentAsync(hstring_view appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(IAppointmentManagerStatics)->abi_ShowReplaceAppointmentAsync(get(appointmentId), get(appointment), get(selection), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerStatics<D>::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerStatics<D>::ShowReplaceAppointmentAsync(hstring_view appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(IAppointmentManagerStatics)->abi_ShowReplaceAppointmentWithPlacementAsync(get(appointmentId), get(appointment), get(selection), preferredPlacement, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerStatics<D>::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerStatics<D>::ShowReplaceAppointmentAsync(hstring_view appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(IAppointmentManagerStatics)->abi_ShowReplaceAppointmentWithPlacementAndDateAsync(get(appointmentId), get(appointment), get(selection), preferredPlacement, get(instanceStartDate), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerStatics<D>::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerStatics<D>::ShowRemoveAppointmentAsync(hstring_view appointmentId, const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppointmentManagerStatics)->abi_ShowRemoveAppointmentAsync(get(appointmentId), get(selection), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerStatics<D>::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerStatics<D>::ShowRemoveAppointmentAsync(hstring_view appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppointmentManagerStatics)->abi_ShowRemoveAppointmentWithPlacementAsync(get(appointmentId), get(selection), preferredPlacement, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerStatics<D>::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerStatics<D>::ShowRemoveAppointmentAsync(hstring_view appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppointmentManagerStatics)->abi_ShowRemoveAppointmentWithPlacementAndDateAsync(get(appointmentId), get(selection), preferredPlacement, get(instanceStartDate), put(operation)));
@@ -3684,14 +3684,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManager
     return asyncAction;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManagerStatics2<D>::ShowAppointmentDetailsAsync(hstring_ref appointmentId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManagerStatics2<D>::ShowAppointmentDetailsAsync(hstring_view appointmentId) const
 {
     Windows::Foundation::IAsyncAction asyncAction;
     check_hresult(WINRT_SHIM(IAppointmentManagerStatics2)->abi_ShowAppointmentDetailsAsync(get(appointmentId), put(asyncAction)));
     return asyncAction;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManagerStatics2<D>::ShowAppointmentDetailsAsync(hstring_ref appointmentId, const Windows::Foundation::DateTime & instanceStartDate) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManagerStatics2<D>::ShowAppointmentDetailsAsync(hstring_view appointmentId, const Windows::Foundation::DateTime & instanceStartDate) const
 {
     Windows::Foundation::IAsyncAction asyncAction;
     check_hresult(WINRT_SHIM(IAppointmentManagerStatics2)->abi_ShowAppointmentDetailsWithDateAsync(get(appointmentId), get(instanceStartDate), put(asyncAction)));
@@ -3733,42 +3733,42 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppoin
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerForUser<D>::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerForUser<D>::ShowReplaceAppointmentAsync(hstring_view appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
     check_hresult(WINRT_SHIM(IAppointmentManagerForUser)->abi_ShowReplaceAppointmentAsync(get(appointmentId), get(appointment), get(selection), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerForUser<D>::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerForUser<D>::ShowReplaceAppointmentAsync(hstring_view appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
     check_hresult(WINRT_SHIM(IAppointmentManagerForUser)->abi_ShowReplaceAppointmentWithPlacementAsync(get(appointmentId), get(appointment), get(selection), preferredPlacement, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerForUser<D>::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentManagerForUser<D>::ShowReplaceAppointmentAsync(hstring_view appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
     check_hresult(WINRT_SHIM(IAppointmentManagerForUser)->abi_ShowReplaceAppointmentWithPlacementAndDateAsync(get(appointmentId), get(appointment), get(selection), preferredPlacement, get(instanceStartDate), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerForUser<D>::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerForUser<D>::ShowRemoveAppointmentAsync(hstring_view appointmentId, const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IAppointmentManagerForUser)->abi_ShowRemoveAppointmentAsync(get(appointmentId), get(selection), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerForUser<D>::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerForUser<D>::ShowRemoveAppointmentAsync(hstring_view appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IAppointmentManagerForUser)->abi_ShowRemoveAppointmentWithPlacementAsync(get(appointmentId), get(selection), preferredPlacement, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerForUser<D>::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentManagerForUser<D>::ShowRemoveAppointmentAsync(hstring_view appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IAppointmentManagerForUser)->abi_ShowRemoveAppointmentWithPlacementAndDateAsync(get(appointmentId), get(selection), preferredPlacement, get(instanceStartDate), put(result)));
@@ -3782,14 +3782,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManager
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManagerForUser<D>::ShowAppointmentDetailsAsync(hstring_ref appointmentId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManagerForUser<D>::ShowAppointmentDetailsAsync(hstring_view appointmentId) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IAppointmentManagerForUser)->abi_ShowAppointmentDetailsAsync(get(appointmentId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManagerForUser<D>::ShowAppointmentDetailsAsync(hstring_ref appointmentId, const Windows::Foundation::DateTime & instanceStartDate) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentManagerForUser<D>::ShowAppointmentDetailsAsync(hstring_view appointmentId, const Windows::Foundation::DateTime & instanceStartDate) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IAppointmentManagerForUser)->abi_ShowAppointmentDetailsWithDateAsync(get(appointmentId), get(instanceStartDate), put(result)));
@@ -3824,7 +3824,7 @@ template <typename D> hstring impl_IAppointmentParticipant<D>::DisplayName() con
     return value;
 }
 
-template <typename D> void impl_IAppointmentParticipant<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IAppointmentParticipant<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointmentParticipant)->put_DisplayName(get(value)));
 }
@@ -3836,7 +3836,7 @@ template <typename D> hstring impl_IAppointmentParticipant<D>::Address() const
     return value;
 }
 
-template <typename D> void impl_IAppointmentParticipant<D>::Address(hstring_ref value) const
+template <typename D> void impl_IAppointmentParticipant<D>::Address(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointmentParticipant)->put_Address(get(value)));
 }
@@ -3975,7 +3975,7 @@ template <typename D> hstring impl_IAppointmentRecurrence2<D>::TimeZone() const
     return value;
 }
 
-template <typename D> void impl_IAppointmentRecurrence2<D>::TimeZone(hstring_ref value) const
+template <typename D> void impl_IAppointmentRecurrence2<D>::TimeZone(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointmentRecurrence2)->put_TimeZone(get(value)));
 }
@@ -4018,7 +4018,7 @@ template <typename D> hstring impl_IAppointment<D>::Location() const
     return value;
 }
 
-template <typename D> void impl_IAppointment<D>::Location(hstring_ref value) const
+template <typename D> void impl_IAppointment<D>::Location(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointment)->put_Location(get(value)));
 }
@@ -4030,7 +4030,7 @@ template <typename D> hstring impl_IAppointment<D>::Subject() const
     return value;
 }
 
-template <typename D> void impl_IAppointment<D>::Subject(hstring_ref value) const
+template <typename D> void impl_IAppointment<D>::Subject(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointment)->put_Subject(get(value)));
 }
@@ -4042,7 +4042,7 @@ template <typename D> hstring impl_IAppointment<D>::Details() const
     return value;
 }
 
-template <typename D> void impl_IAppointment<D>::Details(hstring_ref value) const
+template <typename D> void impl_IAppointment<D>::Details(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointment)->put_Details(get(value)));
 }
@@ -4159,7 +4159,7 @@ template <typename D> hstring impl_IAppointment2<D>::RoamingId() const
     return value;
 }
 
-template <typename D> void impl_IAppointment2<D>::RoamingId(hstring_ref value) const
+template <typename D> void impl_IAppointment2<D>::RoamingId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointment2)->put_RoamingId(get(value)));
 }
@@ -4202,7 +4202,7 @@ template <typename D> hstring impl_IAppointment2<D>::OnlineMeetingLink() const
     return value;
 }
 
-template <typename D> void impl_IAppointment2<D>::OnlineMeetingLink(hstring_ref value) const
+template <typename D> void impl_IAppointment2<D>::OnlineMeetingLink(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointment2)->put_OnlineMeetingLink(get(value)));
 }
@@ -4345,7 +4345,7 @@ template <typename D> hstring impl_IAppointmentCalendar<D>::DisplayName() const
     return value;
 }
 
-template <typename D> void impl_IAppointmentCalendar<D>::DisplayName(hstring_ref value) const
+template <typename D> void impl_IAppointmentCalendar<D>::DisplayName(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointmentCalendar)->put_DisplayName(get(value)));
 }
@@ -4421,35 +4421,35 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentException>> impl_IAppointmentCalendar<D>::FindExceptionsFromMasterAsync(hstring_ref masterLocalId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentException>> impl_IAppointmentCalendar<D>::FindExceptionsFromMasterAsync(hstring_view masterLocalId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentException>> value;
     check_hresult(WINRT_SHIM(IAppointmentCalendar)->abi_FindExceptionsFromMasterAsync(get(masterLocalId), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> impl_IAppointmentCalendar<D>::FindAllInstancesAsync(hstring_ref masterLocalId, const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> impl_IAppointmentCalendar<D>::FindAllInstancesAsync(hstring_view masterLocalId, const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> value;
     check_hresult(WINRT_SHIM(IAppointmentCalendar)->abi_FindAllInstancesAsync(get(masterLocalId), get(rangeStart), get(rangeLength), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> impl_IAppointmentCalendar<D>::FindAllInstancesAsync(hstring_ref masterLocalId, const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength, const Windows::ApplicationModel::Appointments::FindAppointmentsOptions & pOptions) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> impl_IAppointmentCalendar<D>::FindAllInstancesAsync(hstring_view masterLocalId, const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength, const Windows::ApplicationModel::Appointments::FindAppointmentsOptions & pOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> value;
     check_hresult(WINRT_SHIM(IAppointmentCalendar)->abi_FindAllInstancesAsyncWithOptions(get(masterLocalId), get(rangeStart), get(rangeLength), get(pOptions), put(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> impl_IAppointmentCalendar<D>::GetAppointmentAsync(hstring_ref localId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> impl_IAppointmentCalendar<D>::GetAppointmentAsync(hstring_view localId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> result;
     check_hresult(WINRT_SHIM(IAppointmentCalendar)->abi_GetAppointmentAsync(get(localId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> impl_IAppointmentCalendar<D>::GetAppointmentInstanceAsync(hstring_ref localId, const Windows::Foundation::DateTime & instanceStartTime) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> impl_IAppointmentCalendar<D>::GetAppointmentInstanceAsync(hstring_view localId, const Windows::Foundation::DateTime & instanceStartTime) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> result;
     check_hresult(WINRT_SHIM(IAppointmentCalendar)->abi_GetAppointmentInstanceAsync(get(localId), get(instanceStartTime), put(result)));
@@ -4484,14 +4484,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalenda
     return asyncAction;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendar<D>::DeleteAppointmentAsync(hstring_ref localId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendar<D>::DeleteAppointmentAsync(hstring_view localId) const
 {
     Windows::Foundation::IAsyncAction asyncAction;
     check_hresult(WINRT_SHIM(IAppointmentCalendar)->abi_DeleteAppointmentAsync(get(localId), put(asyncAction)));
     return asyncAction;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendar<D>::DeleteAppointmentInstanceAsync(hstring_ref localId, const Windows::Foundation::DateTime & instanceStartTime) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendar<D>::DeleteAppointmentInstanceAsync(hstring_view localId, const Windows::Foundation::DateTime & instanceStartTime) const
 {
     Windows::Foundation::IAsyncAction asyncAction;
     check_hresult(WINRT_SHIM(IAppointmentCalendar)->abi_DeleteAppointmentInstanceAsync(get(localId), get(instanceStartTime), put(asyncAction)));
@@ -4519,7 +4519,7 @@ template <typename D> hstring impl_IAppointmentCalendar2<D>::RemoteId() const
     return value;
 }
 
-template <typename D> void impl_IAppointmentCalendar2<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_IAppointmentCalendar2<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAppointmentCalendar2)->put_RemoteId(get(value)));
 }
@@ -4632,28 +4632,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointme
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryCancelMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, hstring_ref subject, hstring_ref comment, bool notifyInvitees) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryCancelMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, hstring_view subject, hstring_view comment, bool notifyInvitees) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IAppointmentCalendar2)->abi_TryCancelMeetingAsync(get(meeting), get(subject), get(comment), notifyInvitees, put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryForwardMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Appointments::AppointmentInvitee> & invitees, hstring_ref subject, hstring_ref forwardHeader, hstring_ref comment) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryForwardMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Appointments::AppointmentInvitee> & invitees, hstring_view subject, hstring_view forwardHeader, hstring_view comment) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IAppointmentCalendar2)->abi_TryForwardMeetingAsync(get(meeting), get(invitees), get(subject), get(forwardHeader), get(comment), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryProposeNewTimeForMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, const Windows::Foundation::DateTime & newStartTime, const Windows::Foundation::TimeSpan & newDuration, hstring_ref subject, hstring_ref comment) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryProposeNewTimeForMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, const Windows::Foundation::DateTime & newStartTime, const Windows::Foundation::TimeSpan & newDuration, hstring_view subject, hstring_view comment) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IAppointmentCalendar2)->abi_TryProposeNewTimeForMeetingAsync(get(meeting), get(newStartTime), get(newDuration), get(subject), get(comment), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryUpdateMeetingResponseAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, Windows::ApplicationModel::Appointments::AppointmentParticipantResponse response, hstring_ref subject, hstring_ref comment, bool sendUpdate) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryUpdateMeetingResponseAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, Windows::ApplicationModel::Appointments::AppointmentParticipantResponse response, hstring_view subject, hstring_view comment, bool sendUpdate) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IAppointmentCalendar2)->abi_TryUpdateMeetingResponseAsync(get(meeting), response, get(subject), get(comment), sendUpdate, put(result)));
@@ -4997,28 +4997,28 @@ template <typename D> Windows::ApplicationModel::Appointments::AppointmentStoreC
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> impl_IAppointmentStore<D>::CreateAppointmentCalendarAsync(hstring_ref name) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> impl_IAppointmentStore<D>::CreateAppointmentCalendarAsync(hstring_view name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> operation;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_CreateAppointmentCalendarAsync(get(name), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> impl_IAppointmentStore<D>::GetAppointmentCalendarAsync(hstring_ref calendarId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> impl_IAppointmentStore<D>::GetAppointmentCalendarAsync(hstring_view calendarId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> result;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_GetAppointmentCalendarAsync(get(calendarId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> impl_IAppointmentStore<D>::GetAppointmentAsync(hstring_ref localId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> impl_IAppointmentStore<D>::GetAppointmentAsync(hstring_view localId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> result;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_GetAppointmentAsync(get(localId), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> impl_IAppointmentStore<D>::GetAppointmentInstanceAsync(hstring_ref localId, const Windows::Foundation::DateTime & instanceStartTime) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> impl_IAppointmentStore<D>::GetAppointmentInstanceAsync(hstring_view localId, const Windows::Foundation::DateTime & instanceStartTime) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> result;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_GetAppointmentInstanceAsync(get(localId), get(instanceStartTime), put(result)));
@@ -5081,42 +5081,42 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppoin
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentStore<D>::ShowReplaceAppointmentAsync(hstring_ref localId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentStore<D>::ShowReplaceAppointmentAsync(hstring_view localId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_ShowReplaceAppointmentAsync(get(localId), get(appointment), get(selection), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentStore<D>::ShowReplaceAppointmentAsync(hstring_ref localId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppointmentStore<D>::ShowReplaceAppointmentAsync(hstring_view localId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_ShowReplaceAppointmentWithPlacementAndDateAsync(get(localId), get(appointment), get(selection), preferredPlacement, get(instanceStartDate), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentStore<D>::ShowRemoveAppointmentAsync(hstring_ref localId, const Windows::Foundation::Rect & selection) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentStore<D>::ShowRemoveAppointmentAsync(hstring_view localId, const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_ShowRemoveAppointmentAsync(get(localId), get(selection), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentStore<D>::ShowRemoveAppointmentAsync(hstring_ref localId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentStore<D>::ShowRemoveAppointmentAsync(hstring_view localId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_ShowRemoveAppointmentWithPlacementAndDateAsync(get(localId), get(selection), preferredPlacement, get(instanceStartDate), put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentStore<D>::ShowAppointmentDetailsAsync(hstring_ref localId) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentStore<D>::ShowAppointmentDetailsAsync(hstring_view localId) const
 {
     Windows::Foundation::IAsyncAction asyncAction;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_ShowAppointmentDetailsAsync(get(localId), put(asyncAction)));
     return asyncAction;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentStore<D>::ShowAppointmentDetailsAsync(hstring_ref localId, const Windows::Foundation::DateTime & instanceStartDate) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentStore<D>::ShowAppointmentDetailsAsync(hstring_view localId, const Windows::Foundation::DateTime & instanceStartDate) const
 {
     Windows::Foundation::IAsyncAction asyncAction;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_ShowAppointmentDetailsWithDateAsync(get(localId), get(instanceStartDate), put(asyncAction)));
@@ -5130,7 +5130,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IAppoin
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IAppointmentStore<D>::FindLocalIdsFromRoamingIdAsync(hstring_ref roamingId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IAppointmentStore<D>::FindLocalIdsFromRoamingIdAsync(hstring_view roamingId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> operation;
     check_hresult(WINRT_SHIM(IAppointmentStore)->abi_FindLocalIdsFromRoamingIdAsync(get(roamingId), put(operation)));
@@ -5154,7 +5154,7 @@ template <typename D> void impl_IAppointmentStore2<D>::StoreChanged(event_token 
     check_hresult(WINRT_SHIM(IAppointmentStore2)->remove_StoreChanged(token));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> impl_IAppointmentStore2<D>::CreateAppointmentCalendarAsync(hstring_ref name, hstring_ref userDataAccountId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> impl_IAppointmentStore2<D>::CreateAppointmentCalendarAsync(hstring_view name, hstring_view userDataAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> operation;
     check_hresult(WINRT_SHIM(IAppointmentStore2)->abi_CreateAppointmentCalendarInAccountAsync(get(name), get(userDataAccountId), put(operation)));
@@ -5200,32 +5200,32 @@ inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowAdd
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowAddAppointmentAsync(appointment, selection, preferredPlacement);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection)
+inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowReplaceAppointmentAsync(hstring_view appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection)
 {
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowReplaceAppointmentAsync(appointmentId, appointment, selection);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement)
+inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowReplaceAppointmentAsync(hstring_view appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement)
 {
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowReplaceAppointmentAsync(appointmentId, appointment, selection, preferredPlacement);
 }
 
-inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate)
+inline Windows::Foundation::IAsyncOperation<hstring> AppointmentManager::ShowReplaceAppointmentAsync(hstring_view appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate)
 {
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowReplaceAppointmentAsync(appointmentId, appointment, selection, preferredPlacement, instanceStartDate);
 }
 
-inline Windows::Foundation::IAsyncOperation<bool> AppointmentManager::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection)
+inline Windows::Foundation::IAsyncOperation<bool> AppointmentManager::ShowRemoveAppointmentAsync(hstring_view appointmentId, const Windows::Foundation::Rect & selection)
 {
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowRemoveAppointmentAsync(appointmentId, selection);
 }
 
-inline Windows::Foundation::IAsyncOperation<bool> AppointmentManager::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement)
+inline Windows::Foundation::IAsyncOperation<bool> AppointmentManager::ShowRemoveAppointmentAsync(hstring_view appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement)
 {
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowRemoveAppointmentAsync(appointmentId, selection, preferredPlacement);
 }
 
-inline Windows::Foundation::IAsyncOperation<bool> AppointmentManager::ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate)
+inline Windows::Foundation::IAsyncOperation<bool> AppointmentManager::ShowRemoveAppointmentAsync(hstring_view appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate)
 {
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowRemoveAppointmentAsync(appointmentId, selection, preferredPlacement, instanceStartDate);
 }
@@ -5235,12 +5235,12 @@ inline Windows::Foundation::IAsyncAction AppointmentManager::ShowTimeFrameAsync(
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics>().ShowTimeFrameAsync(timeToShow, duration);
 }
 
-inline Windows::Foundation::IAsyncAction AppointmentManager::ShowAppointmentDetailsAsync(hstring_ref appointmentId)
+inline Windows::Foundation::IAsyncAction AppointmentManager::ShowAppointmentDetailsAsync(hstring_view appointmentId)
 {
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics2>().ShowAppointmentDetailsAsync(appointmentId);
 }
 
-inline Windows::Foundation::IAsyncAction AppointmentManager::ShowAppointmentDetailsAsync(hstring_ref appointmentId, const Windows::Foundation::DateTime & instanceStartDate)
+inline Windows::Foundation::IAsyncAction AppointmentManager::ShowAppointmentDetailsAsync(hstring_view appointmentId, const Windows::Foundation::DateTime & instanceStartDate)
 {
     return get_activation_factory<AppointmentManager, IAppointmentManagerStatics2>().ShowAppointmentDetailsAsync(appointmentId, instanceStartDate);
 }

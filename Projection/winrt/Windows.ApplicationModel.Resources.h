@@ -155,7 +155,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
 
 namespace Windows::ApplicationModel::Resources {
 
-template <typename D> hstring impl_IResourceLoader<D>::GetString(hstring_ref resource) const
+template <typename D> hstring impl_IResourceLoader<D>::GetString(hstring_view resource) const
 {
     hstring value;
     check_hresult(WINRT_SHIM(IResourceLoader)->abi_GetString(get(resource), put(value)));
@@ -183,7 +183,7 @@ template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_
     return loader;
 }
 
-template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForCurrentView(hstring_ref name) const
+template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForCurrentView(hstring_view name) const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
     check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForCurrentViewWithName(get(name), put(loader)));
@@ -197,14 +197,14 @@ template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_
     return loader;
 }
 
-template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForViewIndependentUse(hstring_ref name) const
+template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForViewIndependentUse(hstring_view name) const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
     check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForViewIndependentUseWithName(get(name), put(loader)));
     return loader;
 }
 
-template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderFactory<D>::CreateResourceLoaderByName(hstring_ref name) const
+template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderFactory<D>::CreateResourceLoaderByName(hstring_view name) const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
     check_hresult(WINRT_SHIM(IResourceLoaderFactory)->abi_CreateResourceLoaderByName(get(name), put(loader)));
@@ -215,7 +215,7 @@ inline ResourceLoader::ResourceLoader() :
     ResourceLoader(activate_instance<ResourceLoader>())
 {}
 
-inline ResourceLoader::ResourceLoader(hstring_ref name) :
+inline ResourceLoader::ResourceLoader(hstring_view name) :
     ResourceLoader(get_activation_factory<ResourceLoader, IResourceLoaderFactory>().CreateResourceLoaderByName(name))
 {}
 
@@ -229,7 +229,7 @@ inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetF
     return get_activation_factory<ResourceLoader, IResourceLoaderStatics2>().GetForCurrentView();
 }
 
-inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForCurrentView(hstring_ref name)
+inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForCurrentView(hstring_view name)
 {
     return get_activation_factory<ResourceLoader, IResourceLoaderStatics2>().GetForCurrentView(name);
 }
@@ -239,7 +239,7 @@ inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetF
     return get_activation_factory<ResourceLoader, IResourceLoaderStatics2>().GetForViewIndependentUse();
 }
 
-inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForViewIndependentUse(hstring_ref name)
+inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForViewIndependentUse(hstring_view name)
 {
     return get_activation_factory<ResourceLoader, IResourceLoaderStatics2>().GetForViewIndependentUse(name);
 }

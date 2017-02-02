@@ -366,7 +366,7 @@ template <typename D>
 struct WINRT_EBO impl_IPrintTaskRequest
 {
     Windows::Foundation::DateTime Deadline() const;
-    Windows::Graphics::Printing::PrintTask CreatePrintTask(hstring_ref title, const Windows::Graphics::Printing::PrintTaskSourceRequestedHandler & handler) const;
+    Windows::Graphics::Printing::PrintTask CreatePrintTask(hstring_view title, const Windows::Graphics::Printing::PrintTaskSourceRequestedHandler & handler) const;
     Windows::Graphics::Printing::PrintTaskRequestedDeferral GetDeferral() const;
 };
 

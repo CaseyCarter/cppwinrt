@@ -23,7 +23,7 @@ inline hstring::hstring(const std::wstring & value) :
     hstring(value.c_str(), static_cast<size_type>(value.size()))
 {}
 
-inline hstring::hstring(hstring_ref value) :
+inline hstring::hstring(hstring_view value) :
     m_handle(impl::duplicate_string(get(value)))
 {}
 

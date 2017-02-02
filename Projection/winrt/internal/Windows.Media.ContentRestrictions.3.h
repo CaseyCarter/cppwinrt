@@ -19,7 +19,7 @@ struct WINRT_EBO RatedContentDescription :
     Windows::Media::ContentRestrictions::IRatedContentDescription
 {
     RatedContentDescription(std::nullptr_t) noexcept {}
-    RatedContentDescription(hstring_ref id, hstring_ref title, Windows::Media::ContentRestrictions::RatedContentCategory category);
+    RatedContentDescription(hstring_view id, hstring_view title, Windows::Media::ContentRestrictions::RatedContentCategory category);
 };
 
 struct WINRT_EBO RatedContentRestrictions :

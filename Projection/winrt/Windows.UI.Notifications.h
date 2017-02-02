@@ -3085,7 +3085,7 @@ template <typename D> hstring impl_INotificationVisual<D>::Language() const
     return value;
 }
 
-template <typename D> void impl_INotificationVisual<D>::Language(hstring_ref value) const
+template <typename D> void impl_INotificationVisual<D>::Language(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(INotificationVisual)->put_Language(get(value)));
 }
@@ -3097,7 +3097,7 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Not
     return result;
 }
 
-template <typename D> Windows::UI::Notifications::NotificationBinding impl_INotificationVisual<D>::GetBinding(hstring_ref templateName) const
+template <typename D> Windows::UI::Notifications::NotificationBinding impl_INotificationVisual<D>::GetBinding(hstring_view templateName) const
 {
     Windows::UI::Notifications::NotificationBinding result { nullptr };
     check_hresult(WINRT_SHIM(INotificationVisual)->abi_GetBinding(get(templateName), put(result)));
@@ -3125,7 +3125,7 @@ template <typename D> hstring impl_INotificationBinding<D>::Template() const
     return value;
 }
 
-template <typename D> void impl_INotificationBinding<D>::Template(hstring_ref value) const
+template <typename D> void impl_INotificationBinding<D>::Template(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(INotificationBinding)->put_Template(get(value)));
 }
@@ -3137,7 +3137,7 @@ template <typename D> hstring impl_INotificationBinding<D>::Language() const
     return value;
 }
 
-template <typename D> void impl_INotificationBinding<D>::Language(hstring_ref value) const
+template <typename D> void impl_INotificationBinding<D>::Language(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(INotificationBinding)->put_Language(get(value)));
 }
@@ -3345,7 +3345,7 @@ template <typename D> hstring impl_IAdaptiveNotificationText<D>::Text() const
     return value;
 }
 
-template <typename D> void impl_IAdaptiveNotificationText<D>::Text(hstring_ref value) const
+template <typename D> void impl_IAdaptiveNotificationText<D>::Text(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAdaptiveNotificationText)->put_Text(get(value)));
 }
@@ -3357,7 +3357,7 @@ template <typename D> hstring impl_IAdaptiveNotificationText<D>::Language() cons
     return value;
 }
 
-template <typename D> void impl_IAdaptiveNotificationText<D>::Language(hstring_ref value) const
+template <typename D> void impl_IAdaptiveNotificationText<D>::Language(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IAdaptiveNotificationText)->put_Language(get(value)));
 }
@@ -3390,14 +3390,14 @@ template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateMa
     return updater;
 }
 
-template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerStatics<D>::CreateTileUpdaterForApplication(hstring_ref applicationId) const
+template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerStatics<D>::CreateTileUpdaterForApplication(hstring_view applicationId) const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
     check_hresult(WINRT_SHIM(ITileUpdateManagerStatics)->abi_CreateTileUpdaterForApplicationWithId(get(applicationId), put(updater)));
     return updater;
 }
 
-template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerStatics<D>::CreateTileUpdaterForSecondaryTile(hstring_ref tileId) const
+template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerStatics<D>::CreateTileUpdaterForSecondaryTile(hstring_view tileId) const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
     check_hresult(WINRT_SHIM(ITileUpdateManagerStatics)->abi_CreateTileUpdaterForSecondaryTile(get(tileId), put(updater)));
@@ -3425,14 +3425,14 @@ template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateMa
     return updater;
 }
 
-template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerForUser<D>::CreateTileUpdaterForApplication(hstring_ref applicationId) const
+template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerForUser<D>::CreateTileUpdaterForApplication(hstring_view applicationId) const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
     check_hresult(WINRT_SHIM(ITileUpdateManagerForUser)->abi_CreateTileUpdaterForApplicationWithId(get(applicationId), put(updater)));
     return updater;
 }
 
-template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerForUser<D>::CreateTileUpdaterForSecondaryTile(hstring_ref tileId) const
+template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerForUser<D>::CreateTileUpdaterForSecondaryTile(hstring_view tileId) const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
     check_hresult(WINRT_SHIM(ITileUpdateManagerForUser)->abi_CreateTileUpdaterForSecondaryTile(get(tileId), put(updater)));
@@ -3532,14 +3532,14 @@ template <typename D> Windows::UI::Notifications::TileFlyoutUpdater impl_ITileFl
     return updater;
 }
 
-template <typename D> Windows::UI::Notifications::TileFlyoutUpdater impl_ITileFlyoutUpdateManagerStatics<D>::CreateTileFlyoutUpdaterForApplication(hstring_ref applicationId) const
+template <typename D> Windows::UI::Notifications::TileFlyoutUpdater impl_ITileFlyoutUpdateManagerStatics<D>::CreateTileFlyoutUpdaterForApplication(hstring_view applicationId) const
 {
     Windows::UI::Notifications::TileFlyoutUpdater updater { nullptr };
     check_hresult(WINRT_SHIM(ITileFlyoutUpdateManagerStatics)->abi_CreateTileFlyoutUpdaterForApplicationWithId(get(applicationId), put(updater)));
     return updater;
 }
 
-template <typename D> Windows::UI::Notifications::TileFlyoutUpdater impl_ITileFlyoutUpdateManagerStatics<D>::CreateTileFlyoutUpdaterForSecondaryTile(hstring_ref tileId) const
+template <typename D> Windows::UI::Notifications::TileFlyoutUpdater impl_ITileFlyoutUpdateManagerStatics<D>::CreateTileFlyoutUpdaterForSecondaryTile(hstring_view tileId) const
 {
     Windows::UI::Notifications::TileFlyoutUpdater updater { nullptr };
     check_hresult(WINRT_SHIM(ITileFlyoutUpdateManagerStatics)->abi_CreateTileFlyoutUpdaterForSecondaryTile(get(tileId), put(updater)));
@@ -3592,14 +3592,14 @@ template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdate
     return updater;
 }
 
-template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerStatics<D>::CreateBadgeUpdaterForApplication(hstring_ref applicationId) const
+template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerStatics<D>::CreateBadgeUpdaterForApplication(hstring_view applicationId) const
 {
     Windows::UI::Notifications::BadgeUpdater updater { nullptr };
     check_hresult(WINRT_SHIM(IBadgeUpdateManagerStatics)->abi_CreateBadgeUpdaterForApplicationWithId(get(applicationId), put(updater)));
     return updater;
 }
 
-template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerStatics<D>::CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId) const
+template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerStatics<D>::CreateBadgeUpdaterForSecondaryTile(hstring_view tileId) const
 {
     Windows::UI::Notifications::BadgeUpdater updater { nullptr };
     check_hresult(WINRT_SHIM(IBadgeUpdateManagerStatics)->abi_CreateBadgeUpdaterForSecondaryTile(get(tileId), put(updater)));
@@ -3627,14 +3627,14 @@ template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdate
     return result;
 }
 
-template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerForUser<D>::CreateBadgeUpdaterForApplication(hstring_ref applicationId) const
+template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerForUser<D>::CreateBadgeUpdaterForApplication(hstring_view applicationId) const
 {
     Windows::UI::Notifications::BadgeUpdater result { nullptr };
     check_hresult(WINRT_SHIM(IBadgeUpdateManagerForUser)->abi_CreateBadgeUpdaterForApplicationWithId(get(applicationId), put(result)));
     return result;
 }
 
-template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerForUser<D>::CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId) const
+template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerForUser<D>::CreateBadgeUpdaterForSecondaryTile(hstring_view tileId) const
 {
     Windows::UI::Notifications::BadgeUpdater result { nullptr };
     check_hresult(WINRT_SHIM(IBadgeUpdateManagerForUser)->abi_CreateBadgeUpdaterForSecondaryTile(get(tileId), put(result)));
@@ -3680,7 +3680,7 @@ template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotif
     return notifier;
 }
 
-template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotificationManagerStatics<D>::CreateToastNotifier(hstring_ref applicationId) const
+template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotificationManagerStatics<D>::CreateToastNotifier(hstring_view applicationId) const
 {
     Windows::UI::Notifications::ToastNotifier notifier { nullptr };
     check_hresult(WINRT_SHIM(IToastNotificationManagerStatics)->abi_CreateToastNotifierWithId(get(applicationId), put(notifier)));
@@ -3754,7 +3754,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_ITileNotification<D>::Tag(hstring_ref value) const
+template <typename D> void impl_ITileNotification<D>::Tag(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(ITileNotification)->put_Tag(get(value)));
 }
@@ -3895,7 +3895,7 @@ template <typename D> void impl_IToastNotification<D>::Failed(event_token token)
     check_hresult(WINRT_SHIM(IToastNotification)->remove_Failed(token));
 }
 
-template <typename D> void impl_IToastNotification2<D>::Tag(hstring_ref value) const
+template <typename D> void impl_IToastNotification2<D>::Tag(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IToastNotification2)->put_Tag(get(value)));
 }
@@ -3907,7 +3907,7 @@ template <typename D> hstring impl_IToastNotification2<D>::Tag() const
     return value;
 }
 
-template <typename D> void impl_IToastNotification2<D>::Group(hstring_ref value) const
+template <typename D> void impl_IToastNotification2<D>::Group(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IToastNotification2)->put_Group(get(value)));
 }
@@ -3974,7 +3974,7 @@ template <typename D> hstring impl_IToastNotification3<D>::RemoteId() const
     return value;
 }
 
-template <typename D> void impl_IToastNotification3<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_IToastNotification3<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IToastNotification3)->put_RemoteId(get(value)));
 }
@@ -4021,7 +4021,7 @@ template <typename D> uint32_t impl_IScheduledToastNotification<D>::MaximumSnooz
     return value;
 }
 
-template <typename D> void impl_IScheduledToastNotification<D>::Id(hstring_ref value) const
+template <typename D> void impl_IScheduledToastNotification<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IScheduledToastNotification)->put_Id(get(value)));
 }
@@ -4033,7 +4033,7 @@ template <typename D> hstring impl_IScheduledToastNotification<D>::Id() const
     return value;
 }
 
-template <typename D> void impl_IScheduledToastNotification2<D>::Tag(hstring_ref value) const
+template <typename D> void impl_IScheduledToastNotification2<D>::Tag(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IScheduledToastNotification2)->put_Tag(get(value)));
 }
@@ -4045,7 +4045,7 @@ template <typename D> hstring impl_IScheduledToastNotification2<D>::Tag() const
     return value;
 }
 
-template <typename D> void impl_IScheduledToastNotification2<D>::Group(hstring_ref value) const
+template <typename D> void impl_IScheduledToastNotification2<D>::Group(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IScheduledToastNotification2)->put_Group(get(value)));
 }
@@ -4088,7 +4088,7 @@ template <typename D> hstring impl_IScheduledToastNotification3<D>::RemoteId() c
     return value;
 }
 
-template <typename D> void impl_IScheduledToastNotification3<D>::RemoteId(hstring_ref value) const
+template <typename D> void impl_IScheduledToastNotification3<D>::RemoteId(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IScheduledToastNotification3)->put_RemoteId(get(value)));
 }
@@ -4126,7 +4126,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IScheduledTileNotification<D>::Tag(hstring_ref value) const
+template <typename D> void impl_IScheduledTileNotification<D>::Tag(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IScheduledTileNotification)->put_Tag(get(value)));
 }
@@ -4138,7 +4138,7 @@ template <typename D> hstring impl_IScheduledTileNotification<D>::Tag() const
     return value;
 }
 
-template <typename D> void impl_IScheduledTileNotification<D>::Id(hstring_ref value) const
+template <typename D> void impl_IScheduledTileNotification<D>::Id(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IScheduledTileNotification)->put_Id(get(value)));
 }
@@ -4176,7 +4176,7 @@ template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotif
     return result;
 }
 
-template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotificationManagerForUser<D>::CreateToastNotifier(hstring_ref applicationId) const
+template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotificationManagerForUser<D>::CreateToastNotifier(hstring_view applicationId) const
 {
     Windows::UI::Notifications::ToastNotifier result { nullptr };
     check_hresult(WINRT_SHIM(IToastNotificationManagerForUser)->abi_CreateToastNotifierWithId(get(applicationId), put(result)));
@@ -4197,27 +4197,27 @@ template <typename D> Windows::System::User impl_IToastNotificationManagerForUse
     return value;
 }
 
-template <typename D> void impl_IToastNotificationHistory<D>::RemoveGroup(hstring_ref group) const
+template <typename D> void impl_IToastNotificationHistory<D>::RemoveGroup(hstring_view group) const
 {
     check_hresult(WINRT_SHIM(IToastNotificationHistory)->abi_RemoveGroup(get(group)));
 }
 
-template <typename D> void impl_IToastNotificationHistory<D>::RemoveGroup(hstring_ref group, hstring_ref applicationId) const
+template <typename D> void impl_IToastNotificationHistory<D>::RemoveGroup(hstring_view group, hstring_view applicationId) const
 {
     check_hresult(WINRT_SHIM(IToastNotificationHistory)->abi_RemoveGroupWithId(get(group), get(applicationId)));
 }
 
-template <typename D> void impl_IToastNotificationHistory<D>::Remove(hstring_ref tag, hstring_ref group, hstring_ref applicationId) const
+template <typename D> void impl_IToastNotificationHistory<D>::Remove(hstring_view tag, hstring_view group, hstring_view applicationId) const
 {
     check_hresult(WINRT_SHIM(IToastNotificationHistory)->abi_RemoveGroupedTagWithId(get(tag), get(group), get(applicationId)));
 }
 
-template <typename D> void impl_IToastNotificationHistory<D>::Remove(hstring_ref tag, hstring_ref group) const
+template <typename D> void impl_IToastNotificationHistory<D>::Remove(hstring_view tag, hstring_view group) const
 {
     check_hresult(WINRT_SHIM(IToastNotificationHistory)->abi_RemoveGroupedTag(get(tag), get(group)));
 }
 
-template <typename D> void impl_IToastNotificationHistory<D>::Remove(hstring_ref tag) const
+template <typename D> void impl_IToastNotificationHistory<D>::Remove(hstring_view tag) const
 {
     check_hresult(WINRT_SHIM(IToastNotificationHistory)->abi_Remove(get(tag)));
 }
@@ -4227,7 +4227,7 @@ template <typename D> void impl_IToastNotificationHistory<D>::Clear() const
     check_hresult(WINRT_SHIM(IToastNotificationHistory)->abi_Clear());
 }
 
-template <typename D> void impl_IToastNotificationHistory<D>::Clear(hstring_ref applicationId) const
+template <typename D> void impl_IToastNotificationHistory<D>::Clear(hstring_view applicationId) const
 {
     check_hresult(WINRT_SHIM(IToastNotificationHistory)->abi_ClearWithId(get(applicationId)));
 }
@@ -4239,7 +4239,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI:
     return toasts;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> impl_IToastNotificationHistory2<D>::GetHistory(hstring_ref applicationId) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> impl_IToastNotificationHistory2<D>::GetHistory(hstring_view applicationId) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> toasts;
     check_hresult(WINRT_SHIM(IToastNotificationHistory2)->abi_GetHistoryWithId(get(applicationId), put(toasts)));
@@ -4280,12 +4280,12 @@ inline Windows::UI::Notifications::BadgeUpdater BadgeUpdateManager::CreateBadgeU
     return get_activation_factory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().CreateBadgeUpdaterForApplication();
 }
 
-inline Windows::UI::Notifications::BadgeUpdater BadgeUpdateManager::CreateBadgeUpdaterForApplication(hstring_ref applicationId)
+inline Windows::UI::Notifications::BadgeUpdater BadgeUpdateManager::CreateBadgeUpdaterForApplication(hstring_view applicationId)
 {
     return get_activation_factory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().CreateBadgeUpdaterForApplication(applicationId);
 }
 
-inline Windows::UI::Notifications::BadgeUpdater BadgeUpdateManager::CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId)
+inline Windows::UI::Notifications::BadgeUpdater BadgeUpdateManager::CreateBadgeUpdaterForSecondaryTile(hstring_view tileId)
 {
     return get_activation_factory<BadgeUpdateManager, IBadgeUpdateManagerStatics>().CreateBadgeUpdaterForSecondaryTile(tileId);
 }
@@ -4455,12 +4455,12 @@ inline Windows::UI::Notifications::TileFlyoutUpdater TileFlyoutUpdateManager::Cr
     return get_activation_factory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().CreateTileFlyoutUpdaterForApplication();
 }
 
-inline Windows::UI::Notifications::TileFlyoutUpdater TileFlyoutUpdateManager::CreateTileFlyoutUpdaterForApplication(hstring_ref applicationId)
+inline Windows::UI::Notifications::TileFlyoutUpdater TileFlyoutUpdateManager::CreateTileFlyoutUpdaterForApplication(hstring_view applicationId)
 {
     return get_activation_factory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().CreateTileFlyoutUpdaterForApplication(applicationId);
 }
 
-inline Windows::UI::Notifications::TileFlyoutUpdater TileFlyoutUpdateManager::CreateTileFlyoutUpdaterForSecondaryTile(hstring_ref tileId)
+inline Windows::UI::Notifications::TileFlyoutUpdater TileFlyoutUpdateManager::CreateTileFlyoutUpdaterForSecondaryTile(hstring_view tileId)
 {
     return get_activation_factory<TileFlyoutUpdateManager, ITileFlyoutUpdateManagerStatics>().CreateTileFlyoutUpdaterForSecondaryTile(tileId);
 }
@@ -4479,12 +4479,12 @@ inline Windows::UI::Notifications::TileUpdater TileUpdateManager::CreateTileUpda
     return get_activation_factory<TileUpdateManager, ITileUpdateManagerStatics>().CreateTileUpdaterForApplication();
 }
 
-inline Windows::UI::Notifications::TileUpdater TileUpdateManager::CreateTileUpdaterForApplication(hstring_ref applicationId)
+inline Windows::UI::Notifications::TileUpdater TileUpdateManager::CreateTileUpdaterForApplication(hstring_view applicationId)
 {
     return get_activation_factory<TileUpdateManager, ITileUpdateManagerStatics>().CreateTileUpdaterForApplication(applicationId);
 }
 
-inline Windows::UI::Notifications::TileUpdater TileUpdateManager::CreateTileUpdaterForSecondaryTile(hstring_ref tileId)
+inline Windows::UI::Notifications::TileUpdater TileUpdateManager::CreateTileUpdaterForSecondaryTile(hstring_view tileId)
 {
     return get_activation_factory<TileUpdateManager, ITileUpdateManagerStatics>().CreateTileUpdaterForSecondaryTile(tileId);
 }
@@ -4508,7 +4508,7 @@ inline Windows::UI::Notifications::ToastNotifier ToastNotificationManager::Creat
     return get_activation_factory<ToastNotificationManager, IToastNotificationManagerStatics>().CreateToastNotifier();
 }
 
-inline Windows::UI::Notifications::ToastNotifier ToastNotificationManager::CreateToastNotifier(hstring_ref applicationId)
+inline Windows::UI::Notifications::ToastNotifier ToastNotificationManager::CreateToastNotifier(hstring_view applicationId)
 {
     return get_activation_factory<ToastNotificationManager, IToastNotificationManagerStatics>().CreateToastNotifier(applicationId);
 }

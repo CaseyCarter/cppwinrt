@@ -280,8 +280,8 @@ struct WINRT_EBO impl_IDataWriter
     void WriteDouble(double value) const;
     void WriteDateTime(const Windows::Foundation::DateTime & value) const;
     void WriteTimeSpan(const Windows::Foundation::TimeSpan & value) const;
-    uint32_t WriteString(hstring_ref value) const;
-    uint32_t MeasureString(hstring_ref value) const;
+    uint32_t WriteString(hstring_view value) const;
+    uint32_t MeasureString(hstring_view value) const;
     Windows::Storage::Streams::DataWriterStoreOperation StoreAsync() const;
     Windows::Foundation::IAsyncOperation<bool> FlushAsync() const;
     Windows::Storage::Streams::IBuffer DetachBuffer() const;

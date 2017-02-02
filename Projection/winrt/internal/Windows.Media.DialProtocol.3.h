@@ -26,8 +26,8 @@ struct WINRT_EBO DialDevice :
     impl::require<DialDevice, Windows::Media::DialProtocol::IDialDevice2>
 {
     DialDevice(std::nullptr_t) noexcept {}
-    static hstring GetDeviceSelector(hstring_ref appName);
-    static Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> FromIdAsync(hstring_ref value);
+    static hstring GetDeviceSelector(hstring_view appName);
+    static Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> FromIdAsync(hstring_view value);
     static Windows::Foundation::IAsyncOperation<bool> DeviceInfoSupportsDialAsync(const Windows::Devices::Enumeration::DeviceInformation & device);
 };
 

@@ -710,7 +710,7 @@ template <typename D> Windows::Foundation::Collections::IPropertySet impl_IMedia
     return ppProperties;
 }
 
-template <typename D> Windows::Media::Protection::ProtectionCapabilityResult impl_IProtectionCapabilities<D>::IsTypeSupported(hstring_ref type, hstring_ref keySystem) const
+template <typename D> Windows::Media::Protection::ProtectionCapabilityResult impl_IProtectionCapabilities<D>::IsTypeSupported(hstring_view type, hstring_view keySystem) const
 {
     Windows::Media::Protection::ProtectionCapabilityResult value {};
     check_hresult(WINRT_SHIM(IProtectionCapabilities)->abi_IsTypeSupported(get(type), get(keySystem), &value));

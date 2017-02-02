@@ -1051,14 +1051,14 @@ template <typename D> Windows::Foundation::Collections::IPropertySet impl_IVideo
     return value;
 }
 
-template <typename D> Windows::Media::Effects::VideoCompositorDefinition impl_IVideoCompositorDefinitionFactory<D>::Create(hstring_ref activatableClassId) const
+template <typename D> Windows::Media::Effects::VideoCompositorDefinition impl_IVideoCompositorDefinitionFactory<D>::Create(hstring_view activatableClassId) const
 {
     Windows::Media::Effects::VideoCompositorDefinition value { nullptr };
     check_hresult(WINRT_SHIM(IVideoCompositorDefinitionFactory)->abi_Create(get(activatableClassId), put(value)));
     return value;
 }
 
-template <typename D> Windows::Media::Effects::VideoCompositorDefinition impl_IVideoCompositorDefinitionFactory<D>::CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const
+template <typename D> Windows::Media::Effects::VideoCompositorDefinition impl_IVideoCompositorDefinitionFactory<D>::CreateWithProperties(hstring_view activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const
 {
     Windows::Media::Effects::VideoCompositorDefinition value { nullptr };
     check_hresult(WINRT_SHIM(IVideoCompositorDefinitionFactory)->abi_CreateWithProperties(get(activatableClassId), get(props), put(value)));
@@ -1100,28 +1100,28 @@ template <typename D> Windows::Media::Effects::AudioEffectType impl_IAudioEffect
     return value;
 }
 
-template <typename D> Windows::Media::Effects::AudioRenderEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category) const
+template <typename D> Windows::Media::Effects::AudioRenderEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioRenderEffectsManager(hstring_view deviceId, Windows::Media::Render::AudioRenderCategory category) const
 {
     Windows::Media::Effects::AudioRenderEffectsManager value { nullptr };
     check_hresult(WINRT_SHIM(IAudioEffectsManagerStatics)->abi_CreateAudioRenderEffectsManager(get(deviceId), category, put(value)));
     return value;
 }
 
-template <typename D> Windows::Media::Effects::AudioRenderEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode) const
+template <typename D> Windows::Media::Effects::AudioRenderEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioRenderEffectsManager(hstring_view deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode) const
 {
     Windows::Media::Effects::AudioRenderEffectsManager value { nullptr };
     check_hresult(WINRT_SHIM(IAudioEffectsManagerStatics)->abi_CreateAudioRenderEffectsManagerWithMode(get(deviceId), category, mode, put(value)));
     return value;
 }
 
-template <typename D> Windows::Media::Effects::AudioCaptureEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category) const
+template <typename D> Windows::Media::Effects::AudioCaptureEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioCaptureEffectsManager(hstring_view deviceId, Windows::Media::Capture::MediaCategory category) const
 {
     Windows::Media::Effects::AudioCaptureEffectsManager value { nullptr };
     check_hresult(WINRT_SHIM(IAudioEffectsManagerStatics)->abi_CreateAudioCaptureEffectsManager(get(deviceId), category, put(value)));
     return value;
 }
 
-template <typename D> Windows::Media::Effects::AudioCaptureEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode) const
+template <typename D> Windows::Media::Effects::AudioCaptureEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioCaptureEffectsManager(hstring_view deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode) const
 {
     Windows::Media::Effects::AudioCaptureEffectsManager value { nullptr };
     check_hresult(WINRT_SHIM(IAudioEffectsManagerStatics)->abi_CreateAudioCaptureEffectsManagerWithMode(get(deviceId), category, mode, put(value)));
@@ -1250,28 +1250,28 @@ template <typename D> Windows::Foundation::Collections::IPropertySet impl_IVideo
     return value;
 }
 
-template <typename D> Windows::Media::Effects::VideoEffectDefinition impl_IVideoEffectDefinitionFactory<D>::Create(hstring_ref activatableClassId) const
+template <typename D> Windows::Media::Effects::VideoEffectDefinition impl_IVideoEffectDefinitionFactory<D>::Create(hstring_view activatableClassId) const
 {
     Windows::Media::Effects::VideoEffectDefinition value { nullptr };
     check_hresult(WINRT_SHIM(IVideoEffectDefinitionFactory)->abi_Create(get(activatableClassId), put(value)));
     return value;
 }
 
-template <typename D> Windows::Media::Effects::VideoEffectDefinition impl_IVideoEffectDefinitionFactory<D>::CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const
+template <typename D> Windows::Media::Effects::VideoEffectDefinition impl_IVideoEffectDefinitionFactory<D>::CreateWithProperties(hstring_view activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const
 {
     Windows::Media::Effects::VideoEffectDefinition value { nullptr };
     check_hresult(WINRT_SHIM(IVideoEffectDefinitionFactory)->abi_CreateWithProperties(get(activatableClassId), get(props), put(value)));
     return value;
 }
 
-template <typename D> Windows::Media::Effects::AudioEffectDefinition impl_IAudioEffectDefinitionFactory<D>::Create(hstring_ref activatableClassId) const
+template <typename D> Windows::Media::Effects::AudioEffectDefinition impl_IAudioEffectDefinitionFactory<D>::Create(hstring_view activatableClassId) const
 {
     Windows::Media::Effects::AudioEffectDefinition value { nullptr };
     check_hresult(WINRT_SHIM(IAudioEffectDefinitionFactory)->abi_Create(get(activatableClassId), put(value)));
     return value;
 }
 
-template <typename D> Windows::Media::Effects::AudioEffectDefinition impl_IAudioEffectDefinitionFactory<D>::CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const
+template <typename D> Windows::Media::Effects::AudioEffectDefinition impl_IAudioEffectDefinitionFactory<D>::CreateWithProperties(hstring_view activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const
 {
     Windows::Media::Effects::AudioEffectDefinition value { nullptr };
     check_hresult(WINRT_SHIM(IAudioEffectDefinitionFactory)->abi_CreateWithProperties(get(activatableClassId), get(props), put(value)));
@@ -1460,47 +1460,47 @@ template <typename D> Windows::Media::Transcoding::MediaVideoProcessingAlgorithm
     return value;
 }
 
-inline AudioEffectDefinition::AudioEffectDefinition(hstring_ref activatableClassId) :
+inline AudioEffectDefinition::AudioEffectDefinition(hstring_view activatableClassId) :
     AudioEffectDefinition(get_activation_factory<AudioEffectDefinition, IAudioEffectDefinitionFactory>().Create(activatableClassId))
 {}
 
-inline AudioEffectDefinition::AudioEffectDefinition(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) :
+inline AudioEffectDefinition::AudioEffectDefinition(hstring_view activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) :
     AudioEffectDefinition(get_activation_factory<AudioEffectDefinition, IAudioEffectDefinitionFactory>().CreateWithProperties(activatableClassId, props))
 {}
 
-inline Windows::Media::Effects::AudioRenderEffectsManager AudioEffectsManager::CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category)
+inline Windows::Media::Effects::AudioRenderEffectsManager AudioEffectsManager::CreateAudioRenderEffectsManager(hstring_view deviceId, Windows::Media::Render::AudioRenderCategory category)
 {
     return get_activation_factory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioRenderEffectsManager(deviceId, category);
 }
 
-inline Windows::Media::Effects::AudioRenderEffectsManager AudioEffectsManager::CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode)
+inline Windows::Media::Effects::AudioRenderEffectsManager AudioEffectsManager::CreateAudioRenderEffectsManager(hstring_view deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode)
 {
     return get_activation_factory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioRenderEffectsManager(deviceId, category, mode);
 }
 
-inline Windows::Media::Effects::AudioCaptureEffectsManager AudioEffectsManager::CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category)
+inline Windows::Media::Effects::AudioCaptureEffectsManager AudioEffectsManager::CreateAudioCaptureEffectsManager(hstring_view deviceId, Windows::Media::Capture::MediaCategory category)
 {
     return get_activation_factory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioCaptureEffectsManager(deviceId, category);
 }
 
-inline Windows::Media::Effects::AudioCaptureEffectsManager AudioEffectsManager::CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode)
+inline Windows::Media::Effects::AudioCaptureEffectsManager AudioEffectsManager::CreateAudioCaptureEffectsManager(hstring_view deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode)
 {
     return get_activation_factory<AudioEffectsManager, IAudioEffectsManagerStatics>().CreateAudioCaptureEffectsManager(deviceId, category, mode);
 }
 
-inline VideoCompositorDefinition::VideoCompositorDefinition(hstring_ref activatableClassId) :
+inline VideoCompositorDefinition::VideoCompositorDefinition(hstring_view activatableClassId) :
     VideoCompositorDefinition(get_activation_factory<VideoCompositorDefinition, IVideoCompositorDefinitionFactory>().Create(activatableClassId))
 {}
 
-inline VideoCompositorDefinition::VideoCompositorDefinition(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) :
+inline VideoCompositorDefinition::VideoCompositorDefinition(hstring_view activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) :
     VideoCompositorDefinition(get_activation_factory<VideoCompositorDefinition, IVideoCompositorDefinitionFactory>().CreateWithProperties(activatableClassId, props))
 {}
 
-inline VideoEffectDefinition::VideoEffectDefinition(hstring_ref activatableClassId) :
+inline VideoEffectDefinition::VideoEffectDefinition(hstring_view activatableClassId) :
     VideoEffectDefinition(get_activation_factory<VideoEffectDefinition, IVideoEffectDefinitionFactory>().Create(activatableClassId))
 {}
 
-inline VideoEffectDefinition::VideoEffectDefinition(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) :
+inline VideoEffectDefinition::VideoEffectDefinition(hstring_view activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) :
     VideoEffectDefinition(get_activation_factory<VideoEffectDefinition, IVideoEffectDefinitionFactory>().CreateWithProperties(activatableClassId, props))
 {}
 

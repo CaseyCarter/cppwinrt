@@ -507,8 +507,8 @@ struct WINRT_EBO impl_IChatCapabilities
 template <typename D>
 struct WINRT_EBO impl_IChatCapabilitiesManagerStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCachedCapabilitiesAsync(hstring_ref address) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCapabilitiesFromNetworkAsync(hstring_ref address) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCachedCapabilitiesAsync(hstring_view address) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCapabilitiesFromNetworkAsync(hstring_view address) const;
 };
 
 template <typename D>
@@ -517,7 +517,7 @@ struct WINRT_EBO impl_IChatConversation
     bool HasUnreadMessages() const;
     hstring Id() const;
     hstring Subject() const;
-    void Subject(hstring_ref value) const;
+    void Subject(hstring_view value) const;
     bool IsConversationMuted() const;
     void IsConversationMuted(bool value) const;
     hstring MostRecentMessageId() const;
@@ -528,8 +528,8 @@ struct WINRT_EBO impl_IChatConversation
     Windows::Foundation::IAsyncAction MarkMessagesAsReadAsync() const;
     Windows::Foundation::IAsyncAction MarkMessagesAsReadAsync(const Windows::Foundation::DateTime & value) const;
     Windows::Foundation::IAsyncAction SaveAsync() const;
-    void NotifyLocalParticipantComposing(hstring_ref transportId, hstring_ref participantAddress, bool isComposing) const;
-    void NotifyRemoteParticipantComposing(hstring_ref transportId, hstring_ref participantAddress, bool isComposing) const;
+    void NotifyLocalParticipantComposing(hstring_view transportId, hstring_view participantAddress, bool isComposing) const;
+    void NotifyRemoteParticipantComposing(hstring_view transportId, hstring_view participantAddress, bool isComposing) const;
     event_token RemoteParticipantComposingChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::ChatConversation, Windows::ApplicationModel::Chat::RemoteParticipantComposingChangedEventArgs> & handler) const;
     using RemoteParticipantComposingChanged_revoker = event_revoker<IChatConversation>;
     RemoteParticipantComposingChanged_revoker RemoteParticipantComposingChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::ChatConversation, Windows::ApplicationModel::Chat::RemoteParticipantComposingChangedEventArgs> & handler) const;
@@ -554,11 +554,11 @@ template <typename D>
 struct WINRT_EBO impl_IChatConversationThreadingInfo
 {
     hstring ContactId() const;
-    void ContactId(hstring_ref value) const;
+    void ContactId(hstring_view value) const;
     hstring Custom() const;
-    void Custom(hstring_ref value) const;
+    void Custom(hstring_view value) const;
     hstring ConversationId() const;
-    void ConversationId(hstring_ref value) const;
+    void ConversationId(hstring_view value) const;
     Windows::Foundation::Collections::IVector<hstring> Participants() const;
     Windows::ApplicationModel::Chat::ChatConversationThreadingKind Kind() const;
     void Kind(Windows::ApplicationModel::Chat::ChatConversationThreadingKind value) const;
@@ -575,7 +575,7 @@ struct WINRT_EBO impl_IChatMessage
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Chat::ChatMessageAttachment> Attachments() const;
     hstring Body() const;
-    void Body(hstring_ref value) const;
+    void Body(hstring_view value) const;
     hstring From() const;
     hstring Id() const;
     bool IsForwardingDisabled() const;
@@ -589,7 +589,7 @@ struct WINRT_EBO impl_IChatMessage
     hstring Subject() const;
     hstring TransportFriendlyName() const;
     hstring TransportId() const;
-    void TransportId(hstring_ref value) const;
+    void TransportId(hstring_view value) const;
 };
 
 template <typename D>
@@ -597,7 +597,7 @@ struct WINRT_EBO impl_IChatMessage2
 {
     uint64_t EstimatedDownloadSize() const;
     void EstimatedDownloadSize(uint64_t value) const;
-    void From(hstring_ref value) const;
+    void From(hstring_view value) const;
     bool IsAutoReply() const;
     void IsAutoReply(bool value) const;
     void IsForwardingDisabled(bool value) const;
@@ -615,9 +615,9 @@ struct WINRT_EBO impl_IChatMessage2
     void NetworkTimestamp(const Windows::Foundation::DateTime & value) const;
     bool IsReceivedDuringQuietHours() const;
     void IsReceivedDuringQuietHours(bool value) const;
-    void RemoteId(hstring_ref value) const;
+    void RemoteId(hstring_view value) const;
     void Status(Windows::ApplicationModel::Chat::ChatMessageStatus value) const;
-    void Subject(hstring_ref value) const;
+    void Subject(hstring_view value) const;
     bool ShouldSuppressNotification() const;
     void ShouldSuppressNotification(bool value) const;
     Windows::ApplicationModel::Chat::ChatConversationThreadingInfo ThreadingInfo() const;
@@ -635,7 +635,7 @@ template <typename D>
 struct WINRT_EBO impl_IChatMessage4
 {
     hstring SyncId() const;
-    void SyncId(hstring_ref value) const;
+    void SyncId(hstring_view value) const;
 };
 
 template <typename D>
@@ -646,9 +646,9 @@ struct WINRT_EBO impl_IChatMessageAttachment
     uint32_t GroupId() const;
     void GroupId(uint32_t value) const;
     hstring MimeType() const;
-    void MimeType(hstring_ref value) const;
+    void MimeType(hstring_view value) const;
     hstring Text() const;
-    void Text(hstring_ref value) const;
+    void Text(hstring_view value) const;
 };
 
 template <typename D>
@@ -659,19 +659,19 @@ struct WINRT_EBO impl_IChatMessageAttachment2
     double TransferProgress() const;
     void TransferProgress(double value) const;
     hstring OriginalFileName() const;
-    void OriginalFileName(hstring_ref value) const;
+    void OriginalFileName(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IChatMessageAttachmentFactory
 {
-    Windows::ApplicationModel::Chat::ChatMessageAttachment CreateChatMessageAttachment(hstring_ref mimeType, const Windows::Storage::Streams::IRandomAccessStreamReference & dataStreamReference) const;
+    Windows::ApplicationModel::Chat::ChatMessageAttachment CreateChatMessageAttachment(hstring_view mimeType, const Windows::Storage::Streams::IRandomAccessStreamReference & dataStreamReference) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IChatMessageBlockingStatic
 {
-    Windows::Foundation::IAsyncAction MarkMessageAsBlockedAsync(hstring_ref localChatMessageId, bool blocked) const;
+    Windows::Foundation::IAsyncAction MarkMessageAsBlockedAsync(hstring_view localChatMessageId, bool blocked) const;
 };
 
 template <typename D>
@@ -713,7 +713,7 @@ template <typename D>
 struct WINRT_EBO impl_IChatMessageManager2Statics
 {
     Windows::Foundation::IAsyncOperation<hstring> RegisterTransportAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessageTransport> GetTransportAsync(hstring_ref transportId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessageTransport> GetTransportAsync(hstring_view transportId) const;
 };
 
 template <typename D>
@@ -762,13 +762,13 @@ template <typename D>
 struct WINRT_EBO impl_IChatMessageStore
 {
     Windows::ApplicationModel::Chat::ChatMessageChangeTracker ChangeTracker() const;
-    Windows::Foundation::IAsyncAction DeleteMessageAsync(hstring_ref localMessageId) const;
-    Windows::Foundation::IAsyncAction DownloadMessageAsync(hstring_ref localChatMessageId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> GetMessageAsync(hstring_ref localChatMessageId) const;
+    Windows::Foundation::IAsyncAction DeleteMessageAsync(hstring_view localMessageId) const;
+    Windows::Foundation::IAsyncAction DownloadMessageAsync(hstring_view localChatMessageId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> GetMessageAsync(hstring_view localChatMessageId) const;
     Windows::ApplicationModel::Chat::ChatMessageReader GetMessageReader() const;
     Windows::ApplicationModel::Chat::ChatMessageReader GetMessageReader(const Windows::Foundation::TimeSpan & recentTimeLimit) const;
-    Windows::Foundation::IAsyncAction MarkMessageReadAsync(hstring_ref localChatMessageId) const;
-    Windows::Foundation::IAsyncAction RetrySendMessageAsync(hstring_ref localChatMessageId) const;
+    Windows::Foundation::IAsyncAction MarkMessageReadAsync(hstring_view localChatMessageId) const;
+    Windows::Foundation::IAsyncAction RetrySendMessageAsync(hstring_view localChatMessageId) const;
     Windows::Foundation::IAsyncAction SendMessageAsync(const Windows::ApplicationModel::Chat::ChatMessage & chatMessage) const;
     Windows::ApplicationModel::Chat::ChatMessageValidationResult ValidateMessage(const Windows::ApplicationModel::Chat::ChatMessage & chatMessage) const;
     event_token MessageChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::ChatMessageStore, Windows::ApplicationModel::Chat::ChatMessageChangedEventArgs> & value) const;
@@ -780,21 +780,21 @@ struct WINRT_EBO impl_IChatMessageStore
 template <typename D>
 struct WINRT_EBO impl_IChatMessageStore2
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> ForwardMessageAsync(hstring_ref localChatMessageId, const Windows::Foundation::Collections::IIterable<hstring> & addresses) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationAsync(hstring_ref conversationId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationAsync(hstring_ref conversationId, const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> ForwardMessageAsync(hstring_view localChatMessageId, const Windows::Foundation::Collections::IIterable<hstring> & addresses) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationAsync(hstring_view conversationId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationAsync(hstring_view conversationId, const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationFromThreadingInfoAsync(const Windows::ApplicationModel::Chat::ChatConversationThreadingInfo & threadingInfo) const;
     Windows::ApplicationModel::Chat::ChatConversationReader GetConversationReader() const;
     Windows::ApplicationModel::Chat::ChatConversationReader GetConversationReader(const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> GetMessageByRemoteIdAsync(hstring_ref transportId, hstring_ref remoteId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> GetMessageByRemoteIdAsync(hstring_view transportId, hstring_view remoteId) const;
     Windows::Foundation::IAsyncOperation<int32_t> GetUnseenCountAsync() const;
     Windows::Foundation::IAsyncOperation<int32_t> GetUnseenCountAsync(const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
     Windows::Foundation::IAsyncAction MarkAsSeenAsync() const;
     Windows::Foundation::IAsyncAction MarkAsSeenAsync(const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
     Windows::ApplicationModel::Chat::ChatSearchReader GetSearchReader(const Windows::ApplicationModel::Chat::ChatQueryOptions & value) const;
     Windows::Foundation::IAsyncAction SaveMessageAsync(const Windows::ApplicationModel::Chat::ChatMessage & chatMessage) const;
-    Windows::Foundation::IAsyncOperation<bool> TryCancelDownloadMessageAsync(hstring_ref localChatMessageId) const;
-    Windows::Foundation::IAsyncOperation<bool> TryCancelSendMessageAsync(hstring_ref localChatMessageId) const;
+    Windows::Foundation::IAsyncOperation<bool> TryCancelDownloadMessageAsync(hstring_view localChatMessageId) const;
+    Windows::Foundation::IAsyncOperation<bool> TryCancelSendMessageAsync(hstring_view localChatMessageId) const;
     event_token StoreChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::ChatMessageStore, Windows::ApplicationModel::Chat::ChatMessageStoreChangedEventArgs> & handler) const;
     using StoreChanged_revoker = event_revoker<IChatMessageStore2>;
     StoreChanged_revoker StoreChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::ChatMessageStore, Windows::ApplicationModel::Chat::ChatMessageStoreChangedEventArgs> & handler) const;
@@ -804,7 +804,7 @@ struct WINRT_EBO impl_IChatMessageStore2
 template <typename D>
 struct WINRT_EBO impl_IChatMessageStore3
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> GetMessageBySyncIdAsync(hstring_ref syncId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> GetMessageBySyncIdAsync(hstring_view syncId) const;
 };
 
 template <typename D>
@@ -854,14 +854,14 @@ template <typename D>
 struct WINRT_EBO impl_IChatQueryOptions
 {
     hstring SearchString() const;
-    void SearchString(hstring_ref value) const;
+    void SearchString(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IChatRecipientDeliveryInfo
 {
     hstring TransportAddress() const;
-    void TransportAddress(hstring_ref value) const;
+    void TransportAddress(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> DeliveryTime() const;
     void DeliveryTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ReadTime() const;
@@ -909,7 +909,7 @@ struct WINRT_EBO impl_IRcsEndUserMessage
     bool IsPinRequired() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::RcsEndUserMessageAction> Actions() const;
     Windows::Foundation::IAsyncAction SendResponseAsync(const Windows::ApplicationModel::Chat::RcsEndUserMessageAction & action) const;
-    Windows::Foundation::IAsyncAction SendResponseWithPinAsync(const Windows::ApplicationModel::Chat::RcsEndUserMessageAction & action, hstring_ref pin) const;
+    Windows::Foundation::IAsyncAction SendResponseWithPinAsync(const Windows::ApplicationModel::Chat::RcsEndUserMessageAction & action, hstring_view pin) const;
 };
 
 template <typename D>
@@ -946,7 +946,7 @@ struct WINRT_EBO impl_IRcsManagerStatics
 {
     Windows::ApplicationModel::Chat::RcsEndUserMessageManager GetEndUserMessageManager() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::RcsTransport>> GetTransportsAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::RcsTransport> GetTransportAsync(hstring_ref transportId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::RcsTransport> GetTransportAsync(hstring_view transportId) const;
     Windows::Foundation::IAsyncAction LeaveConversationAsync(const Windows::ApplicationModel::Chat::ChatConversation & conversation) const;
 };
 

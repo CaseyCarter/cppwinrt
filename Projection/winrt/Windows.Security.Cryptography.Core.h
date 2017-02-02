@@ -2991,7 +2991,7 @@ template <typename D> Windows::Security::Cryptography::Core::CryptographicKey im
     return key;
 }
 
-template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider2<D>::CreateKeyPairWithCurveName(hstring_ref curveName) const
+template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider2<D>::CreateKeyPairWithCurveName(hstring_view curveName) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
     check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider2)->abi_CreateKeyPairWithCurveName(get(curveName), put(key)));
@@ -3005,14 +3005,14 @@ template <typename D> Windows::Security::Cryptography::Core::CryptographicKey im
     return key;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> impl_IPersistedKeyProviderStatics<D>::OpenKeyPairFromCertificateAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> impl_IPersistedKeyProviderStatics<D>::OpenKeyPairFromCertificateAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_view hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> operation;
     check_hresult(WINRT_SHIM(IPersistedKeyProviderStatics)->abi_OpenKeyPairFromCertificateAsync(get(certificate), get(hashAlgorithmName), padding, put(operation)));
     return operation;
 }
 
-template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IPersistedKeyProviderStatics<D>::OpenPublicKeyFromCertificate(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const
+template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IPersistedKeyProviderStatics<D>::OpenPublicKeyFromCertificate(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_view hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
     check_hresult(WINRT_SHIM(IPersistedKeyProviderStatics)->abi_OpenPublicKeyFromCertificate(get(certificate), get(hashAlgorithmName), padding, put(key)));
@@ -3117,35 +3117,35 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
     return value;
 }
 
-template <typename D> Windows::Security::Cryptography::Core::HashAlgorithmProvider impl_IHashAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
+template <typename D> Windows::Security::Cryptography::Core::HashAlgorithmProvider impl_IHashAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_view algorithm) const
 {
     Windows::Security::Cryptography::Core::HashAlgorithmProvider provider { nullptr };
     check_hresult(WINRT_SHIM(IHashAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
     return provider;
 }
 
-template <typename D> Windows::Security::Cryptography::Core::MacAlgorithmProvider impl_IMacAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
+template <typename D> Windows::Security::Cryptography::Core::MacAlgorithmProvider impl_IMacAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_view algorithm) const
 {
     Windows::Security::Cryptography::Core::MacAlgorithmProvider provider { nullptr };
     check_hresult(WINRT_SHIM(IMacAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
     return provider;
 }
 
-template <typename D> Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider impl_IKeyDerivationAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
+template <typename D> Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider impl_IKeyDerivationAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_view algorithm) const
 {
     Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider provider { nullptr };
     check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
     return provider;
 }
 
-template <typename D> Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider impl_ISymmetricKeyAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
+template <typename D> Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider impl_ISymmetricKeyAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_view algorithm) const
 {
     Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider provider { nullptr };
     check_hresult(WINRT_SHIM(ISymmetricKeyAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
     return provider;
 }
 
-template <typename D> Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider impl_IAsymmetricKeyAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
+template <typename D> Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider impl_IAsymmetricKeyAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_view algorithm) const
 {
     Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider provider { nullptr };
     check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
@@ -4076,7 +4076,7 @@ inline hstring AsymmetricAlgorithmNames::EcdsaSha512()
     return get_activation_factory<AsymmetricAlgorithmNames, IAsymmetricAlgorithmNamesStatics2>().EcdsaSha512();
 }
 
-inline Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider AsymmetricKeyAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
+inline Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider AsymmetricKeyAlgorithmProvider::OpenAlgorithm(hstring_view algorithm)
 {
     return get_activation_factory<AsymmetricKeyAlgorithmProvider, IAsymmetricKeyAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }
@@ -4396,7 +4396,7 @@ inline hstring HashAlgorithmNames::Sha512()
     return get_activation_factory<HashAlgorithmNames, IHashAlgorithmNamesStatics>().Sha512();
 }
 
-inline Windows::Security::Cryptography::Core::HashAlgorithmProvider HashAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
+inline Windows::Security::Cryptography::Core::HashAlgorithmProvider HashAlgorithmProvider::OpenAlgorithm(hstring_view algorithm)
 {
     return get_activation_factory<HashAlgorithmProvider, IHashAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }
@@ -4501,7 +4501,7 @@ inline hstring KeyDerivationAlgorithmNames::CapiKdfSha512()
     return get_activation_factory<KeyDerivationAlgorithmNames, IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha512();
 }
 
-inline Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider KeyDerivationAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
+inline Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider KeyDerivationAlgorithmProvider::OpenAlgorithm(hstring_view algorithm)
 {
     return get_activation_factory<KeyDerivationAlgorithmProvider, IKeyDerivationAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }
@@ -4556,17 +4556,17 @@ inline hstring MacAlgorithmNames::AesCmac()
     return get_activation_factory<MacAlgorithmNames, IMacAlgorithmNamesStatics>().AesCmac();
 }
 
-inline Windows::Security::Cryptography::Core::MacAlgorithmProvider MacAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
+inline Windows::Security::Cryptography::Core::MacAlgorithmProvider MacAlgorithmProvider::OpenAlgorithm(hstring_view algorithm)
 {
     return get_activation_factory<MacAlgorithmProvider, IMacAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> PersistedKeyProvider::OpenKeyPairFromCertificateAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> PersistedKeyProvider::OpenKeyPairFromCertificateAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_view hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding)
 {
     return get_activation_factory<PersistedKeyProvider, IPersistedKeyProviderStatics>().OpenKeyPairFromCertificateAsync(certificate, hashAlgorithmName, padding);
 }
 
-inline Windows::Security::Cryptography::Core::CryptographicKey PersistedKeyProvider::OpenPublicKeyFromCertificate(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding)
+inline Windows::Security::Cryptography::Core::CryptographicKey PersistedKeyProvider::OpenPublicKeyFromCertificate(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_view hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding)
 {
     return get_activation_factory<PersistedKeyProvider, IPersistedKeyProviderStatics>().OpenPublicKeyFromCertificate(certificate, hashAlgorithmName, padding);
 }
@@ -4666,7 +4666,7 @@ inline hstring SymmetricAlgorithmNames::Rc4()
     return get_activation_factory<SymmetricAlgorithmNames, ISymmetricAlgorithmNamesStatics>().Rc4();
 }
 
-inline Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider SymmetricKeyAlgorithmProvider::OpenAlgorithm(hstring_ref algorithm)
+inline Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider SymmetricKeyAlgorithmProvider::OpenAlgorithm(hstring_view algorithm)
 {
     return get_activation_factory<SymmetricKeyAlgorithmProvider, ISymmetricKeyAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
 }

@@ -43,11 +43,11 @@ struct WINRT_EBO impl_ICryptographicBufferStatics
     uint32_t GenerateRandomNumber() const;
     Windows::Storage::Streams::IBuffer CreateFromByteArray(array_ref<const uint8_t> value) const;
     void CopyToByteArray(const Windows::Storage::Streams::IBuffer & buffer, com_array<uint8_t> & value) const;
-    Windows::Storage::Streams::IBuffer DecodeFromHexString(hstring_ref value) const;
+    Windows::Storage::Streams::IBuffer DecodeFromHexString(hstring_view value) const;
     hstring EncodeToHexString(const Windows::Storage::Streams::IBuffer & buffer) const;
-    Windows::Storage::Streams::IBuffer DecodeFromBase64String(hstring_ref value) const;
+    Windows::Storage::Streams::IBuffer DecodeFromBase64String(hstring_view value) const;
     hstring EncodeToBase64String(const Windows::Storage::Streams::IBuffer & buffer) const;
-    Windows::Storage::Streams::IBuffer ConvertStringToBinary(hstring_ref value, Windows::Security::Cryptography::BinaryStringEncoding encoding) const;
+    Windows::Storage::Streams::IBuffer ConvertStringToBinary(hstring_view value, Windows::Security::Cryptography::BinaryStringEncoding encoding) const;
     hstring ConvertBinaryToString(Windows::Security::Cryptography::BinaryStringEncoding encoding, const Windows::Storage::Streams::IBuffer & buffer) const;
 };
 

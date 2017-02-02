@@ -444,7 +444,7 @@ template <typename D> hstring impl_IWiFiAdapterStatics<D>::GetDeviceSelector() c
     return deviceSelector;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> impl_IWiFiAdapterStatics<D>::FromIdAsync(hstring_ref deviceId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> impl_IWiFiAdapterStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> asyncOp;
     check_hresult(WINRT_SHIM(IWiFiAdapterStatics)->abi_FromIdAsync(get(deviceId), put(asyncOp)));
@@ -510,7 +510,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiF
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> impl_IWiFiAdapter<D>::ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, const Windows::Security::Credentials::PasswordCredential & passwordCredential, hstring_ref ssid) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> impl_IWiFiAdapter<D>::ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, const Windows::Security::Credentials::PasswordCredential & passwordCredential, hstring_view ssid) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> value;
     check_hresult(WINRT_SHIM(IWiFiAdapter)->abi_ConnectWithPasswordCredentialAndSsidAsync(get(availableNetwork), reconnectionKind, get(passwordCredential), get(ssid), put(value)));
@@ -630,7 +630,7 @@ inline hstring WiFiAdapter::GetDeviceSelector()
     return get_activation_factory<WiFiAdapter, IWiFiAdapterStatics>().GetDeviceSelector();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> WiFiAdapter::FromIdAsync(hstring_ref deviceId)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> WiFiAdapter::FromIdAsync(hstring_view deviceId)
 {
     return get_activation_factory<WiFiAdapter, IWiFiAdapterStatics>().FromIdAsync(deviceId);
 }
