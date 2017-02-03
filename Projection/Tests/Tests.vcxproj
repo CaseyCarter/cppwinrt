@@ -189,6 +189,7 @@
     </ClCompile>
     <ClCompile Include="internal_map.cpp" />
     <ClCompile Include="internal_vector.cpp" />
+    <ClCompile Include="IReference.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="make_self.cpp" />
     <ClCompile Include="meta.cpp" />

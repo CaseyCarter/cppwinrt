@@ -5839,7 +5839,7 @@ template <typename D>
 struct WINRT_EBO impl_ICalendarDatePicker
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> Date() const;
-    void Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void Date(const optional<Windows::Foundation::DateTime> & value) const;
     bool IsCalendarOpen() const;
     void IsCalendarOpen(bool value) const;
     hstring DateFormat() const;
@@ -8515,7 +8515,7 @@ struct WINRT_EBO impl_IMediaElement
     bool CanPause() const;
     int32_t AudioStreamCount() const;
     Windows::Foundation::IReference<int32_t> AudioStreamIndex() const;
-    void AudioStreamIndex(const Windows::Foundation::IReference<int32_t> & value) const;
+    void AudioStreamIndex(const optional<int32_t> & value) const;
     double PlaybackRate() const;
     void PlaybackRate(double value) const;
     bool IsLooping() const;
@@ -8583,7 +8583,7 @@ struct WINRT_EBO impl_IMediaElement
     void Pause() const;
     Windows::UI::Xaml::Media::MediaCanPlayResponse CanPlayType(hstring_view type) const;
     void SetSource(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view mimeType) const;
-    hstring GetAudioStreamLanguage(const Windows::Foundation::IReference<int32_t> & index) const;
+    hstring GetAudioStreamLanguage(const optional<int32_t> & index) const;
     void AddAudioEffect(hstring_view effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
     void AddVideoEffect(hstring_view effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
     void RemoveAllEffects() const;
@@ -8806,7 +8806,7 @@ struct WINRT_EBO impl_IMediaTransportControlsHelperStatics
 {
     Windows::UI::Xaml::DependencyProperty DropoutOrderProperty() const;
     Windows::Foundation::IReference<int32_t> GetDropoutOrder(const Windows::UI::Xaml::UIElement & element) const;
-    void SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IReference<int32_t> & value) const;
+    void SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const optional<int32_t> & value) const;
 };
 
 template <typename D>
@@ -9839,8 +9839,8 @@ struct WINRT_EBO impl_IScrollViewer2
     using ViewChanging_revoker = event_revoker<IScrollViewer2>;
     ViewChanging_revoker ViewChanging(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::ScrollViewerViewChangingEventArgs> & value) const;
     void ViewChanging(event_token token) const;
-    bool ChangeView(const Windows::Foundation::IReference<double> & horizontalOffset, const Windows::Foundation::IReference<double> & verticalOffset, const Windows::Foundation::IReference<float> & zoomFactor) const;
-    bool ChangeView(const Windows::Foundation::IReference<double> & horizontalOffset, const Windows::Foundation::IReference<double> & verticalOffset, const Windows::Foundation::IReference<float> & zoomFactor, bool disableAnimation) const;
+    bool ChangeView(const optional<double> & horizontalOffset, const optional<double> & verticalOffset, const optional<float> & zoomFactor) const;
+    bool ChangeView(const optional<double> & horizontalOffset, const optional<double> & verticalOffset, const optional<float> & zoomFactor, bool disableAnimation) const;
 };
 
 template <typename D>

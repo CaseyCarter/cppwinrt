@@ -2704,7 +2704,7 @@ template <typename D> Windows::Foundation::IReference<int16_t> impl_IBluetoothSi
     return value;
 }
 
-template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::InRangeThresholdInDBm(const Windows::Foundation::IReference<int16_t> & value) const
+template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::InRangeThresholdInDBm(const optional<int16_t> & value) const
 {
     check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->put_InRangeThresholdInDBm(get_abi(value)));
 }
@@ -2716,7 +2716,7 @@ template <typename D> Windows::Foundation::IReference<int16_t> impl_IBluetoothSi
     return value;
 }
 
-template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::OutOfRangeThresholdInDBm(const Windows::Foundation::IReference<int16_t> & value) const
+template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::OutOfRangeThresholdInDBm(const optional<int16_t> & value) const
 {
     check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->put_OutOfRangeThresholdInDBm(get_abi(value)));
 }
@@ -2728,7 +2728,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::OutOfRangeTimeout(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::OutOfRangeTimeout(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->put_OutOfRangeTimeout(get_abi(value)));
 }
@@ -2740,7 +2740,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::SamplingInterval(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::SamplingInterval(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->put_SamplingInterval(get_abi(value)));
 }

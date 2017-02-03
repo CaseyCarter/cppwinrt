@@ -362,7 +362,7 @@ template <typename D>
 struct WINRT_EBO impl_IGeolocatorStatics2
 {
     bool IsDefaultGeopositionRecommended() const;
-    void DefaultGeoposition(const Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> & value) const;
+    void DefaultGeoposition(const optional<Windows::Devices::Geolocation::BasicGeoposition> & value) const;
     Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> DefaultGeoposition() const;
 };
 
@@ -370,7 +370,7 @@ template <typename D>
 struct WINRT_EBO impl_IGeolocatorWithScalarAccuracy
 {
     Windows::Foundation::IReference<uint32_t> DesiredAccuracyInMeters() const;
-    void DesiredAccuracyInMeters(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void DesiredAccuracyInMeters(const optional<uint32_t> & value) const;
 };
 
 template <typename D>

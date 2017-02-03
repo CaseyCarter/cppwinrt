@@ -2691,7 +2691,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point
     return value;
 }
 
-template <typename D> void impl_ILauncherUIOptions<D>::InvocationPoint(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const
+template <typename D> void impl_ILauncherUIOptions<D>::InvocationPoint(const optional<Windows::Foundation::Point> & value) const
 {
     check_hresult(WINRT_SHIM(ILauncherUIOptions)->put_InvocationPoint(get_abi(value)));
 }
@@ -2703,7 +2703,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::Rect>
     return value;
 }
 
-template <typename D> void impl_ILauncherUIOptions<D>::SelectionRect(const Windows::Foundation::IReference<Windows::Foundation::Rect> & value) const
+template <typename D> void impl_ILauncherUIOptions<D>::SelectionRect(const optional<Windows::Foundation::Rect> & value) const
 {
     check_hresult(WINRT_SHIM(ILauncherUIOptions)->put_SelectionRect(get_abi(value)));
 }

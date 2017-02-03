@@ -996,7 +996,7 @@ template <typename D>
 struct WINRT_EBO impl_IMediaPlaybackList2
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> MaxPrefetchTime() const;
-    void MaxPrefetchTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void MaxPrefetchTime(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Media::Playback::MediaPlaybackItem StartingItem() const;
     void StartingItem(const Windows::Media::Playback::MediaPlaybackItem & value) const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaPlaybackItem> ShuffledItems() const;

@@ -1295,7 +1295,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IAdaptiveMe
     return value;
 }
 
-template <typename D> void impl_IAdaptiveMediaSource<D>::DesiredMinBitrate(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IAdaptiveMediaSource<D>::DesiredMinBitrate(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IAdaptiveMediaSource)->put_DesiredMinBitrate(get_abi(value)));
 }
@@ -1307,7 +1307,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IAdaptiveMe
     return value;
 }
 
-template <typename D> void impl_IAdaptiveMediaSource<D>::DesiredMaxBitrate(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IAdaptiveMediaSource<D>::DesiredMaxBitrate(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IAdaptiveMediaSource)->put_DesiredMaxBitrate(get_abi(value)));
 }
@@ -1449,7 +1449,7 @@ template <typename D> Windows::Foundation::IReference<double> impl_IAdaptiveMedi
     return value;
 }
 
-template <typename D> void impl_IAdaptiveMediaSourceAdvancedSettings<D>::DesiredBitrateHeadroomRatio(const Windows::Foundation::IReference<double> & value) const
+template <typename D> void impl_IAdaptiveMediaSourceAdvancedSettings<D>::DesiredBitrateHeadroomRatio(const optional<double> & value) const
 {
     check_hresult(WINRT_SHIM(IAdaptiveMediaSourceAdvancedSettings)->put_DesiredBitrateHeadroomRatio(get_abi(value)));
 }
@@ -1461,7 +1461,7 @@ template <typename D> Windows::Foundation::IReference<double> impl_IAdaptiveMedi
     return value;
 }
 
-template <typename D> void impl_IAdaptiveMediaSourceAdvancedSettings<D>::BitrateDowngradeTriggerRatio(const Windows::Foundation::IReference<double> & value) const
+template <typename D> void impl_IAdaptiveMediaSourceAdvancedSettings<D>::BitrateDowngradeTriggerRatio(const optional<double> & value) const
 {
     check_hresult(WINRT_SHIM(IAdaptiveMediaSourceAdvancedSettings)->put_BitrateDowngradeTriggerRatio(get_abi(value)));
 }
@@ -1610,7 +1610,7 @@ template <typename D> Windows::Foundation::IReference<uint64_t> impl_IAdaptiveMe
     return value;
 }
 
-template <typename D> void impl_IAdaptiveMediaSourceDownloadResult2<D>::ResourceByteRangeOffset(const Windows::Foundation::IReference<uint64_t> & value) const
+template <typename D> void impl_IAdaptiveMediaSourceDownloadResult2<D>::ResourceByteRangeOffset(const optional<uint64_t> & value) const
 {
     check_hresult(WINRT_SHIM(IAdaptiveMediaSourceDownloadResult2)->put_ResourceByteRangeOffset(get_abi(value)));
 }
@@ -1622,7 +1622,7 @@ template <typename D> Windows::Foundation::IReference<uint64_t> impl_IAdaptiveMe
     return value;
 }
 
-template <typename D> void impl_IAdaptiveMediaSourceDownloadResult2<D>::ResourceByteRangeLength(const Windows::Foundation::IReference<uint64_t> & value) const
+template <typename D> void impl_IAdaptiveMediaSourceDownloadResult2<D>::ResourceByteRangeLength(const optional<uint64_t> & value) const
 {
     check_hresult(WINRT_SHIM(IAdaptiveMediaSourceDownloadResult2)->put_ResourceByteRangeLength(get_abi(value)));
 }

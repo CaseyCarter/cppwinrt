@@ -259,7 +259,7 @@ struct WINRT_EBO impl_IFrameController
     Windows::Media::Devices::Core::FrameIsoSpeedControl IsoSpeedControl() const;
     Windows::Media::Devices::Core::FrameFocusControl FocusControl() const;
     Windows::Foundation::IReference<bool> PhotoConfirmationEnabled() const;
-    void PhotoConfirmationEnabled(const Windows::Foundation::IReference<bool> & value) const;
+    void PhotoConfirmationEnabled(const optional<bool> & value) const;
 };
 
 template <typename D>
@@ -290,7 +290,7 @@ template <typename D>
 struct WINRT_EBO impl_IFrameExposureCompensationControl
 {
     Windows::Foundation::IReference<float> Value() const;
-    void Value(const Windows::Foundation::IReference<float> & value) const;
+    void Value(const optional<float> & value) const;
 };
 
 template <typename D>
@@ -299,7 +299,7 @@ struct WINRT_EBO impl_IFrameExposureControl
     bool Auto() const;
     void Auto(bool value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Value() const;
-    void Value(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void Value(const optional<Windows::Foundation::TimeSpan> & value) const;
 };
 
 template <typename D>
@@ -336,7 +336,7 @@ template <typename D>
 struct WINRT_EBO impl_IFrameFocusControl
 {
     Windows::Foundation::IReference<uint32_t> Value() const;
-    void Value(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void Value(const optional<uint32_t> & value) const;
 };
 
 template <typename D>
@@ -354,7 +354,7 @@ struct WINRT_EBO impl_IFrameIsoSpeedControl
     bool Auto() const;
     void Auto(bool value) const;
     Windows::Foundation::IReference<uint32_t> Value() const;
-    void Value(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void Value(const optional<uint32_t> & value) const;
 };
 
 template <typename D>

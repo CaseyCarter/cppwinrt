@@ -76,7 +76,6 @@ static void WriteBaseHeader()
     Write(out, Strings::base_composable);            // #include "base_composable.h"
     Write(out, Strings::base_activation);            // #include "base_activation.h"
     Write(out, Strings::base_delegate);              // #include "base_delegate.h"
-    Write(out, Strings::base_reference);             // #include "base_reference.h"
     Write(out, Strings::base_collections_consume);   // #include "base_collections_consume.h"
     Write(out, Strings::base_collections_produce);   // #include "base_collections_produce.h"
     Write(out, Strings::base_collections_impl);      // #include "base_collections_impl.h"
@@ -85,8 +84,11 @@ static void WriteBaseHeader()
     Write(out, Strings::base_async_produce);         // #include "base_async_produce.h"
     Write(out, Strings::base_await_consume);         // #include "base_await_consume.h"
     Write(out, Strings::base_await_produce);         // #include "base_await_produce.h"
-
+    Write(out, Strings::base_propertyvalue);         // #include "base_propertyvalue.h"
+    Write(out, Strings::base_reference);             // #include "base_reference.h"
+    
     WriteRootNamespaceEnd(out);
+
     Write(out, Strings::base_std_hash);
 
     Write(out, "\r\n#ifdef WINRT_ASYNC\r\n");

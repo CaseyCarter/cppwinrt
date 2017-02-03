@@ -9248,7 +9248,7 @@ template <typename D> Windows::Foundation::IReference<bool> impl_ISelector<D>::I
     return value;
 }
 
-template <typename D> void impl_ISelector<D>::IsSynchronizedWithCurrentItem(const Windows::Foundation::IReference<bool> & value) const
+template <typename D> void impl_ISelector<D>::IsSynchronizedWithCurrentItem(const optional<bool> & value) const
 {
     check_hresult(WINRT_SHIM(ISelector)->put_IsSynchronizedWithCurrentItem(get_abi(value)));
 }
@@ -9383,7 +9383,7 @@ template <typename D> Windows::Foundation::IReference<bool> impl_IToggleButton<D
     return value;
 }
 
-template <typename D> void impl_IToggleButton<D>::IsChecked(const Windows::Foundation::IReference<bool> & value) const
+template <typename D> void impl_IToggleButton<D>::IsChecked(const optional<bool> & value) const
 {
     check_hresult(WINRT_SHIM(IToggleButton)->put_IsChecked(get_abi(value)));
 }

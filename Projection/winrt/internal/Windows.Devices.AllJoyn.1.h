@@ -386,7 +386,7 @@ struct WINRT_EBO impl_IAllJoynAboutData
     void DefaultAppName(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, hstring> AppNames() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> DateOfManufacture() const;
-    void DateOfManufacture(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void DateOfManufacture(const optional<Windows::Foundation::DateTime> & value) const;
     hstring DefaultDescription() const;
     void DefaultDescription(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, hstring> Descriptions() const;

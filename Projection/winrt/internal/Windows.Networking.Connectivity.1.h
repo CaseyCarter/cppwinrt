@@ -401,18 +401,18 @@ struct WINRT_EBO impl_IConnectionProfileFilter
     bool IsWlanConnectionProfile() const;
     void NetworkCostType(Windows::Networking::Connectivity::NetworkCostType value) const;
     Windows::Networking::Connectivity::NetworkCostType NetworkCostType() const;
-    void ServiceProviderGuid(const Windows::Foundation::IReference<GUID> & value) const;
+    void ServiceProviderGuid(const optional<GUID> & value) const;
     Windows::Foundation::IReference<GUID> ServiceProviderGuid() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IConnectionProfileFilter2
 {
-    void IsRoaming(const Windows::Foundation::IReference<bool> & value) const;
+    void IsRoaming(const optional<bool> & value) const;
     Windows::Foundation::IReference<bool> IsRoaming() const;
-    void IsOverDataLimit(const Windows::Foundation::IReference<bool> & value) const;
+    void IsOverDataLimit(const optional<bool> & value) const;
     Windows::Foundation::IReference<bool> IsOverDataLimit() const;
-    void IsBackgroundDataUsageRestricted(const Windows::Foundation::IReference<bool> & value) const;
+    void IsBackgroundDataUsageRestricted(const optional<bool> & value) const;
     Windows::Foundation::IReference<bool> IsBackgroundDataUsageRestricted() const;
     Windows::Storage::Streams::IBuffer RawData() const;
 };

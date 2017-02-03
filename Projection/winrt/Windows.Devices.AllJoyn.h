@@ -3322,7 +3322,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IAllJoynAboutData<D>::DateOfManufacture(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IAllJoynAboutData<D>::DateOfManufacture(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DateOfManufacture(get_abi(value)));
 }

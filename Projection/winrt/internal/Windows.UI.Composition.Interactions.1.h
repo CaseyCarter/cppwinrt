@@ -233,11 +233,11 @@ struct WINRT_EBO impl_IInteractionTracker
     Windows::UI::Composition::Interactions::IInteractionTrackerOwner Owner() const;
     Windows::Foundation::Numerics::float3 Position() const;
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> PositionInertiaDecayRate() const;
-    void PositionInertiaDecayRate(const Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> & value) const;
+    void PositionInertiaDecayRate(const optional<Windows::Foundation::Numerics::float3> & value) const;
     Windows::Foundation::Numerics::float3 PositionVelocityInPixelsPerSecond() const;
     float Scale() const;
     Windows::Foundation::IReference<float> ScaleInertiaDecayRate() const;
-    void ScaleInertiaDecayRate(const Windows::Foundation::IReference<float> & value) const;
+    void ScaleInertiaDecayRate(const optional<float> & value) const;
     float ScaleVelocityInPercentPerSecond() const;
     void AdjustPositionXIfGreaterThanThreshold(float adjustment, float positionThreshold) const;
     void AdjustPositionYIfGreaterThanThreshold(float adjustment, float positionThreshold) const;

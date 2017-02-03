@@ -1701,7 +1701,7 @@ struct WINRT_EBO MediaTransportControlsHelper :
     MediaTransportControlsHelper(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::DependencyProperty DropoutOrderProperty();
     static Windows::Foundation::IReference<int32_t> GetDropoutOrder(const Windows::UI::Xaml::UIElement & element);
-    static void SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IReference<int32_t> & value);
+    static void SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const optional<int32_t> & value);
 };
 
 struct WINRT_EBO MenuFlyout :

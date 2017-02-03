@@ -1429,7 +1429,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IFrameExposureControl<D>::Value(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IFrameExposureControl<D>::Value(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IFrameExposureControl)->put_Value(get_abi(value)));
 }
@@ -1441,7 +1441,7 @@ template <typename D> Windows::Foundation::IReference<float> impl_IFrameExposure
     return value;
 }
 
-template <typename D> void impl_IFrameExposureCompensationControl<D>::Value(const Windows::Foundation::IReference<float> & value) const
+template <typename D> void impl_IFrameExposureCompensationControl<D>::Value(const optional<float> & value) const
 {
     check_hresult(WINRT_SHIM(IFrameExposureCompensationControl)->put_Value(get_abi(value)));
 }
@@ -1465,7 +1465,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IFrameIsoSp
     return value;
 }
 
-template <typename D> void impl_IFrameIsoSpeedControl<D>::Value(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IFrameIsoSpeedControl<D>::Value(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IFrameIsoSpeedControl)->put_Value(get_abi(value)));
 }
@@ -1477,7 +1477,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IFrameFocus
     return value;
 }
 
-template <typename D> void impl_IFrameFocusControl<D>::Value(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IFrameFocusControl<D>::Value(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IFrameFocusControl)->put_Value(get_abi(value)));
 }
@@ -1565,7 +1565,7 @@ template <typename D> Windows::Foundation::IReference<bool> impl_IFrameControlle
     return value;
 }
 
-template <typename D> void impl_IFrameController<D>::PhotoConfirmationEnabled(const Windows::Foundation::IReference<bool> & value) const
+template <typename D> void impl_IFrameController<D>::PhotoConfirmationEnabled(const optional<bool> & value) const
 {
     check_hresult(WINRT_SHIM(IFrameController)->put_PhotoConfirmationEnabled(get_abi(value)));
 }

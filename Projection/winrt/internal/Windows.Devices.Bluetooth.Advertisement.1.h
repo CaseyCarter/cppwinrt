@@ -186,7 +186,7 @@ template <typename D>
 struct WINRT_EBO impl_IBluetoothLEAdvertisement
 {
     Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> Flags() const;
-    void Flags(const Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> & value) const;
+    void Flags(const optional<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> & value) const;
     hstring LocalName() const;
     void LocalName(hstring_view value) const;
     Windows::Foundation::Collections::IVector<GUID> ServiceUuids() const;

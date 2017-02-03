@@ -1535,7 +1535,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numer
     return value;
 }
 
-template <typename D> void impl_IInteractionTracker<D>::PositionInertiaDecayRate(const Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> & value) const
+template <typename D> void impl_IInteractionTracker<D>::PositionInertiaDecayRate(const optional<Windows::Foundation::Numerics::float3> & value) const
 {
     check_hresult(WINRT_SHIM(IInteractionTracker)->put_PositionInertiaDecayRate(get_abi(value)));
 }
@@ -1561,7 +1561,7 @@ template <typename D> Windows::Foundation::IReference<float> impl_IInteractionTr
     return value;
 }
 
-template <typename D> void impl_IInteractionTracker<D>::ScaleInertiaDecayRate(const Windows::Foundation::IReference<float> & value) const
+template <typename D> void impl_IInteractionTracker<D>::ScaleInertiaDecayRate(const optional<float> & value) const
 {
     check_hresult(WINRT_SHIM(IInteractionTracker)->put_ScaleInertiaDecayRate(get_abi(value)));
 }

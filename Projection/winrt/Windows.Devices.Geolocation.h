@@ -1668,7 +1668,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IGeolocator
     return value;
 }
 
-template <typename D> void impl_IGeolocatorWithScalarAccuracy<D>::DesiredAccuracyInMeters(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IGeolocatorWithScalarAccuracy<D>::DesiredAccuracyInMeters(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IGeolocatorWithScalarAccuracy)->put_DesiredAccuracyInMeters(get_abi(value)));
 }
@@ -1706,7 +1706,7 @@ template <typename D> bool impl_IGeolocatorStatics2<D>::IsDefaultGeopositionReco
     return value;
 }
 
-template <typename D> void impl_IGeolocatorStatics2<D>::DefaultGeoposition(const Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> & value) const
+template <typename D> void impl_IGeolocatorStatics2<D>::DefaultGeoposition(const optional<Windows::Devices::Geolocation::BasicGeoposition> & value) const
 {
     check_hresult(WINRT_SHIM(IGeolocatorStatics2)->put_DefaultGeoposition(get_abi(value)));
 }
@@ -1816,7 +1816,7 @@ inline bool Geolocator::IsDefaultGeopositionRecommended()
     return get_activation_factory<Geolocator, IGeolocatorStatics2>().IsDefaultGeopositionRecommended();
 }
 
-inline void Geolocator::DefaultGeoposition(const Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> & value)
+inline void Geolocator::DefaultGeoposition(const optional<Windows::Devices::Geolocation::BasicGeoposition> & value)
 {
     get_activation_factory<Geolocator, IGeolocatorStatics2>().DefaultGeoposition(value);
 }

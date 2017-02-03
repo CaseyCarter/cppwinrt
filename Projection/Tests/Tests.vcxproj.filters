@@ -39,6 +39,7 @@
     <ClCompile Include="abi_guard.cpp" />
     <ClCompile Include="casts.cpp" />
     <ClCompile Include="Reference.cpp" />
+    <ClCompile Include="IReference.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

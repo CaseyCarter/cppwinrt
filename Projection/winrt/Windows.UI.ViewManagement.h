@@ -2236,7 +2236,7 @@ template <typename D> Windows::UI::ViewManagement::ApplicationViewBoundsMode imp
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::ForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::ForegroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ForegroundColor(get_abi(value)));
 }
@@ -2248,7 +2248,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::BackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::BackgroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_BackgroundColor(get_abi(value)));
 }
@@ -2260,7 +2260,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonForegroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonForegroundColor(get_abi(value)));
 }
@@ -2272,7 +2272,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonBackgroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonBackgroundColor(get_abi(value)));
 }
@@ -2284,7 +2284,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonHoverForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonHoverForegroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonHoverForegroundColor(get_abi(value)));
 }
@@ -2296,7 +2296,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonHoverBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonHoverBackgroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonHoverBackgroundColor(get_abi(value)));
 }
@@ -2308,7 +2308,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonPressedForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonPressedForegroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonPressedForegroundColor(get_abi(value)));
 }
@@ -2320,7 +2320,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonPressedBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonPressedBackgroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonPressedBackgroundColor(get_abi(value)));
 }
@@ -2332,7 +2332,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::InactiveForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::InactiveForegroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_InactiveForegroundColor(get_abi(value)));
 }
@@ -2344,7 +2344,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::InactiveBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::InactiveBackgroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_InactiveBackgroundColor(get_abi(value)));
 }
@@ -2356,7 +2356,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonInactiveForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonInactiveForegroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonInactiveForegroundColor(get_abi(value)));
 }
@@ -2368,7 +2368,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonInactiveBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonInactiveBackgroundColor(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonInactiveBackgroundColor(get_abi(value)));
 }

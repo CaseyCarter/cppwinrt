@@ -45,50 +45,6 @@ struct WINRT_EBO MemoryBuffer :
     MemoryBuffer(uint32_t capacity);
 };
 
-struct PropertyValue
-{
-    PropertyValue() = delete;
-    static Windows::IInspectable CreateEmpty();
-    static Windows::IInspectable CreateUInt8(uint8_t value);
-    static Windows::IInspectable CreateInt16(int16_t value);
-    static Windows::IInspectable CreateUInt16(uint16_t value);
-    static Windows::IInspectable CreateInt32(int32_t value);
-    static Windows::IInspectable CreateUInt32(uint32_t value);
-    static Windows::IInspectable CreateInt64(int64_t value);
-    static Windows::IInspectable CreateUInt64(uint64_t value);
-    static Windows::IInspectable CreateSingle(float value);
-    static Windows::IInspectable CreateDouble(double value);
-    static Windows::IInspectable CreateChar16(wchar_t value);
-    static Windows::IInspectable CreateBoolean(bool value);
-    static Windows::IInspectable CreateString(hstring_view value);
-    static Windows::IInspectable CreateInspectable(const Windows::IInspectable & value);
-    static Windows::IInspectable CreateGuid(GUID value);
-    static Windows::IInspectable CreateDateTime(const Windows::Foundation::DateTime & value);
-    static Windows::IInspectable CreateTimeSpan(const Windows::Foundation::TimeSpan & value);
-    static Windows::IInspectable CreatePoint(const Windows::Foundation::Point & value);
-    static Windows::IInspectable CreateSize(const Windows::Foundation::Size & value);
-    static Windows::IInspectable CreateRect(const Windows::Foundation::Rect & value);
-    static Windows::IInspectable CreateUInt8Array(array_view<const uint8_t> value);
-    static Windows::IInspectable CreateInt16Array(array_view<const int16_t> value);
-    static Windows::IInspectable CreateUInt16Array(array_view<const uint16_t> value);
-    static Windows::IInspectable CreateInt32Array(array_view<const int32_t> value);
-    static Windows::IInspectable CreateUInt32Array(array_view<const uint32_t> value);
-    static Windows::IInspectable CreateInt64Array(array_view<const int64_t> value);
-    static Windows::IInspectable CreateUInt64Array(array_view<const uint64_t> value);
-    static Windows::IInspectable CreateSingleArray(array_view<const float> value);
-    static Windows::IInspectable CreateDoubleArray(array_view<const double> value);
-    static Windows::IInspectable CreateChar16Array(array_view<const wchar_t> value);
-    static Windows::IInspectable CreateBooleanArray(array_view<const bool> value);
-    static Windows::IInspectable CreateStringArray(array_view<const hstring> value);
-    static Windows::IInspectable CreateInspectableArray(array_view<const Windows::IInspectable> value);
-    static Windows::IInspectable CreateGuidArray(array_view<const GUID> value);
-    static Windows::IInspectable CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value);
-    static Windows::IInspectable CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value);
-    static Windows::IInspectable CreatePointArray(array_view<const Windows::Foundation::Point> value);
-    static Windows::IInspectable CreateSizeArray(array_view<const Windows::Foundation::Size> value);
-    static Windows::IInspectable CreateRectArray(array_view<const Windows::Foundation::Rect> value);
-};
-
 struct WINRT_EBO Uri :
     Windows::Foundation::IUriRuntimeClass,
     impl::require<Uri, Windows::Foundation::IStringable, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri>

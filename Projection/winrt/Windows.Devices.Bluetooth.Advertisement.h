@@ -1286,7 +1286,7 @@ template <typename D> Windows::Foundation::IReference<winrt::Windows::Devices::B
     return value;
 }
 
-template <typename D> void impl_IBluetoothLEAdvertisement<D>::Flags(const Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> & value) const
+template <typename D> void impl_IBluetoothLEAdvertisement<D>::Flags(const optional<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> & value) const
 {
     check_hresult(WINRT_SHIM(IBluetoothLEAdvertisement)->put_Flags(get_abi(value)));
 }

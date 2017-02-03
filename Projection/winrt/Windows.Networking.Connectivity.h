@@ -2399,7 +2399,7 @@ template <typename D> Windows::Networking::Connectivity::NetworkCostType impl_IC
     return value;
 }
 
-template <typename D> void impl_IConnectionProfileFilter<D>::ServiceProviderGuid(const Windows::Foundation::IReference<GUID> & value) const
+template <typename D> void impl_IConnectionProfileFilter<D>::ServiceProviderGuid(const optional<GUID> & value) const
 {
     check_hresult(WINRT_SHIM(IConnectionProfileFilter)->put_ServiceProviderGuid(get_abi(value)));
 }
@@ -2411,7 +2411,7 @@ template <typename D> Windows::Foundation::IReference<GUID> impl_IConnectionProf
     return value;
 }
 
-template <typename D> void impl_IConnectionProfileFilter2<D>::IsRoaming(const Windows::Foundation::IReference<bool> & value) const
+template <typename D> void impl_IConnectionProfileFilter2<D>::IsRoaming(const optional<bool> & value) const
 {
     check_hresult(WINRT_SHIM(IConnectionProfileFilter2)->put_IsRoaming(get_abi(value)));
 }
@@ -2423,7 +2423,7 @@ template <typename D> Windows::Foundation::IReference<bool> impl_IConnectionProf
     return value;
 }
 
-template <typename D> void impl_IConnectionProfileFilter2<D>::IsOverDataLimit(const Windows::Foundation::IReference<bool> & value) const
+template <typename D> void impl_IConnectionProfileFilter2<D>::IsOverDataLimit(const optional<bool> & value) const
 {
     check_hresult(WINRT_SHIM(IConnectionProfileFilter2)->put_IsOverDataLimit(get_abi(value)));
 }
@@ -2435,7 +2435,7 @@ template <typename D> Windows::Foundation::IReference<bool> impl_IConnectionProf
     return value;
 }
 
-template <typename D> void impl_IConnectionProfileFilter2<D>::IsBackgroundDataUsageRestricted(const Windows::Foundation::IReference<bool> & value) const
+template <typename D> void impl_IConnectionProfileFilter2<D>::IsBackgroundDataUsageRestricted(const optional<bool> & value) const
 {
     check_hresult(WINRT_SHIM(IConnectionProfileFilter2)->put_IsBackgroundDataUsageRestricted(get_abi(value)));
 }

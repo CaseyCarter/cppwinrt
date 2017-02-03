@@ -1675,7 +1675,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IWalletItem<D>::LastUpdated(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IWalletItem<D>::LastUpdated(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IWalletItem)->put_LastUpdated(get_abi(value)));
 }
@@ -1706,7 +1706,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IWalletItem<D>::ExpirationDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IWalletItem<D>::ExpirationDate(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IWalletItem)->put_ExpirationDate(get_abi(value)));
 }
@@ -1886,7 +1886,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IWalletItem<D>::RelevantDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IWalletItem<D>::RelevantDate(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IWalletItem)->put_RelevantDate(get_abi(value)));
 }
@@ -1998,7 +1998,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IWalletTransaction<D>::TransactionDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IWalletTransaction<D>::TransactionDate(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IWalletTransaction)->put_TransactionDate(get_abi(value)));
 }

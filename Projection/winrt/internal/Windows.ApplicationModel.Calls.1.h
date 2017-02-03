@@ -229,7 +229,7 @@ struct WINRT_EBO impl_IPhoneCallHistoryEntry
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Address() const;
     void Address(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Duration() const;
-    void Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void Duration(const optional<Windows::Foundation::TimeSpan> & value) const;
     bool IsCallerIdBlocked() const;
     void IsCallerIdBlocked(bool value) const;
     bool IsEmergency() const;

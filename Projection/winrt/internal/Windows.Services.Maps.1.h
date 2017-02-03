@@ -275,7 +275,7 @@ struct WINRT_EBO impl_IMapRouteDrivingOptions
     uint32_t MaxAlternateRouteCount() const;
     void MaxAlternateRouteCount(uint32_t value) const;
     Windows::Foundation::IReference<double> InitialHeading() const;
-    void InitialHeading(const Windows::Foundation::IReference<double> & value) const;
+    void InitialHeading(const optional<double> & value) const;
     Windows::Services::Maps::MapRouteOptimization RouteOptimization() const;
     void RouteOptimization(Windows::Services::Maps::MapRouteOptimization value) const;
     Windows::Services::Maps::MapRouteRestrictions RouteRestrictions() const;

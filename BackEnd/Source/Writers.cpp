@@ -446,7 +446,16 @@ static void WriteParameter(Output & out, Parameter const & param)
             }
             else if (param.Category == TypeCategory::Structure || param.Category == TypeCategory::Interface)
             {
-                Write(out, "const % & %", param.ModernType(), param.Name);
+                static const char refInterface[] = "Windows::Foundation::IReference";
+
+                if (param.Category == TypeCategory::Interface && StartsWith(param.Type, refInterface))
+                {
+                    Write(out, "const optional% & %", param.Type.data() + strlen(refInterface), param.Name);
+                }
+                else
+                {
+                    Write(out, "const % & %", param.ModernType(), param.Name);
+                }
             }
             else if (param.Category == TypeCategory::Delegate)
             {

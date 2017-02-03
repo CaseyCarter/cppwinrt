@@ -863,9 +863,9 @@ struct WINRT_EBO impl_IChatRecipientDeliveryInfo
     hstring TransportAddress() const;
     void TransportAddress(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> DeliveryTime() const;
-    void DeliveryTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void DeliveryTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ReadTime() const;
-    void ReadTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void ReadTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::ApplicationModel::Chat::ChatTransportErrorCodeCategory TransportErrorCodeCategory() const;
     Windows::ApplicationModel::Chat::ChatTransportInterpretedErrorCode TransportInterpretedErrorCode() const;
     int32_t TransportErrorCode() const;

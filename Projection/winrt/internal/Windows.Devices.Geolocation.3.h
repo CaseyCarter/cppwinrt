@@ -59,7 +59,7 @@ struct WINRT_EBO Geolocator :
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> GetGeopositionHistoryAsync(const Windows::Foundation::DateTime & startTime);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> GetGeopositionHistoryAsync(const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration);
     static bool IsDefaultGeopositionRecommended();
-    static void DefaultGeoposition(const Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> & value);
+    static void DefaultGeoposition(const optional<Windows::Devices::Geolocation::BasicGeoposition> & value);
     static Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> DefaultGeoposition();
 };
 

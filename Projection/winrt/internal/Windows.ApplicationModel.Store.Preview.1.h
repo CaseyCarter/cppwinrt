@@ -111,7 +111,7 @@ template <typename D>
 struct WINRT_EBO impl_IStoreConfigurationStatics2
 {
     Windows::Foundation::IReference<uint32_t> PurchasePromptingPolicy() const;
-    void PurchasePromptingPolicy(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void PurchasePromptingPolicy(const optional<uint32_t> & value) const;
 };
 
 template <typename D>
@@ -123,7 +123,7 @@ struct WINRT_EBO impl_IStoreConfigurationStatics3
     void SetStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId) const;
     bool IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId) const;
     Windows::Foundation::IReference<uint32_t> GetPurchasePromptingPolicyForUser(const Windows::System::User & user) const;
-    void SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const Windows::Foundation::IReference<uint32_t> & value) const;
+    void SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const optional<uint32_t> & value) const;
 };
 
 template <typename D>

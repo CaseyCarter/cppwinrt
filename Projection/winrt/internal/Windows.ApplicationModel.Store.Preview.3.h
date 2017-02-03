@@ -19,14 +19,14 @@ struct StoreConfiguration
     static Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo HardwareManufacturerInfo();
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> FilterUnsupportedSystemFeaturesAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> & systemFeatures);
     static Windows::Foundation::IReference<uint32_t> PurchasePromptingPolicy();
-    static void PurchasePromptingPolicy(const Windows::Foundation::IReference<uint32_t> & value);
+    static void PurchasePromptingPolicy(const optional<uint32_t> & value);
     static bool HasStoreWebAccount();
     static bool HasStoreWebAccountForUser(const Windows::System::User & user);
     static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> GetStoreLogDataAsync(Windows::ApplicationModel::Store::Preview::StoreLogOptions options);
     static void SetStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId);
     static bool IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId);
     static Windows::Foundation::IReference<uint32_t> GetPurchasePromptingPolicyForUser(const Windows::System::User & user);
-    static void SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const Windows::Foundation::IReference<uint32_t> & value);
+    static void SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const optional<uint32_t> & value);
 };
 
 struct WINRT_EBO StoreHardwareManufacturerInfo :

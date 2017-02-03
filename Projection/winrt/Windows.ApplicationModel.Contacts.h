@@ -6728,7 +6728,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxHomePhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxHomePhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxHomePhoneNumbers(get_abi(value)));
 }
@@ -6740,7 +6740,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxMobilePhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxMobilePhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxMobilePhoneNumbers(get_abi(value)));
 }
@@ -6752,7 +6752,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxWorkPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxWorkPhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxWorkPhoneNumbers(get_abi(value)));
 }
@@ -6764,7 +6764,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherPhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxOtherPhoneNumbers(get_abi(value)));
 }
@@ -6776,7 +6776,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxPagerPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxPagerPhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxPagerPhoneNumbers(get_abi(value)));
 }
@@ -6788,7 +6788,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxBusinessFaxPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxBusinessFaxPhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxBusinessFaxPhoneNumbers(get_abi(value)));
 }
@@ -6800,7 +6800,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxHomeFaxPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxHomeFaxPhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxHomeFaxPhoneNumbers(get_abi(value)));
 }
@@ -6812,7 +6812,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxCompanyPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxCompanyPhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxCompanyPhoneNumbers(get_abi(value)));
 }
@@ -6824,7 +6824,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxAssistantPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxAssistantPhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxAssistantPhoneNumbers(get_abi(value)));
 }
@@ -6836,7 +6836,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxRadioPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxRadioPhoneNumbers(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxRadioPhoneNumbers(get_abi(value)));
 }
@@ -6848,7 +6848,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxPersonalEmailAddresses(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxPersonalEmailAddresses(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxPersonalEmailAddresses(get_abi(value)));
 }
@@ -6860,7 +6860,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxWorkEmailAddresses(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxWorkEmailAddresses(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxWorkEmailAddresses(get_abi(value)));
 }
@@ -6872,7 +6872,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherEmailAddresses(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherEmailAddresses(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxOtherEmailAddresses(get_abi(value)));
 }
@@ -6884,7 +6884,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxHomeAddresses(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxHomeAddresses(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxHomeAddresses(get_abi(value)));
 }
@@ -6896,7 +6896,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxWorkAddresses(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxWorkAddresses(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxWorkAddresses(get_abi(value)));
 }
@@ -6908,7 +6908,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherAddresses(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherAddresses(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxOtherAddresses(get_abi(value)));
 }
@@ -6920,7 +6920,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxBirthdayDates(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxBirthdayDates(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxBirthdayDates(get_abi(value)));
 }
@@ -6932,7 +6932,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxAnniversaryDates(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxAnniversaryDates(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxAnniversaryDates(get_abi(value)));
 }
@@ -6944,7 +6944,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherDates(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherDates(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxOtherDates(get_abi(value)));
 }
@@ -6956,7 +6956,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherRelationships(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherRelationships(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxOtherRelationships(get_abi(value)));
 }
@@ -6968,7 +6968,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxSpouseRelationships(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxSpouseRelationships(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxSpouseRelationships(get_abi(value)));
 }
@@ -6980,7 +6980,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxPartnerRelationships(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxPartnerRelationships(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxPartnerRelationships(get_abi(value)));
 }
@@ -6992,7 +6992,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxSiblingRelationships(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxSiblingRelationships(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxSiblingRelationships(get_abi(value)));
 }
@@ -7004,7 +7004,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxParentRelationships(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxParentRelationships(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxParentRelationships(get_abi(value)));
 }
@@ -7016,7 +7016,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxChildRelationships(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxChildRelationships(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxChildRelationships(get_abi(value)));
 }
@@ -7028,7 +7028,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxJobInfo(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxJobInfo(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxJobInfo(get_abi(value)));
 }
@@ -7040,7 +7040,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactList
     return value;
 }
 
-template <typename D> void impl_IContactListSyncConstraints<D>::MaxWebsites(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactListSyncConstraints<D>::MaxWebsites(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactListSyncConstraints)->put_MaxWebsites(get_abi(value)));
 }
@@ -7304,7 +7304,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IContactDat
     return value;
 }
 
-template <typename D> void impl_IContactDate<D>::Day(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IContactDate<D>::Day(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactDate)->put_Day(get_abi(value)));
 }
@@ -7316,7 +7316,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IContactDat
     return value;
 }
 
-template <typename D> void impl_IContactDate<D>::Month(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IContactDate<D>::Month(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactDate)->put_Month(get_abi(value)));
 }
@@ -7328,7 +7328,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactDate
     return value;
 }
 
-template <typename D> void impl_IContactDate<D>::Year(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IContactDate<D>::Year(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IContactDate)->put_Year(get_abi(value)));
 }

@@ -1231,7 +1231,7 @@ template <typename D> Windows::Foundation::IReference<double> impl_IMapRouteDriv
     return value;
 }
 
-template <typename D> void impl_IMapRouteDrivingOptions<D>::InitialHeading(const Windows::Foundation::IReference<double> & value) const
+template <typename D> void impl_IMapRouteDrivingOptions<D>::InitialHeading(const optional<double> & value) const
 {
     check_hresult(WINRT_SHIM(IMapRouteDrivingOptions)->put_InitialHeading(get_abi(value)));
 }

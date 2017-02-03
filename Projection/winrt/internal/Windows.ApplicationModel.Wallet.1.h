@@ -212,12 +212,12 @@ struct WINRT_EBO impl_IWalletItem
     hstring IssuerDisplayName() const;
     void IssuerDisplayName(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> LastUpdated() const;
-    void LastUpdated(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void LastUpdated(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::ApplicationModel::Wallet::WalletItemKind Kind() const;
     Windows::ApplicationModel::Wallet::WalletBarcode Barcode() const;
     void Barcode(const Windows::ApplicationModel::Wallet::WalletBarcode & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationDate() const;
-    void ExpirationDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void ExpirationDate(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Logo159x159() const;
     void Logo159x159(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Logo336x336() const;
@@ -247,7 +247,7 @@ struct WINRT_EBO impl_IWalletItem
     Windows::Storage::Streams::IRandomAccessStreamReference PromotionalImage() const;
     void PromotionalImage(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> RelevantDate() const;
-    void RelevantDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void RelevantDate(const optional<Windows::Foundation::DateTime> & value) const;
     hstring RelevantDateDisplayMessage() const;
     void RelevantDateDisplayMessage(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletTransaction> TransactionHistory() const;
@@ -336,7 +336,7 @@ struct WINRT_EBO impl_IWalletTransaction
     hstring DisplayLocation() const;
     void DisplayLocation(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> TransactionDate() const;
-    void TransactionDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void TransactionDate(const optional<Windows::Foundation::DateTime> & value) const;
     bool IsLaunchable() const;
     void IsLaunchable(bool value) const;
 };

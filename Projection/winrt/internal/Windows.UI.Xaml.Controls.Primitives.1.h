@@ -1873,7 +1873,7 @@ struct WINRT_EBO impl_ISelector
     hstring SelectedValuePath() const;
     void SelectedValuePath(hstring_view value) const;
     Windows::Foundation::IReference<bool> IsSynchronizedWithCurrentItem() const;
-    void IsSynchronizedWithCurrentItem(const Windows::Foundation::IReference<bool> & value) const;
+    void IsSynchronizedWithCurrentItem(const optional<bool> & value) const;
     event_token SelectionChanged(const Windows::UI::Xaml::Controls::SelectionChangedEventHandler & value) const;
     using SelectionChanged_revoker = event_revoker<ISelector>;
     SelectionChanged_revoker SelectionChanged(auto_revoke_t, const Windows::UI::Xaml::Controls::SelectionChangedEventHandler & value) const;
@@ -1979,7 +1979,7 @@ template <typename D>
 struct WINRT_EBO impl_IToggleButton
 {
     Windows::Foundation::IReference<bool> IsChecked() const;
-    void IsChecked(const Windows::Foundation::IReference<bool> & value) const;
+    void IsChecked(const optional<bool> & value) const;
     bool IsThreeState() const;
     void IsThreeState(bool value) const;
     event_token Checked(const Windows::UI::Xaml::RoutedEventHandler & value) const;

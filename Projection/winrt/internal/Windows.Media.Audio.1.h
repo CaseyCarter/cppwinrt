@@ -471,11 +471,11 @@ struct WINRT_EBO impl_IAudioFileInputNode
     Windows::Foundation::TimeSpan Position() const;
     void Seek(const Windows::Foundation::TimeSpan & position) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> StartTime() const;
-    void StartTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void StartTime(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> EndTime() const;
-    void EndTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void EndTime(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<int32_t> LoopCount() const;
-    void LoopCount(const Windows::Foundation::IReference<int32_t> & value) const;
+    void LoopCount(const optional<int32_t> & value) const;
     Windows::Foundation::TimeSpan Duration() const;
     Windows::Storage::StorageFile SourceFile() const;
     event_token FileCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> & handler) const;

@@ -3884,7 +3884,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IAppointmen
     return value;
 }
 
-template <typename D> void impl_IAppointmentRecurrence<D>::Occurrences(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IAppointmentRecurrence<D>::Occurrences(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IAppointmentRecurrence)->put_Occurrences(get_abi(value)));
 }
@@ -3896,7 +3896,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IAppointmentRecurrence<D>::Until(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IAppointmentRecurrence<D>::Until(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IAppointmentRecurrence)->put_Until(get_abi(value)));
 }
@@ -4054,7 +4054,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IAppointment<D>::Reminder(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IAppointment<D>::Reminder(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IAppointment)->put_Reminder(get_abi(value)));
 }
@@ -4214,7 +4214,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IAppointment2<D>::ReplyTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IAppointment2<D>::ReplyTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IAppointment2)->put_ReplyTime(get_abi(value)));
 }

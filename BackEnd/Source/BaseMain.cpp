@@ -24,7 +24,6 @@ namespace winrt {
 #include "base_composable.h"
 #include "base_activation.h"
 #include "base_delegate.h"
-#include "base_reference.h"
 #include "base_collections_consume.h"
 #include "base_collections_produce.h"
 #include "base_collections_impl.h"
@@ -33,6 +32,8 @@ namespace winrt {
 #include "base_async_produce.h"
 #include "base_await_consume.h"
 #include "base_await_produce.h"
+#include "base_propertyvalue.h"
+#include "base_reference.h"
 
 }
 

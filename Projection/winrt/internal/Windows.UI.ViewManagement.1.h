@@ -428,29 +428,29 @@ struct WINRT_EBO impl_IApplicationViewSwitcherStatics2
 template <typename D>
 struct WINRT_EBO impl_IApplicationViewTitleBar
 {
-    void ForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void ForegroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ForegroundColor() const;
-    void BackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void BackgroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> BackgroundColor() const;
-    void ButtonForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void ButtonForegroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ButtonForegroundColor() const;
-    void ButtonBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void ButtonBackgroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ButtonBackgroundColor() const;
-    void ButtonHoverForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void ButtonHoverForegroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ButtonHoverForegroundColor() const;
-    void ButtonHoverBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void ButtonHoverBackgroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ButtonHoverBackgroundColor() const;
-    void ButtonPressedForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void ButtonPressedForegroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ButtonPressedForegroundColor() const;
-    void ButtonPressedBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void ButtonPressedBackgroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ButtonPressedBackgroundColor() const;
-    void InactiveForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void InactiveForegroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> InactiveForegroundColor() const;
-    void InactiveBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void InactiveBackgroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> InactiveBackgroundColor() const;
-    void ButtonInactiveForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void ButtonInactiveForegroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ButtonInactiveForegroundColor() const;
-    void ButtonInactiveBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void ButtonInactiveBackgroundColor(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ButtonInactiveBackgroundColor() const;
 };
 

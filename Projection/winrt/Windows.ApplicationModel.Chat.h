@@ -4647,7 +4647,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return result;
 }
 
-template <typename D> void impl_IChatRecipientDeliveryInfo<D>::DeliveryTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IChatRecipientDeliveryInfo<D>::DeliveryTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IChatRecipientDeliveryInfo)->put_DeliveryTime(get_abi(value)));
 }
@@ -4659,7 +4659,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return result;
 }
 
-template <typename D> void impl_IChatRecipientDeliveryInfo<D>::ReadTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IChatRecipientDeliveryInfo<D>::ReadTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IChatRecipientDeliveryInfo)->put_ReadTime(get_abi(value)));
 }

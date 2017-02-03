@@ -390,9 +390,9 @@ struct WINRT_EBO impl_IUsbDeviceClass
     uint8_t ClassCode() const;
     void ClassCode(uint8_t value) const;
     Windows::Foundation::IReference<uint8_t> SubclassCode() const;
-    void SubclassCode(const Windows::Foundation::IReference<uint8_t> & value) const;
+    void SubclassCode(const optional<uint8_t> & value) const;
     Windows::Foundation::IReference<uint8_t> ProtocolCode() const;
-    void ProtocolCode(const Windows::Foundation::IReference<uint8_t> & value) const;
+    void ProtocolCode(const optional<uint8_t> & value) const;
 };
 
 template <typename D>

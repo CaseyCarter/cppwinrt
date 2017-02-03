@@ -768,7 +768,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IStoreConfi
     return value;
 }
 
-template <typename D> void impl_IStoreConfigurationStatics2<D>::PurchasePromptingPolicy(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IStoreConfigurationStatics2<D>::PurchasePromptingPolicy(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics2)->put_PurchasePromptingPolicy(get_abi(value)));
 }
@@ -813,7 +813,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IStoreConfi
     return value;
 }
 
-template <typename D> void impl_IStoreConfigurationStatics3<D>::SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IStoreConfigurationStatics3<D>::SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics3)->abi_SetPurchasePromptingPolicyForUser(get_abi(user), get_abi(value)));
 }
@@ -853,7 +853,7 @@ inline Windows::Foundation::IReference<uint32_t> StoreConfiguration::PurchasePro
     return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics2>().PurchasePromptingPolicy();
 }
 
-inline void StoreConfiguration::PurchasePromptingPolicy(const Windows::Foundation::IReference<uint32_t> & value)
+inline void StoreConfiguration::PurchasePromptingPolicy(const optional<uint32_t> & value)
 {
     get_activation_factory<StoreConfiguration, IStoreConfigurationStatics2>().PurchasePromptingPolicy(value);
 }
@@ -888,7 +888,7 @@ inline Windows::Foundation::IReference<uint32_t> StoreConfiguration::GetPurchase
     return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().GetPurchasePromptingPolicyForUser(user);
 }
 
-inline void StoreConfiguration::SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const Windows::Foundation::IReference<uint32_t> & value)
+inline void StoreConfiguration::SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const optional<uint32_t> & value)
 {
     get_activation_factory<StoreConfiguration, IStoreConfigurationStatics3>().SetPurchasePromptingPolicyForUser(user, value);
 }

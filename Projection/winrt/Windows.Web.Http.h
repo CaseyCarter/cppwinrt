@@ -1597,7 +1597,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IHttpCookie<D>::Expires(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IHttpCookie<D>::Expires(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpCookie)->put_Expires(get_abi(value)));
 }

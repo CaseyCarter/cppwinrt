@@ -45409,7 +45409,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IMediaTransp
     return value;
 }
 
-template <typename D> void impl_IMediaTransportControlsHelperStatics<D>::SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IMediaTransportControlsHelperStatics<D>::SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IMediaTransportControlsHelperStatics)->abi_SetDropoutOrder(get_abi(element), get_abi(value)));
 }
@@ -54114,7 +54114,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IMediaElemen
     return value;
 }
 
-template <typename D> void impl_IMediaElement<D>::AudioStreamIndex(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IMediaElement<D>::AudioStreamIndex(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IMediaElement)->put_AudioStreamIndex(get_abi(value)));
 }
@@ -54452,7 +54452,7 @@ template <typename D> void impl_IMediaElement<D>::SetSource(const Windows::Stora
     check_hresult(WINRT_SHIM(IMediaElement)->abi_SetSource(get_abi(stream), get_abi(mimeType)));
 }
 
-template <typename D> hstring impl_IMediaElement<D>::GetAudioStreamLanguage(const Windows::Foundation::IReference<int32_t> & index) const
+template <typename D> hstring impl_IMediaElement<D>::GetAudioStreamLanguage(const optional<int32_t> & index) const
 {
     hstring returnValue;
     check_hresult(WINRT_SHIM(IMediaElement)->abi_GetAudioStreamLanguage(get_abi(index), put_abi(returnValue)));
@@ -55640,7 +55640,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_ICalendarDatePicker<D>::Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_ICalendarDatePicker<D>::Date(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(ICalendarDatePicker)->put_Date(get_abi(value)));
 }
@@ -61078,14 +61078,14 @@ template <typename D> void impl_IScrollViewer2<D>::ViewChanging(event_token toke
     check_hresult(WINRT_SHIM(IScrollViewer2)->remove_ViewChanging(token));
 }
 
-template <typename D> bool impl_IScrollViewer2<D>::ChangeView(const Windows::Foundation::IReference<double> & horizontalOffset, const Windows::Foundation::IReference<double> & verticalOffset, const Windows::Foundation::IReference<float> & zoomFactor) const
+template <typename D> bool impl_IScrollViewer2<D>::ChangeView(const optional<double> & horizontalOffset, const optional<double> & verticalOffset, const optional<float> & zoomFactor) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(IScrollViewer2)->abi_ChangeView(get_abi(horizontalOffset), get_abi(verticalOffset), get_abi(zoomFactor), &returnValue));
     return returnValue;
 }
 
-template <typename D> bool impl_IScrollViewer2<D>::ChangeView(const Windows::Foundation::IReference<double> & horizontalOffset, const Windows::Foundation::IReference<double> & verticalOffset, const Windows::Foundation::IReference<float> & zoomFactor, bool disableAnimation) const
+template <typename D> bool impl_IScrollViewer2<D>::ChangeView(const optional<double> & horizontalOffset, const optional<double> & verticalOffset, const optional<float> & zoomFactor, bool disableAnimation) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(IScrollViewer2)->abi_ChangeViewWithOptionalAnimation(get_abi(horizontalOffset), get_abi(verticalOffset), get_abi(zoomFactor), disableAnimation, &returnValue));
@@ -66677,7 +66677,7 @@ inline Windows::Foundation::IReference<int32_t> MediaTransportControlsHelper::Ge
     return get_activation_factory<MediaTransportControlsHelper, IMediaTransportControlsHelperStatics>().GetDropoutOrder(element);
 }
 
-inline void MediaTransportControlsHelper::SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IReference<int32_t> & value)
+inline void MediaTransportControlsHelper::SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const optional<int32_t> & value)
 {
     get_activation_factory<MediaTransportControlsHelper, IMediaTransportControlsHelperStatics>().SetDropoutOrder(element, value);
 }

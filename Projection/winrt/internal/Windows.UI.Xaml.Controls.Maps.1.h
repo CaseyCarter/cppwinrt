@@ -858,11 +858,11 @@ struct WINRT_EBO impl_IMapControl
     void GetLocationFromOffset(const Windows::Foundation::Point & offset, Windows::Devices::Geolocation::Geopoint & location) const;
     void GetOffsetFromLocation(const Windows::Devices::Geolocation::Geopoint & location, Windows::Foundation::Point & offset) const;
     void IsLocationInView(const Windows::Devices::Geolocation::Geopoint & location, bool & isInView) const;
-    Windows::Foundation::IAsyncOperation<bool> TrySetViewBoundsAsync(const Windows::Devices::Geolocation::GeoboundingBox & bounds, const Windows::Foundation::IReference<Windows::UI::Xaml::Thickness> & margin, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const;
+    Windows::Foundation::IAsyncOperation<bool> TrySetViewBoundsAsync(const Windows::Devices::Geolocation::GeoboundingBox & bounds, const optional<Windows::UI::Xaml::Thickness> & margin, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const;
     Windows::Foundation::IAsyncOperation<bool> TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center) const;
-    Windows::Foundation::IAsyncOperation<bool> TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const Windows::Foundation::IReference<double> & zoomLevel) const;
-    Windows::Foundation::IAsyncOperation<bool> TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const Windows::Foundation::IReference<double> & zoomLevel, const Windows::Foundation::IReference<double> & heading, const Windows::Foundation::IReference<double> & desiredPitch) const;
-    Windows::Foundation::IAsyncOperation<bool> TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const Windows::Foundation::IReference<double> & zoomLevel, const Windows::Foundation::IReference<double> & heading, const Windows::Foundation::IReference<double> & desiredPitch, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const;
+    Windows::Foundation::IAsyncOperation<bool> TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const optional<double> & zoomLevel) const;
+    Windows::Foundation::IAsyncOperation<bool> TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const optional<double> & zoomLevel, const optional<double> & heading, const optional<double> & desiredPitch) const;
+    Windows::Foundation::IAsyncOperation<bool> TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const optional<double> & zoomLevel, const optional<double> & heading, const optional<double> & desiredPitch, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const;
 };
 
 template <typename D>

@@ -3742,7 +3742,7 @@ template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_ITileNotificatio
     return value;
 }
 
-template <typename D> void impl_ITileNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_ITileNotification<D>::ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(ITileNotification)->put_ExpirationTime(get_abi(value)));
 }
@@ -3780,7 +3780,7 @@ template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_ITileFlyoutNotif
     return value;
 }
 
-template <typename D> void impl_ITileFlyoutNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_ITileFlyoutNotification<D>::ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(ITileFlyoutNotification)->put_ExpirationTime(get_abi(value)));
 }
@@ -3806,7 +3806,7 @@ template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IBadgeNotificati
     return value;
 }
 
-template <typename D> void impl_IBadgeNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IBadgeNotification<D>::ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IBadgeNotification)->put_ExpirationTime(get_abi(value)));
 }
@@ -3832,7 +3832,7 @@ template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IToastNotificati
     return value;
 }
 
-template <typename D> void impl_IToastNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IToastNotification<D>::ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IToastNotification)->put_ExpirationTime(get_abi(value)));
 }
@@ -3938,7 +3938,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_INotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_INotification<D>::ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(INotification)->put_ExpirationTime(get_abi(value)));
 }
@@ -4114,7 +4114,7 @@ template <typename D> Windows::Foundation::DateTime impl_IScheduledTileNotificat
     return value;
 }
 
-template <typename D> void impl_IScheduledTileNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IScheduledTileNotification<D>::ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IScheduledTileNotification)->put_ExpirationTime(get_abi(value)));
 }

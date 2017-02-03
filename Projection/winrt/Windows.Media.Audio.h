@@ -3904,7 +3904,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IAudioFileInputNode<D>::StartTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IAudioFileInputNode<D>::StartTime(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IAudioFileInputNode)->put_StartTime(get_abi(value)));
 }
@@ -3916,7 +3916,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IAudioFileInputNode<D>::EndTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IAudioFileInputNode<D>::EndTime(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IAudioFileInputNode)->put_EndTime(get_abi(value)));
 }
@@ -3928,7 +3928,7 @@ template <typename D> Windows::Foundation::IReference<int32_t> impl_IAudioFileIn
     return value;
 }
 
-template <typename D> void impl_IAudioFileInputNode<D>::LoopCount(const Windows::Foundation::IReference<int32_t> & value) const
+template <typename D> void impl_IAudioFileInputNode<D>::LoopCount(const optional<int32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IAudioFileInputNode)->put_LoopCount(get_abi(value)));
 }

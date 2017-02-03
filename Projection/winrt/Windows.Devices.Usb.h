@@ -2165,7 +2165,7 @@ template <typename D> Windows::Foundation::IReference<uint8_t> impl_IUsbDeviceCl
     return value;
 }
 
-template <typename D> void impl_IUsbDeviceClass<D>::SubclassCode(const Windows::Foundation::IReference<uint8_t> & value) const
+template <typename D> void impl_IUsbDeviceClass<D>::SubclassCode(const optional<uint8_t> & value) const
 {
     check_hresult(WINRT_SHIM(IUsbDeviceClass)->put_SubclassCode(get_abi(value)));
 }
@@ -2177,7 +2177,7 @@ template <typename D> Windows::Foundation::IReference<uint8_t> impl_IUsbDeviceCl
     return value;
 }
 
-template <typename D> void impl_IUsbDeviceClass<D>::ProtocolCode(const Windows::Foundation::IReference<uint8_t> & value) const
+template <typename D> void impl_IUsbDeviceClass<D>::ProtocolCode(const optional<uint8_t> & value) const
 {
     check_hresult(WINRT_SHIM(IUsbDeviceClass)->put_ProtocolCode(get_abi(value)));
 }

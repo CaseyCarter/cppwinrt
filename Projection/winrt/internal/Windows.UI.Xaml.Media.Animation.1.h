@@ -1168,11 +1168,11 @@ template <typename D>
 struct WINRT_EBO impl_IColorAnimation
 {
     Windows::Foundation::IReference<Windows::UI::Color> From() const;
-    void From(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void From(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> To() const;
-    void To(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void To(const optional<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> By() const;
-    void By(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    void By(const optional<Windows::UI::Color> & value) const;
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
     void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
     bool EnableDependentAnimation() const;
@@ -1336,11 +1336,11 @@ template <typename D>
 struct WINRT_EBO impl_IDoubleAnimation
 {
     Windows::Foundation::IReference<double> From() const;
-    void From(const Windows::Foundation::IReference<double> & value) const;
+    void From(const optional<double> & value) const;
     Windows::Foundation::IReference<double> To() const;
-    void To(const Windows::Foundation::IReference<double> & value) const;
+    void To(const optional<double> & value) const;
     Windows::Foundation::IReference<double> By() const;
-    void By(const Windows::Foundation::IReference<double> & value) const;
+    void By(const optional<double> & value) const;
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
     void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
     bool EnableDependentAnimation() const;
@@ -1764,11 +1764,11 @@ template <typename D>
 struct WINRT_EBO impl_IPointAnimation
 {
     Windows::Foundation::IReference<Windows::Foundation::Point> From() const;
-    void From(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
+    void From(const optional<Windows::Foundation::Point> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::Point> To() const;
-    void To(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
+    void To(const optional<Windows::Foundation::Point> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::Point> By() const;
-    void By(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
+    void By(const optional<Windows::Foundation::Point> & value) const;
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
     void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
     bool EnableDependentAnimation() const;
@@ -2192,7 +2192,7 @@ struct WINRT_EBO impl_ITimeline
     bool AutoReverse() const;
     void AutoReverse(bool value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> BeginTime() const;
-    void BeginTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void BeginTime(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::UI::Xaml::Duration Duration() const;
     void Duration(const Windows::UI::Xaml::Duration & value) const;
     double SpeedRatio() const;

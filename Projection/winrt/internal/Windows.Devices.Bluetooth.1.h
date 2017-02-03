@@ -430,13 +430,13 @@ template <typename D>
 struct WINRT_EBO impl_IBluetoothSignalStrengthFilter
 {
     Windows::Foundation::IReference<int16_t> InRangeThresholdInDBm() const;
-    void InRangeThresholdInDBm(const Windows::Foundation::IReference<int16_t> & value) const;
+    void InRangeThresholdInDBm(const optional<int16_t> & value) const;
     Windows::Foundation::IReference<int16_t> OutOfRangeThresholdInDBm() const;
-    void OutOfRangeThresholdInDBm(const Windows::Foundation::IReference<int16_t> & value) const;
+    void OutOfRangeThresholdInDBm(const optional<int16_t> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> OutOfRangeTimeout() const;
-    void OutOfRangeTimeout(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void OutOfRangeTimeout(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> SamplingInterval() const;
-    void SamplingInterval(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void SamplingInterval(const optional<Windows::Foundation::TimeSpan> & value) const;
 };
 
 }

@@ -176,9 +176,9 @@ struct WINRT_EBO impl_IAdaptiveMediaSource
     uint32_t CurrentPlaybackBitrate() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> AvailableBitrates() const;
     Windows::Foundation::IReference<uint32_t> DesiredMinBitrate() const;
-    void DesiredMinBitrate(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void DesiredMinBitrate(const optional<uint32_t> & value) const;
     Windows::Foundation::IReference<uint32_t> DesiredMaxBitrate() const;
-    void DesiredMaxBitrate(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void DesiredMaxBitrate(const optional<uint32_t> & value) const;
     bool AudioOnlyPlayback() const;
     uint64_t InboundBitsPerSecond() const;
     Windows::Foundation::TimeSpan InboundBitsPerSecondWindow() const;
@@ -217,9 +217,9 @@ struct WINRT_EBO impl_IAdaptiveMediaSourceAdvancedSettings
     bool AllSegmentsIndependent() const;
     void AllSegmentsIndependent(bool value) const;
     Windows::Foundation::IReference<double> DesiredBitrateHeadroomRatio() const;
-    void DesiredBitrateHeadroomRatio(const Windows::Foundation::IReference<double> & value) const;
+    void DesiredBitrateHeadroomRatio(const optional<double> & value) const;
     Windows::Foundation::IReference<double> BitrateDowngradeTriggerRatio() const;
-    void BitrateDowngradeTriggerRatio(const Windows::Foundation::IReference<double> & value) const;
+    void BitrateDowngradeTriggerRatio(const optional<double> & value) const;
 };
 
 template <typename D>
@@ -293,9 +293,9 @@ template <typename D>
 struct WINRT_EBO impl_IAdaptiveMediaSourceDownloadResult2
 {
     Windows::Foundation::IReference<uint64_t> ResourceByteRangeOffset() const;
-    void ResourceByteRangeOffset(const Windows::Foundation::IReference<uint64_t> & value) const;
+    void ResourceByteRangeOffset(const optional<uint64_t> & value) const;
     Windows::Foundation::IReference<uint64_t> ResourceByteRangeLength() const;
-    void ResourceByteRangeLength(const Windows::Foundation::IReference<uint64_t> & value) const;
+    void ResourceByteRangeLength(const optional<uint64_t> & value) const;
 };
 
 template <typename D>

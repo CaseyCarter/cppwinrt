@@ -1776,7 +1776,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IPhoneCallHistoryEntry<D>::Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IPhoneCallHistoryEntry<D>::Duration(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_Duration(get_abi(value)));
 }

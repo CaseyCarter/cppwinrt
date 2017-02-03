@@ -419,7 +419,7 @@ struct WINRT_EBO impl_IAppointment
     hstring Details() const;
     void Details(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Reminder() const;
-    void Reminder(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void Reminder(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::ApplicationModel::Appointments::AppointmentOrganizer Organizer() const;
     void Organizer(const Windows::ApplicationModel::Appointments::AppointmentOrganizer & value) const;
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Appointments::AppointmentInvitee> Invitees() const;
@@ -450,7 +450,7 @@ struct WINRT_EBO impl_IAppointment2
     hstring OnlineMeetingLink() const;
     void OnlineMeetingLink(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ReplyTime() const;
-    void ReplyTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void ReplyTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::ApplicationModel::Appointments::AppointmentParticipantResponse UserResponse() const;
     void UserResponse(Windows::ApplicationModel::Appointments::AppointmentParticipantResponse value) const;
     bool HasInvitees() const;
@@ -681,9 +681,9 @@ struct WINRT_EBO impl_IAppointmentRecurrence
     Windows::ApplicationModel::Appointments::AppointmentRecurrenceUnit Unit() const;
     void Unit(Windows::ApplicationModel::Appointments::AppointmentRecurrenceUnit value) const;
     Windows::Foundation::IReference<uint32_t> Occurrences() const;
-    void Occurrences(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void Occurrences(const optional<uint32_t> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> Until() const;
-    void Until(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void Until(const optional<Windows::Foundation::DateTime> & value) const;
     uint32_t Interval() const;
     void Interval(uint32_t value) const;
     Windows::ApplicationModel::Appointments::AppointmentDaysOfWeek DaysOfWeek() const;

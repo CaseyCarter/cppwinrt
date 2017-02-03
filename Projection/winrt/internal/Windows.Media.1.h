@@ -381,11 +381,11 @@ struct WINRT_EBO impl_IMediaFrame
 {
     hstring Type() const;
     bool IsReadOnly() const;
-    void RelativeTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void RelativeTime(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> RelativeTime() const;
-    void SystemRelativeTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void SystemRelativeTime(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> SystemRelativeTime() const;
-    void Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void Duration(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Duration() const;
     void IsDiscontinuous(bool value) const;
     bool IsDiscontinuous() const;

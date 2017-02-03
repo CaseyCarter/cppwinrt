@@ -6979,7 +6979,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IMediaPlaybackList2<D>::MaxPrefetchTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IMediaPlaybackList2<D>::MaxPrefetchTime(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IMediaPlaybackList2)->put_MaxPrefetchTime(get_abi(value)));
 }

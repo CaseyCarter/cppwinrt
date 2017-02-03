@@ -3531,7 +3531,7 @@ template <typename D> Windows::Foundation::IReference<uint64_t> impl_IHttpConten
     return value;
 }
 
-template <typename D> void impl_IHttpContentHeaderCollection<D>::ContentLength(const Windows::Foundation::IReference<uint64_t> & value) const
+template <typename D> void impl_IHttpContentHeaderCollection<D>::ContentLength(const optional<uint64_t> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentHeaderCollection)->put_ContentLength(get_abi(value)));
 }
@@ -3591,7 +3591,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IHttpContentHeaderCollection<D>::Expires(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IHttpContentHeaderCollection<D>::Expires(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentHeaderCollection)->put_Expires(get_abi(value)));
 }
@@ -3603,7 +3603,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IHttpContentHeaderCollection<D>::LastModified(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IHttpContentHeaderCollection<D>::LastModified(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentHeaderCollection)->put_LastModified(get_abi(value)));
 }
@@ -3681,7 +3681,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IHttpRequestHeaderCollection<D>::Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IHttpRequestHeaderCollection<D>::Date(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpRequestHeaderCollection)->put_Date(get_abi(value)));
 }
@@ -3724,7 +3724,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IHttpRequestHeaderCollection<D>::IfModifiedSince(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IHttpRequestHeaderCollection<D>::IfModifiedSince(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpRequestHeaderCollection)->put_IfModifiedSince(get_abi(value)));
 }
@@ -3736,7 +3736,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IHttpRequestHeaderCollection<D>::IfUnmodifiedSince(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IHttpRequestHeaderCollection<D>::IfUnmodifiedSince(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpRequestHeaderCollection)->put_IfUnmodifiedSince(get_abi(value)));
 }
@@ -3748,7 +3748,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IHttpReques
     return value;
 }
 
-template <typename D> void impl_IHttpRequestHeaderCollection<D>::MaxForwards(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IHttpRequestHeaderCollection<D>::MaxForwards(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpRequestHeaderCollection)->put_MaxForwards(get_abi(value)));
 }
@@ -3810,7 +3810,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IHttpResponseHeaderCollection<D>::Age(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IHttpResponseHeaderCollection<D>::Age(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpResponseHeaderCollection)->put_Age(get_abi(value)));
 }
@@ -3843,7 +3843,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IHttpResponseHeaderCollection<D>::Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IHttpResponseHeaderCollection<D>::Date(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpResponseHeaderCollection)->put_Date(get_abi(value)));
 }
@@ -3912,7 +3912,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::MaxAge(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::MaxAge(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpCacheDirectiveHeaderValueCollection)->put_MaxAge(get_abi(value)));
 }
@@ -3924,7 +3924,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::MaxStale(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::MaxStale(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpCacheDirectiveHeaderValueCollection)->put_MaxStale(get_abi(value)));
 }
@@ -3936,7 +3936,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::MinFresh(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::MinFresh(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpCacheDirectiveHeaderValueCollection)->put_MinFresh(get_abi(value)));
 }
@@ -3948,7 +3948,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::SharedMaxAge(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::SharedMaxAge(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpCacheDirectiveHeaderValueCollection)->put_SharedMaxAge(get_abi(value)));
 }
@@ -4238,7 +4238,7 @@ template <typename D> Windows::Foundation::IReference<uint64_t> impl_IHttpConten
     return value;
 }
 
-template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::Size(const Windows::Foundation::IReference<uint64_t> & value) const
+template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::Size(const optional<uint64_t> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpContentDispositionHeaderValue)->put_Size(get_abi(value)));
 }
@@ -4648,7 +4648,7 @@ template <typename D> Windows::Foundation::IReference<double> impl_IHttpMediaTyp
     return value;
 }
 
-template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::Quality(const Windows::Foundation::IReference<double> & value) const
+template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::Quality(const optional<double> & value) const
 {
     check_hresult(WINRT_SHIM(IHttpMediaTypeWithQualityHeaderValue)->put_Quality(get_abi(value)));
 }

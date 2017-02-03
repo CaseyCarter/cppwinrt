@@ -432,9 +432,9 @@ template <typename D>
 struct WINRT_EBO impl_ILauncherUIOptions
 {
     Windows::Foundation::IReference<Windows::Foundation::Point> InvocationPoint() const;
-    void InvocationPoint(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
+    void InvocationPoint(const optional<Windows::Foundation::Point> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::Rect> SelectionRect() const;
-    void SelectionRect(const Windows::Foundation::IReference<Windows::Foundation::Rect> & value) const;
+    void SelectionRect(const optional<Windows::Foundation::Rect> & value) const;
     Windows::UI::Popups::Placement PreferredPlacement() const;
     void PreferredPlacement(Windows::UI::Popups::Placement value) const;
 };

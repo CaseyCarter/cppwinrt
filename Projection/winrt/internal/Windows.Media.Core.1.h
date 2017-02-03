@@ -767,9 +767,9 @@ struct WINRT_EBO impl_IAudioStreamDescriptor
 template <typename D>
 struct WINRT_EBO impl_IAudioStreamDescriptor2
 {
-    void LeadingEncoderPadding(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void LeadingEncoderPadding(const optional<uint32_t> & value) const;
     Windows::Foundation::IReference<uint32_t> LeadingEncoderPadding() const;
-    void TrailingEncoderPadding(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void TrailingEncoderPadding(const optional<uint32_t> & value) const;
     Windows::Foundation::IReference<uint32_t> TrailingEncoderPadding() const;
 };
 
@@ -1201,12 +1201,12 @@ struct WINRT_EBO impl_IMseSourceBuffer
     Windows::Foundation::TimeSpan AppendWindowStart() const;
     void AppendWindowStart(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> AppendWindowEnd() const;
-    void AppendWindowEnd(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void AppendWindowEnd(const optional<Windows::Foundation::TimeSpan> & value) const;
     void AppendBuffer(const Windows::Storage::Streams::IBuffer & buffer) const;
     void AppendStream(const Windows::Storage::Streams::IInputStream & stream) const;
     void AppendStream(const Windows::Storage::Streams::IInputStream & stream, uint64_t maxSize) const;
     void Abort() const;
-    void Remove(const Windows::Foundation::TimeSpan & start, const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & end) const;
+    void Remove(const Windows::Foundation::TimeSpan & start, const optional<Windows::Foundation::TimeSpan> & end) const;
 };
 
 template <typename D>
@@ -1242,7 +1242,7 @@ struct WINRT_EBO impl_IMseStreamSource
     Windows::Media::Core::MseSourceBufferList ActiveSourceBuffers() const;
     Windows::Media::Core::MseReadyState ReadyState() const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Duration() const;
-    void Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void Duration(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Media::Core::MseSourceBuffer AddSourceBuffer(hstring_view mimeType) const;
     void RemoveSourceBuffer(const Windows::Media::Core::MseSourceBuffer & buffer) const;
     void EndOfStream(Windows::Media::Core::MseEndOfStreamStatus status) const;

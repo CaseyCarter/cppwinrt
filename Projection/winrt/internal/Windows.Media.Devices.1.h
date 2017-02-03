@@ -608,9 +608,9 @@ struct WINRT_EBO impl_IFocusSettings
     Windows::Media::Devices::AutoFocusRange AutoFocusRange() const;
     void AutoFocusRange(Windows::Media::Devices::AutoFocusRange value) const;
     Windows::Foundation::IReference<uint32_t> Value() const;
-    void Value(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void Value(const optional<uint32_t> & value) const;
     Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> Distance() const;
-    void Distance(const Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> & value) const;
+    void Distance(const optional<winrt::Windows::Media::Devices::ManualFocusDistance> & value) const;
     bool WaitForFocus() const;
     void WaitForFocus(bool value) const;
     bool DisableDriverFallback() const;

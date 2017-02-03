@@ -6220,7 +6220,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IEmailMessage2<D>::SentTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IEmailMessage2<D>::SentTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IEmailMessage2)->put_SentTime(get_abi(value)));
 }
@@ -6461,12 +6461,12 @@ template <typename D> void impl_IEmailMailboxPolicies3<D>::AllowSmimeSoftCertifi
     check_hresult(WINRT_SHIM(IEmailMailboxPolicies3)->put_AllowSmimeSoftCertificates(value));
 }
 
-template <typename D> void impl_IEmailMailboxPolicies3<D>::RequiredSmimeEncryptionAlgorithm(const Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> & value) const
+template <typename D> void impl_IEmailMailboxPolicies3<D>::RequiredSmimeEncryptionAlgorithm(const optional<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> & value) const
 {
     check_hresult(WINRT_SHIM(IEmailMailboxPolicies3)->put_RequiredSmimeEncryptionAlgorithm(get_abi(value)));
 }
 
-template <typename D> void impl_IEmailMailboxPolicies3<D>::RequiredSmimeSigningAlgorithm(const Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm> & value) const
+template <typename D> void impl_IEmailMailboxPolicies3<D>::RequiredSmimeSigningAlgorithm(const optional<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm> & value) const
 {
     check_hresult(WINRT_SHIM(IEmailMailboxPolicies3)->put_RequiredSmimeSigningAlgorithm(get_abi(value)));
 }
@@ -7126,7 +7126,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IEmailMailboxAutoReplySettings<D>::StartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IEmailMailboxAutoReplySettings<D>::StartTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IEmailMailboxAutoReplySettings)->put_StartTime(get_abi(value)));
 }
@@ -7138,7 +7138,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IEmailMailboxAutoReplySettings<D>::EndTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IEmailMailboxAutoReplySettings<D>::EndTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IEmailMailboxAutoReplySettings)->put_EndTime(get_abi(value)));
 }
@@ -7776,7 +7776,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IEmailMeetingInfo<D>::AppointmentOriginalStartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IEmailMeetingInfo<D>::AppointmentOriginalStartTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IEmailMeetingInfo)->put_AppointmentOriginalStartTime(get_abi(value)));
 }
@@ -7836,7 +7836,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return proposedStartTime;
 }
 
-template <typename D> void impl_IEmailMeetingInfo<D>::ProposedStartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & proposedStartTime) const
+template <typename D> void impl_IEmailMeetingInfo<D>::ProposedStartTime(const optional<Windows::Foundation::DateTime> & proposedStartTime) const
 {
     check_hresult(WINRT_SHIM(IEmailMeetingInfo)->put_ProposedStartTime(get_abi(proposedStartTime)));
 }
@@ -7848,7 +7848,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return duration;
 }
 
-template <typename D> void impl_IEmailMeetingInfo<D>::ProposedDuration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & duration) const
+template <typename D> void impl_IEmailMeetingInfo<D>::ProposedDuration(const optional<Windows::Foundation::TimeSpan> & duration) const
 {
     check_hresult(WINRT_SHIM(IEmailMeetingInfo)->put_ProposedDuration(get_abi(duration)));
 }
@@ -7860,7 +7860,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateT
     return value;
 }
 
-template <typename D> void impl_IEmailMeetingInfo<D>::RecurrenceStartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
+template <typename D> void impl_IEmailMeetingInfo<D>::RecurrenceStartTime(const optional<Windows::Foundation::DateTime> & value) const
 {
     check_hresult(WINRT_SHIM(IEmailMeetingInfo)->put_RecurrenceStartTime(get_abi(value)));
 }

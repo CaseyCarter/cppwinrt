@@ -912,9 +912,9 @@ struct WINRT_EBO impl_IEmailMailboxAutoReplySettings
     Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind ResponseKind() const;
     void ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> StartTime() const;
-    void StartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void StartTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> EndTime() const;
-    void EndTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void EndTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::ApplicationModel::Email::EmailMailboxAutoReply InternalReply() const;
     Windows::ApplicationModel::Email::EmailMailboxAutoReply KnownExternalReply() const;
     Windows::ApplicationModel::Email::EmailMailboxAutoReply UnknownExternalReply() const;
@@ -1029,8 +1029,8 @@ struct WINRT_EBO impl_IEmailMailboxPolicies3
 {
     void AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value) const;
     void AllowSmimeSoftCertificates(bool value) const;
-    void RequiredSmimeEncryptionAlgorithm(const Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> & value) const;
-    void RequiredSmimeSigningAlgorithm(const Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm> & value) const;
+    void RequiredSmimeEncryptionAlgorithm(const optional<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> & value) const;
+    void RequiredSmimeSigningAlgorithm(const optional<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm> & value) const;
     void MustEncryptSmimeMessages(bool value) const;
     void MustSignSmimeMessages(bool value) const;
 };
@@ -1090,7 +1090,7 @@ struct WINRT_EBO impl_IEmailMeetingInfo
     hstring AppointmentRoamingId() const;
     void AppointmentRoamingId(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> AppointmentOriginalStartTime() const;
-    void AppointmentOriginalStartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void AppointmentOriginalStartTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::TimeSpan Duration() const;
     void Duration(const Windows::Foundation::TimeSpan & value) const;
     bool IsAllDay() const;
@@ -1100,11 +1100,11 @@ struct WINRT_EBO impl_IEmailMeetingInfo
     hstring Location() const;
     void Location(hstring_view value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ProposedStartTime() const;
-    void ProposedStartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & proposedStartTime) const;
+    void ProposedStartTime(const optional<Windows::Foundation::DateTime> & proposedStartTime) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ProposedDuration() const;
-    void ProposedDuration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & duration) const;
+    void ProposedDuration(const optional<Windows::Foundation::TimeSpan> & duration) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> RecurrenceStartTime() const;
-    void RecurrenceStartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void RecurrenceStartTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::ApplicationModel::Appointments::AppointmentRecurrence Recurrence() const;
     void Recurrence(const Windows::ApplicationModel::Appointments::AppointmentRecurrence & value) const;
     uint64_t RemoteChangeNumber() const;
@@ -1175,7 +1175,7 @@ struct WINRT_EBO impl_IEmailMessage2
     Windows::ApplicationModel::Email::EmailRecipient Sender() const;
     void Sender(const Windows::ApplicationModel::Email::EmailRecipient & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> SentTime() const;
-    void SentTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void SentTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::ApplicationModel::Email::EmailMeetingInfo MeetingInfo() const;
     void MeetingInfo(const Windows::ApplicationModel::Email::EmailMeetingInfo & value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference GetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type) const;

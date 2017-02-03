@@ -6848,7 +6848,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_ITimeline<D>::BeginTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_ITimeline<D>::BeginTime(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(ITimeline)->put_BeginTime(get_abi(value)));
 }
@@ -7062,7 +7062,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IColorAnimation<D>::From(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IColorAnimation<D>::From(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IColorAnimation)->put_From(get_abi(value)));
 }
@@ -7074,7 +7074,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IColorAnimation<D>::To(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IColorAnimation<D>::To(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IColorAnimation)->put_To(get_abi(value)));
 }
@@ -7086,7 +7086,7 @@ template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_I
     return value;
 }
 
-template <typename D> void impl_IColorAnimation<D>::By(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
+template <typename D> void impl_IColorAnimation<D>::By(const optional<Windows::UI::Color> & value) const
 {
     check_hresult(WINRT_SHIM(IColorAnimation)->put_By(get_abi(value)));
 }
@@ -7221,7 +7221,7 @@ template <typename D> Windows::Foundation::IReference<double> impl_IDoubleAnimat
     return value;
 }
 
-template <typename D> void impl_IDoubleAnimation<D>::From(const Windows::Foundation::IReference<double> & value) const
+template <typename D> void impl_IDoubleAnimation<D>::From(const optional<double> & value) const
 {
     check_hresult(WINRT_SHIM(IDoubleAnimation)->put_From(get_abi(value)));
 }
@@ -7233,7 +7233,7 @@ template <typename D> Windows::Foundation::IReference<double> impl_IDoubleAnimat
     return value;
 }
 
-template <typename D> void impl_IDoubleAnimation<D>::To(const Windows::Foundation::IReference<double> & value) const
+template <typename D> void impl_IDoubleAnimation<D>::To(const optional<double> & value) const
 {
     check_hresult(WINRT_SHIM(IDoubleAnimation)->put_To(get_abi(value)));
 }
@@ -7245,7 +7245,7 @@ template <typename D> Windows::Foundation::IReference<double> impl_IDoubleAnimat
     return value;
 }
 
-template <typename D> void impl_IDoubleAnimation<D>::By(const Windows::Foundation::IReference<double> & value) const
+template <typename D> void impl_IDoubleAnimation<D>::By(const optional<double> & value) const
 {
     check_hresult(WINRT_SHIM(IDoubleAnimation)->put_By(get_abi(value)));
 }
@@ -7862,7 +7862,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point
     return value;
 }
 
-template <typename D> void impl_IPointAnimation<D>::From(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const
+template <typename D> void impl_IPointAnimation<D>::From(const optional<Windows::Foundation::Point> & value) const
 {
     check_hresult(WINRT_SHIM(IPointAnimation)->put_From(get_abi(value)));
 }
@@ -7874,7 +7874,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point
     return value;
 }
 
-template <typename D> void impl_IPointAnimation<D>::To(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const
+template <typename D> void impl_IPointAnimation<D>::To(const optional<Windows::Foundation::Point> & value) const
 {
     check_hresult(WINRT_SHIM(IPointAnimation)->put_To(get_abi(value)));
 }
@@ -7886,7 +7886,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point
     return value;
 }
 
-template <typename D> void impl_IPointAnimation<D>::By(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const
+template <typename D> void impl_IPointAnimation<D>::By(const optional<Windows::Foundation::Point> & value) const
 {
     check_hresult(WINRT_SHIM(IPointAnimation)->put_By(get_abi(value)));
 }

@@ -4974,7 +4974,7 @@ template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties i
     return encodingProperties;
 }
 
-template <typename D> void impl_IAudioStreamDescriptor2<D>::LeadingEncoderPadding(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IAudioStreamDescriptor2<D>::LeadingEncoderPadding(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IAudioStreamDescriptor2)->put_LeadingEncoderPadding(get_abi(value)));
 }
@@ -4986,7 +4986,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IAudioStrea
     return value;
 }
 
-template <typename D> void impl_IAudioStreamDescriptor2<D>::TrailingEncoderPadding(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IAudioStreamDescriptor2<D>::TrailingEncoderPadding(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IAudioStreamDescriptor2)->put_TrailingEncoderPadding(get_abi(value)));
 }
@@ -5580,7 +5580,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IMseStreamSource<D>::Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IMseStreamSource<D>::Duration(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IMseStreamSource)->put_Duration(get_abi(value)));
 }
@@ -5744,7 +5744,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IMseSourceBuffer<D>::AppendWindowEnd(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IMseSourceBuffer<D>::AppendWindowEnd(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->put_AppendWindowEnd(get_abi(value)));
 }
@@ -5769,7 +5769,7 @@ template <typename D> void impl_IMseSourceBuffer<D>::Abort() const
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->abi_Abort());
 }
 
-template <typename D> void impl_IMseSourceBuffer<D>::Remove(const Windows::Foundation::TimeSpan & start, const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & end) const
+template <typename D> void impl_IMseSourceBuffer<D>::Remove(const Windows::Foundation::TimeSpan & start, const optional<Windows::Foundation::TimeSpan> & end) const
 {
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->abi_Remove(get_abi(start), get_abi(end)));
 }

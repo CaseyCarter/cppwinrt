@@ -2308,7 +2308,7 @@ template <typename D> bool impl_IMediaFrame<D>::IsReadOnly() const
     return value;
 }
 
-template <typename D> void impl_IMediaFrame<D>::RelativeTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IMediaFrame<D>::RelativeTime(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IMediaFrame)->put_RelativeTime(get_abi(value)));
 }
@@ -2320,7 +2320,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IMediaFrame<D>::SystemRelativeTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IMediaFrame<D>::SystemRelativeTime(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IMediaFrame)->put_SystemRelativeTime(get_abi(value)));
 }
@@ -2332,7 +2332,7 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
     return value;
 }
 
-template <typename D> void impl_IMediaFrame<D>::Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
+template <typename D> void impl_IMediaFrame<D>::Duration(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IMediaFrame)->put_Duration(get_abi(value)));
 }

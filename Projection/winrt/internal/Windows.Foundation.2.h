@@ -105,20 +105,6 @@ struct IMemoryBufferReference :
     IMemoryBufferReference(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IPropertyValue :
-    Windows::IInspectable,
-    impl::consume<IPropertyValue>
-{
-    IPropertyValue(std::nullptr_t = nullptr) noexcept {}
-};
-
-struct IPropertyValueStatics :
-    Windows::IInspectable,
-    impl::consume<IPropertyValueStatics>
-{
-    IPropertyValueStatics(std::nullptr_t = nullptr) noexcept {}
-};
-
 struct IStringable :
     Windows::IInspectable,
     impl::consume<IStringable>

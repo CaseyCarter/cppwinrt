@@ -6988,7 +6988,7 @@ template <typename D> void impl_IMapControl<D>::IsLocationInView(const Windows::
     check_hresult(WINRT_SHIM(IMapControl)->abi_IsLocationInView(get_abi(location), &isInView));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewBoundsAsync(const Windows::Devices::Geolocation::GeoboundingBox & bounds, const Windows::Foundation::IReference<Windows::UI::Xaml::Thickness> & margin, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewBoundsAsync(const Windows::Devices::Geolocation::GeoboundingBox & bounds, const optional<Windows::UI::Xaml::Thickness> & margin, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
     check_hresult(WINRT_SHIM(IMapControl)->abi_TrySetViewBoundsAsync(get_abi(bounds), get_abi(margin), animation, put_abi(returnValue)));
@@ -7002,21 +7002,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapContro
     return returnValue;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const Windows::Foundation::IReference<double> & zoomLevel) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const optional<double> & zoomLevel) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
     check_hresult(WINRT_SHIM(IMapControl)->abi_TrySetViewWithCenterAndZoomAsync(get_abi(center), get_abi(zoomLevel), put_abi(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const Windows::Foundation::IReference<double> & zoomLevel, const Windows::Foundation::IReference<double> & heading, const Windows::Foundation::IReference<double> & desiredPitch) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const optional<double> & zoomLevel, const optional<double> & heading, const optional<double> & desiredPitch) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
     check_hresult(WINRT_SHIM(IMapControl)->abi_TrySetViewWithCenterZoomHeadingAndPitchAsync(get_abi(center), get_abi(zoomLevel), get_abi(heading), get_abi(desiredPitch), put_abi(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const Windows::Foundation::IReference<double> & zoomLevel, const Windows::Foundation::IReference<double> & heading, const Windows::Foundation::IReference<double> & desiredPitch, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const optional<double> & zoomLevel, const optional<double> & heading, const optional<double> & desiredPitch, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
     check_hresult(WINRT_SHIM(IMapControl)->abi_TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(get_abi(center), get_abi(zoomLevel), get_abi(heading), get_abi(desiredPitch), animation, put_abi(returnValue)));

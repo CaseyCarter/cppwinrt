@@ -304,7 +304,7 @@ struct WINRT_EBO impl_IHttpCookie
     hstring Domain() const;
     hstring Path() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> Expires() const;
-    void Expires(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void Expires(const optional<Windows::Foundation::DateTime> & value) const;
     bool HttpOnly() const;
     void HttpOnly(bool value) const;
     bool Secure() const;

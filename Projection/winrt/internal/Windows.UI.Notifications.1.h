@@ -465,7 +465,7 @@ template <typename D>
 struct WINRT_EBO impl_IBadgeNotification
 {
     Windows::Data::Xml::Dom::XmlDocument Content() const;
-    void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
 };
 
@@ -554,7 +554,7 @@ template <typename D>
 struct WINRT_EBO impl_INotification
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
-    void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::UI::Notifications::NotificationVisual Visual() const;
     void Visual(const Windows::UI::Notifications::NotificationVisual & value) const;
 };
@@ -584,7 +584,7 @@ struct WINRT_EBO impl_IScheduledTileNotification
 {
     Windows::Data::Xml::Dom::XmlDocument Content() const;
     Windows::Foundation::DateTime DeliveryTime() const;
-    void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
     void Tag(hstring_view value) const;
     hstring Tag() const;
@@ -646,7 +646,7 @@ template <typename D>
 struct WINRT_EBO impl_ITileFlyoutNotification
 {
     Windows::Data::Xml::Dom::XmlDocument Content() const;
-    void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
 };
 
@@ -680,7 +680,7 @@ template <typename D>
 struct WINRT_EBO impl_ITileNotification
 {
     Windows::Data::Xml::Dom::XmlDocument Content() const;
-    void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
     void Tag(hstring_view value) const;
     hstring Tag() const;
@@ -763,7 +763,7 @@ template <typename D>
 struct WINRT_EBO impl_IToastNotification
 {
     Windows::Data::Xml::Dom::XmlDocument Content() const;
-    void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void ExpirationTime(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
     event_token Dismissed(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastDismissedEventArgs> & handler) const;
     using Dismissed_revoker = event_revoker<IToastNotification>;

@@ -4120,7 +4120,7 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_IFocusSetti
     return value;
 }
 
-template <typename D> void impl_IFocusSettings<D>::Value(const Windows::Foundation::IReference<uint32_t> & value) const
+template <typename D> void impl_IFocusSettings<D>::Value(const optional<uint32_t> & value) const
 {
     check_hresult(WINRT_SHIM(IFocusSettings)->put_Value(get_abi(value)));
 }
@@ -4132,7 +4132,7 @@ template <typename D> Windows::Foundation::IReference<winrt::Windows::Media::Dev
     return value;
 }
 
-template <typename D> void impl_IFocusSettings<D>::Distance(const Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> & value) const
+template <typename D> void impl_IFocusSettings<D>::Distance(const optional<winrt::Windows::Media::Devices::ManualFocusDistance> & value) const
 {
     check_hresult(WINRT_SHIM(IFocusSettings)->put_Distance(get_abi(value)));
 }

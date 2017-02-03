@@ -546,13 +546,13 @@ template <typename D>
 struct WINRT_EBO impl_IHttpCacheDirectiveHeaderValueCollection
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> MaxAge() const;
-    void MaxAge(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void MaxAge(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> MaxStale() const;
-    void MaxStale(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void MaxStale(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> MinFresh() const;
-    void MinFresh(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void MinFresh(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> SharedMaxAge() const;
-    void SharedMaxAge(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void SharedMaxAge(const optional<Windows::Foundation::TimeSpan> & value) const;
     void ParseAdd(hstring_view input) const;
     bool TryParseAdd(hstring_view input) const;
 };
@@ -679,7 +679,7 @@ struct WINRT_EBO impl_IHttpContentDispositionHeaderValue
     void Name(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
     Windows::Foundation::IReference<uint64_t> Size() const;
-    void Size(const Windows::Foundation::IReference<uint64_t> & value) const;
+    void Size(const optional<uint64_t> & value) const;
 };
 
 template <typename D>
@@ -703,7 +703,7 @@ struct WINRT_EBO impl_IHttpContentHeaderCollection
     Windows::Web::Http::Headers::HttpContentCodingHeaderValueCollection ContentEncoding() const;
     Windows::Web::Http::Headers::HttpLanguageHeaderValueCollection ContentLanguage() const;
     Windows::Foundation::IReference<uint64_t> ContentLength() const;
-    void ContentLength(const Windows::Foundation::IReference<uint64_t> & value) const;
+    void ContentLength(const optional<uint64_t> & value) const;
     Windows::Foundation::Uri ContentLocation() const;
     void ContentLocation(const Windows::Foundation::Uri & value) const;
     Windows::Storage::Streams::IBuffer ContentMD5() const;
@@ -713,9 +713,9 @@ struct WINRT_EBO impl_IHttpContentHeaderCollection
     Windows::Web::Http::Headers::HttpMediaTypeHeaderValue ContentType() const;
     void ContentType(const Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> Expires() const;
-    void Expires(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void Expires(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> LastModified() const;
-    void LastModified(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void LastModified(const optional<Windows::Foundation::DateTime> & value) const;
     void Append(hstring_view name, hstring_view value) const;
     bool TryAppendWithoutValidation(hstring_view name, hstring_view value) const;
 };
@@ -907,7 +907,7 @@ struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValue
     void MediaType(hstring_view value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
     Windows::Foundation::IReference<double> Quality() const;
-    void Quality(const Windows::Foundation::IReference<double> & value) const;
+    void Quality(const optional<double> & value) const;
 };
 
 template <typename D>
@@ -1021,18 +1021,18 @@ struct WINRT_EBO impl_IHttpRequestHeaderCollection
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection Connection() const;
     Windows::Web::Http::Headers::HttpCookiePairHeaderValueCollection Cookie() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> Date() const;
-    void Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void Date(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Web::Http::Headers::HttpExpectationHeaderValueCollection Expect() const;
     hstring From() const;
     void From(hstring_view value) const;
     Windows::Networking::HostName Host() const;
     void Host(const Windows::Networking::HostName & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> IfModifiedSince() const;
-    void IfModifiedSince(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void IfModifiedSince(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> IfUnmodifiedSince() const;
-    void IfUnmodifiedSince(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void IfUnmodifiedSince(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<uint32_t> MaxForwards() const;
-    void MaxForwards(const Windows::Foundation::IReference<uint32_t> & value) const;
+    void MaxForwards(const optional<uint32_t> & value) const;
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue ProxyAuthorization() const;
     void ProxyAuthorization(const Windows::Web::Http::Headers::HttpCredentialsHeaderValue & value) const;
     Windows::Foundation::Uri Referer() const;
@@ -1047,12 +1047,12 @@ template <typename D>
 struct WINRT_EBO impl_IHttpResponseHeaderCollection
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Age() const;
-    void Age(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    void Age(const optional<Windows::Foundation::TimeSpan> & value) const;
     Windows::Web::Http::Headers::HttpMethodHeaderValueCollection Allow() const;
     Windows::Web::Http::Headers::HttpCacheDirectiveHeaderValueCollection CacheControl() const;
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection Connection() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> Date() const;
-    void Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    void Date(const optional<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::Uri Location() const;
     void Location(const Windows::Foundation::Uri & value) const;
     Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection ProxyAuthenticate() const;
