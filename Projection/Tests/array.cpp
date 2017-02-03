@@ -171,6 +171,13 @@ TEST_CASE("array,EBO")
 // Now some tests to cover the array members.
 //
 
+static void test_array_ref(array_ref<int const> a)
+{
+    REQUIRE(a[0] == 1);
+    REQUIRE(a[1] == 2);
+    REQUIRE(a[2] == 3);
+}
+
 //
 // Here we're testing 'operator[]' for the three array patterns.
 //
@@ -191,11 +198,7 @@ TEST_CASE("array,[N]")
 
     SECTION("array_cref")
     {
-        array_ref<int const> a{ 1, 2, 3 };
-
-        REQUIRE(a[0] == 1);
-        REQUIRE(a[1] == 2);
-        REQUIRE(a[2] == 3);
+        test_array_ref({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -208,6 +211,13 @@ TEST_CASE("array,[N]")
         REQUIRE(a[1] == 20);
         REQUIRE(a[2] == 3);
     }
+}
+
+static void test_array_ref_n(array_ref<int const> const a)
+{
+    REQUIRE(a[0] == 1);
+    REQUIRE(a[1] == 2);
+    REQUIRE(a[2] == 3);
 }
 
 //
@@ -227,11 +237,7 @@ TEST_CASE("array,[N],const")
 
     SECTION("array_cref")
     {
-        array_ref<int const> const a{ 1, 2, 3 };
-
-        REQUIRE(a[0] == 1);
-        REQUIRE(a[1] == 2);
-        REQUIRE(a[2] == 3);
+        test_array_ref_n({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -242,6 +248,13 @@ TEST_CASE("array,[N],const")
         REQUIRE(a[1] == 2);
         REQUIRE(a[2] == 3);
     }
+}
+
+static void test_array_ref_at(array_ref<int const> a)
+{
+    REQUIRE(a.at(0) == 1);
+    REQUIRE(a.at(1) == 2);
+    REQUIRE(a.at(2) == 3);
 }
 
 //
@@ -264,11 +277,7 @@ TEST_CASE("array,at")
 
     SECTION("array_cref")
     {
-        array_ref<int const> a{ 1, 2, 3 };
-
-        REQUIRE(a.at(0) == 1);
-        REQUIRE(a.at(1) == 2);
-        REQUIRE(a.at(2) == 3);
+        test_array_ref_at({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -283,38 +292,9 @@ TEST_CASE("array,at")
     }
 }
 
-//
-// Here we're testing 'at() const' for the three array patterns.
-//
-TEST_CASE("array,at,const")
+static void test_array_ref_at_throw(array_ref<int const> const a)
 {
-    SECTION("array_ref")
-    {
-        std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
-
-        REQUIRE(a.at(0) == 1);
-        REQUIRE(a.at(1) == 2);
-        REQUIRE(a.at(2) == 3);
-    }
-
-    SECTION("array_cref")
-    {
-        array_ref<int const> const a{ 1, 2, 3 };
-
-        REQUIRE(a.at(0) == 1);
-        REQUIRE(a.at(1) == 2);
-        REQUIRE(a.at(2) == 3);
-    }
-
-    SECTION("com_array")
-    {
-        com_array<int> const a{ 1, 2, 3 };
-
-        REQUIRE(a.at(0) == 1);
-        REQUIRE(a.at(1) == 2);
-        REQUIRE(a.at(2) == 3);
-    }
+    a.at(4);
 }
 
 //
@@ -340,11 +320,9 @@ TEST_CASE("array,at,throw")
 
     SECTION("array_cref")
     {
-        array_ref<int const> const a{ 1, 2, 3 };
-
         try
         {
-            a.at(4);
+            test_array_ref_at_throw({ 1, 2, 3 });
             FAIL(L"Previous line should throw");
         }
         catch (std::out_of_range const & e)
@@ -369,6 +347,12 @@ TEST_CASE("array,at,throw")
     }
 }
 
+static void test_array_ref_front_back(array_ref<int const> a)
+{
+    REQUIRE(a.front() == 1);
+    REQUIRE(a.back() == 3);
+}
+
 //
 // Tests for the front/back methods for the three array patterns.
 //
@@ -388,10 +372,7 @@ TEST_CASE("array,front,back")
 
     SECTION("array_cref")
     {
-        array_ref<int const> a{ 1, 2, 3 };
-
-        REQUIRE(a.front() == 1);
-        REQUIRE(a.back() == 3);
+        test_array_ref_front_back({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -404,6 +385,12 @@ TEST_CASE("array,front,back")
         REQUIRE(a.front() == 10);
         REQUIRE(a.back() == 30);
     }
+}
+
+static void test_array_ref_front_back_const(array_ref<int const> const a)
+{
+    REQUIRE(a.front() == 1);
+    REQUIRE(a.back() == 3);
 }
 
 //
@@ -422,10 +409,7 @@ TEST_CASE("array,front,back,const")
 
     SECTION("array_cref")
     {
-        array_ref<int const> const a{ 1, 2, 3 };
-
-        REQUIRE(a.front() == 1);
-        REQUIRE(a.back() == 3);
+        test_array_ref_front_back_const({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -812,6 +796,11 @@ TEST_CASE("array_ref,range")
     }
 }
 
+static void test_array_ref_init_list(array_ref<int const> a)
+{
+    REQUIRE(a.size() == 3);
+}
+
 //
 // Tests array_ref support for initializer list construction.
 //
@@ -819,8 +808,7 @@ TEST_CASE("array_ref,initializer_list")
 {
     // initializer_list cannot be used with array_ref of non-const T
 
-    array_ref<int const> a { 1, 2, 3 };
-    REQUIRE(a.size() == 3);
+    test_array_ref_init_list({ 1, 2, 3 });
 }
 
 //

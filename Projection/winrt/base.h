@@ -428,16 +428,16 @@ struct conjunction<B1, Bn ...> : std::conditional_t<B1::value, conjunction<Bn ..
 template<typename ... B>
 constexpr bool conjunction_v = conjunction<B ...>::value;
 
-template<typename T, T First, T... Rest>
-constexpr bool sequence_contains(T value)
-{
-    return (value == First) || sequence_contains<T, Rest...>(value);
-}
-
 template<typename T>
 constexpr bool sequence_contains(T)
 {
     return false;
+}
+
+template<typename T, T First, T... Rest>
+constexpr bool sequence_contains(T value)
+{
+    return (value == First) || sequence_contains<T, Rest...>(value);
 }
 
 }
@@ -3971,7 +3971,7 @@ struct overrides : implements<D, R ...>
 
         if (result == E_NOINTERFACE)
         {
-            result = m_inner->QueryInterface(id, object);
+            result = get(m_inner)->QueryInterface(id, object);
         }
 
         return result;

@@ -14,7 +14,7 @@ extern char const base_await_produce[14897];
 extern char const base_collections_consume[41480];
 extern char const base_collections_impl[19087];
 extern char const base_collections_produce[18412];
-extern char const base_composable[556];
+extern char const base_composable[561];
 extern char const base_com_ptr[5307];
 extern char const base_delegate[4254];
 extern char const base_dependencies[2098];
