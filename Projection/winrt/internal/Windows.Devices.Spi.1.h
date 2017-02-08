@@ -131,10 +131,10 @@ struct WINRT_EBO impl_ISpiDevice
 {
     hstring DeviceId() const;
     Windows::Devices::Spi::SpiConnectionSettings ConnectionSettings() const;
-    void Write(array_ref<const uint8_t> buffer) const;
-    void Read(array_ref<uint8_t> buffer) const;
-    void TransferSequential(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
-    void TransferFullDuplex(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
+    void Write(array_view<const uint8_t> buffer) const;
+    void Read(array_view<uint8_t> buffer) const;
+    void TransferSequential(array_view<const uint8_t> writeBuffer, array_view<uint8_t> readBuffer) const;
+    void TransferFullDuplex(array_view<const uint8_t> writeBuffer, array_view<uint8_t> readBuffer) const;
 };
 
 template <typename D>

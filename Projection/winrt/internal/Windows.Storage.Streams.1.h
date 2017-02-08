@@ -224,7 +224,7 @@ struct WINRT_EBO impl_IDataReader
     Windows::Storage::Streams::InputStreamOptions InputStreamOptions() const;
     void InputStreamOptions(Windows::Storage::Streams::InputStreamOptions value) const;
     uint8_t ReadByte() const;
-    void ReadBytes(array_ref<uint8_t> value) const;
+    void ReadBytes(array_view<uint8_t> value) const;
     Windows::Storage::Streams::IBuffer ReadBuffer(uint32_t length) const;
     bool ReadBoolean() const;
     GUID ReadGuid() const;
@@ -265,7 +265,7 @@ struct WINRT_EBO impl_IDataWriter
     Windows::Storage::Streams::ByteOrder ByteOrder() const;
     void ByteOrder(Windows::Storage::Streams::ByteOrder value) const;
     void WriteByte(uint8_t value) const;
-    void WriteBytes(array_ref<const uint8_t> value) const;
+    void WriteBytes(array_view<const uint8_t> value) const;
     void WriteBuffer(const Windows::Storage::Streams::IBuffer & buffer) const;
     void WriteBuffer(const Windows::Storage::Streams::IBuffer & buffer, uint32_t start, uint32_t count) const;
     void WriteBoolean(bool value) const;

@@ -218,7 +218,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesWithF
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetFormatUserData(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().SetFormatUserData(array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1696,7 +1696,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties2> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetFormatUserData(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().SetFormatUserData(array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1919,7 +1919,7 @@ template <typename D> uint32_t impl_IAudioEncodingProperties<D>::BitsPerSample()
     return value;
 }
 
-template <typename D> void impl_IAudioEncodingPropertiesWithFormatUserData<D>::SetFormatUserData(array_ref<const uint8_t> value) const
+template <typename D> void impl_IAudioEncodingPropertiesWithFormatUserData<D>::SetFormatUserData(array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(IAudioEncodingPropertiesWithFormatUserData)->abi_SetFormatUserData(value.size(), get(value)));
 }
@@ -2399,7 +2399,7 @@ template <typename D> int32_t impl_IMpeg2ProfileIdsStatics<D>::High() const
     return value;
 }
 
-template <typename D> void impl_IVideoEncodingProperties2<D>::SetFormatUserData(array_ref<const uint8_t> value) const
+template <typename D> void impl_IVideoEncodingProperties2<D>::SetFormatUserData(array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(IVideoEncodingProperties2)->abi_SetFormatUserData(value.size(), get(value)));
 }

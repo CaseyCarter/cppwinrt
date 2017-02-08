@@ -41,7 +41,7 @@ struct WINRT_EBO impl_ICryptographicBufferStatics
     bool Compare(const Windows::Storage::Streams::IBuffer & object1, const Windows::Storage::Streams::IBuffer & object2) const;
     Windows::Storage::Streams::IBuffer GenerateRandom(uint32_t length) const;
     uint32_t GenerateRandomNumber() const;
-    Windows::Storage::Streams::IBuffer CreateFromByteArray(array_ref<const uint8_t> value) const;
+    Windows::Storage::Streams::IBuffer CreateFromByteArray(array_view<const uint8_t> value) const;
     void CopyToByteArray(const Windows::Storage::Streams::IBuffer & buffer, com_array<uint8_t> & value) const;
     Windows::Storage::Streams::IBuffer DecodeFromHexString(hstring_view value) const;
     hstring EncodeToHexString(const Windows::Storage::Streams::IBuffer & buffer) const;

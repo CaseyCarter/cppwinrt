@@ -694,7 +694,7 @@ struct WINRT_EBO impl_IVpnInterfaceId
 template <typename D>
 struct WINRT_EBO impl_IVpnInterfaceIdFactory
 {
-    Windows::Networking::Vpn::VpnInterfaceId CreateVpnInterfaceId(array_ref<const uint8_t> address) const;
+    Windows::Networking::Vpn::VpnInterfaceId CreateVpnInterfaceId(array_view<const uint8_t> address) const;
 };
 
 template <typename D>

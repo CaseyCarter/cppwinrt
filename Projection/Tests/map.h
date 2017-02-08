@@ -121,7 +121,7 @@ struct KeyValuePairIterator : implements<KeyValuePairIterator<C>,
         return ++m_iterator != m_end;
     }
 
-    uint32_t GetMany(array_ref<Windows::Foundation::Collections::IKeyValuePair<typename C::key_type, typename C::mapped_type>> values)
+    uint32_t GetMany(array_view<Windows::Foundation::Collections::IKeyValuePair<typename C::key_type, typename C::mapped_type>> values)
     {
         uint32_t capacity = values.size();
         uint32_t actual = 0;

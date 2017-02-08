@@ -488,7 +488,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, array_ref<const uint8_t>(pixels, pixels + __pixelsSize));
+            this->shim().SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, array_view<const uint8_t>(pixels, pixels + __pixelsSize));
             return S_OK;
         }
         catch (...)
@@ -2073,7 +2073,7 @@ template <typename D> Windows::Graphics::Imaging::BitmapTransform impl_IBitmapEn
     return value;
 }
 
-template <typename D> void impl_IBitmapEncoder<D>::SetPixelData(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, uint32_t width, uint32_t height, double dpiX, double dpiY, array_ref<const uint8_t> pixels) const
+template <typename D> void impl_IBitmapEncoder<D>::SetPixelData(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, uint32_t width, uint32_t height, double dpiX, double dpiY, array_view<const uint8_t> pixels) const
 {
     check_hresult(WINRT_SHIM(IBitmapEncoder)->abi_SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, pixels.size(), get(pixels)));
 }

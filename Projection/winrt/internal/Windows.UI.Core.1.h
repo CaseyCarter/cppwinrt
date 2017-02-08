@@ -837,7 +837,7 @@ struct WINRT_EBO impl_ITouchHitTestingEventArgs
     Windows::Foundation::Point Point() const;
     Windows::Foundation::Rect BoundingBox() const;
     Windows::UI::Core::CoreProximityEvaluation EvaluateProximity(const Windows::Foundation::Rect & controlBoundingBox) const;
-    Windows::UI::Core::CoreProximityEvaluation EvaluateProximity(array_ref<const Windows::Foundation::Point> controlVertices) const;
+    Windows::UI::Core::CoreProximityEvaluation EvaluateProximity(array_view<const Windows::Foundation::Point> controlVertices) const;
 };
 
 template <typename D>

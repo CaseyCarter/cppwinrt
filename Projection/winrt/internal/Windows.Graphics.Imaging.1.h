@@ -300,7 +300,7 @@ struct WINRT_EBO impl_IBitmapEncoder
     uint32_t GeneratedThumbnailHeight() const;
     void GeneratedThumbnailHeight(uint32_t value) const;
     Windows::Graphics::Imaging::BitmapTransform BitmapTransform() const;
-    void SetPixelData(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, uint32_t width, uint32_t height, double dpiX, double dpiY, array_ref<const uint8_t> pixels) const;
+    void SetPixelData(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, uint32_t width, uint32_t height, double dpiX, double dpiY, array_view<const uint8_t> pixels) const;
     Windows::Foundation::IAsyncAction GoToNextFrameAsync() const;
     Windows::Foundation::IAsyncAction GoToNextFrameAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & encodingOptions) const;
     Windows::Foundation::IAsyncAction FlushAsync() const;

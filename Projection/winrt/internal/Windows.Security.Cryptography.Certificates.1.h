@@ -496,7 +496,7 @@ struct WINRT_EBO impl_ICertificateQuery
     hstring FriendlyName() const;
     void FriendlyName(hstring_view value) const;
     com_array<uint8_t> Thumbprint() const;
-    void Thumbprint(array_ref<const uint8_t> value) const;
+    void Thumbprint(array_view<const uint8_t> value) const;
     bool HardwareOnly() const;
     void HardwareOnly(bool value) const;
 };
@@ -552,7 +552,7 @@ struct WINRT_EBO impl_ICertificateRequestProperties3
     hstring CurveName() const;
     void CurveName(hstring_view value) const;
     com_array<uint8_t> CurveParameters() const;
-    void CurveParameters(array_ref<const uint8_t> value) const;
+    void CurveParameters(array_view<const uint8_t> value) const;
     hstring ContainerNamePrefix() const;
     void ContainerNamePrefix(hstring_view value) const;
     hstring ContainerName() const;

@@ -28,7 +28,7 @@ auto make_array_iterator(T * data, uint32_t, uint32_t index = 0) noexcept
 }
 
 template <typename T>
-struct array_ref
+struct array_view
 {
     using value_type = T;
     using size_type = uint32_t;
@@ -41,40 +41,40 @@ struct array_ref
     using reverse_iterator = std::reverse_iterator<iterator>;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-    array_ref() noexcept = default;
+    array_view() noexcept = default;
 
-    array_ref(pointer first, pointer last) noexcept :
+    array_view(pointer first, pointer last) noexcept :
         m_data(first),
         m_size(static_cast<size_type>(last - first))
     {}
 
-    array_ref(std::initializer_list<value_type> value) noexcept :
-        array_ref(value.begin(), static_cast<size_type>(value.size()))
+    array_view(std::initializer_list<value_type> value) noexcept :
+        array_view(value.begin(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C, size_type N>
-    array_ref(C(&value)[N]) noexcept :
-        array_ref(value, N)
+    array_view(C(&value)[N]) noexcept :
+        array_view(value, N)
     {}
 
     template <typename C>
-    array_ref(std::vector<C> & value) noexcept :
-        array_ref(value.data(), static_cast<size_type>(value.size()))
+    array_view(std::vector<C> & value) noexcept :
+        array_view(value.data(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C>
-    array_ref(const std::vector<C> & value) noexcept :
-        array_ref(value.data(), static_cast<size_type>(value.size()))
+    array_view(const std::vector<C> & value) noexcept :
+        array_view(value.data(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C, size_type N>
-    array_ref(std::array<C, N> & value) noexcept :
-        array_ref(value.data(), static_cast<size_type>(value.size()))
+    array_view(std::array<C, N> & value) noexcept :
+        array_view(value.data(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C, size_type N>
-    array_ref(const std::array<C, N> & value) noexcept :
-        array_ref(value.data(), static_cast<size_type>(value.size()))
+    array_view(const std::array<C, N> & value) noexcept :
+        array_view(value.data(), static_cast<size_type>(value.size()))
     {}
 
     reference operator[](const size_type pos) noexcept
@@ -215,7 +215,7 @@ struct array_ref
 
 protected:
 
-    array_ref(pointer data, uint32_t size) :
+    array_view(pointer data, uint32_t size) :
         m_data(data),
         m_size(size)
     {}
@@ -225,18 +225,18 @@ protected:
 };
 
 template <typename T>
-struct com_array : array_ref<T>
+struct com_array : array_view<T>
 {
-    using typename array_ref<T>::value_type;
-    using typename array_ref<T>::size_type;
-    using typename array_ref<T>::reference;
-    using typename array_ref<T>::const_reference;
-    using typename array_ref<T>::pointer;
-    using typename array_ref<T>::const_pointer;
-    using typename array_ref<T>::iterator;
-    using typename array_ref<T>::const_iterator;
-    using typename array_ref<T>::reverse_iterator;
-    using typename array_ref<T>::const_reverse_iterator;
+    using typename array_view<T>::value_type;
+    using typename array_view<T>::size_type;
+    using typename array_view<T>::reference;
+    using typename array_view<T>::const_reference;
+    using typename array_view<T>::pointer;
+    using typename array_view<T>::const_pointer;
+    using typename array_view<T>::iterator;
+    using typename array_view<T>::const_iterator;
+    using typename array_view<T>::reverse_iterator;
+    using typename array_view<T>::const_reverse_iterator;
 
     com_array(const com_array &) = delete;
     com_array & operator=(const com_array &) = delete;
@@ -278,7 +278,7 @@ struct com_array : array_ref<T>
     {}
 
     com_array(com_array && other) noexcept :
-        array_ref<T>(other.m_data, other.m_size)
+        array_view<T>(other.m_data, other.m_size)
     {
         other.m_data = nullptr;
         other.m_size = 0;
@@ -372,21 +372,21 @@ private:
 };
 
 template <typename T>
-bool operator==(const array_ref<T> & left, const array_ref<T> & right) noexcept
+bool operator==(const array_view<T> & left, const array_view<T> & right) noexcept
 {
     return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
 template <typename T>
-bool operator<(const array_ref<T> & left, const array_ref<T> & right) noexcept
+bool operator<(const array_view<T> & left, const array_view<T> & right) noexcept
 {
     return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-template <typename T> bool operator!=(const array_ref<T> & left, const array_ref<T> & right) noexcept { return !(left == right); }
-template <typename T> bool operator>(const array_ref<T> & left, const array_ref<T> & right) noexcept { return right < left; }
-template <typename T> bool operator<=(const array_ref<T> & left, const array_ref<T> & right) noexcept { return !(right < left); }
-template <typename T> bool operator>=(const array_ref<T> & left, const array_ref<T> & right) noexcept { return !(left < right); }
+template <typename T> bool operator!=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(left == right); }
+template <typename T> bool operator>(const array_view<T> & left, const array_view<T> & right) noexcept { return right < left; }
+template <typename T> bool operator<=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(right < left); }
+template <typename T> bool operator>=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(left < right); }
 
 namespace impl {
 
@@ -481,9 +481,9 @@ struct accessors<com_array<T>>
 };
 
 template <typename T>
-struct accessors<array_ref<T>>
+struct accessors<array_view<T>>
 {
-    static auto get(array_ref<T> object) noexcept
+    static auto get(array_view<T> object) noexcept
     {
         return reinterpret_cast<abi_arg_out<std::remove_const_t<T>>>(const_cast<std::remove_const_t<T> *>(object.data()));
     }

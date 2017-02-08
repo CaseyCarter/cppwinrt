@@ -3076,7 +3076,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPayload(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().SetPayload(array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -4586,7 +4586,7 @@ template <typename D> com_array<uint8_t> impl_IUssdMessage<D>::GetPayload() cons
     return value;
 }
 
-template <typename D> void impl_IUssdMessage<D>::SetPayload(array_ref<const uint8_t> value) const
+template <typename D> void impl_IUssdMessage<D>::SetPayload(array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(IUssdMessage)->abi_SetPayload(value.size(), get(value)));
 }

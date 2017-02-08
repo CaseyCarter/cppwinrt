@@ -1014,7 +1014,7 @@ struct WINRT_EBO impl_IUssdMessage
     uint8_t DataCodingScheme() const;
     void DataCodingScheme(uint8_t value) const;
     com_array<uint8_t> GetPayload() const;
-    void SetPayload(array_ref<const uint8_t> value) const;
+    void SetPayload(array_view<const uint8_t> value) const;
     hstring PayloadAsText() const;
     void PayloadAsText(hstring_view value) const;
 };

@@ -11091,7 +11091,7 @@ struct WINRT_EBO impl_IWebView
     using NavigationFailed_revoker = event_revoker<IWebView>;
     NavigationFailed_revoker NavigationFailed(auto_revoke_t, const Windows::UI::Xaml::Controls::WebViewNavigationFailedEventHandler & value) const;
     void NavigationFailed(event_token token) const;
-    hstring InvokeScript(hstring_view scriptName, array_ref<const hstring> arguments) const;
+    hstring InvokeScript(hstring_view scriptName, array_view<const hstring> arguments) const;
     void Navigate(const Windows::Foundation::Uri & source) const;
     void NavigateToString(hstring_view text) const;
 };

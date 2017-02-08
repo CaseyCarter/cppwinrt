@@ -280,7 +280,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipGameControllerInputSink> :
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().OnMessageReceived(timestamp, messageClass, messageId, sequenceId, array_ref<const uint8_t>(messageBuffer, messageBuffer + __messageBufferSize));
+            this->shim().OnMessageReceived(timestamp, messageClass, messageId, sequenceId, array_view<const uint8_t>(messageBuffer, messageBuffer + __messageBufferSize));
             return S_OK;
         }
         catch (...)
@@ -298,7 +298,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipGameControllerProvider> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SendMessage(messageClass, messageId, array_ref<const uint8_t>(messageBuffer, messageBuffer + __messageBufferSize));
+            this->shim().SendMessage(messageClass, messageId, array_view<const uint8_t>(messageBuffer, messageBuffer + __messageBufferSize));
             return S_OK;
         }
         catch (...)
@@ -312,7 +312,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipGameControllerProvider> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SendReceiveMessage(messageClass, messageId, array_ref<const uint8_t>(requestMessageBuffer, requestMessageBuffer + __requestMessageBufferSize), *responseMessageBuffer);
+            this->shim().SendReceiveMessage(messageClass, messageId, array_view<const uint8_t>(requestMessageBuffer, requestMessageBuffer + __requestMessageBufferSize), *responseMessageBuffer);
             return S_OK;
         }
         catch (...)
@@ -345,7 +345,7 @@ struct produce<D, Windows::Gaming::Input::Custom::IXusbGameControllerInputSink> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().OnInputReceived(timestamp, reportId, array_ref<const uint8_t>(inputBuffer, inputBuffer + __inputBufferSize));
+            this->shim().OnInputReceived(timestamp, reportId, array_view<const uint8_t>(inputBuffer, inputBuffer + __inputBufferSize));
             return S_OK;
         }
         catch (...)
@@ -392,12 +392,12 @@ template <typename D> void impl_IGipGameControllerInputSink<D>::OnKeyReceived(ui
     check_hresult(WINRT_SHIM(IGipGameControllerInputSink)->abi_OnKeyReceived(timestamp, keyCode, isPressed));
 }
 
-template <typename D> void impl_IGipGameControllerInputSink<D>::OnMessageReceived(uint64_t timestamp, Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint8_t sequenceId, array_ref<const uint8_t> messageBuffer) const
+template <typename D> void impl_IGipGameControllerInputSink<D>::OnMessageReceived(uint64_t timestamp, Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint8_t sequenceId, array_view<const uint8_t> messageBuffer) const
 {
     check_hresult(WINRT_SHIM(IGipGameControllerInputSink)->abi_OnMessageReceived(timestamp, messageClass, messageId, sequenceId, messageBuffer.size(), get(messageBuffer)));
 }
 
-template <typename D> void impl_IXusbGameControllerInputSink<D>::OnInputReceived(uint64_t timestamp, uint8_t reportId, array_ref<const uint8_t> inputBuffer) const
+template <typename D> void impl_IXusbGameControllerInputSink<D>::OnInputReceived(uint64_t timestamp, uint8_t reportId, array_view<const uint8_t> inputBuffer) const
 {
     check_hresult(WINRT_SHIM(IXusbGameControllerInputSink)->abi_OnInputReceived(timestamp, reportId, inputBuffer.size(), get(inputBuffer)));
 }
@@ -458,12 +458,12 @@ template <typename D> bool impl_IGameControllerProvider<D>::IsConnected() const
     return value;
 }
 
-template <typename D> void impl_IGipGameControllerProvider<D>::SendMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_ref<const uint8_t> messageBuffer) const
+template <typename D> void impl_IGipGameControllerProvider<D>::SendMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_view<const uint8_t> messageBuffer) const
 {
     check_hresult(WINRT_SHIM(IGipGameControllerProvider)->abi_SendMessage(messageClass, messageId, messageBuffer.size(), get(messageBuffer)));
 }
 
-template <typename D> void impl_IGipGameControllerProvider<D>::SendReceiveMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_ref<const uint8_t> requestMessageBuffer, array_ref<uint8_t> responseMessageBuffer) const
+template <typename D> void impl_IGipGameControllerProvider<D>::SendReceiveMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_view<const uint8_t> requestMessageBuffer, array_view<uint8_t> responseMessageBuffer) const
 {
     check_hresult(WINRT_SHIM(IGipGameControllerProvider)->abi_SendReceiveMessage(messageClass, messageId, requestMessageBuffer.size(), get(requestMessageBuffer), responseMessageBuffer.size(), get(responseMessageBuffer)));
 }

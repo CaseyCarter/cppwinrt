@@ -54980,7 +54980,7 @@ template <typename D> void impl_IWebView<D>::NavigationFailed(event_token token)
     check_hresult(WINRT_SHIM(IWebView)->remove_NavigationFailed(token));
 }
 
-template <typename D> hstring impl_IWebView<D>::InvokeScript(hstring_view scriptName, array_ref<const hstring> arguments) const
+template <typename D> hstring impl_IWebView<D>::InvokeScript(hstring_view scriptName, array_view<const hstring> arguments) const
 {
     hstring returnValue;
     check_hresult(WINRT_SHIM(IWebView)->abi_InvokeScript(get(scriptName), arguments.size(), get(arguments), put(returnValue)));

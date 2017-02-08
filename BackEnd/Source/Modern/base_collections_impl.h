@@ -107,7 +107,7 @@ namespace impl
             return m_storage[index];
         }
 
-        uint32_t GetMany(const uint32_t startIndex, array_ref<T> values) const
+        uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
         {
             if (startIndex >= m_storage.size())
             {
@@ -172,7 +172,7 @@ namespace impl
             m_storage.pop_back();
         }
 
-        void ReplaceAll(array_ref<const T> value)
+        void ReplaceAll(array_view<const T> value)
         {
             m_version.increment();
             m_storage.assign(value.begin(), value.end());
@@ -225,7 +225,7 @@ namespace impl
             return m_storage[index];
         }
 
-        uint32_t GetMany(const uint32_t startIndex, array_ref<T> values) const
+        uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
         {
             if (startIndex >= m_storage.size())
             {
@@ -284,7 +284,7 @@ namespace impl
             return m_storage->GetAt(index);
         }
 
-        uint32_t GetMany(const uint32_t startIndex, array_ref<T> values) const
+        uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
         {
             version_validator.validate();
             return m_storage->GetMany(startIndex, values);
@@ -372,7 +372,7 @@ namespace impl
             return m_current != m_end;
         }
 
-        uint32_t GetMany(array_ref<T> values)
+        uint32_t GetMany(array_view<T> values)
         {
             version_validator.validate();
 
@@ -431,7 +431,7 @@ namespace impl
             return HasCurrent();
         }
 
-        uint32_t GetMany(array_ref<T> values)
+        uint32_t GetMany(array_view<T> values)
         {
             uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
 

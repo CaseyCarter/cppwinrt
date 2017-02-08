@@ -374,7 +374,7 @@ template <typename D>
 struct WINRT_EBO impl_IAsymmetricKeyAlgorithmProvider2
 {
     Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveName(hstring_view curveName) const;
-    Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveParameters(array_ref<const uint8_t> parameters) const;
+    Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveParameters(array_view<const uint8_t> parameters) const;
 };
 
 template <typename D>

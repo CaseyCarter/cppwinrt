@@ -454,7 +454,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
         try
         {
             typename D::abi_guard guard(this->shim());
-            *key = detach(this->shim().CreateKeyPairWithCurveParameters(array_ref<const uint8_t>(parameters, parameters + __parametersSize)));
+            *key = detach(this->shim().CreateKeyPairWithCurveParameters(array_view<const uint8_t>(parameters, parameters + __parametersSize)));
             return S_OK;
         }
         catch (...)
@@ -2998,7 +2998,7 @@ template <typename D> Windows::Security::Cryptography::Core::CryptographicKey im
     return key;
 }
 
-template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider2<D>::CreateKeyPairWithCurveParameters(array_ref<const uint8_t> parameters) const
+template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider2<D>::CreateKeyPairWithCurveParameters(array_view<const uint8_t> parameters) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
     check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider2)->abi_CreateKeyPairWithCurveParameters(parameters.size(), get(parameters), put(key)));

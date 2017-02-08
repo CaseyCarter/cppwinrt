@@ -154,21 +154,21 @@ template <typename D>
 struct WINRT_EBO impl_IGipGameControllerInputSink
 {
     void OnKeyReceived(uint64_t timestamp, uint8_t keyCode, bool isPressed) const;
-    void OnMessageReceived(uint64_t timestamp, Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint8_t sequenceId, array_ref<const uint8_t> messageBuffer) const;
+    void OnMessageReceived(uint64_t timestamp, Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint8_t sequenceId, array_view<const uint8_t> messageBuffer) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IGipGameControllerProvider
 {
-    void SendMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_ref<const uint8_t> messageBuffer) const;
-    void SendReceiveMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_ref<const uint8_t> requestMessageBuffer, array_ref<uint8_t> responseMessageBuffer) const;
+    void SendMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_view<const uint8_t> messageBuffer) const;
+    void SendReceiveMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_view<const uint8_t> requestMessageBuffer, array_view<uint8_t> responseMessageBuffer) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Gaming::Input::Custom::GipFirmwareUpdateResult, Windows::Gaming::Input::Custom::GipFirmwareUpdateProgress> UpdateFirmwareAsync(const Windows::Storage::Streams::IInputStream & firmwareImage) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IXusbGameControllerInputSink
 {
-    void OnInputReceived(uint64_t timestamp, uint8_t reportId, array_ref<const uint8_t> inputBuffer) const;
+    void OnInputReceived(uint64_t timestamp, uint8_t reportId, array_view<const uint8_t> inputBuffer) const;
 };
 
 template <typename D>

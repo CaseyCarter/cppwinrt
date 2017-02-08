@@ -131,7 +131,7 @@ struct WINRT_EBO VpnInterfaceId :
     Windows::Networking::Vpn::IVpnInterfaceId
 {
     VpnInterfaceId(std::nullptr_t) noexcept {}
-    VpnInterfaceId(array_ref<const uint8_t> address);
+    VpnInterfaceId(array_view<const uint8_t> address);
 };
 
 struct WINRT_EBO VpnManagementAgent :

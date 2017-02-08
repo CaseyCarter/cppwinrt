@@ -206,8 +206,8 @@ struct WINRT_EBO impl_ICameraIntrinsics
     uint32_t ImageHeight() const;
     Windows::Foundation::Point ProjectOntoFrame(const Windows::Foundation::Numerics::float3 & coordinate) const;
     Windows::Foundation::Numerics::float2 UnprojectAtUnitDepth(const Windows::Foundation::Point & pixelCoordinate) const;
-    void ProjectManyOntoFrame(array_ref<const Windows::Foundation::Numerics::float3> coordinates, array_ref<Windows::Foundation::Point> results) const;
-    void UnprojectPixelsAtUnitDepth(array_ref<const Windows::Foundation::Point> pixelCoordinates, array_ref<Windows::Foundation::Numerics::float2> results) const;
+    void ProjectManyOntoFrame(array_view<const Windows::Foundation::Numerics::float3> coordinates, array_view<Windows::Foundation::Point> results) const;
+    void UnprojectPixelsAtUnitDepth(array_view<const Windows::Foundation::Point> pixelCoordinates, array_view<Windows::Foundation::Numerics::float2> results) const;
 };
 
 template <typename D>
@@ -215,9 +215,9 @@ struct WINRT_EBO impl_ICameraIntrinsics2
 {
     Windows::Foundation::Numerics::float4x4 UndistortedProjectionTransform() const;
     Windows::Foundation::Point DistortPoint(const Windows::Foundation::Point & input) const;
-    void DistortPoints(array_ref<const Windows::Foundation::Point> inputs, array_ref<Windows::Foundation::Point> results) const;
+    void DistortPoints(array_view<const Windows::Foundation::Point> inputs, array_view<Windows::Foundation::Point> results) const;
     Windows::Foundation::Point UndistortPoint(const Windows::Foundation::Point & input) const;
-    void UndistortPoints(array_ref<const Windows::Foundation::Point> inputs, array_ref<Windows::Foundation::Point> results) const;
+    void UndistortPoints(array_view<const Windows::Foundation::Point> inputs, array_view<Windows::Foundation::Point> results) const;
 };
 
 template <typename D>
@@ -230,9 +230,9 @@ template <typename D>
 struct WINRT_EBO impl_IDepthCorrelatedCoordinateMapper
 {
     Windows::Foundation::Numerics::float3 UnprojectPoint(const Windows::Foundation::Point & sourcePoint, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem) const;
-    void UnprojectPoints(array_ref<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, array_ref<Windows::Foundation::Numerics::float3> results) const;
+    void UnprojectPoints(array_view<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, array_view<Windows::Foundation::Numerics::float3> results) const;
     Windows::Foundation::Point MapPoint(const Windows::Foundation::Point & sourcePoint, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics) const;
-    void MapPoints(array_ref<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics, array_ref<Windows::Foundation::Point> results) const;
+    void MapPoints(array_view<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics, array_view<Windows::Foundation::Point> results) const;
 };
 
 template <typename D>

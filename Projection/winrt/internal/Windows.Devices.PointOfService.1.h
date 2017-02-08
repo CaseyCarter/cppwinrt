@@ -1108,8 +1108,8 @@ struct WINRT_EBO impl_IClaimedMagneticStripeReader
     void RetainDevice() const;
     void SetErrorReportingType(Windows::Devices::PointOfService::MagneticStripeReaderErrorReportingType value) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> RetrieveDeviceAuthenticationDataAsync() const;
-    Windows::Foundation::IAsyncAction AuthenticateDeviceAsync(array_ref<const uint8_t> responseToken) const;
-    Windows::Foundation::IAsyncAction DeAuthenticateDeviceAsync(array_ref<const uint8_t> responseToken) const;
+    Windows::Foundation::IAsyncAction AuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const;
+    Windows::Foundation::IAsyncAction DeAuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const;
     Windows::Foundation::IAsyncAction UpdateKeyAsync(hstring_view key, hstring_view keyName) const;
     Windows::Foundation::IAsyncAction ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
     Windows::Foundation::IAsyncAction UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const;

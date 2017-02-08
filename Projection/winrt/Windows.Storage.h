@@ -827,7 +827,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().WriteBytesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), array_ref<const uint8_t>(buffer, buffer + __bufferSize)));
+            *operation = detach(this->shim().WriteBytesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), array_view<const uint8_t>(buffer, buffer + __bufferSize)));
             return S_OK;
         }
         catch (...)
@@ -1290,7 +1290,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().WriteBytesAsync(*reinterpret_cast<const hstring *>(&absolutePath), array_ref<const uint8_t>(buffer, buffer + __bufferSize)));
+            *operation = detach(this->shim().WriteBytesAsync(*reinterpret_cast<const hstring *>(&absolutePath), array_view<const uint8_t>(buffer, buffer + __bufferSize)));
             return S_OK;
         }
         catch (...)
@@ -4103,7 +4103,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_ref<const uint8_t> buffer) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_view<const uint8_t> buffer) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IFileIOStatics)->abi_WriteBytesAsync(get(file), buffer.size(), get(buffer), put(operation)));
@@ -4208,7 +4208,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteBytesAsync(hstring_view absolutePath, array_ref<const uint8_t> buffer) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteBytesAsync(hstring_view absolutePath, array_view<const uint8_t> buffer) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_WriteBytesAsync(get(absolutePath), buffer.size(), get(buffer), put(operation)));
@@ -4869,7 +4869,7 @@ inline Windows::Foundation::IAsyncAction FileIO::WriteBufferAsync(const Windows:
     return get_activation_factory<FileIO, IFileIOStatics>().WriteBufferAsync(file, buffer);
 }
 
-inline Windows::Foundation::IAsyncAction FileIO::WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_ref<const uint8_t> buffer)
+inline Windows::Foundation::IAsyncAction FileIO::WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_view<const uint8_t> buffer)
 {
     return get_activation_factory<FileIO, IFileIOStatics>().WriteBytesAsync(file, buffer);
 }
@@ -5014,7 +5014,7 @@ inline Windows::Foundation::IAsyncAction PathIO::WriteBufferAsync(hstring_view a
     return get_activation_factory<PathIO, IPathIOStatics>().WriteBufferAsync(absolutePath, buffer);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::WriteBytesAsync(hstring_view absolutePath, array_ref<const uint8_t> buffer)
+inline Windows::Foundation::IAsyncAction PathIO::WriteBytesAsync(hstring_view absolutePath, array_view<const uint8_t> buffer)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().WriteBytesAsync(absolutePath, buffer);
 }

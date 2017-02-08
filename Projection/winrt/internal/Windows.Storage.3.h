@@ -114,7 +114,7 @@ struct FileIO
     static Windows::Foundation::IAsyncAction AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
     static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(const Windows::Storage::IStorageFile & file);
     static Windows::Foundation::IAsyncAction WriteBufferAsync(const Windows::Storage::IStorageFile & file, const Windows::Storage::Streams::IBuffer & buffer);
-    static Windows::Foundation::IAsyncAction WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_ref<const uint8_t> buffer);
+    static Windows::Foundation::IAsyncAction WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_view<const uint8_t> buffer);
 };
 
 struct KnownFolders
@@ -153,7 +153,7 @@ struct PathIO
     static Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding);
     static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(hstring_view absolutePath);
     static Windows::Foundation::IAsyncAction WriteBufferAsync(hstring_view absolutePath, const Windows::Storage::Streams::IBuffer & buffer);
-    static Windows::Foundation::IAsyncAction WriteBytesAsync(hstring_view absolutePath, array_ref<const uint8_t> buffer);
+    static Windows::Foundation::IAsyncAction WriteBytesAsync(hstring_view absolutePath, array_view<const uint8_t> buffer);
 };
 
 struct WINRT_EBO SetVersionDeferral :

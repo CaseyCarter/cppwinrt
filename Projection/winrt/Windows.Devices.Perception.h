@@ -4789,19 +4789,19 @@ template <typename D> Windows::Foundation::Numerics::float3 impl_IPerceptionDept
     return result;
 }
 
-template <typename D> void impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelsAtCorrelatedDepth(array_ref<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const
+template <typename D> void impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelsAtCorrelatedDepth(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
 {
     check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelsAtCorrelatedDepth(sourceCoordinates.size(), get(sourceCoordinates), get(depthFrame), results.size(), get(results)));
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(get(region), get(depthFrame), results.size(), get(results), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectAllPixelsAtCorrelatedDepthAsync(get(depthFrame), results.size(), get(results), put(result)));
@@ -4815,19 +4815,19 @@ template <typename D> Windows::Foundation::Point impl_IPerceptionDepthCorrelated
     return result;
 }
 
-template <typename D> void impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelsToTarget(array_ref<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> results) const
+template <typename D> void impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelsToTarget(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> results) const
 {
     check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelsToTarget(sourceCoordinates.size(), get(sourceCoordinates), get(depthFrame), results.size(), get(results)));
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> targetCoordinates) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapRegionOfPixelsToTargetAsync(get(region), get(depthFrame), targetCoordinates.size(), get(targetCoordinates), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> targetCoordinates) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapAllPixelsToTargetAsync(get(depthFrame), targetCoordinates.size(), get(targetCoordinates), put(result)));

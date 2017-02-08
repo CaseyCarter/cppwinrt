@@ -1471,7 +1471,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnInterfaceIdFactory> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *vpnInterfaceId = detach(this->shim().CreateVpnInterfaceId(array_ref<const uint8_t>(address, address + __addressSize)));
+            *vpnInterfaceId = detach(this->shim().CreateVpnInterfaceId(array_view<const uint8_t>(address, address + __addressSize)));
             return S_OK;
         }
         catch (...)
@@ -3497,7 +3497,7 @@ template <typename D> Windows::Foundation::Uri impl_IVpnNamespaceAssignment<D>::
     return value;
 }
 
-template <typename D> Windows::Networking::Vpn::VpnInterfaceId impl_IVpnInterfaceIdFactory<D>::CreateVpnInterfaceId(array_ref<const uint8_t> address) const
+template <typename D> Windows::Networking::Vpn::VpnInterfaceId impl_IVpnInterfaceIdFactory<D>::CreateVpnInterfaceId(array_view<const uint8_t> address) const
 {
     Windows::Networking::Vpn::VpnInterfaceId vpnInterfaceId { nullptr };
     check_hresult(WINRT_SHIM(IVpnInterfaceIdFactory)->abi_CreateVpnInterfaceId(address.size(), get(address), put(vpnInterfaceId)));
@@ -4544,7 +4544,7 @@ inline VpnDomainNameInfo::VpnDomainNameInfo(hstring_view name, Windows::Networki
     VpnDomainNameInfo(get_activation_factory<VpnDomainNameInfo, IVpnDomainNameInfoFactory>().CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList))
 {}
 
-inline VpnInterfaceId::VpnInterfaceId(array_ref<const uint8_t> address) :
+inline VpnInterfaceId::VpnInterfaceId(array_view<const uint8_t> address) :
     VpnInterfaceId(get_activation_factory<VpnInterfaceId, IVpnInterfaceIdFactory>().CreateVpnInterfaceId(address))
 {}
 

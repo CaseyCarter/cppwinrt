@@ -646,18 +646,18 @@ template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthCorrelatedCameraIntrinsics
 {
     Windows::Foundation::Numerics::float3 UnprojectPixelAtCorrelatedDepth(const Windows::Foundation::Point & pixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const;
-    void UnprojectPixelsAtCorrelatedDepth(array_ref<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const;
-    Windows::Foundation::IAsyncAction UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const;
-    Windows::Foundation::IAsyncAction UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const;
+    void UnprojectPixelsAtCorrelatedDepth(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const;
+    Windows::Foundation::IAsyncAction UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const;
+    Windows::Foundation::IAsyncAction UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthCorrelatedCoordinateMapper
 {
     Windows::Foundation::Point MapPixelToTarget(const Windows::Foundation::Point & sourcePixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const;
-    void MapPixelsToTarget(array_ref<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> results) const;
-    Windows::Foundation::IAsyncAction MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> targetCoordinates) const;
-    Windows::Foundation::IAsyncAction MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> targetCoordinates) const;
+    void MapPixelsToTarget(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> results) const;
+    Windows::Foundation::IAsyncAction MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const;
+    Windows::Foundation::IAsyncAction MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const;
 };
 
 template <typename D>

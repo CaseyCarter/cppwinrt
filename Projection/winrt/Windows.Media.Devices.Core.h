@@ -1694,12 +1694,12 @@ template <typename D> Windows::Foundation::Numerics::float2 impl_ICameraIntrinsi
     return result;
 }
 
-template <typename D> void impl_ICameraIntrinsics<D>::ProjectManyOntoFrame(array_ref<const Windows::Foundation::Numerics::float3> coordinates, array_ref<Windows::Foundation::Point> results) const
+template <typename D> void impl_ICameraIntrinsics<D>::ProjectManyOntoFrame(array_view<const Windows::Foundation::Numerics::float3> coordinates, array_view<Windows::Foundation::Point> results) const
 {
     check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_ProjectManyOntoFrame(coordinates.size(), get(coordinates), results.size(), get(results)));
 }
 
-template <typename D> void impl_ICameraIntrinsics<D>::UnprojectPixelsAtUnitDepth(array_ref<const Windows::Foundation::Point> pixelCoordinates, array_ref<Windows::Foundation::Numerics::float2> results) const
+template <typename D> void impl_ICameraIntrinsics<D>::UnprojectPixelsAtUnitDepth(array_view<const Windows::Foundation::Point> pixelCoordinates, array_view<Windows::Foundation::Numerics::float2> results) const
 {
     check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_UnprojectPixelsAtUnitDepth(pixelCoordinates.size(), get(pixelCoordinates), results.size(), get(results)));
 }
@@ -1718,7 +1718,7 @@ template <typename D> Windows::Foundation::Point impl_ICameraIntrinsics2<D>::Dis
     return result;
 }
 
-template <typename D> void impl_ICameraIntrinsics2<D>::DistortPoints(array_ref<const Windows::Foundation::Point> inputs, array_ref<Windows::Foundation::Point> results) const
+template <typename D> void impl_ICameraIntrinsics2<D>::DistortPoints(array_view<const Windows::Foundation::Point> inputs, array_view<Windows::Foundation::Point> results) const
 {
     check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_DistortPoints(inputs.size(), get(inputs), results.size(), get(results)));
 }
@@ -1730,7 +1730,7 @@ template <typename D> Windows::Foundation::Point impl_ICameraIntrinsics2<D>::Und
     return result;
 }
 
-template <typename D> void impl_ICameraIntrinsics2<D>::UndistortPoints(array_ref<const Windows::Foundation::Point> inputs, array_ref<Windows::Foundation::Point> results) const
+template <typename D> void impl_ICameraIntrinsics2<D>::UndistortPoints(array_view<const Windows::Foundation::Point> inputs, array_view<Windows::Foundation::Point> results) const
 {
     check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_UndistortPoints(inputs.size(), get(inputs), results.size(), get(results)));
 }
@@ -1742,7 +1742,7 @@ template <typename D> Windows::Foundation::Numerics::float3 impl_IDepthCorrelate
     return result;
 }
 
-template <typename D> void impl_IDepthCorrelatedCoordinateMapper<D>::UnprojectPoints(array_ref<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, array_ref<Windows::Foundation::Numerics::float3> results) const
+template <typename D> void impl_IDepthCorrelatedCoordinateMapper<D>::UnprojectPoints(array_view<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, array_view<Windows::Foundation::Numerics::float3> results) const
 {
     check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_UnprojectPoints(sourcePoints.size(), get(sourcePoints), get(targetCoordinateSystem), results.size(), get(results)));
 }
@@ -1754,7 +1754,7 @@ template <typename D> Windows::Foundation::Point impl_IDepthCorrelatedCoordinate
     return result;
 }
 
-template <typename D> void impl_IDepthCorrelatedCoordinateMapper<D>::MapPoints(array_ref<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics, array_ref<Windows::Foundation::Point> results) const
+template <typename D> void impl_IDepthCorrelatedCoordinateMapper<D>::MapPoints(array_view<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics, array_view<Windows::Foundation::Point> results) const
 {
     check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_MapPoints(sourcePoints.size(), get(sourcePoints), get(targetCoordinateSystem), get(targetCameraIntrinsics), results.size(), get(results)));
 }

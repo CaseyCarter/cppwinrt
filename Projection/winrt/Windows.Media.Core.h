@@ -1537,7 +1537,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleProtectionProperties> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetKeyIdentifier(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().SetKeyIdentifier(array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1567,7 +1567,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleProtectionProperties> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetInitializationVector(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().SetInitializationVector(array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1597,7 +1597,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSampleProtectionProperties> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetSubSampleMapping(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().SetSubSampleMapping(array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -2019,7 +2019,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddProtectionKey(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&streamDescriptor), array_ref<const uint8_t>(keyIdentifier, keyIdentifier + __keyIdentifierSize), array_ref<const uint8_t>(licenseData, licenseData + __licenseDataSize));
+            this->shim().AddProtectionKey(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&streamDescriptor), array_view<const uint8_t>(keyIdentifier, keyIdentifier + __keyIdentifierSize), array_view<const uint8_t>(licenseData, licenseData + __licenseDataSize));
             return S_OK;
         }
         catch (...)
@@ -5193,7 +5193,7 @@ template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference im
     return value;
 }
 
-template <typename D> void impl_IMediaStreamSource<D>::AddProtectionKey(const Windows::Media::Core::IMediaStreamDescriptor & streamDescriptor, array_ref<const uint8_t> keyIdentifier, array_ref<const uint8_t> licenseData) const
+template <typename D> void impl_IMediaStreamSource<D>::AddProtectionKey(const Windows::Media::Core::IMediaStreamDescriptor & streamDescriptor, array_view<const uint8_t> keyIdentifier, array_view<const uint8_t> licenseData) const
 {
     check_hresult(WINRT_SHIM(IMediaStreamSource)->abi_AddProtectionKey(get(streamDescriptor), keyIdentifier.size(), get(keyIdentifier), licenseData.size(), get(licenseData)));
 }
@@ -5336,7 +5336,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Core:
     return value;
 }
 
-template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::SetKeyIdentifier(array_ref<const uint8_t> value) const
+template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::SetKeyIdentifier(array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(IMediaStreamSampleProtectionProperties)->abi_SetKeyIdentifier(value.size(), get(value)));
 }
@@ -5346,7 +5346,7 @@ template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::GetKe
     check_hresult(WINRT_SHIM(IMediaStreamSampleProtectionProperties)->abi_GetKeyIdentifier(put_size(value), put(value)));
 }
 
-template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::SetInitializationVector(array_ref<const uint8_t> value) const
+template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::SetInitializationVector(array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(IMediaStreamSampleProtectionProperties)->abi_SetInitializationVector(value.size(), get(value)));
 }
@@ -5356,7 +5356,7 @@ template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::GetIn
     check_hresult(WINRT_SHIM(IMediaStreamSampleProtectionProperties)->abi_GetInitializationVector(put_size(value), put(value)));
 }
 
-template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::SetSubSampleMapping(array_ref<const uint8_t> value) const
+template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::SetSubSampleMapping(array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(IMediaStreamSampleProtectionProperties)->abi_SetSubSampleMapping(value.size(), get(value)));
 }

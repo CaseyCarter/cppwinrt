@@ -2657,7 +2657,7 @@ template <typename D> Windows::UI::Core::CoreProximityEvaluation impl_ITouchHitT
     return proximityEvaluation;
 }
 
-template <typename D> Windows::UI::Core::CoreProximityEvaluation impl_ITouchHitTestingEventArgs<D>::EvaluateProximity(array_ref<const Windows::Foundation::Point> controlVertices) const
+template <typename D> Windows::UI::Core::CoreProximityEvaluation impl_ITouchHitTestingEventArgs<D>::EvaluateProximity(array_view<const Windows::Foundation::Point> controlVertices) const
 {
     Windows::UI::Core::CoreProximityEvaluation proximityEvaluation {};
     check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->abi_EvaluateProximityToPolygon(controlVertices.size(), get(controlVertices), put(proximityEvaluation)));

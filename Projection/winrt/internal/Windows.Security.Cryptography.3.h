@@ -15,7 +15,7 @@ struct CryptographicBuffer
     static bool Compare(const Windows::Storage::Streams::IBuffer & object1, const Windows::Storage::Streams::IBuffer & object2);
     static Windows::Storage::Streams::IBuffer GenerateRandom(uint32_t length);
     static uint32_t GenerateRandomNumber();
-    static Windows::Storage::Streams::IBuffer CreateFromByteArray(array_ref<const uint8_t> value);
+    static Windows::Storage::Streams::IBuffer CreateFromByteArray(array_view<const uint8_t> value);
     static void CopyToByteArray(const Windows::Storage::Streams::IBuffer & buffer, com_array<uint8_t> & value);
     static Windows::Storage::Streams::IBuffer DecodeFromHexString(hstring_view value);
     static hstring EncodeToHexString(const Windows::Storage::Streams::IBuffer & buffer);

@@ -3249,7 +3249,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().AuthenticateDeviceAsync(array_ref<const uint8_t>(responseToken, responseToken + __responseTokenSize)));
+            *result = detach(this->shim().AuthenticateDeviceAsync(array_view<const uint8_t>(responseToken, responseToken + __responseTokenSize)));
             return S_OK;
         }
         catch (...)
@@ -3264,7 +3264,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().DeAuthenticateDeviceAsync(array_ref<const uint8_t>(responseToken, responseToken + __responseTokenSize)));
+            *result = detach(this->shim().DeAuthenticateDeviceAsync(array_view<const uint8_t>(responseToken, responseToken + __responseTokenSize)));
             return S_OK;
         }
         catch (...)
@@ -9552,14 +9552,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::AuthenticateDeviceAsync(array_ref<const uint8_t> responseToken) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::AuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_AuthenticateDeviceAsync(responseToken.size(), get(responseToken), put(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::DeAuthenticateDeviceAsync(array_ref<const uint8_t> responseToken) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::DeAuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_DeAuthenticateDeviceAsync(responseToken.size(), get(responseToken), put(result)));

@@ -885,7 +885,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt8Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().AddUInt8Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -899,7 +899,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt8Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint8_t>(value, value + __valueSize), format);
+            this->shim().AddUInt8Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint8_t>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -913,7 +913,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt8Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint8_t>(value, value + __valueSize), format, tags);
+            this->shim().AddUInt8Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint8_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -969,7 +969,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int16_t>(value, value + __valueSize));
+            this->shim().AddInt16Array(*reinterpret_cast<const hstring *>(&name), array_view<const int16_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -983,7 +983,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int16_t>(value, value + __valueSize), format);
+            this->shim().AddInt16Array(*reinterpret_cast<const hstring *>(&name), array_view<const int16_t>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -997,7 +997,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int16_t>(value, value + __valueSize), format, tags);
+            this->shim().AddInt16Array(*reinterpret_cast<const hstring *>(&name), array_view<const int16_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1053,7 +1053,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint16_t>(value, value + __valueSize));
+            this->shim().AddUInt16Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint16_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1067,7 +1067,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint16_t>(value, value + __valueSize), format);
+            this->shim().AddUInt16Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint16_t>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1081,7 +1081,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint16_t>(value, value + __valueSize), format, tags);
+            this->shim().AddUInt16Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint16_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1137,7 +1137,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int32_t>(value, value + __valueSize));
+            this->shim().AddInt32Array(*reinterpret_cast<const hstring *>(&name), array_view<const int32_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1151,7 +1151,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int32_t>(value, value + __valueSize), format);
+            this->shim().AddInt32Array(*reinterpret_cast<const hstring *>(&name), array_view<const int32_t>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1165,7 +1165,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int32_t>(value, value + __valueSize), format, tags);
+            this->shim().AddInt32Array(*reinterpret_cast<const hstring *>(&name), array_view<const int32_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1221,7 +1221,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint32_t>(value, value + __valueSize));
+            this->shim().AddUInt32Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint32_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1235,7 +1235,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint32_t>(value, value + __valueSize), format);
+            this->shim().AddUInt32Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint32_t>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1249,7 +1249,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint32_t>(value, value + __valueSize), format, tags);
+            this->shim().AddUInt32Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint32_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1305,7 +1305,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int64_t>(value, value + __valueSize));
+            this->shim().AddInt64Array(*reinterpret_cast<const hstring *>(&name), array_view<const int64_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1319,7 +1319,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int64_t>(value, value + __valueSize), format);
+            this->shim().AddInt64Array(*reinterpret_cast<const hstring *>(&name), array_view<const int64_t>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1333,7 +1333,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int64_t>(value, value + __valueSize), format, tags);
+            this->shim().AddInt64Array(*reinterpret_cast<const hstring *>(&name), array_view<const int64_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1389,7 +1389,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint64_t>(value, value + __valueSize));
+            this->shim().AddUInt64Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint64_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1403,7 +1403,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint64_t>(value, value + __valueSize), format);
+            this->shim().AddUInt64Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint64_t>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1417,7 +1417,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddUInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint64_t>(value, value + __valueSize), format, tags);
+            this->shim().AddUInt64Array(*reinterpret_cast<const hstring *>(&name), array_view<const uint64_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1473,7 +1473,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddSingleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const float>(value, value + __valueSize));
+            this->shim().AddSingleArray(*reinterpret_cast<const hstring *>(&name), array_view<const float>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1487,7 +1487,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddSingleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const float>(value, value + __valueSize), format);
+            this->shim().AddSingleArray(*reinterpret_cast<const hstring *>(&name), array_view<const float>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1501,7 +1501,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddSingleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const float>(value, value + __valueSize), format, tags);
+            this->shim().AddSingleArray(*reinterpret_cast<const hstring *>(&name), array_view<const float>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1557,7 +1557,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddDoubleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const double>(value, value + __valueSize));
+            this->shim().AddDoubleArray(*reinterpret_cast<const hstring *>(&name), array_view<const double>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1571,7 +1571,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddDoubleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const double>(value, value + __valueSize), format);
+            this->shim().AddDoubleArray(*reinterpret_cast<const hstring *>(&name), array_view<const double>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1585,7 +1585,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddDoubleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const double>(value, value + __valueSize), format, tags);
+            this->shim().AddDoubleArray(*reinterpret_cast<const hstring *>(&name), array_view<const double>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1641,7 +1641,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddChar16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const wchar_t>(value, value + __valueSize));
+            this->shim().AddChar16Array(*reinterpret_cast<const hstring *>(&name), array_view<const wchar_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1655,7 +1655,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddChar16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const wchar_t>(value, value + __valueSize), format);
+            this->shim().AddChar16Array(*reinterpret_cast<const hstring *>(&name), array_view<const wchar_t>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1669,7 +1669,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddChar16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const wchar_t>(value, value + __valueSize), format, tags);
+            this->shim().AddChar16Array(*reinterpret_cast<const hstring *>(&name), array_view<const wchar_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1725,7 +1725,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddBooleanArray(*reinterpret_cast<const hstring *>(&name), array_ref<const bool>(value, value + __valueSize));
+            this->shim().AddBooleanArray(*reinterpret_cast<const hstring *>(&name), array_view<const bool>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1739,7 +1739,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddBooleanArray(*reinterpret_cast<const hstring *>(&name), array_ref<const bool>(value, value + __valueSize), format);
+            this->shim().AddBooleanArray(*reinterpret_cast<const hstring *>(&name), array_view<const bool>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1753,7 +1753,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddBooleanArray(*reinterpret_cast<const hstring *>(&name), array_ref<const bool>(value, value + __valueSize), format, tags);
+            this->shim().AddBooleanArray(*reinterpret_cast<const hstring *>(&name), array_view<const bool>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -1896,7 +1896,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddGuidArray(*reinterpret_cast<const hstring *>(&name), array_ref<const GUID>(value, value + __valueSize));
+            this->shim().AddGuidArray(*reinterpret_cast<const hstring *>(&name), array_view<const GUID>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1910,7 +1910,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddGuidArray(*reinterpret_cast<const hstring *>(&name), array_ref<const GUID>(value, value + __valueSize), format);
+            this->shim().AddGuidArray(*reinterpret_cast<const hstring *>(&name), array_view<const GUID>(value, value + __valueSize), format);
             return S_OK;
         }
         catch (...)
@@ -1924,7 +1924,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddGuidArray(*reinterpret_cast<const hstring *>(&name), array_ref<const GUID>(value, value + __valueSize), format, tags);
+            this->shim().AddGuidArray(*reinterpret_cast<const hstring *>(&name), array_view<const GUID>(value, value + __valueSize), format, tags);
             return S_OK;
         }
         catch (...)
@@ -3082,17 +3082,17 @@ template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_view name, u
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_ref<const uint8_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_view<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_ref<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_view<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3112,17 +3112,17 @@ template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_view name, i
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_ref<const int16_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_view<const int16_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_view<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_ref<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_view<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3142,17 +3142,17 @@ template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_view name, 
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_ref<const uint16_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_view<const uint16_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_view<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_ref<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_view<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3172,17 +3172,17 @@ template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_view name, i
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_ref<const int32_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_view<const int32_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_view<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_ref<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_view<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3202,17 +3202,17 @@ template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_view name, 
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_ref<const uint32_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_view<const uint32_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_view<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_ref<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_view<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3232,17 +3232,17 @@ template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_view name, i
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_ref<const int64_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_view<const int64_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_view<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_ref<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_view<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3262,17 +3262,17 @@ template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_view name, 
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_ref<const uint64_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_view<const uint64_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_view<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_ref<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_view<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3292,17 +3292,17 @@ template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_view name, 
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleWithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_ref<const float> value) const
+template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_view<const float> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_view<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_ref<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_view<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3322,17 +3322,17 @@ template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_view name, 
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleWithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_ref<const double> value) const
+template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_view<const double> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_view<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_ref<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_view<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3352,17 +3352,17 @@ template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_view name, 
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16WithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_ref<const wchar_t> value) const
+template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_view<const wchar_t> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16Array(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_view<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16ArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_ref<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_view<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3382,17 +3382,17 @@ template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_view name,
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanWithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_ref<const bool> value) const
+template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_view<const bool> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_view<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_ref<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_view<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3412,17 +3412,17 @@ template <typename D> void impl_ILoggingFields<D>::AddString(hstring_view name, 
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_ref<const hstring> value) const
+template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_view<const hstring> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_view<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_ref<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_view<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3442,17 +3442,17 @@ template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_view name, GU
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidWithFormatAndTags(get(name), value, format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_ref<const GUID> value) const
+template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_view<const GUID> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_view<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_ref<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_view<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3472,17 +3472,17 @@ template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_view name
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_ref<const Windows::Foundation::DateTime> value) const
+template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_view<const Windows::Foundation::DateTime> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_view<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_ref<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_view<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3502,17 +3502,17 @@ template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_view name
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_ref<const Windows::Foundation::TimeSpan> value) const
+template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_view<const Windows::Foundation::TimeSpan> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_view<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_ref<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_view<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3532,17 +3532,17 @@ template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_view name, c
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_ref<const Windows::Foundation::Point> value) const
+template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_view<const Windows::Foundation::Point> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_view<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_ref<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_view<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3562,17 +3562,17 @@ template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_view name, co
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_ref<const Windows::Foundation::Size> value) const
+template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_view<const Windows::Foundation::Size> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_view<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_ref<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_view<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }
@@ -3592,17 +3592,17 @@ template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_view name, co
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectWithFormatAndTags(get(name), get(value), format, tags));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_ref<const Windows::Foundation::Rect> value) const
+template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_view<const Windows::Foundation::Rect> value) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArray(get(name), value.size(), get(value)));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
+template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_view<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArrayWithFormat(get(name), value.size(), get(value), format));
 }
 
-template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_ref<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
+template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_view<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
     check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
 }

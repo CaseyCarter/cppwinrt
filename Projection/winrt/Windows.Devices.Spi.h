@@ -329,7 +329,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
+            this->shim().Write(array_view<const uint8_t>(buffer, buffer + __bufferSize));
             return S_OK;
         }
         catch (...)
@@ -357,7 +357,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().TransferSequential(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
+            this->shim().TransferSequential(array_view<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
         catch (...)
@@ -371,7 +371,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().TransferFullDuplex(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
+            this->shim().TransferFullDuplex(array_view<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
         catch (...)
@@ -607,22 +607,22 @@ template <typename D> Windows::Devices::Spi::SpiConnectionSettings impl_ISpiDevi
     return value;
 }
 
-template <typename D> void impl_ISpiDevice<D>::Write(array_ref<const uint8_t> buffer) const
+template <typename D> void impl_ISpiDevice<D>::Write(array_view<const uint8_t> buffer) const
 {
     check_hresult(WINRT_SHIM(ISpiDevice)->abi_Write(buffer.size(), get(buffer)));
 }
 
-template <typename D> void impl_ISpiDevice<D>::Read(array_ref<uint8_t> buffer) const
+template <typename D> void impl_ISpiDevice<D>::Read(array_view<uint8_t> buffer) const
 {
     check_hresult(WINRT_SHIM(ISpiDevice)->abi_Read(buffer.size(), get(buffer)));
 }
 
-template <typename D> void impl_ISpiDevice<D>::TransferSequential(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const
+template <typename D> void impl_ISpiDevice<D>::TransferSequential(array_view<const uint8_t> writeBuffer, array_view<uint8_t> readBuffer) const
 {
     check_hresult(WINRT_SHIM(ISpiDevice)->abi_TransferSequential(writeBuffer.size(), get(writeBuffer), readBuffer.size(), get(readBuffer)));
 }
 
-template <typename D> void impl_ISpiDevice<D>::TransferFullDuplex(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const
+template <typename D> void impl_ISpiDevice<D>::TransferFullDuplex(array_view<const uint8_t> writeBuffer, array_view<uint8_t> readBuffer) const
 {
     check_hresult(WINRT_SHIM(ISpiDevice)->abi_TransferFullDuplex(writeBuffer.size(), get(writeBuffer), readBuffer.size(), get(readBuffer)));
 }

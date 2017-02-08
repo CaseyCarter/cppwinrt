@@ -61,7 +61,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *buffer = detach(this->shim().CreateFromByteArray(array_ref<const uint8_t>(value, value + __valueSize)));
+            *buffer = detach(this->shim().CreateFromByteArray(array_view<const uint8_t>(value, value + __valueSize)));
             return S_OK;
         }
         catch (...)
@@ -203,7 +203,7 @@ template <typename D> uint32_t impl_ICryptographicBufferStatics<D>::GenerateRand
     return value;
 }
 
-template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::CreateFromByteArray(array_ref<const uint8_t> value) const
+template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::CreateFromByteArray(array_view<const uint8_t> value) const
 {
     Windows::Storage::Streams::IBuffer buffer;
     check_hresult(WINRT_SHIM(ICryptographicBufferStatics)->abi_CreateFromByteArray(value.size(), get(value), put(buffer)));
@@ -272,7 +272,7 @@ inline uint32_t CryptographicBuffer::GenerateRandomNumber()
     return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().GenerateRandomNumber();
 }
 
-inline Windows::Storage::Streams::IBuffer CryptographicBuffer::CreateFromByteArray(array_ref<const uint8_t> value)
+inline Windows::Storage::Streams::IBuffer CryptographicBuffer::CreateFromByteArray(array_view<const uint8_t> value)
 {
     return get_activation_factory<CryptographicBuffer, ICryptographicBufferStatics>().CreateFromByteArray(value);
 }

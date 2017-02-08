@@ -562,7 +562,7 @@ struct WINRT_EBO impl_IFileIOStatics
     Windows::Foundation::IAsyncAction AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncAction WriteBufferAsync(const Windows::Storage::IStorageFile & file, const Windows::Storage::Streams::IBuffer & buffer) const;
-    Windows::Foundation::IAsyncAction WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_ref<const uint8_t> buffer) const;
+    Windows::Foundation::IAsyncAction WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_view<const uint8_t> buffer) const;
 };
 
 template <typename D>
@@ -626,7 +626,7 @@ struct WINRT_EBO impl_IPathIOStatics
     Windows::Foundation::IAsyncAction AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ReadBufferAsync(hstring_view absolutePath) const;
     Windows::Foundation::IAsyncAction WriteBufferAsync(hstring_view absolutePath, const Windows::Storage::Streams::IBuffer & buffer) const;
-    Windows::Foundation::IAsyncAction WriteBytesAsync(hstring_view absolutePath, array_ref<const uint8_t> buffer) const;
+    Windows::Foundation::IAsyncAction WriteBytesAsync(hstring_view absolutePath, array_view<const uint8_t> buffer) const;
 };
 
 template <typename D>

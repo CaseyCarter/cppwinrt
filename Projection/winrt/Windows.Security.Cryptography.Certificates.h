@@ -875,7 +875,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Thumbprint(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().Thumbprint(array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1407,7 +1407,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().CurveParameters(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().CurveParameters(array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -3126,7 +3126,7 @@ template <typename D> com_array<uint8_t> impl_ICertificateRequestProperties3<D>:
     return value;
 }
 
-template <typename D> void impl_ICertificateRequestProperties3<D>::CurveParameters(array_ref<const uint8_t> value) const
+template <typename D> void impl_ICertificateRequestProperties3<D>::CurveParameters(array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_CurveParameters(value.size(), get(value)));
 }
@@ -3600,7 +3600,7 @@ template <typename D> com_array<uint8_t> impl_ICertificateQuery<D>::Thumbprint()
     return value;
 }
 
-template <typename D> void impl_ICertificateQuery<D>::Thumbprint(array_ref<const uint8_t> value) const
+template <typename D> void impl_ICertificateQuery<D>::Thumbprint(array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(ICertificateQuery)->put_Thumbprint(value.size(), get(value)));
 }

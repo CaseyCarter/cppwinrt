@@ -94,7 +94,7 @@ static void WriteProducerForwardArgument(Output & out, Parameter const & param)
         else if (param.IsArray())
         {
             Write(out,
-                  "array_ref<const %>(%, % + __%Size)",
+                  "array_view<const %>(%, % + __%Size)",
                   param.ModernType(),
                   param.Name,
                   param.Name,
@@ -422,7 +422,7 @@ static void WriteParameter(Output & out, Parameter const & param)
     {
         if (param.IsIn())
         {
-            Write(out, "array_ref<const %> %", param.ModernType(), param.Name);
+            Write(out, "array_view<const %> %", param.ModernType(), param.Name);
         }
         else if (param.IsOut())
         {
@@ -432,7 +432,7 @@ static void WriteParameter(Output & out, Parameter const & param)
             }
             else
             {
-                Write(out, "array_ref<%> %", param.ModernType(), param.Name);
+                Write(out, "array_view<%> %", param.ModernType(), param.Name);
             }
         }
     }

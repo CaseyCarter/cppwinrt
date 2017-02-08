@@ -214,7 +214,7 @@ struct impl_IIterator
     T Current() const;
     bool HasCurrent() const;
     bool MoveNext() const;
-    uint32_t GetMany(array_ref<T> values) const;
+    uint32_t GetMany(array_view<T> values) const;
 
     auto & operator++()
     {
@@ -261,7 +261,7 @@ struct impl_IVectorView
     T GetAt(const uint32_t index) const;
     uint32_t Size() const;
     bool IndexOf(const T & value, uint32_t & index) const;
-    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const;
+    uint32_t GetMany(uint32_t startIndex, array_view<T> values) const;
 };
 
 template <typename D, typename T>
@@ -277,8 +277,8 @@ struct impl_IVector
     void Append(const T & value) const;
     void RemoveAtEnd() const;
     void Clear() const;
-    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const;
-    void ReplaceAll(array_ref<const T> value) const;
+    uint32_t GetMany(uint32_t startIndex, array_view<T> values) const;
+    void ReplaceAll(array_view<const T> value) const;
 };
 
 template <typename D, typename K, typename V>
@@ -733,7 +733,7 @@ bool impl_IIterator<D, T>::MoveNext() const
 }
 
 template <typename D, typename T>
-uint32_t impl_IIterator<D, T>::GetMany(array_ref<T> values) const
+uint32_t impl_IIterator<D, T>::GetMany(array_view<T> values) const
 {
     uint32_t actual = 0;
     check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_GetMany(values.size(), get(values), &actual));
@@ -789,7 +789,7 @@ bool impl_IVectorView<D, T>::IndexOf(const T & value, uint32_t & index) const
 }
 
 template <typename D, typename T>
-uint32_t impl_IVectorView<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) const
+uint32_t impl_IVectorView<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
 {
     uint32_t actual = 0;
     check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get(values), &actual));
@@ -865,7 +865,7 @@ void impl_IVector<D, T>::Clear() const
 }
 
 template <typename D, typename T>
-uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) const
+uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
 {
     uint32_t actual = 0;
     check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get(values), &actual));
@@ -873,7 +873,7 @@ uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) c
 }
 
 template <typename D, typename T>
-void impl_IVector<D, T>::ReplaceAll(array_ref<const T> value) const
+void impl_IVector<D, T>::ReplaceAll(array_view<const T> value) const
 {
     check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_ReplaceAll(value.size(), get(value)));
 }

@@ -468,13 +468,13 @@ struct WINRT_EBO impl_INDCustomData
 template <typename D>
 struct WINRT_EBO impl_INDCustomDataFactory
 {
-    Windows::Media::Protection::PlayReady::NDCustomData CreateInstance(array_ref<const uint8_t> customDataTypeIDBytes, array_ref<const uint8_t> customDataBytes) const;
+    Windows::Media::Protection::PlayReady::NDCustomData CreateInstance(array_view<const uint8_t> customDataTypeIDBytes, array_view<const uint8_t> customDataBytes) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDDownloadEngine
 {
-    void Open(const Windows::Foundation::Uri & uri, array_ref<const uint8_t> sessionIDBytes) const;
+    void Open(const Windows::Foundation::Uri & uri, array_view<const uint8_t> sessionIDBytes) const;
     void Pause() const;
     void Resume() const;
     void Close() const;
@@ -489,9 +489,9 @@ template <typename D>
 struct WINRT_EBO impl_INDDownloadEngineNotifier
 {
     void OnStreamOpened() const;
-    void OnPlayReadyObjectReceived(array_ref<const uint8_t> dataBytes) const;
+    void OnPlayReadyObjectReceived(array_view<const uint8_t> dataBytes) const;
     void OnContentIDReceived(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
-    void OnDataReceived(array_ref<const uint8_t> dataBytes, uint32_t bytesReceived) const;
+    void OnDataReceived(array_view<const uint8_t> dataBytes, uint32_t bytesReceived) const;
     void OnEndOfStream() const;
     void OnNetworkError() const;
 };
@@ -514,7 +514,7 @@ struct WINRT_EBO impl_INDLicenseFetchDescriptor
 template <typename D>
 struct WINRT_EBO impl_INDLicenseFetchDescriptorFactory
 {
-    Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor CreateInstance(Windows::Media::Protection::PlayReady::NDContentIDType contentIDType, array_ref<const uint8_t> contentIDBytes, const Windows::Media::Protection::PlayReady::INDCustomData & licenseFetchChallengeCustomData) const;
+    Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor CreateInstance(Windows::Media::Protection::PlayReady::NDContentIDType contentIDType, array_view<const uint8_t> contentIDBytes, const Windows::Media::Protection::PlayReady::INDCustomData & licenseFetchChallengeCustomData) const;
 };
 
 template <typename D>
@@ -526,10 +526,10 @@ struct WINRT_EBO impl_INDLicenseFetchResult
 template <typename D>
 struct WINRT_EBO impl_INDMessenger
 {
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendRegistrationRequestAsync(array_ref<const uint8_t> sessionIDBytes, array_ref<const uint8_t> challengeDataBytes) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionStartAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_ref<const uint8_t> transmitterChannelBytes, array_ref<const uint8_t> sessionIDBytes, array_ref<const uint8_t> challengeDataBytes) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionResponseAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_ref<const uint8_t> transmitterChannelBytes, array_ref<const uint8_t> sessionIDBytes, array_ref<const uint8_t> responseDataBytes) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendLicenseFetchRequestAsync(array_ref<const uint8_t> sessionIDBytes, array_ref<const uint8_t> challengeDataBytes) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendRegistrationRequestAsync(array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> challengeDataBytes) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionStartAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_view<const uint8_t> transmitterChannelBytes, array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> challengeDataBytes) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionResponseAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_view<const uint8_t> transmitterChannelBytes, array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> responseDataBytes) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendLicenseFetchRequestAsync(array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> challengeDataBytes) const;
 };
 
 template <typename D>
@@ -568,7 +568,7 @@ struct WINRT_EBO impl_INDStorageFileHelper
 template <typename D>
 struct WINRT_EBO impl_INDStreamParser
 {
-    void ParseData(array_ref<const uint8_t> dataBytes) const;
+    void ParseData(array_view<const uint8_t> dataBytes) const;
     uint32_t GetStreamInformation(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, Windows::Media::Protection::PlayReady::NDMediaStreamType & streamType) const;
     void BeginOfStream() const;
     void EndOfStream() const;
@@ -580,8 +580,8 @@ struct WINRT_EBO impl_INDStreamParserNotifier
 {
     void OnContentIDReceived(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
     void OnMediaStreamDescriptorCreated(const Windows::Foundation::Collections::IVector<Windows::Media::Core::AudioStreamDescriptor> & audioStreamDescriptors, const Windows::Foundation::Collections::IVector<Windows::Media::Core::VideoStreamDescriptor> & videoStreamDescriptors) const;
-    void OnSampleParsed(uint32_t streamID, Windows::Media::Protection::PlayReady::NDMediaStreamType streamType, const Windows::Media::Core::MediaStreamSample & streamSample, int64_t pts, Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ccFormat, array_ref<const uint8_t> ccDataBytes) const;
-    void OnBeginSetupDecryptor(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, GUID keyID, array_ref<const uint8_t> proBytes) const;
+    void OnSampleParsed(uint32_t streamID, Windows::Media::Protection::PlayReady::NDMediaStreamType streamType, const Windows::Media::Core::MediaStreamSample & streamSample, int64_t pts, Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ccFormat, array_view<const uint8_t> ccDataBytes) const;
+    void OnBeginSetupDecryptor(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, GUID keyID, array_view<const uint8_t> proBytes) const;
 };
 
 template <typename D>
@@ -631,15 +631,15 @@ struct WINRT_EBO impl_IPlayReadyContentHeader2
 template <typename D>
 struct WINRT_EBO impl_IPlayReadyContentHeaderFactory
 {
-    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromWindowsMediaDrmHeader(array_ref<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) const;
+    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromWindowsMediaDrmHeader(array_view<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) const;
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromComponents(GUID contentKeyId, hstring_view contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) const;
-    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromPlayReadyHeader(array_ref<const uint8_t> headerBytes) const;
+    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromPlayReadyHeader(array_view<const uint8_t> headerBytes) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayReadyContentHeaderFactory2
 {
-    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromComponents2(uint32_t dwFlags, array_ref<const GUID> contentKeyIds, array_ref<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) const;
+    Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromComponents2(uint32_t dwFlags, array_view<const GUID> contentKeyIds, array_view<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) const;
 };
 
 template <typename D>
@@ -751,7 +751,7 @@ template <typename D>
 struct WINRT_EBO impl_IPlayReadyMeteringReportServiceRequest
 {
     com_array<uint8_t> MeteringCertificate() const;
-    void MeteringCertificate(array_ref<const uint8_t> meteringCertBytes) const;
+    void MeteringCertificate(array_view<const uint8_t> meteringCertBytes) const;
 };
 
 template <typename D>
@@ -762,7 +762,7 @@ struct WINRT_EBO impl_IPlayReadyRevocationServiceRequest
 template <typename D>
 struct WINRT_EBO impl_IPlayReadySecureStopIterableFactory
 {
-    Windows::Media::Protection::PlayReady::PlayReadySecureStopIterable CreateInstance(array_ref<const uint8_t> publisherCertBytes) const;
+    Windows::Media::Protection::PlayReady::PlayReadySecureStopIterable CreateInstance(array_view<const uint8_t> publisherCertBytes) const;
 };
 
 template <typename D>
@@ -778,8 +778,8 @@ struct WINRT_EBO impl_IPlayReadySecureStopServiceRequest
 template <typename D>
 struct WINRT_EBO impl_IPlayReadySecureStopServiceRequestFactory
 {
-    Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest CreateInstance(array_ref<const uint8_t> publisherCertBytes) const;
-    Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest CreateInstanceFromSessionID(GUID sessionID, array_ref<const uint8_t> publisherCertBytes) const;
+    Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest CreateInstance(array_view<const uint8_t> publisherCertBytes) const;
+    Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest CreateInstanceFromSessionID(GUID sessionID, array_view<const uint8_t> publisherCertBytes) const;
 };
 
 template <typename D>
@@ -793,7 +793,7 @@ struct WINRT_EBO impl_IPlayReadyServiceRequest
     Windows::Foundation::IAsyncAction BeginServiceRequest() const;
     Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest NextServiceRequest() const;
     Windows::Media::Protection::PlayReady::PlayReadySoapMessage GenerateManualEnablingChallenge() const;
-    HRESULT ProcessManualEnablingResponse(array_ref<const uint8_t> responseBytes) const;
+    HRESULT ProcessManualEnablingResponse(array_view<const uint8_t> responseBytes) const;
 };
 
 template <typename D>

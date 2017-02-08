@@ -518,10 +518,7 @@ struct not_specialized_type
 template <typename T>
 struct not_specialized
 {
-    static_assert(not_specialized_type<T>::value,
-        "This generic interface has not been specialized. "
-        "Each distinct instantiation of this generic interface requires a corresponding UUID. "
-        "This UUID must be provided by a template specialization.");
+    static_assert(not_specialized_type<T>::value, "This generic interface has not been specialized.");
 };
 
 }
@@ -1883,7 +1880,7 @@ auto make_array_iterator(T * data, uint32_t, uint32_t index = 0) noexcept
 }
 
 template <typename T>
-struct array_ref
+struct array_view
 {
     using value_type = T;
     using size_type = uint32_t;
@@ -1896,40 +1893,40 @@ struct array_ref
     using reverse_iterator = std::reverse_iterator<iterator>;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-    array_ref() noexcept = default;
+    array_view() noexcept = default;
 
-    array_ref(pointer first, pointer last) noexcept :
+    array_view(pointer first, pointer last) noexcept :
         m_data(first),
         m_size(static_cast<size_type>(last - first))
     {}
 
-    array_ref(std::initializer_list<value_type> value) noexcept :
-        array_ref(value.begin(), static_cast<size_type>(value.size()))
+    array_view(std::initializer_list<value_type> value) noexcept :
+        array_view(value.begin(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C, size_type N>
-    array_ref(C(&value)[N]) noexcept :
-        array_ref(value, N)
+    array_view(C(&value)[N]) noexcept :
+        array_view(value, N)
     {}
 
     template <typename C>
-    array_ref(std::vector<C> & value) noexcept :
-        array_ref(value.data(), static_cast<size_type>(value.size()))
+    array_view(std::vector<C> & value) noexcept :
+        array_view(value.data(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C>
-    array_ref(const std::vector<C> & value) noexcept :
-        array_ref(value.data(), static_cast<size_type>(value.size()))
+    array_view(const std::vector<C> & value) noexcept :
+        array_view(value.data(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C, size_type N>
-    array_ref(std::array<C, N> & value) noexcept :
-        array_ref(value.data(), static_cast<size_type>(value.size()))
+    array_view(std::array<C, N> & value) noexcept :
+        array_view(value.data(), static_cast<size_type>(value.size()))
     {}
 
     template <typename C, size_type N>
-    array_ref(const std::array<C, N> & value) noexcept :
-        array_ref(value.data(), static_cast<size_type>(value.size()))
+    array_view(const std::array<C, N> & value) noexcept :
+        array_view(value.data(), static_cast<size_type>(value.size()))
     {}
 
     reference operator[](const size_type pos) noexcept
@@ -2070,7 +2067,7 @@ struct array_ref
 
 protected:
 
-    array_ref(pointer data, uint32_t size) :
+    array_view(pointer data, uint32_t size) :
         m_data(data),
         m_size(size)
     {}
@@ -2080,18 +2077,18 @@ protected:
 };
 
 template <typename T>
-struct com_array : array_ref<T>
+struct com_array : array_view<T>
 {
-    using typename array_ref<T>::value_type;
-    using typename array_ref<T>::size_type;
-    using typename array_ref<T>::reference;
-    using typename array_ref<T>::const_reference;
-    using typename array_ref<T>::pointer;
-    using typename array_ref<T>::const_pointer;
-    using typename array_ref<T>::iterator;
-    using typename array_ref<T>::const_iterator;
-    using typename array_ref<T>::reverse_iterator;
-    using typename array_ref<T>::const_reverse_iterator;
+    using typename array_view<T>::value_type;
+    using typename array_view<T>::size_type;
+    using typename array_view<T>::reference;
+    using typename array_view<T>::const_reference;
+    using typename array_view<T>::pointer;
+    using typename array_view<T>::const_pointer;
+    using typename array_view<T>::iterator;
+    using typename array_view<T>::const_iterator;
+    using typename array_view<T>::reverse_iterator;
+    using typename array_view<T>::const_reverse_iterator;
 
     com_array(const com_array &) = delete;
     com_array & operator=(const com_array &) = delete;
@@ -2133,7 +2130,7 @@ struct com_array : array_ref<T>
     {}
 
     com_array(com_array && other) noexcept :
-        array_ref<T>(other.m_data, other.m_size)
+        array_view<T>(other.m_data, other.m_size)
     {
         other.m_data = nullptr;
         other.m_size = 0;
@@ -2227,21 +2224,21 @@ private:
 };
 
 template <typename T>
-bool operator==(const array_ref<T> & left, const array_ref<T> & right) noexcept
+bool operator==(const array_view<T> & left, const array_view<T> & right) noexcept
 {
     return std::equal(left.begin(), left.end(), right.begin(), right.end());
 }
 
 template <typename T>
-bool operator<(const array_ref<T> & left, const array_ref<T> & right) noexcept
+bool operator<(const array_view<T> & left, const array_view<T> & right) noexcept
 {
     return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end());
 }
 
-template <typename T> bool operator!=(const array_ref<T> & left, const array_ref<T> & right) noexcept { return !(left == right); }
-template <typename T> bool operator>(const array_ref<T> & left, const array_ref<T> & right) noexcept { return right < left; }
-template <typename T> bool operator<=(const array_ref<T> & left, const array_ref<T> & right) noexcept { return !(right < left); }
-template <typename T> bool operator>=(const array_ref<T> & left, const array_ref<T> & right) noexcept { return !(left < right); }
+template <typename T> bool operator!=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(left == right); }
+template <typename T> bool operator>(const array_view<T> & left, const array_view<T> & right) noexcept { return right < left; }
+template <typename T> bool operator<=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(right < left); }
+template <typename T> bool operator>=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(left < right); }
 
 namespace impl {
 
@@ -2336,9 +2333,9 @@ struct accessors<com_array<T>>
 };
 
 template <typename T>
-struct accessors<array_ref<T>>
+struct accessors<array_view<T>>
 {
-    static auto get(array_ref<T> object) noexcept
+    static auto get(array_view<T> object) noexcept
     {
         return reinterpret_cast<abi_arg_out<std::remove_const_t<T>>>(const_cast<std::remove_const_t<T> *>(object.data()));
     }
@@ -4232,7 +4229,7 @@ struct WINRT_EBO TypedEventHandler : IUnknown
 
 namespace ABI::Windows::Foundation {
 
-template <typename T> struct IReference : impl::not_specialized<IReference<T>> {};
+template <typename T> struct IReference;
 
 template <typename T>
 struct __declspec(novtable) impl_IReference : IInspectable
@@ -4518,7 +4515,7 @@ struct impl_IIterator
     T Current() const;
     bool HasCurrent() const;
     bool MoveNext() const;
-    uint32_t GetMany(array_ref<T> values) const;
+    uint32_t GetMany(array_view<T> values) const;
 
     auto & operator++()
     {
@@ -4565,7 +4562,7 @@ struct impl_IVectorView
     T GetAt(const uint32_t index) const;
     uint32_t Size() const;
     bool IndexOf(const T & value, uint32_t & index) const;
-    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const;
+    uint32_t GetMany(uint32_t startIndex, array_view<T> values) const;
 };
 
 template <typename D, typename T>
@@ -4581,8 +4578,8 @@ struct impl_IVector
     void Append(const T & value) const;
     void RemoveAtEnd() const;
     void Clear() const;
-    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const;
-    void ReplaceAll(array_ref<const T> value) const;
+    uint32_t GetMany(uint32_t startIndex, array_view<T> values) const;
+    void ReplaceAll(array_view<const T> value) const;
 };
 
 template <typename D, typename K, typename V>
@@ -5037,7 +5034,7 @@ bool impl_IIterator<D, T>::MoveNext() const
 }
 
 template <typename D, typename T>
-uint32_t impl_IIterator<D, T>::GetMany(array_ref<T> values) const
+uint32_t impl_IIterator<D, T>::GetMany(array_view<T> values) const
 {
     uint32_t actual = 0;
     check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_GetMany(values.size(), get(values), &actual));
@@ -5093,7 +5090,7 @@ bool impl_IVectorView<D, T>::IndexOf(const T & value, uint32_t & index) const
 }
 
 template <typename D, typename T>
-uint32_t impl_IVectorView<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) const
+uint32_t impl_IVectorView<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
 {
     uint32_t actual = 0;
     check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get(values), &actual));
@@ -5169,7 +5166,7 @@ void impl_IVector<D, T>::Clear() const
 }
 
 template <typename D, typename T>
-uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) const
+uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
 {
     uint32_t actual = 0;
     check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get(values), &actual));
@@ -5177,7 +5174,7 @@ uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) c
 }
 
 template <typename D, typename T>
-void impl_IVector<D, T>::ReplaceAll(array_ref<const T> value) const
+void impl_IVector<D, T>::ReplaceAll(array_view<const T> value) const
 {
     check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_ReplaceAll(value.size(), get(value)));
 }
@@ -6180,7 +6177,7 @@ namespace impl
             return m_storage[index];
         }
 
-        uint32_t GetMany(const uint32_t startIndex, array_ref<T> values) const
+        uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
         {
             if (startIndex >= m_storage.size())
             {
@@ -6245,7 +6242,7 @@ namespace impl
             m_storage.pop_back();
         }
 
-        void ReplaceAll(array_ref<const T> value)
+        void ReplaceAll(array_view<const T> value)
         {
             m_version.increment();
             m_storage.assign(value.begin(), value.end());
@@ -6298,7 +6295,7 @@ namespace impl
             return m_storage[index];
         }
 
-        uint32_t GetMany(const uint32_t startIndex, array_ref<T> values) const
+        uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
         {
             if (startIndex >= m_storage.size())
             {
@@ -6357,7 +6354,7 @@ namespace impl
             return m_storage->GetAt(index);
         }
 
-        uint32_t GetMany(const uint32_t startIndex, array_ref<T> values) const
+        uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
         {
             version_validator.validate();
             return m_storage->GetMany(startIndex, values);
@@ -6445,7 +6442,7 @@ namespace impl
             return m_current != m_end;
         }
 
-        uint32_t GetMany(array_ref<T> values)
+        uint32_t GetMany(array_view<T> values)
         {
             version_validator.validate();
 
@@ -6504,7 +6501,7 @@ namespace impl
             return HasCurrent();
         }
 
-        uint32_t GetMany(array_ref<T> values)
+        uint32_t GetMany(array_view<T> values)
         {
             uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
 

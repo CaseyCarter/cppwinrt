@@ -211,7 +211,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
+            this->shim().Write(array_view<const uint8_t>(buffer, buffer + __bufferSize));
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().WritePartial(array_ref<const uint8_t>(buffer, buffer + __bufferSize)));
+            *result = detach(this->shim().WritePartial(array_view<const uint8_t>(buffer, buffer + __bufferSize)));
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().WriteRead(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
+            this->shim().WriteRead(array_view<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
         catch (...)
@@ -281,7 +281,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().WriteReadPartial(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer));
+            *result = detach(this->shim().WriteReadPartial(array_view<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer));
             return S_OK;
         }
         catch (...)
@@ -443,36 +443,36 @@ template <typename D> Windows::Devices::I2c::I2cConnectionSettings impl_II2cDevi
     return value;
 }
 
-template <typename D> void impl_II2cDevice<D>::Write(array_ref<const uint8_t> buffer) const
+template <typename D> void impl_II2cDevice<D>::Write(array_view<const uint8_t> buffer) const
 {
     check_hresult(WINRT_SHIM(II2cDevice)->abi_Write(buffer.size(), get(buffer)));
 }
 
-template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D>::WritePartial(array_ref<const uint8_t> buffer) const
+template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D>::WritePartial(array_view<const uint8_t> buffer) const
 {
     Windows::Devices::I2c::I2cTransferResult result {};
     check_hresult(WINRT_SHIM(II2cDevice)->abi_WritePartial(buffer.size(), get(buffer), put(result)));
     return result;
 }
 
-template <typename D> void impl_II2cDevice<D>::Read(array_ref<uint8_t> buffer) const
+template <typename D> void impl_II2cDevice<D>::Read(array_view<uint8_t> buffer) const
 {
     check_hresult(WINRT_SHIM(II2cDevice)->abi_Read(buffer.size(), get(buffer)));
 }
 
-template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D>::ReadPartial(array_ref<uint8_t> buffer) const
+template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D>::ReadPartial(array_view<uint8_t> buffer) const
 {
     Windows::Devices::I2c::I2cTransferResult result {};
     check_hresult(WINRT_SHIM(II2cDevice)->abi_ReadPartial(buffer.size(), get(buffer), put(result)));
     return result;
 }
 
-template <typename D> void impl_II2cDevice<D>::WriteRead(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const
+template <typename D> void impl_II2cDevice<D>::WriteRead(array_view<const uint8_t> writeBuffer, array_view<uint8_t> readBuffer) const
 {
     check_hresult(WINRT_SHIM(II2cDevice)->abi_WriteRead(writeBuffer.size(), get(writeBuffer), readBuffer.size(), get(readBuffer)));
 }
 
-template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D>::WriteReadPartial(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const
+template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D>::WriteReadPartial(array_view<const uint8_t> writeBuffer, array_view<uint8_t> readBuffer) const
 {
     Windows::Devices::I2c::I2cTransferResult result {};
     check_hresult(WINRT_SHIM(II2cDevice)->abi_WriteReadPartial(writeBuffer.size(), get(writeBuffer), readBuffer.size(), get(readBuffer), put(result)));

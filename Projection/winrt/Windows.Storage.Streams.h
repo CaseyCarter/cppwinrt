@@ -635,7 +635,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().WriteBytes(array_ref<const uint8_t>(value, value + __valueSize));
+            this->shim().WriteBytes(array_view<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
         catch (...)
@@ -1328,7 +1328,7 @@ template <typename D> uint8_t impl_IDataReader<D>::ReadByte() const
     return value;
 }
 
-template <typename D> void impl_IDataReader<D>::ReadBytes(array_ref<uint8_t> value) const
+template <typename D> void impl_IDataReader<D>::ReadBytes(array_view<uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(IDataReader)->abi_ReadBytes(value.size(), get(value)));
 }
@@ -1502,7 +1502,7 @@ template <typename D> void impl_IDataWriter<D>::WriteByte(uint8_t value) const
     check_hresult(WINRT_SHIM(IDataWriter)->abi_WriteByte(value));
 }
 
-template <typename D> void impl_IDataWriter<D>::WriteBytes(array_ref<const uint8_t> value) const
+template <typename D> void impl_IDataWriter<D>::WriteBytes(array_view<const uint8_t> value) const
 {
     check_hresult(WINRT_SHIM(IDataWriter)->abi_WriteBytes(value.size(), get(value)));
 }

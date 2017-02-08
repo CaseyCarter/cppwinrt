@@ -77,7 +77,7 @@ struct Iterator : implements<Iterator<T>,
         return ++i < v.Size();
     }
 
-    uint32_t GetMany(array_ref<T> values) const
+    uint32_t GetMany(array_view<T> values) const
     {
         return v.GetMany(i, values);
     }
@@ -184,7 +184,7 @@ struct Vector : implements<Vector<T>,
         v.clear();
     }
 
-    uint32_t GetMany(const uint32_t startIndex, array_ref<T> values) const
+    uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
     {
         if (v.size() <= startIndex)
         {
@@ -204,7 +204,7 @@ struct Vector : implements<Vector<T>,
         return actual;
     }
 
-    void ReplaceAll(array_ref<const T> value)
+    void ReplaceAll(array_view<const T> value)
     {
         v.assign(std::begin(value), std::end(value));
     }

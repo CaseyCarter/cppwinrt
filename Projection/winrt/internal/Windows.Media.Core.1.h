@@ -1007,11 +1007,11 @@ struct WINRT_EBO impl_IMediaStreamSample
 template <typename D>
 struct WINRT_EBO impl_IMediaStreamSampleProtectionProperties
 {
-    void SetKeyIdentifier(array_ref<const uint8_t> value) const;
+    void SetKeyIdentifier(array_view<const uint8_t> value) const;
     void GetKeyIdentifier(com_array<uint8_t> & value) const;
-    void SetInitializationVector(array_ref<const uint8_t> value) const;
+    void SetInitializationVector(array_view<const uint8_t> value) const;
     void GetInitializationVector(com_array<uint8_t> & value) const;
-    void SetSubSampleMapping(array_ref<const uint8_t> value) const;
+    void SetSubSampleMapping(array_view<const uint8_t> value) const;
     void GetSubSampleMapping(com_array<uint8_t> & value) const;
 };
 
@@ -1060,7 +1060,7 @@ struct WINRT_EBO impl_IMediaStreamSource
     Windows::Storage::FileProperties::VideoProperties VideoProperties() const;
     void Thumbnail(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
-    void AddProtectionKey(const Windows::Media::Core::IMediaStreamDescriptor & streamDescriptor, array_ref<const uint8_t> keyIdentifier, array_ref<const uint8_t> licenseData) const;
+    void AddProtectionKey(const Windows::Media::Core::IMediaStreamDescriptor & streamDescriptor, array_view<const uint8_t> keyIdentifier, array_view<const uint8_t> licenseData) const;
 };
 
 template <typename D>

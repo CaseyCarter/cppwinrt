@@ -78,12 +78,12 @@ template <typename D>
 struct WINRT_EBO impl_II2cDeviceProvider
 {
     hstring DeviceId() const;
-    void Write(array_ref<const uint8_t> buffer) const;
-    Windows::Devices::I2c::Provider::ProviderI2cTransferResult WritePartial(array_ref<const uint8_t> buffer) const;
-    void Read(array_ref<uint8_t> buffer) const;
-    Windows::Devices::I2c::Provider::ProviderI2cTransferResult ReadPartial(array_ref<uint8_t> buffer) const;
-    void WriteRead(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
-    Windows::Devices::I2c::Provider::ProviderI2cTransferResult WriteReadPartial(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
+    void Write(array_view<const uint8_t> buffer) const;
+    Windows::Devices::I2c::Provider::ProviderI2cTransferResult WritePartial(array_view<const uint8_t> buffer) const;
+    void Read(array_view<uint8_t> buffer) const;
+    Windows::Devices::I2c::Provider::ProviderI2cTransferResult ReadPartial(array_view<uint8_t> buffer) const;
+    void WriteRead(array_view<const uint8_t> writeBuffer, array_view<uint8_t> readBuffer) const;
+    Windows::Devices::I2c::Provider::ProviderI2cTransferResult WriteReadPartial(array_view<const uint8_t> writeBuffer, array_view<uint8_t> readBuffer) const;
 };
 
 template <typename D>

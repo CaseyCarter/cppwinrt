@@ -78,7 +78,7 @@ TEST_CASE("IVector,GetAt, out of bounds")
 TEST_CASE("IVector,GetMany, empty vector")
 {
     IVector<int> vector(std::vector<int>({}));
-    winrt::array_ref<int> output;
+    winrt::array_view<int> output;
 
     REQUIRE(vector.GetMany(0, output) == 0);
 }
@@ -452,7 +452,7 @@ TEST_CASE("IVector,ReplaceAll, vector is not empty, replace with a less number o
 TEST_CASE("IVector,ReplaceAll, vector is not empty, replace with no elements")
 {
     std::vector<int> stdVector{ 1, 2 };
-    winrt::array_ref<const int> elements;
+    winrt::array_view<const int> elements;
     IVector<int> vector(std::move(stdVector));
 
     vector.ReplaceAll(elements);
@@ -977,7 +977,7 @@ TEST_CASE("IVectorView, GetAt, invalid index")
 TEST_CASE("IVectorView,GetMany, empty vector")
 {
     IVectorView<int> view(std::vector<int>({}));
-    winrt::array_ref<int> output;
+    winrt::array_view<int> output;
 
     REQUIRE(view.GetMany(0, output) == 0);
 }
@@ -1216,7 +1216,7 @@ TEST_CASE("IVectorView, from Vector,GetMany, empty vector")
 {
     IVector<int> vector(std::vector<int>({}));
     IVectorView<int> view = vector.GetView();
-    winrt::array_ref<int> output;
+    winrt::array_view<int> output;
 
     REQUIRE(view.GetMany(0, output) == 0);
 }

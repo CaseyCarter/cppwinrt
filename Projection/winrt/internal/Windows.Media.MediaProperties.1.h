@@ -250,7 +250,7 @@ struct WINRT_EBO impl_IAudioEncodingPropertiesStatics
 template <typename D>
 struct WINRT_EBO impl_IAudioEncodingPropertiesWithFormatUserData
 {
-    void SetFormatUserData(array_ref<const uint8_t> value) const;
+    void SetFormatUserData(array_view<const uint8_t> value) const;
     void GetFormatUserData(com_array<uint8_t> & value) const;
 };
 
@@ -417,7 +417,7 @@ struct WINRT_EBO impl_IVideoEncodingProperties
 template <typename D>
 struct WINRT_EBO impl_IVideoEncodingProperties2
 {
-    void SetFormatUserData(array_ref<const uint8_t> value) const;
+    void SetFormatUserData(array_view<const uint8_t> value) const;
     void GetFormatUserData(com_array<uint8_t> & value) const;
     void ProfileId(int32_t value) const;
     int32_t ProfileId() const;
