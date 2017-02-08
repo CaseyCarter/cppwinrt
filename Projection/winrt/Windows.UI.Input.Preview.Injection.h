@@ -19,7 +19,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyOptions());
+            *value = detach_abi(this->shim().KeyOptions());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ScanCode());
+            *value = detach_abi(this->shim().ScanCode());
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VirtualKey());
+            *value = detach_abi(this->shim().VirtualKey());
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MouseOptions());
+            *value = detach_abi(this->shim().MouseOptions());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MouseData());
+            *value = detach_abi(this->shim().MouseData());
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeltaY());
+            *value = detach_abi(this->shim().DeltaY());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeltaX());
+            *value = detach_abi(this->shim().DeltaX());
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TimeOffsetInMilliseconds());
+            *value = detach_abi(this->shim().TimeOffsetInMilliseconds());
             return S_OK;
         }
         catch (...)
@@ -246,12 +246,12 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo> : produce_base<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
 {
-    HRESULT __stdcall get_PointerInfo(abi_arg_out<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo> value) noexcept override
+    HRESULT __stdcall get_PointerInfo(impl::abi_arg_out<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PointerInfo());
+            *value = detach_abi(this->shim().PointerInfo());
             return S_OK;
         }
         catch (...)
@@ -260,7 +260,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
         }
     }
 
-    HRESULT __stdcall put_PointerInfo(abi_arg_in<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo> value) noexcept override
+    HRESULT __stdcall put_PointerInfo(impl::abi_arg_in<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo> value) noexcept override
     {
         try
         {
@@ -279,7 +279,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PenButtons());
+            *value = detach_abi(this->shim().PenButtons());
             return S_OK;
         }
         catch (...)
@@ -307,7 +307,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PenParameters());
+            *value = detach_abi(this->shim().PenParameters());
             return S_OK;
         }
         catch (...)
@@ -335,7 +335,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Pressure());
+            *value = detach_abi(this->shim().Pressure());
             return S_OK;
         }
         catch (...)
@@ -363,7 +363,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Rotation());
+            *value = detach_abi(this->shim().Rotation());
             return S_OK;
         }
         catch (...)
@@ -391,7 +391,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TiltX());
+            *value = detach_abi(this->shim().TiltX());
             return S_OK;
         }
         catch (...)
@@ -419,7 +419,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TiltY());
+            *value = detach_abi(this->shim().TiltY());
             return S_OK;
         }
         catch (...)
@@ -446,12 +446,12 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo> : produce_base<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo>
 {
-    HRESULT __stdcall get_Contact(abi_arg_out<Windows::UI::Input::Preview::Injection::InjectedInputRectangle> value) noexcept override
+    HRESULT __stdcall get_Contact(impl::abi_arg_out<Windows::UI::Input::Preview::Injection::InjectedInputRectangle> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Contact());
+            *value = detach_abi(this->shim().Contact());
             return S_OK;
         }
         catch (...)
@@ -460,7 +460,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
         }
     }
 
-    HRESULT __stdcall put_Contact(abi_arg_in<Windows::UI::Input::Preview::Injection::InjectedInputRectangle> value) noexcept override
+    HRESULT __stdcall put_Contact(impl::abi_arg_in<Windows::UI::Input::Preview::Injection::InjectedInputRectangle> value) noexcept override
     {
         try
         {
@@ -479,7 +479,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Orientation());
+            *value = detach_abi(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -502,12 +502,12 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
         }
     }
 
-    HRESULT __stdcall get_PointerInfo(abi_arg_out<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo> value) noexcept override
+    HRESULT __stdcall get_PointerInfo(impl::abi_arg_out<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PointerInfo());
+            *value = detach_abi(this->shim().PointerInfo());
             return S_OK;
         }
         catch (...)
@@ -516,7 +516,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
         }
     }
 
-    HRESULT __stdcall put_PointerInfo(abi_arg_in<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo> value) noexcept override
+    HRESULT __stdcall put_PointerInfo(impl::abi_arg_in<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo> value) noexcept override
     {
         try
         {
@@ -535,7 +535,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Pressure());
+            *value = detach_abi(this->shim().Pressure());
             return S_OK;
         }
         catch (...)
@@ -563,7 +563,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TouchParameters());
+            *value = detach_abi(this->shim().TouchParameters());
             return S_OK;
         }
         catch (...)
@@ -590,7 +590,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : produce_base<D, Windows::UI::Input::Preview::Injection::IInputInjector>
 {
-    HRESULT __stdcall abi_InjectKeyboardInput(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo>> input) noexcept override
+    HRESULT __stdcall abi_InjectKeyboardInput(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo>> input) noexcept override
     {
         try
         {
@@ -604,7 +604,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
         }
     }
 
-    HRESULT __stdcall abi_InjectMouseInput(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo>> input) noexcept override
+    HRESULT __stdcall abi_InjectMouseInput(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo>> input) noexcept override
     {
         try
         {
@@ -632,7 +632,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
         }
     }
 
-    HRESULT __stdcall abi_InjectTouchInput(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo>> input) noexcept override
+    HRESULT __stdcall abi_InjectTouchInput(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo>> input) noexcept override
     {
         try
         {
@@ -674,7 +674,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
         }
     }
 
-    HRESULT __stdcall abi_InjectPenInput(abi_arg_in<Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo> input) noexcept override
+    HRESULT __stdcall abi_InjectPenInput(impl::abi_arg_in<Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo> input) noexcept override
     {
         try
         {
@@ -720,12 +720,12 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjectorStatics> : produce_base<D, Windows::UI::Input::Preview::Injection::IInputInjectorStatics>
 {
-    HRESULT __stdcall abi_TryCreate(abi_arg_out<Windows::UI::Input::Preview::Injection::IInputInjector> instance) noexcept override
+    HRESULT __stdcall abi_TryCreate(impl::abi_arg_out<Windows::UI::Input::Preview::Injection::IInputInjector> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach(this->shim().TryCreate());
+            *instance = detach_abi(this->shim().TryCreate());
             return S_OK;
         }
         catch (...)
@@ -743,13 +743,13 @@ namespace Windows::UI::Input::Preview::Injection {
 template <typename D> Windows::UI::Input::Preview::Injection::InjectedInputRectangle impl_IInjectedInputTouchInfo<D>::Contact() const
 {
     Windows::UI::Input::Preview::Injection::InjectedInputRectangle value {};
-    check_hresult(WINRT_SHIM(IInjectedInputTouchInfo)->get_Contact(put(value)));
+    check_hresult(WINRT_SHIM(IInjectedInputTouchInfo)->get_Contact(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IInjectedInputTouchInfo<D>::Contact(const Windows::UI::Input::Preview::Injection::InjectedInputRectangle & value) const
 {
-    check_hresult(WINRT_SHIM(IInjectedInputTouchInfo)->put_Contact(get(value)));
+    check_hresult(WINRT_SHIM(IInjectedInputTouchInfo)->put_Contact(get_abi(value)));
 }
 
 template <typename D> int32_t impl_IInjectedInputTouchInfo<D>::Orientation() const
@@ -767,13 +767,13 @@ template <typename D> void impl_IInjectedInputTouchInfo<D>::Orientation(int32_t 
 template <typename D> Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo impl_IInjectedInputTouchInfo<D>::PointerInfo() const
 {
     Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo value {};
-    check_hresult(WINRT_SHIM(IInjectedInputTouchInfo)->get_PointerInfo(put(value)));
+    check_hresult(WINRT_SHIM(IInjectedInputTouchInfo)->get_PointerInfo(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IInjectedInputTouchInfo<D>::PointerInfo(const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo & value) const
 {
-    check_hresult(WINRT_SHIM(IInjectedInputTouchInfo)->put_PointerInfo(get(value)));
+    check_hresult(WINRT_SHIM(IInjectedInputTouchInfo)->put_PointerInfo(get_abi(value)));
 }
 
 template <typename D> double impl_IInjectedInputTouchInfo<D>::Pressure() const
@@ -803,13 +803,13 @@ template <typename D> void impl_IInjectedInputTouchInfo<D>::TouchParameters(Wind
 template <typename D> Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo impl_IInjectedInputPenInfo<D>::PointerInfo() const
 {
     Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo value {};
-    check_hresult(WINRT_SHIM(IInjectedInputPenInfo)->get_PointerInfo(put(value)));
+    check_hresult(WINRT_SHIM(IInjectedInputPenInfo)->get_PointerInfo(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IInjectedInputPenInfo<D>::PointerInfo(const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo & value) const
 {
-    check_hresult(WINRT_SHIM(IInjectedInputPenInfo)->put_PointerInfo(get(value)));
+    check_hresult(WINRT_SHIM(IInjectedInputPenInfo)->put_PointerInfo(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Input::Preview::Injection::InjectedInputPenButtons impl_IInjectedInputPenInfo<D>::PenButtons() const
@@ -982,12 +982,12 @@ template <typename D> void impl_IInjectedInputKeyboardInfo<D>::VirtualKey(uint16
 
 template <typename D> void impl_IInputInjector<D>::InjectKeyboardInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> & input) const
 {
-    check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectKeyboardInput(get(input)));
+    check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectKeyboardInput(get_abi(input)));
 }
 
 template <typename D> void impl_IInputInjector<D>::InjectMouseInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> & input) const
 {
-    check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectMouseInput(get(input)));
+    check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectMouseInput(get_abi(input)));
 }
 
 template <typename D> void impl_IInputInjector<D>::InitializeTouchInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) const
@@ -997,7 +997,7 @@ template <typename D> void impl_IInputInjector<D>::InitializeTouchInjection(Wind
 
 template <typename D> void impl_IInputInjector<D>::InjectTouchInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> & input) const
 {
-    check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectTouchInput(get(input)));
+    check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectTouchInput(get_abi(input)));
 }
 
 template <typename D> void impl_IInputInjector<D>::UninitializeTouchInjection() const
@@ -1012,7 +1012,7 @@ template <typename D> void impl_IInputInjector<D>::InitializePenInjection(Window
 
 template <typename D> void impl_IInputInjector<D>::InjectPenInput(const Windows::UI::Input::Preview::Injection::InjectedInputPenInfo & input) const
 {
-    check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectPenInput(get(input)));
+    check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectPenInput(get_abi(input)));
 }
 
 template <typename D> void impl_IInputInjector<D>::UninitializePenInjection() const
@@ -1028,7 +1028,7 @@ template <typename D> void impl_IInputInjector<D>::InjectShortcut(Windows::UI::I
 template <typename D> Windows::UI::Input::Preview::Injection::InputInjector impl_IInputInjectorStatics<D>::TryCreate() const
 {
     Windows::UI::Input::Preview::Injection::InputInjector instance { nullptr };
-    check_hresult(WINRT_SHIM(IInputInjectorStatics)->abi_TryCreate(put(instance)));
+    check_hresult(WINRT_SHIM(IInputInjectorStatics)->abi_TryCreate(put_abi(instance)));
     return instance;
 }
 

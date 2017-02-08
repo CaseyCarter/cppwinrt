@@ -31,12 +31,12 @@ struct produce<D, Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice> : pro
 template <typename D>
 struct produce<D, Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> : produce_base<D, Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface>
 {
-    HRESULT __stdcall get_Description(abi_arg_out<Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription> value) noexcept override
+    HRESULT __stdcall get_Description(impl::abi_arg_out<Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Description());
+            *value = detach_abi(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -58,7 +58,7 @@ template <typename D> void impl_IDirect3DDevice<D>::Trim() const
 template <typename D> Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription impl_IDirect3DSurface<D>::Description() const
 {
     Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription value {};
-    check_hresult(WINRT_SHIM(IDirect3DSurface)->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IDirect3DSurface)->get_Description(put_abi(value)));
     return value;
 }
 

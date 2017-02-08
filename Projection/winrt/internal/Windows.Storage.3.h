@@ -13,7 +13,7 @@ template <typename H> struct impl_ApplicationDataSetVersionHandler : implements<
 {
     impl_ApplicationDataSetVersionHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Storage::ISetVersionRequest> setVersionRequest) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Storage::ISetVersionRequest> setVersionRequest) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_StreamedFileDataRequestedHandler : implements<
 {
     impl_StreamedFileDataRequestedHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Storage::Streams::IOutputStream> stream) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Storage::Streams::IOutputStream> stream) noexcept override
     {
         try
         {

@@ -13,7 +13,7 @@ template <typename H> struct impl_CredentialCommandCredentialDeletedHandler : im
 {
     impl_CredentialCommandCredentialDeletedHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::ApplicationSettings::ICredentialCommand> command) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::ApplicationSettings::ICredentialCommand> command) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_WebAccountCommandInvokedHandler : implements<i
 {
     impl_WebAccountCommandInvokedHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::ApplicationSettings::IWebAccountCommand> command, abi_arg_in<Windows::UI::ApplicationSettings::IWebAccountInvokedArgs> args) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::ApplicationSettings::IWebAccountCommand> command, impl::abi_arg_in<Windows::UI::ApplicationSettings::IWebAccountInvokedArgs> args) noexcept override
     {
         try
         {
@@ -49,7 +49,7 @@ template <typename H> struct impl_WebAccountProviderCommandInvokedHandler : impl
 {
     impl_WebAccountProviderCommandInvokedHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::ApplicationSettings::IWebAccountProviderCommand> command) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::ApplicationSettings::IWebAccountProviderCommand> command) noexcept override
     {
         try
         {

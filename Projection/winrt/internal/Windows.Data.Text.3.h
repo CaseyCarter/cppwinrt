@@ -13,7 +13,7 @@ template <typename H> struct impl_SelectableWordSegmentsTokenizingHandler : impl
 {
     impl_SelectableWordSegmentsTokenizingHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>> precedingWords, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>> words) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>> precedingWords, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment>> words) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_WordSegmentsTokenizingHandler : implements<imp
 {
     impl_WordSegmentsTokenizingHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>> precedingWords, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>> words) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>> precedingWords, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment>> words) noexcept override
     {
         try
         {

@@ -19,7 +19,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PinCount());
+            *value = detach_abi(this->shim().PinCount());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ActualFrequency());
+            *value = detach_abi(this->shim().ActualFrequency());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SetDesiredFrequency(frequency));
+            *value = detach_abi(this->shim().SetDesiredFrequency(frequency));
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxFrequency());
+            *value = detach_abi(this->shim().MaxFrequency());
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinFrequency());
+            *value = detach_abi(this->shim().MinFrequency());
             return S_OK;
         }
         catch (...)
@@ -158,12 +158,12 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
 template <typename D>
 struct produce<D, Windows::Devices::Pwm::Provider::IPwmProvider> : produce_base<D, Windows::Devices::Pwm::Provider::IPwmProvider>
 {
-    HRESULT __stdcall abi_GetControllers(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider>> result) noexcept override
+    HRESULT __stdcall abi_GetControllers(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetControllers());
+            *result = detach_abi(this->shim().GetControllers());
             return S_OK;
         }
         catch (...)
@@ -241,7 +241,7 @@ template <typename D> void impl_IPwmControllerProvider<D>::SetPulseParameters(in
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider> impl_IPwmProvider<D>::GetControllers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider> result;
-    check_hresult(WINRT_SHIM(IPwmProvider)->abi_GetControllers(put(result)));
+    check_hresult(WINRT_SHIM(IPwmProvider)->abi_GetControllers(put_abi(result)));
     return result;
 }
 

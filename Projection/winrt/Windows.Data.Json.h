@@ -14,12 +14,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Data::Json::IJsonArray>
 {
-    HRESULT __stdcall abi_GetObjectAt(uint32_t index, abi_arg_out<Windows::Data::Json::IJsonObject> returnValue) noexcept override
+    HRESULT __stdcall abi_GetObjectAt(uint32_t index, impl::abi_arg_out<Windows::Data::Json::IJsonObject> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetObjectAt(index));
+            *returnValue = detach_abi(this->shim().GetObjectAt(index));
             return S_OK;
         }
         catch (...)
@@ -29,12 +29,12 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
         }
     }
 
-    HRESULT __stdcall abi_GetArrayAt(uint32_t index, abi_arg_out<Windows::Data::Json::IJsonArray> returnValue) noexcept override
+    HRESULT __stdcall abi_GetArrayAt(uint32_t index, impl::abi_arg_out<Windows::Data::Json::IJsonArray> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetArrayAt(index));
+            *returnValue = detach_abi(this->shim().GetArrayAt(index));
             return S_OK;
         }
         catch (...)
@@ -44,12 +44,12 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
         }
     }
 
-    HRESULT __stdcall abi_GetStringAt(uint32_t index, abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetStringAt(uint32_t index, impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetStringAt(index));
+            *returnValue = detach_abi(this->shim().GetStringAt(index));
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNumberAt(index));
+            *returnValue = detach_abi(this->shim().GetNumberAt(index));
             return S_OK;
         }
         catch (...)
@@ -78,7 +78,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetBooleanAt(index));
+            *returnValue = detach_abi(this->shim().GetBooleanAt(index));
             return S_OK;
         }
         catch (...)
@@ -91,12 +91,12 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonArrayStatics> : produce_base<D, Windows::Data::Json::IJsonArrayStatics>
 {
-    HRESULT __stdcall abi_Parse(abi_arg_in<hstring> input, abi_arg_out<Windows::Data::Json::IJsonArray> jsonArray) noexcept override
+    HRESULT __stdcall abi_Parse(impl::abi_arg_in<hstring> input, impl::abi_arg_out<Windows::Data::Json::IJsonArray> jsonArray) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *jsonArray = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
+            *jsonArray = detach_abi(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -106,12 +106,12 @@ struct produce<D, Windows::Data::Json::IJsonArrayStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_TryParse(abi_arg_in<hstring> input, abi_arg_out<Windows::Data::Json::IJsonArray> result, bool * succeeded) noexcept override
+    HRESULT __stdcall abi_TryParse(impl::abi_arg_in<hstring> input, impl::abi_arg_out<Windows::Data::Json::IJsonArray> result, bool * succeeded) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
+            *succeeded = detach_abi(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Data::Json::IJsonErrorStatics2> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *status = detach(this->shim().GetJsonStatus(hresult));
+            *status = detach_abi(this->shim().GetJsonStatus(hresult));
             return S_OK;
         }
         catch (...)
@@ -143,12 +143,12 @@ struct produce<D, Windows::Data::Json::IJsonErrorStatics2> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::Data::Json::IJsonObject>
 {
-    HRESULT __stdcall abi_GetNamedValue(abi_arg_in<hstring> name, abi_arg_out<Windows::Data::Json::IJsonValue> returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedValue(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::Data::Json::IJsonValue> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach_abi(this->shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
         }
     }
 
-    HRESULT __stdcall abi_SetNamedValue(abi_arg_in<hstring> name, abi_arg_in<Windows::Data::Json::IJsonValue> value) noexcept override
+    HRESULT __stdcall abi_SetNamedValue(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Data::Json::IJsonValue> value) noexcept override
     {
         try
         {
@@ -172,12 +172,12 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
         }
     }
 
-    HRESULT __stdcall abi_GetNamedObject(abi_arg_in<hstring> name, abi_arg_out<Windows::Data::Json::IJsonObject> returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedObject(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::Data::Json::IJsonObject> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach_abi(this->shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -187,12 +187,12 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
         }
     }
 
-    HRESULT __stdcall abi_GetNamedArray(abi_arg_in<hstring> name, abi_arg_out<Windows::Data::Json::IJsonArray> returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedArray(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::Data::Json::IJsonArray> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach_abi(this->shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -202,12 +202,12 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
         }
     }
 
-    HRESULT __stdcall abi_GetNamedString(abi_arg_in<hstring> name, abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedString(impl::abi_arg_in<hstring> name, impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedString(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach_abi(this->shim().GetNamedString(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -217,12 +217,12 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
         }
     }
 
-    HRESULT __stdcall abi_GetNamedNumber(abi_arg_in<hstring> name, double * returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedNumber(impl::abi_arg_in<hstring> name, double * returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach_abi(this->shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -231,12 +231,12 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
         }
     }
 
-    HRESULT __stdcall abi_GetNamedBoolean(abi_arg_in<hstring> name, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedBoolean(impl::abi_arg_in<hstring> name, bool * returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name)));
+            *returnValue = detach_abi(this->shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -249,12 +249,12 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonObjectStatics> : produce_base<D, Windows::Data::Json::IJsonObjectStatics>
 {
-    HRESULT __stdcall abi_Parse(abi_arg_in<hstring> input, abi_arg_out<Windows::Data::Json::IJsonObject> jsonObject) noexcept override
+    HRESULT __stdcall abi_Parse(impl::abi_arg_in<hstring> input, impl::abi_arg_out<Windows::Data::Json::IJsonObject> jsonObject) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *jsonObject = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
+            *jsonObject = detach_abi(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -264,12 +264,12 @@ struct produce<D, Windows::Data::Json::IJsonObjectStatics> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_TryParse(abi_arg_in<hstring> input, abi_arg_out<Windows::Data::Json::IJsonObject> result, bool * succeeded) noexcept override
+    HRESULT __stdcall abi_TryParse(impl::abi_arg_in<hstring> input, impl::abi_arg_out<Windows::Data::Json::IJsonObject> result, bool * succeeded) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
+            *succeeded = detach_abi(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
             return S_OK;
         }
         catch (...)
@@ -283,12 +283,12 @@ struct produce<D, Windows::Data::Json::IJsonObjectStatics> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_base<D, Windows::Data::Json::IJsonObjectWithDefaultValues>
 {
-    HRESULT __stdcall abi_GetNamedValueOrDefault(abi_arg_in<hstring> name, abi_arg_in<Windows::Data::Json::IJsonValue> defaultValue, abi_arg_out<Windows::Data::Json::IJsonValue> returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedValueOrDefault(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Data::Json::IJsonValue> defaultValue, impl::abi_arg_out<Windows::Data::Json::IJsonValue> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonValue *>(&defaultValue)));
+            *returnValue = detach_abi(this->shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonValue *>(&defaultValue)));
             return S_OK;
         }
         catch (...)
@@ -298,12 +298,12 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetNamedObjectOrDefault(abi_arg_in<hstring> name, abi_arg_in<Windows::Data::Json::IJsonObject> defaultValue, abi_arg_out<Windows::Data::Json::IJsonObject> returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedObjectOrDefault(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Data::Json::IJsonObject> defaultValue, impl::abi_arg_out<Windows::Data::Json::IJsonObject> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonObject *>(&defaultValue)));
+            *returnValue = detach_abi(this->shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonObject *>(&defaultValue)));
             return S_OK;
         }
         catch (...)
@@ -313,12 +313,12 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetNamedStringOrDefault(abi_arg_in<hstring> name, abi_arg_in<hstring> defaultValue, abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedStringOrDefault(impl::abi_arg_in<hstring> name, impl::abi_arg_in<hstring> defaultValue, impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedString(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&defaultValue)));
+            *returnValue = detach_abi(this->shim().GetNamedString(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&defaultValue)));
             return S_OK;
         }
         catch (...)
@@ -328,12 +328,12 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetNamedArrayOrDefault(abi_arg_in<hstring> name, abi_arg_in<Windows::Data::Json::IJsonArray> defaultValue, abi_arg_out<Windows::Data::Json::IJsonArray> returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedArrayOrDefault(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Data::Json::IJsonArray> defaultValue, impl::abi_arg_out<Windows::Data::Json::IJsonArray> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonArray *>(&defaultValue)));
+            *returnValue = detach_abi(this->shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonArray *>(&defaultValue)));
             return S_OK;
         }
         catch (...)
@@ -343,12 +343,12 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetNamedNumberOrDefault(abi_arg_in<hstring> name, double defaultValue, double * returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedNumberOrDefault(impl::abi_arg_in<hstring> name, double defaultValue, double * returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name), defaultValue));
+            *returnValue = detach_abi(this->shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name), defaultValue));
             return S_OK;
         }
         catch (...)
@@ -357,12 +357,12 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetNamedBooleanOrDefault(abi_arg_in<hstring> name, bool defaultValue, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_GetNamedBooleanOrDefault(impl::abi_arg_in<hstring> name, bool defaultValue, bool * returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name), defaultValue));
+            *returnValue = detach_abi(this->shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name), defaultValue));
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ValueType());
+            *value = detach_abi(this->shim().ValueType());
             return S_OK;
         }
         catch (...)
@@ -389,12 +389,12 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
         }
     }
 
-    HRESULT __stdcall abi_Stringify(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_Stringify(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().Stringify());
+            *returnValue = detach_abi(this->shim().Stringify());
             return S_OK;
         }
         catch (...)
@@ -404,12 +404,12 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
         }
     }
 
-    HRESULT __stdcall abi_GetString(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetString(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetString());
+            *returnValue = detach_abi(this->shim().GetString());
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNumber());
+            *returnValue = detach_abi(this->shim().GetNumber());
             return S_OK;
         }
         catch (...)
@@ -438,7 +438,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetBoolean());
+            *returnValue = detach_abi(this->shim().GetBoolean());
             return S_OK;
         }
         catch (...)
@@ -447,12 +447,12 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
         }
     }
 
-    HRESULT __stdcall abi_GetArray(abi_arg_out<Windows::Data::Json::IJsonArray> returnValue) noexcept override
+    HRESULT __stdcall abi_GetArray(impl::abi_arg_out<Windows::Data::Json::IJsonArray> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetArray());
+            *returnValue = detach_abi(this->shim().GetArray());
             return S_OK;
         }
         catch (...)
@@ -462,12 +462,12 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
         }
     }
 
-    HRESULT __stdcall abi_GetObject(abi_arg_out<Windows::Data::Json::IJsonObject> returnValue) noexcept override
+    HRESULT __stdcall abi_GetObject(impl::abi_arg_out<Windows::Data::Json::IJsonObject> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetObject());
+            *returnValue = detach_abi(this->shim().GetObject());
             return S_OK;
         }
         catch (...)
@@ -481,12 +481,12 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Windows::Data::Json::IJsonValueStatics>
 {
-    HRESULT __stdcall abi_Parse(abi_arg_in<hstring> input, abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
+    HRESULT __stdcall abi_Parse(impl::abi_arg_in<hstring> input, impl::abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *jsonValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
+            *jsonValue = detach_abi(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -496,12 +496,12 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_TryParse(abi_arg_in<hstring> input, abi_arg_out<Windows::Data::Json::IJsonValue> result, bool * succeeded) noexcept override
+    HRESULT __stdcall abi_TryParse(impl::abi_arg_in<hstring> input, impl::abi_arg_out<Windows::Data::Json::IJsonValue> result, bool * succeeded) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
+            *succeeded = detach_abi(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
             return S_OK;
         }
         catch (...)
@@ -511,12 +511,12 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_CreateBooleanValue(bool input, abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
+    HRESULT __stdcall abi_CreateBooleanValue(bool input, impl::abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *jsonValue = detach(this->shim().CreateBooleanValue(input));
+            *jsonValue = detach_abi(this->shim().CreateBooleanValue(input));
             return S_OK;
         }
         catch (...)
@@ -526,12 +526,12 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_CreateNumberValue(double input, abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
+    HRESULT __stdcall abi_CreateNumberValue(double input, impl::abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *jsonValue = detach(this->shim().CreateNumberValue(input));
+            *jsonValue = detach_abi(this->shim().CreateNumberValue(input));
             return S_OK;
         }
         catch (...)
@@ -541,12 +541,12 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_CreateStringValue(abi_arg_in<hstring> input, abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
+    HRESULT __stdcall abi_CreateStringValue(impl::abi_arg_in<hstring> input, impl::abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *jsonValue = detach(this->shim().CreateStringValue(*reinterpret_cast<const hstring *>(&input)));
+            *jsonValue = detach_abi(this->shim().CreateStringValue(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -560,12 +560,12 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonValueStatics2> : produce_base<D, Windows::Data::Json::IJsonValueStatics2>
 {
-    HRESULT __stdcall abi_CreateNullValue(abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
+    HRESULT __stdcall abi_CreateNullValue(impl::abi_arg_out<Windows::Data::Json::IJsonValue> jsonValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *jsonValue = detach(this->shim().CreateNullValue());
+            *jsonValue = detach_abi(this->shim().CreateNullValue());
             return S_OK;
         }
         catch (...)
@@ -590,14 +590,14 @@ template <typename D> Windows::Data::Json::JsonValueType impl_IJsonValue<D>::Val
 template <typename D> hstring impl_IJsonValue<D>::Stringify() const
 {
     hstring returnValue;
-    check_hresult(WINRT_SHIM(IJsonValue)->abi_Stringify(put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonValue)->abi_Stringify(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> hstring impl_IJsonValue<D>::GetString() const
 {
     hstring returnValue;
-    check_hresult(WINRT_SHIM(IJsonValue)->abi_GetString(put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonValue)->abi_GetString(put_abi(returnValue)));
     return returnValue;
 }
 
@@ -618,180 +618,180 @@ template <typename D> bool impl_IJsonValue<D>::GetBoolean() const
 template <typename D> Windows::Data::Json::JsonArray impl_IJsonValue<D>::GetArray() const
 {
     Windows::Data::Json::JsonArray returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonValue)->abi_GetArray(put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonValue)->abi_GetArray(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Data::Json::JsonObject impl_IJsonValue<D>::GetObject() const
 {
     Windows::Data::Json::JsonObject returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonValue)->abi_GetObject(put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonValue)->abi_GetObject(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics<D>::Parse(hstring_view input) const
 {
     Windows::Data::Json::JsonValue jsonValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_Parse(get(input), put(jsonValue)));
+    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_Parse(get_abi(input), put_abi(jsonValue)));
     return jsonValue;
 }
 
 template <typename D> bool impl_IJsonValueStatics<D>::TryParse(hstring_view input, Windows::Data::Json::JsonValue & result) const
 {
     bool succeeded {};
-    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_TryParse(get(input), put(result), &succeeded));
+    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_TryParse(get_abi(input), put_abi(result), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics<D>::CreateBooleanValue(bool input) const
 {
     Windows::Data::Json::JsonValue jsonValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_CreateBooleanValue(input, put(jsonValue)));
+    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_CreateBooleanValue(input, put_abi(jsonValue)));
     return jsonValue;
 }
 
 template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics<D>::CreateNumberValue(double input) const
 {
     Windows::Data::Json::JsonValue jsonValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_CreateNumberValue(input, put(jsonValue)));
+    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_CreateNumberValue(input, put_abi(jsonValue)));
     return jsonValue;
 }
 
 template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics<D>::CreateStringValue(hstring_view input) const
 {
     Windows::Data::Json::JsonValue jsonValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_CreateStringValue(get(input), put(jsonValue)));
+    check_hresult(WINRT_SHIM(IJsonValueStatics)->abi_CreateStringValue(get_abi(input), put_abi(jsonValue)));
     return jsonValue;
 }
 
 template <typename D> Windows::Data::Json::JsonValue impl_IJsonValueStatics2<D>::CreateNullValue() const
 {
     Windows::Data::Json::JsonValue jsonValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonValueStatics2)->abi_CreateNullValue(put(jsonValue)));
+    check_hresult(WINRT_SHIM(IJsonValueStatics2)->abi_CreateNullValue(put_abi(jsonValue)));
     return jsonValue;
 }
 
 template <typename D> Windows::Data::Json::JsonValue impl_IJsonObject<D>::GetNamedValue(hstring_view name) const
 {
     Windows::Data::Json::JsonValue returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedValue(get(name), put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedValue(get_abi(name), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IJsonObject<D>::SetNamedValue(hstring_view name, const Windows::Data::Json::IJsonValue & value) const
 {
-    check_hresult(WINRT_SHIM(IJsonObject)->abi_SetNamedValue(get(name), get(value)));
+    check_hresult(WINRT_SHIM(IJsonObject)->abi_SetNamedValue(get_abi(name), get_abi(value)));
 }
 
 template <typename D> Windows::Data::Json::JsonObject impl_IJsonObject<D>::GetNamedObject(hstring_view name) const
 {
     Windows::Data::Json::JsonObject returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedObject(get(name), put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedObject(get_abi(name), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Data::Json::JsonArray impl_IJsonObject<D>::GetNamedArray(hstring_view name) const
 {
     Windows::Data::Json::JsonArray returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedArray(get(name), put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedArray(get_abi(name), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> hstring impl_IJsonObject<D>::GetNamedString(hstring_view name) const
 {
     hstring returnValue;
-    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedString(get(name), put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedString(get_abi(name), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> double impl_IJsonObject<D>::GetNamedNumber(hstring_view name) const
 {
     double returnValue {};
-    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedNumber(get(name), &returnValue));
+    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedNumber(get_abi(name), &returnValue));
     return returnValue;
 }
 
 template <typename D> bool impl_IJsonObject<D>::GetNamedBoolean(hstring_view name) const
 {
     bool returnValue {};
-    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedBoolean(get(name), &returnValue));
+    check_hresult(WINRT_SHIM(IJsonObject)->abi_GetNamedBoolean(get_abi(name), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::Data::Json::JsonValue impl_IJsonObjectWithDefaultValues<D>::GetNamedValue(hstring_view name, const Windows::Data::Json::JsonValue & defaultValue) const
 {
     Windows::Data::Json::JsonValue returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedValueOrDefault(get(name), get(defaultValue), put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedValueOrDefault(get_abi(name), get_abi(defaultValue), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Data::Json::JsonObject impl_IJsonObjectWithDefaultValues<D>::GetNamedObject(hstring_view name, const Windows::Data::Json::JsonObject & defaultValue) const
 {
     Windows::Data::Json::JsonObject returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedObjectOrDefault(get(name), get(defaultValue), put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedObjectOrDefault(get_abi(name), get_abi(defaultValue), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> hstring impl_IJsonObjectWithDefaultValues<D>::GetNamedString(hstring_view name, hstring_view defaultValue) const
 {
     hstring returnValue;
-    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedStringOrDefault(get(name), get(defaultValue), put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedStringOrDefault(get_abi(name), get_abi(defaultValue), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Data::Json::JsonArray impl_IJsonObjectWithDefaultValues<D>::GetNamedArray(hstring_view name, const Windows::Data::Json::JsonArray & defaultValue) const
 {
     Windows::Data::Json::JsonArray returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedArrayOrDefault(get(name), get(defaultValue), put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedArrayOrDefault(get_abi(name), get_abi(defaultValue), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> double impl_IJsonObjectWithDefaultValues<D>::GetNamedNumber(hstring_view name, double defaultValue) const
 {
     double returnValue {};
-    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedNumberOrDefault(get(name), defaultValue, &returnValue));
+    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedNumberOrDefault(get_abi(name), defaultValue, &returnValue));
     return returnValue;
 }
 
 template <typename D> bool impl_IJsonObjectWithDefaultValues<D>::GetNamedBoolean(hstring_view name, bool defaultValue) const
 {
     bool returnValue {};
-    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedBooleanOrDefault(get(name), defaultValue, &returnValue));
+    check_hresult(WINRT_SHIM(IJsonObjectWithDefaultValues)->abi_GetNamedBooleanOrDefault(get_abi(name), defaultValue, &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::Data::Json::JsonObject impl_IJsonObjectStatics<D>::Parse(hstring_view input) const
 {
     Windows::Data::Json::JsonObject jsonObject { nullptr };
-    check_hresult(WINRT_SHIM(IJsonObjectStatics)->abi_Parse(get(input), put(jsonObject)));
+    check_hresult(WINRT_SHIM(IJsonObjectStatics)->abi_Parse(get_abi(input), put_abi(jsonObject)));
     return jsonObject;
 }
 
 template <typename D> bool impl_IJsonObjectStatics<D>::TryParse(hstring_view input, Windows::Data::Json::JsonObject & result) const
 {
     bool succeeded {};
-    check_hresult(WINRT_SHIM(IJsonObjectStatics)->abi_TryParse(get(input), put(result), &succeeded));
+    check_hresult(WINRT_SHIM(IJsonObjectStatics)->abi_TryParse(get_abi(input), put_abi(result), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Data::Json::JsonObject impl_IJsonArray<D>::GetObjectAt(uint32_t index) const
 {
     Windows::Data::Json::JsonObject returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonArray)->abi_GetObjectAt(index, put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonArray)->abi_GetObjectAt(index, put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Data::Json::JsonArray impl_IJsonArray<D>::GetArrayAt(uint32_t index) const
 {
     Windows::Data::Json::JsonArray returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IJsonArray)->abi_GetArrayAt(index, put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonArray)->abi_GetArrayAt(index, put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> hstring impl_IJsonArray<D>::GetStringAt(uint32_t index) const
 {
     hstring returnValue;
-    check_hresult(WINRT_SHIM(IJsonArray)->abi_GetStringAt(index, put(returnValue)));
+    check_hresult(WINRT_SHIM(IJsonArray)->abi_GetStringAt(index, put_abi(returnValue)));
     return returnValue;
 }
 
@@ -812,14 +812,14 @@ template <typename D> bool impl_IJsonArray<D>::GetBooleanAt(uint32_t index) cons
 template <typename D> Windows::Data::Json::JsonArray impl_IJsonArrayStatics<D>::Parse(hstring_view input) const
 {
     Windows::Data::Json::JsonArray jsonArray { nullptr };
-    check_hresult(WINRT_SHIM(IJsonArrayStatics)->abi_Parse(get(input), put(jsonArray)));
+    check_hresult(WINRT_SHIM(IJsonArrayStatics)->abi_Parse(get_abi(input), put_abi(jsonArray)));
     return jsonArray;
 }
 
 template <typename D> bool impl_IJsonArrayStatics<D>::TryParse(hstring_view input, Windows::Data::Json::JsonArray & result) const
 {
     bool succeeded {};
-    check_hresult(WINRT_SHIM(IJsonArrayStatics)->abi_TryParse(get(input), put(result), &succeeded));
+    check_hresult(WINRT_SHIM(IJsonArrayStatics)->abi_TryParse(get_abi(input), put_abi(result), &succeeded));
     return succeeded;
 }
 

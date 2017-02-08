@@ -309,10 +309,10 @@ struct com_array : array_view<T>
         }
     }
 
-    friend abi_arg_out<T> * impl_put(com_array & value) noexcept
+    friend impl::abi_arg_out<T> * impl_put(com_array & value) noexcept
     {
         WINRT_ASSERT(!value.m_data);
-        return reinterpret_cast<abi_arg_out<T> *>(&value.m_data);
+        return reinterpret_cast<impl::abi_arg_out<T> *>(&value.m_data);
     }
 
     friend auto impl_data(com_array & value) noexcept
@@ -328,7 +328,7 @@ struct com_array : array_view<T>
 
     friend auto impl_detach(com_array & value) noexcept
     {
-        std::pair<uint32_t, abi_arg_in<T> *> result(value.size(), *reinterpret_cast<abi_arg_in<T> **>(&value));
+        std::pair<uint32_t, impl::abi_arg_in<T> *> result(value.size(), *reinterpret_cast<impl::abi_arg_in<T> **>(&value));
         value.m_data = nullptr;
         value.m_size = 0;
         return result;
@@ -492,7 +492,7 @@ struct accessors<array_view<T>>
 }
 
 template <typename T>
-auto detach(uint32_t * __valueSize, abi_arg_out<T> * value) noexcept
+auto detach_abi(uint32_t * __valueSize, impl::abi_arg_out<T> * value) noexcept
 {
     return impl::com_array_proxy<T>(__valueSize, value);
 }

@@ -15,12 +15,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListener> : produce_base<D, Windows::UI::Notifications::Management::IUserNotificationListener>
 {
-    HRESULT __stdcall abi_RequestAccessAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus>> result) noexcept override
+    HRESULT __stdcall abi_RequestAccessAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestAccessAsync());
+            *result = detach_abi(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *accessStatus = detach(this->shim().GetAccessStatus());
+            *accessStatus = detach_abi(this->shim().GetAccessStatus());
             return S_OK;
         }
         catch (...)
@@ -44,12 +44,12 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
         }
     }
 
-    HRESULT __stdcall add_NotificationChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_NotificationChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().NotificationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().NotificationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -72,12 +72,12 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
         }
     }
 
-    HRESULT __stdcall abi_GetNotificationsAsync(Windows::UI::Notifications::NotificationKinds kinds, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>>> result) noexcept override
+    HRESULT __stdcall abi_GetNotificationsAsync(Windows::UI::Notifications::NotificationKinds kinds, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetNotificationsAsync(kinds));
+            *result = detach_abi(this->shim().GetNotificationsAsync(kinds));
             return S_OK;
         }
         catch (...)
@@ -87,12 +87,12 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
         }
     }
 
-    HRESULT __stdcall abi_GetNotification(uint32_t notificationId, abi_arg_out<Windows::UI::Notifications::IUserNotification> result) noexcept override
+    HRESULT __stdcall abi_GetNotification(uint32_t notificationId, impl::abi_arg_out<Windows::UI::Notifications::IUserNotification> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetNotification(notificationId));
+            *result = detach_abi(this->shim().GetNotification(notificationId));
             return S_OK;
         }
         catch (...)
@@ -134,12 +134,12 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
 template <typename D>
 struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListenerStatics> : produce_base<D, Windows::UI::Notifications::Management::IUserNotificationListenerStatics>
 {
-    HRESULT __stdcall get_Current(abi_arg_out<Windows::UI::Notifications::Management::IUserNotificationListener> result) noexcept override
+    HRESULT __stdcall get_Current(impl::abi_arg_out<Windows::UI::Notifications::Management::IUserNotificationListener> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Current());
+            *result = detach_abi(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -157,14 +157,14 @@ namespace Windows::UI::Notifications::Management {
 template <typename D> Windows::UI::Notifications::Management::UserNotificationListener impl_IUserNotificationListenerStatics<D>::Current() const
 {
     Windows::UI::Notifications::Management::UserNotificationListener result { nullptr };
-    check_hresult(WINRT_SHIM(IUserNotificationListenerStatics)->get_Current(put(result)));
+    check_hresult(WINRT_SHIM(IUserNotificationListenerStatics)->get_Current(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> impl_IUserNotificationListener<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> result;
-    check_hresult(WINRT_SHIM(IUserNotificationListener)->abi_RequestAccessAsync(put(result)));
+    check_hresult(WINRT_SHIM(IUserNotificationListener)->abi_RequestAccessAsync(put_abi(result)));
     return result;
 }
 
@@ -178,7 +178,7 @@ template <typename D> Windows::UI::Notifications::Management::UserNotificationLi
 template <typename D> event_token impl_IUserNotificationListener<D>::NotificationChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IUserNotificationListener)->add_NotificationChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IUserNotificationListener)->add_NotificationChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -195,14 +195,14 @@ template <typename D> void impl_IUserNotificationListener<D>::NotificationChange
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>> impl_IUserNotificationListener<D>::GetNotificationsAsync(Windows::UI::Notifications::NotificationKinds kinds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>> result;
-    check_hresult(WINRT_SHIM(IUserNotificationListener)->abi_GetNotificationsAsync(kinds, put(result)));
+    check_hresult(WINRT_SHIM(IUserNotificationListener)->abi_GetNotificationsAsync(kinds, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::UserNotification impl_IUserNotificationListener<D>::GetNotification(uint32_t notificationId) const
 {
     Windows::UI::Notifications::UserNotification result { nullptr };
-    check_hresult(WINRT_SHIM(IUserNotificationListener)->abi_GetNotification(notificationId, put(result)));
+    check_hresult(WINRT_SHIM(IUserNotificationListener)->abi_GetNotification(notificationId, put_abi(result)));
     return result;
 }
 

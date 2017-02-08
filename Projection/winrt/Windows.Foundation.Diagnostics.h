@@ -15,7 +15,7 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics> : produce_base<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics>
 {
-    HRESULT __stdcall abi_TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, abi_arg_in<hstring> operationName, uint64_t relatedContext) noexcept override
+    HRESULT __stdcall abi_TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, impl::abi_arg_in<hstring> operationName, uint64_t relatedContext) noexcept override
     {
         try
         {
@@ -85,12 +85,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics
         }
     }
 
-    HRESULT __stdcall add_TracingStatusChanged(abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_TracingStatusChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().TracingStatusChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().TracingStatusChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -117,12 +117,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::IErrorDetails> : produce_base<D, Windows::Foundation::Diagnostics::IErrorDetails>
 {
-    HRESULT __stdcall get_Description(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Description(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Description());
+            *value = detach_abi(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -132,12 +132,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorDetails> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_LongDescription(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_LongDescription(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LongDescription());
+            *value = detach_abi(this->shim().LongDescription());
             return S_OK;
         }
         catch (...)
@@ -147,12 +147,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorDetails> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_HelpUri(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_HelpUri(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HelpUri());
+            *value = detach_abi(this->shim().HelpUri());
             return S_OK;
         }
         catch (...)
@@ -166,12 +166,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorDetails> : produce_bas
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::IErrorDetailsStatics> : produce_base<D, Windows::Foundation::Diagnostics::IErrorDetailsStatics>
 {
-    HRESULT __stdcall abi_CreateFromHResultAsync(int32_t errorCode, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Diagnostics::ErrorDetails>> operation) noexcept override
+    HRESULT __stdcall abi_CreateFromHResultAsync(int32_t errorCode, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Diagnostics::ErrorDetails>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().CreateFromHResultAsync(errorCode));
+            *operation = detach_abi(this->shim().CreateFromHResultAsync(errorCode));
             return S_OK;
         }
         catch (...)
@@ -204,7 +204,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorReportingSettings> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetErrorOptions());
+            *value = detach_abi(this->shim().GetErrorOptions());
             return S_OK;
         }
         catch (...)
@@ -217,12 +217,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorReportingSettings> : p
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produce_base<D, Windows::Foundation::Diagnostics::IFileLoggingSession>
 {
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Name());
+            *value = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -232,7 +232,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
         }
     }
 
-    HRESULT __stdcall abi_AddLoggingChannel(abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel) noexcept override
+    HRESULT __stdcall abi_AddLoggingChannel(impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel) noexcept override
     {
         try
         {
@@ -246,7 +246,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
         }
     }
 
-    HRESULT __stdcall abi_AddLoggingChannelWithLevel(abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) noexcept override
+    HRESULT __stdcall abi_AddLoggingChannelWithLevel(impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) noexcept override
     {
         try
         {
@@ -260,7 +260,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
         }
     }
 
-    HRESULT __stdcall abi_RemoveLoggingChannel(abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel) noexcept override
+    HRESULT __stdcall abi_RemoveLoggingChannel(impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel) noexcept override
     {
         try
         {
@@ -274,12 +274,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
         }
     }
 
-    HRESULT __stdcall abi_CloseAndSaveToFileAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>> operation) noexcept override
+    HRESULT __stdcall abi_CloseAndSaveToFileAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().CloseAndSaveToFileAsync());
+            *operation = detach_abi(this->shim().CloseAndSaveToFileAsync());
             return S_OK;
         }
         catch (...)
@@ -289,12 +289,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
         }
     }
 
-    HRESULT __stdcall add_LogFileGenerated(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::IFileLoggingSession, Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_LogFileGenerated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::IFileLoggingSession, Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().LogFileGenerated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::IFileLoggingSession, Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().LogFileGenerated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::IFileLoggingSession, Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -321,12 +321,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSessionFactory> : produce_base<D, Windows::Foundation::Diagnostics::IFileLoggingSessionFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> name, abi_arg_out<Windows::Foundation::Diagnostics::IFileLoggingSession> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::Foundation::Diagnostics::IFileLoggingSession> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -340,12 +340,12 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSessionFactory> 
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs> : produce_base<D, Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs>
 {
-    HRESULT __stdcall get_File(abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
+    HRESULT __stdcall get_File(impl::abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().File());
+            *value = detach_abi(this->shim().File());
             return S_OK;
         }
         catch (...)
@@ -359,12 +359,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs> 
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingActivity>
 {
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Name());
+            *value = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -379,7 +379,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -392,12 +392,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity> : produce_
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity2> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingActivity2>
 {
-    HRESULT __stdcall get_Channel(abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannel> value) noexcept override
+    HRESULT __stdcall get_Channel(impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannel> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Channel());
+            *value = detach_abi(this->shim().Channel());
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity2> : produce
         }
     }
 
-    HRESULT __stdcall abi_StopActivity(abi_arg_in<hstring> stopEventName) noexcept override
+    HRESULT __stdcall abi_StopActivity(impl::abi_arg_in<hstring> stopEventName) noexcept override
     {
         try
         {
@@ -421,7 +421,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity2> : produce
         }
     }
 
-    HRESULT __stdcall abi_StopActivityWithFields(abi_arg_in<hstring> stopEventName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields) noexcept override
+    HRESULT __stdcall abi_StopActivityWithFields(impl::abi_arg_in<hstring> stopEventName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields) noexcept override
     {
         try
         {
@@ -435,7 +435,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity2> : produce
         }
     }
 
-    HRESULT __stdcall abi_StopActivityWithFieldsAndOptions(abi_arg_in<hstring> stopEventName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingOptions> options) noexcept override
+    HRESULT __stdcall abi_StopActivityWithFieldsAndOptions(impl::abi_arg_in<hstring> stopEventName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingOptions> options) noexcept override
     {
         try
         {
@@ -453,12 +453,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity2> : produce
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivityFactory> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingActivityFactory>
 {
-    HRESULT __stdcall abi_CreateLoggingActivity(abi_arg_in<hstring> activityName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> loggingActivity) noexcept override
+    HRESULT __stdcall abi_CreateLoggingActivity(impl::abi_arg_in<hstring> activityName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> loggingActivity) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *loggingActivity = detach(this->shim().CreateLoggingActivity(*reinterpret_cast<const hstring *>(&activityName), *reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel)));
+            *loggingActivity = detach_abi(this->shim().CreateLoggingActivity(*reinterpret_cast<const hstring *>(&activityName), *reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel)));
             return S_OK;
         }
         catch (...)
@@ -468,12 +468,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivityFactory> : p
         }
     }
 
-    HRESULT __stdcall abi_CreateLoggingActivityWithLevel(abi_arg_in<hstring> activityName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> loggingActivity) noexcept override
+    HRESULT __stdcall abi_CreateLoggingActivityWithLevel(impl::abi_arg_in<hstring> activityName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> loggingActivity) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *loggingActivity = detach(this->shim().CreateLoggingActivityWithLevel(*reinterpret_cast<const hstring *>(&activityName), *reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel), level));
+            *loggingActivity = detach_abi(this->shim().CreateLoggingActivityWithLevel(*reinterpret_cast<const hstring *>(&activityName), *reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel), level));
             return S_OK;
         }
         catch (...)
@@ -487,12 +487,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivityFactory> : p
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingChannel>
 {
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Name());
+            *value = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -507,7 +507,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Enabled());
+            *value = detach_abi(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -521,7 +521,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Level());
+            *value = detach_abi(this->shim().Level());
             return S_OK;
         }
         catch (...)
@@ -530,7 +530,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_LogMessage(abi_arg_in<hstring> eventString) noexcept override
+    HRESULT __stdcall abi_LogMessage(impl::abi_arg_in<hstring> eventString) noexcept override
     {
         try
         {
@@ -544,7 +544,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_LogMessageWithLevel(abi_arg_in<hstring> eventString, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept override
+    HRESULT __stdcall abi_LogMessageWithLevel(impl::abi_arg_in<hstring> eventString, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept override
     {
         try
         {
@@ -558,7 +558,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_LogValuePair(abi_arg_in<hstring> value1, int32_t value2) noexcept override
+    HRESULT __stdcall abi_LogValuePair(impl::abi_arg_in<hstring> value1, int32_t value2) noexcept override
     {
         try
         {
@@ -572,7 +572,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_LogValuePairWithLevel(abi_arg_in<hstring> value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept override
+    HRESULT __stdcall abi_LogValuePairWithLevel(impl::abi_arg_in<hstring> value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept override
     {
         try
         {
@@ -586,12 +586,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
         }
     }
 
-    HRESULT __stdcall add_LoggingEnabled(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_LoggingEnabled(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().LoggingEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().LoggingEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -623,7 +623,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel2> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -636,12 +636,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel2> : produce_
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelFactory> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingChannelFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> name, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannel> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannel> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -655,12 +655,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelFactory> : pr
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelFactory2> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingChannelFactory2>
 {
-    HRESULT __stdcall abi_CreateWithOptions(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannelOptions> options, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannel> result) noexcept override
+    HRESULT __stdcall abi_CreateWithOptions(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannelOptions> options, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannel> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateWithOptions(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingChannelOptions *>(&options)));
+            *result = detach_abi(this->shim().CreateWithOptions(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingChannelOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -670,12 +670,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelFactory2> : p
         }
     }
 
-    HRESULT __stdcall abi_CreateWithOptionsAndId(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannelOptions> options, GUID id, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannel> result) noexcept override
+    HRESULT __stdcall abi_CreateWithOptionsAndId(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannelOptions> options, GUID id, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannel> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateWithOptionsAndId(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingChannelOptions *>(&options), id));
+            *result = detach_abi(this->shim().CreateWithOptionsAndId(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingChannelOptions *>(&options), id));
             return S_OK;
         }
         catch (...)
@@ -694,7 +694,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelOptions> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Group());
+            *value = detach_abi(this->shim().Group());
             return S_OK;
         }
         catch (...)
@@ -721,12 +721,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelOptions> : pr
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactory> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactory>
 {
-    HRESULT __stdcall abi_Create(GUID group, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannelOptions> result) noexcept override
+    HRESULT __stdcall abi_Create(GUID group, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingChannelOptions> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(group));
+            *result = detach_abi(this->shim().Create(group));
             return S_OK;
         }
         catch (...)
@@ -754,7 +754,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_BeginStruct(abi_arg_in<hstring> name) noexcept override
+    HRESULT __stdcall abi_BeginStruct(impl::abi_arg_in<hstring> name) noexcept override
     {
         try
         {
@@ -768,7 +768,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_BeginStructWithTags(abi_arg_in<hstring> name, int32_t tags) noexcept override
+    HRESULT __stdcall abi_BeginStructWithTags(impl::abi_arg_in<hstring> name, int32_t tags) noexcept override
     {
         try
         {
@@ -796,7 +796,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddEmpty(abi_arg_in<hstring> name) noexcept override
+    HRESULT __stdcall abi_AddEmpty(impl::abi_arg_in<hstring> name) noexcept override
     {
         try
         {
@@ -810,7 +810,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddEmptyWithFormat(abi_arg_in<hstring> name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddEmptyWithFormat(impl::abi_arg_in<hstring> name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -824,7 +824,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddEmptyWithFormatAndTags(abi_arg_in<hstring> name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddEmptyWithFormatAndTags(impl::abi_arg_in<hstring> name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -838,7 +838,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt8(abi_arg_in<hstring> name, uint8_t value) noexcept override
+    HRESULT __stdcall abi_AddUInt8(impl::abi_arg_in<hstring> name, uint8_t value) noexcept override
     {
         try
         {
@@ -852,7 +852,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt8WithFormat(abi_arg_in<hstring> name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddUInt8WithFormat(impl::abi_arg_in<hstring> name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -866,7 +866,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt8WithFormatAndTags(abi_arg_in<hstring> name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddUInt8WithFormatAndTags(impl::abi_arg_in<hstring> name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -880,7 +880,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt8Array(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint8_t> * value) noexcept override
+    HRESULT __stdcall abi_AddUInt8Array(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint8_t> * value) noexcept override
     {
         try
         {
@@ -894,7 +894,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt8ArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint8_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddUInt8ArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint8_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -908,7 +908,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt8ArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint8_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddUInt8ArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint8_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -922,7 +922,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt16(abi_arg_in<hstring> name, int16_t value) noexcept override
+    HRESULT __stdcall abi_AddInt16(impl::abi_arg_in<hstring> name, int16_t value) noexcept override
     {
         try
         {
@@ -936,7 +936,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt16WithFormat(abi_arg_in<hstring> name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddInt16WithFormat(impl::abi_arg_in<hstring> name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -950,7 +950,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt16WithFormatAndTags(abi_arg_in<hstring> name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddInt16WithFormatAndTags(impl::abi_arg_in<hstring> name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -964,7 +964,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt16Array(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<int16_t> * value) noexcept override
+    HRESULT __stdcall abi_AddInt16Array(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<int16_t> * value) noexcept override
     {
         try
         {
@@ -978,7 +978,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt16ArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<int16_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddInt16ArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<int16_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -992,7 +992,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt16ArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<int16_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddInt16ArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<int16_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1006,7 +1006,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt16(abi_arg_in<hstring> name, uint16_t value) noexcept override
+    HRESULT __stdcall abi_AddUInt16(impl::abi_arg_in<hstring> name, uint16_t value) noexcept override
     {
         try
         {
@@ -1020,7 +1020,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt16WithFormat(abi_arg_in<hstring> name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddUInt16WithFormat(impl::abi_arg_in<hstring> name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1034,7 +1034,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt16WithFormatAndTags(abi_arg_in<hstring> name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddUInt16WithFormatAndTags(impl::abi_arg_in<hstring> name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1048,7 +1048,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt16Array(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint16_t> * value) noexcept override
+    HRESULT __stdcall abi_AddUInt16Array(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint16_t> * value) noexcept override
     {
         try
         {
@@ -1062,7 +1062,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt16ArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint16_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddUInt16ArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint16_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1076,7 +1076,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt16ArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint16_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddUInt16ArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint16_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1090,7 +1090,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt32(abi_arg_in<hstring> name, int32_t value) noexcept override
+    HRESULT __stdcall abi_AddInt32(impl::abi_arg_in<hstring> name, int32_t value) noexcept override
     {
         try
         {
@@ -1104,7 +1104,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt32WithFormat(abi_arg_in<hstring> name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddInt32WithFormat(impl::abi_arg_in<hstring> name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1118,7 +1118,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt32WithFormatAndTags(abi_arg_in<hstring> name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddInt32WithFormatAndTags(impl::abi_arg_in<hstring> name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1132,7 +1132,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt32Array(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<int32_t> * value) noexcept override
+    HRESULT __stdcall abi_AddInt32Array(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<int32_t> * value) noexcept override
     {
         try
         {
@@ -1146,7 +1146,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt32ArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<int32_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddInt32ArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<int32_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1160,7 +1160,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt32ArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<int32_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddInt32ArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<int32_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1174,7 +1174,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt32(abi_arg_in<hstring> name, uint32_t value) noexcept override
+    HRESULT __stdcall abi_AddUInt32(impl::abi_arg_in<hstring> name, uint32_t value) noexcept override
     {
         try
         {
@@ -1188,7 +1188,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt32WithFormat(abi_arg_in<hstring> name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddUInt32WithFormat(impl::abi_arg_in<hstring> name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1202,7 +1202,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt32WithFormatAndTags(abi_arg_in<hstring> name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddUInt32WithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1216,7 +1216,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt32Array(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint32_t> * value) noexcept override
+    HRESULT __stdcall abi_AddUInt32Array(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint32_t> * value) noexcept override
     {
         try
         {
@@ -1230,7 +1230,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt32ArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint32_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddUInt32ArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint32_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1244,7 +1244,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt32ArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint32_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddUInt32ArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint32_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1258,7 +1258,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt64(abi_arg_in<hstring> name, int64_t value) noexcept override
+    HRESULT __stdcall abi_AddInt64(impl::abi_arg_in<hstring> name, int64_t value) noexcept override
     {
         try
         {
@@ -1272,7 +1272,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt64WithFormat(abi_arg_in<hstring> name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddInt64WithFormat(impl::abi_arg_in<hstring> name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1286,7 +1286,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt64WithFormatAndTags(abi_arg_in<hstring> name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddInt64WithFormatAndTags(impl::abi_arg_in<hstring> name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1300,7 +1300,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt64Array(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<int64_t> * value) noexcept override
+    HRESULT __stdcall abi_AddInt64Array(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<int64_t> * value) noexcept override
     {
         try
         {
@@ -1314,7 +1314,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt64ArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<int64_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddInt64ArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<int64_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1328,7 +1328,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddInt64ArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<int64_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddInt64ArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<int64_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1342,7 +1342,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt64(abi_arg_in<hstring> name, uint64_t value) noexcept override
+    HRESULT __stdcall abi_AddUInt64(impl::abi_arg_in<hstring> name, uint64_t value) noexcept override
     {
         try
         {
@@ -1356,7 +1356,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt64WithFormat(abi_arg_in<hstring> name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddUInt64WithFormat(impl::abi_arg_in<hstring> name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1370,7 +1370,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt64WithFormatAndTags(abi_arg_in<hstring> name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddUInt64WithFormatAndTags(impl::abi_arg_in<hstring> name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1384,7 +1384,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt64Array(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint64_t> * value) noexcept override
+    HRESULT __stdcall abi_AddUInt64Array(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint64_t> * value) noexcept override
     {
         try
         {
@@ -1398,7 +1398,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt64ArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint64_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddUInt64ArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint64_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1412,7 +1412,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddUInt64ArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<uint64_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddUInt64ArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<uint64_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1426,7 +1426,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSingle(abi_arg_in<hstring> name, float value) noexcept override
+    HRESULT __stdcall abi_AddSingle(impl::abi_arg_in<hstring> name, float value) noexcept override
     {
         try
         {
@@ -1440,7 +1440,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSingleWithFormat(abi_arg_in<hstring> name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddSingleWithFormat(impl::abi_arg_in<hstring> name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1454,7 +1454,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSingleWithFormatAndTags(abi_arg_in<hstring> name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddSingleWithFormatAndTags(impl::abi_arg_in<hstring> name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1468,7 +1468,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSingleArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<float> * value) noexcept override
+    HRESULT __stdcall abi_AddSingleArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<float> * value) noexcept override
     {
         try
         {
@@ -1482,7 +1482,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSingleArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<float> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddSingleArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<float> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1496,7 +1496,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSingleArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<float> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddSingleArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<float> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1510,7 +1510,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDouble(abi_arg_in<hstring> name, double value) noexcept override
+    HRESULT __stdcall abi_AddDouble(impl::abi_arg_in<hstring> name, double value) noexcept override
     {
         try
         {
@@ -1524,7 +1524,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDoubleWithFormat(abi_arg_in<hstring> name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddDoubleWithFormat(impl::abi_arg_in<hstring> name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1538,7 +1538,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDoubleWithFormatAndTags(abi_arg_in<hstring> name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddDoubleWithFormatAndTags(impl::abi_arg_in<hstring> name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1552,7 +1552,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDoubleArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<double> * value) noexcept override
+    HRESULT __stdcall abi_AddDoubleArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<double> * value) noexcept override
     {
         try
         {
@@ -1566,7 +1566,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDoubleArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<double> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddDoubleArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<double> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1580,7 +1580,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDoubleArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<double> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddDoubleArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<double> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1594,7 +1594,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddChar16(abi_arg_in<hstring> name, wchar_t value) noexcept override
+    HRESULT __stdcall abi_AddChar16(impl::abi_arg_in<hstring> name, wchar_t value) noexcept override
     {
         try
         {
@@ -1608,7 +1608,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddChar16WithFormat(abi_arg_in<hstring> name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddChar16WithFormat(impl::abi_arg_in<hstring> name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1622,7 +1622,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddChar16WithFormatAndTags(abi_arg_in<hstring> name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddChar16WithFormatAndTags(impl::abi_arg_in<hstring> name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1636,7 +1636,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddChar16Array(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<wchar_t> * value) noexcept override
+    HRESULT __stdcall abi_AddChar16Array(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<wchar_t> * value) noexcept override
     {
         try
         {
@@ -1650,7 +1650,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddChar16ArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<wchar_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddChar16ArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<wchar_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1664,7 +1664,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddChar16ArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<wchar_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddChar16ArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<wchar_t> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1678,7 +1678,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddBoolean(abi_arg_in<hstring> name, bool value) noexcept override
+    HRESULT __stdcall abi_AddBoolean(impl::abi_arg_in<hstring> name, bool value) noexcept override
     {
         try
         {
@@ -1692,7 +1692,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddBooleanWithFormat(abi_arg_in<hstring> name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddBooleanWithFormat(impl::abi_arg_in<hstring> name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1706,7 +1706,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddBooleanWithFormatAndTags(abi_arg_in<hstring> name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddBooleanWithFormatAndTags(impl::abi_arg_in<hstring> name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1720,7 +1720,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddBooleanArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<bool> * value) noexcept override
+    HRESULT __stdcall abi_AddBooleanArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<bool> * value) noexcept override
     {
         try
         {
@@ -1734,7 +1734,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddBooleanArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<bool> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddBooleanArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<bool> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1748,7 +1748,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddBooleanArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<bool> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddBooleanArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<bool> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1762,7 +1762,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddString(abi_arg_in<hstring> name, abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall abi_AddString(impl::abi_arg_in<hstring> name, impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1776,7 +1776,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddStringWithFormat(abi_arg_in<hstring> name, abi_arg_in<hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddStringWithFormat(impl::abi_arg_in<hstring> name, impl::abi_arg_in<hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1790,7 +1790,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddStringWithFormatAndTags(abi_arg_in<hstring> name, abi_arg_in<hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddStringWithFormatAndTags(impl::abi_arg_in<hstring> name, impl::abi_arg_in<hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1804,7 +1804,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddStringArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<hstring> * value) noexcept override
+    HRESULT __stdcall abi_AddStringArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<hstring> * value) noexcept override
     {
         try
         {
@@ -1819,7 +1819,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddStringArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<hstring> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddStringArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<hstring> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1834,7 +1834,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddStringArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<hstring> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddStringArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<hstring> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1849,7 +1849,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddGuid(abi_arg_in<hstring> name, GUID value) noexcept override
+    HRESULT __stdcall abi_AddGuid(impl::abi_arg_in<hstring> name, GUID value) noexcept override
     {
         try
         {
@@ -1863,7 +1863,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddGuidWithFormat(abi_arg_in<hstring> name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddGuidWithFormat(impl::abi_arg_in<hstring> name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1877,7 +1877,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddGuidWithFormatAndTags(abi_arg_in<hstring> name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddGuidWithFormatAndTags(impl::abi_arg_in<hstring> name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1891,7 +1891,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddGuidArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<GUID> * value) noexcept override
+    HRESULT __stdcall abi_AddGuidArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<GUID> * value) noexcept override
     {
         try
         {
@@ -1905,7 +1905,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddGuidArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<GUID> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddGuidArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<GUID> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1919,7 +1919,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddGuidArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<GUID> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddGuidArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<GUID> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1933,7 +1933,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDateTime(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall abi_AddDateTime(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
@@ -1947,7 +1947,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDateTimeWithFormat(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddDateTimeWithFormat(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -1961,7 +1961,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDateTimeWithFormatAndTags(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddDateTimeWithFormatAndTags(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -1975,7 +1975,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDateTimeArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::DateTime> * value) noexcept override
+    HRESULT __stdcall abi_AddDateTimeArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::DateTime> * value) noexcept override
     {
         try
         {
@@ -1989,7 +1989,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDateTimeArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::DateTime> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddDateTimeArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::DateTime> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -2003,7 +2003,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddDateTimeArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::DateTime> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddDateTimeArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::DateTime> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -2017,7 +2017,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddTimeSpan(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall abi_AddTimeSpan(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
@@ -2031,7 +2031,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddTimeSpanWithFormat(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddTimeSpanWithFormat(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -2045,7 +2045,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddTimeSpanWithFormatAndTags(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddTimeSpanWithFormatAndTags(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -2059,7 +2059,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddTimeSpanArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::TimeSpan> * value) noexcept override
+    HRESULT __stdcall abi_AddTimeSpanArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::TimeSpan> * value) noexcept override
     {
         try
         {
@@ -2073,7 +2073,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddTimeSpanArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::TimeSpan> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddTimeSpanArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::TimeSpan> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -2087,7 +2087,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddTimeSpanArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::TimeSpan> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddTimeSpanArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::TimeSpan> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -2101,7 +2101,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddPoint(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Point> value) noexcept override
+    HRESULT __stdcall abi_AddPoint(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Point> value) noexcept override
     {
         try
         {
@@ -2115,7 +2115,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddPointWithFormat(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddPointWithFormat(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -2129,7 +2129,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddPointWithFormatAndTags(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddPointWithFormatAndTags(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -2143,7 +2143,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddPointArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::Point> * value) noexcept override
+    HRESULT __stdcall abi_AddPointArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::Point> * value) noexcept override
     {
         try
         {
@@ -2157,7 +2157,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddPointArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::Point> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddPointArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::Point> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -2171,7 +2171,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddPointArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::Point> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddPointArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::Point> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -2185,7 +2185,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSize(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Size> value) noexcept override
+    HRESULT __stdcall abi_AddSize(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Size> value) noexcept override
     {
         try
         {
@@ -2199,7 +2199,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSizeWithFormat(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddSizeWithFormat(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -2213,7 +2213,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSizeWithFormatAndTags(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddSizeWithFormatAndTags(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -2227,7 +2227,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSizeArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::Size> * value) noexcept override
+    HRESULT __stdcall abi_AddSizeArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::Size> * value) noexcept override
     {
         try
         {
@@ -2241,7 +2241,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSizeArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::Size> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddSizeArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::Size> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -2255,7 +2255,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddSizeArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::Size> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddSizeArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::Size> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -2269,7 +2269,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddRect(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall abi_AddRect(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
@@ -2283,7 +2283,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddRectWithFormat(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddRectWithFormat(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -2297,7 +2297,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddRectWithFormatAndTags(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddRectWithFormatAndTags(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -2311,7 +2311,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddRectArray(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::Rect> * value) noexcept override
+    HRESULT __stdcall abi_AddRectArray(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::Rect> * value) noexcept override
     {
         try
         {
@@ -2325,7 +2325,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddRectArrayWithFormat(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::Rect> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
+    HRESULT __stdcall abi_AddRectArrayWithFormat(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::Rect> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept override
     {
         try
         {
@@ -2339,7 +2339,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_AddRectArrayWithFormatAndTags(abi_arg_in<hstring> name, uint32_t __valueSize, abi_arg_in<Windows::Foundation::Rect> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
+    HRESULT __stdcall abi_AddRectArrayWithFormatAndTags(impl::abi_arg_in<hstring> name, uint32_t __valueSize, impl::abi_arg_in<Windows::Foundation::Rect> * value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept override
     {
         try
         {
@@ -2362,7 +2362,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Keywords());
+            *value = detach_abi(this->shim().Keywords());
             return S_OK;
         }
         catch (...)
@@ -2390,7 +2390,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Tags());
+            *value = detach_abi(this->shim().Tags());
             return S_OK;
         }
         catch (...)
@@ -2418,7 +2418,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Task());
+            *value = detach_abi(this->shim().Task());
             return S_OK;
         }
         catch (...)
@@ -2446,7 +2446,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Opcode());
+            *value = detach_abi(this->shim().Opcode());
             return S_OK;
         }
         catch (...)
@@ -2474,7 +2474,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ActivityId());
+            *value = detach_abi(this->shim().ActivityId());
             return S_OK;
         }
         catch (...)
@@ -2502,7 +2502,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RelatedActivityId());
+            *value = detach_abi(this->shim().RelatedActivityId());
             return S_OK;
         }
         catch (...)
@@ -2529,12 +2529,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptionsFactory> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingOptionsFactory>
 {
-    HRESULT __stdcall abi_CreateWithKeywords(int64_t keywords, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingOptions> result) noexcept override
+    HRESULT __stdcall abi_CreateWithKeywords(int64_t keywords, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingOptions> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateWithKeywords(keywords));
+            *result = detach_abi(this->shim().CreateWithKeywords(keywords));
             return S_OK;
         }
         catch (...)
@@ -2548,12 +2548,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptionsFactory> : pr
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingSession>
 {
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Name());
+            *value = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -2563,12 +2563,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_SaveToFileAsync(abi_arg_in<Windows::Storage::IStorageFolder> folder, abi_arg_in<hstring> fileName, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>> operation) noexcept override
+    HRESULT __stdcall abi_SaveToFileAsync(impl::abi_arg_in<Windows::Storage::IStorageFolder> folder, impl::abi_arg_in<hstring> fileName, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().SaveToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&folder), *reinterpret_cast<const hstring *>(&fileName)));
+            *operation = detach_abi(this->shim().SaveToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&folder), *reinterpret_cast<const hstring *>(&fileName)));
             return S_OK;
         }
         catch (...)
@@ -2578,7 +2578,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_AddLoggingChannel(abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel) noexcept override
+    HRESULT __stdcall abi_AddLoggingChannel(impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel) noexcept override
     {
         try
         {
@@ -2592,7 +2592,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_AddLoggingChannelWithLevel(abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) noexcept override
+    HRESULT __stdcall abi_AddLoggingChannelWithLevel(impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) noexcept override
     {
         try
         {
@@ -2606,7 +2606,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_RemoveLoggingChannel(abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel) noexcept override
+    HRESULT __stdcall abi_RemoveLoggingChannel(impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingChannel> loggingChannel) noexcept override
     {
         try
         {
@@ -2624,12 +2624,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
 template <typename D>
 struct produce<D, Windows::Foundation::Diagnostics::ILoggingSessionFactory> : produce_base<D, Windows::Foundation::Diagnostics::ILoggingSessionFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> name, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingSession> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingSession> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -2648,7 +2648,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsEnabled());
+            *result = detach_abi(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -2662,7 +2662,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsEnabled(level));
+            *result = detach_abi(this->shim().IsEnabled(level));
             return S_OK;
         }
         catch (...)
@@ -2676,7 +2676,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsEnabled(level, keywords));
+            *result = detach_abi(this->shim().IsEnabled(level, keywords));
             return S_OK;
         }
         catch (...)
@@ -2685,7 +2685,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_LogEvent(abi_arg_in<hstring> eventName) noexcept override
+    HRESULT __stdcall abi_LogEvent(impl::abi_arg_in<hstring> eventName) noexcept override
     {
         try
         {
@@ -2699,7 +2699,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_LogEventWithFields(abi_arg_in<hstring> eventName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields) noexcept override
+    HRESULT __stdcall abi_LogEventWithFields(impl::abi_arg_in<hstring> eventName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields) noexcept override
     {
         try
         {
@@ -2713,7 +2713,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_LogEventWithFieldsAndLevel(abi_arg_in<hstring> eventName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept override
+    HRESULT __stdcall abi_LogEventWithFieldsAndLevel(impl::abi_arg_in<hstring> eventName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept override
     {
         try
         {
@@ -2727,7 +2727,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_LogEventWithFieldsAndOptions(abi_arg_in<hstring> eventName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, Windows::Foundation::Diagnostics::LoggingLevel level, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingOptions> options) noexcept override
+    HRESULT __stdcall abi_LogEventWithFieldsAndOptions(impl::abi_arg_in<hstring> eventName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, Windows::Foundation::Diagnostics::LoggingLevel level, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingOptions> options) noexcept override
     {
         try
         {
@@ -2741,12 +2741,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_StartActivity(abi_arg_in<hstring> startEventName, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> result) noexcept override
+    HRESULT __stdcall abi_StartActivity(impl::abi_arg_in<hstring> startEventName, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName)));
+            *result = detach_abi(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName)));
             return S_OK;
         }
         catch (...)
@@ -2756,12 +2756,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_StartActivityWithFields(abi_arg_in<hstring> startEventName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> result) noexcept override
+    HRESULT __stdcall abi_StartActivityWithFields(impl::abi_arg_in<hstring> startEventName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields)));
+            *result = detach_abi(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields)));
             return S_OK;
         }
         catch (...)
@@ -2771,12 +2771,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_StartActivityWithFieldsAndLevel(abi_arg_in<hstring> startEventName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, Windows::Foundation::Diagnostics::LoggingLevel level, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> result) noexcept override
+    HRESULT __stdcall abi_StartActivityWithFieldsAndLevel(impl::abi_arg_in<hstring> startEventName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, Windows::Foundation::Diagnostics::LoggingLevel level, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields), level));
+            *result = detach_abi(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields), level));
             return S_OK;
         }
         catch (...)
@@ -2786,12 +2786,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_StartActivityWithFieldsAndOptions(abi_arg_in<hstring> startEventName, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, Windows::Foundation::Diagnostics::LoggingLevel level, abi_arg_in<Windows::Foundation::Diagnostics::ILoggingOptions> options, abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> result) noexcept override
+    HRESULT __stdcall abi_StartActivityWithFieldsAndOptions(impl::abi_arg_in<hstring> startEventName, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingFields> fields, Windows::Foundation::Diagnostics::LoggingLevel level, impl::abi_arg_in<Windows::Foundation::Diagnostics::ILoggingOptions> options, impl::abi_arg_out<Windows::Foundation::Diagnostics::ILoggingActivity> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields), level, *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingOptions *>(&options)));
+            *result = detach_abi(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields), level, *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -2810,7 +2810,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ITracingStatusChangedEventAr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *enabled = detach(this->shim().Enabled());
+            *enabled = detach_abi(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -2824,7 +2824,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ITracingStatusChangedEventAr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TraceLevel());
+            *value = detach_abi(this->shim().TraceLevel());
             return S_OK;
         }
         catch (...)
@@ -2854,7 +2854,7 @@ template <typename D> Windows::Foundation::Diagnostics::CausalityTraceLevel impl
 
 template <typename D> void impl_IAsyncCausalityTracerStatics<D>::TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring_view operationName, uint64_t relatedContext) const
 {
-    check_hresult(WINRT_SHIM(IAsyncCausalityTracerStatics)->abi_TraceOperationCreation(traceLevel, source, platformId, operationId, get(operationName), relatedContext));
+    check_hresult(WINRT_SHIM(IAsyncCausalityTracerStatics)->abi_TraceOperationCreation(traceLevel, source, platformId, operationId, get_abi(operationName), relatedContext));
 }
 
 template <typename D> void impl_IAsyncCausalityTracerStatics<D>::TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::AsyncStatus status) const
@@ -2880,7 +2880,7 @@ template <typename D> void impl_IAsyncCausalityTracerStatics<D>::TraceSynchronou
 template <typename D> event_token impl_IAsyncCausalityTracerStatics<D>::TracingStatusChanged(const Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IAsyncCausalityTracerStatics)->add_TracingStatusChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IAsyncCausalityTracerStatics)->add_TracingStatusChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -2909,28 +2909,28 @@ template <typename D> Windows::Foundation::Diagnostics::ErrorOptions impl_IError
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Diagnostics::ErrorDetails> impl_IErrorDetailsStatics<D>::CreateFromHResultAsync(int32_t errorCode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Diagnostics::ErrorDetails> operation;
-    check_hresult(WINRT_SHIM(IErrorDetailsStatics)->abi_CreateFromHResultAsync(errorCode, put(operation)));
+    check_hresult(WINRT_SHIM(IErrorDetailsStatics)->abi_CreateFromHResultAsync(errorCode, put_abi(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IErrorDetails<D>::Description() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IErrorDetails)->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IErrorDetails)->get_Description(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IErrorDetails<D>::LongDescription() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IErrorDetails)->get_LongDescription(put(value)));
+    check_hresult(WINRT_SHIM(IErrorDetails)->get_LongDescription(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IErrorDetails<D>::HelpUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IErrorDetails)->get_HelpUri(put(value)));
+    check_hresult(WINRT_SHIM(IErrorDetails)->get_HelpUri(put_abi(value)));
     return value;
 }
 
@@ -3009,7 +3009,7 @@ template <typename D> void impl_ILoggingOptions<D>::RelatedActivityId(GUID value
 template <typename D> Windows::Foundation::Diagnostics::LoggingOptions impl_ILoggingOptionsFactory<D>::CreateWithKeywords(int64_t keywords) const
 {
     Windows::Foundation::Diagnostics::LoggingOptions result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingOptionsFactory)->abi_CreateWithKeywords(keywords, put(result)));
+    check_hresult(WINRT_SHIM(ILoggingOptionsFactory)->abi_CreateWithKeywords(keywords, put_abi(result)));
     return result;
 }
 
@@ -3028,7 +3028,7 @@ template <typename D> void impl_ILoggingChannelOptions<D>::Group(GUID value) con
 template <typename D> Windows::Foundation::Diagnostics::LoggingChannelOptions impl_ILoggingChannelOptionsFactory<D>::Create(GUID group) const
 {
     Windows::Foundation::Diagnostics::LoggingChannelOptions result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingChannelOptionsFactory)->abi_Create(group, put(result)));
+    check_hresult(WINRT_SHIM(ILoggingChannelOptionsFactory)->abi_Create(group, put_abi(result)));
     return result;
 }
 
@@ -3039,12 +3039,12 @@ template <typename D> void impl_ILoggingFields<D>::Clear() const
 
 template <typename D> void impl_ILoggingFields<D>::BeginStruct(hstring_view name) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_BeginStruct(get(name)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_BeginStruct(get_abi(name)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::BeginStruct(hstring_view name, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_BeginStructWithTags(get(name), tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_BeginStructWithTags(get_abi(name), tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::EndStruct() const
@@ -3054,557 +3054,557 @@ template <typename D> void impl_ILoggingFields<D>::EndStruct() const
 
 template <typename D> void impl_ILoggingFields<D>::AddEmpty(hstring_view name) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddEmpty(get(name)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddEmpty(get_abi(name)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddEmpty(hstring_view name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddEmptyWithFormat(get(name), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddEmptyWithFormat(get_abi(name), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddEmpty(hstring_view name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddEmptyWithFormatAndTags(get(name), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddEmptyWithFormatAndTags(get_abi(name), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_view name, uint8_t value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_view name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8WithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8WithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt8(hstring_view name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8WithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8WithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_view<const uint8_t> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8Array(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8Array(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_view<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8ArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8ArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt8Array(hstring_view name, array_view<const uint8_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt8ArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_view name, int16_t value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_view name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16WithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16WithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt16(hstring_view name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16WithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16WithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_view<const int16_t> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16Array(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16Array(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_view<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16ArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16ArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt16Array(hstring_view name, array_view<const int16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt16ArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_view name, uint16_t value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_view name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16WithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16WithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt16(hstring_view name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16WithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16WithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_view<const uint16_t> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16Array(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16Array(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_view<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16ArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16ArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt16Array(hstring_view name, array_view<const uint16_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt16ArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_view name, int32_t value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_view name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32WithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32WithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt32(hstring_view name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32WithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32WithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_view<const int32_t> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32Array(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32Array(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_view<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32ArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32ArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt32Array(hstring_view name, array_view<const int32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt32ArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_view name, uint32_t value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_view name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32WithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32WithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt32(hstring_view name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32WithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32WithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_view<const uint32_t> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32Array(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32Array(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_view<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32ArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32ArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt32Array(hstring_view name, array_view<const uint32_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt32ArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_view name, int64_t value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_view name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64WithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64WithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt64(hstring_view name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64WithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64WithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_view<const int64_t> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64Array(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64Array(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_view<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64ArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64ArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddInt64Array(hstring_view name, array_view<const int64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddInt64ArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_view name, uint64_t value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_view name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64WithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64WithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt64(hstring_view name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64WithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64WithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_view<const uint64_t> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64Array(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64Array(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_view<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64ArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64ArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddUInt64Array(hstring_view name, array_view<const uint64_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddUInt64ArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_view name, float value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingle(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingle(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_view name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleWithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleWithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSingle(hstring_view name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleWithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleWithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_view<const float> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_view<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSingleArray(hstring_view name, array_view<const float> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSingleArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_view name, double value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDouble(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDouble(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_view name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleWithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleWithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDouble(hstring_view name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleWithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleWithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_view<const double> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_view<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDoubleArray(hstring_view name, array_view<const double> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDoubleArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_view name, wchar_t value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_view name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16WithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16WithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddChar16(hstring_view name, wchar_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16WithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16WithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_view<const wchar_t> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16Array(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16Array(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_view<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16ArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16ArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddChar16Array(hstring_view name, array_view<const wchar_t> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16ArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddChar16ArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_view name, bool value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBoolean(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBoolean(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_view name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanWithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanWithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddBoolean(hstring_view name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanWithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanWithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_view<const bool> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_view<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddBooleanArray(hstring_view name, array_view<const bool> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddBooleanArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddString(hstring_view name, hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddString(get(name), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddString(get_abi(name), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddString(hstring_view name, hstring_view value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringWithFormat(get(name), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringWithFormat(get_abi(name), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddString(hstring_view name, hstring_view value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringWithFormatAndTags(get(name), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringWithFormatAndTags(get_abi(name), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_view<const hstring> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_view<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddStringArray(hstring_view name, array_view<const hstring> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddStringArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_view name, GUID value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuid(get(name), value));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuid(get_abi(name), value));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_view name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidWithFormat(get(name), value, format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidWithFormat(get_abi(name), value, format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddGuid(hstring_view name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidWithFormatAndTags(get(name), value, format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidWithFormatAndTags(get_abi(name), value, format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_view<const GUID> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_view<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddGuidArray(hstring_view name, array_view<const GUID> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddGuidArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_view name, const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTime(get(name), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTime(get_abi(name), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_view name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeWithFormat(get(name), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeWithFormat(get_abi(name), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDateTime(hstring_view name, const Windows::Foundation::DateTime & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeWithFormatAndTags(get(name), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeWithFormatAndTags(get_abi(name), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_view<const Windows::Foundation::DateTime> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_view<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddDateTimeArray(hstring_view name, array_view<const Windows::Foundation::DateTime> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddDateTimeArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_view name, const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpan(get(name), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpan(get_abi(name), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_view name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanWithFormat(get(name), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanWithFormat(get_abi(name), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddTimeSpan(hstring_view name, const Windows::Foundation::TimeSpan & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanWithFormatAndTags(get(name), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanWithFormatAndTags(get_abi(name), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_view<const Windows::Foundation::TimeSpan> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_view<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddTimeSpanArray(hstring_view name, array_view<const Windows::Foundation::TimeSpan> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddTimeSpanArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_view name, const Windows::Foundation::Point & value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPoint(get(name), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPoint(get_abi(name), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_view name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointWithFormat(get(name), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointWithFormat(get_abi(name), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddPoint(hstring_view name, const Windows::Foundation::Point & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointWithFormatAndTags(get(name), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointWithFormatAndTags(get_abi(name), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_view<const Windows::Foundation::Point> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_view<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddPointArray(hstring_view name, array_view<const Windows::Foundation::Point> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddPointArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_view name, const Windows::Foundation::Size & value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSize(get(name), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSize(get_abi(name), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_view name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeWithFormat(get(name), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeWithFormat(get_abi(name), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSize(hstring_view name, const Windows::Foundation::Size & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeWithFormatAndTags(get(name), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeWithFormatAndTags(get_abi(name), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_view<const Windows::Foundation::Size> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_view<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddSizeArray(hstring_view name, array_view<const Windows::Foundation::Size> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddSizeArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_view name, const Windows::Foundation::Rect & value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRect(get(name), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRect(get_abi(name), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_view name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectWithFormat(get(name), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectWithFormat(get_abi(name), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddRect(hstring_view name, const Windows::Foundation::Rect & value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectWithFormatAndTags(get(name), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectWithFormatAndTags(get_abi(name), get_abi(value), format, tags));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_view<const Windows::Foundation::Rect> value) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArray(get(name), value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArray(get_abi(name), value.size(), get_abi(value)));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_view<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArrayWithFormat(get(name), value.size(), get(value), format));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArrayWithFormat(get_abi(name), value.size(), get_abi(value), format));
 }
 
 template <typename D> void impl_ILoggingFields<D>::AddRectArray(hstring_view name, array_view<const Windows::Foundation::Rect> value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) const
 {
-    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArrayWithFormatAndTags(get(name), value.size(), get(value), format, tags));
+    check_hresult(WINRT_SHIM(ILoggingFields)->abi_AddRectArrayWithFormatAndTags(get_abi(name), value.size(), get_abi(value), format, tags));
 }
 
 template <typename D> bool impl_ILoggingTarget<D>::IsEnabled() const
@@ -3630,56 +3630,56 @@ template <typename D> bool impl_ILoggingTarget<D>::IsEnabled(Windows::Foundation
 
 template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_view eventName) const
 {
-    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEvent(get(eventName)));
+    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEvent(get_abi(eventName)));
 }
 
 template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_view eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const
 {
-    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEventWithFields(get(eventName), get(fields)));
+    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEventWithFields(get_abi(eventName), get_abi(fields)));
 }
 
 template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_view eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
-    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEventWithFieldsAndLevel(get(eventName), get(fields), level));
+    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEventWithFieldsAndLevel(get_abi(eventName), get_abi(fields), level));
 }
 
 template <typename D> void impl_ILoggingTarget<D>::LogEvent(hstring_view eventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const
 {
-    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEventWithFieldsAndOptions(get(eventName), get(fields), level, get(options)));
+    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_LogEventWithFieldsAndOptions(get_abi(eventName), get_abi(fields), level, get_abi(options)));
 }
 
 template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_view startEventName) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivity(get(startEventName), put(result)));
+    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivity(get_abi(startEventName), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_view startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivityWithFields(get(startEventName), get(fields), put(result)));
+    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivityWithFields(get_abi(startEventName), get_abi(fields), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_view startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivityWithFieldsAndLevel(get(startEventName), get(fields), level, put(result)));
+    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivityWithFieldsAndLevel(get_abi(startEventName), get_abi(fields), level, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingTarget<D>::StartActivity(hstring_view startEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, Windows::Foundation::Diagnostics::LoggingLevel level, const Windows::Foundation::Diagnostics::LoggingOptions & options) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivityWithFieldsAndOptions(get(startEventName), get(fields), level, get(options), put(result)));
+    check_hresult(WINRT_SHIM(ILoggingTarget)->abi_StartActivityWithFieldsAndOptions(get_abi(startEventName), get_abi(fields), level, get_abi(options), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_ILoggingChannel<D>::Name() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ILoggingChannel)->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ILoggingChannel)->get_Name(put_abi(value)));
     return value;
 }
 
@@ -3699,28 +3699,28 @@ template <typename D> Windows::Foundation::Diagnostics::LoggingLevel impl_ILoggi
 
 template <typename D> void impl_ILoggingChannel<D>::LogMessage(hstring_view eventString) const
 {
-    check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogMessage(get(eventString)));
+    check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogMessage(get_abi(eventString)));
 }
 
 template <typename D> void impl_ILoggingChannel<D>::LogMessage(hstring_view eventString, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
-    check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogMessageWithLevel(get(eventString), level));
+    check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogMessageWithLevel(get_abi(eventString), level));
 }
 
 template <typename D> void impl_ILoggingChannel<D>::LogValuePair(hstring_view value1, int32_t value2) const
 {
-    check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogValuePair(get(value1), value2));
+    check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogValuePair(get_abi(value1), value2));
 }
 
 template <typename D> void impl_ILoggingChannel<D>::LogValuePair(hstring_view value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
-    check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogValuePairWithLevel(get(value1), value2, level));
+    check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogValuePairWithLevel(get_abi(value1), value2, level));
 }
 
 template <typename D> event_token impl_ILoggingChannel<D>::LoggingEnabled(const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(ILoggingChannel)->add_LoggingEnabled(get(handler), &token));
+    check_hresult(WINRT_SHIM(ILoggingChannel)->add_LoggingEnabled(get_abi(handler), &token));
     return token;
 }
 
@@ -3744,28 +3744,28 @@ template <typename D> GUID impl_ILoggingChannel2<D>::Id() const
 template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingChannelFactory<D>::Create(hstring_view name) const
 {
     Windows::Foundation::Diagnostics::LoggingChannel result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingChannelFactory)->abi_Create(get(name), put(result)));
+    check_hresult(WINRT_SHIM(ILoggingChannelFactory)->abi_Create(get_abi(name), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingChannelFactory2<D>::CreateWithOptions(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) const
 {
     Windows::Foundation::Diagnostics::LoggingChannel result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingChannelFactory2)->abi_CreateWithOptions(get(name), get(options), put(result)));
+    check_hresult(WINRT_SHIM(ILoggingChannelFactory2)->abi_CreateWithOptions(get_abi(name), get_abi(options), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingChannelFactory2<D>::CreateWithOptionsAndId(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) const
 {
     Windows::Foundation::Diagnostics::LoggingChannel result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingChannelFactory2)->abi_CreateWithOptionsAndId(get(name), get(options), id, put(result)));
+    check_hresult(WINRT_SHIM(ILoggingChannelFactory2)->abi_CreateWithOptionsAndId(get_abi(name), get_abi(options), id, put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_ILoggingActivity<D>::Name() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ILoggingActivity)->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ILoggingActivity)->get_Name(put_abi(value)));
     return value;
 }
 
@@ -3779,115 +3779,115 @@ template <typename D> GUID impl_ILoggingActivity<D>::Id() const
 template <typename D> Windows::Foundation::Diagnostics::LoggingChannel impl_ILoggingActivity2<D>::Channel() const
 {
     Windows::Foundation::Diagnostics::LoggingChannel value { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingActivity2)->get_Channel(put(value)));
+    check_hresult(WINRT_SHIM(ILoggingActivity2)->get_Channel(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ILoggingActivity2<D>::StopActivity(hstring_view stopEventName) const
 {
-    check_hresult(WINRT_SHIM(ILoggingActivity2)->abi_StopActivity(get(stopEventName)));
+    check_hresult(WINRT_SHIM(ILoggingActivity2)->abi_StopActivity(get_abi(stopEventName)));
 }
 
 template <typename D> void impl_ILoggingActivity2<D>::StopActivity(hstring_view stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const
 {
-    check_hresult(WINRT_SHIM(ILoggingActivity2)->abi_StopActivityWithFields(get(stopEventName), get(fields)));
+    check_hresult(WINRT_SHIM(ILoggingActivity2)->abi_StopActivityWithFields(get_abi(stopEventName), get_abi(fields)));
 }
 
 template <typename D> void impl_ILoggingActivity2<D>::StopActivity(hstring_view stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields, const Windows::Foundation::Diagnostics::LoggingOptions & options) const
 {
-    check_hresult(WINRT_SHIM(ILoggingActivity2)->abi_StopActivityWithFieldsAndOptions(get(stopEventName), get(fields), get(options)));
+    check_hresult(WINRT_SHIM(ILoggingActivity2)->abi_StopActivityWithFieldsAndOptions(get_abi(stopEventName), get_abi(fields), get_abi(options)));
 }
 
 template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingActivityFactory<D>::CreateLoggingActivity(hstring_view activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity loggingActivity { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingActivityFactory)->abi_CreateLoggingActivity(get(activityName), get(loggingChannel), put(loggingActivity)));
+    check_hresult(WINRT_SHIM(ILoggingActivityFactory)->abi_CreateLoggingActivity(get_abi(activityName), get_abi(loggingChannel), put_abi(loggingActivity)));
     return loggingActivity;
 }
 
 template <typename D> Windows::Foundation::Diagnostics::LoggingActivity impl_ILoggingActivityFactory<D>::CreateLoggingActivityWithLevel(hstring_view activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) const
 {
     Windows::Foundation::Diagnostics::LoggingActivity loggingActivity { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingActivityFactory)->abi_CreateLoggingActivityWithLevel(get(activityName), get(loggingChannel), level, put(loggingActivity)));
+    check_hresult(WINRT_SHIM(ILoggingActivityFactory)->abi_CreateLoggingActivityWithLevel(get_abi(activityName), get_abi(loggingChannel), level, put_abi(loggingActivity)));
     return loggingActivity;
 }
 
 template <typename D> hstring impl_ILoggingSession<D>::Name() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ILoggingSession)->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ILoggingSession)->get_Name(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_ILoggingSession<D>::SaveToFileAsync(const Windows::Storage::IStorageFolder & folder, hstring_view fileName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(WINRT_SHIM(ILoggingSession)->abi_SaveToFileAsync(get(folder), get(fileName), put(operation)));
+    check_hresult(WINRT_SHIM(ILoggingSession)->abi_SaveToFileAsync(get_abi(folder), get_abi(fileName), put_abi(operation)));
     return operation;
 }
 
 template <typename D> void impl_ILoggingSession<D>::AddLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const
 {
-    check_hresult(WINRT_SHIM(ILoggingSession)->abi_AddLoggingChannel(get(loggingChannel)));
+    check_hresult(WINRT_SHIM(ILoggingSession)->abi_AddLoggingChannel(get_abi(loggingChannel)));
 }
 
 template <typename D> void impl_ILoggingSession<D>::AddLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) const
 {
-    check_hresult(WINRT_SHIM(ILoggingSession)->abi_AddLoggingChannelWithLevel(get(loggingChannel), maxLevel));
+    check_hresult(WINRT_SHIM(ILoggingSession)->abi_AddLoggingChannelWithLevel(get_abi(loggingChannel), maxLevel));
 }
 
 template <typename D> void impl_ILoggingSession<D>::RemoveLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const
 {
-    check_hresult(WINRT_SHIM(ILoggingSession)->abi_RemoveLoggingChannel(get(loggingChannel)));
+    check_hresult(WINRT_SHIM(ILoggingSession)->abi_RemoveLoggingChannel(get_abi(loggingChannel)));
 }
 
 template <typename D> Windows::Foundation::Diagnostics::LoggingSession impl_ILoggingSessionFactory<D>::Create(hstring_view name) const
 {
     Windows::Foundation::Diagnostics::LoggingSession result { nullptr };
-    check_hresult(WINRT_SHIM(ILoggingSessionFactory)->abi_Create(get(name), put(result)));
+    check_hresult(WINRT_SHIM(ILoggingSessionFactory)->abi_Create(get_abi(name), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Storage::StorageFile impl_ILogFileGeneratedEventArgs<D>::File() const
 {
     Windows::Storage::StorageFile value { nullptr };
-    check_hresult(WINRT_SHIM(ILogFileGeneratedEventArgs)->get_File(put(value)));
+    check_hresult(WINRT_SHIM(ILogFileGeneratedEventArgs)->get_File(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileLoggingSession<D>::Name() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IFileLoggingSession)->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IFileLoggingSession)->get_Name(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFileLoggingSession<D>::AddLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const
 {
-    check_hresult(WINRT_SHIM(IFileLoggingSession)->abi_AddLoggingChannel(get(loggingChannel)));
+    check_hresult(WINRT_SHIM(IFileLoggingSession)->abi_AddLoggingChannel(get_abi(loggingChannel)));
 }
 
 template <typename D> void impl_IFileLoggingSession<D>::AddLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) const
 {
-    check_hresult(WINRT_SHIM(IFileLoggingSession)->abi_AddLoggingChannelWithLevel(get(loggingChannel), maxLevel));
+    check_hresult(WINRT_SHIM(IFileLoggingSession)->abi_AddLoggingChannelWithLevel(get_abi(loggingChannel), maxLevel));
 }
 
 template <typename D> void impl_IFileLoggingSession<D>::RemoveLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const
 {
-    check_hresult(WINRT_SHIM(IFileLoggingSession)->abi_RemoveLoggingChannel(get(loggingChannel)));
+    check_hresult(WINRT_SHIM(IFileLoggingSession)->abi_RemoveLoggingChannel(get_abi(loggingChannel)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IFileLoggingSession<D>::CloseAndSaveToFileAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(WINRT_SHIM(IFileLoggingSession)->abi_CloseAndSaveToFileAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IFileLoggingSession)->abi_CloseAndSaveToFileAsync(put_abi(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IFileLoggingSession<D>::LogFileGenerated(const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::IFileLoggingSession, Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IFileLoggingSession)->add_LogFileGenerated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IFileLoggingSession)->add_LogFileGenerated(get_abi(handler), &token));
     return token;
 }
 
@@ -3904,7 +3904,7 @@ template <typename D> void impl_IFileLoggingSession<D>::LogFileGenerated(event_t
 template <typename D> Windows::Foundation::Diagnostics::FileLoggingSession impl_IFileLoggingSessionFactory<D>::Create(hstring_view name) const
 {
     Windows::Foundation::Diagnostics::FileLoggingSession result { nullptr };
-    check_hresult(WINRT_SHIM(IFileLoggingSessionFactory)->abi_Create(get(name), put(result)));
+    check_hresult(WINRT_SHIM(IFileLoggingSessionFactory)->abi_Create(get_abi(name), put_abi(result)));
     return result;
 }
 

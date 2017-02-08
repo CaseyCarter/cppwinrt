@@ -286,7 +286,7 @@ TEST_CASE("hstring,accessors,get")
 {
     hstring s = L"abc";
 
-    HSTRING h = get(s);
+    HSTRING h = get_abi(s);
 
     REQUIRE(0 == wcscmp(L"abc", WindowsGetStringRawBuffer(h, nullptr))); // handle has correct value
 
@@ -296,13 +296,13 @@ TEST_CASE("hstring,accessors,get")
 static void test_hstring_put(HSTRING * result)
 {
     hstring local = L"abc";
-    *result = detach(local);
+    *result = detach_abi(local);
 }
 
 TEST_CASE("hstring,accessors,put")
 {
     hstring s;
-    test_hstring_put(put(s));
+    test_hstring_put(put_abi(s));
 
     REQUIRE(L"abc" == s);
 }
@@ -312,36 +312,36 @@ TEST_CASE("hstring,accessors,detach,hstring")
     hstring s = L"abc";
     REQUIRE(!s.empty());
 
-    HSTRING h = detach(s);
+    HSTRING h = detach_abi(s);
     REQUIRE(s.empty());
 
-    attach(s, h);
+    attach_abi(s, h);
     REQUIRE(!s.empty());
     REQUIRE(L"abc" == s);
 
     hstring empty;
-    h = detach(empty);
+    h = detach_abi(empty);
     REQUIRE(nullptr == h);
 
-    attach(empty, h);
+    attach_abi(empty, h);
     REQUIRE(empty.empty());
 }
 
 TEST_CASE("hstring,accessors,detach,wchar_t")
 {
-    HSTRING h = detach(L"abc");
+    HSTRING h = detach_abi(L"abc");
 
     hstring s;
-    attach(s, h);
+    attach_abi(s, h);
     REQUIRE(L"abc" == s);
 }
 
 TEST_CASE("hstring,accessors,detach,std::wstring")
 {
-    HSTRING h = detach(std::wstring(L"abc"));
+    HSTRING h = detach_abi(std::wstring(L"abc"));
 
     hstring s;
-    attach(s, h);
+    attach_abi(s, h);
     REQUIRE(L"abc" == s);
 }
 
@@ -350,7 +350,7 @@ TEST_CASE("hstring,accessors,copy_from")
     hstring from = L"abc";
     hstring to;
 
-    copy_from(to, get(from));
+    copy_from_abi(to, get_abi(from));
     REQUIRE(L"abc" == to);
 }
 
@@ -358,10 +358,10 @@ TEST_CASE("hstring,accessors,copy_to")
 {
     hstring from = L"abc";
     HSTRING to = nullptr;
-    copy_to(from, to);
+    copy_to_abi(from, to);
 
     hstring copy;
-    attach(copy, to);
+    attach_abi(copy, to);
     REQUIRE(L"abc" == copy);
 }
 
@@ -416,11 +416,11 @@ static void test_hstring_ref(hstring_view s, wchar_t const * const expected)
     REQUIRE(L"cba" == std::wstring(s.rbegin(), s.rend()));
     REQUIRE(L"cba" == std::wstring(s.crbegin(), s.crend()));
 
-    REQUIRE(0 == wcscmp(L"abc", WindowsGetStringRawBuffer(get(s), nullptr)));
+    REQUIRE(0 == wcscmp(L"abc", WindowsGetStringRawBuffer(get_abi(s), nullptr)));
 
-    HSTRING d = detach(s);
+    HSTRING d = detach_abi(s);
     hstring copy;
-    attach(copy, d);
+    attach_abi(copy, d);
     REQUIRE(L"abc" == copy);
 
     REQUIRE(!s.empty()); // detaching from hstring_view doesn't affect the hstring_view
@@ -437,7 +437,7 @@ TEST_CASE("hstring_view,constructor,wchar_t")
     {
         wchar_t const * const s = L"";
         hstring_view ref = s;
-        REQUIRE(nullptr == get(ref));
+        REQUIRE(nullptr == get_abi(ref));
     }
 }
 
@@ -451,7 +451,7 @@ TEST_CASE("hstring_view,constructor,std::wstring")
     {
         std::wstring s;
         hstring_view ref = s;
-        REQUIRE(nullptr == get(ref));
+        REQUIRE(nullptr == get_abi(ref));
 
         std::wstring copy = ref;
         REQUIRE(copy.empty());
@@ -468,14 +468,14 @@ TEST_CASE("hstring_view,constructor,hstring")
     {
         hstring s;
         hstring_view ref = s;
-        REQUIRE(nullptr == get(ref));
+        REQUIRE(nullptr == get_abi(ref));
     }
 }
 
 TEST_CASE("hstring_view,constructor,HSTRING")
 {
     hstring s = L"abc";
-    test_hstring_ref(hstring_view(get(s)), s.c_str());
+    test_hstring_ref(hstring_view(get_abi(s)), s.c_str());
 }
 
 TEST_CASE("hstring_view,constructor,hstring_view")
@@ -488,7 +488,7 @@ TEST_CASE("hstring_view,constructor,hstring_view")
     {
         hstring_view s = L"";
         hstring_view ref = s;
-        REQUIRE(nullptr == get(ref));
+        REQUIRE(nullptr == get_abi(ref));
     }
 }
 

@@ -1,11 +1,11 @@
 
 inline hstring::hstring(const hstring & value) :
-    m_handle(impl::duplicate_string(get(value.m_handle)))
+    m_handle(impl::duplicate_string(get_abi(value.m_handle)))
 {}
 
 inline hstring & hstring::operator=(const hstring & value)
 {
-    m_handle = impl::duplicate_string(get(value.m_handle));
+    m_handle = impl::duplicate_string(get_abi(value.m_handle));
     return *this;
 }
 
@@ -24,7 +24,7 @@ inline hstring::hstring(const std::wstring & value) :
 {}
 
 inline hstring::hstring(hstring_view value) :
-    m_handle(impl::duplicate_string(get(value)))
+    m_handle(impl::duplicate_string(get_abi(value)))
 {}
 
 inline hstring::hstring(const wchar_t * const value) :
@@ -75,7 +75,7 @@ inline hstring::const_pointer hstring::c_str() const noexcept
 
 inline hstring::const_iterator hstring::begin() const noexcept
 {
-    return WindowsGetStringRawBuffer(get(m_handle), nullptr);
+    return WindowsGetStringRawBuffer(get_abi(m_handle), nullptr);
 }
 
 inline hstring::const_iterator hstring::cbegin() const noexcept
@@ -86,7 +86,7 @@ inline hstring::const_iterator hstring::cbegin() const noexcept
 inline hstring::const_iterator hstring::end() const noexcept
 {
     uint32_t length = 0;
-    const_pointer buffer = WindowsGetStringRawBuffer(get(m_handle), &length);
+    const_pointer buffer = WindowsGetStringRawBuffer(get_abi(m_handle), &length);
     return buffer + length;
 }
 
@@ -122,5 +122,5 @@ inline bool hstring::empty() const noexcept
 
 inline hstring::size_type hstring::size() const noexcept
 {
-    return WindowsGetStringLen(get(m_handle));
+    return WindowsGetStringLen(get_abi(m_handle));
 }

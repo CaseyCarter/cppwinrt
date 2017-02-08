@@ -39,7 +39,7 @@ struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ template <typename D, typename T>
 T impl_IReference<D, T>::Value() const
 {
     T result{};
-    check_hresult((*(abi<IReference<T>> **)&static_cast<const IReference<T> &>(static_cast<const D &>(*this)))->get_Value(put(result)));
+    check_hresult((*(abi<IReference<T>> **)&static_cast<const IReference<T> &>(static_cast<const D &>(*this)))->get_Value(put_abi(result)));
     return result;
 }
 

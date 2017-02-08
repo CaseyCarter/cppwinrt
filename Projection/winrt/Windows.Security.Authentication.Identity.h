@@ -13,12 +13,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationInfo> : produce_base<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationInfo>
 {
-    HRESULT __stdcall get_TenantId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_TenantId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TenantId());
+            *value = detach_abi(this->shim().TenantId());
             return S_OK;
         }
         catch (...)
@@ -28,12 +28,12 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
         }
     }
 
-    HRESULT __stdcall get_TenantName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_TenantName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TenantName());
+            *value = detach_abi(this->shim().TenantName());
             return S_OK;
         }
         catch (...)
@@ -43,12 +43,12 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
         }
     }
 
-    HRESULT __stdcall get_Subject(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Subject(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Subject());
+            *value = detach_abi(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -58,12 +58,12 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
         }
     }
 
-    HRESULT __stdcall get_KeyId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_KeyId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyId());
+            *value = detach_abi(this->shim().KeyId());
             return S_OK;
         }
         catch (...)
@@ -73,12 +73,12 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
         }
     }
 
-    HRESULT __stdcall get_KeyName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_KeyName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyName());
+            *value = detach_abi(this->shim().KeyName());
             return S_OK;
         }
         catch (...)
@@ -92,12 +92,12 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
 template <typename D>
 struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager> : produce_base<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager>
 {
-    HRESULT __stdcall abi_GetRegistrationsAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>>> value) noexcept override
+    HRESULT __stdcall abi_GetRegistrationsAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetRegistrationsAsync());
+            *value = detach_abi(this->shim().GetRegistrationsAsync());
             return S_OK;
         }
         catch (...)
@@ -111,12 +111,12 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
 template <typename D>
 struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManagerStatics> : produce_base<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManagerStatics>
 {
-    HRESULT __stdcall get_Current(abi_arg_out<Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager> value) noexcept override
+    HRESULT __stdcall get_Current(impl::abi_arg_out<Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Current());
+            *value = detach_abi(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -134,49 +134,49 @@ namespace Windows::Security::Authentication::Identity {
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::TenantId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_TenantId(put(value)));
+    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_TenantId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::TenantName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_TenantName(put(value)));
+    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_TenantName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::Subject() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_Subject(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::KeyId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_KeyId(put(value)));
+    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_KeyId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::KeyName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_KeyName(put(value)));
+    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationInfo)->get_KeyName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager impl_IEnterpriseKeyCredentialRegistrationManagerStatics<D>::Current() const
 {
     Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager value { nullptr };
-    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationManagerStatics)->get_Current(put(value)));
+    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationManagerStatics)->get_Current(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> impl_IEnterpriseKeyCredentialRegistrationManager<D>::GetRegistrationsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> value;
-    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationManager)->abi_GetRegistrationsAsync(put(value)));
+    check_hresult(WINRT_SHIM(IEnterpriseKeyCredentialRegistrationManager)->abi_GetRegistrationsAsync(put_abi(value)));
     return value;
 }
 

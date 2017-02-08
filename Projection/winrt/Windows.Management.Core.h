@@ -17,12 +17,12 @@ struct produce<D, Windows::Management::Core::IApplicationDataManager> : produce_
 template <typename D>
 struct produce<D, Windows::Management::Core::IApplicationDataManagerStatics> : produce_base<D, Windows::Management::Core::IApplicationDataManagerStatics>
 {
-    HRESULT __stdcall abi_CreateForPackageFamily(abi_arg_in<hstring> packageFamilyName, abi_arg_out<Windows::Storage::IApplicationData> applicationData) noexcept override
+    HRESULT __stdcall abi_CreateForPackageFamily(impl::abi_arg_in<hstring> packageFamilyName, impl::abi_arg_out<Windows::Storage::IApplicationData> applicationData) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *applicationData = detach(this->shim().CreateForPackageFamily(*reinterpret_cast<const hstring *>(&packageFamilyName)));
+            *applicationData = detach_abi(this->shim().CreateForPackageFamily(*reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
         catch (...)
@@ -40,7 +40,7 @@ namespace Windows::Management::Core {
 template <typename D> Windows::Storage::ApplicationData impl_IApplicationDataManagerStatics<D>::CreateForPackageFamily(hstring_view packageFamilyName) const
 {
     Windows::Storage::ApplicationData applicationData { nullptr };
-    check_hresult(WINRT_SHIM(IApplicationDataManagerStatics)->abi_CreateForPackageFamily(get(packageFamilyName), put(applicationData)));
+    check_hresult(WINRT_SHIM(IApplicationDataManagerStatics)->abi_CreateForPackageFamily(get_abi(packageFamilyName), put_abi(applicationData)));
     return applicationData;
 }
 

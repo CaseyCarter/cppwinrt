@@ -20,12 +20,12 @@ struct produce<D, Windows::UI::Text::IFontWeights> : produce_base<D, Windows::UI
 template <typename D>
 struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Windows::UI::Text::IFontWeightsStatics>
 {
-    HRESULT __stdcall get_Black(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_Black(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Black());
+            *value = detach_abi(this->shim().Black());
             return S_OK;
         }
         catch (...)
@@ -34,12 +34,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_Bold(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_Bold(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Bold());
+            *value = detach_abi(this->shim().Bold());
             return S_OK;
         }
         catch (...)
@@ -48,12 +48,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_ExtraBlack(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_ExtraBlack(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExtraBlack());
+            *value = detach_abi(this->shim().ExtraBlack());
             return S_OK;
         }
         catch (...)
@@ -62,12 +62,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_ExtraBold(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_ExtraBold(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExtraBold());
+            *value = detach_abi(this->shim().ExtraBold());
             return S_OK;
         }
         catch (...)
@@ -76,12 +76,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_ExtraLight(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_ExtraLight(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExtraLight());
+            *value = detach_abi(this->shim().ExtraLight());
             return S_OK;
         }
         catch (...)
@@ -90,12 +90,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_Light(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_Light(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Light());
+            *value = detach_abi(this->shim().Light());
             return S_OK;
         }
         catch (...)
@@ -104,12 +104,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_Medium(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_Medium(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Medium());
+            *value = detach_abi(this->shim().Medium());
             return S_OK;
         }
         catch (...)
@@ -118,12 +118,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_Normal(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_Normal(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Normal());
+            *value = detach_abi(this->shim().Normal());
             return S_OK;
         }
         catch (...)
@@ -132,12 +132,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_SemiBold(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_SemiBold(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SemiBold());
+            *value = detach_abi(this->shim().SemiBold());
             return S_OK;
         }
         catch (...)
@@ -146,12 +146,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_SemiLight(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_SemiLight(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SemiLight());
+            *value = detach_abi(this->shim().SemiLight());
             return S_OK;
         }
         catch (...)
@@ -160,12 +160,12 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_Thin(abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
+    HRESULT __stdcall get_Thin(impl::abi_arg_out<Windows::UI::Text::FontWeight> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Thin());
+            *value = detach_abi(this->shim().Thin());
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AllCaps());
+            *value = detach_abi(this->shim().AllCaps());
             return S_OK;
         }
         catch (...)
@@ -206,12 +206,12 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_BackgroundColor(abi_arg_out<Windows::UI::Color> value) noexcept override
+    HRESULT __stdcall get_BackgroundColor(impl::abi_arg_out<Windows::UI::Color> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BackgroundColor());
+            *value = detach_abi(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall put_BackgroundColor(abi_arg_in<Windows::UI::Color> value) noexcept override
+    HRESULT __stdcall put_BackgroundColor(impl::abi_arg_in<Windows::UI::Color> value) noexcept override
     {
         try
         {
@@ -239,7 +239,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Bold());
+            *value = detach_abi(this->shim().Bold());
             return S_OK;
         }
         catch (...)
@@ -267,7 +267,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FontStretch());
+            *value = detach_abi(this->shim().FontStretch());
             return S_OK;
         }
         catch (...)
@@ -295,7 +295,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FontStyle());
+            *value = detach_abi(this->shim().FontStyle());
             return S_OK;
         }
         catch (...)
@@ -318,12 +318,12 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_ForegroundColor(abi_arg_out<Windows::UI::Color> value) noexcept override
+    HRESULT __stdcall get_ForegroundColor(impl::abi_arg_out<Windows::UI::Color> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ForegroundColor());
+            *value = detach_abi(this->shim().ForegroundColor());
             return S_OK;
         }
         catch (...)
@@ -332,7 +332,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall put_ForegroundColor(abi_arg_in<Windows::UI::Color> value) noexcept override
+    HRESULT __stdcall put_ForegroundColor(impl::abi_arg_in<Windows::UI::Color> value) noexcept override
     {
         try
         {
@@ -351,7 +351,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Hidden());
+            *value = detach_abi(this->shim().Hidden());
             return S_OK;
         }
         catch (...)
@@ -379,7 +379,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Italic());
+            *value = detach_abi(this->shim().Italic());
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Kerning());
+            *value = detach_abi(this->shim().Kerning());
             return S_OK;
         }
         catch (...)
@@ -430,12 +430,12 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_LanguageTag(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_LanguageTag(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LanguageTag());
+            *value = detach_abi(this->shim().LanguageTag());
             return S_OK;
         }
         catch (...)
@@ -445,7 +445,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall put_LanguageTag(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_LanguageTag(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -464,7 +464,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LinkType());
+            *value = detach_abi(this->shim().LinkType());
             return S_OK;
         }
         catch (...)
@@ -473,12 +473,12 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Name());
+            *value = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -488,7 +488,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall put_Name(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Name(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -507,7 +507,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Outline());
+            *value = detach_abi(this->shim().Outline());
             return S_OK;
         }
         catch (...)
@@ -535,7 +535,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Position());
+            *value = detach_abi(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -563,7 +563,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ProtectedText());
+            *value = detach_abi(this->shim().ProtectedText());
             return S_OK;
         }
         catch (...)
@@ -591,7 +591,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Size());
+            *value = detach_abi(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -619,7 +619,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SmallCaps());
+            *value = detach_abi(this->shim().SmallCaps());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Spacing());
+            *value = detach_abi(this->shim().Spacing());
             return S_OK;
         }
         catch (...)
@@ -675,7 +675,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Strikethrough());
+            *value = detach_abi(this->shim().Strikethrough());
             return S_OK;
         }
         catch (...)
@@ -703,7 +703,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Subscript());
+            *value = detach_abi(this->shim().Subscript());
             return S_OK;
         }
         catch (...)
@@ -731,7 +731,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Superscript());
+            *value = detach_abi(this->shim().Superscript());
             return S_OK;
         }
         catch (...)
@@ -759,7 +759,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TextScript());
+            *value = detach_abi(this->shim().TextScript());
             return S_OK;
         }
         catch (...)
@@ -787,7 +787,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Underline());
+            *value = detach_abi(this->shim().Underline());
             return S_OK;
         }
         catch (...)
@@ -815,7 +815,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Weight());
+            *value = detach_abi(this->shim().Weight());
             return S_OK;
         }
         catch (...)
@@ -838,7 +838,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_SetClone(abi_arg_in<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
+    HRESULT __stdcall abi_SetClone(impl::abi_arg_in<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
     {
         try
         {
@@ -852,12 +852,12 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_GetClone(abi_arg_out<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
+    HRESULT __stdcall abi_GetClone(impl::abi_arg_out<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetClone());
+            *value = detach_abi(this->shim().GetClone());
             return S_OK;
         }
         catch (...)
@@ -867,12 +867,12 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_IsEqual(abi_arg_in<Windows::UI::Text::ITextCharacterFormat> format, bool * value) noexcept override
+    HRESULT __stdcall abi_IsEqual(impl::abi_arg_in<Windows::UI::Text::ITextCharacterFormat> format, bool * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::UI::Text::ITextCharacterFormat *>(&format)));
+            *value = detach_abi(this->shim().IsEqual(*reinterpret_cast<const Windows::UI::Text::ITextCharacterFormat *>(&format)));
             return S_OK;
         }
         catch (...)
@@ -885,12 +885,12 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Windows::UI::Text::ITextConstantsStatics>
 {
-    HRESULT __stdcall get_AutoColor(abi_arg_out<Windows::UI::Color> value) noexcept override
+    HRESULT __stdcall get_AutoColor(impl::abi_arg_out<Windows::UI::Color> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AutoColor());
+            *value = detach_abi(this->shim().AutoColor());
             return S_OK;
         }
         catch (...)
@@ -904,7 +904,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinUnitCount());
+            *value = detach_abi(this->shim().MinUnitCount());
             return S_OK;
         }
         catch (...)
@@ -918,7 +918,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxUnitCount());
+            *value = detach_abi(this->shim().MaxUnitCount());
             return S_OK;
         }
         catch (...)
@@ -927,12 +927,12 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_UndefinedColor(abi_arg_out<Windows::UI::Color> value) noexcept override
+    HRESULT __stdcall get_UndefinedColor(impl::abi_arg_out<Windows::UI::Color> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UndefinedColor());
+            *value = detach_abi(this->shim().UndefinedColor());
             return S_OK;
         }
         catch (...)
@@ -946,7 +946,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UndefinedFloatValue());
+            *value = detach_abi(this->shim().UndefinedFloatValue());
             return S_OK;
         }
         catch (...)
@@ -960,7 +960,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UndefinedInt32Value());
+            *value = detach_abi(this->shim().UndefinedInt32Value());
             return S_OK;
         }
         catch (...)
@@ -974,7 +974,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UndefinedFontStretch());
+            *value = detach_abi(this->shim().UndefinedFontStretch());
             return S_OK;
         }
         catch (...)
@@ -988,7 +988,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UndefinedFontStyle());
+            *value = detach_abi(this->shim().UndefinedFontStyle());
             return S_OK;
         }
         catch (...)
@@ -1006,7 +1006,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CaretType());
+            *value = detach_abi(this->shim().CaretType());
             return S_OK;
         }
         catch (...)
@@ -1034,7 +1034,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DefaultTabStop());
+            *value = detach_abi(this->shim().DefaultTabStop());
             return S_OK;
         }
         catch (...)
@@ -1057,12 +1057,12 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall get_Selection(abi_arg_out<Windows::UI::Text::ITextSelection> value) noexcept override
+    HRESULT __stdcall get_Selection(impl::abi_arg_out<Windows::UI::Text::ITextSelection> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Selection());
+            *value = detach_abi(this->shim().Selection());
             return S_OK;
         }
         catch (...)
@@ -1077,7 +1077,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UndoLimit());
+            *value = detach_abi(this->shim().UndoLimit());
             return S_OK;
         }
         catch (...)
@@ -1105,7 +1105,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CanCopy());
+            *value = detach_abi(this->shim().CanCopy());
             return S_OK;
         }
         catch (...)
@@ -1119,7 +1119,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CanPaste());
+            *value = detach_abi(this->shim().CanPaste());
             return S_OK;
         }
         catch (...)
@@ -1133,7 +1133,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CanRedo());
+            *value = detach_abi(this->shim().CanRedo());
             return S_OK;
         }
         catch (...)
@@ -1147,7 +1147,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CanUndo());
+            *value = detach_abi(this->shim().CanUndo());
             return S_OK;
         }
         catch (...)
@@ -1161,7 +1161,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *count = detach(this->shim().ApplyDisplayUpdates());
+            *count = detach_abi(this->shim().ApplyDisplayUpdates());
             return S_OK;
         }
         catch (...)
@@ -1175,7 +1175,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *count = detach(this->shim().BatchDisplayUpdates());
+            *count = detach_abi(this->shim().BatchDisplayUpdates());
             return S_OK;
         }
         catch (...)
@@ -1212,12 +1212,12 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_GetDefaultCharacterFormat(abi_arg_out<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
+    HRESULT __stdcall abi_GetDefaultCharacterFormat(impl::abi_arg_out<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDefaultCharacterFormat());
+            *value = detach_abi(this->shim().GetDefaultCharacterFormat());
             return S_OK;
         }
         catch (...)
@@ -1227,12 +1227,12 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_GetDefaultParagraphFormat(abi_arg_out<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
+    HRESULT __stdcall abi_GetDefaultParagraphFormat(impl::abi_arg_out<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDefaultParagraphFormat());
+            *value = detach_abi(this->shim().GetDefaultParagraphFormat());
             return S_OK;
         }
         catch (...)
@@ -1242,12 +1242,12 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_GetRange(int32_t startPosition, int32_t endPosition, abi_arg_out<Windows::UI::Text::ITextRange> value) noexcept override
+    HRESULT __stdcall abi_GetRange(int32_t startPosition, int32_t endPosition, impl::abi_arg_out<Windows::UI::Text::ITextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetRange(startPosition, endPosition));
+            *value = detach_abi(this->shim().GetRange(startPosition, endPosition));
             return S_OK;
         }
         catch (...)
@@ -1257,12 +1257,12 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_GetRangeFromPoint(abi_arg_in<Windows::Foundation::Point> point, Windows::UI::Text::PointOptions options, abi_arg_out<Windows::UI::Text::ITextRange> value) noexcept override
+    HRESULT __stdcall abi_GetRangeFromPoint(impl::abi_arg_in<Windows::Foundation::Point> point, Windows::UI::Text::PointOptions options, impl::abi_arg_out<Windows::UI::Text::ITextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetRangeFromPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&point), options));
+            *value = detach_abi(this->shim().GetRangeFromPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&point), options));
             return S_OK;
         }
         catch (...)
@@ -1272,7 +1272,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_GetText(Windows::UI::Text::TextGetOptions options, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetText(Windows::UI::Text::TextGetOptions options, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
@@ -1287,7 +1287,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_LoadFromStream(Windows::UI::Text::TextSetOptions options, abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
+    HRESULT __stdcall abi_LoadFromStream(Windows::UI::Text::TextSetOptions options, impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
     {
         try
         {
@@ -1315,7 +1315,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_SaveToStream(Windows::UI::Text::TextGetOptions options, abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
+    HRESULT __stdcall abi_SaveToStream(Windows::UI::Text::TextGetOptions options, impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
     {
         try
         {
@@ -1329,7 +1329,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_SetDefaultCharacterFormat(abi_arg_in<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
+    HRESULT __stdcall abi_SetDefaultCharacterFormat(impl::abi_arg_in<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
     {
         try
         {
@@ -1343,7 +1343,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_SetDefaultParagraphFormat(abi_arg_in<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
+    HRESULT __stdcall abi_SetDefaultParagraphFormat(impl::abi_arg_in<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
     {
         try
         {
@@ -1357,7 +1357,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall abi_SetText(Windows::UI::Text::TextSetOptions options, abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall abi_SetText(Windows::UI::Text::TextSetOptions options, impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1394,7 +1394,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Alignment());
+            *value = detach_abi(this->shim().Alignment());
             return S_OK;
         }
         catch (...)
@@ -1422,7 +1422,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FirstLineIndent());
+            *value = detach_abi(this->shim().FirstLineIndent());
             return S_OK;
         }
         catch (...)
@@ -1436,7 +1436,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeepTogether());
+            *value = detach_abi(this->shim().KeepTogether());
             return S_OK;
         }
         catch (...)
@@ -1464,7 +1464,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeepWithNext());
+            *value = detach_abi(this->shim().KeepWithNext());
             return S_OK;
         }
         catch (...)
@@ -1492,7 +1492,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LeftIndent());
+            *value = detach_abi(this->shim().LeftIndent());
             return S_OK;
         }
         catch (...)
@@ -1506,7 +1506,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LineSpacing());
+            *value = detach_abi(this->shim().LineSpacing());
             return S_OK;
         }
         catch (...)
@@ -1520,7 +1520,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LineSpacingRule());
+            *value = detach_abi(this->shim().LineSpacingRule());
             return S_OK;
         }
         catch (...)
@@ -1534,7 +1534,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ListAlignment());
+            *value = detach_abi(this->shim().ListAlignment());
             return S_OK;
         }
         catch (...)
@@ -1562,7 +1562,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ListLevelIndex());
+            *value = detach_abi(this->shim().ListLevelIndex());
             return S_OK;
         }
         catch (...)
@@ -1590,7 +1590,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ListStart());
+            *value = detach_abi(this->shim().ListStart());
             return S_OK;
         }
         catch (...)
@@ -1618,7 +1618,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ListStyle());
+            *value = detach_abi(this->shim().ListStyle());
             return S_OK;
         }
         catch (...)
@@ -1646,7 +1646,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ListTab());
+            *value = detach_abi(this->shim().ListTab());
             return S_OK;
         }
         catch (...)
@@ -1674,7 +1674,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ListType());
+            *value = detach_abi(this->shim().ListType());
             return S_OK;
         }
         catch (...)
@@ -1702,7 +1702,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NoLineNumber());
+            *value = detach_abi(this->shim().NoLineNumber());
             return S_OK;
         }
         catch (...)
@@ -1730,7 +1730,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PageBreakBefore());
+            *value = detach_abi(this->shim().PageBreakBefore());
             return S_OK;
         }
         catch (...)
@@ -1758,7 +1758,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RightIndent());
+            *value = detach_abi(this->shim().RightIndent());
             return S_OK;
         }
         catch (...)
@@ -1786,7 +1786,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RightToLeft());
+            *value = detach_abi(this->shim().RightToLeft());
             return S_OK;
         }
         catch (...)
@@ -1814,7 +1814,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Style());
+            *value = detach_abi(this->shim().Style());
             return S_OK;
         }
         catch (...)
@@ -1842,7 +1842,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SpaceAfter());
+            *value = detach_abi(this->shim().SpaceAfter());
             return S_OK;
         }
         catch (...)
@@ -1870,7 +1870,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SpaceBefore());
+            *value = detach_abi(this->shim().SpaceBefore());
             return S_OK;
         }
         catch (...)
@@ -1898,7 +1898,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WidowControl());
+            *value = detach_abi(this->shim().WidowControl());
             return S_OK;
         }
         catch (...)
@@ -1926,7 +1926,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TabCount());
+            *value = detach_abi(this->shim().TabCount());
             return S_OK;
         }
         catch (...)
@@ -1977,12 +1977,12 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_GetClone(abi_arg_out<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
+    HRESULT __stdcall abi_GetClone(impl::abi_arg_out<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetClone());
+            *value = detach_abi(this->shim().GetClone());
             return S_OK;
         }
         catch (...)
@@ -2006,12 +2006,12 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_IsEqual(abi_arg_in<Windows::UI::Text::ITextParagraphFormat> format, bool * value) noexcept override
+    HRESULT __stdcall abi_IsEqual(impl::abi_arg_in<Windows::UI::Text::ITextParagraphFormat> format, bool * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::UI::Text::ITextParagraphFormat *>(&format)));
+            *value = detach_abi(this->shim().IsEqual(*reinterpret_cast<const Windows::UI::Text::ITextParagraphFormat *>(&format)));
             return S_OK;
         }
         catch (...)
@@ -2020,7 +2020,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_SetClone(abi_arg_in<Windows::UI::Text::ITextParagraphFormat> format) noexcept override
+    HRESULT __stdcall abi_SetClone(impl::abi_arg_in<Windows::UI::Text::ITextParagraphFormat> format) noexcept override
     {
         try
         {
@@ -2071,7 +2071,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Character());
+            *value = detach_abi(this->shim().Character());
             return S_OK;
         }
         catch (...)
@@ -2094,12 +2094,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall get_CharacterFormat(abi_arg_out<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
+    HRESULT __stdcall get_CharacterFormat(impl::abi_arg_out<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CharacterFormat());
+            *value = detach_abi(this->shim().CharacterFormat());
             return S_OK;
         }
         catch (...)
@@ -2109,7 +2109,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall put_CharacterFormat(abi_arg_in<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
+    HRESULT __stdcall put_CharacterFormat(impl::abi_arg_in<Windows::UI::Text::ITextCharacterFormat> value) noexcept override
     {
         try
         {
@@ -2123,12 +2123,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall get_FormattedText(abi_arg_out<Windows::UI::Text::ITextRange> value) noexcept override
+    HRESULT __stdcall get_FormattedText(impl::abi_arg_out<Windows::UI::Text::ITextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FormattedText());
+            *value = detach_abi(this->shim().FormattedText());
             return S_OK;
         }
         catch (...)
@@ -2138,7 +2138,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall put_FormattedText(abi_arg_in<Windows::UI::Text::ITextRange> value) noexcept override
+    HRESULT __stdcall put_FormattedText(impl::abi_arg_in<Windows::UI::Text::ITextRange> value) noexcept override
     {
         try
         {
@@ -2157,7 +2157,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndPosition());
+            *value = detach_abi(this->shim().EndPosition());
             return S_OK;
         }
         catch (...)
@@ -2185,7 +2185,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gravity());
+            *value = detach_abi(this->shim().Gravity());
             return S_OK;
         }
         catch (...)
@@ -2213,7 +2213,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *length = detach(this->shim().Length());
+            *length = detach_abi(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -2222,12 +2222,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall get_Link(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Link(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Link());
+            *value = detach_abi(this->shim().Link());
             return S_OK;
         }
         catch (...)
@@ -2237,7 +2237,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall put_Link(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Link(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2251,12 +2251,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall get_ParagraphFormat(abi_arg_out<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
+    HRESULT __stdcall get_ParagraphFormat(impl::abi_arg_out<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ParagraphFormat());
+            *value = detach_abi(this->shim().ParagraphFormat());
             return S_OK;
         }
         catch (...)
@@ -2266,7 +2266,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall put_ParagraphFormat(abi_arg_in<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
+    HRESULT __stdcall put_ParagraphFormat(impl::abi_arg_in<Windows::UI::Text::ITextParagraphFormat> value) noexcept override
     {
         try
         {
@@ -2285,7 +2285,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().StartPosition());
+            *value = detach_abi(this->shim().StartPosition());
             return S_OK;
         }
         catch (...)
@@ -2313,7 +2313,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().StoryLength());
+            *value = detach_abi(this->shim().StoryLength());
             return S_OK;
         }
         catch (...)
@@ -2322,12 +2322,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall get_Text(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Text());
+            *value = detach_abi(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -2337,7 +2337,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall put_Text(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Text(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2356,7 +2356,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CanPaste(format));
+            *value = detach_abi(this->shim().CanPaste(format));
             return S_OK;
         }
         catch (...)
@@ -2426,7 +2426,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().Delete(unit, count));
+            *delta = detach_abi(this->shim().Delete(unit, count));
             return S_OK;
         }
         catch (...)
@@ -2440,7 +2440,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().EndOf(unit, extend));
+            *delta = detach_abi(this->shim().EndOf(unit, extend));
             return S_OK;
         }
         catch (...)
@@ -2454,7 +2454,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().Expand(unit));
+            *delta = detach_abi(this->shim().Expand(unit));
             return S_OK;
         }
         catch (...)
@@ -2463,12 +2463,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_FindText(abi_arg_in<hstring> value, int32_t scanLength, Windows::UI::Text::FindOptions options, int32_t * length) noexcept override
+    HRESULT __stdcall abi_FindText(impl::abi_arg_in<hstring> value, int32_t scanLength, Windows::UI::Text::FindOptions options, int32_t * length) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *length = detach(this->shim().FindText(*reinterpret_cast<const hstring *>(&value), scanLength, options));
+            *length = detach_abi(this->shim().FindText(*reinterpret_cast<const hstring *>(&value), scanLength, options));
             return S_OK;
         }
         catch (...)
@@ -2491,12 +2491,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_GetClone(abi_arg_out<Windows::UI::Text::ITextRange> value) noexcept override
+    HRESULT __stdcall abi_GetClone(impl::abi_arg_out<Windows::UI::Text::ITextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetClone());
+            *value = detach_abi(this->shim().GetClone());
             return S_OK;
         }
         catch (...)
@@ -2511,7 +2511,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *index = detach(this->shim().GetIndex(unit));
+            *index = detach_abi(this->shim().GetIndex(unit));
             return S_OK;
         }
         catch (...)
@@ -2520,7 +2520,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_GetPoint(Windows::UI::Text::HorizontalCharacterAlignment horizontalAlign, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, Windows::UI::Text::PointOptions options, abi_arg_out<Windows::Foundation::Point> point) noexcept override
+    HRESULT __stdcall abi_GetPoint(Windows::UI::Text::HorizontalCharacterAlignment horizontalAlign, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, Windows::UI::Text::PointOptions options, impl::abi_arg_out<Windows::Foundation::Point> point) noexcept override
     {
         try
         {
@@ -2534,7 +2534,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_GetRect(Windows::UI::Text::PointOptions options, abi_arg_out<Windows::Foundation::Rect> rect, int32_t * hit) noexcept override
+    HRESULT __stdcall abi_GetRect(Windows::UI::Text::PointOptions options, impl::abi_arg_out<Windows::Foundation::Rect> rect, int32_t * hit) noexcept override
     {
         try
         {
@@ -2548,7 +2548,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_GetText(Windows::UI::Text::TextGetOptions options, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetText(Windows::UI::Text::TextGetOptions options, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
@@ -2563,7 +2563,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_GetTextViaStream(Windows::UI::Text::TextGetOptions options, abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
+    HRESULT __stdcall abi_GetTextViaStream(Windows::UI::Text::TextGetOptions options, impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
     {
         try
         {
@@ -2577,12 +2577,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_InRange(abi_arg_in<Windows::UI::Text::ITextRange> range, bool * value) noexcept override
+    HRESULT __stdcall abi_InRange(impl::abi_arg_in<Windows::UI::Text::ITextRange> range, bool * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InRange(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&range)));
+            *value = detach_abi(this->shim().InRange(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&range)));
             return S_OK;
         }
         catch (...)
@@ -2591,7 +2591,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, abi_arg_in<hstring> alternateText, abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
+    HRESULT __stdcall abi_InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, impl::abi_arg_in<hstring> alternateText, impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
     {
         try
         {
@@ -2605,12 +2605,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_InStory(abi_arg_in<Windows::UI::Text::ITextRange> range, bool * value) noexcept override
+    HRESULT __stdcall abi_InStory(impl::abi_arg_in<Windows::UI::Text::ITextRange> range, bool * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InStory(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&range)));
+            *value = detach_abi(this->shim().InStory(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&range)));
             return S_OK;
         }
         catch (...)
@@ -2619,12 +2619,12 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_IsEqual(abi_arg_in<Windows::UI::Text::ITextRange> range, bool * value) noexcept override
+    HRESULT __stdcall abi_IsEqual(impl::abi_arg_in<Windows::UI::Text::ITextRange> range, bool * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&range)));
+            *value = detach_abi(this->shim().IsEqual(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&range)));
             return S_OK;
         }
         catch (...)
@@ -2638,7 +2638,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().Move(unit, count));
+            *delta = detach_abi(this->shim().Move(unit, count));
             return S_OK;
         }
         catch (...)
@@ -2652,7 +2652,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().MoveEnd(unit, count));
+            *delta = detach_abi(this->shim().MoveEnd(unit, count));
             return S_OK;
         }
         catch (...)
@@ -2666,7 +2666,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().MoveStart(unit, count));
+            *delta = detach_abi(this->shim().MoveStart(unit, count));
             return S_OK;
         }
         catch (...)
@@ -2731,7 +2731,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_SetPoint(abi_arg_in<Windows::Foundation::Point> point, Windows::UI::Text::PointOptions options, bool extend) noexcept override
+    HRESULT __stdcall abi_SetPoint(impl::abi_arg_in<Windows::Foundation::Point> point, Windows::UI::Text::PointOptions options, bool extend) noexcept override
     {
         try
         {
@@ -2759,7 +2759,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_SetText(Windows::UI::Text::TextSetOptions options, abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall abi_SetText(Windows::UI::Text::TextSetOptions options, impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2773,7 +2773,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         }
     }
 
-    HRESULT __stdcall abi_SetTextViaStream(Windows::UI::Text::TextSetOptions options, abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
+    HRESULT __stdcall abi_SetTextViaStream(Windows::UI::Text::TextSetOptions options, impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> value) noexcept override
     {
         try
         {
@@ -2792,7 +2792,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().StartOf(unit, extend));
+            *delta = detach_abi(this->shim().StartOf(unit, extend));
             return S_OK;
         }
         catch (...)
@@ -2810,7 +2810,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Options());
+            *value = detach_abi(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -2838,7 +2838,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Type());
+            *value = detach_abi(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -2852,7 +2852,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().EndKey(unit, extend));
+            *delta = detach_abi(this->shim().EndKey(unit, extend));
             return S_OK;
         }
         catch (...)
@@ -2866,7 +2866,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().HomeKey(unit, extend));
+            *delta = detach_abi(this->shim().HomeKey(unit, extend));
             return S_OK;
         }
         catch (...)
@@ -2880,7 +2880,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().MoveDown(unit, count, extend));
+            *delta = detach_abi(this->shim().MoveDown(unit, count, extend));
             return S_OK;
         }
         catch (...)
@@ -2894,7 +2894,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().MoveLeft(unit, count, extend));
+            *delta = detach_abi(this->shim().MoveLeft(unit, count, extend));
             return S_OK;
         }
         catch (...)
@@ -2908,7 +2908,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().MoveRight(unit, count, extend));
+            *delta = detach_abi(this->shim().MoveRight(unit, count, extend));
             return S_OK;
         }
         catch (...)
@@ -2922,7 +2922,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach(this->shim().MoveUp(unit, count, extend));
+            *delta = detach_abi(this->shim().MoveUp(unit, count, extend));
             return S_OK;
         }
         catch (...)
@@ -2931,7 +2931,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall abi_TypeText(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall abi_TypeText(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2953,7 +2953,7 @@ namespace Windows::UI::Text {
 template <typename D> Windows::UI::Color impl_ITextConstantsStatics<D>::AutoColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(ITextConstantsStatics)->get_AutoColor(put(value)));
+    check_hresult(WINRT_SHIM(ITextConstantsStatics)->get_AutoColor(put_abi(value)));
     return value;
 }
 
@@ -2974,7 +2974,7 @@ template <typename D> int32_t impl_ITextConstantsStatics<D>::MaxUnitCount() cons
 template <typename D> Windows::UI::Color impl_ITextConstantsStatics<D>::UndefinedColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(ITextConstantsStatics)->get_UndefinedColor(put(value)));
+    check_hresult(WINRT_SHIM(ITextConstantsStatics)->get_UndefinedColor(put_abi(value)));
     return value;
 }
 
@@ -3033,7 +3033,7 @@ template <typename D> void impl_ITextDocument<D>::DefaultTabStop(float value) co
 template <typename D> Windows::UI::Text::ITextSelection impl_ITextDocument<D>::Selection() const
 {
     Windows::UI::Text::ITextSelection value;
-    check_hresult(WINRT_SHIM(ITextDocument)->get_Selection(put(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->get_Selection(put_abi(value)));
     return value;
 }
 
@@ -3104,39 +3104,39 @@ template <typename D> void impl_ITextDocument<D>::EndUndoGroup() const
 template <typename D> Windows::UI::Text::ITextCharacterFormat impl_ITextDocument<D>::GetDefaultCharacterFormat() const
 {
     Windows::UI::Text::ITextCharacterFormat value;
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetDefaultCharacterFormat(put(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetDefaultCharacterFormat(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::ITextParagraphFormat impl_ITextDocument<D>::GetDefaultParagraphFormat() const
 {
     Windows::UI::Text::ITextParagraphFormat value;
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetDefaultParagraphFormat(put(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetDefaultParagraphFormat(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::ITextRange impl_ITextDocument<D>::GetRange(int32_t startPosition, int32_t endPosition) const
 {
     Windows::UI::Text::ITextRange value;
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetRange(startPosition, endPosition, put(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetRange(startPosition, endPosition, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::ITextRange impl_ITextDocument<D>::GetRangeFromPoint(const Windows::Foundation::Point & point, Windows::UI::Text::PointOptions options) const
 {
     Windows::UI::Text::ITextRange value;
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetRangeFromPoint(get(point), options, put(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetRangeFromPoint(get_abi(point), options, put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextDocument<D>::GetText(Windows::UI::Text::TextGetOptions options, hstring & value) const
 {
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetText(options, put(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_GetText(options, put_abi(value)));
 }
 
 template <typename D> void impl_ITextDocument<D>::LoadFromStream(Windows::UI::Text::TextSetOptions options, const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_LoadFromStream(options, get(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_LoadFromStream(options, get_abi(value)));
 }
 
 template <typename D> void impl_ITextDocument<D>::Redo() const
@@ -3146,22 +3146,22 @@ template <typename D> void impl_ITextDocument<D>::Redo() const
 
 template <typename D> void impl_ITextDocument<D>::SaveToStream(Windows::UI::Text::TextGetOptions options, const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_SaveToStream(options, get(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_SaveToStream(options, get_abi(value)));
 }
 
 template <typename D> void impl_ITextDocument<D>::SetDefaultCharacterFormat(const Windows::UI::Text::ITextCharacterFormat & value) const
 {
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_SetDefaultCharacterFormat(get(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_SetDefaultCharacterFormat(get_abi(value)));
 }
 
 template <typename D> void impl_ITextDocument<D>::SetDefaultParagraphFormat(const Windows::UI::Text::ITextParagraphFormat & value) const
 {
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_SetDefaultParagraphFormat(get(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_SetDefaultParagraphFormat(get_abi(value)));
 }
 
 template <typename D> void impl_ITextDocument<D>::SetText(Windows::UI::Text::TextSetOptions options, hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ITextDocument)->abi_SetText(options, get(value)));
+    check_hresult(WINRT_SHIM(ITextDocument)->abi_SetText(options, get_abi(value)));
 }
 
 template <typename D> void impl_ITextDocument<D>::Undo() const
@@ -3184,25 +3184,25 @@ template <typename D> void impl_ITextRange<D>::Character(wchar_t value) const
 template <typename D> Windows::UI::Text::ITextCharacterFormat impl_ITextRange<D>::CharacterFormat() const
 {
     Windows::UI::Text::ITextCharacterFormat value;
-    check_hresult(WINRT_SHIM(ITextRange)->get_CharacterFormat(put(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->get_CharacterFormat(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextRange<D>::CharacterFormat(const Windows::UI::Text::ITextCharacterFormat & value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->put_CharacterFormat(get(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->put_CharacterFormat(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::ITextRange impl_ITextRange<D>::FormattedText() const
 {
     Windows::UI::Text::ITextRange value;
-    check_hresult(WINRT_SHIM(ITextRange)->get_FormattedText(put(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->get_FormattedText(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextRange<D>::FormattedText(const Windows::UI::Text::ITextRange & value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->put_FormattedText(get(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->put_FormattedText(get_abi(value)));
 }
 
 template <typename D> int32_t impl_ITextRange<D>::EndPosition() const
@@ -3239,25 +3239,25 @@ template <typename D> int32_t impl_ITextRange<D>::Length() const
 template <typename D> hstring impl_ITextRange<D>::Link() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ITextRange)->get_Link(put(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->get_Link(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextRange<D>::Link(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->put_Link(get(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->put_Link(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::ITextParagraphFormat impl_ITextRange<D>::ParagraphFormat() const
 {
     Windows::UI::Text::ITextParagraphFormat value;
-    check_hresult(WINRT_SHIM(ITextRange)->get_ParagraphFormat(put(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->get_ParagraphFormat(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextRange<D>::ParagraphFormat(const Windows::UI::Text::ITextParagraphFormat & value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->put_ParagraphFormat(get(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->put_ParagraphFormat(get_abi(value)));
 }
 
 template <typename D> int32_t impl_ITextRange<D>::StartPosition() const
@@ -3282,13 +3282,13 @@ template <typename D> int32_t impl_ITextRange<D>::StoryLength() const
 template <typename D> hstring impl_ITextRange<D>::Text() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ITextRange)->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->get_Text(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextRange<D>::Text(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->put_Text(get(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->put_Text(get_abi(value)));
 }
 
 template <typename D> bool impl_ITextRange<D>::CanPaste(int32_t format) const
@@ -3342,7 +3342,7 @@ template <typename D> int32_t impl_ITextRange<D>::Expand(Windows::UI::Text::Text
 template <typename D> int32_t impl_ITextRange<D>::FindText(hstring_view value, int32_t scanLength, Windows::UI::Text::FindOptions options) const
 {
     int32_t length {};
-    check_hresult(WINRT_SHIM(ITextRange)->abi_FindText(get(value), scanLength, options, &length));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_FindText(get_abi(value), scanLength, options, &length));
     return length;
 }
 
@@ -3354,7 +3354,7 @@ template <typename D> void impl_ITextRange<D>::GetCharacterUtf32(uint32_t & valu
 template <typename D> Windows::UI::Text::ITextRange impl_ITextRange<D>::GetClone() const
 {
     Windows::UI::Text::ITextRange value;
-    check_hresult(WINRT_SHIM(ITextRange)->abi_GetClone(put(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_GetClone(put_abi(value)));
     return value;
 }
 
@@ -3367,47 +3367,47 @@ template <typename D> int32_t impl_ITextRange<D>::GetIndex(Windows::UI::Text::Te
 
 template <typename D> void impl_ITextRange<D>::GetPoint(Windows::UI::Text::HorizontalCharacterAlignment horizontalAlign, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, Windows::UI::Text::PointOptions options, Windows::Foundation::Point & point) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->abi_GetPoint(horizontalAlign, verticalAlign, options, put(point)));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_GetPoint(horizontalAlign, verticalAlign, options, put_abi(point)));
 }
 
 template <typename D> void impl_ITextRange<D>::GetRect(Windows::UI::Text::PointOptions options, Windows::Foundation::Rect & rect, int32_t & hit) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->abi_GetRect(options, put(rect), &hit));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_GetRect(options, put_abi(rect), &hit));
 }
 
 template <typename D> void impl_ITextRange<D>::GetText(Windows::UI::Text::TextGetOptions options, hstring & value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->abi_GetText(options, put(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_GetText(options, put_abi(value)));
 }
 
 template <typename D> void impl_ITextRange<D>::GetTextViaStream(Windows::UI::Text::TextGetOptions options, const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->abi_GetTextViaStream(options, get(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_GetTextViaStream(options, get_abi(value)));
 }
 
 template <typename D> bool impl_ITextRange<D>::InRange(const Windows::UI::Text::ITextRange & range) const
 {
     bool value {};
-    check_hresult(WINRT_SHIM(ITextRange)->abi_InRange(get(range), &value));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_InRange(get_abi(range), &value));
     return value;
 }
 
 template <typename D> void impl_ITextRange<D>::InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, hstring_view alternateText, const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->abi_InsertImage(width, height, ascent, verticalAlign, get(alternateText), get(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_InsertImage(width, height, ascent, verticalAlign, get_abi(alternateText), get_abi(value)));
 }
 
 template <typename D> bool impl_ITextRange<D>::InStory(const Windows::UI::Text::ITextRange & range) const
 {
     bool value {};
-    check_hresult(WINRT_SHIM(ITextRange)->abi_InStory(get(range), &value));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_InStory(get_abi(range), &value));
     return value;
 }
 
 template <typename D> bool impl_ITextRange<D>::IsEqual(const Windows::UI::Text::ITextRange & range) const
 {
     bool value {};
-    check_hresult(WINRT_SHIM(ITextRange)->abi_IsEqual(get(range), &value));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_IsEqual(get_abi(range), &value));
     return value;
 }
 
@@ -3454,7 +3454,7 @@ template <typename D> void impl_ITextRange<D>::SetIndex(Windows::UI::Text::TextR
 
 template <typename D> void impl_ITextRange<D>::SetPoint(const Windows::Foundation::Point & point, Windows::UI::Text::PointOptions options, bool extend) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->abi_SetPoint(get(point), options, extend));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_SetPoint(get_abi(point), options, extend));
 }
 
 template <typename D> void impl_ITextRange<D>::SetRange(int32_t startPosition, int32_t endPosition) const
@@ -3464,12 +3464,12 @@ template <typename D> void impl_ITextRange<D>::SetRange(int32_t startPosition, i
 
 template <typename D> void impl_ITextRange<D>::SetText(Windows::UI::Text::TextSetOptions options, hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->abi_SetText(options, get(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_SetText(options, get_abi(value)));
 }
 
 template <typename D> void impl_ITextRange<D>::SetTextViaStream(Windows::UI::Text::TextSetOptions options, const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
-    check_hresult(WINRT_SHIM(ITextRange)->abi_SetTextViaStream(options, get(value)));
+    check_hresult(WINRT_SHIM(ITextRange)->abi_SetTextViaStream(options, get_abi(value)));
 }
 
 template <typename D> int32_t impl_ITextRange<D>::StartOf(Windows::UI::Text::TextRangeUnit unit, bool extend) const
@@ -3542,7 +3542,7 @@ template <typename D> int32_t impl_ITextSelection<D>::MoveUp(Windows::UI::Text::
 
 template <typename D> void impl_ITextSelection<D>::TypeText(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ITextSelection)->abi_TypeText(get(value)));
+    check_hresult(WINRT_SHIM(ITextSelection)->abi_TypeText(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::FormatEffect impl_ITextCharacterFormat<D>::AllCaps() const
@@ -3560,13 +3560,13 @@ template <typename D> void impl_ITextCharacterFormat<D>::AllCaps(Windows::UI::Te
 template <typename D> Windows::UI::Color impl_ITextCharacterFormat<D>::BackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->get_BackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->get_BackgroundColor(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextCharacterFormat<D>::BackgroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_BackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_BackgroundColor(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::FormatEffect impl_ITextCharacterFormat<D>::Bold() const
@@ -3608,13 +3608,13 @@ template <typename D> void impl_ITextCharacterFormat<D>::FontStyle(Windows::UI::
 template <typename D> Windows::UI::Color impl_ITextCharacterFormat<D>::ForegroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->get_ForegroundColor(put(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->get_ForegroundColor(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextCharacterFormat<D>::ForegroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_ForegroundColor(get(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_ForegroundColor(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::FormatEffect impl_ITextCharacterFormat<D>::Hidden() const
@@ -3656,13 +3656,13 @@ template <typename D> void impl_ITextCharacterFormat<D>::Kerning(float value) co
 template <typename D> hstring impl_ITextCharacterFormat<D>::LanguageTag() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->get_LanguageTag(put(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->get_LanguageTag(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextCharacterFormat<D>::LanguageTag(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_LanguageTag(get(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_LanguageTag(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::LinkType impl_ITextCharacterFormat<D>::LinkType() const
@@ -3675,13 +3675,13 @@ template <typename D> Windows::UI::Text::LinkType impl_ITextCharacterFormat<D>::
 template <typename D> hstring impl_ITextCharacterFormat<D>::Name() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->get_Name(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITextCharacterFormat<D>::Name(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_Name(get(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->put_Name(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::FormatEffect impl_ITextCharacterFormat<D>::Outline() const
@@ -3830,20 +3830,20 @@ template <typename D> void impl_ITextCharacterFormat<D>::Weight(int32_t value) c
 
 template <typename D> void impl_ITextCharacterFormat<D>::SetClone(const Windows::UI::Text::ITextCharacterFormat & value) const
 {
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->abi_SetClone(get(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->abi_SetClone(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::ITextCharacterFormat impl_ITextCharacterFormat<D>::GetClone() const
 {
     Windows::UI::Text::ITextCharacterFormat value;
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->abi_GetClone(put(value)));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->abi_GetClone(put_abi(value)));
     return value;
 }
 
 template <typename D> bool impl_ITextCharacterFormat<D>::IsEqual(const Windows::UI::Text::ITextCharacterFormat & format) const
 {
     bool value {};
-    check_hresult(WINRT_SHIM(ITextCharacterFormat)->abi_IsEqual(get(format), &value));
+    check_hresult(WINRT_SHIM(ITextCharacterFormat)->abi_IsEqual(get_abi(format), &value));
     return value;
 }
 
@@ -4104,7 +4104,7 @@ template <typename D> void impl_ITextParagraphFormat<D>::DeleteTab(float positio
 template <typename D> Windows::UI::Text::ITextParagraphFormat impl_ITextParagraphFormat<D>::GetClone() const
 {
     Windows::UI::Text::ITextParagraphFormat value;
-    check_hresult(WINRT_SHIM(ITextParagraphFormat)->abi_GetClone(put(value)));
+    check_hresult(WINRT_SHIM(ITextParagraphFormat)->abi_GetClone(put_abi(value)));
     return value;
 }
 
@@ -4116,13 +4116,13 @@ template <typename D> void impl_ITextParagraphFormat<D>::GetTab(int32_t index, f
 template <typename D> bool impl_ITextParagraphFormat<D>::IsEqual(const Windows::UI::Text::ITextParagraphFormat & format) const
 {
     bool value {};
-    check_hresult(WINRT_SHIM(ITextParagraphFormat)->abi_IsEqual(get(format), &value));
+    check_hresult(WINRT_SHIM(ITextParagraphFormat)->abi_IsEqual(get_abi(format), &value));
     return value;
 }
 
 template <typename D> void impl_ITextParagraphFormat<D>::SetClone(const Windows::UI::Text::ITextParagraphFormat & format) const
 {
-    check_hresult(WINRT_SHIM(ITextParagraphFormat)->abi_SetClone(get(format)));
+    check_hresult(WINRT_SHIM(ITextParagraphFormat)->abi_SetClone(get_abi(format)));
 }
 
 template <typename D> void impl_ITextParagraphFormat<D>::SetIndents(float start, float left, float right) const
@@ -4138,77 +4138,77 @@ template <typename D> void impl_ITextParagraphFormat<D>::SetLineSpacing(Windows:
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::Black() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Black(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Black(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::Bold() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Bold(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Bold(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::ExtraBlack() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_ExtraBlack(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_ExtraBlack(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::ExtraBold() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_ExtraBold(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_ExtraBold(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::ExtraLight() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_ExtraLight(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_ExtraLight(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::Light() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Light(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Light(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::Medium() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Medium(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Medium(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::Normal() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Normal(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Normal(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::SemiBold() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_SemiBold(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_SemiBold(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::SemiLight() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_SemiLight(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_SemiLight(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::Thin() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Thin(put(value)));
+    check_hresult(WINRT_SHIM(IFontWeightsStatics)->get_Thin(put_abi(value)));
     return value;
 }
 

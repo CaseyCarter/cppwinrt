@@ -13,12 +13,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Windows::Gaming::UI::IGameBarStatics>
 {
-    HRESULT __stdcall add_VisibilityChanged(abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_VisibilityChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -41,12 +41,12 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall add_IsInputRedirectedChanged(abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_IsInputRedirectedChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().IsInputRedirectedChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().IsInputRedirectedChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Visible());
+            *value = detach_abi(this->shim().Visible());
             return S_OK;
         }
         catch (...)
@@ -88,7 +88,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsInputRedirected());
+            *value = detach_abi(this->shim().IsInputRedirected());
             return S_OK;
         }
         catch (...)
@@ -105,7 +105,7 @@ namespace Windows::Gaming::UI {
 template <typename D> event_token impl_IGameBarStatics<D>::VisibilityChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IGameBarStatics)->add_VisibilityChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IGameBarStatics)->add_VisibilityChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -122,7 +122,7 @@ template <typename D> void impl_IGameBarStatics<D>::VisibilityChanged(event_toke
 template <typename D> event_token impl_IGameBarStatics<D>::IsInputRedirectedChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IGameBarStatics)->add_IsInputRedirectedChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IGameBarStatics)->add_IsInputRedirectedChanged(get_abi(handler), &token));
     return token;
 }
 

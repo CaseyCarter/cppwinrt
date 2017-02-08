@@ -15,12 +15,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter> : produce_base<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter>
 {
-    HRESULT __stdcall get_Currency(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Currency(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Currency());
+            *value = detach_abi(this->shim().Currency());
             return S_OK;
         }
         catch (...)
@@ -30,7 +30,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter> 
         }
     }
 
-    HRESULT __stdcall put_Currency(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Currency(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -53,7 +53,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter2>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Mode());
+            *value = detach_abi(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -94,12 +94,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter2>
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory> : produce_base<D, Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>
 {
-    HRESULT __stdcall abi_CreateCurrencyFormatterCode(abi_arg_in<hstring> currencyCode, abi_arg_out<Windows::Globalization::NumberFormatting::ICurrencyFormatter> result) noexcept override
+    HRESULT __stdcall abi_CreateCurrencyFormatterCode(impl::abi_arg_in<hstring> currencyCode, impl::abi_arg_out<Windows::Globalization::NumberFormatting::ICurrencyFormatter> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateCurrencyFormatterCode(*reinterpret_cast<const hstring *>(&currencyCode)));
+            *result = detach_abi(this->shim().CreateCurrencyFormatterCode(*reinterpret_cast<const hstring *>(&currencyCode)));
             return S_OK;
         }
         catch (...)
@@ -109,12 +109,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatterFa
         }
     }
 
-    HRESULT __stdcall abi_CreateCurrencyFormatterCodeContext(abi_arg_in<hstring> currencyCode, abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, abi_arg_in<hstring> geographicRegion, abi_arg_out<Windows::Globalization::NumberFormatting::ICurrencyFormatter> result) noexcept override
+    HRESULT __stdcall abi_CreateCurrencyFormatterCodeContext(impl::abi_arg_in<hstring> currencyCode, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, impl::abi_arg_in<hstring> geographicRegion, impl::abi_arg_out<Windows::Globalization::NumberFormatting::ICurrencyFormatter> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateCurrencyFormatterCodeContext(*reinterpret_cast<const hstring *>(&currencyCode), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
+            *result = detach_abi(this->shim().CreateCurrencyFormatterCodeContext(*reinterpret_cast<const hstring *>(&currencyCode), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
             return S_OK;
         }
         catch (...)
@@ -128,12 +128,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatterFa
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::IDecimalFormatterFactory> : produce_base<D, Windows::Globalization::NumberFormatting::IDecimalFormatterFactory>
 {
-    HRESULT __stdcall abi_CreateDecimalFormatter(abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, abi_arg_in<hstring> geographicRegion, abi_arg_out<Windows::Globalization::NumberFormatting::INumberFormatter> result) noexcept override
+    HRESULT __stdcall abi_CreateDecimalFormatter(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, impl::abi_arg_in<hstring> geographicRegion, impl::abi_arg_out<Windows::Globalization::NumberFormatting::INumberFormatter> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateDecimalFormatter(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
+            *result = detach_abi(this->shim().CreateDecimalFormatter(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::IIncrementNumberRoun
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RoundingAlgorithm());
+            *value = detach_abi(this->shim().RoundingAlgorithm());
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::IIncrementNumberRoun
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Increment());
+            *value = detach_abi(this->shim().Increment());
             return S_OK;
         }
         catch (...)
@@ -207,12 +207,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::IIncrementNumberRoun
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter> : produce_base<D, Windows::Globalization::NumberFormatting::INumberFormatter>
 {
-    HRESULT __stdcall abi_FormatInt(int64_t value, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_FormatInt(int64_t value, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Format(value));
+            *result = detach_abi(this->shim().Format(value));
             return S_OK;
         }
         catch (...)
@@ -222,12 +222,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter> : 
         }
     }
 
-    HRESULT __stdcall abi_FormatUInt(uint64_t value, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_FormatUInt(uint64_t value, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Format(value));
+            *result = detach_abi(this->shim().Format(value));
             return S_OK;
         }
         catch (...)
@@ -237,12 +237,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter> : 
         }
     }
 
-    HRESULT __stdcall abi_FormatDouble(double value, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_FormatDouble(double value, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Format(value));
+            *result = detach_abi(this->shim().Format(value));
             return S_OK;
         }
         catch (...)
@@ -256,12 +256,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter> : 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter2> : produce_base<D, Windows::Globalization::NumberFormatting::INumberFormatter2>
 {
-    HRESULT __stdcall abi_FormatInt(int64_t value, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_FormatInt(int64_t value, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FormatInt(value));
+            *result = detach_abi(this->shim().FormatInt(value));
             return S_OK;
         }
         catch (...)
@@ -271,12 +271,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter2> :
         }
     }
 
-    HRESULT __stdcall abi_FormatUInt(uint64_t value, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_FormatUInt(uint64_t value, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FormatUInt(value));
+            *result = detach_abi(this->shim().FormatUInt(value));
             return S_OK;
         }
         catch (...)
@@ -286,12 +286,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter2> :
         }
     }
 
-    HRESULT __stdcall abi_FormatDouble(double value, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_FormatDouble(double value, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FormatDouble(value));
+            *result = detach_abi(this->shim().FormatDouble(value));
             return S_OK;
         }
         catch (...)
@@ -305,12 +305,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter2> :
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOptions> : produce_base<D, Windows::Globalization::NumberFormatting::INumberFormatterOptions>
 {
-    HRESULT __stdcall get_Languages(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_Languages(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Languages());
+            *value = detach_abi(this->shim().Languages());
             return S_OK;
         }
         catch (...)
@@ -320,12 +320,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
         }
     }
 
-    HRESULT __stdcall get_GeographicRegion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_GeographicRegion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GeographicRegion());
+            *value = detach_abi(this->shim().GeographicRegion());
             return S_OK;
         }
         catch (...)
@@ -340,7 +340,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IntegerDigits());
+            *value = detach_abi(this->shim().IntegerDigits());
             return S_OK;
         }
         catch (...)
@@ -368,7 +368,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FractionDigits());
+            *value = detach_abi(this->shim().FractionDigits());
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsGrouped());
+            *value = detach_abi(this->shim().IsGrouped());
             return S_OK;
         }
         catch (...)
@@ -424,7 +424,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsDecimalPointAlwaysDisplayed());
+            *value = detach_abi(this->shim().IsDecimalPointAlwaysDisplayed());
             return S_OK;
         }
         catch (...)
@@ -447,12 +447,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
         }
     }
 
-    HRESULT __stdcall get_NumeralSystem(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_NumeralSystem(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NumeralSystem());
+            *value = detach_abi(this->shim().NumeralSystem());
             return S_OK;
         }
         catch (...)
@@ -462,7 +462,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
         }
     }
 
-    HRESULT __stdcall put_NumeralSystem(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_NumeralSystem(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -476,12 +476,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
         }
     }
 
-    HRESULT __stdcall get_ResolvedLanguage(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ResolvedLanguage(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ResolvedLanguage());
+            *value = detach_abi(this->shim().ResolvedLanguage());
             return S_OK;
         }
         catch (...)
@@ -491,12 +491,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
         }
     }
 
-    HRESULT __stdcall get_ResolvedGeographicRegion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ResolvedGeographicRegion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ResolvedGeographicRegion());
+            *value = detach_abi(this->shim().ResolvedGeographicRegion());
             return S_OK;
         }
         catch (...)
@@ -510,12 +510,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberParser> : produce_base<D, Windows::Globalization::NumberFormatting::INumberParser>
 {
-    HRESULT __stdcall abi_ParseInt(abi_arg_in<hstring> text, abi_arg_out<Windows::Foundation::IReference<int64_t>> result) noexcept override
+    HRESULT __stdcall abi_ParseInt(impl::abi_arg_in<hstring> text, impl::abi_arg_out<Windows::Foundation::IReference<int64_t>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ParseInt(*reinterpret_cast<const hstring *>(&text)));
+            *result = detach_abi(this->shim().ParseInt(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
         catch (...)
@@ -525,12 +525,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberParser> : pro
         }
     }
 
-    HRESULT __stdcall abi_ParseUInt(abi_arg_in<hstring> text, abi_arg_out<Windows::Foundation::IReference<uint64_t>> result) noexcept override
+    HRESULT __stdcall abi_ParseUInt(impl::abi_arg_in<hstring> text, impl::abi_arg_out<Windows::Foundation::IReference<uint64_t>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ParseUInt(*reinterpret_cast<const hstring *>(&text)));
+            *result = detach_abi(this->shim().ParseUInt(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
         catch (...)
@@ -540,12 +540,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberParser> : pro
         }
     }
 
-    HRESULT __stdcall abi_ParseDouble(abi_arg_in<hstring> text, abi_arg_out<Windows::Foundation::IReference<double>> result) noexcept override
+    HRESULT __stdcall abi_ParseDouble(impl::abi_arg_in<hstring> text, impl::abi_arg_out<Windows::Foundation::IReference<double>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ParseDouble(*reinterpret_cast<const hstring *>(&text)));
+            *result = detach_abi(this->shim().ParseDouble(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
         catch (...)
@@ -564,7 +564,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RoundInt32(value));
+            *result = detach_abi(this->shim().RoundInt32(value));
             return S_OK;
         }
         catch (...)
@@ -578,7 +578,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RoundUInt32(value));
+            *result = detach_abi(this->shim().RoundUInt32(value));
             return S_OK;
         }
         catch (...)
@@ -592,7 +592,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RoundInt64(value));
+            *result = detach_abi(this->shim().RoundInt64(value));
             return S_OK;
         }
         catch (...)
@@ -606,7 +606,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RoundUInt64(value));
+            *result = detach_abi(this->shim().RoundUInt64(value));
             return S_OK;
         }
         catch (...)
@@ -620,7 +620,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RoundSingle(value));
+            *result = detach_abi(this->shim().RoundSingle(value));
             return S_OK;
         }
         catch (...)
@@ -634,7 +634,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RoundDouble(value));
+            *result = detach_abi(this->shim().RoundDouble(value));
             return S_OK;
         }
         catch (...)
@@ -647,12 +647,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberRounderOption> : produce_base<D, Windows::Globalization::NumberFormatting::INumberRounderOption>
 {
-    HRESULT __stdcall get_NumberRounder(abi_arg_out<Windows::Globalization::NumberFormatting::INumberRounder> value) noexcept override
+    HRESULT __stdcall get_NumberRounder(impl::abi_arg_out<Windows::Globalization::NumberFormatting::INumberRounder> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NumberRounder());
+            *value = detach_abi(this->shim().NumberRounder());
             return S_OK;
         }
         catch (...)
@@ -662,7 +662,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounderOption
         }
     }
 
-    HRESULT __stdcall put_NumberRounder(abi_arg_in<Windows::Globalization::NumberFormatting::INumberRounder> value) noexcept override
+    HRESULT __stdcall put_NumberRounder(impl::abi_arg_in<Windows::Globalization::NumberFormatting::INumberRounder> value) noexcept override
     {
         try
         {
@@ -680,12 +680,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounderOption
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTranslator> : produce_base<D, Windows::Globalization::NumberFormatting::INumeralSystemTranslator>
 {
-    HRESULT __stdcall get_Languages(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_Languages(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Languages());
+            *value = detach_abi(this->shim().Languages());
             return S_OK;
         }
         catch (...)
@@ -695,12 +695,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
         }
     }
 
-    HRESULT __stdcall get_ResolvedLanguage(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ResolvedLanguage(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ResolvedLanguage());
+            *value = detach_abi(this->shim().ResolvedLanguage());
             return S_OK;
         }
         catch (...)
@@ -710,12 +710,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
         }
     }
 
-    HRESULT __stdcall get_NumeralSystem(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_NumeralSystem(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NumeralSystem());
+            *value = detach_abi(this->shim().NumeralSystem());
             return S_OK;
         }
         catch (...)
@@ -725,7 +725,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
         }
     }
 
-    HRESULT __stdcall put_NumeralSystem(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_NumeralSystem(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -739,12 +739,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
         }
     }
 
-    HRESULT __stdcall abi_TranslateNumerals(abi_arg_in<hstring> value, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_TranslateNumerals(impl::abi_arg_in<hstring> value, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TranslateNumerals(*reinterpret_cast<const hstring *>(&value)));
+            *result = detach_abi(this->shim().TranslateNumerals(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -758,12 +758,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory> : produce_base<D, Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, abi_arg_out<Windows::Globalization::NumberFormatting::INumeralSystemTranslator> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, impl::abi_arg_out<Windows::Globalization::NumberFormatting::INumeralSystemTranslator> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages)));
             return S_OK;
         }
         catch (...)
@@ -777,12 +777,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::IPercentFormatterFactory> : produce_base<D, Windows::Globalization::NumberFormatting::IPercentFormatterFactory>
 {
-    HRESULT __stdcall abi_CreatePercentFormatter(abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, abi_arg_in<hstring> geographicRegion, abi_arg_out<Windows::Globalization::NumberFormatting::INumberFormatter> result) noexcept override
+    HRESULT __stdcall abi_CreatePercentFormatter(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, impl::abi_arg_in<hstring> geographicRegion, impl::abi_arg_out<Windows::Globalization::NumberFormatting::INumberFormatter> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreatePercentFormatter(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
+            *result = detach_abi(this->shim().CreatePercentFormatter(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
             return S_OK;
         }
         catch (...)
@@ -796,12 +796,12 @@ struct produce<D, Windows::Globalization::NumberFormatting::IPercentFormatterFac
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::IPermilleFormatterFactory> : produce_base<D, Windows::Globalization::NumberFormatting::IPermilleFormatterFactory>
 {
-    HRESULT __stdcall abi_CreatePermilleFormatter(abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, abi_arg_in<hstring> geographicRegion, abi_arg_out<Windows::Globalization::NumberFormatting::INumberFormatter> result) noexcept override
+    HRESULT __stdcall abi_CreatePermilleFormatter(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> languages, impl::abi_arg_in<hstring> geographicRegion, impl::abi_arg_out<Windows::Globalization::NumberFormatting::INumberFormatter> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreatePermilleFormatter(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
+            *result = detach_abi(this->shim().CreatePermilleFormatter(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
             return S_OK;
         }
         catch (...)
@@ -820,7 +820,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignedZeroOption> :
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsZeroSigned());
+            *value = detach_abi(this->shim().IsZeroSigned());
             return S_OK;
         }
         catch (...)
@@ -852,7 +852,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsNu
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RoundingAlgorithm());
+            *value = detach_abi(this->shim().RoundingAlgorithm());
             return S_OK;
         }
         catch (...)
@@ -880,7 +880,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsNu
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SignificantDigits());
+            *value = detach_abi(this->shim().SignificantDigits());
             return S_OK;
         }
         catch (...)
@@ -912,7 +912,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsOp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SignificantDigits());
+            *value = detach_abi(this->shim().SignificantDigits());
             return S_OK;
         }
         catch (...)
@@ -1033,77 +1033,77 @@ template <typename D> void impl_IIncrementNumberRounder<D>::Increment(double val
 template <typename D> hstring impl_INumberFormatter<D>::Format(int64_t value) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(INumberFormatter)->abi_FormatInt(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter)->abi_FormatInt(value, put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter<D>::Format(uint64_t value) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(INumberFormatter)->abi_FormatUInt(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter)->abi_FormatUInt(value, put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter<D>::Format(double value) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(INumberFormatter)->abi_FormatDouble(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter)->abi_FormatDouble(value, put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter2<D>::FormatInt(int64_t value) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(INumberFormatter2)->abi_FormatInt(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter2)->abi_FormatInt(value, put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter2<D>::FormatUInt(uint64_t value) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(INumberFormatter2)->abi_FormatUInt(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter2)->abi_FormatUInt(value, put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter2<D>::FormatDouble(double value) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(INumberFormatter2)->abi_FormatDouble(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter2)->abi_FormatDouble(value, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IReference<int64_t> impl_INumberParser<D>::ParseInt(hstring_view text) const
 {
     Windows::Foundation::IReference<int64_t> result;
-    check_hresult(WINRT_SHIM(INumberParser)->abi_ParseInt(get(text), put(result)));
+    check_hresult(WINRT_SHIM(INumberParser)->abi_ParseInt(get_abi(text), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IReference<uint64_t> impl_INumberParser<D>::ParseUInt(hstring_view text) const
 {
     Windows::Foundation::IReference<uint64_t> result;
-    check_hresult(WINRT_SHIM(INumberParser)->abi_ParseUInt(get(text), put(result)));
+    check_hresult(WINRT_SHIM(INumberParser)->abi_ParseUInt(get_abi(text), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_INumberParser<D>::ParseDouble(hstring_view text) const
 {
     Windows::Foundation::IReference<double> result;
-    check_hresult(WINRT_SHIM(INumberParser)->abi_ParseDouble(get(text), put(result)));
+    check_hresult(WINRT_SHIM(INumberParser)->abi_ParseDouble(get_abi(text), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_INumberFormatterOptions<D>::Languages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_Languages(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_Languages(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumberFormatterOptions<D>::GeographicRegion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_GeographicRegion(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_GeographicRegion(put_abi(value)));
     return value;
 }
 
@@ -1158,26 +1158,26 @@ template <typename D> void impl_INumberFormatterOptions<D>::IsDecimalPointAlways
 template <typename D> hstring impl_INumberFormatterOptions<D>::NumeralSystem() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_NumeralSystem(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_NumeralSystem(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_INumberFormatterOptions<D>::NumeralSystem(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(INumberFormatterOptions)->put_NumeralSystem(get(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->put_NumeralSystem(get_abi(value)));
 }
 
 template <typename D> hstring impl_INumberFormatterOptions<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_ResolvedLanguage(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_ResolvedLanguage(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumberFormatterOptions<D>::ResolvedGeographicRegion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_ResolvedGeographicRegion(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_ResolvedGeographicRegion(put_abi(value)));
     return value;
 }
 
@@ -1196,13 +1196,13 @@ template <typename D> void impl_ISignificantDigitsOption<D>::SignificantDigits(i
 template <typename D> Windows::Globalization::NumberFormatting::INumberRounder impl_INumberRounderOption<D>::NumberRounder() const
 {
     Windows::Globalization::NumberFormatting::INumberRounder value;
-    check_hresult(WINRT_SHIM(INumberRounderOption)->get_NumberRounder(put(value)));
+    check_hresult(WINRT_SHIM(INumberRounderOption)->get_NumberRounder(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_INumberRounderOption<D>::NumberRounder(const Windows::Globalization::NumberFormatting::INumberRounder & value) const
 {
-    check_hresult(WINRT_SHIM(INumberRounderOption)->put_NumberRounder(get(value)));
+    check_hresult(WINRT_SHIM(INumberRounderOption)->put_NumberRounder(get_abi(value)));
 }
 
 template <typename D> bool impl_ISignedZeroOption<D>::IsZeroSigned() const
@@ -1220,48 +1220,48 @@ template <typename D> void impl_ISignedZeroOption<D>::IsZeroSigned(bool value) c
 template <typename D> Windows::Globalization::NumberFormatting::DecimalFormatter impl_IDecimalFormatterFactory<D>::CreateDecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::DecimalFormatter result { nullptr };
-    check_hresult(WINRT_SHIM(IDecimalFormatterFactory)->abi_CreateDecimalFormatter(get(languages), get(geographicRegion), put(result)));
+    check_hresult(WINRT_SHIM(IDecimalFormatterFactory)->abi_CreateDecimalFormatter(get_abi(languages), get_abi(geographicRegion), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::PercentFormatter impl_IPercentFormatterFactory<D>::CreatePercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::PercentFormatter result { nullptr };
-    check_hresult(WINRT_SHIM(IPercentFormatterFactory)->abi_CreatePercentFormatter(get(languages), get(geographicRegion), put(result)));
+    check_hresult(WINRT_SHIM(IPercentFormatterFactory)->abi_CreatePercentFormatter(get_abi(languages), get_abi(geographicRegion), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::PermilleFormatter impl_IPermilleFormatterFactory<D>::CreatePermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::PermilleFormatter result { nullptr };
-    check_hresult(WINRT_SHIM(IPermilleFormatterFactory)->abi_CreatePermilleFormatter(get(languages), get(geographicRegion), put(result)));
+    check_hresult(WINRT_SHIM(IPermilleFormatterFactory)->abi_CreatePermilleFormatter(get_abi(languages), get_abi(geographicRegion), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatter impl_ICurrencyFormatterFactory<D>::CreateCurrencyFormatterCode(hstring_view currencyCode) const
 {
     Windows::Globalization::NumberFormatting::CurrencyFormatter result { nullptr };
-    check_hresult(WINRT_SHIM(ICurrencyFormatterFactory)->abi_CreateCurrencyFormatterCode(get(currencyCode), put(result)));
+    check_hresult(WINRT_SHIM(ICurrencyFormatterFactory)->abi_CreateCurrencyFormatterCode(get_abi(currencyCode), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatter impl_ICurrencyFormatterFactory<D>::CreateCurrencyFormatterCodeContext(hstring_view currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::CurrencyFormatter result { nullptr };
-    check_hresult(WINRT_SHIM(ICurrencyFormatterFactory)->abi_CreateCurrencyFormatterCodeContext(get(currencyCode), get(languages), get(geographicRegion), put(result)));
+    check_hresult(WINRT_SHIM(ICurrencyFormatterFactory)->abi_CreateCurrencyFormatterCodeContext(get_abi(currencyCode), get_abi(languages), get_abi(geographicRegion), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICurrencyFormatter<D>::Currency() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICurrencyFormatter)->get_Currency(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyFormatter)->get_Currency(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICurrencyFormatter<D>::Currency(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICurrencyFormatter)->put_Currency(get(value)));
+    check_hresult(WINRT_SHIM(ICurrencyFormatter)->put_Currency(get_abi(value)));
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatterMode impl_ICurrencyFormatter2<D>::Mode() const
@@ -1284,40 +1284,40 @@ template <typename D> void impl_ICurrencyFormatter2<D>::ApplyRoundingForCurrency
 template <typename D> Windows::Globalization::NumberFormatting::NumeralSystemTranslator impl_INumeralSystemTranslatorFactory<D>::Create(const Windows::Foundation::Collections::IIterable<hstring> & languages) const
 {
     Windows::Globalization::NumberFormatting::NumeralSystemTranslator result { nullptr };
-    check_hresult(WINRT_SHIM(INumeralSystemTranslatorFactory)->abi_Create(get(languages), put(result)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslatorFactory)->abi_Create(get_abi(languages), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_INumeralSystemTranslator<D>::Languages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->get_Languages(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->get_Languages(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemTranslator<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->get_ResolvedLanguage(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->get_ResolvedLanguage(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemTranslator<D>::NumeralSystem() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->get_NumeralSystem(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->get_NumeralSystem(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_INumeralSystemTranslator<D>::NumeralSystem(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->put_NumeralSystem(get(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->put_NumeralSystem(get_abi(value)));
 }
 
 template <typename D> hstring impl_INumeralSystemTranslator<D>::TranslateNumerals(hstring_view value) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->abi_TranslateNumerals(get(value), put(result)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->abi_TranslateNumerals(get_abi(value), put_abi(result)));
     return result;
 }
 

@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::System::Profile::IAnalyticsInfoStatics> : produce_base<D, Windows::System::Profile::IAnalyticsInfoStatics>
 {
-    HRESULT __stdcall get_VersionInfo(abi_arg_out<Windows::System::Profile::IAnalyticsVersionInfo> value) noexcept override
+    HRESULT __stdcall get_VersionInfo(impl::abi_arg_out<Windows::System::Profile::IAnalyticsVersionInfo> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VersionInfo());
+            *value = detach_abi(this->shim().VersionInfo());
             return S_OK;
         }
         catch (...)
@@ -31,12 +31,12 @@ struct produce<D, Windows::System::Profile::IAnalyticsInfoStatics> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_DeviceForm(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceForm(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceForm());
+            *value = detach_abi(this->shim().DeviceForm());
             return S_OK;
         }
         catch (...)
@@ -50,12 +50,12 @@ struct produce<D, Windows::System::Profile::IAnalyticsInfoStatics> : produce_bas
 template <typename D>
 struct produce<D, Windows::System::Profile::IAnalyticsVersionInfo> : produce_base<D, Windows::System::Profile::IAnalyticsVersionInfo>
 {
-    HRESULT __stdcall get_DeviceFamily(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceFamily(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceFamily());
+            *value = detach_abi(this->shim().DeviceFamily());
             return S_OK;
         }
         catch (...)
@@ -65,12 +65,12 @@ struct produce<D, Windows::System::Profile::IAnalyticsVersionInfo> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_DeviceFamilyVersion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceFamilyVersion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceFamilyVersion());
+            *value = detach_abi(this->shim().DeviceFamilyVersion());
             return S_OK;
         }
         catch (...)
@@ -84,12 +84,12 @@ struct produce<D, Windows::System::Profile::IAnalyticsVersionInfo> : produce_bas
 template <typename D>
 struct produce<D, Windows::System::Profile::IHardwareIdentificationStatics> : produce_base<D, Windows::System::Profile::IHardwareIdentificationStatics>
 {
-    HRESULT __stdcall abi_GetPackageSpecificToken(abi_arg_in<Windows::Storage::Streams::IBuffer> nonce, abi_arg_out<Windows::System::Profile::IHardwareToken> packageSpecificHardwareToken) noexcept override
+    HRESULT __stdcall abi_GetPackageSpecificToken(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> nonce, impl::abi_arg_out<Windows::System::Profile::IHardwareToken> packageSpecificHardwareToken) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *packageSpecificHardwareToken = detach(this->shim().GetPackageSpecificToken(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&nonce)));
+            *packageSpecificHardwareToken = detach_abi(this->shim().GetPackageSpecificToken(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&nonce)));
             return S_OK;
         }
         catch (...)
@@ -103,12 +103,12 @@ struct produce<D, Windows::System::Profile::IHardwareIdentificationStatics> : pr
 template <typename D>
 struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Windows::System::Profile::IHardwareToken>
 {
-    HRESULT __stdcall get_Id(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -118,12 +118,12 @@ struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_Signature(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Signature(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Signature());
+            *value = detach_abi(this->shim().Signature());
             return S_OK;
         }
         catch (...)
@@ -133,12 +133,12 @@ struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_Certificate(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Certificate(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Certificate());
+            *value = detach_abi(this->shim().Certificate());
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CollectionLevel());
+            *value = detach_abi(this->shim().CollectionLevel());
             return S_OK;
         }
         catch (...)
@@ -166,12 +166,12 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
         }
     }
 
-    HRESULT __stdcall add_CollectionLevelChanged(abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CollectionLevelChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().CollectionLevelChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().CollectionLevelChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -199,7 +199,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CanCollectDiagnostics(level));
+            *result = detach_abi(this->shim().CanCollectDiagnostics(level));
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::System::Profile::ISharedModeSettingsStatics> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsEnabled());
+            *value = detach_abi(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -230,12 +230,12 @@ struct produce<D, Windows::System::Profile::ISharedModeSettingsStatics> : produc
 template <typename D>
 struct produce<D, Windows::System::Profile::ISystemIdentificationInfo> : produce_base<D, Windows::System::Profile::ISystemIdentificationInfo>
 {
-    HRESULT __stdcall get_Id(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -250,7 +250,7 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationInfo> : produce
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Source());
+            *value = detach_abi(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -263,12 +263,12 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationInfo> : produce
 template <typename D>
 struct produce<D, Windows::System::Profile::ISystemIdentificationStatics> : produce_base<D, Windows::System::Profile::ISystemIdentificationStatics>
 {
-    HRESULT __stdcall abi_GetSystemIdForPublisher(abi_arg_out<Windows::System::Profile::ISystemIdentificationInfo> result) noexcept override
+    HRESULT __stdcall abi_GetSystemIdForPublisher(impl::abi_arg_out<Windows::System::Profile::ISystemIdentificationInfo> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetSystemIdForPublisher());
+            *result = detach_abi(this->shim().GetSystemIdForPublisher());
             return S_OK;
         }
         catch (...)
@@ -278,12 +278,12 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationStatics> : prod
         }
     }
 
-    HRESULT __stdcall abi_GetSystemIdForUser(abi_arg_in<Windows::System::IUser> user, abi_arg_out<Windows::System::Profile::ISystemIdentificationInfo> result) noexcept override
+    HRESULT __stdcall abi_GetSystemIdForUser(impl::abi_arg_in<Windows::System::IUser> user, impl::abi_arg_out<Windows::System::Profile::ISystemIdentificationInfo> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetSystemIdForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
+            *result = detach_abi(this->shim().GetSystemIdForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
         catch (...)
@@ -301,35 +301,35 @@ namespace Windows::System::Profile {
 template <typename D> Windows::System::Profile::AnalyticsVersionInfo impl_IAnalyticsInfoStatics<D>::VersionInfo() const
 {
     Windows::System::Profile::AnalyticsVersionInfo value { nullptr };
-    check_hresult(WINRT_SHIM(IAnalyticsInfoStatics)->get_VersionInfo(put(value)));
+    check_hresult(WINRT_SHIM(IAnalyticsInfoStatics)->get_VersionInfo(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAnalyticsInfoStatics<D>::DeviceForm() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAnalyticsInfoStatics)->get_DeviceForm(put(value)));
+    check_hresult(WINRT_SHIM(IAnalyticsInfoStatics)->get_DeviceForm(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAnalyticsVersionInfo<D>::DeviceFamily() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAnalyticsVersionInfo)->get_DeviceFamily(put(value)));
+    check_hresult(WINRT_SHIM(IAnalyticsVersionInfo)->get_DeviceFamily(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAnalyticsVersionInfo<D>::DeviceFamilyVersion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAnalyticsVersionInfo)->get_DeviceFamilyVersion(put(value)));
+    check_hresult(WINRT_SHIM(IAnalyticsVersionInfo)->get_DeviceFamilyVersion(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISystemIdentificationInfo<D>::Id() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(ISystemIdentificationInfo)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(ISystemIdentificationInfo)->get_Id(put_abi(value)));
     return value;
 }
 
@@ -343,14 +343,14 @@ template <typename D> Windows::System::Profile::SystemIdentificationSource impl_
 template <typename D> Windows::System::Profile::SystemIdentificationInfo impl_ISystemIdentificationStatics<D>::GetSystemIdForPublisher() const
 {
     Windows::System::Profile::SystemIdentificationInfo result { nullptr };
-    check_hresult(WINRT_SHIM(ISystemIdentificationStatics)->abi_GetSystemIdForPublisher(put(result)));
+    check_hresult(WINRT_SHIM(ISystemIdentificationStatics)->abi_GetSystemIdForPublisher(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::System::Profile::SystemIdentificationInfo impl_ISystemIdentificationStatics<D>::GetSystemIdForUser(const Windows::System::User & user) const
 {
     Windows::System::Profile::SystemIdentificationInfo result { nullptr };
-    check_hresult(WINRT_SHIM(ISystemIdentificationStatics)->abi_GetSystemIdForUser(get(user), put(result)));
+    check_hresult(WINRT_SHIM(ISystemIdentificationStatics)->abi_GetSystemIdForUser(get_abi(user), put_abi(result)));
     return result;
 }
 
@@ -364,7 +364,7 @@ template <typename D> Windows::System::Profile::PlatformDataCollectionLevel impl
 template <typename D> event_token impl_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlatformDiagnosticsAndUsageDataSettingsStatics)->add_CollectionLevelChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlatformDiagnosticsAndUsageDataSettingsStatics)->add_CollectionLevelChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -388,28 +388,28 @@ template <typename D> bool impl_IPlatformDiagnosticsAndUsageDataSettingsStatics<
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHardwareToken<D>::Id() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IHardwareToken)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IHardwareToken)->get_Id(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHardwareToken<D>::Signature() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IHardwareToken)->get_Signature(put(value)));
+    check_hresult(WINRT_SHIM(IHardwareToken)->get_Signature(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHardwareToken<D>::Certificate() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IHardwareToken)->get_Certificate(put(value)));
+    check_hresult(WINRT_SHIM(IHardwareToken)->get_Certificate(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::System::Profile::HardwareToken impl_IHardwareIdentificationStatics<D>::GetPackageSpecificToken(const Windows::Storage::Streams::IBuffer & nonce) const
 {
     Windows::System::Profile::HardwareToken packageSpecificHardwareToken { nullptr };
-    check_hresult(WINRT_SHIM(IHardwareIdentificationStatics)->abi_GetPackageSpecificToken(get(nonce), put(packageSpecificHardwareToken)));
+    check_hresult(WINRT_SHIM(IHardwareIdentificationStatics)->abi_GetPackageSpecificToken(get_abi(nonce), put_abi(packageSpecificHardwareToken)));
     return packageSpecificHardwareToken;
 }
 

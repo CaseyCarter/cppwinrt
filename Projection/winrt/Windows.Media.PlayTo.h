@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::ICurrentTimeChangeRequestedEventArgs> : produce_base<D, Windows::Media::PlayTo::ICurrentTimeChangeRequestedEventArgs>
 {
-    HRESULT __stdcall get_Time(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_Time(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Time());
+            *value = detach_abi(this->shim().Time());
             return S_OK;
         }
         catch (...)
@@ -39,7 +39,7 @@ struct produce<D, Windows::Media::PlayTo::IMuteChangeRequestedEventArgs> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Mute());
+            *value = detach_abi(this->shim().Mute());
             return S_OK;
         }
         catch (...)
@@ -57,7 +57,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().State());
+            *value = detach_abi(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -66,12 +66,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall add_StateChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_StateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -94,12 +94,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall add_Transferred(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Transferred(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Transferred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Transferred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -122,12 +122,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall add_Error(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Error(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Error(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Error(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionErrorEventArgs> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Code());
+            *value = detach_abi(this->shim().Code());
             return S_OK;
         }
         catch (...)
@@ -168,12 +168,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionErrorEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Message(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Message(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Message());
+            *value = detach_abi(this->shim().Message());
             return S_OK;
         }
         catch (...)
@@ -192,7 +192,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionStateChangedEventArgs
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PreviousState());
+            *value = detach_abi(this->shim().PreviousState());
             return S_OK;
         }
         catch (...)
@@ -206,7 +206,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionStateChangedEventArgs
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CurrentState());
+            *value = detach_abi(this->shim().CurrentState());
             return S_OK;
         }
         catch (...)
@@ -219,12 +219,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionStateChangedEventArgs
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToConnectionTransferredEventArgs> : produce_base<D, Windows::Media::PlayTo::IPlayToConnectionTransferredEventArgs>
 {
-    HRESULT __stdcall get_PreviousSource(abi_arg_out<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
+    HRESULT __stdcall get_PreviousSource(impl::abi_arg_out<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PreviousSource());
+            *value = detach_abi(this->shim().PreviousSource());
             return S_OK;
         }
         catch (...)
@@ -234,12 +234,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionTransferredEventArgs>
         }
     }
 
-    HRESULT __stdcall get_CurrentSource(abi_arg_out<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
+    HRESULT __stdcall get_CurrentSource(impl::abi_arg_out<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CurrentSource());
+            *value = detach_abi(this->shim().CurrentSource());
             return S_OK;
         }
         catch (...)
@@ -253,12 +253,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionTransferredEventArgs>
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Windows::Media::PlayTo::IPlayToManager>
 {
-    HRESULT __stdcall add_SourceRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SourceRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SourceRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -281,12 +281,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_SourceSelected(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceSelected(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SourceSelected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SourceSelected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Wind
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DefaultSourceSelection());
+            *value = detach_abi(this->shim().DefaultSourceSelection());
             return S_OK;
         }
         catch (...)
@@ -341,12 +341,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Wind
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToManagerStatics> : produce_base<D, Windows::Media::PlayTo::IPlayToManagerStatics>
 {
-    HRESULT __stdcall abi_GetForCurrentView(abi_arg_out<Windows::Media::PlayTo::IPlayToManager> playToManager) noexcept override
+    HRESULT __stdcall abi_GetForCurrentView(impl::abi_arg_out<Windows::Media::PlayTo::IPlayToManager> playToManager) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *playToManager = detach(this->shim().GetForCurrentView());
+            *playToManager = detach_abi(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -374,12 +374,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManagerStatics> : produce_base<
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Windows::Media::PlayTo::IPlayToReceiver>
 {
-    HRESULT __stdcall add_PlayRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_PlayRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().PlayRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().PlayRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -402,12 +402,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_PauseRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_PauseRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().PauseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().PauseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -430,12 +430,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_SourceChangeRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::SourceChangeRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceChangeRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::SourceChangeRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SourceChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::SourceChangeRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SourceChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::SourceChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -458,12 +458,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_PlaybackRateChangeRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_PlaybackRateChangeRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().PlaybackRateChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().PlaybackRateChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -486,12 +486,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_CurrentTimeChangeRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CurrentTimeChangeRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().CurrentTimeChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().CurrentTimeChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -514,12 +514,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_MuteChangeRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::MuteChangeRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_MuteChangeRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::MuteChangeRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().MuteChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::MuteChangeRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().MuteChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::MuteChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -542,12 +542,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_VolumeChangeRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::VolumeChangeRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_VolumeChangeRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::VolumeChangeRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().VolumeChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::VolumeChangeRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().VolumeChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::VolumeChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -570,12 +570,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_TimeUpdateRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_TimeUpdateRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().TimeUpdateRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().TimeUpdateRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -598,12 +598,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_StopRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_StopRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().StopRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().StopRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -668,7 +668,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_NotifyTimeUpdate(abi_arg_in<Windows::Foundation::TimeSpan> currentTime) noexcept override
+    HRESULT __stdcall abi_NotifyTimeUpdate(impl::abi_arg_in<Windows::Foundation::TimeSpan> currentTime) noexcept override
     {
         try
         {
@@ -682,7 +682,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_NotifyDurationChange(abi_arg_in<Windows::Foundation::TimeSpan> duration) noexcept override
+    HRESULT __stdcall abi_NotifyDurationChange(impl::abi_arg_in<Windows::Foundation::TimeSpan> duration) noexcept override
     {
         try
         {
@@ -794,12 +794,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_FriendlyName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FriendlyName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FriendlyName());
+            *value = detach_abi(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -809,7 +809,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall put_FriendlyName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_FriendlyName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -842,7 +842,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportsImage());
+            *value = detach_abi(this->shim().SupportsImage());
             return S_OK;
         }
         catch (...)
@@ -870,7 +870,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportsAudio());
+            *value = detach_abi(this->shim().SupportsAudio());
             return S_OK;
         }
         catch (...)
@@ -898,7 +898,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportsVideo());
+            *value = detach_abi(this->shim().SupportsVideo());
             return S_OK;
         }
         catch (...)
@@ -907,12 +907,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_Properties(abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Properties());
+            *value = detach_abi(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -922,12 +922,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_StartAsync(abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
+    HRESULT __stdcall abi_StartAsync(impl::abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *action = detach(this->shim().StartAsync());
+            *action = detach_abi(this->shim().StartAsync());
             return S_OK;
         }
         catch (...)
@@ -937,12 +937,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_StopAsync(abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
+    HRESULT __stdcall abi_StopAsync(impl::abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *action = detach(this->shim().StopAsync());
+            *action = detach_abi(this->shim().StopAsync());
             return S_OK;
         }
         catch (...)
@@ -956,12 +956,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToSource> : produce_base<D, Windows::Media::PlayTo::IPlayToSource>
 {
-    HRESULT __stdcall get_Connection(abi_arg_out<Windows::Media::PlayTo::IPlayToConnection> value) noexcept override
+    HRESULT __stdcall get_Connection(impl::abi_arg_out<Windows::Media::PlayTo::IPlayToConnection> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Connection());
+            *value = detach_abi(this->shim().Connection());
             return S_OK;
         }
         catch (...)
@@ -971,12 +971,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSource> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_Next(abi_arg_out<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
+    HRESULT __stdcall get_Next(impl::abi_arg_out<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Next());
+            *value = detach_abi(this->shim().Next());
             return S_OK;
         }
         catch (...)
@@ -986,7 +986,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSource> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall put_Next(abi_arg_in<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
+    HRESULT __stdcall put_Next(impl::abi_arg_in<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
     {
         try
         {
@@ -1036,12 +1036,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceDeferral> : produce_base<
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequest> : produce_base<D, Windows::Media::PlayTo::IPlayToSourceRequest>
 {
-    HRESULT __stdcall get_Deadline(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall get_Deadline(impl::abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Deadline());
+            *value = detach_abi(this->shim().Deadline());
             return S_OK;
         }
         catch (...)
@@ -1050,7 +1050,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequest> : produce_base<D
         }
     }
 
-    HRESULT __stdcall abi_DisplayErrorString(abi_arg_in<hstring> errorString) noexcept override
+    HRESULT __stdcall abi_DisplayErrorString(impl::abi_arg_in<hstring> errorString) noexcept override
     {
         try
         {
@@ -1064,12 +1064,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequest> : produce_base<D
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Media::PlayTo::IPlayToSourceDeferral> deferral) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Media::PlayTo::IPlayToSourceDeferral> deferral) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *deferral = detach(this->shim().GetDeferral());
+            *deferral = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1079,7 +1079,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequest> : produce_base<D
         }
     }
 
-    HRESULT __stdcall abi_SetSource(abi_arg_in<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
+    HRESULT __stdcall abi_SetSource(impl::abi_arg_in<Windows::Media::PlayTo::IPlayToSource> value) noexcept override
     {
         try
         {
@@ -1097,12 +1097,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequest> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequestedEventArgs> : produce_base<D, Windows::Media::PlayTo::IPlayToSourceRequestedEventArgs>
 {
-    HRESULT __stdcall get_SourceRequest(abi_arg_out<Windows::Media::PlayTo::IPlayToSourceRequest> value) noexcept override
+    HRESULT __stdcall get_SourceRequest(impl::abi_arg_out<Windows::Media::PlayTo::IPlayToSourceRequest> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SourceRequest());
+            *value = detach_abi(this->shim().SourceRequest());
             return S_OK;
         }
         catch (...)
@@ -1116,12 +1116,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequestedEventArgs> : pro
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : produce_base<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs>
 {
-    HRESULT __stdcall get_FriendlyName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FriendlyName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FriendlyName());
+            *value = detach_abi(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -1131,12 +1131,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
         }
     }
 
-    HRESULT __stdcall get_Icon(abi_arg_out<Windows::Storage::Streams::IRandomAccessStreamWithContentType> value) noexcept override
+    HRESULT __stdcall get_Icon(impl::abi_arg_out<Windows::Storage::Streams::IRandomAccessStreamWithContentType> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Icon());
+            *value = detach_abi(this->shim().Icon());
             return S_OK;
         }
         catch (...)
@@ -1151,7 +1151,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportsImage());
+            *value = detach_abi(this->shim().SupportsImage());
             return S_OK;
         }
         catch (...)
@@ -1165,7 +1165,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportsAudio());
+            *value = detach_abi(this->shim().SupportsAudio());
             return S_OK;
         }
         catch (...)
@@ -1179,7 +1179,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportsVideo());
+            *value = detach_abi(this->shim().SupportsVideo());
             return S_OK;
         }
         catch (...)
@@ -1192,12 +1192,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToSourceWithPreferredSourceUri> : produce_base<D, Windows::Media::PlayTo::IPlayToSourceWithPreferredSourceUri>
 {
-    HRESULT __stdcall get_PreferredSourceUri(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_PreferredSourceUri(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PreferredSourceUri());
+            *value = detach_abi(this->shim().PreferredSourceUri());
             return S_OK;
         }
         catch (...)
@@ -1207,7 +1207,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceWithPreferredSourceUri> :
         }
     }
 
-    HRESULT __stdcall put_PreferredSourceUri(abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall put_PreferredSourceUri(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
@@ -1230,7 +1230,7 @@ struct produce<D, Windows::Media::PlayTo::IPlaybackRateChangeRequestedEventArgs>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Rate());
+            *value = detach_abi(this->shim().Rate());
             return S_OK;
         }
         catch (...)
@@ -1243,12 +1243,12 @@ struct produce<D, Windows::Media::PlayTo::IPlaybackRateChangeRequestedEventArgs>
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : produce_base<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs>
 {
-    HRESULT __stdcall get_Stream(abi_arg_out<Windows::Storage::Streams::IRandomAccessStreamWithContentType> value) noexcept override
+    HRESULT __stdcall get_Stream(impl::abi_arg_out<Windows::Storage::Streams::IRandomAccessStreamWithContentType> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Stream());
+            *value = detach_abi(this->shim().Stream());
             return S_OK;
         }
         catch (...)
@@ -1258,12 +1258,12 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Title(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Title(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Title());
+            *value = detach_abi(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -1273,12 +1273,12 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Author(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Author(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Author());
+            *value = detach_abi(this->shim().Author());
             return S_OK;
         }
         catch (...)
@@ -1288,12 +1288,12 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Album(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Album(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Album());
+            *value = detach_abi(this->shim().Album());
             return S_OK;
         }
         catch (...)
@@ -1303,12 +1303,12 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Genre(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Genre(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Genre());
+            *value = detach_abi(this->shim().Genre());
             return S_OK;
         }
         catch (...)
@@ -1318,12 +1318,12 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Description(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Description(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Description());
+            *value = detach_abi(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -1333,12 +1333,12 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Date(abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
+    HRESULT __stdcall get_Date(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Date());
+            *value = detach_abi(this->shim().Date());
             return S_OK;
         }
         catch (...)
@@ -1348,12 +1348,12 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Thumbnail(abi_arg_out<Windows::Storage::Streams::IRandomAccessStreamReference> value) noexcept override
+    HRESULT __stdcall get_Thumbnail(impl::abi_arg_out<Windows::Storage::Streams::IRandomAccessStreamReference> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Thumbnail());
+            *value = detach_abi(this->shim().Thumbnail());
             return S_OK;
         }
         catch (...)
@@ -1363,12 +1363,12 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Rating(abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Rating(impl::abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Rating());
+            *value = detach_abi(this->shim().Rating());
             return S_OK;
         }
         catch (...)
@@ -1378,12 +1378,12 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Properties(abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Properties());
+            *value = detach_abi(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -1402,7 +1402,7 @@ struct produce<D, Windows::Media::PlayTo::IVolumeChangeRequestedEventArgs> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Volume());
+            *value = detach_abi(this->shim().Volume());
             return S_OK;
         }
         catch (...)
@@ -1419,70 +1419,70 @@ namespace Windows::Media::PlayTo {
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamWithContentType impl_ISourceChangeRequestedEventArgs<D>::Stream() const
 {
     Windows::Storage::Streams::IRandomAccessStreamWithContentType value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Stream(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Stream(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Title() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Title(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Author() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Author(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Author(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Album() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Album(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Album(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Genre() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Genre(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Genre(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Description() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Description(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_ISourceChangeRequestedEventArgs<D>::Date() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Date(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Date(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_ISourceChangeRequestedEventArgs<D>::Thumbnail() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Thumbnail(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Thumbnail(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_ISourceChangeRequestedEventArgs<D>::Rating() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Rating(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Rating(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_ISourceChangeRequestedEventArgs<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Properties(put_abi(value)));
     return value;
 }
 
@@ -1496,7 +1496,7 @@ template <typename D> double impl_IPlaybackRateChangeRequestedEventArgs<D>::Rate
 template <typename D> Windows::Foundation::TimeSpan impl_ICurrentTimeChangeRequestedEventArgs<D>::Time() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(ICurrentTimeChangeRequestedEventArgs)->get_Time(put(value)));
+    check_hresult(WINRT_SHIM(ICurrentTimeChangeRequestedEventArgs)->get_Time(put_abi(value)));
     return value;
 }
 
@@ -1517,7 +1517,7 @@ template <typename D> double impl_IVolumeChangeRequestedEventArgs<D>::Volume() c
 template <typename D> event_token impl_IPlayToReceiver<D>::PlayRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_PlayRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_PlayRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1534,7 +1534,7 @@ template <typename D> void impl_IPlayToReceiver<D>::PlayRequested(event_token to
 template <typename D> event_token impl_IPlayToReceiver<D>::PauseRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_PauseRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_PauseRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1551,7 +1551,7 @@ template <typename D> void impl_IPlayToReceiver<D>::PauseRequested(event_token t
 template <typename D> event_token impl_IPlayToReceiver<D>::SourceChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::SourceChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_SourceChangeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_SourceChangeRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1568,7 +1568,7 @@ template <typename D> void impl_IPlayToReceiver<D>::SourceChangeRequested(event_
 template <typename D> event_token impl_IPlayToReceiver<D>::PlaybackRateChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_PlaybackRateChangeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_PlaybackRateChangeRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1585,7 +1585,7 @@ template <typename D> void impl_IPlayToReceiver<D>::PlaybackRateChangeRequested(
 template <typename D> event_token impl_IPlayToReceiver<D>::CurrentTimeChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_CurrentTimeChangeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_CurrentTimeChangeRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1602,7 +1602,7 @@ template <typename D> void impl_IPlayToReceiver<D>::CurrentTimeChangeRequested(e
 template <typename D> event_token impl_IPlayToReceiver<D>::MuteChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::MuteChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_MuteChangeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_MuteChangeRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1619,7 +1619,7 @@ template <typename D> void impl_IPlayToReceiver<D>::MuteChangeRequested(event_to
 template <typename D> event_token impl_IPlayToReceiver<D>::VolumeChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::VolumeChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_VolumeChangeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_VolumeChangeRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1636,7 +1636,7 @@ template <typename D> void impl_IPlayToReceiver<D>::VolumeChangeRequested(event_
 template <typename D> event_token impl_IPlayToReceiver<D>::TimeUpdateRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_TimeUpdateRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_TimeUpdateRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1653,7 +1653,7 @@ template <typename D> void impl_IPlayToReceiver<D>::TimeUpdateRequested(event_to
 template <typename D> event_token impl_IPlayToReceiver<D>::StopRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_StopRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->add_StopRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1684,12 +1684,12 @@ template <typename D> void impl_IPlayToReceiver<D>::NotifyLoadedMetadata() const
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyTimeUpdate(const Windows::Foundation::TimeSpan & currentTime) const
 {
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->abi_NotifyTimeUpdate(get(currentTime)));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->abi_NotifyTimeUpdate(get_abi(currentTime)));
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyDurationChange(const Windows::Foundation::TimeSpan & duration) const
 {
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->abi_NotifyDurationChange(get(duration)));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->abi_NotifyDurationChange(get_abi(duration)));
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifySeeking() const
@@ -1730,13 +1730,13 @@ template <typename D> void impl_IPlayToReceiver<D>::NotifyStopped() const
 template <typename D> hstring impl_IPlayToReceiver<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->get_FriendlyName(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->get_FriendlyName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::FriendlyName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->put_FriendlyName(get(value)));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->put_FriendlyName(get_abi(value)));
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::SupportsImage(bool value) const
@@ -1778,41 +1778,41 @@ template <typename D> bool impl_IPlayToReceiver<D>::SupportsVideo() const
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IPlayToReceiver<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->get_Properties(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPlayToReceiver<D>::StartAsync() const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->abi_StartAsync(put(action)));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->abi_StartAsync(put_abi(action)));
     return action;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPlayToReceiver<D>::StopAsync() const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(WINRT_SHIM(IPlayToReceiver)->abi_StopAsync(put(action)));
+    check_hresult(WINRT_SHIM(IPlayToReceiver)->abi_StopAsync(put_abi(action)));
     return action;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToConnection impl_IPlayToSource<D>::Connection() const
 {
     Windows::Media::PlayTo::PlayToConnection value { nullptr };
-    check_hresult(WINRT_SHIM(IPlayToSource)->get_Connection(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToSource)->get_Connection(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToSource impl_IPlayToSource<D>::Next() const
 {
     Windows::Media::PlayTo::PlayToSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPlayToSource)->get_Next(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToSource)->get_Next(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPlayToSource<D>::Next(const Windows::Media::PlayTo::PlayToSource & value) const
 {
-    check_hresult(WINRT_SHIM(IPlayToSource)->put_Next(get(value)));
+    check_hresult(WINRT_SHIM(IPlayToSource)->put_Next(get_abi(value)));
 }
 
 template <typename D> void impl_IPlayToSource<D>::PlayNext() const
@@ -1823,13 +1823,13 @@ template <typename D> void impl_IPlayToSource<D>::PlayNext() const
 template <typename D> Windows::Foundation::Uri impl_IPlayToSourceWithPreferredSourceUri<D>::PreferredSourceUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IPlayToSourceWithPreferredSourceUri)->get_PreferredSourceUri(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToSourceWithPreferredSourceUri)->get_PreferredSourceUri(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPlayToSourceWithPreferredSourceUri<D>::PreferredSourceUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(WINRT_SHIM(IPlayToSourceWithPreferredSourceUri)->put_PreferredSourceUri(get(value)));
+    check_hresult(WINRT_SHIM(IPlayToSourceWithPreferredSourceUri)->put_PreferredSourceUri(get_abi(value)));
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToConnectionState impl_IPlayToConnectionStateChangedEventArgs<D>::PreviousState() const
@@ -1849,14 +1849,14 @@ template <typename D> Windows::Media::PlayTo::PlayToConnectionState impl_IPlayTo
 template <typename D> Windows::Media::PlayTo::PlayToSource impl_IPlayToConnectionTransferredEventArgs<D>::PreviousSource() const
 {
     Windows::Media::PlayTo::PlayToSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPlayToConnectionTransferredEventArgs)->get_PreviousSource(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToConnectionTransferredEventArgs)->get_PreviousSource(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToSource impl_IPlayToConnectionTransferredEventArgs<D>::CurrentSource() const
 {
     Windows::Media::PlayTo::PlayToSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPlayToConnectionTransferredEventArgs)->get_CurrentSource(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToConnectionTransferredEventArgs)->get_CurrentSource(put_abi(value)));
     return value;
 }
 
@@ -1870,7 +1870,7 @@ template <typename D> Windows::Media::PlayTo::PlayToConnectionError impl_IPlayTo
 template <typename D> hstring impl_IPlayToConnectionErrorEventArgs<D>::Message() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPlayToConnectionErrorEventArgs)->get_Message(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToConnectionErrorEventArgs)->get_Message(put_abi(value)));
     return value;
 }
 
@@ -1884,7 +1884,7 @@ template <typename D> Windows::Media::PlayTo::PlayToConnectionState impl_IPlayTo
 template <typename D> event_token impl_IPlayToConnection<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToConnection)->add_StateChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToConnection)->add_StateChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -1901,7 +1901,7 @@ template <typename D> void impl_IPlayToConnection<D>::StateChanged(event_token t
 template <typename D> event_token impl_IPlayToConnection<D>::Transferred(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToConnection)->add_Transferred(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToConnection)->add_Transferred(get_abi(handler), &token));
     return token;
 }
 
@@ -1918,7 +1918,7 @@ template <typename D> void impl_IPlayToConnection<D>::Transferred(event_token to
 template <typename D> event_token impl_IPlayToConnection<D>::Error(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToConnection)->add_Error(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToConnection)->add_Error(get_abi(handler), &token));
     return token;
 }
 
@@ -1935,14 +1935,14 @@ template <typename D> void impl_IPlayToConnection<D>::Error(event_token token) c
 template <typename D> hstring impl_IPlayToSourceSelectedEventArgs<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPlayToSourceSelectedEventArgs)->get_FriendlyName(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToSourceSelectedEventArgs)->get_FriendlyName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamWithContentType impl_IPlayToSourceSelectedEventArgs<D>::Icon() const
 {
     Windows::Storage::Streams::IRandomAccessStreamWithContentType value;
-    check_hresult(WINRT_SHIM(IPlayToSourceSelectedEventArgs)->get_Icon(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToSourceSelectedEventArgs)->get_Icon(put_abi(value)));
     return value;
 }
 
@@ -1975,38 +1975,38 @@ template <typename D> void impl_IPlayToSourceDeferral<D>::Complete() const
 template <typename D> Windows::Foundation::DateTime impl_IPlayToSourceRequest<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(IPlayToSourceRequest)->get_Deadline(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToSourceRequest)->get_Deadline(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPlayToSourceRequest<D>::DisplayErrorString(hstring_view errorString) const
 {
-    check_hresult(WINRT_SHIM(IPlayToSourceRequest)->abi_DisplayErrorString(get(errorString)));
+    check_hresult(WINRT_SHIM(IPlayToSourceRequest)->abi_DisplayErrorString(get_abi(errorString)));
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToSourceDeferral impl_IPlayToSourceRequest<D>::GetDeferral() const
 {
     Windows::Media::PlayTo::PlayToSourceDeferral deferral { nullptr };
-    check_hresult(WINRT_SHIM(IPlayToSourceRequest)->abi_GetDeferral(put(deferral)));
+    check_hresult(WINRT_SHIM(IPlayToSourceRequest)->abi_GetDeferral(put_abi(deferral)));
     return deferral;
 }
 
 template <typename D> void impl_IPlayToSourceRequest<D>::SetSource(const Windows::Media::PlayTo::PlayToSource & value) const
 {
-    check_hresult(WINRT_SHIM(IPlayToSourceRequest)->abi_SetSource(get(value)));
+    check_hresult(WINRT_SHIM(IPlayToSourceRequest)->abi_SetSource(get_abi(value)));
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToSourceRequest impl_IPlayToSourceRequestedEventArgs<D>::SourceRequest() const
 {
     Windows::Media::PlayTo::PlayToSourceRequest value { nullptr };
-    check_hresult(WINRT_SHIM(IPlayToSourceRequestedEventArgs)->get_SourceRequest(put(value)));
+    check_hresult(WINRT_SHIM(IPlayToSourceRequestedEventArgs)->get_SourceRequest(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPlayToManager<D>::SourceRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToManager)->add_SourceRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToManager)->add_SourceRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -2023,7 +2023,7 @@ template <typename D> void impl_IPlayToManager<D>::SourceRequested(event_token t
 template <typename D> event_token impl_IPlayToManager<D>::SourceSelected(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPlayToManager)->add_SourceSelected(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPlayToManager)->add_SourceSelected(get_abi(handler), &token));
     return token;
 }
 
@@ -2052,7 +2052,7 @@ template <typename D> bool impl_IPlayToManager<D>::DefaultSourceSelection() cons
 template <typename D> Windows::Media::PlayTo::PlayToManager impl_IPlayToManagerStatics<D>::GetForCurrentView() const
 {
     Windows::Media::PlayTo::PlayToManager playToManager { nullptr };
-    check_hresult(WINRT_SHIM(IPlayToManagerStatics)->abi_GetForCurrentView(put(playToManager)));
+    check_hresult(WINRT_SHIM(IPlayToManagerStatics)->abi_GetForCurrentView(put_abi(playToManager)));
     return playToManager;
 }
 

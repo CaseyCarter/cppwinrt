@@ -17,12 +17,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Media::FaceAnalysis::IDetectedFace> : produce_base<D, Windows::Media::FaceAnalysis::IDetectedFace>
 {
-    HRESULT __stdcall get_FaceBox(abi_arg_out<Windows::Graphics::Imaging::BitmapBounds> returnValue) noexcept override
+    HRESULT __stdcall get_FaceBox(impl::abi_arg_out<Windows::Graphics::Imaging::BitmapBounds> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().FaceBox());
+            *returnValue = detach_abi(this->shim().FaceBox());
             return S_OK;
         }
         catch (...)
@@ -35,12 +35,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IDetectedFace> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D, Windows::Media::FaceAnalysis::IFaceDetector>
 {
-    HRESULT __stdcall abi_DetectFacesAsync(abi_arg_in<Windows::Graphics::Imaging::ISoftwareBitmap> image, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>>> returnValue) noexcept override
+    HRESULT __stdcall abi_DetectFacesAsync(impl::abi_arg_in<Windows::Graphics::Imaging::ISoftwareBitmap> image, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>>> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().DetectFacesAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&image)));
+            *returnValue = detach_abi(this->shim().DetectFacesAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&image)));
             return S_OK;
         }
         catch (...)
@@ -50,12 +50,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_DetectFacesWithSearchAreaAsync(abi_arg_in<Windows::Graphics::Imaging::ISoftwareBitmap> image, abi_arg_in<Windows::Graphics::Imaging::BitmapBounds> searchArea, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>>> returnValue) noexcept override
+    HRESULT __stdcall abi_DetectFacesWithSearchAreaAsync(impl::abi_arg_in<Windows::Graphics::Imaging::ISoftwareBitmap> image, impl::abi_arg_in<Windows::Graphics::Imaging::BitmapBounds> searchArea, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>>> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().DetectFacesAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&image), *reinterpret_cast<const Windows::Graphics::Imaging::BitmapBounds *>(&searchArea)));
+            *returnValue = detach_abi(this->shim().DetectFacesAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&image), *reinterpret_cast<const Windows::Graphics::Imaging::BitmapBounds *>(&searchArea)));
             return S_OK;
         }
         catch (...)
@@ -65,12 +65,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_MinDetectableFaceSize(abi_arg_out<Windows::Graphics::Imaging::BitmapSize> returnValue) noexcept override
+    HRESULT __stdcall get_MinDetectableFaceSize(impl::abi_arg_out<Windows::Graphics::Imaging::BitmapSize> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().MinDetectableFaceSize());
+            *returnValue = detach_abi(this->shim().MinDetectableFaceSize());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall put_MinDetectableFaceSize(abi_arg_in<Windows::Graphics::Imaging::BitmapSize> value) noexcept override
+    HRESULT __stdcall put_MinDetectableFaceSize(impl::abi_arg_in<Windows::Graphics::Imaging::BitmapSize> value) noexcept override
     {
         try
         {
@@ -93,12 +93,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_MaxDetectableFaceSize(abi_arg_out<Windows::Graphics::Imaging::BitmapSize> returnValue) noexcept override
+    HRESULT __stdcall get_MaxDetectableFaceSize(impl::abi_arg_out<Windows::Graphics::Imaging::BitmapSize> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().MaxDetectableFaceSize());
+            *returnValue = detach_abi(this->shim().MaxDetectableFaceSize());
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall put_MaxDetectableFaceSize(abi_arg_in<Windows::Graphics::Imaging::BitmapSize> value) noexcept override
+    HRESULT __stdcall put_MaxDetectableFaceSize(impl::abi_arg_in<Windows::Graphics::Imaging::BitmapSize> value) noexcept override
     {
         try
         {
@@ -125,12 +125,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics> : produce_base<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics>
 {
-    HRESULT __stdcall abi_CreateAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector>> returnValue) noexcept override
+    HRESULT __stdcall abi_CreateAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector>> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().CreateAsync());
+            *returnValue = detach_abi(this->shim().CreateAsync());
             return S_OK;
         }
         catch (...)
@@ -140,12 +140,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics> : produce_
         }
     }
 
-    HRESULT __stdcall abi_GetSupportedBitmapPixelFormats(abi_arg_out<Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat>> result) noexcept override
+    HRESULT __stdcall abi_GetSupportedBitmapPixelFormats(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetSupportedBitmapPixelFormats());
+            *result = detach_abi(this->shim().GetSupportedBitmapPixelFormats());
             return S_OK;
         }
         catch (...)
@@ -160,7 +160,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsBitmapPixelFormatSupported(bitmapPixelFormat));
+            *result = detach_abi(this->shim().IsBitmapPixelFormatSupported(bitmapPixelFormat));
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsSupported());
+            *returnValue = detach_abi(this->shim().IsSupported());
             return S_OK;
         }
         catch (...)
@@ -187,12 +187,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics> : produce_
 template <typename D>
 struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, Windows::Media::FaceAnalysis::IFaceTracker>
 {
-    HRESULT __stdcall abi_ProcessNextFrameAsync(abi_arg_in<Windows::Media::IVideoFrame> videoFrame, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>>> returnValue) noexcept override
+    HRESULT __stdcall abi_ProcessNextFrameAsync(impl::abi_arg_in<Windows::Media::IVideoFrame> videoFrame, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>>> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().ProcessNextFrameAsync(*reinterpret_cast<const Windows::Media::VideoFrame *>(&videoFrame)));
+            *returnValue = detach_abi(this->shim().ProcessNextFrameAsync(*reinterpret_cast<const Windows::Media::VideoFrame *>(&videoFrame)));
             return S_OK;
         }
         catch (...)
@@ -202,12 +202,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_MinDetectableFaceSize(abi_arg_out<Windows::Graphics::Imaging::BitmapSize> returnValue) noexcept override
+    HRESULT __stdcall get_MinDetectableFaceSize(impl::abi_arg_out<Windows::Graphics::Imaging::BitmapSize> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().MinDetectableFaceSize());
+            *returnValue = detach_abi(this->shim().MinDetectableFaceSize());
             return S_OK;
         }
         catch (...)
@@ -216,7 +216,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall put_MinDetectableFaceSize(abi_arg_in<Windows::Graphics::Imaging::BitmapSize> value) noexcept override
+    HRESULT __stdcall put_MinDetectableFaceSize(impl::abi_arg_in<Windows::Graphics::Imaging::BitmapSize> value) noexcept override
     {
         try
         {
@@ -230,12 +230,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_MaxDetectableFaceSize(abi_arg_out<Windows::Graphics::Imaging::BitmapSize> returnValue) noexcept override
+    HRESULT __stdcall get_MaxDetectableFaceSize(impl::abi_arg_out<Windows::Graphics::Imaging::BitmapSize> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().MaxDetectableFaceSize());
+            *returnValue = detach_abi(this->shim().MaxDetectableFaceSize());
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall put_MaxDetectableFaceSize(abi_arg_in<Windows::Graphics::Imaging::BitmapSize> value) noexcept override
+    HRESULT __stdcall put_MaxDetectableFaceSize(impl::abi_arg_in<Windows::Graphics::Imaging::BitmapSize> value) noexcept override
     {
         try
         {
@@ -262,12 +262,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Media::FaceAnalysis::IFaceTrackerStatics> : produce_base<D, Windows::Media::FaceAnalysis::IFaceTrackerStatics>
 {
-    HRESULT __stdcall abi_CreateAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker>> returnValue) noexcept override
+    HRESULT __stdcall abi_CreateAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker>> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().CreateAsync());
+            *returnValue = detach_abi(this->shim().CreateAsync());
             return S_OK;
         }
         catch (...)
@@ -277,12 +277,12 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTrackerStatics> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetSupportedBitmapPixelFormats(abi_arg_out<Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat>> result) noexcept override
+    HRESULT __stdcall abi_GetSupportedBitmapPixelFormats(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetSupportedBitmapPixelFormats());
+            *result = detach_abi(this->shim().GetSupportedBitmapPixelFormats());
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTrackerStatics> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsBitmapPixelFormatSupported(bitmapPixelFormat));
+            *result = detach_abi(this->shim().IsBitmapPixelFormatSupported(bitmapPixelFormat));
             return S_OK;
         }
         catch (...)
@@ -311,7 +311,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTrackerStatics> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsSupported());
+            *returnValue = detach_abi(this->shim().IsSupported());
             return S_OK;
         }
         catch (...)
@@ -328,59 +328,59 @@ namespace Windows::Media::FaceAnalysis {
 template <typename D> Windows::Graphics::Imaging::BitmapBounds impl_IDetectedFace<D>::FaceBox() const
 {
     Windows::Graphics::Imaging::BitmapBounds returnValue {};
-    check_hresult(WINRT_SHIM(IDetectedFace)->get_FaceBox(put(returnValue)));
+    check_hresult(WINRT_SHIM(IDetectedFace)->get_FaceBox(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> impl_IFaceDetector<D>::DetectFacesAsync(const Windows::Graphics::Imaging::SoftwareBitmap & image) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> returnValue;
-    check_hresult(WINRT_SHIM(IFaceDetector)->abi_DetectFacesAsync(get(image), put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->abi_DetectFacesAsync(get_abi(image), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> impl_IFaceDetector<D>::DetectFacesAsync(const Windows::Graphics::Imaging::SoftwareBitmap & image, const Windows::Graphics::Imaging::BitmapBounds & searchArea) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> returnValue;
-    check_hresult(WINRT_SHIM(IFaceDetector)->abi_DetectFacesWithSearchAreaAsync(get(image), get(searchArea), put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->abi_DetectFacesWithSearchAreaAsync(get_abi(image), get_abi(searchArea), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapSize impl_IFaceDetector<D>::MinDetectableFaceSize() const
 {
     Windows::Graphics::Imaging::BitmapSize returnValue {};
-    check_hresult(WINRT_SHIM(IFaceDetector)->get_MinDetectableFaceSize(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->get_MinDetectableFaceSize(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFaceDetector<D>::MinDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const
 {
-    check_hresult(WINRT_SHIM(IFaceDetector)->put_MinDetectableFaceSize(get(value)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->put_MinDetectableFaceSize(get_abi(value)));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapSize impl_IFaceDetector<D>::MaxDetectableFaceSize() const
 {
     Windows::Graphics::Imaging::BitmapSize returnValue {};
-    check_hresult(WINRT_SHIM(IFaceDetector)->get_MaxDetectableFaceSize(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->get_MaxDetectableFaceSize(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFaceDetector<D>::MaxDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const
 {
-    check_hresult(WINRT_SHIM(IFaceDetector)->put_MaxDetectableFaceSize(get(value)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->put_MaxDetectableFaceSize(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector> impl_IFaceDetectorStatics<D>::CreateAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector> returnValue;
-    check_hresult(WINRT_SHIM(IFaceDetectorStatics)->abi_CreateAsync(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetectorStatics)->abi_CreateAsync(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> impl_IFaceDetectorStatics<D>::GetSupportedBitmapPixelFormats() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> result;
-    check_hresult(WINRT_SHIM(IFaceDetectorStatics)->abi_GetSupportedBitmapPixelFormats(put(result)));
+    check_hresult(WINRT_SHIM(IFaceDetectorStatics)->abi_GetSupportedBitmapPixelFormats(put_abi(result)));
     return result;
 }
 
@@ -401,45 +401,45 @@ template <typename D> bool impl_IFaceDetectorStatics<D>::IsSupported() const
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> impl_IFaceTracker<D>::ProcessNextFrameAsync(const Windows::Media::VideoFrame & videoFrame) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> returnValue;
-    check_hresult(WINRT_SHIM(IFaceTracker)->abi_ProcessNextFrameAsync(get(videoFrame), put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->abi_ProcessNextFrameAsync(get_abi(videoFrame), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapSize impl_IFaceTracker<D>::MinDetectableFaceSize() const
 {
     Windows::Graphics::Imaging::BitmapSize returnValue {};
-    check_hresult(WINRT_SHIM(IFaceTracker)->get_MinDetectableFaceSize(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->get_MinDetectableFaceSize(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFaceTracker<D>::MinDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const
 {
-    check_hresult(WINRT_SHIM(IFaceTracker)->put_MinDetectableFaceSize(get(value)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->put_MinDetectableFaceSize(get_abi(value)));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapSize impl_IFaceTracker<D>::MaxDetectableFaceSize() const
 {
     Windows::Graphics::Imaging::BitmapSize returnValue {};
-    check_hresult(WINRT_SHIM(IFaceTracker)->get_MaxDetectableFaceSize(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->get_MaxDetectableFaceSize(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFaceTracker<D>::MaxDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const
 {
-    check_hresult(WINRT_SHIM(IFaceTracker)->put_MaxDetectableFaceSize(get(value)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->put_MaxDetectableFaceSize(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> impl_IFaceTrackerStatics<D>::CreateAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> returnValue;
-    check_hresult(WINRT_SHIM(IFaceTrackerStatics)->abi_CreateAsync(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceTrackerStatics)->abi_CreateAsync(put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> impl_IFaceTrackerStatics<D>::GetSupportedBitmapPixelFormats() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> result;
-    check_hresult(WINRT_SHIM(IFaceTrackerStatics)->abi_GetSupportedBitmapPixelFormats(put(result)));
+    check_hresult(WINRT_SHIM(IFaceTrackerStatics)->abi_GetSupportedBitmapPixelFormats(put_abi(result)));
     return result;
 }
 

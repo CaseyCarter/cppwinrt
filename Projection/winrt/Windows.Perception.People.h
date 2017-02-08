@@ -13,12 +13,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Perception::People::IHeadPose> : produce_base<D, Windows::Perception::People::IHeadPose>
 {
-    HRESULT __stdcall get_Position(abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Position());
+            *value = detach_abi(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -27,12 +27,12 @@ struct produce<D, Windows::Perception::People::IHeadPose> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_ForwardDirection(abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall get_ForwardDirection(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ForwardDirection());
+            *value = detach_abi(this->shim().ForwardDirection());
             return S_OK;
         }
         catch (...)
@@ -41,12 +41,12 @@ struct produce<D, Windows::Perception::People::IHeadPose> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_UpDirection(abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall get_UpDirection(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UpDirection());
+            *value = detach_abi(this->shim().UpDirection());
             return S_OK;
         }
         catch (...)
@@ -63,21 +63,21 @@ namespace Windows::Perception::People {
 template <typename D> Windows::Foundation::Numerics::float3 impl_IHeadPose<D>::Position() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(WINRT_SHIM(IHeadPose)->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IHeadPose)->get_Position(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IHeadPose<D>::ForwardDirection() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(WINRT_SHIM(IHeadPose)->get_ForwardDirection(put(value)));
+    check_hresult(WINRT_SHIM(IHeadPose)->get_ForwardDirection(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IHeadPose<D>::UpDirection() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(WINRT_SHIM(IHeadPose)->get_UpDirection(put(value)));
+    check_hresult(WINRT_SHIM(IHeadPose)->get_UpDirection(put_abi(value)));
     return value;
 }
 

@@ -25,7 +25,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Type());
+            *value = detach_abi(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -48,12 +48,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
         }
     }
 
-    HRESULT __stdcall get_Value(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
         }
     }
 
-    HRESULT __stdcall put_Value(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Value(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -81,12 +81,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnAppIdFactory> : produce_base<D, Windows::Networking::Vpn::IVpnAppIdFactory>
 {
-    HRESULT __stdcall abi_Create(Windows::Networking::Vpn::VpnAppIdType type, abi_arg_in<hstring> value, abi_arg_out<Windows::Networking::Vpn::IVpnAppId> result) noexcept override
+    HRESULT __stdcall abi_Create(Windows::Networking::Vpn::VpnAppIdType type, impl::abi_arg_in<hstring> value, impl::abi_arg_out<Windows::Networking::Vpn::IVpnAppId> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(type, *reinterpret_cast<const hstring *>(&value)));
+            *result = detach_abi(this->shim().Create(type, *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -100,7 +100,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppIdFactory> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windows::Networking::Vpn::IVpnChannel>
 {
-    HRESULT __stdcall abi_AssociateTransport(abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport, abi_arg_in<Windows::IInspectable> optionalOuterTunnelTransport) noexcept override
+    HRESULT __stdcall abi_AssociateTransport(impl::abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport, impl::abi_arg_in<Windows::IInspectable> optionalOuterTunnelTransport) noexcept override
     {
         try
         {
@@ -114,7 +114,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_Start(abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> routeScope, abi_arg_in<Windows::Networking::Vpn::IVpnNamespaceAssignment> namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport, abi_arg_in<Windows::IInspectable> optionalOuterTunnelTransport) noexcept override
+    HRESULT __stdcall abi_Start(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> routeScope, impl::abi_arg_in<Windows::Networking::Vpn::IVpnNamespaceAssignment> namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, impl::abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport, impl::abi_arg_in<Windows::IInspectable> optionalOuterTunnelTransport) noexcept override
     {
         try
         {
@@ -142,12 +142,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate, abi_arg_out<Windows::Networking::Vpn::IVpnPickedCredential> credential) noexcept override
+    HRESULT __stdcall abi_RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate, impl::abi_arg_out<Windows::Networking::Vpn::IVpnPickedCredential> credential) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *credential = detach(this->shim().RequestCredentials(credType, isRetry, isSingleSignOnCredential, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
+            *credential = detach_abi(this->shim().RequestCredentials(credType, isRetry, isSingleSignOnCredential, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> vpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, impl::abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> vpnPacketBuffer) noexcept override
     {
         try
         {
@@ -172,7 +172,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_LogDiagnosticMessage(abi_arg_in<hstring> message) noexcept override
+    HRESULT __stdcall abi_LogDiagnosticMessage(impl::abi_arg_in<hstring> message) noexcept override
     {
         try
         {
@@ -191,7 +191,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -200,12 +200,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_Configuration(abi_arg_out<Windows::Networking::Vpn::IVpnChannelConfiguration> value) noexcept override
+    HRESULT __stdcall get_Configuration(impl::abi_arg_out<Windows::Networking::Vpn::IVpnChannelConfiguration> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Configuration());
+            *value = detach_abi(this->shim().Configuration());
             return S_OK;
         }
         catch (...)
@@ -215,12 +215,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall add_ActivityChange(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ActivityChange(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ActivityChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().ActivityChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -243,7 +243,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall put_PlugInContext(abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall put_PlugInContext(impl::abi_arg_in<Windows::IInspectable> value) noexcept override
     {
         try
         {
@@ -257,12 +257,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_PlugInContext(abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_PlugInContext(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PlugInContext());
+            *value = detach_abi(this->shim().PlugInContext());
             return S_OK;
         }
         catch (...)
@@ -272,12 +272,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_SystemHealth(abi_arg_out<Windows::Networking::Vpn::IVpnSystemHealth> value) noexcept override
+    HRESULT __stdcall get_SystemHealth(impl::abi_arg_out<Windows::Networking::Vpn::IVpnSystemHealth> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SystemHealth());
+            *value = detach_abi(this->shim().SystemHealth());
             return S_OK;
         }
         catch (...)
@@ -287,7 +287,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_RequestCustomPrompt(abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt>> customPrompt) noexcept override
+    HRESULT __stdcall abi_RequestCustomPrompt(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt>> customPrompt) noexcept override
     {
         try
         {
@@ -301,7 +301,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_SetErrorMessage(abi_arg_in<hstring> message) noexcept override
+    HRESULT __stdcall abi_SetErrorMessage(impl::abi_arg_in<hstring> message) noexcept override
     {
         try
         {
@@ -315,7 +315,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_SetAllowedSslTlsVersions(abi_arg_in<Windows::IInspectable> tunnelTransport, bool useTls12) noexcept override
+    HRESULT __stdcall abi_SetAllowedSslTlsVersions(impl::abi_arg_in<Windows::IInspectable> tunnelTransport, bool useTls12) noexcept override
     {
         try
         {
@@ -333,7 +333,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Windows::Networking::Vpn::IVpnChannel2>
 {
-    HRESULT __stdcall abi_StartWithMainTransport(abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport) noexcept override
+    HRESULT __stdcall abi_StartWithMainTransport(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, impl::abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, impl::abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport) noexcept override
     {
         try
         {
@@ -347,7 +347,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_StartExistingTransports(abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) noexcept override
+    HRESULT __stdcall abi_StartExistingTransports(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, impl::abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) noexcept override
     {
         try
         {
@@ -361,12 +361,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_ActivityStateChange(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ActivityStateChange(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ActivityStateChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> *>(&handler)));
+            *token = detach_abi(this->shim().ActivityStateChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -389,12 +389,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_GetVpnSendPacketBuffer(abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> vpnSendPacketBuffer) noexcept override
+    HRESULT __stdcall abi_GetVpnSendPacketBuffer(impl::abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> vpnSendPacketBuffer) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *vpnSendPacketBuffer = detach(this->shim().GetVpnSendPacketBuffer());
+            *vpnSendPacketBuffer = detach_abi(this->shim().GetVpnSendPacketBuffer());
             return S_OK;
         }
         catch (...)
@@ -404,12 +404,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_GetVpnReceivePacketBuffer(abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> vpnReceivePacketBuffer) noexcept override
+    HRESULT __stdcall abi_GetVpnReceivePacketBuffer(impl::abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> vpnReceivePacketBuffer) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *vpnReceivePacketBuffer = detach(this->shim().GetVpnReceivePacketBuffer());
+            *vpnReceivePacketBuffer = detach_abi(this->shim().GetVpnReceivePacketBuffer());
             return S_OK;
         }
         catch (...)
@@ -419,12 +419,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_RequestCustomPromptAsync(abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement>> customPromptElement, abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
+    HRESULT __stdcall abi_RequestCustomPromptAsync(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement>> customPromptElement, impl::abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *action = detach(this->shim().RequestCustomPromptAsync(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> *>(&customPromptElement)));
+            *action = detach_abi(this->shim().RequestCustomPromptAsync(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> *>(&customPromptElement)));
             return S_OK;
         }
         catch (...)
@@ -434,12 +434,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_RequestCredentialsWithCertificateAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>> credential) noexcept override
+    HRESULT __stdcall abi_RequestCredentialsWithCertificateAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>> credential) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *credential = detach(this->shim().RequestCredentialsAsync(credType, credOptions, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
+            *credential = detach_abi(this->shim().RequestCredentialsAsync(credType, credOptions, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
         catch (...)
@@ -449,12 +449,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_RequestCredentialsWithOptionsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>> credential) noexcept override
+    HRESULT __stdcall abi_RequestCredentialsWithOptionsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>> credential) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *credential = detach(this->shim().RequestCredentialsAsync(credType, credOptions));
+            *credential = detach_abi(this->shim().RequestCredentialsAsync(credType, credOptions));
             return S_OK;
         }
         catch (...)
@@ -464,12 +464,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_RequestCredentialsSimpleAsync(Windows::Networking::Vpn::VpnCredentialType credType, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>> credential) noexcept override
+    HRESULT __stdcall abi_RequestCredentialsSimpleAsync(Windows::Networking::Vpn::VpnCredentialType credType, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>> credential) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *credential = detach(this->shim().RequestCredentialsAsync(credType));
+            *credential = detach_abi(this->shim().RequestCredentialsAsync(credType));
             return S_OK;
         }
         catch (...)
@@ -479,7 +479,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_TerminateConnection(abi_arg_in<hstring> message) noexcept override
+    HRESULT __stdcall abi_TerminateConnection(impl::abi_arg_in<hstring> message) noexcept override
     {
         try
         {
@@ -493,7 +493,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_StartWithTrafficFilter(abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIpv4List, abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIpv6List, abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport, abi_arg_in<Windows::IInspectable> optionalOuterTunnelTransport, abi_arg_in<Windows::Networking::Vpn::IVpnTrafficFilterAssignment> assignedTrafficFilters) noexcept override
+    HRESULT __stdcall abi_StartWithTrafficFilter(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIpv4List, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIpv6List, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, impl::abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, impl::abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport, impl::abi_arg_in<Windows::IInspectable> optionalOuterTunnelTransport, impl::abi_arg_in<Windows::Networking::Vpn::IVpnTrafficFilterAssignment> assignedTrafficFilters) noexcept override
     {
         try
         {
@@ -516,7 +516,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelActivityEventArgs> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Type());
+            *value = detach_abi(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -534,7 +534,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ActivityState());
+            *value = detach_abi(this->shim().ActivityState());
             return S_OK;
         }
         catch (...)
@@ -547,12 +547,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_base<D, Windows::Networking::Vpn::IVpnChannelConfiguration>
 {
-    HRESULT __stdcall get_ServerServiceName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ServerServiceName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ServerServiceName());
+            *value = detach_abi(this->shim().ServerServiceName());
             return S_OK;
         }
         catch (...)
@@ -562,12 +562,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_
         }
     }
 
-    HRESULT __stdcall get_ServerHostNameList(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> value) noexcept override
+    HRESULT __stdcall get_ServerHostNameList(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ServerHostNameList());
+            *value = detach_abi(this->shim().ServerHostNameList());
             return S_OK;
         }
         catch (...)
@@ -577,12 +577,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_
         }
     }
 
-    HRESULT __stdcall get_CustomField(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_CustomField(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CustomField());
+            *value = detach_abi(this->shim().CustomField());
             return S_OK;
         }
         catch (...)
@@ -596,12 +596,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration2> : produce_base<D, Windows::Networking::Vpn::IVpnChannelConfiguration2>
 {
-    HRESULT __stdcall get_ServerUris(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri>> value) noexcept override
+    HRESULT __stdcall get_ServerUris(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ServerUris());
+            *value = detach_abi(this->shim().ServerUris());
             return S_OK;
         }
         catch (...)
@@ -615,7 +615,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration2> : produce
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannelStatics> : produce_base<D, Windows::Networking::Vpn::IVpnChannelStatics>
 {
-    HRESULT __stdcall abi_ProcessEventAsync(abi_arg_in<Windows::IInspectable> thirdPartyPlugIn, abi_arg_in<Windows::IInspectable> event) noexcept override
+    HRESULT __stdcall abi_ProcessEventAsync(impl::abi_arg_in<Windows::IInspectable> thirdPartyPlugIn, impl::abi_arg_in<Windows::IInspectable> event) noexcept override
     {
         try
         {
@@ -633,12 +633,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelStatics> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Windows::Networking::Vpn::IVpnCredential>
 {
-    HRESULT __stdcall get_PasskeyCredential(abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall get_PasskeyCredential(impl::abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PasskeyCredential());
+            *value = detach_abi(this->shim().PasskeyCredential());
             return S_OK;
         }
         catch (...)
@@ -648,12 +648,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_CertificateCredential(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall get_CertificateCredential(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CertificateCredential());
+            *value = detach_abi(this->shim().CertificateCredential());
             return S_OK;
         }
         catch (...)
@@ -663,12 +663,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_AdditionalPin(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AdditionalPin(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AdditionalPin());
+            *value = detach_abi(this->shim().AdditionalPin());
             return S_OK;
         }
         catch (...)
@@ -678,12 +678,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_OldPasswordCredential(abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall get_OldPasswordCredential(impl::abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OldPasswordCredential());
+            *value = detach_abi(this->shim().OldPasswordCredential());
             return S_OK;
         }
         catch (...)
@@ -716,7 +716,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InitialCheckState());
+            *value = detach_abi(this->shim().InitialCheckState());
             return S_OK;
         }
         catch (...)
@@ -730,7 +730,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Checked());
+            *value = detach_abi(this->shim().Checked());
             return S_OK;
         }
         catch (...)
@@ -743,7 +743,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D, Windows::Networking::Vpn::IVpnCustomComboBox>
 {
-    HRESULT __stdcall put_OptionsText(abi_arg_in<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall put_OptionsText(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
@@ -757,12 +757,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_OptionsText(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_OptionsText(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OptionsText());
+            *value = detach_abi(this->shim().OptionsText());
             return S_OK;
         }
         catch (...)
@@ -777,7 +777,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Selected());
+            *value = detach_abi(this->shim().Selected());
             return S_OK;
         }
         catch (...)
@@ -790,7 +790,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D, Windows::Networking::Vpn::IVpnCustomEditBox>
 {
-    HRESULT __stdcall put_DefaultText(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_DefaultText(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -804,12 +804,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_DefaultText(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DefaultText(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DefaultText());
+            *value = detach_abi(this->shim().DefaultText());
             return S_OK;
         }
         catch (...)
@@ -838,7 +838,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NoEcho());
+            *value = detach_abi(this->shim().NoEcho());
             return S_OK;
         }
         catch (...)
@@ -847,12 +847,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_Text(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Text());
+            *value = detach_abi(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -870,7 +870,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomErrorBox> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
-    HRESULT __stdcall put_Label(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Label(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -884,12 +884,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_Label(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Label(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Label());
+            *value = detach_abi(this->shim().Label());
             return S_OK;
         }
         catch (...)
@@ -918,7 +918,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Compulsory());
+            *value = detach_abi(this->shim().Compulsory());
             return S_OK;
         }
         catch (...)
@@ -946,7 +946,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Bordered());
+            *value = detach_abi(this->shim().Bordered());
             return S_OK;
         }
         catch (...)
@@ -978,7 +978,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InitialValue());
+            *value = detach_abi(this->shim().InitialValue());
             return S_OK;
         }
         catch (...)
@@ -992,7 +992,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1005,7 +1005,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : prod
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
-    HRESULT __stdcall put_DisplayName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_DisplayName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1019,12 +1019,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
         }
     }
 
-    HRESULT __stdcall get_DisplayName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DisplayName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DisplayName());
+            *value = detach_abi(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -1053,7 +1053,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Compulsory());
+            *value = detach_abi(this->shim().Compulsory());
             return S_OK;
         }
         catch (...)
@@ -1081,7 +1081,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Emphasized());
+            *value = detach_abi(this->shim().Emphasized());
             return S_OK;
         }
         catch (...)
@@ -1094,12 +1094,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector>
 {
-    HRESULT __stdcall get_Options(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_Options(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Options());
+            *value = detach_abi(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -1114,7 +1114,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SelectedIndex());
+            *value = detach_abi(this->shim().SelectedIndex());
             return S_OK;
         }
         catch (...)
@@ -1127,7 +1127,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector> : pr
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptText> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPromptText>
 {
-    HRESULT __stdcall put_Text(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Text(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1141,12 +1141,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptText> : produce_base
         }
     }
 
-    HRESULT __stdcall get_Text(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Text());
+            *value = detach_abi(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -1160,7 +1160,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptText> : produce_base
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput>
 {
-    HRESULT __stdcall put_PlaceholderText(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_PlaceholderText(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1174,12 +1174,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
         }
     }
 
-    HRESULT __stdcall get_PlaceholderText(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PlaceholderText(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PlaceholderText());
+            *value = detach_abi(this->shim().PlaceholderText());
             return S_OK;
         }
         catch (...)
@@ -1208,7 +1208,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsTextHidden());
+            *value = detach_abi(this->shim().IsTextHidden());
             return S_OK;
         }
         catch (...)
@@ -1217,12 +1217,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
         }
     }
 
-    HRESULT __stdcall get_Text(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Text());
+            *value = detach_abi(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -1236,7 +1236,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomTextBox> : produce_base<D, Windows::Networking::Vpn::IVpnCustomTextBox>
 {
-    HRESULT __stdcall put_DisplayText(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_DisplayText(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1250,12 +1250,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomTextBox> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_DisplayText(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DisplayText(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DisplayText());
+            *value = detach_abi(this->shim().DisplayText());
             return S_OK;
         }
         catch (...)
@@ -1269,12 +1269,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomTextBox> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_base<D, Windows::Networking::Vpn::IVpnDomainNameAssignment>
 {
-    HRESULT __stdcall get_DomainNameList(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo>> value) noexcept override
+    HRESULT __stdcall get_DomainNameList(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DomainNameList());
+            *value = detach_abi(this->shim().DomainNameList());
             return S_OK;
         }
         catch (...)
@@ -1284,7 +1284,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_
         }
     }
 
-    HRESULT __stdcall put_ProxyAutoConfigurationUri(abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall put_ProxyAutoConfigurationUri(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
@@ -1298,12 +1298,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_
         }
     }
 
-    HRESULT __stdcall get_ProxyAutoConfigurationUri(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_ProxyAutoConfigurationUri(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ProxyAutoConfigurationUri());
+            *value = detach_abi(this->shim().ProxyAutoConfigurationUri());
             return S_OK;
         }
         catch (...)
@@ -1317,7 +1317,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D, Windows::Networking::Vpn::IVpnDomainNameInfo>
 {
-    HRESULT __stdcall put_DomainName(abi_arg_in<Windows::Networking::IHostName> value) noexcept override
+    HRESULT __stdcall put_DomainName(impl::abi_arg_in<Windows::Networking::IHostName> value) noexcept override
     {
         try
         {
@@ -1331,12 +1331,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_DomainName(abi_arg_out<Windows::Networking::IHostName> value) noexcept override
+    HRESULT __stdcall get_DomainName(impl::abi_arg_out<Windows::Networking::IHostName> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DomainName());
+            *value = detach_abi(this->shim().DomainName());
             return S_OK;
         }
         catch (...)
@@ -1365,7 +1365,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DomainNameType());
+            *value = detach_abi(this->shim().DomainNameType());
             return S_OK;
         }
         catch (...)
@@ -1374,12 +1374,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_DnsServers(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
+    HRESULT __stdcall get_DnsServers(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DnsServers());
+            *value = detach_abi(this->shim().DnsServers());
             return S_OK;
         }
         catch (...)
@@ -1389,12 +1389,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_WebProxyServers(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
+    HRESULT __stdcall get_WebProxyServers(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WebProxyServers());
+            *value = detach_abi(this->shim().WebProxyServers());
             return S_OK;
         }
         catch (...)
@@ -1408,12 +1408,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo2> : produce_base<D, Windows::Networking::Vpn::IVpnDomainNameInfo2>
 {
-    HRESULT __stdcall get_WebProxyUris(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>> value) noexcept override
+    HRESULT __stdcall get_WebProxyUris(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WebProxyUris());
+            *value = detach_abi(this->shim().WebProxyUris());
             return S_OK;
         }
         catch (...)
@@ -1427,12 +1427,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo2> : produce_base<
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfoFactory> : produce_base<D, Windows::Networking::Vpn::IVpnDomainNameInfoFactory>
 {
-    HRESULT __stdcall abi_CreateVpnDomainNameInfo(abi_arg_in<hstring> name, Windows::Networking::Vpn::VpnDomainNameType nameType, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Networking::HostName>> dnsServerList, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Networking::HostName>> proxyServerList, abi_arg_out<Windows::Networking::Vpn::IVpnDomainNameInfo> domainNameInfo) noexcept override
+    HRESULT __stdcall abi_CreateVpnDomainNameInfo(impl::abi_arg_in<hstring> name, Windows::Networking::Vpn::VpnDomainNameType nameType, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Networking::HostName>> dnsServerList, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Networking::HostName>> proxyServerList, impl::abi_arg_out<Windows::Networking::Vpn::IVpnDomainNameInfo> domainNameInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *domainNameInfo = detach(this->shim().CreateVpnDomainNameInfo(*reinterpret_cast<const hstring *>(&name), nameType, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&proxyServerList)));
+            *domainNameInfo = detach_abi(this->shim().CreateVpnDomainNameInfo(*reinterpret_cast<const hstring *>(&name), nameType, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&proxyServerList)));
             return S_OK;
         }
         catch (...)
@@ -1446,12 +1446,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfoFactory> : produce
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnInterfaceId> : produce_base<D, Windows::Networking::Vpn::IVpnInterfaceId>
 {
-    HRESULT __stdcall abi_GetAddressInfo(uint32_t * __idSize, abi_arg_out<uint8_t> * id) noexcept override
+    HRESULT __stdcall abi_GetAddressInfo(uint32_t * __idSize, impl::abi_arg_out<uint8_t> * id) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().GetAddressInfo(detach<uint8_t>(__idSize, id));
+            this->shim().GetAddressInfo(detach_abi<uint8_t>(__idSize, id));
             return S_OK;
         }
         catch (...)
@@ -1466,12 +1466,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnInterfaceId> : produce_base<D, W
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnInterfaceIdFactory> : produce_base<D, Windows::Networking::Vpn::IVpnInterfaceIdFactory>
 {
-    HRESULT __stdcall abi_CreateVpnInterfaceId(uint32_t __addressSize, abi_arg_in<uint8_t> * address, abi_arg_out<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId) noexcept override
+    HRESULT __stdcall abi_CreateVpnInterfaceId(uint32_t __addressSize, impl::abi_arg_in<uint8_t> * address, impl::abi_arg_out<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *vpnInterfaceId = detach(this->shim().CreateVpnInterfaceId(array_view<const uint8_t>(address, address + __addressSize)));
+            *vpnInterfaceId = detach_abi(this->shim().CreateVpnInterfaceId(array_view<const uint8_t>(address, address + __addressSize)));
             return S_OK;
         }
         catch (...)
@@ -1485,12 +1485,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnInterfaceIdFactory> : produce_ba
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<D, Windows::Networking::Vpn::IVpnManagementAgent>
 {
-    HRESULT __stdcall abi_AddProfileFromXmlAsync(abi_arg_in<hstring> xml, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
+    HRESULT __stdcall abi_AddProfileFromXmlAsync(impl::abi_arg_in<hstring> xml, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().AddProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
+            *operation = detach_abi(this->shim().AddProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
             return S_OK;
         }
         catch (...)
@@ -1500,12 +1500,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_AddProfileFromObjectAsync(abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
+    HRESULT __stdcall abi_AddProfileFromObjectAsync(impl::abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().AddProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach_abi(this->shim().AddProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1515,12 +1515,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_UpdateProfileFromXmlAsync(abi_arg_in<hstring> xml, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
+    HRESULT __stdcall abi_UpdateProfileFromXmlAsync(impl::abi_arg_in<hstring> xml, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().UpdateProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
+            *operation = detach_abi(this->shim().UpdateProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
             return S_OK;
         }
         catch (...)
@@ -1530,12 +1530,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_UpdateProfileFromObjectAsync(abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
+    HRESULT __stdcall abi_UpdateProfileFromObjectAsync(impl::abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().UpdateProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach_abi(this->shim().UpdateProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1545,12 +1545,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_GetProfilesAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>>> operation) noexcept override
+    HRESULT __stdcall abi_GetProfilesAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetProfilesAsync());
+            *operation = detach_abi(this->shim().GetProfilesAsync());
             return S_OK;
         }
         catch (...)
@@ -1560,12 +1560,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_DeleteProfileAsync(abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
+    HRESULT __stdcall abi_DeleteProfileAsync(impl::abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().DeleteProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach_abi(this->shim().DeleteProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1575,12 +1575,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_ConnectProfileAsync(abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
+    HRESULT __stdcall abi_ConnectProfileAsync(impl::abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().ConnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach_abi(this->shim().ConnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1590,12 +1590,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_ConnectProfileWithPasswordCredentialAsync(abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, abi_arg_in<Windows::Security::Credentials::IPasswordCredential> passwordCredential, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
+    HRESULT __stdcall abi_ConnectProfileWithPasswordCredentialAsync(impl::abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, impl::abi_arg_in<Windows::Security::Credentials::IPasswordCredential> passwordCredential, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().ConnectProfileWithPasswordCredentialAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile), *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential)));
+            *operation = detach_abi(this->shim().ConnectProfileWithPasswordCredentialAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile), *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential)));
             return S_OK;
         }
         catch (...)
@@ -1605,12 +1605,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_DisconnectProfileAsync(abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
+    HRESULT __stdcall abi_DisconnectProfileAsync(impl::abi_arg_in<Windows::Networking::Vpn::IVpnProfile> profile, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().DisconnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
+            *operation = detach_abi(this->shim().DisconnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1624,7 +1624,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_base<D, Windows::Networking::Vpn::IVpnNamespaceAssignment>
 {
-    HRESULT __stdcall put_NamespaceList(abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo>> value) noexcept override
+    HRESULT __stdcall put_NamespaceList(impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo>> value) noexcept override
     {
         try
         {
@@ -1638,12 +1638,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
         }
     }
 
-    HRESULT __stdcall get_NamespaceList(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo>> value) noexcept override
+    HRESULT __stdcall get_NamespaceList(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NamespaceList());
+            *value = detach_abi(this->shim().NamespaceList());
             return S_OK;
         }
         catch (...)
@@ -1653,7 +1653,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
         }
     }
 
-    HRESULT __stdcall put_ProxyAutoConfigUri(abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall put_ProxyAutoConfigUri(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
@@ -1667,12 +1667,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
         }
     }
 
-    HRESULT __stdcall get_ProxyAutoConfigUri(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_ProxyAutoConfigUri(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ProxyAutoConfigUri());
+            *value = detach_abi(this->shim().ProxyAutoConfigUri());
             return S_OK;
         }
         catch (...)
@@ -1686,7 +1686,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D, Windows::Networking::Vpn::IVpnNamespaceInfo>
 {
-    HRESULT __stdcall put_Namespace(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Namespace(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1700,12 +1700,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_Namespace(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Namespace(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Namespace());
+            *value = detach_abi(this->shim().Namespace());
             return S_OK;
         }
         catch (...)
@@ -1715,7 +1715,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall put_DnsServers(abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
+    HRESULT __stdcall put_DnsServers(impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
     {
         try
         {
@@ -1729,12 +1729,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_DnsServers(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
+    HRESULT __stdcall get_DnsServers(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DnsServers());
+            *value = detach_abi(this->shim().DnsServers());
             return S_OK;
         }
         catch (...)
@@ -1744,7 +1744,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall put_WebProxyServers(abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
+    HRESULT __stdcall put_WebProxyServers(impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
     {
         try
         {
@@ -1758,12 +1758,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_WebProxyServers(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
+    HRESULT __stdcall get_WebProxyServers(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WebProxyServers());
+            *value = detach_abi(this->shim().WebProxyServers());
             return S_OK;
         }
         catch (...)
@@ -1777,12 +1777,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfoFactory> : produce_base<D, Windows::Networking::Vpn::IVpnNamespaceInfoFactory>
 {
-    HRESULT __stdcall abi_CreateVpnNamespaceInfo(abi_arg_in<hstring> name, abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> dnsServerList, abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> proxyServerList, abi_arg_out<Windows::Networking::Vpn::IVpnNamespaceInfo> namespaceInfo) noexcept override
+    HRESULT __stdcall abi_CreateVpnNamespaceInfo(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> dnsServerList, impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>> proxyServerList, impl::abi_arg_out<Windows::Networking::Vpn::IVpnNamespaceInfo> namespaceInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *namespaceInfo = detach(this->shim().CreateVpnNamespaceInfo(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&proxyServerList)));
+            *namespaceInfo = detach_abi(this->shim().CreateVpnNamespaceInfo(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&proxyServerList)));
             return S_OK;
         }
         catch (...)
@@ -1796,12 +1796,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfoFactory> : produce_
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D, Windows::Networking::Vpn::IVpnNativeProfile>
 {
-    HRESULT __stdcall get_Servers(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_Servers(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Servers());
+            *value = detach_abi(this->shim().Servers());
             return S_OK;
         }
         catch (...)
@@ -1816,7 +1816,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RoutingPolicyType());
+            *value = detach_abi(this->shim().RoutingPolicyType());
             return S_OK;
         }
         catch (...)
@@ -1844,7 +1844,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NativeProtocolType());
+            *value = detach_abi(this->shim().NativeProtocolType());
             return S_OK;
         }
         catch (...)
@@ -1872,7 +1872,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UserAuthenticationMethod());
+            *value = detach_abi(this->shim().UserAuthenticationMethod());
             return S_OK;
         }
         catch (...)
@@ -1900,7 +1900,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TunnelAuthenticationMethod());
+            *value = detach_abi(this->shim().TunnelAuthenticationMethod());
             return S_OK;
         }
         catch (...)
@@ -1923,12 +1923,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_EapConfiguration(abi_arg_out<hstring> Value) noexcept override
+    HRESULT __stdcall get_EapConfiguration(impl::abi_arg_out<hstring> Value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *Value = detach(this->shim().EapConfiguration());
+            *Value = detach_abi(this->shim().EapConfiguration());
             return S_OK;
         }
         catch (...)
@@ -1938,7 +1938,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall put_EapConfiguration(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_EapConfiguration(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1961,7 +1961,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RequireVpnClientAppUI());
+            *value = detach_abi(this->shim().RequireVpnClientAppUI());
             return S_OK;
         }
         catch (...)
@@ -1989,7 +1989,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ConnectionStatus());
+            *value = detach_abi(this->shim().ConnectionStatus());
             return S_OK;
         }
         catch (...)
@@ -2002,12 +2002,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBuffer>
 {
-    HRESULT __stdcall get_Buffer(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Buffer(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Buffer());
+            *value = detach_abi(this->shim().Buffer());
             return S_OK;
         }
         catch (...)
@@ -2036,7 +2036,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2064,7 +2064,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TransportAffinity());
+            *value = detach_abi(this->shim().TransportAffinity());
             return S_OK;
         }
         catch (...)
@@ -2077,12 +2077,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer2> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBuffer2>
 {
-    HRESULT __stdcall get_AppId(abi_arg_out<Windows::Networking::Vpn::IVpnAppId> value) noexcept override
+    HRESULT __stdcall get_AppId(impl::abi_arg_out<Windows::Networking::Vpn::IVpnAppId> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AppId());
+            *value = detach_abi(this->shim().AppId());
             return S_OK;
         }
         catch (...)
@@ -2096,12 +2096,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer2> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferFactory> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBufferFactory>
 {
-    HRESULT __stdcall abi_CreateVpnPacketBuffer(abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> parentBuffer, uint32_t offset, uint32_t length, abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> vpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_CreateVpnPacketBuffer(impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> parentBuffer, uint32_t offset, uint32_t length, impl::abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> vpnPacketBuffer) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *vpnPacketBuffer = detach(this->shim().CreateVpnPacketBuffer(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&parentBuffer), offset, length));
+            *vpnPacketBuffer = detach_abi(this->shim().CreateVpnPacketBuffer(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&parentBuffer), offset, length));
             return S_OK;
         }
         catch (...)
@@ -2115,7 +2115,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferFactory> : produce_b
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBufferList>
 {
-    HRESULT __stdcall abi_Append(abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_Append(impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
     {
         try
         {
@@ -2129,7 +2129,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_AddAtBegin(abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_AddAtBegin(impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
     {
         try
         {
@@ -2143,12 +2143,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_RemoveAtEnd(abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_RemoveAtEnd(impl::abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *nextVpnPacketBuffer = detach(this->shim().RemoveAtEnd());
+            *nextVpnPacketBuffer = detach_abi(this->shim().RemoveAtEnd());
             return S_OK;
         }
         catch (...)
@@ -2158,12 +2158,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_RemoveAtBegin(abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_RemoveAtBegin(impl::abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *nextVpnPacketBuffer = detach(this->shim().RemoveAtBegin());
+            *nextVpnPacketBuffer = detach_abi(this->shim().RemoveAtBegin());
             return S_OK;
         }
         catch (...)
@@ -2206,7 +2206,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2220,7 +2220,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Size());
+            *value = detach_abi(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -2233,7 +2233,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBufferList2>
 {
-    HRESULT __stdcall abi_AddLeadingPacket(abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_AddLeadingPacket(impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
     {
         try
         {
@@ -2247,12 +2247,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
         }
     }
 
-    HRESULT __stdcall abi_RemoveLeadingPacket(abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_RemoveLeadingPacket(impl::abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *nextVpnPacketBuffer = detach(this->shim().RemoveLeadingPacket());
+            *nextVpnPacketBuffer = detach_abi(this->shim().RemoveLeadingPacket());
             return S_OK;
         }
         catch (...)
@@ -2262,7 +2262,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
         }
     }
 
-    HRESULT __stdcall abi_AddTrailingPacket(abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_AddTrailingPacket(impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
     {
         try
         {
@@ -2276,12 +2276,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
         }
     }
 
-    HRESULT __stdcall abi_RemoveTrailingPacket(abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
+    HRESULT __stdcall abi_RemoveTrailingPacket(impl::abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> nextVpnPacketBuffer) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *nextVpnPacketBuffer = detach(this->shim().RemoveTrailingPacket());
+            *nextVpnPacketBuffer = detach_abi(this->shim().RemoveTrailingPacket());
             return S_OK;
         }
         catch (...)
@@ -2295,12 +2295,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base<D, Windows::Networking::Vpn::IVpnPickedCredential>
 {
-    HRESULT __stdcall get_PasskeyCredential(abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall get_PasskeyCredential(impl::abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PasskeyCredential());
+            *value = detach_abi(this->shim().PasskeyCredential());
             return S_OK;
         }
         catch (...)
@@ -2310,12 +2310,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base
         }
     }
 
-    HRESULT __stdcall get_AdditionalPin(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AdditionalPin(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AdditionalPin());
+            *value = detach_abi(this->shim().AdditionalPin());
             return S_OK;
         }
         catch (...)
@@ -2325,12 +2325,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base
         }
     }
 
-    HRESULT __stdcall get_OldPasswordCredential(abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall get_OldPasswordCredential(impl::abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OldPasswordCredential());
+            *value = detach_abi(this->shim().OldPasswordCredential());
             return S_OK;
         }
         catch (...)
@@ -2344,7 +2344,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Windows::Networking::Vpn::IVpnPlugIn>
 {
-    HRESULT __stdcall abi_Connect(abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel) noexcept override
+    HRESULT __stdcall abi_Connect(impl::abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel) noexcept override
     {
         try
         {
@@ -2358,7 +2358,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_Disconnect(abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel) noexcept override
+    HRESULT __stdcall abi_Disconnect(impl::abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel) noexcept override
     {
         try
         {
@@ -2372,7 +2372,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_GetKeepAlivePayload(abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel, abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> keepAlivePacket) noexcept override
+    HRESULT __stdcall abi_GetKeepAlivePayload(impl::abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel, impl::abi_arg_out<Windows::Networking::Vpn::IVpnPacketBuffer> keepAlivePacket) noexcept override
     {
         try
         {
@@ -2387,7 +2387,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_Encapsulate(abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel, abi_arg_in<Windows::Networking::Vpn::IVpnPacketBufferList> packets, abi_arg_in<Windows::Networking::Vpn::IVpnPacketBufferList> encapulatedPackets) noexcept override
+    HRESULT __stdcall abi_Encapsulate(impl::abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel, impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBufferList> packets, impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBufferList> encapulatedPackets) noexcept override
     {
         try
         {
@@ -2401,7 +2401,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_Decapsulate(abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel, abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> encapBuffer, abi_arg_in<Windows::Networking::Vpn::IVpnPacketBufferList> decapsulatedPackets, abi_arg_in<Windows::Networking::Vpn::IVpnPacketBufferList> controlPacketsToSend) noexcept override
+    HRESULT __stdcall abi_Decapsulate(impl::abi_arg_in<Windows::Networking::Vpn::IVpnChannel> channel, impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBuffer> encapBuffer, impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBufferList> decapsulatedPackets, impl::abi_arg_in<Windows::Networking::Vpn::IVpnPacketBufferList> controlPacketsToSend) noexcept override
     {
         try
         {
@@ -2419,12 +2419,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D, Windows::Networking::Vpn::IVpnPlugInProfile>
 {
-    HRESULT __stdcall get_ServerUris(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>> value) noexcept override
+    HRESULT __stdcall get_ServerUris(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ServerUris());
+            *value = detach_abi(this->shim().ServerUris());
             return S_OK;
         }
         catch (...)
@@ -2434,12 +2434,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_CustomConfiguration(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_CustomConfiguration(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CustomConfiguration());
+            *value = detach_abi(this->shim().CustomConfiguration());
             return S_OK;
         }
         catch (...)
@@ -2449,7 +2449,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall put_CustomConfiguration(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_CustomConfiguration(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2463,12 +2463,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_VpnPluginPackageFamilyName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_VpnPluginPackageFamilyName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VpnPluginPackageFamilyName());
+            *value = detach_abi(this->shim().VpnPluginPackageFamilyName());
             return S_OK;
         }
         catch (...)
@@ -2478,7 +2478,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall put_VpnPluginPackageFamilyName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_VpnPluginPackageFamilyName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2501,7 +2501,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RequireVpnClientAppUI());
+            *value = detach_abi(this->shim().RequireVpnClientAppUI());
             return S_OK;
         }
         catch (...)
@@ -2529,7 +2529,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ConnectionStatus());
+            *value = detach_abi(this->shim().ConnectionStatus());
             return S_OK;
         }
         catch (...)
@@ -2542,12 +2542,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windows::Networking::Vpn::IVpnProfile>
 {
-    HRESULT __stdcall get_ProfileName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ProfileName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ProfileName());
+            *value = detach_abi(this->shim().ProfileName());
             return S_OK;
         }
         catch (...)
@@ -2557,7 +2557,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall put_ProfileName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_ProfileName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2571,12 +2571,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_AppTriggers(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId>> value) noexcept override
+    HRESULT __stdcall get_AppTriggers(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AppTriggers());
+            *value = detach_abi(this->shim().AppTriggers());
             return S_OK;
         }
         catch (...)
@@ -2586,12 +2586,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_Routes(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
+    HRESULT __stdcall get_Routes(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Routes());
+            *value = detach_abi(this->shim().Routes());
             return S_OK;
         }
         catch (...)
@@ -2601,12 +2601,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_DomainNameInfoList(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo>> value) noexcept override
+    HRESULT __stdcall get_DomainNameInfoList(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DomainNameInfoList());
+            *value = detach_abi(this->shim().DomainNameInfoList());
             return S_OK;
         }
         catch (...)
@@ -2616,12 +2616,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_TrafficFilters(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter>> value) noexcept override
+    HRESULT __stdcall get_TrafficFilters(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TrafficFilters());
+            *value = detach_abi(this->shim().TrafficFilters());
             return S_OK;
         }
         catch (...)
@@ -2636,7 +2636,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RememberCredentials());
+            *value = detach_abi(this->shim().RememberCredentials());
             return S_OK;
         }
         catch (...)
@@ -2664,7 +2664,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AlwaysOn());
+            *value = detach_abi(this->shim().AlwaysOn());
             return S_OK;
         }
         catch (...)
@@ -2691,7 +2691,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows::Networking::Vpn::IVpnRoute>
 {
-    HRESULT __stdcall put_Address(abi_arg_in<Windows::Networking::IHostName> value) noexcept override
+    HRESULT __stdcall put_Address(impl::abi_arg_in<Windows::Networking::IHostName> value) noexcept override
     {
         try
         {
@@ -2705,12 +2705,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
         }
     }
 
-    HRESULT __stdcall get_Address(abi_arg_out<Windows::Networking::IHostName> value) noexcept override
+    HRESULT __stdcall get_Address(impl::abi_arg_out<Windows::Networking::IHostName> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Address());
+            *value = detach_abi(this->shim().Address());
             return S_OK;
         }
         catch (...)
@@ -2739,7 +2739,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PrefixSize());
+            *value = detach_abi(this->shim().PrefixSize());
             return S_OK;
         }
         catch (...)
@@ -2752,7 +2752,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<D, Windows::Networking::Vpn::IVpnRouteAssignment>
 {
-    HRESULT __stdcall put_Ipv4InclusionRoutes(abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
+    HRESULT __stdcall put_Ipv4InclusionRoutes(impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
     {
         try
         {
@@ -2766,7 +2766,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
         }
     }
 
-    HRESULT __stdcall put_Ipv6InclusionRoutes(abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
+    HRESULT __stdcall put_Ipv6InclusionRoutes(impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
     {
         try
         {
@@ -2780,12 +2780,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Ipv4InclusionRoutes(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
+    HRESULT __stdcall get_Ipv4InclusionRoutes(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ipv4InclusionRoutes());
+            *value = detach_abi(this->shim().Ipv4InclusionRoutes());
             return S_OK;
         }
         catch (...)
@@ -2795,12 +2795,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Ipv6InclusionRoutes(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
+    HRESULT __stdcall get_Ipv6InclusionRoutes(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ipv6InclusionRoutes());
+            *value = detach_abi(this->shim().Ipv6InclusionRoutes());
             return S_OK;
         }
         catch (...)
@@ -2810,7 +2810,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
         }
     }
 
-    HRESULT __stdcall put_Ipv4ExclusionRoutes(abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
+    HRESULT __stdcall put_Ipv4ExclusionRoutes(impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
     {
         try
         {
@@ -2824,7 +2824,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
         }
     }
 
-    HRESULT __stdcall put_Ipv6ExclusionRoutes(abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
+    HRESULT __stdcall put_Ipv6ExclusionRoutes(impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
     {
         try
         {
@@ -2838,12 +2838,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Ipv4ExclusionRoutes(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
+    HRESULT __stdcall get_Ipv4ExclusionRoutes(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ipv4ExclusionRoutes());
+            *value = detach_abi(this->shim().Ipv4ExclusionRoutes());
             return S_OK;
         }
         catch (...)
@@ -2853,12 +2853,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Ipv6ExclusionRoutes(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
+    HRESULT __stdcall get_Ipv6ExclusionRoutes(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ipv6ExclusionRoutes());
+            *value = detach_abi(this->shim().Ipv6ExclusionRoutes());
             return S_OK;
         }
         catch (...)
@@ -2887,7 +2887,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExcludeLocalSubnets());
+            *value = detach_abi(this->shim().ExcludeLocalSubnets());
             return S_OK;
         }
         catch (...)
@@ -2900,12 +2900,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnRouteFactory> : produce_base<D, Windows::Networking::Vpn::IVpnRouteFactory>
 {
-    HRESULT __stdcall abi_CreateVpnRoute(abi_arg_in<Windows::Networking::IHostName> address, uint8_t prefixSize, abi_arg_out<Windows::Networking::Vpn::IVpnRoute> route) noexcept override
+    HRESULT __stdcall abi_CreateVpnRoute(impl::abi_arg_in<Windows::Networking::IHostName> address, uint8_t prefixSize, impl::abi_arg_out<Windows::Networking::Vpn::IVpnRoute> route) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *route = detach(this->shim().CreateVpnRoute(*reinterpret_cast<const Windows::Networking::HostName *>(&address), prefixSize));
+            *route = detach_abi(this->shim().CreateVpnRoute(*reinterpret_cast<const Windows::Networking::HostName *>(&address), prefixSize));
             return S_OK;
         }
         catch (...)
@@ -2919,12 +2919,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteFactory> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnSystemHealth> : produce_base<D, Windows::Networking::Vpn::IVpnSystemHealth>
 {
-    HRESULT __stdcall get_StatementOfHealth(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_StatementOfHealth(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().StatementOfHealth());
+            *value = detach_abi(this->shim().StatementOfHealth());
             return S_OK;
         }
         catch (...)
@@ -2938,12 +2938,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnSystemHealth> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D, Windows::Networking::Vpn::IVpnTrafficFilter>
 {
-    HRESULT __stdcall get_AppId(abi_arg_out<Windows::Networking::Vpn::IVpnAppId> value) noexcept override
+    HRESULT __stdcall get_AppId(impl::abi_arg_out<Windows::Networking::Vpn::IVpnAppId> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AppId());
+            *value = detach_abi(this->shim().AppId());
             return S_OK;
         }
         catch (...)
@@ -2953,7 +2953,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall put_AppId(abi_arg_in<Windows::Networking::Vpn::IVpnAppId> value) noexcept override
+    HRESULT __stdcall put_AppId(impl::abi_arg_in<Windows::Networking::Vpn::IVpnAppId> value) noexcept override
     {
         try
         {
@@ -2967,12 +2967,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_AppClaims(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_AppClaims(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AppClaims());
+            *value = detach_abi(this->shim().AppClaims());
             return S_OK;
         }
         catch (...)
@@ -2987,7 +2987,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Protocol());
+            *value = detach_abi(this->shim().Protocol());
             return S_OK;
         }
         catch (...)
@@ -3010,12 +3010,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_LocalPortRanges(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_LocalPortRanges(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LocalPortRanges());
+            *value = detach_abi(this->shim().LocalPortRanges());
             return S_OK;
         }
         catch (...)
@@ -3025,12 +3025,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_RemotePortRanges(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_RemotePortRanges(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RemotePortRanges());
+            *value = detach_abi(this->shim().RemotePortRanges());
             return S_OK;
         }
         catch (...)
@@ -3040,12 +3040,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_LocalAddressRanges(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_LocalAddressRanges(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LocalAddressRanges());
+            *value = detach_abi(this->shim().LocalAddressRanges());
             return S_OK;
         }
         catch (...)
@@ -3055,12 +3055,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_RemoteAddressRanges(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_RemoteAddressRanges(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RemoteAddressRanges());
+            *value = detach_abi(this->shim().RemoteAddressRanges());
             return S_OK;
         }
         catch (...)
@@ -3075,7 +3075,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RoutingPolicyType());
+            *value = detach_abi(this->shim().RoutingPolicyType());
             return S_OK;
         }
         catch (...)
@@ -3102,12 +3102,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produce_base<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment>
 {
-    HRESULT __stdcall get_TrafficFilterList(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter>> value) noexcept override
+    HRESULT __stdcall get_TrafficFilterList(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TrafficFilterList());
+            *value = detach_abi(this->shim().TrafficFilterList());
             return S_OK;
         }
         catch (...)
@@ -3122,7 +3122,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AllowOutbound());
+            *value = detach_abi(this->shim().AllowOutbound());
             return S_OK;
         }
         catch (...)
@@ -3150,7 +3150,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AllowInbound());
+            *value = detach_abi(this->shim().AllowInbound());
             return S_OK;
         }
         catch (...)
@@ -3177,12 +3177,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterFactory> : produce_base<D, Windows::Networking::Vpn::IVpnTrafficFilterFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Networking::Vpn::IVpnAppId> appId, abi_arg_out<Windows::Networking::Vpn::IVpnTrafficFilter> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Networking::Vpn::IVpnAppId> appId, impl::abi_arg_out<Windows::Networking::Vpn::IVpnTrafficFilter> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Networking::Vpn::VpnAppId *>(&appId)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Networking::Vpn::VpnAppId *>(&appId)));
             return S_OK;
         }
         catch (...)
@@ -3199,38 +3199,38 @@ namespace Windows::Networking::Vpn {
 
 template <typename D> void impl_IVpnPlugIn<D>::Connect(const Windows::Networking::Vpn::VpnChannel & channel) const
 {
-    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Connect(get(channel)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Connect(get_abi(channel)));
 }
 
 template <typename D> void impl_IVpnPlugIn<D>::Disconnect(const Windows::Networking::Vpn::VpnChannel & channel) const
 {
-    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Disconnect(get(channel)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Disconnect(get_abi(channel)));
 }
 
 template <typename D> void impl_IVpnPlugIn<D>::GetKeepAlivePayload(const Windows::Networking::Vpn::VpnChannel & channel, Windows::Networking::Vpn::VpnPacketBuffer & keepAlivePacket) const
 {
-    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_GetKeepAlivePayload(get(channel), put(keepAlivePacket)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_GetKeepAlivePayload(get_abi(channel), put_abi(keepAlivePacket)));
 }
 
 template <typename D> void impl_IVpnPlugIn<D>::Encapsulate(const Windows::Networking::Vpn::VpnChannel & channel, const Windows::Networking::Vpn::VpnPacketBufferList & packets, const Windows::Networking::Vpn::VpnPacketBufferList & encapulatedPackets) const
 {
-    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Encapsulate(get(channel), get(packets), get(encapulatedPackets)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Encapsulate(get_abi(channel), get_abi(packets), get_abi(encapulatedPackets)));
 }
 
 template <typename D> void impl_IVpnPlugIn<D>::Decapsulate(const Windows::Networking::Vpn::VpnChannel & channel, const Windows::Networking::Vpn::VpnPacketBuffer & encapBuffer, const Windows::Networking::Vpn::VpnPacketBufferList & decapsulatedPackets, const Windows::Networking::Vpn::VpnPacketBufferList & controlPacketsToSend) const
 {
-    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Decapsulate(get(channel), get(encapBuffer), get(decapsulatedPackets), get(controlPacketsToSend)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Decapsulate(get_abi(channel), get_abi(encapBuffer), get_abi(decapsulatedPackets), get_abi(controlPacketsToSend)));
 }
 
 template <typename D> void impl_IVpnCustomPrompt<D>::Label(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->put_Label(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->put_Label(get_abi(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomPrompt<D>::Label() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->get_Label(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->get_Label(put_abi(value)));
     return value;
 }
 
@@ -3260,13 +3260,13 @@ template <typename D> bool impl_IVpnCustomPrompt<D>::Bordered() const
 
 template <typename D> void impl_IVpnCustomEditBox<D>::DefaultText(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->put_DefaultText(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->put_DefaultText(get_abi(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomEditBox<D>::DefaultText() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->get_DefaultText(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->get_DefaultText(put_abi(value)));
     return value;
 }
 
@@ -3285,19 +3285,19 @@ template <typename D> bool impl_IVpnCustomEditBox<D>::NoEcho() const
 template <typename D> hstring impl_IVpnCustomEditBox<D>::Text() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->get_Text(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomComboBox<D>::OptionsText(const Windows::Foundation::Collections::IVectorView<hstring> & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnCustomComboBox)->put_OptionsText(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomComboBox)->put_OptionsText(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IVpnCustomComboBox<D>::OptionsText() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(IVpnCustomComboBox)->get_OptionsText(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomComboBox)->get_OptionsText(put_abi(value)));
     return value;
 }
 
@@ -3310,13 +3310,13 @@ template <typename D> uint32_t impl_IVpnCustomComboBox<D>::Selected() const
 
 template <typename D> void impl_IVpnCustomTextBox<D>::DisplayText(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnCustomTextBox)->put_DisplayText(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomTextBox)->put_DisplayText(get_abi(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomTextBox<D>::DisplayText() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnCustomTextBox)->get_DisplayText(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomTextBox)->get_DisplayText(put_abi(value)));
     return value;
 }
 
@@ -3342,19 +3342,19 @@ template <typename D> bool impl_IVpnCustomCheckBox<D>::Checked() const
 template <typename D> Windows::Networking::Vpn::VpnRoute impl_IVpnRouteFactory<D>::CreateVpnRoute(const Windows::Networking::HostName & address, uint8_t prefixSize) const
 {
     Windows::Networking::Vpn::VpnRoute route { nullptr };
-    check_hresult(WINRT_SHIM(IVpnRouteFactory)->abi_CreateVpnRoute(get(address), prefixSize, put(route)));
+    check_hresult(WINRT_SHIM(IVpnRouteFactory)->abi_CreateVpnRoute(get_abi(address), prefixSize, put_abi(route)));
     return route;
 }
 
 template <typename D> void impl_IVpnRoute<D>::Address(const Windows::Networking::HostName & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnRoute)->put_Address(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRoute)->put_Address(get_abi(value)));
 }
 
 template <typename D> Windows::Networking::HostName impl_IVpnRoute<D>::Address() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnRoute)->get_Address(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRoute)->get_Address(put_abi(value)));
     return value;
 }
 
@@ -3372,49 +3372,49 @@ template <typename D> uint8_t impl_IVpnRoute<D>::PrefixSize() const
 
 template <typename D> void impl_IVpnRouteAssignment<D>::Ipv4InclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv4InclusionRoutes(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv4InclusionRoutes(get_abi(value)));
 }
 
 template <typename D> void impl_IVpnRouteAssignment<D>::Ipv6InclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv6InclusionRoutes(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv6InclusionRoutes(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnRouteAssignment<D>::Ipv4InclusionRoutes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv4InclusionRoutes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv4InclusionRoutes(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnRouteAssignment<D>::Ipv6InclusionRoutes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv6InclusionRoutes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv6InclusionRoutes(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnRouteAssignment<D>::Ipv4ExclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv4ExclusionRoutes(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv4ExclusionRoutes(get_abi(value)));
 }
 
 template <typename D> void impl_IVpnRouteAssignment<D>::Ipv6ExclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv6ExclusionRoutes(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv6ExclusionRoutes(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnRouteAssignment<D>::Ipv4ExclusionRoutes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv4ExclusionRoutes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv4ExclusionRoutes(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnRouteAssignment<D>::Ipv6ExclusionRoutes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv6ExclusionRoutes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv6ExclusionRoutes(put_abi(value)));
     return value;
 }
 
@@ -3433,163 +3433,163 @@ template <typename D> bool impl_IVpnRouteAssignment<D>::ExcludeLocalSubnets() co
 template <typename D> Windows::Networking::Vpn::VpnNamespaceInfo impl_IVpnNamespaceInfoFactory<D>::CreateVpnNamespaceInfo(hstring_view name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) const
 {
     Windows::Networking::Vpn::VpnNamespaceInfo namespaceInfo { nullptr };
-    check_hresult(WINRT_SHIM(IVpnNamespaceInfoFactory)->abi_CreateVpnNamespaceInfo(get(name), get(dnsServerList), get(proxyServerList), put(namespaceInfo)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfoFactory)->abi_CreateVpnNamespaceInfo(get_abi(name), get_abi(dnsServerList), get_abi(proxyServerList), put_abi(namespaceInfo)));
     return namespaceInfo;
 }
 
 template <typename D> void impl_IVpnNamespaceInfo<D>::Namespace(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_Namespace(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_Namespace(get_abi(value)));
 }
 
 template <typename D> hstring impl_IVpnNamespaceInfo<D>::Namespace() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->get_Namespace(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->get_Namespace(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnNamespaceInfo<D>::DnsServers(const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_DnsServers(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_DnsServers(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::HostName> impl_IVpnNamespaceInfo<D>::DnsServers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::HostName> value;
-    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->get_DnsServers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->get_DnsServers(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnNamespaceInfo<D>::WebProxyServers(const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_WebProxyServers(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_WebProxyServers(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::HostName> impl_IVpnNamespaceInfo<D>::WebProxyServers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::HostName> value;
-    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->get_WebProxyServers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->get_WebProxyServers(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnNamespaceAssignment<D>::NamespaceList(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->put_NamespaceList(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->put_NamespaceList(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> impl_IVpnNamespaceAssignment<D>::NamespaceList() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> value;
-    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->get_NamespaceList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->get_NamespaceList(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnNamespaceAssignment<D>::ProxyAutoConfigUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->put_ProxyAutoConfigUri(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->put_ProxyAutoConfigUri(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IVpnNamespaceAssignment<D>::ProxyAutoConfigUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->get_ProxyAutoConfigUri(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->get_ProxyAutoConfigUri(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnInterfaceId impl_IVpnInterfaceIdFactory<D>::CreateVpnInterfaceId(array_view<const uint8_t> address) const
 {
     Windows::Networking::Vpn::VpnInterfaceId vpnInterfaceId { nullptr };
-    check_hresult(WINRT_SHIM(IVpnInterfaceIdFactory)->abi_CreateVpnInterfaceId(address.size(), get(address), put(vpnInterfaceId)));
+    check_hresult(WINRT_SHIM(IVpnInterfaceIdFactory)->abi_CreateVpnInterfaceId(address.size(), get_abi(address), put_abi(vpnInterfaceId)));
     return vpnInterfaceId;
 }
 
 template <typename D> void impl_IVpnInterfaceId<D>::GetAddressInfo(com_array<uint8_t> & id) const
 {
-    check_hresult(WINRT_SHIM(IVpnInterfaceId)->abi_GetAddressInfo(put_size(id), put(id)));
+    check_hresult(WINRT_SHIM(IVpnInterfaceId)->abi_GetAddressInfo(impl::put_size_abi(id), put_abi(id)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IVpnPickedCredential<D>::PasskeyCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnPickedCredential)->get_PasskeyCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPickedCredential)->get_PasskeyCredential(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnPickedCredential<D>::AdditionalPin() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnPickedCredential)->get_AdditionalPin(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPickedCredential)->get_AdditionalPin(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IVpnPickedCredential<D>::OldPasswordCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnPickedCredential)->get_OldPasswordCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPickedCredential)->get_OldPasswordCredential(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IVpnCredential<D>::PasskeyCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnCredential)->get_PasskeyCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCredential)->get_PasskeyCredential(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IVpnCredential<D>::CertificateCredential() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnCredential)->get_CertificateCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCredential)->get_CertificateCredential(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnCredential<D>::AdditionalPin() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnCredential)->get_AdditionalPin(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCredential)->get_AdditionalPin(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IVpnCredential<D>::OldPasswordCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnCredential)->get_OldPasswordCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCredential)->get_OldPasswordCredential(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::Buffer impl_IVpnSystemHealth<D>::StatementOfHealth() const
 {
     Windows::Storage::Streams::Buffer value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnSystemHealth)->get_StatementOfHealth(put(value)));
+    check_hresult(WINRT_SHIM(IVpnSystemHealth)->get_StatementOfHealth(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnChannelConfiguration<D>::ServerServiceName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnChannelConfiguration)->get_ServerServiceName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannelConfiguration)->get_ServerServiceName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> impl_IVpnChannelConfiguration<D>::ServerHostNameList() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> value;
-    check_hresult(WINRT_SHIM(IVpnChannelConfiguration)->get_ServerHostNameList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannelConfiguration)->get_ServerHostNameList(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnChannelConfiguration<D>::CustomField() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnChannelConfiguration)->get_CustomField(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannelConfiguration)->get_CustomField(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> impl_IVpnChannelConfiguration2<D>::ServerUris() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> value;
-    check_hresult(WINRT_SHIM(IVpnChannelConfiguration2)->get_ServerUris(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannelConfiguration2)->get_ServerUris(put_abi(value)));
     return value;
 }
 
@@ -3602,12 +3602,12 @@ template <typename D> Windows::Networking::Vpn::VpnChannelActivityEventType impl
 
 template <typename D> void impl_IVpnChannel<D>::AssociateTransport(const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel)->abi_AssociateTransport(get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_AssociateTransport(get_abi(mainOuterTunnelTransport), get_abi(optionalOuterTunnelTransport)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::Start(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel)->abi_Start(get(assignedClientIPv4list), get(assignedClientIPv6list), get(vpnInterfaceId), get(routeScope), get(namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_Start(get_abi(assignedClientIPv4list), get_abi(assignedClientIPv6list), get_abi(vpnInterfaceId), get_abi(routeScope), get_abi(namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, get_abi(mainOuterTunnelTransport), get_abi(optionalOuterTunnelTransport)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::Stop() const
@@ -3618,18 +3618,18 @@ template <typename D> void impl_IVpnChannel<D>::Stop() const
 template <typename D> Windows::Networking::Vpn::VpnPickedCredential impl_IVpnChannel<D>::RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
     Windows::Networking::Vpn::VpnPickedCredential credential { nullptr };
-    check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestCredentials(credType, isRetry, isSingleSignOnCredential, get(certificate), put(credential)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestCredentials(credType, isRetry, isSingleSignOnCredential, get_abi(certificate), put_abi(credential)));
     return credential;
 }
 
 template <typename D> void impl_IVpnChannel<D>::RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, Windows::Networking::Vpn::VpnPacketBuffer & vpnPacketBuffer) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestVpnPacketBuffer(type, put(vpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestVpnPacketBuffer(type, put_abi(vpnPacketBuffer)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::LogDiagnosticMessage(hstring_view message) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel)->abi_LogDiagnosticMessage(get(message)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_LogDiagnosticMessage(get_abi(message)));
 }
 
 template <typename D> uint32_t impl_IVpnChannel<D>::Id() const
@@ -3642,14 +3642,14 @@ template <typename D> uint32_t impl_IVpnChannel<D>::Id() const
 template <typename D> Windows::Networking::Vpn::VpnChannelConfiguration impl_IVpnChannel<D>::Configuration() const
 {
     Windows::Networking::Vpn::VpnChannelConfiguration value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnChannel)->get_Configuration(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->get_Configuration(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IVpnChannel<D>::ActivityChange(const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IVpnChannel)->add_ActivityChange(get(handler), &token));
+    check_hresult(WINRT_SHIM(IVpnChannel)->add_ActivityChange(get_abi(handler), &token));
     return token;
 }
 
@@ -3665,52 +3665,52 @@ template <typename D> void impl_IVpnChannel<D>::ActivityChange(event_token token
 
 template <typename D> void impl_IVpnChannel<D>::PlugInContext(const Windows::IInspectable & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel)->put_PlugInContext(get(value)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->put_PlugInContext(get_abi(value)));
 }
 
 template <typename D> Windows::IInspectable impl_IVpnChannel<D>::PlugInContext() const
 {
     Windows::IInspectable value;
-    check_hresult(WINRT_SHIM(IVpnChannel)->get_PlugInContext(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->get_PlugInContext(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnSystemHealth impl_IVpnChannel<D>::SystemHealth() const
 {
     Windows::Networking::Vpn::VpnSystemHealth value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnChannel)->get_SystemHealth(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->get_SystemHealth(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnChannel<D>::RequestCustomPrompt(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> & customPrompt) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestCustomPrompt(get(customPrompt)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestCustomPrompt(get_abi(customPrompt)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::SetErrorMessage(hstring_view message) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetErrorMessage(get(message)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetErrorMessage(get_abi(message)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::SetAllowedSslTlsVersions(const Windows::IInspectable & tunnelTransport, bool useTls12) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetAllowedSslTlsVersions(get(tunnelTransport), useTls12));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetAllowedSslTlsVersions(get_abi(tunnelTransport), useTls12));
 }
 
 template <typename D> void impl_IVpnChannel2<D>::StartWithMainTransport(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::IInspectable & mainOuterTunnelTransport) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithMainTransport(get(assignedClientIPv4list), get(assignedClientIPv6list), get(vpnInterfaceId), get(assignedRoutes), get(assignedDomainName), mtuSize, maxFrameSize, Reserved, get(mainOuterTunnelTransport)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithMainTransport(get_abi(assignedClientIPv4list), get_abi(assignedClientIPv6list), get_abi(vpnInterfaceId), get_abi(assignedRoutes), get_abi(assignedDomainName), mtuSize, maxFrameSize, Reserved, get_abi(mainOuterTunnelTransport)));
 }
 
 template <typename D> void impl_IVpnChannel2<D>::StartExistingTransports(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartExistingTransports(get(assignedClientIPv4list), get(assignedClientIPv6list), get(vpnInterfaceId), get(assignedRoutes), get(assignedDomainName), mtuSize, maxFrameSize, Reserved));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartExistingTransports(get_abi(assignedClientIPv4list), get_abi(assignedClientIPv6list), get_abi(vpnInterfaceId), get_abi(assignedRoutes), get_abi(assignedDomainName), mtuSize, maxFrameSize, Reserved));
 }
 
 template <typename D> event_token impl_IVpnChannel2<D>::ActivityStateChange(const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IVpnChannel2)->add_ActivityStateChange(get(handler), &token));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->add_ActivityStateChange(get_abi(handler), &token));
     return token;
 }
 
@@ -3727,64 +3727,64 @@ template <typename D> void impl_IVpnChannel2<D>::ActivityStateChange(event_token
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnChannel2<D>::GetVpnSendPacketBuffer() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer vpnSendPacketBuffer { nullptr };
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_GetVpnSendPacketBuffer(put(vpnSendPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_GetVpnSendPacketBuffer(put_abi(vpnSendPacketBuffer)));
     return vpnSendPacketBuffer;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnChannel2<D>::GetVpnReceivePacketBuffer() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer vpnReceivePacketBuffer { nullptr };
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_GetVpnReceivePacketBuffer(put(vpnReceivePacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_GetVpnReceivePacketBuffer(put_abi(vpnReceivePacketBuffer)));
     return vpnReceivePacketBuffer;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVpnChannel2<D>::RequestCustomPromptAsync(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> & customPromptElement) const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCustomPromptAsync(get(customPromptElement), put(action)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCustomPromptAsync(get_abi(customPromptElement), put_abi(action)));
     return action;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> impl_IVpnChannel2<D>::RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> credential;
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCredentialsWithCertificateAsync(credType, credOptions, get(certificate), put(credential)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCredentialsWithCertificateAsync(credType, credOptions, get_abi(certificate), put_abi(credential)));
     return credential;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> impl_IVpnChannel2<D>::RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> credential;
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCredentialsWithOptionsAsync(credType, credOptions, put(credential)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCredentialsWithOptionsAsync(credType, credOptions, put_abi(credential)));
     return credential;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> impl_IVpnChannel2<D>::RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> credential;
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCredentialsSimpleAsync(credType, put(credential)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCredentialsSimpleAsync(credType, put_abi(credential)));
     return credential;
 }
 
 template <typename D> void impl_IVpnChannel2<D>::TerminateConnection(hstring_view message) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_TerminateConnection(get(message)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_TerminateConnection(get_abi(message)));
 }
 
 template <typename D> void impl_IVpnChannel2<D>::StartWithTrafficFilter(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv4List, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithTrafficFilter(get(assignedClientIpv4List), get(assignedClientIpv6List), get(vpnInterfaceId), get(assignedRoutes), get(assignedNamespace), mtuSize, maxFrameSize, reserved, get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport), get(assignedTrafficFilters)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithTrafficFilter(get_abi(assignedClientIpv4List), get_abi(assignedClientIpv6List), get_abi(vpnInterfaceId), get_abi(assignedRoutes), get_abi(assignedNamespace), mtuSize, maxFrameSize, reserved, get_abi(mainOuterTunnelTransport), get_abi(optionalOuterTunnelTransport), get_abi(assignedTrafficFilters)));
 }
 
 template <typename D> void impl_IVpnCustomPromptElement<D>::DisplayName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->put_DisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->put_DisplayName(get_abi(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomPromptElement<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->get_DisplayName(put_abi(value)));
     return value;
 }
 
@@ -3814,20 +3814,20 @@ template <typename D> bool impl_IVpnCustomPromptElement<D>::Emphasized() const
 
 template <typename D> void impl_IVpnChannelStatics<D>::ProcessEventAsync(const Windows::IInspectable & thirdPartyPlugIn, const Windows::IInspectable & event) const
 {
-    check_hresult(WINRT_SHIM(IVpnChannelStatics)->abi_ProcessEventAsync(get(thirdPartyPlugIn), get(event)));
+    check_hresult(WINRT_SHIM(IVpnChannelStatics)->abi_ProcessEventAsync(get_abi(thirdPartyPlugIn), get_abi(event)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferFactory<D>::CreateVpnPacketBuffer(const Windows::Networking::Vpn::VpnPacketBuffer & parentBuffer, uint32_t offset, uint32_t length) const
 {
     Windows::Networking::Vpn::VpnPacketBuffer vpnPacketBuffer { nullptr };
-    check_hresult(WINRT_SHIM(IVpnPacketBufferFactory)->abi_CreateVpnPacketBuffer(get(parentBuffer), offset, length, put(vpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferFactory)->abi_CreateVpnPacketBuffer(get_abi(parentBuffer), offset, length, put_abi(vpnPacketBuffer)));
     return vpnPacketBuffer;
 }
 
 template <typename D> Windows::Storage::Streams::Buffer impl_IVpnPacketBuffer<D>::Buffer() const
 {
     Windows::Storage::Streams::Buffer value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnPacketBuffer)->get_Buffer(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPacketBuffer)->get_Buffer(put_abi(value)));
     return value;
 }
 
@@ -3858,31 +3858,31 @@ template <typename D> uint32_t impl_IVpnPacketBuffer<D>::TransportAffinity() con
 template <typename D> Windows::Networking::Vpn::VpnAppId impl_IVpnPacketBuffer2<D>::AppId() const
 {
     Windows::Networking::Vpn::VpnAppId value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnPacketBuffer2)->get_AppId(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPacketBuffer2)->get_AppId(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnPacketBufferList<D>::Append(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const
 {
-    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_Append(get(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_Append(get_abi(nextVpnPacketBuffer)));
 }
 
 template <typename D> void impl_IVpnPacketBufferList<D>::AddAtBegin(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const
 {
-    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_AddAtBegin(get(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_AddAtBegin(get_abi(nextVpnPacketBuffer)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferList<D>::RemoveAtEnd() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer nextVpnPacketBuffer { nullptr };
-    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_RemoveAtEnd(put(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_RemoveAtEnd(put_abi(nextVpnPacketBuffer)));
     return nextVpnPacketBuffer;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferList<D>::RemoveAtBegin() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer nextVpnPacketBuffer { nullptr };
-    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_RemoveAtBegin(put(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_RemoveAtBegin(put_abi(nextVpnPacketBuffer)));
     return nextVpnPacketBuffer;
 }
 
@@ -3912,37 +3912,37 @@ template <typename D> uint32_t impl_IVpnPacketBufferList<D>::Size() const
 
 template <typename D> void impl_IVpnPacketBufferList2<D>::AddLeadingPacket(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const
 {
-    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_AddLeadingPacket(get(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_AddLeadingPacket(get_abi(nextVpnPacketBuffer)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferList2<D>::RemoveLeadingPacket() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer nextVpnPacketBuffer { nullptr };
-    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_RemoveLeadingPacket(put(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_RemoveLeadingPacket(put_abi(nextVpnPacketBuffer)));
     return nextVpnPacketBuffer;
 }
 
 template <typename D> void impl_IVpnPacketBufferList2<D>::AddTrailingPacket(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const
 {
-    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_AddTrailingPacket(get(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_AddTrailingPacket(get_abi(nextVpnPacketBuffer)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferList2<D>::RemoveTrailingPacket() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer nextVpnPacketBuffer { nullptr };
-    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_RemoveTrailingPacket(put(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_RemoveTrailingPacket(put_abi(nextVpnPacketBuffer)));
     return nextVpnPacketBuffer;
 }
 
 template <typename D> void impl_IVpnCustomPromptTextInput<D>::PlaceholderText(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->put_PlaceholderText(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->put_PlaceholderText(get_abi(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomPromptTextInput<D>::PlaceholderText() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->get_PlaceholderText(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->get_PlaceholderText(put_abi(value)));
     return value;
 }
 
@@ -3961,14 +3961,14 @@ template <typename D> bool impl_IVpnCustomPromptTextInput<D>::IsTextHidden() con
 template <typename D> hstring impl_IVpnCustomPromptTextInput<D>::Text() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->get_Text(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnCustomPromptOptionSelector<D>::Options() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(IVpnCustomPromptOptionSelector)->get_Options(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptOptionSelector)->get_Options(put_abi(value)));
     return value;
 }
 
@@ -4000,13 +4000,13 @@ template <typename D> bool impl_IVpnCustomPromptBooleanInput<D>::Value() const
 
 template <typename D> void impl_IVpnCustomPromptText<D>::Text(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnCustomPromptText)->put_Text(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptText)->put_Text(get_abi(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomPromptText<D>::Text() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnCustomPromptText)->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptText)->get_Text(put_abi(value)));
     return value;
 }
 
@@ -4020,19 +4020,19 @@ template <typename D> Windows::Networking::Vpn::VpnChannelActivityEventType impl
 template <typename D> Windows::Networking::Vpn::VpnDomainNameInfo impl_IVpnDomainNameInfoFactory<D>::CreateVpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) const
 {
     Windows::Networking::Vpn::VpnDomainNameInfo domainNameInfo { nullptr };
-    check_hresult(WINRT_SHIM(IVpnDomainNameInfoFactory)->abi_CreateVpnDomainNameInfo(get(name), nameType, get(dnsServerList), get(proxyServerList), put(domainNameInfo)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfoFactory)->abi_CreateVpnDomainNameInfo(get_abi(name), nameType, get_abi(dnsServerList), get_abi(proxyServerList), put_abi(domainNameInfo)));
     return domainNameInfo;
 }
 
 template <typename D> void impl_IVpnDomainNameInfo<D>::DomainName(const Windows::Networking::HostName & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->put_DomainName(get(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->put_DomainName(get_abi(value)));
 }
 
 template <typename D> Windows::Networking::HostName impl_IVpnDomainNameInfo<D>::DomainName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_DomainName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_DomainName(put_abi(value)));
     return value;
 }
 
@@ -4051,47 +4051,47 @@ template <typename D> Windows::Networking::Vpn::VpnDomainNameType impl_IVpnDomai
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::HostName> impl_IVpnDomainNameInfo<D>::DnsServers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::HostName> value;
-    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_DnsServers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_DnsServers(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::HostName> impl_IVpnDomainNameInfo<D>::WebProxyServers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::HostName> value;
-    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_WebProxyServers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_WebProxyServers(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> impl_IVpnDomainNameInfo2<D>::WebProxyUris() const
 {
     Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> value;
-    check_hresult(WINRT_SHIM(IVpnDomainNameInfo2)->get_WebProxyUris(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo2)->get_WebProxyUris(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> impl_IVpnDomainNameAssignment<D>::DomainNameList() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> value;
-    check_hresult(WINRT_SHIM(IVpnDomainNameAssignment)->get_DomainNameList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameAssignment)->get_DomainNameList(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnDomainNameAssignment<D>::ProxyAutoConfigurationUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnDomainNameAssignment)->put_ProxyAutoConfigurationUri(get(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameAssignment)->put_ProxyAutoConfigurationUri(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IVpnDomainNameAssignment<D>::ProxyAutoConfigurationUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnDomainNameAssignment)->get_ProxyAutoConfigurationUri(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameAssignment)->get_ProxyAutoConfigurationUri(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnAppId impl_IVpnAppIdFactory<D>::Create(Windows::Networking::Vpn::VpnAppIdType type, hstring_view value) const
 {
     Windows::Networking::Vpn::VpnAppId result { nullptr };
-    check_hresult(WINRT_SHIM(IVpnAppIdFactory)->abi_Create(type, get(value), put(result)));
+    check_hresult(WINRT_SHIM(IVpnAppIdFactory)->abi_Create(type, get_abi(value), put_abi(result)));
     return result;
 }
 
@@ -4110,38 +4110,38 @@ template <typename D> void impl_IVpnAppId<D>::Type(Windows::Networking::Vpn::Vpn
 template <typename D> hstring impl_IVpnAppId<D>::Value() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnAppId)->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IVpnAppId)->get_Value(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnAppId<D>::Value(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnAppId)->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IVpnAppId)->put_Value(get_abi(value)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnTrafficFilter impl_IVpnTrafficFilterFactory<D>::Create(const Windows::Networking::Vpn::VpnAppId & appId) const
 {
     Windows::Networking::Vpn::VpnTrafficFilter result { nullptr };
-    check_hresult(WINRT_SHIM(IVpnTrafficFilterFactory)->abi_Create(get(appId), put(result)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilterFactory)->abi_Create(get_abi(appId), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnAppId impl_IVpnTrafficFilter<D>::AppId() const
 {
     Windows::Networking::Vpn::VpnAppId value { nullptr };
-    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_AppId(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_AppId(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnTrafficFilter<D>::AppId(const Windows::Networking::Vpn::VpnAppId & value) const
 {
-    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->put_AppId(get(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->put_AppId(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::AppClaims() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_AppClaims(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_AppClaims(put_abi(value)));
     return value;
 }
 
@@ -4160,28 +4160,28 @@ template <typename D> void impl_IVpnTrafficFilter<D>::Protocol(Windows::Networki
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::LocalPortRanges() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_LocalPortRanges(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_LocalPortRanges(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::RemotePortRanges() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_RemotePortRanges(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_RemotePortRanges(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::LocalAddressRanges() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_LocalAddressRanges(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_LocalAddressRanges(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::RemoteAddressRanges() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_RemoteAddressRanges(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_RemoteAddressRanges(put_abi(value)));
     return value;
 }
 
@@ -4200,7 +4200,7 @@ template <typename D> void impl_IVpnTrafficFilter<D>::RoutingPolicyType(Windows:
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> impl_IVpnTrafficFilterAssignment<D>::TrafficFilterList() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> value;
-    check_hresult(WINRT_SHIM(IVpnTrafficFilterAssignment)->get_TrafficFilterList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilterAssignment)->get_TrafficFilterList(put_abi(value)));
     return value;
 }
 
@@ -4231,40 +4231,40 @@ template <typename D> void impl_IVpnTrafficFilterAssignment<D>::AllowInbound(boo
 template <typename D> hstring impl_IVpnProfile<D>::ProfileName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnProfile)->get_ProfileName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_ProfileName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnProfile<D>::ProfileName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnProfile)->put_ProfileName(get(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->put_ProfileName(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId> impl_IVpnProfile<D>::AppTriggers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId> value;
-    check_hresult(WINRT_SHIM(IVpnProfile)->get_AppTriggers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_AppTriggers(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnProfile<D>::Routes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(WINRT_SHIM(IVpnProfile)->get_Routes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_Routes(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> impl_IVpnProfile<D>::DomainNameInfoList() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> value;
-    check_hresult(WINRT_SHIM(IVpnProfile)->get_DomainNameInfoList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_DomainNameInfoList(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> impl_IVpnProfile<D>::TrafficFilters() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> value;
-    check_hresult(WINRT_SHIM(IVpnProfile)->get_TrafficFilters(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_TrafficFilters(put_abi(value)));
     return value;
 }
 
@@ -4295,32 +4295,32 @@ template <typename D> void impl_IVpnProfile<D>::AlwaysOn(bool value) const
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> impl_IVpnPlugInProfile<D>::ServerUris() const
 {
     Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> value;
-    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->get_ServerUris(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->get_ServerUris(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnPlugInProfile<D>::CustomConfiguration() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->get_CustomConfiguration(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->get_CustomConfiguration(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnPlugInProfile<D>::CustomConfiguration(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->put_CustomConfiguration(get(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->put_CustomConfiguration(get_abi(value)));
 }
 
 template <typename D> hstring impl_IVpnPlugInProfile<D>::VpnPluginPackageFamilyName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->get_VpnPluginPackageFamilyName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->get_VpnPluginPackageFamilyName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnPlugInProfile<D>::VpnPluginPackageFamilyName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->put_VpnPluginPackageFamilyName(get(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->put_VpnPluginPackageFamilyName(get_abi(value)));
 }
 
 template <typename D> bool impl_IVpnPlugInProfile2<D>::RequireVpnClientAppUI() const
@@ -4345,7 +4345,7 @@ template <typename D> Windows::Networking::Vpn::VpnManagementConnectionStatus im
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnNativeProfile<D>::Servers() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_Servers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_Servers(put_abi(value)));
     return value;
 }
 
@@ -4400,13 +4400,13 @@ template <typename D> void impl_IVpnNativeProfile<D>::TunnelAuthenticationMethod
 template <typename D> hstring impl_IVpnNativeProfile<D>::EapConfiguration() const
 {
     hstring Value;
-    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_EapConfiguration(put(Value)));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_EapConfiguration(put_abi(Value)));
     return Value;
 }
 
 template <typename D> void impl_IVpnNativeProfile<D>::EapConfiguration(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IVpnNativeProfile)->put_EapConfiguration(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->put_EapConfiguration(get_abi(value)));
 }
 
 template <typename D> bool impl_IVpnNativeProfile2<D>::RequireVpnClientAppUI() const
@@ -4431,63 +4431,63 @@ template <typename D> Windows::Networking::Vpn::VpnManagementConnectionStatus im
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::AddProfileFromXmlAsync(hstring_view xml) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_AddProfileFromXmlAsync(get(xml), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_AddProfileFromXmlAsync(get_abi(xml), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::AddProfileFromObjectAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_AddProfileFromObjectAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_AddProfileFromObjectAsync(get_abi(profile), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::UpdateProfileFromXmlAsync(hstring_view xml) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_UpdateProfileFromXmlAsync(get(xml), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_UpdateProfileFromXmlAsync(get_abi(xml), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::UpdateProfileFromObjectAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_UpdateProfileFromObjectAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_UpdateProfileFromObjectAsync(get_abi(profile), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>> impl_IVpnManagementAgent<D>::GetProfilesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>> operation;
-    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_GetProfilesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_GetProfilesAsync(put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::DeleteProfileAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_DeleteProfileAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_DeleteProfileAsync(get_abi(profile), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::ConnectProfileAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_ConnectProfileAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_ConnectProfileAsync(get_abi(profile), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::ConnectProfileWithPasswordCredentialAsync(const Windows::Networking::Vpn::IVpnProfile & profile, const Windows::Security::Credentials::PasswordCredential & passwordCredential) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_ConnectProfileWithPasswordCredentialAsync(get(profile), get(passwordCredential), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_ConnectProfileWithPasswordCredentialAsync(get_abi(profile), get_abi(passwordCredential), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::DisconnectProfileAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_DisconnectProfileAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_DisconnectProfileAsync(get_abi(profile), put_abi(operation)));
     return operation;
 }
 

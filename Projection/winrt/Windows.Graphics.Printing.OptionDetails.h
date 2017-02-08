@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDetails>
 {
-    HRESULT __stdcall get_ItemId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ItemId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ItemId());
+            *value = detach_abi(this->shim().ItemId());
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDe
         }
     }
 
-    HRESULT __stdcall put_ItemDisplayName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_ItemDisplayName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -45,12 +45,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDe
         }
     }
 
-    HRESULT __stdcall get_ItemDisplayName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ItemDisplayName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ItemDisplayName());
+            *value = detach_abi(this->shim().ItemDisplayName());
             return S_OK;
         }
         catch (...)
@@ -64,7 +64,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDe
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemListOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemListOptionDetails>
 {
-    HRESULT __stdcall abi_AddItem(abi_arg_in<hstring> itemId, abi_arg_in<hstring> displayName) noexcept override
+    HRESULT __stdcall abi_AddItem(impl::abi_arg_in<hstring> itemId, impl::abi_arg_in<hstring> displayName) noexcept override
     {
         try
         {
@@ -82,7 +82,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemLi
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomOptionDetails>
 {
-    HRESULT __stdcall put_DisplayName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_DisplayName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -96,12 +96,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomOption
         }
     }
 
-    HRESULT __stdcall get_DisplayName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DisplayName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DisplayName());
+            *value = detach_abi(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -134,7 +134,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxCharacters());
+            *value = detach_abi(this->shim().MaxCharacters());
             return S_OK;
         }
         catch (...)
@@ -147,12 +147,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOp
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintItemListOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintItemListOptionDetails>
 {
-    HRESULT __stdcall get_Items(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Items(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::IInspectable>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Items());
+            *value = detach_abi(this->shim().Items());
             return S_OK;
         }
         catch (...)
@@ -171,7 +171,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintNumberOption
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinValue());
+            *value = detach_abi(this->shim().MinValue());
             return S_OK;
         }
         catch (...)
@@ -185,7 +185,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintNumberOption
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxValue());
+            *value = detach_abi(this->shim().MaxValue());
             return S_OK;
         }
         catch (...)
@@ -198,12 +198,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintNumberOption
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
-    HRESULT __stdcall get_OptionId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_OptionId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OptionId());
+            *value = detach_abi(this->shim().OptionId());
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OptionType());
+            *value = detach_abi(this->shim().OptionType());
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
         }
     }
 
-    HRESULT __stdcall put_ErrorText(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_ErrorText(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -241,12 +241,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
         }
     }
 
-    HRESULT __stdcall get_ErrorText(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ErrorText(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ErrorText());
+            *value = detach_abi(this->shim().ErrorText());
             return S_OK;
         }
         catch (...)
@@ -275,7 +275,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().State());
+            *value = detach_abi(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -284,12 +284,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
         }
     }
 
-    HRESULT __stdcall get_Value(abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -299,12 +299,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
         }
     }
 
-    HRESULT __stdcall abi_TrySetValue(abi_arg_in<Windows::IInspectable> value, bool * succeeded) noexcept override
+    HRESULT __stdcall abi_TrySetValue(impl::abi_arg_in<Windows::IInspectable> value, bool * succeeded) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *succeeded = detach(this->shim().TrySetValue(*reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *succeeded = detach_abi(this->shim().TrySetValue(*reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -317,12 +317,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionChangedEventArgs> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionChangedEventArgs>
 {
-    HRESULT __stdcall get_OptionId(abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_OptionId(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OptionId());
+            *value = detach_abi(this->shim().OptionId());
             return S_OK;
         }
         catch (...)
@@ -336,12 +336,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionCh
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails>
 {
-    HRESULT __stdcall get_Options(abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>> value) noexcept override
+    HRESULT __stdcall get_Options(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Options());
+            *value = detach_abi(this->shim().Options());
             return S_OK;
         }
         catch (...)
@@ -351,12 +351,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
         }
     }
 
-    HRESULT __stdcall abi_CreateItemListOption(abi_arg_in<hstring> optionId, abi_arg_in<hstring> displayName, abi_arg_out<Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> itemListOption) noexcept override
+    HRESULT __stdcall abi_CreateItemListOption(impl::abi_arg_in<hstring> optionId, impl::abi_arg_in<hstring> displayName, impl::abi_arg_out<Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> itemListOption) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *itemListOption = detach(this->shim().CreateItemListOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
+            *itemListOption = detach_abi(this->shim().CreateItemListOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
         catch (...)
@@ -366,12 +366,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
         }
     }
 
-    HRESULT __stdcall abi_CreateTextOption(abi_arg_in<hstring> optionId, abi_arg_in<hstring> displayName, abi_arg_out<Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> textOption) noexcept override
+    HRESULT __stdcall abi_CreateTextOption(impl::abi_arg_in<hstring> optionId, impl::abi_arg_in<hstring> displayName, impl::abi_arg_out<Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> textOption) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *textOption = detach(this->shim().CreateTextOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
+            *textOption = detach_abi(this->shim().CreateTextOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
         catch (...)
@@ -381,12 +381,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
         }
     }
 
-    HRESULT __stdcall add_OptionChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs>> eventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_OptionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs>> eventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach(this->shim().OptionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach_abi(this->shim().OptionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -409,12 +409,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
         }
     }
 
-    HRESULT __stdcall add_BeginValidation(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable>> eventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_BeginValidation(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable>> eventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach(this->shim().BeginValidation(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> *>(&eventHandler)));
+            *eventCookie = detach_abi(this->shim().BeginValidation(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -441,12 +441,12 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetailsStatic> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetailsStatic>
 {
-    HRESULT __stdcall abi_GetFromPrintTaskOptions(abi_arg_in<Windows::Graphics::Printing::IPrintTaskOptionsCore> printTaskOptions, abi_arg_out<Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails> printTaskOptionDetails) noexcept override
+    HRESULT __stdcall abi_GetFromPrintTaskOptions(impl::abi_arg_in<Windows::Graphics::Printing::IPrintTaskOptionsCore> printTaskOptions, impl::abi_arg_out<Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails> printTaskOptionDetails) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *printTaskOptionDetails = detach(this->shim().GetFromPrintTaskOptions(*reinterpret_cast<const Windows::Graphics::Printing::PrintTaskOptions *>(&printTaskOptions)));
+            *printTaskOptionDetails = detach_abi(this->shim().GetFromPrintTaskOptions(*reinterpret_cast<const Windows::Graphics::Printing::PrintTaskOptions *>(&printTaskOptions)));
             return S_OK;
         }
         catch (...)
@@ -465,7 +465,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTextOptionDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxCharacters());
+            *value = detach_abi(this->shim().MaxCharacters());
             return S_OK;
         }
         catch (...)
@@ -482,7 +482,7 @@ namespace Windows::Graphics::Printing::OptionDetails {
 template <typename D> hstring impl_IPrintOptionDetails<D>::OptionId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_OptionId(put(value)));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_OptionId(put_abi(value)));
     return value;
 }
 
@@ -495,13 +495,13 @@ template <typename D> Windows::Graphics::Printing::OptionDetails::PrintOptionTyp
 
 template <typename D> void impl_IPrintOptionDetails<D>::ErrorText(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IPrintOptionDetails)->put_ErrorText(get(value)));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->put_ErrorText(get_abi(value)));
 }
 
 template <typename D> hstring impl_IPrintOptionDetails<D>::ErrorText() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_ErrorText(put(value)));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_ErrorText(put_abi(value)));
     return value;
 }
 
@@ -520,14 +520,14 @@ template <typename D> Windows::Graphics::Printing::OptionDetails::PrintOptionSta
 template <typename D> Windows::IInspectable impl_IPrintOptionDetails<D>::Value() const
 {
     Windows::IInspectable value;
-    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_Value(put_abi(value)));
     return value;
 }
 
 template <typename D> bool impl_IPrintOptionDetails<D>::TrySetValue(const Windows::IInspectable & value) const
 {
     bool succeeded {};
-    check_hresult(WINRT_SHIM(IPrintOptionDetails)->abi_TrySetValue(get(value), &succeeded));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->abi_TrySetValue(get_abi(value), &succeeded));
     return succeeded;
 }
 
@@ -555,19 +555,19 @@ template <typename D> uint32_t impl_IPrintTextOptionDetails<D>::MaxCharacters() 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::IInspectable> impl_IPrintItemListOptionDetails<D>::Items() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::IInspectable> value;
-    check_hresult(WINRT_SHIM(IPrintItemListOptionDetails)->get_Items(put(value)));
+    check_hresult(WINRT_SHIM(IPrintItemListOptionDetails)->get_Items(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintCustomOptionDetails<D>::DisplayName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IPrintCustomOptionDetails)->put_DisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomOptionDetails)->put_DisplayName(get_abi(value)));
 }
 
 template <typename D> hstring impl_IPrintCustomOptionDetails<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPrintCustomOptionDetails)->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomOptionDetails)->get_DisplayName(put_abi(value)));
     return value;
 }
 
@@ -586,59 +586,59 @@ template <typename D> uint32_t impl_IPrintCustomTextOptionDetails<D>::MaxCharact
 template <typename D> hstring impl_IPrintCustomItemDetails<D>::ItemId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->get_ItemId(put(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->get_ItemId(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintCustomItemDetails<D>::ItemDisplayName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->put_ItemDisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->put_ItemDisplayName(get_abi(value)));
 }
 
 template <typename D> hstring impl_IPrintCustomItemDetails<D>::ItemDisplayName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->get_ItemDisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->get_ItemDisplayName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintCustomItemListOptionDetails<D>::AddItem(hstring_view itemId, hstring_view displayName) const
 {
-    check_hresult(WINRT_SHIM(IPrintCustomItemListOptionDetails)->abi_AddItem(get(itemId), get(displayName)));
+    check_hresult(WINRT_SHIM(IPrintCustomItemListOptionDetails)->abi_AddItem(get_abi(itemId), get_abi(displayName)));
 }
 
 template <typename D> Windows::IInspectable impl_IPrintTaskOptionChangedEventArgs<D>::OptionId() const
 {
     Windows::IInspectable value;
-    check_hresult(WINRT_SHIM(IPrintTaskOptionChangedEventArgs)->get_OptionId(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionChangedEventArgs)->get_OptionId(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> impl_IPrintTaskOptionDetails<D>::Options() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> value;
-    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->get_Options(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->get_Options(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails impl_IPrintTaskOptionDetails<D>::CreateItemListOption(hstring_view optionId, hstring_view displayName) const
 {
     Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails itemListOption { nullptr };
-    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->abi_CreateItemListOption(get(optionId), get(displayName), put(itemListOption)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->abi_CreateItemListOption(get_abi(optionId), get_abi(displayName), put_abi(itemListOption)));
     return itemListOption;
 }
 
 template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails impl_IPrintTaskOptionDetails<D>::CreateTextOption(hstring_view optionId, hstring_view displayName) const
 {
     Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails textOption { nullptr };
-    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->abi_CreateTextOption(get(optionId), get(displayName), put(textOption)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->abi_CreateTextOption(get_abi(optionId), get_abi(displayName), put_abi(textOption)));
     return textOption;
 }
 
 template <typename D> event_token impl_IPrintTaskOptionDetails<D>::OptionChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->add_OptionChanged(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->add_OptionChanged(get_abi(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -655,7 +655,7 @@ template <typename D> void impl_IPrintTaskOptionDetails<D>::OptionChanged(event_
 template <typename D> event_token impl_IPrintTaskOptionDetails<D>::BeginValidation(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->add_BeginValidation(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->add_BeginValidation(get_abi(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -672,7 +672,7 @@ template <typename D> void impl_IPrintTaskOptionDetails<D>::BeginValidation(even
 template <typename D> Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails impl_IPrintTaskOptionDetailsStatic<D>::GetFromPrintTaskOptions(const Windows::Graphics::Printing::PrintTaskOptions & printTaskOptions) const
 {
     Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails printTaskOptionDetails { nullptr };
-    check_hresult(WINRT_SHIM(IPrintTaskOptionDetailsStatic)->abi_GetFromPrintTaskOptions(get(printTaskOptions), put(printTaskOptionDetails)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetailsStatic)->abi_GetFromPrintTaskOptions(get_abi(printTaskOptions), put_abi(printTaskOptionDetails)));
     return printTaskOptionDetails;
 }
 

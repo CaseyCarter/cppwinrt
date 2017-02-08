@@ -28,7 +28,7 @@ template <typename O, typename M> ComponentLoadFailedEventHandler::ComponentLoad
 
 inline void ComponentLoadFailedEventHandler::operator()(const Windows::Media::Protection::MediaProtectionManager & sender, const Windows::Media::Protection::ComponentLoadFailedEventArgs & e) const
 {
-    check_hresult((*(abi<ComponentLoadFailedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<ComponentLoadFailedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
 
 template <typename L> RebootNeededEventHandler::RebootNeededEventHandler(L lambda) :
@@ -45,7 +45,7 @@ template <typename O, typename M> RebootNeededEventHandler::RebootNeededEventHan
 
 inline void RebootNeededEventHandler::operator()(const Windows::Media::Protection::MediaProtectionManager & sender) const
 {
-    check_hresult((*(abi<RebootNeededEventHandler> **)this)->abi_Invoke(get(sender)));
+    check_hresult((*(abi<RebootNeededEventHandler> **)this)->abi_Invoke(get_abi(sender)));
 }
 
 template <typename L> ServiceRequestedEventHandler::ServiceRequestedEventHandler(L lambda) :
@@ -62,7 +62,7 @@ template <typename O, typename M> ServiceRequestedEventHandler::ServiceRequested
 
 inline void ServiceRequestedEventHandler::operator()(const Windows::Media::Protection::MediaProtectionManager & sender, const Windows::Media::Protection::ServiceRequestedEventArgs & e) const
 {
-    check_hresult((*(abi<ServiceRequestedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<ServiceRequestedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
 
 }
@@ -72,12 +72,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Media::Protection::IComponentLoadFailedEventArgs> : produce_base<D, Windows::Media::Protection::IComponentLoadFailedEventArgs>
 {
-    HRESULT __stdcall get_Information(abi_arg_out<Windows::Media::Protection::IRevocationAndRenewalInformation> value) noexcept override
+    HRESULT __stdcall get_Information(impl::abi_arg_out<Windows::Media::Protection::IRevocationAndRenewalInformation> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Information());
+            *value = detach_abi(this->shim().Information());
             return S_OK;
         }
         catch (...)
@@ -87,12 +87,12 @@ struct produce<D, Windows::Media::Protection::IComponentLoadFailedEventArgs> : p
         }
     }
 
-    HRESULT __stdcall get_Completion(abi_arg_out<Windows::Media::Protection::IMediaProtectionServiceCompletion> value) noexcept override
+    HRESULT __stdcall get_Completion(impl::abi_arg_out<Windows::Media::Protection::IMediaProtectionServiceCompletion> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Completion());
+            *value = detach_abi(this->shim().Completion());
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsEffectiveProtectionAtLeast(protection));
+            *value = detach_abi(this->shim().IsEffectiveProtectionAtLeast(protection));
             return S_OK;
         }
         catch (...)
@@ -120,27 +120,12 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall abi_GetEffectiveProtection(abi_arg_out<Windows::Foundation::IReference<winrt::Windows::Media::Protection::HdcpProtection>> value) noexcept override
+    HRESULT __stdcall abi_GetEffectiveProtection(impl::abi_arg_out<Windows::Foundation::IReference<winrt::Windows::Media::Protection::HdcpProtection>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetEffectiveProtection());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_SetDesiredMinProtectionAsync(Windows::Media::Protection::HdcpProtection protection, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Protection::HdcpSetProtectionResult>> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SetDesiredMinProtectionAsync(protection));
+            *value = detach_abi(this->shim().GetEffectiveProtection());
             return S_OK;
         }
         catch (...)
@@ -150,12 +135,27 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall add_ProtectionChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall abi_SetDesiredMinProtectionAsync(Windows::Media::Protection::HdcpProtection protection, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Protection::HdcpSetProtectionResult>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ProtectionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> *>(&handler)));
+            *value = detach_abi(this->shim().SetDesiredMinProtectionAsync(protection));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_ProtectionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().ProtectionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -182,12 +182,12 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
 template <typename D>
 struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce_base<D, Windows::Media::Protection::IMediaProtectionManager>
 {
-    HRESULT __stdcall add_ServiceRequested(abi_arg_in<Windows::Media::Protection::ServiceRequestedEventHandler> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_ServiceRequested(impl::abi_arg_in<Windows::Media::Protection::ServiceRequestedEventHandler> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().ServiceRequested(*reinterpret_cast<const Windows::Media::Protection::ServiceRequestedEventHandler *>(&handler)));
+            *cookie = detach_abi(this->shim().ServiceRequested(*reinterpret_cast<const Windows::Media::Protection::ServiceRequestedEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -210,12 +210,12 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
         }
     }
 
-    HRESULT __stdcall add_RebootNeeded(abi_arg_in<Windows::Media::Protection::RebootNeededEventHandler> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_RebootNeeded(impl::abi_arg_in<Windows::Media::Protection::RebootNeededEventHandler> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().RebootNeeded(*reinterpret_cast<const Windows::Media::Protection::RebootNeededEventHandler *>(&handler)));
+            *cookie = detach_abi(this->shim().RebootNeeded(*reinterpret_cast<const Windows::Media::Protection::RebootNeededEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -238,12 +238,12 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
         }
     }
 
-    HRESULT __stdcall add_ComponentLoadFailed(abi_arg_in<Windows::Media::Protection::ComponentLoadFailedEventHandler> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_ComponentLoadFailed(impl::abi_arg_in<Windows::Media::Protection::ComponentLoadFailedEventHandler> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().ComponentLoadFailed(*reinterpret_cast<const Windows::Media::Protection::ComponentLoadFailedEventHandler *>(&handler)));
+            *cookie = detach_abi(this->shim().ComponentLoadFailed(*reinterpret_cast<const Windows::Media::Protection::ComponentLoadFailedEventHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -266,12 +266,12 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
         }
     }
 
-    HRESULT __stdcall get_Properties(abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Properties());
+            *value = detach_abi(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -285,12 +285,12 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
 template <typename D>
 struct produce<D, Windows::Media::Protection::IMediaProtectionPMPServer> : produce_base<D, Windows::Media::Protection::IMediaProtectionPMPServer>
 {
-    HRESULT __stdcall get_Properties(abi_arg_out<Windows::Foundation::Collections::IPropertySet> ppProperties) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IPropertySet> ppProperties) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppProperties = detach(this->shim().Properties());
+            *ppProperties = detach_abi(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -304,12 +304,12 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionPMPServer> : produ
 template <typename D>
 struct produce<D, Windows::Media::Protection::IMediaProtectionPMPServerFactory> : produce_base<D, Windows::Media::Protection::IMediaProtectionPMPServerFactory>
 {
-    HRESULT __stdcall abi_CreatePMPServer(abi_arg_in<Windows::Foundation::Collections::IPropertySet> pProperties, abi_arg_out<Windows::Media::Protection::IMediaProtectionPMPServer> ppObject) noexcept override
+    HRESULT __stdcall abi_CreatePMPServer(impl::abi_arg_in<Windows::Foundation::Collections::IPropertySet> pProperties, impl::abi_arg_out<Windows::Media::Protection::IMediaProtectionPMPServer> ppObject) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppObject = detach(this->shim().CreatePMPServer(*reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&pProperties)));
+            *ppObject = detach_abi(this->shim().CreatePMPServer(*reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&pProperties)));
             return S_OK;
         }
         catch (...)
@@ -346,7 +346,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionServiceRequest> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *system = detach(this->shim().ProtectionSystem());
+            *system = detach_abi(this->shim().ProtectionSystem());
             return S_OK;
         }
         catch (...)
@@ -360,7 +360,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionServiceRequest> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *type = detach(this->shim().Type());
+            *type = detach_abi(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -373,12 +373,12 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionServiceRequest> : 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IProtectionCapabilities> : produce_base<D, Windows::Media::Protection::IProtectionCapabilities>
 {
-    HRESULT __stdcall abi_IsTypeSupported(abi_arg_in<hstring> type, abi_arg_in<hstring> keySystem, Windows::Media::Protection::ProtectionCapabilityResult * value) noexcept override
+    HRESULT __stdcall abi_IsTypeSupported(impl::abi_arg_in<hstring> type, impl::abi_arg_in<hstring> keySystem, Windows::Media::Protection::ProtectionCapabilityResult * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsTypeSupported(*reinterpret_cast<const hstring *>(&type), *reinterpret_cast<const hstring *>(&keySystem)));
+            *value = detach_abi(this->shim().IsTypeSupported(*reinterpret_cast<const hstring *>(&type), *reinterpret_cast<const hstring *>(&keySystem)));
             return S_OK;
         }
         catch (...)
@@ -391,12 +391,12 @@ struct produce<D, Windows::Media::Protection::IProtectionCapabilities> : produce
 template <typename D>
 struct produce<D, Windows::Media::Protection::IRevocationAndRenewalInformation> : produce_base<D, Windows::Media::Protection::IRevocationAndRenewalInformation>
 {
-    HRESULT __stdcall get_Items(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem>> items) noexcept override
+    HRESULT __stdcall get_Items(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem>> items) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *items = detach(this->shim().Items());
+            *items = detach_abi(this->shim().Items());
             return S_OK;
         }
         catch (...)
@@ -415,7 +415,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *reasons = detach(this->shim().Reasons());
+            *reasons = detach_abi(this->shim().Reasons());
             return S_OK;
         }
         catch (...)
@@ -424,27 +424,12 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
         }
     }
 
-    HRESULT __stdcall get_HeaderHash(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_HeaderHash(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HeaderHash());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_PublicKeyHash(abi_arg_out<hstring> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PublicKeyHash());
+            *value = detach_abi(this->shim().HeaderHash());
             return S_OK;
         }
         catch (...)
@@ -454,12 +439,27 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
         }
     }
 
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> name) noexcept override
+    HRESULT __stdcall get_PublicKeyHash(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *name = detach(this->shim().Name());
+            *value = detach_abi(this->shim().PublicKeyHash());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> name) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *name = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -469,12 +469,12 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
         }
     }
 
-    HRESULT __stdcall get_RenewalId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_RenewalId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RenewalId());
+            *value = detach_abi(this->shim().RenewalId());
             return S_OK;
         }
         catch (...)
@@ -488,12 +488,12 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
 template <typename D>
 struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs> : produce_base<D, Windows::Media::Protection::IServiceRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(abi_arg_out<Windows::Media::Protection::IMediaProtectionServiceRequest> value) noexcept override
+    HRESULT __stdcall get_Request(impl::abi_arg_out<Windows::Media::Protection::IMediaProtectionServiceRequest> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Request());
+            *value = detach_abi(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -503,12 +503,12 @@ struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs> : prod
         }
     }
 
-    HRESULT __stdcall get_Completion(abi_arg_out<Windows::Media::Protection::IMediaProtectionServiceCompletion> value) noexcept override
+    HRESULT __stdcall get_Completion(impl::abi_arg_out<Windows::Media::Protection::IMediaProtectionServiceCompletion> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Completion());
+            *value = detach_abi(this->shim().Completion());
             return S_OK;
         }
         catch (...)
@@ -522,12 +522,12 @@ struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs> : prod
 template <typename D>
 struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs2> : produce_base<D, Windows::Media::Protection::IServiceRequestedEventArgs2>
 {
-    HRESULT __stdcall get_MediaPlaybackItem(abi_arg_out<Windows::Media::Playback::IMediaPlaybackItem> value) noexcept override
+    HRESULT __stdcall get_MediaPlaybackItem(impl::abi_arg_out<Windows::Media::Playback::IMediaPlaybackItem> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MediaPlaybackItem());
+            *value = detach_abi(this->shim().MediaPlaybackItem());
             return S_OK;
         }
         catch (...)
@@ -545,7 +545,7 @@ namespace Windows::Media::Protection {
 template <typename D> event_token impl_IMediaProtectionManager<D>::ServiceRequested(const Windows::Media::Protection::ServiceRequestedEventHandler & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IMediaProtectionManager)->add_ServiceRequested(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->add_ServiceRequested(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -562,7 +562,7 @@ template <typename D> void impl_IMediaProtectionManager<D>::ServiceRequested(eve
 template <typename D> event_token impl_IMediaProtectionManager<D>::RebootNeeded(const Windows::Media::Protection::RebootNeededEventHandler & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IMediaProtectionManager)->add_RebootNeeded(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->add_RebootNeeded(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -579,7 +579,7 @@ template <typename D> void impl_IMediaProtectionManager<D>::RebootNeeded(event_t
 template <typename D> event_token impl_IMediaProtectionManager<D>::ComponentLoadFailed(const Windows::Media::Protection::ComponentLoadFailedEventHandler & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IMediaProtectionManager)->add_ComponentLoadFailed(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->add_ComponentLoadFailed(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -596,7 +596,7 @@ template <typename D> void impl_IMediaProtectionManager<D>::ComponentLoadFailed(
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IMediaProtectionManager<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(WINRT_SHIM(IMediaProtectionManager)->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->get_Properties(put_abi(value)));
     return value;
 }
 
@@ -608,14 +608,14 @@ template <typename D> void impl_IMediaProtectionServiceCompletion<D>::Complete(b
 template <typename D> Windows::Media::Protection::IMediaProtectionServiceRequest impl_IServiceRequestedEventArgs<D>::Request() const
 {
     Windows::Media::Protection::IMediaProtectionServiceRequest value;
-    check_hresult(WINRT_SHIM(IServiceRequestedEventArgs)->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IServiceRequestedEventArgs)->get_Request(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Protection::MediaProtectionServiceCompletion impl_IServiceRequestedEventArgs<D>::Completion() const
 {
     Windows::Media::Protection::MediaProtectionServiceCompletion value { nullptr };
-    check_hresult(WINRT_SHIM(IServiceRequestedEventArgs)->get_Completion(put(value)));
+    check_hresult(WINRT_SHIM(IServiceRequestedEventArgs)->get_Completion(put_abi(value)));
     return value;
 }
 
@@ -636,28 +636,28 @@ template <typename D> GUID impl_IMediaProtectionServiceRequest<D>::Type() const
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IServiceRequestedEventArgs2<D>::MediaPlaybackItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(WINRT_SHIM(IServiceRequestedEventArgs2)->get_MediaPlaybackItem(put(value)));
+    check_hresult(WINRT_SHIM(IServiceRequestedEventArgs2)->get_MediaPlaybackItem(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Protection::RevocationAndRenewalInformation impl_IComponentLoadFailedEventArgs<D>::Information() const
 {
     Windows::Media::Protection::RevocationAndRenewalInformation value { nullptr };
-    check_hresult(WINRT_SHIM(IComponentLoadFailedEventArgs)->get_Information(put(value)));
+    check_hresult(WINRT_SHIM(IComponentLoadFailedEventArgs)->get_Information(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Protection::MediaProtectionServiceCompletion impl_IComponentLoadFailedEventArgs<D>::Completion() const
 {
     Windows::Media::Protection::MediaProtectionServiceCompletion value { nullptr };
-    check_hresult(WINRT_SHIM(IComponentLoadFailedEventArgs)->get_Completion(put(value)));
+    check_hresult(WINRT_SHIM(IComponentLoadFailedEventArgs)->get_Completion(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem> impl_IRevocationAndRenewalInformation<D>::Items() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem> items;
-    check_hresult(WINRT_SHIM(IRevocationAndRenewalInformation)->get_Items(put(items)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalInformation)->get_Items(put_abi(items)));
     return items;
 }
 
@@ -671,49 +671,49 @@ template <typename D> Windows::Media::Protection::RevocationAndRenewalReasons im
 template <typename D> hstring impl_IRevocationAndRenewalItem<D>::HeaderHash() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_HeaderHash(put(value)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_HeaderHash(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRevocationAndRenewalItem<D>::PublicKeyHash() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_PublicKeyHash(put(value)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_PublicKeyHash(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRevocationAndRenewalItem<D>::Name() const
 {
     hstring name;
-    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_Name(put(name)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_Name(put_abi(name)));
     return name;
 }
 
 template <typename D> hstring impl_IRevocationAndRenewalItem<D>::RenewalId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_RenewalId(put(value)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_RenewalId(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Protection::MediaProtectionPMPServer impl_IMediaProtectionPMPServerFactory<D>::CreatePMPServer(const Windows::Foundation::Collections::IPropertySet & pProperties) const
 {
     Windows::Media::Protection::MediaProtectionPMPServer ppObject { nullptr };
-    check_hresult(WINRT_SHIM(IMediaProtectionPMPServerFactory)->abi_CreatePMPServer(get(pProperties), put(ppObject)));
+    check_hresult(WINRT_SHIM(IMediaProtectionPMPServerFactory)->abi_CreatePMPServer(get_abi(pProperties), put_abi(ppObject)));
     return ppObject;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IMediaProtectionPMPServer<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet ppProperties;
-    check_hresult(WINRT_SHIM(IMediaProtectionPMPServer)->get_Properties(put(ppProperties)));
+    check_hresult(WINRT_SHIM(IMediaProtectionPMPServer)->get_Properties(put_abi(ppProperties)));
     return ppProperties;
 }
 
 template <typename D> Windows::Media::Protection::ProtectionCapabilityResult impl_IProtectionCapabilities<D>::IsTypeSupported(hstring_view type, hstring_view keySystem) const
 {
     Windows::Media::Protection::ProtectionCapabilityResult value {};
-    check_hresult(WINRT_SHIM(IProtectionCapabilities)->abi_IsTypeSupported(get(type), get(keySystem), &value));
+    check_hresult(WINRT_SHIM(IProtectionCapabilities)->abi_IsTypeSupported(get_abi(type), get_abi(keySystem), &value));
     return value;
 }
 
@@ -727,21 +727,21 @@ template <typename D> bool impl_IHdcpSession<D>::IsEffectiveProtectionAtLeast(Wi
 template <typename D> Windows::Foundation::IReference<winrt::Windows::Media::Protection::HdcpProtection> impl_IHdcpSession<D>::GetEffectiveProtection() const
 {
     Windows::Foundation::IReference<winrt::Windows::Media::Protection::HdcpProtection> value;
-    check_hresult(WINRT_SHIM(IHdcpSession)->abi_GetEffectiveProtection(put(value)));
+    check_hresult(WINRT_SHIM(IHdcpSession)->abi_GetEffectiveProtection(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Protection::HdcpSetProtectionResult> impl_IHdcpSession<D>::SetDesiredMinProtectionAsync(Windows::Media::Protection::HdcpProtection protection) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Protection::HdcpSetProtectionResult> value;
-    check_hresult(WINRT_SHIM(IHdcpSession)->abi_SetDesiredMinProtectionAsync(protection, put(value)));
+    check_hresult(WINRT_SHIM(IHdcpSession)->abi_SetDesiredMinProtectionAsync(protection, put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IHdcpSession<D>::ProtectionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IHdcpSession)->add_ProtectionChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IHdcpSession)->add_ProtectionChanged(get_abi(handler), &token));
     return token;
 }
 

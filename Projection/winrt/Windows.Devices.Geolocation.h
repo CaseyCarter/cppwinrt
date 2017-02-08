@@ -15,12 +15,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D, Windows::Devices::Geolocation::ICivicAddress>
 {
-    HRESULT __stdcall get_Country(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Country(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Country());
+            *value = detach_abi(this->shim().Country());
             return S_OK;
         }
         catch (...)
@@ -30,12 +30,12 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_State(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_State(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().State());
+            *value = detach_abi(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -45,12 +45,12 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_City(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_City(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().City());
+            *value = detach_abi(this->shim().City());
             return S_OK;
         }
         catch (...)
@@ -60,12 +60,12 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_PostalCode(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PostalCode(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PostalCode());
+            *value = detach_abi(this->shim().PostalCode());
             return S_OK;
         }
         catch (...)
@@ -75,12 +75,12 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_Timestamp(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall get_Timestamp(impl::abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Timestamp());
+            *value = detach_abi(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -93,12 +93,12 @@ struct produce<D, Windows::Devices::Geolocation::ICivicAddress> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base<D, Windows::Devices::Geolocation::IGeoboundingBox>
 {
-    HRESULT __stdcall get_NorthwestCorner(abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
+    HRESULT __stdcall get_NorthwestCorner(impl::abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NorthwestCorner());
+            *value = detach_abi(this->shim().NorthwestCorner());
             return S_OK;
         }
         catch (...)
@@ -107,12 +107,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
         }
     }
 
-    HRESULT __stdcall get_SoutheastCorner(abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
+    HRESULT __stdcall get_SoutheastCorner(impl::abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SoutheastCorner());
+            *value = detach_abi(this->shim().SoutheastCorner());
             return S_OK;
         }
         catch (...)
@@ -121,12 +121,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
         }
     }
 
-    HRESULT __stdcall get_Center(abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
+    HRESULT __stdcall get_Center(impl::abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Center());
+            *value = detach_abi(this->shim().Center());
             return S_OK;
         }
         catch (...)
@@ -140,7 +140,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinAltitude());
+            *value = detach_abi(this->shim().MinAltitude());
             return S_OK;
         }
         catch (...)
@@ -154,7 +154,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxAltitude());
+            *value = detach_abi(this->shim().MaxAltitude());
             return S_OK;
         }
         catch (...)
@@ -167,12 +167,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBox> : produce_base
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxFactory> : produce_base<D, Windows::Devices::Geolocation::IGeoboundingBoxFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> northwestCorner, abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> southeastCorner, abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> northwestCorner, impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> southeastCorner, impl::abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner)));
+            *value = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner)));
             return S_OK;
         }
         catch (...)
@@ -182,12 +182,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxFactory> : produ
         }
     }
 
-    HRESULT __stdcall abi_CreateWithAltitudeReference(abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> northwestCorner, abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
+    HRESULT __stdcall abi_CreateWithAltitudeReference(impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> northwestCorner, impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, impl::abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateWithAltitudeReference(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner), altitudeReferenceSystem));
+            *value = detach_abi(this->shim().CreateWithAltitudeReference(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner), altitudeReferenceSystem));
             return S_OK;
         }
         catch (...)
@@ -197,12 +197,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxFactory> : produ
         }
     }
 
-    HRESULT __stdcall abi_CreateWithAltitudeReferenceAndSpatialReference(abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> northwestCorner, abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
+    HRESULT __stdcall abi_CreateWithAltitudeReferenceAndSpatialReference(impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> northwestCorner, impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, impl::abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateWithAltitudeReferenceAndSpatialReference(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner), altitudeReferenceSystem, spatialReferenceId));
+            *value = detach_abi(this->shim().CreateWithAltitudeReferenceAndSpatialReference(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&northwestCorner), *reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&southeastCorner), altitudeReferenceSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -216,12 +216,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxFactory> : produ
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxStatics> : produce_base<D, Windows::Devices::Geolocation::IGeoboundingBoxStatics>
 {
-    HRESULT __stdcall abi_TryCompute(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
+    HRESULT __stdcall abi_TryCompute(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, impl::abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions)));
+            *value = detach_abi(this->shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions)));
             return S_OK;
         }
         catch (...)
@@ -231,12 +231,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxStatics> : produ
         }
     }
 
-    HRESULT __stdcall abi_TryComputeWithAltitudeReference(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
+    HRESULT __stdcall abi_TryComputeWithAltitudeReference(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, impl::abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeRefSystem));
+            *value = detach_abi(this->shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeRefSystem));
             return S_OK;
         }
         catch (...)
@@ -246,12 +246,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxStatics> : produ
         }
     }
 
-    HRESULT __stdcall abi_TryComputeWithAltitudeReferenceAndSpatialReference(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId, abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
+    HRESULT __stdcall abi_TryComputeWithAltitudeReferenceAndSpatialReference(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId, impl::abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeRefSystem, spatialReferenceId));
+            *value = detach_abi(this->shim().TryCompute(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeRefSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -265,12 +265,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoboundingBoxStatics> : produ
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeocircle> : produce_base<D, Windows::Devices::Geolocation::IGeocircle>
 {
-    HRESULT __stdcall get_Center(abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
+    HRESULT __stdcall get_Center(impl::abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Center());
+            *value = detach_abi(this->shim().Center());
             return S_OK;
         }
         catch (...)
@@ -284,7 +284,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocircle> : produce_base<D, W
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Radius());
+            *value = detach_abi(this->shim().Radius());
             return S_OK;
         }
         catch (...)
@@ -297,12 +297,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocircle> : produce_base<D, W
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeocircleFactory> : produce_base<D, Windows::Devices::Geolocation::IGeocircleFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, double radius, abi_arg_out<Windows::Devices::Geolocation::IGeocircle> value) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, double radius, impl::abi_arg_out<Windows::Devices::Geolocation::IGeocircle> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius));
+            *value = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius));
             return S_OK;
         }
         catch (...)
@@ -312,12 +312,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocircleFactory> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_CreateWithAltitudeReferenceSystem(abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, abi_arg_out<Windows::Devices::Geolocation::IGeocircle> value) noexcept override
+    HRESULT __stdcall abi_CreateWithAltitudeReferenceSystem(impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, impl::abi_arg_out<Windows::Devices::Geolocation::IGeocircle> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateWithAltitudeReferenceSystem(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius, altitudeReferenceSystem));
+            *value = detach_abi(this->shim().CreateWithAltitudeReferenceSystem(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius, altitudeReferenceSystem));
             return S_OK;
         }
         catch (...)
@@ -327,12 +327,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocircleFactory> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, abi_arg_out<Windows::Devices::Geolocation::IGeocircle> value) noexcept override
+    HRESULT __stdcall abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, impl::abi_arg_out<Windows::Devices::Geolocation::IGeocircle> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius, altitudeReferenceSystem, spatialReferenceId));
+            *value = detach_abi(this->shim().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), radius, altitudeReferenceSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -351,7 +351,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Latitude());
+            *value = detach_abi(this->shim().Latitude());
             return S_OK;
         }
         catch (...)
@@ -365,7 +365,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Longitude());
+            *value = detach_abi(this->shim().Longitude());
             return S_OK;
         }
         catch (...)
@@ -374,12 +374,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Altitude(abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
+    HRESULT __stdcall get_Altitude(impl::abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Altitude());
+            *value = detach_abi(this->shim().Altitude());
             return S_OK;
         }
         catch (...)
@@ -394,7 +394,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Accuracy());
+            *value = detach_abi(this->shim().Accuracy());
             return S_OK;
         }
         catch (...)
@@ -403,27 +403,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_AltitudeAccuracy(abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
+    HRESULT __stdcall get_AltitudeAccuracy(impl::abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AltitudeAccuracy());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_Heading(abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Heading());
+            *value = detach_abi(this->shim().AltitudeAccuracy());
             return S_OK;
         }
         catch (...)
@@ -433,12 +418,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Speed(abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
+    HRESULT __stdcall get_Heading(impl::abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Speed());
+            *value = detach_abi(this->shim().Heading());
             return S_OK;
         }
         catch (...)
@@ -448,12 +433,27 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Timestamp(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall get_Speed(impl::abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Timestamp());
+            *value = detach_abi(this->shim().Speed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Timestamp(impl::abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -466,12 +466,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinate> : produce_base<
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeocoordinateSatelliteData> : produce_base<D, Windows::Devices::Geolocation::IGeocoordinateSatelliteData>
 {
-    HRESULT __stdcall get_PositionDilutionOfPrecision(abi_arg_out<Windows::Foundation::IReference<double>> ppValue) noexcept override
+    HRESULT __stdcall get_PositionDilutionOfPrecision(impl::abi_arg_out<Windows::Foundation::IReference<double>> ppValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppValue = detach(this->shim().PositionDilutionOfPrecision());
+            *ppValue = detach_abi(this->shim().PositionDilutionOfPrecision());
             return S_OK;
         }
         catch (...)
@@ -481,12 +481,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateSatelliteData> : 
         }
     }
 
-    HRESULT __stdcall get_HorizontalDilutionOfPrecision(abi_arg_out<Windows::Foundation::IReference<double>> ppValue) noexcept override
+    HRESULT __stdcall get_HorizontalDilutionOfPrecision(impl::abi_arg_out<Windows::Foundation::IReference<double>> ppValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppValue = detach(this->shim().HorizontalDilutionOfPrecision());
+            *ppValue = detach_abi(this->shim().HorizontalDilutionOfPrecision());
             return S_OK;
         }
         catch (...)
@@ -496,12 +496,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateSatelliteData> : 
         }
     }
 
-    HRESULT __stdcall get_VerticalDilutionOfPrecision(abi_arg_out<Windows::Foundation::IReference<double>> ppValue) noexcept override
+    HRESULT __stdcall get_VerticalDilutionOfPrecision(impl::abi_arg_out<Windows::Foundation::IReference<double>> ppValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppValue = detach(this->shim().VerticalDilutionOfPrecision());
+            *ppValue = detach_abi(this->shim().VerticalDilutionOfPrecision());
             return S_OK;
         }
         catch (...)
@@ -515,12 +515,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateSatelliteData> : 
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeocoordinateWithPoint> : produce_base<D, Windows::Devices::Geolocation::IGeocoordinateWithPoint>
 {
-    HRESULT __stdcall get_Point(abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
+    HRESULT __stdcall get_Point(impl::abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Point());
+            *value = detach_abi(this->shim().Point());
             return S_OK;
         }
         catch (...)
@@ -539,7 +539,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateWithPositionData>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pValue = detach(this->shim().PositionSource());
+            *pValue = detach_abi(this->shim().PositionSource());
             return S_OK;
         }
         catch (...)
@@ -548,12 +548,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateWithPositionData>
         }
     }
 
-    HRESULT __stdcall get_SatelliteData(abi_arg_out<Windows::Devices::Geolocation::IGeocoordinateSatelliteData> ppValue) noexcept override
+    HRESULT __stdcall get_SatelliteData(impl::abi_arg_out<Windows::Devices::Geolocation::IGeocoordinateSatelliteData> ppValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppValue = detach(this->shim().SatelliteData());
+            *ppValue = detach_abi(this->shim().SatelliteData());
             return S_OK;
         }
         catch (...)
@@ -567,12 +567,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeocoordinateWithPositionData>
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeocoordinateWithPositionSourceTimestamp> : produce_base<D, Windows::Devices::Geolocation::IGeocoordinateWithPositionSourceTimestamp>
 {
-    HRESULT __stdcall get_PositionSourceTimestamp(abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
+    HRESULT __stdcall get_PositionSourceTimestamp(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PositionSourceTimestamp());
+            *value = detach_abi(this->shim().PositionSourceTimestamp());
             return S_OK;
         }
         catch (...)
@@ -591,7 +591,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DesiredAccuracy());
+            *value = detach_abi(this->shim().DesiredAccuracy());
             return S_OK;
         }
         catch (...)
@@ -619,7 +619,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MovementThreshold());
+            *value = detach_abi(this->shim().MovementThreshold());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReportInterval());
+            *value = detach_abi(this->shim().ReportInterval());
             return S_OK;
         }
         catch (...)
@@ -675,7 +675,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LocationStatus());
+            *value = detach_abi(this->shim().LocationStatus());
             return S_OK;
         }
         catch (...)
@@ -684,27 +684,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_GetGeopositionAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition>> value) noexcept override
+    HRESULT __stdcall abi_GetGeopositionAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetGeopositionAsync());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetGeopositionAsyncWithAgeAndTimeout(abi_arg_in<Windows::Foundation::TimeSpan> maximumAge, abi_arg_in<Windows::Foundation::TimeSpan> timeout, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition>> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetGeopositionAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maximumAge), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
+            *value = detach_abi(this->shim().GetGeopositionAsync());
             return S_OK;
         }
         catch (...)
@@ -714,12 +699,27 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_PositionChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall abi_GetGeopositionAsyncWithAgeAndTimeout(impl::abi_arg_in<Windows::Foundation::TimeSpan> maximumAge, impl::abi_arg_in<Windows::Foundation::TimeSpan> timeout, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().PositionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs> *>(&handler)));
+            *value = detach_abi(this->shim().GetGeopositionAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maximumAge), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_PositionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().PositionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -742,12 +742,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_StatusChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_StatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -792,12 +792,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocator2> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics> : produce_base<D, Windows::Devices::Geolocation::IGeolocatorStatics>
 {
-    HRESULT __stdcall abi_RequestAccessAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus>> result) noexcept override
+    HRESULT __stdcall abi_RequestAccessAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestAccessAsync());
+            *result = detach_abi(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -807,12 +807,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetGeopositionHistoryAsync(abi_arg_in<Windows::Foundation::DateTime> startTime, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>>> result) noexcept override
+    HRESULT __stdcall abi_GetGeopositionHistoryAsync(impl::abi_arg_in<Windows::Foundation::DateTime> startTime, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetGeopositionHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime)));
+            *result = detach_abi(this->shim().GetGeopositionHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime)));
             return S_OK;
         }
         catch (...)
@@ -822,12 +822,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetGeopositionHistoryWithDurationAsync(abi_arg_in<Windows::Foundation::DateTime> startTime, abi_arg_in<Windows::Foundation::TimeSpan> duration, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>>> result) noexcept override
+    HRESULT __stdcall abi_GetGeopositionHistoryWithDurationAsync(impl::abi_arg_in<Windows::Foundation::DateTime> startTime, impl::abi_arg_in<Windows::Foundation::TimeSpan> duration, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetGeopositionHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
+            *result = detach_abi(this->shim().GetGeopositionHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
             return S_OK;
         }
         catch (...)
@@ -846,7 +846,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics2> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsDefaultGeopositionRecommended());
+            *value = detach_abi(this->shim().IsDefaultGeopositionRecommended());
             return S_OK;
         }
         catch (...)
@@ -855,7 +855,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics2> : produce_
         }
     }
 
-    HRESULT __stdcall put_DefaultGeoposition(abi_arg_in<Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition>> value) noexcept override
+    HRESULT __stdcall put_DefaultGeoposition(impl::abi_arg_in<Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition>> value) noexcept override
     {
         try
         {
@@ -869,12 +869,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics2> : produce_
         }
     }
 
-    HRESULT __stdcall get_DefaultGeoposition(abi_arg_out<Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition>> value) noexcept override
+    HRESULT __stdcall get_DefaultGeoposition(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DefaultGeoposition());
+            *value = detach_abi(this->shim().DefaultGeoposition());
             return S_OK;
         }
         catch (...)
@@ -888,12 +888,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorStatics2> : produce_
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy> : produce_base<D, Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy>
 {
-    HRESULT __stdcall get_DesiredAccuracyInMeters(abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_DesiredAccuracyInMeters(impl::abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DesiredAccuracyInMeters());
+            *value = detach_abi(this->shim().DesiredAccuracyInMeters());
             return S_OK;
         }
         catch (...)
@@ -903,7 +903,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy> 
         }
     }
 
-    HRESULT __stdcall put_DesiredAccuracyInMeters(abi_arg_in<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    HRESULT __stdcall put_DesiredAccuracyInMeters(impl::abi_arg_in<Windows::Foundation::IReference<uint32_t>> value) noexcept override
     {
         try
         {
@@ -921,12 +921,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy> 
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeopath> : produce_base<D, Windows::Devices::Geolocation::IGeopath>
 {
-    HRESULT __stdcall get_Positions(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::BasicGeoposition>> value) noexcept override
+    HRESULT __stdcall get_Positions(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::BasicGeoposition>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Positions());
+            *value = detach_abi(this->shim().Positions());
             return S_OK;
         }
         catch (...)
@@ -940,12 +940,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeopath> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeopathFactory> : produce_base<D, Windows::Devices::Geolocation::IGeopathFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, abi_arg_out<Windows::Devices::Geolocation::IGeopath> value) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, impl::abi_arg_out<Windows::Devices::Geolocation::IGeopath> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions)));
+            *value = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions)));
             return S_OK;
         }
         catch (...)
@@ -955,12 +955,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeopathFactory> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_CreateWithAltitudeReference(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, abi_arg_out<Windows::Devices::Geolocation::IGeopath> value) noexcept override
+    HRESULT __stdcall abi_CreateWithAltitudeReference(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, impl::abi_arg_out<Windows::Devices::Geolocation::IGeopath> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateWithAltitudeReference(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeReferenceSystem));
+            *value = detach_abi(this->shim().CreateWithAltitudeReference(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeReferenceSystem));
             return S_OK;
         }
         catch (...)
@@ -970,12 +970,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeopathFactory> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_CreateWithAltitudeReferenceAndSpatialReference(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, abi_arg_out<Windows::Devices::Geolocation::IGeopath> value) noexcept override
+    HRESULT __stdcall abi_CreateWithAltitudeReferenceAndSpatialReference(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition>> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, impl::abi_arg_out<Windows::Devices::Geolocation::IGeopath> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateWithAltitudeReferenceAndSpatialReference(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeReferenceSystem, spatialReferenceId));
+            *value = detach_abi(this->shim().CreateWithAltitudeReferenceAndSpatialReference(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> *>(&positions), altitudeReferenceSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -989,12 +989,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeopathFactory> : produce_base
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeopoint> : produce_base<D, Windows::Devices::Geolocation::IGeopoint>
 {
-    HRESULT __stdcall get_Position(abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Devices::Geolocation::BasicGeoposition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Position());
+            *value = detach_abi(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1007,12 +1007,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeopoint> : produce_base<D, Wi
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeopointFactory> : produce_base<D, Windows::Devices::Geolocation::IGeopointFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, impl::abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position)));
+            *value = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position)));
             return S_OK;
         }
         catch (...)
@@ -1022,12 +1022,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeopointFactory> : produce_bas
         }
     }
 
-    HRESULT __stdcall abi_CreateWithAltitudeReferenceSystem(abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
+    HRESULT __stdcall abi_CreateWithAltitudeReferenceSystem(impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, impl::abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateWithAltitudeReferenceSystem(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), altitudeReferenceSystem));
+            *value = detach_abi(this->shim().CreateWithAltitudeReferenceSystem(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), altitudeReferenceSystem));
             return S_OK;
         }
         catch (...)
@@ -1037,12 +1037,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeopointFactory> : produce_bas
         }
     }
 
-    HRESULT __stdcall abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
+    HRESULT __stdcall abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(impl::abi_arg_in<Windows::Devices::Geolocation::BasicGeoposition> position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, impl::abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), altitudeReferenceSystem, spatialReferenceId));
+            *value = detach_abi(this->shim().CreateWithAltitudeReferenceSystemAndSpatialReferenceId(*reinterpret_cast<const Windows::Devices::Geolocation::BasicGeoposition *>(&position), altitudeReferenceSystem, spatialReferenceId));
             return S_OK;
         }
         catch (...)
@@ -1056,12 +1056,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeopointFactory> : produce_bas
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeoposition> : produce_base<D, Windows::Devices::Geolocation::IGeoposition>
 {
-    HRESULT __stdcall get_Coordinate(abi_arg_out<Windows::Devices::Geolocation::IGeocoordinate> value) noexcept override
+    HRESULT __stdcall get_Coordinate(impl::abi_arg_out<Windows::Devices::Geolocation::IGeocoordinate> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Coordinate());
+            *value = detach_abi(this->shim().Coordinate());
             return S_OK;
         }
         catch (...)
@@ -1071,12 +1071,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoposition> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_CivicAddress(abi_arg_out<Windows::Devices::Geolocation::ICivicAddress> value) noexcept override
+    HRESULT __stdcall get_CivicAddress(impl::abi_arg_out<Windows::Devices::Geolocation::ICivicAddress> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CivicAddress());
+            *value = detach_abi(this->shim().CivicAddress());
             return S_OK;
         }
         catch (...)
@@ -1090,12 +1090,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoposition> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IGeoposition2> : produce_base<D, Windows::Devices::Geolocation::IGeoposition2>
 {
-    HRESULT __stdcall get_VenueData(abi_arg_out<Windows::Devices::Geolocation::IVenueData> value) noexcept override
+    HRESULT __stdcall get_VenueData(impl::abi_arg_out<Windows::Devices::Geolocation::IVenueData> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VenueData());
+            *value = detach_abi(this->shim().VenueData());
             return S_OK;
         }
         catch (...)
@@ -1114,7 +1114,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoshape> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GeoshapeType());
+            *value = detach_abi(this->shim().GeoshapeType());
             return S_OK;
         }
         catch (...)
@@ -1128,7 +1128,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoshape> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SpatialReferenceId());
+            *value = detach_abi(this->shim().SpatialReferenceId());
             return S_OK;
         }
         catch (...)
@@ -1142,7 +1142,7 @@ struct produce<D, Windows::Devices::Geolocation::IGeoshape> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AltitudeReferenceSystem());
+            *value = detach_abi(this->shim().AltitudeReferenceSystem());
             return S_OK;
         }
         catch (...)
@@ -1155,12 +1155,12 @@ struct produce<D, Windows::Devices::Geolocation::IGeoshape> : produce_base<D, Wi
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IPositionChangedEventArgs> : produce_base<D, Windows::Devices::Geolocation::IPositionChangedEventArgs>
 {
-    HRESULT __stdcall get_Position(abi_arg_out<Windows::Devices::Geolocation::IGeoposition> value) noexcept override
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Devices::Geolocation::IGeoposition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Position());
+            *value = detach_abi(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1179,7 +1179,7 @@ struct produce<D, Windows::Devices::Geolocation::IStatusChangedEventArgs> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1192,12 +1192,12 @@ struct produce<D, Windows::Devices::Geolocation::IStatusChangedEventArgs> : prod
 template <typename D>
 struct produce<D, Windows::Devices::Geolocation::IVenueData> : produce_base<D, Windows::Devices::Geolocation::IVenueData>
 {
-    HRESULT __stdcall get_Id(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -1207,12 +1207,12 @@ struct produce<D, Windows::Devices::Geolocation::IVenueData> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall get_Level(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Level(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Level());
+            *value = detach_abi(this->shim().Level());
             return S_OK;
         }
         catch (...)
@@ -1251,77 +1251,77 @@ template <typename D> Windows::Devices::Geolocation::AltitudeReferenceSystem imp
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeopoint<D>::Position() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(WINRT_SHIM(IGeopoint)->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IGeopoint)->get_Position(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IGeopointFactory<D>::Create(const Windows::Devices::Geolocation::BasicGeoposition & position) const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(WINRT_SHIM(IGeopointFactory)->abi_Create(get(position), put(value)));
+    check_hresult(WINRT_SHIM(IGeopointFactory)->abi_Create(get_abi(position), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IGeopointFactory<D>::CreateWithAltitudeReferenceSystem(const Windows::Devices::Geolocation::BasicGeoposition & position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(WINRT_SHIM(IGeopointFactory)->abi_CreateWithAltitudeReferenceSystem(get(position), altitudeReferenceSystem, put(value)));
+    check_hresult(WINRT_SHIM(IGeopointFactory)->abi_CreateWithAltitudeReferenceSystem(get_abi(position), altitudeReferenceSystem, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IGeopointFactory<D>::CreateWithAltitudeReferenceSystemAndSpatialReferenceId(const Windows::Devices::Geolocation::BasicGeoposition & position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(WINRT_SHIM(IGeopointFactory)->abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(get(position), altitudeReferenceSystem, spatialReferenceId, put(value)));
+    check_hresult(WINRT_SHIM(IGeopointFactory)->abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(get_abi(position), altitudeReferenceSystem, spatialReferenceId, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::BasicGeoposition> impl_IGeopath<D>::Positions() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::BasicGeoposition> value;
-    check_hresult(WINRT_SHIM(IGeopath)->get_Positions(put(value)));
+    check_hresult(WINRT_SHIM(IGeopath)->get_Positions(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::Create(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(WINRT_SHIM(IGeopathFactory)->abi_Create(get(positions), put(value)));
+    check_hresult(WINRT_SHIM(IGeopathFactory)->abi_Create(get_abi(positions), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::CreateWithAltitudeReference(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(WINRT_SHIM(IGeopathFactory)->abi_CreateWithAltitudeReference(get(positions), altitudeReferenceSystem, put(value)));
+    check_hresult(WINRT_SHIM(IGeopathFactory)->abi_CreateWithAltitudeReference(get_abi(positions), altitudeReferenceSystem, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::CreateWithAltitudeReferenceAndSpatialReference(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(WINRT_SHIM(IGeopathFactory)->abi_CreateWithAltitudeReferenceAndSpatialReference(get(positions), altitudeReferenceSystem, spatialReferenceId, put(value)));
+    check_hresult(WINRT_SHIM(IGeopathFactory)->abi_CreateWithAltitudeReferenceAndSpatialReference(get_abi(positions), altitudeReferenceSystem, spatialReferenceId, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeoboundingBox<D>::NorthwestCorner() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(WINRT_SHIM(IGeoboundingBox)->get_NorthwestCorner(put(value)));
+    check_hresult(WINRT_SHIM(IGeoboundingBox)->get_NorthwestCorner(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeoboundingBox<D>::SoutheastCorner() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(WINRT_SHIM(IGeoboundingBox)->get_SoutheastCorner(put(value)));
+    check_hresult(WINRT_SHIM(IGeoboundingBox)->get_SoutheastCorner(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeoboundingBox<D>::Center() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(WINRT_SHIM(IGeoboundingBox)->get_Center(put(value)));
+    check_hresult(WINRT_SHIM(IGeoboundingBox)->get_Center(put_abi(value)));
     return value;
 }
 
@@ -1342,77 +1342,77 @@ template <typename D> double impl_IGeoboundingBox<D>::MaxAltitude() const
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxFactory<D>::Create(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(WINRT_SHIM(IGeoboundingBoxFactory)->abi_Create(get(northwestCorner), get(southeastCorner), put(value)));
+    check_hresult(WINRT_SHIM(IGeoboundingBoxFactory)->abi_Create(get_abi(northwestCorner), get_abi(southeastCorner), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxFactory<D>::CreateWithAltitudeReference(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(WINRT_SHIM(IGeoboundingBoxFactory)->abi_CreateWithAltitudeReference(get(northwestCorner), get(southeastCorner), altitudeReferenceSystem, put(value)));
+    check_hresult(WINRT_SHIM(IGeoboundingBoxFactory)->abi_CreateWithAltitudeReference(get_abi(northwestCorner), get_abi(southeastCorner), altitudeReferenceSystem, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxFactory<D>::CreateWithAltitudeReferenceAndSpatialReference(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(WINRT_SHIM(IGeoboundingBoxFactory)->abi_CreateWithAltitudeReferenceAndSpatialReference(get(northwestCorner), get(southeastCorner), altitudeReferenceSystem, spatialReferenceId, put(value)));
+    check_hresult(WINRT_SHIM(IGeoboundingBoxFactory)->abi_CreateWithAltitudeReferenceAndSpatialReference(get_abi(northwestCorner), get_abi(southeastCorner), altitudeReferenceSystem, spatialReferenceId, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(WINRT_SHIM(IGeoboundingBoxStatics)->abi_TryCompute(get(positions), put(value)));
+    check_hresult(WINRT_SHIM(IGeoboundingBoxStatics)->abi_TryCompute(get_abi(positions), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(WINRT_SHIM(IGeoboundingBoxStatics)->abi_TryComputeWithAltitudeReference(get(positions), altitudeRefSystem, put(value)));
+    check_hresult(WINRT_SHIM(IGeoboundingBoxStatics)->abi_TryComputeWithAltitudeReference(get_abi(positions), altitudeRefSystem, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(WINRT_SHIM(IGeoboundingBoxStatics)->abi_TryComputeWithAltitudeReferenceAndSpatialReference(get(positions), altitudeRefSystem, spatialReferenceId, put(value)));
+    check_hresult(WINRT_SHIM(IGeoboundingBoxStatics)->abi_TryComputeWithAltitudeReferenceAndSpatialReference(get_abi(positions), altitudeRefSystem, spatialReferenceId, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinateSatelliteData<D>::PositionDilutionOfPrecision() const
 {
     Windows::Foundation::IReference<double> ppValue;
-    check_hresult(WINRT_SHIM(IGeocoordinateSatelliteData)->get_PositionDilutionOfPrecision(put(ppValue)));
+    check_hresult(WINRT_SHIM(IGeocoordinateSatelliteData)->get_PositionDilutionOfPrecision(put_abi(ppValue)));
     return ppValue;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinateSatelliteData<D>::HorizontalDilutionOfPrecision() const
 {
     Windows::Foundation::IReference<double> ppValue;
-    check_hresult(WINRT_SHIM(IGeocoordinateSatelliteData)->get_HorizontalDilutionOfPrecision(put(ppValue)));
+    check_hresult(WINRT_SHIM(IGeocoordinateSatelliteData)->get_HorizontalDilutionOfPrecision(put_abi(ppValue)));
     return ppValue;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinateSatelliteData<D>::VerticalDilutionOfPrecision() const
 {
     Windows::Foundation::IReference<double> ppValue;
-    check_hresult(WINRT_SHIM(IGeocoordinateSatelliteData)->get_VerticalDilutionOfPrecision(put(ppValue)));
+    check_hresult(WINRT_SHIM(IGeocoordinateSatelliteData)->get_VerticalDilutionOfPrecision(put_abi(ppValue)));
     return ppValue;
 }
 
 template <typename D> hstring impl_IVenueData<D>::Id() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVenueData)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IVenueData)->get_Id(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVenueData<D>::Level() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IVenueData)->get_Level(put(value)));
+    check_hresult(WINRT_SHIM(IVenueData)->get_Level(put_abi(value)));
     return value;
 }
 
@@ -1433,7 +1433,7 @@ template <typename D> double impl_IGeocoordinate<D>::Longitude() const
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinate<D>::Altitude() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(WINRT_SHIM(IGeocoordinate)->get_Altitude(put(value)));
+    check_hresult(WINRT_SHIM(IGeocoordinate)->get_Altitude(put_abi(value)));
     return value;
 }
 
@@ -1447,28 +1447,28 @@ template <typename D> double impl_IGeocoordinate<D>::Accuracy() const
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinate<D>::AltitudeAccuracy() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(WINRT_SHIM(IGeocoordinate)->get_AltitudeAccuracy(put(value)));
+    check_hresult(WINRT_SHIM(IGeocoordinate)->get_AltitudeAccuracy(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinate<D>::Heading() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(WINRT_SHIM(IGeocoordinate)->get_Heading(put(value)));
+    check_hresult(WINRT_SHIM(IGeocoordinate)->get_Heading(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinate<D>::Speed() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(WINRT_SHIM(IGeocoordinate)->get_Speed(put(value)));
+    check_hresult(WINRT_SHIM(IGeocoordinate)->get_Speed(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IGeocoordinate<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(IGeocoordinate)->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IGeocoordinate)->get_Timestamp(put_abi(value)));
     return value;
 }
 
@@ -1482,84 +1482,84 @@ template <typename D> Windows::Devices::Geolocation::PositionSource impl_IGeocoo
 template <typename D> Windows::Devices::Geolocation::GeocoordinateSatelliteData impl_IGeocoordinateWithPositionData<D>::SatelliteData() const
 {
     Windows::Devices::Geolocation::GeocoordinateSatelliteData ppValue { nullptr };
-    check_hresult(WINRT_SHIM(IGeocoordinateWithPositionData)->get_SatelliteData(put(ppValue)));
+    check_hresult(WINRT_SHIM(IGeocoordinateWithPositionData)->get_SatelliteData(put_abi(ppValue)));
     return ppValue;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IGeocoordinateWithPoint<D>::Point() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(WINRT_SHIM(IGeocoordinateWithPoint)->get_Point(put(value)));
+    check_hresult(WINRT_SHIM(IGeocoordinateWithPoint)->get_Point(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IGeocoordinateWithPositionSourceTimestamp<D>::PositionSourceTimestamp() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(WINRT_SHIM(IGeocoordinateWithPositionSourceTimestamp)->get_PositionSourceTimestamp(put(value)));
+    check_hresult(WINRT_SHIM(IGeocoordinateWithPositionSourceTimestamp)->get_PositionSourceTimestamp(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geocoordinate impl_IGeoposition<D>::Coordinate() const
 {
     Windows::Devices::Geolocation::Geocoordinate value { nullptr };
-    check_hresult(WINRT_SHIM(IGeoposition)->get_Coordinate(put(value)));
+    check_hresult(WINRT_SHIM(IGeoposition)->get_Coordinate(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::CivicAddress impl_IGeoposition<D>::CivicAddress() const
 {
     Windows::Devices::Geolocation::CivicAddress value { nullptr };
-    check_hresult(WINRT_SHIM(IGeoposition)->get_CivicAddress(put(value)));
+    check_hresult(WINRT_SHIM(IGeoposition)->get_CivicAddress(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::VenueData impl_IGeoposition2<D>::VenueData() const
 {
     Windows::Devices::Geolocation::VenueData value { nullptr };
-    check_hresult(WINRT_SHIM(IGeoposition2)->get_VenueData(put(value)));
+    check_hresult(WINRT_SHIM(IGeoposition2)->get_VenueData(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICivicAddress<D>::Country() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICivicAddress)->get_Country(put(value)));
+    check_hresult(WINRT_SHIM(ICivicAddress)->get_Country(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICivicAddress<D>::State() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICivicAddress)->get_State(put(value)));
+    check_hresult(WINRT_SHIM(ICivicAddress)->get_State(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICivicAddress<D>::City() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICivicAddress)->get_City(put(value)));
+    check_hresult(WINRT_SHIM(ICivicAddress)->get_City(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICivicAddress<D>::PostalCode() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICivicAddress)->get_PostalCode(put(value)));
+    check_hresult(WINRT_SHIM(ICivicAddress)->get_PostalCode(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICivicAddress<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(ICivicAddress)->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(ICivicAddress)->get_Timestamp(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geoposition impl_IPositionChangedEventArgs<D>::Position() const
 {
     Windows::Devices::Geolocation::Geoposition value { nullptr };
-    check_hresult(WINRT_SHIM(IPositionChangedEventArgs)->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IPositionChangedEventArgs)->get_Position(put_abi(value)));
     return value;
 }
 
@@ -1616,21 +1616,21 @@ template <typename D> Windows::Devices::Geolocation::PositionStatus impl_IGeoloc
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> impl_IGeolocator<D>::GetGeopositionAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> value;
-    check_hresult(WINRT_SHIM(IGeolocator)->abi_GetGeopositionAsync(put(value)));
+    check_hresult(WINRT_SHIM(IGeolocator)->abi_GetGeopositionAsync(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> impl_IGeolocator<D>::GetGeopositionAsync(const Windows::Foundation::TimeSpan & maximumAge, const Windows::Foundation::TimeSpan & timeout) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> value;
-    check_hresult(WINRT_SHIM(IGeolocator)->abi_GetGeopositionAsyncWithAgeAndTimeout(get(maximumAge), get(timeout), put(value)));
+    check_hresult(WINRT_SHIM(IGeolocator)->abi_GetGeopositionAsyncWithAgeAndTimeout(get_abi(maximumAge), get_abi(timeout), put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IGeolocator<D>::PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IGeolocator)->add_PositionChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IGeolocator)->add_PositionChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -1647,7 +1647,7 @@ template <typename D> void impl_IGeolocator<D>::PositionChanged(event_token toke
 template <typename D> event_token impl_IGeolocator<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IGeolocator)->add_StatusChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IGeolocator)->add_StatusChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -1664,13 +1664,13 @@ template <typename D> void impl_IGeolocator<D>::StatusChanged(event_token token)
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IGeolocatorWithScalarAccuracy<D>::DesiredAccuracyInMeters() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(WINRT_SHIM(IGeolocatorWithScalarAccuracy)->get_DesiredAccuracyInMeters(put(value)));
+    check_hresult(WINRT_SHIM(IGeolocatorWithScalarAccuracy)->get_DesiredAccuracyInMeters(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IGeolocatorWithScalarAccuracy<D>::DesiredAccuracyInMeters(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(WINRT_SHIM(IGeolocatorWithScalarAccuracy)->put_DesiredAccuracyInMeters(get(value)));
+    check_hresult(WINRT_SHIM(IGeolocatorWithScalarAccuracy)->put_DesiredAccuracyInMeters(get_abi(value)));
 }
 
 template <typename D> void impl_IGeolocator2<D>::AllowFallbackToConsentlessPositions() const
@@ -1681,21 +1681,21 @@ template <typename D> void impl_IGeolocator2<D>::AllowFallbackToConsentlessPosit
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus> impl_IGeolocatorStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus> result;
-    check_hresult(WINRT_SHIM(IGeolocatorStatics)->abi_RequestAccessAsync(put(result)));
+    check_hresult(WINRT_SHIM(IGeolocatorStatics)->abi_RequestAccessAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> impl_IGeolocatorStatics<D>::GetGeopositionHistoryAsync(const Windows::Foundation::DateTime & startTime) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> result;
-    check_hresult(WINRT_SHIM(IGeolocatorStatics)->abi_GetGeopositionHistoryAsync(get(startTime), put(result)));
+    check_hresult(WINRT_SHIM(IGeolocatorStatics)->abi_GetGeopositionHistoryAsync(get_abi(startTime), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> impl_IGeolocatorStatics<D>::GetGeopositionHistoryAsync(const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> result;
-    check_hresult(WINRT_SHIM(IGeolocatorStatics)->abi_GetGeopositionHistoryWithDurationAsync(get(startTime), get(duration), put(result)));
+    check_hresult(WINRT_SHIM(IGeolocatorStatics)->abi_GetGeopositionHistoryWithDurationAsync(get_abi(startTime), get_abi(duration), put_abi(result)));
     return result;
 }
 
@@ -1708,20 +1708,20 @@ template <typename D> bool impl_IGeolocatorStatics2<D>::IsDefaultGeopositionReco
 
 template <typename D> void impl_IGeolocatorStatics2<D>::DefaultGeoposition(const Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> & value) const
 {
-    check_hresult(WINRT_SHIM(IGeolocatorStatics2)->put_DefaultGeoposition(get(value)));
+    check_hresult(WINRT_SHIM(IGeolocatorStatics2)->put_DefaultGeoposition(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> impl_IGeolocatorStatics2<D>::DefaultGeoposition() const
 {
     Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> value;
-    check_hresult(WINRT_SHIM(IGeolocatorStatics2)->get_DefaultGeoposition(put(value)));
+    check_hresult(WINRT_SHIM(IGeolocatorStatics2)->get_DefaultGeoposition(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeocircle<D>::Center() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(WINRT_SHIM(IGeocircle)->get_Center(put(value)));
+    check_hresult(WINRT_SHIM(IGeocircle)->get_Center(put_abi(value)));
     return value;
 }
 
@@ -1735,21 +1735,21 @@ template <typename D> double impl_IGeocircle<D>::Radius() const
 template <typename D> Windows::Devices::Geolocation::Geocircle impl_IGeocircleFactory<D>::Create(const Windows::Devices::Geolocation::BasicGeoposition & position, double radius) const
 {
     Windows::Devices::Geolocation::Geocircle value { nullptr };
-    check_hresult(WINRT_SHIM(IGeocircleFactory)->abi_Create(get(position), radius, put(value)));
+    check_hresult(WINRT_SHIM(IGeocircleFactory)->abi_Create(get_abi(position), radius, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geocircle impl_IGeocircleFactory<D>::CreateWithAltitudeReferenceSystem(const Windows::Devices::Geolocation::BasicGeoposition & position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
 {
     Windows::Devices::Geolocation::Geocircle value { nullptr };
-    check_hresult(WINRT_SHIM(IGeocircleFactory)->abi_CreateWithAltitudeReferenceSystem(get(position), radius, altitudeReferenceSystem, put(value)));
+    check_hresult(WINRT_SHIM(IGeocircleFactory)->abi_CreateWithAltitudeReferenceSystem(get_abi(position), radius, altitudeReferenceSystem, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geocircle impl_IGeocircleFactory<D>::CreateWithAltitudeReferenceSystemAndSpatialReferenceId(const Windows::Devices::Geolocation::BasicGeoposition & position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::Geocircle value { nullptr };
-    check_hresult(WINRT_SHIM(IGeocircleFactory)->abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(get(position), radius, altitudeReferenceSystem, spatialReferenceId, put(value)));
+    check_hresult(WINRT_SHIM(IGeocircleFactory)->abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(get_abi(position), radius, altitudeReferenceSystem, spatialReferenceId, put_abi(value)));
     return value;
 }
 

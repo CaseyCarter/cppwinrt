@@ -13,7 +13,7 @@ template <typename H> struct impl_DeviceArrivedEventHandler : implements<impl_De
 {
     impl_DeviceArrivedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_DeviceDepartedEventHandler : implements<impl_D
 {
     impl_DeviceDepartedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender) noexcept override
     {
         try
         {
@@ -49,7 +49,7 @@ template <typename H> struct impl_MessageReceivedHandler : implements<impl_Messa
 {
     impl_MessageReceivedHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender, abi_arg_in<Windows::Networking::Proximity::IProximityMessage> message) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender, impl::abi_arg_in<Windows::Networking::Proximity::IProximityMessage> message) noexcept override
     {
         try
         {
@@ -67,7 +67,7 @@ template <typename H> struct impl_MessageTransmittedHandler : implements<impl_Me
 {
     impl_MessageTransmittedHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender, int64_t messageId) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Networking::Proximity::IProximityDevice> sender, int64_t messageId) noexcept override
     {
         try
         {

@@ -4,7 +4,7 @@ inline hstring_view::hstring_view(const std::wstring & value) noexcept :
 {}
 
 inline hstring_view::hstring_view(const hstring & value) noexcept :
-    m_handle(get(value))
+    m_handle(get_abi(value))
 {}
 
 inline hstring_view::hstring_view(const wchar_t * const value) noexcept :

@@ -27,12 +27,12 @@ public:
         shim().as<INavigationTransitionInfoOverrides>().SetNavigationStateCore(navigationState);
     }
 
-    HRESULT __stdcall abi_GetNavigationStateCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetNavigationStateCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNavigationStateCore());
+            *returnValue = detach_abi(this->shim().GetNavigationStateCore());
             return S_OK;
         }
         catch (...)
@@ -42,7 +42,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_SetNavigationStateCore(abi_arg_in<hstring> navigationState) noexcept override
+    HRESULT __stdcall abi_SetNavigationStateCore(impl::abi_arg_in<hstring> navigationState) noexcept override
     {
         try
         {

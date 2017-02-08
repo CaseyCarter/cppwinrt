@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration>
 {
-    HRESULT __stdcall get_AccountName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AccountName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AccountName());
+            *value = detach_abi(this->shim().AccountName());
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_AccountName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_AccountName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -45,12 +45,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_DeviceAccountTypeId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceAccountTypeId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceAccountTypeId());
+            *value = detach_abi(this->shim().DeviceAccountTypeId());
             return S_OK;
         }
         catch (...)
@@ -60,7 +60,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_DeviceAccountTypeId(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_DeviceAccountTypeId(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -79,7 +79,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ServerType());
+            *value = detach_abi(this->shim().ServerType());
             return S_OK;
         }
         catch (...)
@@ -102,12 +102,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_EmailAddress(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_EmailAddress(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EmailAddress());
+            *value = detach_abi(this->shim().EmailAddress());
             return S_OK;
         }
         catch (...)
@@ -117,7 +117,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_EmailAddress(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_EmailAddress(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -131,12 +131,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_Domain(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Domain(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Domain());
+            *value = detach_abi(this->shim().Domain());
             return S_OK;
         }
         catch (...)
@@ -146,7 +146,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_Domain(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Domain(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -165,7 +165,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EmailSyncEnabled());
+            *value = detach_abi(this->shim().EmailSyncEnabled());
             return S_OK;
         }
         catch (...)
@@ -193,7 +193,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ContactsSyncEnabled());
+            *value = detach_abi(this->shim().ContactsSyncEnabled());
             return S_OK;
         }
         catch (...)
@@ -221,7 +221,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CalendarSyncEnabled());
+            *value = detach_abi(this->shim().CalendarSyncEnabled());
             return S_OK;
         }
         catch (...)
@@ -244,12 +244,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_IncomingServerAddress(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_IncomingServerAddress(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IncomingServerAddress());
+            *value = detach_abi(this->shim().IncomingServerAddress());
             return S_OK;
         }
         catch (...)
@@ -259,7 +259,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_IncomingServerAddress(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_IncomingServerAddress(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -278,7 +278,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IncomingServerPort());
+            *value = detach_abi(this->shim().IncomingServerPort());
             return S_OK;
         }
         catch (...)
@@ -306,7 +306,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IncomingServerRequiresSsl());
+            *value = detach_abi(this->shim().IncomingServerRequiresSsl());
             return S_OK;
         }
         catch (...)
@@ -329,12 +329,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_IncomingServerUsername(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_IncomingServerUsername(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IncomingServerUsername());
+            *value = detach_abi(this->shim().IncomingServerUsername());
             return S_OK;
         }
         catch (...)
@@ -344,7 +344,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_IncomingServerUsername(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_IncomingServerUsername(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -358,12 +358,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_OutgoingServerAddress(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_OutgoingServerAddress(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutgoingServerAddress());
+            *value = detach_abi(this->shim().OutgoingServerAddress());
             return S_OK;
         }
         catch (...)
@@ -373,7 +373,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_OutgoingServerAddress(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_OutgoingServerAddress(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -392,7 +392,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutgoingServerPort());
+            *value = detach_abi(this->shim().OutgoingServerPort());
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutgoingServerRequiresSsl());
+            *value = detach_abi(this->shim().OutgoingServerRequiresSsl());
             return S_OK;
         }
         catch (...)
@@ -443,12 +443,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_OutgoingServerUsername(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_OutgoingServerUsername(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutgoingServerUsername());
+            *value = detach_abi(this->shim().OutgoingServerUsername());
             return S_OK;
         }
         catch (...)
@@ -458,7 +458,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_OutgoingServerUsername(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_OutgoingServerUsername(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -476,12 +476,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration2> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration2>
 {
-    HRESULT __stdcall get_IncomingServerCredential(abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall get_IncomingServerCredential(impl::abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IncomingServerCredential());
+            *value = detach_abi(this->shim().IncomingServerCredential());
             return S_OK;
         }
         catch (...)
@@ -491,7 +491,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_IncomingServerCredential(abi_arg_in<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall put_IncomingServerCredential(impl::abi_arg_in<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
@@ -505,12 +505,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_OutgoingServerCredential(abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall get_OutgoingServerCredential(impl::abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutgoingServerCredential());
+            *value = detach_abi(this->shim().OutgoingServerCredential());
             return S_OK;
         }
         catch (...)
@@ -520,7 +520,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_OutgoingServerCredential(abi_arg_in<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall put_OutgoingServerCredential(impl::abi_arg_in<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
@@ -534,12 +534,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_OAuthRefreshToken(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_OAuthRefreshToken(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OAuthRefreshToken());
+            *value = detach_abi(this->shim().OAuthRefreshToken());
             return S_OK;
         }
         catch (...)
@@ -549,7 +549,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_OAuthRefreshToken(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_OAuthRefreshToken(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -568,7 +568,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsExternallyManaged());
+            *value = detach_abi(this->shim().IsExternallyManaged());
             return S_OK;
         }
         catch (...)
@@ -596,7 +596,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AccountIconId());
+            *value = detach_abi(this->shim().AccountIconId());
             return S_OK;
         }
         catch (...)
@@ -624,7 +624,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationType());
+            *value = detach_abi(this->shim().AuthenticationType());
             return S_OK;
         }
         catch (...)
@@ -652,7 +652,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsSsoAuthenticationSupported());
+            *value = detach_abi(this->shim().IsSsoAuthenticationSupported());
             return S_OK;
         }
         catch (...)
@@ -661,12 +661,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_SsoAccountId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SsoAccountId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SsoAccountId());
+            *value = detach_abi(this->shim().SsoAccountId());
             return S_OK;
         }
         catch (...)
@@ -676,7 +676,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_SsoAccountId(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_SsoAccountId(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -695,7 +695,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AlwaysDownloadFullMessage());
+            *value = detach_abi(this->shim().AlwaysDownloadFullMessage());
             return S_OK;
         }
         catch (...)
@@ -723,7 +723,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DoesPolicyAllowMailSync());
+            *value = detach_abi(this->shim().DoesPolicyAllowMailSync());
             return S_OK;
         }
         catch (...)
@@ -737,7 +737,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SyncScheduleKind());
+            *value = detach_abi(this->shim().SyncScheduleKind());
             return S_OK;
         }
         catch (...)
@@ -765,7 +765,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MailAgeFilter());
+            *value = detach_abi(this->shim().MailAgeFilter());
             return S_OK;
         }
         catch (...)
@@ -793,7 +793,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsClientAuthenticationCertificateRequired());
+            *value = detach_abi(this->shim().IsClientAuthenticationCertificateRequired());
             return S_OK;
         }
         catch (...)
@@ -821,7 +821,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AutoSelectAuthenticationCertificate());
+            *value = detach_abi(this->shim().AutoSelectAuthenticationCertificate());
             return S_OK;
         }
         catch (...)
@@ -844,12 +844,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_AuthenticationCertificateId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AuthenticationCertificateId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationCertificateId());
+            *value = detach_abi(this->shim().AuthenticationCertificateId());
             return S_OK;
         }
         catch (...)
@@ -859,7 +859,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_AuthenticationCertificateId(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_AuthenticationCertificateId(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -878,7 +878,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CardDavSyncScheduleKind());
+            *value = detach_abi(this->shim().CardDavSyncScheduleKind());
             return S_OK;
         }
         catch (...)
@@ -906,7 +906,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CalDavSyncScheduleKind());
+            *value = detach_abi(this->shim().CalDavSyncScheduleKind());
             return S_OK;
         }
         catch (...)
@@ -929,12 +929,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_CardDavServerUrl(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_CardDavServerUrl(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CardDavServerUrl());
+            *value = detach_abi(this->shim().CardDavServerUrl());
             return S_OK;
         }
         catch (...)
@@ -944,7 +944,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_CardDavServerUrl(abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall put_CardDavServerUrl(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
@@ -963,7 +963,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CardDavRequiresSsl());
+            *value = detach_abi(this->shim().CardDavRequiresSsl());
             return S_OK;
         }
         catch (...)
@@ -986,12 +986,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_CalDavServerUrl(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_CalDavServerUrl(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CalDavServerUrl());
+            *value = detach_abi(this->shim().CalDavServerUrl());
             return S_OK;
         }
         catch (...)
@@ -1001,7 +1001,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_CalDavServerUrl(abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall put_CalDavServerUrl(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
@@ -1020,7 +1020,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CalDavRequiresSsl());
+            *value = detach_abi(this->shim().CalDavRequiresSsl());
             return S_OK;
         }
         catch (...)
@@ -1048,7 +1048,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WasModifiedByUser());
+            *value = detach_abi(this->shim().WasModifiedByUser());
             return S_OK;
         }
         catch (...)
@@ -1076,7 +1076,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WasIncomingServerCertificateHashConfirmed());
+            *value = detach_abi(this->shim().WasIncomingServerCertificateHashConfirmed());
             return S_OK;
         }
         catch (...)
@@ -1099,12 +1099,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_IncomingServerCertificateHash(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_IncomingServerCertificateHash(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IncomingServerCertificateHash());
+            *value = detach_abi(this->shim().IncomingServerCertificateHash());
             return S_OK;
         }
         catch (...)
@@ -1114,7 +1114,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_IncomingServerCertificateHash(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_IncomingServerCertificateHash(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1133,7 +1133,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsOutgoingServerAuthenticationRequired());
+            *value = detach_abi(this->shim().IsOutgoingServerAuthenticationRequired());
             return S_OK;
         }
         catch (...)
@@ -1161,7 +1161,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsOutgoingServerAuthenticationEnabled());
+            *value = detach_abi(this->shim().IsOutgoingServerAuthenticationEnabled());
             return S_OK;
         }
         catch (...)
@@ -1189,7 +1189,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WasOutgoingServerCertificateHashConfirmed());
+            *value = detach_abi(this->shim().WasOutgoingServerCertificateHashConfirmed());
             return S_OK;
         }
         catch (...)
@@ -1212,12 +1212,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall get_OutgoingServerCertificateHash(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_OutgoingServerCertificateHash(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutgoingServerCertificateHash());
+            *value = detach_abi(this->shim().OutgoingServerCertificateHash());
             return S_OK;
         }
         catch (...)
@@ -1227,7 +1227,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         }
     }
 
-    HRESULT __stdcall put_OutgoingServerCertificateHash(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_OutgoingServerCertificateHash(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1246,7 +1246,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsSyncScheduleManagedBySystem());
+            *value = detach_abi(this->shim().IsSyncScheduleManagedBySystem());
             return S_OK;
         }
         catch (...)
@@ -1273,12 +1273,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDe
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics>
 {
-    HRESULT __stdcall abi_AddAndShowDeviceAccountsAsync(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration>> accounts, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>> result) noexcept override
+    HRESULT __stdcall abi_AddAndShowDeviceAccountsAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration>> accounts, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().AddAndShowDeviceAccountsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> *>(&accounts)));
+            *result = detach_abi(this->shim().AddAndShowDeviceAccountsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> *>(&accounts)));
             return S_OK;
         }
         catch (...)
@@ -1292,12 +1292,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>
 {
-    HRESULT __stdcall abi_SuppressLocalAccountWithAccountAsync(abi_arg_in<hstring> userDataAccountId, abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
+    HRESULT __stdcall abi_SuppressLocalAccountWithAccountAsync(impl::abi_arg_in<hstring> userDataAccountId, impl::abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().SuppressLocalAccountWithAccountAsync(*reinterpret_cast<const hstring *>(&userDataAccountId)));
+            *result = detach_abi(this->shim().SuppressLocalAccountWithAccountAsync(*reinterpret_cast<const hstring *>(&userDataAccountId)));
             return S_OK;
         }
         catch (...)
@@ -1307,12 +1307,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
         }
     }
 
-    HRESULT __stdcall abi_CreateDeviceAccountAsync(abi_arg_in<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration> account, abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> result) noexcept override
+    HRESULT __stdcall abi_CreateDeviceAccountAsync(impl::abi_arg_in<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration> account, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateDeviceAccountAsync(*reinterpret_cast<const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration *>(&account)));
+            *result = detach_abi(this->shim().CreateDeviceAccountAsync(*reinterpret_cast<const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration *>(&account)));
             return S_OK;
         }
         catch (...)
@@ -1322,12 +1322,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
         }
     }
 
-    HRESULT __stdcall abi_DeleteDeviceAccountAsync(abi_arg_in<hstring> accountId, abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
+    HRESULT __stdcall abi_DeleteDeviceAccountAsync(impl::abi_arg_in<hstring> accountId, impl::abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().DeleteDeviceAccountAsync(*reinterpret_cast<const hstring *>(&accountId)));
+            *result = detach_abi(this->shim().DeleteDeviceAccountAsync(*reinterpret_cast<const hstring *>(&accountId)));
             return S_OK;
         }
         catch (...)
@@ -1337,12 +1337,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceAccountConfigurationAsync(abi_arg_in<hstring> accountId, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration>> result) noexcept override
+    HRESULT __stdcall abi_GetDeviceAccountConfigurationAsync(impl::abi_arg_in<hstring> accountId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetDeviceAccountConfigurationAsync(*reinterpret_cast<const hstring *>(&accountId)));
+            *result = detach_abi(this->shim().GetDeviceAccountConfigurationAsync(*reinterpret_cast<const hstring *>(&accountId)));
             return S_OK;
         }
         catch (...)
@@ -1360,25 +1360,25 @@ namespace Windows::ApplicationModel::UserDataAccounts::SystemAccess {
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::AccountName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_AccountName(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_AccountName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::AccountName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_AccountName(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_AccountName(get_abi(value)));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::DeviceAccountTypeId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_DeviceAccountTypeId(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_DeviceAccountTypeId(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::DeviceAccountTypeId(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_DeviceAccountTypeId(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_DeviceAccountTypeId(get_abi(value)));
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType impl_IDeviceAccountConfiguration<D>::ServerType() const
@@ -1396,25 +1396,25 @@ template <typename D> void impl_IDeviceAccountConfiguration<D>::ServerType(Windo
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::EmailAddress() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_EmailAddress(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_EmailAddress(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::EmailAddress(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_EmailAddress(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_EmailAddress(get_abi(value)));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::Domain() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_Domain(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_Domain(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::Domain(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_Domain(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_Domain(get_abi(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration<D>::EmailSyncEnabled() const
@@ -1456,13 +1456,13 @@ template <typename D> void impl_IDeviceAccountConfiguration<D>::CalendarSyncEnab
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::IncomingServerAddress() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_IncomingServerAddress(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_IncomingServerAddress(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerAddress(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_IncomingServerAddress(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_IncomingServerAddress(get_abi(value)));
 }
 
 template <typename D> int32_t impl_IDeviceAccountConfiguration<D>::IncomingServerPort() const
@@ -1492,25 +1492,25 @@ template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerRe
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::IncomingServerUsername() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_IncomingServerUsername(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_IncomingServerUsername(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerUsername(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_IncomingServerUsername(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_IncomingServerUsername(get_abi(value)));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::OutgoingServerAddress() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_OutgoingServerAddress(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_OutgoingServerAddress(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerAddress(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_OutgoingServerAddress(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_OutgoingServerAddress(get_abi(value)));
 }
 
 template <typename D> int32_t impl_IDeviceAccountConfiguration<D>::OutgoingServerPort() const
@@ -1540,49 +1540,49 @@ template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerRe
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::OutgoingServerUsername() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_OutgoingServerUsername(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->get_OutgoingServerUsername(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerUsername(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_OutgoingServerUsername(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration)->put_OutgoingServerUsername(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IDeviceAccountConfiguration2<D>::IncomingServerCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_IncomingServerCredential(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_IncomingServerCredential(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::IncomingServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_IncomingServerCredential(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_IncomingServerCredential(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IDeviceAccountConfiguration2<D>::OutgoingServerCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_OutgoingServerCredential(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_OutgoingServerCredential(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::OutgoingServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_OutgoingServerCredential(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_OutgoingServerCredential(get_abi(value)));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::OAuthRefreshToken() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_OAuthRefreshToken(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_OAuthRefreshToken(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::OAuthRefreshToken(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_OAuthRefreshToken(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_OAuthRefreshToken(get_abi(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsExternallyManaged() const
@@ -1631,13 +1631,13 @@ template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsSsoAuthentica
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::SsoAccountId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_SsoAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_SsoAccountId(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::SsoAccountId(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_SsoAccountId(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_SsoAccountId(get_abi(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::AlwaysDownloadFullMessage() const
@@ -1710,13 +1710,13 @@ template <typename D> void impl_IDeviceAccountConfiguration2<D>::AutoSelectAuthe
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::AuthenticationCertificateId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_AuthenticationCertificateId(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_AuthenticationCertificateId(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::AuthenticationCertificateId(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_AuthenticationCertificateId(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_AuthenticationCertificateId(get_abi(value)));
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind impl_IDeviceAccountConfiguration2<D>::CardDavSyncScheduleKind() const
@@ -1746,13 +1746,13 @@ template <typename D> void impl_IDeviceAccountConfiguration2<D>::CalDavSyncSched
 template <typename D> Windows::Foundation::Uri impl_IDeviceAccountConfiguration2<D>::CardDavServerUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_CardDavServerUrl(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_CardDavServerUrl(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::CardDavServerUrl(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_CardDavServerUrl(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_CardDavServerUrl(get_abi(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::CardDavRequiresSsl() const
@@ -1770,13 +1770,13 @@ template <typename D> void impl_IDeviceAccountConfiguration2<D>::CardDavRequires
 template <typename D> Windows::Foundation::Uri impl_IDeviceAccountConfiguration2<D>::CalDavServerUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_CalDavServerUrl(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_CalDavServerUrl(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::CalDavServerUrl(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_CalDavServerUrl(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_CalDavServerUrl(get_abi(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::CalDavRequiresSsl() const
@@ -1818,13 +1818,13 @@ template <typename D> void impl_IDeviceAccountConfiguration2<D>::WasIncomingServ
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::IncomingServerCertificateHash() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_IncomingServerCertificateHash(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_IncomingServerCertificateHash(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::IncomingServerCertificateHash(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_IncomingServerCertificateHash(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_IncomingServerCertificateHash(get_abi(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsOutgoingServerAuthenticationRequired() const
@@ -1866,13 +1866,13 @@ template <typename D> void impl_IDeviceAccountConfiguration2<D>::WasOutgoingServ
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::OutgoingServerCertificateHash() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_OutgoingServerCertificateHash(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->get_OutgoingServerCertificateHash(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::OutgoingServerCertificateHash(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_OutgoingServerCertificateHash(get(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_OutgoingServerCertificateHash(get_abi(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsSyncScheduleManagedBySystem() const
@@ -1890,35 +1890,35 @@ template <typename D> void impl_IDeviceAccountConfiguration2<D>::IsSyncScheduleM
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IUserDataAccountSystemAccessManagerStatics<D>::AddAndShowDeviceAccountsAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> & accounts) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
-    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics)->abi_AddAndShowDeviceAccountsAsync(get(accounts), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics)->abi_AddAndShowDeviceAccountsAsync(get_abi(accounts), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountSystemAccessManagerStatics2<D>::SuppressLocalAccountWithAccountAsync(hstring_view userDataAccountId) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_SuppressLocalAccountWithAccountAsync(get(userDataAccountId), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_SuppressLocalAccountWithAccountAsync(get_abi(userDataAccountId), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IUserDataAccountSystemAccessManagerStatics2<D>::CreateDeviceAccountAsync(const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration & account) const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
-    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_CreateDeviceAccountAsync(get(account), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_CreateDeviceAccountAsync(get_abi(account), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountSystemAccessManagerStatics2<D>::DeleteDeviceAccountAsync(hstring_view accountId) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_DeleteDeviceAccountAsync(get(accountId), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_DeleteDeviceAccountAsync(get_abi(accountId), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> impl_IUserDataAccountSystemAccessManagerStatics2<D>::GetDeviceAccountConfigurationAsync(hstring_view accountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> result;
-    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_GetDeviceAccountConfigurationAsync(get(accountId), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics2)->abi_GetDeviceAccountConfigurationAsync(get_abi(accountId), put_abi(result)));
     return result;
 }
 

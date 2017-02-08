@@ -47,7 +47,7 @@ public:
     hstring ToString() const
     {
         hstring value;
-        check_hresult(shim()->abi_ToString(put(value)));
+        check_hresult(shim()->abi_ToString(put_abi(value)));
         return value;
     }
 };
@@ -99,7 +99,7 @@ struct produce<D, Windows::Foundation::IStringable> : produce_base<D, Windows::F
     {
         try
         {
-            *value = detach(this->shim().ToString());
+            *value = detach_abi(this->shim().ToString());
             return S_OK;
         }
         catch (...)

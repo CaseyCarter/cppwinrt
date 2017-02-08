@@ -127,8 +127,6 @@ struct not_specialized
         "This UUID must be provided by a template specialization.");
 };
 
-}
-
 template <typename T>
 using abi_arg_in = ABI::arg_in<abi<T>>;
 
@@ -137,3 +135,5 @@ using abi_arg_out = ABI::arg_out<abi<T>>;
 
 template <typename T>
 using abi_default_interface = ABI::default_interface<abi<T>>;
+
+}

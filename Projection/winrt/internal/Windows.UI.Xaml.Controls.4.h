@@ -27,7 +27,7 @@ public:
         shim().as<IAppBarOverrides>().OnOpened(e);
     }
 
-    HRESULT __stdcall abi_OnClosed(abi_arg_in<Windows::IInspectable> e) noexcept override
+    HRESULT __stdcall abi_OnClosed(impl::abi_arg_in<Windows::IInspectable> e) noexcept override
     {
         try
         {
@@ -41,7 +41,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnOpened(abi_arg_in<Windows::IInspectable> e) noexcept override
+    HRESULT __stdcall abi_OnOpened(impl::abi_arg_in<Windows::IInspectable> e) noexcept override
     {
         try
         {
@@ -75,7 +75,7 @@ public:
         shim().as<IAppBarOverrides3>().OnOpening(e);
     }
 
-    HRESULT __stdcall abi_OnClosing(abi_arg_in<Windows::IInspectable> e) noexcept override
+    HRESULT __stdcall abi_OnClosing(impl::abi_arg_in<Windows::IInspectable> e) noexcept override
     {
         try
         {
@@ -89,7 +89,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnOpening(abi_arg_in<Windows::IInspectable> e) noexcept override
+    HRESULT __stdcall abi_OnOpening(impl::abi_arg_in<Windows::IInspectable> e) noexcept override
     {
         try
         {
@@ -123,7 +123,7 @@ public:
         shim().as<IComboBoxOverrides>().OnDropDownOpened(e);
     }
 
-    HRESULT __stdcall abi_OnDropDownClosed(abi_arg_in<Windows::IInspectable> e) noexcept override
+    HRESULT __stdcall abi_OnDropDownClosed(impl::abi_arg_in<Windows::IInspectable> e) noexcept override
     {
         try
         {
@@ -137,7 +137,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnDropDownOpened(abi_arg_in<Windows::IInspectable> e) noexcept override
+    HRESULT __stdcall abi_OnDropDownOpened(impl::abi_arg_in<Windows::IInspectable> e) noexcept override
     {
         try
         {
@@ -176,7 +176,7 @@ public:
         shim().as<IContentControlOverrides>().OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector);
     }
 
-    HRESULT __stdcall abi_OnContentChanged(abi_arg_in<Windows::IInspectable> oldContent, abi_arg_in<Windows::IInspectable> newContent) noexcept override
+    HRESULT __stdcall abi_OnContentChanged(impl::abi_arg_in<Windows::IInspectable> oldContent, impl::abi_arg_in<Windows::IInspectable> newContent) noexcept override
     {
         try
         {
@@ -190,7 +190,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
+    HRESULT __stdcall abi_OnContentTemplateChanged(impl::abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, impl::abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
     {
         try
         {
@@ -204,7 +204,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
+    HRESULT __stdcall abi_OnContentTemplateSelectorChanged(impl::abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, impl::abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
     {
         try
         {
@@ -238,7 +238,7 @@ public:
         shim().as<IContentPresenterOverrides>().OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector);
     }
 
-    HRESULT __stdcall abi_OnContentTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
+    HRESULT __stdcall abi_OnContentTemplateChanged(impl::abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldContentTemplate, impl::abi_arg_in<Windows::UI::Xaml::IDataTemplate> newContentTemplate) noexcept override
     {
         try
         {
@@ -252,7 +252,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnContentTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
+    HRESULT __stdcall abi_OnContentTemplateSelectorChanged(impl::abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldContentTemplateSelector, impl::abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newContentTemplateSelector) noexcept override
     {
         try
         {
@@ -401,7 +401,7 @@ public:
         shim().as<IControlOverrides>().OnDrop(e);
     }
 
-    HRESULT __stdcall abi_OnPointerEntered(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnPointerEntered(impl::abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -415,7 +415,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnPointerPressed(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnPointerPressed(impl::abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -429,7 +429,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnPointerMoved(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnPointerMoved(impl::abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -443,7 +443,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnPointerReleased(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnPointerReleased(impl::abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -457,7 +457,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnPointerExited(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnPointerExited(impl::abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -471,7 +471,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnPointerCaptureLost(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnPointerCaptureLost(impl::abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -485,7 +485,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnPointerCanceled(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnPointerCanceled(impl::abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -499,7 +499,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnPointerWheelChanged(abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnPointerWheelChanged(impl::abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -513,7 +513,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnTapped(abi_arg_in<Windows::UI::Xaml::Input::ITappedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnTapped(impl::abi_arg_in<Windows::UI::Xaml::Input::ITappedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -527,7 +527,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnDoubleTapped(abi_arg_in<Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnDoubleTapped(impl::abi_arg_in<Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -541,7 +541,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnHolding(abi_arg_in<Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnHolding(impl::abi_arg_in<Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -555,7 +555,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnRightTapped(abi_arg_in<Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnRightTapped(impl::abi_arg_in<Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -569,7 +569,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnManipulationStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnManipulationStarting(impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -583,7 +583,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnManipulationInertiaStarting(abi_arg_in<Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnManipulationInertiaStarting(impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -597,7 +597,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnManipulationStarted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnManipulationStarted(impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -611,7 +611,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnManipulationDelta(abi_arg_in<Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnManipulationDelta(impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -625,7 +625,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnManipulationCompleted(abi_arg_in<Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnManipulationCompleted(impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -639,7 +639,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnKeyUp(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnKeyUp(impl::abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -653,7 +653,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnKeyDown(abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnKeyDown(impl::abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -667,7 +667,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnGotFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnGotFocus(impl::abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -681,7 +681,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnLostFocus(abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnLostFocus(impl::abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -695,7 +695,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnDragEnter(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnDragEnter(impl::abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
     {
         try
         {
@@ -709,7 +709,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnDragLeave(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnDragLeave(impl::abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
     {
         try
         {
@@ -723,7 +723,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnDragOver(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnDragOver(impl::abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
     {
         try
         {
@@ -737,7 +737,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnDrop(abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnDrop(impl::abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
     {
         try
         {
@@ -766,12 +766,12 @@ public:
         return shim().as<IDataTemplateSelectorOverrides>().SelectTemplateCore(item, container);
     }
 
-    HRESULT __stdcall abi_SelectTemplateCore(abi_arg_in<Windows::IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
+    HRESULT __stdcall abi_SelectTemplateCore(impl::abi_arg_in<Windows::IInspectable> item, impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, impl::abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
+            *returnValue = detach_abi(this->shim().SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
             return S_OK;
         }
         catch (...)
@@ -796,12 +796,12 @@ public:
         return shim().as<IDataTemplateSelectorOverrides2>().SelectTemplateCore(item);
     }
 
-    HRESULT __stdcall abi_SelectTemplateForItemCore(abi_arg_in<Windows::IInspectable> item, abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
+    HRESULT __stdcall abi_SelectTemplateForItemCore(impl::abi_arg_in<Windows::IInspectable> item, impl::abi_arg_out<Windows::UI::Xaml::IDataTemplate> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach_abi(this->shim().SelectTemplateCore(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -826,12 +826,12 @@ public:
         return shim().as<IGroupStyleSelectorOverrides>().SelectGroupStyleCore(group, level);
     }
 
-    HRESULT __stdcall abi_SelectGroupStyleCore(abi_arg_in<Windows::IInspectable> group, uint32_t level, abi_arg_out<Windows::UI::Xaml::Controls::IGroupStyle> returnValue) noexcept override
+    HRESULT __stdcall abi_SelectGroupStyleCore(impl::abi_arg_in<Windows::IInspectable> group, uint32_t level, impl::abi_arg_out<Windows::UI::Xaml::Controls::IGroupStyle> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().SelectGroupStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&group), level));
+            *returnValue = detach_abi(this->shim().SelectGroupStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&group), level));
             return S_OK;
         }
         catch (...)
@@ -856,12 +856,12 @@ public:
         return shim().as<IInkToolbarCustomPenOverrides>().CreateInkDrawingAttributesCore(brush, strokeWidth);
     }
 
-    HRESULT __stdcall abi_CreateInkDrawingAttributesCore(abi_arg_in<Windows::UI::Xaml::Media::IBrush> brush, double strokeWidth, abi_arg_out<Windows::UI::Input::Inking::IInkDrawingAttributes> returnValue) noexcept override
+    HRESULT __stdcall abi_CreateInkDrawingAttributesCore(impl::abi_arg_in<Windows::UI::Xaml::Media::IBrush> brush, double strokeWidth, impl::abi_arg_out<Windows::UI::Input::Inking::IInkDrawingAttributes> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().CreateInkDrawingAttributesCore(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&brush), strokeWidth));
+            *returnValue = detach_abi(this->shim().CreateInkDrawingAttributesCore(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&brush), strokeWidth));
             return S_OK;
         }
         catch (...)
@@ -931,12 +931,12 @@ public:
         shim().as<IItemsControlOverrides>().OnGroupStyleSelectorChanged(oldGroupStyleSelector, newGroupStyleSelector);
     }
 
-    HRESULT __stdcall abi_IsItemItsOwnContainerOverride(abi_arg_in<Windows::IInspectable> item, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_IsItemItsOwnContainerOverride(impl::abi_arg_in<Windows::IInspectable> item, bool * returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsItemItsOwnContainerOverride(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach_abi(this->shim().IsItemItsOwnContainerOverride(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -945,12 +945,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetContainerForItemOverride(abi_arg_out<Windows::UI::Xaml::IDependencyObject> returnValue) noexcept override
+    HRESULT __stdcall abi_GetContainerForItemOverride(impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetContainerForItemOverride());
+            *returnValue = detach_abi(this->shim().GetContainerForItemOverride());
             return S_OK;
         }
         catch (...)
@@ -960,7 +960,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_ClearContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<Windows::IInspectable> item) noexcept override
+    HRESULT __stdcall abi_ClearContainerForItemOverride(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, impl::abi_arg_in<Windows::IInspectable> item) noexcept override
     {
         try
         {
@@ -974,7 +974,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_PrepareContainerForItemOverride(abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, abi_arg_in<Windows::IInspectable> item) noexcept override
+    HRESULT __stdcall abi_PrepareContainerForItemOverride(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, impl::abi_arg_in<Windows::IInspectable> item) noexcept override
     {
         try
         {
@@ -988,7 +988,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<Windows::IInspectable> e) noexcept override
+    HRESULT __stdcall abi_OnItemsChanged(impl::abi_arg_in<Windows::IInspectable> e) noexcept override
     {
         try
         {
@@ -1002,7 +1002,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnItemContainerStyleChanged(abi_arg_in<Windows::UI::Xaml::IStyle> oldItemContainerStyle, abi_arg_in<Windows::UI::Xaml::IStyle> newItemContainerStyle) noexcept override
+    HRESULT __stdcall abi_OnItemContainerStyleChanged(impl::abi_arg_in<Windows::UI::Xaml::IStyle> oldItemContainerStyle, impl::abi_arg_in<Windows::UI::Xaml::IStyle> newItemContainerStyle) noexcept override
     {
         try
         {
@@ -1016,7 +1016,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnItemContainerStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> oldItemContainerStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> newItemContainerStyleSelector) noexcept override
+    HRESULT __stdcall abi_OnItemContainerStyleSelectorChanged(impl::abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> oldItemContainerStyleSelector, impl::abi_arg_in<Windows::UI::Xaml::Controls::IStyleSelector> newItemContainerStyleSelector) noexcept override
     {
         try
         {
@@ -1030,7 +1030,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnItemTemplateChanged(abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldItemTemplate, abi_arg_in<Windows::UI::Xaml::IDataTemplate> newItemTemplate) noexcept override
+    HRESULT __stdcall abi_OnItemTemplateChanged(impl::abi_arg_in<Windows::UI::Xaml::IDataTemplate> oldItemTemplate, impl::abi_arg_in<Windows::UI::Xaml::IDataTemplate> newItemTemplate) noexcept override
     {
         try
         {
@@ -1044,7 +1044,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnItemTemplateSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldItemTemplateSelector, abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newItemTemplateSelector) noexcept override
+    HRESULT __stdcall abi_OnItemTemplateSelectorChanged(impl::abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> oldItemTemplateSelector, impl::abi_arg_in<Windows::UI::Xaml::Controls::IDataTemplateSelector> newItemTemplateSelector) noexcept override
     {
         try
         {
@@ -1058,7 +1058,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnGroupStyleSelectorChanged(abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> oldGroupStyleSelector, abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> newGroupStyleSelector) noexcept override
+    HRESULT __stdcall abi_OnGroupStyleSelectorChanged(impl::abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> oldGroupStyleSelector, impl::abi_arg_in<Windows::UI::Xaml::Controls::IGroupStyleSelector> newGroupStyleSelector) noexcept override
     {
         try
         {
@@ -1097,7 +1097,7 @@ public:
         shim().as<IPageOverrides>().OnNavigatingFrom(e);
     }
 
-    HRESULT __stdcall abi_OnNavigatedFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnNavigatedFrom(impl::abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
     {
         try
         {
@@ -1111,7 +1111,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnNavigatedTo(abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnNavigatedTo(impl::abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
     {
         try
         {
@@ -1125,7 +1125,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnNavigatingFrom(abi_arg_in<Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnNavigatingFrom(impl::abi_arg_in<Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> e) noexcept override
     {
         try
         {
@@ -1154,12 +1154,12 @@ public:
         return shim().as<IStyleSelectorOverrides>().SelectStyleCore(item, container);
     }
 
-    HRESULT __stdcall abi_SelectStyleCore(abi_arg_in<Windows::IInspectable> item, abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, abi_arg_out<Windows::UI::Xaml::IStyle> returnValue) noexcept override
+    HRESULT __stdcall abi_SelectStyleCore(impl::abi_arg_in<Windows::IInspectable> item, impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> container, impl::abi_arg_out<Windows::UI::Xaml::IStyle> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().SelectStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
+            *returnValue = detach_abi(this->shim().SelectStyleCore(*reinterpret_cast<const Windows::IInspectable *>(&item), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&container)));
             return S_OK;
         }
         catch (...)
@@ -1213,7 +1213,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnOnContentChanged(abi_arg_in<Windows::IInspectable> oldContent, abi_arg_in<Windows::IInspectable> newContent) noexcept override
+    HRESULT __stdcall abi_OnOnContentChanged(impl::abi_arg_in<Windows::IInspectable> oldContent, impl::abi_arg_in<Windows::IInspectable> newContent) noexcept override
     {
         try
         {
@@ -1227,7 +1227,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnOffContentChanged(abi_arg_in<Windows::IInspectable> oldContent, abi_arg_in<Windows::IInspectable> newContent) noexcept override
+    HRESULT __stdcall abi_OnOffContentChanged(impl::abi_arg_in<Windows::IInspectable> oldContent, impl::abi_arg_in<Windows::IInspectable> newContent) noexcept override
     {
         try
         {
@@ -1241,7 +1241,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_OnHeaderChanged(abi_arg_in<Windows::IInspectable> oldContent, abi_arg_in<Windows::IInspectable> newContent) noexcept override
+    HRESULT __stdcall abi_OnHeaderChanged(impl::abi_arg_in<Windows::IInspectable> oldContent, impl::abi_arg_in<Windows::IInspectable> newContent) noexcept override
     {
         try
         {
@@ -1280,7 +1280,7 @@ public:
         shim().as<IVirtualizingPanelOverrides>().BringIndexIntoView(index);
     }
 
-    HRESULT __stdcall abi_OnItemsChanged(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs> args) noexcept override
+    HRESULT __stdcall abi_OnItemsChanged(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs> args) noexcept override
     {
         try
         {
@@ -1337,7 +1337,7 @@ public:
         shim().as<IVirtualizingStackPanelOverrides>().OnCleanUpVirtualizedItem(e);
     }
 
-    HRESULT __stdcall abi_OnCleanUpVirtualizedItem(abi_arg_in<Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs> e) noexcept override
+    HRESULT __stdcall abi_OnCleanUpVirtualizedItem(impl::abi_arg_in<Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs> e) noexcept override
     {
         try
         {

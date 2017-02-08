@@ -25,13 +25,13 @@ struct weak_ref
 
     weak_ref(const T & object)
     {
-        check_hresult(object.template as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put(m_ref)));
+        check_hresult(object.template as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put_abi(m_ref)));
     }
 
     T get() const noexcept
     {
         T object = nullptr;
-        m_ref->abi_Resolve(put(object));
+        m_ref->abi_Resolve(put_abi(object));
         return object;
     }
 

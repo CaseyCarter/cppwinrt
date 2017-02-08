@@ -21,7 +21,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PinCount());
+            *value = detach_abi(this->shim().PinCount());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ActualFrequency());
+            *value = detach_abi(this->shim().ActualFrequency());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SetDesiredFrequency(desiredFrequency));
+            *value = detach_abi(this->shim().SetDesiredFrequency(desiredFrequency));
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinFrequency());
+            *value = detach_abi(this->shim().MinFrequency());
             return S_OK;
         }
         catch (...)
@@ -77,7 +77,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxFrequency());
+            *value = detach_abi(this->shim().MaxFrequency());
             return S_OK;
         }
         catch (...)
@@ -86,12 +86,12 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_OpenPin(int32_t pinNumber, abi_arg_out<Windows::Devices::Pwm::IPwmPin> pin) noexcept override
+    HRESULT __stdcall abi_OpenPin(int32_t pinNumber, impl::abi_arg_out<Windows::Devices::Pwm::IPwmPin> pin) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pin = detach(this->shim().OpenPin(pinNumber));
+            *pin = detach_abi(this->shim().OpenPin(pinNumber));
             return S_OK;
         }
         catch (...)
@@ -105,12 +105,12 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics> : produce_base<D, Windows::Devices::Pwm::IPwmControllerStatics>
 {
-    HRESULT __stdcall abi_GetControllersAsync(abi_arg_in<Windows::Devices::Pwm::Provider::IPwmProvider> provider, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>>> operation) noexcept override
+    HRESULT __stdcall abi_GetControllersAsync(impl::abi_arg_in<Windows::Devices::Pwm::Provider::IPwmProvider> provider, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Pwm::Provider::IPwmProvider *>(&provider)));
+            *operation = detach_abi(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Pwm::Provider::IPwmProvider *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -124,12 +124,12 @@ struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics2> : produce_base<D, Windows::Devices::Pwm::IPwmControllerStatics2>
 {
-    HRESULT __stdcall abi_GetDefaultAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController>> operation) noexcept override
+    HRESULT __stdcall abi_GetDefaultAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetDefaultAsync());
+            *operation = detach_abi(this->shim().GetDefaultAsync());
             return S_OK;
         }
         catch (...)
@@ -143,12 +143,12 @@ struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics2> : produce_base<
 template <typename D>
 struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Devices::Pwm::IPwmPin>
 {
-    HRESULT __stdcall get_Controller(abi_arg_out<Windows::Devices::Pwm::IPwmController> value) noexcept override
+    HRESULT __stdcall get_Controller(impl::abi_arg_out<Windows::Devices::Pwm::IPwmController> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Controller());
+            *value = detach_abi(this->shim().Controller());
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetActiveDutyCyclePercentage());
+            *result = detach_abi(this->shim().GetActiveDutyCyclePercentage());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Polarity());
+            *value = detach_abi(this->shim().Polarity());
             return S_OK;
         }
         catch (...)
@@ -247,7 +247,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsStarted());
+            *value = detach_abi(this->shim().IsStarted());
             return S_OK;
         }
         catch (...)
@@ -299,28 +299,28 @@ template <typename D> double impl_IPwmController<D>::MaxFrequency() const
 template <typename D> Windows::Devices::Pwm::PwmPin impl_IPwmController<D>::OpenPin(int32_t pinNumber) const
 {
     Windows::Devices::Pwm::PwmPin pin { nullptr };
-    check_hresult(WINRT_SHIM(IPwmController)->abi_OpenPin(pinNumber, put(pin)));
+    check_hresult(WINRT_SHIM(IPwmController)->abi_OpenPin(pinNumber, put_abi(pin)));
     return pin;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> impl_IPwmControllerStatics<D>::GetControllersAsync(const Windows::Devices::Pwm::Provider::IPwmProvider & provider) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> operation;
-    check_hresult(WINRT_SHIM(IPwmControllerStatics)->abi_GetControllersAsync(get(provider), put(operation)));
+    check_hresult(WINRT_SHIM(IPwmControllerStatics)->abi_GetControllersAsync(get_abi(provider), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> impl_IPwmControllerStatics2<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> operation;
-    check_hresult(WINRT_SHIM(IPwmControllerStatics2)->abi_GetDefaultAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPwmControllerStatics2)->abi_GetDefaultAsync(put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::Pwm::PwmController impl_IPwmPin<D>::Controller() const
 {
     Windows::Devices::Pwm::PwmController value { nullptr };
-    check_hresult(WINRT_SHIM(IPwmPin)->get_Controller(put(value)));
+    check_hresult(WINRT_SHIM(IPwmPin)->get_Controller(put_abi(value)));
     return value;
 }
 

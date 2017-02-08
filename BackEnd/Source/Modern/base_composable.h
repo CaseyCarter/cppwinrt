@@ -14,7 +14,7 @@ struct overrides : implements<D, R ...>
 
         if (result == E_NOINTERFACE)
         {
-            result = get(m_inner)->QueryInterface(id, object);
+            result = get_abi(m_inner)->QueryInterface(id, object);
         }
 
         return result;

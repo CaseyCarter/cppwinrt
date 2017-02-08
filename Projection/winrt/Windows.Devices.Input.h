@@ -20,7 +20,7 @@ struct produce<D, Windows::Devices::Input::IKeyboardCapabilities> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyboardPresent());
+            *value = detach_abi(this->shim().KeyboardPresent());
             return S_OK;
         }
         catch (...)
@@ -38,7 +38,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MousePresent());
+            *value = detach_abi(this->shim().MousePresent());
             return S_OK;
         }
         catch (...)
@@ -52,7 +52,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VerticalWheelPresent());
+            *value = detach_abi(this->shim().VerticalWheelPresent());
             return S_OK;
         }
         catch (...)
@@ -66,7 +66,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HorizontalWheelPresent());
+            *value = detach_abi(this->shim().HorizontalWheelPresent());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SwapButtons());
+            *value = detach_abi(this->shim().SwapButtons());
             return S_OK;
         }
         catch (...)
@@ -94,7 +94,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NumberOfButtons());
+            *value = detach_abi(this->shim().NumberOfButtons());
             return S_OK;
         }
         catch (...)
@@ -107,12 +107,12 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Devices::Input::IMouseDevice> : produce_base<D, Windows::Devices::Input::IMouseDevice>
 {
-    HRESULT __stdcall add_MouseMoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_MouseMoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().MouseMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().MouseMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -139,12 +139,12 @@ struct produce<D, Windows::Devices::Input::IMouseDevice> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::Devices::Input::IMouseDeviceStatics> : produce_base<D, Windows::Devices::Input::IMouseDeviceStatics>
 {
-    HRESULT __stdcall abi_GetForCurrentView(abi_arg_out<Windows::Devices::Input::IMouseDevice> mouseDevice) noexcept override
+    HRESULT __stdcall abi_GetForCurrentView(impl::abi_arg_out<Windows::Devices::Input::IMouseDevice> mouseDevice) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *mouseDevice = detach(this->shim().GetForCurrentView());
+            *mouseDevice = detach_abi(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -158,12 +158,12 @@ struct produce<D, Windows::Devices::Input::IMouseDeviceStatics> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Devices::Input::IMouseEventArgs> : produce_base<D, Windows::Devices::Input::IMouseEventArgs>
 {
-    HRESULT __stdcall get_MouseDelta(abi_arg_out<Windows::Devices::Input::MouseDelta> value) noexcept override
+    HRESULT __stdcall get_MouseDelta(impl::abi_arg_out<Windows::Devices::Input::MouseDelta> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MouseDelta());
+            *value = detach_abi(this->shim().MouseDelta());
             return S_OK;
         }
         catch (...)
@@ -181,7 +181,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PointerDeviceType());
+            *value = detach_abi(this->shim().PointerDeviceType());
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsIntegrated());
+            *value = detach_abi(this->shim().IsIntegrated());
             return S_OK;
         }
         catch (...)
@@ -209,7 +209,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxContacts());
+            *value = detach_abi(this->shim().MaxContacts());
             return S_OK;
         }
         catch (...)
@@ -218,12 +218,12 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_PhysicalDeviceRect(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall get_PhysicalDeviceRect(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PhysicalDeviceRect());
+            *value = detach_abi(this->shim().PhysicalDeviceRect());
             return S_OK;
         }
         catch (...)
@@ -232,12 +232,12 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_ScreenRect(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall get_ScreenRect(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ScreenRect());
+            *value = detach_abi(this->shim().ScreenRect());
             return S_OK;
         }
         catch (...)
@@ -246,12 +246,12 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_SupportedUsages(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage>> value) noexcept override
+    HRESULT __stdcall get_SupportedUsages(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportedUsages());
+            *value = detach_abi(this->shim().SupportedUsages());
             return S_OK;
         }
         catch (...)
@@ -270,7 +270,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice2> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxPointersWithZDistance());
+            *value = detach_abi(this->shim().MaxPointersWithZDistance());
             return S_OK;
         }
         catch (...)
@@ -283,12 +283,12 @@ struct produce<D, Windows::Devices::Input::IPointerDevice2> : produce_base<D, Wi
 template <typename D>
 struct produce<D, Windows::Devices::Input::IPointerDeviceStatics> : produce_base<D, Windows::Devices::Input::IPointerDeviceStatics>
 {
-    HRESULT __stdcall abi_GetPointerDevice(uint32_t pointerId, abi_arg_out<Windows::Devices::Input::IPointerDevice> pointerDevice) noexcept override
+    HRESULT __stdcall abi_GetPointerDevice(uint32_t pointerId, impl::abi_arg_out<Windows::Devices::Input::IPointerDevice> pointerDevice) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pointerDevice = detach(this->shim().GetPointerDevice(pointerId));
+            *pointerDevice = detach_abi(this->shim().GetPointerDevice(pointerId));
             return S_OK;
         }
         catch (...)
@@ -298,12 +298,12 @@ struct produce<D, Windows::Devices::Input::IPointerDeviceStatics> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_GetPointerDevices(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice>> pointerDevices) noexcept override
+    HRESULT __stdcall abi_GetPointerDevices(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice>> pointerDevices) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pointerDevices = detach(this->shim().GetPointerDevices());
+            *pointerDevices = detach_abi(this->shim().GetPointerDevices());
             return S_OK;
         }
         catch (...)
@@ -322,7 +322,7 @@ struct produce<D, Windows::Devices::Input::ITouchCapabilities> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TouchPresent());
+            *value = detach_abi(this->shim().TouchPresent());
             return S_OK;
         }
         catch (...)
@@ -336,7 +336,7 @@ struct produce<D, Windows::Devices::Input::ITouchCapabilities> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Contacts());
+            *value = detach_abi(this->shim().Contacts());
             return S_OK;
         }
         catch (...)
@@ -409,14 +409,14 @@ template <typename D> uint32_t impl_ITouchCapabilities<D>::Contacts() const
 template <typename D> Windows::Devices::Input::PointerDevice impl_IPointerDeviceStatics<D>::GetPointerDevice(uint32_t pointerId) const
 {
     Windows::Devices::Input::PointerDevice pointerDevice { nullptr };
-    check_hresult(WINRT_SHIM(IPointerDeviceStatics)->abi_GetPointerDevice(pointerId, put(pointerDevice)));
+    check_hresult(WINRT_SHIM(IPointerDeviceStatics)->abi_GetPointerDevice(pointerId, put_abi(pointerDevice)));
     return pointerDevice;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice> impl_IPointerDeviceStatics<D>::GetPointerDevices() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice> pointerDevices;
-    check_hresult(WINRT_SHIM(IPointerDeviceStatics)->abi_GetPointerDevices(put(pointerDevices)));
+    check_hresult(WINRT_SHIM(IPointerDeviceStatics)->abi_GetPointerDevices(put_abi(pointerDevices)));
     return pointerDevices;
 }
 
@@ -444,21 +444,21 @@ template <typename D> uint32_t impl_IPointerDevice<D>::MaxContacts() const
 template <typename D> Windows::Foundation::Rect impl_IPointerDevice<D>::PhysicalDeviceRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(IPointerDevice)->get_PhysicalDeviceRect(put(value)));
+    check_hresult(WINRT_SHIM(IPointerDevice)->get_PhysicalDeviceRect(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPointerDevice<D>::ScreenRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(IPointerDevice)->get_ScreenRect(put(value)));
+    check_hresult(WINRT_SHIM(IPointerDevice)->get_ScreenRect(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage> impl_IPointerDevice<D>::SupportedUsages() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage> value;
-    check_hresult(WINRT_SHIM(IPointerDevice)->get_SupportedUsages(put(value)));
+    check_hresult(WINRT_SHIM(IPointerDevice)->get_SupportedUsages(put_abi(value)));
     return value;
 }
 
@@ -472,14 +472,14 @@ template <typename D> uint32_t impl_IPointerDevice2<D>::MaxPointersWithZDistance
 template <typename D> Windows::Devices::Input::MouseDelta impl_IMouseEventArgs<D>::MouseDelta() const
 {
     Windows::Devices::Input::MouseDelta value {};
-    check_hresult(WINRT_SHIM(IMouseEventArgs)->get_MouseDelta(put(value)));
+    check_hresult(WINRT_SHIM(IMouseEventArgs)->get_MouseDelta(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMouseDevice<D>::MouseMoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IMouseDevice)->add_MouseMoved(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMouseDevice)->add_MouseMoved(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -496,7 +496,7 @@ template <typename D> void impl_IMouseDevice<D>::MouseMoved(event_token cookie) 
 template <typename D> Windows::Devices::Input::MouseDevice impl_IMouseDeviceStatics<D>::GetForCurrentView() const
 {
     Windows::Devices::Input::MouseDevice mouseDevice { nullptr };
-    check_hresult(WINRT_SHIM(IMouseDeviceStatics)->abi_GetForCurrentView(put(mouseDevice)));
+    check_hresult(WINRT_SHIM(IMouseDeviceStatics)->abi_GetForCurrentView(put_abi(mouseDevice)));
     return mouseDevice;
 }
 

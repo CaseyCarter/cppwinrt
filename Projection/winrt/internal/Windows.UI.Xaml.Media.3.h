@@ -13,7 +13,7 @@ template <typename H> struct impl_RateChangedRoutedEventHandler : implements<imp
 {
     impl_RateChangedRoutedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_TimelineMarkerRoutedEventHandler : implements<
 {
     impl_TimelineMarkerRoutedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs> e) noexcept override
     {
         try
         {

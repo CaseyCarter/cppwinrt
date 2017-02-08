@@ -24,12 +24,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioDeviceInputNode> : produce_base<D, Windows::Media::Audio::IAudioDeviceInputNode>
 {
-    HRESULT __stdcall get_Device(abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
+    HRESULT __stdcall get_Device(impl::abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Device());
+            *value = detach_abi(this->shim().Device());
             return S_OK;
         }
         catch (...)
@@ -43,12 +43,12 @@ struct produce<D, Windows::Media::Audio::IAudioDeviceInputNode> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioDeviceOutputNode> : produce_base<D, Windows::Media::Audio::IAudioDeviceOutputNode>
 {
-    HRESULT __stdcall get_Device(abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
+    HRESULT __stdcall get_Device(impl::abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Device());
+            *value = detach_abi(this->shim().Device());
             return S_OK;
         }
         catch (...)
@@ -81,7 +81,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PlaybackSpeedFactor());
+            *value = detach_abi(this->shim().PlaybackSpeedFactor());
             return S_OK;
         }
         catch (...)
@@ -90,12 +90,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_Position(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Position());
+            *value = detach_abi(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_Seek(abi_arg_in<Windows::Foundation::TimeSpan> position) noexcept override
+    HRESULT __stdcall abi_Seek(impl::abi_arg_in<Windows::Foundation::TimeSpan> position) noexcept override
     {
         try
         {
@@ -118,12 +118,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_StartTime(abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    HRESULT __stdcall get_StartTime(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().StartTime());
+            *value = detach_abi(this->shim().StartTime());
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall put_StartTime(abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    HRESULT __stdcall put_StartTime(impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
     {
         try
         {
@@ -147,12 +147,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_EndTime(abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    HRESULT __stdcall get_EndTime(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndTime());
+            *value = detach_abi(this->shim().EndTime());
             return S_OK;
         }
         catch (...)
@@ -162,7 +162,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall put_EndTime(abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    HRESULT __stdcall put_EndTime(impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
     {
         try
         {
@@ -176,12 +176,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_LoopCount(abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    HRESULT __stdcall get_LoopCount(impl::abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LoopCount());
+            *value = detach_abi(this->shim().LoopCount());
             return S_OK;
         }
         catch (...)
@@ -191,7 +191,7 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall put_LoopCount(abi_arg_in<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    HRESULT __stdcall put_LoopCount(impl::abi_arg_in<Windows::Foundation::IReference<int32_t>> value) noexcept override
     {
         try
         {
@@ -205,12 +205,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_Duration(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_Duration(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Duration());
+            *value = detach_abi(this->shim().Duration());
             return S_OK;
         }
         catch (...)
@@ -219,12 +219,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_SourceFile(abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
+    HRESULT __stdcall get_SourceFile(impl::abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SourceFile());
+            *value = detach_abi(this->shim().SourceFile());
             return S_OK;
         }
         catch (...)
@@ -234,12 +234,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_FileCompleted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FileCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().FileCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().FileCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -266,12 +266,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioFileOutputNode> : produce_base<D, Windows::Media::Audio::IAudioFileOutputNode>
 {
-    HRESULT __stdcall get_File(abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
+    HRESULT __stdcall get_File(impl::abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().File());
+            *value = detach_abi(this->shim().File());
             return S_OK;
         }
         catch (...)
@@ -281,12 +281,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileOutputNode> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_FileEncodingProfile(abi_arg_out<Windows::Media::MediaProperties::IMediaEncodingProfile> value) noexcept override
+    HRESULT __stdcall get_FileEncodingProfile(impl::abi_arg_out<Windows::Media::MediaProperties::IMediaEncodingProfile> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FileEncodingProfile());
+            *value = detach_abi(this->shim().FileEncodingProfile());
             return S_OK;
         }
         catch (...)
@@ -296,12 +296,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileOutputNode> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_FinalizeAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Transcoding::TranscodeFailureReason>> result) noexcept override
+    HRESULT __stdcall abi_FinalizeAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Transcoding::TranscodeFailureReason>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FinalizeAsync());
+            *result = detach_abi(this->shim().FinalizeAsync());
             return S_OK;
         }
         catch (...)
@@ -315,12 +315,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileOutputNode> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioFrameCompletedEventArgs> : produce_base<D, Windows::Media::Audio::IAudioFrameCompletedEventArgs>
 {
-    HRESULT __stdcall get_Frame(abi_arg_out<Windows::Media::IAudioFrame> value) noexcept override
+    HRESULT __stdcall get_Frame(impl::abi_arg_out<Windows::Media::IAudioFrame> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Frame());
+            *value = detach_abi(this->shim().Frame());
             return S_OK;
         }
         catch (...)
@@ -353,7 +353,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PlaybackSpeedFactor());
+            *value = detach_abi(this->shim().PlaybackSpeedFactor());
             return S_OK;
         }
         catch (...)
@@ -362,7 +362,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_AddFrame(abi_arg_in<Windows::Media::IAudioFrame> frame) noexcept override
+    HRESULT __stdcall abi_AddFrame(impl::abi_arg_in<Windows::Media::IAudioFrame> frame) noexcept override
     {
         try
         {
@@ -395,7 +395,7 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().QueuedSampleCount());
+            *value = detach_abi(this->shim().QueuedSampleCount());
             return S_OK;
         }
         catch (...)
@@ -404,12 +404,12 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_AudioFrameCompleted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::AudioFrameCompletedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AudioFrameCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::AudioFrameCompletedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().AudioFrameCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::AudioFrameCompletedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().AudioFrameCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::AudioFrameCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -432,12 +432,12 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_QuantumStarted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_QuantumStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -464,12 +464,12 @@ struct produce<D, Windows::Media::Audio::IAudioFrameInputNode> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioFrameOutputNode> : produce_base<D, Windows::Media::Audio::IAudioFrameOutputNode>
 {
-    HRESULT __stdcall abi_GetFrame(abi_arg_out<Windows::Media::IAudioFrame> audioFrame) noexcept override
+    HRESULT __stdcall abi_GetFrame(impl::abi_arg_out<Windows::Media::IAudioFrame> audioFrame) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *audioFrame = detach(this->shim().GetFrame());
+            *audioFrame = detach_abi(this->shim().GetFrame());
             return S_OK;
         }
         catch (...)
@@ -483,12 +483,12 @@ struct produce<D, Windows::Media::Audio::IAudioFrameOutputNode> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows::Media::Audio::IAudioGraph>
 {
-    HRESULT __stdcall abi_CreateFrameInputNode(abi_arg_out<Windows::Media::Audio::IAudioFrameInputNode> frameInputNode) noexcept override
+    HRESULT __stdcall abi_CreateFrameInputNode(impl::abi_arg_out<Windows::Media::Audio::IAudioFrameInputNode> frameInputNode) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *frameInputNode = detach(this->shim().CreateFrameInputNode());
+            *frameInputNode = detach_abi(this->shim().CreateFrameInputNode());
             return S_OK;
         }
         catch (...)
@@ -498,12 +498,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateFrameInputNodeWithFormat(abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, abi_arg_out<Windows::Media::Audio::IAudioFrameInputNode> frameInputNode) noexcept override
+    HRESULT __stdcall abi_CreateFrameInputNodeWithFormat(impl::abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, impl::abi_arg_out<Windows::Media::Audio::IAudioFrameInputNode> frameInputNode) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *frameInputNode = detach(this->shim().CreateFrameInputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
+            *frameInputNode = detach_abi(this->shim().CreateFrameInputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -513,12 +513,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateDeviceInputNodeAsync(category));
+            *result = detach_abi(this->shim().CreateDeviceInputNodeAsync(category));
             return S_OK;
         }
         catch (...)
@@ -528,12 +528,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateDeviceInputNodeWithFormatAsync(Windows::Media::Capture::MediaCategory category, abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateDeviceInputNodeWithFormatAsync(Windows::Media::Capture::MediaCategory category, impl::abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
+            *result = detach_abi(this->shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -543,12 +543,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateDeviceInputNodeWithFormatOnDeviceAsync(Windows::Media::Capture::MediaCategory category, abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, abi_arg_in<Windows::Devices::Enumeration::IDeviceInformation> device, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateDeviceInputNodeWithFormatOnDeviceAsync(Windows::Media::Capture::MediaCategory category, impl::abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, impl::abi_arg_in<Windows::Devices::Enumeration::IDeviceInformation> device, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device)));
+            *result = detach_abi(this->shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device)));
             return S_OK;
         }
         catch (...)
@@ -558,12 +558,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateFrameOutputNode(abi_arg_out<Windows::Media::Audio::IAudioFrameOutputNode> frameOutputNode) noexcept override
+    HRESULT __stdcall abi_CreateFrameOutputNode(impl::abi_arg_out<Windows::Media::Audio::IAudioFrameOutputNode> frameOutputNode) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *frameOutputNode = detach(this->shim().CreateFrameOutputNode());
+            *frameOutputNode = detach_abi(this->shim().CreateFrameOutputNode());
             return S_OK;
         }
         catch (...)
@@ -573,12 +573,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateFrameOutputNodeWithFormat(abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, abi_arg_out<Windows::Media::Audio::IAudioFrameOutputNode> frameOutputNode) noexcept override
+    HRESULT __stdcall abi_CreateFrameOutputNodeWithFormat(impl::abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, impl::abi_arg_out<Windows::Media::Audio::IAudioFrameOutputNode> frameOutputNode) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *frameOutputNode = detach(this->shim().CreateFrameOutputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
+            *frameOutputNode = detach_abi(this->shim().CreateFrameOutputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -588,12 +588,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateDeviceOutputNodeAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceOutputNodeResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateDeviceOutputNodeAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceOutputNodeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateDeviceOutputNodeAsync());
+            *result = detach_abi(this->shim().CreateDeviceOutputNodeAsync());
             return S_OK;
         }
         catch (...)
@@ -603,12 +603,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateFileInputNodeAsync(abi_arg_in<Windows::Storage::IStorageFile> file, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateFileInputNodeAsync(impl::abi_arg_in<Windows::Storage::IStorageFile> file, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateFileInputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *result = detach_abi(this->shim().CreateFileInputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -618,12 +618,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateFileOutputNodeAsync(abi_arg_in<Windows::Storage::IStorageFile> file, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateFileOutputNodeAsync(impl::abi_arg_in<Windows::Storage::IStorageFile> file, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateFileOutputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *result = detach_abi(this->shim().CreateFileOutputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -633,12 +633,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateFileOutputNodeWithFileProfileAsync(abi_arg_in<Windows::Storage::IStorageFile> file, abi_arg_in<Windows::Media::MediaProperties::IMediaEncodingProfile> fileEncodingProfile, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateFileOutputNodeWithFileProfileAsync(impl::abi_arg_in<Windows::Storage::IStorageFile> file, impl::abi_arg_in<Windows::Media::MediaProperties::IMediaEncodingProfile> fileEncodingProfile, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateFileOutputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&fileEncodingProfile)));
+            *result = detach_abi(this->shim().CreateFileOutputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&fileEncodingProfile)));
             return S_OK;
         }
         catch (...)
@@ -648,12 +648,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateSubmixNode(abi_arg_out<Windows::Media::Audio::IAudioInputNode> submixNode) noexcept override
+    HRESULT __stdcall abi_CreateSubmixNode(impl::abi_arg_out<Windows::Media::Audio::IAudioInputNode> submixNode) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *submixNode = detach(this->shim().CreateSubmixNode());
+            *submixNode = detach_abi(this->shim().CreateSubmixNode());
             return S_OK;
         }
         catch (...)
@@ -663,12 +663,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CreateSubmixNodeWithFormat(abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, abi_arg_out<Windows::Media::Audio::IAudioInputNode> submixNode) noexcept override
+    HRESULT __stdcall abi_CreateSubmixNodeWithFormat(impl::abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, impl::abi_arg_out<Windows::Media::Audio::IAudioInputNode> submixNode) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *submixNode = detach(this->shim().CreateSubmixNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
+            *submixNode = detach_abi(this->shim().CreateSubmixNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties)));
             return S_OK;
         }
         catch (...)
@@ -720,12 +720,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall add_QuantumStarted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_QuantumStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -748,12 +748,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall add_QuantumProcessed(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_QuantumProcessed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().QuantumProcessed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().QuantumProcessed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -776,12 +776,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall add_UnrecoverableErrorOccurred(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_UnrecoverableErrorOccurred(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().UnrecoverableErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().UnrecoverableErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -809,7 +809,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CompletedQuantumCount());
+            *value = detach_abi(this->shim().CompletedQuantumCount());
             return S_OK;
         }
         catch (...)
@@ -818,12 +818,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall get_EncodingProperties(abi_arg_out<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
+    HRESULT __stdcall get_EncodingProperties(impl::abi_arg_out<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EncodingProperties());
+            *value = detach_abi(this->shim().EncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -838,7 +838,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LatencyInSamples());
+            *value = detach_abi(this->shim().LatencyInSamples());
             return S_OK;
         }
         catch (...)
@@ -847,12 +847,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall get_PrimaryRenderDevice(abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
+    HRESULT __stdcall get_PrimaryRenderDevice(impl::abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PrimaryRenderDevice());
+            *value = detach_abi(this->shim().PrimaryRenderDevice());
             return S_OK;
         }
         catch (...)
@@ -867,7 +867,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RenderDeviceAudioProcessing());
+            *value = detach_abi(this->shim().RenderDeviceAudioProcessing());
             return S_OK;
         }
         catch (...)
@@ -881,7 +881,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SamplesPerQuantum());
+            *value = detach_abi(this->shim().SamplesPerQuantum());
             return S_OK;
         }
         catch (...)
@@ -894,12 +894,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows::Media::Audio::IAudioGraph2>
 {
-    HRESULT __stdcall abi_CreateFrameInputNodeWithFormatAndEmitter(abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, abi_arg_in<Windows::Media::Audio::IAudioNodeEmitter> emitter, abi_arg_out<Windows::Media::Audio::IAudioFrameInputNode> frameInputNode) noexcept override
+    HRESULT __stdcall abi_CreateFrameInputNodeWithFormatAndEmitter(impl::abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, impl::abi_arg_in<Windows::Media::Audio::IAudioNodeEmitter> emitter, impl::abi_arg_out<Windows::Media::Audio::IAudioFrameInputNode> frameInputNode) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *frameInputNode = detach(this->shim().CreateFrameInputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
+            *frameInputNode = detach_abi(this->shim().CreateFrameInputNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
             return S_OK;
         }
         catch (...)
@@ -909,12 +909,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
         }
     }
 
-    HRESULT __stdcall abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(Windows::Media::Capture::MediaCategory category, abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, abi_arg_in<Windows::Devices::Enumeration::IDeviceInformation> device, abi_arg_in<Windows::Media::Audio::IAudioNodeEmitter> emitter, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(Windows::Media::Capture::MediaCategory category, impl::abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, impl::abi_arg_in<Windows::Devices::Enumeration::IDeviceInformation> device, impl::abi_arg_in<Windows::Media::Audio::IAudioNodeEmitter> emitter, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
+            *result = detach_abi(this->shim().CreateDeviceInputNodeAsync(category, *reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
             return S_OK;
         }
         catch (...)
@@ -924,12 +924,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
         }
     }
 
-    HRESULT __stdcall abi_CreateFileInputNodeWithEmitterAsync(abi_arg_in<Windows::Storage::IStorageFile> file, abi_arg_in<Windows::Media::Audio::IAudioNodeEmitter> emitter, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateFileInputNodeWithEmitterAsync(impl::abi_arg_in<Windows::Storage::IStorageFile> file, impl::abi_arg_in<Windows::Media::Audio::IAudioNodeEmitter> emitter, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateFileInputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
+            *result = detach_abi(this->shim().CreateFileInputNodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
             return S_OK;
         }
         catch (...)
@@ -939,12 +939,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
         }
     }
 
-    HRESULT __stdcall abi_CreateSubmixNodeWithFormatAndEmitter(abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, abi_arg_in<Windows::Media::Audio::IAudioNodeEmitter> emitter, abi_arg_out<Windows::Media::Audio::IAudioInputNode> submixNode) noexcept override
+    HRESULT __stdcall abi_CreateSubmixNodeWithFormatAndEmitter(impl::abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> encodingProperties, impl::abi_arg_in<Windows::Media::Audio::IAudioNodeEmitter> emitter, impl::abi_arg_out<Windows::Media::Audio::IAudioInputNode> submixNode) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *submixNode = detach(this->shim().CreateSubmixNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
+            *submixNode = detach_abi(this->shim().CreateSubmixNode(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&encodingProperties), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitter *>(&emitter)));
             return S_OK;
         }
         catch (...)
@@ -954,12 +954,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
         }
     }
 
-    HRESULT __stdcall abi_CreateBatchUpdater(abi_arg_out<Windows::Foundation::IClosable> updater) noexcept override
+    HRESULT __stdcall abi_CreateBatchUpdater(impl::abi_arg_out<Windows::Foundation::IClosable> updater) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *updater = detach(this->shim().CreateBatchUpdater());
+            *updater = detach_abi(this->shim().CreateBatchUpdater());
             return S_OK;
         }
         catch (...)
@@ -973,12 +973,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph2> : produce_base<D, Windows
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioGraphConnection> : produce_base<D, Windows::Media::Audio::IAudioGraphConnection>
 {
-    HRESULT __stdcall get_Destination(abi_arg_out<Windows::Media::Audio::IAudioNode> value) noexcept override
+    HRESULT __stdcall get_Destination(impl::abi_arg_out<Windows::Media::Audio::IAudioNode> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Destination());
+            *value = detach_abi(this->shim().Destination());
             return S_OK;
         }
         catch (...)
@@ -1007,7 +1007,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphConnection> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gain());
+            *value = detach_abi(this->shim().Gain());
             return S_OK;
         }
         catch (...)
@@ -1020,12 +1020,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraphConnection> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, Windows::Media::Audio::IAudioGraphSettings>
 {
-    HRESULT __stdcall get_EncodingProperties(abi_arg_out<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
+    HRESULT __stdcall get_EncodingProperties(impl::abi_arg_out<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EncodingProperties());
+            *value = detach_abi(this->shim().EncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -1035,7 +1035,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall put_EncodingProperties(abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
+    HRESULT __stdcall put_EncodingProperties(impl::abi_arg_in<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
     {
         try
         {
@@ -1049,12 +1049,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_PrimaryRenderDevice(abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
+    HRESULT __stdcall get_PrimaryRenderDevice(impl::abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PrimaryRenderDevice());
+            *value = detach_abi(this->shim().PrimaryRenderDevice());
             return S_OK;
         }
         catch (...)
@@ -1064,7 +1064,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall put_PrimaryRenderDevice(abi_arg_in<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
+    HRESULT __stdcall put_PrimaryRenderDevice(impl::abi_arg_in<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
     {
         try
         {
@@ -1083,7 +1083,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().QuantumSizeSelectionMode());
+            *value = detach_abi(this->shim().QuantumSizeSelectionMode());
             return S_OK;
         }
         catch (...)
@@ -1111,7 +1111,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DesiredSamplesPerQuantum());
+            *value = detach_abi(this->shim().DesiredSamplesPerQuantum());
             return S_OK;
         }
         catch (...)
@@ -1139,7 +1139,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AudioRenderCategory());
+            *value = detach_abi(this->shim().AudioRenderCategory());
             return S_OK;
         }
         catch (...)
@@ -1167,7 +1167,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DesiredRenderDeviceAudioProcessing());
+            *value = detach_abi(this->shim().DesiredRenderDeviceAudioProcessing());
             return S_OK;
         }
         catch (...)
@@ -1194,12 +1194,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettings> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioGraphSettingsFactory> : produce_base<D, Windows::Media::Audio::IAudioGraphSettingsFactory>
 {
-    HRESULT __stdcall abi_Create(Windows::Media::Render::AudioRenderCategory audioRenderCategory, abi_arg_out<Windows::Media::Audio::IAudioGraphSettings> value) noexcept override
+    HRESULT __stdcall abi_Create(Windows::Media::Render::AudioRenderCategory audioRenderCategory, impl::abi_arg_out<Windows::Media::Audio::IAudioGraphSettings> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Create(audioRenderCategory));
+            *value = detach_abi(this->shim().Create(audioRenderCategory));
             return S_OK;
         }
         catch (...)
@@ -1213,12 +1213,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraphSettingsFactory> : produce_b
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioGraphStatics> : produce_base<D, Windows::Media::Audio::IAudioGraphStatics>
 {
-    HRESULT __stdcall abi_CreateAsync(abi_arg_in<Windows::Media::Audio::IAudioGraphSettings> settings, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioGraphResult>> result) noexcept override
+    HRESULT __stdcall abi_CreateAsync(impl::abi_arg_in<Windows::Media::Audio::IAudioGraphSettings> settings, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioGraphResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateAsync(*reinterpret_cast<const Windows::Media::Audio::AudioGraphSettings *>(&settings)));
+            *result = detach_abi(this->shim().CreateAsync(*reinterpret_cast<const Windows::Media::Audio::AudioGraphSettings *>(&settings)));
             return S_OK;
         }
         catch (...)
@@ -1237,7 +1237,7 @@ struct produce<D, Windows::Media::Audio::IAudioGraphUnrecoverableErrorOccurredEv
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Error());
+            *value = detach_abi(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -1250,12 +1250,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraphUnrecoverableErrorOccurredEv
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioInputNode> : produce_base<D, Windows::Media::Audio::IAudioInputNode>
 {
-    HRESULT __stdcall get_OutgoingConnections(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::AudioGraphConnection>> value) noexcept override
+    HRESULT __stdcall get_OutgoingConnections(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::AudioGraphConnection>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutgoingConnections());
+            *value = detach_abi(this->shim().OutgoingConnections());
             return S_OK;
         }
         catch (...)
@@ -1265,7 +1265,7 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_AddOutgoingConnection(abi_arg_in<Windows::Media::Audio::IAudioNode> destination) noexcept override
+    HRESULT __stdcall abi_AddOutgoingConnection(impl::abi_arg_in<Windows::Media::Audio::IAudioNode> destination) noexcept override
     {
         try
         {
@@ -1279,7 +1279,7 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_AddOutgoingConnectionWithGain(abi_arg_in<Windows::Media::Audio::IAudioNode> destination, double gain) noexcept override
+    HRESULT __stdcall abi_AddOutgoingConnectionWithGain(impl::abi_arg_in<Windows::Media::Audio::IAudioNode> destination, double gain) noexcept override
     {
         try
         {
@@ -1293,7 +1293,7 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_RemoveOutgoingConnection(abi_arg_in<Windows::Media::Audio::IAudioNode> destination) noexcept override
+    HRESULT __stdcall abi_RemoveOutgoingConnection(impl::abi_arg_in<Windows::Media::Audio::IAudioNode> destination) noexcept override
     {
         try
         {
@@ -1311,12 +1311,12 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode> : produce_base<D, Wind
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioInputNode2> : produce_base<D, Windows::Media::Audio::IAudioInputNode2>
 {
-    HRESULT __stdcall get_Emitter(abi_arg_out<Windows::Media::Audio::IAudioNodeEmitter> value) noexcept override
+    HRESULT __stdcall get_Emitter(impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitter> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Emitter());
+            *value = detach_abi(this->shim().Emitter());
             return S_OK;
         }
         catch (...)
@@ -1330,12 +1330,12 @@ struct produce<D, Windows::Media::Audio::IAudioInputNode2> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::Media::Audio::IAudioNode>
 {
-    HRESULT __stdcall get_EffectDefinitions(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition>> value) noexcept override
+    HRESULT __stdcall get_EffectDefinitions(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EffectDefinitions());
+            *value = detach_abi(this->shim().EffectDefinitions());
             return S_OK;
         }
         catch (...)
@@ -1364,7 +1364,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutgoingGain());
+            *value = detach_abi(this->shim().OutgoingGain());
             return S_OK;
         }
         catch (...)
@@ -1373,12 +1373,12 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall get_EncodingProperties(abi_arg_out<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
+    HRESULT __stdcall get_EncodingProperties(impl::abi_arg_out<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EncodingProperties());
+            *value = detach_abi(this->shim().EncodingProperties());
             return S_OK;
         }
         catch (...)
@@ -1393,7 +1393,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ConsumeInput());
+            *value = detach_abi(this->shim().ConsumeInput());
             return S_OK;
         }
         catch (...)
@@ -1458,7 +1458,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall abi_DisableEffectsByDefinition(abi_arg_in<Windows::Media::Effects::IAudioEffectDefinition> definition) noexcept override
+    HRESULT __stdcall abi_DisableEffectsByDefinition(impl::abi_arg_in<Windows::Media::Effects::IAudioEffectDefinition> definition) noexcept override
     {
         try
         {
@@ -1472,7 +1472,7 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall abi_EnableEffectsByDefinition(abi_arg_in<Windows::Media::Effects::IAudioEffectDefinition> definition) noexcept override
+    HRESULT __stdcall abi_EnableEffectsByDefinition(impl::abi_arg_in<Windows::Media::Effects::IAudioEffectDefinition> definition) noexcept override
     {
         try
         {
@@ -1490,12 +1490,12 @@ struct produce<D, Windows::Media::Audio::IAudioNode> : produce_base<D, Windows::
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Windows::Media::Audio::IAudioNodeEmitter>
 {
-    HRESULT __stdcall get_Position(abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Position());
+            *value = detach_abi(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -1504,7 +1504,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall put_Position(abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall put_Position(impl::abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
@@ -1518,12 +1518,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_Direction(abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall get_Direction(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Direction());
+            *value = detach_abi(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -1532,7 +1532,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall put_Direction(abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall put_Direction(impl::abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
@@ -1546,12 +1546,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_Shape(abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterShape> value) noexcept override
+    HRESULT __stdcall get_Shape(impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterShape> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Shape());
+            *value = detach_abi(this->shim().Shape());
             return S_OK;
         }
         catch (...)
@@ -1561,12 +1561,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_DecayModel(abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterDecayModel> value) noexcept override
+    HRESULT __stdcall get_DecayModel(impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterDecayModel> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DecayModel());
+            *value = detach_abi(this->shim().DecayModel());
             return S_OK;
         }
         catch (...)
@@ -1581,7 +1581,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gain());
+            *value = detach_abi(this->shim().Gain());
             return S_OK;
         }
         catch (...)
@@ -1609,7 +1609,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DistanceScale());
+            *value = detach_abi(this->shim().DistanceScale());
             return S_OK;
         }
         catch (...)
@@ -1637,7 +1637,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DopplerScale());
+            *value = detach_abi(this->shim().DopplerScale());
             return S_OK;
         }
         catch (...)
@@ -1660,12 +1660,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_DopplerVelocity(abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall get_DopplerVelocity(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DopplerVelocity());
+            *value = detach_abi(this->shim().DopplerVelocity());
             return S_OK;
         }
         catch (...)
@@ -1674,7 +1674,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall put_DopplerVelocity(abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall put_DopplerVelocity(impl::abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
@@ -1693,7 +1693,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter> : produce_base<D, Wi
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsDopplerDisabled());
+            *value = detach_abi(this->shim().IsDopplerDisabled());
             return S_OK;
         }
         catch (...)
@@ -1711,7 +1711,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitter2> : produce_base<D, W
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SpatialAudioModel());
+            *value = detach_abi(this->shim().SpatialAudioModel());
             return S_OK;
         }
         catch (...)
@@ -1743,7 +1743,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterConeProperties> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InnerAngle());
+            *value = detach_abi(this->shim().InnerAngle());
             return S_OK;
         }
         catch (...)
@@ -1757,7 +1757,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterConeProperties> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OuterAngle());
+            *value = detach_abi(this->shim().OuterAngle());
             return S_OK;
         }
         catch (...)
@@ -1771,7 +1771,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterConeProperties> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OuterAngleGain());
+            *value = detach_abi(this->shim().OuterAngleGain());
             return S_OK;
         }
         catch (...)
@@ -1789,7 +1789,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModel> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Kind());
+            *value = detach_abi(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -1803,7 +1803,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModel> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinGain());
+            *value = detach_abi(this->shim().MinGain());
             return S_OK;
         }
         catch (...)
@@ -1817,7 +1817,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModel> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxGain());
+            *value = detach_abi(this->shim().MaxGain());
             return S_OK;
         }
         catch (...)
@@ -1826,12 +1826,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModel> : produce_
         }
     }
 
-    HRESULT __stdcall get_NaturalProperties(abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelProperties> value) noexcept override
+    HRESULT __stdcall get_NaturalProperties(impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelProperties> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NaturalProperties());
+            *value = detach_abi(this->shim().NaturalProperties());
             return S_OK;
         }
         catch (...)
@@ -1845,12 +1845,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModel> : produce_
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModelStatics> : produce_base<D, Windows::Media::Audio::IAudioNodeEmitterDecayModelStatics>
 {
-    HRESULT __stdcall abi_CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance, abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterDecayModel> decayModel) noexcept override
+    HRESULT __stdcall abi_CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance, impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterDecayModel> decayModel) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *decayModel = detach(this->shim().CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance));
+            *decayModel = detach_abi(this->shim().CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance));
             return S_OK;
         }
         catch (...)
@@ -1860,12 +1860,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModelStatics> : p
         }
     }
 
-    HRESULT __stdcall abi_CreateCustom(double minGain, double maxGain, abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterDecayModel> decayModel) noexcept override
+    HRESULT __stdcall abi_CreateCustom(double minGain, double maxGain, impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterDecayModel> decayModel) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *decayModel = detach(this->shim().CreateCustom(minGain, maxGain));
+            *decayModel = detach_abi(this->shim().CreateCustom(minGain, maxGain));
             return S_OK;
         }
         catch (...)
@@ -1879,12 +1879,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterDecayModelStatics> : p
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioNodeEmitterFactory> : produce_base<D, Windows::Media::Audio::IAudioNodeEmitterFactory>
 {
-    HRESULT __stdcall abi_CreateAudioNodeEmitter(abi_arg_in<Windows::Media::Audio::IAudioNodeEmitterShape> shape, abi_arg_in<Windows::Media::Audio::IAudioNodeEmitterDecayModel> decayModel, Windows::Media::Audio::AudioNodeEmitterSettings settings, abi_arg_out<Windows::Media::Audio::IAudioNodeEmitter> emitter) noexcept override
+    HRESULT __stdcall abi_CreateAudioNodeEmitter(impl::abi_arg_in<Windows::Media::Audio::IAudioNodeEmitterShape> shape, impl::abi_arg_in<Windows::Media::Audio::IAudioNodeEmitterDecayModel> decayModel, Windows::Media::Audio::AudioNodeEmitterSettings settings, impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitter> emitter) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *emitter = detach(this->shim().CreateAudioNodeEmitter(*reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitterShape *>(&shape), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitterDecayModel *>(&decayModel), settings));
+            *emitter = detach_abi(this->shim().CreateAudioNodeEmitter(*reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitterShape *>(&shape), *reinterpret_cast<const Windows::Media::Audio::AudioNodeEmitterDecayModel *>(&decayModel), settings));
             return S_OK;
         }
         catch (...)
@@ -1903,7 +1903,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelPrope
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UnityGainDistance());
+            *value = detach_abi(this->shim().UnityGainDistance());
             return S_OK;
         }
         catch (...)
@@ -1917,7 +1917,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelPrope
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CutoffDistance());
+            *value = detach_abi(this->shim().CutoffDistance());
             return S_OK;
         }
         catch (...)
@@ -1935,7 +1935,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShape> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Kind());
+            *value = detach_abi(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -1944,12 +1944,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShape> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_ConeProperties(abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterConeProperties> value) noexcept override
+    HRESULT __stdcall get_ConeProperties(impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterConeProperties> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ConeProperties());
+            *value = detach_abi(this->shim().ConeProperties());
             return S_OK;
         }
         catch (...)
@@ -1963,12 +1963,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShape> : produce_base<
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShapeStatics> : produce_base<D, Windows::Media::Audio::IAudioNodeEmitterShapeStatics>
 {
-    HRESULT __stdcall abi_CreateCone(double innerAngle, double outerAngle, double outerAngleGain, abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterShape> shape) noexcept override
+    HRESULT __stdcall abi_CreateCone(double innerAngle, double outerAngle, double outerAngleGain, impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterShape> shape) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *shape = detach(this->shim().CreateCone(innerAngle, outerAngle, outerAngleGain));
+            *shape = detach_abi(this->shim().CreateCone(innerAngle, outerAngle, outerAngleGain));
             return S_OK;
         }
         catch (...)
@@ -1978,12 +1978,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShapeStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_CreateOmnidirectional(abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterShape> shape) noexcept override
+    HRESULT __stdcall abi_CreateOmnidirectional(impl::abi_arg_out<Windows::Media::Audio::IAudioNodeEmitterShape> shape) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *shape = detach(this->shim().CreateOmnidirectional());
+            *shape = detach_abi(this->shim().CreateOmnidirectional());
             return S_OK;
         }
         catch (...)
@@ -1997,12 +1997,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeEmitterShapeStatics> : produc
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, Windows::Media::Audio::IAudioNodeListener>
 {
-    HRESULT __stdcall get_Position(abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Position());
+            *value = detach_abi(this->shim().Position());
             return S_OK;
         }
         catch (...)
@@ -2011,7 +2011,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall put_Position(abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall put_Position(impl::abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
@@ -2025,12 +2025,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall get_Orientation(abi_arg_out<Windows::Foundation::Numerics::quaternion> value) noexcept override
+    HRESULT __stdcall get_Orientation(impl::abi_arg_out<Windows::Foundation::Numerics::quaternion> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Orientation());
+            *value = detach_abi(this->shim().Orientation());
             return S_OK;
         }
         catch (...)
@@ -2039,7 +2039,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall put_Orientation(abi_arg_in<Windows::Foundation::Numerics::quaternion> value) noexcept override
+    HRESULT __stdcall put_Orientation(impl::abi_arg_in<Windows::Foundation::Numerics::quaternion> value) noexcept override
     {
         try
         {
@@ -2058,7 +2058,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SpeedOfSound());
+            *value = detach_abi(this->shim().SpeedOfSound());
             return S_OK;
         }
         catch (...)
@@ -2081,12 +2081,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall get_DopplerVelocity(abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall get_DopplerVelocity(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DopplerVelocity());
+            *value = detach_abi(this->shim().DopplerVelocity());
             return S_OK;
         }
         catch (...)
@@ -2095,7 +2095,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall put_DopplerVelocity(abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall put_DopplerVelocity(impl::abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
@@ -2113,7 +2113,7 @@ struct produce<D, Windows::Media::Audio::IAudioNodeListener> : produce_base<D, W
 template <typename D>
 struct produce<D, Windows::Media::Audio::IAudioNodeWithListener> : produce_base<D, Windows::Media::Audio::IAudioNodeWithListener>
 {
-    HRESULT __stdcall put_Listener(abi_arg_in<Windows::Media::Audio::IAudioNodeListener> value) noexcept override
+    HRESULT __stdcall put_Listener(impl::abi_arg_in<Windows::Media::Audio::IAudioNodeListener> value) noexcept override
     {
         try
         {
@@ -2127,12 +2127,12 @@ struct produce<D, Windows::Media::Audio::IAudioNodeWithListener> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Listener(abi_arg_out<Windows::Media::Audio::IAudioNodeListener> value) noexcept override
+    HRESULT __stdcall get_Listener(impl::abi_arg_out<Windows::Media::Audio::IAudioNodeListener> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Listener());
+            *value = detach_abi(this->shim().Listener());
             return S_OK;
         }
         catch (...)
@@ -2151,7 +2151,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioDeviceInputNodeResult> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2160,12 +2160,12 @@ struct produce<D, Windows::Media::Audio::ICreateAudioDeviceInputNodeResult> : pr
         }
     }
 
-    HRESULT __stdcall get_DeviceInputNode(abi_arg_out<Windows::Media::Audio::IAudioDeviceInputNode> value) noexcept override
+    HRESULT __stdcall get_DeviceInputNode(impl::abi_arg_out<Windows::Media::Audio::IAudioDeviceInputNode> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceInputNode());
+            *value = detach_abi(this->shim().DeviceInputNode());
             return S_OK;
         }
         catch (...)
@@ -2184,7 +2184,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2193,12 +2193,12 @@ struct produce<D, Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult> : p
         }
     }
 
-    HRESULT __stdcall get_DeviceOutputNode(abi_arg_out<Windows::Media::Audio::IAudioDeviceOutputNode> value) noexcept override
+    HRESULT __stdcall get_DeviceOutputNode(impl::abi_arg_out<Windows::Media::Audio::IAudioDeviceOutputNode> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceOutputNode());
+            *value = detach_abi(this->shim().DeviceOutputNode());
             return S_OK;
         }
         catch (...)
@@ -2217,7 +2217,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioFileInputNodeResult> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2226,12 +2226,12 @@ struct produce<D, Windows::Media::Audio::ICreateAudioFileInputNodeResult> : prod
         }
     }
 
-    HRESULT __stdcall get_FileInputNode(abi_arg_out<Windows::Media::Audio::IAudioFileInputNode> value) noexcept override
+    HRESULT __stdcall get_FileInputNode(impl::abi_arg_out<Windows::Media::Audio::IAudioFileInputNode> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FileInputNode());
+            *value = detach_abi(this->shim().FileInputNode());
             return S_OK;
         }
         catch (...)
@@ -2250,7 +2250,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioFileOutputNodeResult> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2259,12 +2259,12 @@ struct produce<D, Windows::Media::Audio::ICreateAudioFileOutputNodeResult> : pro
         }
     }
 
-    HRESULT __stdcall get_FileOutputNode(abi_arg_out<Windows::Media::Audio::IAudioFileOutputNode> value) noexcept override
+    HRESULT __stdcall get_FileOutputNode(impl::abi_arg_out<Windows::Media::Audio::IAudioFileOutputNode> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FileOutputNode());
+            *value = detach_abi(this->shim().FileOutputNode());
             return S_OK;
         }
         catch (...)
@@ -2283,7 +2283,7 @@ struct produce<D, Windows::Media::Audio::ICreateAudioGraphResult> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2292,12 +2292,12 @@ struct produce<D, Windows::Media::Audio::ICreateAudioGraphResult> : produce_base
         }
     }
 
-    HRESULT __stdcall get_Graph(abi_arg_out<Windows::Media::Audio::IAudioGraph> value) noexcept override
+    HRESULT __stdcall get_Graph(impl::abi_arg_out<Windows::Media::Audio::IAudioGraph> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Graph());
+            *value = detach_abi(this->shim().Graph());
             return S_OK;
         }
         catch (...)
@@ -2330,7 +2330,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WetDryMix());
+            *value = detach_abi(this->shim().WetDryMix());
             return S_OK;
         }
         catch (...)
@@ -2358,7 +2358,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Feedback());
+            *value = detach_abi(this->shim().Feedback());
             return S_OK;
         }
         catch (...)
@@ -2386,7 +2386,7 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Delay());
+            *value = detach_abi(this->shim().Delay());
             return S_OK;
         }
         catch (...)
@@ -2399,12 +2399,12 @@ struct produce<D, Windows::Media::Audio::IEchoEffectDefinition> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Media::Audio::IEchoEffectDefinitionFactory> : produce_base<D, Windows::Media::Audio::IEchoEffectDefinitionFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Media::Audio::IAudioGraph> audioGraph, abi_arg_out<Windows::Media::Audio::IEchoEffectDefinition> value) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Media::Audio::IAudioGraph> audioGraph, impl::abi_arg_out<Windows::Media::Audio::IEchoEffectDefinition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
+            *value = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
             return S_OK;
         }
         catch (...)
@@ -2423,7 +2423,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Bandwidth());
+            *value = detach_abi(this->shim().Bandwidth());
             return S_OK;
         }
         catch (...)
@@ -2451,7 +2451,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrequencyCenter());
+            *value = detach_abi(this->shim().FrequencyCenter());
             return S_OK;
         }
         catch (...)
@@ -2479,7 +2479,7 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gain());
+            *value = detach_abi(this->shim().Gain());
             return S_OK;
         }
         catch (...)
@@ -2506,12 +2506,12 @@ struct produce<D, Windows::Media::Audio::IEqualizerBand> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::Media::Audio::IEqualizerEffectDefinition> : produce_base<D, Windows::Media::Audio::IEqualizerEffectDefinition>
 {
-    HRESULT __stdcall get_Bands(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::EqualizerBand>> value) noexcept override
+    HRESULT __stdcall get_Bands(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::EqualizerBand>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Bands());
+            *value = detach_abi(this->shim().Bands());
             return S_OK;
         }
         catch (...)
@@ -2525,12 +2525,12 @@ struct produce<D, Windows::Media::Audio::IEqualizerEffectDefinition> : produce_b
 template <typename D>
 struct produce<D, Windows::Media::Audio::IEqualizerEffectDefinitionFactory> : produce_base<D, Windows::Media::Audio::IEqualizerEffectDefinitionFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Media::Audio::IAudioGraph> audioGraph, abi_arg_out<Windows::Media::Audio::IEqualizerEffectDefinition> value) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Media::Audio::IAudioGraph> audioGraph, impl::abi_arg_out<Windows::Media::Audio::IEqualizerEffectDefinition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
+            *value = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
             return S_OK;
         }
         catch (...)
@@ -2549,7 +2549,7 @@ struct produce<D, Windows::Media::Audio::IFrameInputNodeQuantumStartedEventArgs>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RequiredSamples());
+            *value = detach_abi(this->shim().RequiredSamples());
             return S_OK;
         }
         catch (...)
@@ -2581,7 +2581,7 @@ struct produce<D, Windows::Media::Audio::ILimiterEffectDefinition> : produce_bas
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Release());
+            *value = detach_abi(this->shim().Release());
             return S_OK;
         }
         catch (...)
@@ -2609,7 +2609,7 @@ struct produce<D, Windows::Media::Audio::ILimiterEffectDefinition> : produce_bas
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Loudness());
+            *value = detach_abi(this->shim().Loudness());
             return S_OK;
         }
         catch (...)
@@ -2622,12 +2622,12 @@ struct produce<D, Windows::Media::Audio::ILimiterEffectDefinition> : produce_bas
 template <typename D>
 struct produce<D, Windows::Media::Audio::ILimiterEffectDefinitionFactory> : produce_base<D, Windows::Media::Audio::ILimiterEffectDefinitionFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Media::Audio::IAudioGraph> audioGraph, abi_arg_out<Windows::Media::Audio::ILimiterEffectDefinition> value) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Media::Audio::IAudioGraph> audioGraph, impl::abi_arg_out<Windows::Media::Audio::ILimiterEffectDefinition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
+            *value = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
             return S_OK;
         }
         catch (...)
@@ -2660,7 +2660,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WetDryMix());
+            *value = detach_abi(this->shim().WetDryMix());
             return S_OK;
         }
         catch (...)
@@ -2688,7 +2688,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReflectionsDelay());
+            *value = detach_abi(this->shim().ReflectionsDelay());
             return S_OK;
         }
         catch (...)
@@ -2716,7 +2716,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReverbDelay());
+            *value = detach_abi(this->shim().ReverbDelay());
             return S_OK;
         }
         catch (...)
@@ -2744,7 +2744,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RearDelay());
+            *value = detach_abi(this->shim().RearDelay());
             return S_OK;
         }
         catch (...)
@@ -2772,7 +2772,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PositionLeft());
+            *value = detach_abi(this->shim().PositionLeft());
             return S_OK;
         }
         catch (...)
@@ -2800,7 +2800,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PositionRight());
+            *value = detach_abi(this->shim().PositionRight());
             return S_OK;
         }
         catch (...)
@@ -2828,7 +2828,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PositionMatrixLeft());
+            *value = detach_abi(this->shim().PositionMatrixLeft());
             return S_OK;
         }
         catch (...)
@@ -2856,7 +2856,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PositionMatrixRight());
+            *value = detach_abi(this->shim().PositionMatrixRight());
             return S_OK;
         }
         catch (...)
@@ -2884,7 +2884,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EarlyDiffusion());
+            *value = detach_abi(this->shim().EarlyDiffusion());
             return S_OK;
         }
         catch (...)
@@ -2912,7 +2912,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LateDiffusion());
+            *value = detach_abi(this->shim().LateDiffusion());
             return S_OK;
         }
         catch (...)
@@ -2940,7 +2940,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LowEQGain());
+            *value = detach_abi(this->shim().LowEQGain());
             return S_OK;
         }
         catch (...)
@@ -2968,7 +2968,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LowEQCutoff());
+            *value = detach_abi(this->shim().LowEQCutoff());
             return S_OK;
         }
         catch (...)
@@ -2996,7 +2996,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HighEQGain());
+            *value = detach_abi(this->shim().HighEQGain());
             return S_OK;
         }
         catch (...)
@@ -3024,7 +3024,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HighEQCutoff());
+            *value = detach_abi(this->shim().HighEQCutoff());
             return S_OK;
         }
         catch (...)
@@ -3052,7 +3052,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RoomFilterFreq());
+            *value = detach_abi(this->shim().RoomFilterFreq());
             return S_OK;
         }
         catch (...)
@@ -3080,7 +3080,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RoomFilterMain());
+            *value = detach_abi(this->shim().RoomFilterMain());
             return S_OK;
         }
         catch (...)
@@ -3108,7 +3108,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RoomFilterHF());
+            *value = detach_abi(this->shim().RoomFilterHF());
             return S_OK;
         }
         catch (...)
@@ -3136,7 +3136,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReflectionsGain());
+            *value = detach_abi(this->shim().ReflectionsGain());
             return S_OK;
         }
         catch (...)
@@ -3164,7 +3164,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReverbGain());
+            *value = detach_abi(this->shim().ReverbGain());
             return S_OK;
         }
         catch (...)
@@ -3192,7 +3192,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DecayTime());
+            *value = detach_abi(this->shim().DecayTime());
             return S_OK;
         }
         catch (...)
@@ -3220,7 +3220,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Density());
+            *value = detach_abi(this->shim().Density());
             return S_OK;
         }
         catch (...)
@@ -3248,7 +3248,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RoomSize());
+            *value = detach_abi(this->shim().RoomSize());
             return S_OK;
         }
         catch (...)
@@ -3276,7 +3276,7 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DisableLateField());
+            *value = detach_abi(this->shim().DisableLateField());
             return S_OK;
         }
         catch (...)
@@ -3289,12 +3289,12 @@ struct produce<D, Windows::Media::Audio::IReverbEffectDefinition> : produce_base
 template <typename D>
 struct produce<D, Windows::Media::Audio::IReverbEffectDefinitionFactory> : produce_base<D, Windows::Media::Audio::IReverbEffectDefinitionFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Media::Audio::IAudioGraph> audioGraph, abi_arg_out<Windows::Media::Audio::IReverbEffectDefinition> value) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Media::Audio::IAudioGraph> audioGraph, impl::abi_arg_out<Windows::Media::Audio::IReverbEffectDefinition> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
+            *value = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Media::Audio::AudioGraph *>(&audioGraph)));
             return S_OK;
         }
         catch (...)
@@ -3319,39 +3319,39 @@ template <typename D> Windows::Media::Audio::AudioGraphCreationStatus impl_ICrea
 template <typename D> Windows::Media::Audio::AudioGraph impl_ICreateAudioGraphResult<D>::Graph() const
 {
     Windows::Media::Audio::AudioGraph value { nullptr };
-    check_hresult(WINRT_SHIM(ICreateAudioGraphResult)->get_Graph(put(value)));
+    check_hresult(WINRT_SHIM(ICreateAudioGraphResult)->get_Graph(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Audio::AudioGraphSettings impl_IAudioGraphSettingsFactory<D>::Create(Windows::Media::Render::AudioRenderCategory audioRenderCategory) const
 {
     Windows::Media::Audio::AudioGraphSettings value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraphSettingsFactory)->abi_Create(audioRenderCategory, put(value)));
+    check_hresult(WINRT_SHIM(IAudioGraphSettingsFactory)->abi_Create(audioRenderCategory, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioGraphSettings<D>::EncodingProperties() const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraphSettings)->get_EncodingProperties(put(value)));
+    check_hresult(WINRT_SHIM(IAudioGraphSettings)->get_EncodingProperties(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioGraphSettings<D>::EncodingProperties(const Windows::Media::MediaProperties::AudioEncodingProperties & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioGraphSettings)->put_EncodingProperties(get(value)));
+    check_hresult(WINRT_SHIM(IAudioGraphSettings)->put_EncodingProperties(get_abi(value)));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IAudioGraphSettings<D>::PrimaryRenderDevice() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraphSettings)->get_PrimaryRenderDevice(put(value)));
+    check_hresult(WINRT_SHIM(IAudioGraphSettings)->get_PrimaryRenderDevice(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioGraphSettings<D>::PrimaryRenderDevice(const Windows::Devices::Enumeration::DeviceInformation & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioGraphSettings)->put_PrimaryRenderDevice(get(value)));
+    check_hresult(WINRT_SHIM(IAudioGraphSettings)->put_PrimaryRenderDevice(get_abi(value)));
 }
 
 template <typename D> Windows::Media::Audio::QuantumSizeSelectionMode impl_IAudioGraphSettings<D>::QuantumSizeSelectionMode() const
@@ -3405,7 +3405,7 @@ template <typename D> void impl_IAudioGraphSettings<D>::DesiredRenderDeviceAudio
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioGraphResult> impl_IAudioGraphStatics<D>::CreateAsync(const Windows::Media::Audio::AudioGraphSettings & settings) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioGraphResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraphStatics)->abi_CreateAsync(get(settings), put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraphStatics)->abi_CreateAsync(get_abi(settings), put_abi(result)));
     return result;
 }
 
@@ -3419,7 +3419,7 @@ template <typename D> Windows::Media::Audio::AudioDeviceNodeCreationStatus impl_
 template <typename D> Windows::Media::Audio::AudioDeviceInputNode impl_ICreateAudioDeviceInputNodeResult<D>::DeviceInputNode() const
 {
     Windows::Media::Audio::AudioDeviceInputNode value { nullptr };
-    check_hresult(WINRT_SHIM(ICreateAudioDeviceInputNodeResult)->get_DeviceInputNode(put(value)));
+    check_hresult(WINRT_SHIM(ICreateAudioDeviceInputNodeResult)->get_DeviceInputNode(put_abi(value)));
     return value;
 }
 
@@ -3433,7 +3433,7 @@ template <typename D> Windows::Media::Audio::AudioDeviceNodeCreationStatus impl_
 template <typename D> Windows::Media::Audio::AudioDeviceOutputNode impl_ICreateAudioDeviceOutputNodeResult<D>::DeviceOutputNode() const
 {
     Windows::Media::Audio::AudioDeviceOutputNode value { nullptr };
-    check_hresult(WINRT_SHIM(ICreateAudioDeviceOutputNodeResult)->get_DeviceOutputNode(put(value)));
+    check_hresult(WINRT_SHIM(ICreateAudioDeviceOutputNodeResult)->get_DeviceOutputNode(put_abi(value)));
     return value;
 }
 
@@ -3447,7 +3447,7 @@ template <typename D> Windows::Media::Audio::AudioFileNodeCreationStatus impl_IC
 template <typename D> Windows::Media::Audio::AudioFileInputNode impl_ICreateAudioFileInputNodeResult<D>::FileInputNode() const
 {
     Windows::Media::Audio::AudioFileInputNode value { nullptr };
-    check_hresult(WINRT_SHIM(ICreateAudioFileInputNodeResult)->get_FileInputNode(put(value)));
+    check_hresult(WINRT_SHIM(ICreateAudioFileInputNodeResult)->get_FileInputNode(put_abi(value)));
     return value;
 }
 
@@ -3461,7 +3461,7 @@ template <typename D> Windows::Media::Audio::AudioFileNodeCreationStatus impl_IC
 template <typename D> Windows::Media::Audio::AudioFileOutputNode impl_ICreateAudioFileOutputNodeResult<D>::FileOutputNode() const
 {
     Windows::Media::Audio::AudioFileOutputNode value { nullptr };
-    check_hresult(WINRT_SHIM(ICreateAudioFileOutputNodeResult)->get_FileOutputNode(put(value)));
+    check_hresult(WINRT_SHIM(ICreateAudioFileOutputNodeResult)->get_FileOutputNode(put_abi(value)));
     return value;
 }
 
@@ -3475,91 +3475,91 @@ template <typename D> Windows::Media::Audio::AudioGraphUnrecoverableError impl_I
 template <typename D> Windows::Media::Audio::AudioFrameInputNode impl_IAudioGraph<D>::CreateFrameInputNode() const
 {
     Windows::Media::Audio::AudioFrameInputNode frameInputNode { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFrameInputNode(put(frameInputNode)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFrameInputNode(put_abi(frameInputNode)));
     return frameInputNode;
 }
 
 template <typename D> Windows::Media::Audio::AudioFrameInputNode impl_IAudioGraph<D>::CreateFrameInputNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const
 {
     Windows::Media::Audio::AudioFrameInputNode frameInputNode { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFrameInputNodeWithFormat(get(encodingProperties), put(frameInputNode)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFrameInputNodeWithFormat(get_abi(encodingProperties), put_abi(frameInputNode)));
     return frameInputNode;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> impl_IAudioGraph<D>::CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateDeviceInputNodeAsync(category, put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateDeviceInputNodeAsync(category, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> impl_IAudioGraph<D>::CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category, const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateDeviceInputNodeWithFormatAsync(category, get(encodingProperties), put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateDeviceInputNodeWithFormatAsync(category, get_abi(encodingProperties), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> impl_IAudioGraph<D>::CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category, const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Devices::Enumeration::DeviceInformation & device) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateDeviceInputNodeWithFormatOnDeviceAsync(category, get(encodingProperties), get(device), put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateDeviceInputNodeWithFormatOnDeviceAsync(category, get_abi(encodingProperties), get_abi(device), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Audio::AudioFrameOutputNode impl_IAudioGraph<D>::CreateFrameOutputNode() const
 {
     Windows::Media::Audio::AudioFrameOutputNode frameOutputNode { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFrameOutputNode(put(frameOutputNode)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFrameOutputNode(put_abi(frameOutputNode)));
     return frameOutputNode;
 }
 
 template <typename D> Windows::Media::Audio::AudioFrameOutputNode impl_IAudioGraph<D>::CreateFrameOutputNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const
 {
     Windows::Media::Audio::AudioFrameOutputNode frameOutputNode { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFrameOutputNodeWithFormat(get(encodingProperties), put(frameOutputNode)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFrameOutputNodeWithFormat(get_abi(encodingProperties), put_abi(frameOutputNode)));
     return frameOutputNode;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceOutputNodeResult> impl_IAudioGraph<D>::CreateDeviceOutputNodeAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceOutputNodeResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateDeviceOutputNodeAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateDeviceOutputNodeAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult> impl_IAudioGraph<D>::CreateFileInputNodeAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFileInputNodeAsync(get(file), put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFileInputNodeAsync(get_abi(file), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult> impl_IAudioGraph<D>::CreateFileOutputNodeAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFileOutputNodeAsync(get(file), put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFileOutputNodeAsync(get_abi(file), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult> impl_IAudioGraph<D>::CreateFileOutputNodeAsync(const Windows::Storage::IStorageFile & file, const Windows::Media::MediaProperties::MediaEncodingProfile & fileEncodingProfile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFileOutputNodeWithFileProfileAsync(get(file), get(fileEncodingProfile), put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateFileOutputNodeWithFileProfileAsync(get_abi(file), get_abi(fileEncodingProfile), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Audio::AudioSubmixNode impl_IAudioGraph<D>::CreateSubmixNode() const
 {
     Windows::Media::Audio::AudioSubmixNode submixNode { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateSubmixNode(put(submixNode)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateSubmixNode(put_abi(submixNode)));
     return submixNode;
 }
 
 template <typename D> Windows::Media::Audio::AudioSubmixNode impl_IAudioGraph<D>::CreateSubmixNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const
 {
     Windows::Media::Audio::AudioSubmixNode submixNode { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateSubmixNodeWithFormat(get(encodingProperties), put(submixNode)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->abi_CreateSubmixNodeWithFormat(get_abi(encodingProperties), put_abi(submixNode)));
     return submixNode;
 }
 
@@ -3581,7 +3581,7 @@ template <typename D> void impl_IAudioGraph<D>::ResetAllNodes() const
 template <typename D> event_token impl_IAudioGraph<D>::QuantumStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAudioGraph)->add_QuantumStarted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAudioGraph)->add_QuantumStarted(get_abi(handler), &token));
     return token;
 }
 
@@ -3598,7 +3598,7 @@ template <typename D> void impl_IAudioGraph<D>::QuantumStarted(event_token token
 template <typename D> event_token impl_IAudioGraph<D>::QuantumProcessed(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAudioGraph)->add_QuantumProcessed(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAudioGraph)->add_QuantumProcessed(get_abi(handler), &token));
     return token;
 }
 
@@ -3615,7 +3615,7 @@ template <typename D> void impl_IAudioGraph<D>::QuantumProcessed(event_token tok
 template <typename D> event_token impl_IAudioGraph<D>::UnrecoverableErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAudioGraph)->add_UnrecoverableErrorOccurred(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAudioGraph)->add_UnrecoverableErrorOccurred(get_abi(handler), &token));
     return token;
 }
 
@@ -3639,7 +3639,7 @@ template <typename D> uint64_t impl_IAudioGraph<D>::CompletedQuantumCount() cons
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioGraph<D>::EncodingProperties() const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph)->get_EncodingProperties(put(value)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->get_EncodingProperties(put_abi(value)));
     return value;
 }
 
@@ -3653,7 +3653,7 @@ template <typename D> int32_t impl_IAudioGraph<D>::LatencyInSamples() const
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IAudioGraph<D>::PrimaryRenderDevice() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph)->get_PrimaryRenderDevice(put(value)));
+    check_hresult(WINRT_SHIM(IAudioGraph)->get_PrimaryRenderDevice(put_abi(value)));
     return value;
 }
 
@@ -3674,42 +3674,42 @@ template <typename D> int32_t impl_IAudioGraph<D>::SamplesPerQuantum() const
 template <typename D> Windows::Media::Audio::AudioFrameInputNode impl_IAudioGraph2<D>::CreateFrameInputNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Media::Audio::AudioNodeEmitter & emitter) const
 {
     Windows::Media::Audio::AudioFrameInputNode frameInputNode { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateFrameInputNodeWithFormatAndEmitter(get(encodingProperties), get(emitter), put(frameInputNode)));
+    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateFrameInputNodeWithFormatAndEmitter(get_abi(encodingProperties), get_abi(emitter), put_abi(frameInputNode)));
     return frameInputNode;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> impl_IAudioGraph2<D>::CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category, const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Devices::Enumeration::DeviceInformation & device, const Windows::Media::Audio::AudioNodeEmitter & emitter) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(category, get(encodingProperties), get(device), get(emitter), put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(category, get_abi(encodingProperties), get_abi(device), get_abi(emitter), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult> impl_IAudioGraph2<D>::CreateFileInputNodeAsync(const Windows::Storage::IStorageFile & file, const Windows::Media::Audio::AudioNodeEmitter & emitter) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult> result;
-    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateFileInputNodeWithEmitterAsync(get(file), get(emitter), put(result)));
+    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateFileInputNodeWithEmitterAsync(get_abi(file), get_abi(emitter), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Audio::AudioSubmixNode impl_IAudioGraph2<D>::CreateSubmixNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Media::Audio::AudioNodeEmitter & emitter) const
 {
     Windows::Media::Audio::AudioSubmixNode submixNode { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateSubmixNodeWithFormatAndEmitter(get(encodingProperties), get(emitter), put(submixNode)));
+    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateSubmixNodeWithFormatAndEmitter(get_abi(encodingProperties), get_abi(emitter), put_abi(submixNode)));
     return submixNode;
 }
 
 template <typename D> Windows::Media::Audio::AudioGraphBatchUpdater impl_IAudioGraph2<D>::CreateBatchUpdater() const
 {
     Windows::Media::Audio::AudioGraphBatchUpdater updater { nullptr };
-    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateBatchUpdater(put(updater)));
+    check_hresult(WINRT_SHIM(IAudioGraph2)->abi_CreateBatchUpdater(put_abi(updater)));
     return updater;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> impl_IAudioNode<D>::EffectDefinitions() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> value;
-    check_hresult(WINRT_SHIM(IAudioNode)->get_EffectDefinitions(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNode)->get_EffectDefinitions(put_abi(value)));
     return value;
 }
 
@@ -3728,7 +3728,7 @@ template <typename D> double impl_IAudioNode<D>::OutgoingGain() const
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioNode<D>::EncodingProperties() const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNode)->get_EncodingProperties(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNode)->get_EncodingProperties(put_abi(value)));
     return value;
 }
 
@@ -3761,52 +3761,52 @@ template <typename D> void impl_IAudioNode<D>::Reset() const
 
 template <typename D> void impl_IAudioNode<D>::DisableEffectsByDefinition(const Windows::Media::Effects::IAudioEffectDefinition & definition) const
 {
-    check_hresult(WINRT_SHIM(IAudioNode)->abi_DisableEffectsByDefinition(get(definition)));
+    check_hresult(WINRT_SHIM(IAudioNode)->abi_DisableEffectsByDefinition(get_abi(definition)));
 }
 
 template <typename D> void impl_IAudioNode<D>::EnableEffectsByDefinition(const Windows::Media::Effects::IAudioEffectDefinition & definition) const
 {
-    check_hresult(WINRT_SHIM(IAudioNode)->abi_EnableEffectsByDefinition(get(definition)));
+    check_hresult(WINRT_SHIM(IAudioNode)->abi_EnableEffectsByDefinition(get_abi(definition)));
 }
 
 template <typename D> void impl_IAudioNodeWithListener<D>::Listener(const Windows::Media::Audio::AudioNodeListener & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioNodeWithListener)->put_Listener(get(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeWithListener)->put_Listener(get_abi(value)));
 }
 
 template <typename D> Windows::Media::Audio::AudioNodeListener impl_IAudioNodeWithListener<D>::Listener() const
 {
     Windows::Media::Audio::AudioNodeListener value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeWithListener)->get_Listener(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeWithListener)->get_Listener(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::AudioGraphConnection> impl_IAudioInputNode<D>::OutgoingConnections() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::AudioGraphConnection> value;
-    check_hresult(WINRT_SHIM(IAudioInputNode)->get_OutgoingConnections(put(value)));
+    check_hresult(WINRT_SHIM(IAudioInputNode)->get_OutgoingConnections(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioInputNode<D>::AddOutgoingConnection(const Windows::Media::Audio::IAudioNode & destination) const
 {
-    check_hresult(WINRT_SHIM(IAudioInputNode)->abi_AddOutgoingConnection(get(destination)));
+    check_hresult(WINRT_SHIM(IAudioInputNode)->abi_AddOutgoingConnection(get_abi(destination)));
 }
 
 template <typename D> void impl_IAudioInputNode<D>::AddOutgoingConnection(const Windows::Media::Audio::IAudioNode & destination, double gain) const
 {
-    check_hresult(WINRT_SHIM(IAudioInputNode)->abi_AddOutgoingConnectionWithGain(get(destination), gain));
+    check_hresult(WINRT_SHIM(IAudioInputNode)->abi_AddOutgoingConnectionWithGain(get_abi(destination), gain));
 }
 
 template <typename D> void impl_IAudioInputNode<D>::RemoveOutgoingConnection(const Windows::Media::Audio::IAudioNode & destination) const
 {
-    check_hresult(WINRT_SHIM(IAudioInputNode)->abi_RemoveOutgoingConnection(get(destination)));
+    check_hresult(WINRT_SHIM(IAudioInputNode)->abi_RemoveOutgoingConnection(get_abi(destination)));
 }
 
 template <typename D> Windows::Media::Audio::AudioNodeEmitter impl_IAudioInputNode2<D>::Emitter() const
 {
     Windows::Media::Audio::AudioNodeEmitter value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioInputNode2)->get_Emitter(put(value)));
+    check_hresult(WINRT_SHIM(IAudioInputNode2)->get_Emitter(put_abi(value)));
     return value;
 }
 
@@ -3824,7 +3824,7 @@ template <typename D> double impl_IAudioFrameInputNode<D>::PlaybackSpeedFactor()
 
 template <typename D> void impl_IAudioFrameInputNode<D>::AddFrame(const Windows::Media::AudioFrame & frame) const
 {
-    check_hresult(WINRT_SHIM(IAudioFrameInputNode)->abi_AddFrame(get(frame)));
+    check_hresult(WINRT_SHIM(IAudioFrameInputNode)->abi_AddFrame(get_abi(frame)));
 }
 
 template <typename D> void impl_IAudioFrameInputNode<D>::DiscardQueuedFrames() const
@@ -3842,7 +3842,7 @@ template <typename D> uint64_t impl_IAudioFrameInputNode<D>::QueuedSampleCount()
 template <typename D> event_token impl_IAudioFrameInputNode<D>::AudioFrameCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::AudioFrameCompletedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAudioFrameInputNode)->add_AudioFrameCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAudioFrameInputNode)->add_AudioFrameCompleted(get_abi(handler), &token));
     return token;
 }
 
@@ -3859,7 +3859,7 @@ template <typename D> void impl_IAudioFrameInputNode<D>::AudioFrameCompleted(eve
 template <typename D> event_token impl_IAudioFrameInputNode<D>::QuantumStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAudioFrameInputNode)->add_QuantumStarted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAudioFrameInputNode)->add_QuantumStarted(get_abi(handler), &token));
     return token;
 }
 
@@ -3888,69 +3888,69 @@ template <typename D> double impl_IAudioFileInputNode<D>::PlaybackSpeedFactor() 
 template <typename D> Windows::Foundation::TimeSpan impl_IAudioFileInputNode<D>::Position() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_Position(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioFileInputNode<D>::Seek(const Windows::Foundation::TimeSpan & position) const
 {
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->abi_Seek(get(position)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->abi_Seek(get_abi(position)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IAudioFileInputNode<D>::StartTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_StartTime(put(value)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_StartTime(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioFileInputNode<D>::StartTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->put_StartTime(get(value)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->put_StartTime(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IAudioFileInputNode<D>::EndTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_EndTime(put(value)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_EndTime(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioFileInputNode<D>::EndTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->put_EndTime(get(value)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->put_EndTime(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IAudioFileInputNode<D>::LoopCount() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_LoopCount(put(value)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_LoopCount(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioFileInputNode<D>::LoopCount(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->put_LoopCount(get(value)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->put_LoopCount(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IAudioFileInputNode<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_Duration(put(value)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_Duration(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFile impl_IAudioFileInputNode<D>::SourceFile() const
 {
     Windows::Storage::StorageFile value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_SourceFile(put(value)));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->get_SourceFile(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IAudioFileInputNode<D>::FileCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAudioFileInputNode)->add_FileCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAudioFileInputNode)->add_FileCompleted(get_abi(handler), &token));
     return token;
 }
 
@@ -3967,49 +3967,49 @@ template <typename D> void impl_IAudioFileInputNode<D>::FileCompleted(event_toke
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IAudioDeviceInputNode<D>::Device() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioDeviceInputNode)->get_Device(put(value)));
+    check_hresult(WINRT_SHIM(IAudioDeviceInputNode)->get_Device(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IAudioDeviceOutputNode<D>::Device() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioDeviceOutputNode)->get_Device(put(value)));
+    check_hresult(WINRT_SHIM(IAudioDeviceOutputNode)->get_Device(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::AudioFrame impl_IAudioFrameOutputNode<D>::GetFrame() const
 {
     Windows::Media::AudioFrame audioFrame { nullptr };
-    check_hresult(WINRT_SHIM(IAudioFrameOutputNode)->abi_GetFrame(put(audioFrame)));
+    check_hresult(WINRT_SHIM(IAudioFrameOutputNode)->abi_GetFrame(put_abi(audioFrame)));
     return audioFrame;
 }
 
 template <typename D> Windows::Storage::IStorageFile impl_IAudioFileOutputNode<D>::File() const
 {
     Windows::Storage::IStorageFile value;
-    check_hresult(WINRT_SHIM(IAudioFileOutputNode)->get_File(put(value)));
+    check_hresult(WINRT_SHIM(IAudioFileOutputNode)->get_File(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IAudioFileOutputNode<D>::FileEncodingProfile() const
 {
     Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioFileOutputNode)->get_FileEncodingProfile(put(value)));
+    check_hresult(WINRT_SHIM(IAudioFileOutputNode)->get_FileEncodingProfile(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Transcoding::TranscodeFailureReason> impl_IAudioFileOutputNode<D>::FinalizeAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Transcoding::TranscodeFailureReason> result;
-    check_hresult(WINRT_SHIM(IAudioFileOutputNode)->abi_FinalizeAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAudioFileOutputNode)->abi_FinalizeAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Media::AudioFrame impl_IAudioFrameCompletedEventArgs<D>::Frame() const
 {
     Windows::Media::AudioFrame value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioFrameCompletedEventArgs)->get_Frame(put(value)));
+    check_hresult(WINRT_SHIM(IAudioFrameCompletedEventArgs)->get_Frame(put_abi(value)));
     return value;
 }
 
@@ -4023,7 +4023,7 @@ template <typename D> int32_t impl_IFrameInputNodeQuantumStartedEventArgs<D>::Re
 template <typename D> Windows::Media::Audio::IAudioNode impl_IAudioGraphConnection<D>::Destination() const
 {
     Windows::Media::Audio::IAudioNode value;
-    check_hresult(WINRT_SHIM(IAudioGraphConnection)->get_Destination(put(value)));
+    check_hresult(WINRT_SHIM(IAudioGraphConnection)->get_Destination(put_abi(value)));
     return value;
 }
 
@@ -4078,28 +4078,28 @@ template <typename D> void impl_IEqualizerBand<D>::Gain(double value) const
 template <typename D> Windows::Media::Audio::EqualizerEffectDefinition impl_IEqualizerEffectDefinitionFactory<D>::Create(const Windows::Media::Audio::AudioGraph & audioGraph) const
 {
     Windows::Media::Audio::EqualizerEffectDefinition value { nullptr };
-    check_hresult(WINRT_SHIM(IEqualizerEffectDefinitionFactory)->abi_Create(get(audioGraph), put(value)));
+    check_hresult(WINRT_SHIM(IEqualizerEffectDefinitionFactory)->abi_Create(get_abi(audioGraph), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Audio::ReverbEffectDefinition impl_IReverbEffectDefinitionFactory<D>::Create(const Windows::Media::Audio::AudioGraph & audioGraph) const
 {
     Windows::Media::Audio::ReverbEffectDefinition value { nullptr };
-    check_hresult(WINRT_SHIM(IReverbEffectDefinitionFactory)->abi_Create(get(audioGraph), put(value)));
+    check_hresult(WINRT_SHIM(IReverbEffectDefinitionFactory)->abi_Create(get_abi(audioGraph), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Audio::EchoEffectDefinition impl_IEchoEffectDefinitionFactory<D>::Create(const Windows::Media::Audio::AudioGraph & audioGraph) const
 {
     Windows::Media::Audio::EchoEffectDefinition value { nullptr };
-    check_hresult(WINRT_SHIM(IEchoEffectDefinitionFactory)->abi_Create(get(audioGraph), put(value)));
+    check_hresult(WINRT_SHIM(IEchoEffectDefinitionFactory)->abi_Create(get_abi(audioGraph), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Audio::LimiterEffectDefinition impl_ILimiterEffectDefinitionFactory<D>::Create(const Windows::Media::Audio::AudioGraph & audioGraph) const
 {
     Windows::Media::Audio::LimiterEffectDefinition value { nullptr };
-    check_hresult(WINRT_SHIM(ILimiterEffectDefinitionFactory)->abi_Create(get(audioGraph), put(value)));
+    check_hresult(WINRT_SHIM(ILimiterEffectDefinitionFactory)->abi_Create(get_abi(audioGraph), put_abi(value)));
     return value;
 }
 
@@ -4134,21 +4134,21 @@ template <typename D> Windows::Media::Audio::AudioNodeEmitterShapeKind impl_IAud
 template <typename D> Windows::Media::Audio::AudioNodeEmitterConeProperties impl_IAudioNodeEmitterShape<D>::ConeProperties() const
 {
     Windows::Media::Audio::AudioNodeEmitterConeProperties value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeEmitterShape)->get_ConeProperties(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitterShape)->get_ConeProperties(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Audio::AudioNodeEmitterShape impl_IAudioNodeEmitterShapeStatics<D>::CreateCone(double innerAngle, double outerAngle, double outerAngleGain) const
 {
     Windows::Media::Audio::AudioNodeEmitterShape shape { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeEmitterShapeStatics)->abi_CreateCone(innerAngle, outerAngle, outerAngleGain, put(shape)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitterShapeStatics)->abi_CreateCone(innerAngle, outerAngle, outerAngleGain, put_abi(shape)));
     return shape;
 }
 
 template <typename D> Windows::Media::Audio::AudioNodeEmitterShape impl_IAudioNodeEmitterShapeStatics<D>::CreateOmnidirectional() const
 {
     Windows::Media::Audio::AudioNodeEmitterShape shape { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeEmitterShapeStatics)->abi_CreateOmnidirectional(put(shape)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitterShapeStatics)->abi_CreateOmnidirectional(put_abi(shape)));
     return shape;
 }
 
@@ -4190,59 +4190,59 @@ template <typename D> double impl_IAudioNodeEmitterDecayModel<D>::MaxGain() cons
 template <typename D> Windows::Media::Audio::AudioNodeEmitterNaturalDecayModelProperties impl_IAudioNodeEmitterDecayModel<D>::NaturalProperties() const
 {
     Windows::Media::Audio::AudioNodeEmitterNaturalDecayModelProperties value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeEmitterDecayModel)->get_NaturalProperties(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitterDecayModel)->get_NaturalProperties(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Audio::AudioNodeEmitterDecayModel impl_IAudioNodeEmitterDecayModelStatics<D>::CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance) const
 {
     Windows::Media::Audio::AudioNodeEmitterDecayModel decayModel { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeEmitterDecayModelStatics)->abi_CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance, put(decayModel)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitterDecayModelStatics)->abi_CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance, put_abi(decayModel)));
     return decayModel;
 }
 
 template <typename D> Windows::Media::Audio::AudioNodeEmitterDecayModel impl_IAudioNodeEmitterDecayModelStatics<D>::CreateCustom(double minGain, double maxGain) const
 {
     Windows::Media::Audio::AudioNodeEmitterDecayModel decayModel { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeEmitterDecayModelStatics)->abi_CreateCustom(minGain, maxGain, put(decayModel)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitterDecayModelStatics)->abi_CreateCustom(minGain, maxGain, put_abi(decayModel)));
     return decayModel;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IAudioNodeEmitter<D>::Position() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_Position(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioNodeEmitter<D>::Position(const Windows::Foundation::Numerics::float3 & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->put_Position(get(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->put_Position(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IAudioNodeEmitter<D>::Direction() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_Direction(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_Direction(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioNodeEmitter<D>::Direction(const Windows::Foundation::Numerics::float3 & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->put_Direction(get(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->put_Direction(get_abi(value)));
 }
 
 template <typename D> Windows::Media::Audio::AudioNodeEmitterShape impl_IAudioNodeEmitter<D>::Shape() const
 {
     Windows::Media::Audio::AudioNodeEmitterShape value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_Shape(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_Shape(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Audio::AudioNodeEmitterDecayModel impl_IAudioNodeEmitter<D>::DecayModel() const
 {
     Windows::Media::Audio::AudioNodeEmitterDecayModel value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_DecayModel(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_DecayModel(put_abi(value)));
     return value;
 }
 
@@ -4285,13 +4285,13 @@ template <typename D> void impl_IAudioNodeEmitter<D>::DopplerScale(double value)
 template <typename D> Windows::Foundation::Numerics::float3 impl_IAudioNodeEmitter<D>::DopplerVelocity() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_DopplerVelocity(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->get_DopplerVelocity(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioNodeEmitter<D>::DopplerVelocity(const Windows::Foundation::Numerics::float3 & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->put_DopplerVelocity(get(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitter)->put_DopplerVelocity(get_abi(value)));
 }
 
 template <typename D> bool impl_IAudioNodeEmitter<D>::IsDopplerDisabled() const
@@ -4316,32 +4316,32 @@ template <typename D> void impl_IAudioNodeEmitter2<D>::SpatialAudioModel(Windows
 template <typename D> Windows::Media::Audio::AudioNodeEmitter impl_IAudioNodeEmitterFactory<D>::CreateAudioNodeEmitter(const Windows::Media::Audio::AudioNodeEmitterShape & shape, const Windows::Media::Audio::AudioNodeEmitterDecayModel & decayModel, Windows::Media::Audio::AudioNodeEmitterSettings settings) const
 {
     Windows::Media::Audio::AudioNodeEmitter emitter { nullptr };
-    check_hresult(WINRT_SHIM(IAudioNodeEmitterFactory)->abi_CreateAudioNodeEmitter(get(shape), get(decayModel), settings, put(emitter)));
+    check_hresult(WINRT_SHIM(IAudioNodeEmitterFactory)->abi_CreateAudioNodeEmitter(get_abi(shape), get_abi(decayModel), settings, put_abi(emitter)));
     return emitter;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IAudioNodeListener<D>::Position() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(WINRT_SHIM(IAudioNodeListener)->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeListener)->get_Position(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioNodeListener<D>::Position(const Windows::Foundation::Numerics::float3 & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioNodeListener)->put_Position(get(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeListener)->put_Position(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Numerics::quaternion impl_IAudioNodeListener<D>::Orientation() const
 {
     Windows::Foundation::Numerics::quaternion value {};
-    check_hresult(WINRT_SHIM(IAudioNodeListener)->get_Orientation(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeListener)->get_Orientation(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioNodeListener<D>::Orientation(const Windows::Foundation::Numerics::quaternion & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioNodeListener)->put_Orientation(get(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeListener)->put_Orientation(get_abi(value)));
 }
 
 template <typename D> double impl_IAudioNodeListener<D>::SpeedOfSound() const
@@ -4359,19 +4359,19 @@ template <typename D> void impl_IAudioNodeListener<D>::SpeedOfSound(double value
 template <typename D> Windows::Foundation::Numerics::float3 impl_IAudioNodeListener<D>::DopplerVelocity() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(WINRT_SHIM(IAudioNodeListener)->get_DopplerVelocity(put(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeListener)->get_DopplerVelocity(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioNodeListener<D>::DopplerVelocity(const Windows::Foundation::Numerics::float3 & value) const
 {
-    check_hresult(WINRT_SHIM(IAudioNodeListener)->put_DopplerVelocity(get(value)));
+    check_hresult(WINRT_SHIM(IAudioNodeListener)->put_DopplerVelocity(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::EqualizerBand> impl_IEqualizerEffectDefinition<D>::Bands() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::EqualizerBand> value;
-    check_hresult(WINRT_SHIM(IEqualizerEffectDefinition)->get_Bands(put(value)));
+    check_hresult(WINRT_SHIM(IEqualizerEffectDefinition)->get_Bands(put_abi(value)));
     return value;
 }
 

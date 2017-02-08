@@ -7,7 +7,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
     {
         void GetResults()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
 
             if (this->m_status == AsyncStatus::Completed)
             {
@@ -29,7 +29,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
             winrt::Windows::Foundation::AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(this->m_lock);
+                const winrt::impl::lock_guard guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Started)
                 {

@@ -13,7 +13,7 @@ template <typename H> struct impl_DoubleTappedEventHandler : implements<impl_Dou
 {
     impl_DoubleTappedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_HoldingEventHandler : implements<impl_HoldingE
 {
     impl_HoldingEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -49,7 +49,7 @@ template <typename H> struct impl_KeyEventHandler : implements<impl_KeyEventHand
 {
     impl_KeyEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IKeyRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -67,7 +67,7 @@ template <typename H> struct impl_ManipulationCompletedEventHandler : implements
 {
     impl_ManipulationCompletedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -85,7 +85,7 @@ template <typename H> struct impl_ManipulationDeltaEventHandler : implements<imp
 {
     impl_ManipulationDeltaEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -103,7 +103,7 @@ template <typename H> struct impl_ManipulationInertiaStartingEventHandler : impl
 {
     impl_ManipulationInertiaStartingEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -121,7 +121,7 @@ template <typename H> struct impl_ManipulationStartedEventHandler : implements<i
 {
     impl_ManipulationStartedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -139,7 +139,7 @@ template <typename H> struct impl_ManipulationStartingEventHandler : implements<
 {
     impl_ManipulationStartingEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -157,7 +157,7 @@ template <typename H> struct impl_PointerEventHandler : implements<impl_PointerE
 {
     impl_PointerEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IPointerRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -175,7 +175,7 @@ template <typename H> struct impl_RightTappedEventHandler : implements<impl_Righ
 {
     impl_RightTappedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -193,7 +193,7 @@ template <typename H> struct impl_TappedEventHandler : implements<impl_TappedEve
 {
     impl_TappedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Input::ITappedRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Input::ITappedRoutedEventArgs> e) noexcept override
     {
         try
         {

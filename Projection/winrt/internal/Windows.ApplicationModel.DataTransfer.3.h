@@ -13,7 +13,7 @@ template <typename H> struct impl_DataProviderHandler : implements<impl_DataProv
 {
     impl_DataProviderHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::ApplicationModel::DataTransfer::IDataProviderRequest> request) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::ApplicationModel::DataTransfer::IDataProviderRequest> request) noexcept override
     {
         try
         {

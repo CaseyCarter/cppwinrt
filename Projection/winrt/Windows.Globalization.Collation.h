@@ -14,12 +14,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Globalization::Collation::ICharacterGrouping> : produce_base<D, Windows::Globalization::Collation::ICharacterGrouping>
 {
-    HRESULT __stdcall get_First(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_First(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().First());
+            *value = detach_abi(this->shim().First());
             return S_OK;
         }
         catch (...)
@@ -29,12 +29,12 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGrouping> : produ
         }
     }
 
-    HRESULT __stdcall get_Label(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Label(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Label());
+            *value = detach_abi(this->shim().Label());
             return S_OK;
         }
         catch (...)
@@ -48,12 +48,12 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGrouping> : produ
 template <typename D>
 struct produce<D, Windows::Globalization::Collation::ICharacterGroupings> : produce_base<D, Windows::Globalization::Collation::ICharacterGroupings>
 {
-    HRESULT __stdcall abi_Lookup(abi_arg_in<hstring> text, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_Lookup(impl::abi_arg_in<hstring> text, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Lookup(*reinterpret_cast<const hstring *>(&text)));
+            *result = detach_abi(this->shim().Lookup(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
         catch (...)
@@ -71,21 +71,21 @@ namespace Windows::Globalization::Collation {
 template <typename D> hstring impl_ICharacterGrouping<D>::First() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICharacterGrouping)->get_First(put(value)));
+    check_hresult(WINRT_SHIM(ICharacterGrouping)->get_First(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICharacterGrouping<D>::Label() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICharacterGrouping)->get_Label(put(value)));
+    check_hresult(WINRT_SHIM(ICharacterGrouping)->get_Label(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICharacterGroupings<D>::Lookup(hstring_view text) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(ICharacterGroupings)->abi_Lookup(get(text), put(result)));
+    check_hresult(WINRT_SHIM(ICharacterGroupings)->abi_Lookup(get_abi(text), put_abi(result)));
     return result;
 }
 

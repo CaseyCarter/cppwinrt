@@ -20,7 +20,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AmbientAmount());
+            *value = detach_abi(this->shim().AmbientAmount());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DiffuseAmount());
+            *value = detach_abi(this->shim().DiffuseAmount());
             return S_OK;
         }
         catch (...)
@@ -71,12 +71,12 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
         }
     }
 
-    HRESULT __stdcall get_NormalMapSource(abi_arg_out<Windows::Graphics::Effects::IGraphicsEffectSource> value) noexcept override
+    HRESULT __stdcall get_NormalMapSource(impl::abi_arg_out<Windows::Graphics::Effects::IGraphicsEffectSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NormalMapSource());
+            *value = detach_abi(this->shim().NormalMapSource());
             return S_OK;
         }
         catch (...)
@@ -86,7 +86,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
         }
     }
 
-    HRESULT __stdcall put_NormalMapSource(abi_arg_in<Windows::Graphics::Effects::IGraphicsEffectSource> value) noexcept override
+    HRESULT __stdcall put_NormalMapSource(impl::abi_arg_in<Windows::Graphics::Effects::IGraphicsEffectSource> value) noexcept override
     {
         try
         {
@@ -105,7 +105,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SpecularAmount());
+            *value = detach_abi(this->shim().SpecularAmount());
             return S_OK;
         }
         catch (...)
@@ -133,7 +133,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SpecularShine());
+            *value = detach_abi(this->shim().SpecularShine());
             return S_OK;
         }
         catch (...)
@@ -188,13 +188,13 @@ template <typename D> void impl_ISceneLightingEffect<D>::DiffuseAmount(float val
 template <typename D> Windows::Graphics::Effects::IGraphicsEffectSource impl_ISceneLightingEffect<D>::NormalMapSource() const
 {
     Windows::Graphics::Effects::IGraphicsEffectSource value;
-    check_hresult(WINRT_SHIM(ISceneLightingEffect)->get_NormalMapSource(put(value)));
+    check_hresult(WINRT_SHIM(ISceneLightingEffect)->get_NormalMapSource(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ISceneLightingEffect<D>::NormalMapSource(const Windows::Graphics::Effects::IGraphicsEffectSource & value) const
 {
-    check_hresult(WINRT_SHIM(ISceneLightingEffect)->put_NormalMapSource(get(value)));
+    check_hresult(WINRT_SHIM(ISceneLightingEffect)->put_NormalMapSource(get_abi(value)));
 }
 
 template <typename D> float impl_ISceneLightingEffect<D>::SpecularAmount() const

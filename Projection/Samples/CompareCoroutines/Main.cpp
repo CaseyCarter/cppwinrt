@@ -83,7 +83,7 @@ void measure(char const * name, F function)
 
 int main()
 {
-    initialize();
+    init_apartment();
 
     try
     {

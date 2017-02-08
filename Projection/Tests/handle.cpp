@@ -27,14 +27,14 @@ TEST_CASE("handle, file")
     wchar_t path[1024] {};
     REQUIRE(0 != GetModuleFileName(nullptr, path, _countof(path)));
 
-    handle<test_file_traits> empty;
+    impl:: handle<test_file_traits> empty;
     REQUIRE(!empty);
     static_assert(sizeof(empty) == sizeof(HANDLE), "fail");
 
-    handle<test_file_traits> good = CreateFile(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+    impl::handle<test_file_traits> good = CreateFile(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
     REQUIRE(good);
 
-    handle<test_file_traits> bad = CreateFile(L"BAD", GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+    impl::handle<test_file_traits> bad = CreateFile(L"BAD", GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
     REQUIRE(!bad);
 }
 
@@ -59,22 +59,22 @@ struct test_event_traits
 
 TEST_CASE("handle, event")
 {
-    handle<test_event_traits> empty;
+    impl::handle<test_event_traits> empty;
     REQUIRE(!empty);
 
-    handle<test_event_traits> good = CreateEvent(nullptr, true, true, nullptr);
+    impl::handle<test_event_traits> good = CreateEvent(nullptr, true, true, nullptr);
     REQUIRE(good);
 
-    handle<test_event_traits> bad = CreateEvent(nullptr, true, true, L"BAD\\");
+    impl::handle<test_event_traits> bad = CreateEvent(nullptr, true, true, L"BAD\\");
     REQUIRE(!bad);
 }
 
 TEST_CASE("handle, move")
 {
-    handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
+    impl::handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
     REQUIRE(a);
 
-    handle<test_event_traits> b = std::move(a); // move construct
+    impl::handle<test_event_traits> b = std::move(a); // move construct
     REQUIRE(!a);
     REQUIRE(b);
 
@@ -85,7 +85,7 @@ TEST_CASE("handle, move")
 
 TEST_CASE("handle, close")
 {
-    handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
+    impl::handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
     REQUIRE(a);
 
     a.close();
@@ -96,9 +96,9 @@ TEST_CASE("handle, get")
 {
     HANDLE h = CreateEvent(nullptr, true, true, nullptr);
 
-    handle<test_event_traits> a = h;
+    impl::handle<test_event_traits> a = h;
 
-    REQUIRE(h == get(a));
+    REQUIRE(h == get_abi(a));
 }
 
 static void test_put(HANDLE * value)
@@ -111,10 +111,10 @@ static void test_put(HANDLE * value)
 
 TEST_CASE("handle, put")
 {
-    handle<test_event_traits> a;
+    impl::handle<test_event_traits> a;
     REQUIRE(!a);
 
-    test_put(put(a));
+    test_put(put_abi(a));
 
     REQUIRE(a);
 }
@@ -123,31 +123,31 @@ TEST_CASE("handle, detach")
 {
     HANDLE h = CreateEvent(nullptr, true, true, nullptr);
 
-    handle<test_event_traits> a = h;
+    impl::handle<test_event_traits> a = h;
 
-    REQUIRE(h == get(a));
+    REQUIRE(h == get_abi(a));
 
-    HANDLE detached = detach(a);
+    HANDLE detached = detach_abi(a);
 
     REQUIRE(!a);
     REQUIRE(h == detached);
 
-    attach(a, detached);
+    attach_abi(a, detached);
     REQUIRE(a);
-    REQUIRE(h == get(a));
+    REQUIRE(h == get_abi(a));
 }
 
 TEST_CASE("handle, swap")
 {
-    handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
-    handle<test_event_traits> b = CreateEvent(nullptr, true, true, nullptr);
+    impl::handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
+    impl::handle<test_event_traits> b = CreateEvent(nullptr, true, true, nullptr);
 
     REQUIRE(a);
     REQUIRE(b);
     REQUIRE(a != b);
 
-    HANDLE ga = get(a);
-    HANDLE gb = get(b);
+    HANDLE ga = get_abi(a);
+    HANDLE gb = get_abi(b);
 
     swap(a, b);
 
@@ -155,14 +155,14 @@ TEST_CASE("handle, swap")
     REQUIRE(b);
     REQUIRE(a != b);
 
-    REQUIRE(gb == get(a));
-    REQUIRE(ga == get(b));
+    REQUIRE(gb == get_abi(a));
+    REQUIRE(ga == get_abi(b));
 }
 
 TEST_CASE("handle, compare")
 {
-    handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
-    handle<test_event_traits> b = CreateEvent(nullptr, true, true, nullptr);
+    impl::handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
+    impl::handle<test_event_traits> b = CreateEvent(nullptr, true, true, nullptr);
 
     if (a > b)
     {

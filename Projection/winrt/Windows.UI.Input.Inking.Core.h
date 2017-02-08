@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSource> : produce_base<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSource>
 {
-    HRESULT __stdcall add_PointerEntering(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerEntering(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerEntering(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerEntering(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -44,12 +44,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
         }
     }
 
-    HRESULT __stdcall add_PointerHovering(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerHovering(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerHovering(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerHovering(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -72,12 +72,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
         }
     }
 
-    HRESULT __stdcall add_PointerExiting(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerExiting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerExiting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerExiting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -100,12 +100,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
         }
     }
 
-    HRESULT __stdcall add_PointerPressing(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerPressing(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerPressing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerPressing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -128,12 +128,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
         }
     }
 
-    HRESULT __stdcall add_PointerMoving(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerMoving(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerMoving(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerMoving(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -156,12 +156,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
         }
     }
 
-    HRESULT __stdcall add_PointerReleasing(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerReleasing(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerReleasing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerReleasing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -184,12 +184,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
         }
     }
 
-    HRESULT __stdcall add_PointerLost(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerLost(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -212,12 +212,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
         }
     }
 
-    HRESULT __stdcall get_InkPresenter(abi_arg_out<Windows::UI::Input::Inking::IInkPresenter> value) noexcept override
+    HRESULT __stdcall get_InkPresenter(impl::abi_arg_out<Windows::UI::Input::Inking::IInkPresenter> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InkPresenter());
+            *value = detach_abi(this->shim().InkPresenter());
             return S_OK;
         }
         catch (...)
@@ -231,12 +231,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSourceStatics> : produce_base<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSourceStatics>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::UI::Input::Inking::IInkPresenter> inkPresenter, abi_arg_out<Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSource> inkIndependentInputSource) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::UI::Input::Inking::IInkPresenter> inkPresenter, impl::abi_arg_out<Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSource> inkIndependentInputSource) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *inkIndependentInputSource = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Input::Inking::InkPresenter *>(&inkPresenter)));
+            *inkIndependentInputSource = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::UI::Input::Inking::InkPresenter *>(&inkPresenter)));
             return S_OK;
         }
         catch (...)
@@ -250,12 +250,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArgs> : produce_base<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArgs>
 {
-    HRESULT __stdcall get_NewInkPoints(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Input::Inking::InkPoint>> value) noexcept override
+    HRESULT __stdcall get_NewInkPoints(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Input::Inking::InkPoint>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NewInkPoints());
+            *value = detach_abi(this->shim().NewInkPoints());
             return S_OK;
         }
         catch (...)
@@ -270,7 +270,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArg
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PointerId());
+            *value = detach_abi(this->shim().PointerId());
             return S_OK;
         }
         catch (...)
@@ -284,7 +284,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArg
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Disposition());
+            *value = detach_abi(this->shim().Disposition());
             return S_OK;
         }
         catch (...)
@@ -311,12 +311,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArg
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> : produce_base<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource>
 {
-    HRESULT __stdcall add_WetStrokeStarting(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_WetStrokeStarting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().WetStrokeStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().WetStrokeStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -339,12 +339,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
         }
     }
 
-    HRESULT __stdcall add_WetStrokeContinuing(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_WetStrokeContinuing(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().WetStrokeContinuing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().WetStrokeContinuing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -367,12 +367,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
         }
     }
 
-    HRESULT __stdcall add_WetStrokeStopping(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_WetStrokeStopping(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().WetStrokeStopping(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().WetStrokeStopping(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -395,12 +395,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
         }
     }
 
-    HRESULT __stdcall add_WetStrokeCompleted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_WetStrokeCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().WetStrokeCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().WetStrokeCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -423,12 +423,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
         }
     }
 
-    HRESULT __stdcall add_WetStrokeCanceled(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_WetStrokeCanceled(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().WetStrokeCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().WetStrokeCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -451,12 +451,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
         }
     }
 
-    HRESULT __stdcall get_InkPresenter(abi_arg_out<Windows::UI::Input::Inking::IInkPresenter> value) noexcept override
+    HRESULT __stdcall get_InkPresenter(impl::abi_arg_out<Windows::UI::Input::Inking::IInkPresenter> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InkPresenter());
+            *value = detach_abi(this->shim().InkPresenter());
             return S_OK;
         }
         catch (...)
@@ -470,12 +470,12 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSourceStatics> : produce_base<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSourceStatics>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::UI::Input::Inking::IInkPresenter> inkPresenter, abi_arg_out<Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> WetStrokeUpdateSource) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::UI::Input::Inking::IInkPresenter> inkPresenter, impl::abi_arg_out<Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> WetStrokeUpdateSource) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *WetStrokeUpdateSource = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Input::Inking::InkPresenter *>(&inkPresenter)));
+            *WetStrokeUpdateSource = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::UI::Input::Inking::InkPresenter *>(&inkPresenter)));
             return S_OK;
         }
         catch (...)
@@ -493,7 +493,7 @@ namespace Windows::UI::Input::Inking::Core {
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerEntering(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerEntering(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerEntering(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -510,7 +510,7 @@ template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerEnteri
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerHovering(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerHovering(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerHovering(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -527,7 +527,7 @@ template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerHoveri
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerExiting(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerExiting(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerExiting(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -544,7 +544,7 @@ template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerExitin
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerPressing(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerPressing(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerPressing(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -561,7 +561,7 @@ template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerPressi
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerMoving(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerMoving(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerMoving(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -578,7 +578,7 @@ template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerMoving
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerReleasing(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerReleasing(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerReleasing(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -595,7 +595,7 @@ template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerReleas
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerLost(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerLost(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->add_PointerLost(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -612,21 +612,21 @@ template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerLost(e
 template <typename D> Windows::UI::Input::Inking::InkPresenter impl_ICoreInkIndependentInputSource<D>::InkPresenter() const
 {
     Windows::UI::Input::Inking::InkPresenter value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->get_InkPresenter(put(value)));
+    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSource)->get_InkPresenter(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource impl_ICoreInkIndependentInputSourceStatics<D>::Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const
 {
     Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource inkIndependentInputSource { nullptr };
-    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSourceStatics)->abi_Create(get(inkPresenter), put(inkIndependentInputSource)));
+    check_hresult(WINRT_SHIM(ICoreInkIndependentInputSourceStatics)->abi_Create(get_abi(inkPresenter), put_abi(inkIndependentInputSource)));
     return inkIndependentInputSource;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Input::Inking::InkPoint> impl_ICoreWetStrokeUpdateEventArgs<D>::NewInkPoints() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Input::Inking::InkPoint> value;
-    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateEventArgs)->get_NewInkPoints(put(value)));
+    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateEventArgs)->get_NewInkPoints(put_abi(value)));
     return value;
 }
 
@@ -652,7 +652,7 @@ template <typename D> void impl_ICoreWetStrokeUpdateEventArgs<D>::Disposition(Wi
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeStarting(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeStarting(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeStarting(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -669,7 +669,7 @@ template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeStarting
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeContinuing(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeContinuing(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeContinuing(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -686,7 +686,7 @@ template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeContinui
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeStopping(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeStopping(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeStopping(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -703,7 +703,7 @@ template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeStopping
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeCompleted(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeCompleted(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -720,7 +720,7 @@ template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeComplete
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeCanceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeCanceled(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->add_WetStrokeCanceled(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -737,14 +737,14 @@ template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeCanceled
 template <typename D> Windows::UI::Input::Inking::InkPresenter impl_ICoreWetStrokeUpdateSource<D>::InkPresenter() const
 {
     Windows::UI::Input::Inking::InkPresenter value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->get_InkPresenter(put(value)));
+    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSource)->get_InkPresenter(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource impl_ICoreWetStrokeUpdateSourceStatics<D>::Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const
 {
     Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource WetStrokeUpdateSource { nullptr };
-    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSourceStatics)->abi_Create(get(inkPresenter), put(WetStrokeUpdateSource)));
+    check_hresult(WINRT_SHIM(ICoreWetStrokeUpdateSourceStatics)->abi_Create(get_abi(inkPresenter), put_abi(WetStrokeUpdateSource)));
     return WetStrokeUpdateSource;
 }
 

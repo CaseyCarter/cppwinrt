@@ -80,7 +80,7 @@ auto make_event_array(const uint32_t capacity)
 {
     com_ptr<event_array<T>> instance;
     void* raw = ::operator new(sizeof(event_array<T>) + (sizeof(T) * capacity));
-    *put(instance) = new(raw) event_array<T>(capacity);
+    *put_abi(instance) = new(raw) event_array<T>(capacity);
     return instance;
 }
 
@@ -117,7 +117,7 @@ struct event : Traits
                 std::copy_n(m_targets->begin(), m_targets->size(), new_targets->begin());
             }
 
-            token.value = reinterpret_cast<int64_t>(get(delegate));
+            token.value = reinterpret_cast<int64_t>(get_abi(delegate));
             new_targets->back() = delegate;
 
             auto swap_guard = this->get_swap_guard();
@@ -286,7 +286,7 @@ struct agile_event_traits : locked_event_traits
 
     event_token get_token(const storage_type & delegate) const noexcept
     {
-        return{ reinterpret_cast<int64_t>(get(delegate.get())) };
+        return{ reinterpret_cast<int64_t>(get_abi(delegate.get())) };
     }
 };
 
@@ -304,7 +304,7 @@ struct non_agile_event_traits : locked_event_traits
 
     event_token get_token(const storage_type & delegate) const noexcept
     {
-        return{ reinterpret_cast<int64_t>(get(delegate)) };
+        return{ reinterpret_cast<int64_t>(get_abi(delegate)) };
     }
 };
 }

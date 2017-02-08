@@ -13,7 +13,7 @@ template <typename H> struct impl_UICommandInvokedHandler : implements<impl_UICo
 {
     impl_UICommandInvokedHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::Popups::IUICommand> command) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::Popups::IUICommand> command) noexcept override
     {
         try
         {

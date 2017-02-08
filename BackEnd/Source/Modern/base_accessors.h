@@ -45,52 +45,52 @@ struct accessors
     }
 };
 
+template <typename T>
+auto put_size_abi(T & object) noexcept
+{
+    return accessors<T>::put_size(object);
+}
+
 }
 
 template <typename T>
-auto get(const T & object) noexcept
+auto get_abi(const T & object) noexcept
 {
     return impl::accessors<T>::get(object);
 }
 
 template <typename T>
-auto put(T & object) noexcept
+auto put_abi(T & object) noexcept
 {
     return impl::accessors<T>::put(object);
 }
 
-template <typename T>
-auto put_size(T & object) noexcept
-{
-    return impl::accessors<T>::put_size(object);
-}
-
 template <typename T, typename V>
-void attach(T & object, V && value) noexcept
+void attach_abi(T & object, V && value) noexcept
 {
     impl::accessors<T>::attach(object, value);
 }
 
 template <typename T, typename V>
-void copy_from(T & object, V && value)
+void copy_from_abi(T & object, V && value)
 {
     impl::accessors<T>::copy_from(object, value);
 }
 
 template <typename T, typename V>
-void copy_to(const T & object, V & value)
+void copy_to_abi(const T & object, V & value)
 {
     impl::accessors<T>::copy_to(object, value);
 }
 
 template <typename T>
-auto detach(T & object)
+auto detach_abi(T & object)
 {
     return impl::accessors<std::decay_t<T>>::detach(object);
 }
 
 template <typename T>
-auto detach(T && object)
+auto detach_abi(T && object)
 {
     return impl::accessors<T>::detach(object);
 }

@@ -96,7 +96,7 @@ struct WINRT_EBO EventHandler : IUnknown
 
     void operator()(const IInspectable & sender, const T & args) const
     {
-        check_hresult((*(abi<EventHandler<T>> **)this)->abi_Invoke(get(sender), get(args)));
+        check_hresult((*(abi<EventHandler<T>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
     }
 };
 
@@ -120,7 +120,7 @@ struct WINRT_EBO TypedEventHandler : IUnknown
 
     void operator()(const TSender & sender, const TArgs & args) const
     {
-        check_hresult((*(abi<TypedEventHandler<TSender, TArgs>> **)this)->abi_Invoke(get(sender), get(args)));
+        check_hresult((*(abi<TypedEventHandler<TSender, TArgs>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
     }
 };
 

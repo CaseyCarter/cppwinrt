@@ -27,7 +27,7 @@ template <typename O, typename M> AddPagesEventHandler::AddPagesEventHandler(O *
 
 inline void AddPagesEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Printing::AddPagesEventArgs & e) const
 {
-    check_hresult((*(abi<AddPagesEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<AddPagesEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
 
 template <typename L> GetPreviewPageEventHandler::GetPreviewPageEventHandler(L lambda) :
@@ -44,7 +44,7 @@ template <typename O, typename M> GetPreviewPageEventHandler::GetPreviewPageEven
 
 inline void GetPreviewPageEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Printing::GetPreviewPageEventArgs & e) const
 {
-    check_hresult((*(abi<GetPreviewPageEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<GetPreviewPageEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
 
 template <typename L> PaginateEventHandler::PaginateEventHandler(L lambda) :
@@ -61,7 +61,7 @@ template <typename O, typename M> PaginateEventHandler::PaginateEventHandler(O *
 
 inline void PaginateEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Printing::PaginateEventArgs & e) const
 {
-    check_hresult((*(abi<PaginateEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<PaginateEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
 
 }
@@ -71,12 +71,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Printing::IAddPagesEventArgs> : produce_base<D, Windows::UI::Xaml::Printing::IAddPagesEventArgs>
 {
-    HRESULT __stdcall get_PrintTaskOptions(abi_arg_out<Windows::Graphics::Printing::IPrintTaskOptionsCore> value) noexcept override
+    HRESULT __stdcall get_PrintTaskOptions(impl::abi_arg_out<Windows::Graphics::Printing::IPrintTaskOptionsCore> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PrintTaskOptions());
+            *value = detach_abi(this->shim().PrintTaskOptions());
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PageNumber());
+            *value = detach_abi(this->shim().PageNumber());
             return S_OK;
         }
         catch (...)
@@ -108,12 +108,12 @@ struct produce<D, Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs> : produ
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Printing::IPaginateEventArgs> : produce_base<D, Windows::UI::Xaml::Printing::IPaginateEventArgs>
 {
-    HRESULT __stdcall get_PrintTaskOptions(abi_arg_out<Windows::Graphics::Printing::IPrintTaskOptionsCore> value) noexcept override
+    HRESULT __stdcall get_PrintTaskOptions(impl::abi_arg_out<Windows::Graphics::Printing::IPrintTaskOptionsCore> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PrintTaskOptions());
+            *value = detach_abi(this->shim().PrintTaskOptions());
             return S_OK;
         }
         catch (...)
@@ -128,7 +128,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPaginateEventArgs> : produce_bas
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CurrentPreviewPageNumber());
+            *value = detach_abi(this->shim().CurrentPreviewPageNumber());
             return S_OK;
         }
         catch (...)
@@ -141,12 +141,12 @@ struct produce<D, Windows::UI::Xaml::Printing::IPaginateEventArgs> : produce_bas
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D, Windows::UI::Xaml::Printing::IPrintDocument>
 {
-    HRESULT __stdcall get_DocumentSource(abi_arg_out<Windows::Graphics::Printing::IPrintDocumentSource> value) noexcept override
+    HRESULT __stdcall get_DocumentSource(impl::abi_arg_out<Windows::Graphics::Printing::IPrintDocumentSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DocumentSource());
+            *value = detach_abi(this->shim().DocumentSource());
             return S_OK;
         }
         catch (...)
@@ -156,12 +156,12 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_Paginate(abi_arg_in<Windows::UI::Xaml::Printing::PaginateEventHandler> value, event_token * token) noexcept override
+    HRESULT __stdcall add_Paginate(impl::abi_arg_in<Windows::UI::Xaml::Printing::PaginateEventHandler> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Paginate(*reinterpret_cast<const Windows::UI::Xaml::Printing::PaginateEventHandler *>(&value)));
+            *token = detach_abi(this->shim().Paginate(*reinterpret_cast<const Windows::UI::Xaml::Printing::PaginateEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -184,12 +184,12 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_GetPreviewPage(abi_arg_in<Windows::UI::Xaml::Printing::GetPreviewPageEventHandler> value, event_token * token) noexcept override
+    HRESULT __stdcall add_GetPreviewPage(impl::abi_arg_in<Windows::UI::Xaml::Printing::GetPreviewPageEventHandler> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().GetPreviewPage(*reinterpret_cast<const Windows::UI::Xaml::Printing::GetPreviewPageEventHandler *>(&value)));
+            *token = detach_abi(this->shim().GetPreviewPage(*reinterpret_cast<const Windows::UI::Xaml::Printing::GetPreviewPageEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -212,12 +212,12 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_AddPages(abi_arg_in<Windows::UI::Xaml::Printing::AddPagesEventHandler> value, event_token * token) noexcept override
+    HRESULT __stdcall add_AddPages(impl::abi_arg_in<Windows::UI::Xaml::Printing::AddPagesEventHandler> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().AddPages(*reinterpret_cast<const Windows::UI::Xaml::Printing::AddPagesEventHandler *>(&value)));
+            *token = detach_abi(this->shim().AddPages(*reinterpret_cast<const Windows::UI::Xaml::Printing::AddPagesEventHandler *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -240,7 +240,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_AddPage(abi_arg_in<Windows::UI::Xaml::IUIElement> pageVisual) noexcept override
+    HRESULT __stdcall abi_AddPage(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> pageVisual) noexcept override
     {
         try
         {
@@ -282,7 +282,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_SetPreviewPage(int32_t pageNumber, abi_arg_in<Windows::UI::Xaml::IUIElement> pageVisual) noexcept override
+    HRESULT __stdcall abi_SetPreviewPage(int32_t pageNumber, impl::abi_arg_in<Windows::UI::Xaml::IUIElement> pageVisual) noexcept override
     {
         try
         {
@@ -314,12 +314,12 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Printing::IPrintDocumentFactory> : produce_base<D, Windows::UI::Xaml::Printing::IPrintDocumentFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(abi_arg_in<Windows::IInspectable> outer, abi_arg_out<Windows::IInspectable> inner, abi_arg_out<Windows::UI::Xaml::Printing::IPrintDocument> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Printing::IPrintDocument> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -334,12 +334,12 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocumentFactory> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Printing::IPrintDocumentStatics> : produce_base<D, Windows::UI::Xaml::Printing::IPrintDocumentStatics>
 {
-    HRESULT __stdcall get_DocumentSourceProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_DocumentSourceProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DocumentSourceProperty());
+            *value = detach_abi(this->shim().DocumentSourceProperty());
             return S_OK;
         }
         catch (...)
@@ -357,7 +357,7 @@ namespace Windows::UI::Xaml::Printing {
 template <typename D> Windows::Graphics::Printing::PrintTaskOptions impl_IAddPagesEventArgs<D>::PrintTaskOptions() const
 {
     Windows::Graphics::Printing::PrintTaskOptions value { nullptr };
-    check_hresult(WINRT_SHIM(IAddPagesEventArgs)->get_PrintTaskOptions(put(value)));
+    check_hresult(WINRT_SHIM(IAddPagesEventArgs)->get_PrintTaskOptions(put_abi(value)));
     return value;
 }
 
@@ -371,7 +371,7 @@ template <typename D> int32_t impl_IGetPreviewPageEventArgs<D>::PageNumber() con
 template <typename D> Windows::Graphics::Printing::PrintTaskOptions impl_IPaginateEventArgs<D>::PrintTaskOptions() const
 {
     Windows::Graphics::Printing::PrintTaskOptions value { nullptr };
-    check_hresult(WINRT_SHIM(IPaginateEventArgs)->get_PrintTaskOptions(put(value)));
+    check_hresult(WINRT_SHIM(IPaginateEventArgs)->get_PrintTaskOptions(put_abi(value)));
     return value;
 }
 
@@ -385,14 +385,14 @@ template <typename D> int32_t impl_IPaginateEventArgs<D>::CurrentPreviewPageNumb
 template <typename D> Windows::Graphics::Printing::IPrintDocumentSource impl_IPrintDocument<D>::DocumentSource() const
 {
     Windows::Graphics::Printing::IPrintDocumentSource value;
-    check_hresult(WINRT_SHIM(IPrintDocument)->get_DocumentSource(put(value)));
+    check_hresult(WINRT_SHIM(IPrintDocument)->get_DocumentSource(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPrintDocument<D>::Paginate(const Windows::UI::Xaml::Printing::PaginateEventHandler & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPrintDocument)->add_Paginate(get(value), &token));
+    check_hresult(WINRT_SHIM(IPrintDocument)->add_Paginate(get_abi(value), &token));
     return token;
 }
 
@@ -409,7 +409,7 @@ template <typename D> void impl_IPrintDocument<D>::Paginate(event_token token) c
 template <typename D> event_token impl_IPrintDocument<D>::GetPreviewPage(const Windows::UI::Xaml::Printing::GetPreviewPageEventHandler & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPrintDocument)->add_GetPreviewPage(get(value), &token));
+    check_hresult(WINRT_SHIM(IPrintDocument)->add_GetPreviewPage(get_abi(value), &token));
     return token;
 }
 
@@ -426,7 +426,7 @@ template <typename D> void impl_IPrintDocument<D>::GetPreviewPage(event_token to
 template <typename D> event_token impl_IPrintDocument<D>::AddPages(const Windows::UI::Xaml::Printing::AddPagesEventHandler & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPrintDocument)->add_AddPages(get(value), &token));
+    check_hresult(WINRT_SHIM(IPrintDocument)->add_AddPages(get_abi(value), &token));
     return token;
 }
 
@@ -442,7 +442,7 @@ template <typename D> void impl_IPrintDocument<D>::AddPages(event_token token) c
 
 template <typename D> void impl_IPrintDocument<D>::AddPage(const Windows::UI::Xaml::UIElement & pageVisual) const
 {
-    check_hresult(WINRT_SHIM(IPrintDocument)->abi_AddPage(get(pageVisual)));
+    check_hresult(WINRT_SHIM(IPrintDocument)->abi_AddPage(get_abi(pageVisual)));
 }
 
 template <typename D> void impl_IPrintDocument<D>::AddPagesComplete() const
@@ -457,7 +457,7 @@ template <typename D> void impl_IPrintDocument<D>::SetPreviewPageCount(int32_t c
 
 template <typename D> void impl_IPrintDocument<D>::SetPreviewPage(int32_t pageNumber, const Windows::UI::Xaml::UIElement & pageVisual) const
 {
-    check_hresult(WINRT_SHIM(IPrintDocument)->abi_SetPreviewPage(pageNumber, get(pageVisual)));
+    check_hresult(WINRT_SHIM(IPrintDocument)->abi_SetPreviewPage(pageNumber, get_abi(pageVisual)));
 }
 
 template <typename D> void impl_IPrintDocument<D>::InvalidatePreview() const
@@ -468,14 +468,14 @@ template <typename D> void impl_IPrintDocument<D>::InvalidatePreview() const
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPrintDocumentStatics<D>::DocumentSourceProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPrintDocumentStatics)->get_DocumentSourceProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPrintDocumentStatics)->get_DocumentSourceProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Printing::PrintDocument impl_IPrintDocumentFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Printing::PrintDocument instance { nullptr };
-    check_hresult(WINRT_SHIM(IPrintDocumentFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IPrintDocumentFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
 }
 

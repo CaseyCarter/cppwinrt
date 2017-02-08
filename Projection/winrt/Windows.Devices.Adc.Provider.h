@@ -19,7 +19,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ChannelCount());
+            *value = detach_abi(this->shim().ChannelCount());
             return S_OK;
         }
         catch (...)
@@ -33,7 +33,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ResolutionInBits());
+            *value = detach_abi(this->shim().ResolutionInBits());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinValue());
+            *value = detach_abi(this->shim().MinValue());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxValue());
+            *value = detach_abi(this->shim().MaxValue());
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ChannelMode());
+            *value = detach_abi(this->shim().ChannelMode());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsChannelModeSupported(channelMode));
+            *result = detach_abi(this->shim().IsChannelModeSupported(channelMode));
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ReadValue(channelNumber));
+            *result = detach_abi(this->shim().ReadValue(channelNumber));
             return S_OK;
         }
         catch (...)
@@ -158,12 +158,12 @@ struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : pro
 template <typename D>
 struct produce<D, Windows::Devices::Adc::Provider::IAdcProvider> : produce_base<D, Windows::Devices::Adc::Provider::IAdcProvider>
 {
-    HRESULT __stdcall abi_GetControllers(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider>> result) noexcept override
+    HRESULT __stdcall abi_GetControllers(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetControllers());
+            *result = detach_abi(this->shim().GetControllers());
             return S_OK;
         }
         catch (...)
@@ -245,7 +245,7 @@ template <typename D> int32_t impl_IAdcControllerProvider<D>::ReadValue(int32_t 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> impl_IAdcProvider<D>::GetControllers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> result;
-    check_hresult(WINRT_SHIM(IAdcProvider)->abi_GetControllers(put(result)));
+    check_hresult(WINRT_SHIM(IAdcProvider)->abi_GetControllers(put_abi(result)));
     return result;
 }
 

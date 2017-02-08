@@ -16,15 +16,15 @@ struct agile_ref
 #endif
 
         check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
-                                          __uuidof(abi_default_interface<T>),
-                                          winrt::get(object),
-                                          put(m_ref)));
+                                          __uuidof(impl::abi_default_interface<T>),
+                                          winrt::get_abi(object),
+                                          put_abi(m_ref)));
     }
 
     T get() const
     {
         T result = nullptr;
-        check_hresult(m_ref->Resolve(put(result)));
+        check_hresult(m_ref->Resolve(put_abi(result)));
         return result;
     }
 

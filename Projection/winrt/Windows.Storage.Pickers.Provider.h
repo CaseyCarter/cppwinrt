@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : produce_base<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI>
 {
-    HRESULT __stdcall abi_AddFile(abi_arg_in<hstring> id, abi_arg_in<Windows::Storage::IStorageFile> file, Windows::Storage::Pickers::Provider::AddFileResult * addResult) noexcept override
+    HRESULT __stdcall abi_AddFile(impl::abi_arg_in<hstring> id, impl::abi_arg_in<Windows::Storage::IStorageFile> file, Windows::Storage::Pickers::Provider::AddFileResult * addResult) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *addResult = detach(this->shim().AddFile(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *addResult = detach_abi(this->shim().AddFile(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -30,7 +30,7 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         }
     }
 
-    HRESULT __stdcall abi_RemoveFile(abi_arg_in<hstring> id) noexcept override
+    HRESULT __stdcall abi_RemoveFile(impl::abi_arg_in<hstring> id) noexcept override
     {
         try
         {
@@ -44,12 +44,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         }
     }
 
-    HRESULT __stdcall abi_ContainsFile(abi_arg_in<hstring> id, bool * isContained) noexcept override
+    HRESULT __stdcall abi_ContainsFile(impl::abi_arg_in<hstring> id, bool * isContained) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *isContained = detach(this->shim().ContainsFile(*reinterpret_cast<const hstring *>(&id)));
+            *isContained = detach_abi(this->shim().ContainsFile(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -58,12 +58,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         }
     }
 
-    HRESULT __stdcall abi_CanAddFile(abi_arg_in<Windows::Storage::IStorageFile> file, bool * canAdd) noexcept override
+    HRESULT __stdcall abi_CanAddFile(impl::abi_arg_in<Windows::Storage::IStorageFile> file, bool * canAdd) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *canAdd = detach(this->shim().CanAddFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
+            *canAdd = detach_abi(this->shim().CanAddFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
         catch (...)
@@ -72,12 +72,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         }
     }
 
-    HRESULT __stdcall get_AllowedFileTypes(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_AllowedFileTypes(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AllowedFileTypes());
+            *value = detach_abi(this->shim().AllowedFileTypes());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SelectionMode());
+            *value = detach_abi(this->shim().SelectionMode());
             return S_OK;
         }
         catch (...)
@@ -101,12 +101,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         }
     }
 
-    HRESULT __stdcall get_SettingsIdentifier(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SettingsIdentifier(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SettingsIdentifier());
+            *value = detach_abi(this->shim().SettingsIdentifier());
             return S_OK;
         }
         catch (...)
@@ -116,12 +116,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         }
     }
 
-    HRESULT __stdcall get_Title(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Title(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Title());
+            *value = detach_abi(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         }
     }
 
-    HRESULT __stdcall put_Title(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Title(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -145,12 +145,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         }
     }
 
-    HRESULT __stdcall add_FileRemoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FileRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().FileRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().FileRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -173,12 +173,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
         }
     }
 
-    HRESULT __stdcall add_Closing(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::PickerClosingEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Closing(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::PickerClosingEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Closing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::PickerClosingEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Closing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::PickerClosingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -205,12 +205,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileOpenPickerUI> : prod
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::Provider::IFileRemovedEventArgs> : produce_base<D, Windows::Storage::Pickers::Provider::IFileRemovedEventArgs>
 {
-    HRESULT __stdcall get_Id(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -224,12 +224,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileRemovedEventArgs> : 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI> : produce_base<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI>
 {
-    HRESULT __stdcall get_Title(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Title(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Title());
+            *value = detach_abi(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -239,7 +239,7 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI> : prod
         }
     }
 
-    HRESULT __stdcall put_Title(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Title(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -253,12 +253,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI> : prod
         }
     }
 
-    HRESULT __stdcall get_AllowedFileTypes(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_AllowedFileTypes(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AllowedFileTypes());
+            *value = detach_abi(this->shim().AllowedFileTypes());
             return S_OK;
         }
         catch (...)
@@ -268,12 +268,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI> : prod
         }
     }
 
-    HRESULT __stdcall get_SettingsIdentifier(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SettingsIdentifier(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SettingsIdentifier());
+            *value = detach_abi(this->shim().SettingsIdentifier());
             return S_OK;
         }
         catch (...)
@@ -283,12 +283,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI> : prod
         }
     }
 
-    HRESULT __stdcall get_FileName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FileName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FileName());
+            *value = detach_abi(this->shim().FileName());
             return S_OK;
         }
         catch (...)
@@ -298,12 +298,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI> : prod
         }
     }
 
-    HRESULT __stdcall abi_TrySetFileName(abi_arg_in<hstring> value, Windows::Storage::Pickers::Provider::SetFileNameResult * result) noexcept override
+    HRESULT __stdcall abi_TrySetFileName(impl::abi_arg_in<hstring> value, Windows::Storage::Pickers::Provider::SetFileNameResult * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TrySetFileName(*reinterpret_cast<const hstring *>(&value)));
+            *result = detach_abi(this->shim().TrySetFileName(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -312,12 +312,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI> : prod
         }
     }
 
-    HRESULT __stdcall add_FileNameChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FileNameChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().FileNameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().FileNameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -340,12 +340,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI> : prod
         }
     }
 
-    HRESULT __stdcall add_TargetFileRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_TargetFileRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().TargetFileRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().TargetFileRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -390,12 +390,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IPickerClosingDeferral> :
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::Provider::IPickerClosingEventArgs> : produce_base<D, Windows::Storage::Pickers::Provider::IPickerClosingEventArgs>
 {
-    HRESULT __stdcall get_ClosingOperation(abi_arg_out<Windows::Storage::Pickers::Provider::IPickerClosingOperation> value) noexcept override
+    HRESULT __stdcall get_ClosingOperation(impl::abi_arg_out<Windows::Storage::Pickers::Provider::IPickerClosingOperation> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ClosingOperation());
+            *value = detach_abi(this->shim().ClosingOperation());
             return S_OK;
         }
         catch (...)
@@ -410,7 +410,7 @@ struct produce<D, Windows::Storage::Pickers::Provider::IPickerClosingEventArgs> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsCanceled());
+            *value = detach_abi(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -423,12 +423,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IPickerClosingEventArgs> 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::Provider::IPickerClosingOperation> : produce_base<D, Windows::Storage::Pickers::Provider::IPickerClosingOperation>
 {
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Storage::Pickers::Provider::IPickerClosingDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Storage::Pickers::Provider::IPickerClosingDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -438,12 +438,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IPickerClosingOperation> 
         }
     }
 
-    HRESULT __stdcall get_Deadline(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall get_Deadline(impl::abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Deadline());
+            *value = detach_abi(this->shim().Deadline());
             return S_OK;
         }
         catch (...)
@@ -456,12 +456,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IPickerClosingOperation> 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::Provider::ITargetFileRequest> : produce_base<D, Windows::Storage::Pickers::Provider::ITargetFileRequest>
 {
-    HRESULT __stdcall get_TargetFile(abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
+    HRESULT __stdcall get_TargetFile(impl::abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TargetFile());
+            *value = detach_abi(this->shim().TargetFile());
             return S_OK;
         }
         catch (...)
@@ -471,7 +471,7 @@ struct produce<D, Windows::Storage::Pickers::Provider::ITargetFileRequest> : pro
         }
     }
 
-    HRESULT __stdcall put_TargetFile(abi_arg_in<Windows::Storage::IStorageFile> value) noexcept override
+    HRESULT __stdcall put_TargetFile(impl::abi_arg_in<Windows::Storage::IStorageFile> value) noexcept override
     {
         try
         {
@@ -485,12 +485,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::ITargetFileRequest> : pro
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Storage::Pickers::Provider::ITargetFileRequestDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Storage::Pickers::Provider::ITargetFileRequestDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -522,12 +522,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::ITargetFileRequestDeferra
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::Provider::ITargetFileRequestedEventArgs> : produce_base<D, Windows::Storage::Pickers::Provider::ITargetFileRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(abi_arg_out<Windows::Storage::Pickers::Provider::ITargetFileRequest> value) noexcept override
+    HRESULT __stdcall get_Request(impl::abi_arg_out<Windows::Storage::Pickers::Provider::ITargetFileRequest> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Request());
+            *value = detach_abi(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -545,40 +545,40 @@ namespace Windows::Storage::Pickers::Provider {
 template <typename D> hstring impl_IFileRemovedEventArgs<D>::Id() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IFileRemovedEventArgs)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IFileRemovedEventArgs)->get_Id(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::AddFileResult impl_IFileOpenPickerUI<D>::AddFile(hstring_view id, const Windows::Storage::IStorageFile & file) const
 {
     Windows::Storage::Pickers::Provider::AddFileResult addResult {};
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_AddFile(get(id), get(file), &addResult));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_AddFile(get_abi(id), get_abi(file), &addResult));
     return addResult;
 }
 
 template <typename D> void impl_IFileOpenPickerUI<D>::RemoveFile(hstring_view id) const
 {
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_RemoveFile(get(id)));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_RemoveFile(get_abi(id)));
 }
 
 template <typename D> bool impl_IFileOpenPickerUI<D>::ContainsFile(hstring_view id) const
 {
     bool isContained {};
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_ContainsFile(get(id), &isContained));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_ContainsFile(get_abi(id), &isContained));
     return isContained;
 }
 
 template <typename D> bool impl_IFileOpenPickerUI<D>::CanAddFile(const Windows::Storage::IStorageFile & file) const
 {
     bool canAdd {};
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_CanAddFile(get(file), &canAdd));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->abi_CanAddFile(get_abi(file), &canAdd));
     return canAdd;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IFileOpenPickerUI<D>::AllowedFileTypes() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->get_AllowedFileTypes(put(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->get_AllowedFileTypes(put_abi(value)));
     return value;
 }
 
@@ -592,26 +592,26 @@ template <typename D> Windows::Storage::Pickers::Provider::FileSelectionMode imp
 template <typename D> hstring impl_IFileOpenPickerUI<D>::SettingsIdentifier() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->get_SettingsIdentifier(put(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->get_SettingsIdentifier(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileOpenPickerUI<D>::Title() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->get_Title(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFileOpenPickerUI<D>::Title(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->put_Title(get_abi(value)));
 }
 
 template <typename D> event_token impl_IFileOpenPickerUI<D>::FileRemoved(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->add_FileRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->add_FileRemoved(get_abi(handler), &token));
     return token;
 }
 
@@ -628,7 +628,7 @@ template <typename D> void impl_IFileOpenPickerUI<D>::FileRemoved(event_token to
 template <typename D> event_token impl_IFileOpenPickerUI<D>::Closing(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::PickerClosingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->add_Closing(get(handler), &token));
+    check_hresult(WINRT_SHIM(IFileOpenPickerUI)->add_Closing(get_abi(handler), &token));
     return token;
 }
 
@@ -645,7 +645,7 @@ template <typename D> void impl_IFileOpenPickerUI<D>::Closing(event_token token)
 template <typename D> Windows::Storage::Pickers::Provider::PickerClosingOperation impl_IPickerClosingEventArgs<D>::ClosingOperation() const
 {
     Windows::Storage::Pickers::Provider::PickerClosingOperation value { nullptr };
-    check_hresult(WINRT_SHIM(IPickerClosingEventArgs)->get_ClosingOperation(put(value)));
+    check_hresult(WINRT_SHIM(IPickerClosingEventArgs)->get_ClosingOperation(put_abi(value)));
     return value;
 }
 
@@ -659,14 +659,14 @@ template <typename D> bool impl_IPickerClosingEventArgs<D>::IsCanceled() const
 template <typename D> Windows::Storage::Pickers::Provider::PickerClosingDeferral impl_IPickerClosingOperation<D>::GetDeferral() const
 {
     Windows::Storage::Pickers::Provider::PickerClosingDeferral value { nullptr };
-    check_hresult(WINRT_SHIM(IPickerClosingOperation)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IPickerClosingOperation)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPickerClosingOperation<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(IPickerClosingOperation)->get_Deadline(put(value)));
+    check_hresult(WINRT_SHIM(IPickerClosingOperation)->get_Deadline(put_abi(value)));
     return value;
 }
 
@@ -678,47 +678,47 @@ template <typename D> void impl_IPickerClosingDeferral<D>::Complete() const
 template <typename D> hstring impl_IFileSavePickerUI<D>::Title() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IFileSavePickerUI)->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePickerUI)->get_Title(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFileSavePickerUI<D>::Title(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IFileSavePickerUI)->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IFileSavePickerUI)->put_Title(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IFileSavePickerUI<D>::AllowedFileTypes() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(IFileSavePickerUI)->get_AllowedFileTypes(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePickerUI)->get_AllowedFileTypes(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileSavePickerUI<D>::SettingsIdentifier() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IFileSavePickerUI)->get_SettingsIdentifier(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePickerUI)->get_SettingsIdentifier(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileSavePickerUI<D>::FileName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IFileSavePickerUI)->get_FileName(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePickerUI)->get_FileName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::SetFileNameResult impl_IFileSavePickerUI<D>::TrySetFileName(hstring_view value) const
 {
     Windows::Storage::Pickers::Provider::SetFileNameResult result {};
-    check_hresult(WINRT_SHIM(IFileSavePickerUI)->abi_TrySetFileName(get(value), &result));
+    check_hresult(WINRT_SHIM(IFileSavePickerUI)->abi_TrySetFileName(get_abi(value), &result));
     return result;
 }
 
 template <typename D> event_token impl_IFileSavePickerUI<D>::FileNameChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IFileSavePickerUI)->add_FileNameChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IFileSavePickerUI)->add_FileNameChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -735,7 +735,7 @@ template <typename D> void impl_IFileSavePickerUI<D>::FileNameChanged(event_toke
 template <typename D> event_token impl_IFileSavePickerUI<D>::TargetFileRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IFileSavePickerUI)->add_TargetFileRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IFileSavePickerUI)->add_TargetFileRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -752,26 +752,26 @@ template <typename D> void impl_IFileSavePickerUI<D>::TargetFileRequested(event_
 template <typename D> Windows::Storage::Pickers::Provider::TargetFileRequest impl_ITargetFileRequestedEventArgs<D>::Request() const
 {
     Windows::Storage::Pickers::Provider::TargetFileRequest value { nullptr };
-    check_hresult(WINRT_SHIM(ITargetFileRequestedEventArgs)->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(ITargetFileRequestedEventArgs)->get_Request(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::IStorageFile impl_ITargetFileRequest<D>::TargetFile() const
 {
     Windows::Storage::IStorageFile value;
-    check_hresult(WINRT_SHIM(ITargetFileRequest)->get_TargetFile(put(value)));
+    check_hresult(WINRT_SHIM(ITargetFileRequest)->get_TargetFile(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITargetFileRequest<D>::TargetFile(const Windows::Storage::IStorageFile & value) const
 {
-    check_hresult(WINRT_SHIM(ITargetFileRequest)->put_TargetFile(get(value)));
+    check_hresult(WINRT_SHIM(ITargetFileRequest)->put_TargetFile(get_abi(value)));
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::TargetFileRequestDeferral impl_ITargetFileRequest<D>::GetDeferral() const
 {
     Windows::Storage::Pickers::Provider::TargetFileRequestDeferral value { nullptr };
-    check_hresult(WINRT_SHIM(ITargetFileRequest)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ITargetFileRequest)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 

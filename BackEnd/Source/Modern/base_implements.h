@@ -77,9 +77,9 @@ namespace impl
 }
 
 template <typename D, typename I>
-D * to_impl(const I & from) noexcept
+D * from_abi(const I & from) noexcept
 {
-    return &static_cast<impl::produce<D, I> *>(get(from))->shim();
+    return &static_cast<impl::produce<D, I> *>(get_abi(from))->shim();
 }
 
 template <typename I, typename D, std::enable_if_t<std::is_base_of<Windows::IUnknown, I>::value> * = nullptr>
@@ -98,7 +98,7 @@ template <typename D, typename I = typename D::first_interface, typename ... Arg
 auto make(Args && ... args)
 {
     std::conditional_t<impl::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
-    *put(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
+    *put_abi(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
     return instance;
 }
 
@@ -106,7 +106,7 @@ template <typename D, typename I = typename D::first_interface, typename ... Arg
 auto make(Args && ... args)
 {
     com_ptr<I> instance;
-    *put(instance) = new D(std::forward<Args>(args) ...);
+    *put_abi(instance) = new D(std::forward<Args>(args) ...);
     return instance.template as<typename D::composable>();
 }
 
@@ -114,7 +114,7 @@ template <typename D, typename ... Args>
 auto make_self(Args && ... args)
 {
     com_ptr<D> instance;
-    *put(instance) = new D(std::forward<Args>(args) ...);
+    *put_abi(instance) = new D(std::forward<Args>(args) ...);
     return instance;
 }
 
@@ -124,7 +124,7 @@ namespace impl
     auto make_delegate(H && handler)
     {
         I instance = nullptr;
-        *put(instance) = new D(std::forward<H>(handler));
+        *put_abi(instance) = new D(std::forward<H>(handler));
         return instance;
     }
 
@@ -134,7 +134,7 @@ namespace impl
         operator I() const noexcept
         {
             I result = nullptr;
-            copy_from(result, const_cast<produce<D, I> *>(&vtable));
+            copy_from_abi(result, const_cast<produce<D, I> *>(&vtable));
             return result;
         }
 
@@ -225,7 +225,7 @@ namespace impl
                 if (id == __uuidof(IMarshal))
                 {
                     com_ptr< ::IUnknown> marshaler;
-                    const HRESULT hr = CoCreateFreeThreadedMarshaler(this, put(marshaler));
+                    const HRESULT hr = CoCreateFreeThreadedMarshaler(this, put_abi(marshaler));
 
                     if (hr != S_OK)
                     {
@@ -362,7 +362,7 @@ struct implements : impl::producer<D, impl::uncloak_t<I>> ...
     operator IInspectable() const noexcept
     {
         IInspectable result;
-        copy_from(result, find_inspectable<I ...>());
+        copy_from_abi(result, find_inspectable<I ...>());
         return result;
     }
 
@@ -438,7 +438,7 @@ protected:
     {
         try
         {
-            *name = detach(static_cast<D *>(this)->GetRuntimeClassName());
+            *name = detach_abi(static_cast<D *>(this)->GetRuntimeClassName());
             return S_OK;
         }
         catch (...) { return impl::to_hresult(); }
@@ -514,7 +514,7 @@ private:
             if (id == __uuidof(IMarshal))
             {
                 com_ptr< ::IUnknown> marshaler;
-                const HRESULT hr = CoCreateFreeThreadedMarshaler(get_unknown(), put(marshaler));
+                const HRESULT hr = CoCreateFreeThreadedMarshaler(get_unknown(), put_abi(marshaler));
 
                 if (hr != S_OK)
                 {
@@ -608,21 +608,21 @@ private:
         }
 
         com_ptr<weak_ref_t> weak_ref;
-        *put(weak_ref) = new (std::nothrow) weak_ref_t(get_unknown(), static_cast<uint32_t>(count_or_pointer));
+        *put_abi(weak_ref) = new (std::nothrow) weak_ref_t(get_unknown(), static_cast<uint32_t>(count_or_pointer));
 
         if (!weak_ref)
         {
             return nullptr;
         }
 
-        const uintptr_t encoding = encode_weak_ref(get(weak_ref));
+        const uintptr_t encoding = encode_weak_ref(get_abi(weak_ref));
 
         while (true)
         {
             if (m_references.compare_exchange_weak(count_or_pointer, encoding, std::memory_order_acq_rel, std::memory_order_relaxed))
             {
                 ABI::Windows::IWeakReferenceSource * result = weak_ref->get_source();
-                detach(weak_ref);
+                detach_abi(weak_ref);
                 return result;
             }
 

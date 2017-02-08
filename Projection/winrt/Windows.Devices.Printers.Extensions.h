@@ -14,12 +14,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : produce_base<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow>
 {
-    HRESULT __stdcall get_DeviceID(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceID(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceID());
+            *value = detach_abi(this->shim().DeviceID());
             return S_OK;
         }
         catch (...)
@@ -29,12 +29,12 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
         }
     }
 
-    HRESULT __stdcall abi_GetPrintModelPackage(abi_arg_out<Windows::IInspectable> printModelPackage) noexcept override
+    HRESULT __stdcall abi_GetPrintModelPackage(impl::abi_arg_out<Windows::IInspectable> printModelPackage) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *printModelPackage = detach(this->shim().GetPrintModelPackage());
+            *printModelPackage = detach_abi(this->shim().GetPrintModelPackage());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsPrintReady());
+            *value = detach_abi(this->shim().IsPrintReady());
             return S_OK;
         }
         catch (...)
@@ -72,12 +72,12 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
         }
     }
 
-    HRESULT __stdcall add_PrintRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs>> eventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_PrintRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs>> eventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach(this->shim().PrintRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach_abi(this->shim().PrintRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -104,12 +104,12 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow2> : produce_base<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow2>
 {
-    HRESULT __stdcall add_PrinterChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs>> eventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_PrinterChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs>> eventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach(this->shim().PrinterChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach_abi(this->shim().PrinterChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -164,7 +164,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
         }
     }
 
-    HRESULT __stdcall abi_SetSource(abi_arg_in<Windows::IInspectable> source) noexcept override
+    HRESULT __stdcall abi_SetSource(impl::abi_arg_in<Windows::IInspectable> source) noexcept override
     {
         try
         {
@@ -196,12 +196,12 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrinterChangedEventArgs> : produce_base<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrinterChangedEventArgs>
 {
-    HRESULT __stdcall get_NewDeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_NewDeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NewDeviceId());
+            *value = detach_abi(this->shim().NewDeviceId());
             return S_OK;
         }
         catch (...)
@@ -230,7 +230,7 @@ template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetE
 
 template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetSource(const Windows::IInspectable & source) const
 {
-    check_hresult(WINRT_SHIM(IPrint3DWorkflowPrintRequestedEventArgs)->abi_SetSource(get(source)));
+    check_hresult(WINRT_SHIM(IPrint3DWorkflowPrintRequestedEventArgs)->abi_SetSource(get_abi(source)));
 }
 
 template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetSourceChanged(bool value) const
@@ -241,21 +241,21 @@ template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetS
 template <typename D> hstring impl_IPrint3DWorkflowPrinterChangedEventArgs<D>::NewDeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPrint3DWorkflowPrinterChangedEventArgs)->get_NewDeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IPrint3DWorkflowPrinterChangedEventArgs)->get_NewDeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPrint3DWorkflow<D>::DeviceID() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPrint3DWorkflow)->get_DeviceID(put(value)));
+    check_hresult(WINRT_SHIM(IPrint3DWorkflow)->get_DeviceID(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IPrint3DWorkflow<D>::GetPrintModelPackage() const
 {
     Windows::IInspectable printModelPackage;
-    check_hresult(WINRT_SHIM(IPrint3DWorkflow)->abi_GetPrintModelPackage(put(printModelPackage)));
+    check_hresult(WINRT_SHIM(IPrint3DWorkflow)->abi_GetPrintModelPackage(put_abi(printModelPackage)));
     return printModelPackage;
 }
 
@@ -274,7 +274,7 @@ template <typename D> void impl_IPrint3DWorkflow<D>::IsPrintReady(bool value) co
 template <typename D> event_token impl_IPrint3DWorkflow<D>::PrintRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(WINRT_SHIM(IPrint3DWorkflow)->add_PrintRequested(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrint3DWorkflow)->add_PrintRequested(get_abi(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -291,7 +291,7 @@ template <typename D> void impl_IPrint3DWorkflow<D>::PrintRequested(event_token 
 template <typename D> event_token impl_IPrint3DWorkflow2<D>::PrinterChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(WINRT_SHIM(IPrint3DWorkflow2)->add_PrinterChanged(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrint3DWorkflow2)->add_PrinterChanged(get_abi(eventHandler), &eventCookie));
     return eventCookie;
 }
 

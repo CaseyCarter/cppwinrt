@@ -48,7 +48,7 @@ TEST_CASE("com_ptr, ::IUnknown")
     com_ptr<::IUnknown> a; // default ctor
     com_ptr<::IUnknown> b = nullptr; // nullptr_t ctor
 
-    REQUIRE(S_OK == get(stringable)->QueryInterface(put(b))); // attach
+    REQUIRE(S_OK == get_abi(stringable)->QueryInterface(put_abi(b))); // attach
 
     com_ptr<::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
@@ -84,7 +84,7 @@ TEST_CASE("com_ptr, Windows::IUnknown")
     com_ptr<Windows::IUnknown> a; // default ctor
     com_ptr<Windows::IUnknown> b = nullptr; // nullptr_t ctor
 
-    REQUIRE(S_OK == get(stringable)->QueryInterface(put(b))); // attach
+    REQUIRE(S_OK == get_abi(stringable)->QueryInterface(put_abi(b))); // attach
 
     com_ptr<Windows::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
@@ -210,23 +210,23 @@ TEST_CASE("com_ptr, accessors")
     REQUIRE(!destroyed);
 
     com_ptr<IUnknown> b;
-    b.copy_from(get(a)); // get
+    b.copy_from(get_abi(a)); // get
     REQUIRE(a);
 
     com_ptr<IUnknown> c;
-    b->QueryInterface(put(c)); // put
+    b->QueryInterface(put_abi(c)); // put
     REQUIRE(c);
 
     b = nullptr;
     c = nullptr;
 
-    attach(b, detach(a));
+    attach_abi(b, detach_abi(a));
 
     REQUIRE(!a);
     REQUIRE(b);
     REQUIRE(!c);
 
-    attach(c, detach(b));
+    attach_abi(c, detach_abi(b));
 
     REQUIRE(!a);
     REQUIRE(!b);
@@ -254,7 +254,7 @@ static com_ptr<IUnknown> test_make_unknown()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<IUnknown> result;
-    REQUIRE(S_OK == get(s)->QueryInterface(put(result)));
+    REQUIRE(S_OK == get_abi(s)->QueryInterface(put_abi(result)));
     return result;
 }
 
@@ -264,7 +264,7 @@ TEST_CASE("com_ptr, copy ctor assign")
     com_ptr<IUnknown> b = a; // copy ctor
 
     REQUIRE(a == b);
-    REQUIRE(get(a) == get(b));
+    REQUIRE(get_abi(a) == get_abi(b));
 
     b = nullptr;
     REQUIRE(a != b);
@@ -272,7 +272,7 @@ TEST_CASE("com_ptr, copy ctor assign")
     b = a; // copy assign
 
     REQUIRE(a == b);
-    REQUIRE(get(a) == get(b));
+    REQUIRE(get_abi(a) == get_abi(b));
 }
 
 TEST_CASE("com_ptr, move ctor assign")
@@ -296,7 +296,7 @@ static com_ptr<IInspectable> test_make_inspectable()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<IInspectable> result;
-    REQUIRE(S_OK == get(s)->QueryInterface(put(result)));
+    REQUIRE(S_OK == get_abi(s)->QueryInterface(put_abi(result)));
     return result;
 }
 
@@ -337,8 +337,8 @@ TEST_CASE("com_ptr, swap")
     REQUIRE(b);
     REQUIRE(a != b);
 
-    IInspectable * ga = get(a);
-    IInspectable * gb = get(b);
+    IInspectable * ga = get_abi(a);
+    IInspectable * gb = get_abi(b);
 
     swap(a, b);
 
@@ -346,8 +346,8 @@ TEST_CASE("com_ptr, swap")
     REQUIRE(b);
     REQUIRE(a != b);
 
-    REQUIRE(gb == get(a));
-    REQUIRE(ga == get(b));
+    REQUIRE(gb == get_abi(a));
+    REQUIRE(ga == get_abi(b));
 }
 
 TEST_CASE("com_ptr, compare")

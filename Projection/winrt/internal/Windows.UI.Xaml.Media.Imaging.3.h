@@ -13,7 +13,7 @@ template <typename H> struct impl_DownloadProgressEventHandler : implements<impl
 {
     impl_DownloadProgressEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs> e) noexcept override
     {
         try
         {

@@ -21,7 +21,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsCanceled());
+            *value = detach_abi(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -30,12 +30,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
         }
     }
 
-    HRESULT __stdcall get_CompositionSegments(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::UI::Text::Core::CoreTextCompositionSegment>> value) noexcept override
+    HRESULT __stdcall get_CompositionSegments(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::UI::Text::Core::CoreTextCompositionSegment>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CompositionSegments());
+            *value = detach_abi(this->shim().CompositionSegments());
             return S_OK;
         }
         catch (...)
@@ -45,12 +45,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -64,12 +64,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionSegment> : produce_base<D, Windows::UI::Text::Core::ICoreTextCompositionSegment>
 {
-    HRESULT __stdcall get_PreconversionString(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PreconversionString(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PreconversionString());
+            *value = detach_abi(this->shim().PreconversionString());
             return S_OK;
         }
         catch (...)
@@ -79,12 +79,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionSegment> : produc
         }
     }
 
-    HRESULT __stdcall get_Range(abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
+    HRESULT __stdcall get_Range(impl::abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Range());
+            *value = detach_abi(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -102,7 +102,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsCanceled());
+            *value = detach_abi(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -111,12 +111,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs>
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -130,12 +130,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs>
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<D, Windows::UI::Text::Core::ICoreTextEditContext>
 {
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Name());
+            *value = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall put_Name(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Name(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -164,7 +164,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InputScope());
+            *value = detach_abi(this->shim().InputScope());
             return S_OK;
         }
         catch (...)
@@ -192,7 +192,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsReadOnly());
+            *value = detach_abi(this->shim().IsReadOnly());
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InputPaneDisplayPolicy());
+            *value = detach_abi(this->shim().InputPaneDisplayPolicy());
             return S_OK;
         }
         catch (...)
@@ -243,12 +243,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_TextRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextRequestedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_TextRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextRequestedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().TextRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextRequestedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().TextRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -271,12 +271,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_SelectionRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_SelectionRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().SelectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().SelectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -299,12 +299,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_LayoutRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_LayoutRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().LayoutRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().LayoutRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -327,12 +327,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_TextUpdating(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_TextUpdating(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().TextUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().TextUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -355,12 +355,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_SelectionUpdating(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_SelectionUpdating(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().SelectionUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().SelectionUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -383,12 +383,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_FormatUpdating(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_FormatUpdating(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().FormatUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().FormatUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -411,12 +411,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_CompositionStarted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_CompositionStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().CompositionStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().CompositionStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -439,12 +439,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_CompositionCompleted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_CompositionCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().CompositionCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().CompositionCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -467,12 +467,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_FocusRemoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_FocusRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().FocusRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().FocusRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -523,7 +523,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_NotifyTextChanged(abi_arg_in<Windows::UI::Text::Core::CoreTextRange> modifiedRange, int32_t newLength, abi_arg_in<Windows::UI::Text::Core::CoreTextRange> newSelection) noexcept override
+    HRESULT __stdcall abi_NotifyTextChanged(impl::abi_arg_in<Windows::UI::Text::Core::CoreTextRange> modifiedRange, int32_t newLength, impl::abi_arg_in<Windows::UI::Text::Core::CoreTextRange> newSelection) noexcept override
     {
         try
         {
@@ -537,7 +537,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_NotifySelectionChanged(abi_arg_in<Windows::UI::Text::Core::CoreTextRange> selection) noexcept override
+    HRESULT __stdcall abi_NotifySelectionChanged(impl::abi_arg_in<Windows::UI::Text::Core::CoreTextRange> selection) noexcept override
     {
         try
         {
@@ -569,12 +569,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext2> : produce_base<D, Windows::UI::Text::Core::ICoreTextEditContext2>
 {
-    HRESULT __stdcall add_NotifyFocusLeaveCompleted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_NotifyFocusLeaveCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().NotifyFocusLeaveCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().NotifyFocusLeaveCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -601,12 +601,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext2> : produce_base
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : produce_base<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs>
 {
-    HRESULT __stdcall get_Range(abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
+    HRESULT __stdcall get_Range(impl::abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Range());
+            *value = detach_abi(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -615,27 +615,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
         }
     }
 
-    HRESULT __stdcall get_TextColor(abi_arg_out<Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType>> value) noexcept override
+    HRESULT __stdcall get_TextColor(impl::abi_arg_out<Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TextColor());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_BackgroundColor(abi_arg_out<Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType>> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BackgroundColor());
+            *value = detach_abi(this->shim().TextColor());
             return S_OK;
         }
         catch (...)
@@ -645,12 +630,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
         }
     }
 
-    HRESULT __stdcall get_UnderlineColor(abi_arg_out<Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType>> value) noexcept override
+    HRESULT __stdcall get_BackgroundColor(impl::abi_arg_out<Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UnderlineColor());
+            *value = detach_abi(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -660,12 +645,27 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
         }
     }
 
-    HRESULT __stdcall get_UnderlineType(abi_arg_out<Windows::Foundation::IReference<winrt::Windows::UI::Text::UnderlineType>> value) noexcept override
+    HRESULT __stdcall get_UnderlineColor(impl::abi_arg_out<Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UnderlineType());
+            *value = detach_abi(this->shim().UnderlineColor());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_UnderlineType(impl::abi_arg_out<Windows::Foundation::IReference<winrt::Windows::UI::Text::UnderlineType>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().UnderlineType());
             return S_OK;
         }
         catch (...)
@@ -680,7 +680,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Reason());
+            *value = detach_abi(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -694,7 +694,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Result());
+            *value = detach_abi(this->shim().Result());
             return S_OK;
         }
         catch (...)
@@ -722,7 +722,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsCanceled());
+            *value = detach_abi(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -731,12 +731,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -750,12 +750,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base<D, Windows::UI::Text::Core::ICoreTextLayoutBounds>
 {
-    HRESULT __stdcall get_TextBounds(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall get_TextBounds(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TextBounds());
+            *value = detach_abi(this->shim().TextBounds());
             return S_OK;
         }
         catch (...)
@@ -764,7 +764,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
         }
     }
 
-    HRESULT __stdcall put_TextBounds(abi_arg_in<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall put_TextBounds(impl::abi_arg_in<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
@@ -778,12 +778,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
         }
     }
 
-    HRESULT __stdcall get_ControlBounds(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall get_ControlBounds(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ControlBounds());
+            *value = detach_abi(this->shim().ControlBounds());
             return S_OK;
         }
         catch (...)
@@ -792,7 +792,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
         }
     }
 
-    HRESULT __stdcall put_ControlBounds(abi_arg_in<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall put_ControlBounds(impl::abi_arg_in<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
@@ -810,12 +810,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_base<D, Windows::UI::Text::Core::ICoreTextLayoutRequest>
 {
-    HRESULT __stdcall get_Range(abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
+    HRESULT __stdcall get_Range(impl::abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Range());
+            *value = detach_abi(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -824,12 +824,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_LayoutBounds(abi_arg_out<Windows::UI::Text::Core::ICoreTextLayoutBounds> value) noexcept override
+    HRESULT __stdcall get_LayoutBounds(impl::abi_arg_out<Windows::UI::Text::Core::ICoreTextLayoutBounds> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LayoutBounds());
+            *value = detach_abi(this->shim().LayoutBounds());
             return S_OK;
         }
         catch (...)
@@ -844,7 +844,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsCanceled());
+            *value = detach_abi(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -853,12 +853,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -872,12 +872,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequestedEventArgs> : produce_base<D, Windows::UI::Text::Core::ICoreTextLayoutRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(abi_arg_out<Windows::UI::Text::Core::ICoreTextLayoutRequest> value) noexcept override
+    HRESULT __stdcall get_Request(impl::abi_arg_out<Windows::UI::Text::Core::ICoreTextLayoutRequest> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Request());
+            *value = detach_abi(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -891,12 +891,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequestedEventArgs> : 
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_base<D, Windows::UI::Text::Core::ICoreTextSelectionRequest>
 {
-    HRESULT __stdcall get_Selection(abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
+    HRESULT __stdcall get_Selection(impl::abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Selection());
+            *value = detach_abi(this->shim().Selection());
             return S_OK;
         }
         catch (...)
@@ -905,7 +905,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
         }
     }
 
-    HRESULT __stdcall put_Selection(abi_arg_in<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
+    HRESULT __stdcall put_Selection(impl::abi_arg_in<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
     {
         try
         {
@@ -924,7 +924,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsCanceled());
+            *value = detach_abi(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -933,12 +933,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -952,12 +952,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequestedEventArgs> : produce_base<D, Windows::UI::Text::Core::ICoreTextSelectionRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(abi_arg_out<Windows::UI::Text::Core::ICoreTextSelectionRequest> value) noexcept override
+    HRESULT __stdcall get_Request(impl::abi_arg_out<Windows::UI::Text::Core::ICoreTextSelectionRequest> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Request());
+            *value = detach_abi(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -971,12 +971,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequestedEventArgs>
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> : produce_base<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs>
 {
-    HRESULT __stdcall get_Selection(abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
+    HRESULT __stdcall get_Selection(impl::abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Selection());
+            *value = detach_abi(this->shim().Selection());
             return S_OK;
         }
         catch (...)
@@ -990,7 +990,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Result());
+            *value = detach_abi(this->shim().Result());
             return S_OK;
         }
         catch (...)
@@ -1018,7 +1018,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsCanceled());
+            *value = detach_abi(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -1027,12 +1027,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1046,12 +1046,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_base<D, Windows::UI::Text::Core::ICoreTextServicesManager>
 {
-    HRESULT __stdcall get_InputLanguage(abi_arg_out<Windows::Globalization::ILanguage> value) noexcept override
+    HRESULT __stdcall get_InputLanguage(impl::abi_arg_out<Windows::Globalization::ILanguage> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InputLanguage());
+            *value = detach_abi(this->shim().InputLanguage());
             return S_OK;
         }
         catch (...)
@@ -1061,12 +1061,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
         }
     }
 
-    HRESULT __stdcall add_InputLanguageChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_InputLanguageChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().InputLanguageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().InputLanguageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1089,12 +1089,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_CreateEditContext(abi_arg_out<Windows::UI::Text::Core::ICoreTextEditContext> value) noexcept override
+    HRESULT __stdcall abi_CreateEditContext(impl::abi_arg_out<Windows::UI::Text::Core::ICoreTextEditContext> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateEditContext());
+            *value = detach_abi(this->shim().CreateEditContext());
             return S_OK;
         }
         catch (...)
@@ -1108,12 +1108,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManagerStatics> : produce_base<D, Windows::UI::Text::Core::ICoreTextServicesManagerStatics>
 {
-    HRESULT __stdcall abi_GetForCurrentView(abi_arg_out<Windows::UI::Text::Core::ICoreTextServicesManager> value) noexcept override
+    HRESULT __stdcall abi_GetForCurrentView(impl::abi_arg_out<Windows::UI::Text::Core::ICoreTextServicesManager> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetForCurrentView());
+            *value = detach_abi(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -1132,7 +1132,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesStatics> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HiddenCharacter());
+            *value = detach_abi(this->shim().HiddenCharacter());
             return S_OK;
         }
         catch (...)
@@ -1145,12 +1145,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesStatics> : produce_b
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<D, Windows::UI::Text::Core::ICoreTextTextRequest>
 {
-    HRESULT __stdcall get_Range(abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
+    HRESULT __stdcall get_Range(impl::abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Range());
+            *value = detach_abi(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -1159,12 +1159,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Text(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Text());
+            *value = detach_abi(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -1174,7 +1174,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
         }
     }
 
-    HRESULT __stdcall put_Text(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Text(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1193,7 +1193,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsCanceled());
+            *value = detach_abi(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -1202,12 +1202,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1221,12 +1221,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequestedEventArgs> : produce_base<D, Windows::UI::Text::Core::ICoreTextTextRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(abi_arg_out<Windows::UI::Text::Core::ICoreTextTextRequest> value) noexcept override
+    HRESULT __stdcall get_Request(impl::abi_arg_out<Windows::UI::Text::Core::ICoreTextTextRequest> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Request());
+            *value = detach_abi(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1240,12 +1240,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequestedEventArgs> : pr
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : produce_base<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs>
 {
-    HRESULT __stdcall get_Range(abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
+    HRESULT __stdcall get_Range(impl::abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Range());
+            *value = detach_abi(this->shim().Range());
             return S_OK;
         }
         catch (...)
@@ -1254,12 +1254,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Text(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Text());
+            *value = detach_abi(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -1269,12 +1269,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_NewSelection(abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
+    HRESULT __stdcall get_NewSelection(impl::abi_arg_out<Windows::UI::Text::Core::CoreTextRange> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NewSelection());
+            *value = detach_abi(this->shim().NewSelection());
             return S_OK;
         }
         catch (...)
@@ -1283,12 +1283,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_InputLanguage(abi_arg_out<Windows::Globalization::ILanguage> value) noexcept override
+    HRESULT __stdcall get_InputLanguage(impl::abi_arg_out<Windows::Globalization::ILanguage> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InputLanguage());
+            *value = detach_abi(this->shim().InputLanguage());
             return S_OK;
         }
         catch (...)
@@ -1303,7 +1303,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Result());
+            *value = detach_abi(this->shim().Result());
             return S_OK;
         }
         catch (...)
@@ -1331,7 +1331,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsCanceled());
+            *value = detach_abi(this->shim().IsCanceled());
             return S_OK;
         }
         catch (...)
@@ -1340,12 +1340,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1363,20 +1363,20 @@ namespace Windows::UI::Text::Core {
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextTextRequest<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(WINRT_SHIM(ICoreTextTextRequest)->get_Range(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextRequest)->get_Range(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICoreTextTextRequest<D>::Text() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICoreTextTextRequest)->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextRequest)->get_Text(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextTextRequest<D>::Text(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICoreTextTextRequest)->put_Text(get(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextRequest)->put_Text(get_abi(value)));
 }
 
 template <typename D> bool impl_ICoreTextTextRequest<D>::IsCanceled() const
@@ -1389,27 +1389,27 @@ template <typename D> bool impl_ICoreTextTextRequest<D>::IsCanceled() const
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextTextRequest<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextTextRequest)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextRequest)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextTextRequest impl_ICoreTextTextRequestedEventArgs<D>::Request() const
 {
     Windows::UI::Text::Core::CoreTextTextRequest value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextTextRequestedEventArgs)->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextRequestedEventArgs)->get_Request(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextSelectionRequest<D>::Selection() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(WINRT_SHIM(ICoreTextSelectionRequest)->get_Selection(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextSelectionRequest)->get_Selection(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextSelectionRequest<D>::Selection(const Windows::UI::Text::Core::CoreTextRange & value) const
 {
-    check_hresult(WINRT_SHIM(ICoreTextSelectionRequest)->put_Selection(get(value)));
+    check_hresult(WINRT_SHIM(ICoreTextSelectionRequest)->put_Selection(get_abi(value)));
 }
 
 template <typename D> bool impl_ICoreTextSelectionRequest<D>::IsCanceled() const
@@ -1422,52 +1422,52 @@ template <typename D> bool impl_ICoreTextSelectionRequest<D>::IsCanceled() const
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextSelectionRequest<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextSelectionRequest)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextSelectionRequest)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextSelectionRequest impl_ICoreTextSelectionRequestedEventArgs<D>::Request() const
 {
     Windows::UI::Text::Core::CoreTextSelectionRequest value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextSelectionRequestedEventArgs)->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextSelectionRequestedEventArgs)->get_Request(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_ICoreTextLayoutBounds<D>::TextBounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(ICoreTextLayoutBounds)->get_TextBounds(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextLayoutBounds)->get_TextBounds(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextLayoutBounds<D>::TextBounds(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(WINRT_SHIM(ICoreTextLayoutBounds)->put_TextBounds(get(value)));
+    check_hresult(WINRT_SHIM(ICoreTextLayoutBounds)->put_TextBounds(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Rect impl_ICoreTextLayoutBounds<D>::ControlBounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(ICoreTextLayoutBounds)->get_ControlBounds(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextLayoutBounds)->get_ControlBounds(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextLayoutBounds<D>::ControlBounds(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(WINRT_SHIM(ICoreTextLayoutBounds)->put_ControlBounds(get(value)));
+    check_hresult(WINRT_SHIM(ICoreTextLayoutBounds)->put_ControlBounds(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextLayoutRequest<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(WINRT_SHIM(ICoreTextLayoutRequest)->get_Range(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextLayoutRequest)->get_Range(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextLayoutBounds impl_ICoreTextLayoutRequest<D>::LayoutBounds() const
 {
     Windows::UI::Text::Core::CoreTextLayoutBounds value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextLayoutRequest)->get_LayoutBounds(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextLayoutRequest)->get_LayoutBounds(put_abi(value)));
     return value;
 }
 
@@ -1481,42 +1481,42 @@ template <typename D> bool impl_ICoreTextLayoutRequest<D>::IsCanceled() const
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextLayoutRequest<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextLayoutRequest)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextLayoutRequest)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextLayoutRequest impl_ICoreTextLayoutRequestedEventArgs<D>::Request() const
 {
     Windows::UI::Text::Core::CoreTextLayoutRequest value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextLayoutRequestedEventArgs)->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextLayoutRequestedEventArgs)->get_Request(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextTextUpdatingEventArgs<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->get_Range(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->get_Range(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICoreTextTextUpdatingEventArgs<D>::Text() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->get_Text(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextTextUpdatingEventArgs<D>::NewSelection() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->get_NewSelection(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->get_NewSelection(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Language impl_ICoreTextTextUpdatingEventArgs<D>::InputLanguage() const
 {
     Windows::Globalization::Language value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->get_InputLanguage(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->get_InputLanguage(put_abi(value)));
     return value;
 }
 
@@ -1542,14 +1542,14 @@ template <typename D> bool impl_ICoreTextTextUpdatingEventArgs<D>::IsCanceled() 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextTextUpdatingEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextTextUpdatingEventArgs)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextSelectionUpdatingEventArgs<D>::Selection() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(WINRT_SHIM(ICoreTextSelectionUpdatingEventArgs)->get_Selection(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextSelectionUpdatingEventArgs)->get_Selection(put_abi(value)));
     return value;
 }
 
@@ -1575,42 +1575,42 @@ template <typename D> bool impl_ICoreTextSelectionUpdatingEventArgs<D>::IsCancel
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextSelectionUpdatingEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextSelectionUpdatingEventArgs)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextSelectionUpdatingEventArgs)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextFormatUpdatingEventArgs<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_Range(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_Range(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> impl_ICoreTextFormatUpdatingEventArgs<D>::TextColor() const
 {
     Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> value;
-    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_TextColor(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_TextColor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> impl_ICoreTextFormatUpdatingEventArgs<D>::BackgroundColor() const
 {
     Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> value;
-    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_BackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_BackgroundColor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> impl_ICoreTextFormatUpdatingEventArgs<D>::UnderlineColor() const
 {
     Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> value;
-    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_UnderlineColor(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_UnderlineColor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::UI::Text::UnderlineType> impl_ICoreTextFormatUpdatingEventArgs<D>::UnderlineType() const
 {
     Windows::Foundation::IReference<winrt::Windows::UI::Text::UnderlineType> value;
-    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_UnderlineType(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->get_UnderlineType(put_abi(value)));
     return value;
 }
 
@@ -1643,7 +1643,7 @@ template <typename D> bool impl_ICoreTextFormatUpdatingEventArgs<D>::IsCanceled(
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextFormatUpdatingEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextFormatUpdatingEventArgs)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
@@ -1657,7 +1657,7 @@ template <typename D> bool impl_ICoreTextCompositionStartedEventArgs<D>::IsCance
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextCompositionStartedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextCompositionStartedEventArgs)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextCompositionStartedEventArgs)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
@@ -1671,21 +1671,21 @@ template <typename D> bool impl_ICoreTextCompositionCompletedEventArgs<D>::IsCan
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Text::Core::CoreTextCompositionSegment> impl_ICoreTextCompositionCompletedEventArgs<D>::CompositionSegments() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Text::Core::CoreTextCompositionSegment> value;
-    check_hresult(WINRT_SHIM(ICoreTextCompositionCompletedEventArgs)->get_CompositionSegments(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextCompositionCompletedEventArgs)->get_CompositionSegments(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextCompositionCompletedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextCompositionCompletedEventArgs)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextCompositionCompletedEventArgs)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_ICoreTextEditContext2<D>::NotifyFocusLeaveCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext2)->add_NotifyFocusLeaveCompleted(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext2)->add_NotifyFocusLeaveCompleted(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1702,13 +1702,13 @@ template <typename D> void impl_ICoreTextEditContext2<D>::NotifyFocusLeaveComple
 template <typename D> hstring impl_ICoreTextEditContext<D>::Name() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->get_Name(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::Name(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->put_Name(get(value)));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->put_Name(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextInputScope impl_ICoreTextEditContext<D>::InputScope() const
@@ -1750,7 +1750,7 @@ template <typename D> void impl_ICoreTextEditContext<D>::InputPaneDisplayPolicy(
 template <typename D> event_token impl_ICoreTextEditContext<D>::TextRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextRequestedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_TextRequested(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_TextRequested(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1767,7 +1767,7 @@ template <typename D> void impl_ICoreTextEditContext<D>::TextRequested(event_tok
 template <typename D> event_token impl_ICoreTextEditContext<D>::SelectionRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_SelectionRequested(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_SelectionRequested(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1784,7 +1784,7 @@ template <typename D> void impl_ICoreTextEditContext<D>::SelectionRequested(even
 template <typename D> event_token impl_ICoreTextEditContext<D>::LayoutRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_LayoutRequested(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_LayoutRequested(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1801,7 +1801,7 @@ template <typename D> void impl_ICoreTextEditContext<D>::LayoutRequested(event_t
 template <typename D> event_token impl_ICoreTextEditContext<D>::TextUpdating(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_TextUpdating(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_TextUpdating(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1818,7 +1818,7 @@ template <typename D> void impl_ICoreTextEditContext<D>::TextUpdating(event_toke
 template <typename D> event_token impl_ICoreTextEditContext<D>::SelectionUpdating(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_SelectionUpdating(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_SelectionUpdating(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1835,7 +1835,7 @@ template <typename D> void impl_ICoreTextEditContext<D>::SelectionUpdating(event
 template <typename D> event_token impl_ICoreTextEditContext<D>::FormatUpdating(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_FormatUpdating(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_FormatUpdating(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1852,7 +1852,7 @@ template <typename D> void impl_ICoreTextEditContext<D>::FormatUpdating(event_to
 template <typename D> event_token impl_ICoreTextEditContext<D>::CompositionStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_CompositionStarted(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_CompositionStarted(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1869,7 +1869,7 @@ template <typename D> void impl_ICoreTextEditContext<D>::CompositionStarted(even
 template <typename D> event_token impl_ICoreTextEditContext<D>::CompositionCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_CompositionCompleted(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_CompositionCompleted(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1886,7 +1886,7 @@ template <typename D> void impl_ICoreTextEditContext<D>::CompositionCompleted(ev
 template <typename D> event_token impl_ICoreTextEditContext<D>::FocusRemoved(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_FocusRemoved(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_FocusRemoved(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1912,12 +1912,12 @@ template <typename D> void impl_ICoreTextEditContext<D>::NotifyFocusLeave() cons
 
 template <typename D> void impl_ICoreTextEditContext<D>::NotifyTextChanged(const Windows::UI::Text::Core::CoreTextRange & modifiedRange, int32_t newLength, const Windows::UI::Text::Core::CoreTextRange & newSelection) const
 {
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->abi_NotifyTextChanged(get(modifiedRange), newLength, get(newSelection)));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->abi_NotifyTextChanged(get_abi(modifiedRange), newLength, get_abi(newSelection)));
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::NotifySelectionChanged(const Windows::UI::Text::Core::CoreTextRange & selection) const
 {
-    check_hresult(WINRT_SHIM(ICoreTextEditContext)->abi_NotifySelectionChanged(get(selection)));
+    check_hresult(WINRT_SHIM(ICoreTextEditContext)->abi_NotifySelectionChanged(get_abi(selection)));
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::NotifyLayoutChanged() const
@@ -1928,14 +1928,14 @@ template <typename D> void impl_ICoreTextEditContext<D>::NotifyLayoutChanged() c
 template <typename D> Windows::Globalization::Language impl_ICoreTextServicesManager<D>::InputLanguage() const
 {
     Windows::Globalization::Language value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextServicesManager)->get_InputLanguage(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextServicesManager)->get_InputLanguage(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_ICoreTextServicesManager<D>::InputLanguageChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreTextServicesManager)->add_InputLanguageChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreTextServicesManager)->add_InputLanguageChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -1952,14 +1952,14 @@ template <typename D> void impl_ICoreTextServicesManager<D>::InputLanguageChange
 template <typename D> Windows::UI::Text::Core::CoreTextEditContext impl_ICoreTextServicesManager<D>::CreateEditContext() const
 {
     Windows::UI::Text::Core::CoreTextEditContext value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextServicesManager)->abi_CreateEditContext(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextServicesManager)->abi_CreateEditContext(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextServicesManager impl_ICoreTextServicesManagerStatics<D>::GetForCurrentView() const
 {
     Windows::UI::Text::Core::CoreTextServicesManager value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreTextServicesManagerStatics)->abi_GetForCurrentView(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextServicesManagerStatics)->abi_GetForCurrentView(put_abi(value)));
     return value;
 }
 
@@ -1973,14 +1973,14 @@ template <typename D> wchar_t impl_ICoreTextServicesStatics<D>::HiddenCharacter(
 template <typename D> hstring impl_ICoreTextCompositionSegment<D>::PreconversionString() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICoreTextCompositionSegment)->get_PreconversionString(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextCompositionSegment)->get_PreconversionString(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextCompositionSegment<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(WINRT_SHIM(ICoreTextCompositionSegment)->get_Range(put(value)));
+    check_hresult(WINRT_SHIM(ICoreTextCompositionSegment)->get_Range(put_abi(value)));
     return value;
 }
 

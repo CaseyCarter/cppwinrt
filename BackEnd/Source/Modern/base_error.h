@@ -28,7 +28,7 @@ inline hstring trim_hresult_message(const wchar_t * const message, uint32_t size
     }
 
     hstring result;
-    WindowsCreateString(message, size, put(result));
+    WindowsCreateString(message, size, put_abi(result));
     return result;
 }
 
@@ -45,20 +45,20 @@ struct hresult_error
         m_code(code)
     {
         WINRT_RoOriginateError(code, nullptr);
-        WINRT_GetRestrictedErrorInfo(put(m_info));
+        WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     hresult_error(const HRESULT code, hstring_view message) noexcept :
         m_code(code)
     {
-        WINRT_RoOriginateError(code, get(message));
-        WINRT_GetRestrictedErrorInfo(put(m_info));
+        WINRT_RoOriginateError(code, get_abi(message));
+        WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     hresult_error(const HRESULT code, from_abi_t) noexcept :
         m_code(code)
     {
-        WINRT_GetRestrictedErrorInfo(put(m_info));
+        WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     HRESULT code() const noexcept
@@ -71,37 +71,37 @@ struct hresult_error
         if (m_info)
         {
             HRESULT code = S_OK;
-            handle<impl::bstr_traits> fallback;
-            handle<impl::bstr_traits> message;
-            handle<impl::bstr_traits> unused;
+            impl::handle<impl::bstr_traits> fallback;
+            impl::handle<impl::bstr_traits> message;
+            impl::handle<impl::bstr_traits> unused;
 
-            if (S_OK == m_info->GetErrorDetails(put(fallback), &code, put(message), put(unused)))
+            if (S_OK == m_info->GetErrorDetails(put_abi(fallback), &code, put_abi(message), put_abi(unused)))
             {
                 if (code == m_code)
                 {
                     if (message)
                     {
-                        return impl::trim_hresult_message(get(message), SysStringLen(get(message)));
+                        return impl::trim_hresult_message(get_abi(message), SysStringLen(get_abi(message)));
                     }
                     else
                     {
-                        return impl::trim_hresult_message(get(fallback), SysStringLen(get(fallback)));
+                        return impl::trim_hresult_message(get_abi(fallback), SysStringLen(get_abi(fallback)));
                     }
                 }
             }
         }
 
-        handle<impl::heap_traits> message;
+        impl::handle<impl::heap_traits> message;
 
         const uint32_t size = FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
                                              nullptr,
                                              m_code,
                                              MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-                                             reinterpret_cast<wchar_t *>(put(message)),
+                                             reinterpret_cast<wchar_t *>(put_abi(message)),
                                              0,
                                              nullptr);
 
-        return impl::trim_hresult_message(get(message), size);
+        return impl::trim_hresult_message(get_abi(message), size);
     }
 
     HRESULT to_abi() const noexcept
@@ -110,7 +110,7 @@ struct hresult_error
 
         if (m_info)
         {
-            WINRT_SetRestrictedErrorInfo(get(m_info));
+            WINRT_SetRestrictedErrorInfo(get_abi(m_info));
         }
 
         return m_code;

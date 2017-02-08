@@ -22,7 +22,7 @@ struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference,
 
     HRESULT __stdcall abi_Resolve(const GUID & iid, abi<IInspectable> ** objectReference) override
     {
-        return get(m_reference)->QueryInterface(iid, reinterpret_cast<void **>(objectReference));
+        return get_abi(m_reference)->QueryInterface(iid, reinterpret_cast<void **>(objectReference));
     }
 };
 
@@ -31,7 +31,7 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windo
     operator SplashScreen() const noexcept
     {
         SplashScreen result = nullptr;
-        copy_from(result, to_abi<ISplashScreen>(this));
+        copy_from_abi(result, to_abi<ISplashScreen>(this));
         return result;
     }
 
@@ -58,7 +58,7 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windo
     {
         try
         {
-            *weakReference = detach(make<TestSplashScreenWeakReference>(*this));
+            *weakReference = detach_abi(make<TestSplashScreenWeakReference>(*this));
             return S_OK;
         }
         catch (...)

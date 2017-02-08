@@ -15,7 +15,7 @@ template <> struct hash<winrt::hstring>
 
         uint32_t length = 0;
 
-        const uint8_t * const buffer = reinterpret_cast<const uint8_t *>(WindowsGetStringRawBuffer(get(value),
+        const uint8_t * const buffer = reinterpret_cast<const uint8_t *>(WindowsGetStringRawBuffer(get_abi(value),
                                                                                                    &length));
 
         length *= sizeof(wchar_t);

@@ -27,7 +27,7 @@ struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach(this->shim().ActivateInstance());
+            *instance = detach_abi(this->shim().ActivateInstance());
             return S_OK;
         }
         catch (...)
@@ -44,7 +44,7 @@ Interface get_agile_activation_factory()
     hstring_view classId(impl::traits<Class>::name());
 
     Interface factory;
-    check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
+    check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
 
     if (!factory.template try_as<IAgileObject>())
     {
@@ -60,7 +60,7 @@ Interface get_activation_factory()
     hstring_view classId(impl::traits<Class>::name());
 
     Interface factory;
-    check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
+    check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
     return factory;
 }
 
@@ -79,24 +79,24 @@ template <typename D>
 IInspectable impl_IActivationFactory<D>::ActivateInstance() const
 {
     IInspectable instance;
-    check_hresult(WINRT_SHIM(IActivationFactory)->abi_ActivateInstance(put(instance)));
+    check_hresult(WINRT_SHIM(IActivationFactory)->abi_ActivateInstance(put_abi(instance)));
     return instance;
 }
 
 }
 
-enum class initialize_type
+enum class apartment_type
 {
     single_threaded,
     multi_threaded
 };
 
-inline void initialize(const initialize_type type = initialize_type::multi_threaded)
+inline void init_apartment(const apartment_type type = apartment_type::multi_threaded)
 {
     check_hresult<S_FALSE>(WINRT_RoInitialize(static_cast<uint32_t>(type)));
 }
 
-inline void uninitialize() noexcept
+inline void uninit_apartment() noexcept
 {
     WINRT_RoUninitialize();
 }

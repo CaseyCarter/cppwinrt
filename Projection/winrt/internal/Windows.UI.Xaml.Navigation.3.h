@@ -13,7 +13,7 @@ template <typename H> struct impl_LoadCompletedEventHandler : implements<impl_Lo
 {
     impl_LoadCompletedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_NavigatedEventHandler : implements<impl_Naviga
 {
     impl_NavigatedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
     {
         try
         {
@@ -49,7 +49,7 @@ template <typename H> struct impl_NavigatingCancelEventHandler : implements<impl
 {
     impl_NavigatingCancelEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> e) noexcept override
     {
         try
         {
@@ -67,7 +67,7 @@ template <typename H> struct impl_NavigationFailedEventHandler : implements<impl
 {
     impl_NavigationFailedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Navigation::INavigationFailedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Navigation::INavigationFailedEventArgs> e) noexcept override
     {
         try
         {
@@ -85,7 +85,7 @@ template <typename H> struct impl_NavigationStoppedEventHandler : implements<imp
 {
     impl_NavigationStoppedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Navigation::INavigationEventArgs> e) noexcept override
     {
         try
         {

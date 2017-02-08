@@ -12,12 +12,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Graphics::Effects::IGraphicsEffect> : produce_base<D, Windows::Graphics::Effects::IGraphicsEffect>
 {
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> name) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> name) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *name = detach(this->shim().Name());
+            *name = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -27,7 +27,7 @@ struct produce<D, Windows::Graphics::Effects::IGraphicsEffect> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall put_Name(abi_arg_in<hstring> name) noexcept override
+    HRESULT __stdcall put_Name(impl::abi_arg_in<hstring> name) noexcept override
     {
         try
         {
@@ -53,13 +53,13 @@ namespace Windows::Graphics::Effects {
 template <typename D> hstring impl_IGraphicsEffect<D>::Name() const
 {
     hstring name;
-    check_hresult(WINRT_SHIM(IGraphicsEffect)->get_Name(put(name)));
+    check_hresult(WINRT_SHIM(IGraphicsEffect)->get_Name(put_abi(name)));
     return name;
 }
 
 template <typename D> void impl_IGraphicsEffect<D>::Name(hstring_view name) const
 {
-    check_hresult(WINRT_SHIM(IGraphicsEffect)->put_Name(get(name)));
+    check_hresult(WINRT_SHIM(IGraphicsEffect)->put_Name(get_abi(name)));
 }
 
 }

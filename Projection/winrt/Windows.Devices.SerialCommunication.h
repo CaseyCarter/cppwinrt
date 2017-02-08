@@ -21,7 +21,7 @@ struct produce<D, Windows::Devices::SerialCommunication::IErrorReceivedEventArgs
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Error());
+            *value = detach_abi(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -39,7 +39,7 @@ struct produce<D, Windows::Devices::SerialCommunication::IPinChangedEventArgs> :
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PinChange());
+            *value = detach_abi(this->shim().PinChange());
             return S_OK;
         }
         catch (...)
@@ -57,7 +57,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BaudRate());
+            *value = detach_abi(this->shim().BaudRate());
             return S_OK;
         }
         catch (...)
@@ -85,7 +85,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BreakSignalState());
+            *value = detach_abi(this->shim().BreakSignalState());
             return S_OK;
         }
         catch (...)
@@ -113,7 +113,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BytesReceived());
+            *value = detach_abi(this->shim().BytesReceived());
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CarrierDetectState());
+            *value = detach_abi(this->shim().CarrierDetectState());
             return S_OK;
         }
         catch (...)
@@ -141,7 +141,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ClearToSendState());
+            *value = detach_abi(this->shim().ClearToSendState());
             return S_OK;
         }
         catch (...)
@@ -155,7 +155,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DataBits());
+            *value = detach_abi(this->shim().DataBits());
             return S_OK;
         }
         catch (...)
@@ -183,7 +183,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DataSetReadyState());
+            *value = detach_abi(this->shim().DataSetReadyState());
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Handshake());
+            *value = detach_abi(this->shim().Handshake());
             return S_OK;
         }
         catch (...)
@@ -225,7 +225,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsDataTerminalReadyEnabled());
+            *value = detach_abi(this->shim().IsDataTerminalReadyEnabled());
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsRequestToSendEnabled());
+            *value = detach_abi(this->shim().IsRequestToSendEnabled());
             return S_OK;
         }
         catch (...)
@@ -281,7 +281,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Parity());
+            *value = detach_abi(this->shim().Parity());
             return S_OK;
         }
         catch (...)
@@ -304,12 +304,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         }
     }
 
-    HRESULT __stdcall get_PortName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PortName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PortName());
+            *value = detach_abi(this->shim().PortName());
             return S_OK;
         }
         catch (...)
@@ -319,12 +319,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         }
     }
 
-    HRESULT __stdcall get_ReadTimeout(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_ReadTimeout(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReadTimeout());
+            *value = detach_abi(this->shim().ReadTimeout());
             return S_OK;
         }
         catch (...)
@@ -333,7 +333,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         }
     }
 
-    HRESULT __stdcall put_ReadTimeout(abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall put_ReadTimeout(impl::abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
@@ -352,7 +352,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().StopBits());
+            *value = detach_abi(this->shim().StopBits());
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UsbVendorId());
+            *value = detach_abi(this->shim().UsbVendorId());
             return S_OK;
         }
         catch (...)
@@ -394,7 +394,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UsbProductId());
+            *value = detach_abi(this->shim().UsbProductId());
             return S_OK;
         }
         catch (...)
@@ -403,12 +403,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         }
     }
 
-    HRESULT __stdcall get_WriteTimeout(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_WriteTimeout(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WriteTimeout());
+            *value = detach_abi(this->shim().WriteTimeout());
             return S_OK;
         }
         catch (...)
@@ -417,7 +417,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         }
     }
 
-    HRESULT __stdcall put_WriteTimeout(abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall put_WriteTimeout(impl::abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
@@ -431,12 +431,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         }
     }
 
-    HRESULT __stdcall get_InputStream(abi_arg_out<Windows::Storage::Streams::IInputStream> value) noexcept override
+    HRESULT __stdcall get_InputStream(impl::abi_arg_out<Windows::Storage::Streams::IInputStream> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InputStream());
+            *value = detach_abi(this->shim().InputStream());
             return S_OK;
         }
         catch (...)
@@ -446,12 +446,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         }
     }
 
-    HRESULT __stdcall get_OutputStream(abi_arg_out<Windows::Storage::Streams::IOutputStream> value) noexcept override
+    HRESULT __stdcall get_OutputStream(impl::abi_arg_out<Windows::Storage::Streams::IOutputStream> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutputStream());
+            *value = detach_abi(this->shim().OutputStream());
             return S_OK;
         }
         catch (...)
@@ -461,12 +461,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         }
     }
 
-    HRESULT __stdcall add_ErrorReceived(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs>> reportHandler, event_token * token) noexcept override
+    HRESULT __stdcall add_ErrorReceived(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs>> reportHandler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ErrorReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> *>(&reportHandler)));
+            *token = detach_abi(this->shim().ErrorReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> *>(&reportHandler)));
             return S_OK;
         }
         catch (...)
@@ -489,12 +489,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
         }
     }
 
-    HRESULT __stdcall add_PinChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs>> reportHandler, event_token * token) noexcept override
+    HRESULT __stdcall add_PinChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs>> reportHandler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().PinChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> *>(&reportHandler)));
+            *token = detach_abi(this->shim().PinChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> *>(&reportHandler)));
             return S_OK;
         }
         catch (...)
@@ -521,12 +521,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
 template <typename D>
 struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> : produce_base<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics>
 {
-    HRESULT __stdcall abi_GetDeviceSelector(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelector(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeviceSelector());
+            *value = detach_abi(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -536,12 +536,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceSelectorFromPortName(abi_arg_in<hstring> portName, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelectorFromPortName(impl::abi_arg_in<hstring> portName, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&portName)));
+            *result = detach_abi(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&portName)));
             return S_OK;
         }
         catch (...)
@@ -551,12 +551,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetDeviceSelectorFromUsbVidPid(vendorId, productId));
+            *result = detach_abi(this->shim().GetDeviceSelectorFromUsbVidPid(vendorId, productId));
             return S_OK;
         }
         catch (...)
@@ -566,12 +566,12 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
         }
     }
 
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> deviceId, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice>> result) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *result = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -589,28 +589,28 @@ namespace Windows::Devices::SerialCommunication {
 template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_GetDeviceSelector(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelector(hstring_view portName) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_GetDeviceSelectorFromPortName(get(portName), put(result)));
+    check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_GetDeviceSelectorFromPortName(get_abi(portName), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_GetDeviceSelectorFromUsbVidPid(vendorId, productId, put(result)));
+    check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_GetDeviceSelectorFromUsbVidPid(vendorId, productId, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> impl_ISerialDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> result;
-    check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(ISerialDeviceStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(result)));
     return result;
 }
 
@@ -743,20 +743,20 @@ template <typename D> void impl_ISerialDevice<D>::Parity(Windows::Devices::Seria
 template <typename D> hstring impl_ISerialDevice<D>::PortName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ISerialDevice)->get_PortName(put(value)));
+    check_hresult(WINRT_SHIM(ISerialDevice)->get_PortName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ISerialDevice<D>::ReadTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(ISerialDevice)->get_ReadTimeout(put(value)));
+    check_hresult(WINRT_SHIM(ISerialDevice)->get_ReadTimeout(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::ReadTimeout(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(WINRT_SHIM(ISerialDevice)->put_ReadTimeout(get(value)));
+    check_hresult(WINRT_SHIM(ISerialDevice)->put_ReadTimeout(get_abi(value)));
 }
 
 template <typename D> Windows::Devices::SerialCommunication::SerialStopBitCount impl_ISerialDevice<D>::StopBits() const
@@ -788,33 +788,33 @@ template <typename D> uint16_t impl_ISerialDevice<D>::UsbProductId() const
 template <typename D> Windows::Foundation::TimeSpan impl_ISerialDevice<D>::WriteTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(ISerialDevice)->get_WriteTimeout(put(value)));
+    check_hresult(WINRT_SHIM(ISerialDevice)->get_WriteTimeout(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::WriteTimeout(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(WINRT_SHIM(ISerialDevice)->put_WriteTimeout(get(value)));
+    check_hresult(WINRT_SHIM(ISerialDevice)->put_WriteTimeout(get_abi(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_ISerialDevice<D>::InputStream() const
 {
     Windows::Storage::Streams::IInputStream value;
-    check_hresult(WINRT_SHIM(ISerialDevice)->get_InputStream(put(value)));
+    check_hresult(WINRT_SHIM(ISerialDevice)->get_InputStream(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IOutputStream impl_ISerialDevice<D>::OutputStream() const
 {
     Windows::Storage::Streams::IOutputStream value;
-    check_hresult(WINRT_SHIM(ISerialDevice)->get_OutputStream(put(value)));
+    check_hresult(WINRT_SHIM(ISerialDevice)->get_OutputStream(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_ISerialDevice<D>::ErrorReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> & reportHandler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(ISerialDevice)->add_ErrorReceived(get(reportHandler), &token));
+    check_hresult(WINRT_SHIM(ISerialDevice)->add_ErrorReceived(get_abi(reportHandler), &token));
     return token;
 }
 
@@ -831,7 +831,7 @@ template <typename D> void impl_ISerialDevice<D>::ErrorReceived(event_token toke
 template <typename D> event_token impl_ISerialDevice<D>::PinChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> & reportHandler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(ISerialDevice)->add_PinChanged(get(reportHandler), &token));
+    check_hresult(WINRT_SHIM(ISerialDevice)->add_PinChanged(get_abi(reportHandler), &token));
     return token;
 }
 

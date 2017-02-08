@@ -25,7 +25,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsEnabled());
+            *value = detach_abi(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -48,12 +48,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_DefaultAppName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DefaultAppName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DefaultAppName());
+            *value = detach_abi(this->shim().DefaultAppName());
             return S_OK;
         }
         catch (...)
@@ -63,7 +63,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall put_DefaultAppName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_DefaultAppName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -77,12 +77,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_AppNames(abi_arg_out<Windows::Foundation::Collections::IMap<hstring, hstring>> value) noexcept override
+    HRESULT __stdcall get_AppNames(impl::abi_arg_out<Windows::Foundation::Collections::IMap<hstring, hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AppNames());
+            *value = detach_abi(this->shim().AppNames());
             return S_OK;
         }
         catch (...)
@@ -92,12 +92,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_DateOfManufacture(abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
+    HRESULT __stdcall get_DateOfManufacture(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DateOfManufacture());
+            *value = detach_abi(this->shim().DateOfManufacture());
             return S_OK;
         }
         catch (...)
@@ -107,7 +107,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall put_DateOfManufacture(abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
+    HRESULT __stdcall put_DateOfManufacture(impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
     {
         try
         {
@@ -121,12 +121,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_DefaultDescription(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DefaultDescription(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DefaultDescription());
+            *value = detach_abi(this->shim().DefaultDescription());
             return S_OK;
         }
         catch (...)
@@ -136,7 +136,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall put_DefaultDescription(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_DefaultDescription(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -150,12 +150,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_Descriptions(abi_arg_out<Windows::Foundation::Collections::IMap<hstring, hstring>> value) noexcept override
+    HRESULT __stdcall get_Descriptions(impl::abi_arg_out<Windows::Foundation::Collections::IMap<hstring, hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Descriptions());
+            *value = detach_abi(this->shim().Descriptions());
             return S_OK;
         }
         catch (...)
@@ -165,12 +165,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_DefaultManufacturer(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DefaultManufacturer(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DefaultManufacturer());
+            *value = detach_abi(this->shim().DefaultManufacturer());
             return S_OK;
         }
         catch (...)
@@ -180,7 +180,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall put_DefaultManufacturer(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_DefaultManufacturer(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -194,12 +194,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_Manufacturers(abi_arg_out<Windows::Foundation::Collections::IMap<hstring, hstring>> value) noexcept override
+    HRESULT __stdcall get_Manufacturers(impl::abi_arg_out<Windows::Foundation::Collections::IMap<hstring, hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Manufacturers());
+            *value = detach_abi(this->shim().Manufacturers());
             return S_OK;
         }
         catch (...)
@@ -209,12 +209,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_ModelNumber(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ModelNumber(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ModelNumber());
+            *value = detach_abi(this->shim().ModelNumber());
             return S_OK;
         }
         catch (...)
@@ -224,7 +224,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall put_ModelNumber(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_ModelNumber(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -238,12 +238,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_SoftwareVersion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SoftwareVersion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SoftwareVersion());
+            *value = detach_abi(this->shim().SoftwareVersion());
             return S_OK;
         }
         catch (...)
@@ -253,7 +253,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall put_SoftwareVersion(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_SoftwareVersion(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -267,12 +267,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_SupportUrl(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_SupportUrl(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportUrl());
+            *value = detach_abi(this->shim().SupportUrl());
             return S_OK;
         }
         catch (...)
@@ -282,7 +282,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         }
     }
 
-    HRESULT __stdcall put_SupportUrl(abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall put_SupportUrl(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
@@ -301,7 +301,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AppId());
+            *value = detach_abi(this->shim().AppId());
             return S_OK;
         }
         catch (...)
@@ -333,7 +333,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -342,12 +342,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_Properties(abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Properties());
+            *value = detach_abi(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -357,12 +357,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_AJSoftwareVersion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AJSoftwareVersion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AJSoftwareVersion());
+            *value = detach_abi(this->shim().AJSoftwareVersion());
             return S_OK;
         }
         catch (...)
@@ -377,7 +377,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AppId());
+            *value = detach_abi(this->shim().AppId());
             return S_OK;
         }
         catch (...)
@@ -386,27 +386,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_DateOfManufacture(abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
+    HRESULT __stdcall get_DateOfManufacture(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DateOfManufacture());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_DefaultLanguage(abi_arg_out<Windows::Globalization::ILanguage> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DefaultLanguage());
+            *value = detach_abi(this->shim().DateOfManufacture());
             return S_OK;
         }
         catch (...)
@@ -416,12 +401,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DefaultLanguage(impl::abi_arg_out<Windows::Globalization::ILanguage> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DefaultLanguage());
             return S_OK;
         }
         catch (...)
@@ -431,12 +416,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_HardwareVersion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HardwareVersion());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -446,12 +431,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_ModelNumber(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_HardwareVersion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ModelNumber());
+            *value = detach_abi(this->shim().HardwareVersion());
             return S_OK;
         }
         catch (...)
@@ -461,12 +446,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_SoftwareVersion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ModelNumber(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SoftwareVersion());
+            *value = detach_abi(this->shim().ModelNumber());
             return S_OK;
         }
         catch (...)
@@ -476,12 +461,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_SupportedLanguages(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language>> value) noexcept override
+    HRESULT __stdcall get_SoftwareVersion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportedLanguages());
+            *value = detach_abi(this->shim().SoftwareVersion());
             return S_OK;
         }
         catch (...)
@@ -491,12 +476,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_SupportUrl(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_SupportedLanguages(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportUrl());
+            *value = detach_abi(this->shim().SupportedLanguages());
             return S_OK;
         }
         catch (...)
@@ -506,12 +491,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_AppName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SupportUrl(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AppName());
+            *value = detach_abi(this->shim().SupportUrl());
             return S_OK;
         }
         catch (...)
@@ -521,12 +506,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_Description(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AppName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Description());
+            *value = detach_abi(this->shim().AppName());
             return S_OK;
         }
         catch (...)
@@ -536,12 +521,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_DeviceName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Description(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceName());
+            *value = detach_abi(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -551,12 +536,27 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_Manufacturer(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Manufacturer());
+            *value = detach_abi(this->shim().DeviceName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Manufacturer(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Manufacturer());
             return S_OK;
         }
         catch (...)
@@ -570,12 +570,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>
 {
-    HRESULT __stdcall abi_GetDataBySessionPortAsync(abi_arg_in<hstring> uniqueName, abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusAttachment> busAttachment, uint16_t sessionPort, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>> operation) noexcept override
+    HRESULT __stdcall abi_GetDataBySessionPortAsync(impl::abi_arg_in<hstring> uniqueName, impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusAttachment> busAttachment, uint16_t sessionPort, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort));
+            *operation = detach_abi(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort));
             return S_OK;
         }
         catch (...)
@@ -585,12 +585,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics> : pro
         }
     }
 
-    HRESULT __stdcall abi_GetDataBySessionPortWithLanguageAsync(abi_arg_in<hstring> uniqueName, abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusAttachment> busAttachment, uint16_t sessionPort, abi_arg_in<Windows::Globalization::ILanguage> language, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>> operation) noexcept override
+    HRESULT __stdcall abi_GetDataBySessionPortWithLanguageAsync(impl::abi_arg_in<hstring> uniqueName, impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusAttachment> busAttachment, uint16_t sessionPort, impl::abi_arg_in<Windows::Globalization::ILanguage> language, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort, *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
+            *operation = detach_abi(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort, *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
         catch (...)
@@ -622,12 +622,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner> : prod
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs>
 {
-    HRESULT __stdcall get_UniqueName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_UniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UniqueName());
+            *value = detach_abi(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -642,7 +642,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SessionPort());
+            *value = detach_abi(this->shim().SessionPort());
             return S_OK;
         }
         catch (...)
@@ -656,7 +656,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TrafficType());
+            *value = detach_abi(this->shim().TrafficType());
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SamePhysicalNode());
+            *value = detach_abi(this->shim().SamePhysicalNode());
             return S_OK;
         }
         catch (...)
@@ -684,7 +684,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SameNetwork());
+            *value = detach_abi(this->shim().SameNetwork());
             return S_OK;
         }
         catch (...)
@@ -711,12 +711,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, abi_arg_in<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner> acceptSessionJoiner, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner> acceptSessionJoiner, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), sessionPort, trafficType, proximity, *reinterpret_cast<const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner *>(&acceptSessionJoiner)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), sessionPort, trafficType, proximity, *reinterpret_cast<const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner *>(&acceptSessionJoiner)));
             return S_OK;
         }
         catch (...)
@@ -735,7 +735,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationMechanism());
+            *value = detach_abi(this->shim().AuthenticationMechanism());
             return S_OK;
         }
         catch (...)
@@ -744,12 +744,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
         }
     }
 
-    HRESULT __stdcall get_PeerUniqueName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PeerUniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PeerUniqueName());
+            *value = detach_abi(this->shim().PeerUniqueName());
             return S_OK;
         }
         catch (...)
@@ -764,7 +764,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Succeeded());
+            *value = detach_abi(this->shim().Succeeded());
             return S_OK;
         }
         catch (...)
@@ -777,12 +777,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment>
 {
-    HRESULT __stdcall get_AboutData(abi_arg_out<Windows::Devices::AllJoyn::IAllJoynAboutData> value) noexcept override
+    HRESULT __stdcall get_AboutData(impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynAboutData> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AboutData());
+            *value = detach_abi(this->shim().AboutData());
             return S_OK;
         }
         catch (...)
@@ -792,12 +792,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_ConnectionSpecification(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ConnectionSpecification(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ConnectionSpecification());
+            *value = detach_abi(this->shim().ConnectionSpecification());
             return S_OK;
         }
         catch (...)
@@ -812,7 +812,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().State());
+            *value = detach_abi(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -821,12 +821,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_UniqueName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_UniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UniqueName());
+            *value = detach_abi(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -836,12 +836,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_PingAsync(abi_arg_in<hstring> uniqueName, abi_arg_out<Windows::Foundation::IAsyncOperation<int32_t>> operation) noexcept override
+    HRESULT __stdcall abi_PingAsync(impl::abi_arg_in<hstring> uniqueName, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<int32_t>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().PingAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *operation = detach_abi(this->shim().PingAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -879,12 +879,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
         }
     }
 
-    HRESULT __stdcall add_StateChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_StateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -907,12 +907,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_AuthenticationMechanisms(abi_arg_out<Windows::Foundation::Collections::IVector<winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism>> value) noexcept override
+    HRESULT __stdcall get_AuthenticationMechanisms(impl::abi_arg_out<Windows::Foundation::Collections::IVector<winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationMechanisms());
+            *value = detach_abi(this->shim().AuthenticationMechanisms());
             return S_OK;
         }
         catch (...)
@@ -922,12 +922,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
         }
     }
 
-    HRESULT __stdcall add_CredentialsRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CredentialsRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().CredentialsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().CredentialsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -950,12 +950,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
         }
     }
 
-    HRESULT __stdcall add_CredentialsVerificationRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CredentialsVerificationRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().CredentialsVerificationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().CredentialsVerificationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -978,12 +978,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
         }
     }
 
-    HRESULT __stdcall add_AuthenticationComplete(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AuthenticationComplete(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().AuthenticationComplete(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().AuthenticationComplete(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1010,12 +1010,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2>
 {
-    HRESULT __stdcall abi_GetAboutDataAsync(abi_arg_in<Windows::Devices::AllJoyn::IAllJoynServiceInfo> serviceInfo, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>> operation) noexcept override
+    HRESULT __stdcall abi_GetAboutDataAsync(impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynServiceInfo> serviceInfo, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
+            *operation = detach_abi(this->shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
             return S_OK;
         }
         catch (...)
@@ -1025,12 +1025,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetAboutDataWithLanguageAsync(abi_arg_in<Windows::Devices::AllJoyn::IAllJoynServiceInfo> serviceInfo, abi_arg_in<Windows::Globalization::ILanguage> language, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>> operation) noexcept override
+    HRESULT __stdcall abi_GetAboutDataWithLanguageAsync(impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynServiceInfo> serviceInfo, impl::abi_arg_in<Windows::Globalization::ILanguage> language, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
+            *operation = detach_abi(this->shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
         catch (...)
@@ -1040,12 +1040,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
         }
     }
 
-    HRESULT __stdcall add_AcceptSessionJoinerRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AcceptSessionJoinerRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().AcceptSessionJoinerRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().AcceptSessionJoinerRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1068,12 +1068,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
         }
     }
 
-    HRESULT __stdcall add_SessionJoined(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SessionJoined(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SessionJoined(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SessionJoined(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1100,12 +1100,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> connectionSpecification, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusAttachment> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> connectionSpecification, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusAttachment> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&connectionSpecification)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&connectionSpecification)));
             return S_OK;
         }
         catch (...)
@@ -1124,7 +1124,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEv
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().State());
+            *value = detach_abi(this->shim().State());
             return S_OK;
         }
         catch (...)
@@ -1138,7 +1138,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEv
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1151,12 +1151,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEv
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>
 {
-    HRESULT __stdcall abi_GetDefault(abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusAttachment> defaultBusAttachment) noexcept override
+    HRESULT __stdcall abi_GetDefault(impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusAttachment> defaultBusAttachment) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *defaultBusAttachment = detach(this->shim().GetDefault());
+            *defaultBusAttachment = detach_abi(this->shim().GetDefault());
             return S_OK;
         }
         catch (...)
@@ -1166,12 +1166,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics> : pro
         }
     }
 
-    HRESULT __stdcall abi_GetWatcher(abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> requiredInterfaces, abi_arg_out<Windows::Devices::Enumeration::IDeviceWatcher> deviceWatcher) noexcept override
+    HRESULT __stdcall abi_GetWatcher(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> requiredInterfaces, impl::abi_arg_out<Windows::Devices::Enumeration::IDeviceWatcher> deviceWatcher) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *deviceWatcher = detach(this->shim().GetWatcher(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requiredInterfaces)));
+            *deviceWatcher = detach_abi(this->shim().GetWatcher(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requiredInterfaces)));
             return S_OK;
         }
         catch (...)
@@ -1213,7 +1213,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
         }
     }
 
-    HRESULT __stdcall abi_AddProducer(abi_arg_in<Windows::Devices::AllJoyn::IAllJoynProducer> producer) noexcept override
+    HRESULT __stdcall abi_AddProducer(impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynProducer> producer) noexcept override
     {
         try
         {
@@ -1227,12 +1227,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_BusAttachment(abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusAttachment> value) noexcept override
+    HRESULT __stdcall get_BusAttachment(impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusAttachment> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BusAttachment());
+            *value = detach_abi(this->shim().BusAttachment());
             return S_OK;
         }
         catch (...)
@@ -1242,12 +1242,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_Session(abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSession> value) noexcept override
+    HRESULT __stdcall get_Session(impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSession> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Session());
+            *value = detach_abi(this->shim().Session());
             return S_OK;
         }
         catch (...)
@@ -1257,12 +1257,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
         }
     }
 
-    HRESULT __stdcall add_Stopped(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1289,12 +1289,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> objectPath, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusObject> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> objectPath, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusObject> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&objectPath)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&objectPath)));
             return S_OK;
         }
         catch (...)
@@ -1304,12 +1304,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory> : produce
         }
     }
 
-    HRESULT __stdcall abi_CreateWithBusAttachment(abi_arg_in<hstring> objectPath, abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusAttachment> busAttachment, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusObject> result) noexcept override
+    HRESULT __stdcall abi_CreateWithBusAttachment(impl::abi_arg_in<hstring> objectPath, impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusAttachment> busAttachment, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusObject> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateWithBusAttachment(*reinterpret_cast<const hstring *>(&objectPath), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
+            *result = detach_abi(this->shim().CreateWithBusAttachment(*reinterpret_cast<const hstring *>(&objectPath), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
             return S_OK;
         }
         catch (...)
@@ -1328,7 +1328,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1341,12 +1341,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs> 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory>
 {
-    HRESULT __stdcall abi_Create(int32_t status, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs> result) noexcept override
+    HRESULT __stdcall abi_Create(int32_t status, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(status));
+            *result = detach_abi(this->shim().Create(status));
             return S_OK;
         }
         catch (...)
@@ -1365,7 +1365,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationMechanism());
+            *value = detach_abi(this->shim().AuthenticationMechanism());
             return S_OK;
         }
         catch (...)
@@ -1374,12 +1374,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
         }
     }
 
-    HRESULT __stdcall get_Certificate(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall get_Certificate(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Certificate());
+            *value = detach_abi(this->shim().Certificate());
             return S_OK;
         }
         catch (...)
@@ -1389,7 +1389,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
         }
     }
 
-    HRESULT __stdcall put_Certificate(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall put_Certificate(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
@@ -1403,12 +1403,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
         }
     }
 
-    HRESULT __stdcall get_PasswordCredential(abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall get_PasswordCredential(impl::abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PasswordCredential());
+            *value = detach_abi(this->shim().PasswordCredential());
             return S_OK;
         }
         catch (...)
@@ -1418,7 +1418,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
         }
     }
 
-    HRESULT __stdcall put_PasswordCredential(abi_arg_in<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall put_PasswordCredential(impl::abi_arg_in<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
@@ -1432,12 +1432,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
         }
     }
 
-    HRESULT __stdcall get_Timeout(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_Timeout(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Timeout());
+            *value = detach_abi(this->shim().Timeout());
             return S_OK;
         }
         catch (...)
@@ -1446,7 +1446,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
         }
     }
 
-    HRESULT __stdcall put_Timeout(abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall put_Timeout(impl::abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
@@ -1469,7 +1469,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AttemptCount());
+            *value = detach_abi(this->shim().AttemptCount());
             return S_OK;
         }
         catch (...)
@@ -1478,27 +1478,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
         }
     }
 
-    HRESULT __stdcall get_Credentials(abi_arg_out<Windows::Devices::AllJoyn::IAllJoynCredentials> value) noexcept override
+    HRESULT __stdcall get_Credentials(impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynCredentials> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Credentials());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_PeerUniqueName(abi_arg_out<hstring> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PeerUniqueName());
+            *value = detach_abi(this->shim().Credentials());
             return S_OK;
         }
         catch (...)
@@ -1508,12 +1493,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
         }
     }
 
-    HRESULT __stdcall get_RequestedUserName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PeerUniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RequestedUserName());
+            *value = detach_abi(this->shim().PeerUniqueName());
             return S_OK;
         }
         catch (...)
@@ -1523,12 +1508,27 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> result) noexcept override
+    HRESULT __stdcall get_RequestedUserName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().RequestedUserName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1547,7 +1547,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationMechanism());
+            *value = detach_abi(this->shim().AuthenticationMechanism());
             return S_OK;
         }
         catch (...)
@@ -1556,12 +1556,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
         }
     }
 
-    HRESULT __stdcall get_PeerUniqueName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PeerUniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PeerUniqueName());
+            *value = detach_abi(this->shim().PeerUniqueName());
             return S_OK;
         }
         catch (...)
@@ -1571,12 +1571,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
         }
     }
 
-    HRESULT __stdcall get_PeerCertificate(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall get_PeerCertificate(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PeerCertificate());
+            *value = detach_abi(this->shim().PeerCertificate());
             return S_OK;
         }
         catch (...)
@@ -1591,7 +1591,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PeerCertificateErrorSeverity());
+            *value = detach_abi(this->shim().PeerCertificateErrorSeverity());
             return S_OK;
         }
         catch (...)
@@ -1600,12 +1600,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
         }
     }
 
-    HRESULT __stdcall get_PeerCertificateErrors(abi_arg_out<Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult>> value) noexcept override
+    HRESULT __stdcall get_PeerCertificateErrors(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PeerCertificateErrors());
+            *value = detach_abi(this->shim().PeerCertificateErrors());
             return S_OK;
         }
         catch (...)
@@ -1615,12 +1615,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
         }
     }
 
-    HRESULT __stdcall get_PeerIntermediateCertificates(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value) noexcept override
+    HRESULT __stdcall get_PeerIntermediateCertificates(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PeerIntermediateCertificates());
+            *value = detach_abi(this->shim().PeerIntermediateCertificates());
             return S_OK;
         }
         catch (...)
@@ -1644,12 +1644,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Foundation::IDeferral> result) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetDeferral());
+            *result = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -1663,12 +1663,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfo> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynMessageInfo>
 {
-    HRESULT __stdcall get_SenderUniqueName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SenderUniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SenderUniqueName());
+            *value = detach_abi(this->shim().SenderUniqueName());
             return S_OK;
         }
         catch (...)
@@ -1682,12 +1682,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfo> : produce_base
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> senderUniqueName, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynMessageInfo> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> senderUniqueName, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynMessageInfo> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&senderUniqueName)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&senderUniqueName)));
             return S_OK;
         }
         catch (...)
@@ -1701,7 +1701,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory> : produ
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducer> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynProducer>
 {
-    HRESULT __stdcall abi_SetBusObject(abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusObject> busObject) noexcept override
+    HRESULT __stdcall abi_SetBusObject(impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusObject> busObject) noexcept override
     {
         try
         {
@@ -1724,7 +1724,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs> :
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1737,12 +1737,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs> :
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory>
 {
-    HRESULT __stdcall abi_Create(int32_t status, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs> result) noexcept override
+    HRESULT __stdcall abi_Create(int32_t status, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(status));
+            *result = detach_abi(this->shim().Create(status));
             return S_OK;
         }
         catch (...)
@@ -1756,12 +1756,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFac
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo>
 {
-    HRESULT __stdcall get_UniqueName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_UniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UniqueName());
+            *value = detach_abi(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -1771,12 +1771,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base
         }
     }
 
-    HRESULT __stdcall get_ObjectPath(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ObjectPath(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ObjectPath());
+            *value = detach_abi(this->shim().ObjectPath());
             return S_OK;
         }
         catch (...)
@@ -1791,7 +1791,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SessionPort());
+            *value = detach_abi(this->shim().SessionPort());
             return S_OK;
         }
         catch (...)
@@ -1804,12 +1804,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> uniqueName, abi_arg_in<hstring> objectPath, uint16_t sessionPort, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynServiceInfo> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> uniqueName, impl::abi_arg_in<hstring> objectPath, uint16_t sessionPort, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynServiceInfo> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const hstring *>(&objectPath), sessionPort));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const hstring *>(&objectPath), sessionPort));
             return S_OK;
         }
         catch (...)
@@ -1823,12 +1823,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory> : produ
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs>
 {
-    HRESULT __stdcall get_UniqueName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_UniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UniqueName());
+            *value = detach_abi(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -1842,12 +1842,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> uniqueName, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> uniqueName, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -1861,12 +1861,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics>
 {
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> deviceId, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo>> operation) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *operation = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -1885,7 +1885,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -1899,7 +1899,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1908,12 +1908,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_RemoveMemberAsync(abi_arg_in<hstring> uniqueName, abi_arg_out<Windows::Foundation::IAsyncOperation<int32_t>> operation) noexcept override
+    HRESULT __stdcall abi_RemoveMemberAsync(impl::abi_arg_in<hstring> uniqueName, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<int32_t>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().RemoveMemberAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *operation = detach_abi(this->shim().RemoveMemberAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -1923,12 +1923,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_MemberAdded(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_MemberAdded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().MemberAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().MemberAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1951,12 +1951,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_MemberRemoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_MemberRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().MemberRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().MemberRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1979,12 +1979,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_Lost(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Lost(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Lost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Lost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2011,12 +2011,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs>
 {
-    HRESULT __stdcall get_Session(abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSession> value) noexcept override
+    HRESULT __stdcall get_Session(impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSession> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Session());
+            *value = detach_abi(this->shim().Session());
             return S_OK;
         }
         catch (...)
@@ -2030,12 +2030,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs> : p
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Devices::AllJoyn::IAllJoynSession> session, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynSession> session, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynSession *>(&session)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynSession *>(&session)));
             return S_OK;
         }
         catch (...)
@@ -2054,7 +2054,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Reason());
+            *value = detach_abi(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -2067,12 +2067,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs> : pro
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory>
 {
-    HRESULT __stdcall abi_Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs> result) noexcept override
+    HRESULT __stdcall abi_Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(reason));
+            *result = detach_abi(this->shim().Create(reason));
             return S_OK;
         }
         catch (...)
@@ -2086,12 +2086,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs>
 {
-    HRESULT __stdcall get_UniqueName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_UniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UniqueName());
+            *value = detach_abi(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -2105,12 +2105,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> uniqueName, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> uniqueName, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -2124,12 +2124,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs>
 {
-    HRESULT __stdcall get_UniqueName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_UniqueName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UniqueName());
+            *value = detach_abi(this->shim().UniqueName());
             return S_OK;
         }
         catch (...)
@@ -2143,12 +2143,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventAr
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> uniqueName, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> uniqueName, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
         catch (...)
@@ -2162,12 +2162,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventAr
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionStatics> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionStatics>
 {
-    HRESULT __stdcall abi_GetFromServiceInfoAsync(abi_arg_in<Windows::Devices::AllJoyn::IAllJoynServiceInfo> serviceInfo, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession>> operation) noexcept override
+    HRESULT __stdcall abi_GetFromServiceInfoAsync(impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynServiceInfo> serviceInfo, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
+            *operation = detach_abi(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
             return S_OK;
         }
         catch (...)
@@ -2177,12 +2177,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionStatics> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetFromServiceInfoAndBusAttachmentAsync(abi_arg_in<Windows::Devices::AllJoyn::IAllJoynServiceInfo> serviceInfo, abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusAttachment> busAttachment, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession>> operation) noexcept override
+    HRESULT __stdcall abi_GetFromServiceInfoAndBusAttachmentAsync(impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynServiceInfo> serviceInfo, impl::abi_arg_in<Windows::Devices::AllJoyn::IAllJoynBusAttachment> busAttachment, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
+            *operation = detach_abi(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
             return S_OK;
         }
         catch (...)
@@ -2201,7 +2201,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ok());
+            *value = detach_abi(this->shim().Ok());
             return S_OK;
         }
         catch (...)
@@ -2215,7 +2215,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Fail());
+            *value = detach_abi(this->shim().Fail());
             return S_OK;
         }
         catch (...)
@@ -2229,7 +2229,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OperationTimedOut());
+            *value = detach_abi(this->shim().OperationTimedOut());
             return S_OK;
         }
         catch (...)
@@ -2243,7 +2243,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OtherEndClosed());
+            *value = detach_abi(this->shim().OtherEndClosed());
             return S_OK;
         }
         catch (...)
@@ -2257,7 +2257,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ConnectionRefused());
+            *value = detach_abi(this->shim().ConnectionRefused());
             return S_OK;
         }
         catch (...)
@@ -2271,7 +2271,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationFailed());
+            *value = detach_abi(this->shim().AuthenticationFailed());
             return S_OK;
         }
         catch (...)
@@ -2285,7 +2285,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationRejectedByUser());
+            *value = detach_abi(this->shim().AuthenticationRejectedByUser());
             return S_OK;
         }
         catch (...)
@@ -2299,7 +2299,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SslConnectFailed());
+            *value = detach_abi(this->shim().SslConnectFailed());
             return S_OK;
         }
         catch (...)
@@ -2313,7 +2313,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SslIdentityVerificationFailed());
+            *value = detach_abi(this->shim().SslIdentityVerificationFailed());
             return S_OK;
         }
         catch (...)
@@ -2327,7 +2327,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InsufficientSecurity());
+            *value = detach_abi(this->shim().InsufficientSecurity());
             return S_OK;
         }
         catch (...)
@@ -2341,7 +2341,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InvalidArgument1());
+            *value = detach_abi(this->shim().InvalidArgument1());
             return S_OK;
         }
         catch (...)
@@ -2355,7 +2355,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InvalidArgument2());
+            *value = detach_abi(this->shim().InvalidArgument2());
             return S_OK;
         }
         catch (...)
@@ -2369,7 +2369,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InvalidArgument3());
+            *value = detach_abi(this->shim().InvalidArgument3());
             return S_OK;
         }
         catch (...)
@@ -2383,7 +2383,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InvalidArgument4());
+            *value = detach_abi(this->shim().InvalidArgument4());
             return S_OK;
         }
         catch (...)
@@ -2397,7 +2397,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InvalidArgument5());
+            *value = detach_abi(this->shim().InvalidArgument5());
             return S_OK;
         }
         catch (...)
@@ -2411,7 +2411,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InvalidArgument6());
+            *value = detach_abi(this->shim().InvalidArgument6());
             return S_OK;
         }
         catch (...)
@@ -2425,7 +2425,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InvalidArgument7());
+            *value = detach_abi(this->shim().InvalidArgument7());
             return S_OK;
         }
         catch (...)
@@ -2439,7 +2439,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InvalidArgument8());
+            *value = detach_abi(this->shim().InvalidArgument8());
             return S_OK;
         }
         catch (...)
@@ -2457,7 +2457,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2470,12 +2470,12 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs> : 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory>
 {
-    HRESULT __stdcall abi_Create(int32_t status, abi_arg_out<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs> result) noexcept override
+    HRESULT __stdcall abi_Create(int32_t status, impl::abi_arg_out<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(status));
+            *result = detach_abi(this->shim().Create(status));
             return S_OK;
         }
         catch (...)
@@ -2619,14 +2619,14 @@ template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InvalidArgument8() 
 template <typename D> Windows::Devices::AllJoyn::AllJoynAboutData impl_IAllJoynBusAttachment<D>::AboutData() const
 {
     Windows::Devices::AllJoyn::AllJoynAboutData value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_AboutData(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_AboutData(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynBusAttachment<D>::ConnectionSpecification() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_ConnectionSpecification(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_ConnectionSpecification(put_abi(value)));
     return value;
 }
 
@@ -2640,14 +2640,14 @@ template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachmentState impl_
 template <typename D> hstring impl_IAllJoynBusAttachment<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_UniqueName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IAllJoynBusAttachment<D>::PingAsync(hstring_view uniqueName) const
 {
     Windows::Foundation::IAsyncOperation<int32_t> operation;
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->abi_PingAsync(get(uniqueName), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->abi_PingAsync(get_abi(uniqueName), put_abi(operation)));
     return operation;
 }
 
@@ -2664,7 +2664,7 @@ template <typename D> void impl_IAllJoynBusAttachment<D>::Disconnect() const
 template <typename D> event_token impl_IAllJoynBusAttachment<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_StateChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_StateChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -2681,14 +2681,14 @@ template <typename D> void impl_IAllJoynBusAttachment<D>::StateChanged(event_tok
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism> impl_IAllJoynBusAttachment<D>::AuthenticationMechanisms() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism> value;
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_AuthenticationMechanisms(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_AuthenticationMechanisms(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IAllJoynBusAttachment<D>::CredentialsRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_CredentialsRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_CredentialsRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -2705,7 +2705,7 @@ template <typename D> void impl_IAllJoynBusAttachment<D>::CredentialsRequested(e
 template <typename D> event_token impl_IAllJoynBusAttachment<D>::CredentialsVerificationRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_CredentialsVerificationRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_CredentialsVerificationRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -2722,7 +2722,7 @@ template <typename D> void impl_IAllJoynBusAttachment<D>::CredentialsVerificatio
 template <typename D> event_token impl_IAllJoynBusAttachment<D>::AuthenticationComplete(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_AuthenticationComplete(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_AuthenticationComplete(get_abi(handler), &token));
     return token;
 }
 
@@ -2739,21 +2739,21 @@ template <typename D> void impl_IAllJoynBusAttachment<D>::AuthenticationComplete
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynBusAttachment2<D>::GetAboutDataAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->abi_GetAboutDataAsync(get(serviceInfo), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->abi_GetAboutDataAsync(get_abi(serviceInfo), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynBusAttachment2<D>::GetAboutDataAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo, const Windows::Globalization::Language & language) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->abi_GetAboutDataWithLanguageAsync(get(serviceInfo), get(language), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->abi_GetAboutDataWithLanguageAsync(get_abi(serviceInfo), get_abi(language), put_abi(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->add_AcceptSessionJoinerRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->add_AcceptSessionJoinerRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -2770,7 +2770,7 @@ template <typename D> void impl_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRe
 template <typename D> event_token impl_IAllJoynBusAttachment2<D>::SessionJoined(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->add_SessionJoined(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->add_SessionJoined(get_abi(handler), &token));
     return token;
 }
 
@@ -2787,14 +2787,14 @@ template <typename D> void impl_IAllJoynBusAttachment2<D>::SessionJoined(event_t
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment impl_IAllJoynBusAttachmentStatics<D>::GetDefault() const
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachment defaultBusAttachment { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentStatics)->abi_GetDefault(put(defaultBusAttachment)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentStatics)->abi_GetDefault(put_abi(defaultBusAttachment)));
     return defaultBusAttachment;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IAllJoynBusAttachmentStatics<D>::GetWatcher(const Windows::Foundation::Collections::IIterable<hstring> & requiredInterfaces) const
 {
     Windows::Devices::Enumeration::DeviceWatcher deviceWatcher { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentStatics)->abi_GetWatcher(get(requiredInterfaces), put(deviceWatcher)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentStatics)->abi_GetWatcher(get_abi(requiredInterfaces), put_abi(deviceWatcher)));
     return deviceWatcher;
 }
 
@@ -2822,37 +2822,37 @@ template <typename D> Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IAllJoynCredentials<D>::Certificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_Certificate(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_Certificate(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynCredentials<D>::Certificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynCredentials)->put_Certificate(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->put_Certificate(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IAllJoynCredentials<D>::PasswordCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_PasswordCredential(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_PasswordCredential(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynCredentials<D>::PasswordCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynCredentials)->put_PasswordCredential(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->put_PasswordCredential(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IAllJoynCredentials<D>::Timeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_Timeout(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_Timeout(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynCredentials<D>::Timeout(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynCredentials)->put_Timeout(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->put_Timeout(get_abi(value)));
 }
 
 template <typename D> uint16_t impl_IAllJoynCredentialsRequestedEventArgs<D>::AttemptCount() const
@@ -2865,28 +2865,28 @@ template <typename D> uint16_t impl_IAllJoynCredentialsRequestedEventArgs<D>::At
 template <typename D> Windows::Devices::AllJoyn::AllJoynCredentials impl_IAllJoynCredentialsRequestedEventArgs<D>::Credentials() const
 {
     Windows::Devices::AllJoyn::AllJoynCredentials value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_Credentials(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_Credentials(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynCredentialsRequestedEventArgs<D>::PeerUniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_PeerUniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_PeerUniqueName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynCredentialsRequestedEventArgs<D>::RequestedUserName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_RequestedUserName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_RequestedUserName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IAllJoynCredentialsRequestedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->abi_GetDeferral(put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->abi_GetDeferral(put_abi(result)));
     return result;
 }
 
@@ -2900,14 +2900,14 @@ template <typename D> Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism 
 template <typename D> hstring impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::PeerUniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerUniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerUniqueName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::PeerCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerCertificate(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerCertificate(put_abi(value)));
     return value;
 }
 
@@ -2921,14 +2921,14 @@ template <typename D> Windows::Networking::Sockets::SocketSslErrorSeverity impl_
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::PeerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerCertificateErrors(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerCertificateErrors(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::PeerIntermediateCertificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerIntermediateCertificates(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerIntermediateCertificates(put_abi(value)));
     return value;
 }
 
@@ -2940,7 +2940,7 @@ template <typename D> void impl_IAllJoynCredentialsVerificationRequestedEventArg
 template <typename D> Windows::Foundation::Deferral impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->abi_GetDeferral(put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->abi_GetDeferral(put_abi(result)));
     return result;
 }
 
@@ -2954,7 +2954,7 @@ template <typename D> Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism 
 template <typename D> hstring impl_IAllJoynAuthenticationCompleteEventArgs<D>::PeerUniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAuthenticationCompleteEventArgs)->get_PeerUniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAuthenticationCompleteEventArgs)->get_PeerUniqueName(put_abi(value)));
     return value;
 }
 
@@ -2968,7 +2968,7 @@ template <typename D> bool impl_IAllJoynAuthenticationCompleteEventArgs<D>::Succ
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment impl_IAllJoynBusAttachmentFactory<D>::Create(hstring_view connectionSpecification) const
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachment result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentFactory)->abi_Create(get(connectionSpecification), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentFactory)->abi_Create(get_abi(connectionSpecification), put_abi(result)));
     return result;
 }
 
@@ -2989,14 +2989,14 @@ template <typename D> int32_t impl_IAllJoynSession<D>::Status() const
 template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IAllJoynSession<D>::RemoveMemberAsync(hstring_view uniqueName) const
 {
     Windows::Foundation::IAsyncOperation<int32_t> operation;
-    check_hresult(WINRT_SHIM(IAllJoynSession)->abi_RemoveMemberAsync(get(uniqueName), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->abi_RemoveMemberAsync(get_abi(uniqueName), put_abi(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IAllJoynSession<D>::MemberAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynSession)->add_MemberAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->add_MemberAdded(get_abi(handler), &token));
     return token;
 }
 
@@ -3013,7 +3013,7 @@ template <typename D> void impl_IAllJoynSession<D>::MemberAdded(event_token toke
 template <typename D> event_token impl_IAllJoynSession<D>::MemberRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynSession)->add_MemberRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->add_MemberRemoved(get_abi(handler), &token));
     return token;
 }
 
@@ -3030,7 +3030,7 @@ template <typename D> void impl_IAllJoynSession<D>::MemberRemoved(event_token to
 template <typename D> event_token impl_IAllJoynSession<D>::Lost(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynSession)->add_Lost(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->add_Lost(get_abi(handler), &token));
     return token;
 }
 
@@ -3047,20 +3047,20 @@ template <typename D> void impl_IAllJoynSession<D>::Lost(event_token token) cons
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> impl_IAllJoynSessionStatics<D>::GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> operation;
-    check_hresult(WINRT_SHIM(IAllJoynSessionStatics)->abi_GetFromServiceInfoAsync(get(serviceInfo), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionStatics)->abi_GetFromServiceInfoAsync(get_abi(serviceInfo), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> impl_IAllJoynSessionStatics<D>::GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> operation;
-    check_hresult(WINRT_SHIM(IAllJoynSessionStatics)->abi_GetFromServiceInfoAndBusAttachmentAsync(get(serviceInfo), get(busAttachment), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionStatics)->abi_GetFromServiceInfoAndBusAttachmentAsync(get_abi(serviceInfo), get_abi(busAttachment), put_abi(operation)));
     return operation;
 }
 
 template <typename D> void impl_IAllJoynProducer<D>::SetBusObject(const Windows::Devices::AllJoyn::AllJoynBusObject & busObject) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynProducer)->abi_SetBusObject(get(busObject)));
+    check_hresult(WINRT_SHIM(IAllJoynProducer)->abi_SetBusObject(get_abi(busObject)));
 }
 
 template <typename D> void impl_IAllJoynBusObject<D>::Start() const
@@ -3075,27 +3075,27 @@ template <typename D> void impl_IAllJoynBusObject<D>::Stop() const
 
 template <typename D> void impl_IAllJoynBusObject<D>::AddProducer(const Windows::Devices::AllJoyn::IAllJoynProducer & producer) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynBusObject)->abi_AddProducer(get(producer)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->abi_AddProducer(get_abi(producer)));
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment impl_IAllJoynBusObject<D>::BusAttachment() const
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachment value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynBusObject)->get_BusAttachment(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->get_BusAttachment(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSession impl_IAllJoynBusObject<D>::Session() const
 {
     Windows::Devices::AllJoyn::AllJoynSession value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynBusObject)->get_Session(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->get_Session(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IAllJoynBusObject<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IAllJoynBusObject)->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->add_Stopped(get_abi(handler), &token));
     return token;
 }
 
@@ -3112,28 +3112,28 @@ template <typename D> void impl_IAllJoynBusObject<D>::Stopped(event_token token)
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusObject impl_IAllJoynBusObjectFactory<D>::Create(hstring_view objectPath) const
 {
     Windows::Devices::AllJoyn::AllJoynBusObject result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynBusObjectFactory)->abi_Create(get(objectPath), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObjectFactory)->abi_Create(get_abi(objectPath), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusObject impl_IAllJoynBusObjectFactory<D>::CreateWithBusAttachment(hstring_view objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const
 {
     Windows::Devices::AllJoyn::AllJoynBusObject result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynBusObjectFactory)->abi_CreateWithBusAttachment(get(objectPath), get(busAttachment), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObjectFactory)->abi_CreateWithBusAttachment(get_abi(objectPath), get_abi(busAttachment), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynServiceInfo<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynServiceInfo)->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfo)->get_UniqueName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynServiceInfo<D>::ObjectPath() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynServiceInfo)->get_ObjectPath(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfo)->get_ObjectPath(put_abi(value)));
     return value;
 }
 
@@ -3147,28 +3147,28 @@ template <typename D> uint16_t impl_IAllJoynServiceInfo<D>::SessionPort() const
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> impl_IAllJoynServiceInfoStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> operation;
-    check_hresult(WINRT_SHIM(IAllJoynServiceInfoStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfoStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynServiceInfo impl_IAllJoynServiceInfoFactory<D>::Create(hstring_view uniqueName, hstring_view objectPath, uint16_t sessionPort) const
 {
     Windows::Devices::AllJoyn::AllJoynServiceInfo result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynServiceInfoFactory)->abi_Create(get(uniqueName), get(objectPath), sessionPort, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfoFactory)->abi_Create(get_abi(uniqueName), get_abi(objectPath), sessionPort, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynAboutDataViewStatics<D>::GetDataBySessionPortAsync(hstring_view uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataViewStatics)->abi_GetDataBySessionPortAsync(get(uniqueName), get(busAttachment), sessionPort, put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataViewStatics)->abi_GetDataBySessionPortAsync(get_abi(uniqueName), get_abi(busAttachment), sessionPort, put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynAboutDataViewStatics<D>::GetDataBySessionPortAsync(hstring_view uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataViewStatics)->abi_GetDataBySessionPortWithLanguageAsync(get(uniqueName), get(busAttachment), sessionPort, get(language), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataViewStatics)->abi_GetDataBySessionPortWithLanguageAsync(get_abi(uniqueName), get_abi(busAttachment), sessionPort, get_abi(language), put_abi(operation)));
     return operation;
 }
 
@@ -3182,14 +3182,14 @@ template <typename D> int32_t impl_IAllJoynAboutDataView<D>::Status() const
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IAllJoynAboutDataView<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Properties(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::AJSoftwareVersion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_AJSoftwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_AJSoftwareVersion(put_abi(value)));
     return value;
 }
 
@@ -3203,84 +3203,84 @@ template <typename D> GUID impl_IAllJoynAboutDataView<D>::AppId() const
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IAllJoynAboutDataView<D>::DateOfManufacture() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DateOfManufacture(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DateOfManufacture(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Language impl_IAllJoynAboutDataView<D>::DefaultLanguage() const
 {
     Windows::Globalization::Language value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DefaultLanguage(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DefaultLanguage(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::HardwareVersion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_HardwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_HardwareVersion(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::ModelNumber() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_ModelNumber(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_ModelNumber(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::SoftwareVersion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_SoftwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_SoftwareVersion(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> impl_IAllJoynAboutDataView<D>::SupportedLanguages() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_SupportedLanguages(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_SupportedLanguages(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IAllJoynAboutDataView<D>::SupportUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_SupportUrl(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_SupportUrl(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::AppName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_AppName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_AppName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::Description() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Description(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::DeviceName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DeviceName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DeviceName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::Manufacturer() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Manufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Manufacturer(put_abi(value)));
     return value;
 }
 
@@ -3299,106 +3299,106 @@ template <typename D> void impl_IAllJoynAboutData<D>::IsEnabled(bool value) cons
 template <typename D> hstring impl_IAllJoynAboutData<D>::DefaultAppName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DefaultAppName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DefaultAppName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::DefaultAppName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultAppName(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultAppName(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IAllJoynAboutData<D>::AppNames() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_AppNames(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_AppNames(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IAllJoynAboutData<D>::DateOfManufacture() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DateOfManufacture(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DateOfManufacture(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::DateOfManufacture(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DateOfManufacture(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DateOfManufacture(get_abi(value)));
 }
 
 template <typename D> hstring impl_IAllJoynAboutData<D>::DefaultDescription() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DefaultDescription(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DefaultDescription(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::DefaultDescription(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultDescription(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultDescription(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IAllJoynAboutData<D>::Descriptions() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_Descriptions(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_Descriptions(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutData<D>::DefaultManufacturer() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DefaultManufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DefaultManufacturer(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::DefaultManufacturer(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultManufacturer(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultManufacturer(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IAllJoynAboutData<D>::Manufacturers() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_Manufacturers(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_Manufacturers(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutData<D>::ModelNumber() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_ModelNumber(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_ModelNumber(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::ModelNumber(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_ModelNumber(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_ModelNumber(get_abi(value)));
 }
 
 template <typename D> hstring impl_IAllJoynAboutData<D>::SoftwareVersion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_SoftwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_SoftwareVersion(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::SoftwareVersion(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_SoftwareVersion(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_SoftwareVersion(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IAllJoynAboutData<D>::SupportUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_SupportUrl(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_SupportUrl(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::SupportUrl(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_SupportUrl(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_SupportUrl(get_abi(value)));
 }
 
 template <typename D> GUID impl_IAllJoynAboutData<D>::AppId() const
@@ -3416,7 +3416,7 @@ template <typename D> void impl_IAllJoynAboutData<D>::AppId(GUID value) const
 template <typename D> hstring impl_IAllJoynAcceptSessionJoinerEventArgs<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgs)->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgs)->get_UniqueName(put_abi(value)));
     return value;
 }
 
@@ -3461,49 +3461,49 @@ template <typename D> void impl_IAllJoynAcceptSessionJoiner<D>::Accept() const
 template <typename D> Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs impl_IAllJoynAcceptSessionJoinerEventArgsFactory<D>::Create(hstring_view uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) const
 {
     Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgsFactory)->abi_Create(get(uniqueName), sessionPort, trafficType, proximity, get(acceptSessionJoiner), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgsFactory)->abi_Create(get_abi(uniqueName), sessionPort, trafficType, proximity, get_abi(acceptSessionJoiner), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynSessionMemberAddedEventArgs<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynSessionMemberAddedEventArgs)->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionMemberAddedEventArgs)->get_UniqueName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs impl_IAllJoynSessionMemberAddedEventArgsFactory<D>::Create(hstring_view uniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynSessionMemberAddedEventArgsFactory)->abi_Create(get(uniqueName), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionMemberAddedEventArgsFactory)->abi_Create(get_abi(uniqueName), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynSessionMemberRemovedEventArgs<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynSessionMemberRemovedEventArgs)->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionMemberRemovedEventArgs)->get_UniqueName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs impl_IAllJoynSessionMemberRemovedEventArgsFactory<D>::Create(hstring_view uniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynSessionMemberRemovedEventArgsFactory)->abi_Create(get(uniqueName), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionMemberRemovedEventArgsFactory)->abi_Create(get_abi(uniqueName), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSession impl_IAllJoynSessionJoinedEventArgs<D>::Session() const
 {
     Windows::Devices::AllJoyn::AllJoynSession value { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynSessionJoinedEventArgs)->get_Session(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionJoinedEventArgs)->get_Session(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs impl_IAllJoynSessionJoinedEventArgsFactory<D>::Create(const Windows::Devices::AllJoyn::AllJoynSession & session) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynSessionJoinedEventArgsFactory)->abi_Create(get(session), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionJoinedEventArgsFactory)->abi_Create(get_abi(session), put_abi(result)));
     return result;
 }
 
@@ -3517,7 +3517,7 @@ template <typename D> Windows::Devices::AllJoyn::AllJoynSessionLostReason impl_I
 template <typename D> Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs impl_IAllJoynSessionLostEventArgsFactory<D>::Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynSessionLostEventArgsFactory)->abi_Create(reason, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionLostEventArgsFactory)->abi_Create(reason, put_abi(result)));
     return result;
 }
 
@@ -3531,7 +3531,7 @@ template <typename D> int32_t impl_IAllJoynProducerStoppedEventArgs<D>::Status()
 template <typename D> Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs impl_IAllJoynProducerStoppedEventArgsFactory<D>::Create(int32_t status) const
 {
     Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynProducerStoppedEventArgsFactory)->abi_Create(status, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynProducerStoppedEventArgsFactory)->abi_Create(status, put_abi(result)));
     return result;
 }
 
@@ -3545,7 +3545,7 @@ template <typename D> int32_t impl_IAllJoynBusObjectStoppedEventArgs<D>::Status(
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs impl_IAllJoynBusObjectStoppedEventArgsFactory<D>::Create(int32_t status) const
 {
     Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynBusObjectStoppedEventArgsFactory)->abi_Create(status, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObjectStoppedEventArgsFactory)->abi_Create(status, put_abi(result)));
     return result;
 }
 
@@ -3559,35 +3559,35 @@ template <typename D> int32_t impl_IAllJoynWatcherStoppedEventArgs<D>::Status() 
 template <typename D> Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs impl_IAllJoynWatcherStoppedEventArgsFactory<D>::Create(int32_t status) const
 {
     Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynWatcherStoppedEventArgsFactory)->abi_Create(status, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynWatcherStoppedEventArgsFactory)->abi_Create(status, put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynServiceInfoRemovedEventArgs<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynServiceInfoRemovedEventArgs)->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfoRemovedEventArgs)->get_UniqueName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs impl_IAllJoynServiceInfoRemovedEventArgsFactory<D>::Create(hstring_view uniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynServiceInfoRemovedEventArgsFactory)->abi_Create(get(uniqueName), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfoRemovedEventArgsFactory)->abi_Create(get_abi(uniqueName), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynMessageInfo<D>::SenderUniqueName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAllJoynMessageInfo)->get_SenderUniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynMessageInfo)->get_SenderUniqueName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynMessageInfo impl_IAllJoynMessageInfoFactory<D>::Create(hstring_view senderUniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynMessageInfo result { nullptr };
-    check_hresult(WINRT_SHIM(IAllJoynMessageInfoFactory)->abi_Create(get(senderUniqueName), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynMessageInfoFactory)->abi_Create(get_abi(senderUniqueName), put_abi(result)));
     return result;
 }
 

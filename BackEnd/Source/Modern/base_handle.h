@@ -1,3 +1,4 @@
+namespace impl {
 
 template <typename T>
 struct handle_traits
@@ -24,14 +25,14 @@ struct handle
     {}
 
     handle(handle && other) noexcept :
-        m_value(detach(other))
+        m_value(detach_abi(other))
     {}
 
     handle & operator=(handle && other) noexcept
     {
         if (this != &other)
         {
-            attach(*this, detach(other));
+            attach_abi(*this, detach_abi(other));
         }
 
         return *this;
@@ -87,7 +88,7 @@ private:
 template <typename T>
 bool operator==(const handle<T> & left, const handle<T> & right) noexcept
 {
-    return get(left) == get(right);
+    return get_abi(left) == get_abi(right);
 }
 
 template <typename T>
@@ -99,7 +100,7 @@ bool operator!=(const handle<T> & left, const handle<T> & right) noexcept
 template <typename T>
 bool operator<(const handle<T> & left, const handle<T> & right) noexcept
 {
-    return get(left) < get(right);
+    return get_abi(left) < get_abi(right);
 }
 
 template <typename T>
@@ -119,8 +120,6 @@ bool operator>=(const handle<T> & left, const handle<T> & right) noexcept
 {
     return !(left < right);
 }
-
-namespace impl {
 
 template <typename T>
 struct accessors<handle<T>>

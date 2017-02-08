@@ -13,7 +13,7 @@ template <typename H> struct impl_SignalHandler : implements<impl_SignalHandler<
 {
     impl_SignalHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::System::Threading::Core::ISignalNotifier> signalNotifier, bool timedOut) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::System::Threading::Core::ISignalNotifier> signalNotifier, bool timedOut) noexcept override
     {
         try
         {

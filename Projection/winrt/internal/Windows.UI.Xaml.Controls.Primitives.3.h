@@ -13,7 +13,7 @@ template <typename H> struct impl_DragCompletedEventHandler : implements<impl_Dr
 {
     impl_DragCompletedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs> e) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_DragDeltaEventHandler : implements<impl_DragDe
 {
     impl_DragDeltaEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs> e) noexcept override
     {
         try
         {
@@ -49,7 +49,7 @@ template <typename H> struct impl_DragStartedEventHandler : implements<impl_Drag
 {
     impl_DragStartedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs> e) noexcept override
     {
         try
         {
@@ -67,7 +67,7 @@ template <typename H> struct impl_ItemsChangedEventHandler : implements<impl_Ite
 {
     impl_ItemsChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -85,7 +85,7 @@ template <typename H> struct impl_RangeBaseValueChangedEventHandler : implements
 {
     impl_RangeBaseValueChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -103,7 +103,7 @@ template <typename H> struct impl_ScrollEventHandler : implements<impl_ScrollEve
 {
     impl_ScrollEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IScrollEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::Primitives::IScrollEventArgs> e) noexcept override
     {
         try
         {

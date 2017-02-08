@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrowsePolicy> : produce_base<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrowsePolicy>
 {
-    HRESULT __stdcall get_GeographicRegion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_GeographicRegion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GeographicRegion());
+            *value = detach_abi(this->shim().GeographicRegion());
             return S_OK;
         }
         catch (...)
@@ -31,12 +31,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrows
         }
     }
 
-    HRESULT __stdcall get_MaxBrowsableAgeRating(abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_MaxBrowsableAgeRating(impl::abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxBrowsableAgeRating());
+            *value = detach_abi(this->shim().MaxBrowsableAgeRating());
             return S_OK;
         }
         catch (...)
@@ -46,12 +46,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrows
         }
     }
 
-    HRESULT __stdcall get_PreferredAgeRating(abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_PreferredAgeRating(impl::abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PreferredAgeRating());
+            *value = detach_abi(this->shim().PreferredAgeRating());
             return S_OK;
         }
         catch (...)
@@ -65,12 +65,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrows
 template <typename D>
 struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription> : produce_base<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
 {
-    HRESULT __stdcall get_Id(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -80,7 +80,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
         }
     }
 
-    HRESULT __stdcall put_Id(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Id(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -94,12 +94,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
         }
     }
 
-    HRESULT __stdcall get_Title(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Title(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Title());
+            *value = detach_abi(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -109,7 +109,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
         }
     }
 
-    HRESULT __stdcall put_Title(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Title(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -123,12 +123,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
         }
     }
 
-    HRESULT __stdcall get_Image(abi_arg_out<Windows::Storage::Streams::IRandomAccessStreamReference> value) noexcept override
+    HRESULT __stdcall get_Image(impl::abi_arg_out<Windows::Storage::Streams::IRandomAccessStreamReference> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Image());
+            *value = detach_abi(this->shim().Image());
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
         }
     }
 
-    HRESULT __stdcall put_Image(abi_arg_in<Windows::Storage::Streams::IRandomAccessStreamReference> value) noexcept override
+    HRESULT __stdcall put_Image(impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStreamReference> value) noexcept override
     {
         try
         {
@@ -157,7 +157,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Category());
+            *value = detach_abi(this->shim().Category());
             return S_OK;
         }
         catch (...)
@@ -180,12 +180,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
         }
     }
 
-    HRESULT __stdcall get_Ratings(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_Ratings(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ratings());
+            *value = detach_abi(this->shim().Ratings());
             return S_OK;
         }
         catch (...)
@@ -195,7 +195,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
         }
     }
 
-    HRESULT __stdcall put_Ratings(abi_arg_in<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall put_Ratings(impl::abi_arg_in<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
@@ -213,12 +213,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
 template <typename D>
 struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescriptionFactory> : produce_base<D, Windows::Media::ContentRestrictions::IRatedContentDescriptionFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<hstring> id, abi_arg_in<hstring> title, Windows::Media::ContentRestrictions::RatedContentCategory category, abi_arg_out<Windows::Media::ContentRestrictions::IRatedContentDescription> RatedContentDescription) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> id, impl::abi_arg_in<hstring> title, Windows::Media::ContentRestrictions::RatedContentCategory category, impl::abi_arg_out<Windows::Media::ContentRestrictions::IRatedContentDescription> RatedContentDescription) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *RatedContentDescription = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&title), category));
+            *RatedContentDescription = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&title), category));
             return S_OK;
         }
         catch (...)
@@ -232,12 +232,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescriptionF
 template <typename D>
 struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions> : produce_base<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions>
 {
-    HRESULT __stdcall abi_GetBrowsePolicyAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy>> operation) noexcept override
+    HRESULT __stdcall abi_GetBrowsePolicyAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetBrowsePolicyAsync());
+            *operation = detach_abi(this->shim().GetBrowsePolicyAsync());
             return S_OK;
         }
         catch (...)
@@ -247,12 +247,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
         }
     }
 
-    HRESULT __stdcall abi_GetRestrictionLevelAsync(abi_arg_in<Windows::Media::ContentRestrictions::IRatedContentDescription> RatedContentDescription, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Media::ContentRestrictions::ContentAccessRestrictionLevel>> operation) noexcept override
+    HRESULT __stdcall abi_GetRestrictionLevelAsync(impl::abi_arg_in<Windows::Media::ContentRestrictions::IRatedContentDescription> RatedContentDescription, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Media::ContentRestrictions::ContentAccessRestrictionLevel>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetRestrictionLevelAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
+            *operation = detach_abi(this->shim().GetRestrictionLevelAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
             return S_OK;
         }
         catch (...)
@@ -262,12 +262,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
         }
     }
 
-    HRESULT __stdcall abi_RequestContentAccessAsync(abi_arg_in<Windows::Media::ContentRestrictions::IRatedContentDescription> RatedContentDescription, abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    HRESULT __stdcall abi_RequestContentAccessAsync(impl::abi_arg_in<Windows::Media::ContentRestrictions::IRatedContentDescription> RatedContentDescription, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().RequestContentAccessAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
+            *operation = detach_abi(this->shim().RequestContentAccessAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
             return S_OK;
         }
         catch (...)
@@ -277,12 +277,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
         }
     }
 
-    HRESULT __stdcall add_RestrictionsChanged(abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_RestrictionsChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().RestrictionsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().RestrictionsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -309,12 +309,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
 template <typename D>
 struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictionsFactory> : produce_base<D, Windows::Media::ContentRestrictions::IRatedContentRestrictionsFactory>
 {
-    HRESULT __stdcall abi_CreateWithMaxAgeRating(uint32_t maxAgeRating, abi_arg_out<Windows::Media::ContentRestrictions::IRatedContentRestrictions> ratedContentRestrictions) noexcept override
+    HRESULT __stdcall abi_CreateWithMaxAgeRating(uint32_t maxAgeRating, impl::abi_arg_out<Windows::Media::ContentRestrictions::IRatedContentRestrictions> ratedContentRestrictions) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ratedContentRestrictions = detach(this->shim().CreateWithMaxAgeRating(maxAgeRating));
+            *ratedContentRestrictions = detach_abi(this->shim().CreateWithMaxAgeRating(maxAgeRating));
             return S_OK;
         }
         catch (...)
@@ -332,37 +332,37 @@ namespace Windows::Media::ContentRestrictions {
 template <typename D> hstring impl_IRatedContentDescription<D>::Id() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IRatedContentDescription)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IRatedContentDescription)->get_Id(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IRatedContentDescription<D>::Id(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Id(get(value)));
+    check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Id(get_abi(value)));
 }
 
 template <typename D> hstring impl_IRatedContentDescription<D>::Title() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IRatedContentDescription)->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IRatedContentDescription)->get_Title(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IRatedContentDescription<D>::Title(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Title(get_abi(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IRatedContentDescription<D>::Image() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(WINRT_SHIM(IRatedContentDescription)->get_Image(put(value)));
+    check_hresult(WINRT_SHIM(IRatedContentDescription)->get_Image(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IRatedContentDescription<D>::Image(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Image(get(value)));
+    check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Image(get_abi(value)));
 }
 
 template <typename D> Windows::Media::ContentRestrictions::RatedContentCategory impl_IRatedContentDescription<D>::Category() const
@@ -380,68 +380,68 @@ template <typename D> void impl_IRatedContentDescription<D>::Category(Windows::M
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IRatedContentDescription<D>::Ratings() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(IRatedContentDescription)->get_Ratings(put(value)));
+    check_hresult(WINRT_SHIM(IRatedContentDescription)->get_Ratings(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IRatedContentDescription<D>::Ratings(const Windows::Foundation::Collections::IVector<hstring> & value) const
 {
-    check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Ratings(get(value)));
+    check_hresult(WINRT_SHIM(IRatedContentDescription)->put_Ratings(get_abi(value)));
 }
 
 template <typename D> Windows::Media::ContentRestrictions::RatedContentDescription impl_IRatedContentDescriptionFactory<D>::Create(hstring_view id, hstring_view title, Windows::Media::ContentRestrictions::RatedContentCategory category) const
 {
     Windows::Media::ContentRestrictions::RatedContentDescription RatedContentDescription { nullptr };
-    check_hresult(WINRT_SHIM(IRatedContentDescriptionFactory)->abi_Create(get(id), get(title), category, put(RatedContentDescription)));
+    check_hresult(WINRT_SHIM(IRatedContentDescriptionFactory)->abi_Create(get_abi(id), get_abi(title), category, put_abi(RatedContentDescription)));
     return RatedContentDescription;
 }
 
 template <typename D> hstring impl_IContentRestrictionsBrowsePolicy<D>::GeographicRegion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IContentRestrictionsBrowsePolicy)->get_GeographicRegion(put(value)));
+    check_hresult(WINRT_SHIM(IContentRestrictionsBrowsePolicy)->get_GeographicRegion(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IContentRestrictionsBrowsePolicy<D>::MaxBrowsableAgeRating() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(WINRT_SHIM(IContentRestrictionsBrowsePolicy)->get_MaxBrowsableAgeRating(put(value)));
+    check_hresult(WINRT_SHIM(IContentRestrictionsBrowsePolicy)->get_MaxBrowsableAgeRating(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IContentRestrictionsBrowsePolicy<D>::PreferredAgeRating() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(WINRT_SHIM(IContentRestrictionsBrowsePolicy)->get_PreferredAgeRating(put(value)));
+    check_hresult(WINRT_SHIM(IContentRestrictionsBrowsePolicy)->get_PreferredAgeRating(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy> impl_IRatedContentRestrictions<D>::GetBrowsePolicyAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy> operation;
-    check_hresult(WINRT_SHIM(IRatedContentRestrictions)->abi_GetBrowsePolicyAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IRatedContentRestrictions)->abi_GetBrowsePolicyAsync(put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::ContentRestrictions::ContentAccessRestrictionLevel> impl_IRatedContentRestrictions<D>::GetRestrictionLevelAsync(const Windows::Media::ContentRestrictions::RatedContentDescription & RatedContentDescription) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::ContentRestrictions::ContentAccessRestrictionLevel> operation;
-    check_hresult(WINRT_SHIM(IRatedContentRestrictions)->abi_GetRestrictionLevelAsync(get(RatedContentDescription), put(operation)));
+    check_hresult(WINRT_SHIM(IRatedContentRestrictions)->abi_GetRestrictionLevelAsync(get_abi(RatedContentDescription), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IRatedContentRestrictions<D>::RequestContentAccessAsync(const Windows::Media::ContentRestrictions::RatedContentDescription & RatedContentDescription) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(WINRT_SHIM(IRatedContentRestrictions)->abi_RequestContentAccessAsync(get(RatedContentDescription), put(operation)));
+    check_hresult(WINRT_SHIM(IRatedContentRestrictions)->abi_RequestContentAccessAsync(get_abi(RatedContentDescription), put_abi(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IRatedContentRestrictions<D>::RestrictionsChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IRatedContentRestrictions)->add_RestrictionsChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IRatedContentRestrictions)->add_RestrictionsChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -458,7 +458,7 @@ template <typename D> void impl_IRatedContentRestrictions<D>::RestrictionsChange
 template <typename D> Windows::Media::ContentRestrictions::RatedContentRestrictions impl_IRatedContentRestrictionsFactory<D>::CreateWithMaxAgeRating(uint32_t maxAgeRating) const
 {
     Windows::Media::ContentRestrictions::RatedContentRestrictions ratedContentRestrictions { nullptr };
-    check_hresult(WINRT_SHIM(IRatedContentRestrictionsFactory)->abi_CreateWithMaxAgeRating(maxAgeRating, put(ratedContentRestrictions)));
+    check_hresult(WINRT_SHIM(IRatedContentRestrictionsFactory)->abi_CreateWithMaxAgeRating(maxAgeRating, put_abi(ratedContentRestrictions)));
     return ratedContentRestrictions;
 }
 

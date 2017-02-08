@@ -13,12 +13,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Web::IUriToStreamResolver> : produce_base<D, Windows::Web::IUriToStreamResolver>
 {
-    HRESULT __stdcall abi_UriToStreamAsync(abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream>> operation) noexcept override
+    HRESULT __stdcall abi_UriToStreamAsync(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().UriToStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *operation = detach_abi(this->shim().UriToStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -37,7 +37,7 @@ struct produce<D, Windows::Web::IWebErrorStatics> : produce_base<D, Windows::Web
         try
         {
             typename D::abi_guard guard(this->shim());
-            *status = detach(this->shim().GetStatus(hresult));
+            *status = detach_abi(this->shim().GetStatus(hresult));
             return S_OK;
         }
         catch (...)
@@ -54,7 +54,7 @@ namespace Windows::Web {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> impl_IUriToStreamResolver<D>::UriToStreamAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> operation;
-    check_hresult(WINRT_SHIM(IUriToStreamResolver)->abi_UriToStreamAsync(get(uri), put(operation)));
+    check_hresult(WINRT_SHIM(IUriToStreamResolver)->abi_UriToStreamAsync(get_abi(uri), put_abi(operation)));
     return operation;
 }
 

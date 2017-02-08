@@ -13,7 +13,7 @@ template <typename H> struct impl_BackgroundTaskCanceledEventHandler : implement
 {
     impl_BackgroundTaskCanceledEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskInstance> sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskInstance> sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_BackgroundTaskCompletedEventHandler : implemen
 {
     impl_BackgroundTaskCompletedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskRegistration> sender, abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs> args) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskRegistration> sender, impl::abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs> args) noexcept override
     {
         try
         {
@@ -49,7 +49,7 @@ template <typename H> struct impl_BackgroundTaskProgressEventHandler : implement
 {
     impl_BackgroundTaskProgressEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskRegistration> sender, abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs> args) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskRegistration> sender, impl::abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs> args) noexcept override
     {
         try
         {

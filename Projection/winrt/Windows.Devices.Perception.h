@@ -20,12 +20,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IKnownCameraIntrinsicsPropertiesStatics> : produce_base<D, Windows::Devices::Perception::IKnownCameraIntrinsicsPropertiesStatics>
 {
-    HRESULT __stdcall get_FocalLength(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FocalLength(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FocalLength());
+            *value = detach_abi(this->shim().FocalLength());
             return S_OK;
         }
         catch (...)
@@ -35,12 +35,12 @@ struct produce<D, Windows::Devices::Perception::IKnownCameraIntrinsicsProperties
         }
     }
 
-    HRESULT __stdcall get_PrincipalPoint(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PrincipalPoint(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PrincipalPoint());
+            *value = detach_abi(this->shim().PrincipalPoint());
             return S_OK;
         }
         catch (...)
@@ -50,12 +50,12 @@ struct produce<D, Windows::Devices::Perception::IKnownCameraIntrinsicsProperties
         }
     }
 
-    HRESULT __stdcall get_RadialDistortion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_RadialDistortion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RadialDistortion());
+            *value = detach_abi(this->shim().RadialDistortion());
             return S_OK;
         }
         catch (...)
@@ -65,12 +65,12 @@ struct produce<D, Windows::Devices::Perception::IKnownCameraIntrinsicsProperties
         }
     }
 
-    HRESULT __stdcall get_TangentialDistortion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_TangentialDistortion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TangentialDistortion());
+            *value = detach_abi(this->shim().TangentialDistortion());
             return S_OK;
         }
         catch (...)
@@ -84,12 +84,12 @@ struct produce<D, Windows::Devices::Perception::IKnownCameraIntrinsicsProperties
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IKnownPerceptionColorFrameSourcePropertiesStatics> : produce_base<D, Windows::Devices::Perception::IKnownPerceptionColorFrameSourcePropertiesStatics>
 {
-    HRESULT __stdcall get_Exposure(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Exposure(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Exposure());
+            *value = detach_abi(this->shim().Exposure());
             return S_OK;
         }
         catch (...)
@@ -99,12 +99,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionColorFrameSource
         }
     }
 
-    HRESULT __stdcall get_AutoExposureEnabled(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AutoExposureEnabled(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AutoExposureEnabled());
+            *value = detach_abi(this->shim().AutoExposureEnabled());
             return S_OK;
         }
         catch (...)
@@ -114,12 +114,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionColorFrameSource
         }
     }
 
-    HRESULT __stdcall get_ExposureCompensation(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ExposureCompensation(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExposureCompensation());
+            *value = detach_abi(this->shim().ExposureCompensation());
             return S_OK;
         }
         catch (...)
@@ -133,12 +133,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionColorFrameSource
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IKnownPerceptionDepthFrameSourcePropertiesStatics> : produce_base<D, Windows::Devices::Perception::IKnownPerceptionDepthFrameSourcePropertiesStatics>
 {
-    HRESULT __stdcall get_MinDepth(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_MinDepth(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinDepth());
+            *value = detach_abi(this->shim().MinDepth());
             return S_OK;
         }
         catch (...)
@@ -148,12 +148,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionDepthFrameSource
         }
     }
 
-    HRESULT __stdcall get_MaxDepth(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_MaxDepth(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxDepth());
+            *value = detach_abi(this->shim().MaxDepth());
             return S_OK;
         }
         catch (...)
@@ -167,12 +167,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionDepthFrameSource
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePropertiesStatics> : produce_base<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePropertiesStatics>
 {
-    HRESULT __stdcall get_Id(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -182,12 +182,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
         }
     }
 
-    HRESULT __stdcall get_PhysicalDeviceIds(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PhysicalDeviceIds(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PhysicalDeviceIds());
+            *value = detach_abi(this->shim().PhysicalDeviceIds());
             return S_OK;
         }
         catch (...)
@@ -197,12 +197,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
         }
     }
 
-    HRESULT __stdcall get_FrameKind(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FrameKind(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameKind());
+            *value = detach_abi(this->shim().FrameKind());
             return S_OK;
         }
         catch (...)
@@ -212,12 +212,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
         }
     }
 
-    HRESULT __stdcall get_DeviceModelVersion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceModelVersion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceModelVersion());
+            *value = detach_abi(this->shim().DeviceModelVersion());
             return S_OK;
         }
         catch (...)
@@ -227,12 +227,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
         }
     }
 
-    HRESULT __stdcall get_EnclosureLocation(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_EnclosureLocation(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EnclosureLocation());
+            *value = detach_abi(this->shim().EnclosureLocation());
             return S_OK;
         }
         catch (...)
@@ -246,12 +246,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePropertiesStatics2> : produce_base<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePropertiesStatics2>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -265,12 +265,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSourcePropertiesStatics> : produce_base<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSourcePropertiesStatics>
 {
-    HRESULT __stdcall get_Exposure(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Exposure(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Exposure());
+            *value = detach_abi(this->shim().Exposure());
             return S_OK;
         }
         catch (...)
@@ -280,12 +280,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
         }
     }
 
-    HRESULT __stdcall get_AutoExposureEnabled(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AutoExposureEnabled(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AutoExposureEnabled());
+            *value = detach_abi(this->shim().AutoExposureEnabled());
             return S_OK;
         }
         catch (...)
@@ -295,12 +295,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
         }
     }
 
-    HRESULT __stdcall get_ExposureCompensation(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ExposureCompensation(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExposureCompensation());
+            *value = detach_abi(this->shim().ExposureCompensation());
             return S_OK;
         }
         catch (...)
@@ -310,12 +310,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
         }
     }
 
-    HRESULT __stdcall get_ActiveIlluminationEnabled(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ActiveIlluminationEnabled(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ActiveIlluminationEnabled());
+            *value = detach_abi(this->shim().ActiveIlluminationEnabled());
             return S_OK;
         }
         catch (...)
@@ -325,12 +325,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
         }
     }
 
-    HRESULT __stdcall get_AmbientSubtractionEnabled(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AmbientSubtractionEnabled(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AmbientSubtractionEnabled());
+            *value = detach_abi(this->shim().AmbientSubtractionEnabled());
             return S_OK;
         }
         catch (...)
@@ -340,12 +340,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
         }
     }
 
-    HRESULT __stdcall get_StructureLightPatternEnabled(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_StructureLightPatternEnabled(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().StructureLightPatternEnabled());
+            *value = detach_abi(this->shim().StructureLightPatternEnabled());
             return S_OK;
         }
         catch (...)
@@ -355,12 +355,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
         }
     }
 
-    HRESULT __stdcall get_InterleavedIlluminationEnabled(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_InterleavedIlluminationEnabled(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterleavedIlluminationEnabled());
+            *value = detach_abi(this->shim().InterleavedIlluminationEnabled());
             return S_OK;
         }
         catch (...)
@@ -374,12 +374,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSourcePropertiesStatics> : produce_base<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSourcePropertiesStatics>
 {
-    HRESULT __stdcall get_VideoProfile(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_VideoProfile(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VideoProfile());
+            *value = detach_abi(this->shim().VideoProfile());
             return S_OK;
         }
         catch (...)
@@ -389,12 +389,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
         }
     }
 
-    HRESULT __stdcall get_SupportedVideoProfiles(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SupportedVideoProfiles(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportedVideoProfiles());
+            *value = detach_abi(this->shim().SupportedVideoProfiles());
             return S_OK;
         }
         catch (...)
@@ -404,12 +404,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
         }
     }
 
-    HRESULT __stdcall get_AvailableVideoProfiles(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AvailableVideoProfiles(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AvailableVideoProfiles());
+            *value = detach_abi(this->shim().AvailableVideoProfiles());
             return S_OK;
         }
         catch (...)
@@ -419,12 +419,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
         }
     }
 
-    HRESULT __stdcall get_IsMirrored(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_IsMirrored(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsMirrored());
+            *value = detach_abi(this->shim().IsMirrored());
             return S_OK;
         }
         catch (...)
@@ -434,12 +434,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
         }
     }
 
-    HRESULT __stdcall get_CameraIntrinsics(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_CameraIntrinsics(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CameraIntrinsics());
+            *value = detach_abi(this->shim().CameraIntrinsics());
             return S_OK;
         }
         catch (...)
@@ -453,12 +453,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfilePropertiesStatics> : produce_base<D, Windows::Devices::Perception::IKnownPerceptionVideoProfilePropertiesStatics>
 {
-    HRESULT __stdcall get_BitmapPixelFormat(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_BitmapPixelFormat(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BitmapPixelFormat());
+            *value = detach_abi(this->shim().BitmapPixelFormat());
             return S_OK;
         }
         catch (...)
@@ -468,12 +468,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
         }
     }
 
-    HRESULT __stdcall get_BitmapAlphaMode(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_BitmapAlphaMode(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BitmapAlphaMode());
+            *value = detach_abi(this->shim().BitmapAlphaMode());
             return S_OK;
         }
         catch (...)
@@ -483,12 +483,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
         }
     }
 
-    HRESULT __stdcall get_Width(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Width(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Width());
+            *value = detach_abi(this->shim().Width());
             return S_OK;
         }
         catch (...)
@@ -498,12 +498,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
         }
     }
 
-    HRESULT __stdcall get_Height(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Height(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Height());
+            *value = detach_abi(this->shim().Height());
             return S_OK;
         }
         catch (...)
@@ -513,12 +513,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
         }
     }
 
-    HRESULT __stdcall get_FrameDuration(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FrameDuration(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameDuration());
+            *value = detach_abi(this->shim().FrameDuration());
             return S_OK;
         }
         catch (...)
@@ -532,12 +532,12 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionColorFrame> : produce_base<D, Windows::Devices::Perception::IPerceptionColorFrame>
 {
-    HRESULT __stdcall get_VideoFrame(abi_arg_out<Windows::Media::IVideoFrame> value) noexcept override
+    HRESULT __stdcall get_VideoFrame(impl::abi_arg_out<Windows::Media::IVideoFrame> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VideoFrame());
+            *value = detach_abi(this->shim().VideoFrame());
             return S_OK;
         }
         catch (...)
@@ -551,12 +551,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrame> : produce
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameArrivedEventArgs> : produce_base<D, Windows::Devices::Perception::IPerceptionColorFrameArrivedEventArgs>
 {
-    HRESULT __stdcall get_RelativeTime(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_RelativeTime(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RelativeTime());
+            *value = detach_abi(this->shim().RelativeTime());
             return S_OK;
         }
         catch (...)
@@ -565,12 +565,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameArrivedEven
         }
     }
 
-    HRESULT __stdcall abi_TryOpenFrame(abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrame> result) noexcept override
+    HRESULT __stdcall abi_TryOpenFrame(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrame> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryOpenFrame());
+            *result = detach_abi(this->shim().TryOpenFrame());
             return S_OK;
         }
         catch (...)
@@ -584,12 +584,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameArrivedEven
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : produce_base<D, Windows::Devices::Perception::IPerceptionColorFrameReader>
 {
-    HRESULT __stdcall add_FrameArrived(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FrameArrived(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -612,12 +612,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
         }
     }
 
-    HRESULT __stdcall get_Source(abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameSource> value) noexcept override
+    HRESULT __stdcall get_Source(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Source());
+            *value = detach_abi(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -632,7 +632,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsPaused());
+            *value = detach_abi(this->shim().IsPaused());
             return S_OK;
         }
         catch (...)
@@ -655,12 +655,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
         }
     }
 
-    HRESULT __stdcall abi_TryReadLatestFrame(abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrame> result) noexcept override
+    HRESULT __stdcall abi_TryReadLatestFrame(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrame> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryReadLatestFrame());
+            *result = detach_abi(this->shim().TryReadLatestFrame());
             return S_OK;
         }
         catch (...)
@@ -674,12 +674,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : produce_base<D, Windows::Devices::Perception::IPerceptionColorFrameSource>
 {
-    HRESULT __stdcall add_AvailableChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AvailableChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().AvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -702,12 +702,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall add_ActiveChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ActiveChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -730,12 +730,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall add_PropertiesChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_PropertiesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().PropertiesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().PropertiesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -758,12 +758,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall add_VideoProfileChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_VideoProfileChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().VideoProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().VideoProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -786,12 +786,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall add_CameraIntrinsicsChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CameraIntrinsicsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().CameraIntrinsicsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().CameraIntrinsicsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -814,12 +814,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_Id(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -829,12 +829,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_DisplayName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DisplayName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DisplayName());
+            *value = detach_abi(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -844,12 +844,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_DeviceKind(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceKind(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceKind());
+            *value = detach_abi(this->shim().DeviceKind());
             return S_OK;
         }
         catch (...)
@@ -864,7 +864,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Available());
+            *value = detach_abi(this->shim().Available());
             return S_OK;
         }
         catch (...)
@@ -878,7 +878,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Active());
+            *value = detach_abi(this->shim().Active());
             return S_OK;
         }
         catch (...)
@@ -892,7 +892,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsControlled());
+            *value = detach_abi(this->shim().IsControlled());
             return S_OK;
         }
         catch (...)
@@ -901,27 +901,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_Properties(abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Properties());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_SupportedVideoProfiles(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportedVideoProfiles());
+            *value = detach_abi(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -931,12 +916,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_AvailableVideoProfiles(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
+    HRESULT __stdcall get_SupportedVideoProfiles(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AvailableVideoProfiles());
+            *value = detach_abi(this->shim().SupportedVideoProfiles());
             return S_OK;
         }
         catch (...)
@@ -946,12 +931,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_VideoProfile(abi_arg_out<Windows::Devices::Perception::IPerceptionVideoProfile> value) noexcept override
+    HRESULT __stdcall get_AvailableVideoProfiles(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VideoProfile());
+            *value = detach_abi(this->shim().AvailableVideoProfiles());
             return S_OK;
         }
         catch (...)
@@ -961,12 +946,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_CameraIntrinsics(abi_arg_out<Windows::Media::Devices::Core::ICameraIntrinsics> value) noexcept override
+    HRESULT __stdcall get_VideoProfile(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionVideoProfile> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CameraIntrinsics());
+            *value = detach_abi(this->shim().VideoProfile());
             return S_OK;
         }
         catch (...)
@@ -976,12 +961,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_AcquireControlSession(abi_arg_out<Windows::Devices::Perception::IPerceptionControlSession> value) noexcept override
+    HRESULT __stdcall get_CameraIntrinsics(impl::abi_arg_out<Windows::Media::Devices::Core::ICameraIntrinsics> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AcquireControlSession());
+            *value = detach_abi(this->shim().CameraIntrinsics());
             return S_OK;
         }
         catch (...)
@@ -991,12 +976,27 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_CanControlIndependentlyFrom(abi_arg_in<hstring> targetId, bool * result) noexcept override
+    HRESULT __stdcall abi_AcquireControlSession(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionControlSession> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CanControlIndependentlyFrom(*reinterpret_cast<const hstring *>(&targetId)));
+            *value = detach_abi(this->shim().AcquireControlSession());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CanControlIndependentlyFrom(impl::abi_arg_in<hstring> targetId, bool * result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CanControlIndependentlyFrom(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
         catch (...)
@@ -1005,12 +1005,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_IsCorrelatedWith(abi_arg_in<hstring> targetId, bool * result) noexcept override
+    HRESULT __stdcall abi_IsCorrelatedWith(impl::abi_arg_in<hstring> targetId, bool * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsCorrelatedWith(*reinterpret_cast<const hstring *>(&targetId)));
+            *result = detach_abi(this->shim().IsCorrelatedWith(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
         catch (...)
@@ -1019,12 +1019,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_TryGetTransformTo(abi_arg_in<hstring> targetId, abi_arg_out<Windows::Foundation::Numerics::float4x4> result, bool * hasResult) noexcept override
+    HRESULT __stdcall abi_TryGetTransformTo(impl::abi_arg_in<hstring> targetId, impl::abi_arg_out<Windows::Foundation::Numerics::float4x4> result, bool * hasResult) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *hasResult = detach(this->shim().TryGetTransformTo(*reinterpret_cast<const hstring *>(&targetId), *result));
+            *hasResult = detach_abi(this->shim().TryGetTransformTo(*reinterpret_cast<const hstring *>(&targetId), *result));
             return S_OK;
         }
         catch (...)
@@ -1033,12 +1033,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> correlatedDepthFrameSource, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics>> result) noexcept override
+    HRESULT __stdcall abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> correlatedDepthFrameSource, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryGetDepthCorrelatedCameraIntrinsicsAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&correlatedDepthFrameSource)));
+            *result = detach_abi(this->shim().TryGetDepthCorrelatedCameraIntrinsicsAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&correlatedDepthFrameSource)));
             return S_OK;
         }
         catch (...)
@@ -1048,12 +1048,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_TryGetDepthCorrelatedCoordinateMapperAsync(abi_arg_in<hstring> targetSourceId, abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> correlatedDepthFrameSource, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper>> result) noexcept override
+    HRESULT __stdcall abi_TryGetDepthCorrelatedCoordinateMapperAsync(impl::abi_arg_in<hstring> targetSourceId, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> correlatedDepthFrameSource, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryGetDepthCorrelatedCoordinateMapperAsync(*reinterpret_cast<const hstring *>(&targetSourceId), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&correlatedDepthFrameSource)));
+            *result = detach_abi(this->shim().TryGetDepthCorrelatedCoordinateMapperAsync(*reinterpret_cast<const hstring *>(&targetSourceId), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&correlatedDepthFrameSource)));
             return S_OK;
         }
         catch (...)
@@ -1063,12 +1063,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_TrySetVideoProfileAsync(abi_arg_in<Windows::Devices::Perception::IPerceptionControlSession> controlSession, abi_arg_in<Windows::Devices::Perception::IPerceptionVideoProfile> profile, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>> result) noexcept override
+    HRESULT __stdcall abi_TrySetVideoProfileAsync(impl::abi_arg_in<Windows::Devices::Perception::IPerceptionControlSession> controlSession, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionVideoProfile> profile, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TrySetVideoProfileAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionControlSession *>(&controlSession), *reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&profile)));
+            *result = detach_abi(this->shim().TrySetVideoProfileAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionControlSession *>(&controlSession), *reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -1078,12 +1078,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_OpenReader(abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameReader> result) noexcept override
+    HRESULT __stdcall abi_OpenReader(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameReader> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().OpenReader());
+            *result = detach_abi(this->shim().OpenReader());
             return S_OK;
         }
         catch (...)
@@ -1097,12 +1097,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource2> : produce_base<D, Windows::Devices::Perception::IPerceptionColorFrameSource2>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -1116,12 +1116,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource2> : 
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceAddedEventArgs> : produce_base<D, Windows::Devices::Perception::IPerceptionColorFrameSourceAddedEventArgs>
 {
-    HRESULT __stdcall get_FrameSource(abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameSource> value) noexcept override
+    HRESULT __stdcall get_FrameSource(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameSource());
+            *value = detach_abi(this->shim().FrameSource());
             return S_OK;
         }
         catch (...)
@@ -1135,12 +1135,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceAdded
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceRemovedEventArgs> : produce_base<D, Windows::Devices::Perception::IPerceptionColorFrameSourceRemovedEventArgs>
 {
-    HRESULT __stdcall get_FrameSource(abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameSource> value) noexcept override
+    HRESULT __stdcall get_FrameSource(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameSource());
+            *value = detach_abi(this->shim().FrameSource());
             return S_OK;
         }
         catch (...)
@@ -1154,12 +1154,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceRemov
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStatics> : produce_base<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStatics>
 {
-    HRESULT __stdcall abi_CreateWatcher(abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameSourceWatcher> watcher) noexcept override
+    HRESULT __stdcall abi_CreateWatcher(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionColorFrameSourceWatcher> watcher) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *watcher = detach(this->shim().CreateWatcher());
+            *watcher = detach_abi(this->shim().CreateWatcher());
             return S_OK;
         }
         catch (...)
@@ -1169,12 +1169,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStati
         }
     }
 
-    HRESULT __stdcall abi_FindAllAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>>> result) noexcept override
+    HRESULT __stdcall abi_FindAllAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FindAllAsync());
+            *result = detach_abi(this->shim().FindAllAsync());
             return S_OK;
         }
         catch (...)
@@ -1184,12 +1184,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStati
         }
     }
 
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> id, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource>> result) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> id, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
+            *result = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -1199,12 +1199,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStati
         }
     }
 
-    HRESULT __stdcall abi_RequestAccessAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus>> result) noexcept override
+    HRESULT __stdcall abi_RequestAccessAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestAccessAsync());
+            *result = detach_abi(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -1218,12 +1218,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStati
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatcher> : produce_base<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatcher>
 {
-    HRESULT __stdcall add_SourceAdded(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceAdded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SourceAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SourceAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1246,12 +1246,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
         }
     }
 
-    HRESULT __stdcall add_SourceRemoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SourceRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SourceRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1274,12 +1274,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
         }
     }
 
-    HRESULT __stdcall add_Stopped(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1302,12 +1302,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
         }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1335,7 +1335,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1376,12 +1376,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionControlSession> : produce_base<D, Windows::Devices::Perception::IPerceptionControlSession>
 {
-    HRESULT __stdcall add_ControlLost(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ControlLost(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ControlLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ControlLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1404,12 +1404,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionControlSession> : pro
         }
     }
 
-    HRESULT __stdcall abi_TrySetPropertyAsync(abi_arg_in<hstring> name, abi_arg_in<Windows::IInspectable> value, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>> result) noexcept override
+    HRESULT __stdcall abi_TrySetPropertyAsync(impl::abi_arg_in<hstring> name, impl::abi_arg_in<Windows::IInspectable> value, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TrySetPropertyAsync(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *result = detach_abi(this->shim().TrySetPropertyAsync(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1423,12 +1423,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionControlSession> : pro
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCameraIntrinsics> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCameraIntrinsics>
 {
-    HRESULT __stdcall abi_UnprojectPixelAtCorrelatedDepth(abi_arg_in<Windows::Foundation::Point> pixelCoordinate, abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, abi_arg_out<Windows::Foundation::Numerics::float3> result) noexcept override
+    HRESULT __stdcall abi_UnprojectPixelAtCorrelatedDepth(impl::abi_arg_in<Windows::Foundation::Point> pixelCoordinate, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, impl::abi_arg_out<Windows::Foundation::Numerics::float3> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().UnprojectPixelAtCorrelatedDepth(*reinterpret_cast<const Windows::Foundation::Point *>(&pixelCoordinate), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame)));
+            *result = detach_abi(this->shim().UnprojectPixelAtCorrelatedDepth(*reinterpret_cast<const Windows::Foundation::Point *>(&pixelCoordinate), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame)));
             return S_OK;
         }
         catch (...)
@@ -1437,7 +1437,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCamera
         }
     }
 
-    HRESULT __stdcall abi_UnprojectPixelsAtCorrelatedDepth(uint32_t __sourceCoordinatesSize, abi_arg_in<Windows::Foundation::Point> * sourceCoordinates, abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Numerics::float3> results) noexcept override
+    HRESULT __stdcall abi_UnprojectPixelsAtCorrelatedDepth(uint32_t __sourceCoordinatesSize, impl::abi_arg_in<Windows::Foundation::Point> * sourceCoordinates, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Numerics::float3> results) noexcept override
     {
         try
         {
@@ -1451,12 +1451,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCamera
         }
     }
 
-    HRESULT __stdcall abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(abi_arg_in<Windows::Foundation::Rect> region, abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Numerics::float3> results, abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
+    HRESULT __stdcall abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(impl::abi_arg_in<Windows::Foundation::Rect> region, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Numerics::float3> results, impl::abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().UnprojectRegionPixelsAtCorrelatedDepthAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&region), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *results));
+            *result = detach_abi(this->shim().UnprojectRegionPixelsAtCorrelatedDepthAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&region), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *results));
             return S_OK;
         }
         catch (...)
@@ -1466,12 +1466,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCamera
         }
     }
 
-    HRESULT __stdcall abi_UnprojectAllPixelsAtCorrelatedDepthAsync(abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Numerics::float3> results, abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
+    HRESULT __stdcall abi_UnprojectAllPixelsAtCorrelatedDepthAsync(impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Numerics::float3> results, impl::abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().UnprojectAllPixelsAtCorrelatedDepthAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *results));
+            *result = detach_abi(this->shim().UnprojectAllPixelsAtCorrelatedDepthAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *results));
             return S_OK;
         }
         catch (...)
@@ -1485,12 +1485,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCamera
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordinateMapper> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordinateMapper>
 {
-    HRESULT __stdcall abi_MapPixelToTarget(abi_arg_in<Windows::Foundation::Point> sourcePixelCoordinate, abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, abi_arg_out<Windows::Foundation::Point> result) noexcept override
+    HRESULT __stdcall abi_MapPixelToTarget(impl::abi_arg_in<Windows::Foundation::Point> sourcePixelCoordinate, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, impl::abi_arg_out<Windows::Foundation::Point> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().MapPixelToTarget(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePixelCoordinate), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame)));
+            *result = detach_abi(this->shim().MapPixelToTarget(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePixelCoordinate), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame)));
             return S_OK;
         }
         catch (...)
@@ -1499,7 +1499,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordi
         }
     }
 
-    HRESULT __stdcall abi_MapPixelsToTarget(uint32_t __sourceCoordinatesSize, abi_arg_in<Windows::Foundation::Point> * sourceCoordinates, abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Point> results) noexcept override
+    HRESULT __stdcall abi_MapPixelsToTarget(uint32_t __sourceCoordinatesSize, impl::abi_arg_in<Windows::Foundation::Point> * sourceCoordinates, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Point> results) noexcept override
     {
         try
         {
@@ -1513,12 +1513,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordi
         }
     }
 
-    HRESULT __stdcall abi_MapRegionOfPixelsToTargetAsync(abi_arg_in<Windows::Foundation::Rect> region, abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __targetCoordinatesSize, abi_arg_out<Windows::Foundation::Point> targetCoordinates, abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
+    HRESULT __stdcall abi_MapRegionOfPixelsToTargetAsync(impl::abi_arg_in<Windows::Foundation::Rect> region, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __targetCoordinatesSize, impl::abi_arg_out<Windows::Foundation::Point> targetCoordinates, impl::abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().MapRegionOfPixelsToTargetAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&region), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *targetCoordinates));
+            *result = detach_abi(this->shim().MapRegionOfPixelsToTargetAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&region), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *targetCoordinates));
             return S_OK;
         }
         catch (...)
@@ -1528,12 +1528,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordi
         }
     }
 
-    HRESULT __stdcall abi_MapAllPixelsToTargetAsync(abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __targetCoordinatesSize, abi_arg_out<Windows::Foundation::Point> targetCoordinates, abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
+    HRESULT __stdcall abi_MapAllPixelsToTargetAsync(impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrame> depthFrame, uint32_t __targetCoordinatesSize, impl::abi_arg_out<Windows::Foundation::Point> targetCoordinates, impl::abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().MapAllPixelsToTargetAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *targetCoordinates));
+            *result = detach_abi(this->shim().MapAllPixelsToTargetAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *targetCoordinates));
             return S_OK;
         }
         catch (...)
@@ -1547,12 +1547,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordi
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrame> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthFrame>
 {
-    HRESULT __stdcall get_VideoFrame(abi_arg_out<Windows::Media::IVideoFrame> value) noexcept override
+    HRESULT __stdcall get_VideoFrame(impl::abi_arg_out<Windows::Media::IVideoFrame> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VideoFrame());
+            *value = detach_abi(this->shim().VideoFrame());
             return S_OK;
         }
         catch (...)
@@ -1566,12 +1566,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrame> : produce
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameArrivedEventArgs> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthFrameArrivedEventArgs>
 {
-    HRESULT __stdcall get_RelativeTime(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_RelativeTime(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RelativeTime());
+            *value = detach_abi(this->shim().RelativeTime());
             return S_OK;
         }
         catch (...)
@@ -1580,12 +1580,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameArrivedEven
         }
     }
 
-    HRESULT __stdcall abi_TryOpenFrame(abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrame> result) noexcept override
+    HRESULT __stdcall abi_TryOpenFrame(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrame> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryOpenFrame());
+            *result = detach_abi(this->shim().TryOpenFrame());
             return S_OK;
         }
         catch (...)
@@ -1599,12 +1599,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameArrivedEven
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthFrameReader>
 {
-    HRESULT __stdcall add_FrameArrived(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FrameArrived(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1627,12 +1627,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
         }
     }
 
-    HRESULT __stdcall get_Source(abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameSource> value) noexcept override
+    HRESULT __stdcall get_Source(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Source());
+            *value = detach_abi(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -1647,7 +1647,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsPaused());
+            *value = detach_abi(this->shim().IsPaused());
             return S_OK;
         }
         catch (...)
@@ -1670,12 +1670,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
         }
     }
 
-    HRESULT __stdcall abi_TryReadLatestFrame(abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrame> result) noexcept override
+    HRESULT __stdcall abi_TryReadLatestFrame(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrame> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryReadLatestFrame());
+            *result = detach_abi(this->shim().TryReadLatestFrame());
             return S_OK;
         }
         catch (...)
@@ -1689,12 +1689,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthFrameSource>
 {
-    HRESULT __stdcall add_AvailableChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AvailableChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().AvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1717,12 +1717,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall add_ActiveChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ActiveChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1745,12 +1745,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall add_PropertiesChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_PropertiesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().PropertiesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().PropertiesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1773,12 +1773,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall add_VideoProfileChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_VideoProfileChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().VideoProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().VideoProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1801,12 +1801,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall add_CameraIntrinsicsChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CameraIntrinsicsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().CameraIntrinsicsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().CameraIntrinsicsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1829,12 +1829,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_Id(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -1844,12 +1844,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_DisplayName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DisplayName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DisplayName());
+            *value = detach_abi(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -1859,12 +1859,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_DeviceKind(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceKind(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceKind());
+            *value = detach_abi(this->shim().DeviceKind());
             return S_OK;
         }
         catch (...)
@@ -1879,7 +1879,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Available());
+            *value = detach_abi(this->shim().Available());
             return S_OK;
         }
         catch (...)
@@ -1893,7 +1893,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Active());
+            *value = detach_abi(this->shim().Active());
             return S_OK;
         }
         catch (...)
@@ -1907,7 +1907,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsControlled());
+            *value = detach_abi(this->shim().IsControlled());
             return S_OK;
         }
         catch (...)
@@ -1916,27 +1916,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_Properties(abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Properties());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_SupportedVideoProfiles(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportedVideoProfiles());
+            *value = detach_abi(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -1946,12 +1931,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_AvailableVideoProfiles(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
+    HRESULT __stdcall get_SupportedVideoProfiles(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AvailableVideoProfiles());
+            *value = detach_abi(this->shim().SupportedVideoProfiles());
             return S_OK;
         }
         catch (...)
@@ -1961,12 +1946,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_VideoProfile(abi_arg_out<Windows::Devices::Perception::IPerceptionVideoProfile> value) noexcept override
+    HRESULT __stdcall get_AvailableVideoProfiles(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VideoProfile());
+            *value = detach_abi(this->shim().AvailableVideoProfiles());
             return S_OK;
         }
         catch (...)
@@ -1976,12 +1961,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall get_CameraIntrinsics(abi_arg_out<Windows::Media::Devices::Core::ICameraIntrinsics> value) noexcept override
+    HRESULT __stdcall get_VideoProfile(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionVideoProfile> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CameraIntrinsics());
+            *value = detach_abi(this->shim().VideoProfile());
             return S_OK;
         }
         catch (...)
@@ -1991,12 +1976,27 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_AcquireControlSession(abi_arg_out<Windows::Devices::Perception::IPerceptionControlSession> result) noexcept override
+    HRESULT __stdcall get_CameraIntrinsics(impl::abi_arg_out<Windows::Media::Devices::Core::ICameraIntrinsics> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().AcquireControlSession());
+            *value = detach_abi(this->shim().CameraIntrinsics());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_AcquireControlSession(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionControlSession> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().AcquireControlSession());
             return S_OK;
         }
         catch (...)
@@ -2006,12 +2006,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_CanControlIndependentlyFrom(abi_arg_in<hstring> targetId, bool * result) noexcept override
+    HRESULT __stdcall abi_CanControlIndependentlyFrom(impl::abi_arg_in<hstring> targetId, bool * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CanControlIndependentlyFrom(*reinterpret_cast<const hstring *>(&targetId)));
+            *result = detach_abi(this->shim().CanControlIndependentlyFrom(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
         catch (...)
@@ -2020,12 +2020,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_IsCorrelatedWith(abi_arg_in<hstring> targetId, bool * result) noexcept override
+    HRESULT __stdcall abi_IsCorrelatedWith(impl::abi_arg_in<hstring> targetId, bool * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsCorrelatedWith(*reinterpret_cast<const hstring *>(&targetId)));
+            *result = detach_abi(this->shim().IsCorrelatedWith(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
         catch (...)
@@ -2034,12 +2034,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_TryGetTransformTo(abi_arg_in<hstring> targetId, abi_arg_out<Windows::Foundation::Numerics::float4x4> result, bool * hasResult) noexcept override
+    HRESULT __stdcall abi_TryGetTransformTo(impl::abi_arg_in<hstring> targetId, impl::abi_arg_out<Windows::Foundation::Numerics::float4x4> result, bool * hasResult) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *hasResult = detach(this->shim().TryGetTransformTo(*reinterpret_cast<const hstring *>(&targetId), *result));
+            *hasResult = detach_abi(this->shim().TryGetTransformTo(*reinterpret_cast<const hstring *>(&targetId), *result));
             return S_OK;
         }
         catch (...)
@@ -2048,27 +2048,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> target, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics>> result) noexcept override
+    HRESULT __stdcall abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> target, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryGetDepthCorrelatedCameraIntrinsicsAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&target)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *result = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_TryGetDepthCorrelatedCoordinateMapperAsync(abi_arg_in<hstring> targetId, abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> depthFrameSourceToMapWith, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper>> result) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryGetDepthCorrelatedCoordinateMapperAsync(*reinterpret_cast<const hstring *>(&targetId), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&depthFrameSourceToMapWith)));
+            *result = detach_abi(this->shim().TryGetDepthCorrelatedCameraIntrinsicsAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -2078,12 +2063,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_TrySetVideoProfileAsync(abi_arg_in<Windows::Devices::Perception::IPerceptionControlSession> controlSession, abi_arg_in<Windows::Devices::Perception::IPerceptionVideoProfile> profile, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>> result) noexcept override
+    HRESULT __stdcall abi_TryGetDepthCorrelatedCoordinateMapperAsync(impl::abi_arg_in<hstring> targetId, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> depthFrameSourceToMapWith, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TrySetVideoProfileAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionControlSession *>(&controlSession), *reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&profile)));
+            *result = detach_abi(this->shim().TryGetDepthCorrelatedCoordinateMapperAsync(*reinterpret_cast<const hstring *>(&targetId), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&depthFrameSourceToMapWith)));
             return S_OK;
         }
         catch (...)
@@ -2093,12 +2078,27 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
         }
     }
 
-    HRESULT __stdcall abi_OpenReader(abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameReader> result) noexcept override
+    HRESULT __stdcall abi_TrySetVideoProfileAsync(impl::abi_arg_in<Windows::Devices::Perception::IPerceptionControlSession> controlSession, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionVideoProfile> profile, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().OpenReader());
+            *result = detach_abi(this->shim().TrySetVideoProfileAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionControlSession *>(&controlSession), *reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&profile)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OpenReader(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameReader> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().OpenReader());
             return S_OK;
         }
         catch (...)
@@ -2112,12 +2112,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource2> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthFrameSource2>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -2131,12 +2131,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource2> : 
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceAddedEventArgs> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceAddedEventArgs>
 {
-    HRESULT __stdcall get_FrameSource(abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameSource> value) noexcept override
+    HRESULT __stdcall get_FrameSource(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameSource());
+            *value = detach_abi(this->shim().FrameSource());
             return S_OK;
         }
         catch (...)
@@ -2150,12 +2150,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceAdded
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceRemovedEventArgs> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceRemovedEventArgs>
 {
-    HRESULT __stdcall get_FrameSource(abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameSource> value) noexcept override
+    HRESULT __stdcall get_FrameSource(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameSource());
+            *value = detach_abi(this->shim().FrameSource());
             return S_OK;
         }
         catch (...)
@@ -2169,12 +2169,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceRemov
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStatics> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStatics>
 {
-    HRESULT __stdcall abi_CreateWatcher(abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameSourceWatcher> watcher) noexcept override
+    HRESULT __stdcall abi_CreateWatcher(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionDepthFrameSourceWatcher> watcher) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *watcher = detach(this->shim().CreateWatcher());
+            *watcher = detach_abi(this->shim().CreateWatcher());
             return S_OK;
         }
         catch (...)
@@ -2184,12 +2184,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStati
         }
     }
 
-    HRESULT __stdcall abi_FindAllAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>>> result) noexcept override
+    HRESULT __stdcall abi_FindAllAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FindAllAsync());
+            *result = detach_abi(this->shim().FindAllAsync());
             return S_OK;
         }
         catch (...)
@@ -2199,12 +2199,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStati
         }
     }
 
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> id, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource>> result) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> id, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
+            *result = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -2214,12 +2214,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStati
         }
     }
 
-    HRESULT __stdcall abi_RequestAccessAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus>> result) noexcept override
+    HRESULT __stdcall abi_RequestAccessAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestAccessAsync());
+            *result = detach_abi(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -2233,12 +2233,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStati
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatcher> : produce_base<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatcher>
 {
-    HRESULT __stdcall add_SourceAdded(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceAdded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SourceAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SourceAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2261,12 +2261,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
         }
     }
 
-    HRESULT __stdcall add_SourceRemoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SourceRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SourceRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2289,12 +2289,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
         }
     }
 
-    HRESULT __stdcall add_Stopped(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2317,12 +2317,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
         }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2350,7 +2350,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2396,7 +2396,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionFrameSourceProperties
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CollectionChange());
+            *value = detach_abi(this->shim().CollectionChange());
             return S_OK;
         }
         catch (...)
@@ -2405,12 +2405,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionFrameSourceProperties
         }
     }
 
-    HRESULT __stdcall get_Key(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Key(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Key());
+            *value = detach_abi(this->shim().Key());
             return S_OK;
         }
         catch (...)
@@ -2429,7 +2429,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionFrameSourcePropertyCh
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2438,12 +2438,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionFrameSourcePropertyCh
         }
     }
 
-    HRESULT __stdcall get_NewValue(abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_NewValue(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NewValue());
+            *value = detach_abi(this->shim().NewValue());
             return S_OK;
         }
         catch (...)
@@ -2457,12 +2457,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionFrameSourcePropertyCh
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrame> : produce_base<D, Windows::Devices::Perception::IPerceptionInfraredFrame>
 {
-    HRESULT __stdcall get_VideoFrame(abi_arg_out<Windows::Media::IVideoFrame> value) noexcept override
+    HRESULT __stdcall get_VideoFrame(impl::abi_arg_out<Windows::Media::IVideoFrame> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VideoFrame());
+            *value = detach_abi(this->shim().VideoFrame());
             return S_OK;
         }
         catch (...)
@@ -2476,12 +2476,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrame> : prod
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameArrivedEventArgs> : produce_base<D, Windows::Devices::Perception::IPerceptionInfraredFrameArrivedEventArgs>
 {
-    HRESULT __stdcall get_RelativeTime(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_RelativeTime(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RelativeTime());
+            *value = detach_abi(this->shim().RelativeTime());
             return S_OK;
         }
         catch (...)
@@ -2490,12 +2490,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameArrivedE
         }
     }
 
-    HRESULT __stdcall abi_TryOpenFrame(abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrame> result) noexcept override
+    HRESULT __stdcall abi_TryOpenFrame(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrame> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryOpenFrame());
+            *result = detach_abi(this->shim().TryOpenFrame());
             return S_OK;
         }
         catch (...)
@@ -2509,12 +2509,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameArrivedE
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> : produce_base<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader>
 {
-    HRESULT __stdcall add_FrameArrived(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FrameArrived(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2537,12 +2537,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
         }
     }
 
-    HRESULT __stdcall get_Source(abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameSource> value) noexcept override
+    HRESULT __stdcall get_Source(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Source());
+            *value = detach_abi(this->shim().Source());
             return S_OK;
         }
         catch (...)
@@ -2557,7 +2557,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsPaused());
+            *value = detach_abi(this->shim().IsPaused());
             return S_OK;
         }
         catch (...)
@@ -2580,12 +2580,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
         }
     }
 
-    HRESULT __stdcall abi_TryReadLatestFrame(abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrame> result) noexcept override
+    HRESULT __stdcall abi_TryReadLatestFrame(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrame> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryReadLatestFrame());
+            *result = detach_abi(this->shim().TryReadLatestFrame());
             return S_OK;
         }
         catch (...)
@@ -2599,12 +2599,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> : produce_base<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource>
 {
-    HRESULT __stdcall add_AvailableChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AvailableChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().AvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2627,12 +2627,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall add_ActiveChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ActiveChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2655,12 +2655,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall add_PropertiesChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_PropertiesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().PropertiesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().PropertiesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2683,12 +2683,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall add_VideoProfileChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_VideoProfileChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().VideoProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().VideoProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2711,12 +2711,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall add_CameraIntrinsicsChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CameraIntrinsicsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().CameraIntrinsicsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().CameraIntrinsicsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2739,12 +2739,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall get_Id(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -2754,12 +2754,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall get_DisplayName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DisplayName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DisplayName());
+            *value = detach_abi(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -2769,12 +2769,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall get_DeviceKind(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceKind(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceKind());
+            *value = detach_abi(this->shim().DeviceKind());
             return S_OK;
         }
         catch (...)
@@ -2789,7 +2789,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Available());
+            *value = detach_abi(this->shim().Available());
             return S_OK;
         }
         catch (...)
@@ -2803,7 +2803,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Active());
+            *value = detach_abi(this->shim().Active());
             return S_OK;
         }
         catch (...)
@@ -2817,7 +2817,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsControlled());
+            *value = detach_abi(this->shim().IsControlled());
             return S_OK;
         }
         catch (...)
@@ -2826,27 +2826,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall get_Properties(abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Properties());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_SupportedVideoProfiles(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportedVideoProfiles());
+            *value = detach_abi(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -2856,12 +2841,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall get_AvailableVideoProfiles(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
+    HRESULT __stdcall get_SupportedVideoProfiles(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AvailableVideoProfiles());
+            *value = detach_abi(this->shim().SupportedVideoProfiles());
             return S_OK;
         }
         catch (...)
@@ -2871,12 +2856,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall get_VideoProfile(abi_arg_out<Windows::Devices::Perception::IPerceptionVideoProfile> value) noexcept override
+    HRESULT __stdcall get_AvailableVideoProfiles(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VideoProfile());
+            *value = detach_abi(this->shim().AvailableVideoProfiles());
             return S_OK;
         }
         catch (...)
@@ -2886,12 +2871,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall get_CameraIntrinsics(abi_arg_out<Windows::Media::Devices::Core::ICameraIntrinsics> value) noexcept override
+    HRESULT __stdcall get_VideoProfile(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionVideoProfile> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CameraIntrinsics());
+            *value = detach_abi(this->shim().VideoProfile());
             return S_OK;
         }
         catch (...)
@@ -2901,12 +2886,27 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall abi_AcquireControlSession(abi_arg_out<Windows::Devices::Perception::IPerceptionControlSession> result) noexcept override
+    HRESULT __stdcall get_CameraIntrinsics(impl::abi_arg_out<Windows::Media::Devices::Core::ICameraIntrinsics> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().AcquireControlSession());
+            *value = detach_abi(this->shim().CameraIntrinsics());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_AcquireControlSession(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionControlSession> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().AcquireControlSession());
             return S_OK;
         }
         catch (...)
@@ -2916,12 +2916,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall abi_CanControlIndependentlyFrom(abi_arg_in<hstring> targetId, bool * result) noexcept override
+    HRESULT __stdcall abi_CanControlIndependentlyFrom(impl::abi_arg_in<hstring> targetId, bool * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CanControlIndependentlyFrom(*reinterpret_cast<const hstring *>(&targetId)));
+            *result = detach_abi(this->shim().CanControlIndependentlyFrom(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
         catch (...)
@@ -2930,12 +2930,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall abi_IsCorrelatedWith(abi_arg_in<hstring> targetId, bool * result) noexcept override
+    HRESULT __stdcall abi_IsCorrelatedWith(impl::abi_arg_in<hstring> targetId, bool * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsCorrelatedWith(*reinterpret_cast<const hstring *>(&targetId)));
+            *result = detach_abi(this->shim().IsCorrelatedWith(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
         catch (...)
@@ -2944,12 +2944,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall abi_TryGetTransformTo(abi_arg_in<hstring> targetId, abi_arg_out<Windows::Foundation::Numerics::float4x4> result, bool * hasResult) noexcept override
+    HRESULT __stdcall abi_TryGetTransformTo(impl::abi_arg_in<hstring> targetId, impl::abi_arg_out<Windows::Foundation::Numerics::float4x4> result, bool * hasResult) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *hasResult = detach(this->shim().TryGetTransformTo(*reinterpret_cast<const hstring *>(&targetId), *result));
+            *hasResult = detach_abi(this->shim().TryGetTransformTo(*reinterpret_cast<const hstring *>(&targetId), *result));
             return S_OK;
         }
         catch (...)
@@ -2958,27 +2958,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> target, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics>> result) noexcept override
+    HRESULT __stdcall abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> target, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryGetDepthCorrelatedCameraIntrinsicsAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&target)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *result = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_TryGetDepthCorrelatedCoordinateMapperAsync(abi_arg_in<hstring> targetId, abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> depthFrameSourceToMapWith, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper>> result) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryGetDepthCorrelatedCoordinateMapperAsync(*reinterpret_cast<const hstring *>(&targetId), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&depthFrameSourceToMapWith)));
+            *result = detach_abi(this->shim().TryGetDepthCorrelatedCameraIntrinsicsAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -2988,12 +2973,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall abi_TrySetVideoProfileAsync(abi_arg_in<Windows::Devices::Perception::IPerceptionControlSession> controlSession, abi_arg_in<Windows::Devices::Perception::IPerceptionVideoProfile> profile, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>> result) noexcept override
+    HRESULT __stdcall abi_TryGetDepthCorrelatedCoordinateMapperAsync(impl::abi_arg_in<hstring> targetId, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionDepthFrameSource> depthFrameSourceToMapWith, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TrySetVideoProfileAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionControlSession *>(&controlSession), *reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&profile)));
+            *result = detach_abi(this->shim().TryGetDepthCorrelatedCoordinateMapperAsync(*reinterpret_cast<const hstring *>(&targetId), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&depthFrameSourceToMapWith)));
             return S_OK;
         }
         catch (...)
@@ -3003,12 +2988,27 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
         }
     }
 
-    HRESULT __stdcall abi_OpenReader(abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameReader> result) noexcept override
+    HRESULT __stdcall abi_TrySetVideoProfileAsync(impl::abi_arg_in<Windows::Devices::Perception::IPerceptionControlSession> controlSession, impl::abi_arg_in<Windows::Devices::Perception::IPerceptionVideoProfile> profile, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().OpenReader());
+            *result = detach_abi(this->shim().TrySetVideoProfileAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionControlSession *>(&controlSession), *reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&profile)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OpenReader(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameReader> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().OpenReader());
             return S_OK;
         }
         catch (...)
@@ -3022,12 +3022,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource2> : produce_base<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource2>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -3041,12 +3041,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource2>
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceAddedEventArgs> : produce_base<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceAddedEventArgs>
 {
-    HRESULT __stdcall get_FrameSource(abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameSource> value) noexcept override
+    HRESULT __stdcall get_FrameSource(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameSource());
+            *value = detach_abi(this->shim().FrameSource());
             return S_OK;
         }
         catch (...)
@@ -3060,12 +3060,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceAd
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceRemovedEventArgs> : produce_base<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceRemovedEventArgs>
 {
-    HRESULT __stdcall get_FrameSource(abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameSource> value) noexcept override
+    HRESULT __stdcall get_FrameSource(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameSource> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameSource());
+            *value = detach_abi(this->shim().FrameSource());
             return S_OK;
         }
         catch (...)
@@ -3079,12 +3079,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceRe
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceStatics> : produce_base<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceStatics>
 {
-    HRESULT __stdcall abi_CreateWatcher(abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameSourceWatcher> watcher) noexcept override
+    HRESULT __stdcall abi_CreateWatcher(impl::abi_arg_out<Windows::Devices::Perception::IPerceptionInfraredFrameSourceWatcher> watcher) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *watcher = detach(this->shim().CreateWatcher());
+            *watcher = detach_abi(this->shim().CreateWatcher());
             return S_OK;
         }
         catch (...)
@@ -3094,12 +3094,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceSt
         }
     }
 
-    HRESULT __stdcall abi_FindAllAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>>> result) noexcept override
+    HRESULT __stdcall abi_FindAllAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FindAllAsync());
+            *result = detach_abi(this->shim().FindAllAsync());
             return S_OK;
         }
         catch (...)
@@ -3109,12 +3109,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceSt
         }
     }
 
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> id, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource>> result) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> id, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
+            *result = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
         catch (...)
@@ -3124,12 +3124,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceSt
         }
     }
 
-    HRESULT __stdcall abi_RequestAccessAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus>> result) noexcept override
+    HRESULT __stdcall abi_RequestAccessAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestAccessAsync());
+            *result = detach_abi(this->shim().RequestAccessAsync());
             return S_OK;
         }
         catch (...)
@@ -3143,12 +3143,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceSt
 template <typename D>
 struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWatcher> : produce_base<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWatcher>
 {
-    HRESULT __stdcall add_SourceAdded(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceAdded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SourceAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SourceAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3171,12 +3171,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
         }
     }
 
-    HRESULT __stdcall add_SourceRemoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().SourceRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().SourceRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3199,12 +3199,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
         }
     }
 
-    HRESULT __stdcall add_Stopped(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3227,12 +3227,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
         }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3260,7 +3260,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -3306,7 +3306,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BitmapPixelFormat());
+            *value = detach_abi(this->shim().BitmapPixelFormat());
             return S_OK;
         }
         catch (...)
@@ -3320,7 +3320,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BitmapAlphaMode());
+            *value = detach_abi(this->shim().BitmapAlphaMode());
             return S_OK;
         }
         catch (...)
@@ -3334,7 +3334,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Width());
+            *value = detach_abi(this->shim().Width());
             return S_OK;
         }
         catch (...)
@@ -3348,7 +3348,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Height());
+            *value = detach_abi(this->shim().Height());
             return S_OK;
         }
         catch (...)
@@ -3357,12 +3357,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
         }
     }
 
-    HRESULT __stdcall get_FrameDuration(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_FrameDuration(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameDuration());
+            *value = detach_abi(this->shim().FrameDuration());
             return S_OK;
         }
         catch (...)
@@ -3371,12 +3371,12 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
         }
     }
 
-    HRESULT __stdcall abi_IsEqual(abi_arg_in<Windows::Devices::Perception::IPerceptionVideoProfile> other, bool * result) noexcept override
+    HRESULT __stdcall abi_IsEqual(impl::abi_arg_in<Windows::Devices::Perception::IPerceptionVideoProfile> other, bool * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&other)));
+            *result = detach_abi(this->shim().IsEqual(*reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&other)));
             return S_OK;
         }
         catch (...)
@@ -3393,7 +3393,7 @@ namespace Windows::Devices::Perception {
 template <typename D> event_token impl_IPerceptionColorFrameSourceWatcher<D>::SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_SourceAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_SourceAdded(get_abi(handler), &token));
     return token;
 }
 
@@ -3410,7 +3410,7 @@ template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::SourceAdd
 template <typename D> event_token impl_IPerceptionColorFrameSourceWatcher<D>::SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_SourceRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_SourceRemoved(get_abi(handler), &token));
     return token;
 }
 
@@ -3427,7 +3427,7 @@ template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::SourceRem
 template <typename D> event_token impl_IPerceptionColorFrameSourceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_Stopped(get_abi(handler), &token));
     return token;
 }
 
@@ -3444,7 +3444,7 @@ template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::Stopped(e
 template <typename D> event_token impl_IPerceptionColorFrameSourceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_EnumerationCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_EnumerationCompleted(get_abi(handler), &token));
     return token;
 }
 
@@ -3478,7 +3478,7 @@ template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::Stop() co
 template <typename D> event_token impl_IPerceptionDepthFrameSourceWatcher<D>::SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_SourceAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_SourceAdded(get_abi(handler), &token));
     return token;
 }
 
@@ -3495,7 +3495,7 @@ template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::SourceAdd
 template <typename D> event_token impl_IPerceptionDepthFrameSourceWatcher<D>::SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_SourceRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_SourceRemoved(get_abi(handler), &token));
     return token;
 }
 
@@ -3512,7 +3512,7 @@ template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::SourceRem
 template <typename D> event_token impl_IPerceptionDepthFrameSourceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_Stopped(get_abi(handler), &token));
     return token;
 }
 
@@ -3529,7 +3529,7 @@ template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::Stopped(e
 template <typename D> event_token impl_IPerceptionDepthFrameSourceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_EnumerationCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_EnumerationCompleted(get_abi(handler), &token));
     return token;
 }
 
@@ -3563,7 +3563,7 @@ template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::Stop() co
 template <typename D> event_token impl_IPerceptionInfraredFrameSourceWatcher<D>::SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_SourceAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_SourceAdded(get_abi(handler), &token));
     return token;
 }
 
@@ -3580,7 +3580,7 @@ template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::Source
 template <typename D> event_token impl_IPerceptionInfraredFrameSourceWatcher<D>::SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_SourceRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_SourceRemoved(get_abi(handler), &token));
     return token;
 }
 
@@ -3597,7 +3597,7 @@ template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::Source
 template <typename D> event_token impl_IPerceptionInfraredFrameSourceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_Stopped(get_abi(handler), &token));
     return token;
 }
 
@@ -3614,7 +3614,7 @@ template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::Stoppe
 template <typename D> event_token impl_IPerceptionInfraredFrameSourceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_EnumerationCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_EnumerationCompleted(get_abi(handler), &token));
     return token;
 }
 
@@ -3648,266 +3648,266 @@ template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::Stop()
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameSource impl_IPerceptionColorFrameSourceAddedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionColorFrameSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceAddedEventArgs)->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceAddedEventArgs)->get_FrameSource(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameSource impl_IPerceptionColorFrameSourceRemovedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionColorFrameSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceRemovedEventArgs)->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceRemovedEventArgs)->get_FrameSource(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameSource impl_IPerceptionDepthFrameSourceAddedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceAddedEventArgs)->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceAddedEventArgs)->get_FrameSource(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameSource impl_IPerceptionDepthFrameSourceRemovedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceRemovedEventArgs)->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceRemovedEventArgs)->get_FrameSource(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameSource impl_IPerceptionInfraredFrameSourceAddedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceAddedEventArgs)->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceAddedEventArgs)->get_FrameSource(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameSource impl_IPerceptionInfraredFrameSourceRemovedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceRemovedEventArgs)->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceRemovedEventArgs)->get_FrameSource(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::Id() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_Id(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::PhysicalDeviceIds() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_PhysicalDeviceIds(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_PhysicalDeviceIds(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::FrameKind() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_FrameKind(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_FrameKind(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::DeviceModelVersion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_DeviceModelVersion(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_DeviceModelVersion(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::EnclosureLocation() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_EnclosureLocation(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_EnclosureLocation(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics2)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics2)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::VideoProfile() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_VideoProfile(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_VideoProfile(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::SupportedVideoProfiles() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_SupportedVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_SupportedVideoProfiles(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::AvailableVideoProfiles() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_AvailableVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_AvailableVideoProfiles(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::IsMirrored() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_IsMirrored(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_IsMirrored(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::CameraIntrinsics() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_CameraIntrinsics(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_CameraIntrinsics(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::Exposure() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_Exposure(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_Exposure(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::AutoExposureEnabled() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_AutoExposureEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_AutoExposureEnabled(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::ExposureCompensation() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_ExposureCompensation(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_ExposureCompensation(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::ActiveIlluminationEnabled() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_ActiveIlluminationEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_ActiveIlluminationEnabled(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::AmbientSubtractionEnabled() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_AmbientSubtractionEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_AmbientSubtractionEnabled(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::StructureLightPatternEnabled() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_StructureLightPatternEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_StructureLightPatternEnabled(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::InterleavedIlluminationEnabled() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_InterleavedIlluminationEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_InterleavedIlluminationEnabled(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionDepthFrameSourcePropertiesStatics<D>::MinDepth() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionDepthFrameSourcePropertiesStatics)->get_MinDepth(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionDepthFrameSourcePropertiesStatics)->get_MinDepth(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionDepthFrameSourcePropertiesStatics<D>::MaxDepth() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionDepthFrameSourcePropertiesStatics)->get_MaxDepth(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionDepthFrameSourcePropertiesStatics)->get_MaxDepth(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionColorFrameSourcePropertiesStatics<D>::Exposure() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionColorFrameSourcePropertiesStatics)->get_Exposure(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionColorFrameSourcePropertiesStatics)->get_Exposure(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionColorFrameSourcePropertiesStatics<D>::AutoExposureEnabled() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionColorFrameSourcePropertiesStatics)->get_AutoExposureEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionColorFrameSourcePropertiesStatics)->get_AutoExposureEnabled(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionColorFrameSourcePropertiesStatics<D>::ExposureCompensation() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionColorFrameSourcePropertiesStatics)->get_ExposureCompensation(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionColorFrameSourcePropertiesStatics)->get_ExposureCompensation(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::BitmapPixelFormat() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_BitmapPixelFormat(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_BitmapPixelFormat(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::BitmapAlphaMode() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_BitmapAlphaMode(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_BitmapAlphaMode(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::Width() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_Width(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_Width(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::Height() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_Height(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_Height(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::FrameDuration() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_FrameDuration(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_FrameDuration(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownCameraIntrinsicsPropertiesStatics<D>::FocalLength() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_FocalLength(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_FocalLength(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownCameraIntrinsicsPropertiesStatics<D>::PrincipalPoint() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_PrincipalPoint(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_PrincipalPoint(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownCameraIntrinsicsPropertiesStatics<D>::RadialDistortion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_RadialDistortion(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_RadialDistortion(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownCameraIntrinsicsPropertiesStatics<D>::TangentialDistortion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_TangentialDistortion(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_TangentialDistortion(put_abi(value)));
     return value;
 }
 
@@ -3921,7 +3921,7 @@ template <typename D> Windows::Devices::Perception::PerceptionFrameSourcePropert
 template <typename D> Windows::IInspectable impl_IPerceptionFrameSourcePropertyChangeResult<D>::NewValue() const
 {
     Windows::IInspectable value;
-    check_hresult(WINRT_SHIM(IPerceptionFrameSourcePropertyChangeResult)->get_NewValue(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionFrameSourcePropertyChangeResult)->get_NewValue(put_abi(value)));
     return value;
 }
 
@@ -3935,98 +3935,98 @@ template <typename D> Windows::Foundation::Collections::CollectionChange impl_IP
 template <typename D> hstring impl_IPerceptionFrameSourcePropertiesChangedEventArgs<D>::Key() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionFrameSourcePropertiesChangedEventArgs)->get_Key(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionFrameSourcePropertiesChangedEventArgs)->get_Key(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher impl_IPerceptionInfraredFrameSourceStatics<D>::CreateWatcher() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher watcher { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_CreateWatcher(put(watcher)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_CreateWatcher(put_abi(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>> impl_IPerceptionInfraredFrameSourceStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>> result;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_FindAllAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_FindAllAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> impl_IPerceptionInfraredFrameSourceStatics<D>::FromIdAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> result;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_FromIdAsync(get(id), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_FromIdAsync(get_abi(id), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> impl_IPerceptionInfraredFrameSourceStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> result;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_RequestAccessAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_RequestAccessAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher impl_IPerceptionDepthFrameSourceStatics<D>::CreateWatcher() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher watcher { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_CreateWatcher(put(watcher)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_CreateWatcher(put_abi(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>> impl_IPerceptionDepthFrameSourceStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>> result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_FindAllAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_FindAllAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> impl_IPerceptionDepthFrameSourceStatics<D>::FromIdAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_FromIdAsync(get(id), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_FromIdAsync(get_abi(id), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> impl_IPerceptionDepthFrameSourceStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_RequestAccessAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_RequestAccessAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameSourceWatcher impl_IPerceptionColorFrameSourceStatics<D>::CreateWatcher() const
 {
     Windows::Devices::Perception::PerceptionColorFrameSourceWatcher watcher { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_CreateWatcher(put(watcher)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_CreateWatcher(put_abi(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>> impl_IPerceptionColorFrameSourceStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>> result;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_FindAllAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_FindAllAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> impl_IPerceptionColorFrameSourceStatics<D>::FromIdAsync(hstring_view id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> result;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_FromIdAsync(get(id), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_FromIdAsync(get_abi(id), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> impl_IPerceptionColorFrameSourceStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> result;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_RequestAccessAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_RequestAccessAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_AvailableChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_AvailableChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4043,7 +4043,7 @@ template <typename D> void impl_IPerceptionColorFrameSource<D>::AvailableChanged
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_ActiveChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_ActiveChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4060,7 +4060,7 @@ template <typename D> void impl_IPerceptionColorFrameSource<D>::ActiveChanged(ev
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_PropertiesChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_PropertiesChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4077,7 +4077,7 @@ template <typename D> void impl_IPerceptionColorFrameSource<D>::PropertiesChange
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_VideoProfileChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_VideoProfileChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4094,7 +4094,7 @@ template <typename D> void impl_IPerceptionColorFrameSource<D>::VideoProfileChan
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_CameraIntrinsicsChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_CameraIntrinsicsChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4111,21 +4111,21 @@ template <typename D> void impl_IPerceptionColorFrameSource<D>::CameraIntrinsics
 template <typename D> hstring impl_IPerceptionColorFrameSource<D>::Id() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_Id(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionColorFrameSource<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_DisplayName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionColorFrameSource<D>::DeviceKind() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_DeviceKind(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_DeviceKind(put_abi(value)));
     return value;
 }
 
@@ -4153,105 +4153,105 @@ template <typename D> bool impl_IPerceptionColorFrameSource<D>::IsControlled() c
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IPerceptionColorFrameSource<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_Properties(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionColorFrameSource<D>::SupportedVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_SupportedVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_SupportedVideoProfiles(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionColorFrameSource<D>::AvailableVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_AvailableVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_AvailableVideoProfiles(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionVideoProfile impl_IPerceptionColorFrameSource<D>::VideoProfile() const
 {
     Windows::Devices::Perception::PerceptionVideoProfile value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_VideoProfile(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_VideoProfile(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_IPerceptionColorFrameSource<D>::CameraIntrinsics() const
 {
     Windows::Media::Devices::Core::CameraIntrinsics value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_CameraIntrinsics(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_CameraIntrinsics(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionControlSession impl_IPerceptionColorFrameSource<D>::AcquireControlSession() const
 {
     Windows::Devices::Perception::PerceptionControlSession value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_AcquireControlSession(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_AcquireControlSession(put_abi(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameSource<D>::CanControlIndependentlyFrom(hstring_view targetId) const
 {
     bool result {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_CanControlIndependentlyFrom(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_CanControlIndependentlyFrom(get_abi(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameSource<D>::IsCorrelatedWith(hstring_view targetId) const
 {
     bool result {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_IsCorrelatedWith(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_IsCorrelatedWith(get_abi(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameSource<D>::TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const
 {
     bool hasResult {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetTransformTo(get_abi(targetId), put_abi(result), &hasResult));
     return hasResult;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> impl_IPerceptionColorFrameSource<D>::TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> result;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get(correlatedDepthFrameSource), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get_abi(correlatedDepthFrameSource), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionColorFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetSourceId, const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> result;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetSourceId), get(correlatedDepthFrameSource), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get_abi(targetSourceId), get_abi(correlatedDepthFrameSource), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionColorFrameSource<D>::TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TrySetVideoProfileAsync(get(controlSession), get(profile), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TrySetVideoProfileAsync(get_abi(controlSession), get_abi(profile), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameReader impl_IPerceptionColorFrameSource<D>::OpenReader() const
 {
     Windows::Devices::Perception::PerceptionColorFrameReader result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_OpenReader(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_OpenReader(put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPerceptionColorFrameSource2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource2)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource2)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_AvailableChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_AvailableChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4268,7 +4268,7 @@ template <typename D> void impl_IPerceptionDepthFrameSource<D>::AvailableChanged
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_ActiveChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_ActiveChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4285,7 +4285,7 @@ template <typename D> void impl_IPerceptionDepthFrameSource<D>::ActiveChanged(ev
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_PropertiesChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_PropertiesChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4302,7 +4302,7 @@ template <typename D> void impl_IPerceptionDepthFrameSource<D>::PropertiesChange
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_VideoProfileChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_VideoProfileChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4319,7 +4319,7 @@ template <typename D> void impl_IPerceptionDepthFrameSource<D>::VideoProfileChan
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_CameraIntrinsicsChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_CameraIntrinsicsChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4336,21 +4336,21 @@ template <typename D> void impl_IPerceptionDepthFrameSource<D>::CameraIntrinsics
 template <typename D> hstring impl_IPerceptionDepthFrameSource<D>::Id() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_Id(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionDepthFrameSource<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_DisplayName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionDepthFrameSource<D>::DeviceKind() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_DeviceKind(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_DeviceKind(put_abi(value)));
     return value;
 }
 
@@ -4378,105 +4378,105 @@ template <typename D> bool impl_IPerceptionDepthFrameSource<D>::IsControlled() c
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IPerceptionDepthFrameSource<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_Properties(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionDepthFrameSource<D>::SupportedVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_SupportedVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_SupportedVideoProfiles(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionDepthFrameSource<D>::AvailableVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_AvailableVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_AvailableVideoProfiles(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionVideoProfile impl_IPerceptionDepthFrameSource<D>::VideoProfile() const
 {
     Windows::Devices::Perception::PerceptionVideoProfile value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_VideoProfile(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_VideoProfile(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_IPerceptionDepthFrameSource<D>::CameraIntrinsics() const
 {
     Windows::Media::Devices::Core::CameraIntrinsics value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_CameraIntrinsics(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_CameraIntrinsics(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionControlSession impl_IPerceptionDepthFrameSource<D>::AcquireControlSession() const
 {
     Windows::Devices::Perception::PerceptionControlSession result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_AcquireControlSession(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_AcquireControlSession(put_abi(result)));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameSource<D>::CanControlIndependentlyFrom(hstring_view targetId) const
 {
     bool result {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_CanControlIndependentlyFrom(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_CanControlIndependentlyFrom(get_abi(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameSource<D>::IsCorrelatedWith(hstring_view targetId) const
 {
     bool result {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_IsCorrelatedWith(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_IsCorrelatedWith(get_abi(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameSource<D>::TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const
 {
     bool hasResult {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetTransformTo(get_abi(targetId), put_abi(result), &hasResult));
     return hasResult;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> impl_IPerceptionDepthFrameSource<D>::TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get(target), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get_abi(target), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionDepthFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetId), get(depthFrameSourceToMapWith), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get_abi(targetId), get_abi(depthFrameSourceToMapWith), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionDepthFrameSource<D>::TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TrySetVideoProfileAsync(get(controlSession), get(profile), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TrySetVideoProfileAsync(get_abi(controlSession), get_abi(profile), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameReader impl_IPerceptionDepthFrameSource<D>::OpenReader() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameReader result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_OpenReader(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_OpenReader(put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPerceptionDepthFrameSource2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource2)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource2)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_AvailableChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_AvailableChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4493,7 +4493,7 @@ template <typename D> void impl_IPerceptionInfraredFrameSource<D>::AvailableChan
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_ActiveChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_ActiveChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4510,7 +4510,7 @@ template <typename D> void impl_IPerceptionInfraredFrameSource<D>::ActiveChanged
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_PropertiesChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_PropertiesChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4527,7 +4527,7 @@ template <typename D> void impl_IPerceptionInfraredFrameSource<D>::PropertiesCha
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_VideoProfileChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_VideoProfileChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4544,7 +4544,7 @@ template <typename D> void impl_IPerceptionInfraredFrameSource<D>::VideoProfileC
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_CameraIntrinsicsChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_CameraIntrinsicsChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -4561,21 +4561,21 @@ template <typename D> void impl_IPerceptionInfraredFrameSource<D>::CameraIntrins
 template <typename D> hstring impl_IPerceptionInfraredFrameSource<D>::Id() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_Id(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionInfraredFrameSource<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_DisplayName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionInfraredFrameSource<D>::DeviceKind() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_DeviceKind(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_DeviceKind(put_abi(value)));
     return value;
 }
 
@@ -4603,98 +4603,98 @@ template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::IsControlled(
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IPerceptionInfraredFrameSource<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_Properties(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionInfraredFrameSource<D>::SupportedVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_SupportedVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_SupportedVideoProfiles(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionInfraredFrameSource<D>::AvailableVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_AvailableVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_AvailableVideoProfiles(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionVideoProfile impl_IPerceptionInfraredFrameSource<D>::VideoProfile() const
 {
     Windows::Devices::Perception::PerceptionVideoProfile value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_VideoProfile(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_VideoProfile(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_IPerceptionInfraredFrameSource<D>::CameraIntrinsics() const
 {
     Windows::Media::Devices::Core::CameraIntrinsics value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_CameraIntrinsics(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_CameraIntrinsics(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionControlSession impl_IPerceptionInfraredFrameSource<D>::AcquireControlSession() const
 {
     Windows::Devices::Perception::PerceptionControlSession result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_AcquireControlSession(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_AcquireControlSession(put_abi(result)));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::CanControlIndependentlyFrom(hstring_view targetId) const
 {
     bool result {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_CanControlIndependentlyFrom(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_CanControlIndependentlyFrom(get_abi(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::IsCorrelatedWith(hstring_view targetId) const
 {
     bool result {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_IsCorrelatedWith(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_IsCorrelatedWith(get_abi(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const
 {
     bool hasResult {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetTransformTo(get_abi(targetId), put_abi(result), &hasResult));
     return hasResult;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> impl_IPerceptionInfraredFrameSource<D>::TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> result;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get(target), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get_abi(target), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionInfraredFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> result;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetId), get(depthFrameSourceToMapWith), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get_abi(targetId), get_abi(depthFrameSourceToMapWith), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionInfraredFrameSource<D>::TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TrySetVideoProfileAsync(get(controlSession), get(profile), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TrySetVideoProfileAsync(get_abi(controlSession), get_abi(profile), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameReader impl_IPerceptionInfraredFrameSource<D>::OpenReader() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameReader result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_OpenReader(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_OpenReader(put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPerceptionInfraredFrameSource2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource2)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource2)->get_DeviceId(put_abi(value)));
     return value;
 }
 
@@ -4729,115 +4729,115 @@ template <typename D> int32_t impl_IPerceptionVideoProfile<D>::Height() const
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionVideoProfile<D>::FrameDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->get_FrameDuration(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->get_FrameDuration(put_abi(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionVideoProfile<D>::IsEqual(const Windows::Devices::Perception::PerceptionVideoProfile & other) const
 {
     bool result {};
-    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->abi_IsEqual(get(other), &result));
+    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->abi_IsEqual(get_abi(other), &result));
     return result;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionColorFrameArrivedEventArgs<D>::RelativeTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->get_RelativeTime(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->get_RelativeTime(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrame impl_IPerceptionColorFrameArrivedEventArgs<D>::TryOpenFrame() const
 {
     Windows::Devices::Perception::PerceptionColorFrame result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->abi_TryOpenFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->abi_TryOpenFrame(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionDepthFrameArrivedEventArgs<D>::RelativeTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->get_RelativeTime(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->get_RelativeTime(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrame impl_IPerceptionDepthFrameArrivedEventArgs<D>::TryOpenFrame() const
 {
     Windows::Devices::Perception::PerceptionDepthFrame result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->abi_TryOpenFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->abi_TryOpenFrame(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionInfraredFrameArrivedEventArgs<D>::RelativeTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->get_RelativeTime(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->get_RelativeTime(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrame impl_IPerceptionInfraredFrameArrivedEventArgs<D>::TryOpenFrame() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrame result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->abi_TryOpenFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->abi_TryOpenFrame(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelAtCorrelatedDepth(const Windows::Foundation::Point & pixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const
 {
     Windows::Foundation::Numerics::float3 result {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelAtCorrelatedDepth(get(pixelCoordinate), get(depthFrame), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelAtCorrelatedDepth(get_abi(pixelCoordinate), get_abi(depthFrame), put_abi(result)));
     return result;
 }
 
 template <typename D> void impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelsAtCorrelatedDepth(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
 {
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelsAtCorrelatedDepth(sourceCoordinates.size(), get(sourceCoordinates), get(depthFrame), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelsAtCorrelatedDepth(sourceCoordinates.size(), get_abi(sourceCoordinates), get_abi(depthFrame), results.size(), get_abi(results)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(get(region), get(depthFrame), results.size(), get(results), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(get_abi(region), get_abi(depthFrame), results.size(), get_abi(results), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectAllPixelsAtCorrelatedDepthAsync(get(depthFrame), results.size(), get(results), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectAllPixelsAtCorrelatedDepthAsync(get_abi(depthFrame), results.size(), get_abi(results), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Point impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelToTarget(const Windows::Foundation::Point & sourcePixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelToTarget(get(sourcePixelCoordinate), get(depthFrame), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelToTarget(get_abi(sourcePixelCoordinate), get_abi(depthFrame), put_abi(result)));
     return result;
 }
 
 template <typename D> void impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelsToTarget(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> results) const
 {
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelsToTarget(sourceCoordinates.size(), get(sourceCoordinates), get(depthFrame), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelsToTarget(sourceCoordinates.size(), get_abi(sourceCoordinates), get_abi(depthFrame), results.size(), get_abi(results)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapRegionOfPixelsToTargetAsync(get(region), get(depthFrame), targetCoordinates.size(), get(targetCoordinates), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapRegionOfPixelsToTargetAsync(get_abi(region), get_abi(depthFrame), targetCoordinates.size(), get_abi(targetCoordinates), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapAllPixelsToTargetAsync(get(depthFrame), targetCoordinates.size(), get(targetCoordinates), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapAllPixelsToTargetAsync(get_abi(depthFrame), targetCoordinates.size(), get_abi(targetCoordinates), put_abi(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionControlSession<D>::ControlLost(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionControlSession)->add_ControlLost(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionControlSession)->add_ControlLost(get_abi(handler), &token));
     return token;
 }
 
@@ -4854,14 +4854,14 @@ template <typename D> void impl_IPerceptionControlSession<D>::ControlLost(event_
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionControlSession<D>::TrySetPropertyAsync(hstring_view name, const Windows::IInspectable & value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
-    check_hresult(WINRT_SHIM(IPerceptionControlSession)->abi_TrySetPropertyAsync(get(name), get(value), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionControlSession)->abi_TrySetPropertyAsync(get_abi(name), get_abi(value), put_abi(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameReader<D>::FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->add_FrameArrived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->add_FrameArrived(get_abi(handler), &token));
     return token;
 }
 
@@ -4878,7 +4878,7 @@ template <typename D> void impl_IPerceptionColorFrameReader<D>::FrameArrived(eve
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameSource impl_IPerceptionColorFrameReader<D>::Source() const
 {
     Windows::Devices::Perception::PerceptionColorFrameSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->get_Source(put_abi(value)));
     return value;
 }
 
@@ -4897,14 +4897,14 @@ template <typename D> void impl_IPerceptionColorFrameReader<D>::IsPaused(bool va
 template <typename D> Windows::Devices::Perception::PerceptionColorFrame impl_IPerceptionColorFrameReader<D>::TryReadLatestFrame() const
 {
     Windows::Devices::Perception::PerceptionColorFrame result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->abi_TryReadLatestFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->abi_TryReadLatestFrame(put_abi(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameReader<D>::FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->add_FrameArrived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->add_FrameArrived(get_abi(handler), &token));
     return token;
 }
 
@@ -4921,7 +4921,7 @@ template <typename D> void impl_IPerceptionDepthFrameReader<D>::FrameArrived(eve
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameSource impl_IPerceptionDepthFrameReader<D>::Source() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->get_Source(put_abi(value)));
     return value;
 }
 
@@ -4940,14 +4940,14 @@ template <typename D> void impl_IPerceptionDepthFrameReader<D>::IsPaused(bool va
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrame impl_IPerceptionDepthFrameReader<D>::TryReadLatestFrame() const
 {
     Windows::Devices::Perception::PerceptionDepthFrame result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->abi_TryReadLatestFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->abi_TryReadLatestFrame(put_abi(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameReader<D>::FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->add_FrameArrived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->add_FrameArrived(get_abi(handler), &token));
     return token;
 }
 
@@ -4964,7 +4964,7 @@ template <typename D> void impl_IPerceptionInfraredFrameReader<D>::FrameArrived(
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameSource impl_IPerceptionInfraredFrameReader<D>::Source() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameSource value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->get_Source(put_abi(value)));
     return value;
 }
 
@@ -4983,28 +4983,28 @@ template <typename D> void impl_IPerceptionInfraredFrameReader<D>::IsPaused(bool
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrame impl_IPerceptionInfraredFrameReader<D>::TryReadLatestFrame() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrame result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->abi_TryReadLatestFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->abi_TryReadLatestFrame(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IPerceptionColorFrame<D>::VideoFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrame)->get_VideoFrame(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrame)->get_VideoFrame(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IPerceptionDepthFrame<D>::VideoFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrame)->get_VideoFrame(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrame)->get_VideoFrame(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IPerceptionInfraredFrame<D>::VideoFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrame)->get_VideoFrame(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrame)->get_VideoFrame(put_abi(value)));
     return value;
 }
 

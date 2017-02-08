@@ -17,12 +17,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificate>
 {
-    HRESULT __stdcall abi_BuildChainAsync(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate>> certificates, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain>> value) noexcept override
+    HRESULT __stdcall abi_BuildChainAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate>> certificates, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BuildChainAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
+            *value = detach_abi(this->shim().BuildChainAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
             return S_OK;
         }
         catch (...)
@@ -32,12 +32,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall abi_BuildChainWithParametersAsync(abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate>> certificates, abi_arg_in<Windows::Security::Cryptography::Certificates::IChainBuildingParameters> parameters, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain>> value) noexcept override
+    HRESULT __stdcall abi_BuildChainWithParametersAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate>> certificates, impl::abi_arg_in<Windows::Security::Cryptography::Certificates::IChainBuildingParameters> parameters, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BuildChainAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::ChainBuildingParameters *>(&parameters)));
+            *value = detach_abi(this->shim().BuildChainAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::ChainBuildingParameters *>(&parameters)));
             return S_OK;
         }
         catch (...)
@@ -47,28 +47,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall get_SerialNumber(uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
+    HRESULT __stdcall get_SerialNumber(uint32_t * __valueSize, impl::abi_arg_out<uint8_t> * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            std::tie(*__valueSize, *value) = detach(this->shim().SerialNumber());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetHashValue(uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            std::tie(*__valueSize, *value) = detach(this->shim().GetHashValue());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().SerialNumber());
             return S_OK;
         }
         catch (...)
@@ -79,12 +63,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall abi_GetHashValueWithAlgorithm(abi_arg_in<hstring> hashAlgorithmName, uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
+    HRESULT __stdcall abi_GetHashValue(uint32_t * __valueSize, impl::abi_arg_out<uint8_t> * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            std::tie(*__valueSize, *value) = detach(this->shim().GetHashValue(*reinterpret_cast<const hstring *>(&hashAlgorithmName)));
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().GetHashValue());
             return S_OK;
         }
         catch (...)
@@ -95,12 +79,28 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall abi_GetCertificateBlob(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall abi_GetHashValueWithAlgorithm(impl::abi_arg_in<hstring> hashAlgorithmName, uint32_t * __valueSize, impl::abi_arg_out<uint8_t> * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetCertificateBlob());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().GetHashValue(*reinterpret_cast<const hstring *>(&hashAlgorithmName)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *__valueSize = 0;
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetCertificateBlob(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetCertificateBlob());
             return S_OK;
         }
         catch (...)
@@ -110,12 +110,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall get_Subject(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Subject(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Subject());
+            *value = detach_abi(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -125,12 +125,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall get_Issuer(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Issuer(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Issuer());
+            *value = detach_abi(this->shim().Issuer());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasPrivateKey());
+            *value = detach_abi(this->shim().HasPrivateKey());
             return S_OK;
         }
         catch (...)
@@ -159,7 +159,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsStronglyProtected());
+            *value = detach_abi(this->shim().IsStronglyProtected());
             return S_OK;
         }
         catch (...)
@@ -168,12 +168,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall get_ValidFrom(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall get_ValidFrom(impl::abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ValidFrom());
+            *value = detach_abi(this->shim().ValidFrom());
             return S_OK;
         }
         catch (...)
@@ -182,12 +182,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall get_ValidTo(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall get_ValidTo(impl::abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ValidTo());
+            *value = detach_abi(this->shim().ValidTo());
             return S_OK;
         }
         catch (...)
@@ -196,12 +196,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall get_EnhancedKeyUsages(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_EnhancedKeyUsages(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EnhancedKeyUsages());
+            *value = detach_abi(this->shim().EnhancedKeyUsages());
             return S_OK;
         }
         catch (...)
@@ -211,7 +211,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall put_FriendlyName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_FriendlyName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -225,12 +225,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate> :
         }
     }
 
-    HRESULT __stdcall get_FriendlyName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FriendlyName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FriendlyName());
+            *value = detach_abi(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsSecurityDeviceBound());
+            *value = detach_abi(this->shim().IsSecurityDeviceBound());
             return S_OK;
         }
         catch (...)
@@ -258,27 +258,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
         }
     }
 
-    HRESULT __stdcall get_KeyUsages(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificateKeyUsages> value) noexcept override
+    HRESULT __stdcall get_KeyUsages(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificateKeyUsages> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyUsages());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_KeyAlgorithmName(abi_arg_out<hstring> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyAlgorithmName());
+            *value = detach_abi(this->shim().KeyUsages());
             return S_OK;
         }
         catch (...)
@@ -288,12 +273,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
         }
     }
 
-    HRESULT __stdcall get_SignatureAlgorithmName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_KeyAlgorithmName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SignatureAlgorithmName());
+            *value = detach_abi(this->shim().KeyAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -303,12 +288,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
         }
     }
 
-    HRESULT __stdcall get_SignatureHashAlgorithmName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SignatureAlgorithmName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SignatureHashAlgorithmName());
+            *value = detach_abi(this->shim().SignatureAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -318,12 +303,27 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate2> 
         }
     }
 
-    HRESULT __stdcall get_SubjectAlternativeName(abi_arg_out<Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo> value) noexcept override
+    HRESULT __stdcall get_SignatureHashAlgorithmName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SubjectAlternativeName());
+            *value = detach_abi(this->shim().SignatureHashAlgorithmName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SubjectAlternativeName(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SubjectAlternativeName());
             return S_OK;
         }
         catch (...)
@@ -342,7 +342,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate3> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsPerUser());
+            *value = detach_abi(this->shim().IsPerUser());
             return S_OK;
         }
         catch (...)
@@ -351,12 +351,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate3> 
         }
     }
 
-    HRESULT __stdcall get_StoreName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_StoreName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().StoreName());
+            *value = detach_abi(this->shim().StoreName());
             return S_OK;
         }
         catch (...)
@@ -366,12 +366,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificate3> 
         }
     }
 
-    HRESULT __stdcall get_KeyStorageProviderName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_KeyStorageProviderName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyStorageProviderName());
+            *value = detach_abi(this->shim().KeyStorageProviderName());
             return S_OK;
         }
         catch (...)
@@ -390,7 +390,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateCha
         try
         {
             typename D::abi_guard guard(this->shim());
-            *status = detach(this->shim().Validate());
+            *status = detach_abi(this->shim().Validate());
             return S_OK;
         }
         catch (...)
@@ -399,12 +399,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateCha
         }
     }
 
-    HRESULT __stdcall abi_ValidateWithParameters(abi_arg_in<Windows::Security::Cryptography::Certificates::IChainValidationParameters> parameter, Windows::Security::Cryptography::Certificates::ChainValidationResult * status) noexcept override
+    HRESULT __stdcall abi_ValidateWithParameters(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::IChainValidationParameters> parameter, Windows::Security::Cryptography::Certificates::ChainValidationResult * status) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *status = detach(this->shim().Validate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::ChainValidationParameters *>(&parameter)));
+            *status = detach_abi(this->shim().Validate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::ChainValidationParameters *>(&parameter)));
             return S_OK;
         }
         catch (...)
@@ -413,12 +413,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateCha
         }
     }
 
-    HRESULT __stdcall abi_GetCertificates(bool includeRoot, abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> certificates) noexcept override
+    HRESULT __stdcall abi_GetCertificates(bool includeRoot, impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> certificates) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *certificates = detach(this->shim().GetCertificates(includeRoot));
+            *certificates = detach_abi(this->shim().GetCertificates(includeRoot));
             return S_OK;
         }
         catch (...)
@@ -432,12 +432,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateCha
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics>
 {
-    HRESULT __stdcall abi_CreateRequestAsync(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificateRequestProperties> request, abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> value) noexcept override
+    HRESULT __stdcall abi_CreateRequestAsync(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificateRequestProperties> request, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateRequestAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateRequestProperties *>(&request)));
+            *value = detach_abi(this->shim().CreateRequestAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateRequestProperties *>(&request)));
             return S_OK;
         }
         catch (...)
@@ -447,12 +447,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
         }
     }
 
-    HRESULT __stdcall abi_InstallCertificateAsync(abi_arg_in<hstring> certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption, abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
+    HRESULT __stdcall abi_InstallCertificateAsync(impl::abi_arg_in<hstring> certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption, impl::abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InstallCertificateAsync(*reinterpret_cast<const hstring *>(&certificate), installOption));
+            *value = detach_abi(this->shim().InstallCertificateAsync(*reinterpret_cast<const hstring *>(&certificate), installOption));
             return S_OK;
         }
         catch (...)
@@ -462,12 +462,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
         }
     }
 
-    HRESULT __stdcall abi_ImportPfxDataAsync(abi_arg_in<hstring> pfxData, abi_arg_in<hstring> password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, abi_arg_in<hstring> friendlyName, abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
+    HRESULT __stdcall abi_ImportPfxDataAsync(impl::abi_arg_in<hstring> pfxData, impl::abi_arg_in<hstring> password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, impl::abi_arg_in<hstring> friendlyName, impl::abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName)));
+            *value = detach_abi(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName)));
             return S_OK;
         }
         catch (...)
@@ -481,12 +481,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics2> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics2>
 {
-    HRESULT __stdcall get_UserCertificateEnrollmentManager(abi_arg_out<Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager> value) noexcept override
+    HRESULT __stdcall get_UserCertificateEnrollmentManager(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UserCertificateEnrollmentManager());
+            *value = detach_abi(this->shim().UserCertificateEnrollmentManager());
             return S_OK;
         }
         catch (...)
@@ -496,12 +496,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
         }
     }
 
-    HRESULT __stdcall abi_ImportPfxDataToKspAsync(abi_arg_in<hstring> pfxData, abi_arg_in<hstring> password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, abi_arg_in<hstring> friendlyName, abi_arg_in<hstring> keyStorageProvider, abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
+    HRESULT __stdcall abi_ImportPfxDataToKspAsync(impl::abi_arg_in<hstring> pfxData, impl::abi_arg_in<hstring> password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, impl::abi_arg_in<hstring> friendlyName, impl::abi_arg_in<hstring> keyStorageProvider, impl::abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const hstring *>(&keyStorageProvider)));
+            *value = detach_abi(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const hstring *>(&keyStorageProvider)));
             return S_OK;
         }
         catch (...)
@@ -515,12 +515,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics3> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics3>
 {
-    HRESULT __stdcall abi_ImportPfxDataToKspWithParametersAsync(abi_arg_in<hstring> pfxData, abi_arg_in<hstring> password, abi_arg_in<Windows::Security::Cryptography::Certificates::IPfxImportParameters> pfxImportParameters, abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
+    HRESULT __stdcall abi_ImportPfxDataToKspWithParametersAsync(impl::abi_arg_in<hstring> pfxData, impl::abi_arg_in<hstring> password, impl::abi_arg_in<Windows::Security::Cryptography::Certificates::IPfxImportParameters> pfxImportParameters, impl::abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::PfxImportParameters *>(&pfxImportParameters)));
+            *value = detach_abi(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::PfxImportParameters *>(&pfxImportParameters)));
             return S_OK;
         }
         catch (...)
@@ -534,12 +534,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateEnr
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateFactory> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateFactory>
 {
-    HRESULT __stdcall abi_CreateCertificate(abi_arg_in<Windows::Storage::Streams::IBuffer> certBlob, abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> certificate) noexcept override
+    HRESULT __stdcall abi_CreateCertificate(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> certBlob, impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> certificate) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *certificate = detach(this->shim().CreateCertificate(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&certBlob)));
+            *certificate = detach_abi(this->shim().CreateCertificate(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&certBlob)));
             return S_OK;
         }
         catch (...)
@@ -558,7 +558,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EncipherOnly());
+            *value = detach_abi(this->shim().EncipherOnly());
             return S_OK;
         }
         catch (...)
@@ -586,7 +586,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CrlSign());
+            *value = detach_abi(this->shim().CrlSign());
             return S_OK;
         }
         catch (...)
@@ -614,7 +614,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyCertificateSign());
+            *value = detach_abi(this->shim().KeyCertificateSign());
             return S_OK;
         }
         catch (...)
@@ -642,7 +642,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyAgreement());
+            *value = detach_abi(this->shim().KeyAgreement());
             return S_OK;
         }
         catch (...)
@@ -670,7 +670,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DataEncipherment());
+            *value = detach_abi(this->shim().DataEncipherment());
             return S_OK;
         }
         catch (...)
@@ -698,7 +698,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyEncipherment());
+            *value = detach_abi(this->shim().KeyEncipherment());
             return S_OK;
         }
         catch (...)
@@ -726,7 +726,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NonRepudiation());
+            *value = detach_abi(this->shim().NonRepudiation());
             return S_OK;
         }
         catch (...)
@@ -754,7 +754,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DigitalSignature());
+            *value = detach_abi(this->shim().DigitalSignature());
             return S_OK;
         }
         catch (...)
@@ -781,12 +781,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateKey
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQuery> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateQuery>
 {
-    HRESULT __stdcall get_EnhancedKeyUsages(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_EnhancedKeyUsages(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EnhancedKeyUsages());
+            *value = detach_abi(this->shim().EnhancedKeyUsages());
             return S_OK;
         }
         catch (...)
@@ -796,12 +796,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         }
     }
 
-    HRESULT __stdcall get_IssuerName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_IssuerName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IssuerName());
+            *value = detach_abi(this->shim().IssuerName());
             return S_OK;
         }
         catch (...)
@@ -811,7 +811,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         }
     }
 
-    HRESULT __stdcall put_IssuerName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_IssuerName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -825,12 +825,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         }
     }
 
-    HRESULT __stdcall get_FriendlyName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FriendlyName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FriendlyName());
+            *value = detach_abi(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -840,7 +840,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         }
     }
 
-    HRESULT __stdcall put_FriendlyName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_FriendlyName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -854,12 +854,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         }
     }
 
-    HRESULT __stdcall get_Thumbprint(uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
+    HRESULT __stdcall get_Thumbprint(uint32_t * __valueSize, impl::abi_arg_out<uint8_t> * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            std::tie(*__valueSize, *value) = detach(this->shim().Thumbprint());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().Thumbprint());
             return S_OK;
         }
         catch (...)
@@ -870,7 +870,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         }
     }
 
-    HRESULT __stdcall put_Thumbprint(uint32_t __valueSize, abi_arg_in<uint8_t> * value) noexcept override
+    HRESULT __stdcall put_Thumbprint(uint32_t __valueSize, impl::abi_arg_in<uint8_t> * value) noexcept override
     {
         try
         {
@@ -889,7 +889,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HardwareOnly());
+            *value = detach_abi(this->shim().HardwareOnly());
             return S_OK;
         }
         catch (...)
@@ -921,7 +921,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IncludeDuplicates());
+            *value = detach_abi(this->shim().IncludeDuplicates());
             return S_OK;
         }
         catch (...)
@@ -949,7 +949,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IncludeExpiredCertificates());
+            *value = detach_abi(this->shim().IncludeExpiredCertificates());
             return S_OK;
         }
         catch (...)
@@ -972,12 +972,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         }
     }
 
-    HRESULT __stdcall get_StoreName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_StoreName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().StoreName());
+            *value = detach_abi(this->shim().StoreName());
             return S_OK;
         }
         catch (...)
@@ -987,7 +987,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
         }
     }
 
-    HRESULT __stdcall put_StoreName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_StoreName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1005,12 +1005,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateQue
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties>
 {
-    HRESULT __stdcall get_Subject(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Subject(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Subject());
+            *value = detach_abi(this->shim().Subject());
             return S_OK;
         }
         catch (...)
@@ -1020,7 +1020,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_Subject(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Subject(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1034,12 +1034,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall get_KeyAlgorithmName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_KeyAlgorithmName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyAlgorithmName());
+            *value = detach_abi(this->shim().KeyAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -1049,7 +1049,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_KeyAlgorithmName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_KeyAlgorithmName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1068,7 +1068,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeySize());
+            *value = detach_abi(this->shim().KeySize());
             return S_OK;
         }
         catch (...)
@@ -1091,12 +1091,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall get_FriendlyName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FriendlyName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FriendlyName());
+            *value = detach_abi(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -1106,7 +1106,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_FriendlyName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_FriendlyName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1120,12 +1120,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall get_HashAlgorithmName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_HashAlgorithmName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HashAlgorithmName());
+            *value = detach_abi(this->shim().HashAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -1135,7 +1135,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_HashAlgorithmName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_HashAlgorithmName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1154,7 +1154,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Exportable());
+            *value = detach_abi(this->shim().Exportable());
             return S_OK;
         }
         catch (...)
@@ -1182,7 +1182,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyUsages());
+            *value = detach_abi(this->shim().KeyUsages());
             return S_OK;
         }
         catch (...)
@@ -1210,7 +1210,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyProtectionLevel());
+            *value = detach_abi(this->shim().KeyProtectionLevel());
             return S_OK;
         }
         catch (...)
@@ -1233,12 +1233,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall get_KeyStorageProviderName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_KeyStorageProviderName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyStorageProviderName());
+            *value = detach_abi(this->shim().KeyStorageProviderName());
             return S_OK;
         }
         catch (...)
@@ -1248,7 +1248,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_KeyStorageProviderName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_KeyStorageProviderName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1266,12 +1266,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties2> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties2>
 {
-    HRESULT __stdcall get_SmartcardReaderName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SmartcardReaderName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SmartcardReaderName());
+            *value = detach_abi(this->shim().SmartcardReaderName());
             return S_OK;
         }
         catch (...)
@@ -1281,7 +1281,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_SmartcardReaderName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_SmartcardReaderName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1295,12 +1295,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall get_SigningCertificate(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall get_SigningCertificate(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SigningCertificate());
+            *value = detach_abi(this->shim().SigningCertificate());
             return S_OK;
         }
         catch (...)
@@ -1310,7 +1310,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_SigningCertificate(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall put_SigningCertificate(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
@@ -1324,12 +1324,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall get_AttestationCredentialCertificate(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall get_AttestationCredentialCertificate(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AttestationCredentialCertificate());
+            *value = detach_abi(this->shim().AttestationCredentialCertificate());
             return S_OK;
         }
         catch (...)
@@ -1339,7 +1339,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_AttestationCredentialCertificate(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall put_AttestationCredentialCertificate(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
@@ -1357,12 +1357,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties3> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties3>
 {
-    HRESULT __stdcall get_CurveName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_CurveName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CurveName());
+            *value = detach_abi(this->shim().CurveName());
             return S_OK;
         }
         catch (...)
@@ -1372,7 +1372,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_CurveName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_CurveName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1386,12 +1386,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall get_CurveParameters(uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
+    HRESULT __stdcall get_CurveParameters(uint32_t * __valueSize, impl::abi_arg_out<uint8_t> * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            std::tie(*__valueSize, *value) = detach(this->shim().CurveParameters());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().CurveParameters());
             return S_OK;
         }
         catch (...)
@@ -1402,7 +1402,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_CurveParameters(uint32_t __valueSize, abi_arg_in<uint8_t> * value) noexcept override
+    HRESULT __stdcall put_CurveParameters(uint32_t __valueSize, impl::abi_arg_in<uint8_t> * value) noexcept override
     {
         try
         {
@@ -1416,12 +1416,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall get_ContainerNamePrefix(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ContainerNamePrefix(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ContainerNamePrefix());
+            *value = detach_abi(this->shim().ContainerNamePrefix());
             return S_OK;
         }
         catch (...)
@@ -1431,7 +1431,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_ContainerNamePrefix(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_ContainerNamePrefix(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1445,12 +1445,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall get_ContainerName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ContainerName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ContainerName());
+            *value = detach_abi(this->shim().ContainerName());
             return S_OK;
         }
         catch (...)
@@ -1460,7 +1460,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         }
     }
 
-    HRESULT __stdcall put_ContainerName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_ContainerName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -1479,7 +1479,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UseExistingKey());
+            *value = detach_abi(this->shim().UseExistingKey());
             return S_OK;
         }
         catch (...)
@@ -1506,7 +1506,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateReq
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateStore> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateStore>
 {
-    HRESULT __stdcall abi_Add(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate) noexcept override
+    HRESULT __stdcall abi_Add(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate) noexcept override
     {
         try
         {
@@ -1520,7 +1520,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
         }
     }
 
-    HRESULT __stdcall abi_Delete(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate) noexcept override
+    HRESULT __stdcall abi_Delete(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate) noexcept override
     {
         try
         {
@@ -1538,12 +1538,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateStore2> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateStore2>
 {
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Name());
+            *value = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -1557,12 +1557,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateStoresStatics> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateStoresStatics>
 {
-    HRESULT __stdcall abi_FindAllAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>> value) noexcept override
+    HRESULT __stdcall abi_FindAllAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FindAllAsync());
+            *value = detach_abi(this->shim().FindAllAsync());
             return S_OK;
         }
         catch (...)
@@ -1572,12 +1572,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
         }
     }
 
-    HRESULT __stdcall abi_FindAllWithQueryAsync(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificateQuery> query, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>> value) noexcept override
+    HRESULT __stdcall abi_FindAllWithQueryAsync(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificateQuery> query, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FindAllAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateQuery *>(&query)));
+            *value = detach_abi(this->shim().FindAllAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateQuery *>(&query)));
             return S_OK;
         }
         catch (...)
@@ -1587,12 +1587,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
         }
     }
 
-    HRESULT __stdcall get_TrustedRootCertificationAuthorities(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificateStore> value) noexcept override
+    HRESULT __stdcall get_TrustedRootCertificationAuthorities(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificateStore> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TrustedRootCertificationAuthorities());
+            *value = detach_abi(this->shim().TrustedRootCertificationAuthorities());
             return S_OK;
         }
         catch (...)
@@ -1602,12 +1602,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
         }
     }
 
-    HRESULT __stdcall get_IntermediateCertificationAuthorities(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificateStore> value) noexcept override
+    HRESULT __stdcall get_IntermediateCertificationAuthorities(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificateStore> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IntermediateCertificationAuthorities());
+            *value = detach_abi(this->shim().IntermediateCertificationAuthorities());
             return S_OK;
         }
         catch (...)
@@ -1617,12 +1617,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
         }
     }
 
-    HRESULT __stdcall abi_GetStoreByName(abi_arg_in<hstring> storeName, abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificateStore> value) noexcept override
+    HRESULT __stdcall abi_GetStoreByName(impl::abi_arg_in<hstring> storeName, impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificateStore> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetStoreByName(*reinterpret_cast<const hstring *>(&storeName)));
+            *value = detach_abi(this->shim().GetStoreByName(*reinterpret_cast<const hstring *>(&storeName)));
             return S_OK;
         }
         catch (...)
@@ -1636,12 +1636,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateStoresStatics2> : produce_base<D, Windows::Security::Cryptography::Certificates::ICertificateStoresStatics2>
 {
-    HRESULT __stdcall abi_GetUserStoreByName(abi_arg_in<hstring> storeName, abi_arg_out<Windows::Security::Cryptography::Certificates::IUserCertificateStore> result) noexcept override
+    HRESULT __stdcall abi_GetUserStoreByName(impl::abi_arg_in<hstring> storeName, impl::abi_arg_out<Windows::Security::Cryptography::Certificates::IUserCertificateStore> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetUserStoreByName(*reinterpret_cast<const hstring *>(&storeName)));
+            *result = detach_abi(this->shim().GetUserStoreByName(*reinterpret_cast<const hstring *>(&storeName)));
             return S_OK;
         }
         catch (...)
@@ -1655,12 +1655,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICertificateSto
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingParameters> : produce_base<D, Windows::Security::Cryptography::Certificates::IChainBuildingParameters>
 {
-    HRESULT __stdcall get_EnhancedKeyUsages(abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
+    HRESULT __stdcall get_EnhancedKeyUsages(impl::abi_arg_out<Windows::Foundation::Collections::IVector<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EnhancedKeyUsages());
+            *value = detach_abi(this->shim().EnhancedKeyUsages());
             return S_OK;
         }
         catch (...)
@@ -1670,12 +1670,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
         }
     }
 
-    HRESULT __stdcall get_ValidationTimestamp(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall get_ValidationTimestamp(impl::abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ValidationTimestamp());
+            *value = detach_abi(this->shim().ValidationTimestamp());
             return S_OK;
         }
         catch (...)
@@ -1684,7 +1684,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
         }
     }
 
-    HRESULT __stdcall put_ValidationTimestamp(abi_arg_in<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall put_ValidationTimestamp(impl::abi_arg_in<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
@@ -1703,7 +1703,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RevocationCheckEnabled());
+            *value = detach_abi(this->shim().RevocationCheckEnabled());
             return S_OK;
         }
         catch (...)
@@ -1731,7 +1731,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NetworkRetrievalEnabled());
+            *value = detach_abi(this->shim().NetworkRetrievalEnabled());
             return S_OK;
         }
         catch (...)
@@ -1759,7 +1759,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthorityInformationAccessEnabled());
+            *value = detach_abi(this->shim().AuthorityInformationAccessEnabled());
             return S_OK;
         }
         catch (...)
@@ -1787,7 +1787,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CurrentTimeValidationEnabled());
+            *value = detach_abi(this->shim().CurrentTimeValidationEnabled());
             return S_OK;
         }
         catch (...)
@@ -1810,12 +1810,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainBuildingP
         }
     }
 
-    HRESULT __stdcall get_ExclusiveTrustRoots(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::Certificate>> certificates) noexcept override
+    HRESULT __stdcall get_ExclusiveTrustRoots(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::Certificate>> certificates) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *certificates = detach(this->shim().ExclusiveTrustRoots());
+            *certificates = detach_abi(this->shim().ExclusiveTrustRoots());
             return S_OK;
         }
         catch (...)
@@ -1834,7 +1834,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainValidatio
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CertificateChainPolicy());
+            *value = detach_abi(this->shim().CertificateChainPolicy());
             return S_OK;
         }
         catch (...)
@@ -1857,12 +1857,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainValidatio
         }
     }
 
-    HRESULT __stdcall get_ServerDnsName(abi_arg_out<Windows::Networking::IHostName> value) noexcept override
+    HRESULT __stdcall get_ServerDnsName(impl::abi_arg_out<Windows::Networking::IHostName> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ServerDnsName());
+            *value = detach_abi(this->shim().ServerDnsName());
             return S_OK;
         }
         catch (...)
@@ -1872,7 +1872,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainValidatio
         }
     }
 
-    HRESULT __stdcall put_ServerDnsName(abi_arg_in<Windows::Networking::IHostName> value) noexcept override
+    HRESULT __stdcall put_ServerDnsName(impl::abi_arg_in<Windows::Networking::IHostName> value) noexcept override
     {
         try
         {
@@ -1890,12 +1890,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IChainValidatio
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSignature> : produce_base<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSignature>
 {
-    HRESULT __stdcall get_Certificates(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value) noexcept override
+    HRESULT __stdcall get_Certificates(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Certificates());
+            *value = detach_abi(this->shim().Certificates());
             return S_OK;
         }
         catch (...)
@@ -1905,12 +1905,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
         }
     }
 
-    HRESULT __stdcall get_Content(uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
+    HRESULT __stdcall get_Content(uint32_t * __valueSize, impl::abi_arg_out<uint8_t> * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            std::tie(*__valueSize, *value) = detach(this->shim().Content());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().Content());
             return S_OK;
         }
         catch (...)
@@ -1921,12 +1921,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
         }
     }
 
-    HRESULT __stdcall get_Signers(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo>> value) noexcept override
+    HRESULT __stdcall get_Signers(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Signers());
+            *value = detach_abi(this->shim().Signers());
             return S_OK;
         }
         catch (...)
@@ -1941,7 +1941,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VerifySignature());
+            *value = detach_abi(this->shim().VerifySignature());
             return S_OK;
         }
         catch (...)
@@ -1954,12 +1954,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSignatureFactory> : produce_base<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSignatureFactory>
 {
-    HRESULT __stdcall abi_CreateCmsAttachedSignature(abi_arg_in<Windows::Storage::Streams::IBuffer> inputBlob, abi_arg_out<Windows::Security::Cryptography::Certificates::ICmsAttachedSignature> cmsSignedData) noexcept override
+    HRESULT __stdcall abi_CreateCmsAttachedSignature(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> inputBlob, impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICmsAttachedSignature> cmsSignedData) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cmsSignedData = detach(this->shim().CreateCmsAttachedSignature(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&inputBlob)));
+            *cmsSignedData = detach_abi(this->shim().CreateCmsAttachedSignature(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&inputBlob)));
             return S_OK;
         }
         catch (...)
@@ -1973,12 +1973,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSignatureStatics> : produce_base<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSignatureStatics>
 {
-    HRESULT __stdcall abi_GenerateSignatureAsync(abi_arg_in<Windows::Storage::Streams::IBuffer> data, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo>> signers, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate>> certificates, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> outputBlob) noexcept override
+    HRESULT __stdcall abi_GenerateSignatureAsync(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> data, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo>> signers, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate>> certificates, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> outputBlob) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *outputBlob = detach(this->shim().GenerateSignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> *>(&signers), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
+            *outputBlob = detach_abi(this->shim().GenerateSignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> *>(&signers), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
             return S_OK;
         }
         catch (...)
@@ -1992,12 +1992,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsAttachedSig
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSignature> : produce_base<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSignature>
 {
-    HRESULT __stdcall get_Certificates(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value) noexcept override
+    HRESULT __stdcall get_Certificates(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Certificates());
+            *value = detach_abi(this->shim().Certificates());
             return S_OK;
         }
         catch (...)
@@ -2007,12 +2007,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
         }
     }
 
-    HRESULT __stdcall get_Signers(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo>> value) noexcept override
+    HRESULT __stdcall get_Signers(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Signers());
+            *value = detach_abi(this->shim().Signers());
             return S_OK;
         }
         catch (...)
@@ -2022,12 +2022,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
         }
     }
 
-    HRESULT __stdcall abi_VerifySignatureAsync(abi_arg_in<Windows::Storage::Streams::IInputStream> data, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Cryptography::Certificates::SignatureValidationResult>> value) noexcept override
+    HRESULT __stdcall abi_VerifySignatureAsync(impl::abi_arg_in<Windows::Storage::Streams::IInputStream> data, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Cryptography::Certificates::SignatureValidationResult>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VerifySignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&data)));
+            *value = detach_abi(this->shim().VerifySignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -2041,12 +2041,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSignatureFactory> : produce_base<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSignatureFactory>
 {
-    HRESULT __stdcall abi_CreateCmsDetachedSignature(abi_arg_in<Windows::Storage::Streams::IBuffer> inputBlob, abi_arg_out<Windows::Security::Cryptography::Certificates::ICmsDetachedSignature> cmsSignedData) noexcept override
+    HRESULT __stdcall abi_CreateCmsDetachedSignature(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> inputBlob, impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICmsDetachedSignature> cmsSignedData) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cmsSignedData = detach(this->shim().CreateCmsDetachedSignature(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&inputBlob)));
+            *cmsSignedData = detach_abi(this->shim().CreateCmsDetachedSignature(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&inputBlob)));
             return S_OK;
         }
         catch (...)
@@ -2060,12 +2060,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSignatureStatics> : produce_base<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSignatureStatics>
 {
-    HRESULT __stdcall abi_GenerateSignatureAsync(abi_arg_in<Windows::Storage::Streams::IInputStream> data, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo>> signers, abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate>> certificates, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> outputBlob) noexcept override
+    HRESULT __stdcall abi_GenerateSignatureAsync(impl::abi_arg_in<Windows::Storage::Streams::IInputStream> data, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo>> signers, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate>> certificates, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> outputBlob) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *outputBlob = detach(this->shim().GenerateSignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&data), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> *>(&signers), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
+            *outputBlob = detach_abi(this->shim().GenerateSignatureAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&data), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> *>(&signers), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
             return S_OK;
         }
         catch (...)
@@ -2079,12 +2079,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsDetachedSig
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo> : produce_base<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
 {
-    HRESULT __stdcall get_Certificate(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall get_Certificate(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Certificate());
+            *value = detach_abi(this->shim().Certificate());
             return S_OK;
         }
         catch (...)
@@ -2094,7 +2094,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
         }
     }
 
-    HRESULT __stdcall put_Certificate(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall put_Certificate(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
@@ -2108,12 +2108,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
         }
     }
 
-    HRESULT __stdcall get_HashAlgorithmName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_HashAlgorithmName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HashAlgorithmName());
+            *value = detach_abi(this->shim().HashAlgorithmName());
             return S_OK;
         }
         catch (...)
@@ -2123,7 +2123,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
         }
     }
 
-    HRESULT __stdcall put_HashAlgorithmName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_HashAlgorithmName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2137,12 +2137,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
         }
     }
 
-    HRESULT __stdcall get_TimestampInfo(abi_arg_out<Windows::Security::Cryptography::Certificates::ICmsTimestampInfo> value) noexcept override
+    HRESULT __stdcall get_TimestampInfo(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICmsTimestampInfo> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TimestampInfo());
+            *value = detach_abi(this->shim().TimestampInfo());
             return S_OK;
         }
         catch (...)
@@ -2156,12 +2156,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ICmsTimestampInfo> : produce_base<D, Windows::Security::Cryptography::Certificates::ICmsTimestampInfo>
 {
-    HRESULT __stdcall get_SigningCertificate(abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
+    HRESULT __stdcall get_SigningCertificate(impl::abi_arg_out<Windows::Security::Cryptography::Certificates::ICertificate> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SigningCertificate());
+            *value = detach_abi(this->shim().SigningCertificate());
             return S_OK;
         }
         catch (...)
@@ -2171,12 +2171,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsTimestampIn
         }
     }
 
-    HRESULT __stdcall get_Certificates(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value) noexcept override
+    HRESULT __stdcall get_Certificates(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Certificates());
+            *value = detach_abi(this->shim().Certificates());
             return S_OK;
         }
         catch (...)
@@ -2186,12 +2186,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsTimestampIn
         }
     }
 
-    HRESULT __stdcall get_Timestamp(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall get_Timestamp(impl::abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Timestamp());
+            *value = detach_abi(this->shim().Timestamp());
             return S_OK;
         }
         catch (...)
@@ -2204,12 +2204,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ICmsTimestampIn
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNamesStatics> : produce_base<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNamesStatics>
 {
-    HRESULT __stdcall get_Rsa(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Rsa(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Rsa());
+            *value = detach_abi(this->shim().Rsa());
             return S_OK;
         }
         catch (...)
@@ -2219,12 +2219,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
         }
     }
 
-    HRESULT __stdcall get_Dsa(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Dsa(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Dsa());
+            *value = detach_abi(this->shim().Dsa());
             return S_OK;
         }
         catch (...)
@@ -2234,12 +2234,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
         }
     }
 
-    HRESULT __stdcall get_Ecdh256(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ecdh256(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ecdh256());
+            *value = detach_abi(this->shim().Ecdh256());
             return S_OK;
         }
         catch (...)
@@ -2249,12 +2249,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
         }
     }
 
-    HRESULT __stdcall get_Ecdh384(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ecdh384(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ecdh384());
+            *value = detach_abi(this->shim().Ecdh384());
             return S_OK;
         }
         catch (...)
@@ -2264,12 +2264,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
         }
     }
 
-    HRESULT __stdcall get_Ecdh521(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ecdh521(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ecdh521());
+            *value = detach_abi(this->shim().Ecdh521());
             return S_OK;
         }
         catch (...)
@@ -2279,12 +2279,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
         }
     }
 
-    HRESULT __stdcall get_Ecdsa256(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ecdsa256(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ecdsa256());
+            *value = detach_abi(this->shim().Ecdsa256());
             return S_OK;
         }
         catch (...)
@@ -2294,12 +2294,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
         }
     }
 
-    HRESULT __stdcall get_Ecdsa384(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ecdsa384(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ecdsa384());
+            *value = detach_abi(this->shim().Ecdsa384());
             return S_OK;
         }
         catch (...)
@@ -2309,12 +2309,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
         }
     }
 
-    HRESULT __stdcall get_Ecdsa521(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ecdsa521(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ecdsa521());
+            *value = detach_abi(this->shim().Ecdsa521());
             return S_OK;
         }
         catch (...)
@@ -2328,12 +2328,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNamesStatics2> : produce_base<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNamesStatics2>
 {
-    HRESULT __stdcall get_Ecdsa(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ecdsa(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ecdsa());
+            *value = detach_abi(this->shim().Ecdsa());
             return S_OK;
         }
         catch (...)
@@ -2343,12 +2343,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
         }
     }
 
-    HRESULT __stdcall get_Ecdh(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ecdh(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ecdh());
+            *value = detach_abi(this->shim().Ecdh());
             return S_OK;
         }
         catch (...)
@@ -2362,12 +2362,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAlgorithmNa
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAttestationHelperStatics> : produce_base<D, Windows::Security::Cryptography::Certificates::IKeyAttestationHelperStatics>
 {
-    HRESULT __stdcall abi_DecryptTpmAttestationCredentialAsync(abi_arg_in<hstring> credential, abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> value) noexcept override
+    HRESULT __stdcall abi_DecryptTpmAttestationCredentialAsync(impl::abi_arg_in<hstring> credential, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DecryptTpmAttestationCredentialAsync(*reinterpret_cast<const hstring *>(&credential)));
+            *value = detach_abi(this->shim().DecryptTpmAttestationCredentialAsync(*reinterpret_cast<const hstring *>(&credential)));
             return S_OK;
         }
         catch (...)
@@ -2377,12 +2377,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAttestation
         }
     }
 
-    HRESULT __stdcall abi_GetTpmAttestationCredentialId(abi_arg_in<hstring> credential, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetTpmAttestationCredentialId(impl::abi_arg_in<hstring> credential, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetTpmAttestationCredentialId(*reinterpret_cast<const hstring *>(&credential)));
+            *value = detach_abi(this->shim().GetTpmAttestationCredentialId(*reinterpret_cast<const hstring *>(&credential)));
             return S_OK;
         }
         catch (...)
@@ -2396,12 +2396,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAttestation
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAttestationHelperStatics2> : produce_base<D, Windows::Security::Cryptography::Certificates::IKeyAttestationHelperStatics2>
 {
-    HRESULT __stdcall abi_DecryptTpmAttestationCredentialWithContainerNameAsync(abi_arg_in<hstring> credential, abi_arg_in<hstring> containerName, abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> value) noexcept override
+    HRESULT __stdcall abi_DecryptTpmAttestationCredentialWithContainerNameAsync(impl::abi_arg_in<hstring> credential, impl::abi_arg_in<hstring> containerName, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DecryptTpmAttestationCredentialAsync(*reinterpret_cast<const hstring *>(&credential), *reinterpret_cast<const hstring *>(&containerName)));
+            *value = detach_abi(this->shim().DecryptTpmAttestationCredentialAsync(*reinterpret_cast<const hstring *>(&credential), *reinterpret_cast<const hstring *>(&containerName)));
             return S_OK;
         }
         catch (...)
@@ -2415,12 +2415,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyAttestation
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IKeyStorageProviderNamesStatics> : produce_base<D, Windows::Security::Cryptography::Certificates::IKeyStorageProviderNamesStatics>
 {
-    HRESULT __stdcall get_SoftwareKeyStorageProvider(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SoftwareKeyStorageProvider(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SoftwareKeyStorageProvider());
+            *value = detach_abi(this->shim().SoftwareKeyStorageProvider());
             return S_OK;
         }
         catch (...)
@@ -2430,12 +2430,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyStorageProv
         }
     }
 
-    HRESULT __stdcall get_SmartcardKeyStorageProvider(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SmartcardKeyStorageProvider(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SmartcardKeyStorageProvider());
+            *value = detach_abi(this->shim().SmartcardKeyStorageProvider());
             return S_OK;
         }
         catch (...)
@@ -2445,12 +2445,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyStorageProv
         }
     }
 
-    HRESULT __stdcall get_PlatformKeyStorageProvider(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PlatformKeyStorageProvider(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PlatformKeyStorageProvider());
+            *value = detach_abi(this->shim().PlatformKeyStorageProvider());
             return S_OK;
         }
         catch (...)
@@ -2464,12 +2464,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IKeyStorageProv
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IKeyStorageProviderNamesStatics2> : produce_base<D, Windows::Security::Cryptography::Certificates::IKeyStorageProviderNamesStatics2>
 {
-    HRESULT __stdcall get_PassportKeyStorageProvider(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PassportKeyStorageProvider(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PassportKeyStorageProvider());
+            *value = detach_abi(this->shim().PassportKeyStorageProvider());
             return S_OK;
         }
         catch (...)
@@ -2488,7 +2488,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Exportable());
+            *value = detach_abi(this->shim().Exportable());
             return S_OK;
         }
         catch (...)
@@ -2516,7 +2516,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyProtectionLevel());
+            *value = detach_abi(this->shim().KeyProtectionLevel());
             return S_OK;
         }
         catch (...)
@@ -2544,7 +2544,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InstallOptions());
+            *value = detach_abi(this->shim().InstallOptions());
             return S_OK;
         }
         catch (...)
@@ -2567,12 +2567,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         }
     }
 
-    HRESULT __stdcall get_FriendlyName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FriendlyName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FriendlyName());
+            *value = detach_abi(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -2582,7 +2582,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         }
     }
 
-    HRESULT __stdcall put_FriendlyName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_FriendlyName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2596,12 +2596,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         }
     }
 
-    HRESULT __stdcall get_KeyStorageProviderName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_KeyStorageProviderName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyStorageProviderName());
+            *value = detach_abi(this->shim().KeyStorageProviderName());
             return S_OK;
         }
         catch (...)
@@ -2611,7 +2611,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         }
     }
 
-    HRESULT __stdcall put_KeyStorageProviderName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_KeyStorageProviderName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2625,12 +2625,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         }
     }
 
-    HRESULT __stdcall get_ContainerNamePrefix(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ContainerNamePrefix(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ContainerNamePrefix());
+            *value = detach_abi(this->shim().ContainerNamePrefix());
             return S_OK;
         }
         catch (...)
@@ -2640,7 +2640,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         }
     }
 
-    HRESULT __stdcall put_ContainerNamePrefix(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_ContainerNamePrefix(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2654,12 +2654,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         }
     }
 
-    HRESULT __stdcall get_ReaderName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ReaderName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReaderName());
+            *value = detach_abi(this->shim().ReaderName());
             return S_OK;
         }
         catch (...)
@@ -2669,7 +2669,7 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
         }
     }
 
-    HRESULT __stdcall put_ReaderName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_ReaderName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2687,12 +2687,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IPfxImportParam
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IStandardCertificateStoreNamesStatics> : produce_base<D, Windows::Security::Cryptography::Certificates::IStandardCertificateStoreNamesStatics>
 {
-    HRESULT __stdcall get_Personal(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Personal(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Personal());
+            *value = detach_abi(this->shim().Personal());
             return S_OK;
         }
         catch (...)
@@ -2702,12 +2702,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IStandardCertif
         }
     }
 
-    HRESULT __stdcall get_TrustedRootCertificationAuthorities(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_TrustedRootCertificationAuthorities(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TrustedRootCertificationAuthorities());
+            *value = detach_abi(this->shim().TrustedRootCertificationAuthorities());
             return S_OK;
         }
         catch (...)
@@ -2717,12 +2717,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IStandardCertif
         }
     }
 
-    HRESULT __stdcall get_IntermediateCertificationAuthorities(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_IntermediateCertificationAuthorities(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IntermediateCertificationAuthorities());
+            *value = detach_abi(this->shim().IntermediateCertificationAuthorities());
             return S_OK;
         }
         catch (...)
@@ -2736,12 +2736,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IStandardCertif
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo> : produce_base<D, Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo>
 {
-    HRESULT __stdcall get_EmailName(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_EmailName(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EmailName());
+            *value = detach_abi(this->shim().EmailName());
             return S_OK;
         }
         catch (...)
@@ -2751,12 +2751,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
         }
     }
 
-    HRESULT __stdcall get_IPAddress(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_IPAddress(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IPAddress());
+            *value = detach_abi(this->shim().IPAddress());
             return S_OK;
         }
         catch (...)
@@ -2766,12 +2766,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
         }
     }
 
-    HRESULT __stdcall get_Url(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_Url(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Url());
+            *value = detach_abi(this->shim().Url());
             return S_OK;
         }
         catch (...)
@@ -2781,12 +2781,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
         }
     }
 
-    HRESULT __stdcall get_DnsName(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_DnsName(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DnsName());
+            *value = detach_abi(this->shim().DnsName());
             return S_OK;
         }
         catch (...)
@@ -2796,12 +2796,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
         }
     }
 
-    HRESULT __stdcall get_DistinguishedName(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_DistinguishedName(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DistinguishedName());
+            *value = detach_abi(this->shim().DistinguishedName());
             return S_OK;
         }
         catch (...)
@@ -2811,12 +2811,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
         }
     }
 
-    HRESULT __stdcall get_PrincipalName(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_PrincipalName(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PrincipalName());
+            *value = detach_abi(this->shim().PrincipalName());
             return S_OK;
         }
         catch (...)
@@ -2830,12 +2830,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::ISubjectAlterna
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager> : produce_base<D, Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager>
 {
-    HRESULT __stdcall abi_CreateRequestAsync(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificateRequestProperties> request, abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> value) noexcept override
+    HRESULT __stdcall abi_CreateRequestAsync(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificateRequestProperties> request, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateRequestAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateRequestProperties *>(&request)));
+            *value = detach_abi(this->shim().CreateRequestAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::CertificateRequestProperties *>(&request)));
             return S_OK;
         }
         catch (...)
@@ -2845,12 +2845,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
         }
     }
 
-    HRESULT __stdcall abi_InstallCertificateAsync(abi_arg_in<hstring> certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption, abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
+    HRESULT __stdcall abi_InstallCertificateAsync(impl::abi_arg_in<hstring> certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption, impl::abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InstallCertificateAsync(*reinterpret_cast<const hstring *>(&certificate), installOption));
+            *value = detach_abi(this->shim().InstallCertificateAsync(*reinterpret_cast<const hstring *>(&certificate), installOption));
             return S_OK;
         }
         catch (...)
@@ -2860,12 +2860,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
         }
     }
 
-    HRESULT __stdcall abi_ImportPfxDataAsync(abi_arg_in<hstring> pfxData, abi_arg_in<hstring> password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, abi_arg_in<hstring> friendlyName, abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
+    HRESULT __stdcall abi_ImportPfxDataAsync(impl::abi_arg_in<hstring> pfxData, impl::abi_arg_in<hstring> password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, impl::abi_arg_in<hstring> friendlyName, impl::abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName)));
+            *value = detach_abi(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName)));
             return S_OK;
         }
         catch (...)
@@ -2875,12 +2875,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
         }
     }
 
-    HRESULT __stdcall abi_ImportPfxDataToKspAsync(abi_arg_in<hstring> pfxData, abi_arg_in<hstring> password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, abi_arg_in<hstring> friendlyName, abi_arg_in<hstring> keyStorageProvider, abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
+    HRESULT __stdcall abi_ImportPfxDataToKspAsync(impl::abi_arg_in<hstring> pfxData, impl::abi_arg_in<hstring> password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, impl::abi_arg_in<hstring> friendlyName, impl::abi_arg_in<hstring> keyStorageProvider, impl::abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const hstring *>(&keyStorageProvider)));
+            *value = detach_abi(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), exportable, keyProtectionLevel, installOption, *reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const hstring *>(&keyStorageProvider)));
             return S_OK;
         }
         catch (...)
@@ -2894,12 +2894,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager2> : produce_base<D, Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager2>
 {
-    HRESULT __stdcall abi_ImportPfxDataToKspWithParametersAsync(abi_arg_in<hstring> pfxData, abi_arg_in<hstring> password, abi_arg_in<Windows::Security::Cryptography::Certificates::IPfxImportParameters> pfxImportParameters, abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
+    HRESULT __stdcall abi_ImportPfxDataToKspWithParametersAsync(impl::abi_arg_in<hstring> pfxData, impl::abi_arg_in<hstring> password, impl::abi_arg_in<Windows::Security::Cryptography::Certificates::IPfxImportParameters> pfxImportParameters, impl::abi_arg_out<Windows::Foundation::IAsyncAction> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::PfxImportParameters *>(&pfxImportParameters)));
+            *value = detach_abi(this->shim().ImportPfxDataAsync(*reinterpret_cast<const hstring *>(&pfxData), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const Windows::Security::Cryptography::Certificates::PfxImportParameters *>(&pfxImportParameters)));
             return S_OK;
         }
         catch (...)
@@ -2913,12 +2913,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificateStore> : produce_base<D, Windows::Security::Cryptography::Certificates::IUserCertificateStore>
 {
-    HRESULT __stdcall abi_RequestAddAsync(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate, abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
+    HRESULT __stdcall abi_RequestAddAsync(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestAddAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
+            *result = detach_abi(this->shim().RequestAddAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
         catch (...)
@@ -2928,12 +2928,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
         }
     }
 
-    HRESULT __stdcall abi_RequestDeleteAsync(abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate, abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
+    HRESULT __stdcall abi_RequestDeleteAsync(impl::abi_arg_in<Windows::Security::Cryptography::Certificates::ICertificate> certificate, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestDeleteAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
+            *result = detach_abi(this->shim().RequestDeleteAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
         catch (...)
@@ -2943,12 +2943,12 @@ struct produce<D, Windows::Security::Cryptography::Certificates::IUserCertificat
         }
     }
 
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Name());
+            *value = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -2966,25 +2966,25 @@ namespace Windows::Security::Cryptography::Certificates {
 template <typename D> hstring impl_ICertificateRequestProperties<D>::Subject() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_Subject(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::Subject(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_Subject(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_Subject(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties<D>::KeyAlgorithmName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_KeyAlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_KeyAlgorithmName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::KeyAlgorithmName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_KeyAlgorithmName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_KeyAlgorithmName(get_abi(value)));
 }
 
 template <typename D> uint32_t impl_ICertificateRequestProperties<D>::KeySize() const
@@ -3002,25 +3002,25 @@ template <typename D> void impl_ICertificateRequestProperties<D>::KeySize(uint32
 template <typename D> hstring impl_ICertificateRequestProperties<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_FriendlyName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_FriendlyName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::FriendlyName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_FriendlyName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_FriendlyName(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties<D>::HashAlgorithmName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_HashAlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_HashAlgorithmName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::HashAlgorithmName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_HashAlgorithmName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_HashAlgorithmName(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::ExportOption impl_ICertificateRequestProperties<D>::Exportable() const
@@ -3062,97 +3062,97 @@ template <typename D> void impl_ICertificateRequestProperties<D>::KeyProtectionL
 template <typename D> hstring impl_ICertificateRequestProperties<D>::KeyStorageProviderName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_KeyStorageProviderName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->get_KeyStorageProviderName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::KeyStorageProviderName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_KeyStorageProviderName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties)->put_KeyStorageProviderName(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties2<D>::SmartcardReaderName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->get_SmartcardReaderName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->get_SmartcardReaderName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties2<D>::SmartcardReaderName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->put_SmartcardReaderName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->put_SmartcardReaderName(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICertificateRequestProperties2<D>::SigningCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->get_SigningCertificate(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->get_SigningCertificate(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties2<D>::SigningCertificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->put_SigningCertificate(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->put_SigningCertificate(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICertificateRequestProperties2<D>::AttestationCredentialCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->get_AttestationCredentialCertificate(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->get_AttestationCredentialCertificate(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties2<D>::AttestationCredentialCertificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->put_AttestationCredentialCertificate(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties2)->put_AttestationCredentialCertificate(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties3<D>::CurveName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->get_CurveName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->get_CurveName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties3<D>::CurveName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_CurveName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_CurveName(get_abi(value)));
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificateRequestProperties3<D>::CurveParameters() const
 {
     com_array<uint8_t> value {};
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->get_CurveParameters(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->get_CurveParameters(impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties3<D>::CurveParameters(array_view<const uint8_t> value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_CurveParameters(value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_CurveParameters(value.size(), get_abi(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties3<D>::ContainerNamePrefix() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->get_ContainerNamePrefix(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->get_ContainerNamePrefix(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties3<D>::ContainerNamePrefix(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_ContainerNamePrefix(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_ContainerNamePrefix(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties3<D>::ContainerName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->get_ContainerName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->get_ContainerName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties3<D>::ContainerName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_ContainerName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateRequestProperties3)->put_ContainerName(get_abi(value)));
 }
 
 template <typename D> bool impl_ICertificateRequestProperties3<D>::UseExistingKey() const
@@ -3170,317 +3170,317 @@ template <typename D> void impl_ICertificateRequestProperties3<D>::UseExistingKe
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICertificateEnrollmentManagerStatics<D>::CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
-    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics)->abi_CreateRequestAsync(get(request), put(value)));
+    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics)->abi_CreateRequestAsync(get_abi(request), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics<D>::InstallCertificateAsync(hstring_view certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics)->abi_InstallCertificateAsync(get(certificate), installOption, put(value)));
+    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics)->abi_InstallCertificateAsync(get_abi(certificate), installOption, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics)->abi_ImportPfxDataAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), put(value)));
+    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics)->abi_ImportPfxDataAsync(get_abi(pfxData), get_abi(password), exportable, keyProtectionLevel, installOption, get_abi(friendlyName), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager impl_ICertificateEnrollmentManagerStatics2<D>::UserCertificateEnrollmentManager() const
 {
     Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager value { nullptr };
-    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics2)->get_UserCertificateEnrollmentManager(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics2)->get_UserCertificateEnrollmentManager(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics2<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName, hstring_view keyStorageProvider) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics2)->abi_ImportPfxDataToKspAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), get(keyStorageProvider), put(value)));
+    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics2)->abi_ImportPfxDataToKspAsync(get_abi(pfxData), get_abi(password), exportable, keyProtectionLevel, installOption, get_abi(friendlyName), get_abi(keyStorageProvider), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics3<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics3)->abi_ImportPfxDataToKspWithParametersAsync(get(pfxData), get(password), get(pfxImportParameters), put(value)));
+    check_hresult(WINRT_SHIM(ICertificateEnrollmentManagerStatics3)->abi_ImportPfxDataToKspWithParametersAsync(get_abi(pfxData), get_abi(password), get_abi(pfxImportParameters), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IKeyAttestationHelperStatics<D>::DecryptTpmAttestationCredentialAsync(hstring_view credential) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
-    check_hresult(WINRT_SHIM(IKeyAttestationHelperStatics)->abi_DecryptTpmAttestationCredentialAsync(get(credential), put(value)));
+    check_hresult(WINRT_SHIM(IKeyAttestationHelperStatics)->abi_DecryptTpmAttestationCredentialAsync(get_abi(credential), put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAttestationHelperStatics<D>::GetTpmAttestationCredentialId(hstring_view credential) const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAttestationHelperStatics)->abi_GetTpmAttestationCredentialId(get(credential), put(value)));
+    check_hresult(WINRT_SHIM(IKeyAttestationHelperStatics)->abi_GetTpmAttestationCredentialId(get_abi(credential), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IKeyAttestationHelperStatics2<D>::DecryptTpmAttestationCredentialAsync(hstring_view credential, hstring_view containerName) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
-    check_hresult(WINRT_SHIM(IKeyAttestationHelperStatics2)->abi_DecryptTpmAttestationCredentialWithContainerNameAsync(get(credential), get(containerName), put(value)));
+    check_hresult(WINRT_SHIM(IKeyAttestationHelperStatics2)->abi_DecryptTpmAttestationCredentialWithContainerNameAsync(get_abi(credential), get_abi(containerName), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> impl_ICertificateStoresStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value;
-    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->abi_FindAllAsync(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->abi_FindAllAsync(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> impl_ICertificateStoresStatics<D>::FindAllAsync(const Windows::Security::Cryptography::Certificates::CertificateQuery & query) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value;
-    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->abi_FindAllWithQueryAsync(get(query), put(value)));
+    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->abi_FindAllWithQueryAsync(get_abi(query), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CertificateStore impl_ICertificateStoresStatics<D>::TrustedRootCertificationAuthorities() const
 {
     Windows::Security::Cryptography::Certificates::CertificateStore value { nullptr };
-    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->get_TrustedRootCertificationAuthorities(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->get_TrustedRootCertificationAuthorities(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CertificateStore impl_ICertificateStoresStatics<D>::IntermediateCertificationAuthorities() const
 {
     Windows::Security::Cryptography::Certificates::CertificateStore value { nullptr };
-    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->get_IntermediateCertificationAuthorities(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->get_IntermediateCertificationAuthorities(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CertificateStore impl_ICertificateStoresStatics<D>::GetStoreByName(hstring_view storeName) const
 {
     Windows::Security::Cryptography::Certificates::CertificateStore value { nullptr };
-    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->abi_GetStoreByName(get(storeName), put(value)));
+    check_hresult(WINRT_SHIM(ICertificateStoresStatics)->abi_GetStoreByName(get_abi(storeName), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::UserCertificateStore impl_ICertificateStoresStatics2<D>::GetUserStoreByName(hstring_view storeName) const
 {
     Windows::Security::Cryptography::Certificates::UserCertificateStore result { nullptr };
-    check_hresult(WINRT_SHIM(ICertificateStoresStatics2)->abi_GetUserStoreByName(get(storeName), put(result)));
+    check_hresult(WINRT_SHIM(ICertificateStoresStatics2)->abi_GetUserStoreByName(get_abi(storeName), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IUserCertificateEnrollmentManager<D>::CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
-    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_CreateRequestAsync(get(request), put(value)));
+    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_CreateRequestAsync(get_abi(request), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::InstallCertificateAsync(hstring_view certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_InstallCertificateAsync(get(certificate), installOption, put(value)));
+    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_InstallCertificateAsync(get_abi(certificate), installOption, put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_ImportPfxDataAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), put(value)));
+    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_ImportPfxDataAsync(get_abi(pfxData), get_abi(password), exportable, keyProtectionLevel, installOption, get_abi(friendlyName), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_view friendlyName, hstring_view keyStorageProvider) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_ImportPfxDataToKspAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), get(keyStorageProvider), put(value)));
+    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager)->abi_ImportPfxDataToKspAsync(get_abi(pfxData), get_abi(password), exportable, keyProtectionLevel, installOption, get_abi(friendlyName), get_abi(keyStorageProvider), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager2<D>::ImportPfxDataAsync(hstring_view pfxData, hstring_view password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager2)->abi_ImportPfxDataToKspWithParametersAsync(get(pfxData), get(password), get(pfxImportParameters), put(value)));
+    check_hresult(WINRT_SHIM(IUserCertificateEnrollmentManager2)->abi_ImportPfxDataToKspWithParametersAsync(get_abi(pfxData), get_abi(password), get_abi(pfxImportParameters), put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateStore<D>::Add(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
-    check_hresult(WINRT_SHIM(ICertificateStore)->abi_Add(get(certificate)));
+    check_hresult(WINRT_SHIM(ICertificateStore)->abi_Add(get_abi(certificate)));
 }
 
 template <typename D> void impl_ICertificateStore<D>::Delete(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
-    check_hresult(WINRT_SHIM(ICertificateStore)->abi_Delete(get(certificate)));
+    check_hresult(WINRT_SHIM(ICertificateStore)->abi_Delete(get_abi(certificate)));
 }
 
 template <typename D> hstring impl_ICertificateStore2<D>::Name() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateStore2)->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateStore2)->get_Name(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IUserCertificateStore<D>::RequestAddAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(IUserCertificateStore)->abi_RequestAddAsync(get(certificate), put(result)));
+    check_hresult(WINRT_SHIM(IUserCertificateStore)->abi_RequestAddAsync(get_abi(certificate), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IUserCertificateStore<D>::RequestDeleteAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(IUserCertificateStore)->abi_RequestDeleteAsync(get(certificate), put(result)));
+    check_hresult(WINRT_SHIM(IUserCertificateStore)->abi_RequestDeleteAsync(get_abi(certificate), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IUserCertificateStore<D>::Name() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IUserCertificateStore)->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IUserCertificateStore)->get_Name(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardCertificateStoreNamesStatics<D>::Personal() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IStandardCertificateStoreNamesStatics)->get_Personal(put(value)));
+    check_hresult(WINRT_SHIM(IStandardCertificateStoreNamesStatics)->get_Personal(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardCertificateStoreNamesStatics<D>::TrustedRootCertificationAuthorities() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IStandardCertificateStoreNamesStatics)->get_TrustedRootCertificationAuthorities(put(value)));
+    check_hresult(WINRT_SHIM(IStandardCertificateStoreNamesStatics)->get_TrustedRootCertificationAuthorities(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardCertificateStoreNamesStatics<D>::IntermediateCertificationAuthorities() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IStandardCertificateStoreNamesStatics)->get_IntermediateCertificationAuthorities(put(value)));
+    check_hresult(WINRT_SHIM(IStandardCertificateStoreNamesStatics)->get_IntermediateCertificationAuthorities(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Rsa() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Rsa(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Rsa(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Dsa() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Dsa(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Dsa(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdh256() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdh256(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdh256(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdh384() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdh384(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdh384(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdh521() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdh521(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdh521(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdsa256() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdsa256(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdsa256(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdsa384() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdsa384(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdsa384(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdsa521() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdsa521(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics)->get_Ecdsa521(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics2<D>::Ecdsa() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics2)->get_Ecdsa(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics2)->get_Ecdsa(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics2<D>::Ecdh() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics2)->get_Ecdh(put(value)));
+    check_hresult(WINRT_SHIM(IKeyAlgorithmNamesStatics2)->get_Ecdh(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyStorageProviderNamesStatics<D>::SoftwareKeyStorageProvider() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyStorageProviderNamesStatics)->get_SoftwareKeyStorageProvider(put(value)));
+    check_hresult(WINRT_SHIM(IKeyStorageProviderNamesStatics)->get_SoftwareKeyStorageProvider(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyStorageProviderNamesStatics<D>::SmartcardKeyStorageProvider() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyStorageProviderNamesStatics)->get_SmartcardKeyStorageProvider(put(value)));
+    check_hresult(WINRT_SHIM(IKeyStorageProviderNamesStatics)->get_SmartcardKeyStorageProvider(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyStorageProviderNamesStatics<D>::PlatformKeyStorageProvider() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyStorageProviderNamesStatics)->get_PlatformKeyStorageProvider(put(value)));
+    check_hresult(WINRT_SHIM(IKeyStorageProviderNamesStatics)->get_PlatformKeyStorageProvider(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyStorageProviderNamesStatics2<D>::PassportKeyStorageProvider() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyStorageProviderNamesStatics2)->get_PassportKeyStorageProvider(put(value)));
+    check_hresult(WINRT_SHIM(IKeyStorageProviderNamesStatics2)->get_PassportKeyStorageProvider(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IChainBuildingParameters<D>::EnhancedKeyUsages() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(IChainBuildingParameters)->get_EnhancedKeyUsages(put(value)));
+    check_hresult(WINRT_SHIM(IChainBuildingParameters)->get_EnhancedKeyUsages(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IChainBuildingParameters<D>::ValidationTimestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(IChainBuildingParameters)->get_ValidationTimestamp(put(value)));
+    check_hresult(WINRT_SHIM(IChainBuildingParameters)->get_ValidationTimestamp(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IChainBuildingParameters<D>::ValidationTimestamp(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(WINRT_SHIM(IChainBuildingParameters)->put_ValidationTimestamp(get(value)));
+    check_hresult(WINRT_SHIM(IChainBuildingParameters)->put_ValidationTimestamp(get_abi(value)));
 }
 
 template <typename D> bool impl_IChainBuildingParameters<D>::RevocationCheckEnabled() const
@@ -3534,7 +3534,7 @@ template <typename D> void impl_IChainBuildingParameters<D>::CurrentTimeValidati
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::Certificate> impl_IChainBuildingParameters<D>::ExclusiveTrustRoots() const
 {
     Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::Certificate> certificates;
-    check_hresult(WINRT_SHIM(IChainBuildingParameters)->get_ExclusiveTrustRoots(put(certificates)));
+    check_hresult(WINRT_SHIM(IChainBuildingParameters)->get_ExclusiveTrustRoots(put_abi(certificates)));
     return certificates;
 }
 
@@ -3553,56 +3553,56 @@ template <typename D> void impl_IChainValidationParameters<D>::CertificateChainP
 template <typename D> Windows::Networking::HostName impl_IChainValidationParameters<D>::ServerDnsName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(WINRT_SHIM(IChainValidationParameters)->get_ServerDnsName(put(value)));
+    check_hresult(WINRT_SHIM(IChainValidationParameters)->get_ServerDnsName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IChainValidationParameters<D>::ServerDnsName(const Windows::Networking::HostName & value) const
 {
-    check_hresult(WINRT_SHIM(IChainValidationParameters)->put_ServerDnsName(get(value)));
+    check_hresult(WINRT_SHIM(IChainValidationParameters)->put_ServerDnsName(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_ICertificateQuery<D>::EnhancedKeyUsages() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(WINRT_SHIM(ICertificateQuery)->get_EnhancedKeyUsages(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateQuery)->get_EnhancedKeyUsages(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificateQuery<D>::IssuerName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateQuery)->get_IssuerName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateQuery)->get_IssuerName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery<D>::IssuerName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateQuery)->put_IssuerName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateQuery)->put_IssuerName(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICertificateQuery<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateQuery)->get_FriendlyName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateQuery)->get_FriendlyName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery<D>::FriendlyName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateQuery)->put_FriendlyName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateQuery)->put_FriendlyName(get_abi(value)));
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificateQuery<D>::Thumbprint() const
 {
     com_array<uint8_t> value {};
-    check_hresult(WINRT_SHIM(ICertificateQuery)->get_Thumbprint(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(ICertificateQuery)->get_Thumbprint(impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery<D>::Thumbprint(array_view<const uint8_t> value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateQuery)->put_Thumbprint(value.size(), get(value)));
+    check_hresult(WINRT_SHIM(ICertificateQuery)->put_Thumbprint(value.size(), get_abi(value)));
 }
 
 template <typename D> bool impl_ICertificateQuery<D>::HardwareOnly() const
@@ -3644,13 +3644,13 @@ template <typename D> void impl_ICertificateQuery2<D>::IncludeExpiredCertificate
 template <typename D> hstring impl_ICertificateQuery2<D>::StoreName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificateQuery2)->get_StoreName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificateQuery2)->get_StoreName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery2<D>::StoreName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificateQuery2)->put_StoreName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificateQuery2)->put_StoreName(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::ChainValidationResult impl_ICertificateChain<D>::Validate() const
@@ -3663,70 +3663,70 @@ template <typename D> Windows::Security::Cryptography::Certificates::ChainValida
 template <typename D> Windows::Security::Cryptography::Certificates::ChainValidationResult impl_ICertificateChain<D>::Validate(const Windows::Security::Cryptography::Certificates::ChainValidationParameters & parameter) const
 {
     Windows::Security::Cryptography::Certificates::ChainValidationResult status {};
-    check_hresult(WINRT_SHIM(ICertificateChain)->abi_ValidateWithParameters(get(parameter), &status));
+    check_hresult(WINRT_SHIM(ICertificateChain)->abi_ValidateWithParameters(get_abi(parameter), &status));
     return status;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_ICertificateChain<D>::GetCertificates(bool includeRoot) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> certificates;
-    check_hresult(WINRT_SHIM(ICertificateChain)->abi_GetCertificates(includeRoot, put(certificates)));
+    check_hresult(WINRT_SHIM(ICertificateChain)->abi_GetCertificates(includeRoot, put_abi(certificates)));
     return certificates;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> impl_ICertificate<D>::BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> value;
-    check_hresult(WINRT_SHIM(ICertificate)->abi_BuildChainAsync(get(certificates), put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->abi_BuildChainAsync(get_abi(certificates), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> impl_ICertificate<D>::BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates, const Windows::Security::Cryptography::Certificates::ChainBuildingParameters & parameters) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> value;
-    check_hresult(WINRT_SHIM(ICertificate)->abi_BuildChainWithParametersAsync(get(certificates), get(parameters), put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->abi_BuildChainWithParametersAsync(get_abi(certificates), get_abi(parameters), put_abi(value)));
     return value;
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificate<D>::SerialNumber() const
 {
     com_array<uint8_t> value {};
-    check_hresult(WINRT_SHIM(ICertificate)->get_SerialNumber(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->get_SerialNumber(impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificate<D>::GetHashValue() const
 {
     com_array<uint8_t> value {};
-    check_hresult(WINRT_SHIM(ICertificate)->abi_GetHashValue(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->abi_GetHashValue(impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificate<D>::GetHashValue(hstring_view hashAlgorithmName) const
 {
     com_array<uint8_t> value {};
-    check_hresult(WINRT_SHIM(ICertificate)->abi_GetHashValueWithAlgorithm(get(hashAlgorithmName), put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->abi_GetHashValueWithAlgorithm(get_abi(hashAlgorithmName), impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICertificate<D>::GetCertificateBlob() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(ICertificate)->abi_GetCertificateBlob(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->abi_GetCertificateBlob(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate<D>::Subject() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificate)->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->get_Subject(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate<D>::Issuer() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificate)->get_Issuer(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->get_Issuer(put_abi(value)));
     return value;
 }
 
@@ -3747,33 +3747,33 @@ template <typename D> bool impl_ICertificate<D>::IsStronglyProtected() const
 template <typename D> Windows::Foundation::DateTime impl_ICertificate<D>::ValidFrom() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(ICertificate)->get_ValidFrom(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->get_ValidFrom(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICertificate<D>::ValidTo() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(ICertificate)->get_ValidTo(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->get_ValidTo(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ICertificate<D>::EnhancedKeyUsages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(ICertificate)->get_EnhancedKeyUsages(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->get_EnhancedKeyUsages(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificate<D>::FriendlyName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICertificate)->put_FriendlyName(get(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->put_FriendlyName(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICertificate<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificate)->get_FriendlyName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate)->get_FriendlyName(put_abi(value)));
     return value;
 }
 
@@ -3787,35 +3787,35 @@ template <typename D> bool impl_ICertificate2<D>::IsSecurityDeviceBound() const
 template <typename D> Windows::Security::Cryptography::Certificates::CertificateKeyUsages impl_ICertificate2<D>::KeyUsages() const
 {
     Windows::Security::Cryptography::Certificates::CertificateKeyUsages value { nullptr };
-    check_hresult(WINRT_SHIM(ICertificate2)->get_KeyUsages(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate2)->get_KeyUsages(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate2<D>::KeyAlgorithmName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificate2)->get_KeyAlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate2)->get_KeyAlgorithmName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate2<D>::SignatureAlgorithmName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificate2)->get_SignatureAlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate2)->get_SignatureAlgorithmName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate2<D>::SignatureHashAlgorithmName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificate2)->get_SignatureHashAlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate2)->get_SignatureHashAlgorithmName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo impl_ICertificate2<D>::SubjectAlternativeName() const
 {
     Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo value { nullptr };
-    check_hresult(WINRT_SHIM(ICertificate2)->get_SubjectAlternativeName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate2)->get_SubjectAlternativeName(put_abi(value)));
     return value;
 }
 
@@ -3829,115 +3829,115 @@ template <typename D> bool impl_ICertificate3<D>::IsPerUser() const
 template <typename D> hstring impl_ICertificate3<D>::StoreName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificate3)->get_StoreName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate3)->get_StoreName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate3<D>::KeyStorageProviderName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICertificate3)->get_KeyStorageProviderName(put(value)));
+    check_hresult(WINRT_SHIM(ICertificate3)->get_KeyStorageProviderName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICertificateFactory<D>::CreateCertificate(const Windows::Storage::Streams::IBuffer & certBlob) const
 {
     Windows::Security::Cryptography::Certificates::Certificate certificate { nullptr };
-    check_hresult(WINRT_SHIM(ICertificateFactory)->abi_CreateCertificate(get(certBlob), put(certificate)));
+    check_hresult(WINRT_SHIM(ICertificateFactory)->abi_CreateCertificate(get_abi(certBlob), put_abi(certificate)));
     return certificate;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICmsTimestampInfo<D>::SigningCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(WINRT_SHIM(ICmsTimestampInfo)->get_SigningCertificate(put(value)));
+    check_hresult(WINRT_SHIM(ICmsTimestampInfo)->get_SigningCertificate(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_ICmsTimestampInfo<D>::Certificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(WINRT_SHIM(ICmsTimestampInfo)->get_Certificates(put(value)));
+    check_hresult(WINRT_SHIM(ICmsTimestampInfo)->get_Certificates(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICmsTimestampInfo<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(ICmsTimestampInfo)->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(ICmsTimestampInfo)->get_Timestamp(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICmsSignerInfo<D>::Certificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(WINRT_SHIM(ICmsSignerInfo)->get_Certificate(put(value)));
+    check_hresult(WINRT_SHIM(ICmsSignerInfo)->get_Certificate(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICmsSignerInfo<D>::Certificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(WINRT_SHIM(ICmsSignerInfo)->put_Certificate(get(value)));
+    check_hresult(WINRT_SHIM(ICmsSignerInfo)->put_Certificate(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICmsSignerInfo<D>::HashAlgorithmName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICmsSignerInfo)->get_HashAlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(ICmsSignerInfo)->get_HashAlgorithmName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICmsSignerInfo<D>::HashAlgorithmName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICmsSignerInfo)->put_HashAlgorithmName(get(value)));
+    check_hresult(WINRT_SHIM(ICmsSignerInfo)->put_HashAlgorithmName(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CmsTimestampInfo impl_ICmsSignerInfo<D>::TimestampInfo() const
 {
     Windows::Security::Cryptography::Certificates::CmsTimestampInfo value { nullptr };
-    check_hresult(WINRT_SHIM(ICmsSignerInfo)->get_TimestampInfo(put(value)));
+    check_hresult(WINRT_SHIM(ICmsSignerInfo)->get_TimestampInfo(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::EmailName() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_EmailName(put(value)));
+    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_EmailName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::IPAddress() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_IPAddress(put(value)));
+    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_IPAddress(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::Url() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_Url(put(value)));
+    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_Url(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::DnsName() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_DnsName(put(value)));
+    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_DnsName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::DistinguishedName() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_DistinguishedName(put(value)));
+    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_DistinguishedName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::PrincipalName() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_PrincipalName(put(value)));
+    check_hresult(WINRT_SHIM(ISubjectAlternativeNameInfo)->get_PrincipalName(put_abi(value)));
     return value;
 }
 
@@ -3980,49 +3980,49 @@ template <typename D> void impl_IPfxImportParameters<D>::InstallOptions(Windows:
 template <typename D> hstring impl_IPfxImportParameters<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPfxImportParameters)->get_FriendlyName(put(value)));
+    check_hresult(WINRT_SHIM(IPfxImportParameters)->get_FriendlyName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::FriendlyName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IPfxImportParameters)->put_FriendlyName(get(value)));
+    check_hresult(WINRT_SHIM(IPfxImportParameters)->put_FriendlyName(get_abi(value)));
 }
 
 template <typename D> hstring impl_IPfxImportParameters<D>::KeyStorageProviderName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPfxImportParameters)->get_KeyStorageProviderName(put(value)));
+    check_hresult(WINRT_SHIM(IPfxImportParameters)->get_KeyStorageProviderName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::KeyStorageProviderName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IPfxImportParameters)->put_KeyStorageProviderName(get(value)));
+    check_hresult(WINRT_SHIM(IPfxImportParameters)->put_KeyStorageProviderName(get_abi(value)));
 }
 
 template <typename D> hstring impl_IPfxImportParameters<D>::ContainerNamePrefix() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPfxImportParameters)->get_ContainerNamePrefix(put(value)));
+    check_hresult(WINRT_SHIM(IPfxImportParameters)->get_ContainerNamePrefix(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::ContainerNamePrefix(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IPfxImportParameters)->put_ContainerNamePrefix(get(value)));
+    check_hresult(WINRT_SHIM(IPfxImportParameters)->put_ContainerNamePrefix(get_abi(value)));
 }
 
 template <typename D> hstring impl_IPfxImportParameters<D>::ReaderName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IPfxImportParameters)->get_ReaderName(put(value)));
+    check_hresult(WINRT_SHIM(IPfxImportParameters)->get_ReaderName(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::ReaderName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IPfxImportParameters)->put_ReaderName(get(value)));
+    check_hresult(WINRT_SHIM(IPfxImportParameters)->put_ReaderName(get_abi(value)));
 }
 
 template <typename D> bool impl_ICertificateKeyUsages<D>::EncipherOnly() const
@@ -4124,21 +4124,21 @@ template <typename D> void impl_ICertificateKeyUsages<D>::DigitalSignature(bool 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_ICmsAttachedSignature<D>::Certificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(WINRT_SHIM(ICmsAttachedSignature)->get_Certificates(put(value)));
+    check_hresult(WINRT_SHIM(ICmsAttachedSignature)->get_Certificates(put_abi(value)));
     return value;
 }
 
 template <typename D> com_array<uint8_t> impl_ICmsAttachedSignature<D>::Content() const
 {
     com_array<uint8_t> value {};
-    check_hresult(WINRT_SHIM(ICmsAttachedSignature)->get_Content(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(ICmsAttachedSignature)->get_Content(impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> impl_ICmsAttachedSignature<D>::Signers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> value;
-    check_hresult(WINRT_SHIM(ICmsAttachedSignature)->get_Signers(put(value)));
+    check_hresult(WINRT_SHIM(ICmsAttachedSignature)->get_Signers(put_abi(value)));
     return value;
 }
 
@@ -4152,49 +4152,49 @@ template <typename D> Windows::Security::Cryptography::Certificates::SignatureVa
 template <typename D> Windows::Security::Cryptography::Certificates::CmsAttachedSignature impl_ICmsAttachedSignatureFactory<D>::CreateCmsAttachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) const
 {
     Windows::Security::Cryptography::Certificates::CmsAttachedSignature cmsSignedData { nullptr };
-    check_hresult(WINRT_SHIM(ICmsAttachedSignatureFactory)->abi_CreateCmsAttachedSignature(get(inputBlob), put(cmsSignedData)));
+    check_hresult(WINRT_SHIM(ICmsAttachedSignatureFactory)->abi_CreateCmsAttachedSignature(get_abi(inputBlob), put_abi(cmsSignedData)));
     return cmsSignedData;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICmsAttachedSignatureStatics<D>::GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> outputBlob;
-    check_hresult(WINRT_SHIM(ICmsAttachedSignatureStatics)->abi_GenerateSignatureAsync(get(data), get(signers), get(certificates), put(outputBlob)));
+    check_hresult(WINRT_SHIM(ICmsAttachedSignatureStatics)->abi_GenerateSignatureAsync(get_abi(data), get_abi(signers), get_abi(certificates), put_abi(outputBlob)));
     return outputBlob;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_ICmsDetachedSignature<D>::Certificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(WINRT_SHIM(ICmsDetachedSignature)->get_Certificates(put(value)));
+    check_hresult(WINRT_SHIM(ICmsDetachedSignature)->get_Certificates(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> impl_ICmsDetachedSignature<D>::Signers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> value;
-    check_hresult(WINRT_SHIM(ICmsDetachedSignature)->get_Signers(put(value)));
+    check_hresult(WINRT_SHIM(ICmsDetachedSignature)->get_Signers(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Cryptography::Certificates::SignatureValidationResult> impl_ICmsDetachedSignature<D>::VerifySignatureAsync(const Windows::Storage::Streams::IInputStream & data) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Cryptography::Certificates::SignatureValidationResult> value;
-    check_hresult(WINRT_SHIM(ICmsDetachedSignature)->abi_VerifySignatureAsync(get(data), put(value)));
+    check_hresult(WINRT_SHIM(ICmsDetachedSignature)->abi_VerifySignatureAsync(get_abi(data), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CmsDetachedSignature impl_ICmsDetachedSignatureFactory<D>::CreateCmsDetachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) const
 {
     Windows::Security::Cryptography::Certificates::CmsDetachedSignature cmsSignedData { nullptr };
-    check_hresult(WINRT_SHIM(ICmsDetachedSignatureFactory)->abi_CreateCmsDetachedSignature(get(inputBlob), put(cmsSignedData)));
+    check_hresult(WINRT_SHIM(ICmsDetachedSignatureFactory)->abi_CreateCmsDetachedSignature(get_abi(inputBlob), put_abi(cmsSignedData)));
     return cmsSignedData;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICmsDetachedSignatureStatics<D>::GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> outputBlob;
-    check_hresult(WINRT_SHIM(ICmsDetachedSignatureStatics)->abi_GenerateSignatureAsync(get(data), get(signers), get(certificates), put(outputBlob)));
+    check_hresult(WINRT_SHIM(ICmsDetachedSignatureStatics)->abi_GenerateSignatureAsync(get_abi(data), get_abi(signers), get_abi(certificates), put_abi(outputBlob)));
     return outputBlob;
 }
 

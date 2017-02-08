@@ -17,7 +17,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -26,27 +26,12 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
         }
     }
 
-    HRESULT __stdcall get_OperatingSystem(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_OperatingSystem(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OperatingSystem());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_FriendlyName(abi_arg_out<hstring> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FriendlyName());
+            *value = detach_abi(this->shim().OperatingSystem());
             return S_OK;
         }
         catch (...)
@@ -56,12 +41,12 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
         }
     }
 
-    HRESULT __stdcall get_SystemManufacturer(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_FriendlyName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SystemManufacturer());
+            *value = detach_abi(this->shim().FriendlyName());
             return S_OK;
         }
         catch (...)
@@ -71,12 +56,12 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
         }
     }
 
-    HRESULT __stdcall get_SystemProductName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SystemManufacturer(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SystemProductName());
+            *value = detach_abi(this->shim().SystemManufacturer());
             return S_OK;
         }
         catch (...)
@@ -86,12 +71,27 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
         }
     }
 
-    HRESULT __stdcall get_SystemSku(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SystemProductName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SystemSku());
+            *value = detach_abi(this->shim().SystemProductName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SystemSku(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SystemSku());
             return S_OK;
         }
         catch (...)
@@ -105,12 +105,12 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
 template <typename D>
 struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation2> : produce_base<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation2>
 {
-    HRESULT __stdcall get_SystemHardwareVersion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SystemHardwareVersion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SystemHardwareVersion());
+            *value = detach_abi(this->shim().SystemHardwareVersion());
             return S_OK;
         }
         catch (...)
@@ -120,12 +120,12 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
         }
     }
 
-    HRESULT __stdcall get_SystemFirmwareVersion(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SystemFirmwareVersion(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SystemFirmwareVersion());
+            *value = detach_abi(this->shim().SystemFirmwareVersion());
             return S_OK;
         }
         catch (...)
@@ -150,49 +150,49 @@ template <typename D> GUID impl_IEasClientDeviceInformation<D>::Id() const
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::OperatingSystem() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_OperatingSystem(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_OperatingSystem(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_FriendlyName(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_FriendlyName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::SystemManufacturer() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_SystemManufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_SystemManufacturer(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::SystemProductName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_SystemProductName(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_SystemProductName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::SystemSku() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_SystemSku(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_SystemSku(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation2<D>::SystemHardwareVersion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEasClientDeviceInformation2)->get_SystemHardwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation2)->get_SystemHardwareVersion(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation2<D>::SystemFirmwareVersion() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IEasClientDeviceInformation2)->get_SystemFirmwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation2)->get_SystemFirmwareVersion(put_abi(value)));
     return value;
 }
 

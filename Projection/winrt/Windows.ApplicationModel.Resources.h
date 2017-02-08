@@ -14,12 +14,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoader>
 {
-    HRESULT __stdcall abi_GetString(abi_arg_in<hstring> resource, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetString(impl::abi_arg_in<hstring> resource, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetString(*reinterpret_cast<const hstring *>(&resource)));
+            *value = detach_abi(this->shim().GetString(*reinterpret_cast<const hstring *>(&resource)));
             return S_OK;
         }
         catch (...)
@@ -33,12 +33,12 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader> : produ
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader2> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoader2>
 {
-    HRESULT __stdcall abi_GetStringForUri(abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetStringForUri(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetStringForUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *value = detach_abi(this->shim().GetStringForUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -52,12 +52,12 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader2> : prod
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderFactory> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoaderFactory>
 {
-    HRESULT __stdcall abi_CreateResourceLoaderByName(abi_arg_in<hstring> name, abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
+    HRESULT __stdcall abi_CreateResourceLoaderByName(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *loader = detach(this->shim().CreateResourceLoaderByName(*reinterpret_cast<const hstring *>(&name)));
+            *loader = detach_abi(this->shim().CreateResourceLoaderByName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -71,12 +71,12 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderFactory> 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics>
 {
-    HRESULT __stdcall abi_GetStringForReference(abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetStringForReference(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetStringForReference(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            *value = detach_abi(this->shim().GetStringForReference(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
         catch (...)
@@ -90,12 +90,12 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics> 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
 {
-    HRESULT __stdcall abi_GetForCurrentView(abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
+    HRESULT __stdcall abi_GetForCurrentView(impl::abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *loader = detach(this->shim().GetForCurrentView());
+            *loader = detach_abi(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -105,12 +105,12 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
         }
     }
 
-    HRESULT __stdcall abi_GetForCurrentViewWithName(abi_arg_in<hstring> name, abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
+    HRESULT __stdcall abi_GetForCurrentViewWithName(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *loader = detach(this->shim().GetForCurrentView(*reinterpret_cast<const hstring *>(&name)));
+            *loader = detach_abi(this->shim().GetForCurrentView(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -120,12 +120,12 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
         }
     }
 
-    HRESULT __stdcall abi_GetForViewIndependentUse(abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
+    HRESULT __stdcall abi_GetForViewIndependentUse(impl::abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *loader = detach(this->shim().GetForViewIndependentUse());
+            *loader = detach_abi(this->shim().GetForViewIndependentUse());
             return S_OK;
         }
         catch (...)
@@ -135,12 +135,12 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
         }
     }
 
-    HRESULT __stdcall abi_GetForViewIndependentUseWithName(abi_arg_in<hstring> name, abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
+    HRESULT __stdcall abi_GetForViewIndependentUseWithName(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::ApplicationModel::Resources::IResourceLoader> loader) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *loader = detach(this->shim().GetForViewIndependentUse(*reinterpret_cast<const hstring *>(&name)));
+            *loader = detach_abi(this->shim().GetForViewIndependentUse(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
         catch (...)
@@ -158,56 +158,56 @@ namespace Windows::ApplicationModel::Resources {
 template <typename D> hstring impl_IResourceLoader<D>::GetString(hstring_view resource) const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IResourceLoader)->abi_GetString(get(resource), put(value)));
+    check_hresult(WINRT_SHIM(IResourceLoader)->abi_GetString(get_abi(resource), put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IResourceLoader2<D>::GetStringForUri(const Windows::Foundation::Uri & uri) const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IResourceLoader2)->abi_GetStringForUri(get(uri), put(value)));
+    check_hresult(WINRT_SHIM(IResourceLoader2)->abi_GetStringForUri(get_abi(uri), put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IResourceLoaderStatics<D>::GetStringForReference(const Windows::Foundation::Uri & uri) const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IResourceLoaderStatics)->abi_GetStringForReference(get(uri), put(value)));
+    check_hresult(WINRT_SHIM(IResourceLoaderStatics)->abi_GetStringForReference(get_abi(uri), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForCurrentView() const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForCurrentView(put(loader)));
+    check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForCurrentView(put_abi(loader)));
     return loader;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForCurrentView(hstring_view name) const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForCurrentViewWithName(get(name), put(loader)));
+    check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForCurrentViewWithName(get_abi(name), put_abi(loader)));
     return loader;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForViewIndependentUse() const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForViewIndependentUse(put(loader)));
+    check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForViewIndependentUse(put_abi(loader)));
     return loader;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForViewIndependentUse(hstring_view name) const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForViewIndependentUseWithName(get(name), put(loader)));
+    check_hresult(WINRT_SHIM(IResourceLoaderStatics2)->abi_GetForViewIndependentUseWithName(get_abi(name), put_abi(loader)));
     return loader;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderFactory<D>::CreateResourceLoaderByName(hstring_view name) const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(WINRT_SHIM(IResourceLoaderFactory)->abi_CreateResourceLoaderByName(get(name), put(loader)));
+    check_hresult(WINRT_SHIM(IResourceLoaderFactory)->abi_CreateResourceLoaderByName(get_abi(name), put_abi(loader)));
     return loader;
 }
 

@@ -92,7 +92,7 @@ TEST_CASE("non-agile event, basic add/remove/invoke")
     BasicTest<non_agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
 }
 
-struct event_traits : handle_traits<HANDLE>
+struct event_traits : impl::handle_traits<HANDLE>
 {
     static void close(type value) noexcept
     {
@@ -114,9 +114,9 @@ struct BlockingHandler
     {
         m_state = Executing;
 
-        SetEvent(get(m_invoking));
+        SetEvent(get_abi(m_invoking));
 
-        DWORD wait_result = WaitForSingleObject(get(m_continue), max_sleep);
+        DWORD wait_result = WaitForSingleObject(get_abi(m_continue), max_sleep);
 
         if (wait_result != WAIT_OBJECT_0)
         {
@@ -127,13 +127,13 @@ struct BlockingHandler
             m_state = OK;
         }
 
-        SetEvent(get(m_invoke_result_set));
+        SetEvent(get_abi(m_invoke_result_set));
     }
 
     bool finish_invoking()
     {
-        SetEvent(get(m_continue));
-        DWORD wait_result = WaitForSingleObject(get(m_invoke_result_set), max_sleep);
+        SetEvent(get_abi(m_continue));
+        DWORD wait_result = WaitForSingleObject(get_abi(m_invoke_result_set), max_sleep);
 
         if (wait_result == WAIT_OBJECT_0)
         {
@@ -145,7 +145,7 @@ struct BlockingHandler
 
     bool block_until_invoking()
     {
-        DWORD wait_result = WaitForSingleObject(get(m_invoking), max_sleep);
+        DWORD wait_result = WaitForSingleObject(get_abi(m_invoking), max_sleep);
      
         if (wait_result == WAIT_OBJECT_0)
         {
@@ -158,9 +158,9 @@ struct BlockingHandler
     void reset()
     {
         m_state = NotStarted;
-        ResetEvent(get(m_invoking));
-        ResetEvent(get(m_continue));
-        ResetEvent(get(m_invoke_result_set));
+        ResetEvent(get_abi(m_invoking));
+        ResetEvent(get_abi(m_continue));
+        ResetEvent(get_abi(m_invoke_result_set));
     }
 
     HandlerState get_state() const
@@ -169,9 +169,9 @@ struct BlockingHandler
     }
 
 private:
-    handle<event_traits> m_continue = CreateEvent(nullptr, false, false, nullptr);
-    handle<event_traits> m_invoking = CreateEvent(nullptr, false, false, nullptr);
-    handle<event_traits> m_invoke_result_set = CreateEvent(nullptr, false, false, nullptr);
+    impl::handle<event_traits> m_continue = CreateEvent(nullptr, false, false, nullptr);
+    impl::handle<event_traits> m_invoking = CreateEvent(nullptr, false, false, nullptr);
+    impl::handle<event_traits> m_invoke_result_set = CreateEvent(nullptr, false, false, nullptr);
     HandlerState m_state{ NotStarted };
 };
 
@@ -203,7 +203,7 @@ void ConcurrentAddTest()
     bool thread3_check_handler2_block = false;
     bool thread3_check_handler2_finished = false;
 
-    handle<event_traits> start_phase_two = CreateEvent(nullptr, false, false, nullptr);
+    impl::handle<event_traits> start_phase_two = CreateEvent(nullptr, false, false, nullptr);
 
     auto invoke_single_handler = ThreadPool::RunAsync([&](auto && ...)
     {
@@ -228,7 +228,7 @@ void ConcurrentAddTest()
 
         blocking_object1.reset();
 
-        SetEvent(get(start_phase_two));
+        SetEvent(get_abi(start_phase_two));
 
         // Invoke both handlers
         test_event(nullptr, nullptr);
@@ -236,7 +236,7 @@ void ConcurrentAddTest()
 
     auto finish_invoking = ThreadPool::RunAsync([&](auto && ...)
     {
-        thread3_block_result = WaitForSingleObject(get(start_phase_two), max_sleep);
+        thread3_block_result = WaitForSingleObject(get_abi(start_phase_two), max_sleep);
 
         thread3_check_handler1_block = blocking_object1.block_until_invoking();
         thread3_check_handler1_finished = blocking_object1.finish_invoking();
@@ -303,7 +303,7 @@ void ConcurrentRemoveTest()
     bool thread3_check_handler2_finished = false;
     bool thread3_check_handler2_ok = false;
 
-    handle<event_traits> start_phase_two = CreateEvent(nullptr, false, false, nullptr);
+    impl::handle<event_traits> start_phase_two = CreateEvent(nullptr, false, false, nullptr);
 
     auto invoke_two_handlers = ThreadPool::RunAsync([&](auto && ...)
     {
@@ -333,7 +333,7 @@ void ConcurrentRemoveTest()
         blocking_object1.reset();
         blocking_object2.reset();
 
-        SetEvent(get(start_phase_two));
+        SetEvent(get_abi(start_phase_two));
 
         // Invoke both handlers
         test_event(nullptr, nullptr);
@@ -341,7 +341,7 @@ void ConcurrentRemoveTest()
 
     auto finish_invoking = ThreadPool::RunAsync([&](auto && ...)
     {
-        thread3_block_result = WaitForSingleObject(get(start_phase_two), max_sleep);
+        thread3_block_result = WaitForSingleObject(get_abi(start_phase_two), max_sleep);
 
         thread3_check_handler2_block = blocking_object2.block_until_invoking();
         thread3_check_handler2_finished = blocking_object2.finish_invoking();

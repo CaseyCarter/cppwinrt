@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Devices::Adc::IAdcChannel> : produce_base<D, Windows::Devices::Adc::IAdcChannel>
 {
-    HRESULT __stdcall get_Controller(abi_arg_out<Windows::Devices::Adc::IAdcController> value) noexcept override
+    HRESULT __stdcall get_Controller(impl::abi_arg_out<Windows::Devices::Adc::IAdcController> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Controller());
+            *value = detach_abi(this->shim().Controller());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::Devices::Adc::IAdcChannel> : produce_base<D, Windows:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ReadValue());
+            *result = detach_abi(this->shim().ReadValue());
             return S_OK;
         }
         catch (...)
@@ -50,7 +50,7 @@ struct produce<D, Windows::Devices::Adc::IAdcChannel> : produce_base<D, Windows:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ReadRatio());
+            *result = detach_abi(this->shim().ReadRatio());
             return S_OK;
         }
         catch (...)
@@ -68,7 +68,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ChannelCount());
+            *value = detach_abi(this->shim().ChannelCount());
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ResolutionInBits());
+            *value = detach_abi(this->shim().ResolutionInBits());
             return S_OK;
         }
         catch (...)
@@ -96,7 +96,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinValue());
+            *value = detach_abi(this->shim().MinValue());
             return S_OK;
         }
         catch (...)
@@ -110,7 +110,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxValue());
+            *value = detach_abi(this->shim().MaxValue());
             return S_OK;
         }
         catch (...)
@@ -124,7 +124,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ChannelMode());
+            *value = detach_abi(this->shim().ChannelMode());
             return S_OK;
         }
         catch (...)
@@ -152,7 +152,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsChannelModeSupported(channelMode));
+            *result = detach_abi(this->shim().IsChannelModeSupported(channelMode));
             return S_OK;
         }
         catch (...)
@@ -161,12 +161,12 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_OpenChannel(int32_t channelNumber, abi_arg_out<Windows::Devices::Adc::IAdcChannel> result) noexcept override
+    HRESULT __stdcall abi_OpenChannel(int32_t channelNumber, impl::abi_arg_out<Windows::Devices::Adc::IAdcChannel> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().OpenChannel(channelNumber));
+            *result = detach_abi(this->shim().OpenChannel(channelNumber));
             return S_OK;
         }
         catch (...)
@@ -180,12 +180,12 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::Devices::Adc::IAdcControllerStatics> : produce_base<D, Windows::Devices::Adc::IAdcControllerStatics>
 {
-    HRESULT __stdcall abi_GetControllersAsync(abi_arg_in<Windows::Devices::Adc::Provider::IAdcProvider> provider, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::AdcController>>> operation) noexcept override
+    HRESULT __stdcall abi_GetControllersAsync(impl::abi_arg_in<Windows::Devices::Adc::Provider::IAdcProvider> provider, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::AdcController>>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Adc::Provider::IAdcProvider *>(&provider)));
+            *operation = detach_abi(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Adc::Provider::IAdcProvider *>(&provider)));
             return S_OK;
         }
         catch (...)
@@ -199,12 +199,12 @@ struct produce<D, Windows::Devices::Adc::IAdcControllerStatics> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Devices::Adc::IAdcControllerStatics2> : produce_base<D, Windows::Devices::Adc::IAdcControllerStatics2>
 {
-    HRESULT __stdcall abi_GetDefaultAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController>> operation) noexcept override
+    HRESULT __stdcall abi_GetDefaultAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetDefaultAsync());
+            *operation = detach_abi(this->shim().GetDefaultAsync());
             return S_OK;
         }
         catch (...)
@@ -269,28 +269,28 @@ template <typename D> bool impl_IAdcController<D>::IsChannelModeSupported(Window
 template <typename D> Windows::Devices::Adc::AdcChannel impl_IAdcController<D>::OpenChannel(int32_t channelNumber) const
 {
     Windows::Devices::Adc::AdcChannel result { nullptr };
-    check_hresult(WINRT_SHIM(IAdcController)->abi_OpenChannel(channelNumber, put(result)));
+    check_hresult(WINRT_SHIM(IAdcController)->abi_OpenChannel(channelNumber, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::AdcController>> impl_IAdcControllerStatics<D>::GetControllersAsync(const Windows::Devices::Adc::Provider::IAdcProvider & provider) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::AdcController>> operation;
-    check_hresult(WINRT_SHIM(IAdcControllerStatics)->abi_GetControllersAsync(get(provider), put(operation)));
+    check_hresult(WINRT_SHIM(IAdcControllerStatics)->abi_GetControllersAsync(get_abi(provider), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController> impl_IAdcControllerStatics2<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController> operation;
-    check_hresult(WINRT_SHIM(IAdcControllerStatics2)->abi_GetDefaultAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IAdcControllerStatics2)->abi_GetDefaultAsync(put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::Adc::AdcController impl_IAdcChannel<D>::Controller() const
 {
     Windows::Devices::Adc::AdcController value { nullptr };
-    check_hresult(WINRT_SHIM(IAdcChannel)->get_Controller(put(value)));
+    check_hresult(WINRT_SHIM(IAdcChannel)->get_Controller(put_abi(value)));
     return value;
 }
 

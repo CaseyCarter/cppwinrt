@@ -15,7 +15,7 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterStatics> : produce_base<D, Windows::Storage::Provider::ICachedFileUpdaterStatics>
 {
-    HRESULT __stdcall abi_SetUpdateInformation(abi_arg_in<Windows::Storage::IStorageFile> file, abi_arg_in<hstring> contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) noexcept override
+    HRESULT __stdcall abi_SetUpdateInformation(impl::abi_arg_in<Windows::Storage::IStorageFile> file, impl::abi_arg_in<hstring> contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) noexcept override
     {
         try
         {
@@ -33,12 +33,12 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterStatics> : produ
 template <typename D>
 struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_base<D, Windows::Storage::Provider::ICachedFileUpdaterUI>
 {
-    HRESULT __stdcall get_Title(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Title(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Title());
+            *value = detach_abi(this->shim().Title());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
         }
     }
 
-    HRESULT __stdcall put_Title(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Title(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -67,7 +67,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UpdateTarget());
+            *value = detach_abi(this->shim().UpdateTarget());
             return S_OK;
         }
         catch (...)
@@ -76,12 +76,12 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
         }
     }
 
-    HRESULT __stdcall add_FileUpdateRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FileUpdateRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().FileUpdateRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().FileUpdateRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -104,12 +104,12 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
         }
     }
 
-    HRESULT __stdcall add_UIRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_UIRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().UIRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().UIRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -137,7 +137,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UIStatus());
+            *value = detach_abi(this->shim().UIStatus());
             return S_OK;
         }
         catch (...)
@@ -150,12 +150,12 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
 template <typename D>
 struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI2> : produce_base<D, Windows::Storage::Provider::ICachedFileUpdaterUI2>
 {
-    HRESULT __stdcall get_UpdateRequest(abi_arg_out<Windows::Storage::Provider::IFileUpdateRequest> value) noexcept override
+    HRESULT __stdcall get_UpdateRequest(impl::abi_arg_out<Windows::Storage::Provider::IFileUpdateRequest> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UpdateRequest());
+            *value = detach_abi(this->shim().UpdateRequest());
             return S_OK;
         }
         catch (...)
@@ -165,12 +165,12 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI2> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Storage::Provider::IFileUpdateRequestDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Storage::Provider::IFileUpdateRequestDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -184,12 +184,12 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI2> : produce_b
 template <typename D>
 struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base<D, Windows::Storage::Provider::IFileUpdateRequest>
 {
-    HRESULT __stdcall get_ContentId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ContentId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ContentId());
+            *value = detach_abi(this->shim().ContentId());
             return S_OK;
         }
         catch (...)
@@ -199,12 +199,12 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
         }
     }
 
-    HRESULT __stdcall get_File(abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
+    HRESULT __stdcall get_File(impl::abi_arg_out<Windows::Storage::IStorageFile> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().File());
+            *value = detach_abi(this->shim().File());
             return S_OK;
         }
         catch (...)
@@ -219,7 +219,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -242,12 +242,12 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Storage::Provider::IFileUpdateRequestDeferral> value) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Storage::Provider::IFileUpdateRequestDeferral> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeferral());
+            *value = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_UpdateLocalFile(abi_arg_in<Windows::Storage::IStorageFile> value) noexcept override
+    HRESULT __stdcall abi_UpdateLocalFile(impl::abi_arg_in<Windows::Storage::IStorageFile> value) noexcept override
     {
         try
         {
@@ -275,12 +275,12 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
 template <typename D>
 struct produce<D, Windows::Storage::Provider::IFileUpdateRequest2> : produce_base<D, Windows::Storage::Provider::IFileUpdateRequest2>
 {
-    HRESULT __stdcall get_UserInputNeededMessage(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_UserInputNeededMessage(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UserInputNeededMessage());
+            *value = detach_abi(this->shim().UserInputNeededMessage());
             return S_OK;
         }
         catch (...)
@@ -290,7 +290,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest2> : produce_bas
         }
     }
 
-    HRESULT __stdcall put_UserInputNeededMessage(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_UserInputNeededMessage(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -326,12 +326,12 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequestDeferral> : prod
 template <typename D>
 struct produce<D, Windows::Storage::Provider::IFileUpdateRequestedEventArgs> : produce_base<D, Windows::Storage::Provider::IFileUpdateRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(abi_arg_out<Windows::Storage::Provider::IFileUpdateRequest> value) noexcept override
+    HRESULT __stdcall get_Request(impl::abi_arg_out<Windows::Storage::Provider::IFileUpdateRequest> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Request());
+            *value = detach_abi(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -349,13 +349,13 @@ namespace Windows::Storage::Provider {
 template <typename D> hstring impl_ICachedFileUpdaterUI<D>::Title() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->get_Title(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICachedFileUpdaterUI<D>::Title(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->put_Title(get_abi(value)));
 }
 
 template <typename D> Windows::Storage::Provider::CachedFileTarget impl_ICachedFileUpdaterUI<D>::UpdateTarget() const
@@ -368,7 +368,7 @@ template <typename D> Windows::Storage::Provider::CachedFileTarget impl_ICachedF
 template <typename D> event_token impl_ICachedFileUpdaterUI<D>::FileUpdateRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->add_FileUpdateRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->add_FileUpdateRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -385,7 +385,7 @@ template <typename D> void impl_ICachedFileUpdaterUI<D>::FileUpdateRequested(eve
 template <typename D> event_token impl_ICachedFileUpdaterUI<D>::UIRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->add_UIRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->add_UIRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -409,21 +409,21 @@ template <typename D> Windows::Storage::Provider::UIStatus impl_ICachedFileUpdat
 template <typename D> Windows::Storage::Provider::FileUpdateRequest impl_IFileUpdateRequestedEventArgs<D>::Request() const
 {
     Windows::Storage::Provider::FileUpdateRequest value { nullptr };
-    check_hresult(WINRT_SHIM(IFileUpdateRequestedEventArgs)->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequestedEventArgs)->get_Request(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileUpdateRequest<D>::ContentId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IFileUpdateRequest)->get_ContentId(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->get_ContentId(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFile impl_IFileUpdateRequest<D>::File() const
 {
     Windows::Storage::StorageFile value { nullptr };
-    check_hresult(WINRT_SHIM(IFileUpdateRequest)->get_File(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->get_File(put_abi(value)));
     return value;
 }
 
@@ -442,13 +442,13 @@ template <typename D> void impl_IFileUpdateRequest<D>::Status(Windows::Storage::
 template <typename D> Windows::Storage::Provider::FileUpdateRequestDeferral impl_IFileUpdateRequest<D>::GetDeferral() const
 {
     Windows::Storage::Provider::FileUpdateRequestDeferral value { nullptr };
-    check_hresult(WINRT_SHIM(IFileUpdateRequest)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFileUpdateRequest<D>::UpdateLocalFile(const Windows::Storage::IStorageFile & value) const
 {
-    check_hresult(WINRT_SHIM(IFileUpdateRequest)->abi_UpdateLocalFile(get(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->abi_UpdateLocalFile(get_abi(value)));
 }
 
 template <typename D> void impl_IFileUpdateRequestDeferral<D>::Complete() const
@@ -459,32 +459,32 @@ template <typename D> void impl_IFileUpdateRequestDeferral<D>::Complete() const
 template <typename D> Windows::Storage::Provider::FileUpdateRequest impl_ICachedFileUpdaterUI2<D>::UpdateRequest() const
 {
     Windows::Storage::Provider::FileUpdateRequest value { nullptr };
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI2)->get_UpdateRequest(put(value)));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI2)->get_UpdateRequest(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Provider::FileUpdateRequestDeferral impl_ICachedFileUpdaterUI2<D>::GetDeferral() const
 {
     Windows::Storage::Provider::FileUpdateRequestDeferral value { nullptr };
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI2)->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI2)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileUpdateRequest2<D>::UserInputNeededMessage() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IFileUpdateRequest2)->get_UserInputNeededMessage(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest2)->get_UserInputNeededMessage(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFileUpdateRequest2<D>::UserInputNeededMessage(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IFileUpdateRequest2)->put_UserInputNeededMessage(get(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest2)->put_UserInputNeededMessage(get_abi(value)));
 }
 
 template <typename D> void impl_ICachedFileUpdaterStatics<D>::SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_view contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const
 {
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterStatics)->abi_SetUpdateInformation(get(file), get(contentId), readMode, writeMode, options));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterStatics)->abi_SetUpdateInformation(get_abi(file), get_abi(contentId), readMode, writeMode, options));
 }
 
 inline void CachedFileUpdater::SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_view contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options)

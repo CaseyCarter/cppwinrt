@@ -13,7 +13,7 @@ template <typename H> struct impl_BackClickEventHandler : implements<impl_BackCl
 {
     impl_BackClickEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::IBackClickEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::IBackClickEventArgs> e) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_CalendarViewDayItemChangingEventHandler : impl
 {
     impl_CalendarViewDayItemChangingEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::Xaml::Controls::ICalendarView> sender, abi_arg_in<Windows::UI::Xaml::Controls::ICalendarViewDayItemChangingEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::Xaml::Controls::ICalendarView> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::ICalendarViewDayItemChangingEventArgs> e) noexcept override
     {
         try
         {
@@ -49,7 +49,7 @@ template <typename H> struct impl_CleanUpVirtualizedItemEventHandler : implement
 {
     impl_CleanUpVirtualizedItemEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs> e) noexcept override
     {
         try
         {
@@ -67,7 +67,7 @@ template <typename H> struct impl_ContextMenuOpeningEventHandler : implements<im
 {
     impl_ContextMenuOpeningEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::IContextMenuEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::IContextMenuEventArgs> e) noexcept override
     {
         try
         {
@@ -85,7 +85,7 @@ template <typename H> struct impl_DragItemsStartingEventHandler : implements<imp
 {
     impl_DragItemsStartingEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs> e) noexcept override
     {
         try
         {
@@ -103,7 +103,7 @@ template <typename H> struct impl_HubSectionHeaderClickEventHandler : implements
 {
     impl_HubSectionHeaderClickEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::IHubSectionHeaderClickEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::IHubSectionHeaderClickEventArgs> e) noexcept override
     {
         try
         {
@@ -121,7 +121,7 @@ template <typename H> struct impl_ItemClickEventHandler : implements<impl_ItemCl
 {
     impl_ItemClickEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::IItemClickEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::IItemClickEventArgs> e) noexcept override
     {
         try
         {
@@ -139,11 +139,11 @@ template <typename H> struct impl_ListViewItemToKeyHandler : implements<impl_Lis
 {
     impl_ListViewItemToKeyHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> item, abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> item, impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
-            *returnValue = detach((*this)(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach_abi((*this)(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -158,11 +158,11 @@ template <typename H> struct impl_ListViewKeyToItemHandler : implements<impl_Lis
 {
     impl_ListViewKeyToItemHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<hstring> key, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::IInspectable>> returnValue) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<hstring> key, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::IInspectable>> returnValue) noexcept override
     {
         try
         {
-            *returnValue = detach((*this)(*reinterpret_cast<const hstring *>(&key)));
+            *returnValue = detach_abi((*this)(*reinterpret_cast<const hstring *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -177,7 +177,7 @@ template <typename H> struct impl_NotifyEventHandler : implements<impl_NotifyEve
 {
     impl_NotifyEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::INotifyEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::INotifyEventArgs> e) noexcept override
     {
         try
         {
@@ -195,7 +195,7 @@ template <typename H> struct impl_SectionsInViewChangedEventHandler : implements
 {
     impl_SectionsInViewChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -213,7 +213,7 @@ template <typename H> struct impl_SelectionChangedEventHandler : implements<impl
 {
     impl_SelectionChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::ISelectionChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::ISelectionChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -231,7 +231,7 @@ template <typename H> struct impl_SemanticZoomViewChangedEventHandler : implemen
 {
     impl_SemanticZoomViewChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -249,7 +249,7 @@ template <typename H> struct impl_TextChangedEventHandler : implements<impl_Text
 {
     impl_TextChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::ITextChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::ITextChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -267,7 +267,7 @@ template <typename H> struct impl_TextControlPasteEventHandler : implements<impl
 {
     impl_TextControlPasteEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::ITextControlPasteEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::ITextControlPasteEventArgs> e) noexcept override
     {
         try
         {
@@ -285,7 +285,7 @@ template <typename H> struct impl_WebViewNavigationFailedEventHandler : implemen
 {
     impl_WebViewNavigationFailedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventArgs> e) noexcept override
     {
         try
         {

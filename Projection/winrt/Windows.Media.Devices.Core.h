@@ -18,12 +18,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_base<D, Windows::Media::Devices::Core::ICameraIntrinsics>
 {
-    HRESULT __stdcall get_FocalLength(abi_arg_out<Windows::Foundation::Numerics::float2> value) noexcept override
+    HRESULT __stdcall get_FocalLength(impl::abi_arg_out<Windows::Foundation::Numerics::float2> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FocalLength());
+            *value = detach_abi(this->shim().FocalLength());
             return S_OK;
         }
         catch (...)
@@ -32,12 +32,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_PrincipalPoint(abi_arg_out<Windows::Foundation::Numerics::float2> value) noexcept override
+    HRESULT __stdcall get_PrincipalPoint(impl::abi_arg_out<Windows::Foundation::Numerics::float2> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PrincipalPoint());
+            *value = detach_abi(this->shim().PrincipalPoint());
             return S_OK;
         }
         catch (...)
@@ -46,12 +46,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_RadialDistortion(abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    HRESULT __stdcall get_RadialDistortion(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RadialDistortion());
+            *value = detach_abi(this->shim().RadialDistortion());
             return S_OK;
         }
         catch (...)
@@ -60,12 +60,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_TangentialDistortion(abi_arg_out<Windows::Foundation::Numerics::float2> value) noexcept override
+    HRESULT __stdcall get_TangentialDistortion(impl::abi_arg_out<Windows::Foundation::Numerics::float2> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TangentialDistortion());
+            *value = detach_abi(this->shim().TangentialDistortion());
             return S_OK;
         }
         catch (...)
@@ -79,7 +79,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ImageWidth());
+            *value = detach_abi(this->shim().ImageWidth());
             return S_OK;
         }
         catch (...)
@@ -93,7 +93,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ImageHeight());
+            *value = detach_abi(this->shim().ImageHeight());
             return S_OK;
         }
         catch (...)
@@ -102,12 +102,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_ProjectOntoFrame(abi_arg_in<Windows::Foundation::Numerics::float3> coordinate, abi_arg_out<Windows::Foundation::Point> result) noexcept override
+    HRESULT __stdcall abi_ProjectOntoFrame(impl::abi_arg_in<Windows::Foundation::Numerics::float3> coordinate, impl::abi_arg_out<Windows::Foundation::Point> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ProjectOntoFrame(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&coordinate)));
+            *result = detach_abi(this->shim().ProjectOntoFrame(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&coordinate)));
             return S_OK;
         }
         catch (...)
@@ -116,12 +116,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_UnprojectAtUnitDepth(abi_arg_in<Windows::Foundation::Point> pixelCoordinate, abi_arg_out<Windows::Foundation::Numerics::float2> result) noexcept override
+    HRESULT __stdcall abi_UnprojectAtUnitDepth(impl::abi_arg_in<Windows::Foundation::Point> pixelCoordinate, impl::abi_arg_out<Windows::Foundation::Numerics::float2> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().UnprojectAtUnitDepth(*reinterpret_cast<const Windows::Foundation::Point *>(&pixelCoordinate)));
+            *result = detach_abi(this->shim().UnprojectAtUnitDepth(*reinterpret_cast<const Windows::Foundation::Point *>(&pixelCoordinate)));
             return S_OK;
         }
         catch (...)
@@ -130,7 +130,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_ProjectManyOntoFrame(uint32_t __coordinatesSize, abi_arg_in<Windows::Foundation::Numerics::float3> * coordinates, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Point> results) noexcept override
+    HRESULT __stdcall abi_ProjectManyOntoFrame(uint32_t __coordinatesSize, impl::abi_arg_in<Windows::Foundation::Numerics::float3> * coordinates, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Point> results) noexcept override
     {
         try
         {
@@ -144,7 +144,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
         }
     }
 
-    HRESULT __stdcall abi_UnprojectPixelsAtUnitDepth(uint32_t __pixelCoordinatesSize, abi_arg_in<Windows::Foundation::Point> * pixelCoordinates, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Numerics::float2> results) noexcept override
+    HRESULT __stdcall abi_UnprojectPixelsAtUnitDepth(uint32_t __pixelCoordinatesSize, impl::abi_arg_in<Windows::Foundation::Point> * pixelCoordinates, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Numerics::float2> results) noexcept override
     {
         try
         {
@@ -162,12 +162,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_base<D, Windows::Media::Devices::Core::ICameraIntrinsics2>
 {
-    HRESULT __stdcall get_UndistortedProjectionTransform(abi_arg_out<Windows::Foundation::Numerics::float4x4> value) noexcept override
+    HRESULT __stdcall get_UndistortedProjectionTransform(impl::abi_arg_out<Windows::Foundation::Numerics::float4x4> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UndistortedProjectionTransform());
+            *value = detach_abi(this->shim().UndistortedProjectionTransform());
             return S_OK;
         }
         catch (...)
@@ -176,12 +176,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_DistortPoint(abi_arg_in<Windows::Foundation::Point> input, abi_arg_out<Windows::Foundation::Point> result) noexcept override
+    HRESULT __stdcall abi_DistortPoint(impl::abi_arg_in<Windows::Foundation::Point> input, impl::abi_arg_out<Windows::Foundation::Point> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().DistortPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&input)));
+            *result = detach_abi(this->shim().DistortPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -190,7 +190,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_DistortPoints(uint32_t __inputsSize, abi_arg_in<Windows::Foundation::Point> * inputs, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Point> results) noexcept override
+    HRESULT __stdcall abi_DistortPoints(uint32_t __inputsSize, impl::abi_arg_in<Windows::Foundation::Point> * inputs, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Point> results) noexcept override
     {
         try
         {
@@ -204,12 +204,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_UndistortPoint(abi_arg_in<Windows::Foundation::Point> input, abi_arg_out<Windows::Foundation::Point> result) noexcept override
+    HRESULT __stdcall abi_UndistortPoint(impl::abi_arg_in<Windows::Foundation::Point> input, impl::abi_arg_out<Windows::Foundation::Point> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().UndistortPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&input)));
+            *result = detach_abi(this->shim().UndistortPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&input)));
             return S_OK;
         }
         catch (...)
@@ -218,7 +218,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_UndistortPoints(uint32_t __inputsSize, abi_arg_in<Windows::Foundation::Point> * inputs, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Point> results) noexcept override
+    HRESULT __stdcall abi_UndistortPoints(uint32_t __inputsSize, impl::abi_arg_in<Windows::Foundation::Point> * inputs, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Point> results) noexcept override
     {
         try
         {
@@ -236,12 +236,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsicsFactory> : produce_base<D, Windows::Media::Devices::Core::ICameraIntrinsicsFactory>
 {
-    HRESULT __stdcall abi_Create(abi_arg_in<Windows::Foundation::Numerics::float2> focalLength, abi_arg_in<Windows::Foundation::Numerics::float2> principalPoint, abi_arg_in<Windows::Foundation::Numerics::float3> radialDistortion, abi_arg_in<Windows::Foundation::Numerics::float2> tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight, abi_arg_out<Windows::Media::Devices::Core::ICameraIntrinsics> result) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Foundation::Numerics::float2> focalLength, impl::abi_arg_in<Windows::Foundation::Numerics::float2> principalPoint, impl::abi_arg_in<Windows::Foundation::Numerics::float3> radialDistortion, impl::abi_arg_in<Windows::Foundation::Numerics::float2> tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight, impl::abi_arg_out<Windows::Media::Devices::Core::ICameraIntrinsics> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&focalLength), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&principalPoint), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&radialDistortion), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&tangentialDistortion), imageWidth, imageHeight));
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&focalLength), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&principalPoint), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&radialDistortion), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&tangentialDistortion), imageWidth, imageHeight));
             return S_OK;
         }
         catch (...)
@@ -255,12 +255,12 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsicsFactory> : pro
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper> : produce_base<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper>
 {
-    HRESULT __stdcall abi_UnprojectPoint(abi_arg_in<Windows::Foundation::Point> sourcePoint, abi_arg_in<Windows::Perception::Spatial::ISpatialCoordinateSystem> targetCoordinateSystem, abi_arg_out<Windows::Foundation::Numerics::float3> result) noexcept override
+    HRESULT __stdcall abi_UnprojectPoint(impl::abi_arg_in<Windows::Foundation::Point> sourcePoint, impl::abi_arg_in<Windows::Perception::Spatial::ISpatialCoordinateSystem> targetCoordinateSystem, impl::abi_arg_out<Windows::Foundation::Numerics::float3> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().UnprojectPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePoint), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&targetCoordinateSystem)));
+            *result = detach_abi(this->shim().UnprojectPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePoint), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&targetCoordinateSystem)));
             return S_OK;
         }
         catch (...)
@@ -269,7 +269,7 @@ struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMappe
         }
     }
 
-    HRESULT __stdcall abi_UnprojectPoints(uint32_t __sourcePointsSize, abi_arg_in<Windows::Foundation::Point> * sourcePoints, abi_arg_in<Windows::Perception::Spatial::ISpatialCoordinateSystem> targetCoordinateSystem, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Numerics::float3> results) noexcept override
+    HRESULT __stdcall abi_UnprojectPoints(uint32_t __sourcePointsSize, impl::abi_arg_in<Windows::Foundation::Point> * sourcePoints, impl::abi_arg_in<Windows::Perception::Spatial::ISpatialCoordinateSystem> targetCoordinateSystem, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Numerics::float3> results) noexcept override
     {
         try
         {
@@ -283,12 +283,12 @@ struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMappe
         }
     }
 
-    HRESULT __stdcall abi_MapPoint(abi_arg_in<Windows::Foundation::Point> sourcePoint, abi_arg_in<Windows::Perception::Spatial::ISpatialCoordinateSystem> targetCoordinateSystem, abi_arg_in<Windows::Media::Devices::Core::ICameraIntrinsics> targetCameraIntrinsics, abi_arg_out<Windows::Foundation::Point> result) noexcept override
+    HRESULT __stdcall abi_MapPoint(impl::abi_arg_in<Windows::Foundation::Point> sourcePoint, impl::abi_arg_in<Windows::Perception::Spatial::ISpatialCoordinateSystem> targetCoordinateSystem, impl::abi_arg_in<Windows::Media::Devices::Core::ICameraIntrinsics> targetCameraIntrinsics, impl::abi_arg_out<Windows::Foundation::Point> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().MapPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePoint), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&targetCoordinateSystem), *reinterpret_cast<const Windows::Media::Devices::Core::CameraIntrinsics *>(&targetCameraIntrinsics)));
+            *result = detach_abi(this->shim().MapPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePoint), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&targetCoordinateSystem), *reinterpret_cast<const Windows::Media::Devices::Core::CameraIntrinsics *>(&targetCameraIntrinsics)));
             return S_OK;
         }
         catch (...)
@@ -297,7 +297,7 @@ struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMappe
         }
     }
 
-    HRESULT __stdcall abi_MapPoints(uint32_t __sourcePointsSize, abi_arg_in<Windows::Foundation::Point> * sourcePoints, abi_arg_in<Windows::Perception::Spatial::ISpatialCoordinateSystem> targetCoordinateSystem, abi_arg_in<Windows::Media::Devices::Core::ICameraIntrinsics> targetCameraIntrinsics, uint32_t __resultsSize, abi_arg_out<Windows::Foundation::Point> results) noexcept override
+    HRESULT __stdcall abi_MapPoints(uint32_t __sourcePointsSize, impl::abi_arg_in<Windows::Foundation::Point> * sourcePoints, impl::abi_arg_in<Windows::Perception::Spatial::ISpatialCoordinateSystem> targetCoordinateSystem, impl::abi_arg_in<Windows::Media::Devices::Core::ICameraIntrinsics> targetCameraIntrinsics, uint32_t __resultsSize, impl::abi_arg_out<Windows::Foundation::Point> results) noexcept override
     {
         try
         {
@@ -315,12 +315,12 @@ struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMappe
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : produce_base<D, Windows::Media::Devices::Core::IFrameControlCapabilities>
 {
-    HRESULT __stdcall get_Exposure(abi_arg_out<Windows::Media::Devices::Core::IFrameExposureCapabilities> value) noexcept override
+    HRESULT __stdcall get_Exposure(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameExposureCapabilities> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Exposure());
+            *value = detach_abi(this->shim().Exposure());
             return S_OK;
         }
         catch (...)
@@ -330,12 +330,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
         }
     }
 
-    HRESULT __stdcall get_ExposureCompensation(abi_arg_out<Windows::Media::Devices::Core::IFrameExposureCompensationCapabilities> value) noexcept override
+    HRESULT __stdcall get_ExposureCompensation(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameExposureCompensationCapabilities> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExposureCompensation());
+            *value = detach_abi(this->shim().ExposureCompensation());
             return S_OK;
         }
         catch (...)
@@ -345,12 +345,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
         }
     }
 
-    HRESULT __stdcall get_IsoSpeed(abi_arg_out<Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> value) noexcept override
+    HRESULT __stdcall get_IsoSpeed(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsoSpeed());
+            *value = detach_abi(this->shim().IsoSpeed());
             return S_OK;
         }
         catch (...)
@@ -360,12 +360,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
         }
     }
 
-    HRESULT __stdcall get_Focus(abi_arg_out<Windows::Media::Devices::Core::IFrameFocusCapabilities> value) noexcept override
+    HRESULT __stdcall get_Focus(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameFocusCapabilities> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Focus());
+            *value = detach_abi(this->shim().Focus());
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PhotoConfirmationSupported());
+            *value = detach_abi(this->shim().PhotoConfirmationSupported());
             return S_OK;
         }
         catch (...)
@@ -393,12 +393,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities2> : produce_base<D, Windows::Media::Devices::Core::IFrameControlCapabilities2>
 {
-    HRESULT __stdcall get_Flash(abi_arg_out<Windows::Media::Devices::Core::IFrameFlashCapabilities> value) noexcept override
+    HRESULT __stdcall get_Flash(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameFlashCapabilities> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Flash());
+            *value = detach_abi(this->shim().Flash());
             return S_OK;
         }
         catch (...)
@@ -412,12 +412,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities2> : p
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_base<D, Windows::Media::Devices::Core::IFrameController>
 {
-    HRESULT __stdcall get_ExposureControl(abi_arg_out<Windows::Media::Devices::Core::IFrameExposureControl> value) noexcept override
+    HRESULT __stdcall get_ExposureControl(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameExposureControl> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExposureControl());
+            *value = detach_abi(this->shim().ExposureControl());
             return S_OK;
         }
         catch (...)
@@ -427,12 +427,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_ExposureCompensationControl(abi_arg_out<Windows::Media::Devices::Core::IFrameExposureCompensationControl> value) noexcept override
+    HRESULT __stdcall get_ExposureCompensationControl(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameExposureCompensationControl> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExposureCompensationControl());
+            *value = detach_abi(this->shim().ExposureCompensationControl());
             return S_OK;
         }
         catch (...)
@@ -442,12 +442,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_IsoSpeedControl(abi_arg_out<Windows::Media::Devices::Core::IFrameIsoSpeedControl> value) noexcept override
+    HRESULT __stdcall get_IsoSpeedControl(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameIsoSpeedControl> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsoSpeedControl());
+            *value = detach_abi(this->shim().IsoSpeedControl());
             return S_OK;
         }
         catch (...)
@@ -457,12 +457,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_FocusControl(abi_arg_out<Windows::Media::Devices::Core::IFrameFocusControl> value) noexcept override
+    HRESULT __stdcall get_FocusControl(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameFocusControl> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FocusControl());
+            *value = detach_abi(this->shim().FocusControl());
             return S_OK;
         }
         catch (...)
@@ -472,12 +472,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_PhotoConfirmationEnabled(abi_arg_out<Windows::Foundation::IReference<bool>> value) noexcept override
+    HRESULT __stdcall get_PhotoConfirmationEnabled(impl::abi_arg_out<Windows::Foundation::IReference<bool>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PhotoConfirmationEnabled());
+            *value = detach_abi(this->shim().PhotoConfirmationEnabled());
             return S_OK;
         }
         catch (...)
@@ -487,7 +487,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
         }
     }
 
-    HRESULT __stdcall put_PhotoConfirmationEnabled(abi_arg_in<Windows::Foundation::IReference<bool>> value) noexcept override
+    HRESULT __stdcall put_PhotoConfirmationEnabled(impl::abi_arg_in<Windows::Foundation::IReference<bool>> value) noexcept override
     {
         try
         {
@@ -505,12 +505,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameController2> : produce_base<D, Windows::Media::Devices::Core::IFrameController2>
 {
-    HRESULT __stdcall get_FlashControl(abi_arg_out<Windows::Media::Devices::Core::IFrameFlashControl> value) noexcept override
+    HRESULT __stdcall get_FlashControl(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameFlashControl> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FlashControl());
+            *value = detach_abi(this->shim().FlashControl());
             return S_OK;
         }
         catch (...)
@@ -529,7 +529,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCapabilities> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Supported());
+            *value = detach_abi(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -538,12 +538,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCapabilities> : p
         }
     }
 
-    HRESULT __stdcall get_Min(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_Min(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Min());
+            *value = detach_abi(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -552,12 +552,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCapabilities> : p
         }
     }
 
-    HRESULT __stdcall get_Max(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_Max(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Max());
+            *value = detach_abi(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -566,12 +566,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCapabilities> : p
         }
     }
 
-    HRESULT __stdcall get_Step(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_Step(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Step());
+            *value = detach_abi(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -589,7 +589,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapab
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Supported());
+            *value = detach_abi(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -603,7 +603,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapab
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Min());
+            *value = detach_abi(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -617,7 +617,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapab
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Max());
+            *value = detach_abi(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -631,7 +631,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapab
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Step());
+            *value = detach_abi(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -644,12 +644,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapab
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationControl> : produce_base<D, Windows::Media::Devices::Core::IFrameExposureCompensationControl>
 {
-    HRESULT __stdcall get_Value(abi_arg_out<Windows::Foundation::IReference<float>> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Foundation::IReference<float>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -659,7 +659,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationContr
         }
     }
 
-    HRESULT __stdcall put_Value(abi_arg_in<Windows::Foundation::IReference<float>> value) noexcept override
+    HRESULT __stdcall put_Value(impl::abi_arg_in<Windows::Foundation::IReference<float>> value) noexcept override
     {
         try
         {
@@ -682,7 +682,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureControl> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Auto());
+            *value = detach_abi(this->shim().Auto());
             return S_OK;
         }
         catch (...)
@@ -705,12 +705,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureControl> : produc
         }
     }
 
-    HRESULT __stdcall get_Value(abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -720,7 +720,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureControl> : produc
         }
     }
 
-    HRESULT __stdcall put_Value(abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    HRESULT __stdcall put_Value(impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
     {
         try
         {
@@ -743,7 +743,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashCapabilities> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Supported());
+            *value = detach_abi(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -757,7 +757,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashCapabilities> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RedEyeReductionSupported());
+            *value = detach_abi(this->shim().RedEyeReductionSupported());
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashCapabilities> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PowerSupported());
+            *value = detach_abi(this->shim().PowerSupported());
             return S_OK;
         }
         catch (...)
@@ -789,7 +789,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Mode());
+            *value = detach_abi(this->shim().Mode());
             return S_OK;
         }
         catch (...)
@@ -817,7 +817,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Auto());
+            *value = detach_abi(this->shim().Auto());
             return S_OK;
         }
         catch (...)
@@ -845,7 +845,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RedEyeReduction());
+            *value = detach_abi(this->shim().RedEyeReduction());
             return S_OK;
         }
         catch (...)
@@ -873,7 +873,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PowerPercent());
+            *value = detach_abi(this->shim().PowerPercent());
             return S_OK;
         }
         catch (...)
@@ -905,7 +905,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Supported());
+            *value = detach_abi(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -919,7 +919,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Min());
+            *value = detach_abi(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -933,7 +933,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Max());
+            *value = detach_abi(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -947,7 +947,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Step());
+            *value = detach_abi(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -960,12 +960,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : prod
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameFocusControl> : produce_base<D, Windows::Media::Devices::Core::IFrameFocusControl>
 {
-    HRESULT __stdcall get_Value(abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -975,7 +975,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusControl> : produce_b
         }
     }
 
-    HRESULT __stdcall put_Value(abi_arg_in<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    HRESULT __stdcall put_Value(impl::abi_arg_in<Windows::Foundation::IReference<uint32_t>> value) noexcept override
     {
         try
         {
@@ -998,7 +998,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Supported());
+            *value = detach_abi(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -1012,7 +1012,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Min());
+            *value = detach_abi(this->shim().Min());
             return S_OK;
         }
         catch (...)
@@ -1026,7 +1026,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Max());
+            *value = detach_abi(this->shim().Max());
             return S_OK;
         }
         catch (...)
@@ -1040,7 +1040,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Step());
+            *value = detach_abi(this->shim().Step());
             return S_OK;
         }
         catch (...)
@@ -1058,7 +1058,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedControl> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Auto());
+            *value = detach_abi(this->shim().Auto());
             return S_OK;
         }
         catch (...)
@@ -1081,12 +1081,12 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedControl> : produc
         }
     }
 
-    HRESULT __stdcall get_Value(abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1096,7 +1096,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedControl> : produc
         }
     }
 
-    HRESULT __stdcall put_Value(abi_arg_in<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    HRESULT __stdcall put_Value(impl::abi_arg_in<Windows::Foundation::IReference<uint32_t>> value) noexcept override
     {
         try
         {
@@ -1119,7 +1119,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Supported());
+            *value = detach_abi(this->shim().Supported());
             return S_OK;
         }
         catch (...)
@@ -1133,7 +1133,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxPhotosPerSecond());
+            *value = detach_abi(this->shim().MaxPhotosPerSecond());
             return S_OK;
         }
         catch (...)
@@ -1147,7 +1147,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PhotosPerSecondLimit());
+            *value = detach_abi(this->shim().PhotosPerSecondLimit());
             return S_OK;
         }
         catch (...)
@@ -1170,12 +1170,12 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
         }
     }
 
-    HRESULT __stdcall abi_GetHighestConcurrentFrameRate(abi_arg_in<Windows::Media::MediaProperties::IMediaEncodingProperties> captureProperties, abi_arg_out<Windows::Media::MediaProperties::IMediaRatio> value) noexcept override
+    HRESULT __stdcall abi_GetHighestConcurrentFrameRate(impl::abi_arg_in<Windows::Media::MediaProperties::IMediaEncodingProperties> captureProperties, impl::abi_arg_out<Windows::Media::MediaProperties::IMediaRatio> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetHighestConcurrentFrameRate(*reinterpret_cast<const Windows::Media::MediaProperties::IMediaEncodingProperties *>(&captureProperties)));
+            *value = detach_abi(this->shim().GetHighestConcurrentFrameRate(*reinterpret_cast<const Windows::Media::MediaProperties::IMediaEncodingProperties *>(&captureProperties)));
             return S_OK;
         }
         catch (...)
@@ -1185,12 +1185,12 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
         }
     }
 
-    HRESULT __stdcall abi_GetCurrentFrameRate(abi_arg_out<Windows::Media::MediaProperties::IMediaRatio> value) noexcept override
+    HRESULT __stdcall abi_GetCurrentFrameRate(impl::abi_arg_out<Windows::Media::MediaProperties::IMediaRatio> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetCurrentFrameRate());
+            *value = detach_abi(this->shim().GetCurrentFrameRate());
             return S_OK;
         }
         catch (...)
@@ -1200,12 +1200,12 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
         }
     }
 
-    HRESULT __stdcall get_FrameCapabilities(abi_arg_out<Windows::Media::Devices::Core::IFrameControlCapabilities> value) noexcept override
+    HRESULT __stdcall get_FrameCapabilities(impl::abi_arg_out<Windows::Media::Devices::Core::IFrameControlCapabilities> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FrameCapabilities());
+            *value = detach_abi(this->shim().FrameCapabilities());
             return S_OK;
         }
         catch (...)
@@ -1215,12 +1215,12 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
         }
     }
 
-    HRESULT __stdcall get_DesiredFrameControllers(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Media::Devices::Core::FrameController>> items) noexcept override
+    HRESULT __stdcall get_DesiredFrameControllers(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Media::Devices::Core::FrameController>> items) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *items = detach(this->shim().DesiredFrameControllers());
+            *items = detach_abi(this->shim().DesiredFrameControllers());
             return S_OK;
         }
         catch (...)
@@ -1245,21 +1245,21 @@ template <typename D> bool impl_IFrameExposureCapabilities<D>::Supported() const
 template <typename D> Windows::Foundation::TimeSpan impl_IFrameExposureCapabilities<D>::Min() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Min(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Min(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IFrameExposureCapabilities<D>::Max() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Max(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Max(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IFrameExposureCapabilities<D>::Step() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Step(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Step(put_abi(value)));
     return value;
 }
 
@@ -1371,28 +1371,28 @@ template <typename D> bool impl_IFrameFlashCapabilities<D>::PowerSupported() con
 template <typename D> Windows::Media::Devices::Core::FrameExposureCapabilities impl_IFrameControlCapabilities<D>::Exposure() const
 {
     Windows::Media::Devices::Core::FrameExposureCapabilities value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_Exposure(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_Exposure(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameExposureCompensationCapabilities impl_IFrameControlCapabilities<D>::ExposureCompensation() const
 {
     Windows::Media::Devices::Core::FrameExposureCompensationCapabilities value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_ExposureCompensation(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_ExposureCompensation(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameIsoSpeedCapabilities impl_IFrameControlCapabilities<D>::IsoSpeed() const
 {
     Windows::Media::Devices::Core::FrameIsoSpeedCapabilities value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_IsoSpeed(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_IsoSpeed(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameFocusCapabilities impl_IFrameControlCapabilities<D>::Focus() const
 {
     Windows::Media::Devices::Core::FrameFocusCapabilities value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_Focus(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_Focus(put_abi(value)));
     return value;
 }
 
@@ -1406,7 +1406,7 @@ template <typename D> bool impl_IFrameControlCapabilities<D>::PhotoConfirmationS
 template <typename D> Windows::Media::Devices::Core::FrameFlashCapabilities impl_IFrameControlCapabilities2<D>::Flash() const
 {
     Windows::Media::Devices::Core::FrameFlashCapabilities value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameControlCapabilities2)->get_Flash(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities2)->get_Flash(put_abi(value)));
     return value;
 }
 
@@ -1425,25 +1425,25 @@ template <typename D> void impl_IFrameExposureControl<D>::Auto(bool value) const
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IFrameExposureControl<D>::Value() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(WINRT_SHIM(IFrameExposureControl)->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureControl)->get_Value(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameExposureControl<D>::Value(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(WINRT_SHIM(IFrameExposureControl)->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureControl)->put_Value(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<float> impl_IFrameExposureCompensationControl<D>::Value() const
 {
     Windows::Foundation::IReference<float> value;
-    check_hresult(WINRT_SHIM(IFrameExposureCompensationControl)->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCompensationControl)->get_Value(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameExposureCompensationControl<D>::Value(const Windows::Foundation::IReference<float> & value) const
 {
-    check_hresult(WINRT_SHIM(IFrameExposureCompensationControl)->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCompensationControl)->put_Value(get_abi(value)));
 }
 
 template <typename D> bool impl_IFrameIsoSpeedControl<D>::Auto() const
@@ -1461,25 +1461,25 @@ template <typename D> void impl_IFrameIsoSpeedControl<D>::Auto(bool value) const
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IFrameIsoSpeedControl<D>::Value() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(WINRT_SHIM(IFrameIsoSpeedControl)->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedControl)->get_Value(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameIsoSpeedControl<D>::Value(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(WINRT_SHIM(IFrameIsoSpeedControl)->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedControl)->put_Value(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IFrameFocusControl<D>::Value() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(WINRT_SHIM(IFrameFocusControl)->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IFrameFocusControl)->get_Value(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameFocusControl<D>::Value(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(WINRT_SHIM(IFrameFocusControl)->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IFrameFocusControl)->put_Value(get_abi(value)));
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameFlashMode impl_IFrameFlashControl<D>::Mode() const
@@ -1533,47 +1533,47 @@ template <typename D> void impl_IFrameFlashControl<D>::PowerPercent(float value)
 template <typename D> Windows::Media::Devices::Core::FrameExposureControl impl_IFrameController<D>::ExposureControl() const
 {
     Windows::Media::Devices::Core::FrameExposureControl value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameController)->get_ExposureControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_ExposureControl(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameExposureCompensationControl impl_IFrameController<D>::ExposureCompensationControl() const
 {
     Windows::Media::Devices::Core::FrameExposureCompensationControl value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameController)->get_ExposureCompensationControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_ExposureCompensationControl(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameIsoSpeedControl impl_IFrameController<D>::IsoSpeedControl() const
 {
     Windows::Media::Devices::Core::FrameIsoSpeedControl value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameController)->get_IsoSpeedControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_IsoSpeedControl(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameFocusControl impl_IFrameController<D>::FocusControl() const
 {
     Windows::Media::Devices::Core::FrameFocusControl value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameController)->get_FocusControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_FocusControl(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<bool> impl_IFrameController<D>::PhotoConfirmationEnabled() const
 {
     Windows::Foundation::IReference<bool> value;
-    check_hresult(WINRT_SHIM(IFrameController)->get_PhotoConfirmationEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_PhotoConfirmationEnabled(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameController<D>::PhotoConfirmationEnabled(const Windows::Foundation::IReference<bool> & value) const
 {
-    check_hresult(WINRT_SHIM(IFrameController)->put_PhotoConfirmationEnabled(get(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->put_PhotoConfirmationEnabled(get_abi(value)));
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameFlashControl impl_IFrameController2<D>::FlashControl() const
 {
     Windows::Media::Devices::Core::FrameFlashControl value { nullptr };
-    check_hresult(WINRT_SHIM(IFrameController2)->get_FlashControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController2)->get_FlashControl(put_abi(value)));
     return value;
 }
 
@@ -1606,63 +1606,63 @@ template <typename D> void impl_IVariablePhotoSequenceController<D>::PhotosPerSe
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_IVariablePhotoSequenceController<D>::GetHighestConcurrentFrameRate(const Windows::Media::MediaProperties::IMediaEncodingProperties & captureProperties) const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->abi_GetHighestConcurrentFrameRate(get(captureProperties), put(value)));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->abi_GetHighestConcurrentFrameRate(get_abi(captureProperties), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_IVariablePhotoSequenceController<D>::GetCurrentFrameRate() const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->abi_GetCurrentFrameRate(put(value)));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->abi_GetCurrentFrameRate(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameControlCapabilities impl_IVariablePhotoSequenceController<D>::FrameCapabilities() const
 {
     Windows::Media::Devices::Core::FrameControlCapabilities value { nullptr };
-    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->get_FrameCapabilities(put(value)));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->get_FrameCapabilities(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Devices::Core::FrameController> impl_IVariablePhotoSequenceController<D>::DesiredFrameControllers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Devices::Core::FrameController> items;
-    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->get_DesiredFrameControllers(put(items)));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->get_DesiredFrameControllers(put_abi(items)));
     return items;
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_ICameraIntrinsicsFactory<D>::Create(const Windows::Foundation::Numerics::float2 & focalLength, const Windows::Foundation::Numerics::float2 & principalPoint, const Windows::Foundation::Numerics::float3 & radialDistortion, const Windows::Foundation::Numerics::float2 & tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight) const
 {
     Windows::Media::Devices::Core::CameraIntrinsics result { nullptr };
-    check_hresult(WINRT_SHIM(ICameraIntrinsicsFactory)->abi_Create(get(focalLength), get(principalPoint), get(radialDistortion), get(tangentialDistortion), imageWidth, imageHeight, put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsicsFactory)->abi_Create(get_abi(focalLength), get_abi(principalPoint), get_abi(radialDistortion), get_abi(tangentialDistortion), imageWidth, imageHeight, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Numerics::float2 impl_ICameraIntrinsics<D>::FocalLength() const
 {
     Windows::Foundation::Numerics::float2 value {};
-    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_FocalLength(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_FocalLength(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float2 impl_ICameraIntrinsics<D>::PrincipalPoint() const
 {
     Windows::Foundation::Numerics::float2 value {};
-    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_PrincipalPoint(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_PrincipalPoint(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ICameraIntrinsics<D>::RadialDistortion() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_RadialDistortion(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_RadialDistortion(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float2 impl_ICameraIntrinsics<D>::TangentialDistortion() const
 {
     Windows::Foundation::Numerics::float2 value {};
-    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_TangentialDistortion(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_TangentialDistortion(put_abi(value)));
     return value;
 }
 
@@ -1683,80 +1683,80 @@ template <typename D> uint32_t impl_ICameraIntrinsics<D>::ImageHeight() const
 template <typename D> Windows::Foundation::Point impl_ICameraIntrinsics<D>::ProjectOntoFrame(const Windows::Foundation::Numerics::float3 & coordinate) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_ProjectOntoFrame(get(coordinate), put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_ProjectOntoFrame(get_abi(coordinate), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Numerics::float2 impl_ICameraIntrinsics<D>::UnprojectAtUnitDepth(const Windows::Foundation::Point & pixelCoordinate) const
 {
     Windows::Foundation::Numerics::float2 result {};
-    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_UnprojectAtUnitDepth(get(pixelCoordinate), put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_UnprojectAtUnitDepth(get_abi(pixelCoordinate), put_abi(result)));
     return result;
 }
 
 template <typename D> void impl_ICameraIntrinsics<D>::ProjectManyOntoFrame(array_view<const Windows::Foundation::Numerics::float3> coordinates, array_view<Windows::Foundation::Point> results) const
 {
-    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_ProjectManyOntoFrame(coordinates.size(), get(coordinates), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_ProjectManyOntoFrame(coordinates.size(), get_abi(coordinates), results.size(), get_abi(results)));
 }
 
 template <typename D> void impl_ICameraIntrinsics<D>::UnprojectPixelsAtUnitDepth(array_view<const Windows::Foundation::Point> pixelCoordinates, array_view<Windows::Foundation::Numerics::float2> results) const
 {
-    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_UnprojectPixelsAtUnitDepth(pixelCoordinates.size(), get(pixelCoordinates), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_UnprojectPixelsAtUnitDepth(pixelCoordinates.size(), get_abi(pixelCoordinates), results.size(), get_abi(results)));
 }
 
 template <typename D> Windows::Foundation::Numerics::float4x4 impl_ICameraIntrinsics2<D>::UndistortedProjectionTransform() const
 {
     Windows::Foundation::Numerics::float4x4 value {};
-    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->get_UndistortedProjectionTransform(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->get_UndistortedProjectionTransform(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_ICameraIntrinsics2<D>::DistortPoint(const Windows::Foundation::Point & input) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_DistortPoint(get(input), put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_DistortPoint(get_abi(input), put_abi(result)));
     return result;
 }
 
 template <typename D> void impl_ICameraIntrinsics2<D>::DistortPoints(array_view<const Windows::Foundation::Point> inputs, array_view<Windows::Foundation::Point> results) const
 {
-    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_DistortPoints(inputs.size(), get(inputs), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_DistortPoints(inputs.size(), get_abi(inputs), results.size(), get_abi(results)));
 }
 
 template <typename D> Windows::Foundation::Point impl_ICameraIntrinsics2<D>::UndistortPoint(const Windows::Foundation::Point & input) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_UndistortPoint(get(input), put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_UndistortPoint(get_abi(input), put_abi(result)));
     return result;
 }
 
 template <typename D> void impl_ICameraIntrinsics2<D>::UndistortPoints(array_view<const Windows::Foundation::Point> inputs, array_view<Windows::Foundation::Point> results) const
 {
-    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_UndistortPoints(inputs.size(), get(inputs), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_UndistortPoints(inputs.size(), get_abi(inputs), results.size(), get_abi(results)));
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IDepthCorrelatedCoordinateMapper<D>::UnprojectPoint(const Windows::Foundation::Point & sourcePoint, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem) const
 {
     Windows::Foundation::Numerics::float3 result {};
-    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_UnprojectPoint(get(sourcePoint), get(targetCoordinateSystem), put(result)));
+    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_UnprojectPoint(get_abi(sourcePoint), get_abi(targetCoordinateSystem), put_abi(result)));
     return result;
 }
 
 template <typename D> void impl_IDepthCorrelatedCoordinateMapper<D>::UnprojectPoints(array_view<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, array_view<Windows::Foundation::Numerics::float3> results) const
 {
-    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_UnprojectPoints(sourcePoints.size(), get(sourcePoints), get(targetCoordinateSystem), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_UnprojectPoints(sourcePoints.size(), get_abi(sourcePoints), get_abi(targetCoordinateSystem), results.size(), get_abi(results)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IDepthCorrelatedCoordinateMapper<D>::MapPoint(const Windows::Foundation::Point & sourcePoint, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_MapPoint(get(sourcePoint), get(targetCoordinateSystem), get(targetCameraIntrinsics), put(result)));
+    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_MapPoint(get_abi(sourcePoint), get_abi(targetCoordinateSystem), get_abi(targetCameraIntrinsics), put_abi(result)));
     return result;
 }
 
 template <typename D> void impl_IDepthCorrelatedCoordinateMapper<D>::MapPoints(array_view<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics, array_view<Windows::Foundation::Point> results) const
 {
-    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_MapPoints(sourcePoints.size(), get(sourcePoints), get(targetCoordinateSystem), get(targetCameraIntrinsics), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_MapPoints(sourcePoints.size(), get_abi(sourcePoints), get_abi(targetCoordinateSystem), get_abi(targetCameraIntrinsics), results.size(), get_abi(results)));
 }
 
 inline FrameController::FrameController() :

@@ -19,12 +19,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContext> : produce_base<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContext>
 {
-    HRESULT __stdcall get_WirelessNetworkId(uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
+    HRESULT __stdcall get_WirelessNetworkId(uint32_t * __valueSize, impl::abi_arg_out<uint8_t> * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            std::tie(*__valueSize, *value) = detach(this->shim().WirelessNetworkId());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().WirelessNetworkId());
             return S_OK;
         }
         catch (...)
@@ -35,12 +35,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
         }
     }
 
-    HRESULT __stdcall get_NetworkAdapter(abi_arg_out<Windows::Networking::Connectivity::INetworkAdapter> value) noexcept override
+    HRESULT __stdcall get_NetworkAdapter(impl::abi_arg_out<Windows::Networking::Connectivity::INetworkAdapter> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NetworkAdapter());
+            *value = detach_abi(this->shim().NetworkAdapter());
             return S_OK;
         }
         catch (...)
@@ -50,12 +50,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
         }
     }
 
-    HRESULT __stdcall get_RedirectMessageUrl(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_RedirectMessageUrl(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RedirectMessageUrl());
+            *value = detach_abi(this->shim().RedirectMessageUrl());
             return S_OK;
         }
         catch (...)
@@ -65,12 +65,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
         }
     }
 
-    HRESULT __stdcall get_RedirectMessageXml(abi_arg_out<Windows::Data::Xml::Dom::IXmlDocument> value) noexcept override
+    HRESULT __stdcall get_RedirectMessageXml(impl::abi_arg_out<Windows::Data::Xml::Dom::IXmlDocument> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RedirectMessageXml());
+            *value = detach_abi(this->shim().RedirectMessageXml());
             return S_OK;
         }
         catch (...)
@@ -80,12 +80,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
         }
     }
 
-    HRESULT __stdcall get_AuthenticationUrl(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_AuthenticationUrl(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationUrl());
+            *value = detach_abi(this->shim().AuthenticationUrl());
             return S_OK;
         }
         catch (...)
@@ -95,7 +95,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
         }
     }
 
-    HRESULT __stdcall abi_IssueCredentials(abi_arg_in<hstring> userName, abi_arg_in<hstring> password, abi_arg_in<hstring> extraParameters, bool markAsManualConnectOnFailure) noexcept override
+    HRESULT __stdcall abi_IssueCredentials(impl::abi_arg_in<hstring> userName, impl::abi_arg_in<hstring> password, impl::abi_arg_in<hstring> extraParameters, bool markAsManualConnectOnFailure) noexcept override
     {
         try
         {
@@ -137,7 +137,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
         }
     }
 
-    HRESULT __stdcall abi_TriggerAttentionRequired(abi_arg_in<hstring> packageRelativeApplicationId, abi_arg_in<hstring> applicationParameters) noexcept override
+    HRESULT __stdcall abi_TriggerAttentionRequired(impl::abi_arg_in<hstring> packageRelativeApplicationId, impl::abi_arg_in<hstring> applicationParameters) noexcept override
     {
         try
         {
@@ -155,12 +155,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2> : produce_base<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2>
 {
-    HRESULT __stdcall abi_IssueCredentialsAsync(abi_arg_in<hstring> userName, abi_arg_in<hstring> password, abi_arg_in<hstring> extraParameters, bool markAsManualConnectOnFailure, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_IssueCredentialsAsync(impl::abi_arg_in<hstring> userName, impl::abi_arg_in<hstring> password, impl::abi_arg_in<hstring> extraParameters, bool markAsManualConnectOnFailure, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().IssueCredentialsAsync(*reinterpret_cast<const hstring *>(&userName), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const hstring *>(&extraParameters), markAsManualConnectOnFailure));
+            *asyncInfo = detach_abi(this->shim().IssueCredentialsAsync(*reinterpret_cast<const hstring *>(&userName), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const hstring *>(&extraParameters), markAsManualConnectOnFailure));
             return S_OK;
         }
         catch (...)
@@ -174,12 +174,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics> : produce_base<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics>
 {
-    HRESULT __stdcall abi_TryGetAuthenticationContext(abi_arg_in<hstring> evenToken, abi_arg_out<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext> context, bool * isValid) noexcept override
+    HRESULT __stdcall abi_TryGetAuthenticationContext(impl::abi_arg_in<hstring> evenToken, impl::abi_arg_out<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext> context, bool * isValid) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *isValid = detach(this->shim().TryGetAuthenticationContext(*reinterpret_cast<const hstring *>(&evenToken), *context));
+            *isValid = detach_abi(this->shim().TryGetAuthenticationContext(*reinterpret_cast<const hstring *>(&evenToken), *context));
             return S_OK;
         }
         catch (...)
@@ -193,12 +193,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails> : produce_base<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails>
 {
-    HRESULT __stdcall get_EventToken(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_EventToken(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EventToken());
+            *value = detach_abi(this->shim().EventToken());
             return S_OK;
         }
         catch (...)
@@ -217,7 +217,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuth
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasNetworkErrorOccurred());
+            *value = detach_abi(this->shim().HasNetworkErrorOccurred());
             return S_OK;
         }
         catch (...)
@@ -231,7 +231,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuth
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ResponseCode());
+            *value = detach_abi(this->shim().ResponseCode());
             return S_OK;
         }
         catch (...)
@@ -240,12 +240,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuth
         }
     }
 
-    HRESULT __stdcall get_LogoffUrl(abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall get_LogoffUrl(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LogoffUrl());
+            *value = detach_abi(this->shim().LogoffUrl());
             return S_OK;
         }
         catch (...)
@@ -255,12 +255,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuth
         }
     }
 
-    HRESULT __stdcall get_AuthenticationReplyXml(abi_arg_out<Windows::Data::Xml::Dom::IXmlDocument> value) noexcept override
+    HRESULT __stdcall get_AuthenticationReplyXml(impl::abi_arg_out<Windows::Data::Xml::Dom::IXmlDocument> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationReplyXml());
+            *value = detach_abi(this->shim().AuthenticationReplyXml());
             return S_OK;
         }
         catch (...)
@@ -274,12 +274,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuth
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics> : produce_base<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>
 {
-    HRESULT __stdcall get_EFSpn(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_EFSpn(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EFSpn());
+            *value = detach_abi(this->shim().EFSpn());
             return S_OK;
         }
         catch (...)
@@ -289,12 +289,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStat
         }
     }
 
-    HRESULT __stdcall get_Gid1(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Gid1(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gid1());
+            *value = detach_abi(this->shim().Gid1());
             return S_OK;
         }
         catch (...)
@@ -304,12 +304,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStat
         }
     }
 
-    HRESULT __stdcall get_Gid2(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Gid2(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gid2());
+            *value = detach_abi(this->shim().Gid2());
             return S_OK;
         }
         catch (...)
@@ -323,12 +323,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStat
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics> : produce_base<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>
 {
-    HRESULT __stdcall get_EFSpn(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_EFSpn(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EFSpn());
+            *value = detach_abi(this->shim().EFSpn());
             return S_OK;
         }
         catch (...)
@@ -338,12 +338,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStat
         }
     }
 
-    HRESULT __stdcall get_Gid1(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Gid1(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gid1());
+            *value = detach_abi(this->shim().Gid1());
             return S_OK;
         }
         catch (...)
@@ -353,12 +353,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStat
         }
     }
 
-    HRESULT __stdcall get_Gid2(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Gid2(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gid2());
+            *value = detach_abi(this->shim().Gid2());
             return S_OK;
         }
         catch (...)
@@ -372,12 +372,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStat
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics> : produce_base<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>
 {
-    HRESULT __stdcall get_EFOns(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_EFOns(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EFOns());
+            *value = detach_abi(this->shim().EFOns());
             return S_OK;
         }
         catch (...)
@@ -387,12 +387,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStati
         }
     }
 
-    HRESULT __stdcall get_EFSpn(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_EFSpn(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EFSpn());
+            *value = detach_abi(this->shim().EFSpn());
             return S_OK;
         }
         catch (...)
@@ -402,12 +402,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStati
         }
     }
 
-    HRESULT __stdcall get_Gid1(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Gid1(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gid1());
+            *value = detach_abi(this->shim().Gid1());
             return S_OK;
         }
         catch (...)
@@ -417,12 +417,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStati
         }
     }
 
-    HRESULT __stdcall get_Gid2(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Gid2(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gid2());
+            *value = detach_abi(this->shim().Gid2());
             return S_OK;
         }
         catch (...)
@@ -436,12 +436,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStati
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics> : produce_base<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>
 {
-    HRESULT __stdcall get_EFSpn(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_EFSpn(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EFSpn());
+            *value = detach_abi(this->shim().EFSpn());
             return S_OK;
         }
         catch (...)
@@ -451,12 +451,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
         }
     }
 
-    HRESULT __stdcall get_EFOpl(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_EFOpl(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EFOpl());
+            *value = detach_abi(this->shim().EFOpl());
             return S_OK;
         }
         catch (...)
@@ -466,12 +466,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
         }
     }
 
-    HRESULT __stdcall get_EFPnn(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_EFPnn(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EFPnn());
+            *value = detach_abi(this->shim().EFPnn());
             return S_OK;
         }
         catch (...)
@@ -481,12 +481,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
         }
     }
 
-    HRESULT __stdcall get_Gid1(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Gid1(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gid1());
+            *value = detach_abi(this->shim().Gid1());
             return S_OK;
         }
         catch (...)
@@ -496,12 +496,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
         }
     }
 
-    HRESULT __stdcall get_Gid2(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_Gid2(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gid2());
+            *value = detach_abi(this->shim().Gid2());
             return S_OK;
         }
         catch (...)
@@ -515,12 +515,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount>
 {
-    HRESULT __stdcall get_NetworkAccountId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_NetworkAccountId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NetworkAccountId());
+            *value = detach_abi(this->shim().NetworkAccountId());
             return S_OK;
         }
         catch (...)
@@ -535,7 +535,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ServiceProviderGuid());
+            *value = detach_abi(this->shim().ServiceProviderGuid());
             return S_OK;
         }
         catch (...)
@@ -544,12 +544,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall get_ServiceProviderName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ServiceProviderName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ServiceProviderName());
+            *value = detach_abi(this->shim().ServiceProviderName());
             return S_OK;
         }
         catch (...)
@@ -559,12 +559,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall get_CurrentNetwork(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork> network) noexcept override
+    HRESULT __stdcall get_CurrentNetwork(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork> network) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *network = detach(this->shim().CurrentNetwork());
+            *network = detach_abi(this->shim().CurrentNetwork());
             return S_OK;
         }
         catch (...)
@@ -574,12 +574,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall get_CurrentDeviceInformation(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation> deviceInformation) noexcept override
+    HRESULT __stdcall get_CurrentDeviceInformation(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation> deviceInformation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *deviceInformation = detach(this->shim().CurrentDeviceInformation());
+            *deviceInformation = detach_abi(this->shim().CurrentDeviceInformation());
             return S_OK;
         }
         catch (...)
@@ -593,12 +593,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount2> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount2>
 {
-    HRESULT __stdcall abi_GetConnectionProfiles(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>> value) noexcept override
+    HRESULT __stdcall abi_GetConnectionProfiles(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetConnectionProfiles());
+            *value = detach_abi(this->shim().GetConnectionProfiles());
             return S_OK;
         }
         catch (...)
@@ -612,12 +612,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>
 {
-    HRESULT __stdcall get_NetworkAccountId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_NetworkAccountId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NetworkAccountId());
+            *value = detach_abi(this->shim().NetworkAccountId());
             return S_OK;
         }
         catch (...)
@@ -631,12 +631,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>
 {
-    HRESULT __stdcall get_AvailableNetworkAccountIds(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> ppAccountIds) noexcept override
+    HRESULT __stdcall get_AvailableNetworkAccountIds(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> ppAccountIds) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppAccountIds = detach(this->shim().AvailableNetworkAccountIds());
+            *ppAccountIds = detach_abi(this->shim().AvailableNetworkAccountIds());
             return S_OK;
         }
         catch (...)
@@ -646,12 +646,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall abi_CreateFromNetworkAccountId(abi_arg_in<hstring> networkAccountId, abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandAccount> ppAccount) noexcept override
+    HRESULT __stdcall abi_CreateFromNetworkAccountId(impl::abi_arg_in<hstring> networkAccountId, impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandAccount> ppAccount) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppAccount = detach(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
+            *ppAccount = detach_abi(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
         catch (...)
@@ -665,12 +665,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs>
 {
-    HRESULT __stdcall get_NetworkAccountId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_NetworkAccountId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NetworkAccountId());
+            *value = detach_abi(this->shim().NetworkAccountId());
             return S_OK;
         }
         catch (...)
@@ -685,7 +685,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasDeviceInformationChanged());
+            *value = detach_abi(this->shim().HasDeviceInformationChanged());
             return S_OK;
         }
         catch (...)
@@ -699,7 +699,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasNetworkChanged());
+            *value = detach_abi(this->shim().HasNetworkChanged());
             return S_OK;
         }
         catch (...)
@@ -712,12 +712,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>
 {
-    HRESULT __stdcall add_AccountAdded(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_AccountAdded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().AccountAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().AccountAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -740,12 +740,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall add_AccountUpdated(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_AccountUpdated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().AccountUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().AccountUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -768,12 +768,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall add_AccountRemoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_AccountRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().AccountRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().AccountRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -796,12 +796,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -824,12 +824,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall add_Stopped(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -857,7 +857,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         try
         {
             typename D::abi_guard guard(this->shim());
-            *status = detach(this->shim().Status());
+            *status = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -903,7 +903,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NetworkDeviceStatus());
+            *value = detach_abi(this->shim().NetworkDeviceStatus());
             return S_OK;
         }
         catch (...)
@@ -912,27 +912,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         }
     }
 
-    HRESULT __stdcall get_Manufacturer(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Manufacturer(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Manufacturer());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_Model(abi_arg_out<hstring> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Model());
+            *value = detach_abi(this->shim().Manufacturer());
             return S_OK;
         }
         catch (...)
@@ -942,12 +927,27 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         }
     }
 
-    HRESULT __stdcall get_FirmwareInformation(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Model(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FirmwareInformation());
+            *value = detach_abi(this->shim().Model());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_FirmwareInformation(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FirmwareInformation());
             return S_OK;
         }
         catch (...)
@@ -962,7 +962,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CellularClass());
+            *value = detach_abi(this->shim().CellularClass());
             return S_OK;
         }
         catch (...)
@@ -976,7 +976,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DataClasses());
+            *value = detach_abi(this->shim().DataClasses());
             return S_OK;
         }
         catch (...)
@@ -985,27 +985,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         }
     }
 
-    HRESULT __stdcall get_CustomDataClass(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_CustomDataClass(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CustomDataClass());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_MobileEquipmentId(abi_arg_out<hstring> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MobileEquipmentId());
+            *value = detach_abi(this->shim().CustomDataClass());
             return S_OK;
         }
         catch (...)
@@ -1015,12 +1000,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         }
     }
 
-    HRESULT __stdcall get_TelephoneNumbers(abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    HRESULT __stdcall get_MobileEquipmentId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TelephoneNumbers());
+            *value = detach_abi(this->shim().MobileEquipmentId());
             return S_OK;
         }
         catch (...)
@@ -1030,12 +1015,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         }
     }
 
-    HRESULT __stdcall get_SubscriberId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_TelephoneNumbers(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SubscriberId());
+            *value = detach_abi(this->shim().TelephoneNumbers());
             return S_OK;
         }
         catch (...)
@@ -1045,12 +1030,27 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         }
     }
 
-    HRESULT __stdcall get_SimIccId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SubscriberId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SimIccId());
+            *value = detach_abi(this->shim().SubscriberId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimIccId(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimIccId());
             return S_OK;
         }
         catch (...)
@@ -1065,7 +1065,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pDeviceType = detach(this->shim().DeviceType());
+            *pDeviceType = detach_abi(this->shim().DeviceType());
             return S_OK;
         }
         catch (...)
@@ -1074,12 +1074,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         }
     }
 
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -1094,7 +1094,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCurrentState = detach(this->shim().CurrentRadioState());
+            *pCurrentState = detach_abi(this->shim().CurrentRadioState());
             return S_OK;
         }
         catch (...)
@@ -1107,12 +1107,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2>
 {
-    HRESULT __stdcall get_PinManager(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandPinManager> value) noexcept override
+    HRESULT __stdcall get_PinManager(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandPinManager> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PinManager());
+            *value = detach_abi(this->shim().PinManager());
             return S_OK;
         }
         catch (...)
@@ -1122,12 +1122,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         }
     }
 
-    HRESULT __stdcall get_Revision(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Revision(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Revision());
+            *value = detach_abi(this->shim().Revision());
             return S_OK;
         }
         catch (...)
@@ -1137,12 +1137,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         }
     }
 
-    HRESULT __stdcall get_SerialNumber(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SerialNumber(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SerialNumber());
+            *value = detach_abi(this->shim().SerialNumber());
             return S_OK;
         }
         catch (...)
@@ -1161,7 +1161,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceServiceId());
+            *value = detach_abi(this->shim().DeviceServiceId());
             return S_OK;
         }
         catch (...)
@@ -1170,27 +1170,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         }
     }
 
-    HRESULT __stdcall get_SupportedCommands(abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
+    HRESULT __stdcall get_SupportedCommands(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<uint32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportedCommands());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_OpenDataSession(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OpenDataSession());
+            *value = detach_abi(this->shim().SupportedCommands());
             return S_OK;
         }
         catch (...)
@@ -1200,12 +1185,27 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         }
     }
 
-    HRESULT __stdcall abi_OpenCommandSession(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession> value) noexcept override
+    HRESULT __stdcall abi_OpenDataSession(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OpenCommandSession());
+            *value = detach_abi(this->shim().OpenDataSession());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OpenCommandSession(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().OpenCommandSession());
             return S_OK;
         }
         catch (...)
@@ -1224,7 +1224,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().StatusCode());
+            *value = detach_abi(this->shim().StatusCode());
             return S_OK;
         }
         catch (...)
@@ -1233,12 +1233,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         }
     }
 
-    HRESULT __stdcall get_ResponseData(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_ResponseData(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ResponseData());
+            *value = detach_abi(this->shim().ResponseData());
             return S_OK;
         }
         catch (...)
@@ -1252,12 +1252,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession>
 {
-    HRESULT __stdcall abi_SendQueryCommandAsync(uint32_t commandId, abi_arg_in<Windows::Storage::Streams::IBuffer> data, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_SendQueryCommandAsync(uint32_t commandId, impl::abi_arg_in<Windows::Storage::Streams::IBuffer> data, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().SendQueryCommandAsync(commandId, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
+            *asyncInfo = detach_abi(this->shim().SendQueryCommandAsync(commandId, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -1267,12 +1267,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         }
     }
 
-    HRESULT __stdcall abi_SendSetCommandAsync(uint32_t commandId, abi_arg_in<Windows::Storage::Streams::IBuffer> data, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_SendSetCommandAsync(uint32_t commandId, impl::abi_arg_in<Windows::Storage::Streams::IBuffer> data, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().SendSetCommandAsync(commandId, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
+            *asyncInfo = detach_abi(this->shim().SendSetCommandAsync(commandId, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
         catch (...)
@@ -1300,12 +1300,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs>
 {
-    HRESULT __stdcall get_ReceivedData(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_ReceivedData(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReceivedData());
+            *value = detach_abi(this->shim().ReceivedData());
             return S_OK;
         }
         catch (...)
@@ -1319,12 +1319,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>
 {
-    HRESULT __stdcall abi_WriteDataAsync(abi_arg_in<Windows::Storage::Streams::IBuffer> value, abi_arg_out<Windows::Foundation::IAsyncAction> asyncInfo) noexcept override
+    HRESULT __stdcall abi_WriteDataAsync(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> value, impl::abi_arg_out<Windows::Foundation::IAsyncAction> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().WriteDataAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value)));
+            *asyncInfo = detach_abi(this->shim().WriteDataAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1348,12 +1348,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         }
     }
 
-    HRESULT __stdcall add_DataReceived(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs>> eventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_DataReceived(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs>> eventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach(this->shim().DataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> *>(&eventHandler)));
+            *eventCookie = detach_abi(this->shim().DataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -1385,7 +1385,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceServiceId());
+            *value = detach_abi(this->shim().DeviceServiceId());
             return S_OK;
         }
         catch (...)
@@ -1399,7 +1399,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsDataReadSupported());
+            *value = detach_abi(this->shim().IsDataReadSupported());
             return S_OK;
         }
         catch (...)
@@ -1413,7 +1413,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsDataWriteSupported());
+            *value = detach_abi(this->shim().IsDataWriteSupported());
             return S_OK;
         }
         catch (...)
@@ -1426,12 +1426,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -1446,7 +1446,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceServiceId());
+            *value = detach_abi(this->shim().DeviceServiceId());
             return S_OK;
         }
         catch (...)
@@ -1455,12 +1455,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
         }
     }
 
-    HRESULT __stdcall get_ReceivedData(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_ReceivedData(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReceivedData());
+            *value = detach_abi(this->shim().ReceivedData());
             return S_OK;
         }
         catch (...)
@@ -1474,12 +1474,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem>
 {
-    HRESULT __stdcall get_CurrentAccount(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandAccount> value) noexcept override
+    HRESULT __stdcall get_CurrentAccount(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandAccount> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CurrentAccount());
+            *value = detach_abi(this->shim().CurrentAccount());
             return S_OK;
         }
         catch (...)
@@ -1489,12 +1489,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
         }
     }
 
-    HRESULT __stdcall get_DeviceInformation(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation> value) noexcept override
+    HRESULT __stdcall get_DeviceInformation(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceInformation());
+            *value = detach_abi(this->shim().DeviceInformation());
             return S_OK;
         }
         catch (...)
@@ -1509,7 +1509,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxDeviceServiceCommandSizeInBytes());
+            *value = detach_abi(this->shim().MaxDeviceServiceCommandSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -1523,7 +1523,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxDeviceServiceDataSizeInBytes());
+            *value = detach_abi(this->shim().MaxDeviceServiceDataSizeInBytes());
             return S_OK;
         }
         catch (...)
@@ -1532,12 +1532,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
         }
     }
 
-    HRESULT __stdcall get_DeviceServices(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation>> value) noexcept override
+    HRESULT __stdcall get_DeviceServices(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceServices());
+            *value = detach_abi(this->shim().DeviceServices());
             return S_OK;
         }
         catch (...)
@@ -1547,12 +1547,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceService(GUID deviceServiceId, abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService> value) noexcept override
+    HRESULT __stdcall abi_GetDeviceService(GUID deviceServiceId, impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeviceService(deviceServiceId));
+            *value = detach_abi(this->shim().GetDeviceService(deviceServiceId));
             return S_OK;
         }
         catch (...)
@@ -1567,7 +1567,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsResetSupported());
+            *value = detach_abi(this->shim().IsResetSupported());
             return S_OK;
         }
         catch (...)
@@ -1576,27 +1576,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
         }
     }
 
-    HRESULT __stdcall abi_ResetAsync(abi_arg_out<Windows::Foundation::IAsyncAction> asyncInfo) noexcept override
+    HRESULT __stdcall abi_ResetAsync(impl::abi_arg_out<Windows::Foundation::IAsyncAction> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().ResetAsync());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *asyncInfo = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetCurrentConfigurationAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration>> asyncInfo) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().GetCurrentConfigurationAsync());
+            *asyncInfo = detach_abi(this->shim().ResetAsync());
             return S_OK;
         }
         catch (...)
@@ -1606,12 +1591,27 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
         }
     }
 
-    HRESULT __stdcall get_CurrentNetwork(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork> value) noexcept override
+    HRESULT __stdcall abi_GetCurrentConfigurationAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CurrentNetwork());
+            *asyncInfo = detach_abi(this->shim().GetCurrentConfigurationAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *asyncInfo = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CurrentNetwork(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CurrentNetwork());
             return S_OK;
         }
         catch (...)
@@ -1625,12 +1625,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration>
 {
-    HRESULT __stdcall get_Uicc(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandUicc> value) noexcept override
+    HRESULT __stdcall get_Uicc(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandUicc> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Uicc());
+            *value = detach_abi(this->shim().Uicc());
             return S_OK;
         }
         catch (...)
@@ -1640,12 +1640,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemCo
         }
     }
 
-    HRESULT __stdcall get_HomeProviderId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_HomeProviderId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HomeProviderId());
+            *value = detach_abi(this->shim().HomeProviderId());
             return S_OK;
         }
         catch (...)
@@ -1655,12 +1655,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemCo
         }
     }
 
-    HRESULT __stdcall get_HomeProviderName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_HomeProviderName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HomeProviderName());
+            *value = detach_abi(this->shim().HomeProviderName());
             return S_OK;
         }
         catch (...)
@@ -1674,12 +1674,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemCo
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>
 {
-    HRESULT __stdcall abi_GetDeviceSelector(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelector(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeviceSelector());
+            *value = detach_abi(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -1689,12 +1689,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemSt
         }
     }
 
-    HRESULT __stdcall abi_FromId(abi_arg_in<hstring> deviceId, abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandModem> value) noexcept override
+    HRESULT __stdcall abi_FromId(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandModem> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FromId(*reinterpret_cast<const hstring *>(&deviceId)));
+            *value = detach_abi(this->shim().FromId(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -1704,12 +1704,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemSt
         }
     }
 
-    HRESULT __stdcall abi_GetDefault(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandModem> value) noexcept override
+    HRESULT __stdcall abi_GetDefault(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandModem> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDefault());
+            *value = detach_abi(this->shim().GetDefault());
             return S_OK;
         }
         catch (...)
@@ -1723,12 +1723,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemSt
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork>
 {
-    HRESULT __stdcall get_NetworkAdapter(abi_arg_out<Windows::Networking::Connectivity::INetworkAdapter> value) noexcept override
+    HRESULT __stdcall get_NetworkAdapter(impl::abi_arg_out<Windows::Networking::Connectivity::INetworkAdapter> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NetworkAdapter());
+            *value = detach_abi(this->shim().NetworkAdapter());
             return S_OK;
         }
         catch (...)
@@ -1743,7 +1743,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         try
         {
             typename D::abi_guard guard(this->shim());
-            *registrationState = detach(this->shim().NetworkRegistrationState());
+            *registrationState = detach_abi(this->shim().NetworkRegistrationState());
             return S_OK;
         }
         catch (...)
@@ -1757,7 +1757,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         try
         {
             typename D::abi_guard guard(this->shim());
-            *networkError = detach(this->shim().RegistrationNetworkError());
+            *networkError = detach_abi(this->shim().RegistrationNetworkError());
             return S_OK;
         }
         catch (...)
@@ -1771,7 +1771,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         try
         {
             typename D::abi_guard guard(this->shim());
-            *networkError = detach(this->shim().PacketAttachNetworkError());
+            *networkError = detach_abi(this->shim().PacketAttachNetworkError());
             return S_OK;
         }
         catch (...)
@@ -1785,7 +1785,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         try
         {
             typename D::abi_guard guard(this->shim());
-            *networkError = detach(this->shim().ActivationNetworkError());
+            *networkError = detach_abi(this->shim().ActivationNetworkError());
             return S_OK;
         }
         catch (...)
@@ -1794,12 +1794,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         }
     }
 
-    HRESULT __stdcall get_AccessPointName(abi_arg_out<hstring> apn) noexcept override
+    HRESULT __stdcall get_AccessPointName(impl::abi_arg_out<hstring> apn) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *apn = detach(this->shim().AccessPointName());
+            *apn = detach_abi(this->shim().AccessPointName());
             return S_OK;
         }
         catch (...)
@@ -1814,7 +1814,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RegisteredDataClass());
+            *value = detach_abi(this->shim().RegisteredDataClass());
             return S_OK;
         }
         catch (...)
@@ -1823,12 +1823,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         }
     }
 
-    HRESULT __stdcall get_RegisteredProviderId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_RegisteredProviderId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RegisteredProviderId());
+            *value = detach_abi(this->shim().RegisteredProviderId());
             return S_OK;
         }
         catch (...)
@@ -1838,12 +1838,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         }
     }
 
-    HRESULT __stdcall get_RegisteredProviderName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_RegisteredProviderName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RegisteredProviderName());
+            *value = detach_abi(this->shim().RegisteredProviderName());
             return S_OK;
         }
         catch (...)
@@ -1871,12 +1871,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2>
 {
-    HRESULT __stdcall abi_GetVoiceCallSupportAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_GetVoiceCallSupportAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().GetVoiceCallSupportAsync());
+            *asyncInfo = detach_abi(this->shim().GetVoiceCallSupportAsync());
             return S_OK;
         }
         catch (...)
@@ -1886,12 +1886,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         }
     }
 
-    HRESULT __stdcall get_RegistrationUiccApps(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>> value) noexcept override
+    HRESULT __stdcall get_RegistrationUiccApps(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RegistrationUiccApps());
+            *value = detach_abi(this->shim().RegistrationUiccApps());
             return S_OK;
         }
         catch (...)
@@ -1905,12 +1905,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -1920,12 +1920,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
         }
     }
 
-    HRESULT __stdcall get_Network(abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork> value) noexcept override
+    HRESULT __stdcall get_Network(impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Network());
+            *value = detach_abi(this->shim().Network());
             return S_OK;
         }
         catch (...)
@@ -1939,12 +1939,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>
 {
-    HRESULT __stdcall get_NetworkRegistrationStateChanges(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange>> value) noexcept override
+    HRESULT __stdcall get_NetworkRegistrationStateChanges(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NetworkRegistrationStateChanges());
+            *value = detach_abi(this->shim().NetworkRegistrationStateChanges());
             return S_OK;
         }
         catch (...)
@@ -1963,7 +1963,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Type());
+            *value = detach_abi(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -1977,7 +1977,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LockState());
+            *value = detach_abi(this->shim().LockState());
             return S_OK;
         }
         catch (...)
@@ -1991,7 +1991,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Format());
+            *value = detach_abi(this->shim().Format());
             return S_OK;
         }
         catch (...)
@@ -2005,7 +2005,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Enabled());
+            *value = detach_abi(this->shim().Enabled());
             return S_OK;
         }
         catch (...)
@@ -2019,7 +2019,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxLength());
+            *value = detach_abi(this->shim().MaxLength());
             return S_OK;
         }
         catch (...)
@@ -2033,7 +2033,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinLength());
+            *value = detach_abi(this->shim().MinLength());
             return S_OK;
         }
         catch (...)
@@ -2047,7 +2047,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AttemptsRemaining());
+            *value = detach_abi(this->shim().AttemptsRemaining());
             return S_OK;
         }
         catch (...)
@@ -2056,27 +2056,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         }
     }
 
-    HRESULT __stdcall abi_EnableAsync(abi_arg_in<hstring> currentPin, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_EnableAsync(impl::abi_arg_in<hstring> currentPin, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().EnableAsync(*reinterpret_cast<const hstring *>(&currentPin)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *asyncInfo = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_DisableAsync(abi_arg_in<hstring> currentPin, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().DisableAsync(*reinterpret_cast<const hstring *>(&currentPin)));
+            *asyncInfo = detach_abi(this->shim().EnableAsync(*reinterpret_cast<const hstring *>(&currentPin)));
             return S_OK;
         }
         catch (...)
@@ -2086,12 +2071,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         }
     }
 
-    HRESULT __stdcall abi_EnterAsync(abi_arg_in<hstring> currentPin, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_DisableAsync(impl::abi_arg_in<hstring> currentPin, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().EnterAsync(*reinterpret_cast<const hstring *>(&currentPin)));
+            *asyncInfo = detach_abi(this->shim().DisableAsync(*reinterpret_cast<const hstring *>(&currentPin)));
             return S_OK;
         }
         catch (...)
@@ -2101,12 +2086,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         }
     }
 
-    HRESULT __stdcall abi_ChangeAsync(abi_arg_in<hstring> currentPin, abi_arg_in<hstring> newPin, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_EnterAsync(impl::abi_arg_in<hstring> currentPin, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().ChangeAsync(*reinterpret_cast<const hstring *>(&currentPin), *reinterpret_cast<const hstring *>(&newPin)));
+            *asyncInfo = detach_abi(this->shim().EnterAsync(*reinterpret_cast<const hstring *>(&currentPin)));
             return S_OK;
         }
         catch (...)
@@ -2116,12 +2101,27 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
         }
     }
 
-    HRESULT __stdcall abi_UnblockAsync(abi_arg_in<hstring> pinUnblockKey, abi_arg_in<hstring> newPin, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_ChangeAsync(impl::abi_arg_in<hstring> currentPin, impl::abi_arg_in<hstring> newPin, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().UnblockAsync(*reinterpret_cast<const hstring *>(&pinUnblockKey), *reinterpret_cast<const hstring *>(&newPin)));
+            *asyncInfo = detach_abi(this->shim().ChangeAsync(*reinterpret_cast<const hstring *>(&currentPin), *reinterpret_cast<const hstring *>(&newPin)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *asyncInfo = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_UnblockAsync(impl::abi_arg_in<hstring> pinUnblockKey, impl::abi_arg_in<hstring> newPin, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>> asyncInfo) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *asyncInfo = detach_abi(this->shim().UnblockAsync(*reinterpret_cast<const hstring *>(&pinUnblockKey), *reinterpret_cast<const hstring *>(&newPin)));
             return S_OK;
         }
         catch (...)
@@ -2135,12 +2135,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -2155,7 +2155,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLock
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PinType());
+            *value = detach_abi(this->shim().PinType());
             return S_OK;
         }
         catch (...)
@@ -2169,7 +2169,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLock
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PinLockState());
+            *value = detach_abi(this->shim().PinLockState());
             return S_OK;
         }
         catch (...)
@@ -2182,12 +2182,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLock
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails>
 {
-    HRESULT __stdcall get_PinLockStateChanges(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange>> value) noexcept override
+    HRESULT __stdcall get_PinLockStateChanges(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PinLockStateChanges());
+            *value = detach_abi(this->shim().PinLockStateChanges());
             return S_OK;
         }
         catch (...)
@@ -2201,12 +2201,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLock
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinManager> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinManager>
 {
-    HRESULT __stdcall get_SupportedPins(abi_arg_out<Windows::Foundation::Collections::IVectorView<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinType>> value) noexcept override
+    HRESULT __stdcall get_SupportedPins(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinType>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportedPins());
+            *value = detach_abi(this->shim().SupportedPins());
             return S_OK;
         }
         catch (...)
@@ -2216,12 +2216,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinMana
         }
     }
 
-    HRESULT __stdcall abi_GetPin(Windows::Networking::NetworkOperators::MobileBroadbandPinType pinType, abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandPin> value) noexcept override
+    HRESULT __stdcall abi_GetPin(Windows::Networking::NetworkOperators::MobileBroadbandPinType pinType, impl::abi_arg_out<Windows::Networking::NetworkOperators::IMobileBroadbandPin> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetPin(pinType));
+            *value = detach_abi(this->shim().GetPin(pinType));
             return S_OK;
         }
         catch (...)
@@ -2240,7 +2240,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinOper
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsSuccessful());
+            *value = detach_abi(this->shim().IsSuccessful());
             return S_OK;
         }
         catch (...)
@@ -2254,7 +2254,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinOper
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AttemptsRemaining());
+            *value = detach_abi(this->shim().AttemptsRemaining());
             return S_OK;
         }
         catch (...)
@@ -2267,12 +2267,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinOper
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -2287,7 +2287,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioSt
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RadioState());
+            *value = detach_abi(this->shim().RadioState());
             return S_OK;
         }
         catch (...)
@@ -2300,12 +2300,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioSt
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails>
 {
-    HRESULT __stdcall get_RadioStateChanges(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange>> value) noexcept override
+    HRESULT __stdcall get_RadioStateChanges(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RadioStateChanges());
+            *value = detach_abi(this->shim().RadioStateChanges());
             return S_OK;
         }
         catch (...)
@@ -2319,12 +2319,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioSt
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUicc> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandUicc>
 {
-    HRESULT __stdcall get_SimIccId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_SimIccId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SimIccId());
+            *value = detach_abi(this->shim().SimIccId());
             return S_OK;
         }
         catch (...)
@@ -2334,12 +2334,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUicc> :
         }
     }
 
-    HRESULT __stdcall abi_GetUiccAppsAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_GetUiccAppsAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().GetUiccAppsAsync());
+            *asyncInfo = detach_abi(this->shim().GetUiccAppsAsync());
             return S_OK;
         }
         catch (...)
@@ -2353,12 +2353,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUicc> :
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp>
 {
-    HRESULT __stdcall get_Id(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -2373,7 +2373,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Kind());
+            *value = detach_abi(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -2382,12 +2382,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         }
     }
 
-    HRESULT __stdcall abi_GetRecordDetailsAsync(abi_arg_in<Windows::Foundation::Collections::IIterable<uint32_t>> uiccFilePath, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_GetRecordDetailsAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<uint32_t>> uiccFilePath, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().GetRecordDetailsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<uint32_t> *>(&uiccFilePath)));
+            *asyncInfo = detach_abi(this->shim().GetRecordDetailsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<uint32_t> *>(&uiccFilePath)));
             return S_OK;
         }
         catch (...)
@@ -2397,12 +2397,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         }
     }
 
-    HRESULT __stdcall abi_ReadRecordAsync(abi_arg_in<Windows::Foundation::Collections::IIterable<uint32_t>> uiccFilePath, int32_t recordIndex, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_ReadRecordAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<uint32_t>> uiccFilePath, int32_t recordIndex, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().ReadRecordAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<uint32_t> *>(&uiccFilePath), recordIndex));
+            *asyncInfo = detach_abi(this->shim().ReadRecordAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<uint32_t> *>(&uiccFilePath), recordIndex));
             return S_OK;
         }
         catch (...)
@@ -2421,7 +2421,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2430,12 +2430,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         }
     }
 
-    HRESULT __stdcall get_Data(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Data(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Data());
+            *value = detach_abi(this->shim().Data());
             return S_OK;
         }
         catch (...)
@@ -2454,7 +2454,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2468,7 +2468,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Kind());
+            *value = detach_abi(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -2482,7 +2482,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RecordCount());
+            *value = detach_abi(this->shim().RecordCount());
             return S_OK;
         }
         catch (...)
@@ -2496,7 +2496,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RecordSize());
+            *value = detach_abi(this->shim().RecordSize());
             return S_OK;
         }
         catch (...)
@@ -2510,7 +2510,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReadAccessCondition());
+            *value = detach_abi(this->shim().ReadAccessCondition());
             return S_OK;
         }
         catch (...)
@@ -2524,7 +2524,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WriteAccessCondition());
+            *value = detach_abi(this->shim().WriteAccessCondition());
             return S_OK;
         }
         catch (...)
@@ -2542,7 +2542,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2551,12 +2551,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
         }
     }
 
-    HRESULT __stdcall get_UiccApps(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>> value) noexcept override
+    HRESULT __stdcall get_UiccApps(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UiccApps());
+            *value = detach_abi(this->shim().UiccApps());
             return S_OK;
         }
         catch (...)
@@ -2570,12 +2570,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration>
 {
-    HRESULT __stdcall get_Ssid(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ssid(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ssid());
+            *value = detach_abi(this->shim().Ssid());
             return S_OK;
         }
         catch (...)
@@ -2585,7 +2585,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall put_Ssid(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Ssid(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2599,12 +2599,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall get_Passphrase(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Passphrase(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Passphrase());
+            *value = detach_abi(this->shim().Passphrase());
             return S_OK;
         }
         catch (...)
@@ -2614,7 +2614,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall put_Passphrase(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Passphrase(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -2632,12 +2632,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient>
 {
-    HRESULT __stdcall get_MacAddress(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_MacAddress(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MacAddress());
+            *value = detach_abi(this->shim().MacAddress());
             return S_OK;
         }
         catch (...)
@@ -2647,12 +2647,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall get_HostNames(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> value) noexcept override
+    HRESULT __stdcall get_HostNames(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HostNames());
+            *value = detach_abi(this->shim().HostNames());
             return S_OK;
         }
         catch (...)
@@ -2666,12 +2666,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager>
 {
-    HRESULT __stdcall abi_GetTetheringClients(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient>> value) noexcept override
+    HRESULT __stdcall abi_GetTetheringClients(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetTetheringClients());
+            *value = detach_abi(this->shim().GetTetheringClients());
             return S_OK;
         }
         catch (...)
@@ -2690,7 +2690,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxClientCount());
+            *value = detach_abi(this->shim().MaxClientCount());
             return S_OK;
         }
         catch (...)
@@ -2704,7 +2704,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ClientCount());
+            *value = detach_abi(this->shim().ClientCount());
             return S_OK;
         }
         catch (...)
@@ -2718,7 +2718,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TetheringOperationalState());
+            *value = detach_abi(this->shim().TetheringOperationalState());
             return S_OK;
         }
         catch (...)
@@ -2727,12 +2727,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall abi_GetCurrentAccessPointConfiguration(abi_arg_out<Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration> configuration) noexcept override
+    HRESULT __stdcall abi_GetCurrentAccessPointConfiguration(impl::abi_arg_out<Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration> configuration) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *configuration = detach(this->shim().GetCurrentAccessPointConfiguration());
+            *configuration = detach_abi(this->shim().GetCurrentAccessPointConfiguration());
             return S_OK;
         }
         catch (...)
@@ -2742,12 +2742,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall abi_ConfigureAccessPointAsync(abi_arg_in<Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration> configuration, abi_arg_out<Windows::Foundation::IAsyncAction> asyncInfo) noexcept override
+    HRESULT __stdcall abi_ConfigureAccessPointAsync(impl::abi_arg_in<Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration> configuration, impl::abi_arg_out<Windows::Foundation::IAsyncAction> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().ConfigureAccessPointAsync(*reinterpret_cast<const Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration *>(&configuration)));
+            *asyncInfo = detach_abi(this->shim().ConfigureAccessPointAsync(*reinterpret_cast<const Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration *>(&configuration)));
             return S_OK;
         }
         catch (...)
@@ -2757,12 +2757,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall abi_StartTetheringAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_StartTetheringAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().StartTetheringAsync());
+            *asyncInfo = detach_abi(this->shim().StartTetheringAsync());
             return S_OK;
         }
         catch (...)
@@ -2772,12 +2772,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall abi_StopTetheringAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_StopTetheringAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().StopTetheringAsync());
+            *asyncInfo = detach_abi(this->shim().StopTetheringAsync());
             return S_OK;
         }
         catch (...)
@@ -2791,12 +2791,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>
 {
-    HRESULT __stdcall abi_GetTetheringCapability(abi_arg_in<hstring> networkAccountId, Windows::Networking::NetworkOperators::TetheringCapability * value) noexcept override
+    HRESULT __stdcall abi_GetTetheringCapability(impl::abi_arg_in<hstring> networkAccountId, Windows::Networking::NetworkOperators::TetheringCapability * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetTetheringCapability(*reinterpret_cast<const hstring *>(&networkAccountId)));
+            *value = detach_abi(this->shim().GetTetheringCapability(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
         catch (...)
@@ -2805,12 +2805,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall abi_CreateFromNetworkAccountId(abi_arg_in<hstring> networkAccountId, abi_arg_out<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager> ppManager) noexcept override
+    HRESULT __stdcall abi_CreateFromNetworkAccountId(impl::abi_arg_in<hstring> networkAccountId, impl::abi_arg_out<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager> ppManager) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppManager = detach(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
+            *ppManager = detach_abi(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
         catch (...)
@@ -2824,12 +2824,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>
 {
-    HRESULT __stdcall abi_GetTetheringCapabilityFromConnectionProfile(abi_arg_in<Windows::Networking::Connectivity::IConnectionProfile> profile, Windows::Networking::NetworkOperators::TetheringCapability * result) noexcept override
+    HRESULT __stdcall abi_GetTetheringCapabilityFromConnectionProfile(impl::abi_arg_in<Windows::Networking::Connectivity::IConnectionProfile> profile, Windows::Networking::NetworkOperators::TetheringCapability * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetTetheringCapabilityFromConnectionProfile(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&profile)));
+            *result = detach_abi(this->shim().GetTetheringCapabilityFromConnectionProfile(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -2838,12 +2838,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall abi_CreateFromConnectionProfile(abi_arg_in<Windows::Networking::Connectivity::IConnectionProfile> profile, abi_arg_out<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager> ppManager) noexcept override
+    HRESULT __stdcall abi_CreateFromConnectionProfile(impl::abi_arg_in<Windows::Networking::Connectivity::IConnectionProfile> profile, impl::abi_arg_out<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager> ppManager) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppManager = detach(this->shim().CreateFromConnectionProfile(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&profile)));
+            *ppManager = detach_abi(this->shim().CreateFromConnectionProfile(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&profile)));
             return S_OK;
         }
         catch (...)
@@ -2857,12 +2857,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3>
 {
-    HRESULT __stdcall abi_CreateFromConnectionProfileWithTargetAdapter(abi_arg_in<Windows::Networking::Connectivity::IConnectionProfile> profile, abi_arg_in<Windows::Networking::Connectivity::INetworkAdapter> adapter, abi_arg_out<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager> ppManager) noexcept override
+    HRESULT __stdcall abi_CreateFromConnectionProfileWithTargetAdapter(impl::abi_arg_in<Windows::Networking::Connectivity::IConnectionProfile> profile, impl::abi_arg_in<Windows::Networking::Connectivity::INetworkAdapter> adapter, impl::abi_arg_out<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager> ppManager) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppManager = detach(this->shim().CreateFromConnectionProfile(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&profile), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
+            *ppManager = detach_abi(this->shim().CreateFromConnectionProfile(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&profile), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
             return S_OK;
         }
         catch (...)
@@ -2881,7 +2881,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -2890,12 +2890,12 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
         }
     }
 
-    HRESULT __stdcall get_AdditionalErrorMessage(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_AdditionalErrorMessage(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AdditionalErrorMessage());
+            *value = detach_abi(this->shim().AdditionalErrorMessage());
             return S_OK;
         }
         catch (...)
@@ -2914,7 +2914,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisionFromXmlDocume
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AllElementsProvisioned());
+            *value = detach_abi(this->shim().AllElementsProvisioned());
             return S_OK;
         }
         catch (...)
@@ -2923,12 +2923,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisionFromXmlDocume
         }
     }
 
-    HRESULT __stdcall get_ProvisionResultsXml(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_ProvisionResultsXml(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ProvisionResultsXml());
+            *value = detach_abi(this->shim().ProvisionResultsXml());
             return S_OK;
         }
         catch (...)
@@ -2956,7 +2956,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisionedProfile> : 
         }
     }
 
-    HRESULT __stdcall abi_UpdateUsage(abi_arg_in<Windows::Networking::NetworkOperators::ProfileUsage> value) noexcept override
+    HRESULT __stdcall abi_UpdateUsage(impl::abi_arg_in<Windows::Networking::NetworkOperators::ProfileUsage> value) noexcept override
     {
         try
         {
@@ -2974,12 +2974,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisionedProfile> : 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IProvisioningAgent> : produce_base<D, Windows::Networking::NetworkOperators::IProvisioningAgent>
 {
-    HRESULT __stdcall abi_ProvisionFromXmlDocumentAsync(abi_arg_in<hstring> provisioningXmlDocument, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_ProvisionFromXmlDocumentAsync(impl::abi_arg_in<hstring> provisioningXmlDocument, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().ProvisionFromXmlDocumentAsync(*reinterpret_cast<const hstring *>(&provisioningXmlDocument)));
+            *asyncInfo = detach_abi(this->shim().ProvisionFromXmlDocumentAsync(*reinterpret_cast<const hstring *>(&provisioningXmlDocument)));
             return S_OK;
         }
         catch (...)
@@ -2989,12 +2989,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisioningAgent> : p
         }
     }
 
-    HRESULT __stdcall abi_GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, abi_arg_in<hstring> profileName, abi_arg_out<Windows::Networking::NetworkOperators::IProvisionedProfile> provisionedProfile) noexcept override
+    HRESULT __stdcall abi_GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, impl::abi_arg_in<hstring> profileName, impl::abi_arg_out<Windows::Networking::NetworkOperators::IProvisionedProfile> provisionedProfile) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *provisionedProfile = detach(this->shim().GetProvisionedProfile(mediaType, *reinterpret_cast<const hstring *>(&profileName)));
+            *provisionedProfile = detach_abi(this->shim().GetProvisionedProfile(mediaType, *reinterpret_cast<const hstring *>(&profileName)));
             return S_OK;
         }
         catch (...)
@@ -3008,12 +3008,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisioningAgent> : p
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods> : produce_base<D, Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods>
 {
-    HRESULT __stdcall abi_CreateFromNetworkAccountId(abi_arg_in<hstring> networkAccountId, abi_arg_out<Windows::Networking::NetworkOperators::IProvisioningAgent> provisioningAgent) noexcept override
+    HRESULT __stdcall abi_CreateFromNetworkAccountId(impl::abi_arg_in<hstring> networkAccountId, impl::abi_arg_out<Windows::Networking::NetworkOperators::IProvisioningAgent> provisioningAgent) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *provisioningAgent = detach(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
+            *provisioningAgent = detach_abi(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
         catch (...)
@@ -3032,7 +3032,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DataCodingScheme());
+            *value = detach_abi(this->shim().DataCodingScheme());
             return S_OK;
         }
         catch (...)
@@ -3055,12 +3055,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
         }
     }
 
-    HRESULT __stdcall abi_GetPayload(uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
+    HRESULT __stdcall abi_GetPayload(uint32_t * __valueSize, impl::abi_arg_out<uint8_t> * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            std::tie(*__valueSize, *value) = detach(this->shim().GetPayload());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().GetPayload());
             return S_OK;
         }
         catch (...)
@@ -3071,7 +3071,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
         }
     }
 
-    HRESULT __stdcall abi_SetPayload(uint32_t __valueSize, abi_arg_in<uint8_t> * value) noexcept override
+    HRESULT __stdcall abi_SetPayload(uint32_t __valueSize, impl::abi_arg_in<uint8_t> * value) noexcept override
     {
         try
         {
@@ -3085,12 +3085,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
         }
     }
 
-    HRESULT __stdcall get_PayloadAsText(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_PayloadAsText(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PayloadAsText());
+            *value = detach_abi(this->shim().PayloadAsText());
             return S_OK;
         }
         catch (...)
@@ -3100,7 +3100,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
         }
     }
 
-    HRESULT __stdcall put_PayloadAsText(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_PayloadAsText(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -3118,12 +3118,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IUssdMessageFactory> : produce_base<D, Windows::Networking::NetworkOperators::IUssdMessageFactory>
 {
-    HRESULT __stdcall abi_CreateMessage(abi_arg_in<hstring> messageText, abi_arg_out<Windows::Networking::NetworkOperators::IUssdMessage> ussdMessage) noexcept override
+    HRESULT __stdcall abi_CreateMessage(impl::abi_arg_in<hstring> messageText, impl::abi_arg_out<Windows::Networking::NetworkOperators::IUssdMessage> ussdMessage) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ussdMessage = detach(this->shim().CreateMessage(*reinterpret_cast<const hstring *>(&messageText)));
+            *ussdMessage = detach_abi(this->shim().CreateMessage(*reinterpret_cast<const hstring *>(&messageText)));
             return S_OK;
         }
         catch (...)
@@ -3142,7 +3142,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdReply> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ResultCode());
+            *value = detach_abi(this->shim().ResultCode());
             return S_OK;
         }
         catch (...)
@@ -3151,12 +3151,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdReply> : produce_b
         }
     }
 
-    HRESULT __stdcall get_Message(abi_arg_out<Windows::Networking::NetworkOperators::IUssdMessage> value) noexcept override
+    HRESULT __stdcall get_Message(impl::abi_arg_out<Windows::Networking::NetworkOperators::IUssdMessage> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Message());
+            *value = detach_abi(this->shim().Message());
             return S_OK;
         }
         catch (...)
@@ -3170,12 +3170,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdReply> : produce_b
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IUssdSession> : produce_base<D, Windows::Networking::NetworkOperators::IUssdSession>
 {
-    HRESULT __stdcall abi_SendMessageAndGetReplyAsync(abi_arg_in<Windows::Networking::NetworkOperators::IUssdMessage> message, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::UssdReply>> asyncInfo) noexcept override
+    HRESULT __stdcall abi_SendMessageAndGetReplyAsync(impl::abi_arg_in<Windows::Networking::NetworkOperators::IUssdMessage> message, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::UssdReply>> asyncInfo) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach(this->shim().SendMessageAndGetReplyAsync(*reinterpret_cast<const Windows::Networking::NetworkOperators::UssdMessage *>(&message)));
+            *asyncInfo = detach_abi(this->shim().SendMessageAndGetReplyAsync(*reinterpret_cast<const Windows::Networking::NetworkOperators::UssdMessage *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -3203,12 +3203,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdSession> : produce
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IUssdSessionStatics> : produce_base<D, Windows::Networking::NetworkOperators::IUssdSessionStatics>
 {
-    HRESULT __stdcall abi_CreateFromNetworkAccountId(abi_arg_in<hstring> networkAccountId, abi_arg_out<Windows::Networking::NetworkOperators::IUssdSession> ussdSession) noexcept override
+    HRESULT __stdcall abi_CreateFromNetworkAccountId(impl::abi_arg_in<hstring> networkAccountId, impl::abi_arg_out<Windows::Networking::NetworkOperators::IUssdSession> ussdSession) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ussdSession = detach(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
+            *ussdSession = detach_abi(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
         catch (...)
@@ -3218,12 +3218,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdSessionStatics> : 
         }
     }
 
-    HRESULT __stdcall abi_CreateFromNetworkInterfaceId(abi_arg_in<hstring> networkInterfaceId, abi_arg_out<Windows::Networking::NetworkOperators::IUssdSession> ussdSession) noexcept override
+    HRESULT __stdcall abi_CreateFromNetworkInterfaceId(impl::abi_arg_in<hstring> networkInterfaceId, impl::abi_arg_out<Windows::Networking::NetworkOperators::IUssdSession> ussdSession) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ussdSession = detach(this->shim().CreateFromNetworkInterfaceId(*reinterpret_cast<const hstring *>(&networkInterfaceId)));
+            *ussdSession = detach_abi(this->shim().CreateFromNetworkInterfaceId(*reinterpret_cast<const hstring *>(&networkInterfaceId)));
             return S_OK;
         }
         catch (...)
@@ -3241,21 +3241,21 @@ namespace Windows::Networking::NetworkOperators {
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IMobileBroadbandAccountStatics<D>::AvailableNetworkAccountIds() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> ppAccountIds;
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccountStatics)->get_AvailableNetworkAccountIds(put(ppAccountIds)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountStatics)->get_AvailableNetworkAccountIds(put_abi(ppAccountIds)));
     return ppAccountIds;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandAccount impl_IMobileBroadbandAccountStatics<D>::CreateFromNetworkAccountId(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandAccount ppAccount { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccountStatics)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ppAccount)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountStatics)->abi_CreateFromNetworkAccountId(get_abi(networkAccountId), put_abi(ppAccount)));
     return ppAccount;
 }
 
 template <typename D> hstring impl_IMobileBroadbandAccount<D>::NetworkAccountId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_NetworkAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_NetworkAccountId(put_abi(value)));
     return value;
 }
 
@@ -3269,28 +3269,28 @@ template <typename D> GUID impl_IMobileBroadbandAccount<D>::ServiceProviderGuid(
 template <typename D> hstring impl_IMobileBroadbandAccount<D>::ServiceProviderName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_ServiceProviderName(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_ServiceProviderName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandNetwork impl_IMobileBroadbandAccount<D>::CurrentNetwork() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandNetwork network { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_CurrentNetwork(put(network)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_CurrentNetwork(put_abi(network)));
     return network;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation impl_IMobileBroadbandAccount<D>::CurrentDeviceInformation() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation deviceInformation { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_CurrentDeviceInformation(put(deviceInformation)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_CurrentDeviceInformation(put_abi(deviceInformation)));
     return deviceInformation;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> impl_IMobileBroadbandAccount2<D>::GetConnectionProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccount2)->abi_GetConnectionProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount2)->abi_GetConnectionProfiles(put_abi(value)));
     return value;
 }
 
@@ -3304,21 +3304,21 @@ template <typename D> Windows::Networking::NetworkOperators::NetworkDeviceStatus
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::Manufacturer() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_Manufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_Manufacturer(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::Model() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_Model(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_Model(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::FirmwareInformation() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_FirmwareInformation(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_FirmwareInformation(put_abi(value)));
     return value;
 }
 
@@ -3339,35 +3339,35 @@ template <typename D> Windows::Networking::NetworkOperators::DataClasses impl_IM
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::CustomDataClass() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_CustomDataClass(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_CustomDataClass(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::MobileEquipmentId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_MobileEquipmentId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_MobileEquipmentId(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IMobileBroadbandDeviceInformation<D>::TelephoneNumbers() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_TelephoneNumbers(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_TelephoneNumbers(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::SubscriberId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_SubscriberId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_SubscriberId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::SimIccId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_SimIccId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_SimIccId(put_abi(value)));
     return value;
 }
 
@@ -3381,7 +3381,7 @@ template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDevi
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_DeviceId(put_abi(value)));
     return value;
 }
 
@@ -3395,28 +3395,28 @@ template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandRadi
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPinManager impl_IMobileBroadbandDeviceInformation2<D>::PinManager() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandPinManager value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_PinManager(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_PinManager(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation2<D>::Revision() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_Revision(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_Revision(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation2<D>::SerialNumber() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_SerialNumber(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_SerialNumber(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkAdapter impl_IMobileBroadbandNetwork<D>::NetworkAdapter() const
 {
     Windows::Networking::Connectivity::NetworkAdapter value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_NetworkAdapter(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_NetworkAdapter(put_abi(value)));
     return value;
 }
 
@@ -3451,7 +3451,7 @@ template <typename D> uint32_t impl_IMobileBroadbandNetwork<D>::ActivationNetwor
 template <typename D> hstring impl_IMobileBroadbandNetwork<D>::AccessPointName() const
 {
     hstring apn;
-    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_AccessPointName(put(apn)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_AccessPointName(put_abi(apn)));
     return apn;
 }
 
@@ -3465,14 +3465,14 @@ template <typename D> Windows::Networking::NetworkOperators::DataClasses impl_IM
 template <typename D> hstring impl_IMobileBroadbandNetwork<D>::RegisteredProviderId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_RegisteredProviderId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_RegisteredProviderId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandNetwork<D>::RegisteredProviderName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_RegisteredProviderName(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_RegisteredProviderName(put_abi(value)));
     return value;
 }
 
@@ -3484,39 +3484,39 @@ template <typename D> void impl_IMobileBroadbandNetwork<D>::ShowConnectionUI() c
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMobileBroadbandNetwork2<D>::GetVoiceCallSupportAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork2)->abi_GetVoiceCallSupportAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork2)->abi_GetVoiceCallSupportAsync(put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> impl_IMobileBroadbandNetwork2<D>::RegistrationUiccApps() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork2)->get_RegistrationUiccApps(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork2)->get_RegistrationUiccApps(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Ssid() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->get_Ssid(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->get_Ssid(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Ssid(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->put_Ssid(get(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->put_Ssid(get_abi(value)));
 }
 
 template <typename D> hstring impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Passphrase() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->get_Passphrase(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->get_Passphrase(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Passphrase(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->put_Passphrase(get(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->put_Passphrase(get_abi(value)));
 }
 
 template <typename D> Windows::Networking::NetworkOperators::TetheringOperationStatus impl_INetworkOperatorTetheringOperationResult<D>::Status() const
@@ -3529,42 +3529,42 @@ template <typename D> Windows::Networking::NetworkOperators::TetheringOperationS
 template <typename D> hstring impl_INetworkOperatorTetheringOperationResult<D>::AdditionalErrorMessage() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringOperationResult)->get_AdditionalErrorMessage(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringOperationResult)->get_AdditionalErrorMessage(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::TetheringCapability impl_INetworkOperatorTetheringManagerStatics<D>::GetTetheringCapability(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::TetheringCapability value {};
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics)->abi_GetTetheringCapability(get(networkAccountId), &value));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics)->abi_GetTetheringCapability(get_abi(networkAccountId), &value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager impl_INetworkOperatorTetheringManagerStatics<D>::CreateFromNetworkAccountId(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager ppManager { nullptr };
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ppManager)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics)->abi_CreateFromNetworkAccountId(get_abi(networkAccountId), put_abi(ppManager)));
     return ppManager;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::TetheringCapability impl_INetworkOperatorTetheringManagerStatics2<D>::GetTetheringCapabilityFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile) const
 {
     Windows::Networking::NetworkOperators::TetheringCapability result {};
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics2)->abi_GetTetheringCapabilityFromConnectionProfile(get(profile), &result));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics2)->abi_GetTetheringCapabilityFromConnectionProfile(get_abi(profile), &result));
     return result;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager impl_INetworkOperatorTetheringManagerStatics2<D>::CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile) const
 {
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager ppManager { nullptr };
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics2)->abi_CreateFromConnectionProfile(get(profile), put(ppManager)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics2)->abi_CreateFromConnectionProfile(get_abi(profile), put_abi(ppManager)));
     return ppManager;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager impl_INetworkOperatorTetheringManagerStatics3<D>::CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager ppManager { nullptr };
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics3)->abi_CreateFromConnectionProfileWithTargetAdapter(get(profile), get(adapter), put(ppManager)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics3)->abi_CreateFromConnectionProfileWithTargetAdapter(get_abi(profile), get_abi(adapter), put_abi(ppManager)));
     return ppManager;
 }
 
@@ -3592,63 +3592,63 @@ template <typename D> Windows::Networking::NetworkOperators::TetheringOperationa
 template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration impl_INetworkOperatorTetheringManager<D>::GetCurrentAccessPointConfiguration() const
 {
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration configuration { nullptr };
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_GetCurrentAccessPointConfiguration(put(configuration)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_GetCurrentAccessPointConfiguration(put_abi(configuration)));
     return configuration;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_INetworkOperatorTetheringManager<D>::ConfigureAccessPointAsync(const Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration & configuration) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_ConfigureAccessPointAsync(get(configuration), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_ConfigureAccessPointAsync(get_abi(configuration), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult> impl_INetworkOperatorTetheringManager<D>::StartTetheringAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult> asyncInfo;
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_StartTetheringAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_StartTetheringAsync(put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult> impl_INetworkOperatorTetheringManager<D>::StopTetheringAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult> asyncInfo;
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_StopTetheringAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_StopTetheringAsync(put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> hstring impl_INetworkOperatorTetheringClient<D>::MacAddress() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringClient)->get_MacAddress(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringClient)->get_MacAddress(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> impl_INetworkOperatorTetheringClient<D>::HostNames() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> value;
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringClient)->get_HostNames(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringClient)->get_HostNames(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> impl_INetworkOperatorTetheringClientManager<D>::GetTetheringClients() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> value;
-    check_hresult(WINRT_SHIM(INetworkOperatorTetheringClientManager)->abi_GetTetheringClients(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringClientManager)->abi_GetTetheringClients(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandAccountEventArgs<D>::NetworkAccountId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccountEventArgs)->get_NetworkAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountEventArgs)->get_NetworkAccountId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandAccountUpdatedEventArgs<D>::NetworkAccountId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccountUpdatedEventArgs)->get_NetworkAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountUpdatedEventArgs)->get_NetworkAccountId(put_abi(value)));
     return value;
 }
 
@@ -3669,7 +3669,7 @@ template <typename D> bool impl_IMobileBroadbandAccountUpdatedEventArgs<D>::HasN
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::AccountAdded(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_AccountAdded(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_AccountAdded(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3686,7 +3686,7 @@ template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::AccountAdded(
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::AccountUpdated(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_AccountUpdated(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_AccountUpdated(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3703,7 +3703,7 @@ template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::AccountUpdate
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::AccountRemoved(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_AccountRemoved(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_AccountRemoved(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3720,7 +3720,7 @@ template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::AccountRemove
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_EnumerationCompleted(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_EnumerationCompleted(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3737,7 +3737,7 @@ template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::EnumerationCo
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_Stopped(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_Stopped(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3771,56 +3771,56 @@ template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::Stop() const
 template <typename D> hstring impl_IMobileBroadbandModemStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_GetDeviceSelector(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandModem impl_IMobileBroadbandModemStatics<D>::FromId(hstring_view deviceId) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandModem value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_FromId(get(deviceId), put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_FromId(get_abi(deviceId), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandModem impl_IMobileBroadbandModemStatics<D>::GetDefault() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandModem value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_GetDefault(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_GetDefault(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandUicc impl_IMobileBroadbandModemConfiguration<D>::Uicc() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandUicc value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandModemConfiguration)->get_Uicc(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemConfiguration)->get_Uicc(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandModemConfiguration<D>::HomeProviderId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandModemConfiguration)->get_HomeProviderId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemConfiguration)->get_HomeProviderId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandModemConfiguration<D>::HomeProviderName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandModemConfiguration)->get_HomeProviderName(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemConfiguration)->get_HomeProviderName(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandAccount impl_IMobileBroadbandModem<D>::CurrentAccount() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandAccount value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_CurrentAccount(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_CurrentAccount(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation impl_IMobileBroadbandModem<D>::DeviceInformation() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_DeviceInformation(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_DeviceInformation(put_abi(value)));
     return value;
 }
 
@@ -3841,14 +3841,14 @@ template <typename D> uint32_t impl_IMobileBroadbandModem<D>::MaxDeviceServiceDa
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation> impl_IMobileBroadbandModem<D>::DeviceServices() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_DeviceServices(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_DeviceServices(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceService impl_IMobileBroadbandModem<D>::GetDeviceService(GUID deviceServiceId) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceService value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->abi_GetDeviceService(deviceServiceId, put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->abi_GetDeviceService(deviceServiceId, put_abi(value)));
     return value;
 }
 
@@ -3862,35 +3862,35 @@ template <typename D> bool impl_IMobileBroadbandModem<D>::IsResetSupported() con
 template <typename D> Windows::Foundation::IAsyncAction impl_IMobileBroadbandModem<D>::ResetAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->abi_ResetAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->abi_ResetAsync(put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration> impl_IMobileBroadbandModem<D>::GetCurrentConfigurationAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->abi_GetCurrentConfigurationAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->abi_GetCurrentConfigurationAsync(put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandNetwork impl_IMobileBroadbandModem<D>::CurrentNetwork() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandNetwork value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_CurrentNetwork(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_CurrentNetwork(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinType> impl_IMobileBroadbandPinManager<D>::SupportedPins() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinType> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandPinManager)->get_SupportedPins(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinManager)->get_SupportedPins(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPin impl_IMobileBroadbandPinManager<D>::GetPin(Windows::Networking::NetworkOperators::MobileBroadbandPinType pinType) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandPin value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandPinManager)->abi_GetPin(pinType, put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinManager)->abi_GetPin(pinType, put_abi(value)));
     return value;
 }
 
@@ -3960,35 +3960,35 @@ template <typename D> uint32_t impl_IMobileBroadbandPin<D>::AttemptsRemaining() 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::EnableAsync(hstring_view currentPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_EnableAsync(get(currentPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_EnableAsync(get_abi(currentPin), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::DisableAsync(hstring_view currentPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_DisableAsync(get(currentPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_DisableAsync(get_abi(currentPin), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::EnterAsync(hstring_view currentPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_EnterAsync(get(currentPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_EnterAsync(get_abi(currentPin), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::ChangeAsync(hstring_view currentPin, hstring_view newPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_ChangeAsync(get(currentPin), get(newPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_ChangeAsync(get_abi(currentPin), get_abi(newPin), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::UnblockAsync(hstring_view pinUnblockKey, hstring_view newPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_UnblockAsync(get(pinUnblockKey), get(newPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_UnblockAsync(get_abi(pinUnblockKey), get_abi(newPin), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
@@ -4023,35 +4023,35 @@ template <typename D> GUID impl_IMobileBroadbandDeviceService<D>::DeviceServiceI
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IMobileBroadbandDeviceService<D>::SupportedCommands() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->get_SupportedCommands(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->get_SupportedCommands(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession impl_IMobileBroadbandDeviceService<D>::OpenDataSession() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->abi_OpenDataSession(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->abi_OpenDataSession(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession impl_IMobileBroadbandDeviceService<D>::OpenCommandSession() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->abi_OpenCommandSession(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->abi_OpenCommandSession(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandDeviceServiceDataReceivedEventArgs<D>::ReceivedData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataReceivedEventArgs)->get_ReceivedData(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataReceivedEventArgs)->get_ReceivedData(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IMobileBroadbandDeviceServiceDataSession<D>::WriteDataAsync(const Windows::Storage::Streams::IBuffer & value) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataSession)->abi_WriteDataAsync(get(value), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataSession)->abi_WriteDataAsync(get_abi(value), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
@@ -4063,7 +4063,7 @@ template <typename D> void impl_IMobileBroadbandDeviceServiceDataSession<D>::Clo
 template <typename D> event_token impl_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataSession)->add_DataReceived(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataSession)->add_DataReceived(get_abi(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -4087,21 +4087,21 @@ template <typename D> uint32_t impl_IMobileBroadbandDeviceServiceCommandResult<D
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandDeviceServiceCommandResult<D>::ResponseData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandResult)->get_ResponseData(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandResult)->get_ResponseData(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> impl_IMobileBroadbandDeviceServiceCommandSession<D>::SendQueryCommandAsync(uint32_t commandId, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandSession)->abi_SendQueryCommandAsync(commandId, get(data), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandSession)->abi_SendQueryCommandAsync(commandId, get_abi(data), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> impl_IMobileBroadbandDeviceServiceCommandSession<D>::SendSetCommandAsync(uint32_t commandId, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandSession)->abi_SendSetCommandAsync(commandId, get(data), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandSession)->abi_SendSetCommandAsync(commandId, get_abi(data), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
@@ -4120,21 +4120,21 @@ template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandUicc
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> impl_IMobileBroadbandUiccAppsResult<D>::UiccApps() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppsResult)->get_UiccApps(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppsResult)->get_UiccApps(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandUicc<D>::SimIccId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandUicc)->get_SimIccId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUicc)->get_SimIccId(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult> impl_IMobileBroadbandUicc<D>::GetUiccAppsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandUicc)->abi_GetUiccAppsAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUicc)->abi_GetUiccAppsAsync(put_abi(asyncInfo)));
     return asyncInfo;
 }
 
@@ -4190,14 +4190,14 @@ template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandUicc
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandUiccAppReadRecordResult<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppReadRecordResult)->get_Data(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppReadRecordResult)->get_Data(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandUiccApp<D>::Id() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->get_Id(put_abi(value)));
     return value;
 }
 
@@ -4211,42 +4211,42 @@ template <typename D> Windows::Networking::NetworkOperators::UiccAppKind impl_IM
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> impl_IMobileBroadbandUiccApp<D>::GetRecordDetailsAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & uiccFilePath) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->abi_GetRecordDetailsAsync(get(uiccFilePath), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->abi_GetRecordDetailsAsync(get_abi(uiccFilePath), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult> impl_IMobileBroadbandUiccApp<D>::ReadRecordAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & uiccFilePath, int32_t recordIndex) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->abi_ReadRecordAsync(get(uiccFilePath), recordIndex, put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->abi_ReadRecordAsync(get_abi(uiccFilePath), recordIndex, put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> hstring impl_IMobileBroadbandNetworkRegistrationStateChange<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandNetworkRegistrationStateChange)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetworkRegistrationStateChange)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandNetwork impl_IMobileBroadbandNetworkRegistrationStateChange<D>::Network() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandNetwork value { nullptr };
-    check_hresult(WINRT_SHIM(IMobileBroadbandNetworkRegistrationStateChange)->get_Network(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetworkRegistrationStateChange)->get_Network(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> impl_IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails<D>::NetworkRegistrationStateChanges() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails)->get_NetworkRegistrationStateChanges(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails)->get_NetworkRegistrationStateChanges(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandRadioStateChange<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandRadioStateChange)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandRadioStateChange)->get_DeviceId(put_abi(value)));
     return value;
 }
 
@@ -4260,14 +4260,14 @@ template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandRadi
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> impl_IMobileBroadbandRadioStateChangeTriggerDetails<D>::RadioStateChanges() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandRadioStateChangeTriggerDetails)->get_RadioStateChanges(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandRadioStateChangeTriggerDetails)->get_RadioStateChanges(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandPinLockStateChange<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandPinLockStateChange)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinLockStateChange)->get_DeviceId(put_abi(value)));
     return value;
 }
 
@@ -4288,14 +4288,14 @@ template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPinL
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange> impl_IMobileBroadbandPinLockStateChangeTriggerDetails<D>::PinLockStateChanges() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange> value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandPinLockStateChangeTriggerDetails)->get_PinLockStateChanges(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinLockStateChangeTriggerDetails)->get_PinLockStateChanges(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceServiceTriggerDetails<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceTriggerDetails)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceTriggerDetails)->get_DeviceId(put_abi(value)));
     return value;
 }
 
@@ -4309,167 +4309,167 @@ template <typename D> GUID impl_IMobileBroadbandDeviceServiceTriggerDetails<D>::
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandDeviceServiceTriggerDetails<D>::ReceivedData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceTriggerDetails)->get_ReceivedData(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceTriggerDetails)->get_ReceivedData(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownCSimFilePathsStatics<D>::EFSpn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownCSimFilePathsStatics)->get_EFSpn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCSimFilePathsStatics)->get_EFSpn(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownCSimFilePathsStatics<D>::Gid1() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownCSimFilePathsStatics)->get_Gid1(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCSimFilePathsStatics)->get_Gid1(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownCSimFilePathsStatics<D>::Gid2() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownCSimFilePathsStatics)->get_Gid2(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCSimFilePathsStatics)->get_Gid2(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownRuimFilePathsStatics<D>::EFSpn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownRuimFilePathsStatics)->get_EFSpn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownRuimFilePathsStatics)->get_EFSpn(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownRuimFilePathsStatics<D>::Gid1() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownRuimFilePathsStatics)->get_Gid1(put(value)));
+    check_hresult(WINRT_SHIM(IKnownRuimFilePathsStatics)->get_Gid1(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownRuimFilePathsStatics<D>::Gid2() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownRuimFilePathsStatics)->get_Gid2(put(value)));
+    check_hresult(WINRT_SHIM(IKnownRuimFilePathsStatics)->get_Gid2(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownSimFilePathsStatics<D>::EFOns() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_EFOns(put(value)));
+    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_EFOns(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownSimFilePathsStatics<D>::EFSpn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_EFSpn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_EFSpn(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownSimFilePathsStatics<D>::Gid1() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_Gid1(put(value)));
+    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_Gid1(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownSimFilePathsStatics<D>::Gid2() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_Gid2(put(value)));
+    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_Gid2(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::EFSpn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_EFSpn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_EFSpn(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::EFOpl() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_EFOpl(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_EFOpl(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::EFPnn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_EFPnn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_EFPnn(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::Gid1() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_Gid1(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_Gid1(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::Gid2() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_Gid2(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_Gid2(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHotspotAuthenticationEventDetails<D>::EventToken() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationEventDetails)->get_EventToken(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationEventDetails)->get_EventToken(put_abi(value)));
     return value;
 }
 
 template <typename D> bool impl_IHotspotAuthenticationContextStatics<D>::TryGetAuthenticationContext(hstring_view evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context) const
 {
     bool isValid {};
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationContextStatics)->abi_TryGetAuthenticationContext(get(evenToken), put(context), &isValid));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContextStatics)->abi_TryGetAuthenticationContext(get_abi(evenToken), put_abi(context), &isValid));
     return isValid;
 }
 
 template <typename D> com_array<uint8_t> impl_IHotspotAuthenticationContext<D>::WirelessNetworkId() const
 {
     com_array<uint8_t> value {};
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_WirelessNetworkId(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_WirelessNetworkId(impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkAdapter impl_IHotspotAuthenticationContext<D>::NetworkAdapter() const
 {
     Windows::Networking::Connectivity::NetworkAdapter value { nullptr };
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_NetworkAdapter(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_NetworkAdapter(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHotspotAuthenticationContext<D>::RedirectMessageUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_RedirectMessageUrl(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_RedirectMessageUrl(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IHotspotAuthenticationContext<D>::RedirectMessageXml() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_RedirectMessageXml(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_RedirectMessageXml(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHotspotAuthenticationContext<D>::AuthenticationUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_AuthenticationUrl(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_AuthenticationUrl(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IHotspotAuthenticationContext<D>::IssueCredentials(hstring_view userName, hstring_view password, hstring_view extraParameters, bool markAsManualConnectOnFailure) const
 {
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_IssueCredentials(get(userName), get(password), get(extraParameters), markAsManualConnectOnFailure));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_IssueCredentials(get_abi(userName), get_abi(password), get_abi(extraParameters), markAsManualConnectOnFailure));
 }
 
 template <typename D> void impl_IHotspotAuthenticationContext<D>::AbortAuthentication(bool markAsManual) const
@@ -4484,7 +4484,7 @@ template <typename D> void impl_IHotspotAuthenticationContext<D>::SkipAuthentica
 
 template <typename D> void impl_IHotspotAuthenticationContext<D>::TriggerAttentionRequired(hstring_view packageRelativeApplicationId, hstring_view applicationParameters) const
 {
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_TriggerAttentionRequired(get(packageRelativeApplicationId), get(applicationParameters)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_TriggerAttentionRequired(get_abi(packageRelativeApplicationId), get_abi(applicationParameters)));
 }
 
 template <typename D> bool impl_IHotspotCredentialsAuthenticationResult<D>::HasNetworkErrorOccurred() const
@@ -4504,21 +4504,21 @@ template <typename D> Windows::Networking::NetworkOperators::HotspotAuthenticati
 template <typename D> Windows::Foundation::Uri impl_IHotspotCredentialsAuthenticationResult<D>::LogoffUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IHotspotCredentialsAuthenticationResult)->get_LogoffUrl(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotCredentialsAuthenticationResult)->get_LogoffUrl(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IHotspotCredentialsAuthenticationResult<D>::AuthenticationReplyXml() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(WINRT_SHIM(IHotspotCredentialsAuthenticationResult)->get_AuthenticationReplyXml(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotCredentialsAuthenticationResult)->get_AuthenticationReplyXml(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> impl_IHotspotAuthenticationContext2<D>::IssueCredentialsAsync(hstring_view userName, hstring_view password, hstring_view extraParameters, bool markAsManualConnectOnFailure) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> asyncInfo;
-    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext2)->abi_IssueCredentialsAsync(get(userName), get(password), get(extraParameters), markAsManualConnectOnFailure, put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext2)->abi_IssueCredentialsAsync(get_abi(userName), get_abi(password), get_abi(extraParameters), markAsManualConnectOnFailure, put_abi(asyncInfo)));
     return asyncInfo;
 }
 
@@ -4532,7 +4532,7 @@ template <typename D> bool impl_IProvisionFromXmlDocumentResults<D>::AllElements
 template <typename D> hstring impl_IProvisionFromXmlDocumentResults<D>::ProvisionResultsXml() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IProvisionFromXmlDocumentResults)->get_ProvisionResultsXml(put(value)));
+    check_hresult(WINRT_SHIM(IProvisionFromXmlDocumentResults)->get_ProvisionResultsXml(put_abi(value)));
     return value;
 }
 
@@ -4543,27 +4543,27 @@ template <typename D> void impl_IProvisionedProfile<D>::UpdateCost(Windows::Netw
 
 template <typename D> void impl_IProvisionedProfile<D>::UpdateUsage(const Windows::Networking::NetworkOperators::ProfileUsage & value) const
 {
-    check_hresult(WINRT_SHIM(IProvisionedProfile)->abi_UpdateUsage(get(value)));
+    check_hresult(WINRT_SHIM(IProvisionedProfile)->abi_UpdateUsage(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> impl_IProvisioningAgent<D>::ProvisionFromXmlDocumentAsync(hstring_view provisioningXmlDocument) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> asyncInfo;
-    check_hresult(WINRT_SHIM(IProvisioningAgent)->abi_ProvisionFromXmlDocumentAsync(get(provisioningXmlDocument), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IProvisioningAgent)->abi_ProvisionFromXmlDocumentAsync(get_abi(provisioningXmlDocument), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::ProvisionedProfile impl_IProvisioningAgent<D>::GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, hstring_view profileName) const
 {
     Windows::Networking::NetworkOperators::ProvisionedProfile provisionedProfile { nullptr };
-    check_hresult(WINRT_SHIM(IProvisioningAgent)->abi_GetProvisionedProfile(mediaType, get(profileName), put(provisionedProfile)));
+    check_hresult(WINRT_SHIM(IProvisioningAgent)->abi_GetProvisionedProfile(mediaType, get_abi(profileName), put_abi(provisionedProfile)));
     return provisionedProfile;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::ProvisioningAgent impl_IProvisioningAgentStaticMethods<D>::CreateFromNetworkAccountId(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::ProvisioningAgent provisioningAgent { nullptr };
-    check_hresult(WINRT_SHIM(IProvisioningAgentStaticMethods)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(provisioningAgent)));
+    check_hresult(WINRT_SHIM(IProvisioningAgentStaticMethods)->abi_CreateFromNetworkAccountId(get_abi(networkAccountId), put_abi(provisioningAgent)));
     return provisioningAgent;
 }
 
@@ -4582,31 +4582,31 @@ template <typename D> void impl_IUssdMessage<D>::DataCodingScheme(uint8_t value)
 template <typename D> com_array<uint8_t> impl_IUssdMessage<D>::GetPayload() const
 {
     com_array<uint8_t> value {};
-    check_hresult(WINRT_SHIM(IUssdMessage)->abi_GetPayload(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(IUssdMessage)->abi_GetPayload(impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IUssdMessage<D>::SetPayload(array_view<const uint8_t> value) const
 {
-    check_hresult(WINRT_SHIM(IUssdMessage)->abi_SetPayload(value.size(), get(value)));
+    check_hresult(WINRT_SHIM(IUssdMessage)->abi_SetPayload(value.size(), get_abi(value)));
 }
 
 template <typename D> hstring impl_IUssdMessage<D>::PayloadAsText() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IUssdMessage)->get_PayloadAsText(put(value)));
+    check_hresult(WINRT_SHIM(IUssdMessage)->get_PayloadAsText(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IUssdMessage<D>::PayloadAsText(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IUssdMessage)->put_PayloadAsText(get(value)));
+    check_hresult(WINRT_SHIM(IUssdMessage)->put_PayloadAsText(get_abi(value)));
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UssdMessage impl_IUssdMessageFactory<D>::CreateMessage(hstring_view messageText) const
 {
     Windows::Networking::NetworkOperators::UssdMessage ussdMessage { nullptr };
-    check_hresult(WINRT_SHIM(IUssdMessageFactory)->abi_CreateMessage(get(messageText), put(ussdMessage)));
+    check_hresult(WINRT_SHIM(IUssdMessageFactory)->abi_CreateMessage(get_abi(messageText), put_abi(ussdMessage)));
     return ussdMessage;
 }
 
@@ -4620,14 +4620,14 @@ template <typename D> Windows::Networking::NetworkOperators::UssdResultCode impl
 template <typename D> Windows::Networking::NetworkOperators::UssdMessage impl_IUssdReply<D>::Message() const
 {
     Windows::Networking::NetworkOperators::UssdMessage value { nullptr };
-    check_hresult(WINRT_SHIM(IUssdReply)->get_Message(put(value)));
+    check_hresult(WINRT_SHIM(IUssdReply)->get_Message(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::UssdReply> impl_IUssdSession<D>::SendMessageAndGetReplyAsync(const Windows::Networking::NetworkOperators::UssdMessage & message) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::UssdReply> asyncInfo;
-    check_hresult(WINRT_SHIM(IUssdSession)->abi_SendMessageAndGetReplyAsync(get(message), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IUssdSession)->abi_SendMessageAndGetReplyAsync(get_abi(message), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
@@ -4639,14 +4639,14 @@ template <typename D> void impl_IUssdSession<D>::Close() const
 template <typename D> Windows::Networking::NetworkOperators::UssdSession impl_IUssdSessionStatics<D>::CreateFromNetworkAccountId(hstring_view networkAccountId) const
 {
     Windows::Networking::NetworkOperators::UssdSession ussdSession { nullptr };
-    check_hresult(WINRT_SHIM(IUssdSessionStatics)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ussdSession)));
+    check_hresult(WINRT_SHIM(IUssdSessionStatics)->abi_CreateFromNetworkAccountId(get_abi(networkAccountId), put_abi(ussdSession)));
     return ussdSession;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UssdSession impl_IUssdSessionStatics<D>::CreateFromNetworkInterfaceId(hstring_view networkInterfaceId) const
 {
     Windows::Networking::NetworkOperators::UssdSession ussdSession { nullptr };
-    check_hresult(WINRT_SHIM(IUssdSessionStatics)->abi_CreateFromNetworkInterfaceId(get(networkInterfaceId), put(ussdSession)));
+    check_hresult(WINRT_SHIM(IUssdSessionStatics)->abi_CreateFromNetworkInterfaceId(get_abi(networkInterfaceId), put_abi(ussdSession)));
     return ussdSession;
 }
 

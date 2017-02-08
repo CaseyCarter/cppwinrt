@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics> : produce_base<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics>
 {
-    HRESULT __stdcall abi_AddLicenseAsync(abi_arg_in<Windows::Storage::Streams::IBuffer> license, abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
+    HRESULT __stdcall abi_AddLicenseAsync(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> license, impl::abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *action = detach(this->shim().AddLicenseAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&license)));
+            *action = detach_abi(this->shim().AddLicenseAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&license)));
             return S_OK;
         }
         catch (...)
@@ -31,12 +31,12 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseM
         }
     }
 
-    HRESULT __stdcall abi_GetSatisfactionInfosAsync(abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> contentIds, abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> keyIds, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult>> operation) noexcept override
+    HRESULT __stdcall abi_GetSatisfactionInfosAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> contentIds, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> keyIds, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetSatisfactionInfosAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&contentIds), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&keyIds)));
+            *operation = detach_abi(this->shim().GetSatisfactionInfosAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&contentIds), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&keyIds)));
             return S_OK;
         }
         catch (...)
@@ -55,7 +55,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SatisfiedByDevice());
+            *value = detach_abi(this->shim().SatisfiedByDevice());
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SatisfiedByOpenLicense());
+            *value = detach_abi(this->shim().SatisfiedByOpenLicense());
             return S_OK;
         }
         catch (...)
@@ -83,7 +83,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SatisfiedByTrial());
+            *value = detach_abi(this->shim().SatisfiedByTrial());
             return S_OK;
         }
         catch (...)
@@ -97,7 +97,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SatisfiedByPass());
+            *value = detach_abi(this->shim().SatisfiedByPass());
             return S_OK;
         }
         catch (...)
@@ -111,7 +111,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SatisfiedByInstallMedia());
+            *value = detach_abi(this->shim().SatisfiedByInstallMedia());
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SatisfiedBySignedInUser());
+            *value = detach_abi(this->shim().SatisfiedBySignedInUser());
             return S_OK;
         }
         catch (...)
@@ -139,7 +139,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsSatisfied());
+            *value = detach_abi(this->shim().IsSatisfied());
             return S_OK;
         }
         catch (...)
@@ -152,12 +152,12 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult> : produce_base<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult>
 {
-    HRESULT __stdcall get_LicenseSatisfactionInfos(abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo>> value) noexcept override
+    HRESULT __stdcall get_LicenseSatisfactionInfos(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LicenseSatisfactionInfos());
+            *value = detach_abi(this->shim().LicenseSatisfactionInfos());
             return S_OK;
         }
         catch (...)
@@ -172,7 +172,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExtendedError());
+            *value = detach_abi(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -189,7 +189,7 @@ namespace Windows::ApplicationModel::Store::LicenseManagement {
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo> impl_ILicenseSatisfactionResult<D>::LicenseSatisfactionInfos() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo> value;
-    check_hresult(WINRT_SHIM(ILicenseSatisfactionResult)->get_LicenseSatisfactionInfos(put(value)));
+    check_hresult(WINRT_SHIM(ILicenseSatisfactionResult)->get_LicenseSatisfactionInfos(put_abi(value)));
     return value;
 }
 
@@ -252,14 +252,14 @@ template <typename D> bool impl_ILicenseSatisfactionInfo<D>::IsSatisfied() const
 template <typename D> Windows::Foundation::IAsyncAction impl_ILicenseManagerStatics<D>::AddLicenseAsync(const Windows::Storage::Streams::IBuffer & license) const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(WINRT_SHIM(ILicenseManagerStatics)->abi_AddLicenseAsync(get(license), put(action)));
+    check_hresult(WINRT_SHIM(ILicenseManagerStatics)->abi_AddLicenseAsync(get_abi(license), put_abi(action)));
     return action;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> impl_ILicenseManagerStatics<D>::GetSatisfactionInfosAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds, const Windows::Foundation::Collections::IIterable<hstring> & keyIds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> operation;
-    check_hresult(WINRT_SHIM(ILicenseManagerStatics)->abi_GetSatisfactionInfosAsync(get(contentIds), get(keyIds), put(operation)));
+    check_hresult(WINRT_SHIM(ILicenseManagerStatics)->abi_GetSatisfactionInfosAsync(get_abi(contentIds), get_abi(keyIds), put_abi(operation)));
     return operation;
 }
 

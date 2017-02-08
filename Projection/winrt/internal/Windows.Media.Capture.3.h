@@ -13,7 +13,7 @@ template <typename H> struct impl_MediaCaptureFailedEventHandler : implements<im
 {
     impl_MediaCaptureFailedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Capture::IMediaCapture> sender, abi_arg_in<Windows::Media::Capture::IMediaCaptureFailedEventArgs> errorEventArgs) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Media::Capture::IMediaCapture> sender, impl::abi_arg_in<Windows::Media::Capture::IMediaCaptureFailedEventArgs> errorEventArgs) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_RecordLimitationExceededEventHandler : impleme
 {
     impl_RecordLimitationExceededEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Media::Capture::IMediaCapture> sender) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Media::Capture::IMediaCapture> sender) noexcept override
     {
         try
         {

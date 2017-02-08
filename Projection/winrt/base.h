@@ -194,55 +194,56 @@ struct accessors
     }
 };
 
+template <typename T>
+auto put_size_abi(T & object) noexcept
+{
+    return accessors<T>::put_size(object);
+}
+
 }
 
 template <typename T>
-auto get(const T & object) noexcept
+auto get_abi(const T & object) noexcept
 {
     return impl::accessors<T>::get(object);
 }
 
 template <typename T>
-auto put(T & object) noexcept
+auto put_abi(T & object) noexcept
 {
     return impl::accessors<T>::put(object);
 }
 
-template <typename T>
-auto put_size(T & object) noexcept
-{
-    return impl::accessors<T>::put_size(object);
-}
-
 template <typename T, typename V>
-void attach(T & object, V && value) noexcept
+void attach_abi(T & object, V && value) noexcept
 {
     impl::accessors<T>::attach(object, value);
 }
 
 template <typename T, typename V>
-void copy_from(T & object, V && value)
+void copy_from_abi(T & object, V && value)
 {
     impl::accessors<T>::copy_from(object, value);
 }
 
 template <typename T, typename V>
-void copy_to(const T & object, V & value)
+void copy_to_abi(const T & object, V & value)
 {
     impl::accessors<T>::copy_to(object, value);
 }
 
 template <typename T>
-auto detach(T & object)
+auto detach_abi(T & object)
 {
     return impl::accessors<std::decay_t<T>>::detach(object);
 }
 
 template <typename T>
-auto detach(T && object)
+auto detach_abi(T && object)
 {
     return impl::accessors<T>::detach(object);
 }
+namespace impl {
 
 template <typename T>
 struct handle_traits
@@ -269,14 +270,14 @@ struct handle
     {}
 
     handle(handle && other) noexcept :
-        m_value(detach(other))
+        m_value(detach_abi(other))
     {}
 
     handle & operator=(handle && other) noexcept
     {
         if (this != &other)
         {
-            attach(*this, detach(other));
+            attach_abi(*this, detach_abi(other));
         }
 
         return *this;
@@ -332,7 +333,7 @@ private:
 template <typename T>
 bool operator==(const handle<T> & left, const handle<T> & right) noexcept
 {
-    return get(left) == get(right);
+    return get_abi(left) == get_abi(right);
 }
 
 template <typename T>
@@ -344,7 +345,7 @@ bool operator!=(const handle<T> & left, const handle<T> & right) noexcept
 template <typename T>
 bool operator<(const handle<T> & left, const handle<T> & right) noexcept
 {
-    return get(left) < get(right);
+    return get_abi(left) < get_abi(right);
 }
 
 template <typename T>
@@ -364,8 +365,6 @@ bool operator>=(const handle<T> & left, const handle<T> & right) noexcept
 {
     return !(left < right);
 }
-
-namespace impl {
 
 template <typename T>
 struct accessors<handle<T>>
@@ -524,8 +523,6 @@ struct not_specialized
         "This UUID must be provided by a template specialization.");
 };
 
-}
-
 template <typename T>
 using abi_arg_in = ABI::arg_in<abi<T>>;
 
@@ -534,6 +531,8 @@ using abi_arg_out = ABI::arg_out<abi<T>>;
 
 template <typename T>
 using abi_default_interface = ABI::default_interface<abi<T>>;
+
+}
 
 namespace Windows {
 
@@ -641,7 +640,7 @@ struct com_ptr
     auto as() const
     {
         std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        check_hresult(m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp))));
         return temp;
     }
 
@@ -649,7 +648,7 @@ struct com_ptr
     auto try_as() const
     {
         std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
+        m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
         return temp;
     }
     
@@ -733,19 +732,19 @@ struct accessors<com_ptr<T>>
 template <typename T>
 bool operator==(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
-    return get(left) == get(right);
+    return get_abi(left) == get_abi(right);
 }
 
 template <typename T>
 bool operator==(const com_ptr<T> & left, std::nullptr_t) noexcept
 {
-    return get(left) == nullptr;
+    return get_abi(left) == nullptr;
 }
 
 template <typename T>
 bool operator==(std::nullptr_t, const com_ptr<T> & right) noexcept
 {
-    return nullptr == get(right);
+    return nullptr == get_abi(right);
 }
 
 template <typename T>
@@ -769,7 +768,7 @@ bool operator!=(std::nullptr_t, const com_ptr<T> & right) noexcept
 template <typename T>
 bool operator<(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
-    return get(left) < get(right);
+    return get_abi(left) < get_abi(right);
 }
 
 template <typename T>
@@ -868,17 +867,17 @@ struct hstring
 
     friend HSTRING impl_get(const hstring & string) noexcept
     {
-        return get(string.m_handle);
+        return get_abi(string.m_handle);
     }
 
     friend HSTRING * impl_put(hstring & string) noexcept
     {
-        return put(string.m_handle);
+        return put_abi(string.m_handle);
     }
 
     friend HSTRING impl_detach(hstring & string) noexcept
     {
-        return detach(string.m_handle);
+        return detach_abi(string.m_handle);
     }
 
     friend void swap(hstring & left, hstring & right) noexcept
@@ -888,7 +887,7 @@ struct hstring
 
 private:
 
-    handle<impl::hstring_traits> m_handle;
+    impl::handle<impl::hstring_traits> m_handle;
 };
 
 struct hstring_view
@@ -1011,24 +1010,24 @@ template <> struct accessors<std::wstring>
 
 inline bool embedded_null(hstring_view value) noexcept
 {
-    return impl::embedded_null(get(value));
+    return impl::embedded_null(get_abi(value));
 }
 
 inline bool embedded_null(const hstring & value) noexcept
 {
-    return impl::embedded_null(get(value));
+    return impl::embedded_null(get_abi(value));
 }
 
 // TODO: this must be removed. The ABI projection should just use HSTRING directly.
 namespace ABI { using hstring = HSTRING; }
 
 inline hstring::hstring(const hstring & value) :
-    m_handle(impl::duplicate_string(get(value.m_handle)))
+    m_handle(impl::duplicate_string(get_abi(value.m_handle)))
 {}
 
 inline hstring & hstring::operator=(const hstring & value)
 {
-    m_handle = impl::duplicate_string(get(value.m_handle));
+    m_handle = impl::duplicate_string(get_abi(value.m_handle));
     return *this;
 }
 
@@ -1047,7 +1046,7 @@ inline hstring::hstring(const std::wstring & value) :
 {}
 
 inline hstring::hstring(hstring_view value) :
-    m_handle(impl::duplicate_string(get(value)))
+    m_handle(impl::duplicate_string(get_abi(value)))
 {}
 
 inline hstring::hstring(const wchar_t * const value) :
@@ -1098,7 +1097,7 @@ inline hstring::const_pointer hstring::c_str() const noexcept
 
 inline hstring::const_iterator hstring::begin() const noexcept
 {
-    return WindowsGetStringRawBuffer(get(m_handle), nullptr);
+    return WindowsGetStringRawBuffer(get_abi(m_handle), nullptr);
 }
 
 inline hstring::const_iterator hstring::cbegin() const noexcept
@@ -1109,7 +1108,7 @@ inline hstring::const_iterator hstring::cbegin() const noexcept
 inline hstring::const_iterator hstring::end() const noexcept
 {
     uint32_t length = 0;
-    const_pointer buffer = WindowsGetStringRawBuffer(get(m_handle), &length);
+    const_pointer buffer = WindowsGetStringRawBuffer(get_abi(m_handle), &length);
     return buffer + length;
 }
 
@@ -1145,7 +1144,7 @@ inline bool hstring::empty() const noexcept
 
 inline hstring::size_type hstring::size() const noexcept
 {
-    return WindowsGetStringLen(get(m_handle));
+    return WindowsGetStringLen(get_abi(m_handle));
 }
 
 inline hstring_view::hstring_view(const std::wstring & value) noexcept :
@@ -1153,7 +1152,7 @@ inline hstring_view::hstring_view(const std::wstring & value) noexcept :
 {}
 
 inline hstring_view::hstring_view(const hstring & value) noexcept :
-    m_handle(get(value))
+    m_handle(get_abi(value))
 {}
 
 inline hstring_view::hstring_view(const wchar_t * const value) noexcept :
@@ -1464,7 +1463,7 @@ inline hstring trim_hresult_message(const wchar_t * const message, uint32_t size
     }
 
     hstring result;
-    WindowsCreateString(message, size, put(result));
+    WindowsCreateString(message, size, put_abi(result));
     return result;
 }
 
@@ -1481,20 +1480,20 @@ struct hresult_error
         m_code(code)
     {
         WINRT_RoOriginateError(code, nullptr);
-        WINRT_GetRestrictedErrorInfo(put(m_info));
+        WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     hresult_error(const HRESULT code, hstring_view message) noexcept :
         m_code(code)
     {
-        WINRT_RoOriginateError(code, get(message));
-        WINRT_GetRestrictedErrorInfo(put(m_info));
+        WINRT_RoOriginateError(code, get_abi(message));
+        WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     hresult_error(const HRESULT code, from_abi_t) noexcept :
         m_code(code)
     {
-        WINRT_GetRestrictedErrorInfo(put(m_info));
+        WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     HRESULT code() const noexcept
@@ -1507,37 +1506,37 @@ struct hresult_error
         if (m_info)
         {
             HRESULT code = S_OK;
-            handle<impl::bstr_traits> fallback;
-            handle<impl::bstr_traits> message;
-            handle<impl::bstr_traits> unused;
+            impl::handle<impl::bstr_traits> fallback;
+            impl::handle<impl::bstr_traits> message;
+            impl::handle<impl::bstr_traits> unused;
 
-            if (S_OK == m_info->GetErrorDetails(put(fallback), &code, put(message), put(unused)))
+            if (S_OK == m_info->GetErrorDetails(put_abi(fallback), &code, put_abi(message), put_abi(unused)))
             {
                 if (code == m_code)
                 {
                     if (message)
                     {
-                        return impl::trim_hresult_message(get(message), SysStringLen(get(message)));
+                        return impl::trim_hresult_message(get_abi(message), SysStringLen(get_abi(message)));
                     }
                     else
                     {
-                        return impl::trim_hresult_message(get(fallback), SysStringLen(get(fallback)));
+                        return impl::trim_hresult_message(get_abi(fallback), SysStringLen(get_abi(fallback)));
                     }
                 }
             }
         }
 
-        handle<impl::heap_traits> message;
+        impl::handle<impl::heap_traits> message;
 
         const uint32_t size = FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
                                              nullptr,
                                              m_code,
                                              MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-                                             reinterpret_cast<wchar_t *>(put(message)),
+                                             reinterpret_cast<wchar_t *>(put_abi(message)),
                                              0,
                                              nullptr);
 
-        return impl::trim_hresult_message(get(message), size);
+        return impl::trim_hresult_message(get_abi(message), size);
     }
 
     HRESULT to_abi() const noexcept
@@ -1546,7 +1545,7 @@ struct hresult_error
 
         if (m_info)
         {
-            WINRT_SetRestrictedErrorInfo(get(m_info));
+            WINRT_SetRestrictedErrorInfo(get_abi(m_info));
         }
 
         return m_code;
@@ -1775,6 +1774,8 @@ __forceinline void check_hresult(const HRESULT result)
     }
 }
 
+namespace impl {
+
 struct lock
 {
     lock(const lock &) = delete;
@@ -1853,6 +1854,8 @@ private:
 
     CONDITION_VARIABLE m_cv{};
 };
+
+}
 
 namespace impl {
 
@@ -2164,10 +2167,10 @@ struct com_array : array_view<T>
         }
     }
 
-    friend abi_arg_out<T> * impl_put(com_array & value) noexcept
+    friend impl::abi_arg_out<T> * impl_put(com_array & value) noexcept
     {
         WINRT_ASSERT(!value.m_data);
-        return reinterpret_cast<abi_arg_out<T> *>(&value.m_data);
+        return reinterpret_cast<impl::abi_arg_out<T> *>(&value.m_data);
     }
 
     friend auto impl_data(com_array & value) noexcept
@@ -2183,7 +2186,7 @@ struct com_array : array_view<T>
 
     friend auto impl_detach(com_array & value) noexcept
     {
-        std::pair<uint32_t, abi_arg_in<T> *> result(value.size(), *reinterpret_cast<abi_arg_in<T> **>(&value));
+        std::pair<uint32_t, impl::abi_arg_in<T> *> result(value.size(), *reinterpret_cast<impl::abi_arg_in<T> **>(&value));
         value.m_data = nullptr;
         value.m_size = 0;
         return result;
@@ -2347,7 +2350,7 @@ struct accessors<array_view<T>>
 }
 
 template <typename T>
-auto detach(uint32_t * __valueSize, abi_arg_out<T> * value) noexcept
+auto detach_abi(uint32_t * __valueSize, impl::abi_arg_out<T> * value) noexcept
 {
     return impl::com_array_proxy<T>(__valueSize, value);
 }
@@ -2435,7 +2438,7 @@ struct IUnknown
     auto as() const
     {
         std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        check_hresult(m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp))));
         return temp;
     }
 
@@ -2443,7 +2446,7 @@ struct IUnknown
     auto try_as() const
     {
         std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
+        m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
         return temp;
     }
 
@@ -2591,7 +2594,7 @@ namespace Windows {
 
 inline bool operator==(const IUnknown & left, const IUnknown & right) noexcept
 {
-    return get(left) == get(right);
+    return get_abi(left) == get_abi(right);
 }
 
 inline bool operator!=(const IUnknown & left, const IUnknown & right) noexcept
@@ -2601,7 +2604,7 @@ inline bool operator!=(const IUnknown & left, const IUnknown & right) noexcept
 
 inline bool operator<(const IUnknown & left, const IUnknown & right) noexcept
 {
-    return get(left) < get(right);
+    return get_abi(left) < get_abi(right);
 }
 
 inline bool operator>(const IUnknown & left, const IUnknown & right) noexcept
@@ -2646,14 +2649,14 @@ struct IInspectable : IUnknown
 inline com_array<GUID> GetIids(const IInspectable & object)
 {
     com_array<GUID> value;
-    check_hresult((*(abi<IInspectable> **)&object)->abi_GetIids(put_size(value), put(value)));
+    check_hresult((*(abi<IInspectable> **)&object)->abi_GetIids(impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 inline hstring GetRuntimeClassName(const IInspectable & object)
 {
     hstring value;
-    check_hresult((*(abi<IInspectable> **)&object)->abi_GetRuntimeClassName(put(value)));
+    check_hresult((*(abi<IInspectable> **)&object)->abi_GetRuntimeClassName(put_abi(value)));
     return value;
 }
 
@@ -2708,13 +2711,13 @@ struct weak_ref
 
     weak_ref(const T & object)
     {
-        check_hresult(object.template as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put(m_ref)));
+        check_hresult(object.template as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put_abi(m_ref)));
     }
 
     T get() const noexcept
     {
         T object = nullptr;
-        m_ref->abi_Resolve(put(object));
+        m_ref->abi_Resolve(put_abi(object));
         return object;
     }
 
@@ -2751,15 +2754,15 @@ struct agile_ref
 #endif
 
         check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
-                                          __uuidof(abi_default_interface<T>),
-                                          winrt::get(object),
-                                          put(m_ref)));
+                                          __uuidof(impl::abi_default_interface<T>),
+                                          winrt::get_abi(object),
+                                          put_abi(m_ref)));
     }
 
     T get() const
     {
         T result = nullptr;
-        check_hresult(m_ref->Resolve(put(result)));
+        check_hresult(m_ref->Resolve(put_abi(result)));
         return result;
     }
 
@@ -2825,7 +2828,7 @@ struct event_revoker
 
         if (I object = m_object.get())
         {
-            ((*get(object)).*(m_method))(m_token);
+            ((*get_abi(object)).*(m_method))(m_token);
         }
 
         m_object = nullptr;
@@ -2867,7 +2870,7 @@ struct factory_event_revoker
             return;
         }
 
-        ((*get(m_object)).*(m_method))(m_token);
+        ((*get_abi(m_object)).*(m_method))(m_token);
         m_object = nullptr;
     }
 
@@ -2969,7 +2972,7 @@ auto make_event_array(const uint32_t capacity)
 {
     com_ptr<event_array<T>> instance;
     void* raw = ::operator new(sizeof(event_array<T>) + (sizeof(T) * capacity));
-    *put(instance) = new(raw) event_array<T>(capacity);
+    *put_abi(instance) = new(raw) event_array<T>(capacity);
     return instance;
 }
 
@@ -3006,7 +3009,7 @@ struct event : Traits
                 std::copy_n(m_targets->begin(), m_targets->size(), new_targets->begin());
             }
 
-            token.value = reinterpret_cast<int64_t>(get(delegate));
+            token.value = reinterpret_cast<int64_t>(get_abi(delegate));
             new_targets->back() = delegate;
 
             auto swap_guard = this->get_swap_guard();
@@ -3175,7 +3178,7 @@ struct agile_event_traits : locked_event_traits
 
     event_token get_token(const storage_type & delegate) const noexcept
     {
-        return{ reinterpret_cast<int64_t>(get(delegate.get())) };
+        return{ reinterpret_cast<int64_t>(get_abi(delegate.get())) };
     }
 };
 
@@ -3193,7 +3196,7 @@ struct non_agile_event_traits : locked_event_traits
 
     event_token get_token(const storage_type & delegate) const noexcept
     {
-        return{ reinterpret_cast<int64_t>(get(delegate)) };
+        return{ reinterpret_cast<int64_t>(get_abi(delegate)) };
     }
 };
 }
@@ -3285,9 +3288,9 @@ namespace impl
 }
 
 template <typename D, typename I>
-D * to_impl(const I & from) noexcept
+D * from_abi(const I & from) noexcept
 {
-    return &static_cast<impl::produce<D, I> *>(get(from))->shim();
+    return &static_cast<impl::produce<D, I> *>(get_abi(from))->shim();
 }
 
 template <typename I, typename D, std::enable_if_t<std::is_base_of<Windows::IUnknown, I>::value> * = nullptr>
@@ -3306,7 +3309,7 @@ template <typename D, typename I = typename D::first_interface, typename ... Arg
 auto make(Args && ... args)
 {
     std::conditional_t<impl::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
-    *put(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
+    *put_abi(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
     return instance;
 }
 
@@ -3314,7 +3317,7 @@ template <typename D, typename I = typename D::first_interface, typename ... Arg
 auto make(Args && ... args)
 {
     com_ptr<I> instance;
-    *put(instance) = new D(std::forward<Args>(args) ...);
+    *put_abi(instance) = new D(std::forward<Args>(args) ...);
     return instance.template as<typename D::composable>();
 }
 
@@ -3322,7 +3325,7 @@ template <typename D, typename ... Args>
 auto make_self(Args && ... args)
 {
     com_ptr<D> instance;
-    *put(instance) = new D(std::forward<Args>(args) ...);
+    *put_abi(instance) = new D(std::forward<Args>(args) ...);
     return instance;
 }
 
@@ -3332,7 +3335,7 @@ namespace impl
     auto make_delegate(H && handler)
     {
         I instance = nullptr;
-        *put(instance) = new D(std::forward<H>(handler));
+        *put_abi(instance) = new D(std::forward<H>(handler));
         return instance;
     }
 
@@ -3342,7 +3345,7 @@ namespace impl
         operator I() const noexcept
         {
             I result = nullptr;
-            copy_from(result, const_cast<produce<D, I> *>(&vtable));
+            copy_from_abi(result, const_cast<produce<D, I> *>(&vtable));
             return result;
         }
 
@@ -3433,7 +3436,7 @@ namespace impl
                 if (id == __uuidof(IMarshal))
                 {
                     com_ptr< ::IUnknown> marshaler;
-                    const HRESULT hr = CoCreateFreeThreadedMarshaler(this, put(marshaler));
+                    const HRESULT hr = CoCreateFreeThreadedMarshaler(this, put_abi(marshaler));
 
                     if (hr != S_OK)
                     {
@@ -3570,7 +3573,7 @@ struct implements : impl::producer<D, impl::uncloak_t<I>> ...
     operator IInspectable() const noexcept
     {
         IInspectable result;
-        copy_from(result, find_inspectable<I ...>());
+        copy_from_abi(result, find_inspectable<I ...>());
         return result;
     }
 
@@ -3646,7 +3649,7 @@ protected:
     {
         try
         {
-            *name = detach(static_cast<D *>(this)->GetRuntimeClassName());
+            *name = detach_abi(static_cast<D *>(this)->GetRuntimeClassName());
             return S_OK;
         }
         catch (...) { return impl::to_hresult(); }
@@ -3722,7 +3725,7 @@ private:
             if (id == __uuidof(IMarshal))
             {
                 com_ptr< ::IUnknown> marshaler;
-                const HRESULT hr = CoCreateFreeThreadedMarshaler(get_unknown(), put(marshaler));
+                const HRESULT hr = CoCreateFreeThreadedMarshaler(get_unknown(), put_abi(marshaler));
 
                 if (hr != S_OK)
                 {
@@ -3816,21 +3819,21 @@ private:
         }
 
         com_ptr<weak_ref_t> weak_ref;
-        *put(weak_ref) = new (std::nothrow) weak_ref_t(get_unknown(), static_cast<uint32_t>(count_or_pointer));
+        *put_abi(weak_ref) = new (std::nothrow) weak_ref_t(get_unknown(), static_cast<uint32_t>(count_or_pointer));
 
         if (!weak_ref)
         {
             return nullptr;
         }
 
-        const uintptr_t encoding = encode_weak_ref(get(weak_ref));
+        const uintptr_t encoding = encode_weak_ref(get_abi(weak_ref));
 
         while (true)
         {
             if (m_references.compare_exchange_weak(count_or_pointer, encoding, std::memory_order_acq_rel, std::memory_order_relaxed))
             {
                 ABI::Windows::IWeakReferenceSource * result = weak_ref->get_source();
-                detach(weak_ref);
+                detach_abi(weak_ref);
                 return result;
             }
 
@@ -3971,7 +3974,7 @@ struct overrides : implements<D, R ...>
 
         if (result == E_NOINTERFACE)
         {
-            result = get(m_inner)->QueryInterface(id, object);
+            result = get_abi(m_inner)->QueryInterface(id, object);
         }
 
         return result;
@@ -4010,7 +4013,7 @@ struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach(this->shim().ActivateInstance());
+            *instance = detach_abi(this->shim().ActivateInstance());
             return S_OK;
         }
         catch (...)
@@ -4027,7 +4030,7 @@ Interface get_agile_activation_factory()
     hstring_view classId(impl::traits<Class>::name());
 
     Interface factory;
-    check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
+    check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
 
     if (!factory.template try_as<IAgileObject>())
     {
@@ -4043,7 +4046,7 @@ Interface get_activation_factory()
     hstring_view classId(impl::traits<Class>::name());
 
     Interface factory;
-    check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
+    check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
     return factory;
 }
 
@@ -4062,24 +4065,24 @@ template <typename D>
 IInspectable impl_IActivationFactory<D>::ActivateInstance() const
 {
     IInspectable instance;
-    check_hresult(WINRT_SHIM(IActivationFactory)->abi_ActivateInstance(put(instance)));
+    check_hresult(WINRT_SHIM(IActivationFactory)->abi_ActivateInstance(put_abi(instance)));
     return instance;
 }
 
 }
 
-enum class initialize_type
+enum class apartment_type
 {
     single_threaded,
     multi_threaded
 };
 
-inline void initialize(const initialize_type type = initialize_type::multi_threaded)
+inline void init_apartment(const apartment_type type = apartment_type::multi_threaded)
 {
     check_hresult<S_FALSE>(WINRT_RoInitialize(static_cast<uint32_t>(type)));
 }
 
-inline void uninitialize() noexcept
+inline void uninit_apartment() noexcept
 {
     WINRT_RoUninitialize();
 }
@@ -4200,7 +4203,7 @@ struct WINRT_EBO EventHandler : IUnknown
 
     void operator()(const IInspectable & sender, const T & args) const
     {
-        check_hresult((*(abi<EventHandler<T>> **)this)->abi_Invoke(get(sender), get(args)));
+        check_hresult((*(abi<EventHandler<T>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
     }
 };
 
@@ -4224,7 +4227,7 @@ struct WINRT_EBO TypedEventHandler : IUnknown
 
     void operator()(const TSender & sender, const TArgs & args) const
     {
-        check_hresult((*(abi<TypedEventHandler<TSender, TArgs>> **)this)->abi_Invoke(get(sender), get(args)));
+        check_hresult((*(abi<TypedEventHandler<TSender, TArgs>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
     }
 };
 
@@ -4270,7 +4273,7 @@ struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -4297,7 +4300,7 @@ template <typename D, typename T>
 T impl_IReference<D, T>::Value() const
 {
     T result{};
-    check_hresult((*(abi<IReference<T>> **)&static_cast<const IReference<T> &>(static_cast<const D &>(*this)))->get_Value(put(result)));
+    check_hresult((*(abi<IReference<T>> **)&static_cast<const IReference<T> &>(static_cast<const D &>(*this)))->get_Value(put_abi(result)));
     return result;
 }
 
@@ -5016,7 +5019,7 @@ template <typename D, typename T>
 T impl_IIterator<D, T>::Current() const
 {
     T result = impl::empty_value<T>();
-    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_Current(put(result)));
+    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_Current(put_abi(result)));
     return result;
 }
 
@@ -5024,7 +5027,7 @@ template <typename D, typename T>
 bool impl_IIterator<D, T>::HasCurrent() const
 {
     bool temp = false;
-    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_HasCurrent(put(temp)));
+    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_HasCurrent(put_abi(temp)));
     return temp;
 }
 
@@ -5032,7 +5035,7 @@ template <typename D, typename T>
 bool impl_IIterator<D, T>::MoveNext() const
 {
     bool temp = false;
-    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_MoveNext(put(temp)));
+    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_MoveNext(put_abi(temp)));
     return temp;
 }
 
@@ -5040,7 +5043,7 @@ template <typename D, typename T>
 uint32_t impl_IIterator<D, T>::GetMany(array_view<T> values) const
 {
     uint32_t actual = 0;
-    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_GetMany(values.size(), get(values), &actual));
+    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_GetMany(values.size(), get_abi(values), &actual));
     return actual;
 }
 
@@ -5048,7 +5051,7 @@ template <typename D, typename T>
 IIterator<T> impl_IIterable<D, T>::First() const
 {
     IIterator<T> iterator;
-    check_hresult((*(abi<IIterable<T>> **)&static_cast<const IIterable<T> &>(static_cast<const D &>(*this)))->abi_First(put(iterator)));
+    check_hresult((*(abi<IIterable<T>> **)&static_cast<const IIterable<T> &>(static_cast<const D &>(*this)))->abi_First(put_abi(iterator)));
     return iterator;
 }
 
@@ -5056,7 +5059,7 @@ template <typename D, typename K, typename V>
 K impl_IKeyValuePair<D, K, V>::Key() const
 {
     K result = impl::empty_value<K>();
-    check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Key(put(result)));
+    check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Key(put_abi(result)));
     return result;
 }
 
@@ -5064,7 +5067,7 @@ template <typename D, typename K, typename V>
 V impl_IKeyValuePair<D, K, V>::Value() const
 {
     V result = impl::empty_value<V>();
-    check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Value(put(result)));
+    check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Value(put_abi(result)));
     return result;
 }
 
@@ -5072,7 +5075,7 @@ template <typename D, typename T>
 T impl_IVectorView<D, T>::GetAt(const uint32_t index) const
 {
     T result = impl::empty_value<T>();
-    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put(result)));
+    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put_abi(result)));
     return result;
 }
 
@@ -5088,7 +5091,7 @@ template <typename D, typename T>
 bool impl_IVectorView<D, T>::IndexOf(const T & value, uint32_t & index) const
 {
     bool found = false;
-    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get(value), &index, put(found)));
+    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get_abi(value), &index, put_abi(found)));
     return found;
 }
 
@@ -5096,7 +5099,7 @@ template <typename D, typename T>
 uint32_t impl_IVectorView<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
 {
     uint32_t actual = 0;
-    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get(values), &actual));
+    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get_abi(values), &actual));
     return actual;
 }
 
@@ -5104,7 +5107,7 @@ template <typename D, typename T>
 T impl_IVector<D, T>::GetAt(const uint32_t index) const
 {
     T result = impl::empty_value<T>();
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put(result)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put_abi(result)));
     return result;
 }
 
@@ -5120,7 +5123,7 @@ template <typename D, typename T>
 IVectorView<T> impl_IVector<D, T>::GetView() const
 {
     IVectorView<T> view;
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetView(put(view)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetView(put_abi(view)));
     return view;
 }
 
@@ -5128,20 +5131,20 @@ template <typename D, typename T>
 bool impl_IVector<D, T>::IndexOf(const T & value, uint32_t & index) const
 {
     bool found = false;
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get(value), &index, put(found)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get_abi(value), &index, put_abi(found)));
     return found;
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::SetAt(const uint32_t index, const T & value) const
 {
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_SetAt(index, get(value)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_SetAt(index, get_abi(value)));
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::InsertAt(const uint32_t index, const T & value) const
 {
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_InsertAt(index, get(value)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_InsertAt(index, get_abi(value)));
 }
 
 template <typename D, typename T>
@@ -5153,7 +5156,7 @@ void impl_IVector<D, T>::RemoveAt(const uint32_t index) const
 template <typename D, typename T>
 void impl_IVector<D, T>::Append(const T & value) const
 {
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_Append(get(value)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_Append(get_abi(value)));
 }
 
 template <typename D, typename T>
@@ -5172,21 +5175,21 @@ template <typename D, typename T>
 uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
 {
     uint32_t actual = 0;
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get(values), &actual));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get_abi(values), &actual));
     return actual;
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::ReplaceAll(array_view<const T> value) const
 {
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_ReplaceAll(value.size(), get(value)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_ReplaceAll(value.size(), get_abi(value)));
 }
 
 template <typename D, typename K, typename V>
 V impl_IMapView<D, K, V>::Lookup(const K & key) const
 {
     V result = impl::empty_value<V>();
-    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get(key), put(result)));
+    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get_abi(key), put_abi(result)));
     return result;
 }
 
@@ -5202,21 +5205,21 @@ template <typename D, typename K, typename V>
 bool impl_IMapView<D, K, V>::HasKey(const K & key) const
 {
     bool found = false;
-    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get(key), put(found)));
+    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get_abi(key), put_abi(found)));
     return found;
 }
 
 template <typename D, typename K, typename V>
 void impl_IMapView<D, K, V>::Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
 {
-    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Split(put(firstPartition), put(secondPartition)));
+    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Split(put_abi(firstPartition), put_abi(secondPartition)));
 }
 
 template <typename D, typename K, typename V>
 V impl_IMap<D, K, V>::Lookup(const K & key) const
 {
     V result = impl::empty_value<V>();
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get(key), put(result)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get_abi(key), put_abi(result)));
     return result;
 }
 
@@ -5232,7 +5235,7 @@ template <typename D, typename K, typename V>
 bool impl_IMap<D, K, V>::HasKey(const K & key) const
 {
     bool found = false;
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get(key), put(found)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get_abi(key), put_abi(found)));
     return found;
 }
 
@@ -5240,7 +5243,7 @@ template <typename D, typename K, typename V>
 IMapView<K, V> impl_IMap<D, K, V>::GetView() const
 {
     IMapView<K, V> view;
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_GetView(put(view)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_GetView(put_abi(view)));
     return view;
 }
 
@@ -5248,14 +5251,14 @@ template <typename D, typename K, typename V>
 bool impl_IMap<D, K, V>::Insert(const K & key, const V & value) const
 {
     bool replaced = false;
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Insert(get(key), get(value), put(replaced)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Insert(get_abi(key), get_abi(value), put_abi(replaced)));
     return replaced;
 }
 
 template <typename D, typename K, typename V>
 void impl_IMap<D, K, V>::Remove(const K & key) const
 {
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Remove(get(key)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Remove(get_abi(key)));
 }
 
 template <typename D, typename K, typename V>
@@ -5276,7 +5279,7 @@ template <typename D, typename K>
 K impl_IMapChangedEventArgs<D, K>::Key() const
 {
     K result = impl::empty_value<K>();
-    check_hresult((*(abi<IMapChangedEventArgs<K>> **)&static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this)))->get_Key(put(result)));
+    check_hresult((*(abi<IMapChangedEventArgs<K>> **)&static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this)))->get_Key(put_abi(result)));
     return result;
 }
 
@@ -5284,7 +5287,7 @@ template <typename D, typename K, typename V>
 event_token impl_IObservableMap<D, K, V>::MapChanged(const MapChangedEventHandler<K, V> & handler) const
 {
     event_token cookie{};
-    check_hresult((*(abi<IObservableMap<K, V>> **)&static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this)))->add_MapChanged(get(handler), &cookie));
+    check_hresult((*(abi<IObservableMap<K, V>> **)&static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this)))->add_MapChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -5298,7 +5301,7 @@ template <typename D, typename T>
 event_token impl_IObservableVector<D, T>::VectorChanged(const VectorChangedEventHandler<T> & handler) const
 {
     event_token cookie{};
-    check_hresult((*(abi<IObservableVector<T>> **)&static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this)))->add_VectorChanged(get(handler), &cookie));
+    check_hresult((*(abi<IObservableVector<T>> **)&static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this)))->add_VectorChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -5363,7 +5366,7 @@ template <typename K, typename V> template <typename O, typename M> MapChangedEv
 
 template <typename K, typename V> void MapChangedEventHandler<K, V>::operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const
 {
-    check_hresult((*(abi<MapChangedEventHandler<K, V>> **)this)->abi_Invoke(get(sender), get(args)));
+    check_hresult((*(abi<MapChangedEventHandler<K, V>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
 }
 
 template <typename T> template <typename L> VectorChangedEventHandler<T>::VectorChangedEventHandler(L handler) :
@@ -5380,7 +5383,7 @@ template <typename T> template <typename O, typename M> VectorChangedEventHandle
 
 template <typename T> void VectorChangedEventHandler<T>::operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const
 {
-    check_hresult((*(abi<VectorChangedEventHandler<T>> **)this)->abi_Invoke(get(sender), get(args)));
+    check_hresult((*(abi<VectorChangedEventHandler<T>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
 }
 
 template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value> * = nullptr>
@@ -5459,7 +5462,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *current = detach(this->shim().Current());
+            *current = detach_abi(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -5522,7 +5525,7 @@ struct produce<D, Windows::Foundation::Collections::IIterable<T>> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *first = detach(this->shim().First());
+            *first = detach_abi(this->shim().First());
             return S_OK;
         }
         catch (...)
@@ -5541,7 +5544,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *key = detach(this->shim().Key());
+            *key = detach_abi(this->shim().Key());
             return S_OK;
         }
         catch (...)
@@ -5556,7 +5559,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -5575,7 +5578,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *item = detach(this->shim().GetAt(index));
+            *item = detach_abi(this->shim().GetAt(index));
             return S_OK;
         }
         catch (...)
@@ -5638,7 +5641,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *item = detach(this->shim().GetAt(index));
+            *item = detach_abi(this->shim().GetAt(index));
             return S_OK;
         }
         catch (...)
@@ -5667,7 +5670,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *view = detach(this->shim().GetView());
+            *view = detach_abi(this->shim().GetView());
             return S_OK;
         }
         catch (...)
@@ -5814,7 +5817,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            *value = detach_abi(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -5877,7 +5880,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            *value = detach_abi(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -5920,7 +5923,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *view = detach(this->shim().GetView());
+            *view = detach_abi(this->shim().GetView());
             return S_OK;
         }
         catch (...)
@@ -5995,7 +5998,7 @@ struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Key());
+            *value = detach_abi(this->shim().Key());
             return S_OK;
         }
         catch (...)
@@ -6807,12 +6810,12 @@ void blocking_suspend(const Async & async)
 
     async.Completed([&](const Async &, Windows::Foundation::AsyncStatus)
     {
-        const winrt::lock_guard guard(x);
+        const lock_guard guard(x);
         completed = true;
         cv.wake_one();
     });
 
-    const winrt::lock_guard guard(x);
+    const lock_guard guard(x);
     cv.wait_while(x, [&] { return !completed; });
 }
 
@@ -7197,14 +7200,14 @@ void impl_IAsyncInfo<D>::Close() const
 template <typename D>
 void impl_IAsyncAction<D>::Completed(const AsyncActionCompletedHandler & handler) const
 {
-    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->put_Completed(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
 }
 
 template <typename D>
 AsyncActionCompletedHandler impl_IAsyncAction<D>::Completed() const
 {
     AsyncActionCompletedHandler handler{};
-    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->get_Completed(put(handler)));
+    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->get_Completed(put_abi(handler)));
     return handler;
 }
 
@@ -7224,28 +7227,28 @@ void impl_IAsyncAction<D>::get() const
 template <typename D, typename TProgress>
 void impl_IAsyncActionWithProgress<D, TProgress>::Progress(const AsyncActionProgressHandler<TProgress> & handler) const
 {
-    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get_abi(handler)));
 }
 
 template <typename D, typename TProgress>
 AsyncActionProgressHandler<TProgress> impl_IAsyncActionWithProgress<D, TProgress>::Progress() const
 {
     AsyncActionProgressHandler<TProgress> handler;
-    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put(handler)));
+    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put_abi(handler)));
     return handler;
 }
 
 template <typename D, typename TProgress>
 void impl_IAsyncActionWithProgress<D, TProgress>::Completed(const AsyncActionWithProgressCompletedHandler<TProgress> & handler) const
 {
-    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
 }
 
 template <typename D, typename TProgress>
 AsyncActionWithProgressCompletedHandler<TProgress> impl_IAsyncActionWithProgress<D, TProgress>::Completed() const
 {
     AsyncActionWithProgressCompletedHandler<TProgress> handler;
-    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put(handler)));
+    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put_abi(handler)));
     return handler;
 }
 
@@ -7265,14 +7268,14 @@ void impl_IAsyncActionWithProgress<D, TProgress>::get() const
 template <typename D, typename TResult>
 void impl_IAsyncOperation<D, TResult>::Completed(const AsyncOperationCompletedHandler<TResult> & handler) const
 {
-    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
 }
 
 template <typename D, typename TResult>
 AsyncOperationCompletedHandler<TResult> impl_IAsyncOperation<D, TResult>::Completed() const
 {
     AsyncOperationCompletedHandler<TResult> temp;
-    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->get_Completed(put(temp)));
+    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->get_Completed(put_abi(temp)));
     return temp;
 }
 
@@ -7280,7 +7283,7 @@ template <typename D, typename TResult>
 TResult impl_IAsyncOperation<D, TResult>::GetResults() const
 {
     TResult result = impl::empty_value<TResult>();
-    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->abi_GetResults(put(result)));
+    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->abi_GetResults(put_abi(result)));
     return result;
 }
 
@@ -7294,28 +7297,28 @@ TResult impl_IAsyncOperation<D, TResult>::get() const
 template <typename D, typename TResult, typename TProgress>
 void impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress(const AsyncOperationProgressHandler<TResult, TProgress> & handler) const
 {
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get_abi(handler)));
 }
 
 template <typename D, typename TResult, typename TProgress>
 AsyncOperationProgressHandler<TResult, TProgress> impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress() const
 {
     AsyncOperationProgressHandler<TResult, TProgress> handler;
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put(handler)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put_abi(handler)));
     return handler;
 }
 
 template <typename D, typename TResult, typename TProgress>
 void impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed(const AsyncOperationWithProgressCompletedHandler<TResult, TProgress> & handler) const
 {
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
 }
 
 template <typename D, typename TResult, typename TProgress>
 AsyncOperationWithProgressCompletedHandler<TResult, TProgress> impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed() const
 {
     AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put(handler)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put_abi(handler)));
     return handler;
 }
 
@@ -7323,7 +7326,7 @@ template <typename D, typename TResult, typename TProgress>
 TResult impl_IAsyncOperationWithProgress<D, TResult, TProgress>::GetResults() const
 {
     TResult result = impl::empty_value<TResult>();
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->abi_GetResults(put(result)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->abi_GetResults(put_abi(result)));
     return result;
 }
 
@@ -7454,7 +7457,7 @@ template <typename O, typename M> AsyncActionCompletedHandler::AsyncActionComple
 
 inline void AsyncActionCompletedHandler::operator()(const IAsyncAction & asyncInfo, const AsyncStatus asyncStatus) const
 {
-    check_hresult((*(abi<AsyncActionCompletedHandler> **)this)->abi_Invoke(get(asyncInfo), asyncStatus));
+    check_hresult((*(abi<AsyncActionCompletedHandler> **)this)->abi_Invoke(get_abi(asyncInfo), asyncStatus));
 }
 
 template <typename TProgress> template <typename L> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(L handler) :
@@ -7471,7 +7474,7 @@ template <typename TProgress> template <typename O, typename M> AsyncActionProgr
 
 template <typename TProgress> void AsyncActionProgressHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const
 {
-    check_hresult((*(abi<AsyncActionProgressHandler<TProgress>> **)this)->abi_Invoke(get(sender), get(args)));
+    check_hresult((*(abi<AsyncActionProgressHandler<TProgress>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
 }
 
 template <typename TProgress> template <typename L> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(L handler) :
@@ -7488,7 +7491,7 @@ template <typename TProgress> template <typename O, typename M> AsyncActionWithP
 
 template <typename TProgress> void AsyncActionWithProgressCompletedHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const
 {
-    check_hresult((*(abi<AsyncActionWithProgressCompletedHandler<TProgress>> **)this)->abi_Invoke(get(sender), args));
+    check_hresult((*(abi<AsyncActionWithProgressCompletedHandler<TProgress>> **)this)->abi_Invoke(get_abi(sender), args));
 }
 
 template <typename TResult, typename TProgress> template <typename L> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(L handler) :
@@ -7505,7 +7508,7 @@ template <typename TResult, typename TProgress> template <typename O, typename M
 
 template <typename TResult, typename TProgress> void AsyncOperationProgressHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const
 {
-    check_hresult((*(abi<AsyncOperationProgressHandler<TResult, TProgress>> **)this)->abi_Invoke(get(sender), get(args)));
+    check_hresult((*(abi<AsyncOperationProgressHandler<TResult, TProgress>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
 }
 
 template <typename TResult, typename TProgress> template <typename L> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(L handler) :
@@ -7522,7 +7525,7 @@ template <typename TResult, typename TProgress> template <typename O, typename M
 
 template <typename TResult, typename TProgress> void AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const
 {
-    check_hresult((*(abi<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> **)this)->abi_Invoke(get(sender), args));
+    check_hresult((*(abi<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> **)this)->abi_Invoke(get_abi(sender), args));
 }
 
 template <typename TResult> template <typename L> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(L handler) :
@@ -7539,7 +7542,7 @@ template <typename TResult> template <typename O, typename M> AsyncOperationComp
 
 template <typename TResult> void AsyncOperationCompletedHandler<TResult>::operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const
 {
-    check_hresult((*(abi<AsyncOperationCompletedHandler<TResult>> **)this)->abi_Invoke(get(sender), args));
+    check_hresult((*(abi<AsyncOperationCompletedHandler<TResult>> **)this)->abi_Invoke(get_abi(sender), args));
 }
 
 }
@@ -7568,7 +7571,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *handler = detach(this->shim().Completed());
+            *handler = detach_abi(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -7689,7 +7692,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *handler = detach(this->shim().Progress());
+            *handler = detach_abi(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -7718,7 +7721,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *handler = detach(this->shim().Completed());
+            *handler = detach_abi(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -7765,7 +7768,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *handler = detach(this->shim().Completed());
+            *handler = detach_abi(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -7780,7 +7783,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *results = detach(this->shim().GetResults());
+            *results = detach_abi(this->shim().GetResults());
             return S_OK;
         }
         catch (...)
@@ -7813,7 +7816,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *handler = detach(this->shim().Progress());
+            *handler = detach_abi(this->shim().Progress());
             return S_OK;
         }
         catch (...)
@@ -7842,7 +7845,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *handler = detach(this->shim().Completed());
+            *handler = detach_abi(this->shim().Completed());
             return S_OK;
         }
         catch (...)
@@ -7857,7 +7860,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *results = detach(this->shim().GetResults());
+            *results = detach_abi(this->shim().GetResults());
             return S_OK;
         }
         catch (...)
@@ -7887,7 +7890,7 @@ namespace impl
         void await_suspend(std::experimental::coroutine_handle<> handle) const
         {
             com_ptr<IContextCallback> context;
-            check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
+            check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put_abi(context))));
 
             async.Completed([handle, context = std::move(context)](const auto &, Windows::Foundation::AsyncStatus)
             {
@@ -7970,7 +7973,7 @@ struct thread_context
 {
     thread_context()
     {
-        check_hresult(CoGetObjectContext(__uuidof(m_context), reinterpret_cast<void **>(put(m_context))));
+        check_hresult(CoGetObjectContext(__uuidof(m_context), reinterpret_cast<void **>(put_abi(m_context))));
     }
 
     bool await_ready() const noexcept
@@ -8023,7 +8026,7 @@ struct resume_after
         }
 
         int64_t relative_count = -m_duration.count();
-        SetThreadpoolTimer(get(m_timer), reinterpret_cast<PFILETIME>(&relative_count), 0, 0);
+        SetThreadpoolTimer(get_abi(m_timer), reinterpret_cast<PFILETIME>(&relative_count), 0, 0);
     }
 
     void await_resume() const noexcept
@@ -8037,7 +8040,7 @@ private:
         std::experimental::coroutine_handle<>::from_address(context)();
     }
 
-    struct timer_traits : handle_traits<PTP_TIMER>
+    struct timer_traits : impl::handle_traits<PTP_TIMER>
     {
         static void close(type value) noexcept
         {
@@ -8045,7 +8048,7 @@ private:
         }
     };
 
-    handle<timer_traits> m_timer;
+    impl::handle<timer_traits> m_timer;
     Windows::Foundation::TimeSpan m_duration;
 };
 
@@ -8077,7 +8080,7 @@ struct resume_on_signal
 
         int64_t relative_count = -m_timeout.count();
         PFILETIME file_time = relative_count != 0 ? reinterpret_cast<PFILETIME>(&relative_count) : nullptr;
-        SetThreadpoolWait(get(m_wait), m_handle, file_time);
+        SetThreadpoolWait(get_abi(m_wait), m_handle, file_time);
     }
 
     bool await_resume() const noexcept
@@ -8094,7 +8097,7 @@ private:
         that->m_resume();
     }
 
-    struct wait_traits : handle_traits<PTP_WAIT>
+    struct wait_traits : impl::handle_traits<PTP_WAIT>
     {
         static void close(type value) noexcept
         {
@@ -8102,7 +8105,7 @@ private:
         }
     };
 
-    handle<wait_traits> m_wait;
+    impl::handle<wait_traits> m_wait;
     Windows::Foundation::TimeSpan m_timeout{ 0 };
     HANDLE m_handle{};
     uint32_t m_result{};
@@ -8239,12 +8242,12 @@ struct resumable_io
 
     PTP_IO get() const noexcept
     {
-        return winrt::get(m_io);
+        return winrt::get_abi(m_io);
     }
 
 private:
 
-    struct io_traits : handle_traits<PTP_IO>
+    struct io_traits : impl::handle_traits<PTP_IO>
     {
         static void close(type value) noexcept
         {
@@ -8252,7 +8255,7 @@ private:
         }
     };
 
-    handle<io_traits> m_io;
+    impl::handle<io_traits> m_io;
 };
 
 inline auto operator co_await(Windows::Foundation::TimeSpan duration)
@@ -8428,7 +8431,7 @@ namespace impl
             AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(m_lock);
+                const lock_guard guard(m_lock);
                 WINRT_ASSERT(m_status == AsyncStatus::Started || m_status == AsyncStatus::Canceled);
 
                 try
@@ -8458,7 +8461,7 @@ namespace impl
     protected:
 
         std::aligned_union_t<0, std::exception_ptr> m_exception;
-        winrt::lock m_lock;
+        lock m_lock;
         CompletedHandler m_completed;
         AsyncStatus m_status{ AsyncStatus::Started };
         bool m_completed_assigned{ false };
@@ -8549,7 +8552,7 @@ template <> struct hash<winrt::hstring>
 
         uint32_t length = 0;
 
-        const uint8_t * const buffer = reinterpret_cast<const uint8_t *>(WindowsGetStringRawBuffer(get(value),
+        const uint8_t * const buffer = reinterpret_cast<const uint8_t *>(WindowsGetStringRawBuffer(get_abi(value),
                                                                                                    &length));
 
         length *= sizeof(wchar_t);
@@ -8605,7 +8608,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
     {
         void GetResults()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
 
             if (this->m_status == AsyncStatus::Completed)
             {
@@ -8627,7 +8630,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
             winrt::Windows::Foundation::AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(this->m_lock);
+                const winrt::impl::lock_guard guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Started)
                 {
@@ -8677,19 +8680,19 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncActionWithProgress<TPr
 
         void Progress(const ProgressHandler & handler)
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
             m_progress = handler;
         }
 
         ProgressHandler Progress()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
             return m_progress;
         }
 
         void GetResults()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
 
             if (this->m_status == AsyncStatus::Completed)
             {
@@ -8711,7 +8714,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncActionWithProgress<TPr
             winrt::Windows::Foundation::AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(this->m_lock);
+                const winrt::impl::lock_guard guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Started)
                 {
@@ -8774,7 +8777,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperation<TResult>, Ar
     {
         TResult GetResults()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
 
             if (this->m_status == AsyncStatus::Completed)
             {
@@ -8796,7 +8799,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperation<TResult>, Ar
             winrt::Windows::Foundation::AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(this->m_lock);
+                const winrt::impl::lock_guard guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Started)
                 {
@@ -8849,19 +8852,19 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<
 
         void Progress(const ProgressHandler & handler)
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
             m_progress = handler;
         }
 
         ProgressHandler Progress()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
             return m_progress;
         }
 
         TResult GetResults()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
 
             if (this->m_status == AsyncStatus::Completed)
             {
@@ -8883,7 +8886,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<
             winrt::Windows::Foundation::AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(this->m_lock);
+                const winrt::impl::lock_guard guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Started)
                 {

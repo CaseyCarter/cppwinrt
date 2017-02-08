@@ -105,7 +105,7 @@ struct com_ptr
     auto as() const
     {
         std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        check_hresult(m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp))));
         return temp;
     }
 
@@ -113,7 +113,7 @@ struct com_ptr
     auto try_as() const
     {
         std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
+        m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
         return temp;
     }
     
@@ -197,19 +197,19 @@ struct accessors<com_ptr<T>>
 template <typename T>
 bool operator==(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
-    return get(left) == get(right);
+    return get_abi(left) == get_abi(right);
 }
 
 template <typename T>
 bool operator==(const com_ptr<T> & left, std::nullptr_t) noexcept
 {
-    return get(left) == nullptr;
+    return get_abi(left) == nullptr;
 }
 
 template <typename T>
 bool operator==(std::nullptr_t, const com_ptr<T> & right) noexcept
 {
-    return nullptr == get(right);
+    return nullptr == get_abi(right);
 }
 
 template <typename T>
@@ -233,7 +233,7 @@ bool operator!=(std::nullptr_t, const com_ptr<T> & right) noexcept
 template <typename T>
 bool operator<(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
-    return get(left) < get(right);
+    return get_abi(left) < get_abi(right);
 }
 
 template <typename T>

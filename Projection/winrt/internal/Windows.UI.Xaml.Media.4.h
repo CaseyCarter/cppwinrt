@@ -32,12 +32,12 @@ public:
         return shim().as<IGeneralTransformOverrides>().TransformBoundsCore(rect);
     }
 
-    HRESULT __stdcall get_InverseCore(abi_arg_out<Windows::UI::Xaml::Media::IGeneralTransform> value) noexcept override
+    HRESULT __stdcall get_InverseCore(impl::abi_arg_out<Windows::UI::Xaml::Media::IGeneralTransform> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InverseCore());
+            *value = detach_abi(this->shim().InverseCore());
             return S_OK;
         }
         catch (...)
@@ -47,12 +47,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_TryTransformCore(abi_arg_in<Windows::Foundation::Point> inPoint, abi_arg_out<Windows::Foundation::Point> outPoint, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_TryTransformCore(impl::abi_arg_in<Windows::Foundation::Point> inPoint, impl::abi_arg_out<Windows::Foundation::Point> outPoint, bool * returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().TryTransformCore(*reinterpret_cast<const Windows::Foundation::Point *>(&inPoint), *outPoint));
+            *returnValue = detach_abi(this->shim().TryTransformCore(*reinterpret_cast<const Windows::Foundation::Point *>(&inPoint), *outPoint));
             return S_OK;
         }
         catch (...)
@@ -61,12 +61,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_TransformBoundsCore(abi_arg_in<Windows::Foundation::Rect> rect, abi_arg_out<Windows::Foundation::Rect> returnValue) noexcept override
+    HRESULT __stdcall abi_TransformBoundsCore(impl::abi_arg_in<Windows::Foundation::Rect> rect, impl::abi_arg_out<Windows::Foundation::Rect> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().TransformBoundsCore(*reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
+            *returnValue = detach_abi(this->shim().TransformBoundsCore(*reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
             return S_OK;
         }
         catch (...)

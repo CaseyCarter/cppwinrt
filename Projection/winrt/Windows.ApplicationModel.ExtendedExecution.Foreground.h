@@ -20,7 +20,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Reason());
+            *value = detach_abi(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -33,12 +33,12 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
 template <typename D>
 struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExtendedExecutionForegroundSession> : produce_base<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExtendedExecutionForegroundSession>
 {
-    HRESULT __stdcall get_Description(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Description(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Description());
+            *value = detach_abi(this->shim().Description());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
         }
     }
 
-    HRESULT __stdcall put_Description(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Description(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -62,12 +62,12 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
         }
     }
 
-    HRESULT __stdcall add_Revoked(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Revoked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().Revoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Revoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -90,12 +90,12 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
         }
     }
 
-    HRESULT __stdcall abi_RequestExtensionAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundResult>> operation) noexcept override
+    HRESULT __stdcall abi_RequestExtensionAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundResult>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().RequestExtensionAsync());
+            *operation = detach_abi(this->shim().RequestExtensionAsync());
             return S_OK;
         }
         catch (...)
@@ -110,7 +110,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Reason());
+            *value = detach_abi(this->shim().Reason());
             return S_OK;
         }
         catch (...)
@@ -148,19 +148,19 @@ template <typename D> Windows::ApplicationModel::ExtendedExecution::Foreground::
 template <typename D> hstring impl_IExtendedExecutionForegroundSession<D>::Description() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->get_Description(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IExtendedExecutionForegroundSession<D>::Description(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->put_Description(get(value)));
+    check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->put_Description(get_abi(value)));
 }
 
 template <typename D> event_token impl_IExtendedExecutionForegroundSession<D>::Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->add_Revoked(get(handler), &token));
+    check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->add_Revoked(get_abi(handler), &token));
     return token;
 }
 
@@ -177,7 +177,7 @@ template <typename D> void impl_IExtendedExecutionForegroundSession<D>::Revoked(
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundResult> impl_IExtendedExecutionForegroundSession<D>::RequestExtensionAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundResult> operation;
-    check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->abi_RequestExtensionAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->abi_RequestExtensionAsync(put_abi(operation)));
     return operation;
 }
 

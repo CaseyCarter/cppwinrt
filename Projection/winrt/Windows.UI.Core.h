@@ -45,7 +45,7 @@ template <typename O, typename M> IdleDispatchedHandler::IdleDispatchedHandler(O
 
 inline void IdleDispatchedHandler::operator()(const Windows::UI::Core::IdleDispatchedHandlerArgs & e) const
 {
-    check_hresult((*(abi<IdleDispatchedHandler> **)this)->abi_Invoke(get(e)));
+    check_hresult((*(abi<IdleDispatchedHandler> **)this)->abi_Invoke(get_abi(e)));
 }
 
 }
@@ -60,7 +60,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EventType());
+            *value = detach_abi(this->shim().EventType());
             return S_OK;
         }
         catch (...)
@@ -74,7 +74,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VirtualKey());
+            *value = detach_abi(this->shim().VirtualKey());
             return S_OK;
         }
         catch (...)
@@ -83,12 +83,12 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_KeyStatus(abi_arg_out<Windows::UI::Core::CorePhysicalKeyStatus> value) noexcept override
+    HRESULT __stdcall get_KeyStatus(impl::abi_arg_out<Windows::UI::Core::CorePhysicalKeyStatus> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyStatus());
+            *value = detach_abi(this->shim().KeyStatus());
             return S_OK;
         }
         catch (...)
@@ -101,12 +101,12 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs2> : produce_base<D, Windows::UI::Core::IAcceleratorKeyEventArgs2>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -120,12 +120,12 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs2> : produce_base<D
 template <typename D>
 struct produce<D, Windows::UI::Core::IAutomationProviderRequestedEventArgs> : produce_base<D, Windows::UI::Core::IAutomationProviderRequestedEventArgs>
 {
-    HRESULT __stdcall get_AutomationProvider(abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_AutomationProvider(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AutomationProvider());
+            *value = detach_abi(this->shim().AutomationProvider());
             return S_OK;
         }
         catch (...)
@@ -135,7 +135,7 @@ struct produce<D, Windows::UI::Core::IAutomationProviderRequestedEventArgs> : pr
         }
     }
 
-    HRESULT __stdcall put_AutomationProvider(abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall put_AutomationProvider(impl::abi_arg_in<Windows::IInspectable> value) noexcept override
     {
         try
         {
@@ -158,7 +158,7 @@ struct produce<D, Windows::UI::Core::IBackRequestedEventArgs> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Handled());
+            *value = detach_abi(this->shim().Handled());
             return S_OK;
         }
         catch (...)
@@ -190,7 +190,7 @@ struct produce<D, Windows::UI::Core::ICharacterReceivedEventArgs> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyCode());
+            *value = detach_abi(this->shim().KeyCode());
             return S_OK;
         }
         catch (...)
@@ -199,12 +199,12 @@ struct produce<D, Windows::UI::Core::ICharacterReceivedEventArgs> : produce_base
         }
     }
 
-    HRESULT __stdcall get_KeyStatus(abi_arg_out<Windows::UI::Core::CorePhysicalKeyStatus> value) noexcept override
+    HRESULT __stdcall get_KeyStatus(impl::abi_arg_out<Windows::UI::Core::CorePhysicalKeyStatus> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyStatus());
+            *value = detach_abi(this->shim().KeyStatus());
             return S_OK;
         }
         catch (...)
@@ -217,12 +217,12 @@ struct produce<D, Windows::UI::Core::ICharacterReceivedEventArgs> : produce_base
 template <typename D>
 struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs> : produce_base<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs>
 {
-    HRESULT __stdcall get_PointerPosition(abi_arg_out<Windows::Foundation::Point> value) noexcept override
+    HRESULT __stdcall get_PointerPosition(impl::abi_arg_out<Windows::Foundation::Point> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PointerPosition());
+            *value = detach_abi(this->shim().PointerPosition());
             return S_OK;
         }
         catch (...)
@@ -231,12 +231,12 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
         }
     }
 
-    HRESULT __stdcall get_SearchBounds(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall get_SearchBounds(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SearchBounds());
+            *value = detach_abi(this->shim().SearchBounds());
             return S_OK;
         }
         catch (...)
@@ -245,12 +245,12 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
         }
     }
 
-    HRESULT __stdcall get_ClosestInteractiveBounds(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall get_ClosestInteractiveBounds(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ClosestInteractiveBounds());
+            *value = detach_abi(this->shim().ClosestInteractiveBounds());
             return S_OK;
         }
         catch (...)
@@ -259,7 +259,7 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
         }
     }
 
-    HRESULT __stdcall put_ClosestInteractiveBounds(abi_arg_in<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall put_ClosestInteractiveBounds(impl::abi_arg_in<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
@@ -277,12 +277,12 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreAcceleratorKeys> : produce_base<D, Windows::UI::Core::ICoreAcceleratorKeys>
 {
-    HRESULT __stdcall add_AcceleratorKeyActivated(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_AcceleratorKeyActivated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().AcceleratorKeyActivated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().AcceleratorKeyActivated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -309,12 +309,12 @@ struct produce<D, Windows::UI::Core::ICoreAcceleratorKeys> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreClosestInteractiveBoundsRequested> : produce_base<D, Windows::UI::Core::ICoreClosestInteractiveBoundsRequested>
 {
-    HRESULT __stdcall add_ClosestInteractiveBoundsRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_ClosestInteractiveBoundsRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -346,7 +346,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasFocus());
+            *value = detach_abi(this->shim().HasFocus());
             return S_OK;
         }
         catch (...)
@@ -355,12 +355,12 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_GotFocus(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_GotFocus(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().GotFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().GotFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -383,12 +383,12 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_LostFocus(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_LostFocus(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().LostFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().LostFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -420,7 +420,7 @@ struct produce<D, Windows::UI::Core::ICoreCursor> : produce_base<D, Windows::UI:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Id());
+            *value = detach_abi(this->shim().Id());
             return S_OK;
         }
         catch (...)
@@ -434,7 +434,7 @@ struct produce<D, Windows::UI::Core::ICoreCursor> : produce_base<D, Windows::UI:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Type());
+            *value = detach_abi(this->shim().Type());
             return S_OK;
         }
         catch (...)
@@ -447,12 +447,12 @@ struct produce<D, Windows::UI::Core::ICoreCursor> : produce_base<D, Windows::UI:
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreCursorFactory> : produce_base<D, Windows::UI::Core::ICoreCursorFactory>
 {
-    HRESULT __stdcall abi_CreateCursor(Windows::UI::Core::CoreCursorType type, uint32_t id, abi_arg_out<Windows::UI::Core::ICoreCursor> cursor) noexcept override
+    HRESULT __stdcall abi_CreateCursor(Windows::UI::Core::CoreCursorType type, uint32_t id, impl::abi_arg_out<Windows::UI::Core::ICoreCursor> cursor) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cursor = detach(this->shim().CreateCursor(type, id));
+            *cursor = detach_abi(this->shim().CreateCursor(type, id));
             return S_OK;
         }
         catch (...)
@@ -471,7 +471,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasThreadAccess());
+            *value = detach_abi(this->shim().HasThreadAccess());
             return S_OK;
         }
         catch (...)
@@ -494,12 +494,12 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_RunAsync(Windows::UI::Core::CoreDispatcherPriority priority, abi_arg_in<Windows::UI::Core::DispatchedHandler> agileCallback, abi_arg_out<Windows::Foundation::IAsyncAction> asyncAction) noexcept override
+    HRESULT __stdcall abi_RunAsync(Windows::UI::Core::CoreDispatcherPriority priority, impl::abi_arg_in<Windows::UI::Core::DispatchedHandler> agileCallback, impl::abi_arg_out<Windows::Foundation::IAsyncAction> asyncAction) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncAction = detach(this->shim().RunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
+            *asyncAction = detach_abi(this->shim().RunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
         catch (...)
@@ -509,12 +509,12 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_RunIdleAsync(abi_arg_in<Windows::UI::Core::IdleDispatchedHandler> agileCallback, abi_arg_out<Windows::Foundation::IAsyncAction> asyncAction) noexcept override
+    HRESULT __stdcall abi_RunIdleAsync(impl::abi_arg_in<Windows::UI::Core::IdleDispatchedHandler> agileCallback, impl::abi_arg_out<Windows::Foundation::IAsyncAction> asyncAction) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncAction = detach(this->shim().RunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
+            *asyncAction = detach_abi(this->shim().RunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
         catch (...)
@@ -528,12 +528,12 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreDispatcher2> : produce_base<D, Windows::UI::Core::ICoreDispatcher2>
 {
-    HRESULT __stdcall abi_TryRunAsync(Windows::UI::Core::CoreDispatcherPriority priority, abi_arg_in<Windows::UI::Core::DispatchedHandler> agileCallback, abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> asyncOperation) noexcept override
+    HRESULT __stdcall abi_TryRunAsync(Windows::UI::Core::CoreDispatcherPriority priority, impl::abi_arg_in<Windows::UI::Core::DispatchedHandler> agileCallback, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> asyncOperation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncOperation = detach(this->shim().TryRunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
+            *asyncOperation = detach_abi(this->shim().TryRunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
         catch (...)
@@ -543,12 +543,12 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher2> : produce_base<D, Windows
         }
     }
 
-    HRESULT __stdcall abi_TryRunIdleAsync(abi_arg_in<Windows::UI::Core::IdleDispatchedHandler> agileCallback, abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> asyncOperation) noexcept override
+    HRESULT __stdcall abi_TryRunIdleAsync(impl::abi_arg_in<Windows::UI::Core::IdleDispatchedHandler> agileCallback, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> asyncOperation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncOperation = detach(this->shim().TryRunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
+            *asyncOperation = detach_abi(this->shim().TryRunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
         catch (...)
@@ -567,7 +567,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CurrentPriority());
+            *value = detach_abi(this->shim().CurrentPriority());
             return S_OK;
         }
         catch (...)
@@ -595,7 +595,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ShouldYield());
+            *value = detach_abi(this->shim().ShouldYield());
             return S_OK;
         }
         catch (...)
@@ -609,7 +609,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ShouldYield(priority));
+            *value = detach_abi(this->shim().ShouldYield(priority));
             return S_OK;
         }
         catch (...)
@@ -636,12 +636,12 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Windows::UI::Core::ICoreInputSourceBase>
 {
-    HRESULT __stdcall get_Dispatcher(abi_arg_out<Windows::UI::Core::ICoreDispatcher> value) noexcept override
+    HRESULT __stdcall get_Dispatcher(impl::abi_arg_out<Windows::UI::Core::ICoreDispatcher> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Dispatcher());
+            *value = detach_abi(this->shim().Dispatcher());
             return S_OK;
         }
         catch (...)
@@ -656,7 +656,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsInputEnabled());
+            *value = detach_abi(this->shim().IsInputEnabled());
             return S_OK;
         }
         catch (...)
@@ -679,12 +679,12 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_InputEnabled(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_InputEnabled(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -716,7 +716,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *KeyState = detach(this->shim().GetCurrentKeyState(virtualKey));
+            *KeyState = detach_abi(this->shim().GetCurrentKeyState(virtualKey));
             return S_OK;
         }
         catch (...)
@@ -725,12 +725,12 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_CharacterReceived(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_CharacterReceived(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -753,12 +753,12 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_KeyDown(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_KeyDown(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -781,12 +781,12 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_KeyUp(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_KeyUp(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -813,12 +813,12 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource2> : produce_base<D, Windows::UI::Core::ICoreKeyboardInputSource2>
 {
-    HRESULT __stdcall abi_GetCurrentKeyEventDeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetCurrentKeyEventDeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetCurrentKeyEventDeviceId());
+            *value = detach_abi(this->shim().GetCurrentKeyEventDeviceId());
             return S_OK;
         }
         catch (...)
@@ -865,7 +865,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasCapture());
+            *value = detach_abi(this->shim().HasCapture());
             return S_OK;
         }
         catch (...)
@@ -874,12 +874,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_PointerPosition(abi_arg_out<Windows::Foundation::Point> value) noexcept override
+    HRESULT __stdcall get_PointerPosition(impl::abi_arg_out<Windows::Foundation::Point> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PointerPosition());
+            *value = detach_abi(this->shim().PointerPosition());
             return S_OK;
         }
         catch (...)
@@ -888,12 +888,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall get_PointerCursor(abi_arg_out<Windows::UI::Core::ICoreCursor> value) noexcept override
+    HRESULT __stdcall get_PointerCursor(impl::abi_arg_out<Windows::UI::Core::ICoreCursor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PointerCursor());
+            *value = detach_abi(this->shim().PointerCursor());
             return S_OK;
         }
         catch (...)
@@ -903,7 +903,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall put_PointerCursor(abi_arg_in<Windows::UI::Core::ICoreCursor> value) noexcept override
+    HRESULT __stdcall put_PointerCursor(impl::abi_arg_in<Windows::UI::Core::ICoreCursor> value) noexcept override
     {
         try
         {
@@ -917,12 +917,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_PointerCaptureLost(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerCaptureLost(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -945,12 +945,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_PointerEntered(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerEntered(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -973,12 +973,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_PointerExited(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerExited(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1001,12 +1001,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_PointerMoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerMoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1029,12 +1029,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_PointerPressed(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerPressed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1057,12 +1057,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_PointerReleased(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerReleased(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1085,12 +1085,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_PointerWheelChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerWheelChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1117,12 +1117,12 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, Windows::UI::Core::ICorePointerRedirector>
 {
-    HRESULT __stdcall add_PointerRoutedAway(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerRoutedAway(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerRoutedAway(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerRoutedAway(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1145,12 +1145,12 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall add_PointerRoutedTo(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerRoutedTo(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerRoutedTo(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerRoutedTo(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1173,12 +1173,12 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall add_PointerRoutedReleased(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerRoutedReleased(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerRoutedReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerRoutedReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1205,12 +1205,12 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreTouchHitTesting> : produce_base<D, Windows::UI::Core::ICoreTouchHitTesting>
 {
-    HRESULT __stdcall add_TouchHitTesting(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_TouchHitTesting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1237,12 +1237,12 @@ struct produce<D, Windows::UI::Core::ICoreTouchHitTesting> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI::Core::ICoreWindow>
 {
-    HRESULT __stdcall get_AutomationHostProvider(abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_AutomationHostProvider(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AutomationHostProvider());
+            *value = detach_abi(this->shim().AutomationHostProvider());
             return S_OK;
         }
         catch (...)
@@ -1252,12 +1252,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall get_Bounds(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall get_Bounds(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Bounds());
+            *value = detach_abi(this->shim().Bounds());
             return S_OK;
         }
         catch (...)
@@ -1266,12 +1266,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall get_CustomProperties(abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
+    HRESULT __stdcall get_CustomProperties(impl::abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CustomProperties());
+            *value = detach_abi(this->shim().CustomProperties());
             return S_OK;
         }
         catch (...)
@@ -1281,12 +1281,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall get_Dispatcher(abi_arg_out<Windows::UI::Core::ICoreDispatcher> value) noexcept override
+    HRESULT __stdcall get_Dispatcher(impl::abi_arg_out<Windows::UI::Core::ICoreDispatcher> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Dispatcher());
+            *value = detach_abi(this->shim().Dispatcher());
             return S_OK;
         }
         catch (...)
@@ -1301,7 +1301,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FlowDirection());
+            *value = detach_abi(this->shim().FlowDirection());
             return S_OK;
         }
         catch (...)
@@ -1329,7 +1329,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsInputEnabled());
+            *value = detach_abi(this->shim().IsInputEnabled());
             return S_OK;
         }
         catch (...)
@@ -1352,12 +1352,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall get_PointerCursor(abi_arg_out<Windows::UI::Core::ICoreCursor> value) noexcept override
+    HRESULT __stdcall get_PointerCursor(impl::abi_arg_out<Windows::UI::Core::ICoreCursor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PointerCursor());
+            *value = detach_abi(this->shim().PointerCursor());
             return S_OK;
         }
         catch (...)
@@ -1367,7 +1367,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall put_PointerCursor(abi_arg_in<Windows::UI::Core::ICoreCursor> value) noexcept override
+    HRESULT __stdcall put_PointerCursor(impl::abi_arg_in<Windows::UI::Core::ICoreCursor> value) noexcept override
     {
         try
         {
@@ -1381,12 +1381,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall get_PointerPosition(abi_arg_out<Windows::Foundation::Point> value) noexcept override
+    HRESULT __stdcall get_PointerPosition(impl::abi_arg_out<Windows::Foundation::Point> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PointerPosition());
+            *value = detach_abi(this->shim().PointerPosition());
             return S_OK;
         }
         catch (...)
@@ -1400,7 +1400,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Visible());
+            *value = detach_abi(this->shim().Visible());
             return S_OK;
         }
         catch (...)
@@ -1442,7 +1442,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *KeyState = detach(this->shim().GetAsyncKeyState(virtualKey));
+            *KeyState = detach_abi(this->shim().GetAsyncKeyState(virtualKey));
             return S_OK;
         }
         catch (...)
@@ -1456,7 +1456,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *KeyState = detach(this->shim().GetKeyState(virtualKey));
+            *KeyState = detach_abi(this->shim().GetKeyState(virtualKey));
             return S_OK;
         }
         catch (...)
@@ -1493,12 +1493,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_Activated(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowActivatedEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_Activated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowActivatedEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().Activated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowActivatedEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().Activated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowActivatedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1521,12 +1521,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_AutomationProviderRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::AutomationProviderRequestedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_AutomationProviderRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::AutomationProviderRequestedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().AutomationProviderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::AutomationProviderRequestedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().AutomationProviderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::AutomationProviderRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1549,12 +1549,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_CharacterReceived(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CharacterReceivedEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_CharacterReceived(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CharacterReceivedEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1577,12 +1577,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_Closed(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CoreWindowEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_Closed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CoreWindowEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1605,12 +1605,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_InputEnabled(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::InputEnabledEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_InputEnabled(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::InputEnabledEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1633,12 +1633,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_KeyDown(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_KeyDown(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1661,12 +1661,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_KeyUp(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_KeyUp(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1689,12 +1689,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_PointerCaptureLost(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerCaptureLost(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1717,12 +1717,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_PointerEntered(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerEntered(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1745,12 +1745,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_PointerExited(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerExited(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1773,12 +1773,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_PointerMoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerMoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1801,12 +1801,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_PointerPressed(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerPressed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1829,12 +1829,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_PointerReleased(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerReleased(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1857,12 +1857,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_TouchHitTesting(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::TouchHitTestingEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_TouchHitTesting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::TouchHitTestingEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1885,12 +1885,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_PointerWheelChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_PointerWheelChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1913,12 +1913,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_SizeChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowSizeChangedEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_SizeChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowSizeChangedEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().SizeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowSizeChangedEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().SizeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowSizeChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1941,12 +1941,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
         }
     }
 
-    HRESULT __stdcall add_VisibilityChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::VisibilityChangedEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_VisibilityChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::VisibilityChangedEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::VisibilityChangedEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::VisibilityChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1973,7 +1973,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreWindow2> : produce_base<D, Windows::UI::Core::ICoreWindow2>
 {
-    HRESULT __stdcall put_PointerPosition(abi_arg_in<Windows::Foundation::Point> value) noexcept override
+    HRESULT __stdcall put_PointerPosition(impl::abi_arg_in<Windows::Foundation::Point> value) noexcept override
     {
         try
         {
@@ -1991,12 +1991,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow2> : produce_base<D, Windows::UI
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreWindow3> : produce_base<D, Windows::UI::Core::ICoreWindow3>
 {
-    HRESULT __stdcall add_ClosestInteractiveBoundsRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs>> handler, event_token * pCookie) noexcept override
+    HRESULT __stdcall add_ClosestInteractiveBoundsRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs>> handler, event_token * pCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach(this->shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
+            *pCookie = detach_abi(this->shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2019,12 +2019,12 @@ struct produce<D, Windows::UI::Core::ICoreWindow3> : produce_base<D, Windows::UI
         }
     }
 
-    HRESULT __stdcall abi_GetCurrentKeyEventDeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetCurrentKeyEventDeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetCurrentKeyEventDeviceId());
+            *value = detach_abi(this->shim().GetCurrentKeyEventDeviceId());
             return S_OK;
         }
         catch (...)
@@ -2043,7 +2043,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowEventArgs> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Handled());
+            *value = detach_abi(this->shim().Handled());
             return S_OK;
         }
         catch (...)
@@ -2107,7 +2107,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerLayoutCapability> :
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ShouldWaitForLayoutCompletion());
+            *value = detach_abi(this->shim().ShouldWaitForLayoutCompletion());
             return S_OK;
         }
         catch (...)
@@ -2120,12 +2120,12 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerLayoutCapability> :
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerStatics> : produce_base<D, Windows::UI::Core::ICoreWindowResizeManagerStatics>
 {
-    HRESULT __stdcall abi_GetForCurrentView(abi_arg_out<Windows::UI::Core::ICoreWindowResizeManager> CoreWindowResizeManager) noexcept override
+    HRESULT __stdcall abi_GetForCurrentView(impl::abi_arg_out<Windows::UI::Core::ICoreWindowResizeManager> CoreWindowResizeManager) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *CoreWindowResizeManager = detach(this->shim().GetForCurrentView());
+            *CoreWindowResizeManager = detach_abi(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -2139,12 +2139,12 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerStatics> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Core::ICoreWindowStatic> : produce_base<D, Windows::UI::Core::ICoreWindowStatic>
 {
-    HRESULT __stdcall abi_GetForCurrentThread(abi_arg_out<Windows::UI::Core::ICoreWindow> ppWindow) noexcept override
+    HRESULT __stdcall abi_GetForCurrentThread(impl::abi_arg_out<Windows::UI::Core::ICoreWindow> ppWindow) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *ppWindow = detach(this->shim().GetForCurrentThread());
+            *ppWindow = detach_abi(this->shim().GetForCurrentThread());
             return S_OK;
         }
         catch (...)
@@ -2163,7 +2163,7 @@ struct produce<D, Windows::UI::Core::IIdleDispatchedHandlerArgs> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsDispatcherIdle());
+            *value = detach_abi(this->shim().IsDispatcherIdle());
             return S_OK;
         }
         catch (...)
@@ -2176,7 +2176,7 @@ struct produce<D, Windows::UI::Core::IIdleDispatchedHandlerArgs> : produce_base<
 template <typename D>
 struct produce<D, Windows::UI::Core::IInitializeWithCoreWindow> : produce_base<D, Windows::UI::Core::IInitializeWithCoreWindow>
 {
-    HRESULT __stdcall abi_Initialize(abi_arg_in<Windows::UI::Core::ICoreWindow> window) noexcept override
+    HRESULT __stdcall abi_Initialize(impl::abi_arg_in<Windows::UI::Core::ICoreWindow> window) noexcept override
     {
         try
         {
@@ -2199,7 +2199,7 @@ struct produce<D, Windows::UI::Core::IInputEnabledEventArgs> : produce_base<D, W
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InputEnabled());
+            *value = detach_abi(this->shim().InputEnabled());
             return S_OK;
         }
         catch (...)
@@ -2217,7 +2217,7 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs> : produce_base<D, Windows::U
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VirtualKey());
+            *value = detach_abi(this->shim().VirtualKey());
             return S_OK;
         }
         catch (...)
@@ -2226,12 +2226,12 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs> : produce_base<D, Windows::U
         }
     }
 
-    HRESULT __stdcall get_KeyStatus(abi_arg_out<Windows::UI::Core::CorePhysicalKeyStatus> value) noexcept override
+    HRESULT __stdcall get_KeyStatus(impl::abi_arg_out<Windows::UI::Core::CorePhysicalKeyStatus> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyStatus());
+            *value = detach_abi(this->shim().KeyStatus());
             return S_OK;
         }
         catch (...)
@@ -2244,12 +2244,12 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs> : produce_base<D, Windows::U
 template <typename D>
 struct produce<D, Windows::UI::Core::IKeyEventArgs2> : produce_base<D, Windows::UI::Core::IKeyEventArgs2>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -2263,12 +2263,12 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs2> : produce_base<D, Windows::
 template <typename D>
 struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Windows::UI::Core::IPointerEventArgs>
 {
-    HRESULT __stdcall get_CurrentPoint(abi_arg_out<Windows::UI::Input::IPointerPoint> value) noexcept override
+    HRESULT __stdcall get_CurrentPoint(impl::abi_arg_out<Windows::UI::Input::IPointerPoint> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CurrentPoint());
+            *value = detach_abi(this->shim().CurrentPoint());
             return S_OK;
         }
         catch (...)
@@ -2283,7 +2283,7 @@ struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().KeyModifiers());
+            *value = detach_abi(this->shim().KeyModifiers());
             return S_OK;
         }
         catch (...)
@@ -2292,12 +2292,12 @@ struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_GetIntermediatePoints(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint>> value) noexcept override
+    HRESULT __stdcall abi_GetIntermediatePoints(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetIntermediatePoints());
+            *value = detach_abi(this->shim().GetIntermediatePoints());
             return S_OK;
         }
         catch (...)
@@ -2311,12 +2311,12 @@ struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Window
 template <typename D>
 struct produce<D, Windows::UI::Core::ISystemNavigationManager> : produce_base<D, Windows::UI::Core::ISystemNavigationManager>
 {
-    HRESULT __stdcall add_BackRequested(abi_arg_in<Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_BackRequested(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().BackRequested(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().BackRequested(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2348,7 +2348,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager2> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AppViewBackButtonVisibility());
+            *value = detach_abi(this->shim().AppViewBackButtonVisibility());
             return S_OK;
         }
         catch (...)
@@ -2375,12 +2375,12 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager2> : produce_base<D
 template <typename D>
 struct produce<D, Windows::UI::Core::ISystemNavigationManagerStatics> : produce_base<D, Windows::UI::Core::ISystemNavigationManagerStatics>
 {
-    HRESULT __stdcall abi_GetForCurrentView(abi_arg_out<Windows::UI::Core::ISystemNavigationManager> loader) noexcept override
+    HRESULT __stdcall abi_GetForCurrentView(impl::abi_arg_out<Windows::UI::Core::ISystemNavigationManager> loader) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *loader = detach(this->shim().GetForCurrentView());
+            *loader = detach_abi(this->shim().GetForCurrentView());
             return S_OK;
         }
         catch (...)
@@ -2394,12 +2394,12 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManagerStatics> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D, Windows::UI::Core::ITouchHitTestingEventArgs>
 {
-    HRESULT __stdcall get_ProximityEvaluation(abi_arg_out<Windows::UI::Core::CoreProximityEvaluation> value) noexcept override
+    HRESULT __stdcall get_ProximityEvaluation(impl::abi_arg_out<Windows::UI::Core::CoreProximityEvaluation> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ProximityEvaluation());
+            *value = detach_abi(this->shim().ProximityEvaluation());
             return S_OK;
         }
         catch (...)
@@ -2408,7 +2408,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
         }
     }
 
-    HRESULT __stdcall put_ProximityEvaluation(abi_arg_in<Windows::UI::Core::CoreProximityEvaluation> value) noexcept override
+    HRESULT __stdcall put_ProximityEvaluation(impl::abi_arg_in<Windows::UI::Core::CoreProximityEvaluation> value) noexcept override
     {
         try
         {
@@ -2422,12 +2422,12 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_Point(abi_arg_out<Windows::Foundation::Point> value) noexcept override
+    HRESULT __stdcall get_Point(impl::abi_arg_out<Windows::Foundation::Point> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Point());
+            *value = detach_abi(this->shim().Point());
             return S_OK;
         }
         catch (...)
@@ -2436,12 +2436,12 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
         }
     }
 
-    HRESULT __stdcall get_BoundingBox(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall get_BoundingBox(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BoundingBox());
+            *value = detach_abi(this->shim().BoundingBox());
             return S_OK;
         }
         catch (...)
@@ -2450,12 +2450,12 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
         }
     }
 
-    HRESULT __stdcall abi_EvaluateProximityToRect(abi_arg_in<Windows::Foundation::Rect> controlBoundingBox, abi_arg_out<Windows::UI::Core::CoreProximityEvaluation> proximityEvaluation) noexcept override
+    HRESULT __stdcall abi_EvaluateProximityToRect(impl::abi_arg_in<Windows::Foundation::Rect> controlBoundingBox, impl::abi_arg_out<Windows::UI::Core::CoreProximityEvaluation> proximityEvaluation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *proximityEvaluation = detach(this->shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Rect *>(&controlBoundingBox)));
+            *proximityEvaluation = detach_abi(this->shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Rect *>(&controlBoundingBox)));
             return S_OK;
         }
         catch (...)
@@ -2464,12 +2464,12 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
         }
     }
 
-    HRESULT __stdcall abi_EvaluateProximityToPolygon(uint32_t __controlVerticesSize, abi_arg_in<Windows::Foundation::Point> * controlVertices, abi_arg_out<Windows::UI::Core::CoreProximityEvaluation> proximityEvaluation) noexcept override
+    HRESULT __stdcall abi_EvaluateProximityToPolygon(uint32_t __controlVerticesSize, impl::abi_arg_in<Windows::Foundation::Point> * controlVertices, impl::abi_arg_out<Windows::UI::Core::CoreProximityEvaluation> proximityEvaluation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *proximityEvaluation = detach(this->shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Point *>(&controlVertices)));
+            *proximityEvaluation = detach_abi(this->shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Point *>(&controlVertices)));
             return S_OK;
         }
         catch (...)
@@ -2487,7 +2487,7 @@ struct produce<D, Windows::UI::Core::IVisibilityChangedEventArgs> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Visible());
+            *value = detach_abi(this->shim().Visible());
             return S_OK;
         }
         catch (...)
@@ -2505,7 +2505,7 @@ struct produce<D, Windows::UI::Core::IWindowActivatedEventArgs> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WindowActivationState());
+            *value = detach_abi(this->shim().WindowActivationState());
             return S_OK;
         }
         catch (...)
@@ -2518,12 +2518,12 @@ struct produce<D, Windows::UI::Core::IWindowActivatedEventArgs> : produce_base<D
 template <typename D>
 struct produce<D, Windows::UI::Core::IWindowSizeChangedEventArgs> : produce_base<D, Windows::UI::Core::IWindowSizeChangedEventArgs>
 {
-    HRESULT __stdcall get_Size(abi_arg_out<Windows::Foundation::Size> value) noexcept override
+    HRESULT __stdcall get_Size(impl::abi_arg_out<Windows::Foundation::Size> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Size());
+            *value = detach_abi(this->shim().Size());
             return S_OK;
         }
         catch (...)
@@ -2552,13 +2552,13 @@ template <typename D> void impl_ICoreWindowEventArgs<D>::Handled(bool value) con
 template <typename D> Windows::IInspectable impl_IAutomationProviderRequestedEventArgs<D>::AutomationProvider() const
 {
     Windows::IInspectable value;
-    check_hresult(WINRT_SHIM(IAutomationProviderRequestedEventArgs)->get_AutomationProvider(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationProviderRequestedEventArgs)->get_AutomationProvider(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationProviderRequestedEventArgs<D>::AutomationProvider(const Windows::IInspectable & value) const
 {
-    check_hresult(WINRT_SHIM(IAutomationProviderRequestedEventArgs)->put_AutomationProvider(get(value)));
+    check_hresult(WINRT_SHIM(IAutomationProviderRequestedEventArgs)->put_AutomationProvider(get_abi(value)));
 }
 
 template <typename D> uint32_t impl_ICharacterReceivedEventArgs<D>::KeyCode() const
@@ -2571,7 +2571,7 @@ template <typename D> uint32_t impl_ICharacterReceivedEventArgs<D>::KeyCode() co
 template <typename D> Windows::UI::Core::CorePhysicalKeyStatus impl_ICharacterReceivedEventArgs<D>::KeyStatus() const
 {
     Windows::UI::Core::CorePhysicalKeyStatus value {};
-    check_hresult(WINRT_SHIM(ICharacterReceivedEventArgs)->get_KeyStatus(put(value)));
+    check_hresult(WINRT_SHIM(ICharacterReceivedEventArgs)->get_KeyStatus(put_abi(value)));
     return value;
 }
 
@@ -2592,21 +2592,21 @@ template <typename D> Windows::System::VirtualKey impl_IKeyEventArgs<D>::Virtual
 template <typename D> Windows::UI::Core::CorePhysicalKeyStatus impl_IKeyEventArgs<D>::KeyStatus() const
 {
     Windows::UI::Core::CorePhysicalKeyStatus value {};
-    check_hresult(WINRT_SHIM(IKeyEventArgs)->get_KeyStatus(put(value)));
+    check_hresult(WINRT_SHIM(IKeyEventArgs)->get_KeyStatus(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyEventArgs2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IKeyEventArgs2)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IKeyEventArgs2)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::PointerPoint impl_IPointerEventArgs<D>::CurrentPoint() const
 {
     Windows::UI::Input::PointerPoint value { nullptr };
-    check_hresult(WINRT_SHIM(IPointerEventArgs)->get_CurrentPoint(put(value)));
+    check_hresult(WINRT_SHIM(IPointerEventArgs)->get_CurrentPoint(put_abi(value)));
     return value;
 }
 
@@ -2620,74 +2620,74 @@ template <typename D> Windows::System::VirtualKeyModifiers impl_IPointerEventArg
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> impl_IPointerEventArgs<D>::GetIntermediatePoints() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> value;
-    check_hresult(WINRT_SHIM(IPointerEventArgs)->abi_GetIntermediatePoints(put(value)));
+    check_hresult(WINRT_SHIM(IPointerEventArgs)->abi_GetIntermediatePoints(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Core::CoreProximityEvaluation impl_ITouchHitTestingEventArgs<D>::ProximityEvaluation() const
 {
     Windows::UI::Core::CoreProximityEvaluation value {};
-    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->get_ProximityEvaluation(put(value)));
+    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->get_ProximityEvaluation(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ITouchHitTestingEventArgs<D>::ProximityEvaluation(const Windows::UI::Core::CoreProximityEvaluation & value) const
 {
-    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->put_ProximityEvaluation(get(value)));
+    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->put_ProximityEvaluation(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_ITouchHitTestingEventArgs<D>::Point() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->get_Point(put(value)));
+    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->get_Point(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_ITouchHitTestingEventArgs<D>::BoundingBox() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->get_BoundingBox(put(value)));
+    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->get_BoundingBox(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Core::CoreProximityEvaluation impl_ITouchHitTestingEventArgs<D>::EvaluateProximity(const Windows::Foundation::Rect & controlBoundingBox) const
 {
     Windows::UI::Core::CoreProximityEvaluation proximityEvaluation {};
-    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->abi_EvaluateProximityToRect(get(controlBoundingBox), put(proximityEvaluation)));
+    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->abi_EvaluateProximityToRect(get_abi(controlBoundingBox), put_abi(proximityEvaluation)));
     return proximityEvaluation;
 }
 
 template <typename D> Windows::UI::Core::CoreProximityEvaluation impl_ITouchHitTestingEventArgs<D>::EvaluateProximity(array_view<const Windows::Foundation::Point> controlVertices) const
 {
     Windows::UI::Core::CoreProximityEvaluation proximityEvaluation {};
-    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->abi_EvaluateProximityToPolygon(controlVertices.size(), get(controlVertices), put(proximityEvaluation)));
+    check_hresult(WINRT_SHIM(ITouchHitTestingEventArgs)->abi_EvaluateProximityToPolygon(controlVertices.size(), get_abi(controlVertices), put_abi(proximityEvaluation)));
     return proximityEvaluation;
 }
 
 template <typename D> Windows::Foundation::Point impl_IClosestInteractiveBoundsRequestedEventArgs<D>::PointerPosition() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(WINRT_SHIM(IClosestInteractiveBoundsRequestedEventArgs)->get_PointerPosition(put(value)));
+    check_hresult(WINRT_SHIM(IClosestInteractiveBoundsRequestedEventArgs)->get_PointerPosition(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IClosestInteractiveBoundsRequestedEventArgs<D>::SearchBounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(IClosestInteractiveBoundsRequestedEventArgs)->get_SearchBounds(put(value)));
+    check_hresult(WINRT_SHIM(IClosestInteractiveBoundsRequestedEventArgs)->get_SearchBounds(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IClosestInteractiveBoundsRequestedEventArgs<D>::ClosestInteractiveBounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(IClosestInteractiveBoundsRequestedEventArgs)->get_ClosestInteractiveBounds(put(value)));
+    check_hresult(WINRT_SHIM(IClosestInteractiveBoundsRequestedEventArgs)->get_ClosestInteractiveBounds(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IClosestInteractiveBoundsRequestedEventArgs<D>::ClosestInteractiveBounds(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(WINRT_SHIM(IClosestInteractiveBoundsRequestedEventArgs)->put_ClosestInteractiveBounds(get(value)));
+    check_hresult(WINRT_SHIM(IClosestInteractiveBoundsRequestedEventArgs)->put_ClosestInteractiveBounds(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Core::CoreWindowActivationState impl_IWindowActivatedEventArgs<D>::WindowActivationState() const
@@ -2700,7 +2700,7 @@ template <typename D> Windows::UI::Core::CoreWindowActivationState impl_IWindowA
 template <typename D> Windows::Foundation::Size impl_IWindowSizeChangedEventArgs<D>::Size() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(WINRT_SHIM(IWindowSizeChangedEventArgs)->get_Size(put(value)));
+    check_hresult(WINRT_SHIM(IWindowSizeChangedEventArgs)->get_Size(put_abi(value)));
     return value;
 }
 
@@ -2714,28 +2714,28 @@ template <typename D> bool impl_IVisibilityChangedEventArgs<D>::Visible() const
 template <typename D> Windows::IInspectable impl_ICoreWindow<D>::AutomationHostProvider() const
 {
     Windows::IInspectable value;
-    check_hresult(WINRT_SHIM(ICoreWindow)->get_AutomationHostProvider(put(value)));
+    check_hresult(WINRT_SHIM(ICoreWindow)->get_AutomationHostProvider(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_ICoreWindow<D>::Bounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->get_Bounds(put(value)));
+    check_hresult(WINRT_SHIM(ICoreWindow)->get_Bounds(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_ICoreWindow<D>::CustomProperties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(WINRT_SHIM(ICoreWindow)->get_CustomProperties(put(value)));
+    check_hresult(WINRT_SHIM(ICoreWindow)->get_CustomProperties(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Core::CoreDispatcher impl_ICoreWindow<D>::Dispatcher() const
 {
     Windows::UI::Core::CoreDispatcher value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreWindow)->get_Dispatcher(put(value)));
+    check_hresult(WINRT_SHIM(ICoreWindow)->get_Dispatcher(put_abi(value)));
     return value;
 }
 
@@ -2766,19 +2766,19 @@ template <typename D> void impl_ICoreWindow<D>::IsInputEnabled(bool value) const
 template <typename D> Windows::UI::Core::CoreCursor impl_ICoreWindow<D>::PointerCursor() const
 {
     Windows::UI::Core::CoreCursor value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreWindow)->get_PointerCursor(put(value)));
+    check_hresult(WINRT_SHIM(ICoreWindow)->get_PointerCursor(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreWindow<D>::PointerCursor(const Windows::UI::Core::CoreCursor & value) const
 {
-    check_hresult(WINRT_SHIM(ICoreWindow)->put_PointerCursor(get(value)));
+    check_hresult(WINRT_SHIM(ICoreWindow)->put_PointerCursor(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_ICoreWindow<D>::PointerPosition() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->get_PointerPosition(put(value)));
+    check_hresult(WINRT_SHIM(ICoreWindow)->get_PointerPosition(put_abi(value)));
     return value;
 }
 
@@ -2826,7 +2826,7 @@ template <typename D> void impl_ICoreWindow<D>::SetPointerCapture() const
 template <typename D> event_token impl_ICoreWindow<D>::Activated(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowActivatedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_Activated(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_Activated(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -2843,7 +2843,7 @@ template <typename D> void impl_ICoreWindow<D>::Activated(event_token cookie) co
 template <typename D> event_token impl_ICoreWindow<D>::AutomationProviderRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::AutomationProviderRequestedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_AutomationProviderRequested(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_AutomationProviderRequested(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -2860,7 +2860,7 @@ template <typename D> void impl_ICoreWindow<D>::AutomationProviderRequested(even
 template <typename D> event_token impl_ICoreWindow<D>::CharacterReceived(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CharacterReceivedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_CharacterReceived(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_CharacterReceived(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -2877,7 +2877,7 @@ template <typename D> void impl_ICoreWindow<D>::CharacterReceived(event_token co
 template <typename D> event_token impl_ICoreWindow<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CoreWindowEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_Closed(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_Closed(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -2894,7 +2894,7 @@ template <typename D> void impl_ICoreWindow<D>::Closed(event_token cookie) const
 template <typename D> event_token impl_ICoreWindow<D>::InputEnabled(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::InputEnabledEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_InputEnabled(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_InputEnabled(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -2911,7 +2911,7 @@ template <typename D> void impl_ICoreWindow<D>::InputEnabled(event_token cookie)
 template <typename D> event_token impl_ICoreWindow<D>::KeyDown(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_KeyDown(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_KeyDown(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -2928,7 +2928,7 @@ template <typename D> void impl_ICoreWindow<D>::KeyDown(event_token cookie) cons
 template <typename D> event_token impl_ICoreWindow<D>::KeyUp(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_KeyUp(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_KeyUp(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -2945,7 +2945,7 @@ template <typename D> void impl_ICoreWindow<D>::KeyUp(event_token cookie) const
 template <typename D> event_token impl_ICoreWindow<D>::PointerCaptureLost(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerCaptureLost(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerCaptureLost(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -2962,7 +2962,7 @@ template <typename D> void impl_ICoreWindow<D>::PointerCaptureLost(event_token c
 template <typename D> event_token impl_ICoreWindow<D>::PointerEntered(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerEntered(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerEntered(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -2979,7 +2979,7 @@ template <typename D> void impl_ICoreWindow<D>::PointerEntered(event_token cooki
 template <typename D> event_token impl_ICoreWindow<D>::PointerExited(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerExited(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerExited(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -2996,7 +2996,7 @@ template <typename D> void impl_ICoreWindow<D>::PointerExited(event_token cookie
 template <typename D> event_token impl_ICoreWindow<D>::PointerMoved(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerMoved(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerMoved(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3013,7 +3013,7 @@ template <typename D> void impl_ICoreWindow<D>::PointerMoved(event_token cookie)
 template <typename D> event_token impl_ICoreWindow<D>::PointerPressed(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerPressed(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerPressed(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3030,7 +3030,7 @@ template <typename D> void impl_ICoreWindow<D>::PointerPressed(event_token cooki
 template <typename D> event_token impl_ICoreWindow<D>::PointerReleased(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerReleased(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerReleased(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3047,7 +3047,7 @@ template <typename D> void impl_ICoreWindow<D>::PointerReleased(event_token cook
 template <typename D> event_token impl_ICoreWindow<D>::TouchHitTesting(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::TouchHitTestingEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_TouchHitTesting(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_TouchHitTesting(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3064,7 +3064,7 @@ template <typename D> void impl_ICoreWindow<D>::TouchHitTesting(event_token cook
 template <typename D> event_token impl_ICoreWindow<D>::PointerWheelChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerWheelChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_PointerWheelChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3081,7 +3081,7 @@ template <typename D> void impl_ICoreWindow<D>::PointerWheelChanged(event_token 
 template <typename D> event_token impl_ICoreWindow<D>::SizeChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowSizeChangedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_SizeChanged(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_SizeChanged(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3098,7 +3098,7 @@ template <typename D> void impl_ICoreWindow<D>::SizeChanged(event_token cookie) 
 template <typename D> event_token impl_ICoreWindow<D>::VisibilityChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::VisibilityChangedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow)->add_VisibilityChanged(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow)->add_VisibilityChanged(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3114,13 +3114,13 @@ template <typename D> void impl_ICoreWindow<D>::VisibilityChanged(event_token co
 
 template <typename D> void impl_ICoreWindow2<D>::PointerPosition(const Windows::Foundation::Point & value) const
 {
-    check_hresult(WINRT_SHIM(ICoreWindow2)->put_PointerPosition(get(value)));
+    check_hresult(WINRT_SHIM(ICoreWindow2)->put_PointerPosition(get_abi(value)));
 }
 
 template <typename D> event_token impl_ICoreWindow3<D>::ClosestInteractiveBoundsRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreWindow3)->add_ClosestInteractiveBoundsRequested(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreWindow3)->add_ClosestInteractiveBoundsRequested(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3137,14 +3137,14 @@ template <typename D> void impl_ICoreWindow3<D>::ClosestInteractiveBoundsRequest
 template <typename D> hstring impl_ICoreWindow3<D>::GetCurrentKeyEventDeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICoreWindow3)->abi_GetCurrentKeyEventDeviceId(put(value)));
+    check_hresult(WINRT_SHIM(ICoreWindow3)->abi_GetCurrentKeyEventDeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Core::CoreWindow impl_ICoreWindowStatic<D>::GetForCurrentThread() const
 {
     Windows::UI::Core::CoreWindow ppWindow { nullptr };
-    check_hresult(WINRT_SHIM(ICoreWindowStatic)->abi_GetForCurrentThread(put(ppWindow)));
+    check_hresult(WINRT_SHIM(ICoreWindowStatic)->abi_GetForCurrentThread(put_abi(ppWindow)));
     return ppWindow;
 }
 
@@ -3165,21 +3165,21 @@ template <typename D> Windows::System::VirtualKey impl_IAcceleratorKeyEventArgs<
 template <typename D> Windows::UI::Core::CorePhysicalKeyStatus impl_IAcceleratorKeyEventArgs<D>::KeyStatus() const
 {
     Windows::UI::Core::CorePhysicalKeyStatus value {};
-    check_hresult(WINRT_SHIM(IAcceleratorKeyEventArgs)->get_KeyStatus(put(value)));
+    check_hresult(WINRT_SHIM(IAcceleratorKeyEventArgs)->get_KeyStatus(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAcceleratorKeyEventArgs2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IAcceleratorKeyEventArgs2)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IAcceleratorKeyEventArgs2)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_ICoreAcceleratorKeys<D>::AcceleratorKeyActivated(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreAcceleratorKeys)->add_AcceleratorKeyActivated(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreAcceleratorKeys)->add_AcceleratorKeyActivated(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3208,28 +3208,28 @@ template <typename D> void impl_ICoreDispatcher<D>::ProcessEvents(Windows::UI::C
 template <typename D> Windows::Foundation::IAsyncAction impl_ICoreDispatcher<D>::RunAsync(Windows::UI::Core::CoreDispatcherPriority priority, const Windows::UI::Core::DispatchedHandler & agileCallback) const
 {
     Windows::Foundation::IAsyncAction asyncAction;
-    check_hresult(WINRT_SHIM(ICoreDispatcher)->abi_RunAsync(priority, get(agileCallback), put(asyncAction)));
+    check_hresult(WINRT_SHIM(ICoreDispatcher)->abi_RunAsync(priority, get_abi(agileCallback), put_abi(asyncAction)));
     return asyncAction;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICoreDispatcher<D>::RunIdleAsync(const Windows::UI::Core::IdleDispatchedHandler & agileCallback) const
 {
     Windows::Foundation::IAsyncAction asyncAction;
-    check_hresult(WINRT_SHIM(ICoreDispatcher)->abi_RunIdleAsync(get(agileCallback), put(asyncAction)));
+    check_hresult(WINRT_SHIM(ICoreDispatcher)->abi_RunIdleAsync(get_abi(agileCallback), put_abi(asyncAction)));
     return asyncAction;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ICoreDispatcher2<D>::TryRunAsync(Windows::UI::Core::CoreDispatcherPriority priority, const Windows::UI::Core::DispatchedHandler & agileCallback) const
 {
     Windows::Foundation::IAsyncOperation<bool> asyncOperation;
-    check_hresult(WINRT_SHIM(ICoreDispatcher2)->abi_TryRunAsync(priority, get(agileCallback), put(asyncOperation)));
+    check_hresult(WINRT_SHIM(ICoreDispatcher2)->abi_TryRunAsync(priority, get_abi(agileCallback), put_abi(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ICoreDispatcher2<D>::TryRunIdleAsync(const Windows::UI::Core::IdleDispatchedHandler & agileCallback) const
 {
     Windows::Foundation::IAsyncOperation<bool> asyncOperation;
-    check_hresult(WINRT_SHIM(ICoreDispatcher2)->abi_TryRunIdleAsync(get(agileCallback), put(asyncOperation)));
+    check_hresult(WINRT_SHIM(ICoreDispatcher2)->abi_TryRunIdleAsync(get_abi(agileCallback), put_abi(asyncOperation)));
     return asyncOperation;
 }
 
@@ -3288,13 +3288,13 @@ template <typename D> Windows::UI::Core::CoreCursorType impl_ICoreCursor<D>::Typ
 template <typename D> Windows::UI::Core::CoreCursor impl_ICoreCursorFactory<D>::CreateCursor(Windows::UI::Core::CoreCursorType type, uint32_t id) const
 {
     Windows::UI::Core::CoreCursor cursor { nullptr };
-    check_hresult(WINRT_SHIM(ICoreCursorFactory)->abi_CreateCursor(type, id, put(cursor)));
+    check_hresult(WINRT_SHIM(ICoreCursorFactory)->abi_CreateCursor(type, id, put_abi(cursor)));
     return cursor;
 }
 
 template <typename D> void impl_IInitializeWithCoreWindow<D>::Initialize(const Windows::UI::Core::CoreWindow & window) const
 {
-    check_hresult(WINRT_SHIM(IInitializeWithCoreWindow)->abi_Initialize(get(window)));
+    check_hresult(WINRT_SHIM(IInitializeWithCoreWindow)->abi_Initialize(get_abi(window)));
 }
 
 template <typename D> void impl_ICoreWindowResizeManager<D>::NotifyLayoutCompleted() const
@@ -3317,14 +3317,14 @@ template <typename D> bool impl_ICoreWindowResizeManagerLayoutCapability<D>::Sho
 template <typename D> Windows::UI::Core::CoreWindowResizeManager impl_ICoreWindowResizeManagerStatics<D>::GetForCurrentView() const
 {
     Windows::UI::Core::CoreWindowResizeManager CoreWindowResizeManager { nullptr };
-    check_hresult(WINRT_SHIM(ICoreWindowResizeManagerStatics)->abi_GetForCurrentView(put(CoreWindowResizeManager)));
+    check_hresult(WINRT_SHIM(ICoreWindowResizeManagerStatics)->abi_GetForCurrentView(put_abi(CoreWindowResizeManager)));
     return CoreWindowResizeManager;
 }
 
 template <typename D> Windows::UI::Core::CoreDispatcher impl_ICoreInputSourceBase<D>::Dispatcher() const
 {
     Windows::UI::Core::CoreDispatcher value { nullptr };
-    check_hresult(WINRT_SHIM(ICoreInputSourceBase)->get_Dispatcher(put(value)));
+    check_hresult(WINRT_SHIM(ICoreInputSourceBase)->get_Dispatcher(put_abi(value)));
     return value;
 }
 
@@ -3343,7 +3343,7 @@ template <typename D> void impl_ICoreInputSourceBase<D>::IsInputEnabled(bool val
 template <typename D> event_token impl_ICoreInputSourceBase<D>::InputEnabled(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreInputSourceBase)->add_InputEnabled(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreInputSourceBase)->add_InputEnabled(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3377,26 +3377,26 @@ template <typename D> bool impl_ICorePointerInputSource<D>::HasCapture() const
 template <typename D> Windows::Foundation::Point impl_ICorePointerInputSource<D>::PointerPosition() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->get_PointerPosition(put(value)));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->get_PointerPosition(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Core::CoreCursor impl_ICorePointerInputSource<D>::PointerCursor() const
 {
     Windows::UI::Core::CoreCursor value { nullptr };
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->get_PointerCursor(put(value)));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->get_PointerCursor(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICorePointerInputSource<D>::PointerCursor(const Windows::UI::Core::CoreCursor & value) const
 {
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->put_PointerCursor(get(value)));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->put_PointerCursor(get_abi(value)));
 }
 
 template <typename D> event_token impl_ICorePointerInputSource<D>::PointerCaptureLost(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerCaptureLost(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerCaptureLost(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3413,7 +3413,7 @@ template <typename D> void impl_ICorePointerInputSource<D>::PointerCaptureLost(e
 template <typename D> event_token impl_ICorePointerInputSource<D>::PointerEntered(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerEntered(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerEntered(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3430,7 +3430,7 @@ template <typename D> void impl_ICorePointerInputSource<D>::PointerEntered(event
 template <typename D> event_token impl_ICorePointerInputSource<D>::PointerExited(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerExited(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerExited(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3447,7 +3447,7 @@ template <typename D> void impl_ICorePointerInputSource<D>::PointerExited(event_
 template <typename D> event_token impl_ICorePointerInputSource<D>::PointerMoved(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerMoved(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerMoved(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3464,7 +3464,7 @@ template <typename D> void impl_ICorePointerInputSource<D>::PointerMoved(event_t
 template <typename D> event_token impl_ICorePointerInputSource<D>::PointerPressed(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerPressed(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerPressed(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3481,7 +3481,7 @@ template <typename D> void impl_ICorePointerInputSource<D>::PointerPressed(event
 template <typename D> event_token impl_ICorePointerInputSource<D>::PointerReleased(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerReleased(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerReleased(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3498,7 +3498,7 @@ template <typename D> void impl_ICorePointerInputSource<D>::PointerReleased(even
 template <typename D> event_token impl_ICorePointerInputSource<D>::PointerWheelChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerWheelChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerInputSource)->add_PointerWheelChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3522,7 +3522,7 @@ template <typename D> Windows::UI::Core::CoreVirtualKeyStates impl_ICoreKeyboard
 template <typename D> event_token impl_ICoreKeyboardInputSource<D>::CharacterReceived(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreKeyboardInputSource)->add_CharacterReceived(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreKeyboardInputSource)->add_CharacterReceived(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3539,7 +3539,7 @@ template <typename D> void impl_ICoreKeyboardInputSource<D>::CharacterReceived(e
 template <typename D> event_token impl_ICoreKeyboardInputSource<D>::KeyDown(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreKeyboardInputSource)->add_KeyDown(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreKeyboardInputSource)->add_KeyDown(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3556,7 +3556,7 @@ template <typename D> void impl_ICoreKeyboardInputSource<D>::KeyDown(event_token
 template <typename D> event_token impl_ICoreKeyboardInputSource<D>::KeyUp(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreKeyboardInputSource)->add_KeyUp(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreKeyboardInputSource)->add_KeyUp(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3573,7 +3573,7 @@ template <typename D> void impl_ICoreKeyboardInputSource<D>::KeyUp(event_token c
 template <typename D> hstring impl_ICoreKeyboardInputSource2<D>::GetCurrentKeyEventDeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICoreKeyboardInputSource2)->abi_GetCurrentKeyEventDeviceId(put(value)));
+    check_hresult(WINRT_SHIM(ICoreKeyboardInputSource2)->abi_GetCurrentKeyEventDeviceId(put_abi(value)));
     return value;
 }
 
@@ -3587,7 +3587,7 @@ template <typename D> bool impl_ICoreComponentFocusable<D>::HasFocus() const
 template <typename D> event_token impl_ICoreComponentFocusable<D>::GotFocus(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreComponentFocusable)->add_GotFocus(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreComponentFocusable)->add_GotFocus(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3604,7 +3604,7 @@ template <typename D> void impl_ICoreComponentFocusable<D>::GotFocus(event_token
 template <typename D> event_token impl_ICoreComponentFocusable<D>::LostFocus(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreComponentFocusable)->add_LostFocus(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreComponentFocusable)->add_LostFocus(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3621,7 +3621,7 @@ template <typename D> void impl_ICoreComponentFocusable<D>::LostFocus(event_toke
 template <typename D> event_token impl_ICoreTouchHitTesting<D>::TouchHitTesting(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreTouchHitTesting)->add_TouchHitTesting(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreTouchHitTesting)->add_TouchHitTesting(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3638,7 +3638,7 @@ template <typename D> void impl_ICoreTouchHitTesting<D>::TouchHitTesting(event_t
 template <typename D> event_token impl_ICoreClosestInteractiveBoundsRequested<D>::ClosestInteractiveBoundsRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(WINRT_SHIM(ICoreClosestInteractiveBoundsRequested)->add_ClosestInteractiveBoundsRequested(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(ICoreClosestInteractiveBoundsRequested)->add_ClosestInteractiveBoundsRequested(get_abi(handler), &pCookie));
     return pCookie;
 }
 
@@ -3655,7 +3655,7 @@ template <typename D> void impl_ICoreClosestInteractiveBoundsRequested<D>::Close
 template <typename D> event_token impl_ICorePointerRedirector<D>::PointerRoutedAway(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerRedirector)->add_PointerRoutedAway(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerRedirector)->add_PointerRoutedAway(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3672,7 +3672,7 @@ template <typename D> void impl_ICorePointerRedirector<D>::PointerRoutedAway(eve
 template <typename D> event_token impl_ICorePointerRedirector<D>::PointerRoutedTo(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerRedirector)->add_PointerRoutedTo(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerRedirector)->add_PointerRoutedTo(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3689,7 +3689,7 @@ template <typename D> void impl_ICorePointerRedirector<D>::PointerRoutedTo(event
 template <typename D> event_token impl_ICorePointerRedirector<D>::PointerRoutedReleased(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(ICorePointerRedirector)->add_PointerRoutedReleased(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ICorePointerRedirector)->add_PointerRoutedReleased(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -3706,7 +3706,7 @@ template <typename D> void impl_ICorePointerRedirector<D>::PointerRoutedReleased
 template <typename D> event_token impl_ISystemNavigationManager<D>::BackRequested(const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(ISystemNavigationManager)->add_BackRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISystemNavigationManager)->add_BackRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -3735,7 +3735,7 @@ template <typename D> void impl_ISystemNavigationManager2<D>::AppViewBackButtonV
 template <typename D> Windows::UI::Core::SystemNavigationManager impl_ISystemNavigationManagerStatics<D>::GetForCurrentView() const
 {
     Windows::UI::Core::SystemNavigationManager loader { nullptr };
-    check_hresult(WINRT_SHIM(ISystemNavigationManagerStatics)->abi_GetForCurrentView(put(loader)));
+    check_hresult(WINRT_SHIM(ISystemNavigationManagerStatics)->abi_GetForCurrentView(put_abi(loader)));
     return loader;
 }
 

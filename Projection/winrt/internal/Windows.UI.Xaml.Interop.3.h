@@ -13,7 +13,7 @@ template <typename H> struct impl_BindableVectorChangedEventHandler : implements
 {
     impl_BindableVectorChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::Xaml::Interop::IBindableObservableVector> vector, abi_arg_in<Windows::IInspectable> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::Xaml::Interop::IBindableObservableVector> vector, impl::abi_arg_in<Windows::IInspectable> e) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_NotifyCollectionChangedEventHandler : implemen
 {
     impl_NotifyCollectionChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs> e) noexcept override
     {
         try
         {

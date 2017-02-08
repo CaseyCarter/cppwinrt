@@ -15,12 +15,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountPartnerAccountInfo> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountPartnerAccountInfo>
 {
-    HRESULT __stdcall get_DisplayName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DisplayName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DisplayName());
+            *value = detach_abi(this->shim().DisplayName());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Priority());
+            *value = detach_abi(this->shim().Priority());
             return S_OK;
         }
         catch (...)
@@ -49,7 +49,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AccountKind());
+            *value = detach_abi(this->shim().AccountKind());
             return S_OK;
         }
         catch (...)
@@ -67,7 +67,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ContentKinds());
+            *value = detach_abi(this->shim().ContentKinds());
             return S_OK;
         }
         catch (...)
@@ -76,12 +76,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
         }
     }
 
-    HRESULT __stdcall get_PartnerAccountInfos(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo>> value) noexcept override
+    HRESULT __stdcall get_PartnerAccountInfos(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PartnerAccountInfos());
+            *value = detach_abi(this->shim().PartnerAccountInfos());
             return S_OK;
         }
         catch (...)
@@ -91,7 +91,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
         }
     }
 
-    HRESULT __stdcall abi_ReportCompleted(abi_arg_in<hstring> userDataAccountId) noexcept override
+    HRESULT __stdcall abi_ReportCompleted(impl::abi_arg_in<hstring> userDataAccountId) noexcept override
     {
         try
         {
@@ -114,7 +114,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Kind());
+            *value = detach_abi(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -127,12 +127,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderResolveErrorsOperation> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderResolveErrorsOperation>
 {
-    HRESULT __stdcall get_UserDataAccountId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_UserDataAccountId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UserDataAccountId());
+            *value = detach_abi(this->shim().UserDataAccountId());
             return S_OK;
         }
         catch (...)
@@ -160,12 +160,12 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderSettingsOperation> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderSettingsOperation>
 {
-    HRESULT __stdcall get_UserDataAccountId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_UserDataAccountId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UserDataAccountId());
+            *value = detach_abi(this->shim().UserDataAccountId());
             return S_OK;
         }
         catch (...)
@@ -211,19 +211,19 @@ template <typename D> Windows::ApplicationModel::UserDataAccounts::UserDataAccou
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> impl_IUserDataAccountProviderAddAccountOperation<D>::PartnerAccountInfos() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> value;
-    check_hresult(WINRT_SHIM(IUserDataAccountProviderAddAccountOperation)->get_PartnerAccountInfos(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccountProviderAddAccountOperation)->get_PartnerAccountInfos(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IUserDataAccountProviderAddAccountOperation<D>::ReportCompleted(hstring_view userDataAccountId) const
 {
-    check_hresult(WINRT_SHIM(IUserDataAccountProviderAddAccountOperation)->abi_ReportCompleted(get(userDataAccountId)));
+    check_hresult(WINRT_SHIM(IUserDataAccountProviderAddAccountOperation)->abi_ReportCompleted(get_abi(userDataAccountId)));
 }
 
 template <typename D> hstring impl_IUserDataAccountPartnerAccountInfo<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IUserDataAccountPartnerAccountInfo)->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccountPartnerAccountInfo)->get_DisplayName(put_abi(value)));
     return value;
 }
 
@@ -244,7 +244,7 @@ template <typename D> Windows::ApplicationModel::UserDataAccounts::Provider::Use
 template <typename D> hstring impl_IUserDataAccountProviderSettingsOperation<D>::UserDataAccountId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IUserDataAccountProviderSettingsOperation)->get_UserDataAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccountProviderSettingsOperation)->get_UserDataAccountId(put_abi(value)));
     return value;
 }
 
@@ -256,7 +256,7 @@ template <typename D> void impl_IUserDataAccountProviderSettingsOperation<D>::Re
 template <typename D> hstring impl_IUserDataAccountProviderResolveErrorsOperation<D>::UserDataAccountId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IUserDataAccountProviderResolveErrorsOperation)->get_UserDataAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccountProviderResolveErrorsOperation)->get_UserDataAccountId(put_abi(value)));
     return value;
 }
 

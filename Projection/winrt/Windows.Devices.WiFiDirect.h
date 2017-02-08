@@ -20,12 +20,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement>
 {
-    HRESULT __stdcall get_InformationElements(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>> value) noexcept override
+    HRESULT __stdcall get_InformationElements(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InformationElements());
+            *value = detach_abi(this->shim().InformationElements());
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
         }
     }
 
-    HRESULT __stdcall put_InformationElements(abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>> value) noexcept override
+    HRESULT __stdcall put_InformationElements(impl::abi_arg_in<Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>> value) noexcept override
     {
         try
         {
@@ -54,7 +54,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ListenStateDiscoverability());
+            *value = detach_abi(this->shim().ListenStateDiscoverability());
             return S_OK;
         }
         catch (...)
@@ -82,7 +82,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsAutonomousGroupOwnerEnabled());
+            *value = detach_abi(this->shim().IsAutonomousGroupOwnerEnabled());
             return S_OK;
         }
         catch (...)
@@ -105,12 +105,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
         }
     }
 
-    HRESULT __stdcall get_LegacySettings(abi_arg_out<Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> value) noexcept override
+    HRESULT __stdcall get_LegacySettings(impl::abi_arg_out<Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LegacySettings());
+            *value = detach_abi(this->shim().LegacySettings());
             return S_OK;
         }
         catch (...)
@@ -124,12 +124,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> : prod
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2>
 {
-    HRESULT __stdcall get_SupportedConfigurationMethods(abi_arg_out<Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod>> value) noexcept override
+    HRESULT __stdcall get_SupportedConfigurationMethods(impl::abi_arg_out<Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SupportedConfigurationMethods());
+            *value = detach_abi(this->shim().SupportedConfigurationMethods());
             return S_OK;
         }
         catch (...)
@@ -143,12 +143,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2> : pro
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher>
 {
-    HRESULT __stdcall get_Advertisement(abi_arg_out<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> value) noexcept override
+    HRESULT __stdcall get_Advertisement(impl::abi_arg_out<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Advertisement());
+            *value = detach_abi(this->shim().Advertisement());
             return S_OK;
         }
         catch (...)
@@ -163,7 +163,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -172,12 +172,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
         }
     }
 
-    HRESULT __stdcall add_StatusChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_StatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -237,7 +237,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -251,7 +251,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Error());
+            *value = detach_abi(this->shim().Error());
             return S_OK;
         }
         catch (...)
@@ -264,12 +264,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublishe
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener>
 {
-    HRESULT __stdcall add_ConnectionRequested(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ConnectionRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ConnectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().ConnectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -301,7 +301,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters>
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GroupOwnerIntent());
+            *value = detach_abi(this->shim().GroupOwnerIntent());
             return S_OK;
         }
         catch (...)
@@ -328,12 +328,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters>
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2>
 {
-    HRESULT __stdcall get_PreferenceOrderedConfigurationMethods(abi_arg_out<Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod>> value) noexcept override
+    HRESULT __stdcall get_PreferenceOrderedConfigurationMethods(impl::abi_arg_out<Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PreferenceOrderedConfigurationMethods());
+            *value = detach_abi(this->shim().PreferenceOrderedConfigurationMethods());
             return S_OK;
         }
         catch (...)
@@ -348,7 +348,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PreferredPairingProcedure());
+            *value = detach_abi(this->shim().PreferredPairingProcedure());
             return S_OK;
         }
         catch (...)
@@ -380,7 +380,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParametersS
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetDevicePairingKinds(configurationMethod));
+            *result = detach_abi(this->shim().GetDevicePairingKinds(configurationMethod));
             return S_OK;
         }
         catch (...)
@@ -393,12 +393,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParametersS
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest>
 {
-    HRESULT __stdcall get_DeviceInformation(abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
+    HRESULT __stdcall get_DeviceInformation(impl::abi_arg_out<Windows::Devices::Enumeration::IDeviceInformation> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceInformation());
+            *value = detach_abi(this->shim().DeviceInformation());
             return S_OK;
         }
         catch (...)
@@ -412,12 +412,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest> : 
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEventArgs> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEventArgs>
 {
-    HRESULT __stdcall abi_GetConnectionRequest(abi_arg_out<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest> result) noexcept override
+    HRESULT __stdcall abi_GetConnectionRequest(impl::abi_arg_out<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetConnectionRequest());
+            *result = detach_abi(this->shim().GetConnectionRequest());
             return S_OK;
         }
         catch (...)
@@ -436,7 +436,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ConnectionStatus());
+            *value = detach_abi(this->shim().ConnectionStatus());
             return S_OK;
         }
         catch (...)
@@ -445,12 +445,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -460,12 +460,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_ConnectionStatusChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ConnectionStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -488,12 +488,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
         }
     }
 
-    HRESULT __stdcall abi_GetConnectionEndpointPairs(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> value) noexcept override
+    HRESULT __stdcall abi_GetConnectionEndpointPairs(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetConnectionEndpointPairs());
+            *value = detach_abi(this->shim().GetConnectionEndpointPairs());
             return S_OK;
         }
         catch (...)
@@ -507,12 +507,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics>
 {
-    HRESULT __stdcall abi_GetDeviceSelector(abi_arg_out<hstring> deviceSelector) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelector(impl::abi_arg_out<hstring> deviceSelector) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *deviceSelector = detach(this->shim().GetDeviceSelector());
+            *deviceSelector = detach_abi(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -522,12 +522,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics> : prod
         }
     }
 
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> deviceId, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice>> asyncOp) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice>> asyncOp) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *asyncOp = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *asyncOp = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -541,12 +541,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics> : prod
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2>
 {
-    HRESULT __stdcall abi_GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type, abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type, impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetDeviceSelector(type));
+            *result = detach_abi(this->shim().GetDeviceSelector(type));
             return S_OK;
         }
         catch (...)
@@ -556,12 +556,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2> : pro
         }
     }
 
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> deviceId, abi_arg_in<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters> connectionParameters, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice>> result) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_in<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters> connectionParameters, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters *>(&connectionParameters)));
+            *result = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters *>(&connectionParameters)));
             return S_OK;
         }
         catch (...)
@@ -575,12 +575,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2> : pro
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement>
 {
-    HRESULT __stdcall get_Oui(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Oui(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Oui());
+            *value = detach_abi(this->shim().Oui());
             return S_OK;
         }
         catch (...)
@@ -590,7 +590,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
         }
     }
 
-    HRESULT __stdcall put_Oui(abi_arg_in<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall put_Oui(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
@@ -609,7 +609,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OuiType());
+            *value = detach_abi(this->shim().OuiType());
             return S_OK;
         }
         catch (...)
@@ -632,12 +632,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
         }
     }
 
-    HRESULT __stdcall get_Value(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -647,7 +647,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
         }
     }
 
-    HRESULT __stdcall put_Value(abi_arg_in<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall put_Value(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
@@ -665,12 +665,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElement> :
 template <typename D>
 struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElementStatics> : produce_base<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElementStatics>
 {
-    HRESULT __stdcall abi_CreateFromBuffer(abi_arg_in<Windows::Storage::Streams::IBuffer> buffer, abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>> result) noexcept override
+    HRESULT __stdcall abi_CreateFromBuffer(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> buffer, impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
+            *result = detach_abi(this->shim().CreateFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
         catch (...)
@@ -680,12 +680,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectInformationElementSta
         }
     }
 
-    HRESULT __stdcall abi_CreateFromDeviceInformation(abi_arg_in<Windows::Devices::Enumeration::IDeviceInformation> deviceInformation, abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>> result) noexcept override
+    HRESULT __stdcall abi_CreateFromDeviceInformation(impl::abi_arg_in<Windows::Devices::Enumeration::IDeviceInformation> deviceInformation, impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CreateFromDeviceInformation(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&deviceInformation)));
+            *result = detach_abi(this->shim().CreateFromDeviceInformation(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&deviceInformation)));
             return S_OK;
         }
         catch (...)
@@ -704,7 +704,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsEnabled());
+            *value = detach_abi(this->shim().IsEnabled());
             return S_OK;
         }
         catch (...)
@@ -727,12 +727,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
         }
     }
 
-    HRESULT __stdcall get_Ssid(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Ssid(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Ssid());
+            *value = detach_abi(this->shim().Ssid());
             return S_OK;
         }
         catch (...)
@@ -742,7 +742,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
         }
     }
 
-    HRESULT __stdcall put_Ssid(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Ssid(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -756,12 +756,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
         }
     }
 
-    HRESULT __stdcall get_Passphrase(abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall get_Passphrase(impl::abi_arg_out<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Passphrase());
+            *value = detach_abi(this->shim().Passphrase());
             return S_OK;
         }
         catch (...)
@@ -771,7 +771,7 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> : pro
         }
     }
 
-    HRESULT __stdcall put_Passphrase(abi_arg_in<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
+    HRESULT __stdcall put_Passphrase(impl::abi_arg_in<Windows::Security::Credentials::IPasswordCredential> value) noexcept override
     {
         try
         {
@@ -793,55 +793,55 @@ namespace Windows::Devices::WiFiDirect {
 template <typename D> hstring impl_IWiFiDirectDeviceStatics<D>::GetDeviceSelector() const
 {
     hstring deviceSelector;
-    check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics)->abi_GetDeviceSelector(put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics)->abi_GetDeviceSelector(put_abi(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> impl_IWiFiDirectDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> asyncOp;
-    check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics)->abi_FromIdAsync(get(deviceId), put(asyncOp)));
+    check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> hstring impl_IWiFiDirectDeviceStatics2<D>::GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type) const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics2)->abi_GetDeviceSelector(type, put(result)));
+    check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics2)->abi_GetDeviceSelector(type, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> impl_IWiFiDirectDeviceStatics2<D>::FromIdAsync(hstring_view deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> result;
-    check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics2)->abi_FromIdAsync(get(deviceId), get(connectionParameters), put(result)));
+    check_hresult(WINRT_SHIM(IWiFiDirectDeviceStatics2)->abi_FromIdAsync(get_abi(deviceId), get_abi(connectionParameters), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> impl_IWiFiDirectInformationElementStatics<D>::CreateFromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> result;
-    check_hresult(WINRT_SHIM(IWiFiDirectInformationElementStatics)->abi_CreateFromBuffer(get(buffer), put(result)));
+    check_hresult(WINRT_SHIM(IWiFiDirectInformationElementStatics)->abi_CreateFromBuffer(get_abi(buffer), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> impl_IWiFiDirectInformationElementStatics<D>::CreateFromDeviceInformation(const Windows::Devices::Enumeration::DeviceInformation & deviceInformation) const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> result;
-    check_hresult(WINRT_SHIM(IWiFiDirectInformationElementStatics)->abi_CreateFromDeviceInformation(get(deviceInformation), put(result)));
+    check_hresult(WINRT_SHIM(IWiFiDirectInformationElementStatics)->abi_CreateFromDeviceInformation(get_abi(deviceInformation), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IWiFiDirectInformationElement<D>::Oui() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IWiFiDirectInformationElement)->get_Oui(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectInformationElement)->get_Oui(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectInformationElement<D>::Oui(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(WINRT_SHIM(IWiFiDirectInformationElement)->put_Oui(get(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectInformationElement)->put_Oui(get_abi(value)));
 }
 
 template <typename D> uint8_t impl_IWiFiDirectInformationElement<D>::OuiType() const
@@ -859,13 +859,13 @@ template <typename D> void impl_IWiFiDirectInformationElement<D>::OuiType(uint8_
 template <typename D> Windows::Storage::Streams::IBuffer impl_IWiFiDirectInformationElement<D>::Value() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IWiFiDirectInformationElement)->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectInformationElement)->get_Value(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectInformationElement<D>::Value(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(WINRT_SHIM(IWiFiDirectInformationElement)->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectInformationElement)->put_Value(get_abi(value)));
 }
 
 template <typename D> bool impl_IWiFiDirectLegacySettings<D>::IsEnabled() const
@@ -883,37 +883,37 @@ template <typename D> void impl_IWiFiDirectLegacySettings<D>::IsEnabled(bool val
 template <typename D> hstring impl_IWiFiDirectLegacySettings<D>::Ssid() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IWiFiDirectLegacySettings)->get_Ssid(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectLegacySettings)->get_Ssid(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectLegacySettings<D>::Ssid(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(IWiFiDirectLegacySettings)->put_Ssid(get(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectLegacySettings)->put_Ssid(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IWiFiDirectLegacySettings<D>::Passphrase() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(WINRT_SHIM(IWiFiDirectLegacySettings)->get_Passphrase(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectLegacySettings)->get_Passphrase(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectLegacySettings<D>::Passphrase(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(WINRT_SHIM(IWiFiDirectLegacySettings)->put_Passphrase(get(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectLegacySettings)->put_Passphrase(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> impl_IWiFiDirectAdvertisement<D>::InformationElements() const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> value;
-    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisement)->get_InformationElements(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisement)->get_InformationElements(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectAdvertisement<D>::InformationElements(const Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> & value) const
 {
-    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisement)->put_InformationElements(get(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisement)->put_InformationElements(get_abi(value)));
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability impl_IWiFiDirectAdvertisement<D>::ListenStateDiscoverability() const
@@ -943,14 +943,14 @@ template <typename D> void impl_IWiFiDirectAdvertisement<D>::IsAutonomousGroupOw
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectLegacySettings impl_IWiFiDirectAdvertisement<D>::LegacySettings() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectLegacySettings value { nullptr };
-    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisement)->get_LegacySettings(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisement)->get_LegacySettings(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> impl_IWiFiDirectAdvertisement2<D>::SupportedConfigurationMethods() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> value;
-    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisement2)->get_SupportedConfigurationMethods(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisement2)->get_SupportedConfigurationMethods(put_abi(value)));
     return value;
 }
 
@@ -971,7 +971,7 @@ template <typename D> Windows::Devices::WiFiDirect::WiFiDirectError impl_IWiFiDi
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectAdvertisement impl_IWiFiDirectAdvertisementPublisher<D>::Advertisement() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisement value { nullptr };
-    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisementPublisher)->get_Advertisement(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisementPublisher)->get_Advertisement(put_abi(value)));
     return value;
 }
 
@@ -985,7 +985,7 @@ template <typename D> Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPubli
 template <typename D> event_token impl_IWiFiDirectAdvertisementPublisher<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisementPublisher)->add_StatusChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IWiFiDirectAdvertisementPublisher)->add_StatusChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -1031,7 +1031,7 @@ template <typename D> void impl_IWiFiDirectConnectionParameters<D>::GroupOwnerIn
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> impl_IWiFiDirectConnectionParameters2<D>::PreferenceOrderedConfigurationMethods() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> value;
-    check_hresult(WINRT_SHIM(IWiFiDirectConnectionParameters2)->get_PreferenceOrderedConfigurationMethods(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectConnectionParameters2)->get_PreferenceOrderedConfigurationMethods(put_abi(value)));
     return value;
 }
 
@@ -1050,14 +1050,14 @@ template <typename D> void impl_IWiFiDirectConnectionParameters2<D>::PreferredPa
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest impl_IWiFiDirectConnectionRequestedEventArgs<D>::GetConnectionRequest() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest result { nullptr };
-    check_hresult(WINRT_SHIM(IWiFiDirectConnectionRequestedEventArgs)->abi_GetConnectionRequest(put(result)));
+    check_hresult(WINRT_SHIM(IWiFiDirectConnectionRequestedEventArgs)->abi_GetConnectionRequest(put_abi(result)));
     return result;
 }
 
 template <typename D> event_token impl_IWiFiDirectConnectionListener<D>::ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IWiFiDirectConnectionListener)->add_ConnectionRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IWiFiDirectConnectionListener)->add_ConnectionRequested(get_abi(handler), &token));
     return token;
 }
 
@@ -1081,14 +1081,14 @@ template <typename D> Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus i
 template <typename D> hstring impl_IWiFiDirectDevice<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->add_ConnectionStatusChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->add_ConnectionStatusChanged(get_abi(handler), &token));
     return token;
 }
 
@@ -1105,14 +1105,14 @@ template <typename D> void impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(ev
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> impl_IWiFiDirectDevice<D>::GetConnectionEndpointPairs() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> value;
-    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->abi_GetConnectionEndpointPairs(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->abi_GetConnectionEndpointPairs(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IWiFiDirectConnectionRequest<D>::DeviceInformation() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(WINRT_SHIM(IWiFiDirectConnectionRequest)->get_DeviceInformation(put(value)));
+    check_hresult(WINRT_SHIM(IWiFiDirectConnectionRequest)->get_DeviceInformation(put_abi(value)));
     return value;
 }
 

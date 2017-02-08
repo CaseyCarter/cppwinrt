@@ -16,12 +16,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore> : produce_base<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore>
 {
-    HRESULT __stdcall abi_GetItemsAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>>> operation) noexcept override
+    HRESULT __stdcall abi_GetItemsAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().GetItemsAsync());
+            *operation = detach_abi(this->shim().GetItemsAsync());
             return S_OK;
         }
         catch (...)
@@ -31,12 +31,12 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
         }
     }
 
-    HRESULT __stdcall abi_DeleteAsync(abi_arg_in<Windows::ApplicationModel::Wallet::IWalletItem> item, abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
+    HRESULT __stdcall abi_DeleteAsync(impl::abi_arg_in<Windows::ApplicationModel::Wallet::IWalletItem> item, impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
+            *operation = detach_abi(this->shim().DeleteAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -46,12 +46,12 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
         }
     }
 
-    HRESULT __stdcall abi_ImportItemAsync(abi_arg_in<Windows::Storage::Streams::IRandomAccessStreamReference> stream, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem>> operation) noexcept override
+    HRESULT __stdcall abi_ImportItemAsync(impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStreamReference> stream, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().ImportItemAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream)));
+            *operation = detach_abi(this->shim().ImportItemAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream)));
             return S_OK;
         }
         catch (...)
@@ -61,12 +61,12 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
         }
     }
 
-    HRESULT __stdcall abi_GetAppStatusForItem(abi_arg_in<Windows::ApplicationModel::Wallet::IWalletItem> item, Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation * result) noexcept override
+    HRESULT __stdcall abi_GetAppStatusForItem(impl::abi_arg_in<Windows::ApplicationModel::Wallet::IWalletItem> item, Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetAppStatusForItem(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
+            *result = detach_abi(this->shim().GetAppStatusForItem(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -75,12 +75,12 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
         }
     }
 
-    HRESULT __stdcall abi_LaunchAppForItemAsync(abi_arg_in<Windows::ApplicationModel::Wallet::IWalletItem> item, abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    HRESULT __stdcall abi_LaunchAppForItemAsync(impl::abi_arg_in<Windows::ApplicationModel::Wallet::IWalletItem> item, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().LaunchAppForItemAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
+            *operation = detach_abi(this->shim().LaunchAppForItemAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
         catch (...)
@@ -94,12 +94,12 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2> : produce_base<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2>
 {
-    HRESULT __stdcall add_ItemsChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_ItemsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach(this->shim().ItemsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().ItemsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -126,12 +126,12 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletManagerSystemStatics> : produce_base<D, Windows::ApplicationModel::Wallet::System::IWalletManagerSystemStatics>
 {
-    HRESULT __stdcall abi_RequestStoreAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore>> operation) noexcept override
+    HRESULT __stdcall abi_RequestStoreAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().RequestStoreAsync());
+            *operation = detach_abi(this->shim().RequestStoreAsync());
             return S_OK;
         }
         catch (...)
@@ -149,42 +149,42 @@ namespace Windows::ApplicationModel::Wallet::System {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> impl_IWalletItemSystemStore<D>::GetItemsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> operation;
-    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_GetItemsAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_GetItemsAsync(put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemSystemStore<D>::DeleteAsync(const Windows::ApplicationModel::Wallet::WalletItem & item) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_DeleteAsync(get(item), put(operation)));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_DeleteAsync(get_abi(item), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> impl_IWalletItemSystemStore<D>::ImportItemAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> operation;
-    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_ImportItemAsync(get(stream), put(operation)));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_ImportItemAsync(get_abi(stream), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation impl_IWalletItemSystemStore<D>::GetAppStatusForItem(const Windows::ApplicationModel::Wallet::WalletItem & item) const
 {
     Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation result {};
-    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_GetAppStatusForItem(get(item), &result));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_GetAppStatusForItem(get_abi(item), &result));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IWalletItemSystemStore<D>::LaunchAppForItemAsync(const Windows::ApplicationModel::Wallet::WalletItem & item) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_LaunchAppForItemAsync(get(item), put(operation)));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_LaunchAppForItemAsync(get_abi(item), put_abi(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IWalletItemSystemStore2<D>::ItemsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(WINRT_SHIM(IWalletItemSystemStore2)->add_ItemsChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore2)->add_ItemsChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
@@ -201,7 +201,7 @@ template <typename D> void impl_IWalletItemSystemStore2<D>::ItemsChanged(event_t
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore> impl_IWalletManagerSystemStatics<D>::RequestStoreAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore> operation;
-    check_hresult(WINRT_SHIM(IWalletManagerSystemStatics)->abi_RequestStoreAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IWalletManagerSystemStatics)->abi_RequestStoreAsync(put_abi(operation)));
     return operation;
 }
 

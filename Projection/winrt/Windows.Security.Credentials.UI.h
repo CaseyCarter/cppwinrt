@@ -15,7 +15,7 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> : produce_base<D, Windows::Security::Credentials::UI::ICredentialPickerOptions>
 {
-    HRESULT __stdcall put_Caption(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Caption(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -29,12 +29,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         }
     }
 
-    HRESULT __stdcall get_Caption(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Caption(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Caption());
+            *value = detach_abi(this->shim().Caption());
             return S_OK;
         }
         catch (...)
@@ -44,7 +44,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         }
     }
 
-    HRESULT __stdcall put_Message(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_Message(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -58,12 +58,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         }
     }
 
-    HRESULT __stdcall get_Message(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Message(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Message());
+            *value = detach_abi(this->shim().Message());
             return S_OK;
         }
         catch (...)
@@ -92,7 +92,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ErrorCode());
+            *value = detach_abi(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -101,7 +101,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         }
     }
 
-    HRESULT __stdcall put_TargetName(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_TargetName(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -115,12 +115,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         }
     }
 
-    HRESULT __stdcall get_TargetName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_TargetName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TargetName());
+            *value = detach_abi(this->shim().TargetName());
             return S_OK;
         }
         catch (...)
@@ -149,7 +149,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AuthenticationProtocol());
+            *value = detach_abi(this->shim().AuthenticationProtocol());
             return S_OK;
         }
         catch (...)
@@ -158,7 +158,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         }
     }
 
-    HRESULT __stdcall put_CustomAuthenticationProtocol(abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall put_CustomAuthenticationProtocol(impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
@@ -172,12 +172,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         }
     }
 
-    HRESULT __stdcall get_CustomAuthenticationProtocol(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_CustomAuthenticationProtocol(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CustomAuthenticationProtocol());
+            *value = detach_abi(this->shim().CustomAuthenticationProtocol());
             return S_OK;
         }
         catch (...)
@@ -187,7 +187,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         }
     }
 
-    HRESULT __stdcall put_PreviousCredential(abi_arg_in<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall put_PreviousCredential(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
@@ -201,12 +201,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         }
     }
 
-    HRESULT __stdcall get_PreviousCredential(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_PreviousCredential(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PreviousCredential());
+            *value = detach_abi(this->shim().PreviousCredential());
             return S_OK;
         }
         catch (...)
@@ -235,7 +235,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AlwaysDisplayDialog());
+            *value = detach_abi(this->shim().AlwaysDisplayDialog());
             return S_OK;
         }
         catch (...)
@@ -263,7 +263,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CallerSavesCredential());
+            *value = detach_abi(this->shim().CallerSavesCredential());
             return S_OK;
         }
         catch (...)
@@ -291,7 +291,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CredentialSaveOption());
+            *value = detach_abi(this->shim().CredentialSaveOption());
             return S_OK;
         }
         catch (...)
@@ -309,7 +309,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ErrorCode());
+            *value = detach_abi(this->shim().ErrorCode());
             return S_OK;
         }
         catch (...)
@@ -323,7 +323,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CredentialSaveOption());
+            *value = detach_abi(this->shim().CredentialSaveOption());
             return S_OK;
         }
         catch (...)
@@ -337,7 +337,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CredentialSaved());
+            *value = detach_abi(this->shim().CredentialSaved());
             return S_OK;
         }
         catch (...)
@@ -346,27 +346,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
         }
     }
 
-    HRESULT __stdcall get_Credential(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Credential(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Credential());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_CredentialDomainName(abi_arg_out<hstring> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CredentialDomainName());
+            *value = detach_abi(this->shim().Credential());
             return S_OK;
         }
         catch (...)
@@ -376,12 +361,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
         }
     }
 
-    HRESULT __stdcall get_CredentialUserName(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_CredentialDomainName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CredentialUserName());
+            *value = detach_abi(this->shim().CredentialDomainName());
             return S_OK;
         }
         catch (...)
@@ -391,12 +376,27 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
         }
     }
 
-    HRESULT __stdcall get_CredentialPassword(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_CredentialUserName(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CredentialPassword());
+            *value = detach_abi(this->shim().CredentialUserName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CredentialPassword(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CredentialPassword());
             return S_OK;
         }
         catch (...)
@@ -410,12 +410,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerStatics> : produce_base<D, Windows::Security::Credentials::UI::ICredentialPickerStatics>
 {
-    HRESULT __stdcall abi_PickWithOptionsAsync(abi_arg_in<Windows::Security::Credentials::UI::ICredentialPickerOptions> options, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>> operation) noexcept override
+    HRESULT __stdcall abi_PickWithOptionsAsync(impl::abi_arg_in<Windows::Security::Credentials::UI::ICredentialPickerOptions> options, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().PickAsync(*reinterpret_cast<const Windows::Security::Credentials::UI::CredentialPickerOptions *>(&options)));
+            *operation = detach_abi(this->shim().PickAsync(*reinterpret_cast<const Windows::Security::Credentials::UI::CredentialPickerOptions *>(&options)));
             return S_OK;
         }
         catch (...)
@@ -425,12 +425,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerStatics> 
         }
     }
 
-    HRESULT __stdcall abi_PickWithMessageAsync(abi_arg_in<hstring> targetName, abi_arg_in<hstring> message, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>> operation) noexcept override
+    HRESULT __stdcall abi_PickWithMessageAsync(impl::abi_arg_in<hstring> targetName, impl::abi_arg_in<hstring> message, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().PickAsync(*reinterpret_cast<const hstring *>(&targetName), *reinterpret_cast<const hstring *>(&message)));
+            *operation = detach_abi(this->shim().PickAsync(*reinterpret_cast<const hstring *>(&targetName), *reinterpret_cast<const hstring *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -440,12 +440,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerStatics> 
         }
     }
 
-    HRESULT __stdcall abi_PickWithCaptionAsync(abi_arg_in<hstring> targetName, abi_arg_in<hstring> message, abi_arg_in<hstring> caption, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>> operation) noexcept override
+    HRESULT __stdcall abi_PickWithCaptionAsync(impl::abi_arg_in<hstring> targetName, impl::abi_arg_in<hstring> message, impl::abi_arg_in<hstring> caption, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().PickAsync(*reinterpret_cast<const hstring *>(&targetName), *reinterpret_cast<const hstring *>(&message), *reinterpret_cast<const hstring *>(&caption)));
+            *operation = detach_abi(this->shim().PickAsync(*reinterpret_cast<const hstring *>(&targetName), *reinterpret_cast<const hstring *>(&message), *reinterpret_cast<const hstring *>(&caption)));
             return S_OK;
         }
         catch (...)
@@ -459,12 +459,12 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerStatics> 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::UI::IUserConsentVerifierStatics> : produce_base<D, Windows::Security::Credentials::UI::IUserConsentVerifierStatics>
 {
-    HRESULT __stdcall abi_CheckAvailabilityAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability>> result) noexcept override
+    HRESULT __stdcall abi_CheckAvailabilityAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().CheckAvailabilityAsync());
+            *result = detach_abi(this->shim().CheckAvailabilityAsync());
             return S_OK;
         }
         catch (...)
@@ -474,12 +474,12 @@ struct produce<D, Windows::Security::Credentials::UI::IUserConsentVerifierStatic
         }
     }
 
-    HRESULT __stdcall abi_RequestVerificationAsync(abi_arg_in<hstring> message, abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult>> result) noexcept override
+    HRESULT __stdcall abi_RequestVerificationAsync(impl::abi_arg_in<hstring> message, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestVerificationAsync(*reinterpret_cast<const hstring *>(&message)));
+            *result = detach_abi(this->shim().RequestVerificationAsync(*reinterpret_cast<const hstring *>(&message)));
             return S_OK;
         }
         catch (...)
@@ -496,25 +496,25 @@ namespace Windows::Security::Credentials::UI {
 
 template <typename D> void impl_ICredentialPickerOptions<D>::Caption(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_Caption(get(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_Caption(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICredentialPickerOptions<D>::Caption() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_Caption(put(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_Caption(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::Message(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_Message(get(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_Message(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICredentialPickerOptions<D>::Message() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_Message(put(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_Message(put_abi(value)));
     return value;
 }
 
@@ -532,13 +532,13 @@ template <typename D> uint32_t impl_ICredentialPickerOptions<D>::ErrorCode() con
 
 template <typename D> void impl_ICredentialPickerOptions<D>::TargetName(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_TargetName(get(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_TargetName(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICredentialPickerOptions<D>::TargetName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_TargetName(put(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_TargetName(put_abi(value)));
     return value;
 }
 
@@ -556,25 +556,25 @@ template <typename D> Windows::Security::Credentials::UI::AuthenticationProtocol
 
 template <typename D> void impl_ICredentialPickerOptions<D>::CustomAuthenticationProtocol(hstring_view value) const
 {
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_CustomAuthenticationProtocol(get(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_CustomAuthenticationProtocol(get_abi(value)));
 }
 
 template <typename D> hstring impl_ICredentialPickerOptions<D>::CustomAuthenticationProtocol() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_CustomAuthenticationProtocol(put(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_CustomAuthenticationProtocol(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::PreviousCredential(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_PreviousCredential(get(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->put_PreviousCredential(get_abi(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICredentialPickerOptions<D>::PreviousCredential() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_PreviousCredential(put(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerOptions)->get_PreviousCredential(put_abi(value)));
     return value;
 }
 
@@ -617,21 +617,21 @@ template <typename D> Windows::Security::Credentials::UI::CredentialSaveOption i
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(const Windows::Security::Credentials::UI::CredentialPickerOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> operation;
-    check_hresult(WINRT_SHIM(ICredentialPickerStatics)->abi_PickWithOptionsAsync(get(options), put(operation)));
+    check_hresult(WINRT_SHIM(ICredentialPickerStatics)->abi_PickWithOptionsAsync(get_abi(options), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(hstring_view targetName, hstring_view message) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> operation;
-    check_hresult(WINRT_SHIM(ICredentialPickerStatics)->abi_PickWithMessageAsync(get(targetName), get(message), put(operation)));
+    check_hresult(WINRT_SHIM(ICredentialPickerStatics)->abi_PickWithMessageAsync(get_abi(targetName), get_abi(message), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(hstring_view targetName, hstring_view message, hstring_view caption) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> operation;
-    check_hresult(WINRT_SHIM(ICredentialPickerStatics)->abi_PickWithCaptionAsync(get(targetName), get(message), get(caption), put(operation)));
+    check_hresult(WINRT_SHIM(ICredentialPickerStatics)->abi_PickWithCaptionAsync(get_abi(targetName), get_abi(message), get_abi(caption), put_abi(operation)));
     return operation;
 }
 
@@ -659,42 +659,42 @@ template <typename D> bool impl_ICredentialPickerResults<D>::CredentialSaved() c
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICredentialPickerResults<D>::Credential() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(ICredentialPickerResults)->get_Credential(put(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerResults)->get_Credential(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICredentialPickerResults<D>::CredentialDomainName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICredentialPickerResults)->get_CredentialDomainName(put(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerResults)->get_CredentialDomainName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICredentialPickerResults<D>::CredentialUserName() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICredentialPickerResults)->get_CredentialUserName(put(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerResults)->get_CredentialUserName(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICredentialPickerResults<D>::CredentialPassword() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ICredentialPickerResults)->get_CredentialPassword(put(value)));
+    check_hresult(WINRT_SHIM(ICredentialPickerResults)->get_CredentialPassword(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability> impl_IUserConsentVerifierStatics<D>::CheckAvailabilityAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability> result;
-    check_hresult(WINRT_SHIM(IUserConsentVerifierStatics)->abi_CheckAvailabilityAsync(put(result)));
+    check_hresult(WINRT_SHIM(IUserConsentVerifierStatics)->abi_CheckAvailabilityAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> impl_IUserConsentVerifierStatics<D>::RequestVerificationAsync(hstring_view message) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> result;
-    check_hresult(WINRT_SHIM(IUserConsentVerifierStatics)->abi_RequestVerificationAsync(get(message), put(result)));
+    check_hresult(WINRT_SHIM(IUserConsentVerifierStatics)->abi_RequestVerificationAsync(get_abi(message), put_abi(result)));
     return result;
 }
 

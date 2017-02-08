@@ -19,7 +19,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FontColor());
+            *value = detach_abi(this->shim().FontColor());
             return S_OK;
         }
         catch (...)
@@ -28,12 +28,12 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         }
     }
 
-    HRESULT __stdcall get_ComputedFontColor(abi_arg_out<Windows::UI::Color> value) noexcept override
+    HRESULT __stdcall get_ComputedFontColor(impl::abi_arg_out<Windows::UI::Color> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ComputedFontColor());
+            *value = detach_abi(this->shim().ComputedFontColor());
             return S_OK;
         }
         catch (...)
@@ -47,7 +47,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FontOpacity());
+            *value = detach_abi(this->shim().FontOpacity());
             return S_OK;
         }
         catch (...)
@@ -61,7 +61,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FontSize());
+            *value = detach_abi(this->shim().FontSize());
             return S_OK;
         }
         catch (...)
@@ -75,7 +75,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FontStyle());
+            *value = detach_abi(this->shim().FontStyle());
             return S_OK;
         }
         catch (...)
@@ -89,7 +89,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FontEffect());
+            *value = detach_abi(this->shim().FontEffect());
             return S_OK;
         }
         catch (...)
@@ -103,7 +103,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BackgroundColor());
+            *value = detach_abi(this->shim().BackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -112,12 +112,12 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         }
     }
 
-    HRESULT __stdcall get_ComputedBackgroundColor(abi_arg_out<Windows::UI::Color> value) noexcept override
+    HRESULT __stdcall get_ComputedBackgroundColor(impl::abi_arg_out<Windows::UI::Color> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ComputedBackgroundColor());
+            *value = detach_abi(this->shim().ComputedBackgroundColor());
             return S_OK;
         }
         catch (...)
@@ -131,7 +131,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BackgroundOpacity());
+            *value = detach_abi(this->shim().BackgroundOpacity());
             return S_OK;
         }
         catch (...)
@@ -145,7 +145,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RegionColor());
+            *value = detach_abi(this->shim().RegionColor());
             return S_OK;
         }
         catch (...)
@@ -154,12 +154,12 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         }
     }
 
-    HRESULT __stdcall get_ComputedRegionColor(abi_arg_out<Windows::UI::Color> value) noexcept override
+    HRESULT __stdcall get_ComputedRegionColor(impl::abi_arg_out<Windows::UI::Color> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ComputedRegionColor());
+            *value = detach_abi(this->shim().ComputedRegionColor());
             return S_OK;
         }
         catch (...)
@@ -173,7 +173,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RegionOpacity());
+            *value = detach_abi(this->shim().RegionOpacity());
             return S_OK;
         }
         catch (...)
@@ -197,7 +197,7 @@ template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionColor impl_
 template <typename D> Windows::UI::Color impl_IClosedCaptionPropertiesStatics<D>::ComputedFontColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(IClosedCaptionPropertiesStatics)->get_ComputedFontColor(put(value)));
+    check_hresult(WINRT_SHIM(IClosedCaptionPropertiesStatics)->get_ComputedFontColor(put_abi(value)));
     return value;
 }
 
@@ -239,7 +239,7 @@ template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionColor impl_
 template <typename D> Windows::UI::Color impl_IClosedCaptionPropertiesStatics<D>::ComputedBackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(IClosedCaptionPropertiesStatics)->get_ComputedBackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IClosedCaptionPropertiesStatics)->get_ComputedBackgroundColor(put_abi(value)));
     return value;
 }
 
@@ -260,7 +260,7 @@ template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionColor impl_
 template <typename D> Windows::UI::Color impl_IClosedCaptionPropertiesStatics<D>::ComputedRegionColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(IClosedCaptionPropertiesStatics)->get_ComputedRegionColor(put(value)));
+    check_hresult(WINRT_SHIM(IClosedCaptionPropertiesStatics)->get_ComputedRegionColor(put_abi(value)));
     return value;
 }
 

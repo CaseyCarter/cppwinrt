@@ -30,21 +30,21 @@ TEST_CASE("produce_IUnknown")
         // Basic query works for IUnknown.
 
         com_ptr<Windows::IUnknown> qi;
-        REQUIRE(S_OK == p->QueryInterface(put(qi)));
+        REQUIRE(S_OK == p->QueryInterface(put_abi(qi)));
         REQUIRE(qi);
     }
     {
         // Query for unsupported interface is rejected.
 
         com_ptr<Windows::IInspectable> qi;
-        REQUIRE(E_NOINTERFACE == p->QueryInterface(put(qi)));
+        REQUIRE(E_NOINTERFACE == p->QueryInterface(put_abi(qi)));
         REQUIRE(!qi);
     }
     {
         // C++/WinRT won't let you call AddRef and Release so we confirm they work
         // by retrieving a raw pointer to IUnknown here.
 
-        ::IUnknown * raw = get(p);
+        ::IUnknown * raw = get_abi(p);
         raw->AddRef();
         raw->Release();
     }
@@ -93,21 +93,21 @@ TEST_CASE("produce_IInspectable")
         // Basic query works for IUnknown.
 
         com_ptr<Windows::IUnknown> qi;
-        REQUIRE(S_OK == get(p)->QueryInterface(put(qi)));
+        REQUIRE(S_OK == get_abi(p)->QueryInterface(put_abi(qi)));
         REQUIRE(qi);
     }
     {
         // Query works for IInspectable.
 
         com_ptr<Windows::IInspectable> qi;
-        REQUIRE(S_OK == get(p)->QueryInterface(put(qi)));
+        REQUIRE(S_OK == get_abi(p)->QueryInterface(put_abi(qi)));
         REQUIRE(qi);
     }
     {
         // Query for unsupported interface is rejected.
 
         com_ptr<IActivationFactory> qi;
-        REQUIRE(E_NOINTERFACE == get(p)->QueryInterface(put(qi)));
+        REQUIRE(E_NOINTERFACE == get_abi(p)->QueryInterface(put_abi(qi)));
         REQUIRE(!qi);
     }
 

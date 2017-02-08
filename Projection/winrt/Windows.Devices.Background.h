@@ -14,12 +14,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produce_base<D, Windows::Devices::Background::IDeviceServicingDetails>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -29,12 +29,12 @@ struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produ
         }
     }
 
-    HRESULT __stdcall get_Arguments(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Arguments(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Arguments());
+            *value = detach_abi(this->shim().Arguments());
             return S_OK;
         }
         catch (...)
@@ -44,12 +44,12 @@ struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produ
         }
     }
 
-    HRESULT __stdcall get_ExpectedDuration(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_ExpectedDuration(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ExpectedDuration());
+            *value = detach_abi(this->shim().ExpectedDuration());
             return S_OK;
         }
         catch (...)
@@ -62,12 +62,12 @@ struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produ
 template <typename D>
 struct produce<D, Windows::Devices::Background::IDeviceUseDetails> : produce_base<D, Windows::Devices::Background::IDeviceUseDetails>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -77,12 +77,12 @@ struct produce<D, Windows::Devices::Background::IDeviceUseDetails> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_Arguments(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Arguments(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Arguments());
+            *value = detach_abi(this->shim().Arguments());
             return S_OK;
         }
         catch (...)
@@ -100,35 +100,35 @@ namespace Windows::Devices::Background {
 template <typename D> hstring impl_IDeviceUseDetails<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceUseDetails)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceUseDetails)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceUseDetails<D>::Arguments() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceUseDetails)->get_Arguments(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceUseDetails)->get_Arguments(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceServicingDetails<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceServicingDetails)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceServicingDetails)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceServicingDetails<D>::Arguments() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IDeviceServicingDetails)->get_Arguments(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceServicingDetails)->get_Arguments(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IDeviceServicingDetails<D>::ExpectedDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IDeviceServicingDetails)->get_ExpectedDuration(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceServicingDetails)->get_ExpectedDuration(put_abi(value)));
     return value;
 }
 

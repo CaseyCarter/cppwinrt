@@ -22,7 +22,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxPacketSize());
+            *value = detach_abi(this->shim().MaxPacketSize());
             return S_OK;
         }
         catch (...)
@@ -36,7 +36,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointNumber());
+            *value = detach_abi(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -45,12 +45,12 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce
         }
     }
 
-    HRESULT __stdcall get_Pipe(abi_arg_out<Windows::Devices::Usb::IUsbBulkInPipe> value) noexcept override
+    HRESULT __stdcall get_Pipe(impl::abi_arg_out<Windows::Devices::Usb::IUsbBulkInPipe> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Pipe());
+            *value = detach_abi(this->shim().Pipe());
             return S_OK;
         }
         catch (...)
@@ -69,7 +69,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxTransferSizeBytes());
+            *value = detach_abi(this->shim().MaxTransferSizeBytes());
             return S_OK;
         }
         catch (...)
@@ -78,12 +78,12 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_EndpointDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> value) noexcept override
+    HRESULT __stdcall get_EndpointDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointDescriptor());
+            *value = detach_abi(this->shim().EndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -93,12 +93,12 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_ClearStallAsync(abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
+    HRESULT __stdcall abi_ClearStallAsync(impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().ClearStallAsync());
+            *operation = detach_abi(this->shim().ClearStallAsync());
             return S_OK;
         }
         catch (...)
@@ -127,7 +127,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ReadOptions());
+            *value = detach_abi(this->shim().ReadOptions());
             return S_OK;
         }
         catch (...)
@@ -150,12 +150,12 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_InputStream(abi_arg_out<Windows::Storage::Streams::IInputStream> value) noexcept override
+    HRESULT __stdcall get_InputStream(impl::abi_arg_out<Windows::Storage::Streams::IInputStream> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InputStream());
+            *value = detach_abi(this->shim().InputStream());
             return S_OK;
         }
         catch (...)
@@ -174,7 +174,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxPacketSize());
+            *value = detach_abi(this->shim().MaxPacketSize());
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointNumber());
+            *value = detach_abi(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -197,12 +197,12 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
         }
     }
 
-    HRESULT __stdcall get_Pipe(abi_arg_out<Windows::Devices::Usb::IUsbBulkOutPipe> value) noexcept override
+    HRESULT __stdcall get_Pipe(impl::abi_arg_out<Windows::Devices::Usb::IUsbBulkOutPipe> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Pipe());
+            *value = detach_abi(this->shim().Pipe());
             return S_OK;
         }
         catch (...)
@@ -216,12 +216,12 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Windows::Devices::Usb::IUsbBulkOutPipe>
 {
-    HRESULT __stdcall get_EndpointDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> value) noexcept override
+    HRESULT __stdcall get_EndpointDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointDescriptor());
+            *value = detach_abi(this->shim().EndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -231,12 +231,12 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_ClearStallAsync(abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
+    HRESULT __stdcall abi_ClearStallAsync(impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().ClearStallAsync());
+            *operation = detach_abi(this->shim().ClearStallAsync());
             return S_OK;
         }
         catch (...)
@@ -265,7 +265,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WriteOptions());
+            *value = detach_abi(this->shim().WriteOptions());
             return S_OK;
         }
         catch (...)
@@ -274,12 +274,12 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_OutputStream(abi_arg_out<Windows::Storage::Streams::IOutputStream> value) noexcept override
+    HRESULT __stdcall get_OutputStream(impl::abi_arg_out<Windows::Storage::Streams::IOutputStream> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutputStream());
+            *value = detach_abi(this->shim().OutputStream());
             return S_OK;
         }
         catch (...)
@@ -293,12 +293,12 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Windows::Devices::Usb::IUsbConfiguration>
 {
-    HRESULT __stdcall get_UsbInterfaces(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface>> value) noexcept override
+    HRESULT __stdcall get_UsbInterfaces(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UsbInterfaces());
+            *value = detach_abi(this->shim().UsbInterfaces());
             return S_OK;
         }
         catch (...)
@@ -308,12 +308,12 @@ struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_ConfigurationDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbConfigurationDescriptor> value) noexcept override
+    HRESULT __stdcall get_ConfigurationDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbConfigurationDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ConfigurationDescriptor());
+            *value = detach_abi(this->shim().ConfigurationDescriptor());
             return S_OK;
         }
         catch (...)
@@ -323,12 +323,12 @@ struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_Descriptors(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>> value) noexcept override
+    HRESULT __stdcall get_Descriptors(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Descriptors());
+            *value = detach_abi(this->shim().Descriptors());
             return S_OK;
         }
         catch (...)
@@ -347,7 +347,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ConfigurationValue());
+            *value = detach_abi(this->shim().ConfigurationValue());
             return S_OK;
         }
         catch (...)
@@ -361,7 +361,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxPowerMilliamps());
+            *value = detach_abi(this->shim().MaxPowerMilliamps());
             return S_OK;
         }
         catch (...)
@@ -375,7 +375,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SelfPowered());
+            *value = detach_abi(this->shim().SelfPowered());
             return S_OK;
         }
         catch (...)
@@ -389,7 +389,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RemoteWakeup());
+            *value = detach_abi(this->shim().RemoteWakeup());
             return S_OK;
         }
         catch (...)
@@ -402,12 +402,12 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics> : produce_base<D, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>
 {
-    HRESULT __stdcall abi_TryParse(abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, abi_arg_out<Windows::Devices::Usb::IUsbConfigurationDescriptor> parsed, bool * success) noexcept override
+    HRESULT __stdcall abi_TryParse(impl::abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, impl::abi_arg_out<Windows::Devices::Usb::IUsbConfigurationDescriptor> parsed, bool * success) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *success = detach(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
+            *success = detach_abi(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
             return S_OK;
         }
         catch (...)
@@ -417,12 +417,12 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics> : p
         }
     }
 
-    HRESULT __stdcall abi_Parse(abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, abi_arg_out<Windows::Devices::Usb::IUsbConfigurationDescriptor> parsed) noexcept override
+    HRESULT __stdcall abi_Parse(impl::abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, impl::abi_arg_out<Windows::Devices::Usb::IUsbConfigurationDescriptor> parsed) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *parsed = detach(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
+            *parsed = detach_abi(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
             return S_OK;
         }
         catch (...)
@@ -441,7 +441,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Direction());
+            *value = detach_abi(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -469,7 +469,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ControlTransferType());
+            *value = detach_abi(this->shim().ControlTransferType());
             return S_OK;
         }
         catch (...)
@@ -497,7 +497,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Recipient());
+            *value = detach_abi(this->shim().Recipient());
             return S_OK;
         }
         catch (...)
@@ -525,7 +525,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AsByte());
+            *value = detach_abi(this->shim().AsByte());
             return S_OK;
         }
         catch (...)
@@ -557,7 +557,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Length());
+            *value = detach_abi(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -571,7 +571,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DescriptorType());
+            *value = detach_abi(this->shim().DescriptorType());
             return S_OK;
         }
         catch (...)
@@ -580,7 +580,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_ReadDescriptorBuffer(abi_arg_in<Windows::Storage::Streams::IBuffer> buffer) noexcept override
+    HRESULT __stdcall abi_ReadDescriptorBuffer(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> buffer) noexcept override
     {
         try
         {
@@ -598,12 +598,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::Devices::Usb::IUsbDevice>
 {
-    HRESULT __stdcall abi_SendControlOutTransferAsync(abi_arg_in<Windows::Devices::Usb::IUsbSetupPacket> setupPacket, abi_arg_in<Windows::Storage::Streams::IBuffer> buffer, abi_arg_out<Windows::Foundation::IAsyncOperation<uint32_t>> operation) noexcept override
+    HRESULT __stdcall abi_SendControlOutTransferAsync(impl::abi_arg_in<Windows::Devices::Usb::IUsbSetupPacket> setupPacket, impl::abi_arg_in<Windows::Storage::Streams::IBuffer> buffer, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<uint32_t>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
+            *operation = detach_abi(this->shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
         catch (...)
@@ -613,12 +613,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall abi_SendControlOutTransferAsyncNoBuffer(abi_arg_in<Windows::Devices::Usb::IUsbSetupPacket> setupPacket, abi_arg_out<Windows::Foundation::IAsyncOperation<uint32_t>> operation) noexcept override
+    HRESULT __stdcall abi_SendControlOutTransferAsyncNoBuffer(impl::abi_arg_in<Windows::Devices::Usb::IUsbSetupPacket> setupPacket, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<uint32_t>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
+            *operation = detach_abi(this->shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
             return S_OK;
         }
         catch (...)
@@ -628,12 +628,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall abi_SendControlInTransferAsync(abi_arg_in<Windows::Devices::Usb::IUsbSetupPacket> setupPacket, abi_arg_in<Windows::Storage::Streams::IBuffer> buffer, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> operation) noexcept override
+    HRESULT __stdcall abi_SendControlInTransferAsync(impl::abi_arg_in<Windows::Devices::Usb::IUsbSetupPacket> setupPacket, impl::abi_arg_in<Windows::Storage::Streams::IBuffer> buffer, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
+            *operation = detach_abi(this->shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
         catch (...)
@@ -643,12 +643,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall abi_SendControlInTransferAsyncNoBuffer(abi_arg_in<Windows::Devices::Usb::IUsbSetupPacket> setupPacket, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> operation) noexcept override
+    HRESULT __stdcall abi_SendControlInTransferAsyncNoBuffer(impl::abi_arg_in<Windows::Devices::Usb::IUsbSetupPacket> setupPacket, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
+            *operation = detach_abi(this->shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
             return S_OK;
         }
         catch (...)
@@ -658,12 +658,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall get_DefaultInterface(abi_arg_out<Windows::Devices::Usb::IUsbInterface> value) noexcept override
+    HRESULT __stdcall get_DefaultInterface(impl::abi_arg_out<Windows::Devices::Usb::IUsbInterface> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DefaultInterface());
+            *value = detach_abi(this->shim().DefaultInterface());
             return S_OK;
         }
         catch (...)
@@ -673,12 +673,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall get_DeviceDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbDeviceDescriptor> value) noexcept override
+    HRESULT __stdcall get_DeviceDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceDescriptor());
+            *value = detach_abi(this->shim().DeviceDescriptor());
             return S_OK;
         }
         catch (...)
@@ -688,12 +688,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall get_Configuration(abi_arg_out<Windows::Devices::Usb::IUsbConfiguration> value) noexcept override
+    HRESULT __stdcall get_Configuration(impl::abi_arg_out<Windows::Devices::Usb::IUsbConfiguration> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Configuration());
+            *value = detach_abi(this->shim().Configuration());
             return S_OK;
         }
         catch (...)
@@ -712,7 +712,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ClassCode());
+            *value = detach_abi(this->shim().ClassCode());
             return S_OK;
         }
         catch (...)
@@ -735,12 +735,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_SubclassCode(abi_arg_out<Windows::Foundation::IReference<uint8_t>> value) noexcept override
+    HRESULT __stdcall get_SubclassCode(impl::abi_arg_out<Windows::Foundation::IReference<uint8_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SubclassCode());
+            *value = detach_abi(this->shim().SubclassCode());
             return S_OK;
         }
         catch (...)
@@ -750,7 +750,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall put_SubclassCode(abi_arg_in<Windows::Foundation::IReference<uint8_t>> value) noexcept override
+    HRESULT __stdcall put_SubclassCode(impl::abi_arg_in<Windows::Foundation::IReference<uint8_t>> value) noexcept override
     {
         try
         {
@@ -764,12 +764,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_ProtocolCode(abi_arg_out<Windows::Foundation::IReference<uint8_t>> value) noexcept override
+    HRESULT __stdcall get_ProtocolCode(impl::abi_arg_out<Windows::Foundation::IReference<uint8_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ProtocolCode());
+            *value = detach_abi(this->shim().ProtocolCode());
             return S_OK;
         }
         catch (...)
@@ -779,7 +779,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall put_ProtocolCode(abi_arg_in<Windows::Foundation::IReference<uint8_t>> value) noexcept override
+    HRESULT __stdcall put_ProtocolCode(impl::abi_arg_in<Windows::Foundation::IReference<uint8_t>> value) noexcept override
     {
         try
         {
@@ -801,12 +801,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClasses> : produce_base<D, Wi
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_base<D, Windows::Devices::Usb::IUsbDeviceClassesStatics>
 {
-    HRESULT __stdcall get_CdcControl(abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
+    HRESULT __stdcall get_CdcControl(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CdcControl());
+            *value = detach_abi(this->shim().CdcControl());
             return S_OK;
         }
         catch (...)
@@ -816,12 +816,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_Physical(abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
+    HRESULT __stdcall get_Physical(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Physical());
+            *value = detach_abi(this->shim().Physical());
             return S_OK;
         }
         catch (...)
@@ -831,12 +831,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_PersonalHealthcare(abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
+    HRESULT __stdcall get_PersonalHealthcare(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PersonalHealthcare());
+            *value = detach_abi(this->shim().PersonalHealthcare());
             return S_OK;
         }
         catch (...)
@@ -846,12 +846,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_ActiveSync(abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
+    HRESULT __stdcall get_ActiveSync(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ActiveSync());
+            *value = detach_abi(this->shim().ActiveSync());
             return S_OK;
         }
         catch (...)
@@ -861,12 +861,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_PalmSync(abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
+    HRESULT __stdcall get_PalmSync(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().PalmSync());
+            *value = detach_abi(this->shim().PalmSync());
             return S_OK;
         }
         catch (...)
@@ -876,12 +876,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_DeviceFirmwareUpdate(abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
+    HRESULT __stdcall get_DeviceFirmwareUpdate(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceFirmwareUpdate());
+            *value = detach_abi(this->shim().DeviceFirmwareUpdate());
             return S_OK;
         }
         catch (...)
@@ -891,12 +891,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_Irda(abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
+    HRESULT __stdcall get_Irda(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Irda());
+            *value = detach_abi(this->shim().Irda());
             return S_OK;
         }
         catch (...)
@@ -906,12 +906,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_Measurement(abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
+    HRESULT __stdcall get_Measurement(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Measurement());
+            *value = detach_abi(this->shim().Measurement());
             return S_OK;
         }
         catch (...)
@@ -921,12 +921,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_VendorSpecific(abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
+    HRESULT __stdcall get_VendorSpecific(impl::abi_arg_out<Windows::Devices::Usb::IUsbDeviceClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VendorSpecific());
+            *value = detach_abi(this->shim().VendorSpecific());
             return S_OK;
         }
         catch (...)
@@ -945,7 +945,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BcdUsb());
+            *value = detach_abi(this->shim().BcdUsb());
             return S_OK;
         }
         catch (...)
@@ -959,7 +959,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxPacketSize0());
+            *value = detach_abi(this->shim().MaxPacketSize0());
             return S_OK;
         }
         catch (...)
@@ -973,7 +973,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().VendorId());
+            *value = detach_abi(this->shim().VendorId());
             return S_OK;
         }
         catch (...)
@@ -987,7 +987,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ProductId());
+            *value = detach_abi(this->shim().ProductId());
             return S_OK;
         }
         catch (...)
@@ -1001,7 +1001,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BcdDeviceRevision());
+            *value = detach_abi(this->shim().BcdDeviceRevision());
             return S_OK;
         }
         catch (...)
@@ -1015,7 +1015,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().NumberOfConfigurations());
+            *value = detach_abi(this->shim().NumberOfConfigurations());
             return S_OK;
         }
         catch (...)
@@ -1028,12 +1028,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Windows::Devices::Usb::IUsbDeviceStatics>
 {
-    HRESULT __stdcall abi_GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID winUsbInterfaceClass, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID winUsbInterfaceClass, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeviceSelector(vendorId, productId, winUsbInterfaceClass));
+            *value = detach_abi(this->shim().GetDeviceSelector(vendorId, productId, winUsbInterfaceClass));
             return S_OK;
         }
         catch (...)
@@ -1043,12 +1043,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeviceSelector(winUsbInterfaceClass));
+            *value = detach_abi(this->shim().GetDeviceSelector(winUsbInterfaceClass));
             return S_OK;
         }
         catch (...)
@@ -1058,12 +1058,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceSelectorVidPidOnly(uint32_t vendorId, uint32_t productId, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelectorVidPidOnly(uint32_t vendorId, uint32_t productId, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeviceSelector(vendorId, productId));
+            *value = detach_abi(this->shim().GetDeviceSelector(vendorId, productId));
             return S_OK;
         }
         catch (...)
@@ -1073,12 +1073,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceClassSelector(abi_arg_in<Windows::Devices::Usb::IUsbDeviceClass> usbClass, abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall abi_GetDeviceClassSelector(impl::abi_arg_in<Windows::Devices::Usb::IUsbDeviceClass> usbClass, impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetDeviceClassSelector(*reinterpret_cast<const Windows::Devices::Usb::UsbDeviceClass *>(&usbClass)));
+            *value = detach_abi(this->shim().GetDeviceClassSelector(*reinterpret_cast<const Windows::Devices::Usb::UsbDeviceClass *>(&usbClass)));
             return S_OK;
         }
         catch (...)
@@ -1088,12 +1088,12 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> deviceId, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice>> operation) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *operation = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -1112,7 +1112,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointNumber());
+            *value = detach_abi(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -1126,7 +1126,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Direction());
+            *value = detach_abi(this->shim().Direction());
             return S_OK;
         }
         catch (...)
@@ -1140,7 +1140,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointType());
+            *value = detach_abi(this->shim().EndpointType());
             return S_OK;
         }
         catch (...)
@@ -1149,27 +1149,12 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_AsBulkInEndpointDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> value) noexcept override
+    HRESULT __stdcall get_AsBulkInEndpointDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AsBulkInEndpointDescriptor());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_AsInterruptInEndpointDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> value) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AsInterruptInEndpointDescriptor());
+            *value = detach_abi(this->shim().AsBulkInEndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1179,12 +1164,12 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_AsBulkOutEndpointDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> value) noexcept override
+    HRESULT __stdcall get_AsInterruptInEndpointDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AsBulkOutEndpointDescriptor());
+            *value = detach_abi(this->shim().AsInterruptInEndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1194,12 +1179,27 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_AsInterruptOutEndpointDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> value) noexcept override
+    HRESULT __stdcall get_AsBulkOutEndpointDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AsInterruptOutEndpointDescriptor());
+            *value = detach_abi(this->shim().AsBulkOutEndpointDescriptor());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AsInterruptOutEndpointDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AsInterruptOutEndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1213,12 +1213,12 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics> : produce_base<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics>
 {
-    HRESULT __stdcall abi_TryParse(abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, abi_arg_out<Windows::Devices::Usb::IUsbEndpointDescriptor> parsed, bool * success) noexcept override
+    HRESULT __stdcall abi_TryParse(impl::abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, impl::abi_arg_out<Windows::Devices::Usb::IUsbEndpointDescriptor> parsed, bool * success) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *success = detach(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
+            *success = detach_abi(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
             return S_OK;
         }
         catch (...)
@@ -1228,12 +1228,12 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_Parse(abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, abi_arg_out<Windows::Devices::Usb::IUsbEndpointDescriptor> parsed) noexcept override
+    HRESULT __stdcall abi_Parse(impl::abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, impl::abi_arg_out<Windows::Devices::Usb::IUsbEndpointDescriptor> parsed) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *parsed = detach(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
+            *parsed = detach_abi(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
             return S_OK;
         }
         catch (...)
@@ -1247,12 +1247,12 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics> : produc
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Windows::Devices::Usb::IUsbInterface>
 {
-    HRESULT __stdcall get_BulkInPipes(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe>> value) noexcept override
+    HRESULT __stdcall get_BulkInPipes(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BulkInPipes());
+            *value = detach_abi(this->shim().BulkInPipes());
             return S_OK;
         }
         catch (...)
@@ -1262,12 +1262,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall get_InterruptInPipes(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe>> value) noexcept override
+    HRESULT __stdcall get_InterruptInPipes(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterruptInPipes());
+            *value = detach_abi(this->shim().InterruptInPipes());
             return S_OK;
         }
         catch (...)
@@ -1277,12 +1277,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall get_BulkOutPipes(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutPipe>> value) noexcept override
+    HRESULT __stdcall get_BulkOutPipes(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutPipe>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BulkOutPipes());
+            *value = detach_abi(this->shim().BulkOutPipes());
             return S_OK;
         }
         catch (...)
@@ -1292,12 +1292,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall get_InterruptOutPipes(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutPipe>> value) noexcept override
+    HRESULT __stdcall get_InterruptOutPipes(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutPipe>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterruptOutPipes());
+            *value = detach_abi(this->shim().InterruptOutPipes());
             return S_OK;
         }
         catch (...)
@@ -1307,12 +1307,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall get_InterfaceSettings(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterfaceSetting>> value) noexcept override
+    HRESULT __stdcall get_InterfaceSettings(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterfaceSetting>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterfaceSettings());
+            *value = detach_abi(this->shim().InterfaceSettings());
             return S_OK;
         }
         catch (...)
@@ -1327,7 +1327,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterfaceNumber());
+            *value = detach_abi(this->shim().InterfaceNumber());
             return S_OK;
         }
         catch (...)
@@ -1336,12 +1336,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall get_Descriptors(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>> value) noexcept override
+    HRESULT __stdcall get_Descriptors(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Descriptors());
+            *value = detach_abi(this->shim().Descriptors());
             return S_OK;
         }
         catch (...)
@@ -1360,7 +1360,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ClassCode());
+            *value = detach_abi(this->shim().ClassCode());
             return S_OK;
         }
         catch (...)
@@ -1374,7 +1374,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SubclassCode());
+            *value = detach_abi(this->shim().SubclassCode());
             return S_OK;
         }
         catch (...)
@@ -1388,7 +1388,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ProtocolCode());
+            *value = detach_abi(this->shim().ProtocolCode());
             return S_OK;
         }
         catch (...)
@@ -1402,7 +1402,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AlternateSettingNumber());
+            *value = detach_abi(this->shim().AlternateSettingNumber());
             return S_OK;
         }
         catch (...)
@@ -1416,7 +1416,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterfaceNumber());
+            *value = detach_abi(this->shim().InterfaceNumber());
             return S_OK;
         }
         catch (...)
@@ -1429,12 +1429,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics> : produce_base<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>
 {
-    HRESULT __stdcall abi_TryParse(abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, abi_arg_out<Windows::Devices::Usb::IUsbInterfaceDescriptor> parsed, bool * success) noexcept override
+    HRESULT __stdcall abi_TryParse(impl::abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, impl::abi_arg_out<Windows::Devices::Usb::IUsbInterfaceDescriptor> parsed, bool * success) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *success = detach(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
+            *success = detach_abi(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
             return S_OK;
         }
         catch (...)
@@ -1444,12 +1444,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics> : produ
         }
     }
 
-    HRESULT __stdcall abi_Parse(abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, abi_arg_out<Windows::Devices::Usb::IUsbInterfaceDescriptor> parsed) noexcept override
+    HRESULT __stdcall abi_Parse(impl::abi_arg_in<Windows::Devices::Usb::IUsbDescriptor> descriptor, impl::abi_arg_out<Windows::Devices::Usb::IUsbInterfaceDescriptor> parsed) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *parsed = detach(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
+            *parsed = detach_abi(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
             return S_OK;
         }
         catch (...)
@@ -1463,12 +1463,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics> : produ
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D, Windows::Devices::Usb::IUsbInterfaceSetting>
 {
-    HRESULT __stdcall get_BulkInEndpoints(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor>> value) noexcept override
+    HRESULT __stdcall get_BulkInEndpoints(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BulkInEndpoints());
+            *value = detach_abi(this->shim().BulkInEndpoints());
             return S_OK;
         }
         catch (...)
@@ -1478,12 +1478,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_InterruptInEndpoints(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor>> value) noexcept override
+    HRESULT __stdcall get_InterruptInEndpoints(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterruptInEndpoints());
+            *value = detach_abi(this->shim().InterruptInEndpoints());
             return S_OK;
         }
         catch (...)
@@ -1493,12 +1493,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_BulkOutEndpoints(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor>> value) noexcept override
+    HRESULT __stdcall get_BulkOutEndpoints(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BulkOutEndpoints());
+            *value = detach_abi(this->shim().BulkOutEndpoints());
             return S_OK;
         }
         catch (...)
@@ -1508,12 +1508,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_InterruptOutEndpoints(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor>> value) noexcept override
+    HRESULT __stdcall get_InterruptOutEndpoints(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterruptOutEndpoints());
+            *value = detach_abi(this->shim().InterruptOutEndpoints());
             return S_OK;
         }
         catch (...)
@@ -1528,7 +1528,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Selected());
+            *value = detach_abi(this->shim().Selected());
             return S_OK;
         }
         catch (...)
@@ -1537,12 +1537,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_SelectSettingAsync(abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
+    HRESULT __stdcall abi_SelectSettingAsync(impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().SelectSettingAsync());
+            *operation = detach_abi(this->shim().SelectSettingAsync());
             return S_OK;
         }
         catch (...)
@@ -1552,12 +1552,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_InterfaceDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbInterfaceDescriptor> value) noexcept override
+    HRESULT __stdcall get_InterfaceDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbInterfaceDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterfaceDescriptor());
+            *value = detach_abi(this->shim().InterfaceDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1567,12 +1567,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_Descriptors(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>> value) noexcept override
+    HRESULT __stdcall get_Descriptors(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Descriptors());
+            *value = detach_abi(this->shim().Descriptors());
             return S_OK;
         }
         catch (...)
@@ -1591,7 +1591,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxPacketSize());
+            *value = detach_abi(this->shim().MaxPacketSize());
             return S_OK;
         }
         catch (...)
@@ -1605,7 +1605,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointNumber());
+            *value = detach_abi(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -1614,12 +1614,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
         }
     }
 
-    HRESULT __stdcall get_Interval(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_Interval(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Interval());
+            *value = detach_abi(this->shim().Interval());
             return S_OK;
         }
         catch (...)
@@ -1628,12 +1628,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
         }
     }
 
-    HRESULT __stdcall get_Pipe(abi_arg_out<Windows::Devices::Usb::IUsbInterruptInPipe> value) noexcept override
+    HRESULT __stdcall get_Pipe(impl::abi_arg_out<Windows::Devices::Usb::IUsbInterruptInPipe> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Pipe());
+            *value = detach_abi(this->shim().Pipe());
             return S_OK;
         }
         catch (...)
@@ -1647,12 +1647,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterruptInEventArgs> : produce_base<D, Windows::Devices::Usb::IUsbInterruptInEventArgs>
 {
-    HRESULT __stdcall get_InterruptData(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_InterruptData(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().InterruptData());
+            *value = detach_abi(this->shim().InterruptData());
             return S_OK;
         }
         catch (...)
@@ -1666,12 +1666,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEventArgs> : produce_bas
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, Windows::Devices::Usb::IUsbInterruptInPipe>
 {
-    HRESULT __stdcall get_EndpointDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> value) noexcept override
+    HRESULT __stdcall get_EndpointDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointDescriptor());
+            *value = detach_abi(this->shim().EndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1681,12 +1681,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_ClearStallAsync(abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
+    HRESULT __stdcall abi_ClearStallAsync(impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().ClearStallAsync());
+            *operation = detach_abi(this->shim().ClearStallAsync());
             return S_OK;
         }
         catch (...)
@@ -1696,12 +1696,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_DataReceived(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_DataReceived(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().DataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().DataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1733,7 +1733,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxPacketSize());
+            *value = detach_abi(this->shim().MaxPacketSize());
             return S_OK;
         }
         catch (...)
@@ -1747,7 +1747,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointNumber());
+            *value = detach_abi(this->shim().EndpointNumber());
             return S_OK;
         }
         catch (...)
@@ -1756,12 +1756,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
         }
     }
 
-    HRESULT __stdcall get_Interval(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall get_Interval(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Interval());
+            *value = detach_abi(this->shim().Interval());
             return S_OK;
         }
         catch (...)
@@ -1770,12 +1770,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
         }
     }
 
-    HRESULT __stdcall get_Pipe(abi_arg_out<Windows::Devices::Usb::IUsbInterruptOutPipe> value) noexcept override
+    HRESULT __stdcall get_Pipe(impl::abi_arg_out<Windows::Devices::Usb::IUsbInterruptOutPipe> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Pipe());
+            *value = detach_abi(this->shim().Pipe());
             return S_OK;
         }
         catch (...)
@@ -1789,12 +1789,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D, Windows::Devices::Usb::IUsbInterruptOutPipe>
 {
-    HRESULT __stdcall get_EndpointDescriptor(abi_arg_out<Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> value) noexcept override
+    HRESULT __stdcall get_EndpointDescriptor(impl::abi_arg_out<Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().EndpointDescriptor());
+            *value = detach_abi(this->shim().EndpointDescriptor());
             return S_OK;
         }
         catch (...)
@@ -1804,12 +1804,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_ClearStallAsync(abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
+    HRESULT __stdcall abi_ClearStallAsync(impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach(this->shim().ClearStallAsync());
+            *operation = detach_abi(this->shim().ClearStallAsync());
             return S_OK;
         }
         catch (...)
@@ -1838,7 +1838,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WriteOptions());
+            *value = detach_abi(this->shim().WriteOptions());
             return S_OK;
         }
         catch (...)
@@ -1847,12 +1847,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_OutputStream(abi_arg_out<Windows::Storage::Streams::IOutputStream> value) noexcept override
+    HRESULT __stdcall get_OutputStream(impl::abi_arg_out<Windows::Storage::Streams::IOutputStream> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OutputStream());
+            *value = detach_abi(this->shim().OutputStream());
             return S_OK;
         }
         catch (...)
@@ -1866,12 +1866,12 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Windows::Devices::Usb::IUsbSetupPacket>
 {
-    HRESULT __stdcall get_RequestType(abi_arg_out<Windows::Devices::Usb::IUsbControlRequestType> value) noexcept override
+    HRESULT __stdcall get_RequestType(impl::abi_arg_out<Windows::Devices::Usb::IUsbControlRequestType> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RequestType());
+            *value = detach_abi(this->shim().RequestType());
             return S_OK;
         }
         catch (...)
@@ -1881,7 +1881,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall put_RequestType(abi_arg_in<Windows::Devices::Usb::IUsbControlRequestType> value) noexcept override
+    HRESULT __stdcall put_RequestType(impl::abi_arg_in<Windows::Devices::Usb::IUsbControlRequestType> value) noexcept override
     {
         try
         {
@@ -1900,7 +1900,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Request());
+            *value = detach_abi(this->shim().Request());
             return S_OK;
         }
         catch (...)
@@ -1928,7 +1928,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -1956,7 +1956,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Index());
+            *value = detach_abi(this->shim().Index());
             return S_OK;
         }
         catch (...)
@@ -1984,7 +1984,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Length());
+            *value = detach_abi(this->shim().Length());
             return S_OK;
         }
         catch (...)
@@ -2011,12 +2011,12 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbSetupPacketFactory> : produce_base<D, Windows::Devices::Usb::IUsbSetupPacketFactory>
 {
-    HRESULT __stdcall abi_CreateWithEightByteBuffer(abi_arg_in<Windows::Storage::Streams::IBuffer> eightByteBuffer, abi_arg_out<Windows::Devices::Usb::IUsbSetupPacket> value) noexcept override
+    HRESULT __stdcall abi_CreateWithEightByteBuffer(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> eightByteBuffer, impl::abi_arg_out<Windows::Devices::Usb::IUsbSetupPacket> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CreateWithEightByteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&eightByteBuffer)));
+            *value = detach_abi(this->shim().CreateWithEightByteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&eightByteBuffer)));
             return S_OK;
         }
         catch (...)
@@ -2082,20 +2082,20 @@ template <typename D> void impl_IUsbControlRequestType<D>::AsByte(uint8_t value)
 template <typename D> Windows::Devices::Usb::UsbSetupPacket impl_IUsbSetupPacketFactory<D>::CreateWithEightByteBuffer(const Windows::Storage::Streams::IBuffer & eightByteBuffer) const
 {
     Windows::Devices::Usb::UsbSetupPacket value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbSetupPacketFactory)->abi_CreateWithEightByteBuffer(get(eightByteBuffer), put(value)));
+    check_hresult(WINRT_SHIM(IUsbSetupPacketFactory)->abi_CreateWithEightByteBuffer(get_abi(eightByteBuffer), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbControlRequestType impl_IUsbSetupPacket<D>::RequestType() const
 {
     Windows::Devices::Usb::UsbControlRequestType value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbSetupPacket)->get_RequestType(put(value)));
+    check_hresult(WINRT_SHIM(IUsbSetupPacket)->get_RequestType(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IUsbSetupPacket<D>::RequestType(const Windows::Devices::Usb::UsbControlRequestType & value) const
 {
-    check_hresult(WINRT_SHIM(IUsbSetupPacket)->put_RequestType(get(value)));
+    check_hresult(WINRT_SHIM(IUsbSetupPacket)->put_RequestType(get_abi(value)));
 }
 
 template <typename D> uint8_t impl_IUsbSetupPacket<D>::Request() const
@@ -2161,122 +2161,122 @@ template <typename D> void impl_IUsbDeviceClass<D>::ClassCode(uint8_t value) con
 template <typename D> Windows::Foundation::IReference<uint8_t> impl_IUsbDeviceClass<D>::SubclassCode() const
 {
     Windows::Foundation::IReference<uint8_t> value;
-    check_hresult(WINRT_SHIM(IUsbDeviceClass)->get_SubclassCode(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClass)->get_SubclassCode(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IUsbDeviceClass<D>::SubclassCode(const Windows::Foundation::IReference<uint8_t> & value) const
 {
-    check_hresult(WINRT_SHIM(IUsbDeviceClass)->put_SubclassCode(get(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClass)->put_SubclassCode(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<uint8_t> impl_IUsbDeviceClass<D>::ProtocolCode() const
 {
     Windows::Foundation::IReference<uint8_t> value;
-    check_hresult(WINRT_SHIM(IUsbDeviceClass)->get_ProtocolCode(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClass)->get_ProtocolCode(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IUsbDeviceClass<D>::ProtocolCode(const Windows::Foundation::IReference<uint8_t> & value) const
 {
-    check_hresult(WINRT_SHIM(IUsbDeviceClass)->put_ProtocolCode(get(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClass)->put_ProtocolCode(get_abi(value)));
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::CdcControl() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_CdcControl(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_CdcControl(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::Physical() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_Physical(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_Physical(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::PersonalHealthcare() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_PersonalHealthcare(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_PersonalHealthcare(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::ActiveSync() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_ActiveSync(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_ActiveSync(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::PalmSync() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_PalmSync(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_PalmSync(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::DeviceFirmwareUpdate() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_DeviceFirmwareUpdate(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_DeviceFirmwareUpdate(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::Irda() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_Irda(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_Irda(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::Measurement() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_Measurement(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_Measurement(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::VendorSpecific() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_VendorSpecific(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceClassesStatics)->get_VendorSpecific(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUsbDeviceStatics<D>::GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID winUsbInterfaceClass) const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_GetDeviceSelector(vendorId, productId, winUsbInterfaceClass, put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_GetDeviceSelector(vendorId, productId, winUsbInterfaceClass, put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUsbDeviceStatics<D>::GetDeviceSelector(GUID winUsbInterfaceClass) const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUsbDeviceStatics<D>::GetDeviceSelector(uint32_t vendorId, uint32_t productId) const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_GetDeviceSelectorVidPidOnly(vendorId, productId, put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_GetDeviceSelectorVidPidOnly(vendorId, productId, put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUsbDeviceStatics<D>::GetDeviceClassSelector(const Windows::Devices::Usb::UsbDeviceClass & usbClass) const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_GetDeviceClassSelector(get(usbClass), put(value)));
+    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_GetDeviceClassSelector(get_abi(usbClass), put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> impl_IUsbDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> operation;
-    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
+    check_hresult(WINRT_SHIM(IUsbDeviceStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(operation)));
     return operation;
 }
 
@@ -2353,14 +2353,14 @@ template <typename D> bool impl_IUsbConfigurationDescriptor<D>::RemoteWakeup() c
 template <typename D> bool impl_IUsbConfigurationDescriptorStatics<D>::TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbConfigurationDescriptor & parsed) const
 {
     bool success {};
-    check_hresult(WINRT_SHIM(IUsbConfigurationDescriptorStatics)->abi_TryParse(get(descriptor), put(parsed), &success));
+    check_hresult(WINRT_SHIM(IUsbConfigurationDescriptorStatics)->abi_TryParse(get_abi(descriptor), put_abi(parsed), &success));
     return success;
 }
 
 template <typename D> Windows::Devices::Usb::UsbConfigurationDescriptor impl_IUsbConfigurationDescriptorStatics<D>::Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor) const
 {
     Windows::Devices::Usb::UsbConfigurationDescriptor parsed { nullptr };
-    check_hresult(WINRT_SHIM(IUsbConfigurationDescriptorStatics)->abi_Parse(get(descriptor), put(parsed)));
+    check_hresult(WINRT_SHIM(IUsbConfigurationDescriptorStatics)->abi_Parse(get_abi(descriptor), put_abi(parsed)));
     return parsed;
 }
 
@@ -2402,14 +2402,14 @@ template <typename D> uint8_t impl_IUsbInterfaceDescriptor<D>::InterfaceNumber()
 template <typename D> bool impl_IUsbInterfaceDescriptorStatics<D>::TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbInterfaceDescriptor & parsed) const
 {
     bool success {};
-    check_hresult(WINRT_SHIM(IUsbInterfaceDescriptorStatics)->abi_TryParse(get(descriptor), put(parsed), &success));
+    check_hresult(WINRT_SHIM(IUsbInterfaceDescriptorStatics)->abi_TryParse(get_abi(descriptor), put_abi(parsed), &success));
     return success;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterfaceDescriptor impl_IUsbInterfaceDescriptorStatics<D>::Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor) const
 {
     Windows::Devices::Usb::UsbInterfaceDescriptor parsed { nullptr };
-    check_hresult(WINRT_SHIM(IUsbInterfaceDescriptorStatics)->abi_Parse(get(descriptor), put(parsed)));
+    check_hresult(WINRT_SHIM(IUsbInterfaceDescriptorStatics)->abi_Parse(get_abi(descriptor), put_abi(parsed)));
     return parsed;
 }
 
@@ -2437,42 +2437,42 @@ template <typename D> Windows::Devices::Usb::UsbEndpointType impl_IUsbEndpointDe
 template <typename D> Windows::Devices::Usb::UsbBulkInEndpointDescriptor impl_IUsbEndpointDescriptor<D>::AsBulkInEndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbBulkInEndpointDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbEndpointDescriptor)->get_AsBulkInEndpointDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbEndpointDescriptor)->get_AsBulkInEndpointDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptInEndpointDescriptor impl_IUsbEndpointDescriptor<D>::AsInterruptInEndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbInterruptInEndpointDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbEndpointDescriptor)->get_AsInterruptInEndpointDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbEndpointDescriptor)->get_AsInterruptInEndpointDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbBulkOutEndpointDescriptor impl_IUsbEndpointDescriptor<D>::AsBulkOutEndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbBulkOutEndpointDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbEndpointDescriptor)->get_AsBulkOutEndpointDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbEndpointDescriptor)->get_AsBulkOutEndpointDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor impl_IUsbEndpointDescriptor<D>::AsInterruptOutEndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbEndpointDescriptor)->get_AsInterruptOutEndpointDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbEndpointDescriptor)->get_AsInterruptOutEndpointDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> bool impl_IUsbEndpointDescriptorStatics<D>::TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbEndpointDescriptor & parsed) const
 {
     bool success {};
-    check_hresult(WINRT_SHIM(IUsbEndpointDescriptorStatics)->abi_TryParse(get(descriptor), put(parsed), &success));
+    check_hresult(WINRT_SHIM(IUsbEndpointDescriptorStatics)->abi_TryParse(get_abi(descriptor), put_abi(parsed), &success));
     return success;
 }
 
 template <typename D> Windows::Devices::Usb::UsbEndpointDescriptor impl_IUsbEndpointDescriptorStatics<D>::Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor) const
 {
     Windows::Devices::Usb::UsbEndpointDescriptor parsed { nullptr };
-    check_hresult(WINRT_SHIM(IUsbEndpointDescriptorStatics)->abi_Parse(get(descriptor), put(parsed)));
+    check_hresult(WINRT_SHIM(IUsbEndpointDescriptorStatics)->abi_Parse(get_abi(descriptor), put_abi(parsed)));
     return parsed;
 }
 
@@ -2492,13 +2492,13 @@ template <typename D> uint8_t impl_IUsbDescriptor<D>::DescriptorType() const
 
 template <typename D> void impl_IUsbDescriptor<D>::ReadDescriptorBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
-    check_hresult(WINRT_SHIM(IUsbDescriptor)->abi_ReadDescriptorBuffer(get(buffer)));
+    check_hresult(WINRT_SHIM(IUsbDescriptor)->abi_ReadDescriptorBuffer(get_abi(buffer)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IUsbInterruptInEventArgs<D>::InterruptData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IUsbInterruptInEventArgs)->get_InterruptData(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterruptInEventArgs)->get_InterruptData(put_abi(value)));
     return value;
 }
 
@@ -2512,14 +2512,14 @@ template <typename D> uint32_t impl_IUsbBulkInPipe<D>::MaxTransferSizeBytes() co
 template <typename D> Windows::Devices::Usb::UsbBulkInEndpointDescriptor impl_IUsbBulkInPipe<D>::EndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbBulkInEndpointDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbBulkInPipe)->get_EndpointDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbBulkInPipe)->get_EndpointDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbBulkInPipe<D>::ClearStallAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(WINRT_SHIM(IUsbBulkInPipe)->abi_ClearStallAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IUsbBulkInPipe)->abi_ClearStallAsync(put_abi(operation)));
     return operation;
 }
 
@@ -2543,28 +2543,28 @@ template <typename D> void impl_IUsbBulkInPipe<D>::FlushBuffer() const
 template <typename D> Windows::Storage::Streams::IInputStream impl_IUsbBulkInPipe<D>::InputStream() const
 {
     Windows::Storage::Streams::IInputStream value;
-    check_hresult(WINRT_SHIM(IUsbBulkInPipe)->get_InputStream(put(value)));
+    check_hresult(WINRT_SHIM(IUsbBulkInPipe)->get_InputStream(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptInEndpointDescriptor impl_IUsbInterruptInPipe<D>::EndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbInterruptInEndpointDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbInterruptInPipe)->get_EndpointDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterruptInPipe)->get_EndpointDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbInterruptInPipe<D>::ClearStallAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(WINRT_SHIM(IUsbInterruptInPipe)->abi_ClearStallAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IUsbInterruptInPipe)->abi_ClearStallAsync(put_abi(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IUsbInterruptInPipe<D>::DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IUsbInterruptInPipe)->add_DataReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IUsbInterruptInPipe)->add_DataReceived(get_abi(handler), &token));
     return token;
 }
 
@@ -2581,14 +2581,14 @@ template <typename D> void impl_IUsbInterruptInPipe<D>::DataReceived(event_token
 template <typename D> Windows::Devices::Usb::UsbBulkOutEndpointDescriptor impl_IUsbBulkOutPipe<D>::EndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbBulkOutEndpointDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbBulkOutPipe)->get_EndpointDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbBulkOutPipe)->get_EndpointDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbBulkOutPipe<D>::ClearStallAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(WINRT_SHIM(IUsbBulkOutPipe)->abi_ClearStallAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IUsbBulkOutPipe)->abi_ClearStallAsync(put_abi(operation)));
     return operation;
 }
 
@@ -2607,21 +2607,21 @@ template <typename D> Windows::Devices::Usb::UsbWriteOptions impl_IUsbBulkOutPip
 template <typename D> Windows::Storage::Streams::IOutputStream impl_IUsbBulkOutPipe<D>::OutputStream() const
 {
     Windows::Storage::Streams::IOutputStream value;
-    check_hresult(WINRT_SHIM(IUsbBulkOutPipe)->get_OutputStream(put(value)));
+    check_hresult(WINRT_SHIM(IUsbBulkOutPipe)->get_OutputStream(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor impl_IUsbInterruptOutPipe<D>::EndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbInterruptOutPipe)->get_EndpointDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterruptOutPipe)->get_EndpointDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbInterruptOutPipe<D>::ClearStallAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(WINRT_SHIM(IUsbInterruptOutPipe)->abi_ClearStallAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IUsbInterruptOutPipe)->abi_ClearStallAsync(put_abi(operation)));
     return operation;
 }
 
@@ -2640,63 +2640,63 @@ template <typename D> Windows::Devices::Usb::UsbWriteOptions impl_IUsbInterruptO
 template <typename D> Windows::Storage::Streams::IOutputStream impl_IUsbInterruptOutPipe<D>::OutputStream() const
 {
     Windows::Storage::Streams::IOutputStream value;
-    check_hresult(WINRT_SHIM(IUsbInterruptOutPipe)->get_OutputStream(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterruptOutPipe)->get_OutputStream(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface> impl_IUsbConfiguration<D>::UsbInterfaces() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface> value;
-    check_hresult(WINRT_SHIM(IUsbConfiguration)->get_UsbInterfaces(put(value)));
+    check_hresult(WINRT_SHIM(IUsbConfiguration)->get_UsbInterfaces(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbConfigurationDescriptor impl_IUsbConfiguration<D>::ConfigurationDescriptor() const
 {
     Windows::Devices::Usb::UsbConfigurationDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbConfiguration)->get_ConfigurationDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbConfiguration)->get_ConfigurationDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> impl_IUsbConfiguration<D>::Descriptors() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> value;
-    check_hresult(WINRT_SHIM(IUsbConfiguration)->get_Descriptors(put(value)));
+    check_hresult(WINRT_SHIM(IUsbConfiguration)->get_Descriptors(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe> impl_IUsbInterface<D>::BulkInPipes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe> value;
-    check_hresult(WINRT_SHIM(IUsbInterface)->get_BulkInPipes(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterface)->get_BulkInPipes(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe> impl_IUsbInterface<D>::InterruptInPipes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe> value;
-    check_hresult(WINRT_SHIM(IUsbInterface)->get_InterruptInPipes(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterface)->get_InterruptInPipes(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutPipe> impl_IUsbInterface<D>::BulkOutPipes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutPipe> value;
-    check_hresult(WINRT_SHIM(IUsbInterface)->get_BulkOutPipes(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterface)->get_BulkOutPipes(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutPipe> impl_IUsbInterface<D>::InterruptOutPipes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutPipe> value;
-    check_hresult(WINRT_SHIM(IUsbInterface)->get_InterruptOutPipes(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterface)->get_InterruptOutPipes(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterfaceSetting> impl_IUsbInterface<D>::InterfaceSettings() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterfaceSetting> value;
-    check_hresult(WINRT_SHIM(IUsbInterface)->get_InterfaceSettings(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterface)->get_InterfaceSettings(put_abi(value)));
     return value;
 }
 
@@ -2710,35 +2710,35 @@ template <typename D> uint8_t impl_IUsbInterface<D>::InterfaceNumber() const
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> impl_IUsbInterface<D>::Descriptors() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> value;
-    check_hresult(WINRT_SHIM(IUsbInterface)->get_Descriptors(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterface)->get_Descriptors(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> impl_IUsbInterfaceSetting<D>::BulkInEndpoints() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> value;
-    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_BulkInEndpoints(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_BulkInEndpoints(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> impl_IUsbInterfaceSetting<D>::InterruptInEndpoints() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> value;
-    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_InterruptInEndpoints(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_InterruptInEndpoints(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> impl_IUsbInterfaceSetting<D>::BulkOutEndpoints() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> value;
-    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_BulkOutEndpoints(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_BulkOutEndpoints(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor> impl_IUsbInterfaceSetting<D>::InterruptOutEndpoints() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor> value;
-    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_InterruptOutEndpoints(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_InterruptOutEndpoints(put_abi(value)));
     return value;
 }
 
@@ -2752,21 +2752,21 @@ template <typename D> bool impl_IUsbInterfaceSetting<D>::Selected() const
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbInterfaceSetting<D>::SelectSettingAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->abi_SelectSettingAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->abi_SelectSettingAsync(put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterfaceDescriptor impl_IUsbInterfaceSetting<D>::InterfaceDescriptor() const
 {
     Windows::Devices::Usb::UsbInterfaceDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_InterfaceDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_InterfaceDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> impl_IUsbInterfaceSetting<D>::Descriptors() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> value;
-    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_Descriptors(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterfaceSetting)->get_Descriptors(put_abi(value)));
     return value;
 }
 
@@ -2787,7 +2787,7 @@ template <typename D> uint8_t impl_IUsbBulkInEndpointDescriptor<D>::EndpointNumb
 template <typename D> Windows::Devices::Usb::UsbBulkInPipe impl_IUsbBulkInEndpointDescriptor<D>::Pipe() const
 {
     Windows::Devices::Usb::UsbBulkInPipe value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbBulkInEndpointDescriptor)->get_Pipe(put(value)));
+    check_hresult(WINRT_SHIM(IUsbBulkInEndpointDescriptor)->get_Pipe(put_abi(value)));
     return value;
 }
 
@@ -2808,14 +2808,14 @@ template <typename D> uint8_t impl_IUsbInterruptInEndpointDescriptor<D>::Endpoin
 template <typename D> Windows::Foundation::TimeSpan impl_IUsbInterruptInEndpointDescriptor<D>::Interval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IUsbInterruptInEndpointDescriptor)->get_Interval(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterruptInEndpointDescriptor)->get_Interval(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptInPipe impl_IUsbInterruptInEndpointDescriptor<D>::Pipe() const
 {
     Windows::Devices::Usb::UsbInterruptInPipe value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbInterruptInEndpointDescriptor)->get_Pipe(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterruptInEndpointDescriptor)->get_Pipe(put_abi(value)));
     return value;
 }
 
@@ -2836,7 +2836,7 @@ template <typename D> uint8_t impl_IUsbBulkOutEndpointDescriptor<D>::EndpointNum
 template <typename D> Windows::Devices::Usb::UsbBulkOutPipe impl_IUsbBulkOutEndpointDescriptor<D>::Pipe() const
 {
     Windows::Devices::Usb::UsbBulkOutPipe value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbBulkOutEndpointDescriptor)->get_Pipe(put(value)));
+    check_hresult(WINRT_SHIM(IUsbBulkOutEndpointDescriptor)->get_Pipe(put_abi(value)));
     return value;
 }
 
@@ -2857,63 +2857,63 @@ template <typename D> uint8_t impl_IUsbInterruptOutEndpointDescriptor<D>::Endpoi
 template <typename D> Windows::Foundation::TimeSpan impl_IUsbInterruptOutEndpointDescriptor<D>::Interval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IUsbInterruptOutEndpointDescriptor)->get_Interval(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterruptOutEndpointDescriptor)->get_Interval(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptOutPipe impl_IUsbInterruptOutEndpointDescriptor<D>::Pipe() const
 {
     Windows::Devices::Usb::UsbInterruptOutPipe value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbInterruptOutEndpointDescriptor)->get_Pipe(put(value)));
+    check_hresult(WINRT_SHIM(IUsbInterruptOutEndpointDescriptor)->get_Pipe(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IUsbDevice<D>::SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlOutTransferAsync(get(setupPacket), get(buffer), put(operation)));
+    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlOutTransferAsync(get_abi(setupPacket), get_abi(buffer), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IUsbDevice<D>::SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket) const
 {
     Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlOutTransferAsyncNoBuffer(get(setupPacket), put(operation)));
+    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlOutTransferAsyncNoBuffer(get_abi(setupPacket), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IUsbDevice<D>::SendControlInTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlInTransferAsync(get(setupPacket), get(buffer), put(operation)));
+    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlInTransferAsync(get_abi(setupPacket), get_abi(buffer), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IUsbDevice<D>::SendControlInTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlInTransferAsyncNoBuffer(get(setupPacket), put(operation)));
+    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlInTransferAsyncNoBuffer(get_abi(setupPacket), put_abi(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterface impl_IUsbDevice<D>::DefaultInterface() const
 {
     Windows::Devices::Usb::UsbInterface value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDevice)->get_DefaultInterface(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDevice)->get_DefaultInterface(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceDescriptor impl_IUsbDevice<D>::DeviceDescriptor() const
 {
     Windows::Devices::Usb::UsbDeviceDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDevice)->get_DeviceDescriptor(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDevice)->get_DeviceDescriptor(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbConfiguration impl_IUsbDevice<D>::Configuration() const
 {
     Windows::Devices::Usb::UsbConfiguration value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDevice)->get_Configuration(put(value)));
+    check_hresult(WINRT_SHIM(IUsbDevice)->get_Configuration(put_abi(value)));
     return value;
 }
 

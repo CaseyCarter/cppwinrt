@@ -77,17 +77,17 @@ struct hstring
 
     friend HSTRING impl_get(const hstring & string) noexcept
     {
-        return get(string.m_handle);
+        return get_abi(string.m_handle);
     }
 
     friend HSTRING * impl_put(hstring & string) noexcept
     {
-        return put(string.m_handle);
+        return put_abi(string.m_handle);
     }
 
     friend HSTRING impl_detach(hstring & string) noexcept
     {
-        return detach(string.m_handle);
+        return detach_abi(string.m_handle);
     }
 
     friend void swap(hstring & left, hstring & right) noexcept
@@ -97,7 +97,7 @@ struct hstring
 
 private:
 
-    handle<impl::hstring_traits> m_handle;
+    impl::handle<impl::hstring_traits> m_handle;
 };
 
 struct hstring_view
@@ -220,12 +220,12 @@ template <> struct accessors<std::wstring>
 
 inline bool embedded_null(hstring_view value) noexcept
 {
-    return impl::embedded_null(get(value));
+    return impl::embedded_null(get_abi(value));
 }
 
 inline bool embedded_null(const hstring & value) noexcept
 {
-    return impl::embedded_null(get(value));
+    return impl::embedded_null(get_abi(value));
 }
 
 // TODO: this must be removed. The ABI projection should just use HSTRING directly.

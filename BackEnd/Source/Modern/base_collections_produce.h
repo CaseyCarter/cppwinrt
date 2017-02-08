@@ -41,7 +41,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *current = detach(this->shim().Current());
+            *current = detach_abi(this->shim().Current());
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::Foundation::Collections::IIterable<T>> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *first = detach(this->shim().First());
+            *first = detach_abi(this->shim().First());
             return S_OK;
         }
         catch (...)
@@ -123,7 +123,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *key = detach(this->shim().Key());
+            *key = detach_abi(this->shim().Key());
             return S_OK;
         }
         catch (...)
@@ -138,7 +138,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Value());
+            *value = detach_abi(this->shim().Value());
             return S_OK;
         }
         catch (...)
@@ -157,7 +157,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *item = detach(this->shim().GetAt(index));
+            *item = detach_abi(this->shim().GetAt(index));
             return S_OK;
         }
         catch (...)
@@ -220,7 +220,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *item = detach(this->shim().GetAt(index));
+            *item = detach_abi(this->shim().GetAt(index));
             return S_OK;
         }
         catch (...)
@@ -249,7 +249,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *view = detach(this->shim().GetView());
+            *view = detach_abi(this->shim().GetView());
             return S_OK;
         }
         catch (...)
@@ -396,7 +396,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            *value = detach_abi(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -459,7 +459,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
+            *value = detach_abi(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
         catch (...)
@@ -502,7 +502,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
         try
         {
             typename D::abi_guard guard(this->shim());
-            *view = detach(this->shim().GetView());
+            *view = detach_abi(this->shim().GetView());
             return S_OK;
         }
         catch (...)
@@ -577,7 +577,7 @@ struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : p
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Key());
+            *value = detach_abi(this->shim().Key());
             return S_OK;
         }
         catch (...)

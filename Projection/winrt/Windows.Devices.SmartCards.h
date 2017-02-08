@@ -27,7 +27,7 @@ template <typename O, typename M> SmartCardPinResetHandler::SmartCardPinResetHan
 
 inline void SmartCardPinResetHandler::operator()(const Windows::Devices::SmartCards::SmartCardProvisioning & sender, const Windows::Devices::SmartCards::SmartCardPinResetRequest & request) const
 {
-    check_hresult((*(abi<SmartCardPinResetHandler> **)this)->abi_Invoke(get(sender), get(request)));
+    check_hresult((*(abi<SmartCardPinResetHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(request)));
 }
 
 }
@@ -37,12 +37,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ICardAddedEventArgs> : produce_base<D, Windows::Devices::SmartCards::ICardAddedEventArgs>
 {
-    HRESULT __stdcall get_SmartCard(abi_arg_out<Windows::Devices::SmartCards::ISmartCard> value) noexcept override
+    HRESULT __stdcall get_SmartCard(impl::abi_arg_out<Windows::Devices::SmartCards::ISmartCard> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SmartCard());
+            *value = detach_abi(this->shim().SmartCard());
             return S_OK;
         }
         catch (...)
@@ -56,12 +56,12 @@ struct produce<D, Windows::Devices::SmartCards::ICardAddedEventArgs> : produce_b
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ICardRemovedEventArgs> : produce_base<D, Windows::Devices::SmartCards::ICardRemovedEventArgs>
 {
-    HRESULT __stdcall get_SmartCard(abi_arg_out<Windows::Devices::SmartCards::ISmartCard> value) noexcept override
+    HRESULT __stdcall get_SmartCard(impl::abi_arg_out<Windows::Devices::SmartCards::ISmartCard> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SmartCard());
+            *value = detach_abi(this->shim().SmartCard());
             return S_OK;
         }
         catch (...)
@@ -75,12 +75,12 @@ struct produce<D, Windows::Devices::SmartCards::ICardRemovedEventArgs> : produce
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCard> : produce_base<D, Windows::Devices::SmartCards::ISmartCard>
 {
-    HRESULT __stdcall get_Reader(abi_arg_out<Windows::Devices::SmartCards::ISmartCardReader> value) noexcept override
+    HRESULT __stdcall get_Reader(impl::abi_arg_out<Windows::Devices::SmartCards::ISmartCardReader> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Reader());
+            *value = detach_abi(this->shim().Reader());
             return S_OK;
         }
         catch (...)
@@ -90,12 +90,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCard> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall abi_GetStatusAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardStatus>> result) noexcept override
+    HRESULT __stdcall abi_GetStatusAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardStatus>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetStatusAsync());
+            *result = detach_abi(this->shim().GetStatusAsync());
             return S_OK;
         }
         catch (...)
@@ -105,12 +105,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCard> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall abi_GetAnswerToResetAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> result) noexcept override
+    HRESULT __stdcall abi_GetAnswerToResetAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetAnswerToResetAsync());
+            *result = detach_abi(this->shim().GetAnswerToResetAsync());
             return S_OK;
         }
         catch (...)
@@ -124,12 +124,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCard> : produce_base<D, Wi
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : produce_base<D, Windows::Devices::SmartCards::ISmartCardChallengeContext>
 {
-    HRESULT __stdcall get_Challenge(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Challenge(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Challenge());
+            *value = detach_abi(this->shim().Challenge());
             return S_OK;
         }
         catch (...)
@@ -139,12 +139,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
         }
     }
 
-    HRESULT __stdcall abi_VerifyResponseAsync(abi_arg_in<Windows::Storage::Streams::IBuffer> response, abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
+    HRESULT __stdcall abi_VerifyResponseAsync(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> response, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().VerifyResponseAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response)));
+            *result = detach_abi(this->shim().VerifyResponseAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response)));
             return S_OK;
         }
         catch (...)
@@ -154,12 +154,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
         }
     }
 
-    HRESULT __stdcall abi_ProvisionAsync(abi_arg_in<Windows::Storage::Streams::IBuffer> response, bool formatCard, abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
+    HRESULT __stdcall abi_ProvisionAsync(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> response, bool formatCard, impl::abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ProvisionAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response), formatCard));
+            *result = detach_abi(this->shim().ProvisionAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response), formatCard));
             return S_OK;
         }
         catch (...)
@@ -169,12 +169,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
         }
     }
 
-    HRESULT __stdcall abi_ProvisionAsyncWithNewCardId(abi_arg_in<Windows::Storage::Streams::IBuffer> response, bool formatCard, GUID newCardId, abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
+    HRESULT __stdcall abi_ProvisionAsyncWithNewCardId(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> response, bool formatCard, GUID newCardId, impl::abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ProvisionAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response), formatCard, newCardId));
+            *result = detach_abi(this->shim().ProvisionAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response), formatCard, newCardId));
             return S_OK;
         }
         catch (...)
@@ -184,12 +184,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
         }
     }
 
-    HRESULT __stdcall abi_ChangeAdministrativeKeyAsync(abi_arg_in<Windows::Storage::Streams::IBuffer> response, abi_arg_in<Windows::Storage::Streams::IBuffer> newAdministrativeKey, abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
+    HRESULT __stdcall abi_ChangeAdministrativeKeyAsync(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> response, impl::abi_arg_in<Windows::Storage::Streams::IBuffer> newAdministrativeKey, impl::abi_arg_out<Windows::Foundation::IAsyncAction> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ChangeAdministrativeKeyAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&newAdministrativeKey)));
+            *result = detach_abi(this->shim().ChangeAdministrativeKeyAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&newAdministrativeKey)));
             return S_OK;
         }
         catch (...)
@@ -203,12 +203,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardConnect> : produce_base<D, Windows::Devices::SmartCards::ISmartCardConnect>
 {
-    HRESULT __stdcall abi_ConnectAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardConnection>> result) noexcept override
+    HRESULT __stdcall abi_ConnectAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardConnection>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().ConnectAsync());
+            *result = detach_abi(this->shim().ConnectAsync());
             return S_OK;
         }
         catch (...)
@@ -222,12 +222,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardConnect> : produce_bas
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardConnection> : produce_base<D, Windows::Devices::SmartCards::ISmartCardConnection>
 {
-    HRESULT __stdcall abi_TransmitAsync(abi_arg_in<Windows::Storage::Streams::IBuffer> command, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> result) noexcept override
+    HRESULT __stdcall abi_TransmitAsync(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> command, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TransmitAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&command)));
+            *result = detach_abi(this->shim().TransmitAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&command)));
             return S_OK;
         }
         catch (...)
@@ -246,7 +246,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MinLength());
+            *value = detach_abi(this->shim().MinLength());
             return S_OK;
         }
         catch (...)
@@ -274,7 +274,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxLength());
+            *value = detach_abi(this->shim().MaxLength());
             return S_OK;
         }
         catch (...)
@@ -302,7 +302,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UppercaseLetters());
+            *value = detach_abi(this->shim().UppercaseLetters());
             return S_OK;
         }
         catch (...)
@@ -330,7 +330,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().LowercaseLetters());
+            *value = detach_abi(this->shim().LowercaseLetters());
             return S_OK;
         }
         catch (...)
@@ -358,7 +358,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Digits());
+            *value = detach_abi(this->shim().Digits());
             return S_OK;
         }
         catch (...)
@@ -386,7 +386,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SpecialCharacters());
+            *value = detach_abi(this->shim().SpecialCharacters());
             return S_OK;
         }
         catch (...)
@@ -431,12 +431,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetDeferral> : pr
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest> : produce_base<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest>
 {
-    HRESULT __stdcall get_Challenge(abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    HRESULT __stdcall get_Challenge(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Challenge());
+            *value = detach_abi(this->shim().Challenge());
             return S_OK;
         }
         catch (...)
@@ -446,12 +446,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest> : pro
         }
     }
 
-    HRESULT __stdcall get_Deadline(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall get_Deadline(impl::abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Deadline());
+            *value = detach_abi(this->shim().Deadline());
             return S_OK;
         }
         catch (...)
@@ -460,12 +460,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest> : pro
         }
     }
 
-    HRESULT __stdcall abi_GetDeferral(abi_arg_out<Windows::Devices::SmartCards::ISmartCardPinResetDeferral> result) noexcept override
+    HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Devices::SmartCards::ISmartCardPinResetDeferral> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetDeferral());
+            *result = detach_abi(this->shim().GetDeferral());
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest> : pro
         }
     }
 
-    HRESULT __stdcall abi_SetResponse(abi_arg_in<Windows::Storage::Streams::IBuffer> response) noexcept override
+    HRESULT __stdcall abi_SetResponse(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> response) noexcept override
     {
         try
         {
@@ -493,12 +493,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest> : pro
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produce_base<D, Windows::Devices::SmartCards::ISmartCardProvisioning>
 {
-    HRESULT __stdcall get_SmartCard(abi_arg_out<Windows::Devices::SmartCards::ISmartCard> value) noexcept override
+    HRESULT __stdcall get_SmartCard(impl::abi_arg_out<Windows::Devices::SmartCards::ISmartCard> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().SmartCard());
+            *value = detach_abi(this->shim().SmartCard());
             return S_OK;
         }
         catch (...)
@@ -508,12 +508,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
         }
     }
 
-    HRESULT __stdcall abi_GetIdAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<GUID>> result) noexcept override
+    HRESULT __stdcall abi_GetIdAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<GUID>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetIdAsync());
+            *result = detach_abi(this->shim().GetIdAsync());
             return S_OK;
         }
         catch (...)
@@ -523,12 +523,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
         }
     }
 
-    HRESULT __stdcall abi_GetNameAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> result) noexcept override
+    HRESULT __stdcall abi_GetNameAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetNameAsync());
+            *result = detach_abi(this->shim().GetNameAsync());
             return S_OK;
         }
         catch (...)
@@ -538,12 +538,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
         }
     }
 
-    HRESULT __stdcall abi_GetChallengeContextAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardChallengeContext>> result) noexcept override
+    HRESULT __stdcall abi_GetChallengeContextAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardChallengeContext>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetChallengeContextAsync());
+            *result = detach_abi(this->shim().GetChallengeContextAsync());
             return S_OK;
         }
         catch (...)
@@ -553,12 +553,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
         }
     }
 
-    HRESULT __stdcall abi_RequestPinChangeAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
+    HRESULT __stdcall abi_RequestPinChangeAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestPinChangeAsync());
+            *result = detach_abi(this->shim().RequestPinChangeAsync());
             return S_OK;
         }
         catch (...)
@@ -568,12 +568,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
         }
     }
 
-    HRESULT __stdcall abi_RequestPinResetAsync(abi_arg_in<Windows::Devices::SmartCards::SmartCardPinResetHandler> handler, abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
+    HRESULT __stdcall abi_RequestPinResetAsync(impl::abi_arg_in<Windows::Devices::SmartCards::SmartCardPinResetHandler> handler, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestPinResetAsync(*reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinResetHandler *>(&handler)));
+            *result = detach_abi(this->shim().RequestPinResetAsync(*reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinResetHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -587,12 +587,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning2> : produce_base<D, Windows::Devices::SmartCards::ISmartCardProvisioning2>
 {
-    HRESULT __stdcall abi_GetAuthorityKeyContainerNameAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> result) noexcept override
+    HRESULT __stdcall abi_GetAuthorityKeyContainerNameAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetAuthorityKeyContainerNameAsync());
+            *result = detach_abi(this->shim().GetAuthorityKeyContainerNameAsync());
             return S_OK;
         }
         catch (...)
@@ -606,12 +606,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning2> : produ
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics> : produce_base<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics>
 {
-    HRESULT __stdcall abi_FromSmartCardAsync(abi_arg_in<Windows::Devices::SmartCards::ISmartCard> card, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
+    HRESULT __stdcall abi_FromSmartCardAsync(impl::abi_arg_in<Windows::Devices::SmartCards::ISmartCard> card, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FromSmartCardAsync(*reinterpret_cast<const Windows::Devices::SmartCards::SmartCard *>(&card)));
+            *result = detach_abi(this->shim().FromSmartCardAsync(*reinterpret_cast<const Windows::Devices::SmartCards::SmartCard *>(&card)));
             return S_OK;
         }
         catch (...)
@@ -621,12 +621,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics> :
         }
     }
 
-    HRESULT __stdcall abi_RequestVirtualSmartCardCreationAsync(abi_arg_in<hstring> friendlyName, abi_arg_in<Windows::Storage::Streams::IBuffer> administrativeKey, abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinPolicy> pinPolicy, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
+    HRESULT __stdcall abi_RequestVirtualSmartCardCreationAsync(impl::abi_arg_in<hstring> friendlyName, impl::abi_arg_in<Windows::Storage::Streams::IBuffer> administrativeKey, impl::abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinPolicy> pinPolicy, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy)));
+            *result = detach_abi(this->shim().RequestVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy)));
             return S_OK;
         }
         catch (...)
@@ -636,12 +636,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics> :
         }
     }
 
-    HRESULT __stdcall abi_RequestVirtualSmartCardCreationAsyncWithCardId(abi_arg_in<hstring> friendlyName, abi_arg_in<Windows::Storage::Streams::IBuffer> administrativeKey, abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinPolicy> pinPolicy, GUID cardId, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
+    HRESULT __stdcall abi_RequestVirtualSmartCardCreationAsyncWithCardId(impl::abi_arg_in<hstring> friendlyName, impl::abi_arg_in<Windows::Storage::Streams::IBuffer> administrativeKey, impl::abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinPolicy> pinPolicy, GUID cardId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy), cardId));
+            *result = detach_abi(this->shim().RequestVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy), cardId));
             return S_OK;
         }
         catch (...)
@@ -651,12 +651,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics> :
         }
     }
 
-    HRESULT __stdcall abi_RequestVirtualSmartCardDeletionAsync(abi_arg_in<Windows::Devices::SmartCards::ISmartCard> card, abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
+    HRESULT __stdcall abi_RequestVirtualSmartCardDeletionAsync(impl::abi_arg_in<Windows::Devices::SmartCards::ISmartCard> card, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestVirtualSmartCardDeletionAsync(*reinterpret_cast<const Windows::Devices::SmartCards::SmartCard *>(&card)));
+            *result = detach_abi(this->shim().RequestVirtualSmartCardDeletionAsync(*reinterpret_cast<const Windows::Devices::SmartCards::SmartCard *>(&card)));
             return S_OK;
         }
         catch (...)
@@ -670,12 +670,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics> :
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics2> : produce_base<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics2>
 {
-    HRESULT __stdcall abi_RequestAttestedVirtualSmartCardCreationAsync(abi_arg_in<hstring> friendlyName, abi_arg_in<Windows::Storage::Streams::IBuffer> administrativeKey, abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinPolicy> pinPolicy, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
+    HRESULT __stdcall abi_RequestAttestedVirtualSmartCardCreationAsync(impl::abi_arg_in<hstring> friendlyName, impl::abi_arg_in<Windows::Storage::Streams::IBuffer> administrativeKey, impl::abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinPolicy> pinPolicy, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestAttestedVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy)));
+            *result = detach_abi(this->shim().RequestAttestedVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy)));
             return S_OK;
         }
         catch (...)
@@ -685,12 +685,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics2> 
         }
     }
 
-    HRESULT __stdcall abi_RequestAttestedVirtualSmartCardCreationAsyncWithCardId(abi_arg_in<hstring> friendlyName, abi_arg_in<Windows::Storage::Streams::IBuffer> administrativeKey, abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinPolicy> pinPolicy, GUID cardId, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
+    HRESULT __stdcall abi_RequestAttestedVirtualSmartCardCreationAsyncWithCardId(impl::abi_arg_in<hstring> friendlyName, impl::abi_arg_in<Windows::Storage::Streams::IBuffer> administrativeKey, impl::abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinPolicy> pinPolicy, GUID cardId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RequestAttestedVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy), cardId));
+            *result = detach_abi(this->shim().RequestAttestedVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy), cardId));
             return S_OK;
         }
         catch (...)
@@ -704,12 +704,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics2> 
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base<D, Windows::Devices::SmartCards::ISmartCardReader>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -719,12 +719,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
         }
     }
 
-    HRESULT __stdcall get_Name(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Name());
+            *value = detach_abi(this->shim().Name());
             return S_OK;
         }
         catch (...)
@@ -739,7 +739,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Kind());
+            *value = detach_abi(this->shim().Kind());
             return S_OK;
         }
         catch (...)
@@ -748,27 +748,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_GetStatusAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardReaderStatus>> result) noexcept override
+    HRESULT __stdcall abi_GetStatusAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardReaderStatus>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetStatusAsync());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *result = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_FindAllCardsAsync(abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::SmartCards::SmartCard>>> result) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FindAllCardsAsync());
+            *result = detach_abi(this->shim().GetStatusAsync());
             return S_OK;
         }
         catch (...)
@@ -778,12 +763,27 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
         }
     }
 
-    HRESULT __stdcall add_CardAdded(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardAddedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall abi_FindAllCardsAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::SmartCards::SmartCard>>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().CardAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardAddedEventArgs> *>(&handler)));
+            *result = detach_abi(this->shim().FindAllCardsAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_CardAdded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardAddedEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().CardAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardAddedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -806,12 +806,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
         }
     }
 
-    HRESULT __stdcall add_CardRemoved(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardRemovedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CardRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardRemovedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().CardRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardRemovedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().CardRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -838,12 +838,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
 template <typename D>
 struct produce<D, Windows::Devices::SmartCards::ISmartCardReaderStatics> : produce_base<D, Windows::Devices::SmartCards::ISmartCardReaderStatics>
 {
-    HRESULT __stdcall abi_GetDeviceSelector(abi_arg_out<hstring> selector) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelector(impl::abi_arg_out<hstring> selector) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *selector = detach(this->shim().GetDeviceSelector());
+            *selector = detach_abi(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -853,12 +853,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReaderStatics> : produ
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceSelectorWithKind(Windows::Devices::SmartCards::SmartCardReaderKind kind, abi_arg_out<hstring> selector) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelectorWithKind(Windows::Devices::SmartCards::SmartCardReaderKind kind, impl::abi_arg_out<hstring> selector) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *selector = detach(this->shim().GetDeviceSelector(kind));
+            *selector = detach_abi(this->shim().GetDeviceSelector(kind));
             return S_OK;
         }
         catch (...)
@@ -868,12 +868,12 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReaderStatics> : produ
         }
     }
 
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> deviceId, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardReader>> result) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardReader>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *result = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -891,35 +891,35 @@ namespace Windows::Devices::SmartCards {
 template <typename D> hstring impl_ISmartCardReaderStatics<D>::GetDeviceSelector() const
 {
     hstring selector;
-    check_hresult(WINRT_SHIM(ISmartCardReaderStatics)->abi_GetDeviceSelector(put(selector)));
+    check_hresult(WINRT_SHIM(ISmartCardReaderStatics)->abi_GetDeviceSelector(put_abi(selector)));
     return selector;
 }
 
 template <typename D> hstring impl_ISmartCardReaderStatics<D>::GetDeviceSelector(Windows::Devices::SmartCards::SmartCardReaderKind kind) const
 {
     hstring selector;
-    check_hresult(WINRT_SHIM(ISmartCardReaderStatics)->abi_GetDeviceSelectorWithKind(kind, put(selector)));
+    check_hresult(WINRT_SHIM(ISmartCardReaderStatics)->abi_GetDeviceSelectorWithKind(kind, put_abi(selector)));
     return selector;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardReader> impl_ISmartCardReaderStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardReader> result;
-    check_hresult(WINRT_SHIM(ISmartCardReaderStatics)->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardReaderStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_ISmartCardReader<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ISmartCardReader)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmartCardReader<D>::Name() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(ISmartCardReader)->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->get_Name(put_abi(value)));
     return value;
 }
 
@@ -933,21 +933,21 @@ template <typename D> Windows::Devices::SmartCards::SmartCardReaderKind impl_ISm
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardReaderStatus> impl_ISmartCardReader<D>::GetStatusAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardReaderStatus> result;
-    check_hresult(WINRT_SHIM(ISmartCardReader)->abi_GetStatusAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->abi_GetStatusAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::SmartCards::SmartCard>> impl_ISmartCardReader<D>::FindAllCardsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::SmartCards::SmartCard>> result;
-    check_hresult(WINRT_SHIM(ISmartCardReader)->abi_FindAllCardsAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->abi_FindAllCardsAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> event_token impl_ISmartCardReader<D>::CardAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(ISmartCardReader)->add_CardAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->add_CardAdded(get_abi(handler), &token));
     return token;
 }
 
@@ -964,7 +964,7 @@ template <typename D> void impl_ISmartCardReader<D>::CardAdded(event_token token
 template <typename D> event_token impl_ISmartCardReader<D>::CardRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(ISmartCardReader)->add_CardRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->add_CardRemoved(get_abi(handler), &token));
     return token;
 }
 
@@ -981,153 +981,153 @@ template <typename D> void impl_ISmartCardReader<D>::CardRemoved(event_token tok
 template <typename D> Windows::Devices::SmartCards::SmartCard impl_ICardAddedEventArgs<D>::SmartCard() const
 {
     Windows::Devices::SmartCards::SmartCard value { nullptr };
-    check_hresult(WINRT_SHIM(ICardAddedEventArgs)->get_SmartCard(put(value)));
+    check_hresult(WINRT_SHIM(ICardAddedEventArgs)->get_SmartCard(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCard impl_ICardRemovedEventArgs<D>::SmartCard() const
 {
     Windows::Devices::SmartCards::SmartCard value { nullptr };
-    check_hresult(WINRT_SHIM(ICardRemovedEventArgs)->get_SmartCard(put(value)));
+    check_hresult(WINRT_SHIM(ICardRemovedEventArgs)->get_SmartCard(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCardReader impl_ISmartCard<D>::Reader() const
 {
     Windows::Devices::SmartCards::SmartCardReader value { nullptr };
-    check_hresult(WINRT_SHIM(ISmartCard)->get_Reader(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCard)->get_Reader(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardStatus> impl_ISmartCard<D>::GetStatusAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardStatus> result;
-    check_hresult(WINRT_SHIM(ISmartCard)->abi_GetStatusAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCard)->abi_GetStatusAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ISmartCard<D>::GetAnswerToResetAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> result;
-    check_hresult(WINRT_SHIM(ISmartCard)->abi_GetAnswerToResetAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCard)->abi_GetAnswerToResetAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics<D>::FromSmartCardAsync(const Windows::Devices::SmartCards::SmartCard & card) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_FromSmartCardAsync(get(card), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_FromSmartCardAsync(get_abi(card), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics<D>::RequestVirtualSmartCardCreationAsync(hstring_view friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_RequestVirtualSmartCardCreationAsync(get(friendlyName), get(administrativeKey), get(pinPolicy), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_RequestVirtualSmartCardCreationAsync(get_abi(friendlyName), get_abi(administrativeKey), get_abi(pinPolicy), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics<D>::RequestVirtualSmartCardCreationAsync(hstring_view friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy, GUID cardId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_RequestVirtualSmartCardCreationAsyncWithCardId(get(friendlyName), get(administrativeKey), get(pinPolicy), cardId, put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_RequestVirtualSmartCardCreationAsyncWithCardId(get_abi(friendlyName), get_abi(administrativeKey), get_abi(pinPolicy), cardId, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISmartCardProvisioningStatics<D>::RequestVirtualSmartCardDeletionAsync(const Windows::Devices::SmartCards::SmartCard & card) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_RequestVirtualSmartCardDeletionAsync(get(card), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_RequestVirtualSmartCardDeletionAsync(get_abi(card), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics2<D>::RequestAttestedVirtualSmartCardCreationAsync(hstring_view friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics2)->abi_RequestAttestedVirtualSmartCardCreationAsync(get(friendlyName), get(administrativeKey), get(pinPolicy), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics2)->abi_RequestAttestedVirtualSmartCardCreationAsync(get_abi(friendlyName), get_abi(administrativeKey), get_abi(pinPolicy), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics2<D>::RequestAttestedVirtualSmartCardCreationAsync(hstring_view friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy, GUID cardId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics2)->abi_RequestAttestedVirtualSmartCardCreationAsyncWithCardId(get(friendlyName), get(administrativeKey), get(pinPolicy), cardId, put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics2)->abi_RequestAttestedVirtualSmartCardCreationAsyncWithCardId(get_abi(friendlyName), get_abi(administrativeKey), get_abi(pinPolicy), cardId, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCard impl_ISmartCardProvisioning<D>::SmartCard() const
 {
     Windows::Devices::SmartCards::SmartCard value { nullptr };
-    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->get_SmartCard(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->get_SmartCard(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<GUID> impl_ISmartCardProvisioning<D>::GetIdAsync() const
 {
     Windows::Foundation::IAsyncOperation<GUID> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_GetIdAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_GetIdAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ISmartCardProvisioning<D>::GetNameAsync() const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_GetNameAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_GetNameAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardChallengeContext> impl_ISmartCardProvisioning<D>::GetChallengeContextAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardChallengeContext> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_GetChallengeContextAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_GetChallengeContextAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISmartCardProvisioning<D>::RequestPinChangeAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_RequestPinChangeAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_RequestPinChangeAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISmartCardProvisioning<D>::RequestPinResetAsync(const Windows::Devices::SmartCards::SmartCardPinResetHandler & handler) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_RequestPinResetAsync(get(handler), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_RequestPinResetAsync(get_abi(handler), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ISmartCardProvisioning2<D>::GetAuthorityKeyContainerNameAsync() const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
-    check_hresult(WINRT_SHIM(ISmartCardProvisioning2)->abi_GetAuthorityKeyContainerNameAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning2)->abi_GetAuthorityKeyContainerNameAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISmartCardPinResetRequest<D>::Challenge() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->get_Challenge(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->get_Challenge(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISmartCardPinResetRequest<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->get_Deadline(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->get_Deadline(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCardPinResetDeferral impl_ISmartCardPinResetRequest<D>::GetDeferral() const
 {
     Windows::Devices::SmartCards::SmartCardPinResetDeferral result { nullptr };
-    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->abi_GetDeferral(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->abi_GetDeferral(put_abi(result)));
     return result;
 }
 
 template <typename D> void impl_ISmartCardPinResetRequest<D>::SetResponse(const Windows::Storage::Streams::IBuffer & response) const
 {
-    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->abi_SetResponse(get(response)));
+    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->abi_SetResponse(get_abi(response)));
 }
 
 template <typename D> void impl_ISmartCardPinResetDeferral<D>::Complete() const
@@ -1210,49 +1210,49 @@ template <typename D> void impl_ISmartCardPinPolicy<D>::SpecialCharacters(Window
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardConnection> impl_ISmartCardConnect<D>::ConnectAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardConnection> result;
-    check_hresult(WINRT_SHIM(ISmartCardConnect)->abi_ConnectAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardConnect)->abi_ConnectAsync(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISmartCardChallengeContext<D>::Challenge() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->get_Challenge(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->get_Challenge(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISmartCardChallengeContext<D>::VerifyResponseAsync(const Windows::Storage::Streams::IBuffer & response) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_VerifyResponseAsync(get(response), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_VerifyResponseAsync(get_abi(response), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISmartCardChallengeContext<D>::ProvisionAsync(const Windows::Storage::Streams::IBuffer & response, bool formatCard) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_ProvisionAsync(get(response), formatCard, put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_ProvisionAsync(get_abi(response), formatCard, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISmartCardChallengeContext<D>::ProvisionAsync(const Windows::Storage::Streams::IBuffer & response, bool formatCard, GUID newCardId) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_ProvisionAsyncWithNewCardId(get(response), formatCard, newCardId, put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_ProvisionAsyncWithNewCardId(get_abi(response), formatCard, newCardId, put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISmartCardChallengeContext<D>::ChangeAdministrativeKeyAsync(const Windows::Storage::Streams::IBuffer & response, const Windows::Storage::Streams::IBuffer & newAdministrativeKey) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_ChangeAdministrativeKeyAsync(get(response), get(newAdministrativeKey), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_ChangeAdministrativeKeyAsync(get_abi(response), get_abi(newAdministrativeKey), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ISmartCardConnection<D>::TransmitAsync(const Windows::Storage::Streams::IBuffer & command) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> result;
-    check_hresult(WINRT_SHIM(ISmartCardConnection)->abi_TransmitAsync(get(command), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardConnection)->abi_TransmitAsync(get_abi(command), put_abi(result)));
     return result;
 }
 

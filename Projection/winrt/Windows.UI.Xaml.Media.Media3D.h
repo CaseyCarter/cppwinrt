@@ -20,7 +20,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CenterX());
+            *value = detach_abi(this->shim().CenterX());
             return S_OK;
         }
         catch (...)
@@ -48,7 +48,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CenterY());
+            *value = detach_abi(this->shim().CenterY());
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CenterZ());
+            *value = detach_abi(this->shim().CenterZ());
             return S_OK;
         }
         catch (...)
@@ -104,7 +104,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RotationX());
+            *value = detach_abi(this->shim().RotationX());
             return S_OK;
         }
         catch (...)
@@ -132,7 +132,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RotationY());
+            *value = detach_abi(this->shim().RotationY());
             return S_OK;
         }
         catch (...)
@@ -160,7 +160,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RotationZ());
+            *value = detach_abi(this->shim().RotationZ());
             return S_OK;
         }
         catch (...)
@@ -188,7 +188,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ScaleX());
+            *value = detach_abi(this->shim().ScaleX());
             return S_OK;
         }
         catch (...)
@@ -216,7 +216,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ScaleY());
+            *value = detach_abi(this->shim().ScaleY());
             return S_OK;
         }
         catch (...)
@@ -244,7 +244,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ScaleZ());
+            *value = detach_abi(this->shim().ScaleZ());
             return S_OK;
         }
         catch (...)
@@ -272,7 +272,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TranslateX());
+            *value = detach_abi(this->shim().TranslateX());
             return S_OK;
         }
         catch (...)
@@ -300,7 +300,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TranslateY());
+            *value = detach_abi(this->shim().TranslateY());
             return S_OK;
         }
         catch (...)
@@ -328,7 +328,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TranslateZ());
+            *value = detach_abi(this->shim().TranslateZ());
             return S_OK;
         }
         catch (...)
@@ -355,12 +355,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : pr
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics> : produce_base<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>
 {
-    HRESULT __stdcall get_CenterXProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_CenterXProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CenterXProperty());
+            *value = detach_abi(this->shim().CenterXProperty());
             return S_OK;
         }
         catch (...)
@@ -370,12 +370,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_CenterYProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_CenterYProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CenterYProperty());
+            *value = detach_abi(this->shim().CenterYProperty());
             return S_OK;
         }
         catch (...)
@@ -385,12 +385,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_CenterZProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_CenterZProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CenterZProperty());
+            *value = detach_abi(this->shim().CenterZProperty());
             return S_OK;
         }
         catch (...)
@@ -400,12 +400,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_RotationXProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_RotationXProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RotationXProperty());
+            *value = detach_abi(this->shim().RotationXProperty());
             return S_OK;
         }
         catch (...)
@@ -415,12 +415,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_RotationYProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_RotationYProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RotationYProperty());
+            *value = detach_abi(this->shim().RotationYProperty());
             return S_OK;
         }
         catch (...)
@@ -430,12 +430,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_RotationZProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_RotationZProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RotationZProperty());
+            *value = detach_abi(this->shim().RotationZProperty());
             return S_OK;
         }
         catch (...)
@@ -445,12 +445,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_ScaleXProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_ScaleXProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ScaleXProperty());
+            *value = detach_abi(this->shim().ScaleXProperty());
             return S_OK;
         }
         catch (...)
@@ -460,12 +460,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_ScaleYProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_ScaleYProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ScaleYProperty());
+            *value = detach_abi(this->shim().ScaleYProperty());
             return S_OK;
         }
         catch (...)
@@ -475,12 +475,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_ScaleZProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_ScaleZProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ScaleZProperty());
+            *value = detach_abi(this->shim().ScaleZProperty());
             return S_OK;
         }
         catch (...)
@@ -490,12 +490,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_TranslateXProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_TranslateXProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TranslateXProperty());
+            *value = detach_abi(this->shim().TranslateXProperty());
             return S_OK;
         }
         catch (...)
@@ -505,12 +505,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_TranslateYProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_TranslateYProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TranslateYProperty());
+            *value = detach_abi(this->shim().TranslateYProperty());
             return S_OK;
         }
         catch (...)
@@ -520,12 +520,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatic
         }
     }
 
-    HRESULT __stdcall get_TranslateZProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_TranslateZProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TranslateZProperty());
+            *value = detach_abi(this->shim().TranslateZProperty());
             return S_OK;
         }
         catch (...)
@@ -543,12 +543,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelper> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : produce_base<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>
 {
-    HRESULT __stdcall get_Identity(abi_arg_out<Windows::UI::Xaml::Media::Media3D::Matrix3D> value) noexcept override
+    HRESULT __stdcall get_Identity(impl::abi_arg_out<Windows::UI::Xaml::Media::Media3D::Matrix3D> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Identity());
+            *value = detach_abi(this->shim().Identity());
             return S_OK;
         }
         catch (...)
@@ -557,12 +557,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
         }
     }
 
-    HRESULT __stdcall abi_Multiply(abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> matrix1, abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> matrix2, abi_arg_out<Windows::UI::Xaml::Media::Media3D::Matrix3D> returnValue) noexcept override
+    HRESULT __stdcall abi_Multiply(impl::abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> matrix1, impl::abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> matrix2, impl::abi_arg_out<Windows::UI::Xaml::Media::Media3D::Matrix3D> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().Multiply(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&matrix1), *reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&matrix2)));
+            *returnValue = detach_abi(this->shim().Multiply(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&matrix1), *reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&matrix2)));
             return S_OK;
         }
         catch (...)
@@ -571,12 +571,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
         }
     }
 
-    HRESULT __stdcall abi_FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44, abi_arg_out<Windows::UI::Xaml::Media::Media3D::Matrix3D> returnValue) noexcept override
+    HRESULT __stdcall abi_FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44, impl::abi_arg_out<Windows::UI::Xaml::Media::Media3D::Matrix3D> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44));
+            *returnValue = detach_abi(this->shim().FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44));
             return S_OK;
         }
         catch (...)
@@ -585,12 +585,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
         }
     }
 
-    HRESULT __stdcall abi_GetHasInverse(abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> target, bool * value) noexcept override
+    HRESULT __stdcall abi_GetHasInverse(impl::abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> target, bool * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetHasInverse(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
+            *value = detach_abi(this->shim().GetHasInverse(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -599,12 +599,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
         }
     }
 
-    HRESULT __stdcall abi_GetIsIdentity(abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> target, bool * value) noexcept override
+    HRESULT __stdcall abi_GetIsIdentity(impl::abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> target, bool * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetIsIdentity(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
+            *value = detach_abi(this->shim().GetIsIdentity(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -613,12 +613,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : p
         }
     }
 
-    HRESULT __stdcall abi_Invert(abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> target, abi_arg_out<Windows::UI::Xaml::Media::Media3D::Matrix3D> returnValue) noexcept override
+    HRESULT __stdcall abi_Invert(impl::abi_arg_in<Windows::UI::Xaml::Media::Media3D::Matrix3D> target, impl::abi_arg_out<Windows::UI::Xaml::Media::Media3D::Matrix3D> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().Invert(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
+            *returnValue = detach_abi(this->shim().Invert(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Matrix3D *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -636,7 +636,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Depth());
+            *value = detach_abi(this->shim().Depth());
             return S_OK;
         }
         catch (...)
@@ -664,7 +664,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OffsetX());
+            *value = detach_abi(this->shim().OffsetX());
             return S_OK;
         }
         catch (...)
@@ -692,7 +692,7 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OffsetY());
+            *value = detach_abi(this->shim().OffsetY());
             return S_OK;
         }
         catch (...)
@@ -719,12 +719,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics> : produce_base<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics>
 {
-    HRESULT __stdcall get_DepthProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_DepthProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DepthProperty());
+            *value = detach_abi(this->shim().DepthProperty());
             return S_OK;
         }
         catch (...)
@@ -734,12 +734,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStat
         }
     }
 
-    HRESULT __stdcall get_OffsetXProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_OffsetXProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OffsetXProperty());
+            *value = detach_abi(this->shim().OffsetXProperty());
             return S_OK;
         }
         catch (...)
@@ -749,12 +749,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStat
         }
     }
 
-    HRESULT __stdcall get_OffsetYProperty(abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    HRESULT __stdcall get_OffsetYProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().OffsetYProperty());
+            *value = detach_abi(this->shim().OffsetYProperty());
             return S_OK;
         }
         catch (...)
@@ -772,12 +772,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ITransform3D> : produce_bas
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory> : produce_base<D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(abi_arg_in<Windows::IInspectable> outer, abi_arg_out<Windows::IInspectable> inner, abi_arg_out<Windows::UI::Xaml::Media::Media3D::ITransform3D> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Media3D::ITransform3D> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -796,49 +796,49 @@ namespace Windows::UI::Xaml::Media::Media3D {
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DHelperStatics<D>::Identity() const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D value {};
-    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->get_Identity(put(value)));
+    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->get_Identity(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DHelperStatics<D>::Multiply(const Windows::UI::Xaml::Media::Media3D::Matrix3D & matrix1, const Windows::UI::Xaml::Media::Media3D::Matrix3D & matrix2) const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D returnValue {};
-    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_Multiply(get(matrix1), get(matrix2), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_Multiply(get_abi(matrix1), get_abi(matrix2), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DHelperStatics<D>::FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44) const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D returnValue {};
-    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44, put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IMatrix3DHelperStatics<D>::GetHasInverse(const Windows::UI::Xaml::Media::Media3D::Matrix3D & target) const
 {
     bool value {};
-    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_GetHasInverse(get(target), &value));
+    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_GetHasInverse(get_abi(target), &value));
     return value;
 }
 
 template <typename D> bool impl_IMatrix3DHelperStatics<D>::GetIsIdentity(const Windows::UI::Xaml::Media::Media3D::Matrix3D & target) const
 {
     bool value {};
-    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_GetIsIdentity(get(target), &value));
+    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_GetIsIdentity(get_abi(target), &value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DHelperStatics<D>::Invert(const Windows::UI::Xaml::Media::Media3D::Matrix3D & target) const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D returnValue {};
-    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_Invert(get(target), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMatrix3DHelperStatics)->abi_Invert(get_abi(target), put_abi(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Transform3D impl_ITransform3DFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Media3D::Transform3D instance { nullptr };
-    check_hresult(WINRT_SHIM(ITransform3DFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(ITransform3DFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
 }
 
@@ -989,84 +989,84 @@ template <typename D> void impl_ICompositeTransform3D<D>::TranslateZ(double valu
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::CenterXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_CenterXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_CenterXProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::CenterYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_CenterYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_CenterYProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::CenterZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_CenterZProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_CenterZProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::RotationXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_RotationXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_RotationXProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::RotationYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_RotationYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_RotationYProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::RotationZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_RotationZProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_RotationZProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::ScaleXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_ScaleXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_ScaleXProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::ScaleYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_ScaleYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_ScaleYProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::ScaleZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_ScaleZProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_ScaleZProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::TranslateXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_TranslateXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_TranslateXProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::TranslateYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_TranslateYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_TranslateYProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::TranslateZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_TranslateZProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransform3DStatics)->get_TranslateZProperty(put_abi(value)));
     return value;
 }
 
@@ -1109,21 +1109,21 @@ template <typename D> void impl_IPerspectiveTransform3D<D>::OffsetY(double value
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPerspectiveTransform3DStatics<D>::DepthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPerspectiveTransform3DStatics)->get_DepthProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPerspectiveTransform3DStatics)->get_DepthProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPerspectiveTransform3DStatics<D>::OffsetXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPerspectiveTransform3DStatics)->get_OffsetXProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPerspectiveTransform3DStatics)->get_OffsetXProperty(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPerspectiveTransform3DStatics<D>::OffsetYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPerspectiveTransform3DStatics)->get_OffsetYProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPerspectiveTransform3DStatics)->get_OffsetYProperty(put_abi(value)));
     return value;
 }
 

@@ -13,11 +13,11 @@ template <typename H> struct impl_PerceptionStartFaceAuthenticationHandler : imp
 {
     impl_PerceptionStartFaceAuthenticationHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup> sender, bool * result) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup> sender, bool * result) noexcept override
     {
         try
         {
-            *result = detach((*this)(*reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup *>(&sender)));
+            *result = detach_abi((*this)(*reinterpret_cast<const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup *>(&sender)));
             return S_OK;
         }
         catch (...)
@@ -31,7 +31,7 @@ template <typename H> struct impl_PerceptionStopFaceAuthenticationHandler : impl
 {
     impl_PerceptionStopFaceAuthenticationHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup> sender) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup> sender) noexcept override
     {
         try
         {

@@ -111,7 +111,7 @@ static void WriteProducerForwardArgument(Output & out, Parameter const & param)
             param.IsReferenceOrReturn())
         {
             Write(out,
-                  "detach<%>(__%Size, %)",
+                  "detach_abi<%>(__%Size, %)",
                   param.ModernType(),
                   param.Name,
                   param.Name);
@@ -150,11 +150,11 @@ static void WriteAbiArgument(Output & out, Parameter const & param)
     {
         if (param.IsIn() || !param.IsReferenceOrReturn())
         {
-            Write(out, "%.size(), get(%)", param.Name, param.Name);
+            Write(out, "%.size(), get_abi(%)", param.Name, param.Name);
         }
         else
         {
-            Write(out, "put_size(%), put(%)", param.Name, param.Name);
+            Write(out, "impl::put_size_abi(%), put_abi(%)", param.Name, param.Name);
         }
     }
     else
@@ -174,11 +174,11 @@ static void WriteAbiArgument(Output & out, Parameter const & param)
         {
             if (param.IsIn())
             {
-                Write(out, "get(%)", param.Name);
+                Write(out, "get_abi(%)", param.Name);
             }
             else
             {
-                Write(out, "put(%)", param.Name);
+                Write(out, "put_abi(%)", param.Name);
             }
         }
     }
@@ -247,7 +247,7 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
     {
         if (param.IsArray())
         {
-            Write(out, "uint32_t __%Size, abi_arg_in<%> * %", param.Name, param.Type, param.Name);
+            Write(out, "uint32_t __%Size, impl::abi_arg_in<%> * %", param.Name, param.Type, param.Name);
         }
         else if (param.Category == TypeCategory::Value || param.Category == TypeCategory::Enumeration)
         {
@@ -255,7 +255,7 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
         }
         else
         {
-            Write(out, "abi_arg_in<%> %", param.Type, param.Name);
+            Write(out, "impl::abi_arg_in<%> %", param.Type, param.Name);
         }
     }
     else
@@ -264,11 +264,11 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
         {
             if (param.IsReferenceOrReturn())
             {
-                Write(out, "uint32_t * __%Size, abi_arg_out<%> * %", param.Name, param.Type, param.Name);
+                Write(out, "uint32_t * __%Size, impl::abi_arg_out<%> * %", param.Name, param.Type, param.Name);
             }
             else
             {
-                Write(out, "uint32_t __%Size, abi_arg_out<%> %", param.Name, param.Type, param.Name);
+                Write(out, "uint32_t __%Size, impl::abi_arg_out<%> %", param.Name, param.Type, param.Name);
             }
         }
         else if (param.Category == TypeCategory::Value || param.Category == TypeCategory::Enumeration)
@@ -277,7 +277,7 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
         }
         else
         {
-            Write(out, "abi_arg_out<%> %", param.Type, param.Name);
+            Write(out, "impl::abi_arg_out<%> %", param.Type, param.Name);
         }
     }
 }
@@ -839,7 +839,7 @@ static void WriteDelegateOverrideVirtualInternalCall(Output & out)
         }
 
         Write(out,
-              " = detach((*this)(%))",
+              " = detach_abi((*this)(%))",
               Bind(WriteProducerForwardArguments));
     }
     else
@@ -866,7 +866,7 @@ static void WriteOverrideVirtualInternalCall(Output & out)
         }
 
         Write(out,
-              " = detach(this->shim().%(%))",
+              " = detach_abi(this->shim().%(%))",
               Settings::MethodName,
               Bind(WriteProducerForwardArguments));
     }

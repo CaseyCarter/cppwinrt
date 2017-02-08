@@ -18,7 +18,7 @@ struct produce<D, Windows::System::RemoteDesktop::IInteractiveSessionStatics> : 
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsRemote());
+            *value = detach_abi(this->shim().IsRemote());
             return S_OK;
         }
         catch (...)

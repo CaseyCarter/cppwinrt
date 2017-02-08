@@ -9,7 +9,7 @@ using namespace Windows::Foundation;
 
 int main()
 {
-    initialize();
+    init_apartment();
 
     Uri uri(L"http://host/path");
 

@@ -22,12 +22,12 @@ public:
         return shim().as<IFlyoutBaseOverrides>().CreatePresenter();
     }
 
-    HRESULT __stdcall abi_CreatePresenter(abi_arg_out<Windows::UI::Xaml::Controls::IControl> returnValue) noexcept override
+    HRESULT __stdcall abi_CreatePresenter(impl::abi_arg_out<Windows::UI::Xaml::Controls::IControl> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().CreatePresenter());
+            *returnValue = detach_abi(this->shim().CreatePresenter());
             return S_OK;
         }
         catch (...)
@@ -76,7 +76,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().ShouldShowConfirmationButtons());
+            *returnValue = detach_abi(this->shim().ShouldShowConfirmationButtons());
             return S_OK;
         }
         catch (...)

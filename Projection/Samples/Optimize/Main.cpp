@@ -147,14 +147,14 @@ struct Sample : winrt::implements<Sample, winrt::IChatQueryOptions>
 uint64_t fast_strings_cx()
 {
     winrt::IChatQueryOptions winrt_sample = winrt::make<Sample>();
-    cx::IChatQueryOptions ^ sample = reinterpret_cast<cx::IChatQueryOptions ^>(winrt::get(winrt_sample));
+    cx::IChatQueryOptions ^ sample = reinterpret_cast<cx::IChatQueryOptions ^>(winrt::get_abi(winrt_sample));
 
     for (unsigned i = 0; i != 10 * TestPasses; ++i)
     {
         sample->SearchString = L"value";
     }
 
-    Sample * s = winrt::to_impl<Sample>(winrt_sample);
+    Sample * s = winrt::from_abi<Sample>(winrt_sample);
     return s->m_check;
 }
 
@@ -167,7 +167,7 @@ uint64_t fast_strings()
         sample.SearchString(L"value");
     }
 
-    Sample * s = winrt::to_impl<Sample>(sample);
+    Sample * s = winrt::from_abi<Sample>(sample);
     return s->m_check;
 }
 
@@ -321,7 +321,7 @@ void measure(char const * name, F function)
 
 int main()
 {
-    winrt::initialize();
+    winrt::init_apartment();
 
     printf("\nCalling factory and static methods via RoGetActivationFactory\n");
     measure("C++/CX", factory_sample_cx);

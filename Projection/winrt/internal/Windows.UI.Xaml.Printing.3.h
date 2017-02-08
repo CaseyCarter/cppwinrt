@@ -13,7 +13,7 @@ template <typename H> struct impl_AddPagesEventHandler : implements<impl_AddPage
 {
     impl_AddPagesEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Printing::IAddPagesEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Printing::IAddPagesEventArgs> e) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_GetPreviewPageEventHandler : implements<impl_G
 {
     impl_GetPreviewPageEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs> e) noexcept override
     {
         try
         {
@@ -49,7 +49,7 @@ template <typename H> struct impl_PaginateEventHandler : implements<impl_Paginat
 {
     impl_PaginateEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::Printing::IPaginateEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::Printing::IPaginateEventArgs> e) noexcept override
     {
         try
         {

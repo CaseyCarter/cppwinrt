@@ -17,12 +17,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Media::Ocr::IOcrEngine> : produce_base<D, Windows::Media::Ocr::IOcrEngine>
 {
-    HRESULT __stdcall abi_RecognizeAsync(abi_arg_in<Windows::Graphics::Imaging::ISoftwareBitmap> bitmap, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Ocr::OcrResult>> result) noexcept override
+    HRESULT __stdcall abi_RecognizeAsync(impl::abi_arg_in<Windows::Graphics::Imaging::ISoftwareBitmap> bitmap, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Ocr::OcrResult>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().RecognizeAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap)));
+            *result = detach_abi(this->shim().RecognizeAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap)));
             return S_OK;
         }
         catch (...)
@@ -32,12 +32,12 @@ struct produce<D, Windows::Media::Ocr::IOcrEngine> : produce_base<D, Windows::Me
         }
     }
 
-    HRESULT __stdcall get_RecognizerLanguage(abi_arg_out<Windows::Globalization::ILanguage> value) noexcept override
+    HRESULT __stdcall get_RecognizerLanguage(impl::abi_arg_out<Windows::Globalization::ILanguage> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RecognizerLanguage());
+            *value = detach_abi(this->shim().RecognizerLanguage());
             return S_OK;
         }
         catch (...)
@@ -56,7 +56,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxImageDimension());
+            *value = detach_abi(this->shim().MaxImageDimension());
             return S_OK;
         }
         catch (...)
@@ -65,12 +65,12 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall get_AvailableRecognizerLanguages(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language>> value) noexcept override
+    HRESULT __stdcall get_AvailableRecognizerLanguages(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().AvailableRecognizerLanguages());
+            *value = detach_abi(this->shim().AvailableRecognizerLanguages());
             return S_OK;
         }
         catch (...)
@@ -80,12 +80,12 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_IsLanguageSupported(abi_arg_in<Windows::Globalization::ILanguage> language, bool * result) noexcept override
+    HRESULT __stdcall abi_IsLanguageSupported(impl::abi_arg_in<Windows::Globalization::ILanguage> language, bool * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().IsLanguageSupported(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
+            *result = detach_abi(this->shim().IsLanguageSupported(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
         catch (...)
@@ -94,12 +94,12 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_TryCreateFromLanguage(abi_arg_in<Windows::Globalization::ILanguage> language, abi_arg_out<Windows::Media::Ocr::IOcrEngine> result) noexcept override
+    HRESULT __stdcall abi_TryCreateFromLanguage(impl::abi_arg_in<Windows::Globalization::ILanguage> language, impl::abi_arg_out<Windows::Media::Ocr::IOcrEngine> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryCreateFromLanguage(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
+            *result = detach_abi(this->shim().TryCreateFromLanguage(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
         catch (...)
@@ -109,12 +109,12 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_TryCreateFromUserProfileLanguages(abi_arg_out<Windows::Media::Ocr::IOcrEngine> result) noexcept override
+    HRESULT __stdcall abi_TryCreateFromUserProfileLanguages(impl::abi_arg_out<Windows::Media::Ocr::IOcrEngine> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().TryCreateFromUserProfileLanguages());
+            *result = detach_abi(this->shim().TryCreateFromUserProfileLanguages());
             return S_OK;
         }
         catch (...)
@@ -128,12 +128,12 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
 template <typename D>
 struct produce<D, Windows::Media::Ocr::IOcrLine> : produce_base<D, Windows::Media::Ocr::IOcrLine>
 {
-    HRESULT __stdcall get_Words(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrWord>> value) noexcept override
+    HRESULT __stdcall get_Words(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrWord>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Words());
+            *value = detach_abi(this->shim().Words());
             return S_OK;
         }
         catch (...)
@@ -143,12 +143,12 @@ struct produce<D, Windows::Media::Ocr::IOcrLine> : produce_base<D, Windows::Medi
         }
     }
 
-    HRESULT __stdcall get_Text(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Text());
+            *value = detach_abi(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -162,12 +162,12 @@ struct produce<D, Windows::Media::Ocr::IOcrLine> : produce_base<D, Windows::Medi
 template <typename D>
 struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Media::Ocr::IOcrResult>
 {
-    HRESULT __stdcall get_Lines(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrLine>> value) noexcept override
+    HRESULT __stdcall get_Lines(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrLine>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Lines());
+            *value = detach_abi(this->shim().Lines());
             return S_OK;
         }
         catch (...)
@@ -177,12 +177,12 @@ struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Me
         }
     }
 
-    HRESULT __stdcall get_TextAngle(abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
+    HRESULT __stdcall get_TextAngle(impl::abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().TextAngle());
+            *value = detach_abi(this->shim().TextAngle());
             return S_OK;
         }
         catch (...)
@@ -192,12 +192,12 @@ struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Me
         }
     }
 
-    HRESULT __stdcall get_Text(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Text());
+            *value = detach_abi(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -211,12 +211,12 @@ struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Me
 template <typename D>
 struct produce<D, Windows::Media::Ocr::IOcrWord> : produce_base<D, Windows::Media::Ocr::IOcrWord>
 {
-    HRESULT __stdcall get_BoundingRect(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall get_BoundingRect(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().BoundingRect());
+            *value = detach_abi(this->shim().BoundingRect());
             return S_OK;
         }
         catch (...)
@@ -225,12 +225,12 @@ struct produce<D, Windows::Media::Ocr::IOcrWord> : produce_base<D, Windows::Medi
         }
     }
 
-    HRESULT __stdcall get_Text(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Text());
+            *value = detach_abi(this->shim().Text());
             return S_OK;
         }
         catch (...)
@@ -248,63 +248,63 @@ namespace Windows::Media::Ocr {
 template <typename D> Windows::Foundation::Rect impl_IOcrWord<D>::BoundingRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(IOcrWord)->get_BoundingRect(put(value)));
+    check_hresult(WINRT_SHIM(IOcrWord)->get_BoundingRect(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IOcrWord<D>::Text() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IOcrWord)->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IOcrWord)->get_Text(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrWord> impl_IOcrLine<D>::Words() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrWord> value;
-    check_hresult(WINRT_SHIM(IOcrLine)->get_Words(put(value)));
+    check_hresult(WINRT_SHIM(IOcrLine)->get_Words(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IOcrLine<D>::Text() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IOcrLine)->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IOcrLine)->get_Text(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrLine> impl_IOcrResult<D>::Lines() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrLine> value;
-    check_hresult(WINRT_SHIM(IOcrResult)->get_Lines(put(value)));
+    check_hresult(WINRT_SHIM(IOcrResult)->get_Lines(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IOcrResult<D>::TextAngle() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(WINRT_SHIM(IOcrResult)->get_TextAngle(put(value)));
+    check_hresult(WINRT_SHIM(IOcrResult)->get_TextAngle(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IOcrResult<D>::Text() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IOcrResult)->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IOcrResult)->get_Text(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Ocr::OcrResult> impl_IOcrEngine<D>::RecognizeAsync(const Windows::Graphics::Imaging::SoftwareBitmap & bitmap) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Ocr::OcrResult> result;
-    check_hresult(WINRT_SHIM(IOcrEngine)->abi_RecognizeAsync(get(bitmap), put(result)));
+    check_hresult(WINRT_SHIM(IOcrEngine)->abi_RecognizeAsync(get_abi(bitmap), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::Language impl_IOcrEngine<D>::RecognizerLanguage() const
 {
     Windows::Globalization::Language value { nullptr };
-    check_hresult(WINRT_SHIM(IOcrEngine)->get_RecognizerLanguage(put(value)));
+    check_hresult(WINRT_SHIM(IOcrEngine)->get_RecognizerLanguage(put_abi(value)));
     return value;
 }
 
@@ -318,28 +318,28 @@ template <typename D> uint32_t impl_IOcrEngineStatics<D>::MaxImageDimension() co
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> impl_IOcrEngineStatics<D>::AvailableRecognizerLanguages() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> value;
-    check_hresult(WINRT_SHIM(IOcrEngineStatics)->get_AvailableRecognizerLanguages(put(value)));
+    check_hresult(WINRT_SHIM(IOcrEngineStatics)->get_AvailableRecognizerLanguages(put_abi(value)));
     return value;
 }
 
 template <typename D> bool impl_IOcrEngineStatics<D>::IsLanguageSupported(const Windows::Globalization::Language & language) const
 {
     bool result {};
-    check_hresult(WINRT_SHIM(IOcrEngineStatics)->abi_IsLanguageSupported(get(language), &result));
+    check_hresult(WINRT_SHIM(IOcrEngineStatics)->abi_IsLanguageSupported(get_abi(language), &result));
     return result;
 }
 
 template <typename D> Windows::Media::Ocr::OcrEngine impl_IOcrEngineStatics<D>::TryCreateFromLanguage(const Windows::Globalization::Language & language) const
 {
     Windows::Media::Ocr::OcrEngine result { nullptr };
-    check_hresult(WINRT_SHIM(IOcrEngineStatics)->abi_TryCreateFromLanguage(get(language), put(result)));
+    check_hresult(WINRT_SHIM(IOcrEngineStatics)->abi_TryCreateFromLanguage(get_abi(language), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Ocr::OcrEngine impl_IOcrEngineStatics<D>::TryCreateFromUserProfileLanguages() const
 {
     Windows::Media::Ocr::OcrEngine result { nullptr };
-    check_hresult(WINRT_SHIM(IOcrEngineStatics)->abi_TryCreateFromUserProfileLanguages(put(result)));
+    check_hresult(WINRT_SHIM(IOcrEngineStatics)->abi_TryCreateFromUserProfileLanguages(put_abi(result)));
     return result;
 }
 

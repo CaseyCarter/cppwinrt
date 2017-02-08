@@ -9,19 +9,19 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<
 
         void Progress(const ProgressHandler & handler)
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
             m_progress = handler;
         }
 
         ProgressHandler Progress()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
             return m_progress;
         }
 
         TResult GetResults()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
 
             if (this->m_status == AsyncStatus::Completed)
             {
@@ -43,7 +43,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<
             winrt::Windows::Foundation::AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(this->m_lock);
+                const winrt::impl::lock_guard guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Started)
                 {

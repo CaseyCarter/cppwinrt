@@ -1,4 +1,6 @@
 
+namespace impl {
+
 struct lock
 {
     lock(const lock &) = delete;
@@ -77,3 +79,5 @@ private:
 
     CONDITION_VARIABLE m_cv{};
 };
+
+}

@@ -82,7 +82,7 @@ struct IUnknown
     auto as() const
     {
         std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        check_hresult(m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp))));
         return temp;
     }
 
@@ -90,7 +90,7 @@ struct IUnknown
     auto try_as() const
     {
         std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
+        m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
         return temp;
     }
 
@@ -238,7 +238,7 @@ namespace Windows {
 
 inline bool operator==(const IUnknown & left, const IUnknown & right) noexcept
 {
-    return get(left) == get(right);
+    return get_abi(left) == get_abi(right);
 }
 
 inline bool operator!=(const IUnknown & left, const IUnknown & right) noexcept
@@ -248,7 +248,7 @@ inline bool operator!=(const IUnknown & left, const IUnknown & right) noexcept
 
 inline bool operator<(const IUnknown & left, const IUnknown & right) noexcept
 {
-    return get(left) < get(right);
+    return get_abi(left) < get_abi(right);
 }
 
 inline bool operator>(const IUnknown & left, const IUnknown & right) noexcept
@@ -293,14 +293,14 @@ struct IInspectable : IUnknown
 inline com_array<GUID> GetIids(const IInspectable & object)
 {
     com_array<GUID> value;
-    check_hresult((*(abi<IInspectable> **)&object)->abi_GetIids(put_size(value), put(value)));
+    check_hresult((*(abi<IInspectable> **)&object)->abi_GetIids(impl::put_size_abi(value), put_abi(value)));
     return value;
 }
 
 inline hstring GetRuntimeClassName(const IInspectable & object)
 {
     hstring value;
-    check_hresult((*(abi<IInspectable> **)&object)->abi_GetRuntimeClassName(put(value)));
+    check_hresult((*(abi<IInspectable> **)&object)->abi_GetRuntimeClassName(put_abi(value)));
     return value;
 }
 

@@ -15,12 +15,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::Devices::Power::IBattery>
 {
-    HRESULT __stdcall get_DeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DeviceId());
+            *value = detach_abi(this->shim().DeviceId());
             return S_OK;
         }
         catch (...)
@@ -30,12 +30,12 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall abi_GetReport(abi_arg_out<Windows::Devices::Power::IBatteryReport> result) noexcept override
+    HRESULT __stdcall abi_GetReport(impl::abi_arg_out<Windows::Devices::Power::IBatteryReport> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetReport());
+            *result = detach_abi(this->shim().GetReport());
             return S_OK;
         }
         catch (...)
@@ -45,12 +45,12 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall add_ReportUpdated(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ReportUpdated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ReportUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ReportUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -77,12 +77,12 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
 template <typename D>
 struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Windows::Devices::Power::IBatteryReport>
 {
-    HRESULT __stdcall get_ChargeRateInMilliwatts(abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    HRESULT __stdcall get_ChargeRateInMilliwatts(impl::abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ChargeRateInMilliwatts());
+            *value = detach_abi(this->shim().ChargeRateInMilliwatts());
             return S_OK;
         }
         catch (...)
@@ -92,12 +92,12 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_DesignCapacityInMilliwattHours(abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    HRESULT __stdcall get_DesignCapacityInMilliwattHours(impl::abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().DesignCapacityInMilliwattHours());
+            *value = detach_abi(this->shim().DesignCapacityInMilliwattHours());
             return S_OK;
         }
         catch (...)
@@ -107,12 +107,12 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_FullChargeCapacityInMilliwattHours(abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    HRESULT __stdcall get_FullChargeCapacityInMilliwattHours(impl::abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().FullChargeCapacityInMilliwattHours());
+            *value = detach_abi(this->shim().FullChargeCapacityInMilliwattHours());
             return S_OK;
         }
         catch (...)
@@ -122,12 +122,12 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_RemainingCapacityInMilliwattHours(abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    HRESULT __stdcall get_RemainingCapacityInMilliwattHours(impl::abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RemainingCapacityInMilliwattHours());
+            *value = detach_abi(this->shim().RemainingCapacityInMilliwattHours());
             return S_OK;
         }
         catch (...)
@@ -142,7 +142,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Status());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -155,12 +155,12 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Devices::Power::IBatteryStatics> : produce_base<D, Windows::Devices::Power::IBatteryStatics>
 {
-    HRESULT __stdcall get_AggregateBattery(abi_arg_out<Windows::Devices::Power::IBattery> result) noexcept override
+    HRESULT __stdcall get_AggregateBattery(impl::abi_arg_out<Windows::Devices::Power::IBattery> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().AggregateBattery());
+            *result = detach_abi(this->shim().AggregateBattery());
             return S_OK;
         }
         catch (...)
@@ -170,12 +170,12 @@ struct produce<D, Windows::Devices::Power::IBatteryStatics> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall abi_FromIdAsync(abi_arg_in<hstring> deviceId, abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery>> result) noexcept override
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery>> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            *result = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -185,12 +185,12 @@ struct produce<D, Windows::Devices::Power::IBatteryStatics> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceSelector(abi_arg_out<hstring> result) noexcept override
+    HRESULT __stdcall abi_GetDeviceSelector(impl::abi_arg_out<hstring> result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach(this->shim().GetDeviceSelector());
+            *result = detach_abi(this->shim().GetDeviceSelector());
             return S_OK;
         }
         catch (...)
@@ -208,21 +208,21 @@ namespace Windows::Devices::Power {
 template <typename D> hstring impl_IBattery<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IBattery)->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IBattery)->get_DeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Power::BatteryReport impl_IBattery<D>::GetReport() const
 {
     Windows::Devices::Power::BatteryReport result { nullptr };
-    check_hresult(WINRT_SHIM(IBattery)->abi_GetReport(put(result)));
+    check_hresult(WINRT_SHIM(IBattery)->abi_GetReport(put_abi(result)));
     return result;
 }
 
 template <typename D> event_token impl_IBattery<D>::ReportUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IBattery)->add_ReportUpdated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBattery)->add_ReportUpdated(get_abi(handler), &token));
     return token;
 }
 
@@ -239,28 +239,28 @@ template <typename D> void impl_IBattery<D>::ReportUpdated(event_token token) co
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IBatteryReport<D>::ChargeRateInMilliwatts() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(WINRT_SHIM(IBatteryReport)->get_ChargeRateInMilliwatts(put(value)));
+    check_hresult(WINRT_SHIM(IBatteryReport)->get_ChargeRateInMilliwatts(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IBatteryReport<D>::DesignCapacityInMilliwattHours() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(WINRT_SHIM(IBatteryReport)->get_DesignCapacityInMilliwattHours(put(value)));
+    check_hresult(WINRT_SHIM(IBatteryReport)->get_DesignCapacityInMilliwattHours(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IBatteryReport<D>::FullChargeCapacityInMilliwattHours() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(WINRT_SHIM(IBatteryReport)->get_FullChargeCapacityInMilliwattHours(put(value)));
+    check_hresult(WINRT_SHIM(IBatteryReport)->get_FullChargeCapacityInMilliwattHours(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IBatteryReport<D>::RemainingCapacityInMilliwattHours() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(WINRT_SHIM(IBatteryReport)->get_RemainingCapacityInMilliwattHours(put(value)));
+    check_hresult(WINRT_SHIM(IBatteryReport)->get_RemainingCapacityInMilliwattHours(put_abi(value)));
     return value;
 }
 
@@ -274,21 +274,21 @@ template <typename D> Windows::System::Power::BatteryStatus impl_IBatteryReport<
 template <typename D> Windows::Devices::Power::Battery impl_IBatteryStatics<D>::AggregateBattery() const
 {
     Windows::Devices::Power::Battery result { nullptr };
-    check_hresult(WINRT_SHIM(IBatteryStatics)->get_AggregateBattery(put(result)));
+    check_hresult(WINRT_SHIM(IBatteryStatics)->get_AggregateBattery(put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> impl_IBatteryStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> result;
-    check_hresult(WINRT_SHIM(IBatteryStatics)->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(IBatteryStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(result)));
     return result;
 }
 
 template <typename D> hstring impl_IBatteryStatics<D>::GetDeviceSelector() const
 {
     hstring result;
-    check_hresult(WINRT_SHIM(IBatteryStatics)->abi_GetDeviceSelector(put(result)));
+    check_hresult(WINRT_SHIM(IBatteryStatics)->abi_GetDeviceSelector(put_abi(result)));
     return result;
 }
 

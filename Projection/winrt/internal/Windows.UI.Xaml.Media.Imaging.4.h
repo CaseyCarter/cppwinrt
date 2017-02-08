@@ -22,7 +22,7 @@ public:
         shim().as<IXamlRenderingBackgroundTaskOverrides>().OnRun(taskInstance);
     }
 
-    HRESULT __stdcall abi_OnRun(abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskInstance> taskInstance) noexcept override
+    HRESULT __stdcall abi_OnRun(impl::abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskInstance> taskInstance) noexcept override
     {
         try
         {

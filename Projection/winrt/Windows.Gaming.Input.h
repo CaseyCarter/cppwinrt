@@ -21,7 +21,7 @@ struct produce<D, Windows::Gaming::Input::IArcadeStick> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetButtonLabel(button));
+            *value = detach_abi(this->shim().GetButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -30,12 +30,12 @@ struct produce<D, Windows::Gaming::Input::IArcadeStick> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_GetCurrentReading(abi_arg_out<Windows::Gaming::Input::ArcadeStickReading> value) noexcept override
+    HRESULT __stdcall abi_GetCurrentReading(impl::abi_arg_out<Windows::Gaming::Input::ArcadeStickReading> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetCurrentReading());
+            *value = detach_abi(this->shim().GetCurrentReading());
             return S_OK;
         }
         catch (...)
@@ -48,12 +48,12 @@ struct produce<D, Windows::Gaming::Input::IArcadeStick> : produce_base<D, Window
 template <typename D>
 struct produce<D, Windows::Gaming::Input::IArcadeStickStatics> : produce_base<D, Windows::Gaming::Input::IArcadeStickStatics>
 {
-    HRESULT __stdcall add_ArcadeStickAdded(abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_ArcadeStickAdded(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ArcadeStickAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> *>(&value)));
+            *token = detach_abi(this->shim().ArcadeStickAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -76,12 +76,12 @@ struct produce<D, Windows::Gaming::Input::IArcadeStickStatics> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_ArcadeStickRemoved(abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_ArcadeStickRemoved(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().ArcadeStickRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> *>(&value)));
+            *token = detach_abi(this->shim().ArcadeStickRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -104,12 +104,12 @@ struct produce<D, Windows::Gaming::Input::IArcadeStickStatics> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_ArcadeSticks(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::ArcadeStick>> value) noexcept override
+    HRESULT __stdcall get_ArcadeSticks(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::ArcadeStick>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().ArcadeSticks());
+            *value = detach_abi(this->shim().ArcadeSticks());
             return S_OK;
         }
         catch (...)
@@ -123,12 +123,12 @@ struct produce<D, Windows::Gaming::Input::IArcadeStickStatics> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Windows::Gaming::Input::IGameController>
 {
-    HRESULT __stdcall add_HeadsetConnected(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_HeadsetConnected(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().HeadsetConnected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> *>(&value)));
+            *token = detach_abi(this->shim().HeadsetConnected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -151,12 +151,12 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_HeadsetDisconnected(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_HeadsetDisconnected(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().HeadsetDisconnected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> *>(&value)));
+            *token = detach_abi(this->shim().HeadsetDisconnected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -179,12 +179,12 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_UserChanged(abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::System::UserChangedEventArgs>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_UserChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::System::UserChangedEventArgs>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().UserChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::System::UserChangedEventArgs> *>(&value)));
+            *token = detach_abi(this->shim().UserChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::System::UserChangedEventArgs> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -207,12 +207,12 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_Headset(abi_arg_out<Windows::Gaming::Input::IHeadset> value) noexcept override
+    HRESULT __stdcall get_Headset(impl::abi_arg_out<Windows::Gaming::Input::IHeadset> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Headset());
+            *value = detach_abi(this->shim().Headset());
             return S_OK;
         }
         catch (...)
@@ -227,7 +227,7 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().IsWireless());
+            *value = detach_abi(this->shim().IsWireless());
             return S_OK;
         }
         catch (...)
@@ -236,12 +236,12 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_User(abi_arg_out<Windows::System::IUser> value) noexcept override
+    HRESULT __stdcall get_User(impl::abi_arg_out<Windows::System::IUser> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().User());
+            *value = detach_abi(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -255,12 +255,12 @@ struct produce<D, Windows::Gaming::Input::IGameController> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Gaming::Input::IGamepad> : produce_base<D, Windows::Gaming::Input::IGamepad>
 {
-    HRESULT __stdcall get_Vibration(abi_arg_out<Windows::Gaming::Input::GamepadVibration> value) noexcept override
+    HRESULT __stdcall get_Vibration(impl::abi_arg_out<Windows::Gaming::Input::GamepadVibration> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Vibration());
+            *value = detach_abi(this->shim().Vibration());
             return S_OK;
         }
         catch (...)
@@ -269,7 +269,7 @@ struct produce<D, Windows::Gaming::Input::IGamepad> : produce_base<D, Windows::G
         }
     }
 
-    HRESULT __stdcall put_Vibration(abi_arg_in<Windows::Gaming::Input::GamepadVibration> value) noexcept override
+    HRESULT __stdcall put_Vibration(impl::abi_arg_in<Windows::Gaming::Input::GamepadVibration> value) noexcept override
     {
         try
         {
@@ -283,12 +283,12 @@ struct produce<D, Windows::Gaming::Input::IGamepad> : produce_base<D, Windows::G
         }
     }
 
-    HRESULT __stdcall abi_GetCurrentReading(abi_arg_out<Windows::Gaming::Input::GamepadReading> value) noexcept override
+    HRESULT __stdcall abi_GetCurrentReading(impl::abi_arg_out<Windows::Gaming::Input::GamepadReading> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetCurrentReading());
+            *value = detach_abi(this->shim().GetCurrentReading());
             return S_OK;
         }
         catch (...)
@@ -306,7 +306,7 @@ struct produce<D, Windows::Gaming::Input::IGamepad2> : produce_base<D, Windows::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetButtonLabel(button));
+            *value = detach_abi(this->shim().GetButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -319,12 +319,12 @@ struct produce<D, Windows::Gaming::Input::IGamepad2> : produce_base<D, Windows::
 template <typename D>
 struct produce<D, Windows::Gaming::Input::IGamepadStatics> : produce_base<D, Windows::Gaming::Input::IGamepadStatics>
 {
-    HRESULT __stdcall add_GamepadAdded(abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_GamepadAdded(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().GamepadAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> *>(&value)));
+            *token = detach_abi(this->shim().GamepadAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -347,12 +347,12 @@ struct produce<D, Windows::Gaming::Input::IGamepadStatics> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_GamepadRemoved(abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_GamepadRemoved(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().GamepadRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> *>(&value)));
+            *token = detach_abi(this->shim().GamepadRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -375,12 +375,12 @@ struct produce<D, Windows::Gaming::Input::IGamepadStatics> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_Gamepads(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::Gamepad>> value) noexcept override
+    HRESULT __stdcall get_Gamepads(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::Gamepad>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().Gamepads());
+            *value = detach_abi(this->shim().Gamepads());
             return S_OK;
         }
         catch (...)
@@ -394,12 +394,12 @@ struct produce<D, Windows::Gaming::Input::IGamepadStatics> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Gaming::Input::IHeadset> : produce_base<D, Windows::Gaming::Input::IHeadset>
 {
-    HRESULT __stdcall get_CaptureDeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_CaptureDeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().CaptureDeviceId());
+            *value = detach_abi(this->shim().CaptureDeviceId());
             return S_OK;
         }
         catch (...)
@@ -409,12 +409,12 @@ struct produce<D, Windows::Gaming::Input::IHeadset> : produce_base<D, Windows::G
         }
     }
 
-    HRESULT __stdcall get_RenderDeviceId(abi_arg_out<hstring> value) noexcept override
+    HRESULT __stdcall get_RenderDeviceId(impl::abi_arg_out<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RenderDeviceId());
+            *value = detach_abi(this->shim().RenderDeviceId());
             return S_OK;
         }
         catch (...)
@@ -433,7 +433,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasClutch());
+            *value = detach_abi(this->shim().HasClutch());
             return S_OK;
         }
         catch (...)
@@ -447,7 +447,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasHandbrake());
+            *value = detach_abi(this->shim().HasHandbrake());
             return S_OK;
         }
         catch (...)
@@ -461,7 +461,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().HasPatternShifter());
+            *value = detach_abi(this->shim().HasPatternShifter());
             return S_OK;
         }
         catch (...)
@@ -475,7 +475,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxPatternShifterGear());
+            *value = detach_abi(this->shim().MaxPatternShifterGear());
             return S_OK;
         }
         catch (...)
@@ -489,7 +489,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().MaxWheelAngle());
+            *value = detach_abi(this->shim().MaxWheelAngle());
             return S_OK;
         }
         catch (...)
@@ -498,12 +498,12 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall get_WheelMotor(abi_arg_out<Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> value) noexcept override
+    HRESULT __stdcall get_WheelMotor(impl::abi_arg_out<Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().WheelMotor());
+            *value = detach_abi(this->shim().WheelMotor());
             return S_OK;
         }
         catch (...)
@@ -518,7 +518,7 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetButtonLabel(button));
+            *value = detach_abi(this->shim().GetButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -527,12 +527,12 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_GetCurrentReading(abi_arg_out<Windows::Gaming::Input::RacingWheelReading> value) noexcept override
+    HRESULT __stdcall abi_GetCurrentReading(impl::abi_arg_out<Windows::Gaming::Input::RacingWheelReading> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetCurrentReading());
+            *value = detach_abi(this->shim().GetCurrentReading());
             return S_OK;
         }
         catch (...)
@@ -545,12 +545,12 @@ struct produce<D, Windows::Gaming::Input::IRacingWheel> : produce_base<D, Window
 template <typename D>
 struct produce<D, Windows::Gaming::Input::IRacingWheelStatics> : produce_base<D, Windows::Gaming::Input::IRacingWheelStatics>
 {
-    HRESULT __stdcall add_RacingWheelAdded(abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_RacingWheelAdded(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().RacingWheelAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> *>(&value)));
+            *token = detach_abi(this->shim().RacingWheelAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -573,12 +573,12 @@ struct produce<D, Windows::Gaming::Input::IRacingWheelStatics> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_RacingWheelRemoved(abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_RacingWheelRemoved(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().RacingWheelRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> *>(&value)));
+            *token = detach_abi(this->shim().RacingWheelRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -601,12 +601,12 @@ struct produce<D, Windows::Gaming::Input::IRacingWheelStatics> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall get_RacingWheels(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RacingWheel>> value) noexcept override
+    HRESULT __stdcall get_RacingWheels(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RacingWheel>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().RacingWheels());
+            *value = detach_abi(this->shim().RacingWheels());
             return S_OK;
         }
         catch (...)
@@ -620,12 +620,12 @@ struct produce<D, Windows::Gaming::Input::IRacingWheelStatics> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::Gaming::Input::IUINavigationController> : produce_base<D, Windows::Gaming::Input::IUINavigationController>
 {
-    HRESULT __stdcall abi_GetCurrentReading(abi_arg_out<Windows::Gaming::Input::UINavigationReading> value) noexcept override
+    HRESULT __stdcall abi_GetCurrentReading(impl::abi_arg_out<Windows::Gaming::Input::UINavigationReading> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetCurrentReading());
+            *value = detach_abi(this->shim().GetCurrentReading());
             return S_OK;
         }
         catch (...)
@@ -639,7 +639,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationController> : produce_bas
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetOptionalButtonLabel(button));
+            *value = detach_abi(this->shim().GetOptionalButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -653,7 +653,7 @@ struct produce<D, Windows::Gaming::Input::IUINavigationController> : produce_bas
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().GetRequiredButtonLabel(button));
+            *value = detach_abi(this->shim().GetRequiredButtonLabel(button));
             return S_OK;
         }
         catch (...)
@@ -666,12 +666,12 @@ struct produce<D, Windows::Gaming::Input::IUINavigationController> : produce_bas
 template <typename D>
 struct produce<D, Windows::Gaming::Input::IUINavigationControllerStatics> : produce_base<D, Windows::Gaming::Input::IUINavigationControllerStatics>
 {
-    HRESULT __stdcall add_UINavigationControllerAdded(abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_UINavigationControllerAdded(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().UINavigationControllerAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> *>(&value)));
+            *token = detach_abi(this->shim().UINavigationControllerAdded(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -694,12 +694,12 @@ struct produce<D, Windows::Gaming::Input::IUINavigationControllerStatics> : prod
         }
     }
 
-    HRESULT __stdcall add_UINavigationControllerRemoved(abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_UINavigationControllerRemoved(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach(this->shim().UINavigationControllerRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> *>(&value)));
+            *token = detach_abi(this->shim().UINavigationControllerRemoved(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -722,12 +722,12 @@ struct produce<D, Windows::Gaming::Input::IUINavigationControllerStatics> : prod
         }
     }
 
-    HRESULT __stdcall get_UINavigationControllers(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::UINavigationController>> value) noexcept override
+    HRESULT __stdcall get_UINavigationControllers(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::UINavigationController>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach(this->shim().UINavigationControllers());
+            *value = detach_abi(this->shim().UINavigationControllers());
             return S_OK;
         }
         catch (...)
@@ -745,7 +745,7 @@ namespace Windows::Gaming::Input {
 template <typename D> event_token impl_IGameController<D>::HeadsetConnected(const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IGameController)->add_HeadsetConnected(get(value), &token));
+    check_hresult(WINRT_SHIM(IGameController)->add_HeadsetConnected(get_abi(value), &token));
     return token;
 }
 
@@ -762,7 +762,7 @@ template <typename D> void impl_IGameController<D>::HeadsetConnected(event_token
 template <typename D> event_token impl_IGameController<D>::HeadsetDisconnected(const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IGameController)->add_HeadsetDisconnected(get(value), &token));
+    check_hresult(WINRT_SHIM(IGameController)->add_HeadsetDisconnected(get_abi(value), &token));
     return token;
 }
 
@@ -779,7 +779,7 @@ template <typename D> void impl_IGameController<D>::HeadsetDisconnected(event_to
 template <typename D> event_token impl_IGameController<D>::UserChanged(const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::System::UserChangedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IGameController)->add_UserChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IGameController)->add_UserChanged(get_abi(value), &token));
     return token;
 }
 
@@ -796,7 +796,7 @@ template <typename D> void impl_IGameController<D>::UserChanged(event_token toke
 template <typename D> Windows::Gaming::Input::Headset impl_IGameController<D>::Headset() const
 {
     Windows::Gaming::Input::Headset value { nullptr };
-    check_hresult(WINRT_SHIM(IGameController)->get_Headset(put(value)));
+    check_hresult(WINRT_SHIM(IGameController)->get_Headset(put_abi(value)));
     return value;
 }
 
@@ -810,7 +810,7 @@ template <typename D> bool impl_IGameController<D>::IsWireless() const
 template <typename D> Windows::System::User impl_IGameController<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(WINRT_SHIM(IGameController)->get_User(put(value)));
+    check_hresult(WINRT_SHIM(IGameController)->get_User(put_abi(value)));
     return value;
 }
 
@@ -824,14 +824,14 @@ template <typename D> Windows::Gaming::Input::GameControllerButtonLabel impl_IAr
 template <typename D> Windows::Gaming::Input::ArcadeStickReading impl_IArcadeStick<D>::GetCurrentReading() const
 {
     Windows::Gaming::Input::ArcadeStickReading value {};
-    check_hresult(WINRT_SHIM(IArcadeStick)->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IArcadeStick)->abi_GetCurrentReading(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IArcadeStickStatics<D>::ArcadeStickAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IArcadeStickStatics)->add_ArcadeStickAdded(get(value), &token));
+    check_hresult(WINRT_SHIM(IArcadeStickStatics)->add_ArcadeStickAdded(get_abi(value), &token));
     return token;
 }
 
@@ -848,7 +848,7 @@ template <typename D> void impl_IArcadeStickStatics<D>::ArcadeStickAdded(event_t
 template <typename D> event_token impl_IArcadeStickStatics<D>::ArcadeStickRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IArcadeStickStatics)->add_ArcadeStickRemoved(get(value), &token));
+    check_hresult(WINRT_SHIM(IArcadeStickStatics)->add_ArcadeStickRemoved(get_abi(value), &token));
     return token;
 }
 
@@ -865,26 +865,26 @@ template <typename D> void impl_IArcadeStickStatics<D>::ArcadeStickRemoved(event
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::ArcadeStick> impl_IArcadeStickStatics<D>::ArcadeSticks() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::ArcadeStick> value;
-    check_hresult(WINRT_SHIM(IArcadeStickStatics)->get_ArcadeSticks(put(value)));
+    check_hresult(WINRT_SHIM(IArcadeStickStatics)->get_ArcadeSticks(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::GamepadVibration impl_IGamepad<D>::Vibration() const
 {
     Windows::Gaming::Input::GamepadVibration value {};
-    check_hresult(WINRT_SHIM(IGamepad)->get_Vibration(put(value)));
+    check_hresult(WINRT_SHIM(IGamepad)->get_Vibration(put_abi(value)));
     return value;
 }
 
 template <typename D> void impl_IGamepad<D>::Vibration(const Windows::Gaming::Input::GamepadVibration & value) const
 {
-    check_hresult(WINRT_SHIM(IGamepad)->put_Vibration(get(value)));
+    check_hresult(WINRT_SHIM(IGamepad)->put_Vibration(get_abi(value)));
 }
 
 template <typename D> Windows::Gaming::Input::GamepadReading impl_IGamepad<D>::GetCurrentReading() const
 {
     Windows::Gaming::Input::GamepadReading value {};
-    check_hresult(WINRT_SHIM(IGamepad)->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IGamepad)->abi_GetCurrentReading(put_abi(value)));
     return value;
 }
 
@@ -898,7 +898,7 @@ template <typename D> Windows::Gaming::Input::GameControllerButtonLabel impl_IGa
 template <typename D> event_token impl_IGamepadStatics<D>::GamepadAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IGamepadStatics)->add_GamepadAdded(get(value), &token));
+    check_hresult(WINRT_SHIM(IGamepadStatics)->add_GamepadAdded(get_abi(value), &token));
     return token;
 }
 
@@ -915,7 +915,7 @@ template <typename D> void impl_IGamepadStatics<D>::GamepadAdded(event_token tok
 template <typename D> event_token impl_IGamepadStatics<D>::GamepadRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IGamepadStatics)->add_GamepadRemoved(get(value), &token));
+    check_hresult(WINRT_SHIM(IGamepadStatics)->add_GamepadRemoved(get_abi(value), &token));
     return token;
 }
 
@@ -932,21 +932,21 @@ template <typename D> void impl_IGamepadStatics<D>::GamepadRemoved(event_token t
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::Gamepad> impl_IGamepadStatics<D>::Gamepads() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::Gamepad> value;
-    check_hresult(WINRT_SHIM(IGamepadStatics)->get_Gamepads(put(value)));
+    check_hresult(WINRT_SHIM(IGamepadStatics)->get_Gamepads(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHeadset<D>::CaptureDeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IHeadset)->get_CaptureDeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IHeadset)->get_CaptureDeviceId(put_abi(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHeadset<D>::RenderDeviceId() const
 {
     hstring value;
-    check_hresult(WINRT_SHIM(IHeadset)->get_RenderDeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IHeadset)->get_RenderDeviceId(put_abi(value)));
     return value;
 }
 
@@ -988,7 +988,7 @@ template <typename D> double impl_IRacingWheel<D>::MaxWheelAngle() const
 template <typename D> Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor impl_IRacingWheel<D>::WheelMotor() const
 {
     Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor value { nullptr };
-    check_hresult(WINRT_SHIM(IRacingWheel)->get_WheelMotor(put(value)));
+    check_hresult(WINRT_SHIM(IRacingWheel)->get_WheelMotor(put_abi(value)));
     return value;
 }
 
@@ -1002,14 +1002,14 @@ template <typename D> Windows::Gaming::Input::GameControllerButtonLabel impl_IRa
 template <typename D> Windows::Gaming::Input::RacingWheelReading impl_IRacingWheel<D>::GetCurrentReading() const
 {
     Windows::Gaming::Input::RacingWheelReading value {};
-    check_hresult(WINRT_SHIM(IRacingWheel)->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IRacingWheel)->abi_GetCurrentReading(put_abi(value)));
     return value;
 }
 
 template <typename D> event_token impl_IRacingWheelStatics<D>::RacingWheelAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IRacingWheelStatics)->add_RacingWheelAdded(get(value), &token));
+    check_hresult(WINRT_SHIM(IRacingWheelStatics)->add_RacingWheelAdded(get_abi(value), &token));
     return token;
 }
 
@@ -1026,7 +1026,7 @@ template <typename D> void impl_IRacingWheelStatics<D>::RacingWheelAdded(event_t
 template <typename D> event_token impl_IRacingWheelStatics<D>::RacingWheelRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IRacingWheelStatics)->add_RacingWheelRemoved(get(value), &token));
+    check_hresult(WINRT_SHIM(IRacingWheelStatics)->add_RacingWheelRemoved(get_abi(value), &token));
     return token;
 }
 
@@ -1043,14 +1043,14 @@ template <typename D> void impl_IRacingWheelStatics<D>::RacingWheelRemoved(event
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RacingWheel> impl_IRacingWheelStatics<D>::RacingWheels() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RacingWheel> value;
-    check_hresult(WINRT_SHIM(IRacingWheelStatics)->get_RacingWheels(put(value)));
+    check_hresult(WINRT_SHIM(IRacingWheelStatics)->get_RacingWheels(put_abi(value)));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::UINavigationReading impl_IUINavigationController<D>::GetCurrentReading() const
 {
     Windows::Gaming::Input::UINavigationReading value {};
-    check_hresult(WINRT_SHIM(IUINavigationController)->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IUINavigationController)->abi_GetCurrentReading(put_abi(value)));
     return value;
 }
 
@@ -1071,7 +1071,7 @@ template <typename D> Windows::Gaming::Input::GameControllerButtonLabel impl_IUI
 template <typename D> event_token impl_IUINavigationControllerStatics<D>::UINavigationControllerAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IUINavigationControllerStatics)->add_UINavigationControllerAdded(get(value), &token));
+    check_hresult(WINRT_SHIM(IUINavigationControllerStatics)->add_UINavigationControllerAdded(get_abi(value), &token));
     return token;
 }
 
@@ -1088,7 +1088,7 @@ template <typename D> void impl_IUINavigationControllerStatics<D>::UINavigationC
 template <typename D> event_token impl_IUINavigationControllerStatics<D>::UINavigationControllerRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value) const
 {
     event_token token {};
-    check_hresult(WINRT_SHIM(IUINavigationControllerStatics)->add_UINavigationControllerRemoved(get(value), &token));
+    check_hresult(WINRT_SHIM(IUINavigationControllerStatics)->add_UINavigationControllerRemoved(get_abi(value), &token));
     return token;
 }
 
@@ -1105,7 +1105,7 @@ template <typename D> void impl_IUINavigationControllerStatics<D>::UINavigationC
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::UINavigationController> impl_IUINavigationControllerStatics<D>::UINavigationControllers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::UINavigationController> value;
-    check_hresult(WINRT_SHIM(IUINavigationControllerStatics)->get_UINavigationControllers(put(value)));
+    check_hresult(WINRT_SHIM(IUINavigationControllerStatics)->get_UINavigationControllers(put_abi(value)));
     return value;
 }
 

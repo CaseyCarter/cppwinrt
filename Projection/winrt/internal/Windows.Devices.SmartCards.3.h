@@ -13,7 +13,7 @@ template <typename H> struct impl_SmartCardPinResetHandler : implements<impl_Sma
 {
     impl_SmartCardPinResetHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Devices::SmartCards::ISmartCardProvisioning> sender, abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinResetRequest> request) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Devices::SmartCards::ISmartCardProvisioning> sender, impl::abi_arg_in<Windows::Devices::SmartCards::ISmartCardPinResetRequest> request) noexcept override
     {
         try
         {

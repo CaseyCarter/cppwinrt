@@ -13,7 +13,7 @@ template <typename H> struct impl_ActivatedEventHandler : implements<impl_Activa
 {
     impl_ActivatedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::ApplicationModel::Activation::IActivatedEventArgs> eventArgs) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::ApplicationModel::Activation::IActivatedEventArgs> eventArgs) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_EnteredBackgroundEventHandler : implements<imp
 {
     impl_EnteredBackgroundEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::ApplicationModel::IEnteredBackgroundEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::ApplicationModel::IEnteredBackgroundEventArgs> e) noexcept override
     {
         try
         {
@@ -49,7 +49,7 @@ template <typename H> struct impl_LeavingBackgroundEventHandler : implements<imp
 {
     impl_LeavingBackgroundEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::ApplicationModel::ILeavingBackgroundEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::ApplicationModel::ILeavingBackgroundEventArgs> e) noexcept override
     {
         try
         {
@@ -67,7 +67,7 @@ template <typename H> struct impl_NavigatedEventHandler : implements<impl_Naviga
 {
     impl_NavigatedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::WebUI::IWebUINavigatedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::WebUI::IWebUINavigatedEventArgs> e) noexcept override
     {
         try
         {
@@ -85,7 +85,7 @@ template <typename H> struct impl_ResumingEventHandler : implements<impl_Resumin
 {
     impl_ResumingEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender) noexcept override
     {
         try
         {
@@ -103,7 +103,7 @@ template <typename H> struct impl_SuspendingEventHandler : implements<impl_Suspe
 {
     impl_SuspendingEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::ApplicationModel::ISuspendingEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::ApplicationModel::ISuspendingEventArgs> e) noexcept override
     {
         try
         {

@@ -152,12 +152,12 @@ public:
         return shim().as<IAutomationPeerOverrides>().GetLiveSettingCore();
     }
 
-    HRESULT __stdcall abi_GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetPatternCore(patternInterface));
+            *returnValue = detach_abi(this->shim().GetPatternCore(patternInterface));
             return S_OK;
         }
         catch (...)
@@ -167,12 +167,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetAcceleratorKeyCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetAcceleratorKeyCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetAcceleratorKeyCore());
+            *returnValue = detach_abi(this->shim().GetAcceleratorKeyCore());
             return S_OK;
         }
         catch (...)
@@ -182,12 +182,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetAccessKeyCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetAccessKeyCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetAccessKeyCore());
+            *returnValue = detach_abi(this->shim().GetAccessKeyCore());
             return S_OK;
         }
         catch (...)
@@ -202,7 +202,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetAutomationControlTypeCore());
+            *returnValue = detach_abi(this->shim().GetAutomationControlTypeCore());
             return S_OK;
         }
         catch (...)
@@ -211,41 +211,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetAutomationIdCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetAutomationIdCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetAutomationIdCore());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *returnValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetBoundingRectangleCore(abi_arg_out<Windows::Foundation::Rect> returnValue) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetBoundingRectangleCore());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetChildrenCore(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetChildrenCore());
+            *returnValue = detach_abi(this->shim().GetAutomationIdCore());
             return S_OK;
         }
         catch (...)
@@ -255,12 +226,26 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetClassNameCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetBoundingRectangleCore(impl::abi_arg_out<Windows::Foundation::Rect> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetClassNameCore());
+            *returnValue = detach_abi(this->shim().GetBoundingRectangleCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetChildrenCore(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().GetChildrenCore());
             return S_OK;
         }
         catch (...)
@@ -270,26 +255,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetClickablePointCore(abi_arg_out<Windows::Foundation::Point> returnValue) noexcept override
+    HRESULT __stdcall abi_GetClassNameCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetClickablePointCore());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetHelpTextCore(abi_arg_out<hstring> returnValue) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetHelpTextCore());
+            *returnValue = detach_abi(this->shim().GetClassNameCore());
             return S_OK;
         }
         catch (...)
@@ -299,12 +270,26 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetItemStatusCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetClickablePointCore(impl::abi_arg_out<Windows::Foundation::Point> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetItemStatusCore());
+            *returnValue = detach_abi(this->shim().GetClickablePointCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetHelpTextCore(impl::abi_arg_out<hstring> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().GetHelpTextCore());
             return S_OK;
         }
         catch (...)
@@ -314,12 +299,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetItemTypeCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetItemStatusCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetItemTypeCore());
+            *returnValue = detach_abi(this->shim().GetItemStatusCore());
             return S_OK;
         }
         catch (...)
@@ -329,12 +314,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetLabeledByCore(abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
+    HRESULT __stdcall abi_GetItemTypeCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetLabeledByCore());
+            *returnValue = detach_abi(this->shim().GetItemTypeCore());
             return S_OK;
         }
         catch (...)
@@ -344,12 +329,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetLocalizedControlTypeCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetLabeledByCore(impl::abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetLocalizedControlTypeCore());
+            *returnValue = detach_abi(this->shim().GetLabeledByCore());
             return S_OK;
         }
         catch (...)
@@ -359,12 +344,27 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetNameCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetLocalizedControlTypeCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetNameCore());
+            *returnValue = detach_abi(this->shim().GetLocalizedControlTypeCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetNameCore(impl::abi_arg_out<hstring> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().GetNameCore());
             return S_OK;
         }
         catch (...)
@@ -379,7 +379,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetOrientationCore());
+            *returnValue = detach_abi(this->shim().GetOrientationCore());
             return S_OK;
         }
         catch (...)
@@ -393,7 +393,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().HasKeyboardFocusCore());
+            *returnValue = detach_abi(this->shim().HasKeyboardFocusCore());
             return S_OK;
         }
         catch (...)
@@ -407,7 +407,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsContentElementCore());
+            *returnValue = detach_abi(this->shim().IsContentElementCore());
             return S_OK;
         }
         catch (...)
@@ -421,7 +421,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsControlElementCore());
+            *returnValue = detach_abi(this->shim().IsControlElementCore());
             return S_OK;
         }
         catch (...)
@@ -435,7 +435,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsEnabledCore());
+            *returnValue = detach_abi(this->shim().IsEnabledCore());
             return S_OK;
         }
         catch (...)
@@ -449,7 +449,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsKeyboardFocusableCore());
+            *returnValue = detach_abi(this->shim().IsKeyboardFocusableCore());
             return S_OK;
         }
         catch (...)
@@ -463,7 +463,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsOffscreenCore());
+            *returnValue = detach_abi(this->shim().IsOffscreenCore());
             return S_OK;
         }
         catch (...)
@@ -477,7 +477,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsPasswordCore());
+            *returnValue = detach_abi(this->shim().IsPasswordCore());
             return S_OK;
         }
         catch (...)
@@ -491,7 +491,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsRequiredForFormCore());
+            *returnValue = detach_abi(this->shim().IsRequiredForFormCore());
             return S_OK;
         }
         catch (...)
@@ -514,12 +514,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetPeerFromPointCore(abi_arg_in<Windows::Foundation::Point> point, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
+    HRESULT __stdcall abi_GetPeerFromPointCore(impl::abi_arg_in<Windows::Foundation::Point> point, impl::abi_arg_out<Windows::UI::Xaml::Automation::Peers::IAutomationPeer> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetPeerFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
+            *returnValue = detach_abi(this->shim().GetPeerFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
             return S_OK;
         }
         catch (...)
@@ -534,7 +534,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetLiveSettingCore());
+            *returnValue = detach_abi(this->shim().GetLiveSettingCore());
             return S_OK;
         }
         catch (...)
@@ -577,12 +577,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetControlledPeersCore(abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    HRESULT __stdcall abi_GetControlledPeersCore(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetControlledPeersCore());
+            *returnValue = detach_abi(this->shim().GetControlledPeersCore());
             return S_OK;
         }
         catch (...)
@@ -637,12 +637,12 @@ public:
         return shim().as<IAutomationPeerOverrides3>().GetLevelCore();
     }
 
-    HRESULT __stdcall abi_NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().NavigateCore(direction));
+            *returnValue = detach_abi(this->shim().NavigateCore(direction));
             return S_OK;
         }
         catch (...)
@@ -652,12 +652,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetElementFromPointCore(abi_arg_in<Windows::Foundation::Point> pointInWindowCoordinates, abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetElementFromPointCore(impl::abi_arg_in<Windows::Foundation::Point> pointInWindowCoordinates, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetElementFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
+            *returnValue = detach_abi(this->shim().GetElementFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
             return S_OK;
         }
         catch (...)
@@ -667,12 +667,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetFocusedElementCore(abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetFocusedElementCore(impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetFocusedElementCore());
+            *returnValue = detach_abi(this->shim().GetFocusedElementCore());
             return S_OK;
         }
         catch (...)
@@ -682,12 +682,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetAnnotationsCore(abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation>> returnValue) noexcept override
+    HRESULT __stdcall abi_GetAnnotationsCore(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation>> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetAnnotationsCore());
+            *returnValue = detach_abi(this->shim().GetAnnotationsCore());
             return S_OK;
         }
         catch (...)
@@ -702,7 +702,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetPositionInSetCore());
+            *returnValue = detach_abi(this->shim().GetPositionInSetCore());
             return S_OK;
         }
         catch (...)
@@ -716,7 +716,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetSizeOfSetCore());
+            *returnValue = detach_abi(this->shim().GetSizeOfSetCore());
             return S_OK;
         }
         catch (...)
@@ -730,7 +730,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetLevelCore());
+            *returnValue = detach_abi(this->shim().GetLevelCore());
             return S_OK;
         }
         catch (...)
@@ -764,7 +764,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetLandmarkTypeCore());
+            *returnValue = detach_abi(this->shim().GetLandmarkTypeCore());
             return S_OK;
         }
         catch (...)
@@ -773,12 +773,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetLocalizedLandmarkTypeCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetLocalizedLandmarkTypeCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetLocalizedLandmarkTypeCore());
+            *returnValue = detach_abi(this->shim().GetLocalizedLandmarkTypeCore());
             return S_OK;
         }
         catch (...)
@@ -833,7 +833,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsPeripheralCore());
+            *returnValue = detach_abi(this->shim().IsPeripheralCore());
             return S_OK;
         }
         catch (...)
@@ -847,7 +847,7 @@ public:
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().IsDataValidForFormCore());
+            *returnValue = detach_abi(this->shim().IsDataValidForFormCore());
             return S_OK;
         }
         catch (...)
@@ -856,27 +856,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetFullDescriptionCore(abi_arg_out<hstring> returnValue) noexcept override
+    HRESULT __stdcall abi_GetFullDescriptionCore(impl::abi_arg_out<hstring> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetFullDescriptionCore());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *returnValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetDescribedByCore(abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetDescribedByCore());
+            *returnValue = detach_abi(this->shim().GetFullDescriptionCore());
             return S_OK;
         }
         catch (...)
@@ -886,12 +871,12 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetFlowsToCore(abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    HRESULT __stdcall abi_GetDescribedByCore(impl::abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetFlowsToCore());
+            *returnValue = detach_abi(this->shim().GetDescribedByCore());
             return S_OK;
         }
         catch (...)
@@ -901,12 +886,27 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetFlowsFromCore(abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    HRESULT __stdcall abi_GetFlowsToCore(impl::abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().GetFlowsFromCore());
+            *returnValue = detach_abi(this->shim().GetFlowsToCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetFlowsFromCore(impl::abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer>> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().GetFlowsFromCore());
             return S_OK;
         }
         catch (...)
@@ -931,12 +931,12 @@ public:
         return shim().as<IItemsControlAutomationPeerOverrides2>().OnCreateItemAutomationPeer(item);
     }
 
-    HRESULT __stdcall abi_OnCreateItemAutomationPeer(abi_arg_in<Windows::IInspectable> item, abi_arg_out<Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> returnValue) noexcept override
+    HRESULT __stdcall abi_OnCreateItemAutomationPeer(impl::abi_arg_in<Windows::IInspectable> item, impl::abi_arg_out<Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach(this->shim().OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach_abi(this->shim().OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)

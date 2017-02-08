@@ -12,12 +12,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Data::Html::IHtmlUtilities> : produce_base<D, Windows::Data::Html::IHtmlUtilities>
 {
-    HRESULT __stdcall abi_ConvertToText(abi_arg_in<hstring> html, abi_arg_out<hstring> text) noexcept override
+    HRESULT __stdcall abi_ConvertToText(impl::abi_arg_in<hstring> html, impl::abi_arg_out<hstring> text) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *text = detach(this->shim().ConvertToText(*reinterpret_cast<const hstring *>(&html)));
+            *text = detach_abi(this->shim().ConvertToText(*reinterpret_cast<const hstring *>(&html)));
             return S_OK;
         }
         catch (...)
@@ -35,7 +35,7 @@ namespace Windows::Data::Html {
 template <typename D> hstring impl_IHtmlUtilities<D>::ConvertToText(hstring_view html) const
 {
     hstring text;
-    check_hresult(WINRT_SHIM(IHtmlUtilities)->abi_ConvertToText(get(html), put(text)));
+    check_hresult(WINRT_SHIM(IHtmlUtilities)->abi_ConvertToText(get_abi(html), put_abi(text)));
     return text;
 }
 

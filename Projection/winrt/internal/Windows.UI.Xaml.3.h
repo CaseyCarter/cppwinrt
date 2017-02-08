@@ -13,7 +13,7 @@ template <typename H> struct impl_ApplicationInitializationCallback : implements
 {
     impl_ApplicationInitializationCallback(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::Xaml::IApplicationInitializationCallbackParams> p) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::Xaml::IApplicationInitializationCallbackParams> p) noexcept override
     {
         try
         {
@@ -31,7 +31,7 @@ template <typename H> struct impl_BindingFailedEventHandler : implements<impl_Bi
 {
     impl_BindingFailedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::IBindingFailedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::IBindingFailedEventArgs> e) noexcept override
     {
         try
         {
@@ -49,11 +49,11 @@ template <typename H> struct impl_CreateDefaultValueCallback : implements<impl_C
 {
     impl_CreateDefaultValueCallback(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
     {
         try
         {
-            *value = detach((*this)());
+            *value = detach_abi((*this)());
             return S_OK;
         }
         catch (...)
@@ -68,7 +68,7 @@ template <typename H> struct impl_DependencyPropertyChangedCallback : implements
 {
     impl_DependencyPropertyChangedCallback(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::Xaml::IDependencyObject> sender, abi_arg_in<Windows::UI::Xaml::IDependencyProperty> dp) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> sender, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> dp) noexcept override
     {
         try
         {
@@ -86,7 +86,7 @@ template <typename H> struct impl_DependencyPropertyChangedEventHandler : implem
 {
     impl_DependencyPropertyChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::IDependencyPropertyChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::IDependencyPropertyChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -104,7 +104,7 @@ template <typename H> struct impl_DragEventHandler : implements<impl_DragEventHa
 {
     impl_DragEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::IDragEventArgs> e) noexcept override
     {
         try
         {
@@ -122,7 +122,7 @@ template <typename H> struct impl_EnteredBackgroundEventHandler : implements<imp
 {
     impl_EnteredBackgroundEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::ApplicationModel::IEnteredBackgroundEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::ApplicationModel::IEnteredBackgroundEventArgs> e) noexcept override
     {
         try
         {
@@ -140,7 +140,7 @@ template <typename H> struct impl_ExceptionRoutedEventHandler : implements<impl_
 {
     impl_ExceptionRoutedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::IExceptionRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::IExceptionRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -158,7 +158,7 @@ template <typename H> struct impl_LeavingBackgroundEventHandler : implements<imp
 {
     impl_LeavingBackgroundEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::ApplicationModel::ILeavingBackgroundEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::ApplicationModel::ILeavingBackgroundEventArgs> e) noexcept override
     {
         try
         {
@@ -176,7 +176,7 @@ template <typename H> struct impl_PropertyChangedCallback : implements<impl_Prop
 {
     impl_PropertyChangedCallback(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::Xaml::IDependencyObject> d, abi_arg_in<Windows::UI::Xaml::IDependencyPropertyChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> d, impl::abi_arg_in<Windows::UI::Xaml::IDependencyPropertyChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -194,7 +194,7 @@ template <typename H> struct impl_RoutedEventHandler : implements<impl_RoutedEve
 {
     impl_RoutedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::IRoutedEventArgs> e) noexcept override
     {
         try
         {
@@ -212,7 +212,7 @@ template <typename H> struct impl_SizeChangedEventHandler : implements<impl_Size
 {
     impl_SizeChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::ISizeChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::ISizeChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -230,7 +230,7 @@ template <typename H> struct impl_SuspendingEventHandler : implements<impl_Suspe
 {
     impl_SuspendingEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::ApplicationModel::ISuspendingEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::ApplicationModel::ISuspendingEventArgs> e) noexcept override
     {
         try
         {
@@ -248,7 +248,7 @@ template <typename H> struct impl_UnhandledExceptionEventHandler : implements<im
 {
     impl_UnhandledExceptionEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::IUnhandledExceptionEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::IUnhandledExceptionEventArgs> e) noexcept override
     {
         try
         {
@@ -266,7 +266,7 @@ template <typename H> struct impl_VisualStateChangedEventHandler : implements<im
 {
     impl_VisualStateChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Xaml::IVisualStateChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Xaml::IVisualStateChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -284,7 +284,7 @@ template <typename H> struct impl_WindowActivatedEventHandler : implements<impl_
 {
     impl_WindowActivatedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Core::IWindowActivatedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Core::IWindowActivatedEventArgs> e) noexcept override
     {
         try
         {
@@ -302,7 +302,7 @@ template <typename H> struct impl_WindowClosedEventHandler : implements<impl_Win
 {
     impl_WindowClosedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Core::ICoreWindowEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Core::ICoreWindowEventArgs> e) noexcept override
     {
         try
         {
@@ -320,7 +320,7 @@ template <typename H> struct impl_WindowSizeChangedEventHandler : implements<imp
 {
     impl_WindowSizeChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Core::IWindowSizeChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Core::IWindowSizeChangedEventArgs> e) noexcept override
     {
         try
         {
@@ -338,7 +338,7 @@ template <typename H> struct impl_WindowVisibilityChangedEventHandler : implemen
 {
     impl_WindowVisibilityChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<Windows::UI::Core::IVisibilityChangedEventArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender, impl::abi_arg_in<Windows::UI::Core::IVisibilityChangedEventArgs> e) noexcept override
     {
         try
         {
