@@ -85,6 +85,6 @@ TEST_CASE("IReference, constructor and getter")
 
 TEST_CASE("IReference, set WinRT runtime class property")
 {
-    HttpContentDispositionHeaderValue value(L"fake header value");
+    HttpContentDispositionHeaderValue value(L"inline");
     value.Size(200);
 }
