@@ -80,6 +80,7 @@ static void WriteBaseHeader()
     Write(out, Strings::base_collections_produce);   // #include "base_collections_produce.h"
     Write(out, Strings::base_collections_impl);      // #include "base_collections_impl.h"
     Write(out, Strings::base_foundation);            // #include "base_foundation.h"
+    Write(out, Strings::base_chrono);                // #include "base_chrono.h"
     Write(out, Strings::base_async_consume);         // #include "base_async_consume.h"
     Write(out, Strings::base_async_produce);         // #include "base_async_produce.h"
     Write(out, Strings::base_await_consume);         // #include "base_await_consume.h"

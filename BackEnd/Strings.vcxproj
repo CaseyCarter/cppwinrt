@@ -36,6 +36,7 @@
     <ClInclude Include="Source\Modern\base_async_consume.h" />
     <ClInclude Include="Source\Modern\base_async_produce.h" />
     <ClInclude Include="Source\Modern\base_await_consume.h" />
+    <ClInclude Include="Source\Modern\base_chrono.h" />
     <ClInclude Include="Source\Modern\base_collections_consume.h" />
     <ClInclude Include="Source\Modern\base_collections_produce.h" />
     <ClInclude Include="Source\Modern\base_composable.h" />

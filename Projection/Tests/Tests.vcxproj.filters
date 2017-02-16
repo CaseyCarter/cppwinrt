@@ -40,6 +40,7 @@
     <ClCompile Include="casts.cpp" />
     <ClCompile Include="Reference.cpp" />
     <ClCompile Include="IReference.cpp" />
+    <ClCompile Include="clock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
