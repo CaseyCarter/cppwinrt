@@ -168,6 +168,7 @@
     <ClCompile Include="array.cpp" />
     <ClCompile Include="async.cpp" />
     <ClCompile Include="casts.cpp" />
+    <ClCompile Include="clock.cpp" />
     <ClCompile Include="Collections.cpp" />
     <ClCompile Include="com_ptr.cpp" />
     <ClCompile Include="delegate.cpp" />

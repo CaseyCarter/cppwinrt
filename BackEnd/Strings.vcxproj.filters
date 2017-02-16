@@ -248,6 +248,9 @@
     <ClInclude Include="Source\Modern\base_reference.h">
       <Filter>Assets</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Modern\base_chrono.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\Modern\ConsoleHeader.txt">

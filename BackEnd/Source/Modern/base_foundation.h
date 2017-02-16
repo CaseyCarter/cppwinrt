@@ -1,5 +1,6 @@
 
-namespace Windows::Foundation {
+namespace Windows::Foundation
+{
 
 struct Point
 {
@@ -59,21 +60,11 @@ struct Rect
     float Height;
 };
 
-struct DateTime
-{
-    int64_t UniversalTime;
-};
-
-using TimeSpan = std::chrono::duration<int64_t, std::ratio<1, 10'000'000>>;
-
 }
 
-namespace ABI::Windows::Foundation {
-
-using Point = winrt::Windows::Foundation::Point;
-using Size = winrt::Windows::Foundation::Size;
-using TimeSpan = winrt::Windows::Foundation::TimeSpan;
-using Rect = winrt::Windows::Foundation::Rect;
-using DateTime = winrt::Windows::Foundation::DateTime;
-
+namespace ABI::Windows::Foundation
+{
+    using Point = winrt::Windows::Foundation::Point;
+    using Size = winrt::Windows::Foundation::Size;
+    using Rect = winrt::Windows::Foundation::Rect;
 }
