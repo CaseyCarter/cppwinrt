@@ -236,70 +236,70 @@ template <> struct __declspec(uuid("09393d62-2316-536b-8a10-7038884ab2a7")) __de
 namespace Windows::Devices::Usb {
 
 struct IUsbBulkInEndpointDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbBulkInEndpointDescriptor>
 {
     IUsbBulkInEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbBulkInPipe :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbBulkInPipe>
 {
     IUsbBulkInPipe(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbBulkOutEndpointDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbBulkOutEndpointDescriptor>
 {
     IUsbBulkOutEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbBulkOutPipe :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbBulkOutPipe>
 {
     IUsbBulkOutPipe(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbConfiguration>
 {
     IUsbConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbConfigurationDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbConfigurationDescriptor>
 {
     IUsbConfigurationDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbConfigurationDescriptorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbConfigurationDescriptorStatics>
 {
     IUsbConfigurationDescriptorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbControlRequestType :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbControlRequestType>
 {
     IUsbControlRequestType(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbDescriptor>
 {
     IUsbDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbDevice>,
     impl::require<IUsbDevice, Windows::Foundation::IClosable>
 {
@@ -307,126 +307,126 @@ struct IUsbDevice :
 };
 
 struct IUsbDeviceClass :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbDeviceClass>
 {
     IUsbDeviceClass(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbDeviceClasses :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbDeviceClasses>
 {
     IUsbDeviceClasses(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbDeviceClassesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbDeviceClassesStatics>
 {
     IUsbDeviceClassesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbDeviceDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbDeviceDescriptor>
 {
     IUsbDeviceDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbDeviceStatics>
 {
     IUsbDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbEndpointDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbEndpointDescriptor>
 {
     IUsbEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbEndpointDescriptorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbEndpointDescriptorStatics>
 {
     IUsbEndpointDescriptorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbInterface :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbInterface>
 {
     IUsbInterface(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbInterfaceDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbInterfaceDescriptor>
 {
     IUsbInterfaceDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbInterfaceDescriptorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbInterfaceDescriptorStatics>
 {
     IUsbInterfaceDescriptorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbInterfaceSetting :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbInterfaceSetting>
 {
     IUsbInterfaceSetting(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbInterruptInEndpointDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbInterruptInEndpointDescriptor>
 {
     IUsbInterruptInEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbInterruptInEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbInterruptInEventArgs>
 {
     IUsbInterruptInEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbInterruptInPipe :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbInterruptInPipe>
 {
     IUsbInterruptInPipe(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbInterruptOutEndpointDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbInterruptOutEndpointDescriptor>
 {
     IUsbInterruptOutEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbInterruptOutPipe :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbInterruptOutPipe>
 {
     IUsbInterruptOutPipe(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbSetupPacket :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbSetupPacket>
 {
     IUsbSetupPacket(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUsbSetupPacketFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUsbSetupPacketFactory>
 {
     IUsbSetupPacketFactory(std::nullptr_t = nullptr) noexcept {}

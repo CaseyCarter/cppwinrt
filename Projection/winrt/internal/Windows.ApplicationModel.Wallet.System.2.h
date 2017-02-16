@@ -36,7 +36,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_3c619943_a672_57ee_ad32_f6d97a6f4217
 #define WINRT_GENERIC_3c619943_a672_57ee_ad32_f6d97a6f4217
-template <> struct __declspec(uuid("3c619943-a672-57ee-ad32-f6d97a6f4217")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> {};
+template <> struct __declspec(uuid("3c619943-a672-57ee-ad32-f6d97a6f4217")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_587c5f4f_7c55_5f74_b26a_f80e3bc6d4f2
@@ -95,21 +95,21 @@ template <> struct __declspec(uuid("9302d49e-dda3-5971-b48a-dfdf02c572af")) __de
 namespace Windows::ApplicationModel::Wallet::System {
 
 struct IWalletItemSystemStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletItemSystemStore>
 {
     IWalletItemSystemStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletItemSystemStore2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletItemSystemStore2>
 {
     IWalletItemSystemStore2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletManagerSystemStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletManagerSystemStatics>
 {
     IWalletManagerSystemStatics(std::nullptr_t = nullptr) noexcept {}

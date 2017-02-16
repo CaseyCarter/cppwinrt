@@ -586,12 +586,12 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
         }
     }
 
-    HRESULT __stdcall add_LoggingEnabled(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_LoggingEnabled(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().LoggingEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().LoggingEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3717,14 +3717,14 @@ template <typename D> void impl_ILoggingChannel<D>::LogValuePair(hstring_view va
     check_hresult(WINRT_SHIM(ILoggingChannel)->abi_LogValuePairWithLevel(get_abi(value1), value2, level));
 }
 
-template <typename D> event_token impl_ILoggingChannel<D>::LoggingEnabled(const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ILoggingChannel<D>::LoggingEnabled(const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ILoggingChannel)->add_LoggingEnabled(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ILoggingChannel> impl_ILoggingChannel<D>::LoggingEnabled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ILoggingChannel> impl_ILoggingChannel<D>::LoggingEnabled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ILoggingChannel>(this, &ABI::Windows::Foundation::Diagnostics::ILoggingChannel::remove_LoggingEnabled, LoggingEnabled(handler));
 }

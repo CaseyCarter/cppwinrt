@@ -49,37 +49,37 @@ struct __declspec(uuid("d1f276c4-98d8-4636-bf49-eb79507548e9")) __declspec(novta
     virtual HRESULT __stdcall abi_Invoke() = 0;
 };
 
-struct __declspec(uuid("ff1c4c4a-9287-470b-836e-9086e3126ade")) __declspec(novtable) IAcceleratorKeyEventArgs : Windows::IInspectable
+struct __declspec(uuid("ff1c4c4a-9287-470b-836e-9086e3126ade")) __declspec(novtable) IAcceleratorKeyEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EventType(winrt::Windows::UI::Core::CoreAcceleratorKeyEventType * value) = 0;
     virtual HRESULT __stdcall get_VirtualKey(winrt::Windows::System::VirtualKey * value) = 0;
     virtual HRESULT __stdcall get_KeyStatus(Windows::UI::Core::CorePhysicalKeyStatus * value) = 0;
 };
 
-struct __declspec(uuid("d300a9f6-2f7e-4873-a555-166e596ee1c5")) __declspec(novtable) IAcceleratorKeyEventArgs2 : Windows::IInspectable
+struct __declspec(uuid("d300a9f6-2f7e-4873-a555-166e596ee1c5")) __declspec(novtable) IAcceleratorKeyEventArgs2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("961ff258-21bf-4b42-a298-fa479d4c52e2")) __declspec(novtable) IAutomationProviderRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("961ff258-21bf-4b42-a298-fa479d4c52e2")) __declspec(novtable) IAutomationProviderRequestedEventArgs : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_AutomationProvider(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_AutomationProvider(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_AutomationProvider(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_AutomationProvider(Windows::Foundation::IInspectable * value) = 0;
 };
 
-struct __declspec(uuid("d603d28a-e411-4a4e-ba41-6a327a8675bc")) __declspec(novtable) IBackRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("d603d28a-e411-4a4e-ba41-6a327a8675bc")) __declspec(novtable) IBackRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
 };
 
-struct __declspec(uuid("c584659f-99b2-4bcc-bd33-04e63f42902e")) __declspec(novtable) ICharacterReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("c584659f-99b2-4bcc-bd33-04e63f42902e")) __declspec(novtable) ICharacterReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeyCode(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_KeyStatus(Windows::UI::Core::CorePhysicalKeyStatus * value) = 0;
 };
 
-struct __declspec(uuid("347c11d7-f6f8-40e3-b29f-ae50d3e86486")) __declspec(novtable) IClosestInteractiveBoundsRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("347c11d7-f6f8-40e3-b29f-ae50d3e86486")) __declspec(novtable) IClosestInteractiveBoundsRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PointerPosition(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall get_SearchBounds(Windows::Foundation::Rect * value) = 0;
@@ -87,39 +87,39 @@ struct __declspec(uuid("347c11d7-f6f8-40e3-b29f-ae50d3e86486")) __declspec(novta
     virtual HRESULT __stdcall put_ClosestInteractiveBounds(Windows::Foundation::Rect value) = 0;
 };
 
-struct __declspec(uuid("9ffdf7f5-b8c9-4ef0-b7d2-1de626561fc8")) __declspec(novtable) ICoreAcceleratorKeys : Windows::IInspectable
+struct __declspec(uuid("9ffdf7f5-b8c9-4ef0-b7d2-1de626561fc8")) __declspec(novtable) ICoreAcceleratorKeys : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_AcceleratorKeyActivated(Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_AcceleratorKeyActivated(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("f303043a-e8bf-4e8e-ae69-c9dadd57a114")) __declspec(novtable) ICoreClosestInteractiveBoundsRequested : Windows::IInspectable
+struct __declspec(uuid("f303043a-e8bf-4e8e-ae69-c9dadd57a114")) __declspec(novtable) ICoreClosestInteractiveBoundsRequested : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_ClosestInteractiveBoundsRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_ClosestInteractiveBoundsRequested(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("52f96fa3-8742-4411-ae69-79a85f29ac8b")) __declspec(novtable) ICoreComponentFocusable : Windows::IInspectable
+struct __declspec(uuid("52f96fa3-8742-4411-ae69-79a85f29ac8b")) __declspec(novtable) ICoreComponentFocusable : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HasFocus(bool * value) = 0;
-    virtual HRESULT __stdcall add_GotFocus(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> * handler, event_token * pCookie) = 0;
+    virtual HRESULT __stdcall add_GotFocus(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CoreWindowEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_GotFocus(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_LostFocus(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> * handler, event_token * pCookie) = 0;
+    virtual HRESULT __stdcall add_LostFocus(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CoreWindowEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_LostFocus(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("96893acf-111d-442c-8a77-b87992f8e2d6")) __declspec(novtable) ICoreCursor : Windows::IInspectable
+struct __declspec(uuid("96893acf-111d-442c-8a77-b87992f8e2d6")) __declspec(novtable) ICoreCursor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_Type(winrt::Windows::UI::Core::CoreCursorType * value) = 0;
 };
 
-struct __declspec(uuid("f6359621-a79d-4ed3-8c32-a9ef9d6b76a4")) __declspec(novtable) ICoreCursorFactory : Windows::IInspectable
+struct __declspec(uuid("f6359621-a79d-4ed3-8c32-a9ef9d6b76a4")) __declspec(novtable) ICoreCursorFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateCursor(winrt::Windows::UI::Core::CoreCursorType type, uint32_t id, Windows::UI::Core::ICoreCursor ** cursor) = 0;
 };
 
-struct __declspec(uuid("60db2fa8-b705-4fde-a7d6-ebbb1891d39e")) __declspec(novtable) ICoreDispatcher : Windows::IInspectable
+struct __declspec(uuid("60db2fa8-b705-4fde-a7d6-ebbb1891d39e")) __declspec(novtable) ICoreDispatcher : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HasThreadAccess(bool * value) = 0;
     virtual HRESULT __stdcall abi_ProcessEvents(winrt::Windows::UI::Core::CoreProcessEventsOption options) = 0;
@@ -127,13 +127,13 @@ struct __declspec(uuid("60db2fa8-b705-4fde-a7d6-ebbb1891d39e")) __declspec(novta
     virtual HRESULT __stdcall abi_RunIdleAsync(Windows::UI::Core::IdleDispatchedHandler * agileCallback, Windows::Foundation::IAsyncAction ** asyncAction) = 0;
 };
 
-struct __declspec(uuid("6f5e63c7-e3aa-4eae-b0e0-dcf321ca4b2f")) __declspec(novtable) ICoreDispatcher2 : Windows::IInspectable
+struct __declspec(uuid("6f5e63c7-e3aa-4eae-b0e0-dcf321ca4b2f")) __declspec(novtable) ICoreDispatcher2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryRunAsync(winrt::Windows::UI::Core::CoreDispatcherPriority priority, Windows::UI::Core::DispatchedHandler * agileCallback, Windows::Foundation::IAsyncOperation<bool> ** asyncOperation) = 0;
     virtual HRESULT __stdcall abi_TryRunIdleAsync(Windows::UI::Core::IdleDispatchedHandler * agileCallback, Windows::Foundation::IAsyncOperation<bool> ** asyncOperation) = 0;
 };
 
-struct __declspec(uuid("bafaecad-484d-41be-ba80-1d58c65263ea")) __declspec(novtable) ICoreDispatcherWithTaskPriority : Windows::IInspectable
+struct __declspec(uuid("bafaecad-484d-41be-ba80-1d58c65263ea")) __declspec(novtable) ICoreDispatcherWithTaskPriority : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CurrentPriority(winrt::Windows::UI::Core::CoreDispatcherPriority * value) = 0;
     virtual HRESULT __stdcall put_CurrentPriority(winrt::Windows::UI::Core::CoreDispatcherPriority value) = 0;
@@ -142,32 +142,32 @@ struct __declspec(uuid("bafaecad-484d-41be-ba80-1d58c65263ea")) __declspec(novta
     virtual HRESULT __stdcall abi_StopProcessEvents() = 0;
 };
 
-struct __declspec(uuid("9f488807-4580-4be8-be68-92a9311713bb")) __declspec(novtable) ICoreInputSourceBase : Windows::IInspectable
+struct __declspec(uuid("9f488807-4580-4be8-be68-92a9311713bb")) __declspec(novtable) ICoreInputSourceBase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Dispatcher(Windows::UI::Core::ICoreDispatcher ** value) = 0;
     virtual HRESULT __stdcall get_IsInputEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsInputEnabled(bool value) = 0;
-    virtual HRESULT __stdcall add_InputEnabled(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> * handler, event_token * pCookie) = 0;
+    virtual HRESULT __stdcall add_InputEnabled(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::InputEnabledEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_InputEnabled(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("231c9088-e469-4df1-b208-6e490d71cb90")) __declspec(novtable) ICoreKeyboardInputSource : Windows::IInspectable
+struct __declspec(uuid("231c9088-e469-4df1-b208-6e490d71cb90")) __declspec(novtable) ICoreKeyboardInputSource : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCurrentKeyState(winrt::Windows::System::VirtualKey virtualKey, winrt::Windows::UI::Core::CoreVirtualKeyStates * KeyState) = 0;
-    virtual HRESULT __stdcall add_CharacterReceived(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> * handler, event_token * pCookie) = 0;
+    virtual HRESULT __stdcall add_CharacterReceived(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_CharacterReceived(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_KeyDown(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> * handler, event_token * pCookie) = 0;
+    virtual HRESULT __stdcall add_KeyDown(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::KeyEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_KeyDown(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_KeyUp(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> * handler, event_token * pCookie) = 0;
+    virtual HRESULT __stdcall add_KeyUp(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::KeyEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_KeyUp(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("fa24cb94-f963-47a5-8778-207c482b0afd")) __declspec(novtable) ICoreKeyboardInputSource2 : Windows::IInspectable
+struct __declspec(uuid("fa24cb94-f963-47a5-8778-207c482b0afd")) __declspec(novtable) ICoreKeyboardInputSource2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCurrentKeyEventDeviceId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551")) __declspec(novtable) ICorePointerInputSource : Windows::IInspectable
+struct __declspec(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551")) __declspec(novtable) ICorePointerInputSource : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ReleasePointerCapture() = 0;
     virtual HRESULT __stdcall abi_SetPointerCapture() = 0;
@@ -175,23 +175,23 @@ struct __declspec(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551")) __declspec(novta
     virtual HRESULT __stdcall get_PointerPosition(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall get_PointerCursor(Windows::UI::Core::ICoreCursor ** value) = 0;
     virtual HRESULT __stdcall put_PointerCursor(Windows::UI::Core::ICoreCursor * value) = 0;
-    virtual HRESULT __stdcall add_PointerCaptureLost(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_PointerCaptureLost(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_PointerCaptureLost(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_PointerEntered(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_PointerEntered(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_PointerEntered(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_PointerExited(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_PointerExited(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_PointerExited(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_PointerMoved(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_PointerMoved(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_PointerMoved(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_PointerPressed(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_PointerPressed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_PointerPressed(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_PointerReleased(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_PointerReleased(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_PointerReleased(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_PointerWheelChanged(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_PointerWheelChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_PointerWheelChanged(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3")) __declspec(novtable) ICorePointerRedirector : Windows::IInspectable
+struct __declspec(uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3")) __declspec(novtable) ICorePointerRedirector : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_PointerRoutedAway(Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_PointerRoutedAway(event_token cookie) = 0;
@@ -201,15 +201,15 @@ struct __declspec(uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3")) __declspec(novta
     virtual HRESULT __stdcall remove_PointerRoutedReleased(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("b1d8a289-3acf-4124-9fa3-ea8aba353c21")) __declspec(novtable) ICoreTouchHitTesting : Windows::IInspectable
+struct __declspec(uuid("b1d8a289-3acf-4124-9fa3-ea8aba353c21")) __declspec(novtable) ICoreTouchHitTesting : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_TouchHitTesting(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> * handler, event_token * pCookie) = 0;
+    virtual HRESULT __stdcall add_TouchHitTesting(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_TouchHitTesting(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("79b9d5f2-879e-4b89-b798-79e47598030c")) __declspec(novtable) ICoreWindow : Windows::IInspectable
+struct __declspec(uuid("79b9d5f2-879e-4b89-b798-79e47598030c")) __declspec(novtable) ICoreWindow : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_AutomationHostProvider(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_AutomationHostProvider(Windows::Foundation::IInspectable ** value) = 0;
     virtual HRESULT __stdcall get_Bounds(Windows::Foundation::Rect * value) = 0;
     virtual HRESULT __stdcall get_CustomProperties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
     virtual HRESULT __stdcall get_Dispatcher(Windows::UI::Core::ICoreDispatcher ** value) = 0;
@@ -263,96 +263,96 @@ struct __declspec(uuid("79b9d5f2-879e-4b89-b798-79e47598030c")) __declspec(novta
     virtual HRESULT __stdcall remove_VisibilityChanged(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("7c2b1b85-6917-4361-9c02-0d9e3a420b95")) __declspec(novtable) ICoreWindow2 : Windows::IInspectable
+struct __declspec(uuid("7c2b1b85-6917-4361-9c02-0d9e3a420b95")) __declspec(novtable) ICoreWindow2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_PointerPosition(Windows::Foundation::Point value) = 0;
 };
 
-struct __declspec(uuid("32c20dd8-faef-4375-a2ab-32640e4815c7")) __declspec(novtable) ICoreWindow3 : Windows::IInspectable
+struct __declspec(uuid("32c20dd8-faef-4375-a2ab-32640e4815c7")) __declspec(novtable) ICoreWindow3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_ClosestInteractiveBoundsRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_ClosestInteractiveBoundsRequested(event_token cookie) = 0;
     virtual HRESULT __stdcall abi_GetCurrentKeyEventDeviceId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da")) __declspec(novtable) ICoreWindowEventArgs : Windows::IInspectable
+struct __declspec(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da")) __declspec(novtable) ICoreWindowEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
 };
 
-struct __declspec(uuid("b8f0b925-b350-48b3-a198-5c1a84700243")) __declspec(novtable) ICoreWindowResizeManager : Windows::IInspectable
+struct __declspec(uuid("b8f0b925-b350-48b3-a198-5c1a84700243")) __declspec(novtable) ICoreWindowResizeManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_NotifyLayoutCompleted() = 0;
 };
 
-struct __declspec(uuid("bb74f27b-a544-4301-80e6-0ae033ef4536")) __declspec(novtable) ICoreWindowResizeManagerLayoutCapability : Windows::IInspectable
+struct __declspec(uuid("bb74f27b-a544-4301-80e6-0ae033ef4536")) __declspec(novtable) ICoreWindowResizeManagerLayoutCapability : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_ShouldWaitForLayoutCompletion(bool value) = 0;
     virtual HRESULT __stdcall get_ShouldWaitForLayoutCompletion(bool * value) = 0;
 };
 
-struct __declspec(uuid("ae4a9045-6d70-49db-8e68-46ffbd17d38d")) __declspec(novtable) ICoreWindowResizeManagerStatics : Windows::IInspectable
+struct __declspec(uuid("ae4a9045-6d70-49db-8e68-46ffbd17d38d")) __declspec(novtable) ICoreWindowResizeManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForCurrentView(Windows::UI::Core::ICoreWindowResizeManager ** CoreWindowResizeManager) = 0;
 };
 
-struct __declspec(uuid("4d239005-3c2a-41b1-9022-536bb9cf93b1")) __declspec(novtable) ICoreWindowStatic : Windows::IInspectable
+struct __declspec(uuid("4d239005-3c2a-41b1-9022-536bb9cf93b1")) __declspec(novtable) ICoreWindowStatic : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForCurrentThread(Windows::UI::Core::ICoreWindow ** ppWindow) = 0;
 };
 
-struct __declspec(uuid("98bb6a24-dc1c-43cb-b4ed-d1c0eb2391f3")) __declspec(novtable) IIdleDispatchedHandlerArgs : Windows::IInspectable
+struct __declspec(uuid("98bb6a24-dc1c-43cb-b4ed-d1c0eb2391f3")) __declspec(novtable) IIdleDispatchedHandlerArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsDispatcherIdle(bool * value) = 0;
 };
 
-struct __declspec(uuid("188f20d6-9873-464a-ace5-57e010f465e6")) __declspec(novtable) IInitializeWithCoreWindow : Windows::IInspectable
+struct __declspec(uuid("188f20d6-9873-464a-ace5-57e010f465e6")) __declspec(novtable) IInitializeWithCoreWindow : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Initialize(Windows::UI::Core::ICoreWindow * window) = 0;
 };
 
-struct __declspec(uuid("80371d4f-2fd8-4c24-aa86-3163a87b4e5a")) __declspec(novtable) IInputEnabledEventArgs : Windows::IInspectable
+struct __declspec(uuid("80371d4f-2fd8-4c24-aa86-3163a87b4e5a")) __declspec(novtable) IInputEnabledEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InputEnabled(bool * value) = 0;
 };
 
-struct __declspec(uuid("5ff5e930-2544-4a17-bd78-1f2fdebb106b")) __declspec(novtable) IKeyEventArgs : Windows::IInspectable
+struct __declspec(uuid("5ff5e930-2544-4a17-bd78-1f2fdebb106b")) __declspec(novtable) IKeyEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_VirtualKey(winrt::Windows::System::VirtualKey * value) = 0;
     virtual HRESULT __stdcall get_KeyStatus(Windows::UI::Core::CorePhysicalKeyStatus * value) = 0;
 };
 
-struct __declspec(uuid("583add98-0790-4571-9b12-645ef9d79e42")) __declspec(novtable) IKeyEventArgs2 : Windows::IInspectable
+struct __declspec(uuid("583add98-0790-4571-9b12-645ef9d79e42")) __declspec(novtable) IKeyEventArgs2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("920d9cb1-a5fc-4a21-8c09-49dfe6ffe25f")) __declspec(novtable) IPointerEventArgs : Windows::IInspectable
+struct __declspec(uuid("920d9cb1-a5fc-4a21-8c09-49dfe6ffe25f")) __declspec(novtable) IPointerEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CurrentPoint(Windows::UI::Input::IPointerPoint ** value) = 0;
     virtual HRESULT __stdcall get_KeyModifiers(winrt::Windows::System::VirtualKeyModifiers * value) = 0;
     virtual HRESULT __stdcall abi_GetIntermediatePoints(Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> ** value) = 0;
 };
 
-struct __declspec(uuid("93023118-cf50-42a6-9706-69107fa122e1")) __declspec(novtable) ISystemNavigationManager : Windows::IInspectable
+struct __declspec(uuid("93023118-cf50-42a6-9706-69107fa122e1")) __declspec(novtable) ISystemNavigationManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_BackRequested(Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_BackRequested(event_token token) = 0;
 };
 
-struct __declspec(uuid("8c510401-67be-49ae-9509-671c1e54a389")) __declspec(novtable) ISystemNavigationManager2 : Windows::IInspectable
+struct __declspec(uuid("8c510401-67be-49ae-9509-671c1e54a389")) __declspec(novtable) ISystemNavigationManager2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppViewBackButtonVisibility(winrt::Windows::UI::Core::AppViewBackButtonVisibility * value) = 0;
     virtual HRESULT __stdcall put_AppViewBackButtonVisibility(winrt::Windows::UI::Core::AppViewBackButtonVisibility value) = 0;
 };
 
-struct __declspec(uuid("dc52b5ce-bee0-4305-8c54-68228ed683b5")) __declspec(novtable) ISystemNavigationManagerStatics : Windows::IInspectable
+struct __declspec(uuid("dc52b5ce-bee0-4305-8c54-68228ed683b5")) __declspec(novtable) ISystemNavigationManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForCurrentView(Windows::UI::Core::ISystemNavigationManager ** loader) = 0;
 };
 
-struct __declspec(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b")) __declspec(novtable) ITouchHitTestingEventArgs : Windows::IInspectable
+struct __declspec(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b")) __declspec(novtable) ITouchHitTestingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProximityEvaluation(Windows::UI::Core::CoreProximityEvaluation * value) = 0;
     virtual HRESULT __stdcall put_ProximityEvaluation(Windows::UI::Core::CoreProximityEvaluation value) = 0;
@@ -362,17 +362,17 @@ struct __declspec(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b")) __declspec(novta
     virtual HRESULT __stdcall abi_EvaluateProximityToPolygon(uint32_t __controlVerticesSize, Windows::Foundation::Point * controlVertices, Windows::UI::Core::CoreProximityEvaluation * proximityEvaluation) = 0;
 };
 
-struct __declspec(uuid("bf9918ea-d801-4564-a495-b1e84f8ad085")) __declspec(novtable) IVisibilityChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("bf9918ea-d801-4564-a495-b1e84f8ad085")) __declspec(novtable) IVisibilityChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Visible(bool * value) = 0;
 };
 
-struct __declspec(uuid("179d65e7-4658-4cb6-aa13-41d094ea255e")) __declspec(novtable) IWindowActivatedEventArgs : Windows::IInspectable
+struct __declspec(uuid("179d65e7-4658-4cb6-aa13-41d094ea255e")) __declspec(novtable) IWindowActivatedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_WindowActivationState(winrt::Windows::UI::Core::CoreWindowActivationState * value) = 0;
 };
 
-struct __declspec(uuid("5a200ec7-0426-47dc-b86c-6f475915e451")) __declspec(novtable) IWindowSizeChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("5a200ec7-0426-47dc-b86c-6f475915e451")) __declspec(novtable) IWindowSizeChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Size(Windows::Foundation::Size * value) = 0;
 };
@@ -430,8 +430,8 @@ struct WINRT_EBO impl_IAcceleratorKeyEventArgs2
 template <typename D>
 struct WINRT_EBO impl_IAutomationProviderRequestedEventArgs
 {
-    Windows::IInspectable AutomationProvider() const;
-    void AutomationProvider(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable AutomationProvider() const;
+    void AutomationProvider(const Windows::Foundation::IInspectable & value) const;
 };
 
 template <typename D>
@@ -479,13 +479,13 @@ template <typename D>
 struct WINRT_EBO impl_ICoreComponentFocusable
 {
     bool HasFocus() const;
-    event_token GotFocus(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const;
+    event_token GotFocus(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const;
     using GotFocus_revoker = event_revoker<ICoreComponentFocusable>;
-    GotFocus_revoker GotFocus(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const;
+    GotFocus_revoker GotFocus(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const;
     void GotFocus(event_token cookie) const;
-    event_token LostFocus(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const;
+    event_token LostFocus(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const;
     using LostFocus_revoker = event_revoker<ICoreComponentFocusable>;
-    LostFocus_revoker LostFocus(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const;
+    LostFocus_revoker LostFocus(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const;
     void LostFocus(event_token cookie) const;
 };
 
@@ -534,9 +534,9 @@ struct WINRT_EBO impl_ICoreInputSourceBase
     Windows::UI::Core::CoreDispatcher Dispatcher() const;
     bool IsInputEnabled() const;
     void IsInputEnabled(bool value) const;
-    event_token InputEnabled(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> & handler) const;
+    event_token InputEnabled(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::InputEnabledEventArgs> & handler) const;
     using InputEnabled_revoker = event_revoker<ICoreInputSourceBase>;
-    InputEnabled_revoker InputEnabled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> & handler) const;
+    InputEnabled_revoker InputEnabled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::InputEnabledEventArgs> & handler) const;
     void InputEnabled(event_token cookie) const;
 };
 
@@ -544,17 +544,17 @@ template <typename D>
 struct WINRT_EBO impl_ICoreKeyboardInputSource
 {
     Windows::UI::Core::CoreVirtualKeyStates GetCurrentKeyState(Windows::System::VirtualKey virtualKey) const;
-    event_token CharacterReceived(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> & handler) const;
+    event_token CharacterReceived(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> & handler) const;
     using CharacterReceived_revoker = event_revoker<ICoreKeyboardInputSource>;
-    CharacterReceived_revoker CharacterReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> & handler) const;
+    CharacterReceived_revoker CharacterReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> & handler) const;
     void CharacterReceived(event_token cookie) const;
-    event_token KeyDown(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const;
+    event_token KeyDown(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const;
     using KeyDown_revoker = event_revoker<ICoreKeyboardInputSource>;
-    KeyDown_revoker KeyDown(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const;
+    KeyDown_revoker KeyDown(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const;
     void KeyDown(event_token cookie) const;
-    event_token KeyUp(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const;
+    event_token KeyUp(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const;
     using KeyUp_revoker = event_revoker<ICoreKeyboardInputSource>;
-    KeyUp_revoker KeyUp(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const;
+    KeyUp_revoker KeyUp(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::KeyEventArgs> & handler) const;
     void KeyUp(event_token cookie) const;
 };
 
@@ -573,33 +573,33 @@ struct WINRT_EBO impl_ICorePointerInputSource
     Windows::Foundation::Point PointerPosition() const;
     Windows::UI::Core::CoreCursor PointerCursor() const;
     void PointerCursor(const Windows::UI::Core::CoreCursor & value) const;
-    event_token PointerCaptureLost(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    event_token PointerCaptureLost(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerCaptureLost_revoker = event_revoker<ICorePointerInputSource>;
-    PointerCaptureLost_revoker PointerCaptureLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    PointerCaptureLost_revoker PointerCaptureLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     void PointerCaptureLost(event_token cookie) const;
-    event_token PointerEntered(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    event_token PointerEntered(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerEntered_revoker = event_revoker<ICorePointerInputSource>;
-    PointerEntered_revoker PointerEntered(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    PointerEntered_revoker PointerEntered(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     void PointerEntered(event_token cookie) const;
-    event_token PointerExited(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    event_token PointerExited(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerExited_revoker = event_revoker<ICorePointerInputSource>;
-    PointerExited_revoker PointerExited(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    PointerExited_revoker PointerExited(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     void PointerExited(event_token cookie) const;
-    event_token PointerMoved(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    event_token PointerMoved(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerMoved_revoker = event_revoker<ICorePointerInputSource>;
-    PointerMoved_revoker PointerMoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    PointerMoved_revoker PointerMoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     void PointerMoved(event_token cookie) const;
-    event_token PointerPressed(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    event_token PointerPressed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerPressed_revoker = event_revoker<ICorePointerInputSource>;
-    PointerPressed_revoker PointerPressed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    PointerPressed_revoker PointerPressed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     void PointerPressed(event_token cookie) const;
-    event_token PointerReleased(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    event_token PointerReleased(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerReleased_revoker = event_revoker<ICorePointerInputSource>;
-    PointerReleased_revoker PointerReleased(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    PointerReleased_revoker PointerReleased(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     void PointerReleased(event_token cookie) const;
-    event_token PointerWheelChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    event_token PointerWheelChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerWheelChanged_revoker = event_revoker<ICorePointerInputSource>;
-    PointerWheelChanged_revoker PointerWheelChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
+    PointerWheelChanged_revoker PointerWheelChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> & handler) const;
     void PointerWheelChanged(event_token cookie) const;
 };
 
@@ -623,16 +623,16 @@ struct WINRT_EBO impl_ICorePointerRedirector
 template <typename D>
 struct WINRT_EBO impl_ICoreTouchHitTesting
 {
-    event_token TouchHitTesting(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> & handler) const;
+    event_token TouchHitTesting(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> & handler) const;
     using TouchHitTesting_revoker = event_revoker<ICoreTouchHitTesting>;
-    TouchHitTesting_revoker TouchHitTesting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> & handler) const;
+    TouchHitTesting_revoker TouchHitTesting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> & handler) const;
     void TouchHitTesting(event_token cookie) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ICoreWindow
 {
-    Windows::IInspectable AutomationHostProvider() const;
+    Windows::Foundation::IInspectable AutomationHostProvider() const;
     Windows::Foundation::Rect Bounds() const;
     Windows::Foundation::Collections::IPropertySet CustomProperties() const;
     Windows::UI::Core::CoreDispatcher Dispatcher() const;

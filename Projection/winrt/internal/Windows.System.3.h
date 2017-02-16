@@ -98,13 +98,13 @@ struct MemoryManager
     static uint64_t AppMemoryUsage();
     static uint64_t AppMemoryUsageLimit();
     static Windows::System::AppMemoryUsageLevel AppMemoryUsageLevel();
-    static event_token AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static event_token AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     using AppMemoryUsageIncreased_revoker = factory_event_revoker<IMemoryManagerStatics>;
-    static AppMemoryUsageIncreased_revoker AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static AppMemoryUsageIncreased_revoker AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     static void AppMemoryUsageIncreased(event_token token);
-    static event_token AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static event_token AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     using AppMemoryUsageDecreased_revoker = factory_event_revoker<IMemoryManagerStatics>;
-    static AppMemoryUsageDecreased_revoker AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static AppMemoryUsageDecreased_revoker AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     static void AppMemoryUsageDecreased(event_token token);
     static event_token AppMemoryUsageLimitChanging(const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler);
     using AppMemoryUsageLimitChanging_revoker = factory_event_revoker<IMemoryManagerStatics>;

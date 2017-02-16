@@ -18,7 +18,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Networking::Vpn {
 
-struct __declspec(uuid("7b06a635-5c58-41d9-94a7-bfbcf1d8ca54")) __declspec(novtable) IVpnAppId : Windows::IInspectable
+struct __declspec(uuid("7b06a635-5c58-41d9-94a7-bfbcf1d8ca54")) __declspec(novtable) IVpnAppId : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::Networking::Vpn::VpnAppIdType * value) = 0;
     virtual HRESULT __stdcall put_Type(winrt::Windows::Networking::Vpn::VpnAppIdType value) = 0;
@@ -26,15 +26,15 @@ struct __declspec(uuid("7b06a635-5c58-41d9-94a7-bfbcf1d8ca54")) __declspec(novta
     virtual HRESULT __stdcall put_Value(hstring value) = 0;
 };
 
-struct __declspec(uuid("46adfd2a-0aab-4fdb-821d-d3ddc919788b")) __declspec(novtable) IVpnAppIdFactory : Windows::IInspectable
+struct __declspec(uuid("46adfd2a-0aab-4fdb-821d-d3ddc919788b")) __declspec(novtable) IVpnAppIdFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(winrt::Windows::Networking::Vpn::VpnAppIdType type, hstring value, Windows::Networking::Vpn::IVpnAppId ** result) = 0;
 };
 
-struct __declspec(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3")) __declspec(novtable) IVpnChannel : Windows::IInspectable
+struct __declspec(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3")) __declspec(novtable) IVpnChannel : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_AssociateTransport(Windows::IInspectable * mainOuterTunnelTransport, Windows::IInspectable * optionalOuterTunnelTransport) = 0;
-    virtual HRESULT __stdcall abi_Start(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv4list, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv6list, Windows::Networking::Vpn::IVpnInterfaceId * vpnInterfaceId, Windows::Networking::Vpn::IVpnRouteAssignment * routeScope, Windows::Networking::Vpn::IVpnNamespaceAssignment * namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, Windows::IInspectable * mainOuterTunnelTransport, Windows::IInspectable * optionalOuterTunnelTransport) = 0;
+    virtual HRESULT __stdcall abi_AssociateTransport(Windows::Foundation::IInspectable * mainOuterTunnelTransport, Windows::Foundation::IInspectable * optionalOuterTunnelTransport) = 0;
+    virtual HRESULT __stdcall abi_Start(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv4list, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv6list, Windows::Networking::Vpn::IVpnInterfaceId * vpnInterfaceId, Windows::Networking::Vpn::IVpnRouteAssignment * routeScope, Windows::Networking::Vpn::IVpnNamespaceAssignment * namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, Windows::Foundation::IInspectable * mainOuterTunnelTransport, Windows::Foundation::IInspectable * optionalOuterTunnelTransport) = 0;
     virtual HRESULT __stdcall abi_Stop() = 0;
     virtual HRESULT __stdcall abi_RequestCredentials(winrt::Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, Windows::Security::Cryptography::Certificates::ICertificate * certificate, Windows::Networking::Vpn::IVpnPickedCredential ** credential) = 0;
     virtual HRESULT __stdcall abi_RequestVpnPacketBuffer(winrt::Windows::Networking::Vpn::VpnDataPathType type, Windows::Networking::Vpn::IVpnPacketBuffer ** vpnPacketBuffer) = 0;
@@ -43,17 +43,17 @@ struct __declspec(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3")) __declspec(novta
     virtual HRESULT __stdcall get_Configuration(Windows::Networking::Vpn::IVpnChannelConfiguration ** value) = 0;
     virtual HRESULT __stdcall add_ActivityChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ActivityChange(event_token token) = 0;
-    virtual HRESULT __stdcall put_PlugInContext(Windows::IInspectable * value) = 0;
-    virtual HRESULT __stdcall get_PlugInContext(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_PlugInContext(Windows::Foundation::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_PlugInContext(Windows::Foundation::IInspectable ** value) = 0;
     virtual HRESULT __stdcall get_SystemHealth(Windows::Networking::Vpn::IVpnSystemHealth ** value) = 0;
     virtual HRESULT __stdcall abi_RequestCustomPrompt(Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> * customPrompt) = 0;
     virtual HRESULT __stdcall abi_SetErrorMessage(hstring message) = 0;
-    virtual HRESULT __stdcall abi_SetAllowedSslTlsVersions(Windows::IInspectable * tunnelTransport, bool useTls12) = 0;
+    virtual HRESULT __stdcall abi_SetAllowedSslTlsVersions(Windows::Foundation::IInspectable * tunnelTransport, bool useTls12) = 0;
 };
 
-struct __declspec(uuid("2255d165-993b-4629-ad60-f1c3f3537f50")) __declspec(novtable) IVpnChannel2 : Windows::IInspectable
+struct __declspec(uuid("2255d165-993b-4629-ad60-f1c3f3537f50")) __declspec(novtable) IVpnChannel2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_StartWithMainTransport(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv4list, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv6list, Windows::Networking::Vpn::IVpnInterfaceId * vpnInterfaceId, Windows::Networking::Vpn::IVpnRouteAssignment * assignedRoutes, Windows::Networking::Vpn::IVpnDomainNameAssignment * assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, Windows::IInspectable * mainOuterTunnelTransport) = 0;
+    virtual HRESULT __stdcall abi_StartWithMainTransport(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv4list, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv6list, Windows::Networking::Vpn::IVpnInterfaceId * vpnInterfaceId, Windows::Networking::Vpn::IVpnRouteAssignment * assignedRoutes, Windows::Networking::Vpn::IVpnDomainNameAssignment * assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, Windows::Foundation::IInspectable * mainOuterTunnelTransport) = 0;
     virtual HRESULT __stdcall abi_StartExistingTransports(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv4list, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIPv6list, Windows::Networking::Vpn::IVpnInterfaceId * vpnInterfaceId, Windows::Networking::Vpn::IVpnRouteAssignment * assignedRoutes, Windows::Networking::Vpn::IVpnDomainNameAssignment * assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) = 0;
     virtual HRESULT __stdcall add_ActivityStateChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ActivityStateChange(event_token token) = 0;
@@ -64,37 +64,37 @@ struct __declspec(uuid("2255d165-993b-4629-ad60-f1c3f3537f50")) __declspec(novta
     virtual HRESULT __stdcall abi_RequestCredentialsWithOptionsAsync(winrt::Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> ** credential) = 0;
     virtual HRESULT __stdcall abi_RequestCredentialsSimpleAsync(winrt::Windows::Networking::Vpn::VpnCredentialType credType, Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> ** credential) = 0;
     virtual HRESULT __stdcall abi_TerminateConnection(hstring message) = 0;
-    virtual HRESULT __stdcall abi_StartWithTrafficFilter(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIpv4List, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIpv6List, Windows::Networking::Vpn::IVpnInterfaceId * vpnInterfaceId, Windows::Networking::Vpn::IVpnRouteAssignment * assignedRoutes, Windows::Networking::Vpn::IVpnDomainNameAssignment * assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, Windows::IInspectable * mainOuterTunnelTransport, Windows::IInspectable * optionalOuterTunnelTransport, Windows::Networking::Vpn::IVpnTrafficFilterAssignment * assignedTrafficFilters) = 0;
+    virtual HRESULT __stdcall abi_StartWithTrafficFilter(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIpv4List, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> * assignedClientIpv6List, Windows::Networking::Vpn::IVpnInterfaceId * vpnInterfaceId, Windows::Networking::Vpn::IVpnRouteAssignment * assignedRoutes, Windows::Networking::Vpn::IVpnDomainNameAssignment * assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, Windows::Foundation::IInspectable * mainOuterTunnelTransport, Windows::Foundation::IInspectable * optionalOuterTunnelTransport, Windows::Networking::Vpn::IVpnTrafficFilterAssignment * assignedTrafficFilters) = 0;
 };
 
-struct __declspec(uuid("a36c88f2-afdc-4775-855d-d4ac0a35fc55")) __declspec(novtable) IVpnChannelActivityEventArgs : Windows::IInspectable
+struct __declspec(uuid("a36c88f2-afdc-4775-855d-d4ac0a35fc55")) __declspec(novtable) IVpnChannelActivityEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::Networking::Vpn::VpnChannelActivityEventType * value) = 0;
 };
 
-struct __declspec(uuid("3d750565-fdc0-4bbe-a23b-45fffc6d97a1")) __declspec(novtable) IVpnChannelActivityStateChangedArgs : Windows::IInspectable
+struct __declspec(uuid("3d750565-fdc0-4bbe-a23b-45fffc6d97a1")) __declspec(novtable) IVpnChannelActivityStateChangedArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ActivityState(winrt::Windows::Networking::Vpn::VpnChannelActivityEventType * value) = 0;
 };
 
-struct __declspec(uuid("0e2ddca2-2012-4fe4-b179-8c652c6d107e")) __declspec(novtable) IVpnChannelConfiguration : Windows::IInspectable
+struct __declspec(uuid("0e2ddca2-2012-4fe4-b179-8c652c6d107e")) __declspec(novtable) IVpnChannelConfiguration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ServerServiceName(hstring * value) = 0;
     virtual HRESULT __stdcall get_ServerHostNameList(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> ** value) = 0;
     virtual HRESULT __stdcall get_CustomField(hstring * value) = 0;
 };
 
-struct __declspec(uuid("f30b574c-7824-471c-a118-63dbc93ae4c7")) __declspec(novtable) IVpnChannelConfiguration2 : Windows::IInspectable
+struct __declspec(uuid("f30b574c-7824-471c-a118-63dbc93ae4c7")) __declspec(novtable) IVpnChannelConfiguration2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ServerUris(Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> ** value) = 0;
 };
 
-struct __declspec(uuid("88eb062d-e818-4ffd-98a6-363e3736c95d")) __declspec(novtable) IVpnChannelStatics : Windows::IInspectable
+struct __declspec(uuid("88eb062d-e818-4ffd-98a6-363e3736c95d")) __declspec(novtable) IVpnChannelStatics : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_ProcessEventAsync(Windows::IInspectable * thirdPartyPlugIn, Windows::IInspectable * event) = 0;
+    virtual HRESULT __stdcall abi_ProcessEventAsync(Windows::Foundation::IInspectable * thirdPartyPlugIn, Windows::Foundation::IInspectable * event) = 0;
 };
 
-struct __declspec(uuid("b7e78af3-a46d-404b-8729-1832522853ac")) __declspec(novtable) IVpnCredential : Windows::IInspectable
+struct __declspec(uuid("b7e78af3-a46d-404b-8729-1832522853ac")) __declspec(novtable) IVpnCredential : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PasskeyCredential(Windows::Security::Credentials::IPasswordCredential ** value) = 0;
     virtual HRESULT __stdcall get_CertificateCredential(Windows::Security::Cryptography::Certificates::ICertificate ** value) = 0;
@@ -102,21 +102,21 @@ struct __declspec(uuid("b7e78af3-a46d-404b-8729-1832522853ac")) __declspec(novta
     virtual HRESULT __stdcall get_OldPasswordCredential(Windows::Security::Credentials::IPasswordCredential ** value) = 0;
 };
 
-struct __declspec(uuid("43878753-03c5-4e61-93d7-a957714c4282")) __declspec(novtable) IVpnCustomCheckBox : Windows::IInspectable
+struct __declspec(uuid("43878753-03c5-4e61-93d7-a957714c4282")) __declspec(novtable) IVpnCustomCheckBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_InitialCheckState(bool value) = 0;
     virtual HRESULT __stdcall get_InitialCheckState(bool * value) = 0;
     virtual HRESULT __stdcall get_Checked(bool * value) = 0;
 };
 
-struct __declspec(uuid("9a24158e-dba1-4c6f-8270-dcf3c9761c4c")) __declspec(novtable) IVpnCustomComboBox : Windows::IInspectable
+struct __declspec(uuid("9a24158e-dba1-4c6f-8270-dcf3c9761c4c")) __declspec(novtable) IVpnCustomComboBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_OptionsText(Windows::Foundation::Collections::IVectorView<hstring> * value) = 0;
     virtual HRESULT __stdcall get_OptionsText(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
     virtual HRESULT __stdcall get_Selected(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39")) __declspec(novtable) IVpnCustomEditBox : Windows::IInspectable
+struct __declspec(uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39")) __declspec(novtable) IVpnCustomEditBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_DefaultText(hstring value) = 0;
     virtual HRESULT __stdcall get_DefaultText(hstring * value) = 0;
@@ -125,11 +125,11 @@ struct __declspec(uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39")) __declspec(novta
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
 };
 
-struct __declspec(uuid("9ec4efb2-c942-42af-b223-588b48328721")) __declspec(novtable) IVpnCustomErrorBox : Windows::IInspectable
+struct __declspec(uuid("9ec4efb2-c942-42af-b223-588b48328721")) __declspec(novtable) IVpnCustomErrorBox : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244")) __declspec(novtable) IVpnCustomPrompt : Windows::IInspectable
+struct __declspec(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244")) __declspec(novtable) IVpnCustomPrompt : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Label(hstring value) = 0;
     virtual HRESULT __stdcall get_Label(hstring * value) = 0;
@@ -139,14 +139,14 @@ struct __declspec(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244")) __declspec(novta
     virtual HRESULT __stdcall get_Bordered(bool * value) = 0;
 };
 
-struct __declspec(uuid("c4c9a69e-ff47-4527-9f27-a49292019979")) __declspec(novtable) IVpnCustomPromptBooleanInput : Windows::IInspectable
+struct __declspec(uuid("c4c9a69e-ff47-4527-9f27-a49292019979")) __declspec(novtable) IVpnCustomPromptBooleanInput : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_InitialValue(bool value) = 0;
     virtual HRESULT __stdcall get_InitialValue(bool * value) = 0;
     virtual HRESULT __stdcall get_Value(bool * value) = 0;
 };
 
-struct __declspec(uuid("73bd5638-6f04-404d-93dd-50a44924a38b")) __declspec(novtable) IVpnCustomPromptElement : Windows::IInspectable
+struct __declspec(uuid("73bd5638-6f04-404d-93dd-50a44924a38b")) __declspec(novtable) IVpnCustomPromptElement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_DisplayName(hstring value) = 0;
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
@@ -156,19 +156,19 @@ struct __declspec(uuid("73bd5638-6f04-404d-93dd-50a44924a38b")) __declspec(novta
     virtual HRESULT __stdcall get_Emphasized(bool * value) = 0;
 };
 
-struct __declspec(uuid("3b8f34d9-8ec1-4e95-9a4e-7ba64d38f330")) __declspec(novtable) IVpnCustomPromptOptionSelector : Windows::IInspectable
+struct __declspec(uuid("3b8f34d9-8ec1-4e95-9a4e-7ba64d38f330")) __declspec(novtable) IVpnCustomPromptOptionSelector : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Options(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
     virtual HRESULT __stdcall get_SelectedIndex(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("3bc8bdee-3a42-49a3-abdd-07b2edea752d")) __declspec(novtable) IVpnCustomPromptText : Windows::IInspectable
+struct __declspec(uuid("3bc8bdee-3a42-49a3-abdd-07b2edea752d")) __declspec(novtable) IVpnCustomPromptText : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Text(hstring value) = 0;
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
 };
 
-struct __declspec(uuid("c9da9c75-913c-47d5-88ba-48fc48930235")) __declspec(novtable) IVpnCustomPromptTextInput : Windows::IInspectable
+struct __declspec(uuid("c9da9c75-913c-47d5-88ba-48fc48930235")) __declspec(novtable) IVpnCustomPromptTextInput : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_PlaceholderText(hstring value) = 0;
     virtual HRESULT __stdcall get_PlaceholderText(hstring * value) = 0;
@@ -177,20 +177,20 @@ struct __declspec(uuid("c9da9c75-913c-47d5-88ba-48fc48930235")) __declspec(novta
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
 };
 
-struct __declspec(uuid("daa4c3ca-8f23-4d36-91f1-76d937827942")) __declspec(novtable) IVpnCustomTextBox : Windows::IInspectable
+struct __declspec(uuid("daa4c3ca-8f23-4d36-91f1-76d937827942")) __declspec(novtable) IVpnCustomTextBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_DisplayText(hstring value) = 0;
     virtual HRESULT __stdcall get_DisplayText(hstring * value) = 0;
 };
 
-struct __declspec(uuid("4135b141-ccdb-49b5-9401-039a8ae767e9")) __declspec(novtable) IVpnDomainNameAssignment : Windows::IInspectable
+struct __declspec(uuid("4135b141-ccdb-49b5-9401-039a8ae767e9")) __declspec(novtable) IVpnDomainNameAssignment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DomainNameList(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> ** value) = 0;
     virtual HRESULT __stdcall put_ProxyAutoConfigurationUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
     virtual HRESULT __stdcall get_ProxyAutoConfigurationUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("ad2eb82f-ea8e-4f7a-843e-1a87e32e1b9a")) __declspec(novtable) IVpnDomainNameInfo : Windows::IInspectable
+struct __declspec(uuid("ad2eb82f-ea8e-4f7a-843e-1a87e32e1b9a")) __declspec(novtable) IVpnDomainNameInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_DomainName(Windows::Networking::IHostName * value) = 0;
     virtual HRESULT __stdcall get_DomainName(Windows::Networking::IHostName ** value) = 0;
@@ -200,27 +200,27 @@ struct __declspec(uuid("ad2eb82f-ea8e-4f7a-843e-1a87e32e1b9a")) __declspec(novta
     virtual HRESULT __stdcall get_WebProxyServers(Windows::Foundation::Collections::IVector<Windows::Networking::HostName> ** value) = 0;
 };
 
-struct __declspec(uuid("ab871151-6c53-4828-9883-d886de104407")) __declspec(novtable) IVpnDomainNameInfo2 : Windows::IInspectable
+struct __declspec(uuid("ab871151-6c53-4828-9883-d886de104407")) __declspec(novtable) IVpnDomainNameInfo2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_WebProxyUris(Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ** value) = 0;
 };
 
-struct __declspec(uuid("2507bb75-028f-4688-8d3a-c4531df37da8")) __declspec(novtable) IVpnDomainNameInfoFactory : Windows::IInspectable
+struct __declspec(uuid("2507bb75-028f-4688-8d3a-c4531df37da8")) __declspec(novtable) IVpnDomainNameInfoFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateVpnDomainNameInfo(hstring name, winrt::Windows::Networking::Vpn::VpnDomainNameType nameType, Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> * dnsServerList, Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> * proxyServerList, Windows::Networking::Vpn::IVpnDomainNameInfo ** domainNameInfo) = 0;
 };
 
-struct __declspec(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d1011")) __declspec(novtable) IVpnInterfaceId : Windows::IInspectable
+struct __declspec(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d1011")) __declspec(novtable) IVpnInterfaceId : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAddressInfo(uint32_t * __idSize, uint8_t ** id) = 0;
 };
 
-struct __declspec(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d1000")) __declspec(novtable) IVpnInterfaceIdFactory : Windows::IInspectable
+struct __declspec(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d1000")) __declspec(novtable) IVpnInterfaceIdFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateVpnInterfaceId(uint32_t __addressSize, uint8_t * address, Windows::Networking::Vpn::IVpnInterfaceId ** vpnInterfaceId) = 0;
 };
 
-struct __declspec(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34")) __declspec(novtable) IVpnManagementAgent : Windows::IInspectable
+struct __declspec(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34")) __declspec(novtable) IVpnManagementAgent : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddProfileFromXmlAsync(hstring xml, Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> ** operation) = 0;
     virtual HRESULT __stdcall abi_AddProfileFromObjectAsync(Windows::Networking::Vpn::IVpnProfile * profile, Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> ** operation) = 0;
@@ -233,7 +233,7 @@ struct __declspec(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34")) __declspec(novta
     virtual HRESULT __stdcall abi_DisconnectProfileAsync(Windows::Networking::Vpn::IVpnProfile * profile, Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> ** operation) = 0;
 };
 
-struct __declspec(uuid("d7f7db18-307d-4c0e-bd62-8fa270bbadd6")) __declspec(novtable) IVpnNamespaceAssignment : Windows::IInspectable
+struct __declspec(uuid("d7f7db18-307d-4c0e-bd62-8fa270bbadd6")) __declspec(novtable) IVpnNamespaceAssignment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_NamespaceList(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> * value) = 0;
     virtual HRESULT __stdcall get_NamespaceList(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> ** value) = 0;
@@ -241,7 +241,7 @@ struct __declspec(uuid("d7f7db18-307d-4c0e-bd62-8fa270bbadd6")) __declspec(novta
     virtual HRESULT __stdcall get_ProxyAutoConfigUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("30edfb43-444f-44c5-8167-a35a91f1af94")) __declspec(novtable) IVpnNamespaceInfo : Windows::IInspectable
+struct __declspec(uuid("30edfb43-444f-44c5-8167-a35a91f1af94")) __declspec(novtable) IVpnNamespaceInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Namespace(hstring value) = 0;
     virtual HRESULT __stdcall get_Namespace(hstring * value) = 0;
@@ -251,12 +251,12 @@ struct __declspec(uuid("30edfb43-444f-44c5-8167-a35a91f1af94")) __declspec(novta
     virtual HRESULT __stdcall get_WebProxyServers(Windows::Foundation::Collections::IVector<Windows::Networking::HostName> ** value) = 0;
 };
 
-struct __declspec(uuid("cb3e951a-b0ce-442b-acbb-5f99b202c31c")) __declspec(novtable) IVpnNamespaceInfoFactory : Windows::IInspectable
+struct __declspec(uuid("cb3e951a-b0ce-442b-acbb-5f99b202c31c")) __declspec(novtable) IVpnNamespaceInfoFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateVpnNamespaceInfo(hstring name, Windows::Foundation::Collections::IVector<Windows::Networking::HostName> * dnsServerList, Windows::Foundation::Collections::IVector<Windows::Networking::HostName> * proxyServerList, Windows::Networking::Vpn::IVpnNamespaceInfo ** namespaceInfo) = 0;
 };
 
-struct __declspec(uuid("a4aee29e-6417-4333-9842-f0a66db69802")) __declspec(novtable) IVpnNativeProfile : Windows::IInspectable
+struct __declspec(uuid("a4aee29e-6417-4333-9842-f0a66db69802")) __declspec(novtable) IVpnNativeProfile : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Servers(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
     virtual HRESULT __stdcall get_RoutingPolicyType(winrt::Windows::Networking::Vpn::VpnRoutingPolicyType * value) = 0;
@@ -271,14 +271,14 @@ struct __declspec(uuid("a4aee29e-6417-4333-9842-f0a66db69802")) __declspec(novta
     virtual HRESULT __stdcall put_EapConfiguration(hstring value) = 0;
 };
 
-struct __declspec(uuid("0fec2467-cdb5-4ac7-b5a3-0afb5ec47682")) __declspec(novtable) IVpnNativeProfile2 : Windows::IInspectable
+struct __declspec(uuid("0fec2467-cdb5-4ac7-b5a3-0afb5ec47682")) __declspec(novtable) IVpnNativeProfile2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequireVpnClientAppUI(bool * value) = 0;
     virtual HRESULT __stdcall put_RequireVpnClientAppUI(bool value) = 0;
     virtual HRESULT __stdcall get_ConnectionStatus(winrt::Windows::Networking::Vpn::VpnManagementConnectionStatus * value) = 0;
 };
 
-struct __declspec(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce55")) __declspec(novtable) IVpnPacketBuffer : Windows::IInspectable
+struct __declspec(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce55")) __declspec(novtable) IVpnPacketBuffer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Buffer(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall put_Status(winrt::Windows::Networking::Vpn::VpnPacketBufferStatus value) = 0;
@@ -287,17 +287,17 @@ struct __declspec(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce55")) __declspec(novta
     virtual HRESULT __stdcall get_TransportAffinity(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("665e91f0-8805-4bf5-a619-2e84882e6b4f")) __declspec(novtable) IVpnPacketBuffer2 : Windows::IInspectable
+struct __declspec(uuid("665e91f0-8805-4bf5-a619-2e84882e6b4f")) __declspec(novtable) IVpnPacketBuffer2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppId(Windows::Networking::Vpn::IVpnAppId ** value) = 0;
 };
 
-struct __declspec(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d9999")) __declspec(novtable) IVpnPacketBufferFactory : Windows::IInspectable
+struct __declspec(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d9999")) __declspec(novtable) IVpnPacketBufferFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateVpnPacketBuffer(Windows::Networking::Vpn::IVpnPacketBuffer * parentBuffer, uint32_t offset, uint32_t length, Windows::Networking::Vpn::IVpnPacketBuffer ** vpnPacketBuffer) = 0;
 };
 
-struct __declspec(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77")) __declspec(novtable) IVpnPacketBufferList : Windows::IInspectable
+struct __declspec(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77")) __declspec(novtable) IVpnPacketBufferList : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Append(Windows::Networking::Vpn::IVpnPacketBuffer * nextVpnPacketBuffer) = 0;
     virtual HRESULT __stdcall abi_AddAtBegin(Windows::Networking::Vpn::IVpnPacketBuffer * nextVpnPacketBuffer) = 0;
@@ -309,7 +309,7 @@ struct __declspec(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77")) __declspec(novta
     virtual HRESULT __stdcall get_Size(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("3e7acfe5-ea1e-482a-8d98-c065f57d89ea")) __declspec(novtable) IVpnPacketBufferList2 : Windows::IInspectable
+struct __declspec(uuid("3e7acfe5-ea1e-482a-8d98-c065f57d89ea")) __declspec(novtable) IVpnPacketBufferList2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddLeadingPacket(Windows::Networking::Vpn::IVpnPacketBuffer * nextVpnPacketBuffer) = 0;
     virtual HRESULT __stdcall abi_RemoveLeadingPacket(Windows::Networking::Vpn::IVpnPacketBuffer ** nextVpnPacketBuffer) = 0;
@@ -317,14 +317,14 @@ struct __declspec(uuid("3e7acfe5-ea1e-482a-8d98-c065f57d89ea")) __declspec(novta
     virtual HRESULT __stdcall abi_RemoveTrailingPacket(Windows::Networking::Vpn::IVpnPacketBuffer ** nextVpnPacketBuffer) = 0;
 };
 
-struct __declspec(uuid("9a793ac7-8854-4e52-ad97-24dd9a842bce")) __declspec(novtable) IVpnPickedCredential : Windows::IInspectable
+struct __declspec(uuid("9a793ac7-8854-4e52-ad97-24dd9a842bce")) __declspec(novtable) IVpnPickedCredential : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PasskeyCredential(Windows::Security::Credentials::IPasswordCredential ** value) = 0;
     virtual HRESULT __stdcall get_AdditionalPin(hstring * value) = 0;
     virtual HRESULT __stdcall get_OldPasswordCredential(Windows::Security::Credentials::IPasswordCredential ** value) = 0;
 };
 
-struct __declspec(uuid("ceb78d07-d0a8-4703-a091-c8c2c0915bc4")) __declspec(novtable) IVpnPlugIn : Windows::IInspectable
+struct __declspec(uuid("ceb78d07-d0a8-4703-a091-c8c2c0915bc4")) __declspec(novtable) IVpnPlugIn : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Connect(Windows::Networking::Vpn::IVpnChannel * channel) = 0;
     virtual HRESULT __stdcall abi_Disconnect(Windows::Networking::Vpn::IVpnChannel * channel) = 0;
@@ -333,7 +333,7 @@ struct __declspec(uuid("ceb78d07-d0a8-4703-a091-c8c2c0915bc4")) __declspec(novta
     virtual HRESULT __stdcall abi_Decapsulate(Windows::Networking::Vpn::IVpnChannel * channel, Windows::Networking::Vpn::IVpnPacketBuffer * encapBuffer, Windows::Networking::Vpn::IVpnPacketBufferList * decapsulatedPackets, Windows::Networking::Vpn::IVpnPacketBufferList * controlPacketsToSend) = 0;
 };
 
-struct __declspec(uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c")) __declspec(novtable) IVpnPlugInProfile : Windows::IInspectable
+struct __declspec(uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c")) __declspec(novtable) IVpnPlugInProfile : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ServerUris(Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ** value) = 0;
     virtual HRESULT __stdcall get_CustomConfiguration(hstring * value) = 0;
@@ -342,14 +342,14 @@ struct __declspec(uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c")) __declspec(novta
     virtual HRESULT __stdcall put_VpnPluginPackageFamilyName(hstring value) = 0;
 };
 
-struct __declspec(uuid("611c4892-cf94-4ad6-ba99-00f4ff34565e")) __declspec(novtable) IVpnPlugInProfile2 : Windows::IInspectable
+struct __declspec(uuid("611c4892-cf94-4ad6-ba99-00f4ff34565e")) __declspec(novtable) IVpnPlugInProfile2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequireVpnClientAppUI(bool * value) = 0;
     virtual HRESULT __stdcall put_RequireVpnClientAppUI(bool value) = 0;
     virtual HRESULT __stdcall get_ConnectionStatus(winrt::Windows::Networking::Vpn::VpnManagementConnectionStatus * value) = 0;
 };
 
-struct __declspec(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a")) __declspec(novtable) IVpnProfile : Windows::IInspectable
+struct __declspec(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a")) __declspec(novtable) IVpnProfile : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProfileName(hstring * value) = 0;
     virtual HRESULT __stdcall put_ProfileName(hstring value) = 0;
@@ -363,7 +363,7 @@ struct __declspec(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a")) __declspec(novta
     virtual HRESULT __stdcall put_AlwaysOn(bool value) = 0;
 };
 
-struct __declspec(uuid("b5731b83-0969-4699-938e-7776db29cfb3")) __declspec(novtable) IVpnRoute : Windows::IInspectable
+struct __declspec(uuid("b5731b83-0969-4699-938e-7776db29cfb3")) __declspec(novtable) IVpnRoute : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Address(Windows::Networking::IHostName * value) = 0;
     virtual HRESULT __stdcall get_Address(Windows::Networking::IHostName ** value) = 0;
@@ -371,7 +371,7 @@ struct __declspec(uuid("b5731b83-0969-4699-938e-7776db29cfb3")) __declspec(novta
     virtual HRESULT __stdcall get_PrefixSize(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("db64de22-ce39-4a76-9550-f61039f80e48")) __declspec(novtable) IVpnRouteAssignment : Windows::IInspectable
+struct __declspec(uuid("db64de22-ce39-4a76-9550-f61039f80e48")) __declspec(novtable) IVpnRouteAssignment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Ipv4InclusionRoutes(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> * value) = 0;
     virtual HRESULT __stdcall put_Ipv6InclusionRoutes(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> * value) = 0;
@@ -385,17 +385,17 @@ struct __declspec(uuid("db64de22-ce39-4a76-9550-f61039f80e48")) __declspec(novta
     virtual HRESULT __stdcall get_ExcludeLocalSubnets(bool * value) = 0;
 };
 
-struct __declspec(uuid("bdeab5ff-45cf-4b99-83fb-db3bc2672b02")) __declspec(novtable) IVpnRouteFactory : Windows::IInspectable
+struct __declspec(uuid("bdeab5ff-45cf-4b99-83fb-db3bc2672b02")) __declspec(novtable) IVpnRouteFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateVpnRoute(Windows::Networking::IHostName * address, uint8_t prefixSize, Windows::Networking::Vpn::IVpnRoute ** route) = 0;
 };
 
-struct __declspec(uuid("99a8f8af-c0ee-4e75-817a-f231aee5123d")) __declspec(novtable) IVpnSystemHealth : Windows::IInspectable
+struct __declspec(uuid("99a8f8af-c0ee-4e75-817a-f231aee5123d")) __declspec(novtable) IVpnSystemHealth : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StatementOfHealth(Windows::Storage::Streams::IBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50")) __declspec(novtable) IVpnTrafficFilter : Windows::IInspectable
+struct __declspec(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50")) __declspec(novtable) IVpnTrafficFilter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppId(Windows::Networking::Vpn::IVpnAppId ** value) = 0;
     virtual HRESULT __stdcall put_AppId(Windows::Networking::Vpn::IVpnAppId * value) = 0;
@@ -410,7 +410,7 @@ struct __declspec(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50")) __declspec(novta
     virtual HRESULT __stdcall put_RoutingPolicyType(winrt::Windows::Networking::Vpn::VpnRoutingPolicyType value) = 0;
 };
 
-struct __declspec(uuid("56ccd45c-e664-471e-89cd-601603b9e0f3")) __declspec(novtable) IVpnTrafficFilterAssignment : Windows::IInspectable
+struct __declspec(uuid("56ccd45c-e664-471e-89cd-601603b9e0f3")) __declspec(novtable) IVpnTrafficFilterAssignment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TrafficFilterList(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> ** value) = 0;
     virtual HRESULT __stdcall get_AllowOutbound(bool * value) = 0;
@@ -419,7 +419,7 @@ struct __declspec(uuid("56ccd45c-e664-471e-89cd-601603b9e0f3")) __declspec(novta
     virtual HRESULT __stdcall put_AllowInbound(bool value) = 0;
 };
 
-struct __declspec(uuid("480d41d5-7f99-474c-86ee-96df168318f1")) __declspec(novtable) IVpnTrafficFilterFactory : Windows::IInspectable
+struct __declspec(uuid("480d41d5-7f99-474c-86ee-96df168318f1")) __declspec(novtable) IVpnTrafficFilterFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Networking::Vpn::IVpnAppId * appId, Windows::Networking::Vpn::IVpnTrafficFilter ** result) = 0;
 };
@@ -482,8 +482,8 @@ struct WINRT_EBO impl_IVpnAppIdFactory
 template <typename D>
 struct WINRT_EBO impl_IVpnChannel
 {
-    void AssociateTransport(const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const;
-    void Start(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const;
+    void AssociateTransport(const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport) const;
+    void Start(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport) const;
     void Stop() const;
     Windows::Networking::Vpn::VpnPickedCredential RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
     void RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, Windows::Networking::Vpn::VpnPacketBuffer & vpnPacketBuffer) const;
@@ -494,18 +494,18 @@ struct WINRT_EBO impl_IVpnChannel
     using ActivityChange_revoker = event_revoker<IVpnChannel>;
     ActivityChange_revoker ActivityChange(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> & handler) const;
     void ActivityChange(event_token token) const;
-    void PlugInContext(const Windows::IInspectable & value) const;
-    Windows::IInspectable PlugInContext() const;
+    void PlugInContext(const Windows::Foundation::IInspectable & value) const;
+    Windows::Foundation::IInspectable PlugInContext() const;
     Windows::Networking::Vpn::VpnSystemHealth SystemHealth() const;
     void RequestCustomPrompt(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> & customPrompt) const;
     void SetErrorMessage(hstring_view message) const;
-    void SetAllowedSslTlsVersions(const Windows::IInspectable & tunnelTransport, bool useTls12) const;
+    void SetAllowedSslTlsVersions(const Windows::Foundation::IInspectable & tunnelTransport, bool useTls12) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IVpnChannel2
 {
-    void StartWithMainTransport(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::IInspectable & mainOuterTunnelTransport) const;
+    void StartWithMainTransport(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport) const;
     void StartExistingTransports(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) const;
     event_token ActivityStateChange(const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> & handler) const;
     using ActivityStateChange_revoker = event_revoker<IVpnChannel2>;
@@ -518,7 +518,7 @@ struct WINRT_EBO impl_IVpnChannel2
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType) const;
     void TerminateConnection(hstring_view message) const;
-    void StartWithTrafficFilter(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv4List, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const;
+    void StartWithTrafficFilter(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv4List, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const;
 };
 
 template <typename D>
@@ -550,7 +550,7 @@ struct WINRT_EBO impl_IVpnChannelConfiguration2
 template <typename D>
 struct WINRT_EBO impl_IVpnChannelStatics
 {
-    void ProcessEventAsync(const Windows::IInspectable & thirdPartyPlugIn, const Windows::IInspectable & event) const;
+    void ProcessEventAsync(const Windows::Foundation::IInspectable & thirdPartyPlugIn, const Windows::Foundation::IInspectable & event) const;
 };
 
 template <typename D>

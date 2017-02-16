@@ -581,12 +581,12 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrame> : produce
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrameFactory> : produce_base<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrameFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::IColorKeyFrame> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::IColorKeyFrame> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -729,12 +729,12 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : produce_base<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation>
 {
-    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1547,12 +1547,12 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> : produc
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameFactory> : produce_base<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3078,12 +3078,12 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoFactory> : produce_base<D, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3197,7 +3197,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyF
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produce_base<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame>
 {
-    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -3212,12 +3212,12 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
         }
     }
 
-    HRESULT __stdcall put_Value(impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall put_Value(impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Value(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().Value(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3258,12 +3258,12 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrameFactory> : produce_base<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrameFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3716,12 +3716,12 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrame> : produce
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrameFactory> : produce_base<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrameFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::IPointKeyFrame> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::IPointKeyFrame> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -6348,12 +6348,12 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
         }
     }
 
-    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -6380,12 +6380,12 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineFactory> : produce_base<D, Windows::UI::Xaml::Media::Animation::ITimelineFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::ITimeline> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::ITimeline> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -6618,7 +6618,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IColorKeyFrameS
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::ColorKeyFrame impl_IColorKeyFrameFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::Animation::ColorKeyFrame impl_IColorKeyFrameFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Animation::ColorKeyFrame instance { nullptr };
     check_hresult(WINRT_SHIM(IColorKeyFrameFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -6663,7 +6663,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDoubleKeyFrame
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::DoubleKeyFrame impl_IDoubleKeyFrameFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::Animation::DoubleKeyFrame impl_IDoubleKeyFrameFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Animation::DoubleKeyFrame instance { nullptr };
     check_hresult(WINRT_SHIM(IDoubleKeyFrameFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -6732,21 +6732,21 @@ template <typename D> void impl_INavigationTransitionInfoOverrides<D>::SetNaviga
     check_hresult(WINRT_SHIM(INavigationTransitionInfoOverrides)->abi_SetNavigationStateCore(get_abi(navigationState)));
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo impl_INavigationTransitionInfoFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo impl_INavigationTransitionInfoFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo instance { nullptr };
     check_hresult(WINRT_SHIM(INavigationTransitionInfoFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
 }
 
-template <typename D> Windows::IInspectable impl_IObjectKeyFrame<D>::Value() const
+template <typename D> Windows::Foundation::IInspectable impl_IObjectKeyFrame<D>::Value() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IObjectKeyFrame)->get_Value(put_abi(value)));
     return value;
 }
 
-template <typename D> void impl_IObjectKeyFrame<D>::Value(const Windows::IInspectable & value) const
+template <typename D> void impl_IObjectKeyFrame<D>::Value(const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IObjectKeyFrame)->put_Value(get_abi(value)));
 }
@@ -6777,7 +6777,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IObjectKeyFrame
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::ObjectKeyFrame impl_IObjectKeyFrameFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::Animation::ObjectKeyFrame impl_IObjectKeyFrameFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Animation::ObjectKeyFrame instance { nullptr };
     check_hresult(WINRT_SHIM(IObjectKeyFrameFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -6822,7 +6822,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointKeyFrameS
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::PointKeyFrame impl_IPointKeyFrameFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::Animation::PointKeyFrame impl_IPointKeyFrameFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Animation::PointKeyFrame instance { nullptr };
     check_hresult(WINRT_SHIM(IPointKeyFrameFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -6901,14 +6901,14 @@ template <typename D> void impl_ITimeline<D>::RepeatBehavior(const Windows::UI::
     check_hresult(WINRT_SHIM(ITimeline)->put_RepeatBehavior(get_abi(value)));
 }
 
-template <typename D> event_token impl_ITimeline<D>::Completed(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
+template <typename D> event_token impl_ITimeline<D>::Completed(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ITimeline)->add_Completed(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<ITimeline> impl_ITimeline<D>::Completed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
+template <typename D> event_revoker<ITimeline> impl_ITimeline<D>::Completed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, ITimeline>(this, &ABI::Windows::UI::Xaml::Media::Animation::ITimeline::remove_Completed, Completed(value));
 }
@@ -6972,7 +6972,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITimelineStatic
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::Timeline impl_ITimelineFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::Animation::Timeline impl_ITimelineFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Animation::Timeline instance { nullptr };
     check_hresult(WINRT_SHIM(ITimelineFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -8911,14 +8911,14 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISwipeHintTheme
     return value;
 }
 
-template <typename D> event_token impl_IConnectedAnimation<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IConnectedAnimation<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IConnectedAnimation)->add_Completed(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IConnectedAnimation> impl_IConnectedAnimation<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IConnectedAnimation> impl_IConnectedAnimation<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IConnectedAnimation>(this, &ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation::remove_Completed, Completed(value));
 }

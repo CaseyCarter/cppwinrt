@@ -29,14 +29,14 @@ TEST_CASE("produce_IUnknown")
     {
         // Basic query works for IUnknown.
 
-        com_ptr<Windows::IUnknown> qi;
+        com_ptr<Windows::Foundation::IUnknown> qi;
         REQUIRE(S_OK == p->QueryInterface(put_abi(qi)));
         REQUIRE(qi);
     }
     {
         // Query for unsupported interface is rejected.
 
-        com_ptr<Windows::IInspectable> qi;
+        com_ptr<Windows::Foundation::IInspectable> qi;
         REQUIRE(E_NOINTERFACE == p->QueryInterface(put_abi(qi)));
         REQUIRE(!qi);
     }
@@ -77,7 +77,7 @@ TEST_CASE("produce_IUnknown_ABI")
 // IInspectable - tests support for producing implementations with just IInspectable.
 //
 
-struct produce_IInspectable : implements<produce_IInspectable, Windows::IInspectable>
+struct produce_IInspectable : implements<produce_IInspectable, Windows::Foundation::IInspectable>
 {
     bool & m_destroyed;
     produce_IInspectable(bool & destroyed) : m_destroyed(destroyed) { m_destroyed = false; }
@@ -87,19 +87,19 @@ struct produce_IInspectable : implements<produce_IInspectable, Windows::IInspect
 TEST_CASE("produce_IInspectable")
 {
     bool destroyed = false;
-    Windows::IInspectable p = make<produce_IInspectable>(destroyed);
+    Windows::Foundation::IInspectable p = make<produce_IInspectable>(destroyed);
 
     {
         // Basic query works for IUnknown.
 
-        com_ptr<Windows::IUnknown> qi;
+        com_ptr<Windows::Foundation::IUnknown> qi;
         REQUIRE(S_OK == get_abi(p)->QueryInterface(put_abi(qi)));
         REQUIRE(qi);
     }
     {
         // Query works for IInspectable.
 
-        com_ptr<Windows::IInspectable> qi;
+        com_ptr<Windows::Foundation::IInspectable> qi;
         REQUIRE(S_OK == get_abi(p)->QueryInterface(put_abi(qi)));
         REQUIRE(qi);
     }
@@ -118,11 +118,11 @@ TEST_CASE("produce_IInspectable")
 
 // RuntimeClassName may optionally be implemented with the projection.
 
-struct produce_IInspectable_No_RuntimeClassName : implements<produce_IInspectable_No_RuntimeClassName, Windows::IInspectable>
+struct produce_IInspectable_No_RuntimeClassName : implements<produce_IInspectable_No_RuntimeClassName, Windows::Foundation::IInspectable>
 {
 };
 
-struct produce_IInspectable_RuntimeClassName : implements<produce_IInspectable_RuntimeClassName, Windows::IInspectable>
+struct produce_IInspectable_RuntimeClassName : implements<produce_IInspectable_RuntimeClassName, Windows::Foundation::IInspectable>
 {
     hstring GetRuntimeClassName()
     {
@@ -132,10 +132,10 @@ struct produce_IInspectable_RuntimeClassName : implements<produce_IInspectable_R
 
 TEST_CASE("produce_IInspectable_RuntimeClassName")
 {
-    Windows::IInspectable without = make<produce_IInspectable_No_RuntimeClassName>();
+    Windows::Foundation::IInspectable without = make<produce_IInspectable_No_RuntimeClassName>();
     REQUIRE_THROWS_AS(GetRuntimeClassName(without), hresult_not_implemented);
 
-    Windows::IInspectable with = make<produce_IInspectable_RuntimeClassName>();
+    Windows::Foundation::IInspectable with = make<produce_IInspectable_RuntimeClassName>();
     REQUIRE(GetRuntimeClassName(with) == L"produce_IInspectable_RuntimeClassName");
 }
 
@@ -157,7 +157,7 @@ struct produce_IActivationFactory : implements<produce_IActivationFactory, IActi
     produce_IActivationFactory(bool & destroyed) : m_destroyed(destroyed) { m_destroyed = false; }
     ~produce_IActivationFactory() { m_destroyed = true; }
 
-    Windows::IInspectable ActivateInstance()
+    Windows::Foundation::IInspectable ActivateInstance()
     {
         return make<produce_IActivationFactory_Instance>();
     }

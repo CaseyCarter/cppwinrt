@@ -137,12 +137,12 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlock> : produce_base<D, Window
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Documents::IBlockFactory> : produce_base<D, Windows::UI::Xaml::Documents::IBlockFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Documents::IBlock> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Documents::IBlock> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1041,12 +1041,12 @@ struct produce<D, Windows::UI::Xaml::Documents::IInline> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Documents::IInlineFactory> : produce_base<D, Windows::UI::Xaml::Documents::IInlineFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Documents::IInline> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Documents::IInline> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1281,12 +1281,12 @@ struct produce<D, Windows::UI::Xaml::Documents::ISpan> : produce_base<D, Windows
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Documents::ISpanFactory> : produce_base<D, Windows::UI::Xaml::Documents::ISpanFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Documents::ISpan> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Documents::ISpan> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1603,7 +1603,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_FindName(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_FindName(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -4900,9 +4900,9 @@ template <typename D> Windows::UI::Xaml::Documents::TextPointer impl_ITextElemen
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_ITextElement<D>::FindName(hstring_view name) const
+template <typename D> Windows::Foundation::IInspectable impl_ITextElement<D>::FindName(hstring_view name) const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(ITextElement)->abi_FindName(get_abi(name), put_abi(returnValue)));
     return returnValue;
 }
@@ -5120,14 +5120,14 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBlockStatics<D
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Documents::Block impl_IBlockFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Documents::Block impl_IBlockFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Documents::Block instance { nullptr };
     check_hresult(WINRT_SHIM(IBlockFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
 }
 
-template <typename D> Windows::UI::Xaml::Documents::Inline impl_IInlineFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Documents::Inline impl_IInlineFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Documents::Inline instance { nullptr };
     check_hresult(WINRT_SHIM(IInlineFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -5215,7 +5215,7 @@ template <typename D> void impl_ISpan<D>::Inlines(const Windows::UI::Xaml::Docum
     check_hresult(WINRT_SHIM(ISpan)->put_Inlines(get_abi(value)));
 }
 
-template <typename D> Windows::UI::Xaml::Documents::Span impl_ISpanFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Documents::Span impl_ISpanFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Documents::Span instance { nullptr };
     check_hresult(WINRT_SHIM(ISpanFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -5711,7 +5711,7 @@ inline Windows::UI::Xaml::DependencyProperty Run::FlowDirectionProperty()
 
 inline Span::Span()
 {
-    Windows::IInspectable outer, inner;
+    Windows::Foundation::IInspectable outer, inner;
     impl_move(get_activation_factory<Span, ISpanFactory>().CreateInstance(outer, inner));
 }
 

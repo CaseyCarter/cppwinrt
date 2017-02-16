@@ -94,12 +94,12 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
         }
     }
 
-    HRESULT __stdcall add_Resuming(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Resuming(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Resuming(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Resuming(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -300,12 +300,12 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationExit> : produ
         }
     }
 
-    HRESULT __stdcall add_Exiting(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Exiting(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Exiting(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Exiting(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -621,12 +621,12 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
         }
     }
 
-    HRESULT __stdcall add_LayoutMetricsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_LayoutMetricsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().LayoutMetricsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().LayoutMetricsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -663,12 +663,12 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
         }
     }
 
-    HRESULT __stdcall add_IsVisibleChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_IsVisibleChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().IsVisibleChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().IsVisibleChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1016,14 +1016,14 @@ template <typename D> void impl_ICoreApplication<D>::Suspending(event_token toke
     check_hresult(WINRT_SHIM(ICoreApplication)->remove_Suspending(token));
 }
 
-template <typename D> event_token impl_ICoreApplication<D>::Resuming(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICoreApplication<D>::Resuming(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICoreApplication)->add_Resuming(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICoreApplication> impl_ICoreApplication<D>::Resuming(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICoreApplication> impl_ICoreApplication<D>::Resuming(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICoreApplication>(this, &ABI::Windows::ApplicationModel::Core::ICoreApplication::remove_Resuming, Resuming(handler));
 }
@@ -1072,14 +1072,14 @@ template <typename D> void impl_ICoreApplicationExit<D>::Exit() const
     check_hresult(WINRT_SHIM(ICoreApplicationExit)->abi_Exit());
 }
 
-template <typename D> event_token impl_ICoreApplicationExit<D>::Exiting(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICoreApplicationExit<D>::Exiting(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICoreApplicationExit)->add_Exiting(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICoreApplicationExit> impl_ICoreApplicationExit<D>::Exiting(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICoreApplicationExit> impl_ICoreApplicationExit<D>::Exiting(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICoreApplicationExit>(this, &ABI::Windows::ApplicationModel::Core::ICoreApplicationExit::remove_Exiting, Exiting(handler));
 }
@@ -1313,14 +1313,14 @@ template <typename D> double impl_ICoreApplicationViewTitleBar<D>::Height() cons
     return value;
 }
 
-template <typename D> event_token impl_ICoreApplicationViewTitleBar<D>::LayoutMetricsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICoreApplicationViewTitleBar<D>::LayoutMetricsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICoreApplicationViewTitleBar)->add_LayoutMetricsChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICoreApplicationViewTitleBar> impl_ICoreApplicationViewTitleBar<D>::LayoutMetricsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICoreApplicationViewTitleBar> impl_ICoreApplicationViewTitleBar<D>::LayoutMetricsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICoreApplicationViewTitleBar>(this, &ABI::Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar::remove_LayoutMetricsChanged, LayoutMetricsChanged(handler));
 }
@@ -1337,14 +1337,14 @@ template <typename D> bool impl_ICoreApplicationViewTitleBar<D>::IsVisible() con
     return value;
 }
 
-template <typename D> event_token impl_ICoreApplicationViewTitleBar<D>::IsVisibleChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICoreApplicationViewTitleBar<D>::IsVisibleChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICoreApplicationViewTitleBar)->add_IsVisibleChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICoreApplicationViewTitleBar> impl_ICoreApplicationViewTitleBar<D>::IsVisibleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICoreApplicationViewTitleBar> impl_ICoreApplicationViewTitleBar<D>::IsVisibleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICoreApplicationViewTitleBar>(this, &ABI::Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar::remove_IsVisibleChanged, IsVisibleChanged(handler));
 }
@@ -1394,12 +1394,12 @@ inline void CoreApplication::Suspending(event_token token)
     get_activation_factory<CoreApplication, ICoreApplication>().Suspending(token);
 }
 
-inline event_token CoreApplication::Resuming(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline event_token CoreApplication::Resuming(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     return get_activation_factory<CoreApplication, ICoreApplication>().Resuming(handler);
 }
 
-inline factory_event_revoker<ICoreApplication> CoreApplication::Resuming(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline factory_event_revoker<ICoreApplication> CoreApplication::Resuming(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     auto factory = get_activation_factory<CoreApplication, ICoreApplication>();
     return { factory, &ABI::Windows::ApplicationModel::Core::ICoreApplication::remove_Resuming, factory.Resuming(handler) };
@@ -1488,12 +1488,12 @@ inline void CoreApplication::Exit()
     get_activation_factory<CoreApplication, ICoreApplicationExit>().Exit();
 }
 
-inline event_token CoreApplication::Exiting(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline event_token CoreApplication::Exiting(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     return get_activation_factory<CoreApplication, ICoreApplicationExit>().Exiting(handler);
 }
 
-inline factory_event_revoker<ICoreApplicationExit> CoreApplication::Exiting(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline factory_event_revoker<ICoreApplicationExit> CoreApplication::Exiting(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     auto factory = get_activation_factory<CoreApplication, ICoreApplicationExit>();
     return { factory, &ABI::Windows::ApplicationModel::Core::ICoreApplicationExit::remove_Exiting, factory.Exiting(handler) };

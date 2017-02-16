@@ -27,7 +27,7 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 namespace Windows::Storage::Compression {
 
 struct ICompressor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompressor>,
     impl::require<ICompressor, Windows::Foundation::IClosable, Windows::Storage::Streams::IOutputStream>
 {
@@ -35,14 +35,14 @@ struct ICompressor :
 };
 
 struct ICompressorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompressorFactory>
 {
     ICompressorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDecompressor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDecompressor>,
     impl::require<IDecompressor, Windows::Foundation::IClosable, Windows::Storage::Streams::IInputStream>
 {
@@ -50,7 +50,7 @@ struct IDecompressor :
 };
 
 struct IDecompressorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDecompressorFactory>
 {
     IDecompressorFactory(std::nullptr_t = nullptr) noexcept {}

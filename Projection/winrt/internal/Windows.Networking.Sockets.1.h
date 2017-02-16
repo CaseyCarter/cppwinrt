@@ -52,7 +52,7 @@ using BandwidthStatistics = ABI::Windows::Networking::Sockets::BandwidthStatisti
 
 namespace ABI::Windows::Networking::Sockets {
 
-struct __declspec(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af")) __declspec(novtable) IDatagramSocket : Windows::IInspectable
+struct __declspec(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af")) __declspec(novtable) IDatagramSocket : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Control(Windows::Networking::Sockets::IDatagramSocketControl ** value) = 0;
     virtual HRESULT __stdcall get_Information(Windows::Networking::Sockets::IDatagramSocketInformation ** value) = 0;
@@ -68,12 +68,12 @@ struct __declspec(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af")) __declspec(novta
     virtual HRESULT __stdcall remove_MessageReceived(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("d83ba354-9a9d-4185-a20a-1424c9c2a7cd")) __declspec(novtable) IDatagramSocket2 : Windows::IInspectable
+struct __declspec(uuid("d83ba354-9a9d-4185-a20a-1424c9c2a7cd")) __declspec(novtable) IDatagramSocket2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_BindServiceNameAndAdapterAsync(hstring localServiceName, Windows::Networking::Connectivity::INetworkAdapter * adapter, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("37544f09-ab92-4306-9ac1-0c381283d9c6")) __declspec(novtable) IDatagramSocket3 : Windows::IInspectable
+struct __declspec(uuid("37544f09-ab92-4306-9ac1-0c381283d9c6")) __declspec(novtable) IDatagramSocket3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CancelIOAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_EnableTransferOwnership(GUID taskId) = 0;
@@ -83,7 +83,7 @@ struct __declspec(uuid("37544f09-ab92-4306-9ac1-0c381283d9c6")) __declspec(novta
     virtual HRESULT __stdcall abi_TransferOwnershipWithContextAndKeepAliveTime(hstring socketId, Windows::Networking::Sockets::ISocketActivityContext * data, Windows::Foundation::TimeSpan keepAliveTime) = 0;
 };
 
-struct __declspec(uuid("52ac3f2e-349a-4135-bb58-b79b2647d390")) __declspec(novtable) IDatagramSocketControl : Windows::IInspectable
+struct __declspec(uuid("52ac3f2e-349a-4135-bb58-b79b2647d390")) __declspec(novtable) IDatagramSocketControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QualityOfService(winrt::Windows::Networking::Sockets::SocketQualityOfService * value) = 0;
     virtual HRESULT __stdcall put_QualityOfService(winrt::Windows::Networking::Sockets::SocketQualityOfService value) = 0;
@@ -91,7 +91,7 @@ struct __declspec(uuid("52ac3f2e-349a-4135-bb58-b79b2647d390")) __declspec(novta
     virtual HRESULT __stdcall put_OutboundUnicastHopLimit(uint8_t value) = 0;
 };
 
-struct __declspec(uuid("33ead5c2-979c-4415-82a1-3cfaf646c192")) __declspec(novtable) IDatagramSocketControl2 : Windows::IInspectable
+struct __declspec(uuid("33ead5c2-979c-4415-82a1-3cfaf646c192")) __declspec(novtable) IDatagramSocketControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InboundBufferSizeInBytes(uint32_t * value) = 0;
     virtual HRESULT __stdcall put_InboundBufferSizeInBytes(uint32_t value) = 0;
@@ -99,13 +99,13 @@ struct __declspec(uuid("33ead5c2-979c-4415-82a1-3cfaf646c192")) __declspec(novta
     virtual HRESULT __stdcall put_DontFragment(bool value) = 0;
 };
 
-struct __declspec(uuid("d4eb8256-1f6d-4598-9b57-d42a001df349")) __declspec(novtable) IDatagramSocketControl3 : Windows::IInspectable
+struct __declspec(uuid("d4eb8256-1f6d-4598-9b57-d42a001df349")) __declspec(novtable) IDatagramSocketControl3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MulticastOnly(bool * value) = 0;
     virtual HRESULT __stdcall put_MulticastOnly(bool value) = 0;
 };
 
-struct __declspec(uuid("5f1a569a-55fb-48cd-9706-7a974f7b1585")) __declspec(novtable) IDatagramSocketInformation : Windows::IInspectable
+struct __declspec(uuid("5f1a569a-55fb-48cd-9706-7a974f7b1585")) __declspec(novtable) IDatagramSocketInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LocalAddress(Windows::Networking::IHostName ** value) = 0;
     virtual HRESULT __stdcall get_LocalPort(hstring * value) = 0;
@@ -113,7 +113,7 @@ struct __declspec(uuid("5f1a569a-55fb-48cd-9706-7a974f7b1585")) __declspec(novta
     virtual HRESULT __stdcall get_RemotePort(hstring * value) = 0;
 };
 
-struct __declspec(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d107e")) __declspec(novtable) IDatagramSocketMessageReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d107e")) __declspec(novtable) IDatagramSocketMessageReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RemoteAddress(Windows::Networking::IHostName ** value) = 0;
     virtual HRESULT __stdcall get_RemotePort(hstring * value) = 0;
@@ -122,13 +122,13 @@ struct __declspec(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d107e")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDataStream(Windows::Storage::Streams::IInputStream ** inputStream) = 0;
 };
 
-struct __declspec(uuid("e9c62aee-1494-4a21-bb7e-8589fc751d9d")) __declspec(novtable) IDatagramSocketStatics : Windows::IInspectable
+struct __declspec(uuid("e9c62aee-1494-4a21-bb7e-8589fc751d9d")) __declspec(novtable) IDatagramSocketStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetEndpointPairsAsync(Windows::Networking::IHostName * remoteHostName, hstring remoteServiceName, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetEndpointPairsWithSortOptionsAsync(Windows::Networking::IHostName * remoteHostName, hstring remoteServiceName, winrt::Windows::Networking::HostNameSortOptions sortOptions, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> ** operation) = 0;
 };
 
-struct __declspec(uuid("33727d08-34d5-4746-ad7b-8dde5bc2ef88")) __declspec(novtable) IMessageWebSocket : Windows::IInspectable
+struct __declspec(uuid("33727d08-34d5-4746-ad7b-8dde5bc2ef88")) __declspec(novtable) IMessageWebSocket : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Control(Windows::Networking::Sockets::IMessageWebSocketControl ** value) = 0;
     virtual HRESULT __stdcall get_Information(Windows::Networking::Sockets::IWebSocketInformation ** value) = 0;
@@ -136,13 +136,13 @@ struct __declspec(uuid("33727d08-34d5-4746-ad7b-8dde5bc2ef88")) __declspec(novta
     virtual HRESULT __stdcall remove_MessageReceived(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("bed0cee7-f9c8-440a-9ad5-737281d9742e")) __declspec(novtable) IMessageWebSocket2 : Windows::IInspectable
+struct __declspec(uuid("bed0cee7-f9c8-440a-9ad5-737281d9742e")) __declspec(novtable) IMessageWebSocket2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_ServerCustomValidationRequested(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> * eventHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_ServerCustomValidationRequested(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("8118388a-c629-4f0a-80fb-81fc05538862")) __declspec(novtable) IMessageWebSocketControl : Windows::IInspectable
+struct __declspec(uuid("8118388a-c629-4f0a-80fb-81fc05538862")) __declspec(novtable) IMessageWebSocketControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxMessageSize(uint32_t * value) = 0;
     virtual HRESULT __stdcall put_MaxMessageSize(uint32_t value) = 0;
@@ -150,24 +150,24 @@ struct __declspec(uuid("8118388a-c629-4f0a-80fb-81fc05538862")) __declspec(novta
     virtual HRESULT __stdcall put_MessageType(winrt::Windows::Networking::Sockets::SocketMessageType value) = 0;
 };
 
-struct __declspec(uuid("478c22ac-4c4b-42ed-9ed7-1ef9f94fa3d5")) __declspec(novtable) IMessageWebSocketMessageReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("478c22ac-4c4b-42ed-9ed7-1ef9f94fa3d5")) __declspec(novtable) IMessageWebSocketMessageReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MessageType(winrt::Windows::Networking::Sockets::SocketMessageType * value) = 0;
     virtual HRESULT __stdcall abi_GetDataReader(Windows::Storage::Streams::IDataReader ** dataReader) = 0;
     virtual HRESULT __stdcall abi_GetDataStream(Windows::Storage::Streams::IInputStream ** inputStream) = 0;
 };
 
-struct __declspec(uuid("43b04d64-4c85-4396-a637-1d973f6ebd49")) __declspec(novtable) ISocketActivityContext : Windows::IInspectable
+struct __declspec(uuid("43b04d64-4c85-4396-a637-1d973f6ebd49")) __declspec(novtable) ISocketActivityContext : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Data(Windows::Storage::Streams::IBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("b99fc3c3-088c-4388-83ae-2525138e049a")) __declspec(novtable) ISocketActivityContextFactory : Windows::IInspectable
+struct __declspec(uuid("b99fc3c3-088c-4388-83ae-2525138e049a")) __declspec(novtable) ISocketActivityContextFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Storage::Streams::IBuffer * data, Windows::Networking::Sockets::ISocketActivityContext ** context) = 0;
 };
 
-struct __declspec(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe")) __declspec(novtable) ISocketActivityInformation : Windows::IInspectable
+struct __declspec(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe")) __declspec(novtable) ISocketActivityInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TaskId(GUID * value) = 0;
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
@@ -178,23 +178,23 @@ struct __declspec(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe")) __declspec(novta
     virtual HRESULT __stdcall get_StreamSocketListener(Windows::Networking::Sockets::IStreamSocketListener ** value) = 0;
 };
 
-struct __declspec(uuid("8570b47a-7e7d-4736-8041-1327a6543c56")) __declspec(novtable) ISocketActivityInformationStatics : Windows::IInspectable
+struct __declspec(uuid("8570b47a-7e7d-4736-8041-1327a6543c56")) __declspec(novtable) ISocketActivityInformationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllSockets(Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation> ** sockets) = 0;
 };
 
-struct __declspec(uuid("45f406a7-fc9f-4f81-acad-355fef51e67b")) __declspec(novtable) ISocketActivityTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("45f406a7-fc9f-4f81-acad-355fef51e67b")) __declspec(novtable) ISocketActivityTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Reason(winrt::Windows::Networking::Sockets::SocketActivityTriggerReason * value) = 0;
     virtual HRESULT __stdcall get_SocketInformation(Windows::Networking::Sockets::ISocketActivityInformation ** value) = 0;
 };
 
-struct __declspec(uuid("828337f4-7d56-4d8e-b7b4-a07dd7c1bca9")) __declspec(novtable) ISocketErrorStatics : Windows::IInspectable
+struct __declspec(uuid("828337f4-7d56-4d8e-b7b4-a07dd7c1bca9")) __declspec(novtable) ISocketErrorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetStatus(int32_t hresult, winrt::Windows::Networking::Sockets::SocketErrorStatus * status) = 0;
 };
 
-struct __declspec(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49")) __declspec(novtable) IStreamSocket : Windows::IInspectable
+struct __declspec(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49")) __declspec(novtable) IStreamSocket : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Control(Windows::Networking::Sockets::IStreamSocketControl ** value) = 0;
     virtual HRESULT __stdcall get_Information(Windows::Networking::Sockets::IStreamSocketInformation ** value) = 0;
@@ -207,12 +207,12 @@ struct __declspec(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49")) __declspec(novta
     virtual HRESULT __stdcall abi_UpgradeToSslAsync(winrt::Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, Windows::Networking::IHostName * validationHostName, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("29d0e575-f314-4d09-adf0-0fbd967fbd9f")) __declspec(novtable) IStreamSocket2 : Windows::IInspectable
+struct __declspec(uuid("29d0e575-f314-4d09-adf0-0fbd967fbd9f")) __declspec(novtable) IStreamSocket2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ConnectWithProtectionLevelAndAdapterAsync(Windows::Networking::IHostName * remoteHostName, hstring remoteServiceName, winrt::Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, Windows::Networking::Connectivity::INetworkAdapter * adapter, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("3f430b00-9d28-4854-bac3-2301941ec223")) __declspec(novtable) IStreamSocket3 : Windows::IInspectable
+struct __declspec(uuid("3f430b00-9d28-4854-bac3-2301941ec223")) __declspec(novtable) IStreamSocket3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CancelIOAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_EnableTransferOwnership(GUID taskId) = 0;
@@ -222,7 +222,7 @@ struct __declspec(uuid("3f430b00-9d28-4854-bac3-2301941ec223")) __declspec(novta
     virtual HRESULT __stdcall abi_TransferOwnershipWithContextAndKeepAliveTime(hstring socketId, Windows::Networking::Sockets::ISocketActivityContext * data, Windows::Foundation::TimeSpan keepAliveTime) = 0;
 };
 
-struct __declspec(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4")) __declspec(novtable) IStreamSocketControl : Windows::IInspectable
+struct __declspec(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4")) __declspec(novtable) IStreamSocketControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NoDelay(bool * value) = 0;
     virtual HRESULT __stdcall put_NoDelay(bool value) = 0;
@@ -236,12 +236,12 @@ struct __declspec(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4")) __declspec(novta
     virtual HRESULT __stdcall put_OutboundUnicastHopLimit(uint8_t value) = 0;
 };
 
-struct __declspec(uuid("c2d09a56-060f-44c1-b8e2-1fbf60bd62c5")) __declspec(novtable) IStreamSocketControl2 : Windows::IInspectable
+struct __declspec(uuid("c2d09a56-060f-44c1-b8e2-1fbf60bd62c5")) __declspec(novtable) IStreamSocketControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IgnorableServerCertificateErrors(Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> ** value) = 0;
 };
 
-struct __declspec(uuid("c56a444c-4e74-403e-894c-b31cae5c7342")) __declspec(novtable) IStreamSocketControl3 : Windows::IInspectable
+struct __declspec(uuid("c56a444c-4e74-403e-894c-b31cae5c7342")) __declspec(novtable) IStreamSocketControl3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SerializeConnectionAttempts(bool * value) = 0;
     virtual HRESULT __stdcall put_SerializeConnectionAttempts(bool value) = 0;
@@ -249,7 +249,7 @@ struct __declspec(uuid("c56a444c-4e74-403e-894c-b31cae5c7342")) __declspec(novta
     virtual HRESULT __stdcall put_ClientCertificate(Windows::Security::Cryptography::Certificates::ICertificate * value) = 0;
 };
 
-struct __declspec(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded")) __declspec(novtable) IStreamSocketInformation : Windows::IInspectable
+struct __declspec(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded")) __declspec(novtable) IStreamSocketInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LocalAddress(Windows::Networking::IHostName ** value) = 0;
     virtual HRESULT __stdcall get_LocalPort(hstring * value) = 0;
@@ -263,7 +263,7 @@ struct __declspec(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded")) __declspec(novta
     virtual HRESULT __stdcall get_SessionKey(Windows::Storage::Streams::IBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("12c28452-4bdc-4ee4-976a-cf130e9d92e3")) __declspec(novtable) IStreamSocketInformation2 : Windows::IInspectable
+struct __declspec(uuid("12c28452-4bdc-4ee4-976a-cf130e9d92e3")) __declspec(novtable) IStreamSocketInformation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ServerCertificateErrorSeverity(winrt::Windows::Networking::Sockets::SocketSslErrorSeverity * value) = 0;
     virtual HRESULT __stdcall get_ServerCertificateErrors(Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> ** value) = 0;
@@ -271,7 +271,7 @@ struct __declspec(uuid("12c28452-4bdc-4ee4-976a-cf130e9d92e3")) __declspec(novta
     virtual HRESULT __stdcall get_ServerIntermediateCertificates(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> ** value) = 0;
 };
 
-struct __declspec(uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae")) __declspec(novtable) IStreamSocketListener : Windows::IInspectable
+struct __declspec(uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae")) __declspec(novtable) IStreamSocketListener : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Control(Windows::Networking::Sockets::IStreamSocketListenerControl ** value) = 0;
     virtual HRESULT __stdcall get_Information(Windows::Networking::Sockets::IStreamSocketListenerInformation ** value) = 0;
@@ -281,13 +281,13 @@ struct __declspec(uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae")) __declspec(novta
     virtual HRESULT __stdcall remove_ConnectionReceived(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("658dc13e-bb3e-4458-b232-ed1088694b98")) __declspec(novtable) IStreamSocketListener2 : Windows::IInspectable
+struct __declspec(uuid("658dc13e-bb3e-4458-b232-ed1088694b98")) __declspec(novtable) IStreamSocketListener2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_BindServiceNameWithProtectionLevelAsync(hstring localServiceName, winrt::Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_BindServiceNameWithProtectionLevelAndAdapterAsync(hstring localServiceName, winrt::Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, Windows::Networking::Connectivity::INetworkAdapter * adapter, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("4798201c-bdf8-4919-8542-28d450e74507")) __declspec(novtable) IStreamSocketListener3 : Windows::IInspectable
+struct __declspec(uuid("4798201c-bdf8-4919-8542-28d450e74507")) __declspec(novtable) IStreamSocketListener3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CancelIOAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_EnableTransferOwnership(GUID taskId) = 0;
@@ -296,18 +296,18 @@ struct __declspec(uuid("4798201c-bdf8-4919-8542-28d450e74507")) __declspec(novta
     virtual HRESULT __stdcall abi_TransferOwnershipWithContext(hstring socketId, Windows::Networking::Sockets::ISocketActivityContext * data) = 0;
 };
 
-struct __declspec(uuid("0c472ea9-373f-447b-85b1-ddd4548803ba")) __declspec(novtable) IStreamSocketListenerConnectionReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("0c472ea9-373f-447b-85b1-ddd4548803ba")) __declspec(novtable) IStreamSocketListenerConnectionReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Socket(Windows::Networking::Sockets::IStreamSocket ** value) = 0;
 };
 
-struct __declspec(uuid("20d8c576-8d8a-4dba-9722-a16c4d984980")) __declspec(novtable) IStreamSocketListenerControl : Windows::IInspectable
+struct __declspec(uuid("20d8c576-8d8a-4dba-9722-a16c4d984980")) __declspec(novtable) IStreamSocketListenerControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QualityOfService(winrt::Windows::Networking::Sockets::SocketQualityOfService * value) = 0;
     virtual HRESULT __stdcall put_QualityOfService(winrt::Windows::Networking::Sockets::SocketQualityOfService value) = 0;
 };
 
-struct __declspec(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1")) __declspec(novtable) IStreamSocketListenerControl2 : Windows::IInspectable
+struct __declspec(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1")) __declspec(novtable) IStreamSocketListenerControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NoDelay(bool * value) = 0;
     virtual HRESULT __stdcall put_NoDelay(bool value) = 0;
@@ -319,37 +319,37 @@ struct __declspec(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1")) __declspec(novta
     virtual HRESULT __stdcall put_OutboundUnicastHopLimit(uint8_t value) = 0;
 };
 
-struct __declspec(uuid("e62ba82f-a63a-430b-bf62-29e93e5633b4")) __declspec(novtable) IStreamSocketListenerInformation : Windows::IInspectable
+struct __declspec(uuid("e62ba82f-a63a-430b-bf62-29e93e5633b4")) __declspec(novtable) IStreamSocketListenerInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LocalPort(hstring * value) = 0;
 };
 
-struct __declspec(uuid("a420bc4a-6e2e-4af5-b556-355ae0cd4f29")) __declspec(novtable) IStreamSocketStatics : Windows::IInspectable
+struct __declspec(uuid("a420bc4a-6e2e-4af5-b556-355ae0cd4f29")) __declspec(novtable) IStreamSocketStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetEndpointPairsAsync(Windows::Networking::IHostName * remoteHostName, hstring remoteServiceName, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetEndpointPairsWithSortOptionsAsync(Windows::Networking::IHostName * remoteHostName, hstring remoteServiceName, winrt::Windows::Networking::HostNameSortOptions sortOptions, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> ** operation) = 0;
 };
 
-struct __declspec(uuid("bd4a49d8-b289-45bb-97eb-c7525205a843")) __declspec(novtable) IStreamWebSocket : Windows::IInspectable
+struct __declspec(uuid("bd4a49d8-b289-45bb-97eb-c7525205a843")) __declspec(novtable) IStreamWebSocket : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Control(Windows::Networking::Sockets::IStreamWebSocketControl ** value) = 0;
     virtual HRESULT __stdcall get_Information(Windows::Networking::Sockets::IWebSocketInformation ** value) = 0;
     virtual HRESULT __stdcall get_InputStream(Windows::Storage::Streams::IInputStream ** value) = 0;
 };
 
-struct __declspec(uuid("aa4d08cb-93f5-4678-8236-57cce5417ed5")) __declspec(novtable) IStreamWebSocket2 : Windows::IInspectable
+struct __declspec(uuid("aa4d08cb-93f5-4678-8236-57cce5417ed5")) __declspec(novtable) IStreamWebSocket2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_ServerCustomValidationRequested(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> * eventHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_ServerCustomValidationRequested(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("b4f478b1-a45a-48db-953a-645b7d964c07")) __declspec(novtable) IStreamWebSocketControl : Windows::IInspectable
+struct __declspec(uuid("b4f478b1-a45a-48db-953a-645b7d964c07")) __declspec(novtable) IStreamWebSocketControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NoDelay(bool * value) = 0;
     virtual HRESULT __stdcall put_NoDelay(bool value) = 0;
 };
 
-struct __declspec(uuid("f877396f-99b1-4e18-bc08-850c9adf156e")) __declspec(novtable) IWebSocket : Windows::IInspectable
+struct __declspec(uuid("f877396f-99b1-4e18-bc08-850c9adf156e")) __declspec(novtable) IWebSocket : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OutputStream(Windows::Storage::Streams::IOutputStream ** value) = 0;
     virtual HRESULT __stdcall abi_ConnectAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::IAsyncAction ** operation) = 0;
@@ -359,13 +359,13 @@ struct __declspec(uuid("f877396f-99b1-4e18-bc08-850c9adf156e")) __declspec(novta
     virtual HRESULT __stdcall abi_CloseWithStatus(uint16_t code, hstring reason) = 0;
 };
 
-struct __declspec(uuid("ceb78d07-d0a8-4703-a091-c8c2c0915bc3")) __declspec(novtable) IWebSocketClosedEventArgs : Windows::IInspectable
+struct __declspec(uuid("ceb78d07-d0a8-4703-a091-c8c2c0915bc3")) __declspec(novtable) IWebSocketClosedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Code(uint16_t * value) = 0;
     virtual HRESULT __stdcall get_Reason(hstring * value) = 0;
 };
 
-struct __declspec(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9")) __declspec(novtable) IWebSocketControl : Windows::IInspectable
+struct __declspec(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9")) __declspec(novtable) IWebSocketControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OutboundBufferSizeInBytes(uint32_t * value) = 0;
     virtual HRESULT __stdcall put_OutboundBufferSizeInBytes(uint32_t value) = 0;
@@ -376,24 +376,24 @@ struct __declspec(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9")) __declspec(novta
     virtual HRESULT __stdcall get_SupportedProtocols(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("79c3be03-f2ca-461e-af4e-9665bc2d0620")) __declspec(novtable) IWebSocketControl2 : Windows::IInspectable
+struct __declspec(uuid("79c3be03-f2ca-461e-af4e-9665bc2d0620")) __declspec(novtable) IWebSocketControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IgnorableServerCertificateErrors(Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> ** value) = 0;
 };
 
-struct __declspec(uuid("27cdf35b-1f61-4709-8e02-61283ada4e9d")) __declspec(novtable) IWebSocketErrorStatics : Windows::IInspectable
+struct __declspec(uuid("27cdf35b-1f61-4709-8e02-61283ada4e9d")) __declspec(novtable) IWebSocketErrorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetStatus(int32_t hresult, winrt::Windows::Web::WebErrorStatus * status) = 0;
 };
 
-struct __declspec(uuid("5e01e316-c92a-47a5-b25f-07847639d181")) __declspec(novtable) IWebSocketInformation : Windows::IInspectable
+struct __declspec(uuid("5e01e316-c92a-47a5-b25f-07847639d181")) __declspec(novtable) IWebSocketInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LocalAddress(Windows::Networking::IHostName ** value) = 0;
     virtual HRESULT __stdcall get_BandwidthStatistics(Windows::Networking::Sockets::BandwidthStatistics * value) = 0;
     virtual HRESULT __stdcall get_Protocol(hstring * value) = 0;
 };
 
-struct __declspec(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a")) __declspec(novtable) IWebSocketInformation2 : Windows::IInspectable
+struct __declspec(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a")) __declspec(novtable) IWebSocketInformation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ServerCertificate(Windows::Security::Cryptography::Certificates::ICertificate ** value) = 0;
     virtual HRESULT __stdcall get_ServerCertificateErrorSeverity(winrt::Windows::Networking::Sockets::SocketSslErrorSeverity * value) = 0;
@@ -401,7 +401,7 @@ struct __declspec(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a")) __declspec(novta
     virtual HRESULT __stdcall get_ServerIntermediateCertificates(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> ** value) = 0;
 };
 
-struct __declspec(uuid("ffeffe48-022a-4ab7-8b36-e10af4640e6b")) __declspec(novtable) IWebSocketServerCustomValidationRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("ffeffe48-022a-4ab7-8b36-e10af4640e6b")) __declspec(novtable) IWebSocketServerCustomValidationRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ServerCertificate(Windows::Security::Cryptography::Certificates::ICertificate ** value) = 0;
     virtual HRESULT __stdcall get_ServerCertificateErrorSeverity(winrt::Windows::Networking::Sockets::SocketSslErrorSeverity * value) = 0;

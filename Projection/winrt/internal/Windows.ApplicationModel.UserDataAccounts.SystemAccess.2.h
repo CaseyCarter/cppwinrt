@@ -90,28 +90,28 @@ template <> struct __declspec(uuid("7c7899be-5f2e-5bf3-ade5-ad98b772c7cd")) __de
 namespace Windows::ApplicationModel::UserDataAccounts::SystemAccess {
 
 struct IDeviceAccountConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceAccountConfiguration>
 {
     IDeviceAccountConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceAccountConfiguration2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceAccountConfiguration2>
 {
     IDeviceAccountConfiguration2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccountSystemAccessManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountSystemAccessManagerStatics>
 {
     IUserDataAccountSystemAccessManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccountSystemAccessManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountSystemAccessManagerStatics2>
 {
     IUserDataAccountSystemAccessManagerStatics2(std::nullptr_t = nullptr) noexcept {}

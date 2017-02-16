@@ -16,7 +16,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Xaml::Documents {
 
-struct __declspec(uuid("4bce0016-dd47-4350-8cb0-e171600ac896")) __declspec(novtable) IBlock : Windows::IInspectable
+struct __declspec(uuid("4bce0016-dd47-4350-8cb0-e171600ac896")) __declspec(novtable) IBlock : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextAlignment(winrt::Windows::UI::Xaml::TextAlignment * value) = 0;
     virtual HRESULT __stdcall put_TextAlignment(winrt::Windows::UI::Xaml::TextAlignment value) = 0;
@@ -28,12 +28,12 @@ struct __declspec(uuid("4bce0016-dd47-4350-8cb0-e171600ac896")) __declspec(novta
     virtual HRESULT __stdcall put_Margin(Windows::UI::Xaml::Thickness value) = 0;
 };
 
-struct __declspec(uuid("07110532-4f59-4f3b-9ce5-25784c430507")) __declspec(novtable) IBlockFactory : Windows::IInspectable
+struct __declspec(uuid("07110532-4f59-4f3b-9ce5-25784c430507")) __declspec(novtable) IBlockFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Documents::IBlock ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Documents::IBlock ** instance) = 0;
 };
 
-struct __declspec(uuid("f86a8c34-8d18-4c53-aebd-91e610a5e010")) __declspec(novtable) IBlockStatics : Windows::IInspectable
+struct __declspec(uuid("f86a8c34-8d18-4c53-aebd-91e610a5e010")) __declspec(novtable) IBlockStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextAlignmentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_LineHeightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -41,11 +41,11 @@ struct __declspec(uuid("f86a8c34-8d18-4c53-aebd-91e610a5e010")) __declspec(novta
     virtual HRESULT __stdcall get_MarginProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ade73784-1b59-4da4-bb23-0f20e885b4bf")) __declspec(novtable) IBold : Windows::IInspectable
+struct __declspec(uuid("ade73784-1b59-4da4-bb23-0f20e885b4bf")) __declspec(novtable) IBold : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5")) __declspec(novtable) IGlyphs : Windows::IInspectable
+struct __declspec(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5")) __declspec(novtable) IGlyphs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UnicodeString(hstring * value) = 0;
     virtual HRESULT __stdcall put_UnicodeString(hstring value) = 0;
@@ -65,7 +65,7 @@ struct __declspec(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5")) __declspec(novta
     virtual HRESULT __stdcall put_Fill(Windows::UI::Xaml::Media::IBrush * value) = 0;
 };
 
-struct __declspec(uuid("aa8bfe5c-3754-4bee-bbe1-4403ee9b86f0")) __declspec(novtable) IGlyphs2 : Windows::IInspectable
+struct __declspec(uuid("aa8bfe5c-3754-4bee-bbe1-4403ee9b86f0")) __declspec(novtable) IGlyphs2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsColorFontEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsColorFontEnabled(bool value) = 0;
@@ -73,7 +73,7 @@ struct __declspec(uuid("aa8bfe5c-3754-4bee-bbe1-4403ee9b86f0")) __declspec(novta
     virtual HRESULT __stdcall put_ColorFontPaletteIndex(int32_t value) = 0;
 };
 
-struct __declspec(uuid("225cf4c5-fdf1-43ed-958f-414e86f103f2")) __declspec(novtable) IGlyphsStatics : Windows::IInspectable
+struct __declspec(uuid("225cf4c5-fdf1-43ed-958f-414e86f103f2")) __declspec(novtable) IGlyphsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UnicodeStringProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IndicesProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -85,13 +85,13 @@ struct __declspec(uuid("225cf4c5-fdf1-43ed-958f-414e86f103f2")) __declspec(novta
     virtual HRESULT __stdcall get_FillProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("10489aa7-1615-4a33-aa02-d7ef2aefc739")) __declspec(novtable) IGlyphsStatics2 : Windows::IInspectable
+struct __declspec(uuid("10489aa7-1615-4a33-aa02-d7ef2aefc739")) __declspec(novtable) IGlyphsStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsColorFontEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ColorFontPaletteIndexProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0fe2363b-14e9-4152-9e58-5aea5b21f08d")) __declspec(novtable) IHyperlink : Windows::IInspectable
+struct __declspec(uuid("0fe2363b-14e9-4152-9e58-5aea5b21f08d")) __declspec(novtable) IHyperlink : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NavigateUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall put_NavigateUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
@@ -99,13 +99,13 @@ struct __declspec(uuid("0fe2363b-14e9-4152-9e58-5aea5b21f08d")) __declspec(novta
     virtual HRESULT __stdcall remove_Click(event_token token) = 0;
 };
 
-struct __declspec(uuid("4ce9da5f-7cff-4291-b78f-dfec72490576")) __declspec(novtable) IHyperlink2 : Windows::IInspectable
+struct __declspec(uuid("4ce9da5f-7cff-4291-b78f-dfec72490576")) __declspec(novtable) IHyperlink2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UnderlineStyle(winrt::Windows::UI::Xaml::Documents::UnderlineStyle * value) = 0;
     virtual HRESULT __stdcall put_UnderlineStyle(winrt::Windows::UI::Xaml::Documents::UnderlineStyle value) = 0;
 };
 
-struct __declspec(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a")) __declspec(novtable) IHyperlink3 : Windows::IInspectable
+struct __declspec(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a")) __declspec(novtable) IHyperlink3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_XYFocusLeft(Windows::UI::Xaml::IDependencyObject ** value) = 0;
     virtual HRESULT __stdcall put_XYFocusLeft(Windows::UI::Xaml::IDependencyObject * value) = 0;
@@ -119,21 +119,21 @@ struct __declspec(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a")) __declspec(novta
     virtual HRESULT __stdcall put_ElementSoundMode(winrt::Windows::UI::Xaml::ElementSoundMode value) = 0;
 };
 
-struct __declspec(uuid("c755916b-7bdc-4be7-b373-9240a503d870")) __declspec(novtable) IHyperlinkClickEventArgs : Windows::IInspectable
+struct __declspec(uuid("c755916b-7bdc-4be7-b373-9240a503d870")) __declspec(novtable) IHyperlinkClickEventArgs : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("3a44d3d4-fd41-41db-8c72-3b790acd9fd3")) __declspec(novtable) IHyperlinkStatics : Windows::IInspectable
+struct __declspec(uuid("3a44d3d4-fd41-41db-8c72-3b790acd9fd3")) __declspec(novtable) IHyperlinkStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NavigateUriProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("5028d8b7-7adf-43ee-a4ae-9c925f755716")) __declspec(novtable) IHyperlinkStatics2 : Windows::IInspectable
+struct __declspec(uuid("5028d8b7-7adf-43ee-a4ae-9c925f755716")) __declspec(novtable) IHyperlinkStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UnderlineStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("3e15dea0-205e-4947-99a5-74e757e8e1b4")) __declspec(novtable) IHyperlinkStatics3 : Windows::IInspectable
+struct __declspec(uuid("3e15dea0-205e-4947-99a5-74e757e8e1b4")) __declspec(novtable) IHyperlinkStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_XYFocusLeftProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_XYFocusRightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -142,42 +142,42 @@ struct __declspec(uuid("3e15dea0-205e-4947-99a5-74e757e8e1b4")) __declspec(novta
     virtual HRESULT __stdcall get_ElementSoundModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0c92712d-1bc9-4931-8cb1-1aeadf1cc685")) __declspec(novtable) IInline : Windows::IInspectable
+struct __declspec(uuid("0c92712d-1bc9-4931-8cb1-1aeadf1cc685")) __declspec(novtable) IInline : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("4058acd1-2f90-4b8f-99dd-4218ef5f03de")) __declspec(novtable) IInlineFactory : Windows::IInspectable
+struct __declspec(uuid("4058acd1-2f90-4b8f-99dd-4218ef5f03de")) __declspec(novtable) IInlineFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Documents::IInline ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Documents::IInline ** instance) = 0;
 };
 
-struct __declspec(uuid("1416ce81-28ee-452e-b121-5fc4f60b86a6")) __declspec(novtable) IInlineUIContainer : Windows::IInspectable
+struct __declspec(uuid("1416ce81-28ee-452e-b121-5fc4f60b86a6")) __declspec(novtable) IInlineUIContainer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Child(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall put_Child(Windows::UI::Xaml::IUIElement * value) = 0;
 };
 
-struct __declspec(uuid("91f4619c-fcbb-4157-802c-76f63b5fb657")) __declspec(novtable) IItalic : Windows::IInspectable
+struct __declspec(uuid("91f4619c-fcbb-4157-802c-76f63b5fb657")) __declspec(novtable) IItalic : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("645589c4-f769-41ed-895b-8a1b2fb31562")) __declspec(novtable) ILineBreak : Windows::IInspectable
+struct __declspec(uuid("645589c4-f769-41ed-895b-8a1b2fb31562")) __declspec(novtable) ILineBreak : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("f83ef59a-fa61-4bef-ae33-0b0ad756a84d")) __declspec(novtable) IParagraph : Windows::IInspectable
+struct __declspec(uuid("f83ef59a-fa61-4bef-ae33-0b0ad756a84d")) __declspec(novtable) IParagraph : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Inlines(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Documents::Inline> ** value) = 0;
     virtual HRESULT __stdcall get_TextIndent(double * value) = 0;
     virtual HRESULT __stdcall put_TextIndent(double value) = 0;
 };
 
-struct __declspec(uuid("ef08889a-535b-4e4c-8d84-283b33e98a37")) __declspec(novtable) IParagraphStatics : Windows::IInspectable
+struct __declspec(uuid("ef08889a-535b-4e4c-8d84-283b33e98a37")) __declspec(novtable) IParagraphStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextIndentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("59553c83-0e14-49bd-b84b-c526f3034349")) __declspec(novtable) IRun : Windows::IInspectable
+struct __declspec(uuid("59553c83-0e14-49bd-b84b-c526f3034349")) __declspec(novtable) IRun : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
     virtual HRESULT __stdcall put_Text(hstring value) = 0;
@@ -185,23 +185,23 @@ struct __declspec(uuid("59553c83-0e14-49bd-b84b-c526f3034349")) __declspec(novta
     virtual HRESULT __stdcall put_FlowDirection(winrt::Windows::UI::Xaml::FlowDirection value) = 0;
 };
 
-struct __declspec(uuid("e9303cef-65a0-4b8d-a7f7-8fdb287b46f3")) __declspec(novtable) IRunStatics : Windows::IInspectable
+struct __declspec(uuid("e9303cef-65a0-4b8d-a7f7-8fdb287b46f3")) __declspec(novtable) IRunStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FlowDirectionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("9839d4a9-02af-4811-aa15-6bef3acac97a")) __declspec(novtable) ISpan : Windows::IInspectable
+struct __declspec(uuid("9839d4a9-02af-4811-aa15-6bef3acac97a")) __declspec(novtable) ISpan : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Inlines(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Documents::Inline> ** value) = 0;
     virtual HRESULT __stdcall put_Inlines(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Documents::Inline> * value) = 0;
 };
 
-struct __declspec(uuid("5b916f5c-cd2d-40c0-956a-386448322f79")) __declspec(novtable) ISpanFactory : Windows::IInspectable
+struct __declspec(uuid("5b916f5c-cd2d-40c0-956a-386448322f79")) __declspec(novtable) ISpanFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Documents::ISpan ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Documents::ISpan ** instance) = 0;
 };
 
-struct __declspec(uuid("e83b0062-d776-4f92-baea-40e77d4791d5")) __declspec(novtable) ITextElement : Windows::IInspectable
+struct __declspec(uuid("e83b0062-d776-4f92-baea-40e77d4791d5")) __declspec(novtable) ITextElement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_FontSize(double * value) = 0;
@@ -224,16 +224,16 @@ struct __declspec(uuid("e83b0062-d776-4f92-baea-40e77d4791d5")) __declspec(novta
     virtual HRESULT __stdcall get_ContentEnd(Windows::UI::Xaml::Documents::ITextPointer ** value) = 0;
     virtual HRESULT __stdcall get_ElementStart(Windows::UI::Xaml::Documents::ITextPointer ** value) = 0;
     virtual HRESULT __stdcall get_ElementEnd(Windows::UI::Xaml::Documents::ITextPointer ** value) = 0;
-    virtual HRESULT __stdcall abi_FindName(hstring name, Windows::IInspectable ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_FindName(hstring name, Windows::Foundation::IInspectable ** returnValue) = 0;
 };
 
-struct __declspec(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d")) __declspec(novtable) ITextElement2 : Windows::IInspectable
+struct __declspec(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d")) __declspec(novtable) ITextElement2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsTextScaleFactorEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab")) __declspec(novtable) ITextElement3 : Windows::IInspectable
+struct __declspec(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab")) __declspec(novtable) ITextElement3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllowFocusOnInteraction(bool * value) = 0;
     virtual HRESULT __stdcall put_AllowFocusOnInteraction(bool value) = 0;
@@ -243,16 +243,16 @@ struct __declspec(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab")) __declspec(novta
     virtual HRESULT __stdcall put_ExitDisplayModeOnAccessKeyInvoked(bool value) = 0;
 };
 
-struct __declspec(uuid("35007285-cf47-4bfe-b1bc-39c93af4ae80")) __declspec(novtable) ITextElementFactory : Windows::IInspectable
+struct __declspec(uuid("35007285-cf47-4bfe-b1bc-39c93af4ae80")) __declspec(novtable) ITextElementFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("0ce21ee7-4f76-4dd9-bf91-163beccf84bc")) __declspec(novtable) ITextElementOverrides : Windows::IInspectable
+struct __declspec(uuid("0ce21ee7-4f76-4dd9-bf91-163beccf84bc")) __declspec(novtable) ITextElementOverrides : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_OnDisconnectVisualChildren() = 0;
 };
 
-struct __declspec(uuid("0a2f9b98-6c03-4470-a79b-3298a10482ce")) __declspec(novtable) ITextElementStatics : Windows::IInspectable
+struct __declspec(uuid("0a2f9b98-6c03-4470-a79b-3298a10482ce")) __declspec(novtable) ITextElementStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontSizeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FontFamilyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -264,19 +264,19 @@ struct __declspec(uuid("0a2f9b98-6c03-4470-a79b-3298a10482ce")) __declspec(novta
     virtual HRESULT __stdcall get_LanguageProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("164297b2-982b-49e1-8c03-ca43bc4d5b6d")) __declspec(novtable) ITextElementStatics2 : Windows::IInspectable
+struct __declspec(uuid("164297b2-982b-49e1-8c03-ca43bc4d5b6d")) __declspec(novtable) ITextElementStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("cfefcfaf-0fa1-45ec-9a4e-9b33664dc8b1")) __declspec(novtable) ITextElementStatics3 : Windows::IInspectable
+struct __declspec(uuid("cfefcfaf-0fa1-45ec-9a4e-9b33664dc8b1")) __declspec(novtable) ITextElementStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllowFocusOnInteractionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AccessKeyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ExitDisplayModeOnAccessKeyInvokedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b")) __declspec(novtable) ITextPointer : Windows::IInspectable
+struct __declspec(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b")) __declspec(novtable) ITextPointer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Parent(Windows::UI::Xaml::IDependencyObject ** value) = 0;
     virtual HRESULT __stdcall get_VisualParent(Windows::UI::Xaml::IFrameworkElement ** value) = 0;
@@ -286,11 +286,11 @@ struct __declspec(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b")) __declspec(novta
     virtual HRESULT __stdcall abi_GetPositionAtOffset(int32_t offset, winrt::Windows::UI::Xaml::Documents::LogicalDirection direction, Windows::UI::Xaml::Documents::ITextPointer ** returnValue) = 0;
 };
 
-struct __declspec(uuid("866f65d5-ea97-42ab-9288-9c01aebc7a97")) __declspec(novtable) ITypography : Windows::IInspectable
+struct __declspec(uuid("866f65d5-ea97-42ab-9288-9c01aebc7a97")) __declspec(novtable) ITypography : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("67b9ec88-6c57-4ce0-95f1-d4b9ed632fb4")) __declspec(novtable) ITypographyStatics : Windows::IInspectable
+struct __declspec(uuid("67b9ec88-6c57-4ce0-95f1-d4b9ed632fb4")) __declspec(novtable) ITypographyStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AnnotationAlternatesProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall abi_GetAnnotationAlternates(Windows::UI::Xaml::IDependencyObject * element, int32_t * value) = 0;
@@ -423,7 +423,7 @@ struct __declspec(uuid("67b9ec88-6c57-4ce0-95f1-d4b9ed632fb4")) __declspec(novta
     virtual HRESULT __stdcall abi_SetVariants(Windows::UI::Xaml::IDependencyObject * element, winrt::Windows::UI::Xaml::FontVariants value) = 0;
 };
 
-struct __declspec(uuid("a5fa8202-61c0-47d7-93ef-bc0b577c5f26")) __declspec(novtable) IUnderline : Windows::IInspectable
+struct __declspec(uuid("a5fa8202-61c0-47d7-93ef-bc0b577c5f26")) __declspec(novtable) IUnderline : Windows::Foundation::IInspectable
 {
 };
 
@@ -470,7 +470,7 @@ struct WINRT_EBO impl_IBlock
 template <typename D>
 struct WINRT_EBO impl_IBlockFactory
 {
-    Windows::UI::Xaml::Documents::Block CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Documents::Block CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -605,7 +605,7 @@ struct WINRT_EBO impl_IInline
 template <typename D>
 struct WINRT_EBO impl_IInlineFactory
 {
-    Windows::UI::Xaml::Documents::Inline CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Documents::Inline CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -664,7 +664,7 @@ struct WINRT_EBO impl_ISpan
 template <typename D>
 struct WINRT_EBO impl_ISpanFactory
 {
-    Windows::UI::Xaml::Documents::Span CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Documents::Span CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -691,7 +691,7 @@ struct WINRT_EBO impl_ITextElement
     Windows::UI::Xaml::Documents::TextPointer ContentEnd() const;
     Windows::UI::Xaml::Documents::TextPointer ElementStart() const;
     Windows::UI::Xaml::Documents::TextPointer ElementEnd() const;
-    Windows::IInspectable FindName(hstring_view name) const;
+    Windows::Foundation::IInspectable FindName(hstring_view name) const;
 };
 
 template <typename D>

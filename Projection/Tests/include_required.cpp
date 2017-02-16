@@ -15,7 +15,7 @@ TEST_CASE("include, generic")
 {
     hstring prop = hstring_view(L"fakeproperty");
     Windows::Graphics::Imaging::BitmapPropertySet properties;
-    Windows::Graphics::Imaging::BitmapTypedValue val(properties.as<winrt::Windows::IInspectable>(), winrt::Windows::Foundation::PropertyType::Inspectable);
+    Windows::Graphics::Imaging::BitmapTypedValue val(properties.as<winrt::Windows::Foundation::IInspectable>(), winrt::Windows::Foundation::PropertyType::Inspectable);
     
     // Call a member of an interface in another namespace not explicitly included. In this case, Windows::Foundation::Collection::IMap.
     properties.Insert(prop, val);

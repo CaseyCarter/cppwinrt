@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::System::Display {
 
-struct __declspec(uuid("e5732044-f49f-4b60-8dd4-5e7e3a632ac0")) __declspec(novtable) IDisplayRequest : Windows::IInspectable
+struct __declspec(uuid("e5732044-f49f-4b60-8dd4-5e7e3a632ac0")) __declspec(novtable) IDisplayRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestActive() = 0;
     virtual HRESULT __stdcall abi_RequestRelease() = 0;

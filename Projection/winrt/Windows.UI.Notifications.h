@@ -2262,12 +2262,12 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
         }
     }
 
-    HRESULT __stdcall add_Activated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_Activated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().Activated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().Activated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3861,14 +3861,14 @@ template <typename D> void impl_IToastNotification<D>::Dismissed(event_token coo
     check_hresult(WINRT_SHIM(IToastNotification)->remove_Dismissed(cookie));
 }
 
-template <typename D> event_token impl_IToastNotification<D>::Activated(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IToastNotification<D>::Activated(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IToastNotification)->add_Activated(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IToastNotification> impl_IToastNotification<D>::Activated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IToastNotification> impl_IToastNotification<D>::Activated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IToastNotification>(this, &ABI::Windows::UI::Notifications::IToastNotification::remove_Activated, Activated(handler));
 }

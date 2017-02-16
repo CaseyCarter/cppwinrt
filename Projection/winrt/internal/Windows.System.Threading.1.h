@@ -11,21 +11,21 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::System::Threading {
 
-struct __declspec(uuid("b6bf67dd-84bd-44f8-ac1c-93ebcb9dba91")) __declspec(novtable) IThreadPoolStatics : Windows::IInspectable
+struct __declspec(uuid("b6bf67dd-84bd-44f8-ac1c-93ebcb9dba91")) __declspec(novtable) IThreadPoolStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RunAsync(Windows::System::Threading::WorkItemHandler * handler, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_RunWithPriorityAsync(Windows::System::Threading::WorkItemHandler * handler, winrt::Windows::System::Threading::WorkItemPriority priority, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_RunWithPriorityAndOptionsAsync(Windows::System::Threading::WorkItemHandler * handler, winrt::Windows::System::Threading::WorkItemPriority priority, winrt::Windows::System::Threading::WorkItemOptions options, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("594ebe78-55ea-4a88-a50d-3402ae1f9cf2")) __declspec(novtable) IThreadPoolTimer : Windows::IInspectable
+struct __declspec(uuid("594ebe78-55ea-4a88-a50d-3402ae1f9cf2")) __declspec(novtable) IThreadPoolTimer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Period(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_Delay(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall abi_Cancel() = 0;
 };
 
-struct __declspec(uuid("1a8a9d02-e482-461b-b8c7-8efad1cce590")) __declspec(novtable) IThreadPoolTimerStatics : Windows::IInspectable
+struct __declspec(uuid("1a8a9d02-e482-461b-b8c7-8efad1cce590")) __declspec(novtable) IThreadPoolTimerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreatePeriodicTimer(Windows::System::Threading::TimerElapsedHandler * handler, Windows::Foundation::TimeSpan period, Windows::System::Threading::IThreadPoolTimer ** timer) = 0;
     virtual HRESULT __stdcall abi_CreateTimer(Windows::System::Threading::TimerElapsedHandler * handler, Windows::Foundation::TimeSpan delay, Windows::System::Threading::IThreadPoolTimer ** timer) = 0;

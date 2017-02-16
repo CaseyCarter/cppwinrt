@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
-struct __declspec(uuid("8a43ed9f-f4e6-4421-acf9-1dab2986820c")) __declspec(novtable) IPropertySet : Windows::IInspectable
+struct __declspec(uuid("8a43ed9f-f4e6-4421-acf9-1dab2986820c")) __declspec(novtable) IPropertySet : Windows::Foundation::IInspectable
 {
 };
 

@@ -11,13 +11,13 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Perception {
 
-struct __declspec(uuid("87c24804-a22e-4adb-ba26-d78ef639bcf4")) __declspec(novtable) IPerceptionTimestamp : Windows::IInspectable
+struct __declspec(uuid("87c24804-a22e-4adb-ba26-d78ef639bcf4")) __declspec(novtable) IPerceptionTimestamp : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetTime(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_PredictionAmount(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("47a611d4-a9df-4edc-855d-f4d339d967ac")) __declspec(novtable) IPerceptionTimestampHelperStatics : Windows::IInspectable
+struct __declspec(uuid("47a611d4-a9df-4edc-855d-f4d339d967ac")) __declspec(novtable) IPerceptionTimestampHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromHistoricalTargetTime(Windows::Foundation::DateTime targetTime, Windows::Perception::IPerceptionTimestamp ** value) = 0;
 };

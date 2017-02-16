@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::System::RemoteDesktop {
 
-struct __declspec(uuid("60884631-dd3a-4576-9c8d-e8027618bdce")) __declspec(novtable) IInteractiveSessionStatics : Windows::IInspectable
+struct __declspec(uuid("60884631-dd3a-4576-9c8d-e8027618bdce")) __declspec(novtable) IInteractiveSessionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsRemote(bool * value) = 0;
 };

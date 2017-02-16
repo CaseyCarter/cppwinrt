@@ -22,5 +22,5 @@ struct overrides : implements<D, R ...>
 
 protected:
 
-    Windows::IInspectable m_inner;
+    Windows::Foundation::IInspectable m_inner;
 };

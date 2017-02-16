@@ -31,7 +31,7 @@ template <> struct __declspec(uuid("191a8c6e-60dd-5a21-a53c-bf3f940a1dde")) __de
 namespace Windows::Devices::Lights {
 
 struct ILamp :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILamp>,
     impl::require<ILamp, Windows::Foundation::IClosable>
 {
@@ -39,14 +39,14 @@ struct ILamp :
 };
 
 struct ILampAvailabilityChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILampAvailabilityChangedEventArgs>
 {
     ILampAvailabilityChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILampStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILampStatics>
 {
     ILampStatics(std::nullptr_t = nullptr) noexcept {}

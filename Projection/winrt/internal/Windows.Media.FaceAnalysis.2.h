@@ -115,35 +115,35 @@ template <> struct __declspec(uuid("b0a53153-2015-58b3-9dd0-bdf291b856b2")) __de
 namespace Windows::Media::FaceAnalysis {
 
 struct IDetectedFace :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDetectedFace>
 {
     IDetectedFace(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFaceDetector :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFaceDetector>
 {
     IFaceDetector(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFaceDetectorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFaceDetectorStatics>
 {
     IFaceDetectorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFaceTracker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFaceTracker>
 {
     IFaceTracker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFaceTrackerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFaceTrackerStatics>
 {
     IFaceTrackerStatics(std::nullptr_t = nullptr) noexcept {}

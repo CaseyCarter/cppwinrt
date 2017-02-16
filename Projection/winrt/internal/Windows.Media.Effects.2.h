@@ -22,7 +22,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_4be29c7e_449c_576e_a7b8_3a40f2f01dc8
 #define WINRT_GENERIC_4be29c7e_449c_576e_a7b8_3a40f2f01dc8
-template <> struct __declspec(uuid("4be29c7e-449c-576e-a7b8-3a40f2f01dc8")) __declspec(novtable) TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> {};
+template <> struct __declspec(uuid("4be29c7e-449c-576e-a7b8-3a40f2f01dc8")) __declspec(novtable) TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -42,7 +42,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_a1c5e803_a275_5bb1_9d44_2ac8ae9ffb89
 #define WINRT_GENERIC_a1c5e803_a275_5bb1_9d44_2ac8ae9ffb89
-template <> struct __declspec(uuid("a1c5e803-a275-5bb1-9d44-2ac8ae9ffb89")) __declspec(novtable) TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> {};
+template <> struct __declspec(uuid("a1c5e803-a275-5bb1-9d44-2ac8ae9ffb89")) __declspec(novtable) TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -106,56 +106,56 @@ template <> struct __declspec(uuid("00939468-25d8-533f-854e-4f20f36c51dc")) __de
 namespace Windows::Media::Effects {
 
 struct IAudioCaptureEffectsManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioCaptureEffectsManager>
 {
     IAudioCaptureEffectsManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioEffect>
 {
     IAudioEffect(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioEffectDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioEffectDefinition>
 {
     IAudioEffectDefinition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioEffectDefinitionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioEffectDefinitionFactory>
 {
     IAudioEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioEffectsManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioEffectsManagerStatics>
 {
     IAudioEffectsManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioRenderEffectsManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioRenderEffectsManager>
 {
     IAudioRenderEffectsManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("Not supported starting in windows 10")]] IAudioRenderEffectsManager2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioRenderEffectsManager2>
 {
     IAudioRenderEffectsManager2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBasicAudioEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBasicAudioEffect>,
     impl::require<IBasicAudioEffect, Windows::Media::IMediaExtension>
 {
@@ -163,7 +163,7 @@ struct IBasicAudioEffect :
 };
 
 struct IBasicVideoEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBasicVideoEffect>,
     impl::require<IBasicVideoEffect, Windows::Media::IMediaExtension>
 {
@@ -171,28 +171,28 @@ struct IBasicVideoEffect :
 };
 
 struct ICompositeVideoFrameContext :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositeVideoFrameContext>
 {
     ICompositeVideoFrameContext(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessAudioFrameContext :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessAudioFrameContext>
 {
     IProcessAudioFrameContext(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessVideoFrameContext :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessVideoFrameContext>
 {
     IProcessVideoFrameContext(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoCompositor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoCompositor>,
     impl::require<IVideoCompositor, Windows::Media::IMediaExtension>
 {
@@ -200,35 +200,35 @@ struct IVideoCompositor :
 };
 
 struct IVideoCompositorDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoCompositorDefinition>
 {
     IVideoCompositorDefinition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoCompositorDefinitionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoCompositorDefinitionFactory>
 {
     IVideoCompositorDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoEffectDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoEffectDefinition>
 {
     IVideoEffectDefinition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoEffectDefinitionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoEffectDefinitionFactory>
 {
     IVideoEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoTransformEffectDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoTransformEffectDefinition>,
     impl::require<IVideoTransformEffectDefinition, Windows::Media::Effects::IVideoEffectDefinition>
 {

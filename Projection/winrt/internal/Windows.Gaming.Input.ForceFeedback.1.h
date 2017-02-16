@@ -12,24 +12,24 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Gaming::Input::ForceFeedback {
 
-struct __declspec(uuid("32d1ea68-3695-4e69-85c0-cd1944189140")) __declspec(novtable) IConditionForceEffect : Windows::IInspectable
+struct __declspec(uuid("32d1ea68-3695-4e69-85c0-cd1944189140")) __declspec(novtable) IConditionForceEffect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Kind(winrt::Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind * value) = 0;
     virtual HRESULT __stdcall abi_SetParameters(Windows::Foundation::Numerics::float3 direction, float positiveCoefficient, float negativeCoefficient, float maxPositiveMagnitude, float maxNegativeMagnitude, float deadZone, float bias) = 0;
 };
 
-struct __declspec(uuid("91a99264-1810-4eb6-a773-bfd3b8cddbab")) __declspec(novtable) IConditionForceEffectFactory : Windows::IInspectable
+struct __declspec(uuid("91a99264-1810-4eb6-a773-bfd3b8cddbab")) __declspec(novtable) IConditionForceEffectFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(winrt::Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind effectKind, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect ** value) = 0;
 };
 
-struct __declspec(uuid("9bfa0140-f3c7-415c-b068-0f068734bce0")) __declspec(novtable) IConstantForceEffect : Windows::IInspectable
+struct __declspec(uuid("9bfa0140-f3c7-415c-b068-0f068734bce0")) __declspec(novtable) IConstantForceEffect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetParameters(Windows::Foundation::Numerics::float3 vector, Windows::Foundation::TimeSpan duration) = 0;
     virtual HRESULT __stdcall abi_SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) = 0;
 };
 
-struct __declspec(uuid("a17fba0c-2ae4-48c2-8063-eabd0777cb89")) __declspec(novtable) IForceFeedbackEffect : Windows::IInspectable
+struct __declspec(uuid("a17fba0c-2ae4-48c2-8063-eabd0777cb89")) __declspec(novtable) IForceFeedbackEffect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Gain(double * value) = 0;
     virtual HRESULT __stdcall put_Gain(double value) = 0;
@@ -38,7 +38,7 @@ struct __declspec(uuid("a17fba0c-2ae4-48c2-8063-eabd0777cb89")) __declspec(novta
     virtual HRESULT __stdcall abi_Stop() = 0;
 };
 
-struct __declspec(uuid("8d3d417c-a5ea-4516-8026-2b00f74ef6e5")) __declspec(novtable) IForceFeedbackMotor : Windows::IInspectable
+struct __declspec(uuid("8d3d417c-a5ea-4516-8026-2b00f74ef6e5")) __declspec(novtable) IForceFeedbackMotor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreEffectsPaused(bool * value) = 0;
     virtual HRESULT __stdcall get_MasterGain(double * value) = 0;
@@ -55,19 +55,19 @@ struct __declspec(uuid("8d3d417c-a5ea-4516-8026-2b00f74ef6e5")) __declspec(novta
     virtual HRESULT __stdcall abi_TryUnloadEffectAsync(Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect * effect, Windows::Foundation::IAsyncOperation<bool> ** asyncOperation) = 0;
 };
 
-struct __declspec(uuid("5c5138d7-fc75-4d52-9a0a-efe4cab5fe64")) __declspec(novtable) IPeriodicForceEffect : Windows::IInspectable
+struct __declspec(uuid("5c5138d7-fc75-4d52-9a0a-efe4cab5fe64")) __declspec(novtable) IPeriodicForceEffect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Kind(winrt::Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind * value) = 0;
     virtual HRESULT __stdcall abi_SetParameters(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, Windows::Foundation::TimeSpan duration) = 0;
     virtual HRESULT __stdcall abi_SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) = 0;
 };
 
-struct __declspec(uuid("6f62eb1a-9851-477b-b318-35ecaa15070f")) __declspec(novtable) IPeriodicForceEffectFactory : Windows::IInspectable
+struct __declspec(uuid("6f62eb1a-9851-477b-b318-35ecaa15070f")) __declspec(novtable) IPeriodicForceEffectFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(winrt::Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind effectKind, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect ** value) = 0;
 };
 
-struct __declspec(uuid("f1f81259-1ca6-4080-b56d-b43f3354d052")) __declspec(novtable) IRampForceEffect : Windows::IInspectable
+struct __declspec(uuid("f1f81259-1ca6-4080-b56d-b43f3354d052")) __declspec(novtable) IRampForceEffect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetParameters(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, Windows::Foundation::TimeSpan duration) = 0;
     virtual HRESULT __stdcall abi_SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) = 0;

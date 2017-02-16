@@ -12,12 +12,12 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
-template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::IInspectable> : impl_IKeyValuePair<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
-template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::IInspectable> : impl_IMapView<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::Foundation::IInspectable> : impl_IMapView<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -37,7 +37,7 @@ template <> struct __declspec(uuid("c7131ddd-ff22-5fb7-ada0-961e3b28917b")) __de
 
 #ifndef WINRT_GENERIC_b3f5bf64_7fc0_5d8c_978c_a38d5b18a51d
 #define WINRT_GENERIC_b3f5bf64_7fc0_5d8c_978c_a38d5b18a51d
-template <> struct __declspec(uuid("b3f5bf64-7fc0-5d8c-978c-a38d5b18a51d")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> {};
+template <> struct __declspec(uuid("b3f5bf64-7fc0-5d8c-978c-a38d5b18a51d")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_a3c1e25f_3574_5a27_a791_16e1bcc424f4
@@ -52,7 +52,7 @@ template <> struct __declspec(uuid("5cf5faf7-0785-5589-a621-089d900412c8")) __de
 
 #ifndef WINRT_GENERIC_c5efa976_d948_50c7_8555_664190f9a968
 #define WINRT_GENERIC_c5efa976_d948_50c7_8555_664190f9a968
-template <> struct __declspec(uuid("c5efa976-d948-50c7-8555-664190f9a968")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> {};
+template <> struct __declspec(uuid("c5efa976-d948-50c7-8555-664190f9a968")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_a8180cd1_c25b_5c7f_94dd_198423bb56d5
@@ -67,7 +67,7 @@ template <> struct __declspec(uuid("2ca3a9b7-3348-5953-8d0d-ef8d78640b23")) __de
 
 #ifndef WINRT_GENERIC_1555a628_3dff_5fd0_b10a_ca6adb2440c6
 #define WINRT_GENERIC_1555a628_3dff_5fd0_b10a_ca6adb2440c6
-template <> struct __declspec(uuid("1555a628-3dff-5fd0-b10a-ca6adb2440c6")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> {};
+template <> struct __declspec(uuid("1555a628-3dff-5fd0-b10a-ca6adb2440c6")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -137,7 +137,7 @@ template <> struct __declspec(uuid("9647fec8-2c56-5348-86c8-a9c3a97fb944")) __de
 
 #ifndef WINRT_GENERIC_023444d9_7b47_5497_9569_4399faf96717
 #define WINRT_GENERIC_023444d9_7b47_5497_9569_4399faf96717
-template <> struct __declspec(uuid("023444d9-7b47-5497-9569-4399faf96717")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> {};
+template <> struct __declspec(uuid("023444d9-7b47-5497-9569-4399faf96717")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_b2c3a488_7ed9_5110_804a_9792ef7f26be
@@ -177,7 +177,7 @@ template <> struct __declspec(uuid("4a7bcb69-2b09-55d1-af68-b5aa5c2c6471")) __de
 
 #ifndef WINRT_GENERIC_135ba76a_ab44_5f69_b208_e732cce9403b
 #define WINRT_GENERIC_135ba76a_ab44_5f69_b208_e732cce9403b
-template <> struct __declspec(uuid("135ba76a-ab44-5f69-b208-e732cce9403b")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> {};
+template <> struct __declspec(uuid("135ba76a-ab44-5f69-b208-e732cce9403b")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_188fdef2_d829_548b_a89d_38a34c5cb641
@@ -187,7 +187,7 @@ template <> struct __declspec(uuid("188fdef2-d829-548b-a89d-38a34c5cb641")) __de
 
 #ifndef WINRT_GENERIC_31edabbd_d123_5e88_89d8_c80ee8f0f2ca
 #define WINRT_GENERIC_31edabbd_d123_5e88_89d8_c80ee8f0f2ca
-template <> struct __declspec(uuid("31edabbd-d123-5e88-89d8-c80ee8f0f2ca")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> {};
+template <> struct __declspec(uuid("31edabbd-d123-5e88-89d8-c80ee8f0f2ca")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_b6c1b828_a157_54ed_9c18_6919b9f91be9
@@ -197,7 +197,7 @@ template <> struct __declspec(uuid("b6c1b828-a157-54ed-9c18-6919b9f91be9")) __de
 
 #ifndef WINRT_GENERIC_abc21152_2495_5e8c_aed3_7dc55309ac08
 #define WINRT_GENERIC_abc21152_2495_5e8c_aed3_7dc55309ac08
-template <> struct __declspec(uuid("abc21152-2495-5e8c-aed3-7dc55309ac08")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> {};
+template <> struct __declspec(uuid("abc21152-2495-5e8c-aed3-7dc55309ac08")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_a4a50ea5_778d_5056_a1cf_546a1be2c010
@@ -337,7 +337,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
 #define WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
-template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -367,7 +367,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
 #define WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
-template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -396,63 +396,63 @@ template <> struct __declspec(uuid("0a36a7af-da9e-553f-8dc5-e89d705bb40b")) __de
 namespace Windows::Devices::Perception {
 
 struct IKnownCameraIntrinsicsPropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownCameraIntrinsicsPropertiesStatics>
 {
     IKnownCameraIntrinsicsPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownPerceptionColorFrameSourcePropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownPerceptionColorFrameSourcePropertiesStatics>
 {
     IKnownPerceptionColorFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownPerceptionDepthFrameSourcePropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownPerceptionDepthFrameSourcePropertiesStatics>
 {
     IKnownPerceptionDepthFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownPerceptionFrameSourcePropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownPerceptionFrameSourcePropertiesStatics>
 {
     IKnownPerceptionFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownPerceptionFrameSourcePropertiesStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownPerceptionFrameSourcePropertiesStatics2>
 {
     IKnownPerceptionFrameSourcePropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownPerceptionInfraredFrameSourcePropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownPerceptionInfraredFrameSourcePropertiesStatics>
 {
     IKnownPerceptionInfraredFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownPerceptionVideoFrameSourcePropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownPerceptionVideoFrameSourcePropertiesStatics>
 {
     IKnownPerceptionVideoFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownPerceptionVideoProfilePropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownPerceptionVideoProfilePropertiesStatics>
 {
     IKnownPerceptionVideoProfilePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionColorFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionColorFrame>,
     impl::require<IPerceptionColorFrame, Windows::Foundation::IClosable>
 {
@@ -460,14 +460,14 @@ struct IPerceptionColorFrame :
 };
 
 struct IPerceptionColorFrameArrivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionColorFrameArrivedEventArgs>
 {
     IPerceptionColorFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionColorFrameReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionColorFrameReader>,
     impl::require<IPerceptionColorFrameReader, Windows::Foundation::IClosable>
 {
@@ -475,49 +475,49 @@ struct IPerceptionColorFrameReader :
 };
 
 struct IPerceptionColorFrameSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionColorFrameSource>
 {
     IPerceptionColorFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionColorFrameSource2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionColorFrameSource2>
 {
     IPerceptionColorFrameSource2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionColorFrameSourceAddedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionColorFrameSourceAddedEventArgs>
 {
     IPerceptionColorFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionColorFrameSourceRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionColorFrameSourceRemovedEventArgs>
 {
     IPerceptionColorFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionColorFrameSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionColorFrameSourceStatics>
 {
     IPerceptionColorFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionColorFrameSourceWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionColorFrameSourceWatcher>
 {
     IPerceptionColorFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionControlSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionControlSession>,
     impl::require<IPerceptionControlSession, Windows::Foundation::IClosable>
 {
@@ -525,21 +525,21 @@ struct IPerceptionControlSession :
 };
 
 struct IPerceptionDepthCorrelatedCameraIntrinsics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthCorrelatedCameraIntrinsics>
 {
     IPerceptionDepthCorrelatedCameraIntrinsics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionDepthCorrelatedCoordinateMapper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthCorrelatedCoordinateMapper>
 {
     IPerceptionDepthCorrelatedCoordinateMapper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionDepthFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthFrame>,
     impl::require<IPerceptionDepthFrame, Windows::Foundation::IClosable>
 {
@@ -547,14 +547,14 @@ struct IPerceptionDepthFrame :
 };
 
 struct IPerceptionDepthFrameArrivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthFrameArrivedEventArgs>
 {
     IPerceptionDepthFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionDepthFrameReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthFrameReader>,
     impl::require<IPerceptionDepthFrameReader, Windows::Foundation::IClosable>
 {
@@ -562,63 +562,63 @@ struct IPerceptionDepthFrameReader :
 };
 
 struct IPerceptionDepthFrameSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthFrameSource>
 {
     IPerceptionDepthFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionDepthFrameSource2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthFrameSource2>
 {
     IPerceptionDepthFrameSource2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionDepthFrameSourceAddedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthFrameSourceAddedEventArgs>
 {
     IPerceptionDepthFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionDepthFrameSourceRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthFrameSourceRemovedEventArgs>
 {
     IPerceptionDepthFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionDepthFrameSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthFrameSourceStatics>
 {
     IPerceptionDepthFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionDepthFrameSourceWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionDepthFrameSourceWatcher>
 {
     IPerceptionDepthFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionFrameSourcePropertiesChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionFrameSourcePropertiesChangedEventArgs>
 {
     IPerceptionFrameSourcePropertiesChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionFrameSourcePropertyChangeResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionFrameSourcePropertyChangeResult>
 {
     IPerceptionFrameSourcePropertyChangeResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionInfraredFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionInfraredFrame>,
     impl::require<IPerceptionInfraredFrame, Windows::Foundation::IClosable>
 {
@@ -626,14 +626,14 @@ struct IPerceptionInfraredFrame :
 };
 
 struct IPerceptionInfraredFrameArrivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionInfraredFrameArrivedEventArgs>
 {
     IPerceptionInfraredFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionInfraredFrameReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionInfraredFrameReader>,
     impl::require<IPerceptionInfraredFrameReader, Windows::Foundation::IClosable>
 {
@@ -641,49 +641,49 @@ struct IPerceptionInfraredFrameReader :
 };
 
 struct IPerceptionInfraredFrameSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionInfraredFrameSource>
 {
     IPerceptionInfraredFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionInfraredFrameSource2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionInfraredFrameSource2>
 {
     IPerceptionInfraredFrameSource2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionInfraredFrameSourceAddedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionInfraredFrameSourceAddedEventArgs>
 {
     IPerceptionInfraredFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionInfraredFrameSourceRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionInfraredFrameSourceRemovedEventArgs>
 {
     IPerceptionInfraredFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionInfraredFrameSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionInfraredFrameSourceStatics>
 {
     IPerceptionInfraredFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionInfraredFrameSourceWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionInfraredFrameSourceWatcher>
 {
     IPerceptionInfraredFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionVideoProfile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionVideoProfile>
 {
     IPerceptionVideoProfile(std::nullptr_t = nullptr) noexcept {}

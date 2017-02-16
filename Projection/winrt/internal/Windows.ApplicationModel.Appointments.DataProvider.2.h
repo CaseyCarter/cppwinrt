@@ -95,98 +95,98 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::ApplicationModel::Appointments::DataProvider {
 
 struct IAppointmentCalendarCancelMeetingRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarCancelMeetingRequest>
 {
     IAppointmentCalendarCancelMeetingRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarCancelMeetingRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarCancelMeetingRequestEventArgs>
 {
     IAppointmentCalendarCancelMeetingRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarCreateOrUpdateAppointmentRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarCreateOrUpdateAppointmentRequest>
 {
     IAppointmentCalendarCreateOrUpdateAppointmentRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs>
 {
     IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarForwardMeetingRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarForwardMeetingRequest>
 {
     IAppointmentCalendarForwardMeetingRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarForwardMeetingRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarForwardMeetingRequestEventArgs>
 {
     IAppointmentCalendarForwardMeetingRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarProposeNewTimeForMeetingRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarProposeNewTimeForMeetingRequest>
 {
     IAppointmentCalendarProposeNewTimeForMeetingRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs>
 {
     IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarSyncManagerSyncRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarSyncManagerSyncRequest>
 {
     IAppointmentCalendarSyncManagerSyncRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarSyncManagerSyncRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarSyncManagerSyncRequestEventArgs>
 {
     IAppointmentCalendarSyncManagerSyncRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarUpdateMeetingResponseRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarUpdateMeetingResponseRequest>
 {
     IAppointmentCalendarUpdateMeetingResponseRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarUpdateMeetingResponseRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarUpdateMeetingResponseRequestEventArgs>
 {
     IAppointmentCalendarUpdateMeetingResponseRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentDataProviderConnection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentDataProviderConnection>
 {
     IAppointmentDataProviderConnection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentDataProviderTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentDataProviderTriggerDetails>
 {
     IAppointmentDataProviderTriggerDetails(std::nullptr_t = nullptr) noexcept {}

@@ -12,7 +12,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_b6d68d9c_9546_50b3_8af6_9c985a372ba8
 #define WINRT_GENERIC_b6d68d9c_9546_50b3_8af6_9c985a372ba8
-template <> struct __declspec(uuid("b6d68d9c-9546-50b3-8af6-9c985a372ba8")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> {};
+template <> struct __declspec(uuid("b6d68d9c-9546-50b3-8af6-9c985a372ba8")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_1dbb1bc9_6cd7_5947_8cd1_29632b5aa950
@@ -31,14 +31,14 @@ template <> struct __declspec(uuid("873c5c7a-c638-5a33-9b03-215c72471663")) __de
 namespace Windows::ApplicationModel::ExtendedExecution {
 
 struct IExtendedExecutionRevokedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExtendedExecutionRevokedEventArgs>
 {
     IExtendedExecutionRevokedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExtendedExecutionSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExtendedExecutionSession>,
     impl::require<IExtendedExecutionSession, Windows::Foundation::IClosable>
 {

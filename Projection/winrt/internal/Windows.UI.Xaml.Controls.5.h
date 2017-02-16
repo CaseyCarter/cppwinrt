@@ -459,7 +459,7 @@ protected:
 };
 
 template <typename D, typename ... Interfaces> struct GroupStyleT :
-    overrides<D, Windows::IInspectable, Interfaces ...>,
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::Controls::IGroupStyle, Windows::UI::Xaml::Controls::IGroupStyle2, Windows::UI::Xaml::Data::INotifyPropertyChanged>
 {
     using composable = GroupStyle;
@@ -1033,14 +1033,14 @@ protected:
 };
 
 template <typename D, typename ... Interfaces> struct SelectionChangedEventArgsT :
-    overrides<D, Windows::IInspectable, Interfaces ...>,
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::Controls::ISelectionChangedEventArgs, Windows::UI::Xaml::IRoutedEventArgs>
 {
     using composable = SelectionChangedEventArgs;
 
 protected:
 
-    SelectionChangedEventArgsT(const Windows::Foundation::Collections::IVector<Windows::IInspectable> & removedItems, const Windows::Foundation::Collections::IVector<Windows::IInspectable> & addedItems)
+    SelectionChangedEventArgsT(const Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> & removedItems, const Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> & addedItems)
     {
         get_activation_factory<SelectionChangedEventArgs, ISelectionChangedEventArgsFactory>().CreateInstanceWithRemovedItemsAndAddedItems(removedItems, addedItems, *this, this->m_inner);
     }

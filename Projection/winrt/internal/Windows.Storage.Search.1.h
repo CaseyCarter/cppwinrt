@@ -47,52 +47,52 @@ template <> struct traits<Windows::Storage::Search::SortEntry>
 
 namespace ABI::Windows::Storage::Search {
 
-struct __declspec(uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2")) __declspec(novtable) IContentIndexer : Windows::IInspectable
+struct __declspec(uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2")) __declspec(novtable) IContentIndexer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddAsync(Windows::Storage::Search::IIndexableContent * indexableContent, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_UpdateAsync(Windows::Storage::Search::IIndexableContent * indexableContent, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_DeleteAsync(hstring contentId, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_DeleteMultipleAsync(Windows::Foundation::Collections::IIterable<hstring> * contentIds, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_DeleteAllAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
-    virtual HRESULT __stdcall abi_RetrievePropertiesAsync(hstring contentId, Windows::Foundation::Collections::IIterable<hstring> * propertiesToRetrieve, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_RetrievePropertiesAsync(hstring contentId, Windows::Foundation::Collections::IIterable<hstring> * propertiesToRetrieve, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> ** operation) = 0;
     virtual HRESULT __stdcall get_Revision(uint64_t * value) = 0;
 };
 
-struct __declspec(uuid("70e3b0f8-4bfc-428a-8889-cc51da9a7b9d")) __declspec(novtable) IContentIndexerQuery : Windows::IInspectable
+struct __declspec(uuid("70e3b0f8-4bfc-428a-8889-cc51da9a7b9d")) __declspec(novtable) IContentIndexerQuery : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCountAsync(Windows::Foundation::IAsyncOperation<uint32_t> ** operation) = 0;
-    virtual HRESULT __stdcall abi_GetPropertiesAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>>> ** operation) = 0;
-    virtual HRESULT __stdcall abi_GetPropertiesRangeAsync(uint32_t startIndex, uint32_t maxItems, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetPropertiesAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetPropertiesRangeAsync(uint32_t startIndex, uint32_t maxItems, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::Search::IIndexableContent>> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetRangeAsync(uint32_t startIndex, uint32_t maxItems, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::Search::IIndexableContent>> ** operation) = 0;
     virtual HRESULT __stdcall get_QueryFolder(Windows::Storage::IStorageFolder ** value) = 0;
 };
 
-struct __declspec(uuid("28823e10-4786-42f1-9730-792b3566b150")) __declspec(novtable) IContentIndexerQueryOperations : Windows::IInspectable
+struct __declspec(uuid("28823e10-4786-42f1-9730-792b3566b150")) __declspec(novtable) IContentIndexerQueryOperations : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateQueryWithSortOrderAndLanguage(hstring searchFilter, Windows::Foundation::Collections::IIterable<hstring> * propertiesToRetrieve, Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> * sortOrder, hstring searchFilterLanguage, Windows::Storage::Search::IContentIndexerQuery ** query) = 0;
     virtual HRESULT __stdcall abi_CreateQueryWithSortOrder(hstring searchFilter, Windows::Foundation::Collections::IIterable<hstring> * propertiesToRetrieve, Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> * sortOrder, Windows::Storage::Search::IContentIndexerQuery ** query) = 0;
     virtual HRESULT __stdcall abi_CreateQuery(hstring searchFilter, Windows::Foundation::Collections::IIterable<hstring> * propertiesToRetrieve, Windows::Storage::Search::IContentIndexerQuery ** query) = 0;
 };
 
-struct __declspec(uuid("8c488375-b37e-4c60-9ba8-b760fda3e59d")) __declspec(novtable) IContentIndexerStatics : Windows::IInspectable
+struct __declspec(uuid("8c488375-b37e-4c60-9ba8-b760fda3e59d")) __declspec(novtable) IContentIndexerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetIndexerWithName(hstring indexName, Windows::Storage::Search::IContentIndexer ** index) = 0;
     virtual HRESULT __stdcall abi_GetIndexer(Windows::Storage::Search::IContentIndexer ** index) = 0;
 };
 
-struct __declspec(uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4")) __declspec(novtable) IIndexableContent : Windows::IInspectable
+struct __declspec(uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4")) __declspec(novtable) IIndexableContent : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall put_Id(hstring value) = 0;
-    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_Stream(Windows::Storage::Streams::IRandomAccessStream ** value) = 0;
     virtual HRESULT __stdcall put_Stream(Windows::Storage::Streams::IRandomAccessStream * value) = 0;
     virtual HRESULT __stdcall get_StreamContentType(hstring * value) = 0;
     virtual HRESULT __stdcall put_StreamContentType(hstring value) = 0;
 };
 
-struct __declspec(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30")) __declspec(novtable) IQueryOptions : Windows::IInspectable
+struct __declspec(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30")) __declspec(novtable) IQueryOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FileTypeFilter(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
     virtual HRESULT __stdcall get_FolderDepth(winrt::Windows::Storage::Search::FolderDepth * value) = 0;
@@ -114,29 +114,29 @@ struct __declspec(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30")) __declspec(novta
     virtual HRESULT __stdcall abi_SetPropertyPrefetch(winrt::Windows::Storage::FileProperties::PropertyPrefetchOptions options, Windows::Foundation::Collections::IIterable<hstring> * propertiesToRetrieve) = 0;
 };
 
-struct __declspec(uuid("032e1f8c-a9c1-4e71-8011-0dee9d4811a3")) __declspec(novtable) IQueryOptionsFactory : Windows::IInspectable
+struct __declspec(uuid("032e1f8c-a9c1-4e71-8011-0dee9d4811a3")) __declspec(novtable) IQueryOptionsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateCommonFileQuery(winrt::Windows::Storage::Search::CommonFileQuery query, Windows::Foundation::Collections::IIterable<hstring> * fileTypeFilter, Windows::Storage::Search::IQueryOptions ** queryOptions) = 0;
     virtual HRESULT __stdcall abi_CreateCommonFolderQuery(winrt::Windows::Storage::Search::CommonFolderQuery query, Windows::Storage::Search::IQueryOptions ** queryOptions) = 0;
 };
 
-struct __declspec(uuid("5b9d1026-15c4-44dd-b89a-47a59b7d7c4f")) __declspec(novtable) IQueryOptionsWithProviderFilter : Windows::IInspectable
+struct __declspec(uuid("5b9d1026-15c4-44dd-b89a-47a59b7d7c4f")) __declspec(novtable) IQueryOptionsWithProviderFilter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StorageProviderIdFilter(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("52fda447-2baa-412c-b29f-d4b1778efa1e")) __declspec(novtable) IStorageFileQueryResult : Windows::IInspectable
+struct __declspec(uuid("52fda447-2baa-412c-b29f-d4b1778efa1e")) __declspec(novtable) IStorageFileQueryResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetFilesAsync(uint32_t startIndex, uint32_t maxNumberOfItems, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetFilesAsyncDefaultStartAndCount(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> ** operation) = 0;
 };
 
-struct __declspec(uuid("4e5db9dd-7141-46c4-8be3-e9dc9e27275c")) __declspec(novtable) IStorageFileQueryResult2 : Windows::IInspectable
+struct __declspec(uuid("4e5db9dd-7141-46c4-8be3-e9dc9e27275c")) __declspec(novtable) IStorageFileQueryResult2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetMatchingPropertiesWithRanges(Windows::Storage::IStorageFile * file, Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>> ** result) = 0;
 };
 
-struct __declspec(uuid("cb43ccc9-446b-4a4f-be97-757771be5203")) __declspec(novtable) IStorageFolderQueryOperations : Windows::IInspectable
+struct __declspec(uuid("cb43ccc9-446b-4a4f-be97-757771be5203")) __declspec(novtable) IStorageFolderQueryOperations : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetIndexedStateAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Search::IndexedState> ** operation) = 0;
     virtual HRESULT __stdcall abi_CreateFileQueryOverloadDefault(Windows::Storage::Search::IStorageFileQueryResult ** value) = 0;
@@ -157,43 +157,43 @@ struct __declspec(uuid("cb43ccc9-446b-4a4f-be97-757771be5203")) __declspec(novta
     virtual HRESULT __stdcall abi_IsCommonFileQuerySupported(winrt::Windows::Storage::Search::CommonFileQuery query, bool * value) = 0;
 };
 
-struct __declspec(uuid("6654c911-7d66-46fa-aecf-e4a4baa93ab8")) __declspec(novtable) IStorageFolderQueryResult : Windows::IInspectable
+struct __declspec(uuid("6654c911-7d66-46fa-aecf-e4a4baa93ab8")) __declspec(novtable) IStorageFolderQueryResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetFoldersAsync(uint32_t startIndex, uint32_t maxNumberOfItems, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFolder>> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetFoldersAsyncDefaultStartAndCount(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFolder>> ** operation) = 0;
 };
 
-struct __declspec(uuid("e8948079-9d58-47b8-b2b2-41b07f4795f9")) __declspec(novtable) IStorageItemQueryResult : Windows::IInspectable
+struct __declspec(uuid("e8948079-9d58-47b8-b2b2-41b07f4795f9")) __declspec(novtable) IStorageItemQueryResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetItemsAsync(uint32_t startIndex, uint32_t maxNumberOfItems, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetItemsAsyncDefaultStartAndCount(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> ** operation) = 0;
 };
 
-struct __declspec(uuid("2a371977-abbf-4e1d-8aa5-6385d8884799")) __declspec(novtable) IStorageLibraryContentChangedTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("2a371977-abbf-4e1d-8aa5-6385d8884799")) __declspec(novtable) IStorageLibraryContentChangedTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Folder(Windows::Storage::IStorageFolder ** value) = 0;
     virtual HRESULT __stdcall abi_CreateModifiedSinceQuery(Windows::Foundation::DateTime lastQueryTime, Windows::Storage::Search::IStorageItemQueryResult ** result) = 0;
 };
 
-struct __declspec(uuid("c297d70d-7353-47ab-ba58-8c61425dc54b")) __declspec(novtable) IStorageQueryResultBase : Windows::IInspectable
+struct __declspec(uuid("c297d70d-7353-47ab-ba58-8c61425dc54b")) __declspec(novtable) IStorageQueryResultBase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetItemCountAsync(Windows::Foundation::IAsyncOperation<uint32_t> ** operation) = 0;
     virtual HRESULT __stdcall get_Folder(Windows::Storage::IStorageFolder ** container) = 0;
-    virtual HRESULT __stdcall add_ContentsChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> * handler, event_token * eventCookie) = 0;
+    virtual HRESULT __stdcall add_ContentsChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> * handler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_ContentsChanged(event_token eventCookie) = 0;
-    virtual HRESULT __stdcall add_OptionsChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> * changedHandler, event_token * eventCookie) = 0;
+    virtual HRESULT __stdcall add_OptionsChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> * changedHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_OptionsChanged(event_token eventCookie) = 0;
-    virtual HRESULT __stdcall abi_FindStartIndexAsync(Windows::IInspectable * value, Windows::Foundation::IAsyncOperation<uint32_t> ** operation) = 0;
+    virtual HRESULT __stdcall abi_FindStartIndexAsync(Windows::Foundation::IInspectable * value, Windows::Foundation::IAsyncOperation<uint32_t> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetCurrentQueryOptions(Windows::Storage::Search::IQueryOptions ** value) = 0;
     virtual HRESULT __stdcall abi_ApplyNewQueryOptions(Windows::Storage::Search::IQueryOptions * newQueryOptions) = 0;
 };
 
-struct __declspec(uuid("b9914881-a1ee-4bc4-92a5-466968e30436")) __declspec(novtable) IValueAndLanguage : Windows::IInspectable
+struct __declspec(uuid("b9914881-a1ee-4bc4-92a5-466968e30436")) __declspec(novtable) IValueAndLanguage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Language(hstring * value) = 0;
     virtual HRESULT __stdcall put_Language(hstring value) = 0;
-    virtual HRESULT __stdcall get_Value(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Value(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Value(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Value(Windows::Foundation::IInspectable * value) = 0;
 };
 
 }
@@ -223,7 +223,7 @@ struct WINRT_EBO impl_IContentIndexer
     Windows::Foundation::IAsyncAction DeleteAsync(hstring_view contentId) const;
     Windows::Foundation::IAsyncAction DeleteMultipleAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds) const;
     Windows::Foundation::IAsyncAction DeleteAllAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> RetrievePropertiesAsync(hstring_view contentId, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> RetrievePropertiesAsync(hstring_view contentId, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
     uint64_t Revision() const;
 };
 
@@ -231,8 +231,8 @@ template <typename D>
 struct WINRT_EBO impl_IContentIndexerQuery
 {
     Windows::Foundation::IAsyncOperation<uint32_t> GetCountAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>>> GetPropertiesAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>>> GetPropertiesAsync(uint32_t startIndex, uint32_t maxItems) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>> GetPropertiesAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>> GetPropertiesAsync(uint32_t startIndex, uint32_t maxItems) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::Search::IIndexableContent>> GetAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::Search::IIndexableContent>> GetAsync(uint32_t startIndex, uint32_t maxItems) const;
     Windows::Storage::StorageFolder QueryFolder() const;
@@ -258,7 +258,7 @@ struct WINRT_EBO impl_IIndexableContent
 {
     hstring Id() const;
     void Id(hstring_view value) const;
-    Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable> Properties() const;
+    Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable> Properties() const;
     Windows::Storage::Streams::IRandomAccessStream Stream() const;
     void Stream(const Windows::Storage::Streams::IRandomAccessStream & value) const;
     hstring StreamContentType() const;
@@ -362,15 +362,15 @@ struct WINRT_EBO impl_IStorageQueryResultBase
 {
     Windows::Foundation::IAsyncOperation<uint32_t> GetItemCountAsync() const;
     Windows::Storage::StorageFolder Folder() const;
-    event_token ContentsChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> & handler) const;
+    event_token ContentsChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> & handler) const;
     using ContentsChanged_revoker = event_revoker<IStorageQueryResultBase>;
-    ContentsChanged_revoker ContentsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> & handler) const;
+    ContentsChanged_revoker ContentsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> & handler) const;
     void ContentsChanged(event_token eventCookie) const;
-    event_token OptionsChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> & changedHandler) const;
+    event_token OptionsChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> & changedHandler) const;
     using OptionsChanged_revoker = event_revoker<IStorageQueryResultBase>;
-    OptionsChanged_revoker OptionsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> & changedHandler) const;
+    OptionsChanged_revoker OptionsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> & changedHandler) const;
     void OptionsChanged(event_token eventCookie) const;
-    Windows::Foundation::IAsyncOperation<uint32_t> FindStartIndexAsync(const Windows::IInspectable & value) const;
+    Windows::Foundation::IAsyncOperation<uint32_t> FindStartIndexAsync(const Windows::Foundation::IInspectable & value) const;
     Windows::Storage::Search::QueryOptions GetCurrentQueryOptions() const;
     void ApplyNewQueryOptions(const Windows::Storage::Search::QueryOptions & newQueryOptions) const;
 };
@@ -380,8 +380,8 @@ struct WINRT_EBO impl_IValueAndLanguage
 {
     hstring Language() const;
     void Language(hstring_view value) const;
-    Windows::IInspectable Value() const;
-    void Value(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Value() const;
+    void Value(const Windows::Foundation::IInspectable & value) const;
 };
 
 }

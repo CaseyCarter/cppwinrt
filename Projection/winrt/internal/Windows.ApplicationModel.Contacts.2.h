@@ -162,7 +162,7 @@ template <> struct __declspec(uuid("c953dc00-30be-5379-bcac-435c6bad3ce6")) __de
 
 #ifndef WINRT_GENERIC_f0c4ce23_4e80_5cb1_9f43_fbdc1c609122
 #define WINRT_GENERIC_f0c4ce23_4e80_5cb1_9f43_fbdc1c609122
-template <> struct __declspec(uuid("f0c4ce23-4e80-5cb1-9f43-fbdc1c609122")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f0c4ce23-4e80-5cb1-9f43-fbdc1c609122")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -771,28 +771,28 @@ template <> struct __declspec(uuid("589b0543-eeae-5ca2-a63b-76010c64fccb")) __de
 namespace Windows::ApplicationModel::Contacts {
 
 struct IAggregateContactManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAggregateContactManager>
 {
     IAggregateContactManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAggregateContactManager2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAggregateContactManager2>
 {
     IAggregateContactManager2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContact :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContact>
 {
     IContact(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContact2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContact2>,
     impl::require<IContact2, Windows::ApplicationModel::Contacts::IContact>
 {
@@ -800,7 +800,7 @@ struct IContact2 :
 };
 
 struct IContact3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContact3>,
     impl::require<IContact3, Windows::ApplicationModel::Contacts::IContact, Windows::ApplicationModel::Contacts::IContact2>
 {
@@ -808,42 +808,42 @@ struct IContact3 :
 };
 
 struct IContactAddress :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactAddress>
 {
     IContactAddress(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactAnnotation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactAnnotation>
 {
     IContactAnnotation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactAnnotationList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactAnnotationList>
 {
     IContactAnnotationList(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactAnnotationStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactAnnotationStore>
 {
     IContactAnnotationStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactBatch :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactBatch>
 {
     IContactBatch(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactCardDelayedDataLoader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactCardDelayedDataLoader>,
     impl::require<IContactCardDelayedDataLoader, Windows::Foundation::IClosable>
 {
@@ -851,14 +851,14 @@ struct IContactCardDelayedDataLoader :
 };
 
 struct IContactCardOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactCardOptions>
 {
     IContactCardOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactCardOptions2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactCardOptions2>,
     impl::require<IContactCardOptions2, Windows::ApplicationModel::Contacts::IContactCardOptions>
 {
@@ -866,84 +866,84 @@ struct IContactCardOptions2 :
 };
 
 struct IContactChange :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactChange>
 {
     IContactChange(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactChangeReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactChangeReader>
 {
     IContactChangeReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactChangeTracker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactChangeTracker>
 {
     IContactChangeTracker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactChangedDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactChangedDeferral>
 {
     IContactChangedDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactChangedEventArgs>
 {
     IContactChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactConnectedServiceAccount :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactConnectedServiceAccount>
 {
     IContactConnectedServiceAccount(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactDate :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactDate>
 {
     IContactDate(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactEmail :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactEmail>
 {
     IContactEmail(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactField :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactField>
 {
     IContactField(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactFieldFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactFieldFactory>
 {
     IContactFieldFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactInformation>
 {
     IContactInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactInstantMessageField :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactInstantMessageField>,
     impl::require<IContactInstantMessageField, Windows::ApplicationModel::Contacts::IContactField>
 {
@@ -951,63 +951,63 @@ struct IContactInstantMessageField :
 };
 
 struct IContactInstantMessageFieldFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactInstantMessageFieldFactory>
 {
     IContactInstantMessageFieldFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactJobInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactJobInfo>
 {
     IContactJobInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactLaunchActionVerbsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactLaunchActionVerbsStatics>
 {
     IContactLaunchActionVerbsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactList>
 {
     IContactList(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactList2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactList2>
 {
     IContactList2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactListSyncConstraints :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactListSyncConstraints>
 {
     IContactListSyncConstraints(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactListSyncManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactListSyncManager>
 {
     IContactListSyncManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactListSyncManager2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactListSyncManager2>
 {
     IContactListSyncManager2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactLocationField :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactLocationField>,
     impl::require<IContactLocationField, Windows::ApplicationModel::Contacts::IContactField>
 {
@@ -1015,28 +1015,28 @@ struct IContactLocationField :
 };
 
 struct IContactLocationFieldFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactLocationFieldFactory>
 {
     IContactLocationFieldFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactManagerForUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactManagerForUser>
 {
     IContactManagerForUser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactManagerStatics>
 {
     IContactManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactManagerStatics2>,
     impl::require<IContactManagerStatics2, Windows::ApplicationModel::Contacts::IContactManagerStatics>
 {
@@ -1044,7 +1044,7 @@ struct IContactManagerStatics2 :
 };
 
 struct IContactManagerStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactManagerStatics3>,
     impl::require<IContactManagerStatics3, Windows::ApplicationModel::Contacts::IContactManagerStatics, Windows::ApplicationModel::Contacts::IContactManagerStatics2>
 {
@@ -1058,84 +1058,84 @@ struct IContactManagerStatics3 :
 };
 
 struct IContactManagerStatics4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactManagerStatics4>
 {
     IContactManagerStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactMatchReason :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactMatchReason>
 {
     IContactMatchReason(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactName :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactName>
 {
     IContactName(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactPhone :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactPhone>
 {
     IContactPhone(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactPicker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactPicker>
 {
     IContactPicker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactPicker2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactPicker2>
 {
     IContactPicker2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactQueryOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactQueryOptions>
 {
     IContactQueryOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactQueryOptionsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactQueryOptionsFactory>
 {
     IContactQueryOptionsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactQueryTextSearch :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactQueryTextSearch>
 {
     IContactQueryTextSearch(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactReader>
 {
     IContactReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactSignificantOther :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactSignificantOther>
 {
     IContactSignificantOther(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactSignificantOther2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactSignificantOther2>,
     impl::require<IContactSignificantOther2, Windows::ApplicationModel::Contacts::IContactSignificantOther>
 {
@@ -1143,14 +1143,14 @@ struct IContactSignificantOther2 :
 };
 
 struct IContactStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactStore>
 {
     IContactStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactStore2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactStore2>,
     impl::require<IContactStore2, Windows::ApplicationModel::Contacts::IContactStore>
 {
@@ -1158,21 +1158,21 @@ struct IContactStore2 :
 };
 
 struct IContactStoreNotificationTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactStoreNotificationTriggerDetails>
 {
     IContactStoreNotificationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactWebsite :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactWebsite>
 {
     IContactWebsite(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactWebsite2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactWebsite2>,
     impl::require<IContactWebsite2, Windows::ApplicationModel::Contacts::IContactWebsite>
 {
@@ -1180,14 +1180,14 @@ struct IContactWebsite2 :
 };
 
 struct IFullContactCardOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFullContactCardOptions>
 {
     IFullContactCardOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] IKnownContactFieldStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownContactFieldStatics>
 {
     IKnownContactFieldStatics(std::nullptr_t = nullptr) noexcept {}

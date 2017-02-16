@@ -335,12 +335,12 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
         }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -363,12 +363,12 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
         }
     }
 
-    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -455,14 +455,14 @@ template <typename D> void impl_IDnssdServiceWatcher<D>::Added(event_token token
     check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->remove_Added(token));
 }
 
-template <typename D> event_token impl_IDnssdServiceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDnssdServiceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->add_EnumerationCompleted(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDnssdServiceWatcher> impl_IDnssdServiceWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDnssdServiceWatcher> impl_IDnssdServiceWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDnssdServiceWatcher>(this, &ABI::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWatcher::remove_EnumerationCompleted, EnumerationCompleted(handler));
 }
@@ -472,14 +472,14 @@ template <typename D> void impl_IDnssdServiceWatcher<D>::EnumerationCompleted(ev
     check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->remove_EnumerationCompleted(token));
 }
 
-template <typename D> event_token impl_IDnssdServiceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDnssdServiceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->add_Stopped(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDnssdServiceWatcher> impl_IDnssdServiceWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDnssdServiceWatcher> impl_IDnssdServiceWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDnssdServiceWatcher>(this, &ABI::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWatcher::remove_Stopped, Stopped(handler));
 }

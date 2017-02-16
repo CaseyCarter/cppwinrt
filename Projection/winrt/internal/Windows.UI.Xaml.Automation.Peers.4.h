@@ -17,7 +17,7 @@ public:
 
     using IAutomationPeerOverrides = winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides;
 
-    Windows::IInspectable GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface)
+    Windows::Foundation::IInspectable GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface)
     {
         return shim().as<IAutomationPeerOverrides>().GetPatternCore(patternInterface);
     }
@@ -152,7 +152,7 @@ public:
         return shim().as<IAutomationPeerOverrides>().GetLiveSettingCore();
     }
 
-    HRESULT __stdcall abi_GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -602,17 +602,17 @@ public:
 
     using IAutomationPeerOverrides3 = winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3;
 
-    Windows::IInspectable NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction)
+    Windows::Foundation::IInspectable NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction)
     {
         return shim().as<IAutomationPeerOverrides3>().NavigateCore(direction);
     }
 
-    Windows::IInspectable GetElementFromPointCore(const Windows::Foundation::Point & pointInWindowCoordinates)
+    Windows::Foundation::IInspectable GetElementFromPointCore(const Windows::Foundation::Point & pointInWindowCoordinates)
     {
         return shim().as<IAutomationPeerOverrides3>().GetElementFromPointCore(pointInWindowCoordinates);
     }
 
-    Windows::IInspectable GetFocusedElementCore()
+    Windows::Foundation::IInspectable GetFocusedElementCore()
     {
         return shim().as<IAutomationPeerOverrides3>().GetFocusedElementCore();
     }
@@ -637,7 +637,7 @@ public:
         return shim().as<IAutomationPeerOverrides3>().GetLevelCore();
     }
 
-    HRESULT __stdcall abi_NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -652,7 +652,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetElementFromPointCore(impl::abi_arg_in<Windows::Foundation::Point> pointInWindowCoordinates, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetElementFromPointCore(impl::abi_arg_in<Windows::Foundation::Point> pointInWindowCoordinates, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -667,7 +667,7 @@ public:
         }
     }
 
-    HRESULT __stdcall abi_GetFocusedElementCore(impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetFocusedElementCore(impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -926,17 +926,17 @@ public:
 
     using IItemsControlAutomationPeerOverrides2 = winrt::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2;
 
-    Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer OnCreateItemAutomationPeer(const Windows::IInspectable & item)
+    Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer OnCreateItemAutomationPeer(const Windows::Foundation::IInspectable & item)
     {
         return shim().as<IItemsControlAutomationPeerOverrides2>().OnCreateItemAutomationPeer(item);
     }
 
-    HRESULT __stdcall abi_OnCreateItemAutomationPeer(impl::abi_arg_in<Windows::IInspectable> item, impl::abi_arg_out<Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> returnValue) noexcept override
+    HRESULT __stdcall abi_OnCreateItemAutomationPeer(impl::abi_arg_in<Windows::Foundation::IInspectable> item, impl::abi_arg_out<Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_abi(this->shim().OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
+            *returnValue = detach_abi(this->shim().OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&item)));
             return S_OK;
         }
         catch (...)

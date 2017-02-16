@@ -45,11 +45,11 @@ struct event_handler : implements<event_handler<T, H>, abi<Windows::Foundation::
 {
     event_handler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::IInspectable> sender, abi_arg_in<T> args) noexcept override
+    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IInspectable> sender, abi_arg_in<T> args) noexcept override
     {
         try
         {
-            (*this)(*reinterpret_cast<const Windows::IInspectable *>(&sender), *reinterpret_cast<const T *>(&args));
+            (*this)(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&sender), *reinterpret_cast<const T *>(&args));
             return S_OK;
         }
         catch (...) { return impl::to_hresult(); }

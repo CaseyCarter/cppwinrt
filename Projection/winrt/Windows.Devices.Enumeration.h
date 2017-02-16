@@ -264,7 +264,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
         }
     }
 
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -813,7 +813,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationUpdate> : pro
         }
     }
 
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -1078,12 +1078,12 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
         }
     }
 
-    HRESULT __stdcall add_DevicePickerDismissed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_DevicePickerDismissed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().DevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().DevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1552,12 +1552,12 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1580,12 +1580,12 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1979,14 +1979,14 @@ template <typename D> void impl_IDevicePicker<D>::DisconnectButtonClicked(event_
     check_hresult(WINRT_SHIM(IDevicePicker)->remove_DisconnectButtonClicked(token));
 }
 
-template <typename D> event_token impl_IDevicePicker<D>::DevicePickerDismissed(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDevicePicker<D>::DevicePickerDismissed(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDevicePicker)->add_DevicePickerDismissed(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDevicePicker> impl_IDevicePicker<D>::DevicePickerDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDevicePicker> impl_IDevicePicker<D>::DevicePickerDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDevicePicker>(this, &ABI::Windows::Devices::Enumeration::IDevicePicker::remove_DevicePickerDismissed, DevicePickerDismissed(handler));
 }
@@ -2065,9 +2065,9 @@ template <typename D> hstring impl_IDeviceInformationUpdate<D>::Id() const
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IDeviceInformationUpdate<D>::Properties() const
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> impl_IDeviceInformationUpdate<D>::Properties() const
 {
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(IDeviceInformationUpdate)->get_Properties(put_abi(value)));
     return value;
 }
@@ -2130,14 +2130,14 @@ template <typename D> void impl_IDeviceWatcher<D>::Removed(event_token token) co
     check_hresult(WINRT_SHIM(IDeviceWatcher)->remove_Removed(token));
 }
 
-template <typename D> event_token impl_IDeviceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDeviceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDeviceWatcher)->add_EnumerationCompleted(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDeviceWatcher> impl_IDeviceWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDeviceWatcher> impl_IDeviceWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDeviceWatcher>(this, &ABI::Windows::Devices::Enumeration::IDeviceWatcher::remove_EnumerationCompleted, EnumerationCompleted(handler));
 }
@@ -2147,14 +2147,14 @@ template <typename D> void impl_IDeviceWatcher<D>::EnumerationCompleted(event_to
     check_hresult(WINRT_SHIM(IDeviceWatcher)->remove_EnumerationCompleted(token));
 }
 
-template <typename D> event_token impl_IDeviceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDeviceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDeviceWatcher)->add_Stopped(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDeviceWatcher> impl_IDeviceWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDeviceWatcher> impl_IDeviceWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDeviceWatcher>(this, &ABI::Windows::Devices::Enumeration::IDeviceWatcher::remove_Stopped, Stopped(handler));
 }
@@ -2321,9 +2321,9 @@ template <typename D> Windows::Devices::Enumeration::EnclosureLocation impl_IDev
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IDeviceInformation<D>::Properties() const
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> impl_IDeviceInformation<D>::Properties() const
 {
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(IDeviceInformation)->get_Properties(put_abi(value)));
     return value;
 }

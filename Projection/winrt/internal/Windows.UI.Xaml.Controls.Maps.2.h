@@ -130,7 +130,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_f250dd93_e636_51ef_bc93_ee78d431a6bd
 #define WINRT_GENERIC_f250dd93_e636_51ef_bc93_ee78d431a6bd
-template <> struct __declspec(uuid("f250dd93-e636-51ef-bc93-ee78d431a6bd")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f250dd93-e636-51ef-bc93-ee78d431a6bd")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_b92f6816_4d0a_52c2_9868_94b5c942007e
@@ -309,448 +309,448 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::UI::Xaml::Controls::Maps {
 
 struct ICustomMapTileDataSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICustomMapTileDataSource>
 {
     ICustomMapTileDataSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICustomMapTileDataSourceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICustomMapTileDataSourceFactory>
 {
     ICustomMapTileDataSourceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMapTileDataSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMapTileDataSource>
 {
     IHttpMapTileDataSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMapTileDataSourceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMapTileDataSourceFactory>
 {
     IHttpMapTileDataSourceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILocalMapTileDataSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILocalMapTileDataSource>
 {
     ILocalMapTileDataSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILocalMapTileDataSourceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILocalMapTileDataSourceFactory>
 {
     ILocalMapTileDataSourceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapActualCameraChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapActualCameraChangedEventArgs>
 {
     IMapActualCameraChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapActualCameraChangedEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapActualCameraChangedEventArgs2>
 {
     IMapActualCameraChangedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapActualCameraChangingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapActualCameraChangingEventArgs>
 {
     IMapActualCameraChangingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapActualCameraChangingEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapActualCameraChangingEventArgs2>
 {
     IMapActualCameraChangingEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapCamera :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapCamera>
 {
     IMapCamera(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapCameraFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapCameraFactory>
 {
     IMapCameraFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapControl>
 {
     IMapControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapControl2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapControl2>
 {
     IMapControl2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapControl3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapControl3>
 {
     IMapControl3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapControl4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapControl4>
 {
     IMapControl4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapControlStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapControlStatics>
 {
     IMapControlStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapControlStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapControlStatics2>
 {
     IMapControlStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapControlStatics4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapControlStatics4>
 {
     IMapControlStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapCustomExperience :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapCustomExperience>
 {
     IMapCustomExperience(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapCustomExperienceChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapCustomExperienceChangedEventArgs>
 {
     IMapCustomExperienceChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapCustomExperienceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapCustomExperienceFactory>
 {
     IMapCustomExperienceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapElement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapElement>
 {
     IMapElement(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapElement2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapElement2>
 {
     IMapElement2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapElementClickEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapElementClickEventArgs>
 {
     IMapElementClickEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapElementFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapElementFactory>
 {
     IMapElementFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapElementPointerEnteredEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapElementPointerEnteredEventArgs>
 {
     IMapElementPointerEnteredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapElementPointerExitedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapElementPointerExitedEventArgs>
 {
     IMapElementPointerExitedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapElementStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapElementStatics>
 {
     IMapElementStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapElementStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapElementStatics2>
 {
     IMapElementStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapIcon :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapIcon>
 {
     IMapIcon(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapIcon2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapIcon2>
 {
     IMapIcon2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapIconStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapIconStatics>
 {
     IMapIconStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapIconStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapIconStatics2>
 {
     IMapIconStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapInputEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapInputEventArgs>
 {
     IMapInputEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapItemsControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapItemsControl>
 {
     IMapItemsControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapItemsControlStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapItemsControlStatics>
 {
     IMapItemsControlStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapPolygon :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapPolygon>
 {
     IMapPolygon(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapPolygon2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapPolygon2>
 {
     IMapPolygon2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapPolygonStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapPolygonStatics>
 {
     IMapPolygonStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapPolyline :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapPolyline>
 {
     IMapPolyline(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapPolylineStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapPolylineStatics>
 {
     IMapPolylineStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRightTappedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRightTappedEventArgs>
 {
     IMapRightTappedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteView>
 {
     IMapRouteView(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteViewFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteViewFactory>
 {
     IMapRouteViewFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapScene :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapScene>
 {
     IMapScene(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapSceneStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapSceneStatics>
 {
     IMapSceneStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTargetCameraChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTargetCameraChangedEventArgs>
 {
     IMapTargetCameraChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTargetCameraChangedEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTargetCameraChangedEventArgs2>
 {
     IMapTargetCameraChangedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileBitmapRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileBitmapRequest>
 {
     IMapTileBitmapRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileBitmapRequestDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileBitmapRequestDeferral>
 {
     IMapTileBitmapRequestDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileBitmapRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileBitmapRequestedEventArgs>
 {
     IMapTileBitmapRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileDataSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileDataSource>
 {
     IMapTileDataSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileDataSourceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileDataSourceFactory>
 {
     IMapTileDataSourceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileSource>
 {
     IMapTileSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileSourceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileSourceFactory>
 {
     IMapTileSourceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileSourceStatics>
 {
     IMapTileSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileUriRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileUriRequest>
 {
     IMapTileUriRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileUriRequestDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileUriRequestDeferral>
 {
     IMapTileUriRequestDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTileUriRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapTileUriRequestedEventArgs>
 {
     IMapTileUriRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreetsideExperience :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreetsideExperience>
 {
     IStreetsideExperience(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreetsideExperienceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreetsideExperienceFactory>
 {
     IStreetsideExperienceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreetsidePanorama :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreetsidePanorama>
 {
     IStreetsidePanorama(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreetsidePanoramaStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreetsidePanoramaStatics>
 {
     IStreetsidePanoramaStatics(std::nullptr_t = nullptr) noexcept {}

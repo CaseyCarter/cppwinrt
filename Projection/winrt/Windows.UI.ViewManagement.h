@@ -47,12 +47,12 @@ struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce
         }
     }
 
-    HRESULT __stdcall add_HighContrastChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_HighContrastChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().HighContrastChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().HighContrastChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -342,12 +342,12 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
         }
     }
 
-    HRESULT __stdcall add_VisibleBoundsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_VisibleBoundsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().VisibleBoundsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().VisibleBoundsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1568,12 +1568,12 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
         }
     }
 
-    HRESULT __stdcall add_ProjectionDisplayAvailableChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ProjectionDisplayAvailableChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ProjectionDisplayAvailableChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ProjectionDisplayAvailableChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1864,12 +1864,12 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings2> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall add_TextScaleFactorChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_TextScaleFactorChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().TextScaleFactorChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().TextScaleFactorChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1910,12 +1910,12 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings3> : produce_base<D, W
         }
     }
 
-    HRESULT __stdcall add_ColorValuesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_ColorValuesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().ColorValuesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().ColorValuesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2205,14 +2205,14 @@ template <typename D> Windows::Foundation::Rect impl_IApplicationView2<D>::Visib
     return value;
 }
 
-template <typename D> event_token impl_IApplicationView2<D>::VisibleBoundsChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IApplicationView2<D>::VisibleBoundsChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IApplicationView2)->add_VisibleBoundsChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IApplicationView2> impl_IApplicationView2<D>::VisibleBoundsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IApplicationView2> impl_IApplicationView2<D>::VisibleBoundsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IApplicationView2>(this, &ABI::Windows::UI::ViewManagement::IApplicationView2::remove_VisibleBoundsChanged, VisibleBoundsChanged(handler));
 }
@@ -2610,14 +2610,14 @@ template <typename D> bool impl_IProjectionManagerStatics<D>::ProjectionDisplayA
     return value;
 }
 
-template <typename D> event_token impl_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IProjectionManagerStatics)->add_ProjectionDisplayAvailableChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IProjectionManagerStatics> impl_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IProjectionManagerStatics> impl_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IProjectionManagerStatics>(this, &ABI::Windows::UI::ViewManagement::IProjectionManagerStatics::remove_ProjectionDisplayAvailableChanged, ProjectionDisplayAvailableChanged(handler));
 }
@@ -2683,14 +2683,14 @@ template <typename D> hstring impl_IAccessibilitySettings<D>::HighContrastScheme
     return value;
 }
 
-template <typename D> event_token impl_IAccessibilitySettings<D>::HighContrastChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAccessibilitySettings<D>::HighContrastChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IAccessibilitySettings)->add_HighContrastChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IAccessibilitySettings> impl_IAccessibilitySettings<D>::HighContrastChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAccessibilitySettings> impl_IAccessibilitySettings<D>::HighContrastChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAccessibilitySettings>(this, &ABI::Windows::UI::ViewManagement::IAccessibilitySettings::remove_HighContrastChanged, HighContrastChanged(handler));
 }
@@ -2798,14 +2798,14 @@ template <typename D> double impl_IUISettings2<D>::TextScaleFactor() const
     return value;
 }
 
-template <typename D> event_token impl_IUISettings2<D>::TextScaleFactorChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IUISettings2<D>::TextScaleFactorChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IUISettings2)->add_TextScaleFactorChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IUISettings2> impl_IUISettings2<D>::TextScaleFactorChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IUISettings2> impl_IUISettings2<D>::TextScaleFactorChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IUISettings2>(this, &ABI::Windows::UI::ViewManagement::IUISettings2::remove_TextScaleFactorChanged, TextScaleFactorChanged(handler));
 }
@@ -2822,14 +2822,14 @@ template <typename D> Windows::UI::Color impl_IUISettings3<D>::GetColorValue(Win
     return value;
 }
 
-template <typename D> event_token impl_IUISettings3<D>::ColorValuesChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IUISettings3<D>::ColorValuesChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IUISettings3)->add_ColorValuesChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IUISettings3> impl_IUISettings3<D>::ColorValuesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IUISettings3> impl_IUISettings3<D>::ColorValuesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IUISettings3>(this, &ABI::Windows::UI::ViewManagement::IUISettings3::remove_ColorValuesChanged, ColorValuesChanged(handler));
 }
@@ -3001,12 +3001,12 @@ inline bool ProjectionManager::ProjectionDisplayAvailable()
     return get_activation_factory<ProjectionManager, IProjectionManagerStatics>().ProjectionDisplayAvailable();
 }
 
-inline event_token ProjectionManager::ProjectionDisplayAvailableChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline event_token ProjectionManager::ProjectionDisplayAvailableChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     return get_activation_factory<ProjectionManager, IProjectionManagerStatics>().ProjectionDisplayAvailableChanged(handler);
 }
 
-inline factory_event_revoker<IProjectionManagerStatics> ProjectionManager::ProjectionDisplayAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline factory_event_revoker<IProjectionManagerStatics> ProjectionManager::ProjectionDisplayAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     auto factory = get_activation_factory<ProjectionManager, IProjectionManagerStatics>();
     return { factory, &ABI::Windows::UI::ViewManagement::IProjectionManagerStatics::remove_ProjectionDisplayAvailableChanged, factory.ProjectionDisplayAvailableChanged(handler) };

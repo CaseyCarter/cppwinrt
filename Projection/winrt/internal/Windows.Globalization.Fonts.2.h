@@ -10,21 +10,21 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Globalization::Fonts {
 
 struct ILanguageFont :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanguageFont>
 {
     ILanguageFont(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILanguageFontGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanguageFontGroup>
 {
     ILanguageFontGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILanguageFontGroupFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanguageFontGroupFactory>
 {
     ILanguageFontGroupFactory(std::nullptr_t = nullptr) noexcept {}

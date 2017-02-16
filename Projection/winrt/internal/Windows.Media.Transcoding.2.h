@@ -40,21 +40,21 @@ template <> struct __declspec(uuid("94d64ac6-4491-53ef-8be8-36481f3ff1e8")) __de
 namespace Windows::Media::Transcoding {
 
 struct IMediaTranscoder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaTranscoder>
 {
     IMediaTranscoder(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaTranscoder2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaTranscoder2>
 {
     IMediaTranscoder2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrepareTranscodeResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrepareTranscodeResult>
 {
     IPrepareTranscodeResult(std::nullptr_t = nullptr) noexcept {}

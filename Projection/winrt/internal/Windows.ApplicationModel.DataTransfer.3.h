@@ -38,9 +38,9 @@ struct Clipboard
     static void SetContent(const Windows::ApplicationModel::DataTransfer::DataPackage & content);
     static void Flush();
     static void Clear();
-    static event_token ContentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler);
+    static event_token ContentChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler);
     using ContentChanged_revoker = factory_event_revoker<IClipboardStatics>;
-    static ContentChanged_revoker ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler);
+    static ContentChanged_revoker ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler);
     static void ContentChanged(event_token token);
 };
 

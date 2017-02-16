@@ -140,42 +140,42 @@ template <> struct __declspec(uuid("b9d6d973-a089-550a-83b7-f659ea0dea04")) __de
 namespace Windows::UI::StartScreen {
 
 struct IJumpList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJumpList>
 {
     IJumpList(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IJumpListItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJumpListItem>
 {
     IJumpListItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IJumpListItemStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJumpListItemStatics>
 {
     IJumpListItemStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IJumpListStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJumpListStatics>
 {
     IJumpListStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryTile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryTile>
 {
     ISecondaryTile(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryTile2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryTile2>,
     impl::require<ISecondaryTile2, Windows::UI::StartScreen::ISecondaryTile>
 {
@@ -183,14 +183,14 @@ struct ISecondaryTile2 :
 };
 
 struct ISecondaryTileFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryTileFactory>
 {
     ISecondaryTileFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryTileFactory2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryTileFactory2>,
     impl::require<ISecondaryTileFactory2, Windows::UI::StartScreen::ISecondaryTileFactory>
 {
@@ -198,49 +198,49 @@ struct ISecondaryTileFactory2 :
 };
 
 struct ISecondaryTileStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryTileStatics>
 {
     ISecondaryTileStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryTileVisualElements :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryTileVisualElements>
 {
     ISecondaryTileVisualElements(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryTileVisualElements2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryTileVisualElements2>
 {
     ISecondaryTileVisualElements2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryTileVisualElements3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryTileVisualElements3>
 {
     ISecondaryTileVisualElements3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualElementsRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualElementsRequest>
 {
     IVisualElementsRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualElementsRequestDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualElementsRequestDeferral>
 {
     IVisualElementsRequestDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualElementsRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualElementsRequestedEventArgs>
 {
     IVisualElementsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}

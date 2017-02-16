@@ -27,17 +27,17 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_236aac9d_fb12_5c4d_a41c_9e445fb4d7ec
 #define WINRT_GENERIC_236aac9d_fb12_5c4d_a41c_9e445fb4d7ec
-template <> struct __declspec(uuid("236aac9d-fb12-5c4d-a41c-9e445fb4d7ec")) __declspec(novtable) IObservableMap<hstring, Windows::IInspectable> : impl_IObservableMap<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("236aac9d-fb12-5c4d-a41c-9e445fb4d7ec")) __declspec(novtable) IObservableMap<hstring, Windows::Foundation::IInspectable> : impl_IObservableMap<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
 #define WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
-template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __declspec(novtable) IMap<hstring, Windows::IInspectable> : impl_IMap<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __declspec(novtable) IMap<hstring, Windows::Foundation::IInspectable> : impl_IMap<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
-template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::IInspectable> : impl_IKeyValuePair<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -67,7 +67,7 @@ template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __de
 
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
-template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::IInspectable> : impl_IMapView<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::Foundation::IInspectable> : impl_IMapView<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
@@ -137,7 +137,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_edc09538_bbae_5b2b_9e81_b449ea7e48fe
 #define WINRT_GENERIC_edc09538_bbae_5b2b_9e81_b449ea7e48fe
-template <> struct __declspec(uuid("edc09538-bbae-5b2b-9e81-b449ea7e48fe")) __declspec(novtable) TypedEventHandler<Windows::Storage::StorageLibrary, Windows::IInspectable> : impl_TypedEventHandler<Windows::Storage::StorageLibrary, Windows::IInspectable> {};
+template <> struct __declspec(uuid("edc09538-bbae-5b2b-9e81-b449ea7e48fe")) __declspec(novtable) TypedEventHandler<Windows::Storage::StorageLibrary, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Storage::StorageLibrary, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_5e52f8ce_aced_5a42_95b4_f674dd84885e
@@ -222,7 +222,7 @@ template <> struct __declspec(uuid("31456b58-a5cb-5c5b-bd6e-ccce3a7bf4b4")) __de
 
 #ifndef WINRT_GENERIC_b5348b3b_5081_5ae9_8fa3_4d22d68fb0ea
 #define WINRT_GENERIC_b5348b3b_5081_5ae9_8fa3_4d22d68fb0ea
-template <> struct __declspec(uuid("b5348b3b-5081-5ae9-8fa3-4d22d68fb0ea")) __declspec(novtable) TypedEventHandler<Windows::Storage::ApplicationData, Windows::IInspectable> : impl_TypedEventHandler<Windows::Storage::ApplicationData, Windows::IInspectable> {};
+template <> struct __declspec(uuid("b5348b3b-5081-5ae9-8fa3-4d22d68fb0ea")) __declspec(novtable) TypedEventHandler<Windows::Storage::ApplicationData, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Storage::ApplicationData, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -257,7 +257,7 @@ template <> struct __declspec(uuid("60141efb-f2f9-5377-96fd-f8c60d9558b5")) __de
 
 #ifndef WINRT_GENERIC_24f981e5_ddca_538d_aada_a59906084cf1
 #define WINRT_GENERIC_24f981e5_ddca_538d_aada_a59906084cf1
-template <> struct __declspec(uuid("24f981e5-ddca-538d-aada-a59906084cf1")) __declspec(novtable) MapChangedEventHandler<hstring, Windows::IInspectable> : impl_MapChangedEventHandler<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("24f981e5-ddca-538d-aada-a59906084cf1")) __declspec(novtable) MapChangedEventHandler<hstring, Windows::Foundation::IInspectable> : impl_MapChangedEventHandler<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -417,7 +417,7 @@ template <> struct __declspec(uuid("5adbc543-2170-5ad9-b35e-968cdb78fb30")) __de
 
 #ifndef WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
 #define WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
-template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -457,7 +457,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
 #define WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
-template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -510,7 +510,7 @@ template <> struct __declspec(uuid("a785be1d-159e-53ad-9553-598b03dca048")) __de
 
 namespace Windows::Storage {
 
-struct ApplicationDataSetVersionHandler : Windows::IUnknown
+struct ApplicationDataSetVersionHandler : Windows::Foundation::IUnknown
 {
     ApplicationDataSetVersionHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> ApplicationDataSetVersionHandler(L lambda);
@@ -519,7 +519,7 @@ struct ApplicationDataSetVersionHandler : Windows::IUnknown
     void operator()(const Windows::Storage::SetVersionRequest & setVersionRequest) const;
 };
 
-struct StreamedFileDataRequestedHandler : Windows::IUnknown
+struct StreamedFileDataRequestedHandler : Windows::Foundation::IUnknown
 {
     StreamedFileDataRequestedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> StreamedFileDataRequestedHandler(L lambda);
@@ -529,140 +529,140 @@ struct StreamedFileDataRequestedHandler : Windows::IUnknown
 };
 
 struct IApplicationData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationData>
 {
     IApplicationData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationData2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationData2>
 {
     IApplicationData2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationData3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationData3>
 {
     IApplicationData3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationDataContainer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationDataContainer>
 {
     IApplicationDataContainer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationDataStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationDataStatics>
 {
     IApplicationDataStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationDataStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationDataStatics2>
 {
     IApplicationDataStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICachedFileManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICachedFileManagerStatics>
 {
     ICachedFileManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDownloadsFolderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDownloadsFolderStatics>
 {
     IDownloadsFolderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDownloadsFolderStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDownloadsFolderStatics2>
 {
     IDownloadsFolderStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileIOStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileIOStatics>
 {
     IFileIOStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownFoldersCameraRollStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownFoldersCameraRollStatics>
 {
     IKnownFoldersCameraRollStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownFoldersPlaylistsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownFoldersPlaylistsStatics>
 {
     IKnownFoldersPlaylistsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownFoldersSavedPicturesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownFoldersSavedPicturesStatics>
 {
     IKnownFoldersSavedPicturesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownFoldersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownFoldersStatics>
 {
     IKnownFoldersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownFoldersStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownFoldersStatics2>
 {
     IKnownFoldersStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownFoldersStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownFoldersStatics3>
 {
     IKnownFoldersStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPathIOStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPathIOStatics>
 {
     IPathIOStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISetVersionDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISetVersionDeferral>
 {
     ISetVersionDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISetVersionRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISetVersionRequest>
 {
     ISetVersionRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageFile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageFile>,
     impl::require<IStorageFile, Windows::Storage::IStorageItem, Windows::Storage::Streams::IInputStreamReference, Windows::Storage::Streams::IRandomAccessStreamReference>
 {
@@ -670,28 +670,28 @@ struct IStorageFile :
 };
 
 struct IStorageFile2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageFile2>
 {
     IStorageFile2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageFilePropertiesWithAvailability :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageFilePropertiesWithAvailability>
 {
     IStorageFilePropertiesWithAvailability(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageFileStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageFileStatics>
 {
     IStorageFileStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageFolder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageFolder>,
     impl::require<IStorageFolder, Windows::Storage::IStorageItem>
 {
@@ -699,28 +699,28 @@ struct IStorageFolder :
 };
 
 struct IStorageFolder2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageFolder2>
 {
     IStorageFolder2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageFolderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageFolderStatics>
 {
     IStorageFolderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageItem>
 {
     IStorageItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageItem2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageItem2>,
     impl::require<IStorageItem2, Windows::Storage::IStorageItem>
 {
@@ -728,14 +728,14 @@ struct IStorageItem2 :
 };
 
 struct IStorageItemProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageItemProperties>
 {
     IStorageItemProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageItemProperties2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageItemProperties2>,
     impl::require<IStorageItemProperties2, Windows::Storage::IStorageItemProperties>
 {
@@ -743,7 +743,7 @@ struct IStorageItemProperties2 :
 };
 
 struct IStorageItemPropertiesWithProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageItemPropertiesWithProvider>,
     impl::require<IStorageItemPropertiesWithProvider, Windows::Storage::IStorageItemProperties>
 {
@@ -751,63 +751,63 @@ struct IStorageItemPropertiesWithProvider :
 };
 
 struct IStorageLibrary :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageLibrary>
 {
     IStorageLibrary(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageLibrary2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageLibrary2>
 {
     IStorageLibrary2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageLibraryChange :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageLibraryChange>
 {
     IStorageLibraryChange(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageLibraryChangeReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageLibraryChangeReader>
 {
     IStorageLibraryChangeReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageLibraryChangeTracker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageLibraryChangeTracker>
 {
     IStorageLibraryChangeTracker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageLibraryStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageLibraryStatics>
 {
     IStorageLibraryStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageLibraryStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageLibraryStatics2>
 {
     IStorageLibraryStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageProvider>
 {
     IStorageProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageStreamTransaction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageStreamTransaction>,
     impl::require<IStorageStreamTransaction, Windows::Foundation::IClosable>
 {
@@ -815,63 +815,63 @@ struct IStorageStreamTransaction :
 };
 
 struct IStreamedFileDataRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamedFileDataRequest>
 {
     IStreamedFileDataRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemAudioProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemAudioProperties>
 {
     ISystemAudioProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemGPSProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemGPSProperties>
 {
     ISystemGPSProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemImageProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemImageProperties>
 {
     ISystemImageProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemMediaProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemMediaProperties>
 {
     ISystemMediaProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemMusicProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemMusicProperties>
 {
     ISystemMusicProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemPhotoProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemPhotoProperties>
 {
     ISystemPhotoProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemProperties>
 {
     ISystemProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemVideoProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemVideoProperties>
 {
     ISystemVideoProperties(std::nullptr_t = nullptr) noexcept {}

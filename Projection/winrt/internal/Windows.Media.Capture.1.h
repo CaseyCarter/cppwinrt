@@ -45,50 +45,50 @@ using WhiteBalanceGain = ABI::Windows::Media::Capture::WhiteBalanceGain;
 
 namespace ABI::Windows::Media::Capture {
 
-struct __declspec(uuid("f072728b-b292-4491-9d41-99807a550bbf")) __declspec(novtable) IAdvancedCapturedPhoto : Windows::IInspectable
+struct __declspec(uuid("f072728b-b292-4491-9d41-99807a550bbf")) __declspec(novtable) IAdvancedCapturedPhoto : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Frame(Windows::Media::Capture::ICapturedFrame ** value) = 0;
     virtual HRESULT __stdcall get_Mode(winrt::Windows::Media::Devices::AdvancedPhotoMode * value) = 0;
-    virtual HRESULT __stdcall get_Context(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_Context(Windows::Foundation::IInspectable ** value) = 0;
 };
 
-struct __declspec(uuid("18cf6cd8-cffe-42d8-8104-017bb318f4a1")) __declspec(novtable) IAdvancedCapturedPhoto2 : Windows::IInspectable
+struct __declspec(uuid("18cf6cd8-cffe-42d8-8104-017bb318f4a1")) __declspec(novtable) IAdvancedCapturedPhoto2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FrameBoundsRelativeToReferencePhoto(Windows::Foundation::IReference<Windows::Foundation::Rect> ** value) = 0;
 };
 
-struct __declspec(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f")) __declspec(novtable) IAdvancedPhotoCapture : Windows::IInspectable
+struct __declspec(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f")) __declspec(novtable) IAdvancedPhotoCapture : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CaptureAsync(Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> ** operation) = 0;
-    virtual HRESULT __stdcall abi_CaptureWithContextAsync(Windows::IInspectable * context, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> ** operation) = 0;
+    virtual HRESULT __stdcall abi_CaptureWithContextAsync(Windows::Foundation::IInspectable * context, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> ** operation) = 0;
     virtual HRESULT __stdcall add_OptionalReferencePhotoCaptured(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_OptionalReferencePhotoCaptured(event_token token) = 0;
-    virtual HRESULT __stdcall add_AllPhotosCaptured(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_AllPhotosCaptured(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_AllPhotosCaptured(event_token token) = 0;
     virtual HRESULT __stdcall abi_FinishAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("9749d453-a29a-45ed-8f29-22d09942cff7")) __declspec(novtable) IAppCapture : Windows::IInspectable
+struct __declspec(uuid("9749d453-a29a-45ed-8f29-22d09942cff7")) __declspec(novtable) IAppCapture : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsCapturingAudio(bool * value) = 0;
     virtual HRESULT __stdcall get_IsCapturingVideo(bool * value) = 0;
-    virtual HRESULT __stdcall add_CapturingChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_CapturingChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_CapturingChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("f922dd6c-0a7e-4e74-8b20-9c1f902d08a1")) __declspec(novtable) IAppCaptureStatics : Windows::IInspectable
+struct __declspec(uuid("f922dd6c-0a7e-4e74-8b20-9c1f902d08a1")) __declspec(novtable) IAppCaptureStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForCurrentView(Windows::Media::Capture::IAppCapture ** value) = 0;
 };
 
-struct __declspec(uuid("48587540-6f93-4bb4-b8f3-e89e48948c91")) __declspec(novtable) ICameraCaptureUI : Windows::IInspectable
+struct __declspec(uuid("48587540-6f93-4bb4-b8f3-e89e48948c91")) __declspec(novtable) ICameraCaptureUI : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PhotoSettings(Windows::Media::Capture::ICameraCaptureUIPhotoCaptureSettings ** value) = 0;
     virtual HRESULT __stdcall get_VideoSettings(Windows::Media::Capture::ICameraCaptureUIVideoCaptureSettings ** value) = 0;
     virtual HRESULT __stdcall abi_CaptureFileAsync(winrt::Windows::Media::Capture::CameraCaptureUIMode mode, Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d")) __declspec(novtable) ICameraCaptureUIPhotoCaptureSettings : Windows::IInspectable
+struct __declspec(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d")) __declspec(novtable) ICameraCaptureUIPhotoCaptureSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Format(winrt::Windows::Media::Capture::CameraCaptureUIPhotoFormat * value) = 0;
     virtual HRESULT __stdcall put_Format(winrt::Windows::Media::Capture::CameraCaptureUIPhotoFormat value) = 0;
@@ -102,7 +102,7 @@ struct __declspec(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d")) __declspec(novta
     virtual HRESULT __stdcall put_AllowCropping(bool value) = 0;
 };
 
-struct __declspec(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e")) __declspec(novtable) ICameraCaptureUIVideoCaptureSettings : Windows::IInspectable
+struct __declspec(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e")) __declspec(novtable) ICameraCaptureUIVideoCaptureSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Format(winrt::Windows::Media::Capture::CameraCaptureUIVideoFormat * value) = 0;
     virtual HRESULT __stdcall put_Format(winrt::Windows::Media::Capture::CameraCaptureUIVideoFormat value) = 0;
@@ -114,13 +114,13 @@ struct __declspec(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e")) __declspec(novta
     virtual HRESULT __stdcall put_AllowTrimming(bool value) = 0;
 };
 
-struct __declspec(uuid("1dd2de1f-571b-44d8-8e80-a08a1578766e")) __declspec(novtable) ICapturedFrame : Windows::IInspectable
+struct __declspec(uuid("1dd2de1f-571b-44d8-8e80-a08a1578766e")) __declspec(novtable) ICapturedFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Width(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_Height(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90")) __declspec(novtable) ICapturedFrameControlValues : Windows::IInspectable
+struct __declspec(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90")) __declspec(novtable) ICapturedFrameControlValues : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Exposure(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ** value) = 0;
     virtual HRESULT __stdcall get_ExposureCompensation(Windows::Foundation::IReference<float> ** value) = 0;
@@ -133,7 +133,7 @@ struct __declspec(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90")) __declspec(novta
     virtual HRESULT __stdcall get_ZoomFactor(Windows::Foundation::IReference<float> ** value) = 0;
 };
 
-struct __declspec(uuid("500b2b88-06d2-4aa7-a7db-d37af73321d8")) __declspec(novtable) ICapturedFrameControlValues2 : Windows::IInspectable
+struct __declspec(uuid("500b2b88-06d2-4aa7-a7db-d37af73321d8")) __declspec(novtable) ICapturedFrameControlValues2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FocusState(Windows::Foundation::IReference<winrt::Windows::Media::Devices::MediaCaptureFocusState> ** value) = 0;
     virtual HRESULT __stdcall get_IsoDigitalGain(Windows::Foundation::IReference<double> ** value) = 0;
@@ -142,43 +142,43 @@ struct __declspec(uuid("500b2b88-06d2-4aa7-a7db-d37af73321d8")) __declspec(novta
     virtual HRESULT __stdcall get_WhiteBalanceGain(Windows::Foundation::IReference<Windows::Media::Capture::WhiteBalanceGain> ** value) = 0;
 };
 
-struct __declspec(uuid("b58e8b6e-8503-49b5-9e86-897d26a3ff3d")) __declspec(novtable) ICapturedFrameWithSoftwareBitmap : Windows::IInspectable
+struct __declspec(uuid("b58e8b6e-8503-49b5-9e86-897d26a3ff3d")) __declspec(novtable) ICapturedFrameWithSoftwareBitmap : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SoftwareBitmap(Windows::Graphics::Imaging::ISoftwareBitmap ** value) = 0;
 };
 
-struct __declspec(uuid("b0ce7e5a-cfcc-4d6c-8ad1-0869208aca16")) __declspec(novtable) ICapturedPhoto : Windows::IInspectable
+struct __declspec(uuid("b0ce7e5a-cfcc-4d6c-8ad1-0869208aca16")) __declspec(novtable) ICapturedPhoto : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Frame(Windows::Media::Capture::ICapturedFrame ** value) = 0;
     virtual HRESULT __stdcall get_Thumbnail(Windows::Media::Capture::ICapturedFrame ** value) = 0;
 };
 
-struct __declspec(uuid("41c8baf7-ff3f-49f0-a477-f195e3ce5108")) __declspec(novtable) ILowLagMediaRecording : Windows::IInspectable
+struct __declspec(uuid("41c8baf7-ff3f-49f0-a477-f195e3ce5108")) __declspec(novtable) ILowLagMediaRecording : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_StartAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_StopAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_FinishAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("6369c758-5644-41e2-97af-8ef56a25e225")) __declspec(novtable) ILowLagMediaRecording2 : Windows::IInspectable
+struct __declspec(uuid("6369c758-5644-41e2-97af-8ef56a25e225")) __declspec(novtable) ILowLagMediaRecording2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_PauseAsync(winrt::Windows::Media::Devices::MediaCapturePauseBehavior behavior, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_ResumeAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("5c33ab12-48f7-47da-b41e-90880a5fe0ec")) __declspec(novtable) ILowLagMediaRecording3 : Windows::IInspectable
+struct __declspec(uuid("5c33ab12-48f7-47da-b41e-90880a5fe0ec")) __declspec(novtable) ILowLagMediaRecording3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_PauseWithResultAsync(winrt::Windows::Media::Devices::MediaCapturePauseBehavior behavior, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCapturePauseResult> ** operation) = 0;
     virtual HRESULT __stdcall abi_StopWithResultAsync(Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCaptureStopResult> ** operation) = 0;
 };
 
-struct __declspec(uuid("a37251b7-6b44-473d-8f24-f703d6c0ec44")) __declspec(novtable) ILowLagPhotoCapture : Windows::IInspectable
+struct __declspec(uuid("a37251b7-6b44-473d-8f24-f703d6c0ec44")) __declspec(novtable) ILowLagPhotoCapture : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CaptureAsync(Windows::Foundation::IAsyncOperation<Windows::Media::Capture::CapturedPhoto> ** operation) = 0;
     virtual HRESULT __stdcall abi_FinishAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("7cc346bb-b9a9-4c91-8ffa-287e9c668669")) __declspec(novtable) ILowLagPhotoSequenceCapture : Windows::IInspectable
+struct __declspec(uuid("7cc346bb-b9a9-4c91-8ffa-287e9c668669")) __declspec(novtable) ILowLagPhotoSequenceCapture : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_StartAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_StopAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
@@ -187,7 +187,7 @@ struct __declspec(uuid("7cc346bb-b9a9-4c91-8ffa-287e9c668669")) __declspec(novta
     virtual HRESULT __stdcall remove_PhotoCaptured(event_token token) = 0;
 };
 
-struct __declspec(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee")) __declspec(novtable) IMediaCapture : Windows::IInspectable
+struct __declspec(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee")) __declspec(novtable) IMediaCapture : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_InitializeAsync(Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
     virtual HRESULT __stdcall abi_InitializeWithSettingsAsync(Windows::Media::Capture::IMediaCaptureInitializationSettings * mediaCaptureInitializationSettings, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
@@ -200,8 +200,8 @@ struct __declspec(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee")) __declspec(novta
     virtual HRESULT __stdcall abi_CapturePhotoToStreamAsync(Windows::Media::MediaProperties::IImageEncodingProperties * type, Windows::Storage::Streams::IRandomAccessStream * stream, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
     virtual HRESULT __stdcall abi_AddEffectAsync(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, hstring effectActivationID, Windows::Foundation::Collections::IPropertySet * effectSettings, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
     virtual HRESULT __stdcall abi_ClearEffectsAsync(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
-    virtual HRESULT __stdcall abi_SetEncoderProperty(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, Windows::IInspectable * propertyValue) = 0;
-    virtual HRESULT __stdcall abi_GetEncoderProperty(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, Windows::IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_SetEncoderProperty(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, Windows::Foundation::IInspectable * propertyValue) = 0;
+    virtual HRESULT __stdcall abi_GetEncoderProperty(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, Windows::Foundation::IInspectable ** propertyValue) = 0;
     virtual HRESULT __stdcall add_Failed(Windows::Media::Capture::MediaCaptureFailedEventHandler * errorEventHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_Failed(event_token eventCookie) = 0;
     virtual HRESULT __stdcall add_RecordLimitationExceeded(Windows::Media::Capture::RecordLimitationExceededEventHandler * recordLimitationExceededEventHandler, event_token * eventCookie) = 0;
@@ -217,7 +217,7 @@ struct __declspec(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee")) __declspec(novta
     virtual HRESULT __stdcall abi_GetRecordRotation(winrt::Windows::Media::Capture::VideoRotation * value) = 0;
 };
 
-struct __declspec(uuid("9cc68260-7da1-4043-b652-21b8878daff9")) __declspec(novtable) IMediaCapture2 : Windows::IInspectable
+struct __declspec(uuid("9cc68260-7da1-4043-b652-21b8878daff9")) __declspec(novtable) IMediaCapture2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_PrepareLowLagRecordToStorageFileAsync(Windows::Media::MediaProperties::IMediaEncodingProfile * encodingProfile, Windows::Storage::IStorageFile * file, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> ** operation) = 0;
     virtual HRESULT __stdcall abi_PrepareLowLagRecordToStreamAsync(Windows::Media::MediaProperties::IMediaEncodingProfile * encodingProfile, Windows::Storage::Streams::IRandomAccessStream * stream, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> ** operation) = 0;
@@ -225,10 +225,10 @@ struct __declspec(uuid("9cc68260-7da1-4043-b652-21b8878daff9")) __declspec(novta
     virtual HRESULT __stdcall abi_PrepareLowLagRecordToCustomSinkIdAsync(Windows::Media::MediaProperties::IMediaEncodingProfile * encodingProfile, hstring customSinkActivationId, Windows::Foundation::Collections::IPropertySet * customSinkSettings, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> ** operation) = 0;
     virtual HRESULT __stdcall abi_PrepareLowLagPhotoCaptureAsync(Windows::Media::MediaProperties::IImageEncodingProperties * type, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagPhotoCapture> ** operation) = 0;
     virtual HRESULT __stdcall abi_PrepareLowLagPhotoSequenceCaptureAsync(Windows::Media::MediaProperties::IImageEncodingProperties * type, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagPhotoSequenceCapture> ** operation) = 0;
-    virtual HRESULT __stdcall abi_SetEncodingPropertiesAsync(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, Windows::Media::MediaProperties::IMediaEncodingProperties * mediaEncodingProperties, Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable> * encoderProperties, Windows::Foundation::IAsyncAction ** operation) = 0;
+    virtual HRESULT __stdcall abi_SetEncodingPropertiesAsync(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, Windows::Media::MediaProperties::IMediaEncodingProperties * mediaEncodingProperties, Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable> * encoderProperties, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("d4136f30-1564-466e-bc0a-af94e02ab016")) __declspec(novtable) IMediaCapture3 : Windows::IInspectable
+struct __declspec(uuid("d4136f30-1564-466e-bc0a-af94e02ab016")) __declspec(novtable) IMediaCapture3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_PrepareVariablePhotoSequenceCaptureAsync(Windows::Media::MediaProperties::IImageEncodingProperties * type, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Core::VariablePhotoSequenceCapture> ** operation) = 0;
     virtual HRESULT __stdcall add_FocusChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureFocusChangedEventArgs> * handler, event_token * token) = 0;
@@ -237,24 +237,24 @@ struct __declspec(uuid("d4136f30-1564-466e-bc0a-af94e02ab016")) __declspec(novta
     virtual HRESULT __stdcall remove_PhotoConfirmationCaptured(event_token token) = 0;
 };
 
-struct __declspec(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13")) __declspec(novtable) IMediaCapture4 : Windows::IInspectable
+struct __declspec(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13")) __declspec(novtable) IMediaCapture4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddAudioEffectAsync(Windows::Media::Effects::IAudioEffectDefinition * definition, Windows::Foundation::IAsyncOperation<Windows::Media::IMediaExtension> ** op) = 0;
     virtual HRESULT __stdcall abi_AddVideoEffectAsync(Windows::Media::Effects::IVideoEffectDefinition * definition, winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, Windows::Foundation::IAsyncOperation<Windows::Media::IMediaExtension> ** op) = 0;
     virtual HRESULT __stdcall abi_PauseRecordAsync(winrt::Windows::Media::Devices::MediaCapturePauseBehavior behavior, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
     virtual HRESULT __stdcall abi_ResumeRecordAsync(Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
-    virtual HRESULT __stdcall add_CameraStreamStateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_CameraStreamStateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_CameraStreamStateChanged(event_token token) = 0;
     virtual HRESULT __stdcall get_CameraStreamState(winrt::Windows::Media::Devices::CameraStreamState * streamState) = 0;
     virtual HRESULT __stdcall abi_GetPreviewFrameAsync(Windows::Foundation::IAsyncOperation<Windows::Media::VideoFrame> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetPreviewFrameCopyAsync(Windows::Media::IVideoFrame * destination, Windows::Foundation::IAsyncOperation<Windows::Media::VideoFrame> ** operation) = 0;
-    virtual HRESULT __stdcall add_ThermalStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_ThermalStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ThermalStatusChanged(event_token token) = 0;
     virtual HRESULT __stdcall get_ThermalStatus(winrt::Windows::Media::Capture::MediaCaptureThermalStatus * value) = 0;
     virtual HRESULT __stdcall abi_PrepareAdvancedPhotoCaptureAsync(Windows::Media::MediaProperties::IImageEncodingProperties * encodingProperties, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedPhotoCapture> ** operation) = 0;
 };
 
-struct __declspec(uuid("da787c22-3a9b-4720-a71e-97900a316e5a")) __declspec(novtable) IMediaCapture5 : Windows::IInspectable
+struct __declspec(uuid("da787c22-3a9b-4720-a71e-97900a316e5a")) __declspec(novtable) IMediaCapture5 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RemoveEffectAsync(Windows::Media::IMediaExtension * effect, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
     virtual HRESULT __stdcall abi_PauseRecordWithResultAsync(winrt::Windows::Media::Devices::MediaCapturePauseBehavior behavior, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCapturePauseResult> ** operation) = 0;
@@ -265,18 +265,18 @@ struct __declspec(uuid("da787c22-3a9b-4720-a71e-97900a316e5a")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateFrameReaderWithSubtypeAndSizeAsync(Windows::Media::Capture::Frames::IMediaFrameSource * inputSource, hstring outputSubtype, Windows::Graphics::Imaging::BitmapSize outputSize, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> ** value) = 0;
 };
 
-struct __declspec(uuid("80fde3f4-54c4-42c0-8d19-cea1a87ca18b")) __declspec(novtable) IMediaCaptureFailedEventArgs : Windows::IInspectable
+struct __declspec(uuid("80fde3f4-54c4-42c0-8d19-cea1a87ca18b")) __declspec(novtable) IMediaCaptureFailedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Message(hstring * value) = 0;
     virtual HRESULT __stdcall get_Code(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("81e1bc7f-2277-493e-abee-d3f44ff98c04")) __declspec(novtable) IMediaCaptureFocusChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("81e1bc7f-2277-493e-abee-d3f44ff98c04")) __declspec(novtable) IMediaCaptureFocusChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FocusState(winrt::Windows::Media::Devices::MediaCaptureFocusState * value) = 0;
 };
 
-struct __declspec(uuid("9782ba70-ea65-4900-9356-8ca887726884")) __declspec(novtable) IMediaCaptureInitializationSettings : Windows::IInspectable
+struct __declspec(uuid("9782ba70-ea65-4900-9356-8ca887726884")) __declspec(novtable) IMediaCaptureInitializationSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_AudioDeviceId(hstring value) = 0;
     virtual HRESULT __stdcall get_AudioDeviceId(hstring * value) = 0;
@@ -288,7 +288,7 @@ struct __declspec(uuid("9782ba70-ea65-4900-9356-8ca887726884")) __declspec(novta
     virtual HRESULT __stdcall get_PhotoCaptureSource(winrt::Windows::Media::Capture::PhotoCaptureSource * value) = 0;
 };
 
-struct __declspec(uuid("404e0626-c9dc-43e9-aee4-e6bf1b57b44c")) __declspec(novtable) IMediaCaptureInitializationSettings2 : Windows::IInspectable
+struct __declspec(uuid("404e0626-c9dc-43e9-aee4-e6bf1b57b44c")) __declspec(novtable) IMediaCaptureInitializationSettings2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_MediaCategory(winrt::Windows::Media::Capture::MediaCategory value) = 0;
     virtual HRESULT __stdcall get_MediaCategory(winrt::Windows::Media::Capture::MediaCategory * value) = 0;
@@ -296,7 +296,7 @@ struct __declspec(uuid("404e0626-c9dc-43e9-aee4-e6bf1b57b44c")) __declspec(novta
     virtual HRESULT __stdcall get_AudioProcessing(winrt::Windows::Media::AudioProcessing * value) = 0;
 };
 
-struct __declspec(uuid("4160519d-be48-4730-8104-0cf6e9e97948")) __declspec(novtable) IMediaCaptureInitializationSettings3 : Windows::IInspectable
+struct __declspec(uuid("4160519d-be48-4730-8104-0cf6e9e97948")) __declspec(novtable) IMediaCaptureInitializationSettings3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_AudioSource(Windows::Media::Core::IMediaSource * value) = 0;
     virtual HRESULT __stdcall get_AudioSource(Windows::Media::Core::IMediaSource ** value) = 0;
@@ -304,7 +304,7 @@ struct __declspec(uuid("4160519d-be48-4730-8104-0cf6e9e97948")) __declspec(novta
     virtual HRESULT __stdcall get_VideoSource(Windows::Media::Core::IMediaSource ** value) = 0;
 };
 
-struct __declspec(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518")) __declspec(novtable) IMediaCaptureInitializationSettings4 : Windows::IInspectable
+struct __declspec(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518")) __declspec(novtable) IMediaCaptureInitializationSettings4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_VideoProfile(Windows::Media::Capture::IMediaCaptureVideoProfile ** value) = 0;
     virtual HRESULT __stdcall put_VideoProfile(Windows::Media::Capture::IMediaCaptureVideoProfile * value) = 0;
@@ -316,7 +316,7 @@ struct __declspec(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518")) __declspec(novta
     virtual HRESULT __stdcall put_PhotoMediaDescription(Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription * value) = 0;
 };
 
-struct __declspec(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a")) __declspec(novtable) IMediaCaptureInitializationSettings5 : Windows::IInspectable
+struct __declspec(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a")) __declspec(novtable) IMediaCaptureInitializationSettings5 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SourceGroup(Windows::Media::Capture::Frames::IMediaFrameSourceGroup ** value) = 0;
     virtual HRESULT __stdcall put_SourceGroup(Windows::Media::Capture::Frames::IMediaFrameSourceGroup * value) = 0;
@@ -326,13 +326,13 @@ struct __declspec(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a")) __declspec(novta
     virtual HRESULT __stdcall put_MemoryPreference(winrt::Windows::Media::Capture::MediaCaptureMemoryPreference value) = 0;
 };
 
-struct __declspec(uuid("aec47ca3-4477-4b04-a06f-2c1c5182fe9d")) __declspec(novtable) IMediaCapturePauseResult : Windows::IInspectable
+struct __declspec(uuid("aec47ca3-4477-4b04-a06f-2c1c5182fe9d")) __declspec(novtable) IMediaCapturePauseResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LastFrame(Windows::Media::IVideoFrame ** value) = 0;
     virtual HRESULT __stdcall get_RecordDuration(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091")) __declspec(novtable) IMediaCaptureSettings : Windows::IInspectable
+struct __declspec(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091")) __declspec(novtable) IMediaCaptureSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AudioDeviceId(hstring * value) = 0;
     virtual HRESULT __stdcall get_VideoDeviceId(hstring * value) = 0;
@@ -341,7 +341,7 @@ struct __declspec(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091")) __declspec(novta
     virtual HRESULT __stdcall get_VideoDeviceCharacteristic(winrt::Windows::Media::Capture::VideoDeviceCharacteristic * value) = 0;
 };
 
-struct __declspec(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493")) __declspec(novtable) IMediaCaptureSettings2 : Windows::IInspectable
+struct __declspec(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493")) __declspec(novtable) IMediaCaptureSettings2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ConcurrentRecordAndPhotoSupported(bool * value) = 0;
     virtual HRESULT __stdcall get_ConcurrentRecordAndPhotoSequenceSupported(bool * value) = 0;
@@ -353,7 +353,7 @@ struct __declspec(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493")) __declspec(novta
     virtual HRESULT __stdcall get_AudioProcessing(winrt::Windows::Media::AudioProcessing * value) = 0;
 };
 
-struct __declspec(uuid("acef81ff-99ed-4645-965e-1925cfc63834")) __declspec(novtable) IMediaCaptureStatics : Windows::IInspectable
+struct __declspec(uuid("acef81ff-99ed-4645-965e-1925cfc63834")) __declspec(novtable) IMediaCaptureStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_IsVideoProfileSupported(hstring videoDeviceId, bool * value) = 0;
     virtual HRESULT __stdcall abi_FindAllVideoProfiles(hstring videoDeviceId, Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> ** value) = 0;
@@ -361,13 +361,13 @@ struct __declspec(uuid("acef81ff-99ed-4645-965e-1925cfc63834")) __declspec(novta
     virtual HRESULT __stdcall abi_FindKnownVideoProfiles(hstring videoDeviceId, winrt::Windows::Media::Capture::KnownVideoProfile name, Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> ** value) = 0;
 };
 
-struct __declspec(uuid("f9db6a2a-a092-4ad1-97d4-f201f9d082db")) __declspec(novtable) IMediaCaptureStopResult : Windows::IInspectable
+struct __declspec(uuid("f9db6a2a-a092-4ad1-97d4-f201f9d082db")) __declspec(novtable) IMediaCaptureStopResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LastFrame(Windows::Media::IVideoFrame ** value) = 0;
     virtual HRESULT __stdcall get_RecordDuration(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("27727073-549e-447f-a20a-4f03c479d8c0")) __declspec(novtable) IMediaCaptureVideoPreview : Windows::IInspectable
+struct __declspec(uuid("27727073-549e-447f-a20a-4f03c479d8c0")) __declspec(novtable) IMediaCaptureVideoPreview : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_StartPreviewAsync(Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
     virtual HRESULT __stdcall abi_StartPreviewToCustomSinkAsync(Windows::Media::MediaProperties::IMediaEncodingProfile * encodingProfile, Windows::Media::IMediaExtension * customMediaSink, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
@@ -375,7 +375,7 @@ struct __declspec(uuid("27727073-549e-447f-a20a-4f03c479d8c0")) __declspec(novta
     virtual HRESULT __stdcall abi_StopPreviewAsync(Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305")) __declspec(novtable) IMediaCaptureVideoProfile : Windows::IInspectable
+struct __declspec(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305")) __declspec(novtable) IMediaCaptureVideoProfile : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_VideoDeviceId(hstring * value) = 0;
@@ -385,7 +385,7 @@ struct __declspec(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305")) __declspec(novta
     virtual HRESULT __stdcall abi_GetConcurrency(Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> ** value) = 0;
 };
 
-struct __declspec(uuid("8012afef-b691-49ff-83f2-c1e76eaaea1b")) __declspec(novtable) IMediaCaptureVideoProfileMediaDescription : Windows::IInspectable
+struct __declspec(uuid("8012afef-b691-49ff-83f2-c1e76eaaea1b")) __declspec(novtable) IMediaCaptureVideoProfileMediaDescription : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Width(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_Height(uint32_t * value) = 0;
@@ -394,26 +394,26 @@ struct __declspec(uuid("8012afef-b691-49ff-83f2-c1e76eaaea1b")) __declspec(novta
     virtual HRESULT __stdcall get_IsHdrVideoSupported(bool * value) = 0;
 };
 
-struct __declspec(uuid("470f88b3-1e6d-4051-9c8b-f1d85af047b7")) __declspec(novtable) IOptionalReferencePhotoCapturedEventArgs : Windows::IInspectable
+struct __declspec(uuid("470f88b3-1e6d-4051-9c8b-f1d85af047b7")) __declspec(novtable) IOptionalReferencePhotoCapturedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Frame(Windows::Media::Capture::ICapturedFrame ** value) = 0;
-    virtual HRESULT __stdcall get_Context(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_Context(Windows::Foundation::IInspectable ** value) = 0;
 };
 
-struct __declspec(uuid("373bfbc1-984e-4ff0-bf85-1c00aabc5a45")) __declspec(novtable) IPhotoCapturedEventArgs : Windows::IInspectable
+struct __declspec(uuid("373bfbc1-984e-4ff0-bf85-1c00aabc5a45")) __declspec(novtable) IPhotoCapturedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Frame(Windows::Media::Capture::ICapturedFrame ** value) = 0;
     virtual HRESULT __stdcall get_Thumbnail(Windows::Media::Capture::ICapturedFrame ** value) = 0;
     virtual HRESULT __stdcall get_CaptureTimeOffset(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("ab473672-c28a-4827-8f8d-3636d3beb51e")) __declspec(novtable) IPhotoConfirmationCapturedEventArgs : Windows::IInspectable
+struct __declspec(uuid("ab473672-c28a-4827-8f8d-3636d3beb51e")) __declspec(novtable) IPhotoConfirmationCapturedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Frame(Windows::Media::Capture::ICapturedFrame ** value) = 0;
     virtual HRESULT __stdcall get_CaptureTimeOffset(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("d8770a6f-4390-4b5e-ad3e-0f8af0963490")) __declspec(novtable) IVideoStreamConfiguration : Windows::IInspectable
+struct __declspec(uuid("d8770a6f-4390-4b5e-ad3e-0f8af0963490")) __declspec(novtable) IVideoStreamConfiguration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InputProperties(Windows::Media::MediaProperties::IVideoEncodingProperties ** value) = 0;
     virtual HRESULT __stdcall get_OutputProperties(Windows::Media::MediaProperties::IVideoEncodingProperties ** value) = 0;
@@ -468,7 +468,7 @@ struct WINRT_EBO impl_IAdvancedCapturedPhoto
 {
     Windows::Media::Capture::CapturedFrame Frame() const;
     Windows::Media::Devices::AdvancedPhotoMode Mode() const;
-    Windows::IInspectable Context() const;
+    Windows::Foundation::IInspectable Context() const;
 };
 
 template <typename D>
@@ -481,14 +481,14 @@ template <typename D>
 struct WINRT_EBO impl_IAdvancedPhotoCapture
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> CaptureAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> CaptureAsync(const Windows::IInspectable & context) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> CaptureAsync(const Windows::Foundation::IInspectable & context) const;
     event_token OptionalReferencePhotoCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs> & handler) const;
     using OptionalReferencePhotoCaptured_revoker = event_revoker<IAdvancedPhotoCapture>;
     OptionalReferencePhotoCaptured_revoker OptionalReferencePhotoCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs> & handler) const;
     void OptionalReferencePhotoCaptured(event_token token) const;
-    event_token AllPhotosCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> & handler) const;
+    event_token AllPhotosCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Foundation::IInspectable> & handler) const;
     using AllPhotosCaptured_revoker = event_revoker<IAdvancedPhotoCapture>;
-    AllPhotosCaptured_revoker AllPhotosCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> & handler) const;
+    AllPhotosCaptured_revoker AllPhotosCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Foundation::IInspectable> & handler) const;
     void AllPhotosCaptured(event_token token) const;
     Windows::Foundation::IAsyncAction FinishAsync() const;
 };
@@ -498,9 +498,9 @@ struct WINRT_EBO impl_IAppCapture
 {
     bool IsCapturingAudio() const;
     bool IsCapturingVideo() const;
-    event_token CapturingChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> & handler) const;
+    event_token CapturingChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> & handler) const;
     using CapturingChanged_revoker = event_revoker<IAppCapture>;
-    CapturingChanged_revoker CapturingChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> & handler) const;
+    CapturingChanged_revoker CapturingChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> & handler) const;
     void CapturingChanged(event_token token) const;
 };
 
@@ -645,8 +645,8 @@ struct WINRT_EBO impl_IMediaCapture
     Windows::Foundation::IAsyncAction CapturePhotoToStreamAsync(const Windows::Media::MediaProperties::ImageEncodingProperties & type, const Windows::Storage::Streams::IRandomAccessStream & stream) const;
     [[deprecated("AddEffectAsync might not be available in future versions of Windows. Starting with Windows Threshold, use AddAudioEffectAsync and AddVideoEffectAsync instead")]] Windows::Foundation::IAsyncAction AddEffectAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, hstring_view effectActivationID, const Windows::Foundation::Collections::IPropertySet & effectSettings) const;
     Windows::Foundation::IAsyncAction ClearEffectsAsync(Windows::Media::Capture::MediaStreamType mediaStreamType) const;
-    void SetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, const Windows::IInspectable & propertyValue) const;
-    Windows::IInspectable GetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId) const;
+    void SetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, const Windows::Foundation::IInspectable & propertyValue) const;
+    Windows::Foundation::IInspectable GetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId) const;
     event_token Failed(const Windows::Media::Capture::MediaCaptureFailedEventHandler & errorEventHandler) const;
     using Failed_revoker = event_revoker<IMediaCapture>;
     Failed_revoker Failed(auto_revoke_t, const Windows::Media::Capture::MediaCaptureFailedEventHandler & errorEventHandler) const;
@@ -699,16 +699,16 @@ struct WINRT_EBO impl_IMediaCapture4
     Windows::Foundation::IAsyncOperation<Windows::Media::IMediaExtension> AddVideoEffectAsync(const Windows::Media::Effects::IVideoEffectDefinition & definition, Windows::Media::Capture::MediaStreamType mediaStreamType) const;
     Windows::Foundation::IAsyncAction PauseRecordAsync(Windows::Media::Devices::MediaCapturePauseBehavior behavior) const;
     Windows::Foundation::IAsyncAction ResumeRecordAsync() const;
-    event_token CameraStreamStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const;
+    event_token CameraStreamStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> & handler) const;
     using CameraStreamStateChanged_revoker = event_revoker<IMediaCapture4>;
-    CameraStreamStateChanged_revoker CameraStreamStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const;
+    CameraStreamStateChanged_revoker CameraStreamStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> & handler) const;
     void CameraStreamStateChanged(event_token token) const;
     Windows::Media::Devices::CameraStreamState CameraStreamState() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::VideoFrame> GetPreviewFrameAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::VideoFrame> GetPreviewFrameAsync(const Windows::Media::VideoFrame & destination) const;
-    event_token ThermalStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const;
+    event_token ThermalStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> & handler) const;
     using ThermalStatusChanged_revoker = event_revoker<IMediaCapture4>;
-    ThermalStatusChanged_revoker ThermalStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const;
+    ThermalStatusChanged_revoker ThermalStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> & handler) const;
     void ThermalStatusChanged(event_token token) const;
     Windows::Media::Capture::MediaCaptureThermalStatus ThermalStatus() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedPhotoCapture> PrepareAdvancedPhotoCaptureAsync(const Windows::Media::MediaProperties::ImageEncodingProperties & encodingProperties) const;
@@ -874,7 +874,7 @@ template <typename D>
 struct WINRT_EBO impl_IOptionalReferencePhotoCapturedEventArgs
 {
     Windows::Media::Capture::CapturedFrame Frame() const;
-    Windows::IInspectable Context() const;
+    Windows::Foundation::IInspectable Context() const;
 };
 
 template <typename D>

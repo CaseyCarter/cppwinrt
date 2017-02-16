@@ -15,7 +15,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Input::Spatial {
 
-struct __declspec(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45")) __declspec(novtable) ISpatialGestureRecognizer : Windows::IInspectable
+struct __declspec(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45")) __declspec(novtable) ISpatialGestureRecognizer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_RecognitionStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_RecognitionStarted(event_token token) = 0;
@@ -51,40 +51,40 @@ struct __declspec(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45")) __declspec(novta
     virtual HRESULT __stdcall get_GestureSettings(winrt::Windows::UI::Input::Spatial::SpatialGestureSettings * value) = 0;
 };
 
-struct __declspec(uuid("77214186-57b9-3150-8382-698b24e264d0")) __declspec(novtable) ISpatialGestureRecognizerFactory : Windows::IInspectable
+struct __declspec(uuid("77214186-57b9-3150-8382-698b24e264d0")) __declspec(novtable) ISpatialGestureRecognizerFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(winrt::Windows::UI::Input::Spatial::SpatialGestureSettings settings, Windows::UI::Input::Spatial::ISpatialGestureRecognizer ** value) = 0;
 };
 
-struct __declspec(uuid("5dfcb667-4caa-4093-8c35-b601a839f31b")) __declspec(novtable) ISpatialHoldCanceledEventArgs : Windows::IInspectable
+struct __declspec(uuid("5dfcb667-4caa-4093-8c35-b601a839f31b")) __declspec(novtable) ISpatialHoldCanceledEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
 };
 
-struct __declspec(uuid("3f64470b-4cfd-43da-8dc4-e64552173971")) __declspec(novtable) ISpatialHoldCompletedEventArgs : Windows::IInspectable
+struct __declspec(uuid("3f64470b-4cfd-43da-8dc4-e64552173971")) __declspec(novtable) ISpatialHoldCompletedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
 };
 
-struct __declspec(uuid("8e343d79-acb6-4144-8615-2cfba8a3cb3f")) __declspec(novtable) ISpatialHoldStartedEventArgs : Windows::IInspectable
+struct __declspec(uuid("8e343d79-acb6-4144-8615-2cfba8a3cb3f")) __declspec(novtable) ISpatialHoldStartedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall abi_TryGetPointerPose(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialPointerPose ** value) = 0;
 };
 
-struct __declspec(uuid("fc967639-88e6-4646-9112-4344aaec9dfa")) __declspec(novtable) ISpatialInteraction : Windows::IInspectable
+struct __declspec(uuid("fc967639-88e6-4646-9112-4344aaec9dfa")) __declspec(novtable) ISpatialInteraction : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SourceState(Windows::UI::Input::Spatial::ISpatialInteractionSourceState ** value) = 0;
 };
 
-struct __declspec(uuid("075878e4-5961-3b41-9dfb-cea5d89cc38a")) __declspec(novtable) ISpatialInteractionDetectedEventArgs : Windows::IInspectable
+struct __declspec(uuid("075878e4-5961-3b41-9dfb-cea5d89cc38a")) __declspec(novtable) ISpatialInteractionDetectedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall abi_TryGetPointerPose(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialPointerPose ** value) = 0;
     virtual HRESULT __stdcall get_Interaction(Windows::UI::Input::Spatial::ISpatialInteraction ** value) = 0;
 };
 
-struct __declspec(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef")) __declspec(novtable) ISpatialInteractionManager : Windows::IInspectable
+struct __declspec(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef")) __declspec(novtable) ISpatialInteractionManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_SourceDetected(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SourceDetected(event_token token) = 0;
@@ -101,41 +101,41 @@ struct __declspec(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDetectedSourcesAtTimestamp(Windows::Perception::IPerceptionTimestamp * timeStamp, Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Spatial::SpatialInteractionSourceState> ** value) = 0;
 };
 
-struct __declspec(uuid("00e31fa6-8ca2-30bf-91fe-d9cb4a008990")) __declspec(novtable) ISpatialInteractionManagerStatics : Windows::IInspectable
+struct __declspec(uuid("00e31fa6-8ca2-30bf-91fe-d9cb4a008990")) __declspec(novtable) ISpatialInteractionManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForCurrentView(Windows::UI::Input::Spatial::ISpatialInteractionManager ** value) = 0;
 };
 
-struct __declspec(uuid("fb5433ba-b0b3-3148-9f3b-e9f5de568f5d")) __declspec(novtable) ISpatialInteractionSource : Windows::IInspectable
+struct __declspec(uuid("fb5433ba-b0b3-3148-9f3b-e9f5de568f5d")) __declspec(novtable) ISpatialInteractionSource : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_Kind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
 };
 
-struct __declspec(uuid("23b786cf-ec23-3979-b27c-eb0e12feb7c7")) __declspec(novtable) ISpatialInteractionSourceEventArgs : Windows::IInspectable
+struct __declspec(uuid("23b786cf-ec23-3979-b27c-eb0e12feb7c7")) __declspec(novtable) ISpatialInteractionSourceEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_State(Windows::UI::Input::Spatial::ISpatialInteractionSourceState ** value) = 0;
 };
 
-struct __declspec(uuid("ea4696c4-7e8b-30ca-bcc5-c77189cea30a")) __declspec(novtable) ISpatialInteractionSourceLocation : Windows::IInspectable
+struct __declspec(uuid("ea4696c4-7e8b-30ca-bcc5-c77189cea30a")) __declspec(novtable) ISpatialInteractionSourceLocation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> ** value) = 0;
     virtual HRESULT __stdcall get_Velocity(Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> ** value) = 0;
 };
 
-struct __declspec(uuid("4c671045-3917-40fc-a9ac-31c9cf5ff91b")) __declspec(novtable) ISpatialInteractionSourceLocation2 : Windows::IInspectable
+struct __declspec(uuid("4c671045-3917-40fc-a9ac-31c9cf5ff91b")) __declspec(novtable) ISpatialInteractionSourceLocation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Orientation(Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion> ** value) = 0;
 };
 
-struct __declspec(uuid("05604542-3ef7-3222-9f53-63c9cb7e3bc7")) __declspec(novtable) ISpatialInteractionSourceProperties : Windows::IInspectable
+struct __declspec(uuid("05604542-3ef7-3222-9f53-63c9cb7e3bc7")) __declspec(novtable) ISpatialInteractionSourceProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryGetSourceLossMitigationDirection(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> ** value) = 0;
     virtual HRESULT __stdcall get_SourceLossRisk(double * value) = 0;
     virtual HRESULT __stdcall abi_TryGetLocation(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation ** value) = 0;
 };
 
-struct __declspec(uuid("d5c475ef-4b63-37ec-98b9-9fc652b9d2f2")) __declspec(novtable) ISpatialInteractionSourceState : Windows::IInspectable
+struct __declspec(uuid("d5c475ef-4b63-37ec-98b9-9fc652b9d2f2")) __declspec(novtable) ISpatialInteractionSourceState : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Source(Windows::UI::Input::Spatial::ISpatialInteractionSource ** value) = 0;
     virtual HRESULT __stdcall get_Properties(Windows::UI::Input::Spatial::ISpatialInteractionSourceProperties ** value) = 0;
@@ -144,46 +144,46 @@ struct __declspec(uuid("d5c475ef-4b63-37ec-98b9-9fc652b9d2f2")) __declspec(novta
     virtual HRESULT __stdcall abi_TryGetPointerPose(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialPointerPose ** value) = 0;
 };
 
-struct __declspec(uuid("2d40d1cb-e7da-4220-b0bf-819301674780")) __declspec(novtable) ISpatialManipulationCanceledEventArgs : Windows::IInspectable
+struct __declspec(uuid("2d40d1cb-e7da-4220-b0bf-819301674780")) __declspec(novtable) ISpatialManipulationCanceledEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
 };
 
-struct __declspec(uuid("05086802-f301-4343-9250-2fbaa5f87a37")) __declspec(novtable) ISpatialManipulationCompletedEventArgs : Windows::IInspectable
+struct __declspec(uuid("05086802-f301-4343-9250-2fbaa5f87a37")) __declspec(novtable) ISpatialManipulationCompletedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall abi_TryGetCumulativeDelta(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialManipulationDelta ** value) = 0;
 };
 
-struct __declspec(uuid("a7ec967a-d123-3a81-a15b-992923dcbe91")) __declspec(novtable) ISpatialManipulationDelta : Windows::IInspectable
+struct __declspec(uuid("a7ec967a-d123-3a81-a15b-992923dcbe91")) __declspec(novtable) ISpatialManipulationDelta : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Translation(Windows::Foundation::Numerics::float3 * value) = 0;
 };
 
-struct __declspec(uuid("a1d6bbce-42a5-377b-ada6-d28e3d384737")) __declspec(novtable) ISpatialManipulationStartedEventArgs : Windows::IInspectable
+struct __declspec(uuid("a1d6bbce-42a5-377b-ada6-d28e3d384737")) __declspec(novtable) ISpatialManipulationStartedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall abi_TryGetPointerPose(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialPointerPose ** value) = 0;
 };
 
-struct __declspec(uuid("5f230b9b-60c6-4dc6-bdc9-9f4a6f15fe49")) __declspec(novtable) ISpatialManipulationUpdatedEventArgs : Windows::IInspectable
+struct __declspec(uuid("5f230b9b-60c6-4dc6-bdc9-9f4a6f15fe49")) __declspec(novtable) ISpatialManipulationUpdatedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall abi_TryGetCumulativeDelta(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialManipulationDelta ** value) = 0;
 };
 
-struct __declspec(uuid("ce503edc-e8a5-46f0-92d4-3c122b35112a")) __declspec(novtable) ISpatialNavigationCanceledEventArgs : Windows::IInspectable
+struct __declspec(uuid("ce503edc-e8a5-46f0-92d4-3c122b35112a")) __declspec(novtable) ISpatialNavigationCanceledEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
 };
 
-struct __declspec(uuid("012e80b7-af3b-42c2-9e41-baaa0e721f3a")) __declspec(novtable) ISpatialNavigationCompletedEventArgs : Windows::IInspectable
+struct __declspec(uuid("012e80b7-af3b-42c2-9e41-baaa0e721f3a")) __declspec(novtable) ISpatialNavigationCompletedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall get_NormalizedOffset(Windows::Foundation::Numerics::float3 * value) = 0;
 };
 
-struct __declspec(uuid("754a348a-fb64-4656-8ebd-9deecaafe475")) __declspec(novtable) ISpatialNavigationStartedEventArgs : Windows::IInspectable
+struct __declspec(uuid("754a348a-fb64-4656-8ebd-9deecaafe475")) __declspec(novtable) ISpatialNavigationStartedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall abi_TryGetPointerPose(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialPointerPose ** value) = 0;
@@ -192,36 +192,36 @@ struct __declspec(uuid("754a348a-fb64-4656-8ebd-9deecaafe475")) __declspec(novta
     virtual HRESULT __stdcall get_IsNavigatingZ(bool * value) = 0;
 };
 
-struct __declspec(uuid("9b713fd7-839d-4a74-8732-45466fc044b5")) __declspec(novtable) ISpatialNavigationUpdatedEventArgs : Windows::IInspectable
+struct __declspec(uuid("9b713fd7-839d-4a74-8732-45466fc044b5")) __declspec(novtable) ISpatialNavigationUpdatedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall get_NormalizedOffset(Windows::Foundation::Numerics::float3 * value) = 0;
 };
 
-struct __declspec(uuid("6953a42e-c17e-357d-97a1-7269d0ed2d10")) __declspec(novtable) ISpatialPointerPose : Windows::IInspectable
+struct __declspec(uuid("6953a42e-c17e-357d-97a1-7269d0ed2d10")) __declspec(novtable) ISpatialPointerPose : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Timestamp(Windows::Perception::IPerceptionTimestamp ** value) = 0;
     virtual HRESULT __stdcall get_Head(Windows::Perception::People::IHeadPose ** value) = 0;
 };
 
-struct __declspec(uuid("a25591a9-aca1-3ee0-9816-785cfb2e3fb8")) __declspec(novtable) ISpatialPointerPoseStatics : Windows::IInspectable
+struct __declspec(uuid("a25591a9-aca1-3ee0-9816-785cfb2e3fb8")) __declspec(novtable) ISpatialPointerPoseStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryGetAtTimestamp(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::Perception::IPerceptionTimestamp * timestamp, Windows::UI::Input::Spatial::ISpatialPointerPose ** value) = 0;
 };
 
-struct __declspec(uuid("0e35f5cb-3f75-43f3-ac81-d1dc2df9b1fb")) __declspec(novtable) ISpatialRecognitionEndedEventArgs : Windows::IInspectable
+struct __declspec(uuid("0e35f5cb-3f75-43f3-ac81-d1dc2df9b1fb")) __declspec(novtable) ISpatialRecognitionEndedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
 };
 
-struct __declspec(uuid("24da128f-0008-4a6d-aa50-2a76f9cfb264")) __declspec(novtable) ISpatialRecognitionStartedEventArgs : Windows::IInspectable
+struct __declspec(uuid("24da128f-0008-4a6d-aa50-2a76f9cfb264")) __declspec(novtable) ISpatialRecognitionStartedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall abi_TryGetPointerPose(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialPointerPose ** value) = 0;
     virtual HRESULT __stdcall abi_IsGesturePossible(winrt::Windows::UI::Input::Spatial::SpatialGestureSettings gesture, bool * value) = 0;
 };
 
-struct __declspec(uuid("296d83de-f444-4aa1-b2bf-9dc88d567da6")) __declspec(novtable) ISpatialTappedEventArgs : Windows::IInspectable
+struct __declspec(uuid("296d83de-f444-4aa1-b2bf-9dc88d567da6")) __declspec(novtable) ISpatialTappedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSourceKind(winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) = 0;
     virtual HRESULT __stdcall abi_TryGetPointerPose(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::UI::Input::Spatial::ISpatialPointerPose ** value) = 0;

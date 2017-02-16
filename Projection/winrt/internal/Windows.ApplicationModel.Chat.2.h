@@ -21,7 +21,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
-template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::IInspectable> : impl_IKeyValuePair<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -61,7 +61,7 @@ template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __de
 
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
-template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::IInspectable> : impl_IMapView<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::Foundation::IInspectable> : impl_IMapView<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_447a59fc_e729_5846_91da_b650fdeca785
@@ -456,7 +456,7 @@ template <> struct __declspec(uuid("b6d21a55-471e-5a25-acdd-7784f7b4d7ba")) __de
 
 #ifndef WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
 #define WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
-template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -501,7 +501,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
 #define WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
-template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -565,63 +565,63 @@ template <> struct __declspec(uuid("f6555a8d-a624-5eb4-a2f3-f5b1c5c1a0d2")) __de
 namespace Windows::ApplicationModel::Chat {
 
 struct IChatCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatCapabilities>
 {
     IChatCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatCapabilitiesManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatCapabilitiesManagerStatics>
 {
     IChatCapabilitiesManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatConversation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatConversation>
 {
     IChatConversation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatConversation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatConversation2>
 {
     IChatConversation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatConversationReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatConversationReader>
 {
     IChatConversationReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatConversationThreadingInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatConversationThreadingInfo>
 {
     IChatConversationThreadingInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatItem>
 {
     IChatItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessage>
 {
     IChatMessage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessage2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessage2>,
     impl::require<IChatMessage2, Windows::ApplicationModel::Chat::IChatMessage, Windows::ApplicationModel::Chat::IChatMessage3>
 {
@@ -647,7 +647,7 @@ struct IChatMessage2 :
 };
 
 struct IChatMessage3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessage3>,
     impl::require<IChatMessage3, Windows::ApplicationModel::Chat::IChatMessage>
 {
@@ -655,7 +655,7 @@ struct IChatMessage3 :
 };
 
 struct IChatMessage4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessage4>,
     impl::require<IChatMessage4, Windows::ApplicationModel::Chat::IChatMessage>
 {
@@ -663,14 +663,14 @@ struct IChatMessage4 :
 };
 
 struct IChatMessageAttachment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageAttachment>
 {
     IChatMessageAttachment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageAttachment2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageAttachment2>,
     impl::require<IChatMessageAttachment2, Windows::ApplicationModel::Chat::IChatMessageAttachment>
 {
@@ -678,56 +678,56 @@ struct IChatMessageAttachment2 :
 };
 
 struct IChatMessageAttachmentFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageAttachmentFactory>
 {
     IChatMessageAttachmentFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageBlockingStatic :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageBlockingStatic>
 {
     IChatMessageBlockingStatic(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageChange :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageChange>
 {
     IChatMessageChange(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageChangeReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageChangeReader>
 {
     IChatMessageChangeReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageChangeTracker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageChangeTracker>
 {
     IChatMessageChangeTracker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageChangedDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageChangedDeferral>
 {
     IChatMessageChangedDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageChangedEventArgs>
 {
     IChatMessageChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageManager2Statics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageManager2Statics>,
     impl::require<IChatMessageManager2Statics, Windows::ApplicationModel::Chat::IChatMessageManagerStatic>
 {
@@ -735,14 +735,14 @@ struct IChatMessageManager2Statics :
 };
 
 struct IChatMessageManagerStatic :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageManagerStatic>
 {
     IChatMessageManagerStatic(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageManagerStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageManagerStatics3>,
     impl::require<IChatMessageManagerStatics3, Windows::ApplicationModel::Chat::IChatMessageManagerStatic>
 {
@@ -750,14 +750,14 @@ struct IChatMessageManagerStatics3 :
 };
 
 struct IChatMessageNotificationTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageNotificationTriggerDetails>
 {
     IChatMessageNotificationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageNotificationTriggerDetails2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageNotificationTriggerDetails2>,
     impl::require<IChatMessageNotificationTriggerDetails2, Windows::ApplicationModel::Chat::IChatMessageNotificationTriggerDetails>
 {
@@ -765,28 +765,28 @@ struct IChatMessageNotificationTriggerDetails2 :
 };
 
 struct IChatMessageReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageReader>
 {
     IChatMessageReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageReader2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageReader2>
 {
     IChatMessageReader2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageStore>
 {
     IChatMessageStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageStore2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageStore2>,
     impl::require<IChatMessageStore2, Windows::ApplicationModel::Chat::IChatMessageStore>
 {
@@ -794,7 +794,7 @@ struct IChatMessageStore2 :
 };
 
 struct IChatMessageStore3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageStore3>,
     impl::require<IChatMessageStore3, Windows::ApplicationModel::Chat::IChatMessageStore>
 {
@@ -802,21 +802,21 @@ struct IChatMessageStore3 :
 };
 
 struct IChatMessageStoreChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageStoreChangedEventArgs>
 {
     IChatMessageStoreChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageTransport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageTransport>
 {
     IChatMessageTransport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageTransport2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageTransport2>,
     impl::require<IChatMessageTransport2, Windows::ApplicationModel::Chat::IChatMessageTransport>
 {
@@ -824,119 +824,119 @@ struct IChatMessageTransport2 :
 };
 
 struct IChatMessageTransportConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageTransportConfiguration>
 {
     IChatMessageTransportConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageValidationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageValidationResult>
 {
     IChatMessageValidationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatQueryOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatQueryOptions>
 {
     IChatQueryOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatRecipientDeliveryInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatRecipientDeliveryInfo>
 {
     IChatRecipientDeliveryInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatSearchReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatSearchReader>
 {
     IChatSearchReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatSyncConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatSyncConfiguration>
 {
     IChatSyncConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatSyncManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatSyncManager>
 {
     IChatSyncManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsEndUserMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsEndUserMessage>
 {
     IRcsEndUserMessage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsEndUserMessageAction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsEndUserMessageAction>
 {
     IRcsEndUserMessageAction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsEndUserMessageAvailableEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsEndUserMessageAvailableEventArgs>
 {
     IRcsEndUserMessageAvailableEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsEndUserMessageAvailableTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsEndUserMessageAvailableTriggerDetails>
 {
     IRcsEndUserMessageAvailableTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsEndUserMessageManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsEndUserMessageManager>
 {
     IRcsEndUserMessageManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsManagerStatics>
 {
     IRcsManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsServiceKindSupportedChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsServiceKindSupportedChangedEventArgs>
 {
     IRcsServiceKindSupportedChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsTransport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsTransport>
 {
     IRcsTransport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsTransportConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsTransportConfiguration>
 {
     IRcsTransportConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteParticipantComposingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteParticipantComposingChangedEventArgs>
 {
     IRemoteParticipantComposingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}

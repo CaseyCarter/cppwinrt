@@ -14,11 +14,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Composition::Interactions {
 
-struct __declspec(uuid("043b2431-06e3-495a-ba54-409f0017fac0")) __declspec(novtable) ICompositionInteractionSource : Windows::IInspectable
+struct __declspec(uuid("043b2431-06e3-495a-ba54-409f0017fac0")) __declspec(novtable) ICompositionInteractionSource : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("1b468e4b-a5bf-47d8-a547-3894155a158c")) __declspec(novtable) ICompositionInteractionSourceCollection : Windows::IInspectable
+struct __declspec(uuid("1b468e4b-a5bf-47d8-a547-3894155a158c")) __declspec(novtable) ICompositionInteractionSourceCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Count(int32_t * value) = 0;
     virtual HRESULT __stdcall abi_Add(Windows::UI::Composition::Interactions::ICompositionInteractionSource * value) = 0;
@@ -26,7 +26,7 @@ struct __declspec(uuid("1b468e4b-a5bf-47d8-a547-3894155a158c")) __declspec(novta
     virtual HRESULT __stdcall abi_RemoveAll() = 0;
 };
 
-struct __declspec(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308")) __declspec(novtable) IInteractionTracker : Windows::IInspectable
+struct __declspec(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308")) __declspec(novtable) IInteractionTracker : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InteractionSources(Windows::UI::Composition::Interactions::ICompositionInteractionSourceCollection ** value) = 0;
     virtual HRESULT __stdcall get_IsPositionRoundingSuggested(bool * value) = 0;
@@ -63,25 +63,25 @@ struct __declspec(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308")) __declspec(novta
     virtual HRESULT __stdcall abi_TryUpdateScaleWithAdditionalVelocity(float velocityInPercentPerSecond, Windows::Foundation::Numerics::float3 centerPoint, int32_t * requestId) = 0;
 };
 
-struct __declspec(uuid("8d1c8cf1-d7b0-434c-a5d2-2d7611864834")) __declspec(novtable) IInteractionTrackerCustomAnimationStateEnteredArgs : Windows::IInspectable
+struct __declspec(uuid("8d1c8cf1-d7b0-434c-a5d2-2d7611864834")) __declspec(novtable) IInteractionTrackerCustomAnimationStateEnteredArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequestId(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("50012faa-1510-4142-a1a5-019b09f8857b")) __declspec(novtable) IInteractionTrackerIdleStateEnteredArgs : Windows::IInspectable
+struct __declspec(uuid("50012faa-1510-4142-a1a5-019b09f8857b")) __declspec(novtable) IInteractionTrackerIdleStateEnteredArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequestId(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("a0e2c920-26b4-4da2-8b61-5e683979bbe2")) __declspec(novtable) IInteractionTrackerInertiaModifier : Windows::IInspectable
+struct __declspec(uuid("a0e2c920-26b4-4da2-8b61-5e683979bbe2")) __declspec(novtable) IInteractionTrackerInertiaModifier : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("993818fe-c94e-4b86-87f3-922665ba46b9")) __declspec(novtable) IInteractionTrackerInertiaModifierFactory : Windows::IInspectable
+struct __declspec(uuid("993818fe-c94e-4b86-87f3-922665ba46b9")) __declspec(novtable) IInteractionTrackerInertiaModifierFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("04922fdc-f154-4cb8-bf33-cc1ba611e6db")) __declspec(novtable) IInteractionTrackerInertiaMotion : Windows::IInspectable
+struct __declspec(uuid("04922fdc-f154-4cb8-bf33-cc1ba611e6db")) __declspec(novtable) IInteractionTrackerInertiaMotion : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Condition(Windows::UI::Composition::IExpressionAnimation ** value) = 0;
     virtual HRESULT __stdcall put_Condition(Windows::UI::Composition::IExpressionAnimation * value) = 0;
@@ -89,12 +89,12 @@ struct __declspec(uuid("04922fdc-f154-4cb8-bf33-cc1ba611e6db")) __declspec(novta
     virtual HRESULT __stdcall put_Motion(Windows::UI::Composition::IExpressionAnimation * value) = 0;
 };
 
-struct __declspec(uuid("8cc83dd6-ba7b-431a-844b-6eac9130f99a")) __declspec(novtable) IInteractionTrackerInertiaMotionStatics : Windows::IInspectable
+struct __declspec(uuid("8cc83dd6-ba7b-431a-844b-6eac9130f99a")) __declspec(novtable) IInteractionTrackerInertiaMotionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::UI::Composition::ICompositor * compositor, Windows::UI::Composition::Interactions::IInteractionTrackerInertiaMotion ** result) = 0;
 };
 
-struct __declspec(uuid("86f7ec09-5096-4170-9cc8-df2fe101bb93")) __declspec(novtable) IInteractionTrackerInertiaRestingValue : Windows::IInspectable
+struct __declspec(uuid("86f7ec09-5096-4170-9cc8-df2fe101bb93")) __declspec(novtable) IInteractionTrackerInertiaRestingValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Condition(Windows::UI::Composition::IExpressionAnimation ** value) = 0;
     virtual HRESULT __stdcall put_Condition(Windows::UI::Composition::IExpressionAnimation * value) = 0;
@@ -102,12 +102,12 @@ struct __declspec(uuid("86f7ec09-5096-4170-9cc8-df2fe101bb93")) __declspec(novta
     virtual HRESULT __stdcall put_RestingValue(Windows::UI::Composition::IExpressionAnimation * value) = 0;
 };
 
-struct __declspec(uuid("18ed4699-0745-4096-bcab-3a4e99569bcf")) __declspec(novtable) IInteractionTrackerInertiaRestingValueStatics : Windows::IInspectable
+struct __declspec(uuid("18ed4699-0745-4096-bcab-3a4e99569bcf")) __declspec(novtable) IInteractionTrackerInertiaRestingValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::UI::Composition::ICompositor * compositor, Windows::UI::Composition::Interactions::IInteractionTrackerInertiaRestingValue ** result) = 0;
 };
 
-struct __declspec(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63")) __declspec(novtable) IInteractionTrackerInertiaStateEnteredArgs : Windows::IInspectable
+struct __declspec(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63")) __declspec(novtable) IInteractionTrackerInertiaStateEnteredArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ModifiedRestingPosition(Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> ** value) = 0;
     virtual HRESULT __stdcall get_ModifiedRestingScale(Windows::Foundation::IReference<float> ** value) = 0;
@@ -118,12 +118,12 @@ struct __declspec(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63")) __declspec(novta
     virtual HRESULT __stdcall get_ScaleVelocityInPercentPerSecond(float * value) = 0;
 };
 
-struct __declspec(uuid("a7263939-a17b-4011-99fd-b5c24f143748")) __declspec(novtable) IInteractionTrackerInteractingStateEnteredArgs : Windows::IInspectable
+struct __declspec(uuid("a7263939-a17b-4011-99fd-b5c24f143748")) __declspec(novtable) IInteractionTrackerInteractingStateEnteredArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequestId(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("db2e8af3-4deb-4e53-b29c-b06c9f96d651")) __declspec(novtable) IInteractionTrackerOwner : Windows::IInspectable
+struct __declspec(uuid("db2e8af3-4deb-4e53-b29c-b06c9f96d651")) __declspec(novtable) IInteractionTrackerOwner : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CustomAnimationStateEntered(Windows::UI::Composition::Interactions::IInteractionTracker * sender, Windows::UI::Composition::Interactions::IInteractionTrackerCustomAnimationStateEnteredArgs * args) = 0;
     virtual HRESULT __stdcall abi_IdleStateEntered(Windows::UI::Composition::Interactions::IInteractionTracker * sender, Windows::UI::Composition::Interactions::IInteractionTrackerIdleStateEnteredArgs * args) = 0;
@@ -133,25 +133,25 @@ struct __declspec(uuid("db2e8af3-4deb-4e53-b29c-b06c9f96d651")) __declspec(novta
     virtual HRESULT __stdcall abi_ValuesChanged(Windows::UI::Composition::Interactions::IInteractionTracker * sender, Windows::UI::Composition::Interactions::IInteractionTrackerValuesChangedArgs * args) = 0;
 };
 
-struct __declspec(uuid("80dd82f1-ce25-488f-91dd-cb6455ccff2e")) __declspec(novtable) IInteractionTrackerRequestIgnoredArgs : Windows::IInspectable
+struct __declspec(uuid("80dd82f1-ce25-488f-91dd-cb6455ccff2e")) __declspec(novtable) IInteractionTrackerRequestIgnoredArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequestId(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("bba5d7b7-6590-4498-8d6c-eb62b514c92a")) __declspec(novtable) IInteractionTrackerStatics : Windows::IInspectable
+struct __declspec(uuid("bba5d7b7-6590-4498-8d6c-eb62b514c92a")) __declspec(novtable) IInteractionTrackerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::UI::Composition::ICompositor * compositor, Windows::UI::Composition::Interactions::IInteractionTracker ** result) = 0;
     virtual HRESULT __stdcall abi_CreateWithOwner(Windows::UI::Composition::ICompositor * compositor, Windows::UI::Composition::Interactions::IInteractionTrackerOwner * owner, Windows::UI::Composition::Interactions::IInteractionTracker ** result) = 0;
 };
 
-struct __declspec(uuid("cf1578ef-d3df-4501-b9e6-f02fb22f73d0")) __declspec(novtable) IInteractionTrackerValuesChangedArgs : Windows::IInspectable
+struct __declspec(uuid("cf1578ef-d3df-4501-b9e6-f02fb22f73d0")) __declspec(novtable) IInteractionTrackerValuesChangedArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Foundation::Numerics::float3 * value) = 0;
     virtual HRESULT __stdcall get_RequestId(int32_t * value) = 0;
     virtual HRESULT __stdcall get_Scale(float * value) = 0;
 };
 
-struct __declspec(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed")) __declspec(novtable) IVisualInteractionSource : Windows::IInspectable
+struct __declspec(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed")) __declspec(novtable) IVisualInteractionSource : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsPositionXRailsEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsPositionXRailsEnabled(bool value) = 0;
@@ -175,7 +175,7 @@ struct __declspec(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed")) __declspec(novta
     virtual HRESULT __stdcall abi_TryRedirectForManipulation(Windows::UI::Input::IPointerPoint * pointerPoint) = 0;
 };
 
-struct __declspec(uuid("369965e1-8645-4f75-ba00-6479cd10c8e6")) __declspec(novtable) IVisualInteractionSourceStatics : Windows::IInspectable
+struct __declspec(uuid("369965e1-8645-4f75-ba00-6479cd10c8e6")) __declspec(novtable) IVisualInteractionSourceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::UI::Composition::IVisual * source, Windows::UI::Composition::Interactions::IVisualInteractionSource ** result) = 0;
 };

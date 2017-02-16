@@ -41,7 +41,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
 #define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
-template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::IInspectable> : impl_EventHandler<Windows::IInspectable> {};
+template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -105,35 +105,35 @@ template <> struct __declspec(uuid("cf61be5d-40c3-5484-846a-3f82b8ba5738")) __de
 namespace Windows::Media::ContentRestrictions {
 
 struct IContentRestrictionsBrowsePolicy :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContentRestrictionsBrowsePolicy>
 {
     IContentRestrictionsBrowsePolicy(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRatedContentDescription :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRatedContentDescription>
 {
     IRatedContentDescription(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRatedContentDescriptionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRatedContentDescriptionFactory>
 {
     IRatedContentDescriptionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRatedContentRestrictions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRatedContentRestrictions>
 {
     IRatedContentRestrictions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRatedContentRestrictionsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRatedContentRestrictionsFactory>
 {
     IRatedContentRestrictionsFactory(std::nullptr_t = nullptr) noexcept {}

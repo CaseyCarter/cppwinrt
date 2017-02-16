@@ -24,12 +24,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Media::Effects::IAudioCaptureEffectsManager> : produce_base<D, Windows::Media::Effects::IAudioCaptureEffectsManager>
 {
-    HRESULT __stdcall add_AudioCaptureEffectsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AudioCaptureEffectsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().AudioCaptureEffectsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AudioCaptureEffectsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -221,12 +221,12 @@ struct produce<D, Windows::Media::Effects::IAudioEffectsManagerStatics> : produc
 template <typename D>
 struct produce<D, Windows::Media::Effects::IAudioRenderEffectsManager> : produce_base<D, Windows::Media::Effects::IAudioRenderEffectsManager>
 {
-    HRESULT __stdcall add_AudioRenderEffectsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AudioRenderEffectsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().AudioRenderEffectsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AudioRenderEffectsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1128,14 +1128,14 @@ template <typename D> Windows::Media::Effects::AudioCaptureEffectsManager impl_I
     return value;
 }
 
-template <typename D> event_token impl_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAudioRenderEffectsManager)->add_AudioRenderEffectsChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAudioRenderEffectsManager> impl_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAudioRenderEffectsManager> impl_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAudioRenderEffectsManager>(this, &ABI::Windows::Media::Effects::IAudioRenderEffectsManager::remove_AudioRenderEffectsChanged, AudioRenderEffectsChanged(handler));
 }
@@ -1171,14 +1171,14 @@ template <typename D> void impl_IAudioRenderEffectsManager2<D>::ShowSettingsUI()
     check_hresult(WINRT_SHIM(IAudioRenderEffectsManager2)->abi_ShowSettingsUI());
 }
 
-template <typename D> event_token impl_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAudioCaptureEffectsManager)->add_AudioCaptureEffectsChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAudioCaptureEffectsManager> impl_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAudioCaptureEffectsManager> impl_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAudioCaptureEffectsManager>(this, &ABI::Windows::Media::Effects::IAudioCaptureEffectsManager::remove_AudioCaptureEffectsChanged, AudioCaptureEffectsChanged(handler));
 }

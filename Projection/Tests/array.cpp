@@ -1084,7 +1084,7 @@ TEST_CASE("array,PropertyValue")
         auto inspectable = PropertyValue::CreateInspectableArray({ Uri(L"http://one/"), Uri(L"http://two/"), Uri(L"http://three/") });
         auto pv = inspectable.as<IPropertyValue>();
 
-        com_array<Windows::IInspectable> a;
+        com_array<Windows::Foundation::IInspectable> a;
         pv.GetInspectableArray(a);
 
         REQUIRE(3 == a.size());
@@ -1097,7 +1097,7 @@ TEST_CASE("array,PropertyValue")
     {
         auto pv = make<produce_IPropertyValue>();
 
-        com_array<Windows::IInspectable> a;
+        com_array<Windows::Foundation::IInspectable> a;
         pv.GetInspectableArray(a);
 
         REQUIRE(3 == a.size());

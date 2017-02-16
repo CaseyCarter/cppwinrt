@@ -14,171 +14,171 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Midi {
 
-struct __declspec(uuid("be1fa860-62b4-4d52-a37e-92e54d35b909")) __declspec(novtable) IMidiChannelPressureMessage : Windows::IInspectable
+struct __declspec(uuid("be1fa860-62b4-4d52-a37e-92e54d35b909")) __declspec(novtable) IMidiChannelPressureMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Channel(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Pressure(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("6218ed2f-2284-412a-94cf-10fb04842c6c")) __declspec(novtable) IMidiChannelPressureMessageFactory : Windows::IInspectable
+struct __declspec(uuid("6218ed2f-2284-412a-94cf-10fb04842c6c")) __declspec(novtable) IMidiChannelPressureMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiChannelPressureMessage(uint8_t channel, uint8_t pressure, Windows::Devices::Midi::IMidiChannelPressureMessage ** value) = 0;
 };
 
-struct __declspec(uuid("b7e15f83-780d-405f-b781-3e1598c97f40")) __declspec(novtable) IMidiControlChangeMessage : Windows::IInspectable
+struct __declspec(uuid("b7e15f83-780d-405f-b781-3e1598c97f40")) __declspec(novtable) IMidiControlChangeMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Channel(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Controller(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_ControlValue(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("2ab14321-956c-46ad-9752-f87f55052fe3")) __declspec(novtable) IMidiControlChangeMessageFactory : Windows::IInspectable
+struct __declspec(uuid("2ab14321-956c-46ad-9752-f87f55052fe3")) __declspec(novtable) IMidiControlChangeMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiControlChangeMessage(uint8_t channel, uint8_t controller, uint8_t controlValue, Windows::Devices::Midi::IMidiControlChangeMessage ** value) = 0;
 };
 
-struct __declspec(uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9")) __declspec(novtable) IMidiInPort : Windows::IInspectable
+struct __declspec(uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9")) __declspec(novtable) IMidiInPort : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_MessageReceived(event_token token) = 0;
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("44c439dc-67ff-4a6e-8bac-fdb6610cf296")) __declspec(novtable) IMidiInPortStatics : Windows::IInspectable
+struct __declspec(uuid("44c439dc-67ff-4a6e-8bac-fdb6610cf296")) __declspec(novtable) IMidiInPortStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * value) = 0;
 };
 
-struct __declspec(uuid("79767945-1094-4283-9be0-289fc0ee8334")) __declspec(novtable) IMidiMessage : Windows::IInspectable
+struct __declspec(uuid("79767945-1094-4283-9be0-289fc0ee8334")) __declspec(novtable) IMidiMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_RawData(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall get_Type(winrt::Windows::Devices::Midi::MidiMessageType * value) = 0;
 };
 
-struct __declspec(uuid("76566e56-f328-4b51-907d-b3a8ce96bf80")) __declspec(novtable) IMidiMessageReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("76566e56-f328-4b51-907d-b3a8ce96bf80")) __declspec(novtable) IMidiMessageReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Message(Windows::Devices::Midi::IMidiMessage ** value) = 0;
 };
 
-struct __declspec(uuid("16fd8af4-198e-4d8f-a654-d305a293548f")) __declspec(novtable) IMidiNoteOffMessage : Windows::IInspectable
+struct __declspec(uuid("16fd8af4-198e-4d8f-a654-d305a293548f")) __declspec(novtable) IMidiNoteOffMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Channel(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Note(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Velocity(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("a6b240e0-a749-425f-8af4-a4d979cc15b5")) __declspec(novtable) IMidiNoteOffMessageFactory : Windows::IInspectable
+struct __declspec(uuid("a6b240e0-a749-425f-8af4-a4d979cc15b5")) __declspec(novtable) IMidiNoteOffMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiNoteOffMessage(uint8_t channel, uint8_t note, uint8_t velocity, Windows::Devices::Midi::IMidiNoteOffMessage ** value) = 0;
 };
 
-struct __declspec(uuid("e0224af5-6181-46dd-afa2-410004c057aa")) __declspec(novtable) IMidiNoteOnMessage : Windows::IInspectable
+struct __declspec(uuid("e0224af5-6181-46dd-afa2-410004c057aa")) __declspec(novtable) IMidiNoteOnMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Channel(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Note(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Velocity(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("9b4280a0-59c1-420e-b517-15a10aa9606b")) __declspec(novtable) IMidiNoteOnMessageFactory : Windows::IInspectable
+struct __declspec(uuid("9b4280a0-59c1-420e-b517-15a10aa9606b")) __declspec(novtable) IMidiNoteOnMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiNoteOnMessage(uint8_t channel, uint8_t note, uint8_t velocity, Windows::Devices::Midi::IMidiNoteOnMessage ** value) = 0;
 };
 
-struct __declspec(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693")) __declspec(novtable) IMidiOutPort : Windows::IInspectable
+struct __declspec(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693")) __declspec(novtable) IMidiOutPort : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SendMessage(Windows::Devices::Midi::IMidiMessage * midiMessage) = 0;
     virtual HRESULT __stdcall abi_SendBuffer(Windows::Storage::Streams::IBuffer * midiData) = 0;
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("065cc3e9-0f88-448b-9b64-a95826c65b8f")) __declspec(novtable) IMidiOutPortStatics : Windows::IInspectable
+struct __declspec(uuid("065cc3e9-0f88-448b-9b64-a95826c65b8f")) __declspec(novtable) IMidiOutPortStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * value) = 0;
 };
 
-struct __declspec(uuid("29df4cb1-2e9f-4faf-8c2b-9cb82a9079ca")) __declspec(novtable) IMidiPitchBendChangeMessage : Windows::IInspectable
+struct __declspec(uuid("29df4cb1-2e9f-4faf-8c2b-9cb82a9079ca")) __declspec(novtable) IMidiPitchBendChangeMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Channel(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Bend(uint16_t * value) = 0;
 };
 
-struct __declspec(uuid("f5eedf55-cfc8-4926-b30e-a3622393306c")) __declspec(novtable) IMidiPitchBendChangeMessageFactory : Windows::IInspectable
+struct __declspec(uuid("f5eedf55-cfc8-4926-b30e-a3622393306c")) __declspec(novtable) IMidiPitchBendChangeMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiPitchBendChangeMessage(uint8_t channel, uint16_t bend, Windows::Devices::Midi::IMidiPitchBendChangeMessage ** value) = 0;
 };
 
-struct __declspec(uuid("1f7337fe-ace8-48a0-868e-7cdbf20f04d6")) __declspec(novtable) IMidiPolyphonicKeyPressureMessage : Windows::IInspectable
+struct __declspec(uuid("1f7337fe-ace8-48a0-868e-7cdbf20f04d6")) __declspec(novtable) IMidiPolyphonicKeyPressureMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Channel(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Note(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Pressure(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("e98f483e-c4b3-4dd2-917c-e349815a1b3b")) __declspec(novtable) IMidiPolyphonicKeyPressureMessageFactory : Windows::IInspectable
+struct __declspec(uuid("e98f483e-c4b3-4dd2-917c-e349815a1b3b")) __declspec(novtable) IMidiPolyphonicKeyPressureMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiPolyphonicKeyPressureMessage(uint8_t channel, uint8_t note, uint8_t pressure, Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage ** value) = 0;
 };
 
-struct __declspec(uuid("9cbb3c78-7a3e-4327-aa98-20b8e4485af8")) __declspec(novtable) IMidiProgramChangeMessage : Windows::IInspectable
+struct __declspec(uuid("9cbb3c78-7a3e-4327-aa98-20b8e4485af8")) __declspec(novtable) IMidiProgramChangeMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Channel(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Program(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("d6b04387-524b-4104-9c99-6572bfd2e261")) __declspec(novtable) IMidiProgramChangeMessageFactory : Windows::IInspectable
+struct __declspec(uuid("d6b04387-524b-4104-9c99-6572bfd2e261")) __declspec(novtable) IMidiProgramChangeMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiProgramChangeMessage(uint8_t channel, uint8_t program, Windows::Devices::Midi::IMidiProgramChangeMessage ** value) = 0;
 };
 
-struct __declspec(uuid("4ca50c56-ec5e-4ae4-a115-88dc57cc2b79")) __declspec(novtable) IMidiSongPositionPointerMessage : Windows::IInspectable
+struct __declspec(uuid("4ca50c56-ec5e-4ae4-a115-88dc57cc2b79")) __declspec(novtable) IMidiSongPositionPointerMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Beats(uint16_t * value) = 0;
 };
 
-struct __declspec(uuid("9c00e996-f10b-4fea-b395-f5d6cf80f64e")) __declspec(novtable) IMidiSongPositionPointerMessageFactory : Windows::IInspectable
+struct __declspec(uuid("9c00e996-f10b-4fea-b395-f5d6cf80f64e")) __declspec(novtable) IMidiSongPositionPointerMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiSongPositionPointerMessage(uint16_t beats, Windows::Devices::Midi::IMidiSongPositionPointerMessage ** value) = 0;
 };
 
-struct __declspec(uuid("49f0f27f-6d83-4741-a5bf-4629f6be974f")) __declspec(novtable) IMidiSongSelectMessage : Windows::IInspectable
+struct __declspec(uuid("49f0f27f-6d83-4741-a5bf-4629f6be974f")) __declspec(novtable) IMidiSongSelectMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Song(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("848878e4-8748-4129-a66c-a05493f75daa")) __declspec(novtable) IMidiSongSelectMessageFactory : Windows::IInspectable
+struct __declspec(uuid("848878e4-8748-4129-a66c-a05493f75daa")) __declspec(novtable) IMidiSongSelectMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiSongSelectMessage(uint8_t song, Windows::Devices::Midi::IMidiSongSelectMessage ** value) = 0;
 };
 
-struct __declspec(uuid("f0da155e-db90-405f-b8ae-21d2e17f2e45")) __declspec(novtable) IMidiSynthesizer : Windows::IInspectable
+struct __declspec(uuid("f0da155e-db90-405f-b8ae-21d2e17f2e45")) __declspec(novtable) IMidiSynthesizer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AudioDevice(Windows::Devices::Enumeration::IDeviceInformation ** value) = 0;
     virtual HRESULT __stdcall get_Volume(double * value) = 0;
     virtual HRESULT __stdcall put_Volume(double value) = 0;
 };
 
-struct __declspec(uuid("4224eaa8-6629-4d6b-aa8f-d4521a5a31ce")) __declspec(novtable) IMidiSynthesizerStatics : Windows::IInspectable
+struct __declspec(uuid("4224eaa8-6629-4d6b-aa8f-d4521a5a31ce")) __declspec(novtable) IMidiSynthesizerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateAsync(Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> ** value) = 0;
     virtual HRESULT __stdcall abi_CreateFromAudioDeviceAsync(Windows::Devices::Enumeration::IDeviceInformation * audioDevice, Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> ** value) = 0;
     virtual HRESULT __stdcall abi_IsSynthesizer(Windows::Devices::Enumeration::IDeviceInformation * midiDevice, bool * value) = 0;
 };
 
-struct __declspec(uuid("083de222-3b74-4320-9b42-0ca8545f8a24")) __declspec(novtable) IMidiSystemExclusiveMessageFactory : Windows::IInspectable
+struct __declspec(uuid("083de222-3b74-4320-9b42-0ca8545f8a24")) __declspec(novtable) IMidiSystemExclusiveMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiSystemExclusiveMessage(Windows::Storage::Streams::IBuffer * rawData, Windows::Devices::Midi::IMidiMessage ** value) = 0;
 };
 
-struct __declspec(uuid("0bf7087d-fa63-4a1c-8deb-c0e87796a6d7")) __declspec(novtable) IMidiTimeCodeMessage : Windows::IInspectable
+struct __declspec(uuid("0bf7087d-fa63-4a1c-8deb-c0e87796a6d7")) __declspec(novtable) IMidiTimeCodeMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FrameType(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Values(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("eb3099c5-771c-40de-b961-175a7489a85e")) __declspec(novtable) IMidiTimeCodeMessageFactory : Windows::IInspectable
+struct __declspec(uuid("eb3099c5-771c-40de-b961-175a7489a85e")) __declspec(novtable) IMidiTimeCodeMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMidiTimeCodeMessage(uint8_t frameType, uint8_t values, Windows::Devices::Midi::IMidiTimeCodeMessage ** value) = 0;
 };

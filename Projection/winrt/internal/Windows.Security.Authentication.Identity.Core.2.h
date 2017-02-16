@@ -100,42 +100,42 @@ template <> struct __declspec(uuid("6cc53e8c-d0e4-5ded-94f4-7c73b132d2a4")) __de
 namespace Windows::Security::Authentication::Identity::Core {
 
 struct IMicrosoftAccountMultiFactorAuthenticationManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMicrosoftAccountMultiFactorAuthenticationManager>
 {
     IMicrosoftAccountMultiFactorAuthenticationManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMicrosoftAccountMultiFactorAuthenticatorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMicrosoftAccountMultiFactorAuthenticatorStatics>
 {
     IMicrosoftAccountMultiFactorAuthenticatorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMicrosoftAccountMultiFactorGetSessionsResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMicrosoftAccountMultiFactorGetSessionsResult>
 {
     IMicrosoftAccountMultiFactorGetSessionsResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMicrosoftAccountMultiFactorOneTimeCodedInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMicrosoftAccountMultiFactorOneTimeCodedInfo>
 {
     IMicrosoftAccountMultiFactorOneTimeCodedInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMicrosoftAccountMultiFactorSessionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMicrosoftAccountMultiFactorSessionInfo>
 {
     IMicrosoftAccountMultiFactorSessionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>
 {
     IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo(std::nullptr_t = nullptr) noexcept {}

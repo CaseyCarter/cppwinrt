@@ -25,14 +25,14 @@ template <> struct __declspec(uuid("d0bd0125-9049-57a3-bd66-e2525d98c814")) __de
 namespace Windows::Web {
 
 struct IUriToStreamResolver :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUriToStreamResolver>
 {
     IUriToStreamResolver(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebErrorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebErrorStatics>
 {
     IWebErrorStatics(std::nullptr_t = nullptr) noexcept {}

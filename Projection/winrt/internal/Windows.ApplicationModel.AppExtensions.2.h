@@ -115,56 +115,56 @@ template <> struct __declspec(uuid("cbd3ea3b-1275-5688-8610-0ab1f83442fc")) __de
 namespace Windows::ApplicationModel::AppExtensions {
 
 struct IAppExtension :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppExtension>
 {
     IAppExtension(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppExtensionCatalog :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppExtensionCatalog>
 {
     IAppExtensionCatalog(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppExtensionCatalogStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppExtensionCatalogStatics>
 {
     IAppExtensionCatalogStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppExtensionPackageInstalledEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppExtensionPackageInstalledEventArgs>
 {
     IAppExtensionPackageInstalledEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppExtensionPackageStatusChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppExtensionPackageStatusChangedEventArgs>
 {
     IAppExtensionPackageStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppExtensionPackageUninstallingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppExtensionPackageUninstallingEventArgs>
 {
     IAppExtensionPackageUninstallingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppExtensionPackageUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppExtensionPackageUpdatedEventArgs>
 {
     IAppExtensionPackageUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppExtensionPackageUpdatingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppExtensionPackageUpdatingEventArgs>
 {
     IAppExtensionPackageUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}

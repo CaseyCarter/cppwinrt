@@ -35,14 +35,14 @@ using PackageVersion = ABI::Windows::ApplicationModel::PackageVersion;
 
 namespace ABI::Windows::ApplicationModel {
 
-struct __declspec(uuid("1aeb1103-e4d4-41aa-a4f6-c4a276e79eac")) __declspec(novtable) IAppDisplayInfo : Windows::IInspectable
+struct __declspec(uuid("1aeb1103-e4d4-41aa-a4f6-c4a276e79eac")) __declspec(novtable) IAppDisplayInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
     virtual HRESULT __stdcall get_Description(hstring * value) = 0;
     virtual HRESULT __stdcall abi_GetLogo(Windows::Foundation::Size size, Windows::Storage::Streams::IRandomAccessStreamReference ** value) = 0;
 };
 
-struct __declspec(uuid("cf7f59b3-6a09-4de8-a6c0-5792d56880d1")) __declspec(novtable) IAppInfo : Windows::IInspectable
+struct __declspec(uuid("cf7f59b3-6a09-4de8-a6c0-5792d56880d1")) __declspec(novtable) IAppInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_AppUserModelId(hstring * value) = 0;
@@ -50,22 +50,22 @@ struct __declspec(uuid("cf7f59b3-6a09-4de8-a6c0-5792d56880d1")) __declspec(novta
     virtual HRESULT __stdcall get_PackageFamilyName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("2c3893cc-f81a-4e7a-b857-76a80887e185")) __declspec(novtable) IDesignModeStatics : Windows::IInspectable
+struct __declspec(uuid("2c3893cc-f81a-4e7a-b857-76a80887e185")) __declspec(novtable) IDesignModeStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DesignModeEnabled(bool * value) = 0;
 };
 
-struct __declspec(uuid("f722dcc2-9827-403d-aaed-ecca9ac17398")) __declspec(novtable) IEnteredBackgroundEventArgs : Windows::IInspectable
+struct __declspec(uuid("f722dcc2-9827-403d-aaed-ecca9ac17398")) __declspec(novtable) IEnteredBackgroundEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("39c6ec9a-ae6e-46f9-a07a-cfc23f88733e")) __declspec(novtable) ILeavingBackgroundEventArgs : Windows::IInspectable
+struct __declspec(uuid("39c6ec9a-ae6e-46f9-a07a-cfc23f88733e")) __declspec(novtable) ILeavingBackgroundEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("163c792f-bd75-413c-bf23-b1fe7b95d825")) __declspec(novtable) IPackage : Windows::IInspectable
+struct __declspec(uuid("163c792f-bd75-413c-bf23-b1fe7b95d825")) __declspec(novtable) IPackage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(Windows::ApplicationModel::IPackageId ** value) = 0;
     virtual HRESULT __stdcall get_InstalledLocation(Windows::Storage::IStorageFolder ** value) = 0;
@@ -73,7 +73,7 @@ struct __declspec(uuid("163c792f-bd75-413c-bf23-b1fe7b95d825")) __declspec(novta
     virtual HRESULT __stdcall get_Dependencies(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Package> ** value) = 0;
 };
 
-struct __declspec(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01")) __declspec(novtable) IPackage2 : Windows::IInspectable
+struct __declspec(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01")) __declspec(novtable) IPackage2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
     virtual HRESULT __stdcall get_PublisherDisplayName(hstring * value) = 0;
@@ -84,21 +84,21 @@ struct __declspec(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01")) __declspec(novta
     virtual HRESULT __stdcall get_IsDevelopmentMode(bool * value) = 0;
 };
 
-struct __declspec(uuid("5f738b61-f86a-4917-93d1-f1ee9d3b35d9")) __declspec(novtable) IPackage3 : Windows::IInspectable
+struct __declspec(uuid("5f738b61-f86a-4917-93d1-f1ee9d3b35d9")) __declspec(novtable) IPackage3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::IPackageStatus ** value) = 0;
     virtual HRESULT __stdcall get_InstalledDate(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall abi_GetAppListEntriesAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::AppListEntry>> ** operation) = 0;
 };
 
-struct __declspec(uuid("65aed1ae-b95b-450c-882b-6255187f397e")) __declspec(novtable) IPackage4 : Windows::IInspectable
+struct __declspec(uuid("65aed1ae-b95b-450c-882b-6255187f397e")) __declspec(novtable) IPackage4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SignatureKind(winrt::Windows::ApplicationModel::PackageSignatureKind * value) = 0;
     virtual HRESULT __stdcall get_IsOptional(bool * value) = 0;
     virtual HRESULT __stdcall abi_VerifyContentIntegrityAsync(Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
 };
 
-struct __declspec(uuid("230a3751-9de3-4445-be74-91fb325abefe")) __declspec(novtable) IPackageCatalog : Windows::IInspectable
+struct __declspec(uuid("230a3751-9de3-4445-be74-91fb325abefe")) __declspec(novtable) IPackageCatalog : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_PackageStaging(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PackageStaging(event_token token) = 0;
@@ -112,13 +112,13 @@ struct __declspec(uuid("230a3751-9de3-4445-be74-91fb325abefe")) __declspec(novta
     virtual HRESULT __stdcall remove_PackageStatusChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("a18c9696-e65b-4634-ba21-5e63eb7244a7")) __declspec(novtable) IPackageCatalogStatics : Windows::IInspectable
+struct __declspec(uuid("a18c9696-e65b-4634-ba21-5e63eb7244a7")) __declspec(novtable) IPackageCatalogStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_OpenForCurrentPackage(Windows::ApplicationModel::IPackageCatalog ** value) = 0;
     virtual HRESULT __stdcall abi_OpenForCurrentUser(Windows::ApplicationModel::IPackageCatalog ** value) = 0;
 };
 
-struct __declspec(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2")) __declspec(novtable) IPackageId : Windows::IInspectable
+struct __declspec(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2")) __declspec(novtable) IPackageId : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Version(Windows::ApplicationModel::PackageVersion * value) = 0;
@@ -130,13 +130,13 @@ struct __declspec(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2")) __declspec(novta
     virtual HRESULT __stdcall get_FamilyName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("40577a7c-0c9e-443d-9074-855f5ce0a08d")) __declspec(novtable) IPackageIdWithMetadata : Windows::IInspectable
+struct __declspec(uuid("40577a7c-0c9e-443d-9074-855f5ce0a08d")) __declspec(novtable) IPackageIdWithMetadata : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProductId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Author(hstring * value) = 0;
 };
 
-struct __declspec(uuid("97741eb7-ab7a-401a-8b61-eb0e7faff237")) __declspec(novtable) IPackageInstallingEventArgs : Windows::IInspectable
+struct __declspec(uuid("97741eb7-ab7a-401a-8b61-eb0e7faff237")) __declspec(novtable) IPackageInstallingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ActivityId(GUID * value) = 0;
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
@@ -145,7 +145,7 @@ struct __declspec(uuid("97741eb7-ab7a-401a-8b61-eb0e7faff237")) __declspec(novta
     virtual HRESULT __stdcall get_ErrorCode(HRESULT * value) = 0;
 };
 
-struct __declspec(uuid("1041682d-54e2-4f51-b828-9ef7046c210f")) __declspec(novtable) IPackageStagingEventArgs : Windows::IInspectable
+struct __declspec(uuid("1041682d-54e2-4f51-b828-9ef7046c210f")) __declspec(novtable) IPackageStagingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ActivityId(GUID * value) = 0;
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
@@ -154,12 +154,12 @@ struct __declspec(uuid("1041682d-54e2-4f51-b828-9ef7046c210f")) __declspec(novta
     virtual HRESULT __stdcall get_ErrorCode(HRESULT * value) = 0;
 };
 
-struct __declspec(uuid("4e534bdf-2960-4878-97a4-9624deb72f2d")) __declspec(novtable) IPackageStatics : Windows::IInspectable
+struct __declspec(uuid("4e534bdf-2960-4878-97a4-9624deb72f2d")) __declspec(novtable) IPackageStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Current(Windows::ApplicationModel::IPackage ** value) = 0;
 };
 
-struct __declspec(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da")) __declspec(novtable) IPackageStatus : Windows::IInspectable
+struct __declspec(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da")) __declspec(novtable) IPackageStatus : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_VerifyIsOK(bool * value) = 0;
     virtual HRESULT __stdcall get_NotAvailable(bool * value) = 0;
@@ -175,12 +175,12 @@ struct __declspec(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da")) __declspec(novta
     virtual HRESULT __stdcall get_DeploymentInProgress(bool * value) = 0;
 };
 
-struct __declspec(uuid("437d714d-bd80-4a70-bc50-f6e796509575")) __declspec(novtable) IPackageStatusChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("437d714d-bd80-4a70-bc50-f6e796509575")) __declspec(novtable) IPackageStatusChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
 };
 
-struct __declspec(uuid("4443aa52-ab22-44cd-82bb-4ec9b827367a")) __declspec(novtable) IPackageUninstallingEventArgs : Windows::IInspectable
+struct __declspec(uuid("4443aa52-ab22-44cd-82bb-4ec9b827367a")) __declspec(novtable) IPackageUninstallingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ActivityId(GUID * value) = 0;
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
@@ -189,7 +189,7 @@ struct __declspec(uuid("4443aa52-ab22-44cd-82bb-4ec9b827367a")) __declspec(novta
     virtual HRESULT __stdcall get_ErrorCode(HRESULT * value) = 0;
 };
 
-struct __declspec(uuid("cd7b4228-fd74-443e-b114-23e677b0e86f")) __declspec(novtable) IPackageUpdatingEventArgs : Windows::IInspectable
+struct __declspec(uuid("cd7b4228-fd74-443e-b114-23e677b0e86f")) __declspec(novtable) IPackageUpdatingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ActivityId(GUID * value) = 0;
     virtual HRESULT __stdcall get_SourcePackage(Windows::ApplicationModel::IPackage ** value) = 0;
@@ -199,24 +199,24 @@ struct __declspec(uuid("cd7b4228-fd74-443e-b114-23e677b0e86f")) __declspec(novta
     virtual HRESULT __stdcall get_ErrorCode(HRESULT * value) = 0;
 };
 
-struct __declspec(uuid("95949780-1de9-40f2-b452-0de9f1910012")) __declspec(novtable) IPackageWithMetadata : Windows::IInspectable
+struct __declspec(uuid("95949780-1de9-40f2-b452-0de9f1910012")) __declspec(novtable) IPackageWithMetadata : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InstallDate(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall abi_GetThumbnailToken(hstring * value) = 0;
     virtual HRESULT __stdcall abi_Launch(hstring parameters) = 0;
 };
 
-struct __declspec(uuid("59140509-8bc9-4eb4-b636-dabdc4f46f66")) __declspec(novtable) ISuspendingDeferral : Windows::IInspectable
+struct __declspec(uuid("59140509-8bc9-4eb4-b636-dabdc4f46f66")) __declspec(novtable) ISuspendingDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("96061c05-2dba-4d08-b0bd-2b30a131c6aa")) __declspec(novtable) ISuspendingEventArgs : Windows::IInspectable
+struct __declspec(uuid("96061c05-2dba-4d08-b0bd-2b30a131c6aa")) __declspec(novtable) ISuspendingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SuspendingOperation(Windows::ApplicationModel::ISuspendingOperation ** value) = 0;
 };
 
-struct __declspec(uuid("9da4ca41-20e1-4e9b-9f65-a9f435340c3a")) __declspec(novtable) ISuspendingOperation : Windows::IInspectable
+struct __declspec(uuid("9da4ca41-20e1-4e9b-9f65-a9f435340c3a")) __declspec(novtable) ISuspendingOperation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeferral(Windows::ApplicationModel::ISuspendingDeferral ** deferral) = 0;
     virtual HRESULT __stdcall get_Deadline(Windows::Foundation::DateTime * value) = 0;

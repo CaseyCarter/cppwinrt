@@ -165,224 +165,224 @@ template <> struct __declspec(uuid("676fc159-f15c-58bd-91a7-28f7e795c756")) __de
 namespace Windows::ApplicationModel::Email::DataProvider {
 
 struct IEmailDataProviderConnection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailDataProviderConnection>
 {
     IEmailDataProviderConnection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailDataProviderTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailDataProviderTriggerDetails>
 {
     IEmailDataProviderTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxCreateFolderRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxCreateFolderRequest>
 {
     IEmailMailboxCreateFolderRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxCreateFolderRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxCreateFolderRequestEventArgs>
 {
     IEmailMailboxCreateFolderRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxDeleteFolderRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxDeleteFolderRequest>
 {
     IEmailMailboxDeleteFolderRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxDeleteFolderRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxDeleteFolderRequestEventArgs>
 {
     IEmailMailboxDeleteFolderRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxDownloadAttachmentRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxDownloadAttachmentRequest>
 {
     IEmailMailboxDownloadAttachmentRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxDownloadAttachmentRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxDownloadAttachmentRequestEventArgs>
 {
     IEmailMailboxDownloadAttachmentRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxDownloadMessageRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxDownloadMessageRequest>
 {
     IEmailMailboxDownloadMessageRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxDownloadMessageRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxDownloadMessageRequestEventArgs>
 {
     IEmailMailboxDownloadMessageRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxEmptyFolderRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxEmptyFolderRequest>
 {
     IEmailMailboxEmptyFolderRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxEmptyFolderRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxEmptyFolderRequestEventArgs>
 {
     IEmailMailboxEmptyFolderRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxForwardMeetingRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxForwardMeetingRequest>
 {
     IEmailMailboxForwardMeetingRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxForwardMeetingRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxForwardMeetingRequestEventArgs>
 {
     IEmailMailboxForwardMeetingRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxGetAutoReplySettingsRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxGetAutoReplySettingsRequest>
 {
     IEmailMailboxGetAutoReplySettingsRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxGetAutoReplySettingsRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxGetAutoReplySettingsRequestEventArgs>
 {
     IEmailMailboxGetAutoReplySettingsRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxMoveFolderRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxMoveFolderRequest>
 {
     IEmailMailboxMoveFolderRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxMoveFolderRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxMoveFolderRequestEventArgs>
 {
     IEmailMailboxMoveFolderRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxProposeNewTimeForMeetingRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxProposeNewTimeForMeetingRequest>
 {
     IEmailMailboxProposeNewTimeForMeetingRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxProposeNewTimeForMeetingRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxProposeNewTimeForMeetingRequestEventArgs>
 {
     IEmailMailboxProposeNewTimeForMeetingRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxResolveRecipientsRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxResolveRecipientsRequest>
 {
     IEmailMailboxResolveRecipientsRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxResolveRecipientsRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxResolveRecipientsRequestEventArgs>
 {
     IEmailMailboxResolveRecipientsRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxServerSearchReadBatchRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxServerSearchReadBatchRequest>
 {
     IEmailMailboxServerSearchReadBatchRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxServerSearchReadBatchRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxServerSearchReadBatchRequestEventArgs>
 {
     IEmailMailboxServerSearchReadBatchRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxSetAutoReplySettingsRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxSetAutoReplySettingsRequest>
 {
     IEmailMailboxSetAutoReplySettingsRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxSetAutoReplySettingsRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxSetAutoReplySettingsRequestEventArgs>
 {
     IEmailMailboxSetAutoReplySettingsRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxSyncManagerSyncRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxSyncManagerSyncRequest>
 {
     IEmailMailboxSyncManagerSyncRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxSyncManagerSyncRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxSyncManagerSyncRequestEventArgs>
 {
     IEmailMailboxSyncManagerSyncRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxUpdateMeetingResponseRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxUpdateMeetingResponseRequest>
 {
     IEmailMailboxUpdateMeetingResponseRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxUpdateMeetingResponseRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxUpdateMeetingResponseRequestEventArgs>
 {
     IEmailMailboxUpdateMeetingResponseRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxValidateCertificatesRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxValidateCertificatesRequest>
 {
     IEmailMailboxValidateCertificatesRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMailboxValidateCertificatesRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailMailboxValidateCertificatesRequestEventArgs>
 {
     IEmailMailboxValidateCertificatesRequestEventArgs(std::nullptr_t = nullptr) noexcept {}

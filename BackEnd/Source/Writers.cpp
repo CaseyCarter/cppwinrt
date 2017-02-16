@@ -796,7 +796,7 @@ static void WriteComposableOverridables(Output & out)
 
     if (first) // no overrides
     {
-        Write(out, "Windows::IInspectable");
+        Write(out, "Windows::Foundation::IInspectable");
     }
 }
 
@@ -1294,7 +1294,7 @@ void WriteAbiInterfaces(Output & out)
               Strings::WriteAbiInterface,
               Settings::InterfaceGuid,
               Settings::InterfaceName,
-              Settings::InterfaceDelegate ? "IUnknown" : "Windows::IInspectable",
+              Settings::InterfaceDelegate ? "IUnknown" : "Windows::Foundation::IInspectable",
               Bind(WriteAbiInterfaceMethods));
     });
 }

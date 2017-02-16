@@ -30,14 +30,14 @@ template <> struct __declspec(uuid("4936ed59-b494-5128-bc7e-03e630346475")) __de
 namespace Windows::Devices::Pwm::Provider {
 
 struct IPwmControllerProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPwmControllerProvider>
 {
     IPwmControllerProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPwmProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPwmProvider>
 {
     IPwmProvider(std::nullptr_t = nullptr) noexcept {}

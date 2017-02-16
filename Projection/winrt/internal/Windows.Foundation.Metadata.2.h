@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Foundation::Metadata {
 
 struct IApiInformationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApiInformationStatics>
 {
     IApiInformationStatics(std::nullptr_t = nullptr) noexcept {}

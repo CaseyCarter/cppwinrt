@@ -101,42 +101,42 @@ template <> struct __declspec(uuid("c8afc9cb-6807-57ec-84c9-9f3dbc003450")) __de
 namespace Windows::Devices::Spi {
 
 struct ISpiBusInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiBusInfo>
 {
     ISpiBusInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpiConnectionSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiConnectionSettings>
 {
     ISpiConnectionSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpiConnectionSettingsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiConnectionSettingsFactory>
 {
     ISpiConnectionSettingsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpiController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiController>
 {
     ISpiController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpiControllerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiControllerStatics>
 {
     ISpiControllerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpiDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiDevice>,
     impl::require<ISpiDevice, Windows::Foundation::IClosable>
 {
@@ -144,7 +144,7 @@ struct ISpiDevice :
 };
 
 struct ISpiDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiDeviceStatics>
 {
     ISpiDeviceStatics(std::nullptr_t = nullptr) noexcept {}

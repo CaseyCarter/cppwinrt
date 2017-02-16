@@ -175,112 +175,112 @@ template <> struct __declspec(uuid("1ef6a805-fd84-5756-a180-353dd72db275")) __de
 namespace Windows::ApplicationModel::Calls {
 
 struct ICallAnswerEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICallAnswerEventArgs>
 {
     ICallAnswerEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICallRejectEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICallRejectEventArgs>
 {
     ICallRejectEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICallStateChangeEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICallStateChangeEventArgs>
 {
     ICallStateChangeEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMuteChangeEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMuteChangeEventArgs>
 {
     IMuteChangeEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneCallHistoryEntry :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneCallHistoryEntry>
 {
     IPhoneCallHistoryEntry(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneCallHistoryEntryAddress :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneCallHistoryEntryAddress>
 {
     IPhoneCallHistoryEntryAddress(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneCallHistoryEntryAddressFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneCallHistoryEntryAddressFactory>
 {
     IPhoneCallHistoryEntryAddressFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneCallHistoryEntryQueryOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneCallHistoryEntryQueryOptions>
 {
     IPhoneCallHistoryEntryQueryOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneCallHistoryEntryReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneCallHistoryEntryReader>
 {
     IPhoneCallHistoryEntryReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneCallHistoryManagerForUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneCallHistoryManagerForUser>
 {
     IPhoneCallHistoryManagerForUser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneCallHistoryManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneCallHistoryManagerStatics>
 {
     IPhoneCallHistoryManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneCallHistoryManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneCallHistoryManagerStatics2>
 {
     IPhoneCallHistoryManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneCallHistoryStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneCallHistoryStore>
 {
     IPhoneCallHistoryStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoipCallCoordinator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoipCallCoordinator>
 {
     IVoipCallCoordinator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoipCallCoordinatorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoipCallCoordinatorStatics>
 {
     IVoipCallCoordinatorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoipPhoneCall :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoipPhoneCall>
 {
     IVoipPhoneCall(std::nullptr_t = nullptr) noexcept {}

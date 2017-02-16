@@ -98,12 +98,12 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics> : 
         }
     }
 
-    HRESULT __stdcall add_ContentChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> changeHandler, event_token * token) noexcept override
+    HRESULT __stdcall add_ContentChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> changeHandler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ContentChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&changeHandler)));
+            *token = detach_abi(this->shim().ContentChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&changeHandler)));
             return S_OK;
         }
         catch (...)
@@ -216,12 +216,12 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
         }
     }
 
-    HRESULT __stdcall add_Destroyed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable>> handler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_Destroyed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable>> handler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().Destroyed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> *>(&handler)));
+            *eventCookie = detach_abi(this->shim().Destroyed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -244,12 +244,12 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produ
         }
     }
 
-    HRESULT __stdcall abi_SetData(impl::abi_arg_in<hstring> formatId, impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_SetData(impl::abi_arg_in<hstring> formatId, impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetData(*reinterpret_cast<const hstring *>(&formatId), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SetData(*reinterpret_cast<const hstring *>(&formatId), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -1029,7 +1029,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : p
         }
     }
 
-    HRESULT __stdcall abi_GetDataAsync(impl::abi_arg_in<hstring> formatId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::IInspectable>> operation) noexcept override
+    HRESULT __stdcall abi_GetDataAsync(impl::abi_arg_in<hstring> formatId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable>> operation) noexcept override
     {
         try
         {
@@ -1330,12 +1330,12 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::IDataProviderRequest>
         }
     }
 
-    HRESULT __stdcall abi_SetData(impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_SetData(impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetData(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SetData(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2144,7 +2144,7 @@ template <typename D> Windows::ApplicationModel::DataTransfer::DataProviderDefer
     return value;
 }
 
-template <typename D> void impl_IDataProviderRequest<D>::SetData(const Windows::IInspectable & value) const
+template <typename D> void impl_IDataProviderRequest<D>::SetData(const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IDataProviderRequest)->abi_SetData(get_abi(value)));
 }
@@ -2196,9 +2196,9 @@ template <typename D> bool impl_IDataPackageView<D>::Contains(hstring_view forma
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::IInspectable> impl_IDataPackageView<D>::GetDataAsync(hstring_view formatId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> impl_IDataPackageView<D>::GetDataAsync(hstring_view formatId) const
 {
-    Windows::Foundation::IAsyncOperation<Windows::IInspectable> operation;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> operation;
     check_hresult(WINRT_SHIM(IDataPackageView)->abi_GetDataAsync(get_abi(formatId), put_abi(operation)));
     return operation;
 }
@@ -2342,14 +2342,14 @@ template <typename D> void impl_IDataPackage<D>::OperationCompleted(event_token 
     check_hresult(WINRT_SHIM(IDataPackage)->remove_OperationCompleted(eventCookie));
 }
 
-template <typename D> event_token impl_IDataPackage<D>::Destroyed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDataPackage<D>::Destroyed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> & handler) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IDataPackage)->add_Destroyed(get_abi(handler), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IDataPackage> impl_IDataPackage<D>::Destroyed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDataPackage> impl_IDataPackage<D>::Destroyed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDataPackage>(this, &ABI::Windows::ApplicationModel::DataTransfer::IDataPackage::remove_Destroyed, Destroyed(handler));
 }
@@ -2359,7 +2359,7 @@ template <typename D> void impl_IDataPackage<D>::Destroyed(event_token eventCook
     check_hresult(WINRT_SHIM(IDataPackage)->remove_Destroyed(eventCookie));
 }
 
-template <typename D> void impl_IDataPackage<D>::SetData(hstring_view formatId, const Windows::IInspectable & value) const
+template <typename D> void impl_IDataPackage<D>::SetData(hstring_view formatId, const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetData(get_abi(formatId), get_abi(value)));
 }
@@ -2457,14 +2457,14 @@ template <typename D> void impl_IClipboardStatics<D>::Clear() const
     check_hresult(WINRT_SHIM(IClipboardStatics)->abi_Clear());
 }
 
-template <typename D> event_token impl_IClipboardStatics<D>::ContentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler) const
+template <typename D> event_token impl_IClipboardStatics<D>::ContentChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IClipboardStatics)->add_ContentChanged(get_abi(changeHandler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IClipboardStatics> impl_IClipboardStatics<D>::ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler) const
+template <typename D> event_revoker<IClipboardStatics> impl_IClipboardStatics<D>::ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler) const
 {
     return impl::make_event_revoker<D, IClipboardStatics>(this, &ABI::Windows::ApplicationModel::DataTransfer::IClipboardStatics::remove_ContentChanged, ContentChanged(changeHandler));
 }
@@ -2616,12 +2616,12 @@ inline void Clipboard::Clear()
     get_activation_factory<Clipboard, IClipboardStatics>().Clear();
 }
 
-inline event_token Clipboard::ContentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler)
+inline event_token Clipboard::ContentChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler)
 {
     return get_activation_factory<Clipboard, IClipboardStatics>().ContentChanged(changeHandler);
 }
 
-inline factory_event_revoker<IClipboardStatics> Clipboard::ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler)
+inline factory_event_revoker<IClipboardStatics> Clipboard::ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler)
 {
     auto factory = get_activation_factory<Clipboard, IClipboardStatics>();
     return { factory, &ABI::Windows::ApplicationModel::DataTransfer::IClipboardStatics::remove_ContentChanged, factory.ContentChanged(changeHandler) };

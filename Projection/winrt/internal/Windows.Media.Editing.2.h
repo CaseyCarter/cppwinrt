@@ -320,91 +320,91 @@ template <> struct __declspec(uuid("6683d49c-9fd5-5b08-899f-e2d7dc5cf9c4")) __de
 namespace Windows::Media::Editing {
 
 struct IBackgroundAudioTrack :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundAudioTrack>
 {
     IBackgroundAudioTrack(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundAudioTrackStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundAudioTrackStatics>
 {
     IBackgroundAudioTrackStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmbeddedAudioTrack :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmbeddedAudioTrack>
 {
     IEmbeddedAudioTrack(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaClip :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaClip>
 {
     IMediaClip(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaClipStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaClipStatics>
 {
     IMediaClipStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaClipStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaClipStatics2>
 {
     IMediaClipStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaComposition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaComposition>
 {
     IMediaComposition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaComposition2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaComposition2>
 {
     IMediaComposition2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCompositionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCompositionStatics>
 {
     IMediaCompositionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaOverlay :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaOverlay>
 {
     IMediaOverlay(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaOverlayFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaOverlayFactory>
 {
     IMediaOverlayFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaOverlayLayer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaOverlayLayer>
 {
     IMediaOverlayLayer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaOverlayLayerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaOverlayLayerFactory>
 {
     IMediaOverlayLayerFactory(std::nullptr_t = nullptr) noexcept {}

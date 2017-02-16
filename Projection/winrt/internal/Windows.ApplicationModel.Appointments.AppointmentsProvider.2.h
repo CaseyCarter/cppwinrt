@@ -20,35 +20,35 @@ template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __de
 namespace Windows::ApplicationModel::Appointments::AppointmentsProvider {
 
 struct IAddAppointmentOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAddAppointmentOperation>
 {
     IAddAppointmentOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentsProviderLaunchActionVerbsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentsProviderLaunchActionVerbsStatics>
 {
     IAppointmentsProviderLaunchActionVerbsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentsProviderLaunchActionVerbsStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentsProviderLaunchActionVerbsStatics2>
 {
     IAppointmentsProviderLaunchActionVerbsStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoveAppointmentOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoveAppointmentOperation>
 {
     IRemoveAppointmentOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IReplaceAppointmentOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IReplaceAppointmentOperation>
 {
     IReplaceAppointmentOperation(std::nullptr_t = nullptr) noexcept {}

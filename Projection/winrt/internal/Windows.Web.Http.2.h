@@ -12,12 +12,12 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
 #define WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
-template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __declspec(novtable) IMap<hstring, Windows::IInspectable> : impl_IMap<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __declspec(novtable) IMap<hstring, Windows::Foundation::IInspectable> : impl_IMap<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
-template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::IInspectable> : impl_IKeyValuePair<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_60310303_49c5_52e6_abc6_a9b36eccc716
@@ -42,7 +42,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
-template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::IInspectable> : impl_IMapView<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::Foundation::IInspectable> : impl_IMapView<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
@@ -277,7 +277,7 @@ template <> struct __declspec(uuid("59f44f31-695e-5af7-a3c5-85c01939cec8")) __de
 
 #ifndef WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
 #define WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
-template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_e9bdaaf0_cbf6_5c72_be90_29cbf3a1319b
@@ -287,7 +287,7 @@ template <> struct __declspec(uuid("e9bdaaf0-cbf6-5c72-be90-29cbf3a1319b")) __de
 
 #ifndef WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
 #define WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
-template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_05eb86f1_7140_5517_b88d_cbaebe57e6b1
@@ -301,14 +301,14 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Web::Http {
 
 struct IHttpBufferContentFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpBufferContentFactory>
 {
     IHttpBufferContentFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpClient :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpClient>,
     impl::require<IHttpClient, Windows::Foundation::IClosable>
 {
@@ -316,14 +316,14 @@ struct IHttpClient :
 };
 
 struct IHttpClientFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpClientFactory>
 {
     IHttpClientFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContent>,
     impl::require<IHttpContent, Windows::Foundation::IClosable>
 {
@@ -331,56 +331,56 @@ struct IHttpContent :
 };
 
 struct IHttpCookie :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCookie>
 {
     IHttpCookie(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpCookieFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCookieFactory>
 {
     IHttpCookieFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpCookieManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCookieManager>
 {
     IHttpCookieManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpFormUrlEncodedContentFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpFormUrlEncodedContentFactory>
 {
     IHttpFormUrlEncodedContentFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMethod :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMethod>
 {
     IHttpMethod(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMethodFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMethodFactory>
 {
     IHttpMethodFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMethodStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMethodStatics>
 {
     IHttpMethodStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMultipartContent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMultipartContent>,
     impl::require<IHttpMultipartContent, Windows::Foundation::Collections::IIterable<Windows::Web::Http::IHttpContent>>
 {
@@ -388,14 +388,14 @@ struct IHttpMultipartContent :
 };
 
 struct IHttpMultipartContentFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMultipartContentFactory>
 {
     IHttpMultipartContentFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMultipartFormDataContent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMultipartFormDataContent>,
     impl::require<IHttpMultipartFormDataContent, Windows::Foundation::Collections::IIterable<Windows::Web::Http::IHttpContent>>
 {
@@ -403,14 +403,14 @@ struct IHttpMultipartFormDataContent :
 };
 
 struct IHttpMultipartFormDataContentFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMultipartFormDataContentFactory>
 {
     IHttpMultipartFormDataContentFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpRequestMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpRequestMessage>,
     impl::require<IHttpRequestMessage, Windows::Foundation::IClosable>
 {
@@ -418,14 +418,14 @@ struct IHttpRequestMessage :
 };
 
 struct IHttpRequestMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpRequestMessageFactory>
 {
     IHttpRequestMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpResponseMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpResponseMessage>,
     impl::require<IHttpResponseMessage, Windows::Foundation::IClosable>
 {
@@ -433,28 +433,28 @@ struct IHttpResponseMessage :
 };
 
 struct IHttpResponseMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpResponseMessageFactory>
 {
     IHttpResponseMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpStreamContentFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpStreamContentFactory>
 {
     IHttpStreamContentFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpStringContentFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpStringContentFactory>
 {
     IHttpStringContentFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpTransportInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpTransportInformation>
 {
     IHttpTransportInformation(std::nullptr_t = nullptr) noexcept {}

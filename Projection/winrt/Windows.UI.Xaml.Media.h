@@ -32,7 +32,7 @@ template <typename O, typename M> RateChangedRoutedEventHandler::RateChangedRout
     RateChangedRoutedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void RateChangedRoutedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Media::RateChangedRoutedEventArgs & e) const
+inline void RateChangedRoutedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Media::RateChangedRoutedEventArgs & e) const
 {
     check_hresult((*(abi<RateChangedRoutedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -49,7 +49,7 @@ template <typename O, typename M> TimelineMarkerRoutedEventHandler::TimelineMark
     TimelineMarkerRoutedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void TimelineMarkerRoutedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs & e) const
+inline void TimelineMarkerRoutedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs & e) const
 {
     check_hresult((*(abi<TimelineMarkerRoutedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -515,12 +515,12 @@ struct produce<D, Windows::UI::Xaml::Media::IBrush> : produce_base<D, Windows::U
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::IBrushFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IBrush> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IBrush> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -588,12 +588,12 @@ struct produce<D, Windows::UI::Xaml::Media::ICacheMode> : produce_base<D, Window
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ICacheModeFactory> : produce_base<D, Windows::UI::Xaml::Media::ICacheModeFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::ICacheMode> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::ICacheMode> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1007,12 +1007,12 @@ struct produce<D, Windows::UI::Xaml::Media::ICompositionTarget> : produce_base<D
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ICompositionTargetStatics> : produce_base<D, Windows::UI::Xaml::Media::ICompositionTargetStatics>
 {
-    HRESULT __stdcall add_Rendering(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_Rendering(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Rendering(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().Rendering(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1035,12 +1035,12 @@ struct produce<D, Windows::UI::Xaml::Media::ICompositionTargetStatics> : produce
         }
     }
 
-    HRESULT __stdcall add_SurfaceContentsLost(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_SurfaceContentsLost(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().SurfaceContentsLost(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().SurfaceContentsLost(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1223,12 +1223,12 @@ struct produce<D, Windows::UI::Xaml::Media::IFontFamily> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IFontFamilyFactory> : produce_base<D, Windows::UI::Xaml::Media::IFontFamilyFactory>
 {
-    HRESULT __stdcall abi_CreateInstanceWithName(impl::abi_arg_in<hstring> familyName, impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IFontFamily> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstanceWithName(impl::abi_arg_in<hstring> familyName, impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IFontFamily> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstanceWithName(*reinterpret_cast<const hstring *>(&familyName), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstanceWithName(*reinterpret_cast<const hstring *>(&familyName), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1323,12 +1323,12 @@ struct produce<D, Windows::UI::Xaml::Media::IGeneralTransform> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGeneralTransformFactory> : produce_base<D, Windows::UI::Xaml::Media::IGeneralTransformFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IGeneralTransform> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IGeneralTransform> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1701,12 +1701,12 @@ struct produce<D, Windows::UI::Xaml::Media::IGradientBrush> : produce_base<D, Wi
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGradientBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::IGradientBrushFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IGradientBrush> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IGradientBrush> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -3485,12 +3485,12 @@ struct produce<D, Windows::UI::Xaml::Media::IProjection> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IProjectionFactory> : produce_base<D, Windows::UI::Xaml::Media::IProjectionFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IProjection> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IProjection> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -4327,12 +4327,12 @@ struct produce<D, Windows::UI::Xaml::Media::ITileBrush> : produce_base<D, Window
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITileBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::ITileBrushFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::ITileBrush> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::ITileBrush> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -4985,14 +4985,14 @@ template <typename D> Windows::Foundation::Point impl_IMatrixHelperStatics<D>::T
     return returnValue;
 }
 
-template <typename D> event_token impl_ICompositionTargetStatics<D>::Rendering(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
+template <typename D> event_token impl_ICompositionTargetStatics<D>::Rendering(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICompositionTargetStatics)->add_Rendering(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICompositionTargetStatics> impl_ICompositionTargetStatics<D>::Rendering(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
+template <typename D> event_revoker<ICompositionTargetStatics> impl_ICompositionTargetStatics<D>::Rendering(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, ICompositionTargetStatics>(this, &ABI::Windows::UI::Xaml::Media::ICompositionTargetStatics::remove_Rendering, Rendering(value));
 }
@@ -5002,14 +5002,14 @@ template <typename D> void impl_ICompositionTargetStatics<D>::Rendering(event_to
     check_hresult(WINRT_SHIM(ICompositionTargetStatics)->remove_Rendering(token));
 }
 
-template <typename D> event_token impl_ICompositionTargetStatics<D>::SurfaceContentsLost(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
+template <typename D> event_token impl_ICompositionTargetStatics<D>::SurfaceContentsLost(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICompositionTargetStatics)->add_SurfaceContentsLost(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICompositionTargetStatics> impl_ICompositionTargetStatics<D>::SurfaceContentsLost(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
+template <typename D> event_revoker<ICompositionTargetStatics> impl_ICompositionTargetStatics<D>::SurfaceContentsLost(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, ICompositionTargetStatics>(this, &ABI::Windows::UI::Xaml::Media::ICompositionTargetStatics::remove_SurfaceContentsLost, SurfaceContentsLost(value));
 }
@@ -5026,7 +5026,7 @@ template <typename D> hstring impl_IFontFamily<D>::Source() const
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::FontFamily impl_IFontFamilyFactory<D>::CreateInstanceWithName(hstring_view familyName, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::FontFamily impl_IFontFamilyFactory<D>::CreateInstanceWithName(hstring_view familyName, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::FontFamily instance { nullptr };
     check_hresult(WINRT_SHIM(IFontFamilyFactory)->abi_CreateInstanceWithName(get_abi(familyName), get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -5116,14 +5116,14 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBrushStatics<D
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Brush impl_IBrushFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::Brush impl_IBrushFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Brush instance { nullptr };
     check_hresult(WINRT_SHIM(IBrushFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
 }
 
-template <typename D> Windows::UI::Xaml::Media::CacheMode impl_ICacheModeFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::CacheMode impl_ICacheModeFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::CacheMode instance { nullptr };
     check_hresult(WINRT_SHIM(ICacheModeFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -5179,7 +5179,7 @@ template <typename D> Windows::Foundation::Rect impl_IGeneralTransformOverrides<
     return returnValue;
 }
 
-template <typename D> Windows::UI::Xaml::Media::GeneralTransform impl_IGeneralTransformFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::GeneralTransform impl_IGeneralTransformFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::GeneralTransform instance { nullptr };
     check_hresult(WINRT_SHIM(IGeneralTransformFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -5226,7 +5226,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGeometryStatic
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Projection impl_IProjectionFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::Projection impl_IProjectionFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Projection instance { nullptr };
     check_hresult(WINRT_SHIM(IProjectionFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -6508,7 +6508,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGradientBrushS
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::GradientBrush impl_IGradientBrushFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::GradientBrush impl_IGradientBrushFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::GradientBrush instance { nullptr };
     check_hresult(WINRT_SHIM(IGradientBrushFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -6762,7 +6762,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITileBrushStati
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::TileBrush impl_ITileBrushFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::TileBrush impl_ITileBrushFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::TileBrush instance { nullptr };
     check_hresult(WINRT_SHIM(ITileBrushFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -6987,12 +6987,12 @@ inline Windows::UI::Xaml::DependencyProperty CompositeTransform::TranslateYPrope
     return get_activation_factory<CompositeTransform, ICompositeTransformStatics>().TranslateYProperty();
 }
 
-inline event_token CompositionTarget::Rendering(const Windows::Foundation::EventHandler<Windows::IInspectable> & value)
+inline event_token CompositionTarget::Rendering(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value)
 {
     return get_activation_factory<CompositionTarget, ICompositionTargetStatics>().Rendering(value);
 }
 
-inline factory_event_revoker<ICompositionTargetStatics> CompositionTarget::Rendering(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value)
+inline factory_event_revoker<ICompositionTargetStatics> CompositionTarget::Rendering(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value)
 {
     auto factory = get_activation_factory<CompositionTarget, ICompositionTargetStatics>();
     return { factory, &ABI::Windows::UI::Xaml::Media::ICompositionTargetStatics::remove_Rendering, factory.Rendering(value) };
@@ -7003,12 +7003,12 @@ inline void CompositionTarget::Rendering(event_token token)
     get_activation_factory<CompositionTarget, ICompositionTargetStatics>().Rendering(token);
 }
 
-inline event_token CompositionTarget::SurfaceContentsLost(const Windows::Foundation::EventHandler<Windows::IInspectable> & value)
+inline event_token CompositionTarget::SurfaceContentsLost(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value)
 {
     return get_activation_factory<CompositionTarget, ICompositionTargetStatics>().SurfaceContentsLost(value);
 }
 
-inline factory_event_revoker<ICompositionTargetStatics> CompositionTarget::SurfaceContentsLost(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value)
+inline factory_event_revoker<ICompositionTargetStatics> CompositionTarget::SurfaceContentsLost(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value)
 {
     auto factory = get_activation_factory<CompositionTarget, ICompositionTargetStatics>();
     return { factory, &ABI::Windows::UI::Xaml::Media::ICompositionTargetStatics::remove_SurfaceContentsLost, factory.SurfaceContentsLost(value) };
@@ -7044,7 +7044,7 @@ inline Windows::UI::Xaml::DependencyProperty EllipseGeometry::RadiusYProperty()
 
 inline FontFamily::FontFamily(hstring_view familyName)
 {
-    Windows::IInspectable outer, inner;
+    Windows::Foundation::IInspectable outer, inner;
     impl_move(get_activation_factory<FontFamily, IFontFamilyFactory>().CreateInstanceWithName(familyName, outer, inner));
 }
 

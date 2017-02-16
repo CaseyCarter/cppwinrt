@@ -25,21 +25,21 @@ template <> struct __declspec(uuid("3c1ec44c-e942-54e5-bcd3-e329c951f595")) __de
 namespace Windows::Security::Authentication::Web {
 
 struct IWebAuthenticationBrokerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAuthenticationBrokerStatics>
 {
     IWebAuthenticationBrokerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAuthenticationBrokerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAuthenticationBrokerStatics2>
 {
     IWebAuthenticationBrokerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAuthenticationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAuthenticationResult>
 {
     IWebAuthenticationResult(std::nullptr_t = nullptr) noexcept {}

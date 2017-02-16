@@ -884,7 +884,7 @@ struct produce<D, Windows::Storage::FileProperties::IStorageItemContentPropertie
 template <typename D>
 struct produce<D, Windows::Storage::FileProperties::IStorageItemExtraProperties> : produce_base<D, Windows::Storage::FileProperties::IStorageItemExtraProperties>
 {
-    HRESULT __stdcall abi_RetrievePropertiesAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> propertiesToRetrieve, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>>> operation) noexcept override
+    HRESULT __stdcall abi_RetrievePropertiesAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> propertiesToRetrieve, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>>> operation) noexcept override
     {
         try
         {
@@ -899,12 +899,12 @@ struct produce<D, Windows::Storage::FileProperties::IStorageItemExtraProperties>
         }
     }
 
-    HRESULT __stdcall abi_SavePropertiesAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>> propertiesToSave, impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
+    HRESULT __stdcall abi_SavePropertiesAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>> propertiesToSave, impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach_abi(this->shim().SavePropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> *>(&propertiesToSave)));
+            *operation = detach_abi(this->shim().SavePropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> *>(&propertiesToSave)));
             return S_OK;
         }
         catch (...)
@@ -1350,14 +1350,14 @@ template <typename D> Windows::Storage::FileProperties::ThumbnailType impl_IThum
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>> impl_IStorageItemExtraProperties<D>::RetrievePropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> impl_IStorageItemExtraProperties<D>::RetrievePropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
 {
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>> operation;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> operation;
     check_hresult(WINRT_SHIM(IStorageItemExtraProperties)->abi_RetrievePropertiesAsync(get_abi(propertiesToRetrieve), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItemExtraProperties<D>::SavePropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> & propertiesToSave) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItemExtraProperties<D>::SavePropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> & propertiesToSave) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStorageItemExtraProperties)->abi_SavePropertiesAsync(get_abi(propertiesToSave), put_abi(operation)));

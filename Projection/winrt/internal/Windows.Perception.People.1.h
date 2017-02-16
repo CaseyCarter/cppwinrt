@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Perception::People {
 
-struct __declspec(uuid("7f5ac5a5-49db-379f-9429-32a2faf34fa6")) __declspec(novtable) IHeadPose : Windows::IInspectable
+struct __declspec(uuid("7f5ac5a5-49db-379f-9429-32a2faf34fa6")) __declspec(novtable) IHeadPose : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Foundation::Numerics::float3 * value) = 0;
     virtual HRESULT __stdcall get_ForwardDirection(Windows::Foundation::Numerics::float3 * value) = 0;

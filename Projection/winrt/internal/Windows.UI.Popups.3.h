@@ -53,7 +53,7 @@ struct WINRT_EBO UICommand :
     UICommand();
     UICommand(hstring_view label);
     UICommand(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action);
-    UICommand(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId);
+    UICommand(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::Foundation::IInspectable & commandId);
 };
 
 struct WINRT_EBO UICommandSeparator :

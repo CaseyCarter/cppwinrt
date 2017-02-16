@@ -91,7 +91,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_c0081611_7485_58a8_88be_82e712d8c1ba
 #define WINRT_GENERIC_c0081611_7485_58a8_88be_82e712d8c1ba
-template <> struct __declspec(uuid("c0081611-7485-58a8-88be-82e712d8c1ba")) __declspec(novtable) TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> : impl_TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> {};
+template <> struct __declspec(uuid("c0081611-7485-58a8-88be-82e712d8c1ba")) __declspec(novtable) TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_bccf7095_bc8e_5ff5_83c0_d5691e0aa24d
@@ -569,7 +569,7 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 
 namespace Windows::Graphics::Printing3D {
 
-struct Print3DTaskSourceRequestedHandler : Windows::IUnknown
+struct Print3DTaskSourceRequestedHandler : Windows::Foundation::IUnknown
 {
     Print3DTaskSourceRequestedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> Print3DTaskSourceRequestedHandler(L lambda);
@@ -579,273 +579,273 @@ struct Print3DTaskSourceRequestedHandler : Windows::IUnknown
 };
 
 struct IPrint3DManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DManager>
 {
     IPrint3DManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DManagerStatics>
 {
     IPrint3DManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DTask :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DTask>
 {
     IPrint3DTask(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DTaskCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DTaskCompletedEventArgs>
 {
     IPrint3DTaskCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DTaskRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DTaskRequest>
 {
     IPrint3DTaskRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DTaskRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DTaskRequestedEventArgs>
 {
     IPrint3DTaskRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DTaskSourceChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DTaskSourceChangedEventArgs>
 {
     IPrint3DTaskSourceChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DTaskSourceRequestedArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DTaskSourceRequestedArgs>
 {
     IPrint3DTaskSourceRequestedArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3D3MFPackage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3D3MFPackage>
 {
     IPrinting3D3MFPackage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3D3MFPackageStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3D3MFPackageStatics>
 {
     IPrinting3D3MFPackageStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DBaseMaterial :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DBaseMaterial>
 {
     IPrinting3DBaseMaterial(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DBaseMaterialGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DBaseMaterialGroup>
 {
     IPrinting3DBaseMaterialGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DBaseMaterialGroupFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DBaseMaterialGroupFactory>
 {
     IPrinting3DBaseMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DBaseMaterialStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DBaseMaterialStatics>
 {
     IPrinting3DBaseMaterialStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DColorMaterial :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DColorMaterial>
 {
     IPrinting3DColorMaterial(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DColorMaterial2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DColorMaterial2>
 {
     IPrinting3DColorMaterial2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DColorMaterialGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DColorMaterialGroup>
 {
     IPrinting3DColorMaterialGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DColorMaterialGroupFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DColorMaterialGroupFactory>
 {
     IPrinting3DColorMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DComponent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DComponent>
 {
     IPrinting3DComponent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DComponentWithMatrix :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DComponentWithMatrix>
 {
     IPrinting3DComponentWithMatrix(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DCompositeMaterial :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DCompositeMaterial>
 {
     IPrinting3DCompositeMaterial(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DCompositeMaterialGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DCompositeMaterialGroup>
 {
     IPrinting3DCompositeMaterialGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DCompositeMaterialGroup2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DCompositeMaterialGroup2>
 {
     IPrinting3DCompositeMaterialGroup2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DCompositeMaterialGroupFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DCompositeMaterialGroupFactory>
 {
     IPrinting3DCompositeMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DFaceReductionOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DFaceReductionOptions>
 {
     IPrinting3DFaceReductionOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DMaterial :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DMaterial>
 {
     IPrinting3DMaterial(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DMesh :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DMesh>
 {
     IPrinting3DMesh(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DMeshVerificationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DMeshVerificationResult>
 {
     IPrinting3DMeshVerificationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DModel :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DModel>
 {
     IPrinting3DModel(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DModel2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DModel2>
 {
     IPrinting3DModel2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DModelTexture :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DModelTexture>
 {
     IPrinting3DModelTexture(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DMultiplePropertyMaterial :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DMultiplePropertyMaterial>
 {
     IPrinting3DMultiplePropertyMaterial(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DMultiplePropertyMaterialGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DMultiplePropertyMaterialGroup>
 {
     IPrinting3DMultiplePropertyMaterialGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DMultiplePropertyMaterialGroupFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DMultiplePropertyMaterialGroupFactory>
 {
     IPrinting3DMultiplePropertyMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DTexture2CoordMaterial :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DTexture2CoordMaterial>
 {
     IPrinting3DTexture2CoordMaterial(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DTexture2CoordMaterialGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DTexture2CoordMaterialGroup>
 {
     IPrinting3DTexture2CoordMaterialGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DTexture2CoordMaterialGroup2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DTexture2CoordMaterialGroup2>
 {
     IPrinting3DTexture2CoordMaterialGroup2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DTexture2CoordMaterialGroupFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DTexture2CoordMaterialGroupFactory>
 {
     IPrinting3DTexture2CoordMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrinting3DTextureResource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrinting3DTextureResource>
 {
     IPrinting3DTextureResource(std::nullptr_t = nullptr) noexcept {}

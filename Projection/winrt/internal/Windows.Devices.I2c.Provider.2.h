@@ -46,14 +46,14 @@ template <> struct __declspec(uuid("771e22ed-da9e-50be-b730-a3bada6bfb25")) __de
 namespace Windows::Devices::I2c::Provider {
 
 struct II2cControllerProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<II2cControllerProvider>
 {
     II2cControllerProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct II2cDeviceProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<II2cDeviceProvider>,
     impl::require<II2cDeviceProvider, Windows::Foundation::IClosable>
 {
@@ -61,14 +61,14 @@ struct II2cDeviceProvider :
 };
 
 struct II2cProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<II2cProvider>
 {
     II2cProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProviderI2cConnectionSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProviderI2cConnectionSettings>
 {
     IProviderI2cConnectionSettings(std::nullptr_t = nullptr) noexcept {}

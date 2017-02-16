@@ -111,7 +111,7 @@ template <> struct __declspec(uuid("67b64d17-4245-5d7c-bfb4-6b68dd525877")) __de
 
 namespace Windows::UI::ApplicationSettings {
 
-struct CredentialCommandCredentialDeletedHandler : Windows::IUnknown
+struct CredentialCommandCredentialDeletedHandler : Windows::Foundation::IUnknown
 {
     CredentialCommandCredentialDeletedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> CredentialCommandCredentialDeletedHandler(L lambda);
@@ -120,7 +120,7 @@ struct CredentialCommandCredentialDeletedHandler : Windows::IUnknown
     void operator()(const Windows::UI::ApplicationSettings::CredentialCommand & command) const;
 };
 
-struct WebAccountCommandInvokedHandler : Windows::IUnknown
+struct WebAccountCommandInvokedHandler : Windows::Foundation::IUnknown
 {
     WebAccountCommandInvokedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> WebAccountCommandInvokedHandler(L lambda);
@@ -129,7 +129,7 @@ struct WebAccountCommandInvokedHandler : Windows::IUnknown
     void operator()(const Windows::UI::ApplicationSettings::WebAccountCommand & command, const Windows::UI::ApplicationSettings::WebAccountInvokedArgs & args) const;
 };
 
-struct WebAccountProviderCommandInvokedHandler : Windows::IUnknown
+struct WebAccountProviderCommandInvokedHandler : Windows::Foundation::IUnknown
 {
     WebAccountProviderCommandInvokedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> WebAccountProviderCommandInvokedHandler(L lambda);
@@ -139,35 +139,35 @@ struct WebAccountProviderCommandInvokedHandler : Windows::IUnknown
 };
 
 struct IAccountsSettingsPane :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccountsSettingsPane>
 {
     IAccountsSettingsPane(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccountsSettingsPaneCommandsRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccountsSettingsPaneCommandsRequestedEventArgs>
 {
     IAccountsSettingsPaneCommandsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccountsSettingsPaneEventDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccountsSettingsPaneEventDeferral>
 {
     IAccountsSettingsPaneEventDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccountsSettingsPaneStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccountsSettingsPaneStatics>
 {
     IAccountsSettingsPaneStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccountsSettingsPaneStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccountsSettingsPaneStatics2>,
     impl::require<IAccountsSettingsPaneStatics2, Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics>
 {
@@ -175,63 +175,63 @@ struct IAccountsSettingsPaneStatics2 :
 };
 
 struct ICredentialCommand :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICredentialCommand>
 {
     ICredentialCommand(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICredentialCommandFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICredentialCommandFactory>
 {
     ICredentialCommandFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISettingsCommandFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISettingsCommandFactory>
 {
     ISettingsCommandFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISettingsCommandStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISettingsCommandStatics>
 {
     ISettingsCommandStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountCommand :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountCommand>
 {
     IWebAccountCommand(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountCommandFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountCommandFactory>
 {
     IWebAccountCommandFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountInvokedArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountInvokedArgs>
 {
     IWebAccountInvokedArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountProviderCommand :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderCommand>
 {
     IWebAccountProviderCommand(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountProviderCommandFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderCommandFactory>
 {
     IWebAccountProviderCommandFactory(std::nullptr_t = nullptr) noexcept {}

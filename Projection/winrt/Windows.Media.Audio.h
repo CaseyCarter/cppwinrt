@@ -234,12 +234,12 @@ struct produce<D, Windows::Media::Audio::IAudioFileInputNode> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_FileCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FileCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().FileCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().FileCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -720,12 +720,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall add_QuantumStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_QuantumStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().QuantumStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -748,12 +748,12 @@ struct produce<D, Windows::Media::Audio::IAudioGraph> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall add_QuantumProcessed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_QuantumProcessed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().QuantumProcessed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().QuantumProcessed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3578,14 +3578,14 @@ template <typename D> void impl_IAudioGraph<D>::ResetAllNodes() const
     check_hresult(WINRT_SHIM(IAudioGraph)->abi_ResetAllNodes());
 }
 
-template <typename D> event_token impl_IAudioGraph<D>::QuantumStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAudioGraph<D>::QuantumStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAudioGraph)->add_QuantumStarted(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAudioGraph> impl_IAudioGraph<D>::QuantumStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAudioGraph> impl_IAudioGraph<D>::QuantumStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAudioGraph>(this, &ABI::Windows::Media::Audio::IAudioGraph::remove_QuantumStarted, QuantumStarted(handler));
 }
@@ -3595,14 +3595,14 @@ template <typename D> void impl_IAudioGraph<D>::QuantumStarted(event_token token
     check_hresult(WINRT_SHIM(IAudioGraph)->remove_QuantumStarted(token));
 }
 
-template <typename D> event_token impl_IAudioGraph<D>::QuantumProcessed(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAudioGraph<D>::QuantumProcessed(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAudioGraph)->add_QuantumProcessed(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAudioGraph> impl_IAudioGraph<D>::QuantumProcessed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAudioGraph> impl_IAudioGraph<D>::QuantumProcessed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAudioGraph>(this, &ABI::Windows::Media::Audio::IAudioGraph::remove_QuantumProcessed, QuantumProcessed(handler));
 }
@@ -3947,14 +3947,14 @@ template <typename D> Windows::Storage::StorageFile impl_IAudioFileInputNode<D>:
     return value;
 }
 
-template <typename D> event_token impl_IAudioFileInputNode<D>::FileCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAudioFileInputNode<D>::FileCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAudioFileInputNode)->add_FileCompleted(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAudioFileInputNode> impl_IAudioFileInputNode<D>::FileCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAudioFileInputNode> impl_IAudioFileInputNode<D>::FileCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAudioFileInputNode>(this, &ABI::Windows::Media::Audio::IAudioFileInputNode::remove_FileCompleted, FileCompleted(handler));
 }

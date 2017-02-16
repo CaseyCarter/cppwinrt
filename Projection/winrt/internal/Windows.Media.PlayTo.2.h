@@ -11,7 +11,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
-template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::IInspectable> : impl_IKeyValuePair<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -36,7 +36,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
-template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::IInspectable> : impl_IMapView<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::Foundation::IInspectable> : impl_IMapView<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -46,7 +46,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_7a89b9c2_78d4_5866_88f1_4cdc0a0e75b8
 #define WINRT_GENERIC_7a89b9c2_78d4_5866_88f1_4cdc0a0e75b8
-template <> struct __declspec(uuid("7a89b9c2-78d4-5866-88f1-4cdc0a0e75b8")) __declspec(novtable) TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> {};
+template <> struct __declspec(uuid("7a89b9c2-78d4-5866-88f1-4cdc0a0e75b8")) __declspec(novtable) TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_1466d074_b7b4_5814_b2d7_847c5ae7d87d
@@ -106,12 +106,12 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
 #define WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
-template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
 #define WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
-template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -120,126 +120,126 @@ template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __de
 namespace Windows::Media::PlayTo {
 
 struct ICurrentTimeChangeRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentTimeChangeRequestedEventArgs>
 {
     ICurrentTimeChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMuteChangeRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMuteChangeRequestedEventArgs>
 {
     IMuteChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] IPlayToConnection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToConnection>
 {
     IPlayToConnection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")]] IPlayToConnectionErrorEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToConnectionErrorEventArgs>
 {
     IPlayToConnectionErrorEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToConnectionStateChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToConnectionStateChangedEventArgs>
 {
     IPlayToConnectionStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToConnectionTransferredEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToConnectionTransferredEventArgs>
 {
     IPlayToConnectionTransferredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] IPlayToManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToManager>
 {
     IPlayToManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] IPlayToManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToManagerStatics>
 {
     IPlayToManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayToReceiver :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToReceiver>
 {
     IPlayToReceiver(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] IPlayToSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToSource>
 {
     IPlayToSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToSourceDeferral may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceDeferral>
 {
     IPlayToSourceDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceRequest>
 {
     IPlayToSourceRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToSourceRequestedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceRequestedEventArgs>
 {
     IPlayToSourceRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceSelectedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceSelectedEventArgs>
 {
     IPlayToSourceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] IPlayToSourceWithPreferredSourceUri :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceWithPreferredSourceUri>
 {
     IPlayToSourceWithPreferredSourceUri(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlaybackRateChangeRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlaybackRateChangeRequestedEventArgs>
 {
     IPlaybackRateChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISourceChangeRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISourceChangeRequestedEventArgs>
 {
     ISourceChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVolumeChangeRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVolumeChangeRequestedEventArgs>
 {
     IVolumeChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}

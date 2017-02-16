@@ -11,7 +11,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_4d4aa646_767f_5645_af5c_546464d3ec09
 #define WINRT_GENERIC_4d4aa646_767f_5645_af5c_546464d3ec09
-template <> struct __declspec(uuid("4d4aa646-767f-5645-af5c-546464d3ec09")) __declspec(novtable) TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> {};
+template <> struct __declspec(uuid("4d4aa646-767f-5645-af5c-546464d3ec09")) __declspec(novtable) TypedEventHandler<Windows::Devices::Power::Battery, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Power::Battery, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_548cefbd_bc8a_5fa0_8df2_957440fc8bf4
@@ -35,21 +35,21 @@ template <> struct __declspec(uuid("97f82115-3822-507b-82e6-2777b336e98e")) __de
 namespace Windows::Devices::Power {
 
 struct IBattery :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBattery>
 {
     IBattery(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBatteryReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBatteryReport>
 {
     IBatteryReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBatteryStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBatteryStatics>
 {
     IBatteryStatics(std::nullptr_t = nullptr) noexcept {}

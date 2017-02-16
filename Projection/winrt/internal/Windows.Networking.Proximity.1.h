@@ -27,12 +27,12 @@ struct __declspec(uuid("efa9da69-f6e2-49c9-a49e-8e0fc58fb911")) __declspec(novta
     virtual HRESULT __stdcall abi_Invoke(Windows::Networking::Proximity::IProximityDevice * sender) = 0;
 };
 
-struct __declspec(uuid("eb6891ae-4f1e-4c66-bd0d-46924a942e08")) __declspec(novtable) IConnectionRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("eb6891ae-4f1e-4c66-bd0d-46924a942e08")) __declspec(novtable) IConnectionRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PeerInformation(Windows::Networking::Proximity::IPeerInformation ** value) = 0;
 };
 
-struct __declspec(uuid("914b3b61-f6e1-47c4-a14c-148a1903d0c6")) __declspec(novtable) IPeerFinderStatics : Windows::IInspectable
+struct __declspec(uuid("914b3b61-f6e1-47c4-a14c-148a1903d0c6")) __declspec(novtable) IPeerFinderStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllowBluetooth(bool * value) = 0;
     virtual HRESULT __stdcall put_AllowBluetooth(bool value) = 0;
@@ -47,15 +47,15 @@ struct __declspec(uuid("914b3b61-f6e1-47c4-a14c-148a1903d0c6")) __declspec(novta
     virtual HRESULT __stdcall abi_Start() = 0;
     virtual HRESULT __stdcall abi_StartWithMessage(hstring peerMessage) = 0;
     virtual HRESULT __stdcall abi_Stop() = 0;
-    virtual HRESULT __stdcall add_TriggeredConnectionStateChanged(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_TriggeredConnectionStateChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_TriggeredConnectionStateChanged(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_ConnectionRequested(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_ConnectionRequested(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_ConnectionRequested(event_token cookie) = 0;
     virtual HRESULT __stdcall abi_FindAllPeersAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Proximity::PeerInformation>> ** asyncOp) = 0;
     virtual HRESULT __stdcall abi_ConnectAsync(Windows::Networking::Proximity::IPeerInformation * peerInformation, Windows::Foundation::IAsyncOperation<Windows::Networking::Sockets::StreamSocket> ** asyncOp) = 0;
 };
 
-struct __declspec(uuid("d6e73c65-fdd0-4b0b-9312-866408935d82")) __declspec(novtable) IPeerFinderStatics2 : Windows::IInspectable
+struct __declspec(uuid("d6e73c65-fdd0-4b0b-9312-866408935d82")) __declspec(novtable) IPeerFinderStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Role(winrt::Windows::Networking::Proximity::PeerRole * value) = 0;
     virtual HRESULT __stdcall put_Role(winrt::Windows::Networking::Proximity::PeerRole value) = 0;
@@ -64,24 +64,24 @@ struct __declspec(uuid("d6e73c65-fdd0-4b0b-9312-866408935d82")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateWatcher(Windows::Networking::Proximity::IPeerWatcher ** watcher) = 0;
 };
 
-struct __declspec(uuid("20024f08-9fff-45f4-b6e9-408b2ebef373")) __declspec(novtable) IPeerInformation : Windows::IInspectable
+struct __declspec(uuid("20024f08-9fff-45f4-b6e9-408b2ebef373")) __declspec(novtable) IPeerInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("b20f612a-dbd0-40f8-95bd-2d4209c7836f")) __declspec(novtable) IPeerInformation3 : Windows::IInspectable
+struct __declspec(uuid("b20f612a-dbd0-40f8-95bd-2d4209c7836f")) __declspec(novtable) IPeerInformation3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_DiscoveryData(Windows::Storage::Streams::IBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("ecc7ccad-1b70-4e8b-92db-bbe781419308")) __declspec(novtable) IPeerInformationWithHostAndService : Windows::IInspectable
+struct __declspec(uuid("ecc7ccad-1b70-4e8b-92db-bbe781419308")) __declspec(novtable) IPeerInformationWithHostAndService : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HostName(Windows::Networking::IHostName ** value) = 0;
     virtual HRESULT __stdcall get_ServiceName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34")) __declspec(novtable) IPeerWatcher : Windows::IInspectable
+struct __declspec(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34")) __declspec(novtable) IPeerWatcher : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_Added(Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Added(event_token token) = 0;
@@ -89,16 +89,16 @@ struct __declspec(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34")) __declspec(novta
     virtual HRESULT __stdcall remove_Removed(event_token token) = 0;
     virtual HRESULT __stdcall add_Updated(Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Updated(event_token token) = 0;
-    virtual HRESULT __stdcall add_EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_EnumerationCompleted(event_token token) = 0;
-    virtual HRESULT __stdcall add_Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Stopped(event_token token) = 0;
     virtual HRESULT __stdcall get_Status(winrt::Windows::Networking::Proximity::PeerWatcherStatus * status) = 0;
     virtual HRESULT __stdcall abi_Start() = 0;
     virtual HRESULT __stdcall abi_Stop() = 0;
 };
 
-struct __declspec(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262")) __declspec(novtable) IProximityDevice : Windows::IInspectable
+struct __declspec(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262")) __declspec(novtable) IProximityDevice : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SubscribeForMessage(hstring messageType, Windows::Networking::Proximity::MessageReceivedHandler * messageReceivedHandler, int64_t * subscriptionId) = 0;
     virtual HRESULT __stdcall abi_PublishMessage(hstring messageType, hstring message, int64_t * messageId) = 0;
@@ -118,14 +118,14 @@ struct __declspec(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262")) __declspec(novta
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("914ba01d-f6e1-47c4-a14c-148a1903d0c6")) __declspec(novtable) IProximityDeviceStatics : Windows::IInspectable
+struct __declspec(uuid("914ba01d-f6e1-47c4-a14c-148a1903d0c6")) __declspec(novtable) IProximityDeviceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * selector) = 0;
     virtual HRESULT __stdcall abi_GetDefault(Windows::Networking::Proximity::IProximityDevice ** proximityDevice) = 0;
     virtual HRESULT __stdcall abi_FromId(hstring deviceId, Windows::Networking::Proximity::IProximityDevice ** proximityDevice) = 0;
 };
 
-struct __declspec(uuid("efab0782-f6e1-4675-a045-d8e320c24808")) __declspec(novtable) IProximityMessage : Windows::IInspectable
+struct __declspec(uuid("efab0782-f6e1-4675-a045-d8e320c24808")) __declspec(novtable) IProximityMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MessageType(hstring * value) = 0;
     virtual HRESULT __stdcall get_SubscriptionId(int64_t * value) = 0;
@@ -133,7 +133,7 @@ struct __declspec(uuid("efab0782-f6e1-4675-a045-d8e320c24808")) __declspec(novta
     virtual HRESULT __stdcall get_DataAsString(hstring * value) = 0;
 };
 
-struct __declspec(uuid("c6a780ad-f6e1-4d54-96e2-33f620bca88a")) __declspec(novtable) ITriggeredConnectionStateChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("c6a780ad-f6e1-4d54-96e2-33f620bca88a")) __declspec(novtable) ITriggeredConnectionStateChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_State(winrt::Windows::Networking::Proximity::TriggeredConnectState * value) = 0;
     virtual HRESULT __stdcall get_Id(uint32_t * value) = 0;
@@ -187,13 +187,13 @@ struct WINRT_EBO impl_IPeerFinderStatics
     void Start() const;
     void Start(hstring_view peerMessage) const;
     void Stop() const;
-    event_token TriggeredConnectionStateChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler) const;
+    event_token TriggeredConnectionStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler) const;
     using TriggeredConnectionStateChanged_revoker = event_revoker<IPeerFinderStatics>;
-    TriggeredConnectionStateChanged_revoker TriggeredConnectionStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler) const;
+    TriggeredConnectionStateChanged_revoker TriggeredConnectionStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler) const;
     void TriggeredConnectionStateChanged(event_token cookie) const;
-    event_token ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler) const;
+    event_token ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler) const;
     using ConnectionRequested_revoker = event_revoker<IPeerFinderStatics>;
-    ConnectionRequested_revoker ConnectionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler) const;
+    ConnectionRequested_revoker ConnectionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler) const;
     void ConnectionRequested(event_token cookie) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Proximity::PeerInformation>> FindAllPeersAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::Sockets::StreamSocket> ConnectAsync(const Windows::Networking::Proximity::PeerInformation & peerInformation) const;
@@ -244,13 +244,13 @@ struct WINRT_EBO impl_IPeerWatcher
     using Updated_revoker = event_revoker<IPeerWatcher>;
     Updated_revoker Updated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> & handler) const;
     void Updated(event_token token) const;
-    event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> & handler) const;
+    event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> & handler) const;
     using EnumerationCompleted_revoker = event_revoker<IPeerWatcher>;
-    EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> & handler) const;
+    EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> & handler) const;
     void EnumerationCompleted(event_token token) const;
-    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> & handler) const;
+    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> & handler) const;
     using Stopped_revoker = event_revoker<IPeerWatcher>;
-    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> & handler) const;
+    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> & handler) const;
     void Stopped(event_token token) const;
     Windows::Networking::Proximity::PeerWatcherStatus Status() const;
     void Start() const;

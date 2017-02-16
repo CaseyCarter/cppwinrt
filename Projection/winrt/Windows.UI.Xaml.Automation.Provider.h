@@ -4,9 +4,9 @@
 #pragma once
 
 #include "internal/Windows.UI.Xaml.Automation.3.h"
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.3.h"
 #include "internal/Windows.UI.Xaml.Automation.Text.3.h"
-#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Xaml.Automation.Peers.3.h"
 #include "internal/Windows.UI.Xaml.Automation.Provider.3.h"
 #include "Windows.UI.Xaml.Automation.h"
@@ -96,7 +96,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IAnnotationProvider> 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Automation::Provider::ICustomNavigationProvider> : produce_base<D, Windows::UI::Xaml::Automation::Provider::ICustomNavigationProvider>
 {
-    HRESULT __stdcall abi_NavigateCustom(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_NavigateCustom(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -437,12 +437,12 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IInvokeProvider> : pr
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider> : produce_base<D, Windows::UI::Xaml::Automation::Provider::IItemContainerProvider>
 {
-    HRESULT __stdcall abi_FindItemByProperty(impl::abi_arg_in<Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple> startAfter, impl::abi_arg_in<Windows::UI::Xaml::Automation::IAutomationProperty> automationProperty, impl::abi_arg_in<Windows::IInspectable> value, impl::abi_arg_out<Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple> returnValue) noexcept override
+    HRESULT __stdcall abi_FindItemByProperty(impl::abi_arg_in<Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple> startAfter, impl::abi_arg_in<Windows::UI::Xaml::Automation::IAutomationProperty> automationProperty, impl::abi_arg_in<Windows::Foundation::IInspectable> value, impl::abi_arg_out<Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_abi(this->shim().FindItemByProperty(*reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple *>(&startAfter), *reinterpret_cast<const Windows::UI::Xaml::Automation::AutomationProperty *>(&automationProperty), *reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *returnValue = detach_abi(this->shim().FindItemByProperty(*reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple *>(&startAfter), *reinterpret_cast<const Windows::UI::Xaml::Automation::AutomationProperty *>(&automationProperty), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -519,7 +519,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IMultipleViewProvider
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Automation::Provider::IObjectModelProvider> : produce_base<D, Windows::UI::Xaml::Automation::Provider::IObjectModelProvider>
 {
-    HRESULT __stdcall abi_GetUnderlyingObjectModel(impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetUnderlyingObjectModel(impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -1445,12 +1445,12 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
         }
     }
 
-    HRESULT __stdcall abi_FindAttribute(int32_t attributeId, impl::abi_arg_in<Windows::IInspectable> value, bool backward, impl::abi_arg_out<Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> returnValue) noexcept override
+    HRESULT __stdcall abi_FindAttribute(int32_t attributeId, impl::abi_arg_in<Windows::Foundation::IInspectable> value, bool backward, impl::abi_arg_out<Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_abi(this->shim().FindAttribute(attributeId, *reinterpret_cast<const Windows::IInspectable *>(&value), backward));
+            *returnValue = detach_abi(this->shim().FindAttribute(attributeId, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value), backward));
             return S_OK;
         }
         catch (...)
@@ -1475,7 +1475,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
         }
     }
 
-    HRESULT __stdcall abi_GetAttributeValue(int32_t attributeId, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetAttributeValue(int32_t attributeId, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -2243,7 +2243,7 @@ template <typename D> void impl_IInvokeProvider<D>::Invoke() const
     check_hresult(WINRT_SHIM(IInvokeProvider)->abi_Invoke());
 }
 
-template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_IItemContainerProvider<D>::FindItemByProperty(const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple & startAfter, const Windows::UI::Xaml::Automation::AutomationProperty & automationProperty, const Windows::IInspectable & value) const
+template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_IItemContainerProvider<D>::FindItemByProperty(const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple & startAfter, const Windows::UI::Xaml::Automation::AutomationProperty & automationProperty, const Windows::Foundation::IInspectable & value) const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple returnValue { nullptr };
     check_hresult(WINRT_SHIM(IItemContainerProvider)->abi_FindItemByProperty(get_abi(startAfter), get_abi(automationProperty), get_abi(value), put_abi(returnValue)));
@@ -2276,9 +2276,9 @@ template <typename D> void impl_IMultipleViewProvider<D>::SetCurrentView(int32_t
     check_hresult(WINRT_SHIM(IMultipleViewProvider)->abi_SetCurrentView(viewId));
 }
 
-template <typename D> Windows::IInspectable impl_IObjectModelProvider<D>::GetUnderlyingObjectModel() const
+template <typename D> Windows::Foundation::IInspectable impl_IObjectModelProvider<D>::GetUnderlyingObjectModel() const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IObjectModelProvider)->abi_GetUnderlyingObjectModel(put_abi(returnValue)));
     return returnValue;
 }
@@ -2599,7 +2599,7 @@ template <typename D> void impl_ITextRangeProvider<D>::ExpandToEnclosingUnit(Win
     check_hresult(WINRT_SHIM(ITextRangeProvider)->abi_ExpandToEnclosingUnit(unit));
 }
 
-template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextRangeProvider<D>::FindAttribute(int32_t attributeId, const Windows::IInspectable & value, bool backward) const
+template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextRangeProvider<D>::FindAttribute(int32_t attributeId, const Windows::Foundation::IInspectable & value, bool backward) const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
     check_hresult(WINRT_SHIM(ITextRangeProvider)->abi_FindAttribute(attributeId, get_abi(value), backward, put_abi(returnValue)));
@@ -2613,9 +2613,9 @@ template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvide
     return returnValue;
 }
 
-template <typename D> Windows::IInspectable impl_ITextRangeProvider<D>::GetAttributeValue(int32_t attributeId) const
+template <typename D> Windows::Foundation::IInspectable impl_ITextRangeProvider<D>::GetAttributeValue(int32_t attributeId) const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(ITextRangeProvider)->abi_GetAttributeValue(attributeId, put_abi(returnValue)));
     return returnValue;
 }
@@ -2915,9 +2915,9 @@ template <typename D> bool impl_IWindowProvider<D>::WaitForInputIdle(int32_t mil
     return returnValue;
 }
 
-template <typename D> Windows::IInspectable impl_ICustomNavigationProvider<D>::NavigateCustom(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction) const
+template <typename D> Windows::Foundation::IInspectable impl_ICustomNavigationProvider<D>::NavigateCustom(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction) const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(ICustomNavigationProvider)->abi_NavigateCustom(direction, put_abi(returnValue)));
     return returnValue;
 }

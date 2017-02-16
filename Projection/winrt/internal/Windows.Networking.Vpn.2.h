@@ -335,77 +335,77 @@ template <> struct __declspec(uuid("dac6dd72-a5d1-56d4-afc4-989f84dcb2b3")) __de
 namespace Windows::Networking::Vpn {
 
 struct IVpnAppId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnAppId>
 {
     IVpnAppId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnAppIdFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnAppIdFactory>
 {
     IVpnAppIdFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnChannel :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnChannel>
 {
     IVpnChannel(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnChannel2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnChannel2>
 {
     IVpnChannel2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnChannelActivityEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnChannelActivityEventArgs>
 {
     IVpnChannelActivityEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnChannelActivityStateChangedArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnChannelActivityStateChangedArgs>
 {
     IVpnChannelActivityStateChangedArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnChannelConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnChannelConfiguration>
 {
     IVpnChannelConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnChannelConfiguration2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnChannelConfiguration2>
 {
     IVpnChannelConfiguration2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnChannelStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnChannelStatics>
 {
     IVpnChannelStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnCredential :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCredential>
 {
     IVpnCredential(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnCustomCheckBox :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomCheckBox>,
     impl::require<IVpnCustomCheckBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
@@ -413,7 +413,7 @@ struct IVpnCustomCheckBox :
 };
 
 struct IVpnCustomComboBox :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomComboBox>,
     impl::require<IVpnCustomComboBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
@@ -421,7 +421,7 @@ struct IVpnCustomComboBox :
 };
 
 struct IVpnCustomEditBox :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomEditBox>,
     impl::require<IVpnCustomEditBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
@@ -429,7 +429,7 @@ struct IVpnCustomEditBox :
 };
 
 struct IVpnCustomErrorBox :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomErrorBox>,
     impl::require<IVpnCustomErrorBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
@@ -437,14 +437,14 @@ struct IVpnCustomErrorBox :
 };
 
 struct IVpnCustomPrompt :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomPrompt>
 {
     IVpnCustomPrompt(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnCustomPromptBooleanInput :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomPromptBooleanInput>,
     impl::require<IVpnCustomPromptBooleanInput, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
@@ -452,14 +452,14 @@ struct IVpnCustomPromptBooleanInput :
 };
 
 struct IVpnCustomPromptElement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomPromptElement>
 {
     IVpnCustomPromptElement(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnCustomPromptOptionSelector :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomPromptOptionSelector>,
     impl::require<IVpnCustomPromptOptionSelector, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
@@ -467,7 +467,7 @@ struct IVpnCustomPromptOptionSelector :
 };
 
 struct IVpnCustomPromptText :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomPromptText>,
     impl::require<IVpnCustomPromptText, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
@@ -475,7 +475,7 @@ struct IVpnCustomPromptText :
 };
 
 struct IVpnCustomPromptTextInput :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomPromptTextInput>,
     impl::require<IVpnCustomPromptTextInput, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
@@ -483,7 +483,7 @@ struct IVpnCustomPromptTextInput :
 };
 
 struct IVpnCustomTextBox :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnCustomTextBox>,
     impl::require<IVpnCustomTextBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
@@ -491,77 +491,77 @@ struct IVpnCustomTextBox :
 };
 
 struct IVpnDomainNameAssignment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnDomainNameAssignment>
 {
     IVpnDomainNameAssignment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnDomainNameInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnDomainNameInfo>
 {
     IVpnDomainNameInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnDomainNameInfo2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnDomainNameInfo2>
 {
     IVpnDomainNameInfo2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnDomainNameInfoFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnDomainNameInfoFactory>
 {
     IVpnDomainNameInfoFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnInterfaceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnInterfaceId>
 {
     IVpnInterfaceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnInterfaceIdFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnInterfaceIdFactory>
 {
     IVpnInterfaceIdFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnManagementAgent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnManagementAgent>
 {
     IVpnManagementAgent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnNamespaceAssignment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnNamespaceAssignment>
 {
     IVpnNamespaceAssignment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnNamespaceInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnNamespaceInfo>
 {
     IVpnNamespaceInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnNamespaceInfoFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnNamespaceInfoFactory>
 {
     IVpnNamespaceInfoFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnNativeProfile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnNativeProfile>,
     impl::require<IVpnNativeProfile, Windows::Networking::Vpn::IVpnProfile>
 {
@@ -569,35 +569,35 @@ struct IVpnNativeProfile :
 };
 
 struct IVpnNativeProfile2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnNativeProfile2>
 {
     IVpnNativeProfile2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnPacketBuffer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnPacketBuffer>
 {
     IVpnPacketBuffer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnPacketBuffer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnPacketBuffer2>
 {
     IVpnPacketBuffer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnPacketBufferFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnPacketBufferFactory>
 {
     IVpnPacketBufferFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnPacketBufferList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnPacketBufferList>,
     impl::require<IVpnPacketBufferList, Windows::Foundation::Collections::IIterable<Windows::Networking::Vpn::VpnPacketBuffer>>
 {
@@ -605,7 +605,7 @@ struct IVpnPacketBufferList :
 };
 
 struct IVpnPacketBufferList2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnPacketBufferList2>,
     impl::require<IVpnPacketBufferList2, Windows::Foundation::Collections::IIterable<Windows::Networking::Vpn::VpnPacketBuffer>>
 {
@@ -613,21 +613,21 @@ struct IVpnPacketBufferList2 :
 };
 
 struct IVpnPickedCredential :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnPickedCredential>
 {
     IVpnPickedCredential(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnPlugIn :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnPlugIn>
 {
     IVpnPlugIn(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnPlugInProfile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnPlugInProfile>,
     impl::require<IVpnPlugInProfile, Windows::Networking::Vpn::IVpnProfile>
 {
@@ -635,7 +635,7 @@ struct IVpnPlugInProfile :
 };
 
 struct IVpnPlugInProfile2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnPlugInProfile2>,
     impl::require<IVpnPlugInProfile2, Windows::Networking::Vpn::IVpnProfile>
 {
@@ -643,56 +643,56 @@ struct IVpnPlugInProfile2 :
 };
 
 struct IVpnProfile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnProfile>
 {
     IVpnProfile(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnRoute :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnRoute>
 {
     IVpnRoute(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnRouteAssignment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnRouteAssignment>
 {
     IVpnRouteAssignment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnRouteFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnRouteFactory>
 {
     IVpnRouteFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnSystemHealth :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnSystemHealth>
 {
     IVpnSystemHealth(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnTrafficFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnTrafficFilter>
 {
     IVpnTrafficFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnTrafficFilterAssignment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnTrafficFilterAssignment>
 {
     IVpnTrafficFilterAssignment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVpnTrafficFilterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVpnTrafficFilterFactory>
 {
     IVpnTrafficFilterFactory(std::nullptr_t = nullptr) noexcept {}

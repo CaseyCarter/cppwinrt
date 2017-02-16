@@ -180,56 +180,56 @@ template <> struct __declspec(uuid("721241c2-0b83-594a-9b61-ce7f1492c415")) __de
 namespace Windows::Management::Deployment {
 
 struct IDeploymentResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeploymentResult>
 {
     IDeploymentResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageManager>
 {
     IPackageManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageManager2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageManager2>
 {
     IPackageManager2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageManager3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageManager3>
 {
     IPackageManager3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageManager4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageManager4>
 {
     IPackageManager4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageUserInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageUserInformation>
 {
     IPackageUserInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageVolume :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageVolume>
 {
     IPackageVolume(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageVolume2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageVolume2>
 {
     IPackageVolume2(std::nullptr_t = nullptr) noexcept {}

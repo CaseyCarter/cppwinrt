@@ -10,14 +10,14 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Management::Core {
 
 struct IApplicationDataManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationDataManager>
 {
     IApplicationDataManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationDataManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationDataManagerStatics>
 {
     IApplicationDataManagerStatics(std::nullptr_t = nullptr) noexcept {}

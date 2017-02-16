@@ -46,28 +46,28 @@ template <> struct __declspec(uuid("e9e2ae03-42d6-5211-ab52-325e722e2611")) __de
 namespace Windows::Devices::Spi::Provider {
 
 struct IProviderSpiConnectionSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProviderSpiConnectionSettings>
 {
     IProviderSpiConnectionSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProviderSpiConnectionSettingsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProviderSpiConnectionSettingsFactory>
 {
     IProviderSpiConnectionSettingsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpiControllerProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiControllerProvider>
 {
     ISpiControllerProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpiDeviceProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiDeviceProvider>,
     impl::require<ISpiDeviceProvider, Windows::Foundation::IClosable>
 {
@@ -75,7 +75,7 @@ struct ISpiDeviceProvider :
 };
 
 struct ISpiProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpiProvider>
 {
     ISpiProvider(std::nullptr_t = nullptr) noexcept {}

@@ -55,49 +55,49 @@ template <> struct __declspec(uuid("4669befc-ae5c-52b1-8a97-5466ce61e94e")) __de
 namespace Windows::ApplicationModel::Search {
 
 struct ILocalContentSuggestionSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILocalContentSuggestionSettings>
 {
     ILocalContentSuggestionSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISearchPaneQueryLinguisticDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchPaneQueryLinguisticDetails>
 {
     ISearchPaneQueryLinguisticDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISearchQueryLinguisticDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchQueryLinguisticDetails>
 {
     ISearchQueryLinguisticDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISearchQueryLinguisticDetailsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchQueryLinguisticDetailsFactory>
 {
     ISearchQueryLinguisticDetailsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISearchSuggestionCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchSuggestionCollection>
 {
     ISearchSuggestionCollection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISearchSuggestionsRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchSuggestionsRequest>
 {
     ISearchSuggestionsRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISearchSuggestionsRequestDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchSuggestionsRequestDeferral>
 {
     ISearchSuggestionsRequestDeferral(std::nullptr_t = nullptr) noexcept {}

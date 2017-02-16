@@ -36,7 +36,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_ef53b467_c472_5b59_a827_38adc3a9d326
 #define WINRT_GENERIC_ef53b467_c472_5b59_a827_38adc3a9d326
-template <> struct __declspec(uuid("ef53b467-c472-5b59-a827-38adc3a9d326")) __declspec(novtable) TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> : impl_TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> {};
+template <> struct __declspec(uuid("ef53b467-c472-5b59-a827-38adc3a9d326")) __declspec(novtable) TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c7e08176_4134_50b7_bc73_729e9f9ad22a
@@ -81,7 +81,7 @@ template <> struct __declspec(uuid("a2d7059e-68ed-5260-8d8e-1dcf3d25d663")) __de
 
 #ifndef WINRT_GENERIC_112fb01d_260a_51c6_9198_5db3e6e9ef3d
 #define WINRT_GENERIC_112fb01d_260a_51c6_9198_5db3e6e9ef3d
-template <> struct __declspec(uuid("112fb01d-260a-51c6-9198-5db3e6e9ef3d")) __declspec(novtable) TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> : impl_TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> {};
+template <> struct __declspec(uuid("112fb01d-260a-51c6-9198-5db3e6e9ef3d")) __declspec(novtable) TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -105,126 +105,126 @@ template <> struct __declspec(uuid("38372bd2-d3fe-5ad2-9d39-d166b68e78e7")) __de
 namespace Windows::UI::Text::Core {
 
 struct ICoreTextCompositionCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextCompositionCompletedEventArgs>
 {
     ICoreTextCompositionCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextCompositionSegment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextCompositionSegment>
 {
     ICoreTextCompositionSegment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextCompositionStartedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextCompositionStartedEventArgs>
 {
     ICoreTextCompositionStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextEditContext :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextEditContext>
 {
     ICoreTextEditContext(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextEditContext2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextEditContext2>
 {
     ICoreTextEditContext2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextFormatUpdatingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextFormatUpdatingEventArgs>
 {
     ICoreTextFormatUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextLayoutBounds :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextLayoutBounds>
 {
     ICoreTextLayoutBounds(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextLayoutRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextLayoutRequest>
 {
     ICoreTextLayoutRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextLayoutRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextLayoutRequestedEventArgs>
 {
     ICoreTextLayoutRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextSelectionRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextSelectionRequest>
 {
     ICoreTextSelectionRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextSelectionRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextSelectionRequestedEventArgs>
 {
     ICoreTextSelectionRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextSelectionUpdatingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextSelectionUpdatingEventArgs>
 {
     ICoreTextSelectionUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextServicesManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextServicesManager>
 {
     ICoreTextServicesManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextServicesManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextServicesManagerStatics>
 {
     ICoreTextServicesManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextServicesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextServicesStatics>
 {
     ICoreTextServicesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextTextRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextTextRequest>
 {
     ICoreTextTextRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextTextRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextTextRequestedEventArgs>
 {
     ICoreTextTextRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTextTextUpdatingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTextTextUpdatingEventArgs>
 {
     ICoreTextTextUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}

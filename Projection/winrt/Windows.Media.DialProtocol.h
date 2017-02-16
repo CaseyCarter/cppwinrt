@@ -269,12 +269,12 @@ struct produce<D, Windows::Media::DialProtocol::IDialDevicePicker> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_DialDevicePickerDismissed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_DialDevicePickerDismissed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().DialDevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().DialDevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -654,14 +654,14 @@ template <typename D> void impl_IDialDevicePicker<D>::DisconnectButtonClicked(ev
     check_hresult(WINRT_SHIM(IDialDevicePicker)->remove_DisconnectButtonClicked(token));
 }
 
-template <typename D> event_token impl_IDialDevicePicker<D>::DialDevicePickerDismissed(const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDialDevicePicker<D>::DialDevicePickerDismissed(const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDialDevicePicker)->add_DialDevicePickerDismissed(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDialDevicePicker> impl_IDialDevicePicker<D>::DialDevicePickerDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDialDevicePicker> impl_IDialDevicePicker<D>::DialDevicePickerDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDialDevicePicker>(this, &ABI::Windows::Media::DialProtocol::IDialDevicePicker::remove_DialDevicePickerDismissed, DialDevicePickerDismissed(handler));
 }

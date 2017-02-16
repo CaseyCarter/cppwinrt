@@ -61,7 +61,7 @@ enum class PropertyType
 
 namespace ABI::Windows::Foundation {
     
-struct __declspec(uuid("4bd682dd-7554-40e9-9a9b-82654ede7e62")) __declspec(novtable) IPropertyValue : Windows::IInspectable
+struct __declspec(uuid("4bd682dd-7554-40e9-9a9b-82654ede7e62")) __declspec(novtable) IPropertyValue : IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::Foundation::PropertyType * value) = 0;
     virtual HRESULT __stdcall get_IsNumericScalar(bool * value) = 0;
@@ -95,7 +95,7 @@ struct __declspec(uuid("4bd682dd-7554-40e9-9a9b-82654ede7e62")) __declspec(novta
     virtual HRESULT __stdcall abi_GetChar16Array(uint32_t * __valueSize, wchar_t ** value) = 0;
     virtual HRESULT __stdcall abi_GetBooleanArray(uint32_t * __valueSize, bool ** value) = 0;
     virtual HRESULT __stdcall abi_GetStringArray(uint32_t * __valueSize, hstring ** value) = 0;
-    virtual HRESULT __stdcall abi_GetInspectableArray(uint32_t * __valueSize, Windows::IInspectable *** value) = 0;
+    virtual HRESULT __stdcall abi_GetInspectableArray(uint32_t * __valueSize, IInspectable *** value) = 0;
     virtual HRESULT __stdcall abi_GetGuidArray(uint32_t * __valueSize, GUID ** value) = 0;
     virtual HRESULT __stdcall abi_GetDateTimeArray(uint32_t * __valueSize, Windows::Foundation::DateTime ** value) = 0;
     virtual HRESULT __stdcall abi_GetTimeSpanArray(uint32_t * __valueSize, Windows::Foundation::TimeSpan ** value) = 0;
@@ -104,47 +104,47 @@ struct __declspec(uuid("4bd682dd-7554-40e9-9a9b-82654ede7e62")) __declspec(novta
     virtual HRESULT __stdcall abi_GetRectArray(uint32_t * __valueSize, Windows::Foundation::Rect ** value) = 0;
 };
 
-struct __declspec(uuid("629bdbc8-d932-4ff4-96b9-8d96c5c1e858")) __declspec(novtable) IPropertyValueStatics : Windows::IInspectable
+struct __declspec(uuid("629bdbc8-d932-4ff4-96b9-8d96c5c1e858")) __declspec(novtable) IPropertyValueStatics : IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateEmpty(Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt8(uint8_t value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt16(int16_t value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt16(uint16_t value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt32(int32_t value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt32(uint32_t value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt64(int64_t value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt64(uint64_t value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateSingle(float value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateDouble(double value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateChar16(wchar_t value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateBoolean(bool value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateString(hstring value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInspectable(Windows::IInspectable * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateGuid(GUID value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateDateTime(Windows::Foundation::DateTime value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateTimeSpan(Windows::Foundation::TimeSpan value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreatePoint(Windows::Foundation::Point value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateSize(Windows::Foundation::Size value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateRect(Windows::Foundation::Rect value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt8Array(uint32_t __valueSize, uint8_t * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt16Array(uint32_t __valueSize, int16_t * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt16Array(uint32_t __valueSize, uint16_t * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt32Array(uint32_t __valueSize, int32_t * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt32Array(uint32_t __valueSize, uint32_t * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt64Array(uint32_t __valueSize, int64_t * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt64Array(uint32_t __valueSize, uint64_t * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateSingleArray(uint32_t __valueSize, float * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateDoubleArray(uint32_t __valueSize, double * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateChar16Array(uint32_t __valueSize, wchar_t * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateBooleanArray(uint32_t __valueSize, bool * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateStringArray(uint32_t __valueSize, hstring * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInspectableArray(uint32_t __valueSize, Windows::IInspectable ** value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateGuidArray(uint32_t __valueSize, GUID * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateDateTimeArray(uint32_t __valueSize, Windows::Foundation::DateTime * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateTimeSpanArray(uint32_t __valueSize, Windows::Foundation::TimeSpan * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreatePointArray(uint32_t __valueSize, Windows::Foundation::Point * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateSizeArray(uint32_t __valueSize, Windows::Foundation::Size * value, Windows::IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateRectArray(uint32_t __valueSize, Windows::Foundation::Rect * value, Windows::IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateEmpty(IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateUInt8(uint8_t value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateInt16(int16_t value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateUInt16(uint16_t value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateInt32(int32_t value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateUInt32(uint32_t value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateInt64(int64_t value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateUInt64(uint64_t value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateSingle(float value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateDouble(double value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateChar16(wchar_t value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateBoolean(bool value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateString(hstring value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateInspectable(IInspectable * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateGuid(GUID value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateDateTime(Windows::Foundation::DateTime value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateTimeSpan(Windows::Foundation::TimeSpan value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreatePoint(Windows::Foundation::Point value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateSize(Windows::Foundation::Size value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateRect(Windows::Foundation::Rect value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateUInt8Array(uint32_t __valueSize, uint8_t * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateInt16Array(uint32_t __valueSize, int16_t * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateUInt16Array(uint32_t __valueSize, uint16_t * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateInt32Array(uint32_t __valueSize, int32_t * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateUInt32Array(uint32_t __valueSize, uint32_t * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateInt64Array(uint32_t __valueSize, int64_t * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateUInt64Array(uint32_t __valueSize, uint64_t * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateSingleArray(uint32_t __valueSize, float * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateDoubleArray(uint32_t __valueSize, double * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateChar16Array(uint32_t __valueSize, wchar_t * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateBooleanArray(uint32_t __valueSize, bool * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateStringArray(uint32_t __valueSize, hstring * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateInspectableArray(uint32_t __valueSize, IInspectable ** value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateGuidArray(uint32_t __valueSize, GUID * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateDateTimeArray(uint32_t __valueSize, Windows::Foundation::DateTime * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateTimeSpanArray(uint32_t __valueSize, Windows::Foundation::TimeSpan * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreatePointArray(uint32_t __valueSize, Windows::Foundation::Point * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateSizeArray(uint32_t __valueSize, Windows::Foundation::Size * value, IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_CreateRectArray(uint32_t __valueSize, Windows::Foundation::Rect * value, IInspectable ** propertyValue) = 0;
 };
     
 }
@@ -186,7 +186,7 @@ struct WINRT_EBO impl_IPropertyValue
     void GetChar16Array(com_array<wchar_t> & value) const;
     void GetBooleanArray(com_array<bool> & value) const;
     void GetStringArray(com_array<hstring> & value) const;
-    void GetInspectableArray(com_array<Windows::IInspectable> & value) const;
+    void GetInspectableArray(com_array<IInspectable> & value) const;
     void GetGuidArray(com_array<GUID> & value) const;
     void GetDateTimeArray(com_array<Windows::Foundation::DateTime> & value) const;
     void GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> & value) const;
@@ -198,45 +198,45 @@ struct WINRT_EBO impl_IPropertyValue
 template <typename D>
 struct WINRT_EBO impl_IPropertyValueStatics
 {
-    Windows::IInspectable CreateEmpty() const;
-    Windows::IInspectable CreateUInt8(uint8_t value) const;
-    Windows::IInspectable CreateInt16(int16_t value) const;
-    Windows::IInspectable CreateUInt16(uint16_t value) const;
-    Windows::IInspectable CreateInt32(int32_t value) const;
-    Windows::IInspectable CreateUInt32(uint32_t value) const;
-    Windows::IInspectable CreateInt64(int64_t value) const;
-    Windows::IInspectable CreateUInt64(uint64_t value) const;
-    Windows::IInspectable CreateSingle(float value) const;
-    Windows::IInspectable CreateDouble(double value) const;
-    Windows::IInspectable CreateChar16(wchar_t value) const;
-    Windows::IInspectable CreateBoolean(bool value) const;
-    Windows::IInspectable CreateString(hstring_view value) const;
-    Windows::IInspectable CreateInspectable(const Windows::IInspectable & value) const;
-    Windows::IInspectable CreateGuid(GUID value) const;
-    Windows::IInspectable CreateDateTime(const Windows::Foundation::DateTime & value) const;
-    Windows::IInspectable CreateTimeSpan(const Windows::Foundation::TimeSpan & value) const;
-    Windows::IInspectable CreatePoint(const Windows::Foundation::Point & value) const;
-    Windows::IInspectable CreateSize(const Windows::Foundation::Size & value) const;
-    Windows::IInspectable CreateRect(const Windows::Foundation::Rect & value) const;
-    Windows::IInspectable CreateUInt8Array(array_view<const uint8_t> value) const;
-    Windows::IInspectable CreateInt16Array(array_view<const int16_t> value) const;
-    Windows::IInspectable CreateUInt16Array(array_view<const uint16_t> value) const;
-    Windows::IInspectable CreateInt32Array(array_view<const int32_t> value) const;
-    Windows::IInspectable CreateUInt32Array(array_view<const uint32_t> value) const;
-    Windows::IInspectable CreateInt64Array(array_view<const int64_t> value) const;
-    Windows::IInspectable CreateUInt64Array(array_view<const uint64_t> value) const;
-    Windows::IInspectable CreateSingleArray(array_view<const float> value) const;
-    Windows::IInspectable CreateDoubleArray(array_view<const double> value) const;
-    Windows::IInspectable CreateChar16Array(array_view<const wchar_t> value) const;
-    Windows::IInspectable CreateBooleanArray(array_view<const bool> value) const;
-    Windows::IInspectable CreateStringArray(array_view<const hstring> value) const;
-    Windows::IInspectable CreateInspectableArray(array_view<const Windows::IInspectable> value) const;
-    Windows::IInspectable CreateGuidArray(array_view<const GUID> value) const;
-    Windows::IInspectable CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value) const;
-    Windows::IInspectable CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value) const;
-    Windows::IInspectable CreatePointArray(array_view<const Windows::Foundation::Point> value) const;
-    Windows::IInspectable CreateSizeArray(array_view<const Windows::Foundation::Size> value) const;
-    Windows::IInspectable CreateRectArray(array_view<const Windows::Foundation::Rect> value) const;
+    IInspectable CreateEmpty() const;
+    IInspectable CreateUInt8(uint8_t value) const;
+    IInspectable CreateInt16(int16_t value) const;
+    IInspectable CreateUInt16(uint16_t value) const;
+    IInspectable CreateInt32(int32_t value) const;
+    IInspectable CreateUInt32(uint32_t value) const;
+    IInspectable CreateInt64(int64_t value) const;
+    IInspectable CreateUInt64(uint64_t value) const;
+    IInspectable CreateSingle(float value) const;
+    IInspectable CreateDouble(double value) const;
+    IInspectable CreateChar16(wchar_t value) const;
+    IInspectable CreateBoolean(bool value) const;
+    IInspectable CreateString(hstring_view value) const;
+    IInspectable CreateInspectable(const IInspectable & value) const;
+    IInspectable CreateGuid(GUID value) const;
+    IInspectable CreateDateTime(const Windows::Foundation::DateTime & value) const;
+    IInspectable CreateTimeSpan(const Windows::Foundation::TimeSpan & value) const;
+    IInspectable CreatePoint(const Windows::Foundation::Point & value) const;
+    IInspectable CreateSize(const Windows::Foundation::Size & value) const;
+    IInspectable CreateRect(const Windows::Foundation::Rect & value) const;
+    IInspectable CreateUInt8Array(array_view<const uint8_t> value) const;
+    IInspectable CreateInt16Array(array_view<const int16_t> value) const;
+    IInspectable CreateUInt16Array(array_view<const uint16_t> value) const;
+    IInspectable CreateInt32Array(array_view<const int32_t> value) const;
+    IInspectable CreateUInt32Array(array_view<const uint32_t> value) const;
+    IInspectable CreateInt64Array(array_view<const int64_t> value) const;
+    IInspectable CreateUInt64Array(array_view<const uint64_t> value) const;
+    IInspectable CreateSingleArray(array_view<const float> value) const;
+    IInspectable CreateDoubleArray(array_view<const double> value) const;
+    IInspectable CreateChar16Array(array_view<const wchar_t> value) const;
+    IInspectable CreateBooleanArray(array_view<const bool> value) const;
+    IInspectable CreateStringArray(array_view<const hstring> value) const;
+    IInspectable CreateInspectableArray(array_view<const IInspectable> value) const;
+    IInspectable CreateGuidArray(array_view<const GUID> value) const;
+    IInspectable CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value) const;
+    IInspectable CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value) const;
+    IInspectable CreatePointArray(array_view<const Windows::Foundation::Point> value) const;
+    IInspectable CreateSizeArray(array_view<const Windows::Foundation::Size> value) const;
+    IInspectable CreateRectArray(array_view<const Windows::Foundation::Rect> value) const;
 };
 
 }
@@ -265,14 +265,14 @@ template <> struct traits<Windows::Foundation::PropertyValue>
 namespace Windows::Foundation {
 
 struct IPropertyValue :
-    Windows::IInspectable,
+    IInspectable,
     impl::consume<IPropertyValue>
 {
     IPropertyValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPropertyValueStatics :
-    Windows::IInspectable,
+    IInspectable,
     impl::consume<IPropertyValueStatics>
 {
     IPropertyValueStatics(std::nullptr_t = nullptr) noexcept {}
@@ -281,45 +281,45 @@ struct IPropertyValueStatics :
 struct PropertyValue
 {
     PropertyValue() = delete;
-    static Windows::IInspectable CreateEmpty();
-    static Windows::IInspectable CreateUInt8(uint8_t value);
-    static Windows::IInspectable CreateInt16(int16_t value);
-    static Windows::IInspectable CreateUInt16(uint16_t value);
-    static Windows::IInspectable CreateInt32(int32_t value);
-    static Windows::IInspectable CreateUInt32(uint32_t value);
-    static Windows::IInspectable CreateInt64(int64_t value);
-    static Windows::IInspectable CreateUInt64(uint64_t value);
-    static Windows::IInspectable CreateSingle(float value);
-    static Windows::IInspectable CreateDouble(double value);
-    static Windows::IInspectable CreateChar16(wchar_t value);
-    static Windows::IInspectable CreateBoolean(bool value);
-    static Windows::IInspectable CreateString(hstring_view value);
-    static Windows::IInspectable CreateInspectable(const Windows::IInspectable & value);
-    static Windows::IInspectable CreateGuid(GUID value);
-    static Windows::IInspectable CreateDateTime(const Windows::Foundation::DateTime & value);
-    static Windows::IInspectable CreateTimeSpan(const Windows::Foundation::TimeSpan & value);
-    static Windows::IInspectable CreatePoint(const Windows::Foundation::Point & value);
-    static Windows::IInspectable CreateSize(const Windows::Foundation::Size & value);
-    static Windows::IInspectable CreateRect(const Windows::Foundation::Rect & value);
-    static Windows::IInspectable CreateUInt8Array(array_view<const uint8_t> value);
-    static Windows::IInspectable CreateInt16Array(array_view<const int16_t> value);
-    static Windows::IInspectable CreateUInt16Array(array_view<const uint16_t> value);
-    static Windows::IInspectable CreateInt32Array(array_view<const int32_t> value);
-    static Windows::IInspectable CreateUInt32Array(array_view<const uint32_t> value);
-    static Windows::IInspectable CreateInt64Array(array_view<const int64_t> value);
-    static Windows::IInspectable CreateUInt64Array(array_view<const uint64_t> value);
-    static Windows::IInspectable CreateSingleArray(array_view<const float> value);
-    static Windows::IInspectable CreateDoubleArray(array_view<const double> value);
-    static Windows::IInspectable CreateChar16Array(array_view<const wchar_t> value);
-    static Windows::IInspectable CreateBooleanArray(array_view<const bool> value);
-    static Windows::IInspectable CreateStringArray(array_view<const hstring> value);
-    static Windows::IInspectable CreateInspectableArray(array_view<const Windows::IInspectable> value);
-    static Windows::IInspectable CreateGuidArray(array_view<const GUID> value);
-    static Windows::IInspectable CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value);
-    static Windows::IInspectable CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value);
-    static Windows::IInspectable CreatePointArray(array_view<const Windows::Foundation::Point> value);
-    static Windows::IInspectable CreateSizeArray(array_view<const Windows::Foundation::Size> value);
-    static Windows::IInspectable CreateRectArray(array_view<const Windows::Foundation::Rect> value);
+    static IInspectable CreateEmpty();
+    static IInspectable CreateUInt8(uint8_t value);
+    static IInspectable CreateInt16(int16_t value);
+    static IInspectable CreateUInt16(uint16_t value);
+    static IInspectable CreateInt32(int32_t value);
+    static IInspectable CreateUInt32(uint32_t value);
+    static IInspectable CreateInt64(int64_t value);
+    static IInspectable CreateUInt64(uint64_t value);
+    static IInspectable CreateSingle(float value);
+    static IInspectable CreateDouble(double value);
+    static IInspectable CreateChar16(wchar_t value);
+    static IInspectable CreateBoolean(bool value);
+    static IInspectable CreateString(hstring_view value);
+    static IInspectable CreateInspectable(const IInspectable & value);
+    static IInspectable CreateGuid(GUID value);
+    static IInspectable CreateDateTime(const Windows::Foundation::DateTime & value);
+    static IInspectable CreateTimeSpan(const Windows::Foundation::TimeSpan & value);
+    static IInspectable CreatePoint(const Windows::Foundation::Point & value);
+    static IInspectable CreateSize(const Windows::Foundation::Size & value);
+    static IInspectable CreateRect(const Windows::Foundation::Rect & value);
+    static IInspectable CreateUInt8Array(array_view<const uint8_t> value);
+    static IInspectable CreateInt16Array(array_view<const int16_t> value);
+    static IInspectable CreateUInt16Array(array_view<const uint16_t> value);
+    static IInspectable CreateInt32Array(array_view<const int32_t> value);
+    static IInspectable CreateUInt32Array(array_view<const uint32_t> value);
+    static IInspectable CreateInt64Array(array_view<const int64_t> value);
+    static IInspectable CreateUInt64Array(array_view<const uint64_t> value);
+    static IInspectable CreateSingleArray(array_view<const float> value);
+    static IInspectable CreateDoubleArray(array_view<const double> value);
+    static IInspectable CreateChar16Array(array_view<const wchar_t> value);
+    static IInspectable CreateBooleanArray(array_view<const bool> value);
+    static IInspectable CreateStringArray(array_view<const hstring> value);
+    static IInspectable CreateInspectableArray(array_view<const IInspectable> value);
+    static IInspectable CreateGuidArray(array_view<const GUID> value);
+    static IInspectable CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value);
+    static IInspectable CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value);
+    static IInspectable CreatePointArray(array_view<const Windows::Foundation::Point> value);
+    static IInspectable CreateSizeArray(array_view<const Windows::Foundation::Size> value);
+    static IInspectable CreateRectArray(array_view<const Windows::Foundation::Rect> value);
 };
 
 }
@@ -802,12 +802,12 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
         }
     }
 
-    HRESULT __stdcall abi_GetInspectableArray(uint32_t * __valueSize, abi_arg_out<Windows::IInspectable> * value) noexcept override
+    HRESULT __stdcall abi_GetInspectableArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::IInspectable> * value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().GetInspectableArray(detach_abi<Windows::IInspectable>(__valueSize, value));
+            this->shim().GetInspectableArray(detach_abi<Windows::Foundation::IInspectable>(__valueSize, value));
             return S_OK;
         }
         catch (...)
@@ -918,7 +918,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
 template <typename D>
 struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, Windows::Foundation::IPropertyValueStatics>
 {
-    HRESULT __stdcall abi_CreateEmpty(abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateEmpty(abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -933,7 +933,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateUInt8(uint8_t value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateUInt8(uint8_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -948,7 +948,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateInt16(int16_t value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateInt16(int16_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -963,7 +963,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateUInt16(uint16_t value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateUInt16(uint16_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -978,7 +978,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateInt32(int32_t value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateInt32(int32_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -993,7 +993,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateUInt32(uint32_t value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateUInt32(uint32_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1008,7 +1008,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateInt64(int64_t value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateInt64(int64_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1023,7 +1023,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateUInt64(uint64_t value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateUInt64(uint64_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1038,7 +1038,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateSingle(float value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateSingle(float value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1053,7 +1053,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateDouble(double value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateDouble(double value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1068,7 +1068,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateChar16(wchar_t value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateChar16(wchar_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1083,7 +1083,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateBoolean(bool value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateBoolean(bool value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1098,7 +1098,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateString(abi_arg_in<hstring> value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateString(abi_arg_in<hstring> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1113,12 +1113,12 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateInspectable(abi_arg_in<Windows::IInspectable> value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateInspectable(abi_arg_in<Windows::Foundation::IInspectable> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInspectable(*reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *propertyValue = detach_abi(this->shim().CreateInspectable(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1128,7 +1128,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateGuid(GUID value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateGuid(GUID value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1143,7 +1143,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateDateTime(abi_arg_in<Windows::Foundation::DateTime> value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateDateTime(abi_arg_in<Windows::Foundation::DateTime> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1158,7 +1158,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateTimeSpan(abi_arg_in<Windows::Foundation::TimeSpan> value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateTimeSpan(abi_arg_in<Windows::Foundation::TimeSpan> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1173,7 +1173,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreatePoint(abi_arg_in<Windows::Foundation::Point> value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreatePoint(abi_arg_in<Windows::Foundation::Point> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1188,7 +1188,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateSize(abi_arg_in<Windows::Foundation::Size> value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateSize(abi_arg_in<Windows::Foundation::Size> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1203,7 +1203,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateRect(abi_arg_in<Windows::Foundation::Rect> value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateRect(abi_arg_in<Windows::Foundation::Rect> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1218,7 +1218,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateUInt8Array(uint32_t __valueSize, abi_arg_in<uint8_t> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateUInt8Array(uint32_t __valueSize, abi_arg_in<uint8_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1233,7 +1233,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateInt16Array(uint32_t __valueSize, abi_arg_in<int16_t> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateInt16Array(uint32_t __valueSize, abi_arg_in<int16_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1248,7 +1248,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateUInt16Array(uint32_t __valueSize, abi_arg_in<uint16_t> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateUInt16Array(uint32_t __valueSize, abi_arg_in<uint16_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1263,7 +1263,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateInt32Array(uint32_t __valueSize, abi_arg_in<int32_t> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateInt32Array(uint32_t __valueSize, abi_arg_in<int32_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1278,7 +1278,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateUInt32Array(uint32_t __valueSize, abi_arg_in<uint32_t> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateUInt32Array(uint32_t __valueSize, abi_arg_in<uint32_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1293,7 +1293,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateInt64Array(uint32_t __valueSize, abi_arg_in<int64_t> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateInt64Array(uint32_t __valueSize, abi_arg_in<int64_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1308,7 +1308,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateUInt64Array(uint32_t __valueSize, abi_arg_in<uint64_t> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateUInt64Array(uint32_t __valueSize, abi_arg_in<uint64_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1323,7 +1323,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateSingleArray(uint32_t __valueSize, abi_arg_in<float> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateSingleArray(uint32_t __valueSize, abi_arg_in<float> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1338,7 +1338,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateDoubleArray(uint32_t __valueSize, abi_arg_in<double> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateDoubleArray(uint32_t __valueSize, abi_arg_in<double> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1353,7 +1353,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateChar16Array(uint32_t __valueSize, abi_arg_in<wchar_t> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateChar16Array(uint32_t __valueSize, abi_arg_in<wchar_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1368,7 +1368,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateBooleanArray(uint32_t __valueSize, abi_arg_in<bool> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateBooleanArray(uint32_t __valueSize, abi_arg_in<bool> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1383,7 +1383,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateStringArray(uint32_t __valueSize, abi_arg_in<hstring> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateStringArray(uint32_t __valueSize, abi_arg_in<hstring> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1399,12 +1399,12 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateInspectableArray(uint32_t __valueSize, abi_arg_in<Windows::IInspectable> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateInspectableArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::IInspectable> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInspectableArray(*reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *propertyValue = detach_abi(this->shim().CreateInspectableArray(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -1415,7 +1415,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateGuidArray(uint32_t __valueSize, abi_arg_in<GUID> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateGuidArray(uint32_t __valueSize, abi_arg_in<GUID> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1430,7 +1430,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateDateTimeArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::DateTime> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateDateTimeArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::DateTime> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1445,7 +1445,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateTimeSpanArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::TimeSpan> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateTimeSpanArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::TimeSpan> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1460,7 +1460,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreatePointArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Point> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreatePointArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Point> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1475,7 +1475,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateSizeArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Size> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateSizeArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Size> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1490,7 +1490,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall abi_CreateRectArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Rect> * value, abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_CreateRectArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Rect> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1710,7 +1710,7 @@ template <typename D> void impl_IPropertyValue<D>::GetStringArray(com_array<hstr
     check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetStringArray(impl::put_size_abi(value), put_abi(value)));
 }
 
-template <typename D> void impl_IPropertyValue<D>::GetInspectableArray(com_array<Windows::IInspectable> & value) const
+template <typename D> void impl_IPropertyValue<D>::GetInspectableArray(com_array<Windows::Foundation::IInspectable> & value) const
 {
     check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInspectableArray(impl::put_size_abi(value), put_abi(value)));
 }
@@ -1745,470 +1745,470 @@ template <typename D> void impl_IPropertyValue<D>::GetRectArray(com_array<Window
     check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetRectArray(impl::put_size_abi(value), put_abi(value)));
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateEmpty() const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateEmpty() const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateEmpty(put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8(uint8_t value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8(uint8_t value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt8(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt16(int16_t value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt16(int16_t value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt16(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16(uint16_t value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16(uint16_t value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt16(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt32(int32_t value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt32(int32_t value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt32(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32(uint32_t value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32(uint32_t value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt32(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt64(int64_t value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt64(int64_t value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt64(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64(uint64_t value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64(uint64_t value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt64(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateSingle(float value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSingle(float value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSingle(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateDouble(double value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDouble(double value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDouble(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateChar16(wchar_t value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateChar16(wchar_t value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateChar16(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateBoolean(bool value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateBoolean(bool value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateBoolean(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateString(hstring_view value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateString(hstring_view value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateString(get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInspectable(const Windows::IInspectable & value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInspectable(const Windows::Foundation::IInspectable & value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInspectable(get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateGuid(GUID value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateGuid(GUID value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateGuid(value, put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateDateTime(const Windows::Foundation::DateTime & value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDateTime(const Windows::Foundation::DateTime & value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDateTime(get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpan(const Windows::Foundation::TimeSpan & value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpan(const Windows::Foundation::TimeSpan & value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateTimeSpan(get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreatePoint(const Windows::Foundation::Point & value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreatePoint(const Windows::Foundation::Point & value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreatePoint(get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateSize(const Windows::Foundation::Size & value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSize(const Windows::Foundation::Size & value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSize(get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateRect(const Windows::Foundation::Rect & value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateRect(const Windows::Foundation::Rect & value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateRect(get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8Array(array_view<const uint8_t> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8Array(array_view<const uint8_t> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt8Array(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt16Array(array_view<const int16_t> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt16Array(array_view<const int16_t> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt16Array(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16Array(array_view<const uint16_t> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16Array(array_view<const uint16_t> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt16Array(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt32Array(array_view<const int32_t> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt32Array(array_view<const int32_t> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt32Array(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32Array(array_view<const uint32_t> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32Array(array_view<const uint32_t> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt32Array(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt64Array(array_view<const int64_t> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt64Array(array_view<const int64_t> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt64Array(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64Array(array_view<const uint64_t> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64Array(array_view<const uint64_t> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt64Array(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateSingleArray(array_view<const float> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSingleArray(array_view<const float> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSingleArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateDoubleArray(array_view<const double> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDoubleArray(array_view<const double> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDoubleArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateChar16Array(array_view<const wchar_t> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateChar16Array(array_view<const wchar_t> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateChar16Array(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateBooleanArray(array_view<const bool> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateBooleanArray(array_view<const bool> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateBooleanArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateStringArray(array_view<const hstring> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateStringArray(array_view<const hstring> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateStringArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInspectableArray(array_view<const Windows::IInspectable> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInspectableArray(array_view<const Windows::Foundation::IInspectable> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInspectableArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateGuidArray(array_view<const GUID> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateGuidArray(array_view<const GUID> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateGuidArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDateTimeArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateTimeSpanArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreatePointArray(array_view<const Windows::Foundation::Point> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreatePointArray(array_view<const Windows::Foundation::Point> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreatePointArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateSizeArray(array_view<const Windows::Foundation::Size> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSizeArray(array_view<const Windows::Foundation::Size> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSizeArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateRectArray(array_view<const Windows::Foundation::Rect> value) const
+template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateRectArray(array_view<const Windows::Foundation::Rect> value) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateRectArray(value.size(), get_abi(value), put_abi(propertyValue)));
     return propertyValue;
 }
 
-inline Windows::IInspectable PropertyValue::CreateEmpty()
+inline Windows::Foundation::IInspectable PropertyValue::CreateEmpty()
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateEmpty();
 }
 
-inline Windows::IInspectable PropertyValue::CreateUInt8(uint8_t value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateUInt8(uint8_t value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt8(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateInt16(int16_t value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateInt16(int16_t value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt16(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateUInt16(uint16_t value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateUInt16(uint16_t value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt16(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateInt32(int32_t value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateInt32(int32_t value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt32(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateUInt32(uint32_t value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateUInt32(uint32_t value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt32(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateInt64(int64_t value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateInt64(int64_t value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt64(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateUInt64(uint64_t value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateUInt64(uint64_t value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt64(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateSingle(float value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateSingle(float value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSingle(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateDouble(double value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateDouble(double value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDouble(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateChar16(wchar_t value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateChar16(wchar_t value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateChar16(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateBoolean(bool value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateBoolean(bool value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateBoolean(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateString(hstring_view value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateString(hstring_view value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateString(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateInspectable(const Windows::IInspectable & value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateInspectable(const Windows::Foundation::IInspectable & value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInspectable(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateGuid(GUID value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateGuid(GUID value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateGuid(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateDateTime(const Windows::Foundation::DateTime & value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateDateTime(const Windows::Foundation::DateTime & value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDateTime(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateTimeSpan(const Windows::Foundation::TimeSpan & value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateTimeSpan(const Windows::Foundation::TimeSpan & value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateTimeSpan(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreatePoint(const Windows::Foundation::Point & value)
+inline Windows::Foundation::IInspectable PropertyValue::CreatePoint(const Windows::Foundation::Point & value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreatePoint(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateSize(const Windows::Foundation::Size & value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateSize(const Windows::Foundation::Size & value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSize(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateRect(const Windows::Foundation::Rect & value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateRect(const Windows::Foundation::Rect & value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateRect(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateUInt8Array(array_view<const uint8_t> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateUInt8Array(array_view<const uint8_t> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt8Array(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateInt16Array(array_view<const int16_t> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateInt16Array(array_view<const int16_t> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt16Array(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateUInt16Array(array_view<const uint16_t> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateUInt16Array(array_view<const uint16_t> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt16Array(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateInt32Array(array_view<const int32_t> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateInt32Array(array_view<const int32_t> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt32Array(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateUInt32Array(array_view<const uint32_t> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateUInt32Array(array_view<const uint32_t> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt32Array(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateInt64Array(array_view<const int64_t> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateInt64Array(array_view<const int64_t> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt64Array(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateUInt64Array(array_view<const uint64_t> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateUInt64Array(array_view<const uint64_t> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt64Array(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateSingleArray(array_view<const float> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateSingleArray(array_view<const float> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSingleArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateDoubleArray(array_view<const double> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateDoubleArray(array_view<const double> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDoubleArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateChar16Array(array_view<const wchar_t> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateChar16Array(array_view<const wchar_t> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateChar16Array(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateBooleanArray(array_view<const bool> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateBooleanArray(array_view<const bool> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateBooleanArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateStringArray(array_view<const hstring> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateStringArray(array_view<const hstring> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateStringArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateInspectableArray(array_view<const Windows::IInspectable> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateInspectableArray(array_view<const Windows::Foundation::IInspectable> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInspectableArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateGuidArray(array_view<const GUID> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateGuidArray(array_view<const GUID> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateGuidArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDateTimeArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateTimeSpanArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreatePointArray(array_view<const Windows::Foundation::Point> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreatePointArray(array_view<const Windows::Foundation::Point> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreatePointArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateSizeArray(array_view<const Windows::Foundation::Size> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateSizeArray(array_view<const Windows::Foundation::Size> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSizeArray(value);
 }
 
-inline Windows::IInspectable PropertyValue::CreateRectArray(array_view<const Windows::Foundation::Rect> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateRectArray(array_view<const Windows::Foundation::Rect> value)
 {
     return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateRectArray(value);
 }

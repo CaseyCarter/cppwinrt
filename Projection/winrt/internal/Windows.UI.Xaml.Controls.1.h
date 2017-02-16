@@ -49,7 +49,7 @@ namespace ABI::Windows::UI::Xaml::Controls {
 
 struct __declspec(uuid("fa9bc21f-9892-482e-abf6-eb2d607d32de")) __declspec(novtable) BackClickEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::IBackClickEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::IBackClickEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("8d745891-4de3-49cb-974b-083871a3afe6")) __declspec(novtable) CalendarViewDayItemChangingEventHandler : IUnknown
@@ -59,58 +59,58 @@ struct __declspec(uuid("8d745891-4de3-49cb-974b-083871a3afe6")) __declspec(novta
 
 struct __declspec(uuid("cacad0d6-0f0d-4870-884d-f2dedf674288")) __declspec(novtable) CleanUpVirtualizedItemEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("df945151-745c-4446-b2fc-216d765847a0")) __declspec(novtable) ContextMenuOpeningEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::IContextMenuEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::IContextMenuEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("3aaeab4c-14cb-4434-becc-88a8585c2f89")) __declspec(novtable) DragItemsStartingEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("afe17b9b-9c63-4583-88e4-c59019b7f49d")) __declspec(novtable) HubSectionHeaderClickEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::IHubSectionHeaderClickEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::IHubSectionHeaderClickEventArgs * e) = 0;
 };
 
-struct __declspec(uuid("7b0fc253-86a5-4b43-9872-0b8a6234b74b")) __declspec(novtable) IAppBar : Windows::IInspectable
+struct __declspec(uuid("7b0fc253-86a5-4b43-9872-0b8a6234b74b")) __declspec(novtable) IAppBar : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsOpen(bool * value) = 0;
     virtual HRESULT __stdcall put_IsOpen(bool value) = 0;
     virtual HRESULT __stdcall get_IsSticky(bool * value) = 0;
     virtual HRESULT __stdcall put_IsSticky(bool value) = 0;
-    virtual HRESULT __stdcall add_Opened(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Opened(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Opened(event_token token) = 0;
-    virtual HRESULT __stdcall add_Closed(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Closed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Closed(event_token token) = 0;
 };
 
-struct __declspec(uuid("c3ab17b3-7ad7-4676-9910-7fe3f0e8e993")) __declspec(novtable) IAppBar2 : Windows::IInspectable
+struct __declspec(uuid("c3ab17b3-7ad7-4676-9910-7fe3f0e8e993")) __declspec(novtable) IAppBar2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ClosedDisplayMode(winrt::Windows::UI::Xaml::Controls::AppBarClosedDisplayMode * value) = 0;
     virtual HRESULT __stdcall put_ClosedDisplayMode(winrt::Windows::UI::Xaml::Controls::AppBarClosedDisplayMode value) = 0;
 };
 
-struct __declspec(uuid("982b001f-752e-4e7a-b055-54802c9ea749")) __declspec(novtable) IAppBar3 : Windows::IInspectable
+struct __declspec(uuid("982b001f-752e-4e7a-b055-54802c9ea749")) __declspec(novtable) IAppBar3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TemplateSettings(Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettings ** value) = 0;
-    virtual HRESULT __stdcall add_Opening(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Opening(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Opening(event_token token) = 0;
-    virtual HRESULT __stdcall add_Closing(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Closing(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Closing(event_token token) = 0;
 };
 
-struct __declspec(uuid("94ebc8cd-0a64-4da3-bf43-f13100a46605")) __declspec(novtable) IAppBar4 : Windows::IInspectable
+struct __declspec(uuid("94ebc8cd-0a64-4da3-bf43-f13100a46605")) __declspec(novtable) IAppBar4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode * value) = 0;
     virtual HRESULT __stdcall put_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode value) = 0;
 };
 
-struct __declspec(uuid("4459a451-69e8-440c-9896-4bb4f5f642d1")) __declspec(novtable) IAppBarButton : Windows::IInspectable
+struct __declspec(uuid("4459a451-69e8-440c-9896-4bb4f5f642d1")) __declspec(novtable) IAppBarButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Label(hstring * value) = 0;
     virtual HRESULT __stdcall put_Label(hstring value) = 0;
@@ -118,85 +118,85 @@ struct __declspec(uuid("4459a451-69e8-440c-9896-4bb4f5f642d1")) __declspec(novta
     virtual HRESULT __stdcall put_Icon(Windows::UI::Xaml::Controls::IIconElement * value) = 0;
 };
 
-struct __declspec(uuid("0b282150-198b-4e84-8f1c-9f6a8ba267a7")) __declspec(novtable) IAppBarButton3 : Windows::IInspectable
+struct __declspec(uuid("0b282150-198b-4e84-8f1c-9f6a8ba267a7")) __declspec(novtable) IAppBarButton3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LabelPosition(winrt::Windows::UI::Xaml::Controls::CommandBarLabelPosition * value) = 0;
     virtual HRESULT __stdcall put_LabelPosition(winrt::Windows::UI::Xaml::Controls::CommandBarLabelPosition value) = 0;
 };
 
-struct __declspec(uuid("bdbb1bb6-cb2e-4276-abd6-7935130510e0")) __declspec(novtable) IAppBarButtonFactory : Windows::IInspectable
+struct __declspec(uuid("bdbb1bb6-cb2e-4276-abd6-7935130510e0")) __declspec(novtable) IAppBarButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IAppBarButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IAppBarButton ** instance) = 0;
 };
 
-struct __declspec(uuid("7ccd13e6-5301-407f-874e-dc9160aa07af")) __declspec(novtable) IAppBarButtonStatics : Windows::IInspectable
+struct __declspec(uuid("7ccd13e6-5301-407f-874e-dc9160aa07af")) __declspec(novtable) IAppBarButtonStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LabelProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IconProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsCompactProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4d7bf314-2ede-4328-8906-752a1f27cdfa")) __declspec(novtable) IAppBarButtonStatics3 : Windows::IInspectable
+struct __declspec(uuid("4d7bf314-2ede-4328-8906-752a1f27cdfa")) __declspec(novtable) IAppBarButtonStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LabelPositionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsInOverflowProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_DynamicOverflowOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("614708d1-8e65-43cb-92d7-8eee17515f8d")) __declspec(novtable) IAppBarFactory : Windows::IInspectable
+struct __declspec(uuid("614708d1-8e65-43cb-92d7-8eee17515f8d")) __declspec(novtable) IAppBarFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IAppBar ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IAppBar ** instance) = 0;
 };
 
-struct __declspec(uuid("f003e4e2-7b0f-4f4a-970d-ae8a0eaa9b70")) __declspec(novtable) IAppBarOverrides : Windows::IInspectable
+struct __declspec(uuid("f003e4e2-7b0f-4f4a-970d-ae8a0eaa9b70")) __declspec(novtable) IAppBarOverrides : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_OnClosed(Windows::IInspectable * e) = 0;
-    virtual HRESULT __stdcall abi_OnOpened(Windows::IInspectable * e) = 0;
+    virtual HRESULT __stdcall abi_OnClosed(Windows::Foundation::IInspectable * e) = 0;
+    virtual HRESULT __stdcall abi_OnOpened(Windows::Foundation::IInspectable * e) = 0;
 };
 
-struct __declspec(uuid("412bbbc8-51d0-4b49-ab62-a3dd6bdcb298")) __declspec(novtable) IAppBarOverrides3 : Windows::IInspectable
+struct __declspec(uuid("412bbbc8-51d0-4b49-ab62-a3dd6bdcb298")) __declspec(novtable) IAppBarOverrides3 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_OnClosing(Windows::IInspectable * e) = 0;
-    virtual HRESULT __stdcall abi_OnOpening(Windows::IInspectable * e) = 0;
+    virtual HRESULT __stdcall abi_OnClosing(Windows::Foundation::IInspectable * e) = 0;
+    virtual HRESULT __stdcall abi_OnOpening(Windows::Foundation::IInspectable * e) = 0;
 };
 
-struct __declspec(uuid("1b0795a1-1bc1-4d53-95ea-fb0a2cccc905")) __declspec(novtable) IAppBarSeparator : Windows::IInspectable
+struct __declspec(uuid("1b0795a1-1bc1-4d53-95ea-fb0a2cccc905")) __declspec(novtable) IAppBarSeparator : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("05da25cd-f407-48de-8b50-ff87d1e2818f")) __declspec(novtable) IAppBarSeparatorFactory : Windows::IInspectable
+struct __declspec(uuid("05da25cd-f407-48de-8b50-ff87d1e2818f")) __declspec(novtable) IAppBarSeparatorFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IAppBarSeparator ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IAppBarSeparator ** instance) = 0;
 };
 
-struct __declspec(uuid("37f23484-5b35-4663-a75d-f2d50cb9c619")) __declspec(novtable) IAppBarSeparatorStatics : Windows::IInspectable
+struct __declspec(uuid("37f23484-5b35-4663-a75d-f2d50cb9c619")) __declspec(novtable) IAppBarSeparatorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsCompactProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("36c753f9-7373-4e5e-9ba4-c3622a003c4e")) __declspec(novtable) IAppBarSeparatorStatics3 : Windows::IInspectable
+struct __declspec(uuid("36c753f9-7373-4e5e-9ba4-c3622a003c4e")) __declspec(novtable) IAppBarSeparatorStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsInOverflowProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_DynamicOverflowOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("79bb7e8d-dca9-4b5f-a448-37b13238ed76")) __declspec(novtable) IAppBarStatics : Windows::IInspectable
+struct __declspec(uuid("79bb7e8d-dca9-4b5f-a448-37b13238ed76")) __declspec(novtable) IAppBarStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsOpenProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsStickyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("222355e9-0384-49de-8738-dfc9d409ac5d")) __declspec(novtable) IAppBarStatics2 : Windows::IInspectable
+struct __declspec(uuid("222355e9-0384-49de-8738-dfc9d409ac5d")) __declspec(novtable) IAppBarStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ClosedDisplayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ba02082e-1165-4451-94b3-eb3ac73e4196")) __declspec(novtable) IAppBarStatics4 : Windows::IInspectable
+struct __declspec(uuid("ba02082e-1165-4451-94b3-eb3ac73e4196")) __declspec(novtable) IAppBarStatics4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("2e914438-fd53-4b8d-858b-3644269f8e4d")) __declspec(novtable) IAppBarToggleButton : Windows::IInspectable
+struct __declspec(uuid("2e914438-fd53-4b8d-858b-3644269f8e4d")) __declspec(novtable) IAppBarToggleButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Label(hstring * value) = 0;
     virtual HRESULT __stdcall put_Label(hstring value) = 0;
@@ -204,32 +204,32 @@ struct __declspec(uuid("2e914438-fd53-4b8d-858b-3644269f8e4d")) __declspec(novta
     virtual HRESULT __stdcall put_Icon(Windows::UI::Xaml::Controls::IIconElement * value) = 0;
 };
 
-struct __declspec(uuid("ef9a85e5-16ff-4d72-b9e8-9b861eaf84a8")) __declspec(novtable) IAppBarToggleButton3 : Windows::IInspectable
+struct __declspec(uuid("ef9a85e5-16ff-4d72-b9e8-9b861eaf84a8")) __declspec(novtable) IAppBarToggleButton3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LabelPosition(winrt::Windows::UI::Xaml::Controls::CommandBarLabelPosition * value) = 0;
     virtual HRESULT __stdcall put_LabelPosition(winrt::Windows::UI::Xaml::Controls::CommandBarLabelPosition value) = 0;
 };
 
-struct __declspec(uuid("028aa7d4-8f54-45a6-9f90-13605656d793")) __declspec(novtable) IAppBarToggleButtonFactory : Windows::IInspectable
+struct __declspec(uuid("028aa7d4-8f54-45a6-9f90-13605656d793")) __declspec(novtable) IAppBarToggleButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IAppBarToggleButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IAppBarToggleButton ** instance) = 0;
 };
 
-struct __declspec(uuid("fe5aaf96-7929-4da1-aa67-cddf73a3e4b5")) __declspec(novtable) IAppBarToggleButtonStatics : Windows::IInspectable
+struct __declspec(uuid("fe5aaf96-7929-4da1-aa67-cddf73a3e4b5")) __declspec(novtable) IAppBarToggleButtonStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LabelProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IconProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsCompactProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("bd4c65bf-2edd-44d1-acd5-35c00e2f21bc")) __declspec(novtable) IAppBarToggleButtonStatics3 : Windows::IInspectable
+struct __declspec(uuid("bd4c65bf-2edd-44d1-acd5-35c00e2f21bc")) __declspec(novtable) IAppBarToggleButtonStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LabelPositionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsInOverflowProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_DynamicOverflowOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("103e9b13-3400-4a16-90b9-6912bf06974f")) __declspec(novtable) IAutoSuggestBox : Windows::IInspectable
+struct __declspec(uuid("103e9b13-3400-4a16-90b9-6912bf06974f")) __declspec(novtable) IAutoSuggestBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxSuggestionListHeight(double * value) = 0;
     virtual HRESULT __stdcall put_MaxSuggestionListHeight(double value) = 0;
@@ -243,8 +243,8 @@ struct __declspec(uuid("103e9b13-3400-4a16-90b9-6912bf06974f")) __declspec(novta
     virtual HRESULT __stdcall put_UpdateTextOnSelect(bool value) = 0;
     virtual HRESULT __stdcall get_PlaceholderText(hstring * value) = 0;
     virtual HRESULT __stdcall put_PlaceholderText(hstring value) = 0;
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_AutoMaximizeSuggestionArea(bool * value) = 0;
     virtual HRESULT __stdcall put_AutoMaximizeSuggestionArea(bool value) = 0;
     virtual HRESULT __stdcall get_TextBoxStyle(Windows::UI::Xaml::IStyle ** value) = 0;
@@ -255,7 +255,7 @@ struct __declspec(uuid("103e9b13-3400-4a16-90b9-6912bf06974f")) __declspec(novta
     virtual HRESULT __stdcall remove_TextChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("aa87ddde-e679-45b2-a7c9-9aedc39db886")) __declspec(novtable) IAutoSuggestBox2 : Windows::IInspectable
+struct __declspec(uuid("aa87ddde-e679-45b2-a7c9-9aedc39db886")) __declspec(novtable) IAutoSuggestBox2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QueryIcon(Windows::UI::Xaml::Controls::IIconElement ** value) = 0;
     virtual HRESULT __stdcall put_QueryIcon(Windows::UI::Xaml::Controls::IIconElement * value) = 0;
@@ -263,19 +263,19 @@ struct __declspec(uuid("aa87ddde-e679-45b2-a7c9-9aedc39db886")) __declspec(novta
     virtual HRESULT __stdcall remove_QuerySubmitted(event_token token) = 0;
 };
 
-struct __declspec(uuid("9bbbfcef-f32d-402e-9009-05bdbaf6336e")) __declspec(novtable) IAutoSuggestBox3 : Windows::IInspectable
+struct __declspec(uuid("9bbbfcef-f32d-402e-9009-05bdbaf6336e")) __declspec(novtable) IAutoSuggestBox3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode * value) = 0;
     virtual HRESULT __stdcall put_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode value) = 0;
 };
 
-struct __declspec(uuid("78dcb116-818a-4cb5-bca7-382ce6ddc90d")) __declspec(novtable) IAutoSuggestBoxQuerySubmittedEventArgs : Windows::IInspectable
+struct __declspec(uuid("78dcb116-818a-4cb5-bca7-382ce6ddc90d")) __declspec(novtable) IAutoSuggestBoxQuerySubmittedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QueryText(hstring * value) = 0;
-    virtual HRESULT __stdcall get_ChosenSuggestion(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_ChosenSuggestion(Windows::Foundation::IInspectable ** value) = 0;
 };
 
-struct __declspec(uuid("ee22c7f4-c15d-4ff3-8a94-f50dfdfbe89a")) __declspec(novtable) IAutoSuggestBoxStatics : Windows::IInspectable
+struct __declspec(uuid("ee22c7f4-c15d-4ff3-8a94-f50dfdfbe89a")) __declspec(novtable) IAutoSuggestBoxStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxSuggestionListHeightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsSuggestionListOpenProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -288,56 +288,56 @@ struct __declspec(uuid("ee22c7f4-c15d-4ff3-8a94-f50dfdfbe89a")) __declspec(novta
     virtual HRESULT __stdcall get_TextBoxStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("1cd297a8-8e6a-41ef-a95d-7157dc0c7106")) __declspec(novtable) IAutoSuggestBoxStatics2 : Windows::IInspectable
+struct __declspec(uuid("1cd297a8-8e6a-41ef-a95d-7157dc0c7106")) __declspec(novtable) IAutoSuggestBoxStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QueryIconProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("2cead2dd-c4d5-4ab2-8a13-afddcf067c86")) __declspec(novtable) IAutoSuggestBoxStatics3 : Windows::IInspectable
+struct __declspec(uuid("2cead2dd-c4d5-4ab2-8a13-afddcf067c86")) __declspec(novtable) IAutoSuggestBoxStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("396f7254-1ed5-4bc5-a060-655530bca6ba")) __declspec(novtable) IAutoSuggestBoxSuggestionChosenEventArgs : Windows::IInspectable
+struct __declspec(uuid("396f7254-1ed5-4bc5-a060-655530bca6ba")) __declspec(novtable) IAutoSuggestBoxSuggestionChosenEventArgs : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_SelectedItem(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_SelectedItem(Windows::Foundation::IInspectable ** value) = 0;
 };
 
-struct __declspec(uuid("3a6f7254-1ed5-4bc5-a060-655530bca6ba")) __declspec(novtable) IAutoSuggestBoxTextChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("3a6f7254-1ed5-4bc5-a060-655530bca6ba")) __declspec(novtable) IAutoSuggestBoxTextChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Reason(winrt::Windows::UI::Xaml::Controls::AutoSuggestionBoxTextChangeReason * value) = 0;
     virtual HRESULT __stdcall put_Reason(winrt::Windows::UI::Xaml::Controls::AutoSuggestionBoxTextChangeReason value) = 0;
     virtual HRESULT __stdcall abi_CheckCurrent(bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("fef7772b-9f45-44db-8c27-bda3f933e7b5")) __declspec(novtable) IAutoSuggestBoxTextChangedEventArgsStatics : Windows::IInspectable
+struct __declspec(uuid("fef7772b-9f45-44db-8c27-bda3f933e7b5")) __declspec(novtable) IAutoSuggestBoxTextChangedEventArgsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ReasonProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("2ae6146c-477e-48c9-8830-2c464b7c7104")) __declspec(novtable) IBackClickEventArgs : Windows::IInspectable
+struct __declspec(uuid("2ae6146c-477e-48c9-8830-2c464b7c7104")) __declspec(novtable) IBackClickEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
 };
 
-struct __declspec(uuid("e8fe17cb-35f7-40f3-a185-48b397b73e68")) __declspec(novtable) IBitmapIcon : Windows::IInspectable
+struct __declspec(uuid("e8fe17cb-35f7-40f3-a185-48b397b73e68")) __declspec(novtable) IBitmapIcon : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UriSource(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall put_UriSource(Windows::Foundation::IUriRuntimeClass * value) = 0;
 };
 
-struct __declspec(uuid("46d64b1d-7a49-4f66-9729-2848c788e402")) __declspec(novtable) IBitmapIconFactory : Windows::IInspectable
+struct __declspec(uuid("46d64b1d-7a49-4f66-9729-2848c788e402")) __declspec(novtable) IBitmapIconFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IBitmapIcon ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IBitmapIcon ** instance) = 0;
 };
 
-struct __declspec(uuid("e072d117-e4e7-4e0c-9470-53ff1ce84f67")) __declspec(novtable) IBitmapIconStatics : Windows::IInspectable
+struct __declspec(uuid("e072d117-e4e7-4e0c-9470-53ff1ce84f67")) __declspec(novtable) IBitmapIconStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UriSourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("797c4539-45bd-4633-a044-bfb02ef5170f")) __declspec(novtable) IBorder : Windows::IInspectable
+struct __declspec(uuid("797c4539-45bd-4633-a044-bfb02ef5170f")) __declspec(novtable) IBorder : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BorderBrush(Windows::UI::Xaml::Media::IBrush ** value) = 0;
     virtual HRESULT __stdcall put_BorderBrush(Windows::UI::Xaml::Media::IBrush * value) = 0;
@@ -355,7 +355,7 @@ struct __declspec(uuid("797c4539-45bd-4633-a044-bfb02ef5170f")) __declspec(novta
     virtual HRESULT __stdcall put_ChildTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> * value) = 0;
 };
 
-struct __declspec(uuid("b81d1639-e911-4fd7-a4c4-b9c7f008b7fc")) __declspec(novtable) IBorderStatics : Windows::IInspectable
+struct __declspec(uuid("b81d1639-e911-4fd7-a4c4-b9c7f008b7fc")) __declspec(novtable) IBorderStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BorderBrushProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_BorderThicknessProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -365,27 +365,27 @@ struct __declspec(uuid("b81d1639-e911-4fd7-a4c4-b9c7f008b7fc")) __declspec(novta
     virtual HRESULT __stdcall get_ChildTransitionsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("280335ae-5570-46c7-8e0b-602be71229a2")) __declspec(novtable) IButton : Windows::IInspectable
+struct __declspec(uuid("280335ae-5570-46c7-8e0b-602be71229a2")) __declspec(novtable) IButton : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("80a13c19-843a-451c-8cf5-44c701b0e216")) __declspec(novtable) IButtonFactory : Windows::IInspectable
+struct __declspec(uuid("80a13c19-843a-451c-8cf5-44c701b0e216")) __declspec(novtable) IButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IButton ** instance) = 0;
 };
 
-struct __declspec(uuid("90143898-a16c-4759-b2f0-a5f7e625169e")) __declspec(novtable) IButtonStaticsWithFlyout : Windows::IInspectable
+struct __declspec(uuid("90143898-a16c-4759-b2f0-a5f7e625169e")) __declspec(novtable) IButtonStaticsWithFlyout : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FlyoutProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("09108f87-df6c-4180-9b3a-e60845825811")) __declspec(novtable) IButtonWithFlyout : Windows::IInspectable
+struct __declspec(uuid("09108f87-df6c-4180-9b3a-e60845825811")) __declspec(novtable) IButtonWithFlyout : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Flyout(Windows::UI::Xaml::Controls::Primitives::IFlyoutBase ** value) = 0;
     virtual HRESULT __stdcall put_Flyout(Windows::UI::Xaml::Controls::Primitives::IFlyoutBase * value) = 0;
 };
 
-struct __declspec(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29")) __declspec(novtable) ICalendarDatePicker : Windows::IInspectable
+struct __declspec(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29")) __declspec(novtable) ICalendarDatePicker : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Date(Windows::Foundation::IReference<Windows::Foundation::DateTime> ** value) = 0;
     virtual HRESULT __stdcall put_Date(Windows::Foundation::IReference<Windows::Foundation::DateTime> * value) = 0;
@@ -395,8 +395,8 @@ struct __declspec(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29")) __declspec(novta
     virtual HRESULT __stdcall put_DateFormat(hstring value) = 0;
     virtual HRESULT __stdcall get_PlaceholderText(hstring * value) = 0;
     virtual HRESULT __stdcall put_PlaceholderText(hstring value) = 0;
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_CalendarViewStyle(Windows::UI::Xaml::IStyle ** value) = 0;
@@ -423,32 +423,32 @@ struct __declspec(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29")) __declspec(novta
     virtual HRESULT __stdcall remove_CalendarViewDayItemChanging(event_token token) = 0;
     virtual HRESULT __stdcall add_DateChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarDatePicker, Windows::UI::Xaml::Controls::CalendarDatePickerDateChangedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_DateChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_Opened(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Opened(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Opened(event_token token) = 0;
-    virtual HRESULT __stdcall add_Closed(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Closed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Closed(event_token token) = 0;
     virtual HRESULT __stdcall abi_SetDisplayDate(Windows::Foundation::DateTime date) = 0;
     virtual HRESULT __stdcall abi_SetYearDecadeDisplayDimensions(int32_t columns, int32_t rows) = 0;
 };
 
-struct __declspec(uuid("b216c159-2411-4a60-a7aa-27416b49481e")) __declspec(novtable) ICalendarDatePicker2 : Windows::IInspectable
+struct __declspec(uuid("b216c159-2411-4a60-a7aa-27416b49481e")) __declspec(novtable) ICalendarDatePicker2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode * value) = 0;
     virtual HRESULT __stdcall put_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode value) = 0;
 };
 
-struct __declspec(uuid("60d90db2-5010-46ba-842d-a4152c6504e7")) __declspec(novtable) ICalendarDatePickerDateChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("60d90db2-5010-46ba-842d-a4152c6504e7")) __declspec(novtable) ICalendarDatePickerDateChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NewDate(Windows::Foundation::IReference<Windows::Foundation::DateTime> ** value) = 0;
     virtual HRESULT __stdcall get_OldDate(Windows::Foundation::IReference<Windows::Foundation::DateTime> ** value) = 0;
 };
 
-struct __declspec(uuid("107aad5d-38be-42af-a957-fc86a5cf1e9a")) __declspec(novtable) ICalendarDatePickerFactory : Windows::IInspectable
+struct __declspec(uuid("107aad5d-38be-42af-a957-fc86a5cf1e9a")) __declspec(novtable) ICalendarDatePickerFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ICalendarDatePicker ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ICalendarDatePicker ** instance) = 0;
 };
 
-struct __declspec(uuid("39a3d291-afab-4b94-8395-ba7b874e3c8c")) __declspec(novtable) ICalendarDatePickerStatics : Windows::IInspectable
+struct __declspec(uuid("39a3d291-afab-4b94-8395-ba7b874e3c8c")) __declspec(novtable) ICalendarDatePickerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsCalendarOpenProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -468,12 +468,12 @@ struct __declspec(uuid("39a3d291-afab-4b94-8395-ba7b874e3c8c")) __declspec(novta
     virtual HRESULT __stdcall get_IsGroupLabelVisibleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("30206b58-a2f6-4a00-8d13-33c46b6b8e0d")) __declspec(novtable) ICalendarDatePickerStatics2 : Windows::IInspectable
+struct __declspec(uuid("30206b58-a2f6-4a00-8d13-33c46b6b8e0d")) __declspec(novtable) ICalendarDatePickerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("cd639203-dfb5-4312-ac07-c0391824607b")) __declspec(novtable) ICalendarView : Windows::IInspectable
+struct __declspec(uuid("cd639203-dfb5-4312-ac07-c0391824607b")) __declspec(novtable) ICalendarView : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CalendarIdentifier(hstring * value) = 0;
     virtual HRESULT __stdcall put_CalendarIdentifier(hstring value) = 0;
@@ -583,7 +583,7 @@ struct __declspec(uuid("cd639203-dfb5-4312-ac07-c0391824607b")) __declspec(novta
     virtual HRESULT __stdcall abi_SetYearDecadeDisplayDimensions(int32_t columns, int32_t rows) = 0;
 };
 
-struct __declspec(uuid("0fdb2dc5-32c1-4b8f-befc-017b555b32d2")) __declspec(novtable) ICalendarViewDayItem : Windows::IInspectable
+struct __declspec(uuid("0fdb2dc5-32c1-4b8f-befc-017b555b32d2")) __declspec(novtable) ICalendarViewDayItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsBlackout(bool * value) = 0;
     virtual HRESULT __stdcall put_IsBlackout(bool value) = 0;
@@ -591,7 +591,7 @@ struct __declspec(uuid("0fdb2dc5-32c1-4b8f-befc-017b555b32d2")) __declspec(novta
     virtual HRESULT __stdcall abi_SetDensityColors(Windows::Foundation::Collections::IIterable<Windows::UI::Color> * colors) = 0;
 };
 
-struct __declspec(uuid("73146666-1fb1-44f9-b7ad-4de859ecc565")) __declspec(novtable) ICalendarViewDayItemChangingEventArgs : Windows::IInspectable
+struct __declspec(uuid("73146666-1fb1-44f9-b7ad-4de859ecc565")) __declspec(novtable) ICalendarViewDayItemChangingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InRecycleQueue(bool * value) = 0;
     virtual HRESULT __stdcall get_Item(Windows::UI::Xaml::Controls::ICalendarViewDayItem ** value) = 0;
@@ -600,29 +600,29 @@ struct __declspec(uuid("73146666-1fb1-44f9-b7ad-4de859ecc565")) __declspec(novta
     virtual HRESULT __stdcall abi_RegisterUpdateCallbackWithPhase(uint32_t callbackPhase, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarView, Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventArgs> * callback) = 0;
 };
 
-struct __declspec(uuid("62112bdc-1d2f-4e44-9baf-1665749521f2")) __declspec(novtable) ICalendarViewDayItemFactory : Windows::IInspectable
+struct __declspec(uuid("62112bdc-1d2f-4e44-9baf-1665749521f2")) __declspec(novtable) ICalendarViewDayItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ICalendarViewDayItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ICalendarViewDayItem ** instance) = 0;
 };
 
-struct __declspec(uuid("c3a1dbbf-bd88-488b-b916-d00d69b1735a")) __declspec(novtable) ICalendarViewDayItemStatics : Windows::IInspectable
+struct __declspec(uuid("c3a1dbbf-bd88-488b-b916-d00d69b1735a")) __declspec(novtable) ICalendarViewDayItemStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsBlackoutProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_DateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("3d8f82e3-6cc6-423e-8d7c-7014d954ddef")) __declspec(novtable) ICalendarViewFactory : Windows::IInspectable
+struct __declspec(uuid("3d8f82e3-6cc6-423e-8d7c-7014d954ddef")) __declspec(novtable) ICalendarViewFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ICalendarView ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ICalendarView ** instance) = 0;
 };
 
-struct __declspec(uuid("ee6069f6-13ef-4896-8ffc-5302b1b17539")) __declspec(novtable) ICalendarViewSelectedDatesChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("ee6069f6-13ef-4896-8ffc-5302b1b17539")) __declspec(novtable) ICalendarViewSelectedDatesChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AddedDates(Windows::Foundation::Collections::IVectorView<Windows::Foundation::DateTime> ** value) = 0;
     virtual HRESULT __stdcall get_RemovedDates(Windows::Foundation::Collections::IVectorView<Windows::Foundation::DateTime> ** value) = 0;
 };
 
-struct __declspec(uuid("7260f1c4-2f5d-41bd-99bb-4571b20b79a8")) __declspec(novtable) ICalendarViewStatics : Windows::IInspectable
+struct __declspec(uuid("7260f1c4-2f5d-41bd-99bb-4571b20b79a8")) __declspec(novtable) ICalendarViewStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CalendarIdentifierProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_DayOfWeekFormatProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -677,21 +677,21 @@ struct __declspec(uuid("7260f1c4-2f5d-41bd-99bb-4571b20b79a8")) __declspec(novta
     virtual HRESULT __stdcall get_CalendarViewDayItemStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("8a946458-83b0-4c32-9450-5169a5838b55")) __declspec(novtable) ICandidateWindowBoundsChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("8a946458-83b0-4c32-9450-5169a5838b55")) __declspec(novtable) ICandidateWindowBoundsChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Bounds(Windows::Foundation::Rect * value) = 0;
 };
 
-struct __declspec(uuid("79190e19-cd38-4823-aeae-64a77132f519")) __declspec(novtable) ICanvas : Windows::IInspectable
+struct __declspec(uuid("79190e19-cd38-4823-aeae-64a77132f519")) __declspec(novtable) ICanvas : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("1b328bd1-b400-4a8e-943b-5ad2c45be0df")) __declspec(novtable) ICanvasFactory : Windows::IInspectable
+struct __declspec(uuid("1b328bd1-b400-4a8e-943b-5ad2c45be0df")) __declspec(novtable) ICanvasFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ICanvas ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ICanvas ** instance) = 0;
 };
 
-struct __declspec(uuid("40ce5c46-2962-446f-aafb-4cdc486939c9")) __declspec(novtable) ICanvasStatics : Windows::IInspectable
+struct __declspec(uuid("40ce5c46-2962-446f-aafb-4cdc486939c9")) __declspec(novtable) ICanvasStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LeftProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall abi_GetLeft(Windows::UI::Xaml::IUIElement * element, double * length) = 0;
@@ -704,7 +704,7 @@ struct __declspec(uuid("40ce5c46-2962-446f-aafb-4cdc486939c9")) __declspec(novta
     virtual HRESULT __stdcall abi_SetZIndex(Windows::UI::Xaml::IUIElement * element, int32_t value) = 0;
 };
 
-struct __declspec(uuid("31a5c0e7-f307-4d4a-b626-e978863f5b74")) __declspec(novtable) ICaptureElement : Windows::IInspectable
+struct __declspec(uuid("31a5c0e7-f307-4d4a-b626-e978863f5b74")) __declspec(novtable) ICaptureElement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Source(Windows::Media::Capture::IMediaCapture ** value) = 0;
     virtual HRESULT __stdcall put_Source(Windows::Media::Capture::IMediaCapture * value) = 0;
@@ -712,48 +712,48 @@ struct __declspec(uuid("31a5c0e7-f307-4d4a-b626-e978863f5b74")) __declspec(novta
     virtual HRESULT __stdcall put_Stretch(winrt::Windows::UI::Xaml::Media::Stretch value) = 0;
 };
 
-struct __declspec(uuid("1e438ded-7da6-409e-806e-305ae4ad9b3f")) __declspec(novtable) ICaptureElementStatics : Windows::IInspectable
+struct __declspec(uuid("1e438ded-7da6-409e-806e-305ae4ad9b3f")) __declspec(novtable) ICaptureElementStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_StretchProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("2294c894-7e2a-4b70-b088-8f5d814875ba")) __declspec(novtable) ICheckBox : Windows::IInspectable
+struct __declspec(uuid("2294c894-7e2a-4b70-b088-8f5d814875ba")) __declspec(novtable) ICheckBox : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("4fa6aabb-3f4b-4301-be07-1172ea61eefb")) __declspec(novtable) ICheckBoxFactory : Windows::IInspectable
+struct __declspec(uuid("4fa6aabb-3f4b-4301-be07-1172ea61eefb")) __declspec(novtable) ICheckBoxFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ICheckBox ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ICheckBox ** instance) = 0;
 };
 
-struct __declspec(uuid("67db44d6-d201-4d72-beac-5e8e58afd8c7")) __declspec(novtable) IChoosingGroupHeaderContainerEventArgs : Windows::IInspectable
+struct __declspec(uuid("67db44d6-d201-4d72-beac-5e8e58afd8c7")) __declspec(novtable) IChoosingGroupHeaderContainerEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GroupHeaderContainer(Windows::UI::Xaml::Controls::IListViewBaseHeaderItem ** value) = 0;
     virtual HRESULT __stdcall put_GroupHeaderContainer(Windows::UI::Xaml::Controls::IListViewBaseHeaderItem * value) = 0;
     virtual HRESULT __stdcall get_GroupIndex(int32_t * value) = 0;
-    virtual HRESULT __stdcall get_Group(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_Group(Windows::Foundation::IInspectable ** value) = 0;
 };
 
-struct __declspec(uuid("9bb43bce-ae67-4a80-8363-e3fe1b244f2c")) __declspec(novtable) IChoosingItemContainerEventArgs : Windows::IInspectable
+struct __declspec(uuid("9bb43bce-ae67-4a80-8363-e3fe1b244f2c")) __declspec(novtable) IChoosingItemContainerEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemIndex(int32_t * value) = 0;
-    virtual HRESULT __stdcall get_Item(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_Item(Windows::Foundation::IInspectable ** value) = 0;
     virtual HRESULT __stdcall get_ItemContainer(Windows::UI::Xaml::Controls::Primitives::ISelectorItem ** value) = 0;
     virtual HRESULT __stdcall put_ItemContainer(Windows::UI::Xaml::Controls::Primitives::ISelectorItem * value) = 0;
     virtual HRESULT __stdcall get_IsContainerPrepared(bool * value) = 0;
     virtual HRESULT __stdcall put_IsContainerPrepared(bool value) = 0;
 };
 
-struct __declspec(uuid("ea05cce9-937c-4120-8406-792185784338")) __declspec(novtable) ICleanUpVirtualizedItemEventArgs : Windows::IInspectable
+struct __declspec(uuid("ea05cce9-937c-4120-8406-792185784338")) __declspec(novtable) ICleanUpVirtualizedItemEventArgs : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Value(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_Value(Windows::Foundation::IInspectable ** value) = 0;
     virtual HRESULT __stdcall get_UIElement(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
     virtual HRESULT __stdcall put_Cancel(bool value) = 0;
 };
 
-struct __declspec(uuid("f7f1b229-f024-467f-970a-7e705615db7b")) __declspec(novtable) IColumnDefinition : Windows::IInspectable
+struct __declspec(uuid("f7f1b229-f024-467f-970a-7e705615db7b")) __declspec(novtable) IColumnDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Width(Windows::UI::Xaml::GridLength * value) = 0;
     virtual HRESULT __stdcall put_Width(Windows::UI::Xaml::GridLength value) = 0;
@@ -764,14 +764,14 @@ struct __declspec(uuid("f7f1b229-f024-467f-970a-7e705615db7b")) __declspec(novta
     virtual HRESULT __stdcall get_ActualWidth(double * value) = 0;
 };
 
-struct __declspec(uuid("06b0d728-d044-40c6-942e-ae60eac74851")) __declspec(novtable) IColumnDefinitionStatics : Windows::IInspectable
+struct __declspec(uuid("06b0d728-d044-40c6-942e-ae60eac74851")) __declspec(novtable) IColumnDefinitionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_WidthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MaxWidthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MinWidthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b9a8d05c-ac97-47f1-a5f4-3f9f4d4b116c")) __declspec(novtable) IComboBox : Windows::IInspectable
+struct __declspec(uuid("b9a8d05c-ac97-47f1-a5f4-3f9f4d4b116c")) __declspec(novtable) IComboBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsDropDownOpen(bool * value) = 0;
     virtual HRESULT __stdcall put_IsDropDownOpen(bool value) = 0;
@@ -779,26 +779,26 @@ struct __declspec(uuid("b9a8d05c-ac97-47f1-a5f4-3f9f4d4b116c")) __declspec(novta
     virtual HRESULT __stdcall get_IsSelectionBoxHighlighted(bool * value) = 0;
     virtual HRESULT __stdcall get_MaxDropDownHeight(double * value) = 0;
     virtual HRESULT __stdcall put_MaxDropDownHeight(double value) = 0;
-    virtual HRESULT __stdcall get_SelectionBoxItem(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_SelectionBoxItem(Windows::Foundation::IInspectable ** value) = 0;
     virtual HRESULT __stdcall get_SelectionBoxItemTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall get_TemplateSettings(Windows::UI::Xaml::Controls::Primitives::IComboBoxTemplateSettings ** value) = 0;
-    virtual HRESULT __stdcall add_DropDownClosed(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_DropDownClosed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_DropDownClosed(event_token token) = 0;
-    virtual HRESULT __stdcall add_DropDownOpened(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_DropDownOpened(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_DropDownOpened(event_token token) = 0;
 };
 
-struct __declspec(uuid("ea0cbf91-ca36-4fad-972a-2e53a6718b9f")) __declspec(novtable) IComboBox2 : Windows::IInspectable
+struct __declspec(uuid("ea0cbf91-ca36-4fad-972a-2e53a6718b9f")) __declspec(novtable) IComboBox2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_PlaceholderText(hstring * value) = 0;
     virtual HRESULT __stdcall put_PlaceholderText(hstring value) = 0;
 };
 
-struct __declspec(uuid("52400a63-476c-4bb6-b781-019324d3fed9")) __declspec(novtable) IComboBox3 : Windows::IInspectable
+struct __declspec(uuid("52400a63-476c-4bb6-b781-019324d3fed9")) __declspec(novtable) IComboBox3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode * value) = 0;
     virtual HRESULT __stdcall put_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode value) = 0;
@@ -806,59 +806,59 @@ struct __declspec(uuid("52400a63-476c-4bb6-b781-019324d3fed9")) __declspec(novta
     virtual HRESULT __stdcall put_IsTextSearchEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("ac0d0444-a65b-4abd-86df-3016049efedc")) __declspec(novtable) IComboBoxFactory : Windows::IInspectable
+struct __declspec(uuid("ac0d0444-a65b-4abd-86df-3016049efedc")) __declspec(novtable) IComboBoxFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IComboBox ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IComboBox ** instance) = 0;
 };
 
-struct __declspec(uuid("993fd6d2-2aae-4f3b-b44d-5648f4d06114")) __declspec(novtable) IComboBoxItem : Windows::IInspectable
+struct __declspec(uuid("993fd6d2-2aae-4f3b-b44d-5648f4d06114")) __declspec(novtable) IComboBoxItem : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("8fffe867-d94c-4e87-8fc4-6ebcd63c5ac2")) __declspec(novtable) IComboBoxItemFactory : Windows::IInspectable
+struct __declspec(uuid("8fffe867-d94c-4e87-8fc4-6ebcd63c5ac2")) __declspec(novtable) IComboBoxItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IComboBoxItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IComboBoxItem ** instance) = 0;
 };
 
-struct __declspec(uuid("4f016541-bcfe-4a22-8932-c914981c2240")) __declspec(novtable) IComboBoxOverrides : Windows::IInspectable
+struct __declspec(uuid("4f016541-bcfe-4a22-8932-c914981c2240")) __declspec(novtable) IComboBoxOverrides : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_OnDropDownClosed(Windows::IInspectable * e) = 0;
-    virtual HRESULT __stdcall abi_OnDropDownOpened(Windows::IInspectable * e) = 0;
+    virtual HRESULT __stdcall abi_OnDropDownClosed(Windows::Foundation::IInspectable * e) = 0;
+    virtual HRESULT __stdcall abi_OnDropDownOpened(Windows::Foundation::IInspectable * e) = 0;
 };
 
-struct __declspec(uuid("3e14c9b1-d15b-4dc9-8110-cf3a117b96e7")) __declspec(novtable) IComboBoxStatics : Windows::IInspectable
+struct __declspec(uuid("3e14c9b1-d15b-4dc9-8110-cf3a117b96e7")) __declspec(novtable) IComboBoxStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsDropDownOpenProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MaxDropDownHeightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("93988a11-402c-4b13-96d1-7220266b9220")) __declspec(novtable) IComboBoxStatics2 : Windows::IInspectable
+struct __declspec(uuid("93988a11-402c-4b13-96d1-7220266b9220")) __declspec(novtable) IComboBoxStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_PlaceholderTextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("949e140f-ce7f-4e41-bdc5-d1d3388ad0a6")) __declspec(novtable) IComboBoxStatics3 : Windows::IInspectable
+struct __declspec(uuid("949e140f-ce7f-4e41-bdc5-d1d3388ad0a6")) __declspec(novtable) IComboBoxStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsTextSearchEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("98bc4280-4a3d-4cee-bd07-22ce94c5af76")) __declspec(novtable) ICommandBar : Windows::IInspectable
+struct __declspec(uuid("98bc4280-4a3d-4cee-bd07-22ce94c5af76")) __declspec(novtable) ICommandBar : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PrimaryCommands(Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::Controls::ICommandBarElement> ** value) = 0;
     virtual HRESULT __stdcall get_SecondaryCommands(Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::Controls::ICommandBarElement> ** value) = 0;
 };
 
-struct __declspec(uuid("57662f58-5b32-475d-be64-4ca36e7b97d4")) __declspec(novtable) ICommandBar2 : Windows::IInspectable
+struct __declspec(uuid("57662f58-5b32-475d-be64-4ca36e7b97d4")) __declspec(novtable) ICommandBar2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CommandBarOverflowPresenterStyle(Windows::UI::Xaml::IStyle ** value) = 0;
     virtual HRESULT __stdcall put_CommandBarOverflowPresenterStyle(Windows::UI::Xaml::IStyle * value) = 0;
     virtual HRESULT __stdcall get_CommandBarTemplateSettings(Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSettings ** value) = 0;
 };
 
-struct __declspec(uuid("40ebbc23-2a79-48b3-9a67-649b852d8589")) __declspec(novtable) ICommandBar3 : Windows::IInspectable
+struct __declspec(uuid("40ebbc23-2a79-48b3-9a67-649b852d8589")) __declspec(novtable) ICommandBar3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DefaultLabelPosition(winrt::Windows::UI::Xaml::Controls::CommandBarDefaultLabelPosition * value) = 0;
     virtual HRESULT __stdcall put_DefaultLabelPosition(winrt::Windows::UI::Xaml::Controls::CommandBarDefaultLabelPosition value) = 0;
@@ -870,57 +870,57 @@ struct __declspec(uuid("40ebbc23-2a79-48b3-9a67-649b852d8589")) __declspec(novta
     virtual HRESULT __stdcall remove_DynamicOverflowItemsChanging(event_token token) = 0;
 };
 
-struct __declspec(uuid("67918e1b-f2d5-44d1-8b84-92b87f80a350")) __declspec(novtable) ICommandBarElement : Windows::IInspectable
+struct __declspec(uuid("67918e1b-f2d5-44d1-8b84-92b87f80a350")) __declspec(novtable) ICommandBarElement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsCompact(bool * value) = 0;
     virtual HRESULT __stdcall put_IsCompact(bool value) = 0;
 };
 
-struct __declspec(uuid("a9bf1236-4402-4688-b987-9d2b9b7bf2bd")) __declspec(novtable) ICommandBarElement2 : Windows::IInspectable
+struct __declspec(uuid("a9bf1236-4402-4688-b987-9d2b9b7bf2bd")) __declspec(novtable) ICommandBarElement2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsInOverflow(bool * value) = 0;
     virtual HRESULT __stdcall get_DynamicOverflowOrder(int32_t * value) = 0;
     virtual HRESULT __stdcall put_DynamicOverflowOrder(int32_t value) = 0;
 };
 
-struct __declspec(uuid("67bdeb44-20e1-4177-ad44-f617b374e8e8")) __declspec(novtable) ICommandBarFactory : Windows::IInspectable
+struct __declspec(uuid("67bdeb44-20e1-4177-ad44-f617b374e8e8")) __declspec(novtable) ICommandBarFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ICommandBar ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ICommandBar ** instance) = 0;
 };
 
-struct __declspec(uuid("6e7a9427-58ef-4366-a017-18c193d56b14")) __declspec(novtable) ICommandBarOverflowPresenter : Windows::IInspectable
+struct __declspec(uuid("6e7a9427-58ef-4366-a017-18c193d56b14")) __declspec(novtable) ICommandBarOverflowPresenter : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("8323f774-5aaa-4049-b78f-218c6a19c37e")) __declspec(novtable) ICommandBarOverflowPresenterFactory : Windows::IInspectable
+struct __declspec(uuid("8323f774-5aaa-4049-b78f-218c6a19c37e")) __declspec(novtable) ICommandBarOverflowPresenterFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ICommandBarOverflowPresenter ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ICommandBarOverflowPresenter ** instance) = 0;
 };
 
-struct __declspec(uuid("5bd981ea-e278-409c-b522-f946ca253b44")) __declspec(novtable) ICommandBarStatics : Windows::IInspectable
+struct __declspec(uuid("5bd981ea-e278-409c-b522-f946ca253b44")) __declspec(novtable) ICommandBarStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PrimaryCommandsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_SecondaryCommandsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("3d9ec8e3-51a9-4e34-956c-7081d06f26f8")) __declspec(novtable) ICommandBarStatics2 : Windows::IInspectable
+struct __declspec(uuid("3d9ec8e3-51a9-4e34-956c-7081d06f26f8")) __declspec(novtable) ICommandBarStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CommandBarOverflowPresenterStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b45a24a4-8af1-4843-b319-e03fc45ab726")) __declspec(novtable) ICommandBarStatics3 : Windows::IInspectable
+struct __declspec(uuid("b45a24a4-8af1-4843-b319-e03fc45ab726")) __declspec(novtable) ICommandBarStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DefaultLabelPositionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OverflowButtonVisibilityProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsDynamicOverflowEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("07deeaa7-018f-4dda-b399-fd4e13a31bea")) __declspec(novtable) IContainerContentChangingEventArgs : Windows::IInspectable
+struct __declspec(uuid("07deeaa7-018f-4dda-b399-fd4e13a31bea")) __declspec(novtable) IContainerContentChangingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemContainer(Windows::UI::Xaml::Controls::Primitives::ISelectorItem ** value) = 0;
     virtual HRESULT __stdcall get_InRecycleQueue(bool * value) = 0;
     virtual HRESULT __stdcall get_ItemIndex(int32_t * value) = 0;
-    virtual HRESULT __stdcall get_Item(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_Item(Windows::Foundation::IInspectable ** value) = 0;
     virtual HRESULT __stdcall get_Phase(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
@@ -928,10 +928,10 @@ struct __declspec(uuid("07deeaa7-018f-4dda-b399-fd4e13a31bea")) __declspec(novta
     virtual HRESULT __stdcall abi_RegisterUpdateCallbackWithPhase(uint32_t callbackPhase, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs> * callback) = 0;
 };
 
-struct __declspec(uuid("a26dd1dc-cd44-435c-be94-01d6241c231c")) __declspec(novtable) IContentControl : Windows::IInspectable
+struct __declspec(uuid("a26dd1dc-cd44-435c-be94-01d6241c231c")) __declspec(novtable) IContentControl : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Content(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Content(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Content(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Content(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_ContentTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_ContentTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_ContentTemplateSelector(Windows::UI::Xaml::Controls::IDataTemplateSelector ** value) = 0;
@@ -940,24 +940,24 @@ struct __declspec(uuid("a26dd1dc-cd44-435c-be94-01d6241c231c")) __declspec(novta
     virtual HRESULT __stdcall put_ContentTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> * value) = 0;
 };
 
-struct __declspec(uuid("652c208c-8ccf-4399-bd3e-5a015aa1bc03")) __declspec(novtable) IContentControl2 : Windows::IInspectable
+struct __declspec(uuid("652c208c-8ccf-4399-bd3e-5a015aa1bc03")) __declspec(novtable) IContentControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentTemplateRoot(Windows::UI::Xaml::IUIElement ** value) = 0;
 };
 
-struct __declspec(uuid("ab017b19-196e-4ed5-a27f-55c58fb1673f")) __declspec(novtable) IContentControlFactory : Windows::IInspectable
+struct __declspec(uuid("ab017b19-196e-4ed5-a27f-55c58fb1673f")) __declspec(novtable) IContentControlFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IContentControl ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IContentControl ** instance) = 0;
 };
 
-struct __declspec(uuid("5f4c0b10-e38e-4b5d-be1a-5ed04246a635")) __declspec(novtable) IContentControlOverrides : Windows::IInspectable
+struct __declspec(uuid("5f4c0b10-e38e-4b5d-be1a-5ed04246a635")) __declspec(novtable) IContentControlOverrides : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_OnContentChanged(Windows::IInspectable * oldContent, Windows::IInspectable * newContent) = 0;
+    virtual HRESULT __stdcall abi_OnContentChanged(Windows::Foundation::IInspectable * oldContent, Windows::Foundation::IInspectable * newContent) = 0;
     virtual HRESULT __stdcall abi_OnContentTemplateChanged(Windows::UI::Xaml::IDataTemplate * oldContentTemplate, Windows::UI::Xaml::IDataTemplate * newContentTemplate) = 0;
     virtual HRESULT __stdcall abi_OnContentTemplateSelectorChanged(Windows::UI::Xaml::Controls::IDataTemplateSelector * oldContentTemplateSelector, Windows::UI::Xaml::Controls::IDataTemplateSelector * newContentTemplateSelector) = 0;
 };
 
-struct __declspec(uuid("116982a4-5cf5-4c05-a53f-15e4876c85ec")) __declspec(novtable) IContentControlStatics : Windows::IInspectable
+struct __declspec(uuid("116982a4-5cf5-4c05-a53f-15e4876c85ec")) __declspec(novtable) IContentControlStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ContentTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -965,10 +965,10 @@ struct __declspec(uuid("116982a4-5cf5-4c05-a53f-15e4876c85ec")) __declspec(novta
     virtual HRESULT __stdcall get_ContentTransitionsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("38dc4404-d24e-40d8-9415-349464c1afdc")) __declspec(novtable) IContentDialog : Windows::IInspectable
+struct __declspec(uuid("38dc4404-d24e-40d8-9415-349464c1afdc")) __declspec(novtable) IContentDialog : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Title(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Title(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Title(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Title(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_TitleTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_TitleTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_FullSizeDesired(bool * value) = 0;
@@ -981,10 +981,10 @@ struct __declspec(uuid("38dc4404-d24e-40d8-9415-349464c1afdc")) __declspec(novta
     virtual HRESULT __stdcall put_PrimaryButtonCommand(Windows::UI::Xaml::Input::ICommand * value) = 0;
     virtual HRESULT __stdcall get_SecondaryButtonCommand(Windows::UI::Xaml::Input::ICommand ** value) = 0;
     virtual HRESULT __stdcall put_SecondaryButtonCommand(Windows::UI::Xaml::Input::ICommand * value) = 0;
-    virtual HRESULT __stdcall get_PrimaryButtonCommandParameter(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_PrimaryButtonCommandParameter(Windows::IInspectable * value) = 0;
-    virtual HRESULT __stdcall get_SecondaryButtonCommandParameter(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_SecondaryButtonCommandParameter(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_PrimaryButtonCommandParameter(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_PrimaryButtonCommandParameter(Windows::Foundation::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_SecondaryButtonCommandParameter(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_SecondaryButtonCommandParameter(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_IsPrimaryButtonEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsPrimaryButtonEnabled(bool value) = 0;
     virtual HRESULT __stdcall get_IsSecondaryButtonEnabled(bool * value) = 0;
@@ -1003,29 +1003,29 @@ struct __declspec(uuid("38dc4404-d24e-40d8-9415-349464c1afdc")) __declspec(novta
     virtual HRESULT __stdcall abi_ShowAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Controls::ContentDialogResult> ** returnValue) = 0;
 };
 
-struct __declspec(uuid("bd0d3637-19ce-4946-8e77-bd03fe8ebe03")) __declspec(novtable) IContentDialogButtonClickDeferral : Windows::IInspectable
+struct __declspec(uuid("bd0d3637-19ce-4946-8e77-bd03fe8ebe03")) __declspec(novtable) IContentDialogButtonClickDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("5f34c205-8afa-4cf2-8ca0-264d73bed63d")) __declspec(novtable) IContentDialogButtonClickEventArgs : Windows::IInspectable
+struct __declspec(uuid("5f34c205-8afa-4cf2-8ca0-264d73bed63d")) __declspec(novtable) IContentDialogButtonClickEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
     virtual HRESULT __stdcall put_Cancel(bool value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral ** returnValue) = 0;
 };
 
-struct __declspec(uuid("905522ef-2cba-4af8-b666-cc36c22732fb")) __declspec(novtable) IContentDialogClosedEventArgs : Windows::IInspectable
+struct __declspec(uuid("905522ef-2cba-4af8-b666-cc36c22732fb")) __declspec(novtable) IContentDialogClosedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Result(winrt::Windows::UI::Xaml::Controls::ContentDialogResult * value) = 0;
 };
 
-struct __declspec(uuid("215d4d11-7e30-4cb9-a710-5a4f9cca8b42")) __declspec(novtable) IContentDialogClosingDeferral : Windows::IInspectable
+struct __declspec(uuid("215d4d11-7e30-4cb9-a710-5a4f9cca8b42")) __declspec(novtable) IContentDialogClosingDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("db3c1c34-3bbf-47d4-be4f-c9ec115918b9")) __declspec(novtable) IContentDialogClosingEventArgs : Windows::IInspectable
+struct __declspec(uuid("db3c1c34-3bbf-47d4-be4f-c9ec115918b9")) __declspec(novtable) IContentDialogClosingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Result(winrt::Windows::UI::Xaml::Controls::ContentDialogResult * value) = 0;
     virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
@@ -1033,16 +1033,16 @@ struct __declspec(uuid("db3c1c34-3bbf-47d4-be4f-c9ec115918b9")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeferral(Windows::UI::Xaml::Controls::IContentDialogClosingDeferral ** returnValue) = 0;
 };
 
-struct __declspec(uuid("05557178-9d8e-4315-b37d-680c14012c35")) __declspec(novtable) IContentDialogFactory : Windows::IInspectable
+struct __declspec(uuid("05557178-9d8e-4315-b37d-680c14012c35")) __declspec(novtable) IContentDialogFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IContentDialog ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IContentDialog ** instance) = 0;
 };
 
-struct __declspec(uuid("0966b315-5f59-4999-9e3e-374c0f174b04")) __declspec(novtable) IContentDialogOpenedEventArgs : Windows::IInspectable
+struct __declspec(uuid("0966b315-5f59-4999-9e3e-374c0f174b04")) __declspec(novtable) IContentDialogOpenedEventArgs : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("23ab47a6-508a-4f33-b786-f2fa96d869af")) __declspec(novtable) IContentDialogStatics : Windows::IInspectable
+struct __declspec(uuid("23ab47a6-508a-4f33-b786-f2fa96d869af")) __declspec(novtable) IContentDialogStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TitleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TitleTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1057,10 +1057,10 @@ struct __declspec(uuid("23ab47a6-508a-4f33-b786-f2fa96d869af")) __declspec(novta
     virtual HRESULT __stdcall get_IsSecondaryButtonEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("79fde5b4-cd37-491c-8845-daf472defff6")) __declspec(novtable) IContentPresenter : Windows::IInspectable
+struct __declspec(uuid("79fde5b4-cd37-491c-8845-daf472defff6")) __declspec(novtable) IContentPresenter : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Content(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Content(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Content(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Content(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_ContentTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_ContentTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_ContentTemplateSelector(Windows::UI::Xaml::Controls::IDataTemplateSelector ** value) = 0;
@@ -1083,7 +1083,7 @@ struct __declspec(uuid("79fde5b4-cd37-491c-8845-daf472defff6")) __declspec(novta
     virtual HRESULT __stdcall put_Foreground(Windows::UI::Xaml::Media::IBrush * value) = 0;
 };
 
-struct __declspec(uuid("5138e958-335d-4210-8bbb-0aa2b4b5c29e")) __declspec(novtable) IContentPresenter2 : Windows::IInspectable
+struct __declspec(uuid("5138e958-335d-4210-8bbb-0aa2b4b5c29e")) __declspec(novtable) IContentPresenter2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OpticalMarginAlignment(winrt::Windows::UI::Xaml::OpticalMarginAlignment * value) = 0;
     virtual HRESULT __stdcall put_OpticalMarginAlignment(winrt::Windows::UI::Xaml::OpticalMarginAlignment value) = 0;
@@ -1091,13 +1091,13 @@ struct __declspec(uuid("5138e958-335d-4210-8bbb-0aa2b4b5c29e")) __declspec(novta
     virtual HRESULT __stdcall put_TextLineBounds(winrt::Windows::UI::Xaml::TextLineBounds value) = 0;
 };
 
-struct __declspec(uuid("b038876a-9c4d-4402-ac56-a223487dc6c8")) __declspec(novtable) IContentPresenter3 : Windows::IInspectable
+struct __declspec(uuid("b038876a-9c4d-4402-ac56-a223487dc6c8")) __declspec(novtable) IContentPresenter3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsTextScaleFactorEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("997b1b17-3bf8-432b-8fd9-68c7bab21f9d")) __declspec(novtable) IContentPresenter4 : Windows::IInspectable
+struct __declspec(uuid("997b1b17-3bf8-432b-8fd9-68c7bab21f9d")) __declspec(novtable) IContentPresenter4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextWrapping(winrt::Windows::UI::Xaml::TextWrapping * value) = 0;
     virtual HRESULT __stdcall put_TextWrapping(winrt::Windows::UI::Xaml::TextWrapping value) = 0;
@@ -1123,18 +1123,18 @@ struct __declspec(uuid("997b1b17-3bf8-432b-8fd9-68c7bab21f9d")) __declspec(novta
     virtual HRESULT __stdcall put_VerticalContentAlignment(winrt::Windows::UI::Xaml::VerticalAlignment value) = 0;
 };
 
-struct __declspec(uuid("3339d4f7-4815-44c4-9f76-68c83880ef10")) __declspec(novtable) IContentPresenterFactory : Windows::IInspectable
+struct __declspec(uuid("3339d4f7-4815-44c4-9f76-68c83880ef10")) __declspec(novtable) IContentPresenterFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IContentPresenter ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IContentPresenter ** instance) = 0;
 };
 
-struct __declspec(uuid("a76339ed-32ff-438b-aad5-1d68fae93426")) __declspec(novtable) IContentPresenterOverrides : Windows::IInspectable
+struct __declspec(uuid("a76339ed-32ff-438b-aad5-1d68fae93426")) __declspec(novtable) IContentPresenterOverrides : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_OnContentTemplateChanged(Windows::UI::Xaml::IDataTemplate * oldContentTemplate, Windows::UI::Xaml::IDataTemplate * newContentTemplate) = 0;
     virtual HRESULT __stdcall abi_OnContentTemplateSelectorChanged(Windows::UI::Xaml::Controls::IDataTemplateSelector * oldContentTemplateSelector, Windows::UI::Xaml::Controls::IDataTemplateSelector * newContentTemplateSelector) = 0;
 };
 
-struct __declspec(uuid("18c2893b-da2e-4426-b85a-2c7e2171bedf")) __declspec(novtable) IContentPresenterStatics : Windows::IInspectable
+struct __declspec(uuid("18c2893b-da2e-4426-b85a-2c7e2171bedf")) __declspec(novtable) IContentPresenterStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ContentTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1149,18 +1149,18 @@ struct __declspec(uuid("18c2893b-da2e-4426-b85a-2c7e2171bedf")) __declspec(novta
     virtual HRESULT __stdcall get_ForegroundProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("c7d89dd9-06e6-46be-a8a0-9c117d3024a3")) __declspec(novtable) IContentPresenterStatics2 : Windows::IInspectable
+struct __declspec(uuid("c7d89dd9-06e6-46be-a8a0-9c117d3024a3")) __declspec(novtable) IContentPresenterStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OpticalMarginAlignmentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TextLineBoundsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("cbe6cf5b-38b1-4d5d-b098-bc94b35c8ddf")) __declspec(novtable) IContentPresenterStatics3 : Windows::IInspectable
+struct __declspec(uuid("cbe6cf5b-38b1-4d5d-b098-bc94b35c8ddf")) __declspec(novtable) IContentPresenterStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ff8be292-af28-47eb-a5c3-dc44ced40fd2")) __declspec(novtable) IContentPresenterStatics4 : Windows::IInspectable
+struct __declspec(uuid("ff8be292-af28-47eb-a5c3-dc44ced40fd2")) __declspec(novtable) IContentPresenterStatics4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextWrappingProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MaxLinesProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1175,7 +1175,7 @@ struct __declspec(uuid("ff8be292-af28-47eb-a5c3-dc44ced40fd2")) __declspec(novta
     virtual HRESULT __stdcall get_VerticalContentAlignmentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("1f7df263-c14b-4528-b6f0-637999d83cc6")) __declspec(novtable) IContextMenuEventArgs : Windows::IInspectable
+struct __declspec(uuid("1f7df263-c14b-4528-b6f0-637999d83cc6")) __declspec(novtable) IContextMenuEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
@@ -1183,7 +1183,7 @@ struct __declspec(uuid("1f7df263-c14b-4528-b6f0-637999d83cc6")) __declspec(novta
     virtual HRESULT __stdcall get_CursorTop(double * value) = 0;
 };
 
-struct __declspec(uuid("a8912263-2951-4f58-a9c5-5a134eaa7f07")) __declspec(novtable) IControl : Windows::IInspectable
+struct __declspec(uuid("a8912263-2951-4f58-a9c5-5a134eaa7f07")) __declspec(novtable) IControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontSize(double * value) = 0;
     virtual HRESULT __stdcall put_FontSize(double value) = 0;
@@ -1228,19 +1228,19 @@ struct __declspec(uuid("a8912263-2951-4f58-a9c5-5a134eaa7f07")) __declspec(novta
     virtual HRESULT __stdcall abi_Focus(winrt::Windows::UI::Xaml::FocusState value, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("43e0fe10-14ec-427e-8c57-dee60df60aa8")) __declspec(novtable) IControl2 : Windows::IInspectable
+struct __declspec(uuid("43e0fe10-14ec-427e-8c57-dee60df60aa8")) __declspec(novtable) IControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsTextScaleFactorEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("077b29e4-dade-4f55-9b96-09e21b28eb1c")) __declspec(novtable) IControl3 : Windows::IInspectable
+struct __declspec(uuid("077b29e4-dade-4f55-9b96-09e21b28eb1c")) __declspec(novtable) IControl3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UseSystemFocusVisuals(bool * value) = 0;
     virtual HRESULT __stdcall put_UseSystemFocusVisuals(bool value) = 0;
 };
 
-struct __declspec(uuid("0e18aeee-5f2e-44ea-8513-d3875c0a7513")) __declspec(novtable) IControl4 : Windows::IInspectable
+struct __declspec(uuid("0e18aeee-5f2e-44ea-8513-d3875c0a7513")) __declspec(novtable) IControl4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsFocusEngagementEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsFocusEngagementEnabled(bool value) = 0;
@@ -1265,12 +1265,12 @@ struct __declspec(uuid("0e18aeee-5f2e-44ea-8513-d3875c0a7513")) __declspec(novta
     virtual HRESULT __stdcall abi_RemoveFocusEngagement() = 0;
 };
 
-struct __declspec(uuid("b12b1d5a-6419-4e16-b212-a45336b75778")) __declspec(novtable) IControlFactory : Windows::IInspectable
+struct __declspec(uuid("b12b1d5a-6419-4e16-b212-a45336b75778")) __declspec(novtable) IControlFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IControl ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IControl ** instance) = 0;
 };
 
-struct __declspec(uuid("a09691df-9824-41fe-b530-b0d8990e64c1")) __declspec(novtable) IControlOverrides : Windows::IInspectable
+struct __declspec(uuid("a09691df-9824-41fe-b530-b0d8990e64c1")) __declspec(novtable) IControlOverrides : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_OnPointerEntered(Windows::UI::Xaml::Input::IPointerRoutedEventArgs * e) = 0;
     virtual HRESULT __stdcall abi_OnPointerPressed(Windows::UI::Xaml::Input::IPointerRoutedEventArgs * e) = 0;
@@ -1299,14 +1299,14 @@ struct __declspec(uuid("a09691df-9824-41fe-b530-b0d8990e64c1")) __declspec(novta
     virtual HRESULT __stdcall abi_OnDrop(Windows::UI::Xaml::IDragEventArgs * e) = 0;
 };
 
-struct __declspec(uuid("1791587a-2a7c-4981-a2d8-ab99fffc65b9")) __declspec(novtable) IControlProtected : Windows::IInspectable
+struct __declspec(uuid("1791587a-2a7c-4981-a2d8-ab99fffc65b9")) __declspec(novtable) IControlProtected : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_DefaultStyleKey(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_DefaultStyleKey(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_DefaultStyleKey(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_DefaultStyleKey(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall abi_GetTemplateChild(hstring childName, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
 };
 
-struct __declspec(uuid("473b305b-877d-4c35-8fca-46a05f96607a")) __declspec(novtable) IControlStatics : Windows::IInspectable
+struct __declspec(uuid("473b305b-877d-4c35-8fca-46a05f96607a")) __declspec(novtable) IControlStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontSizeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FontFamilyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1330,12 +1330,12 @@ struct __declspec(uuid("473b305b-877d-4c35-8fca-46a05f96607a")) __declspec(novta
     virtual HRESULT __stdcall get_FocusStateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("32233e36-ab74-4a25-a556-45293135b2c5")) __declspec(novtable) IControlStatics2 : Windows::IInspectable
+struct __declspec(uuid("32233e36-ab74-4a25-a556-45293135b2c5")) __declspec(novtable) IControlStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("aad15e61-e4b9-4d72-b653-934149aa5003")) __declspec(novtable) IControlStatics3 : Windows::IInspectable
+struct __declspec(uuid("aad15e61-e4b9-4d72-b653-934149aa5003")) __declspec(novtable) IControlStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UseSystemFocusVisualsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsTemplateFocusTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1343,7 +1343,7 @@ struct __declspec(uuid("aad15e61-e4b9-4d72-b653-934149aa5003")) __declspec(novta
     virtual HRESULT __stdcall abi_SetIsTemplateFocusTarget(Windows::UI::Xaml::IFrameworkElement * element, bool value) = 0;
 };
 
-struct __declspec(uuid("59fda728-c05a-4ec2-8a4b-06ad69b66e15")) __declspec(novtable) IControlStatics4 : Windows::IInspectable
+struct __declspec(uuid("59fda728-c05a-4ec2-8a4b-06ad69b66e15")) __declspec(novtable) IControlStatics4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsFocusEngagementEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsFocusEngagedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1355,47 +1355,47 @@ struct __declspec(uuid("59fda728-c05a-4ec2-8a4b-06ad69b66e15")) __declspec(novta
     virtual HRESULT __stdcall get_ElementSoundModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("efd2418e-41e0-48bb-8b82-91eda1ba3fe2")) __declspec(novtable) IControlTemplate : Windows::IInspectable
+struct __declspec(uuid("efd2418e-41e0-48bb-8b82-91eda1ba3fe2")) __declspec(novtable) IControlTemplate : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetType(Windows::UI::Xaml::Interop::TypeName * value) = 0;
     virtual HRESULT __stdcall put_TargetType(Windows::UI::Xaml::Interop::TypeName value) = 0;
 };
 
-struct __declspec(uuid("a907d496-46a0-4cd7-8dbe-f9a581df60b1")) __declspec(novtable) IDataTemplateSelector : Windows::IInspectable
+struct __declspec(uuid("a907d496-46a0-4cd7-8dbe-f9a581df60b1")) __declspec(novtable) IDataTemplateSelector : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_SelectTemplate(Windows::IInspectable * item, Windows::UI::Xaml::IDependencyObject * container, Windows::UI::Xaml::IDataTemplate ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_SelectTemplate(Windows::Foundation::IInspectable * item, Windows::UI::Xaml::IDependencyObject * container, Windows::UI::Xaml::IDataTemplate ** returnValue) = 0;
 };
 
-struct __declspec(uuid("3792bc47-8c4b-4257-a5ae-cc3f8ed786eb")) __declspec(novtable) IDataTemplateSelector2 : Windows::IInspectable
+struct __declspec(uuid("3792bc47-8c4b-4257-a5ae-cc3f8ed786eb")) __declspec(novtable) IDataTemplateSelector2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_SelectTemplateForItem(Windows::IInspectable * item, Windows::UI::Xaml::IDataTemplate ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_SelectTemplateForItem(Windows::Foundation::IInspectable * item, Windows::UI::Xaml::IDataTemplate ** returnValue) = 0;
 };
 
-struct __declspec(uuid("511baad0-210a-457d-9521-433d2b11b7d2")) __declspec(novtable) IDataTemplateSelectorFactory : Windows::IInspectable
+struct __declspec(uuid("511baad0-210a-457d-9521-433d2b11b7d2")) __declspec(novtable) IDataTemplateSelectorFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IDataTemplateSelector ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IDataTemplateSelector ** instance) = 0;
 };
 
-struct __declspec(uuid("2d162925-5966-4bfa-8638-4d345689f6cf")) __declspec(novtable) IDataTemplateSelectorOverrides : Windows::IInspectable
+struct __declspec(uuid("2d162925-5966-4bfa-8638-4d345689f6cf")) __declspec(novtable) IDataTemplateSelectorOverrides : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_SelectTemplateCore(Windows::IInspectable * item, Windows::UI::Xaml::IDependencyObject * container, Windows::UI::Xaml::IDataTemplate ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_SelectTemplateCore(Windows::Foundation::IInspectable * item, Windows::UI::Xaml::IDependencyObject * container, Windows::UI::Xaml::IDataTemplate ** returnValue) = 0;
 };
 
-struct __declspec(uuid("6c3fb5fc-8e84-4c91-ac15-04a1d885500f")) __declspec(novtable) IDataTemplateSelectorOverrides2 : Windows::IInspectable
+struct __declspec(uuid("6c3fb5fc-8e84-4c91-ac15-04a1d885500f")) __declspec(novtable) IDataTemplateSelectorOverrides2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_SelectTemplateForItemCore(Windows::IInspectable * item, Windows::UI::Xaml::IDataTemplate ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_SelectTemplateForItemCore(Windows::Foundation::IInspectable * item, Windows::UI::Xaml::IDataTemplate ** returnValue) = 0;
 };
 
-struct __declspec(uuid("a1527b12-59c1-4521-b28c-b176675e7c5a")) __declspec(novtable) IDatePickedEventArgs : Windows::IInspectable
+struct __declspec(uuid("a1527b12-59c1-4521-b28c-b176675e7c5a")) __declspec(novtable) IDatePickedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OldDate(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_NewDate(Windows::Foundation::DateTime * value) = 0;
 };
 
-struct __declspec(uuid("06da3946-08b8-4103-8b8a-093efd6a7657")) __declspec(novtable) IDatePicker : Windows::IInspectable
+struct __declspec(uuid("06da3946-08b8-4103-8b8a-093efd6a7657")) __declspec(novtable) IDatePicker : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_CalendarIdentifier(hstring * value) = 0;
@@ -1424,18 +1424,18 @@ struct __declspec(uuid("06da3946-08b8-4103-8b8a-093efd6a7657")) __declspec(novta
     virtual HRESULT __stdcall remove_DateChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("bb28b475-2c1f-4340-9e30-948f99c9e57a")) __declspec(novtable) IDatePicker2 : Windows::IInspectable
+struct __declspec(uuid("bb28b475-2c1f-4340-9e30-948f99c9e57a")) __declspec(novtable) IDatePicker2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode * value) = 0;
     virtual HRESULT __stdcall put_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode value) = 0;
 };
 
-struct __declspec(uuid("eec3ca84-9896-4a7d-bb35-6fb21eaeca11")) __declspec(novtable) IDatePickerFactory : Windows::IInspectable
+struct __declspec(uuid("eec3ca84-9896-4a7d-bb35-6fb21eaeca11")) __declspec(novtable) IDatePickerFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IDatePicker ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IDatePicker ** instance) = 0;
 };
 
-struct __declspec(uuid("fbf33b1a-a3a4-4df8-9228-23a5ac27df4e")) __declspec(novtable) IDatePickerFlyout : Windows::IInspectable
+struct __declspec(uuid("fbf33b1a-a3a4-4df8-9228-23a5ac27df4e")) __declspec(novtable) IDatePickerFlyout : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CalendarIdentifier(hstring * value) = 0;
     virtual HRESULT __stdcall put_CalendarIdentifier(hstring value) = 0;
@@ -1456,7 +1456,7 @@ struct __declspec(uuid("fbf33b1a-a3a4-4df8-9228-23a5ac27df4e")) __declspec(novta
     virtual HRESULT __stdcall abi_ShowAtAsync(Windows::UI::Xaml::IFrameworkElement * target, Windows::Foundation::IAsyncOperation<Windows::Foundation::IReference<Windows::Foundation::DateTime>> ** returnValue) = 0;
 };
 
-struct __declspec(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84")) __declspec(novtable) IDatePickerFlyout2 : Windows::IInspectable
+struct __declspec(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84")) __declspec(novtable) IDatePickerFlyout2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DayFormat(hstring * value) = 0;
     virtual HRESULT __stdcall put_DayFormat(hstring value) = 0;
@@ -1466,7 +1466,7 @@ struct __declspec(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84")) __declspec(novta
     virtual HRESULT __stdcall put_YearFormat(hstring value) = 0;
 };
 
-struct __declspec(uuid("9d9bc289-00d2-4aac-9c85-d74f06367887")) __declspec(novtable) IDatePickerFlyoutItem : Windows::IInspectable
+struct __declspec(uuid("9d9bc289-00d2-4aac-9c85-d74f06367887")) __declspec(novtable) IDatePickerFlyoutItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PrimaryText(hstring * value) = 0;
     virtual HRESULT __stdcall put_PrimaryText(hstring value) = 0;
@@ -1474,17 +1474,17 @@ struct __declspec(uuid("9d9bc289-00d2-4aac-9c85-d74f06367887")) __declspec(novta
     virtual HRESULT __stdcall put_SecondaryText(hstring value) = 0;
 };
 
-struct __declspec(uuid("aa9c91da-07f6-4cdf-89b4-dda3bdb0ea6b")) __declspec(novtable) IDatePickerFlyoutItemStatics : Windows::IInspectable
+struct __declspec(uuid("aa9c91da-07f6-4cdf-89b4-dda3bdb0ea6b")) __declspec(novtable) IDatePickerFlyoutItemStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PrimaryTextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_SecondaryTextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("7c62f70e-2ddc-4381-832f-54cbdfaa849a")) __declspec(novtable) IDatePickerFlyoutPresenter : Windows::IInspectable
+struct __declspec(uuid("7c62f70e-2ddc-4381-832f-54cbdfaa849a")) __declspec(novtable) IDatePickerFlyoutPresenter : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("cd570377-5845-4c12-8c10-592d9fcc7cd9")) __declspec(novtable) IDatePickerFlyoutStatics : Windows::IInspectable
+struct __declspec(uuid("cd570377-5845-4c12-8c10-592d9fcc7cd9")) __declspec(novtable) IDatePickerFlyoutStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CalendarIdentifierProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_DateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1495,14 +1495,14 @@ struct __declspec(uuid("cd570377-5845-4c12-8c10-592d9fcc7cd9")) __declspec(novta
     virtual HRESULT __stdcall get_MaxYearProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("afd3e569-81e6-4b54-84a9-68079b73e34e")) __declspec(novtable) IDatePickerFlyoutStatics2 : Windows::IInspectable
+struct __declspec(uuid("afd3e569-81e6-4b54-84a9-68079b73e34e")) __declspec(novtable) IDatePickerFlyoutStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DayFormatProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MonthFormatProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_YearFormatProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("182e7c69-2116-4c67-b513-713364831d79")) __declspec(novtable) IDatePickerStatics : Windows::IInspectable
+struct __declspec(uuid("182e7c69-2116-4c67-b513-713364831d79")) __declspec(novtable) IDatePickerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1519,66 +1519,66 @@ struct __declspec(uuid("182e7c69-2116-4c67-b513-713364831d79")) __declspec(novta
     virtual HRESULT __stdcall get_OrientationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("f1076df6-fba6-4550-8b88-a6420847f60d")) __declspec(novtable) IDatePickerStatics2 : Windows::IInspectable
+struct __declspec(uuid("f1076df6-fba6-4550-8b88-a6420847f60d")) __declspec(novtable) IDatePickerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("1ae661b2-b1b4-4273-96e0-19daff187446")) __declspec(novtable) IDatePickerValueChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("1ae661b2-b1b4-4273-96e0-19daff187446")) __declspec(novtable) IDatePickerValueChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OldDate(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_NewDate(Windows::Foundation::DateTime * value) = 0;
 };
 
-struct __declspec(uuid("af05f22f-9e78-4b21-9a8e-41c2d1367a2a")) __declspec(novtable) IDragItemsCompletedEventArgs : Windows::IInspectable
+struct __declspec(uuid("af05f22f-9e78-4b21-9a8e-41c2d1367a2a")) __declspec(novtable) IDragItemsCompletedEventArgs : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Items(Windows::Foundation::Collections::IVectorView<Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_Items(Windows::Foundation::Collections::IVectorView<Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_DropResult(winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation * value) = 0;
 };
 
-struct __declspec(uuid("71cf215c-daed-4783-aa11-dc574d2713e9")) __declspec(novtable) IDragItemsStartingEventArgs : Windows::IInspectable
+struct __declspec(uuid("71cf215c-daed-4783-aa11-dc574d2713e9")) __declspec(novtable) IDragItemsStartingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
     virtual HRESULT __stdcall put_Cancel(bool value) = 0;
-    virtual HRESULT __stdcall get_Items(Windows::Foundation::Collections::IVector<Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_Items(Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_Data(Windows::ApplicationModel::DataTransfer::IDataPackage ** value) = 0;
 };
 
-struct __declspec(uuid("c93c736f-6f6e-4e43-90d9-9b46a0d88b9f")) __declspec(novtable) IDynamicOverflowItemsChangingEventArgs : Windows::IInspectable
+struct __declspec(uuid("c93c736f-6f6e-4e43-90d9-9b46a0d88b9f")) __declspec(novtable) IDynamicOverflowItemsChangingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Action(winrt::Windows::UI::Xaml::Controls::CommandBarDynamicOverflowAction * value) = 0;
 };
 
-struct __declspec(uuid("a1582f68-3d7d-4d3b-b71d-488eed1e3493")) __declspec(novtable) IFlipView : Windows::IInspectable
+struct __declspec(uuid("a1582f68-3d7d-4d3b-b71d-488eed1e3493")) __declspec(novtable) IFlipView : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("c4fea4fd-7af3-4952-9fd9-9e0987fc4f29")) __declspec(novtable) IFlipView2 : Windows::IInspectable
+struct __declspec(uuid("c4fea4fd-7af3-4952-9fd9-9e0987fc4f29")) __declspec(novtable) IFlipView2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UseTouchAnimationsForAllNavigation(bool * value) = 0;
     virtual HRESULT __stdcall put_UseTouchAnimationsForAllNavigation(bool value) = 0;
 };
 
-struct __declspec(uuid("f1dea9be-9ae8-4d4b-ab43-16d31e05f4f3")) __declspec(novtable) IFlipViewFactory : Windows::IInspectable
+struct __declspec(uuid("f1dea9be-9ae8-4d4b-ab43-16d31e05f4f3")) __declspec(novtable) IFlipViewFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IFlipView ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IFlipView ** instance) = 0;
 };
 
-struct __declspec(uuid("56196565-ce2b-4bda-a36b-82a2b8b0d4c0")) __declspec(novtable) IFlipViewItem : Windows::IInspectable
+struct __declspec(uuid("56196565-ce2b-4bda-a36b-82a2b8b0d4c0")) __declspec(novtable) IFlipViewItem : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("f21d91fe-22a0-4412-a853-9d6a6e8f2aaf")) __declspec(novtable) IFlipViewItemFactory : Windows::IInspectable
+struct __declspec(uuid("f21d91fe-22a0-4412-a853-9d6a6e8f2aaf")) __declspec(novtable) IFlipViewItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IFlipViewItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IFlipViewItem ** instance) = 0;
 };
 
-struct __declspec(uuid("70e3d93f-4308-4ba2-bbce-e2cb0ed34476")) __declspec(novtable) IFlipViewStatics2 : Windows::IInspectable
+struct __declspec(uuid("70e3d93f-4308-4ba2-bbce-e2cb0ed34476")) __declspec(novtable) IFlipViewStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UseTouchAnimationsForAllNavigationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("6584ebdf-cbc7-4e19-843a-a14f24a793ea")) __declspec(novtable) IFlyout : Windows::IInspectable
+struct __declspec(uuid("6584ebdf-cbc7-4e19-843a-a14f24a793ea")) __declspec(novtable) IFlyout : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Content(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall put_Content(Windows::UI::Xaml::IUIElement * value) = 0;
@@ -1586,35 +1586,35 @@ struct __declspec(uuid("6584ebdf-cbc7-4e19-843a-a14f24a793ea")) __declspec(novta
     virtual HRESULT __stdcall put_FlyoutPresenterStyle(Windows::UI::Xaml::IStyle * value) = 0;
 };
 
-struct __declspec(uuid("4bed4933-008e-4b03-a385-79fe5266ddba")) __declspec(novtable) IFlyoutFactory : Windows::IInspectable
+struct __declspec(uuid("4bed4933-008e-4b03-a385-79fe5266ddba")) __declspec(novtable) IFlyoutFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IFlyout ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IFlyout ** instance) = 0;
 };
 
-struct __declspec(uuid("827d5b79-e37b-46a5-8d44-63a11a580e83")) __declspec(novtable) IFlyoutPresenter : Windows::IInspectable
+struct __declspec(uuid("827d5b79-e37b-46a5-8d44-63a11a580e83")) __declspec(novtable) IFlyoutPresenter : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("ee4d668f-da76-469a-acd7-3060e613ade7")) __declspec(novtable) IFlyoutPresenterFactory : Windows::IInspectable
+struct __declspec(uuid("ee4d668f-da76-469a-acd7-3060e613ade7")) __declspec(novtable) IFlyoutPresenterFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IFlyoutPresenter ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IFlyoutPresenter ** instance) = 0;
 };
 
-struct __declspec(uuid("61364e0b-db75-47e1-b2c3-5b901c3d74b6")) __declspec(novtable) IFlyoutStatics : Windows::IInspectable
+struct __declspec(uuid("61364e0b-db75-47e1-b2c3-5b901c3d74b6")) __declspec(novtable) IFlyoutStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FlyoutPresenterStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("5e14280f-953e-4cf8-b9ea-c530a1ce02ad")) __declspec(novtable) IFocusDisengagedEventArgs : Windows::IInspectable
+struct __declspec(uuid("5e14280f-953e-4cf8-b9ea-c530a1ce02ad")) __declspec(novtable) IFocusDisengagedEventArgs : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("a69fc352-da66-404c-823f-5358594e70bb")) __declspec(novtable) IFocusEngagedEventArgs : Windows::IInspectable
+struct __declspec(uuid("a69fc352-da66-404c-823f-5358594e70bb")) __declspec(novtable) IFocusEngagedEventArgs : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("d4d61391-39ac-4950-9166-3606c264418b")) __declspec(novtable) IFontIcon : Windows::IInspectable
+struct __declspec(uuid("d4d61391-39ac-4950-9166-3606c264418b")) __declspec(novtable) IFontIcon : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Glyph(hstring * value) = 0;
     virtual HRESULT __stdcall put_Glyph(hstring value) = 0;
@@ -1628,24 +1628,24 @@ struct __declspec(uuid("d4d61391-39ac-4950-9166-3606c264418b")) __declspec(novta
     virtual HRESULT __stdcall put_FontStyle(winrt::Windows::UI::Text::FontStyle value) = 0;
 };
 
-struct __declspec(uuid("f6ebd84d-37e8-46ee-a574-41ad550482e0")) __declspec(novtable) IFontIcon2 : Windows::IInspectable
+struct __declspec(uuid("f6ebd84d-37e8-46ee-a574-41ad550482e0")) __declspec(novtable) IFontIcon2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsTextScaleFactorEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("6155d919-1c6c-4950-8794-231ef0914d94")) __declspec(novtable) IFontIcon3 : Windows::IInspectable
+struct __declspec(uuid("6155d919-1c6c-4950-8794-231ef0914d94")) __declspec(novtable) IFontIcon3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MirroredWhenRightToLeft(bool * value) = 0;
     virtual HRESULT __stdcall put_MirroredWhenRightToLeft(bool value) = 0;
 };
 
-struct __declspec(uuid("1c781b6b-37bf-4ddc-a1a8-1b77db3cf0ea")) __declspec(novtable) IFontIconFactory : Windows::IInspectable
+struct __declspec(uuid("1c781b6b-37bf-4ddc-a1a8-1b77db3cf0ea")) __declspec(novtable) IFontIconFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IFontIcon ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IFontIcon ** instance) = 0;
 };
 
-struct __declspec(uuid("b3be7bf6-1467-4086-bbcb-4e21d97a7b4d")) __declspec(novtable) IFontIconStatics : Windows::IInspectable
+struct __declspec(uuid("b3be7bf6-1467-4086-bbcb-4e21d97a7b4d")) __declspec(novtable) IFontIconStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GlyphProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FontSizeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1654,17 +1654,17 @@ struct __declspec(uuid("b3be7bf6-1467-4086-bbcb-4e21d97a7b4d")) __declspec(novta
     virtual HRESULT __stdcall get_FontStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e6080672-08f8-43d3-8790-4604290cbebd")) __declspec(novtable) IFontIconStatics2 : Windows::IInspectable
+struct __declspec(uuid("e6080672-08f8-43d3-8790-4604290cbebd")) __declspec(novtable) IFontIconStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("a4528b17-b084-4bd5-aab4-feae9d3b5d26")) __declspec(novtable) IFontIconStatics3 : Windows::IInspectable
+struct __declspec(uuid("a4528b17-b084-4bd5-aab4-feae9d3b5d26")) __declspec(novtable) IFontIconStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MirroredWhenRightToLeftProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("68ea500b-3fe9-4735-b6a0-e7601933b089")) __declspec(novtable) IFrame : Windows::IInspectable
+struct __declspec(uuid("68ea500b-3fe9-4735-b6a0-e7601933b089")) __declspec(novtable) IFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CacheSize(int32_t * value) = 0;
     virtual HRESULT __stdcall put_CacheSize(int32_t value) = 0;
@@ -1684,29 +1684,29 @@ struct __declspec(uuid("68ea500b-3fe9-4735-b6a0-e7601933b089")) __declspec(novta
     virtual HRESULT __stdcall remove_NavigationStopped(event_token token) = 0;
     virtual HRESULT __stdcall abi_GoBack() = 0;
     virtual HRESULT __stdcall abi_GoForward() = 0;
-    virtual HRESULT __stdcall abi_Navigate(Windows::UI::Xaml::Interop::TypeName sourcePageType, Windows::IInspectable * parameter, bool * returnValue) = 0;
+    virtual HRESULT __stdcall abi_Navigate(Windows::UI::Xaml::Interop::TypeName sourcePageType, Windows::Foundation::IInspectable * parameter, bool * returnValue) = 0;
     virtual HRESULT __stdcall abi_GetNavigationState(hstring * returnValue) = 0;
     virtual HRESULT __stdcall abi_SetNavigationState(hstring navigationState) = 0;
 };
 
-struct __declspec(uuid("3f367f87-9f5a-4b04-b818-b554c069597a")) __declspec(novtable) IFrame2 : Windows::IInspectable
+struct __declspec(uuid("3f367f87-9f5a-4b04-b818-b554c069597a")) __declspec(novtable) IFrame2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BackStack(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Navigation::PageStackEntry> ** value) = 0;
     virtual HRESULT __stdcall get_ForwardStack(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Navigation::PageStackEntry> ** value) = 0;
-    virtual HRESULT __stdcall abi_Navigate(Windows::UI::Xaml::Interop::TypeName sourcePageType, Windows::IInspectable * parameter, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * infoOverride, bool * returnValue) = 0;
+    virtual HRESULT __stdcall abi_Navigate(Windows::UI::Xaml::Interop::TypeName sourcePageType, Windows::Foundation::IInspectable * parameter, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * infoOverride, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("648a2b4d-53ca-4b5a-aa8e-3cc7440f4a67")) __declspec(novtable) IFrame3 : Windows::IInspectable
+struct __declspec(uuid("648a2b4d-53ca-4b5a-aa8e-3cc7440f4a67")) __declspec(novtable) IFrame3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GoBack(Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * transitionInfoOverride) = 0;
 };
 
-struct __declspec(uuid("02ee93d4-448e-469e-9799-0a8a1f70f171")) __declspec(novtable) IFrameFactory : Windows::IInspectable
+struct __declspec(uuid("02ee93d4-448e-469e-9799-0a8a1f70f171")) __declspec(novtable) IFrameFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IFrame ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IFrame ** instance) = 0;
 };
 
-struct __declspec(uuid("d5acf0e9-d967-471b-8459-c8af4341511b")) __declspec(novtable) IFrameStatics : Windows::IInspectable
+struct __declspec(uuid("d5acf0e9-d967-471b-8459-c8af4341511b")) __declspec(novtable) IFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CacheSizeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CanGoBackProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1716,19 +1716,19 @@ struct __declspec(uuid("d5acf0e9-d967-471b-8459-c8af4341511b")) __declspec(novta
     virtual HRESULT __stdcall get_BackStackDepthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e4b5cdfe-42f0-4462-a1c1-5d259dd82a03")) __declspec(novtable) IFrameStatics2 : Windows::IInspectable
+struct __declspec(uuid("e4b5cdfe-42f0-4462-a1c1-5d259dd82a03")) __declspec(novtable) IFrameStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BackStackProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ForwardStackProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("fd104460-2e15-4ba3-8b8f-fa693a4161e9")) __declspec(novtable) IGrid : Windows::IInspectable
+struct __declspec(uuid("fd104460-2e15-4ba3-8b8f-fa693a4161e9")) __declspec(novtable) IGrid : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RowDefinitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::RowDefinition> ** value) = 0;
     virtual HRESULT __stdcall get_ColumnDefinitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::ColumnDefinition> ** value) = 0;
 };
 
-struct __declspec(uuid("f76efa41-380e-45db-be87-9e1326ba4b57")) __declspec(novtable) IGrid2 : Windows::IInspectable
+struct __declspec(uuid("f76efa41-380e-45db-be87-9e1326ba4b57")) __declspec(novtable) IGrid2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BorderBrush(Windows::UI::Xaml::Media::IBrush ** value) = 0;
     virtual HRESULT __stdcall put_BorderBrush(Windows::UI::Xaml::Media::IBrush * value) = 0;
@@ -1740,12 +1740,12 @@ struct __declspec(uuid("f76efa41-380e-45db-be87-9e1326ba4b57")) __declspec(novta
     virtual HRESULT __stdcall put_Padding(Windows::UI::Xaml::Thickness value) = 0;
 };
 
-struct __declspec(uuid("ae814041-c531-43b4-bf99-12f506f7b01c")) __declspec(novtable) IGridFactory : Windows::IInspectable
+struct __declspec(uuid("ae814041-c531-43b4-bf99-12f506f7b01c")) __declspec(novtable) IGridFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IGrid ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IGrid ** instance) = 0;
 };
 
-struct __declspec(uuid("64fe2e9f-f951-42b6-a9ce-bb179af11595")) __declspec(novtable) IGridStatics : Windows::IInspectable
+struct __declspec(uuid("64fe2e9f-f951-42b6-a9ce-bb179af11595")) __declspec(novtable) IGridStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RowProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall abi_GetRow(Windows::UI::Xaml::IFrameworkElement * element, int32_t * value) = 0;
@@ -1761,7 +1761,7 @@ struct __declspec(uuid("64fe2e9f-f951-42b6-a9ce-bb179af11595")) __declspec(novta
     virtual HRESULT __stdcall abi_SetColumnSpan(Windows::UI::Xaml::IFrameworkElement * element, int32_t value) = 0;
 };
 
-struct __declspec(uuid("2d666658-58b6-4a1b-841b-875ba93b5d6a")) __declspec(novtable) IGridStatics2 : Windows::IInspectable
+struct __declspec(uuid("2d666658-58b6-4a1b-841b-875ba93b5d6a")) __declspec(novtable) IGridStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BorderBrushProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_BorderThicknessProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1769,44 +1769,44 @@ struct __declspec(uuid("2d666658-58b6-4a1b-841b-875ba93b5d6a")) __declspec(novta
     virtual HRESULT __stdcall get_PaddingProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("026ae934-b67e-4d80-8f72-8aa64b4d827b")) __declspec(novtable) IGridView : Windows::IInspectable
+struct __declspec(uuid("026ae934-b67e-4d80-8f72-8aa64b4d827b")) __declspec(novtable) IGridView : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("d9bcca89-09f9-4c6e-a83e-f199146f0e7d")) __declspec(novtable) IGridViewFactory : Windows::IInspectable
+struct __declspec(uuid("d9bcca89-09f9-4c6e-a83e-f199146f0e7d")) __declspec(novtable) IGridViewFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IGridView ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IGridView ** instance) = 0;
 };
 
-struct __declspec(uuid("72d75d7e-5dc3-4ffc-9b1c-939b5c37161c")) __declspec(novtable) IGridViewHeaderItem : Windows::IInspectable
+struct __declspec(uuid("72d75d7e-5dc3-4ffc-9b1c-939b5c37161c")) __declspec(novtable) IGridViewHeaderItem : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("36e0c96e-b56a-4b3b-8bac-7aef5e6f9945")) __declspec(novtable) IGridViewHeaderItemFactory : Windows::IInspectable
+struct __declspec(uuid("36e0c96e-b56a-4b3b-8bac-7aef5e6f9945")) __declspec(novtable) IGridViewHeaderItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IGridViewHeaderItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IGridViewHeaderItem ** instance) = 0;
 };
 
-struct __declspec(uuid("7d9901f1-e7c1-4e83-b470-c9d6d7bda9f5")) __declspec(novtable) IGridViewItem : Windows::IInspectable
+struct __declspec(uuid("7d9901f1-e7c1-4e83-b470-c9d6d7bda9f5")) __declspec(novtable) IGridViewItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TemplateSettings(Windows::UI::Xaml::Controls::Primitives::IGridViewItemTemplateSettings ** value) = 0;
 };
 
-struct __declspec(uuid("229b00af-3fa6-43e9-979d-07ea0d6280dc")) __declspec(novtable) IGridViewItemFactory : Windows::IInspectable
+struct __declspec(uuid("229b00af-3fa6-43e9-979d-07ea0d6280dc")) __declspec(novtable) IGridViewItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IGridViewItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IGridViewItem ** instance) = 0;
 };
 
-struct __declspec(uuid("4ae8d5d1-7228-4a16-a61f-88c0e8f45c76")) __declspec(novtable) IGroupItem : Windows::IInspectable
+struct __declspec(uuid("4ae8d5d1-7228-4a16-a61f-88c0e8f45c76")) __declspec(novtable) IGroupItem : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("d9a1d53e-b1e0-4319-9808-7a9e887e13b0")) __declspec(novtable) IGroupItemFactory : Windows::IInspectable
+struct __declspec(uuid("d9a1d53e-b1e0-4319-9808-7a9e887e13b0")) __declspec(novtable) IGroupItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IGroupItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IGroupItem ** instance) = 0;
 };
 
-struct __declspec(uuid("71ca300b-b89e-4184-b0df-a9e95447de8d")) __declspec(novtable) IGroupStyle : Windows::IInspectable
+struct __declspec(uuid("71ca300b-b89e-4184-b0df-a9e95447de8d")) __declspec(novtable) IGroupStyle : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Panel(Windows::UI::Xaml::Controls::IItemsPanelTemplate ** value) = 0;
     virtual HRESULT __stdcall put_Panel(Windows::UI::Xaml::Controls::IItemsPanelTemplate * value) = 0;
@@ -1822,36 +1822,36 @@ struct __declspec(uuid("71ca300b-b89e-4184-b0df-a9e95447de8d")) __declspec(novta
     virtual HRESULT __stdcall put_HidesIfEmpty(bool value) = 0;
 };
 
-struct __declspec(uuid("69f90679-3a11-4fe7-b4df-2a0139d4018b")) __declspec(novtable) IGroupStyle2 : Windows::IInspectable
+struct __declspec(uuid("69f90679-3a11-4fe7-b4df-2a0139d4018b")) __declspec(novtable) IGroupStyle2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderContainerStyle(Windows::UI::Xaml::IStyle ** value) = 0;
     virtual HRESULT __stdcall put_HeaderContainerStyle(Windows::UI::Xaml::IStyle * value) = 0;
 };
 
-struct __declspec(uuid("56ff664f-e2d7-4f49-803d-c727cdf9372d")) __declspec(novtable) IGroupStyleFactory : Windows::IInspectable
+struct __declspec(uuid("56ff664f-e2d7-4f49-803d-c727cdf9372d")) __declspec(novtable) IGroupStyleFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IGroupStyle ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IGroupStyle ** instance) = 0;
 };
 
-struct __declspec(uuid("6dda119e-9a74-478f-a339-5bb52de6c51e")) __declspec(novtable) IGroupStyleSelector : Windows::IInspectable
+struct __declspec(uuid("6dda119e-9a74-478f-a339-5bb52de6c51e")) __declspec(novtable) IGroupStyleSelector : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_SelectGroupStyle(Windows::IInspectable * group, uint32_t level, Windows::UI::Xaml::Controls::IGroupStyle ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_SelectGroupStyle(Windows::Foundation::IInspectable * group, uint32_t level, Windows::UI::Xaml::Controls::IGroupStyle ** returnValue) = 0;
 };
 
-struct __declspec(uuid("bf570d33-b2f6-481f-a450-c80c291fb22d")) __declspec(novtable) IGroupStyleSelectorFactory : Windows::IInspectable
+struct __declspec(uuid("bf570d33-b2f6-481f-a450-c80c291fb22d")) __declspec(novtable) IGroupStyleSelectorFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IGroupStyleSelector ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IGroupStyleSelector ** instance) = 0;
 };
 
-struct __declspec(uuid("f691cab2-77ad-4d3d-a51c-8ef9c3836456")) __declspec(novtable) IGroupStyleSelectorOverrides : Windows::IInspectable
+struct __declspec(uuid("f691cab2-77ad-4d3d-a51c-8ef9c3836456")) __declspec(novtable) IGroupStyleSelectorOverrides : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_SelectGroupStyleCore(Windows::IInspectable * group, uint32_t level, Windows::UI::Xaml::Controls::IGroupStyle ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_SelectGroupStyleCore(Windows::Foundation::IInspectable * group, uint32_t level, Windows::UI::Xaml::Controls::IGroupStyle ** returnValue) = 0;
 };
 
-struct __declspec(uuid("ae692e82-7314-4f51-ab11-2af1ed4a19f8")) __declspec(novtable) IHub : Windows::IInspectable
+struct __declspec(uuid("ae692e82-7314-4f51-ab11-2af1ed4a19f8")) __declspec(novtable) IHub : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_Orientation(winrt::Windows::UI::Xaml::Controls::Orientation * value) = 0;
@@ -1860,7 +1860,7 @@ struct __declspec(uuid("ae692e82-7314-4f51-ab11-2af1ed4a19f8")) __declspec(novta
     virtual HRESULT __stdcall put_DefaultSectionIndex(int32_t value) = 0;
     virtual HRESULT __stdcall get_Sections(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> ** value) = 0;
     virtual HRESULT __stdcall get_SectionsInView(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> ** value) = 0;
-    virtual HRESULT __stdcall get_SectionHeaders(Windows::Foundation::Collections::IObservableVector<Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_SectionHeaders(Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall add_SectionHeaderClick(Windows::UI::Xaml::Controls::HubSectionHeaderClickEventHandler * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SectionHeaderClick(event_token token) = 0;
     virtual HRESULT __stdcall add_SectionsInViewChanged(Windows::UI::Xaml::Controls::SectionsInViewChangedEventHandler * value, event_token * token) = 0;
@@ -1868,15 +1868,15 @@ struct __declspec(uuid("ae692e82-7314-4f51-ab11-2af1ed4a19f8")) __declspec(novta
     virtual HRESULT __stdcall abi_ScrollToSection(Windows::UI::Xaml::Controls::IHubSection * section) = 0;
 };
 
-struct __declspec(uuid("dca6b2ba-c6f5-4961-9953-c51873db5424")) __declspec(novtable) IHubFactory : Windows::IInspectable
+struct __declspec(uuid("dca6b2ba-c6f5-4961-9953-c51873db5424")) __declspec(novtable) IHubFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IHub ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IHub ** instance) = 0;
 };
 
-struct __declspec(uuid("a4e66cb7-7fdd-4fe0-ab49-c246639dccf9")) __declspec(novtable) IHubSection : Windows::IInspectable
+struct __declspec(uuid("a4e66cb7-7fdd-4fe0-ab49-c246639dccf9")) __declspec(novtable) IHubSection : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_ContentTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
@@ -1885,17 +1885,17 @@ struct __declspec(uuid("a4e66cb7-7fdd-4fe0-ab49-c246639dccf9")) __declspec(novta
     virtual HRESULT __stdcall put_IsHeaderInteractive(bool value) = 0;
 };
 
-struct __declspec(uuid("fff55fa2-ece4-4bba-aa3b-9804aef47883")) __declspec(novtable) IHubSectionFactory : Windows::IInspectable
+struct __declspec(uuid("fff55fa2-ece4-4bba-aa3b-9804aef47883")) __declspec(novtable) IHubSectionFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IHubSection ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IHubSection ** instance) = 0;
 };
 
-struct __declspec(uuid("e1c5ef04-1edd-4112-aeeb-996c96400698")) __declspec(novtable) IHubSectionHeaderClickEventArgs : Windows::IInspectable
+struct __declspec(uuid("e1c5ef04-1edd-4112-aeeb-996c96400698")) __declspec(novtable) IHubSectionHeaderClickEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Section(Windows::UI::Xaml::Controls::IHubSection ** value) = 0;
 };
 
-struct __declspec(uuid("12d2d85a-ea27-42d1-998b-61e52aed842b")) __declspec(novtable) IHubSectionStatics : Windows::IInspectable
+struct __declspec(uuid("12d2d85a-ea27-42d1-998b-61e52aed842b")) __declspec(novtable) IHubSectionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1903,7 +1903,7 @@ struct __declspec(uuid("12d2d85a-ea27-42d1-998b-61e52aed842b")) __declspec(novta
     virtual HRESULT __stdcall get_IsHeaderInteractiveProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0e6fa034-ad3c-4f32-b701-e24fab562028")) __declspec(novtable) IHubStatics : Windows::IInspectable
+struct __declspec(uuid("0e6fa034-ad3c-4f32-b701-e24fab562028")) __declspec(novtable) IHubStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1914,38 +1914,38 @@ struct __declspec(uuid("0e6fa034-ad3c-4f32-b701-e24fab562028")) __declspec(novta
     virtual HRESULT __stdcall get_IsZoomedInViewProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ccebaca3-3b5c-4f4c-9bfd-86887bc79772")) __declspec(novtable) IHyperlinkButton : Windows::IInspectable
+struct __declspec(uuid("ccebaca3-3b5c-4f4c-9bfd-86887bc79772")) __declspec(novtable) IHyperlinkButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NavigateUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall put_NavigateUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
 };
 
-struct __declspec(uuid("43521bad-4e97-4da9-a64d-935dfd8cedf2")) __declspec(novtable) IHyperlinkButtonFactory : Windows::IInspectable
+struct __declspec(uuid("43521bad-4e97-4da9-a64d-935dfd8cedf2")) __declspec(novtable) IHyperlinkButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IHyperlinkButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IHyperlinkButton ** instance) = 0;
 };
 
-struct __declspec(uuid("fbaeb5c7-cdb7-4263-b7d6-3c0d2904ed98")) __declspec(novtable) IHyperlinkButtonStatics : Windows::IInspectable
+struct __declspec(uuid("fbaeb5c7-cdb7-4263-b7d6-3c0d2904ed98")) __declspec(novtable) IHyperlinkButtonStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NavigateUriProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("9af0803b-d04c-467a-bbd5-9b81f02d9a56")) __declspec(novtable) IIconElement : Windows::IInspectable
+struct __declspec(uuid("9af0803b-d04c-467a-bbd5-9b81f02d9a56")) __declspec(novtable) IIconElement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Foreground(Windows::UI::Xaml::Media::IBrush ** value) = 0;
     virtual HRESULT __stdcall put_Foreground(Windows::UI::Xaml::Media::IBrush * value) = 0;
 };
 
-struct __declspec(uuid("cf37a562-0424-43c7-8bea-720fba973ef1")) __declspec(novtable) IIconElementFactory : Windows::IInspectable
+struct __declspec(uuid("cf37a562-0424-43c7-8bea-720fba973ef1")) __declspec(novtable) IIconElementFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("be19a623-77cf-472f-82ea-047801d12012")) __declspec(novtable) IIconElementStatics : Windows::IInspectable
+struct __declspec(uuid("be19a623-77cf-472f-82ea-047801d12012")) __declspec(novtable) IIconElementStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ForegroundProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("495b7402-9af3-4e50-aa90-03388f3086d2")) __declspec(novtable) IImage : Windows::IInspectable
+struct __declspec(uuid("495b7402-9af3-4e50-aa90-03388f3086d2")) __declspec(novtable) IImage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Source(Windows::UI::Xaml::Media::IImageSource ** value) = 0;
     virtual HRESULT __stdcall put_Source(Windows::UI::Xaml::Media::IImageSource * value) = 0;
@@ -1960,17 +1960,17 @@ struct __declspec(uuid("495b7402-9af3-4e50-aa90-03388f3086d2")) __declspec(novta
     virtual HRESULT __stdcall remove_ImageOpened(event_token token) = 0;
 };
 
-struct __declspec(uuid("f445119e-881f-48bb-873a-64417ca4f002")) __declspec(novtable) IImage2 : Windows::IInspectable
+struct __declspec(uuid("f445119e-881f-48bb-873a-64417ca4f002")) __declspec(novtable) IImage2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAsCastingSource(Windows::Media::Casting::ICastingSource ** returnValue) = 0;
 };
 
-struct __declspec(uuid("06ebe792-47c2-4d92-a488-8cd685d06aca")) __declspec(novtable) IImage3 : Windows::IInspectable
+struct __declspec(uuid("06ebe792-47c2-4d92-a488-8cd685d06aca")) __declspec(novtable) IImage3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAlphaMask(Windows::UI::Composition::ICompositionBrush ** returnValue) = 0;
 };
 
-struct __declspec(uuid("89903772-c336-43d1-9d51-c3bbd5d5d691")) __declspec(novtable) IImageStatics : Windows::IInspectable
+struct __declspec(uuid("89903772-c336-43d1-9d51-c3bbd5d5d691")) __declspec(novtable) IImageStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_StretchProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -1978,17 +1978,17 @@ struct __declspec(uuid("89903772-c336-43d1-9d51-c3bbd5d5d691")) __declspec(novta
     virtual HRESULT __stdcall get_PlayToSourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("29443c28-8e48-4fc8-a473-35b0ba12acea")) __declspec(novtable) IInkCanvas : Windows::IInspectable
+struct __declspec(uuid("29443c28-8e48-4fc8-a473-35b0ba12acea")) __declspec(novtable) IInkCanvas : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InkPresenter(Windows::UI::Input::Inking::IInkPresenter ** value) = 0;
 };
 
-struct __declspec(uuid("924ac2de-ab04-48f0-9653-e0f2da4dbf1a")) __declspec(novtable) IInkCanvasFactory : Windows::IInspectable
+struct __declspec(uuid("924ac2de-ab04-48f0-9653-e0f2da4dbf1a")) __declspec(novtable) IInkCanvasFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkCanvas ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkCanvas ** instance) = 0;
 };
 
-struct __declspec(uuid("3ddd0cca-51f0-486f-a03e-4ee13dc12bcb")) __declspec(novtable) IInkToolbar : Windows::IInspectable
+struct __declspec(uuid("3ddd0cca-51f0-486f-a03e-4ee13dc12bcb")) __declspec(novtable) IInkToolbar : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InitialControls(winrt::Windows::UI::Xaml::Controls::InkToolbarInitialControls * value) = 0;
     virtual HRESULT __stdcall put_InitialControls(winrt::Windows::UI::Xaml::Controls::InkToolbarInitialControls value) = 0;
@@ -2000,33 +2000,33 @@ struct __declspec(uuid("3ddd0cca-51f0-486f-a03e-4ee13dc12bcb")) __declspec(novta
     virtual HRESULT __stdcall put_IsRulerButtonChecked(bool value) = 0;
     virtual HRESULT __stdcall get_TargetInkCanvas(Windows::UI::Xaml::Controls::IInkCanvas ** value) = 0;
     virtual HRESULT __stdcall put_TargetInkCanvas(Windows::UI::Xaml::Controls::IInkCanvas * value) = 0;
-    virtual HRESULT __stdcall add_ActiveToolChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_ActiveToolChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ActiveToolChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_InkDrawingAttributesChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_InkDrawingAttributesChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_InkDrawingAttributesChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_EraseAllClicked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_EraseAllClicked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_EraseAllClicked(event_token token) = 0;
-    virtual HRESULT __stdcall add_IsRulerButtonCheckedChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_IsRulerButtonCheckedChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_IsRulerButtonCheckedChanged(event_token token) = 0;
     virtual HRESULT __stdcall abi_GetToolButton(winrt::Windows::UI::Xaml::Controls::InkToolbarTool tool, Windows::UI::Xaml::Controls::IInkToolbarToolButton ** returnValue) = 0;
     virtual HRESULT __stdcall abi_GetToggleButton(winrt::Windows::UI::Xaml::Controls::InkToolbarToggle tool, Windows::UI::Xaml::Controls::IInkToolbarToggleButton ** returnValue) = 0;
 };
 
-struct __declspec(uuid("158329f8-1e99-3acc-910f-9da2d872ae12")) __declspec(novtable) IInkToolbarBallpointPenButton : Windows::IInspectable
+struct __declspec(uuid("158329f8-1e99-3acc-910f-9da2d872ae12")) __declspec(novtable) IInkToolbarBallpointPenButton : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("2f0bd3e4-d754-4255-8ec4-00cd101296ab")) __declspec(novtable) IInkToolbarBallpointPenButtonFactory : Windows::IInspectable
+struct __declspec(uuid("2f0bd3e4-d754-4255-8ec4-00cd101296ab")) __declspec(novtable) IInkToolbarBallpointPenButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton ** instance) = 0;
 };
 
-struct __declspec(uuid("4082207b-2f3d-4e6a-8c27-fe61ef7e70eb")) __declspec(novtable) IInkToolbarCustomPen : Windows::IInspectable
+struct __declspec(uuid("4082207b-2f3d-4e6a-8c27-fe61ef7e70eb")) __declspec(novtable) IInkToolbarCustomPen : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInkDrawingAttributes(Windows::UI::Xaml::Media::IBrush * brush, double strokeWidth, Windows::UI::Input::Inking::IInkDrawingAttributes ** returnValue) = 0;
 };
 
-struct __declspec(uuid("46024401-2b2a-4f3c-a53c-1a045a408efa")) __declspec(novtable) IInkToolbarCustomPenButton : Windows::IInspectable
+struct __declspec(uuid("46024401-2b2a-4f3c-a53c-1a045a408efa")) __declspec(novtable) IInkToolbarCustomPenButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CustomPen(Windows::UI::Xaml::Controls::IInkToolbarCustomPen ** value) = 0;
     virtual HRESULT __stdcall put_CustomPen(Windows::UI::Xaml::Controls::IInkToolbarCustomPen * value) = 0;
@@ -2034,76 +2034,76 @@ struct __declspec(uuid("46024401-2b2a-4f3c-a53c-1a045a408efa")) __declspec(novta
     virtual HRESULT __stdcall put_ConfigurationContent(Windows::UI::Xaml::IUIElement * value) = 0;
 };
 
-struct __declspec(uuid("0f2ef0ba-c8b9-4c36-8987-94d3dafede18")) __declspec(novtable) IInkToolbarCustomPenButtonFactory : Windows::IInspectable
+struct __declspec(uuid("0f2ef0ba-c8b9-4c36-8987-94d3dafede18")) __declspec(novtable) IInkToolbarCustomPenButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarCustomPenButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarCustomPenButton ** instance) = 0;
 };
 
-struct __declspec(uuid("373c25f4-e555-4e85-a80d-da6b8433dbde")) __declspec(novtable) IInkToolbarCustomPenButtonStatics : Windows::IInspectable
+struct __declspec(uuid("373c25f4-e555-4e85-a80d-da6b8433dbde")) __declspec(novtable) IInkToolbarCustomPenButtonStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CustomPenProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ConfigurationContentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("d214d636-f1aa-4f48-bf2c-a926caae4c60")) __declspec(novtable) IInkToolbarCustomPenFactory : Windows::IInspectable
+struct __declspec(uuid("d214d636-f1aa-4f48-bf2c-a926caae4c60")) __declspec(novtable) IInkToolbarCustomPenFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarCustomPen ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarCustomPen ** instance) = 0;
 };
 
-struct __declspec(uuid("9d22eb6c-1255-4256-b6bd-82c2fd273488")) __declspec(novtable) IInkToolbarCustomPenOverrides : Windows::IInspectable
+struct __declspec(uuid("9d22eb6c-1255-4256-b6bd-82c2fd273488")) __declspec(novtable) IInkToolbarCustomPenOverrides : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInkDrawingAttributesCore(Windows::UI::Xaml::Media::IBrush * brush, double strokeWidth, Windows::UI::Input::Inking::IInkDrawingAttributes ** returnValue) = 0;
 };
 
-struct __declspec(uuid("550c4d84-4f54-4fbe-b12b-e0a50aab0d05")) __declspec(novtable) IInkToolbarCustomToggleButton : Windows::IInspectable
+struct __declspec(uuid("550c4d84-4f54-4fbe-b12b-e0a50aab0d05")) __declspec(novtable) IInkToolbarCustomToggleButton : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("4a00374d-4cd2-4ed9-863e-83b8cf3fd2af")) __declspec(novtable) IInkToolbarCustomToggleButtonFactory : Windows::IInspectable
+struct __declspec(uuid("4a00374d-4cd2-4ed9-863e-83b8cf3fd2af")) __declspec(novtable) IInkToolbarCustomToggleButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarCustomToggleButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarCustomToggleButton ** instance) = 0;
 };
 
-struct __declspec(uuid("9f98acd7-c605-4105-be10-3943a7c0da3c")) __declspec(novtable) IInkToolbarCustomToolButton : Windows::IInspectable
+struct __declspec(uuid("9f98acd7-c605-4105-be10-3943a7c0da3c")) __declspec(novtable) IInkToolbarCustomToolButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ConfigurationContent(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall put_ConfigurationContent(Windows::UI::Xaml::IUIElement * value) = 0;
 };
 
-struct __declspec(uuid("c295fe4e-30eb-4130-a6b6-8c85d8e26e89")) __declspec(novtable) IInkToolbarCustomToolButtonFactory : Windows::IInspectable
+struct __declspec(uuid("c295fe4e-30eb-4130-a6b6-8c85d8e26e89")) __declspec(novtable) IInkToolbarCustomToolButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarCustomToolButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarCustomToolButton ** instance) = 0;
 };
 
-struct __declspec(uuid("11fe4cb9-bbac-4314-9344-92c6693ddeaf")) __declspec(novtable) IInkToolbarCustomToolButtonStatics : Windows::IInspectable
+struct __declspec(uuid("11fe4cb9-bbac-4314-9344-92c6693ddeaf")) __declspec(novtable) IInkToolbarCustomToolButtonStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ConfigurationContentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4cbdb92e-5f5e-4b35-a41c-16ffb0283bc0")) __declspec(novtable) IInkToolbarEraserButton : Windows::IInspectable
+struct __declspec(uuid("4cbdb92e-5f5e-4b35-a41c-16ffb0283bc0")) __declspec(novtable) IInkToolbarEraserButton : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("fd40611d-d1ba-4d67-af00-148036ad492c")) __declspec(novtable) IInkToolbarEraserButtonFactory : Windows::IInspectable
+struct __declspec(uuid("fd40611d-d1ba-4d67-af00-148036ad492c")) __declspec(novtable) IInkToolbarEraserButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarEraserButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarEraserButton ** instance) = 0;
 };
 
-struct __declspec(uuid("3947aa99-36b1-4374-ab5c-98bf07a4320b")) __declspec(novtable) IInkToolbarFactory : Windows::IInspectable
+struct __declspec(uuid("3947aa99-36b1-4374-ab5c-98bf07a4320b")) __declspec(novtable) IInkToolbarFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbar ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbar ** instance) = 0;
 };
 
-struct __declspec(uuid("0b3cc15b-7abf-487e-acc1-5b5048fee6d2")) __declspec(novtable) IInkToolbarHighlighterButton : Windows::IInspectable
+struct __declspec(uuid("0b3cc15b-7abf-487e-acc1-5b5048fee6d2")) __declspec(novtable) IInkToolbarHighlighterButton : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("7c334add-42ca-4943-94a4-23b5a6e55cf1")) __declspec(novtable) IInkToolbarHighlighterButtonFactory : Windows::IInspectable
+struct __declspec(uuid("7c334add-42ca-4943-94a4-23b5a6e55cf1")) __declspec(novtable) IInkToolbarHighlighterButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton ** instance) = 0;
 };
 
-struct __declspec(uuid("e0b80c21-b032-40ee-a2b9-507f6ccb827b")) __declspec(novtable) IInkToolbarPenButton : Windows::IInspectable
+struct __declspec(uuid("e0b80c21-b032-40ee-a2b9-507f6ccb827b")) __declspec(novtable) IInkToolbarPenButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Palette(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Brush> ** value) = 0;
     virtual HRESULT __stdcall put_Palette(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Brush> * value) = 0;
@@ -2118,11 +2118,11 @@ struct __declspec(uuid("e0b80c21-b032-40ee-a2b9-507f6ccb827b")) __declspec(novta
     virtual HRESULT __stdcall put_SelectedStrokeWidth(double value) = 0;
 };
 
-struct __declspec(uuid("b1463d21-59cb-4a83-92e1-692842797b2e")) __declspec(novtable) IInkToolbarPenButtonFactory : Windows::IInspectable
+struct __declspec(uuid("b1463d21-59cb-4a83-92e1-692842797b2e")) __declspec(novtable) IInkToolbarPenButtonFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("b922ce42-09f0-453d-8026-44daf2753f65")) __declspec(novtable) IInkToolbarPenButtonStatics : Windows::IInspectable
+struct __declspec(uuid("b922ce42-09f0-453d-8026-44daf2753f65")) __declspec(novtable) IInkToolbarPenButtonStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PaletteProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MinStrokeWidthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2132,46 +2132,46 @@ struct __declspec(uuid("b922ce42-09f0-453d-8026-44daf2753f65")) __declspec(novta
     virtual HRESULT __stdcall get_SelectedStrokeWidthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("601ae5f6-28a5-44cc-89a6-380e91a572dd")) __declspec(novtable) IInkToolbarPenConfigurationControl : Windows::IInspectable
+struct __declspec(uuid("601ae5f6-28a5-44cc-89a6-380e91a572dd")) __declspec(novtable) IInkToolbarPenConfigurationControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PenButton(Windows::UI::Xaml::Controls::IInkToolbarPenButton ** value) = 0;
 };
 
-struct __declspec(uuid("67f065ee-f5e7-46eb-9187-8d3ca3af891b")) __declspec(novtable) IInkToolbarPenConfigurationControlFactory : Windows::IInspectable
+struct __declspec(uuid("67f065ee-f5e7-46eb-9187-8d3ca3af891b")) __declspec(novtable) IInkToolbarPenConfigurationControlFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControl ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControl ** instance) = 0;
 };
 
-struct __declspec(uuid("48a61bef-19ce-41bb-abe0-7c8726fae75e")) __declspec(novtable) IInkToolbarPenConfigurationControlStatics : Windows::IInspectable
+struct __declspec(uuid("48a61bef-19ce-41bb-abe0-7c8726fae75e")) __declspec(novtable) IInkToolbarPenConfigurationControlStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PenButtonProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("5b112832-1984-4148-9f25-382b35db087f")) __declspec(novtable) IInkToolbarPencilButton : Windows::IInspectable
+struct __declspec(uuid("5b112832-1984-4148-9f25-382b35db087f")) __declspec(novtable) IInkToolbarPencilButton : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("db66d85f-cfd6-495f-93ab-b8566af9f8af")) __declspec(novtable) IInkToolbarPencilButtonFactory : Windows::IInspectable
+struct __declspec(uuid("db66d85f-cfd6-495f-93ab-b8566af9f8af")) __declspec(novtable) IInkToolbarPencilButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarPencilButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarPencilButton ** instance) = 0;
 };
 
-struct __declspec(uuid("4a992832-1984-4148-9f25-382b35db087f")) __declspec(novtable) IInkToolbarRulerButton : Windows::IInspectable
+struct __declspec(uuid("4a992832-1984-4148-9f25-382b35db087f")) __declspec(novtable) IInkToolbarRulerButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Ruler(Windows::UI::Input::Inking::IInkPresenterRuler ** value) = 0;
 };
 
-struct __declspec(uuid("bb26d85f-cfd6-495f-93ab-b8566af9f8af")) __declspec(novtable) IInkToolbarRulerButtonFactory : Windows::IInspectable
+struct __declspec(uuid("bb26d85f-cfd6-495f-93ab-b8566af9f8af")) __declspec(novtable) IInkToolbarRulerButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarRulerButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarRulerButton ** instance) = 0;
 };
 
-struct __declspec(uuid("bae75f65-be30-4bee-964b-ff9e498fee37")) __declspec(novtable) IInkToolbarRulerButtonStatics : Windows::IInspectable
+struct __declspec(uuid("bae75f65-be30-4bee-964b-ff9e498fee37")) __declspec(novtable) IInkToolbarRulerButtonStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RulerProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("a3b493bb-cb4f-4e6b-a33d-f11e7a295efa")) __declspec(novtable) IInkToolbarStatics : Windows::IInspectable
+struct __declspec(uuid("a3b493bb-cb4f-4e6b-a33d-f11e7a295efa")) __declspec(novtable) IInkToolbarStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InitialControlsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ChildrenProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2181,47 +2181,47 @@ struct __declspec(uuid("a3b493bb-cb4f-4e6b-a33d-f11e7a295efa")) __declspec(novta
     virtual HRESULT __stdcall get_TargetInkCanvasProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b4a278fa-f5f0-4b1f-beb0-0b8a29905a4a")) __declspec(novtable) IInkToolbarToggleButton : Windows::IInspectable
+struct __declspec(uuid("b4a278fa-f5f0-4b1f-beb0-0b8a29905a4a")) __declspec(novtable) IInkToolbarToggleButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ToggleKind(winrt::Windows::UI::Xaml::Controls::InkToolbarToggle * value) = 0;
 };
 
-struct __declspec(uuid("b2f90710-e5a1-4365-9d1a-e5b7ad8b9668")) __declspec(novtable) IInkToolbarToggleButtonFactory : Windows::IInspectable
+struct __declspec(uuid("b2f90710-e5a1-4365-9d1a-e5b7ad8b9668")) __declspec(novtable) IInkToolbarToggleButtonFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("5c5af41e-ccb7-4458-8064-a9849d31561b")) __declspec(novtable) IInkToolbarToolButton : Windows::IInspectable
+struct __declspec(uuid("5c5af41e-ccb7-4458-8064-a9849d31561b")) __declspec(novtable) IInkToolbarToolButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ToolKind(winrt::Windows::UI::Xaml::Controls::InkToolbarTool * value) = 0;
     virtual HRESULT __stdcall get_IsExtensionGlyphShown(bool * value) = 0;
     virtual HRESULT __stdcall put_IsExtensionGlyphShown(bool value) = 0;
 };
 
-struct __declspec(uuid("6293bf4b-89fe-4ed0-a1a6-88d3eba917b2")) __declspec(novtable) IInkToolbarToolButtonFactory : Windows::IInspectable
+struct __declspec(uuid("6293bf4b-89fe-4ed0-a1a6-88d3eba917b2")) __declspec(novtable) IInkToolbarToolButtonFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("9e097d18-d136-4ef6-b0fd-1a78c2884a01")) __declspec(novtable) IInkToolbarToolButtonStatics : Windows::IInspectable
+struct __declspec(uuid("9e097d18-d136-4ef6-b0fd-1a78c2884a01")) __declspec(novtable) IInkToolbarToolButtonStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsExtensionGlyphShownProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("6b8de08f-6527-4d39-bcbf-58b01da923d7")) __declspec(novtable) IInsertionPanel : Windows::IInspectable
+struct __declspec(uuid("6b8de08f-6527-4d39-bcbf-58b01da923d7")) __declspec(novtable) IInsertionPanel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetInsertionIndexes(Windows::Foundation::Point position, int32_t * first, int32_t * second) = 0;
 };
 
-struct __declspec(uuid("9c314242-f29a-494d-a3a5-d4c7b2a46852")) __declspec(novtable) IItemClickEventArgs : Windows::IInspectable
+struct __declspec(uuid("9c314242-f29a-494d-a3a5-d4c7b2a46852")) __declspec(novtable) IItemClickEventArgs : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_ClickedItem(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_ClickedItem(Windows::Foundation::IInspectable ** value) = 0;
 };
 
-struct __declspec(uuid("40765f00-83f0-4d7f-b1b8-f19de4f1d5da")) __declspec(novtable) IItemContainerGenerator : Windows::IInspectable
+struct __declspec(uuid("40765f00-83f0-4d7f-b1b8-f19de4f1d5da")) __declspec(novtable) IItemContainerGenerator : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_ItemsChanged(Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventHandler * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ItemsChanged(event_token token) = 0;
-    virtual HRESULT __stdcall abi_ItemFromContainer(Windows::UI::Xaml::IDependencyObject * container, Windows::IInspectable ** returnValue) = 0;
-    virtual HRESULT __stdcall abi_ContainerFromItem(Windows::IInspectable * item, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_ItemFromContainer(Windows::UI::Xaml::IDependencyObject * container, Windows::Foundation::IInspectable ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_ContainerFromItem(Windows::Foundation::IInspectable * item, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
     virtual HRESULT __stdcall abi_IndexFromContainer(Windows::UI::Xaml::IDependencyObject * container, int32_t * returnValue) = 0;
     virtual HRESULT __stdcall abi_ContainerFromIndex(int32_t index, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
     virtual HRESULT __stdcall abi_GetItemContainerGeneratorForPanel(Windows::UI::Xaml::Controls::IPanel * panel, Windows::UI::Xaml::Controls::IItemContainerGenerator ** returnValue) = 0;
@@ -2236,19 +2236,19 @@ struct __declspec(uuid("40765f00-83f0-4d7f-b1b8-f19de4f1d5da")) __declspec(novta
     virtual HRESULT __stdcall abi_Recycle(Windows::UI::Xaml::Controls::Primitives::GeneratorPosition position, int32_t count) = 0;
 };
 
-struct __declspec(uuid("53c9f23a-f25d-446a-99b8-c7aeb839050f")) __declspec(novtable) IItemContainerMapping : Windows::IInspectable
+struct __declspec(uuid("53c9f23a-f25d-446a-99b8-c7aeb839050f")) __declspec(novtable) IItemContainerMapping : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_ItemFromContainer(Windows::UI::Xaml::IDependencyObject * container, Windows::IInspectable ** returnValue) = 0;
-    virtual HRESULT __stdcall abi_ContainerFromItem(Windows::IInspectable * item, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_ItemFromContainer(Windows::UI::Xaml::IDependencyObject * container, Windows::Foundation::IInspectable ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_ContainerFromItem(Windows::Foundation::IInspectable * item, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
     virtual HRESULT __stdcall abi_IndexFromContainer(Windows::UI::Xaml::IDependencyObject * container, int32_t * returnValue) = 0;
     virtual HRESULT __stdcall abi_ContainerFromIndex(int32_t index, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
 };
 
-struct __declspec(uuid("f4a91dd8-d979-4381-8652-bda0342a765e")) __declspec(novtable) IItemsControl : Windows::IInspectable
+struct __declspec(uuid("f4a91dd8-d979-4381-8652-bda0342a765e")) __declspec(novtable) IItemsControl : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_ItemsSource(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_ItemsSource(Windows::IInspectable * value) = 0;
-    virtual HRESULT __stdcall get_Items(Windows::Foundation::Collections::IObservableVector<Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_ItemsSource(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_ItemsSource(Windows::Foundation::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Items(Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_ItemTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_ItemTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_ItemTemplateSelector(Windows::UI::Xaml::Controls::IDataTemplateSelector ** value) = 0;
@@ -2270,28 +2270,28 @@ struct __declspec(uuid("f4a91dd8-d979-4381-8652-bda0342a765e")) __declspec(novta
     virtual HRESULT __stdcall get_IsGrouping(bool * value) = 0;
 };
 
-struct __declspec(uuid("754c3266-0529-45e3-8748-bf747d158357")) __declspec(novtable) IItemsControl2 : Windows::IInspectable
+struct __declspec(uuid("754c3266-0529-45e3-8748-bf747d158357")) __declspec(novtable) IItemsControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemsPanelRoot(Windows::UI::Xaml::Controls::IPanel ** value) = 0;
 };
 
-struct __declspec(uuid("502b7489-aee4-4de3-a2ab-195ac20c4212")) __declspec(novtable) IItemsControl3 : Windows::IInspectable
+struct __declspec(uuid("502b7489-aee4-4de3-a2ab-195ac20c4212")) __declspec(novtable) IItemsControl3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GroupHeaderContainerFromItemContainer(Windows::UI::Xaml::IDependencyObject * itemContainer, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
 };
 
-struct __declspec(uuid("f7bbc359-f8fd-471c-bcb2-2c74be8ebf8c")) __declspec(novtable) IItemsControlFactory : Windows::IInspectable
+struct __declspec(uuid("f7bbc359-f8fd-471c-bcb2-2c74be8ebf8c")) __declspec(novtable) IItemsControlFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IItemsControl ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IItemsControl ** instance) = 0;
 };
 
-struct __declspec(uuid("c79bb41b-a084-4301-a496-72971f364ed1")) __declspec(novtable) IItemsControlOverrides : Windows::IInspectable
+struct __declspec(uuid("c79bb41b-a084-4301-a496-72971f364ed1")) __declspec(novtable) IItemsControlOverrides : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_IsItemItsOwnContainerOverride(Windows::IInspectable * item, bool * returnValue) = 0;
+    virtual HRESULT __stdcall abi_IsItemItsOwnContainerOverride(Windows::Foundation::IInspectable * item, bool * returnValue) = 0;
     virtual HRESULT __stdcall abi_GetContainerForItemOverride(Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
-    virtual HRESULT __stdcall abi_ClearContainerForItemOverride(Windows::UI::Xaml::IDependencyObject * element, Windows::IInspectable * item) = 0;
-    virtual HRESULT __stdcall abi_PrepareContainerForItemOverride(Windows::UI::Xaml::IDependencyObject * element, Windows::IInspectable * item) = 0;
-    virtual HRESULT __stdcall abi_OnItemsChanged(Windows::IInspectable * e) = 0;
+    virtual HRESULT __stdcall abi_ClearContainerForItemOverride(Windows::UI::Xaml::IDependencyObject * element, Windows::Foundation::IInspectable * item) = 0;
+    virtual HRESULT __stdcall abi_PrepareContainerForItemOverride(Windows::UI::Xaml::IDependencyObject * element, Windows::Foundation::IInspectable * item) = 0;
+    virtual HRESULT __stdcall abi_OnItemsChanged(Windows::Foundation::IInspectable * e) = 0;
     virtual HRESULT __stdcall abi_OnItemContainerStyleChanged(Windows::UI::Xaml::IStyle * oldItemContainerStyle, Windows::UI::Xaml::IStyle * newItemContainerStyle) = 0;
     virtual HRESULT __stdcall abi_OnItemContainerStyleSelectorChanged(Windows::UI::Xaml::Controls::IStyleSelector * oldItemContainerStyleSelector, Windows::UI::Xaml::Controls::IStyleSelector * newItemContainerStyleSelector) = 0;
     virtual HRESULT __stdcall abi_OnItemTemplateChanged(Windows::UI::Xaml::IDataTemplate * oldItemTemplate, Windows::UI::Xaml::IDataTemplate * newItemTemplate) = 0;
@@ -2299,7 +2299,7 @@ struct __declspec(uuid("c79bb41b-a084-4301-a496-72971f364ed1")) __declspec(novta
     virtual HRESULT __stdcall abi_OnGroupStyleSelectorChanged(Windows::UI::Xaml::Controls::IGroupStyleSelector * oldGroupStyleSelector, Windows::UI::Xaml::Controls::IGroupStyleSelector * newGroupStyleSelector) = 0;
 };
 
-struct __declspec(uuid("37dabd89-dcfb-45b8-9afe-874df097905e")) __declspec(novtable) IItemsControlStatics : Windows::IInspectable
+struct __declspec(uuid("37dabd89-dcfb-45b8-9afe-874df097905e")) __declspec(novtable) IItemsControlStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemsSourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ItemTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2315,20 +2315,20 @@ struct __declspec(uuid("37dabd89-dcfb-45b8-9afe-874df097905e")) __declspec(novta
     virtual HRESULT __stdcall abi_ItemsControlFromItemContainer(Windows::UI::Xaml::IDependencyObject * container, Windows::UI::Xaml::Controls::IItemsControl ** returnValue) = 0;
 };
 
-struct __declspec(uuid("14ead768-34b2-4b97-bf3c-e8d73230a2aa")) __declspec(novtable) IItemsPanelTemplate : Windows::IInspectable
+struct __declspec(uuid("14ead768-34b2-4b97-bf3c-e8d73230a2aa")) __declspec(novtable) IItemsPanelTemplate : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("f95b9aac-a621-488e-9156-8ee31165be04")) __declspec(novtable) IItemsPickedEventArgs : Windows::IInspectable
+struct __declspec(uuid("f95b9aac-a621-488e-9156-8ee31165be04")) __declspec(novtable) IItemsPickedEventArgs : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_AddedItems(Windows::Foundation::Collections::IVector<Windows::IInspectable> ** value) = 0;
-    virtual HRESULT __stdcall get_RemovedItems(Windows::Foundation::Collections::IVector<Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_AddedItems(Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_RemovedItems(Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> ** value) = 0;
 };
 
-struct __declspec(uuid("c271569b-6dca-4e2b-8e14-c55136b02a71")) __declspec(novtable) IItemsPresenter : Windows::IInspectable
+struct __declspec(uuid("c271569b-6dca-4e2b-8e14-c55136b02a71")) __declspec(novtable) IItemsPresenter : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_HeaderTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> ** value) = 0;
@@ -2337,17 +2337,17 @@ struct __declspec(uuid("c271569b-6dca-4e2b-8e14-c55136b02a71")) __declspec(novta
     virtual HRESULT __stdcall put_Padding(Windows::UI::Xaml::Thickness value) = 0;
 };
 
-struct __declspec(uuid("5c04aa33-1df3-4731-a4c9-da818378d63d")) __declspec(novtable) IItemsPresenter2 : Windows::IInspectable
+struct __declspec(uuid("5c04aa33-1df3-4731-a4c9-da818378d63d")) __declspec(novtable) IItemsPresenter2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Footer(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Footer(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Footer(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Footer(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_FooterTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_FooterTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_FooterTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> ** value) = 0;
     virtual HRESULT __stdcall put_FooterTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> * value) = 0;
 };
 
-struct __declspec(uuid("18de66cd-4a6c-4b2e-aa86-cb126c9a2920")) __declspec(novtable) IItemsPresenterStatics : Windows::IInspectable
+struct __declspec(uuid("18de66cd-4a6c-4b2e-aa86-cb126c9a2920")) __declspec(novtable) IItemsPresenterStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2355,14 +2355,14 @@ struct __declspec(uuid("18de66cd-4a6c-4b2e-aa86-cb126c9a2920")) __declspec(novta
     virtual HRESULT __stdcall get_PaddingProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("8971632e-7867-4d66-9630-29f1c5f7403f")) __declspec(novtable) IItemsPresenterStatics2 : Windows::IInspectable
+struct __declspec(uuid("8971632e-7867-4d66-9630-29f1c5f7403f")) __declspec(novtable) IItemsPresenterStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FooterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FooterTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FooterTransitionsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("df7ab79d-7ad5-4b58-9363-919af90226e6")) __declspec(novtable) IItemsStackPanel : Windows::IInspectable
+struct __declspec(uuid("df7ab79d-7ad5-4b58-9363-919af90226e6")) __declspec(novtable) IItemsStackPanel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GroupPadding(Windows::UI::Xaml::Thickness * value) = 0;
     virtual HRESULT __stdcall put_GroupPadding(Windows::UI::Xaml::Thickness value) = 0;
@@ -2381,13 +2381,13 @@ struct __declspec(uuid("df7ab79d-7ad5-4b58-9363-919af90226e6")) __declspec(novta
     virtual HRESULT __stdcall put_CacheLength(double value) = 0;
 };
 
-struct __declspec(uuid("eeeecdb0-00b4-4534-937b-56318b293e92")) __declspec(novtable) IItemsStackPanel2 : Windows::IInspectable
+struct __declspec(uuid("eeeecdb0-00b4-4534-937b-56318b293e92")) __declspec(novtable) IItemsStackPanel2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreStickyGroupHeadersEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_AreStickyGroupHeadersEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("ca25d63f-044f-4b6b-b315-0b60e0b4f87d")) __declspec(novtable) IItemsStackPanelStatics : Windows::IInspectable
+struct __declspec(uuid("ca25d63f-044f-4b6b-b315-0b60e0b4f87d")) __declspec(novtable) IItemsStackPanelStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GroupPaddingProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OrientationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2395,12 +2395,12 @@ struct __declspec(uuid("ca25d63f-044f-4b6b-b315-0b60e0b4f87d")) __declspec(novta
     virtual HRESULT __stdcall get_CacheLengthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("3972eb2c-384a-48bf-adfd-772e2572c504")) __declspec(novtable) IItemsStackPanelStatics2 : Windows::IInspectable
+struct __declspec(uuid("3972eb2c-384a-48bf-adfd-772e2572c504")) __declspec(novtable) IItemsStackPanelStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreStickyGroupHeadersEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ddfe6b5f-ba88-4a7d-8a5b-e58caf0f4e2d")) __declspec(novtable) IItemsWrapGrid : Windows::IInspectable
+struct __declspec(uuid("ddfe6b5f-ba88-4a7d-8a5b-e58caf0f4e2d")) __declspec(novtable) IItemsWrapGrid : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GroupPadding(Windows::UI::Xaml::Thickness * value) = 0;
     virtual HRESULT __stdcall put_GroupPadding(Windows::UI::Xaml::Thickness value) = 0;
@@ -2423,13 +2423,13 @@ struct __declspec(uuid("ddfe6b5f-ba88-4a7d-8a5b-e58caf0f4e2d")) __declspec(novta
     virtual HRESULT __stdcall put_CacheLength(double value) = 0;
 };
 
-struct __declspec(uuid("80c21c0f-63ec-4258-bd61-d4a6956c864a")) __declspec(novtable) IItemsWrapGrid2 : Windows::IInspectable
+struct __declspec(uuid("80c21c0f-63ec-4258-bd61-d4a6956c864a")) __declspec(novtable) IItemsWrapGrid2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreStickyGroupHeadersEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_AreStickyGroupHeadersEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("4ec5427d-24a0-449a-b763-3077ba0f2dd5")) __declspec(novtable) IItemsWrapGridStatics : Windows::IInspectable
+struct __declspec(uuid("4ec5427d-24a0-449a-b763-3077ba0f2dd5")) __declspec(novtable) IItemsWrapGridStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GroupPaddingProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OrientationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2440,54 +2440,54 @@ struct __declspec(uuid("4ec5427d-24a0-449a-b763-3077ba0f2dd5")) __declspec(novta
     virtual HRESULT __stdcall get_CacheLengthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("2e27d3f7-feaa-478d-bfd1-29338adc5a03")) __declspec(novtable) IItemsWrapGridStatics2 : Windows::IInspectable
+struct __declspec(uuid("2e27d3f7-feaa-478d-bfd1-29338adc5a03")) __declspec(novtable) IItemsWrapGridStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreStickyGroupHeadersEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e9f3b9ff-8e91-4ecf-a707-c927f694f881")) __declspec(novtable) IListBox : Windows::IInspectable
+struct __declspec(uuid("e9f3b9ff-8e91-4ecf-a707-c927f694f881")) __declspec(novtable) IListBox : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_SelectedItems(Windows::Foundation::Collections::IVector<Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_SelectedItems(Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_SelectionMode(winrt::Windows::UI::Xaml::Controls::SelectionMode * value) = 0;
     virtual HRESULT __stdcall put_SelectionMode(winrt::Windows::UI::Xaml::Controls::SelectionMode value) = 0;
-    virtual HRESULT __stdcall abi_ScrollIntoView(Windows::IInspectable * item) = 0;
+    virtual HRESULT __stdcall abi_ScrollIntoView(Windows::Foundation::IInspectable * item) = 0;
     virtual HRESULT __stdcall abi_SelectAll() = 0;
 };
 
-struct __declspec(uuid("70572aba-8ad1-4085-9350-deee359294e3")) __declspec(novtable) IListBox2 : Windows::IInspectable
+struct __declspec(uuid("70572aba-8ad1-4085-9350-deee359294e3")) __declspec(novtable) IListBox2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SingleSelectionFollowsFocus(bool * value) = 0;
     virtual HRESULT __stdcall put_SingleSelectionFollowsFocus(bool value) = 0;
 };
 
-struct __declspec(uuid("60cdfda2-2f44-444b-9c94-b8c9fda46f59")) __declspec(novtable) IListBoxFactory : Windows::IInspectable
+struct __declspec(uuid("60cdfda2-2f44-444b-9c94-b8c9fda46f59")) __declspec(novtable) IListBoxFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IListBox ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IListBox ** instance) = 0;
 };
 
-struct __declspec(uuid("43c13323-6edf-4e4b-b6b2-3a93eec41d95")) __declspec(novtable) IListBoxItem : Windows::IInspectable
+struct __declspec(uuid("43c13323-6edf-4e4b-b6b2-3a93eec41d95")) __declspec(novtable) IListBoxItem : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("4398b8d4-a3de-402c-b23d-190384b27ca8")) __declspec(novtable) IListBoxItemFactory : Windows::IInspectable
+struct __declspec(uuid("4398b8d4-a3de-402c-b23d-190384b27ca8")) __declspec(novtable) IListBoxItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IListBoxItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IListBoxItem ** instance) = 0;
 };
 
-struct __declspec(uuid("6d3f7f73-706a-4e53-a9aa-c9a53c9cdd70")) __declspec(novtable) IListBoxStatics : Windows::IInspectable
+struct __declspec(uuid("6d3f7f73-706a-4e53-a9aa-c9a53c9cdd70")) __declspec(novtable) IListBoxStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SelectionModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0089adeb-b709-4c8d-b1ed-4a7d97ee7716")) __declspec(novtable) IListBoxStatics2 : Windows::IInspectable
+struct __declspec(uuid("0089adeb-b709-4c8d-b1ed-4a7d97ee7716")) __declspec(novtable) IListBoxStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SingleSelectionFollowsFocusProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47")) __declspec(novtable) IListPickerFlyout : Windows::IInspectable
+struct __declspec(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47")) __declspec(novtable) IListPickerFlyout : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_ItemsSource(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_ItemsSource(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_ItemsSource(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_ItemsSource(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_ItemTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_ItemTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_DisplayMemberPath(hstring * value) = 0;
@@ -2496,23 +2496,23 @@ struct __declspec(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47")) __declspec(novta
     virtual HRESULT __stdcall put_SelectionMode(winrt::Windows::UI::Xaml::Controls::ListPickerFlyoutSelectionMode value) = 0;
     virtual HRESULT __stdcall get_SelectedIndex(int32_t * value) = 0;
     virtual HRESULT __stdcall put_SelectedIndex(int32_t value) = 0;
-    virtual HRESULT __stdcall get_SelectedItem(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_SelectedItem(Windows::IInspectable * value) = 0;
-    virtual HRESULT __stdcall get_SelectedValue(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_SelectedValue(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_SelectedItem(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_SelectedItem(Windows::Foundation::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_SelectedValue(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_SelectedValue(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_SelectedValuePath(hstring * value) = 0;
     virtual HRESULT __stdcall put_SelectedValuePath(hstring value) = 0;
-    virtual HRESULT __stdcall get_SelectedItems(Windows::Foundation::Collections::IVector<Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_SelectedItems(Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall add_ItemsPicked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListPickerFlyout, Windows::UI::Xaml::Controls::ItemsPickedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ItemsPicked(event_token token) = 0;
-    virtual HRESULT __stdcall abi_ShowAtAsync(Windows::UI::Xaml::IFrameworkElement * target, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::IInspectable>> ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_ShowAtAsync(Windows::UI::Xaml::IFrameworkElement * target, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::IInspectable>> ** returnValue) = 0;
 };
 
-struct __declspec(uuid("68155fb3-883e-417a-80d0-e2fd88410084")) __declspec(novtable) IListPickerFlyoutPresenter : Windows::IInspectable
+struct __declspec(uuid("68155fb3-883e-417a-80d0-e2fd88410084")) __declspec(novtable) IListPickerFlyoutPresenter : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("fee25b97-8b96-4602-81d2-82fd8e0f7ea8")) __declspec(novtable) IListPickerFlyoutStatics : Windows::IInspectable
+struct __declspec(uuid("fee25b97-8b96-4602-81d2-82fd8e0f7ea8")) __declspec(novtable) IListPickerFlyoutStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemsSourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ItemTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2524,13 +2524,13 @@ struct __declspec(uuid("fee25b97-8b96-4602-81d2-82fd8e0f7ea8")) __declspec(novta
     virtual HRESULT __stdcall get_SelectedValuePathProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("f6ce8c6d-fe96-41ad-a64a-c2b81c4af7f8")) __declspec(novtable) IListView : Windows::IInspectable
+struct __declspec(uuid("f6ce8c6d-fe96-41ad-a64a-c2b81c4af7f8")) __declspec(novtable) IListView : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("3d0813ba-6890-4537-bfe5-796d9458edd6")) __declspec(novtable) IListViewBase : Windows::IInspectable
+struct __declspec(uuid("3d0813ba-6890-4537-bfe5-796d9458edd6")) __declspec(novtable) IListViewBase : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_SelectedItems(Windows::Foundation::Collections::IVector<Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_SelectedItems(Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_SelectionMode(winrt::Windows::UI::Xaml::Controls::ListViewSelectionMode * value) = 0;
     virtual HRESULT __stdcall put_SelectionMode(winrt::Windows::UI::Xaml::Controls::ListViewSelectionMode value) = 0;
     virtual HRESULT __stdcall get_IsSwipeEnabled(bool * value) = 0;
@@ -2551,40 +2551,40 @@ struct __declspec(uuid("3d0813ba-6890-4537-bfe5-796d9458edd6")) __declspec(novta
     virtual HRESULT __stdcall remove_ItemClick(event_token token) = 0;
     virtual HRESULT __stdcall add_DragItemsStarting(Windows::UI::Xaml::Controls::DragItemsStartingEventHandler * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_DragItemsStarting(event_token token) = 0;
-    virtual HRESULT __stdcall abi_ScrollIntoView(Windows::IInspectable * item) = 0;
+    virtual HRESULT __stdcall abi_ScrollIntoView(Windows::Foundation::IInspectable * item) = 0;
     virtual HRESULT __stdcall abi_SelectAll() = 0;
     virtual HRESULT __stdcall abi_LoadMoreItemsAsync(Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Data::LoadMoreItemsResult> ** returnValue) = 0;
-    virtual HRESULT __stdcall abi_ScrollIntoViewWithAlignment(Windows::IInspectable * item, winrt::Windows::UI::Xaml::Controls::ScrollIntoViewAlignment alignment) = 0;
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_ScrollIntoViewWithAlignment(Windows::Foundation::IInspectable * item, winrt::Windows::UI::Xaml::Controls::ScrollIntoViewAlignment alignment) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_HeaderTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> * value) = 0;
 };
 
-struct __declspec(uuid("d1c2a4f7-78a3-4491-86e0-2ddebc007ac5")) __declspec(novtable) IListViewBase2 : Windows::IInspectable
+struct __declspec(uuid("d1c2a4f7-78a3-4491-86e0-2ddebc007ac5")) __declspec(novtable) IListViewBase2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ShowsScrollingPlaceholders(bool * value) = 0;
     virtual HRESULT __stdcall put_ShowsScrollingPlaceholders(bool value) = 0;
     virtual HRESULT __stdcall add_ContainerContentChanging(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ContainerContentChanging(event_token token) = 0;
     virtual HRESULT __stdcall abi_SetDesiredContainerUpdateDuration(Windows::Foundation::TimeSpan duration) = 0;
-    virtual HRESULT __stdcall get_Footer(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Footer(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Footer(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Footer(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_FooterTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_FooterTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_FooterTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> ** value) = 0;
     virtual HRESULT __stdcall put_FooterTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> * value) = 0;
 };
 
-struct __declspec(uuid("b364c035-0a13-406f-a3fb-f30e7ddca94c")) __declspec(novtable) IListViewBase3 : Windows::IInspectable
+struct __declspec(uuid("b364c035-0a13-406f-a3fb-f30e7ddca94c")) __declspec(novtable) IListViewBase3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ReorderMode(winrt::Windows::UI::Xaml::Controls::ListViewReorderMode * value) = 0;
     virtual HRESULT __stdcall put_ReorderMode(winrt::Windows::UI::Xaml::Controls::ListViewReorderMode value) = 0;
 };
 
-struct __declspec(uuid("18b7792b-11dc-4eb6-a7bc-741adb3eeb79")) __declspec(novtable) IListViewBase4 : Windows::IInspectable
+struct __declspec(uuid("18b7792b-11dc-4eb6-a7bc-741adb3eeb79")) __declspec(novtable) IListViewBase4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SelectedRanges(Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Data::ItemIndexRange> ** value) = 0;
     virtual HRESULT __stdcall get_IsMultiSelectCheckBoxEnabled(bool * value) = 0;
@@ -2599,27 +2599,27 @@ struct __declspec(uuid("18b7792b-11dc-4eb6-a7bc-741adb3eeb79")) __declspec(novta
     virtual HRESULT __stdcall abi_DeselectRange(Windows::UI::Xaml::Data::IItemIndexRange * itemIndexRange) = 0;
 };
 
-struct __declspec(uuid("1a9c6e99-1719-4b80-b335-628331a07019")) __declspec(novtable) IListViewBase5 : Windows::IInspectable
+struct __declspec(uuid("1a9c6e99-1719-4b80-b335-628331a07019")) __declspec(novtable) IListViewBase5 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SingleSelectionFollowsFocus(bool * value) = 0;
     virtual HRESULT __stdcall put_SingleSelectionFollowsFocus(bool value) = 0;
     virtual HRESULT __stdcall abi_IsDragSource(bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("e67e6c7f-150f-46d0-a6ac-c5002bd9ca53")) __declspec(novtable) IListViewBaseFactory : Windows::IInspectable
+struct __declspec(uuid("e67e6c7f-150f-46d0-a6ac-c5002bd9ca53")) __declspec(novtable) IListViewBaseFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IListViewBase ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IListViewBase ** instance) = 0;
 };
 
-struct __declspec(uuid("6d0ded27-0d19-4091-8917-ce7c85c1e630")) __declspec(novtable) IListViewBaseHeaderItem : Windows::IInspectable
-{
-};
-
-struct __declspec(uuid("3872a6a1-ea19-455f-9df7-147cc41d329c")) __declspec(novtable) IListViewBaseHeaderItemFactory : Windows::IInspectable
+struct __declspec(uuid("6d0ded27-0d19-4091-8917-ce7c85c1e630")) __declspec(novtable) IListViewBaseHeaderItem : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("8532b8f7-3e16-455b-89a8-c1346223f6d3")) __declspec(novtable) IListViewBaseStatics : Windows::IInspectable
+struct __declspec(uuid("3872a6a1-ea19-455f-9df7-147cc41d329c")) __declspec(novtable) IListViewBaseHeaderItemFactory : Windows::Foundation::IInspectable
+{
+};
+
+struct __declspec(uuid("8532b8f7-3e16-455b-89a8-c1346223f6d3")) __declspec(novtable) IListViewBaseStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SelectionModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsSwipeEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2637,7 +2637,7 @@ struct __declspec(uuid("8532b8f7-3e16-455b-89a8-c1346223f6d3")) __declspec(novta
     virtual HRESULT __stdcall get_HeaderTransitionsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("821c00c8-78cc-411f-9f2e-a55758227f3e")) __declspec(novtable) IListViewBaseStatics2 : Windows::IInspectable
+struct __declspec(uuid("821c00c8-78cc-411f-9f2e-a55758227f3e")) __declspec(novtable) IListViewBaseStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ShowsScrollingPlaceholdersProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FooterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2645,56 +2645,56 @@ struct __declspec(uuid("821c00c8-78cc-411f-9f2e-a55758227f3e")) __declspec(novta
     virtual HRESULT __stdcall get_FooterTransitionsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("3b539091-31c6-4d0c-90af-5dc1d6ae9c05")) __declspec(novtable) IListViewBaseStatics3 : Windows::IInspectable
+struct __declspec(uuid("3b539091-31c6-4d0c-90af-5dc1d6ae9c05")) __declspec(novtable) IListViewBaseStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ReorderModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ad13258b-fbd0-4f18-8bf8-9b8613951c22")) __declspec(novtable) IListViewBaseStatics4 : Windows::IInspectable
+struct __declspec(uuid("ad13258b-fbd0-4f18-8bf8-9b8613951c22")) __declspec(novtable) IListViewBaseStatics4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsMultiSelectCheckBoxEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("40346fcf-0476-4259-895f-a6569738620f")) __declspec(novtable) IListViewBaseStatics5 : Windows::IInspectable
+struct __declspec(uuid("40346fcf-0476-4259-895f-a6569738620f")) __declspec(novtable) IListViewBaseStatics5 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SingleSelectionFollowsFocusProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("bdff696d-3f22-41f9-97a6-883134a76113")) __declspec(novtable) IListViewFactory : Windows::IInspectable
+struct __declspec(uuid("bdff696d-3f22-41f9-97a6-883134a76113")) __declspec(novtable) IListViewFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IListView ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IListView ** instance) = 0;
 };
 
-struct __declspec(uuid("1b61baeb-e196-4b3b-a5f9-1ed636f3f79b")) __declspec(novtable) IListViewHeaderItem : Windows::IInspectable
+struct __declspec(uuid("1b61baeb-e196-4b3b-a5f9-1ed636f3f79b")) __declspec(novtable) IListViewHeaderItem : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("68d2c96a-96b0-4f08-a7a5-f1086720a0fa")) __declspec(novtable) IListViewHeaderItemFactory : Windows::IInspectable
+struct __declspec(uuid("68d2c96a-96b0-4f08-a7a5-f1086720a0fa")) __declspec(novtable) IListViewHeaderItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IListViewHeaderItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IListViewHeaderItem ** instance) = 0;
 };
 
-struct __declspec(uuid("b7bb4305-3dd9-43de-a8c0-c472f085bc11")) __declspec(novtable) IListViewItem : Windows::IInspectable
+struct __declspec(uuid("b7bb4305-3dd9-43de-a8c0-c472f085bc11")) __declspec(novtable) IListViewItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TemplateSettings(Windows::UI::Xaml::Controls::Primitives::IListViewItemTemplateSettings ** value) = 0;
 };
 
-struct __declspec(uuid("f431073d-9cac-42a2-82df-0f4490bc4e2e")) __declspec(novtable) IListViewItemFactory : Windows::IInspectable
+struct __declspec(uuid("f431073d-9cac-42a2-82df-0f4490bc4e2e")) __declspec(novtable) IListViewItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IListViewItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IListViewItem ** instance) = 0;
 };
 
-struct __declspec(uuid("05bde8a6-2191-4b4b-8c22-9b25676e806e")) __declspec(novtable) IListViewPersistenceHelper : Windows::IInspectable
+struct __declspec(uuid("05bde8a6-2191-4b4b-8c22-9b25676e806e")) __declspec(novtable) IListViewPersistenceHelper : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("6d0c2b08-bb9b-44f9-8063-5c3f9c21884b")) __declspec(novtable) IListViewPersistenceHelperStatics : Windows::IInspectable
+struct __declspec(uuid("6d0c2b08-bb9b-44f9-8063-5c3f9c21884b")) __declspec(novtable) IListViewPersistenceHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetRelativeScrollPosition(Windows::UI::Xaml::Controls::IListViewBase * listViewBase, Windows::UI::Xaml::Controls::ListViewItemToKeyHandler * itemToKeyHandler, hstring * returnValue) = 0;
     virtual HRESULT __stdcall abi_SetRelativeScrollPositionAsync(Windows::UI::Xaml::Controls::IListViewBase * listViewBase, hstring relativeScrollPosition, Windows::UI::Xaml::Controls::ListViewKeyToItemHandler * keyToItemHandler, Windows::Foundation::IAsyncAction ** returnValue) = 0;
 };
 
-struct __declspec(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353")) __declspec(novtable) IMediaElement : Windows::IInspectable
+struct __declspec(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353")) __declspec(novtable) IMediaElement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PosterSource(Windows::UI::Xaml::Media::IImageSource ** value) = 0;
     virtual HRESULT __stdcall put_PosterSource(Windows::UI::Xaml::Media::IImageSource * value) = 0;
@@ -2778,7 +2778,7 @@ struct __declspec(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353")) __declspec(novta
     virtual HRESULT __stdcall get_ActualStereo3DVideoPackingMode(winrt::Windows::UI::Xaml::Media::Stereo3DVideoPackingMode * value) = 0;
 };
 
-struct __declspec(uuid("fd53da65-b186-4654-bfdb-180ed26cad07")) __declspec(novtable) IMediaElement2 : Windows::IInspectable
+struct __declspec(uuid("fd53da65-b186-4654-bfdb-180ed26cad07")) __declspec(novtable) IMediaElement2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreTransportControlsEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_AreTransportControlsEnabled(bool value) = 0;
@@ -2791,7 +2791,7 @@ struct __declspec(uuid("fd53da65-b186-4654-bfdb-180ed26cad07")) __declspec(novta
     virtual HRESULT __stdcall put_PlayToPreferredSourceUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
 };
 
-struct __declspec(uuid("479f6f13-0fdb-4ed8-928a-4d39169c3cd2")) __declspec(novtable) IMediaElement3 : Windows::IInspectable
+struct __declspec(uuid("479f6f13-0fdb-4ed8-928a-4d39169c3cd2")) __declspec(novtable) IMediaElement3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TransportControls(Windows::UI::Xaml::Controls::IMediaTransportControls ** value) = 0;
     virtual HRESULT __stdcall put_TransportControls(Windows::UI::Xaml::Controls::IMediaTransportControls * value) = 0;
@@ -2801,7 +2801,7 @@ struct __declspec(uuid("479f6f13-0fdb-4ed8-928a-4d39169c3cd2")) __declspec(novta
     virtual HRESULT __stdcall abi_GetAsCastingSource(Windows::Media::Casting::ICastingSource ** returnValue) = 0;
 };
 
-struct __declspec(uuid("dccd2cb9-7568-4682-a72a-8ddf2a2665ca")) __declspec(novtable) IMediaElementStatics : Windows::IInspectable
+struct __declspec(uuid("dccd2cb9-7568-4682-a72a-8ddf2a2665ca")) __declspec(novtable) IMediaElementStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PosterSourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_SourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2838,7 +2838,7 @@ struct __declspec(uuid("dccd2cb9-7568-4682-a72a-8ddf2a2665ca")) __declspec(novta
     virtual HRESULT __stdcall get_ActualStereo3DVideoPackingModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("9ee7f826-f154-4dc6-8014-a6eba987f847")) __declspec(novtable) IMediaElementStatics2 : Windows::IInspectable
+struct __declspec(uuid("9ee7f826-f154-4dc6-8014-a6eba987f847")) __declspec(novtable) IMediaElementStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreTransportControlsEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_StretchProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2846,7 +2846,7 @@ struct __declspec(uuid("9ee7f826-f154-4dc6-8014-a6eba987f847")) __declspec(novta
     virtual HRESULT __stdcall get_PlayToPreferredSourceUriProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("3b4ca526-2e25-4598-bc71-d491f8e8de39")) __declspec(novtable) IMediaPlayerElement : Windows::IInspectable
+struct __declspec(uuid("3b4ca526-2e25-4598-bc71-d491f8e8de39")) __declspec(novtable) IMediaPlayerElement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Source(Windows::Media::Playback::IMediaPlaybackSource ** value) = 0;
     virtual HRESULT __stdcall put_Source(Windows::Media::Playback::IMediaPlaybackSource * value) = 0;
@@ -2866,12 +2866,12 @@ struct __declspec(uuid("3b4ca526-2e25-4598-bc71-d491f8e8de39")) __declspec(novta
     virtual HRESULT __stdcall abi_SetMediaPlayer(Windows::Media::Playback::IMediaPlayer * mediaPlayer) = 0;
 };
 
-struct __declspec(uuid("77e525c3-eb17-4b8d-889d-1ea8abdbd4ef")) __declspec(novtable) IMediaPlayerElementFactory : Windows::IInspectable
+struct __declspec(uuid("77e525c3-eb17-4b8d-889d-1ea8abdbd4ef")) __declspec(novtable) IMediaPlayerElementFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IMediaPlayerElement ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IMediaPlayerElement ** instance) = 0;
 };
 
-struct __declspec(uuid("1e7c4020-ac57-42dd-ad1c-3ebc2d7f08ba")) __declspec(novtable) IMediaPlayerElementStatics : Windows::IInspectable
+struct __declspec(uuid("1e7c4020-ac57-42dd-ad1c-3ebc2d7f08ba")) __declspec(novtable) IMediaPlayerElementStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AreTransportControlsEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2882,7 +2882,7 @@ struct __declspec(uuid("1e7c4020-ac57-42dd-ad1c-3ebc2d7f08ba")) __declspec(novta
     virtual HRESULT __stdcall get_MediaPlayerProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("77a92326-0c5b-41fc-bf49-15f6c3524b6b")) __declspec(novtable) IMediaPlayerPresenter : Windows::IInspectable
+struct __declspec(uuid("77a92326-0c5b-41fc-bf49-15f6c3524b6b")) __declspec(novtable) IMediaPlayerPresenter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MediaPlayer(Windows::Media::Playback::IMediaPlayer ** value) = 0;
     virtual HRESULT __stdcall put_MediaPlayer(Windows::Media::Playback::IMediaPlayer * value) = 0;
@@ -2892,19 +2892,19 @@ struct __declspec(uuid("77a92326-0c5b-41fc-bf49-15f6c3524b6b")) __declspec(novta
     virtual HRESULT __stdcall put_IsFullWindow(bool value) = 0;
 };
 
-struct __declspec(uuid("e6766fb7-d96f-4b95-b33c-59e81cb1e9ba")) __declspec(novtable) IMediaPlayerPresenterFactory : Windows::IInspectable
+struct __declspec(uuid("e6766fb7-d96f-4b95-b33c-59e81cb1e9ba")) __declspec(novtable) IMediaPlayerPresenterFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IMediaPlayerPresenter ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IMediaPlayerPresenter ** instance) = 0;
 };
 
-struct __declspec(uuid("84d774fe-ead4-4957-b42b-223158ca0de7")) __declspec(novtable) IMediaPlayerPresenterStatics : Windows::IInspectable
+struct __declspec(uuid("84d774fe-ead4-4957-b42b-223158ca0de7")) __declspec(novtable) IMediaPlayerPresenterStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MediaPlayerProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_StretchProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsFullWindowProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("d6f69e7d-0825-49a9-9fce-5586d8694f0c")) __declspec(novtable) IMediaTransportControls : Windows::IInspectable
+struct __declspec(uuid("d6f69e7d-0825-49a9-9fce-5586d8694f0c")) __declspec(novtable) IMediaTransportControls : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsFullWindowButtonVisible(bool * value) = 0;
     virtual HRESULT __stdcall put_IsFullWindowButtonVisible(bool value) = 0;
@@ -2942,7 +2942,7 @@ struct __declspec(uuid("d6f69e7d-0825-49a9-9fce-5586d8694f0c")) __declspec(novta
     virtual HRESULT __stdcall put_IsCompact(bool value) = 0;
 };
 
-struct __declspec(uuid("2b89efec-1bea-451e-8bcd-cfe2d9423262")) __declspec(novtable) IMediaTransportControls2 : Windows::IInspectable
+struct __declspec(uuid("2b89efec-1bea-451e-8bcd-cfe2d9423262")) __declspec(novtable) IMediaTransportControls2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsSkipForwardButtonVisible(bool * value) = 0;
     virtual HRESULT __stdcall put_IsSkipForwardButtonVisible(bool value) = 0;
@@ -2962,23 +2962,23 @@ struct __declspec(uuid("2b89efec-1bea-451e-8bcd-cfe2d9423262")) __declspec(novta
     virtual HRESULT __stdcall remove_ThumbnailRequested(event_token token) = 0;
 };
 
-struct __declspec(uuid("1da2015a-a8e4-4c1b-88c9-0b183ecc62e3")) __declspec(novtable) IMediaTransportControlsFactory : Windows::IInspectable
+struct __declspec(uuid("1da2015a-a8e4-4c1b-88c9-0b183ecc62e3")) __declspec(novtable) IMediaTransportControlsFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IMediaTransportControls ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IMediaTransportControls ** instance) = 0;
 };
 
-struct __declspec(uuid("3d41d509-ff44-4420-807e-8f7a2e2c4251")) __declspec(novtable) IMediaTransportControlsHelper : Windows::IInspectable
+struct __declspec(uuid("3d41d509-ff44-4420-807e-8f7a2e2c4251")) __declspec(novtable) IMediaTransportControlsHelper : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("5a772047-a9a1-4625-9270-7f49875d4394")) __declspec(novtable) IMediaTransportControlsHelperStatics : Windows::IInspectable
+struct __declspec(uuid("5a772047-a9a1-4625-9270-7f49875d4394")) __declspec(novtable) IMediaTransportControlsHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DropoutOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall abi_GetDropoutOrder(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IReference<int32_t> ** value) = 0;
     virtual HRESULT __stdcall abi_SetDropoutOrder(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IReference<int32_t> * value) = 0;
 };
 
-struct __declspec(uuid("590ea907-d2ef-4c1a-9429-b4b15d64fd56")) __declspec(novtable) IMediaTransportControlsStatics : Windows::IInspectable
+struct __declspec(uuid("590ea907-d2ef-4c1a-9429-b4b15d64fd56")) __declspec(novtable) IMediaTransportControlsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsFullWindowButtonVisibleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsFullWindowEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -2999,7 +2999,7 @@ struct __declspec(uuid("590ea907-d2ef-4c1a-9429-b4b15d64fd56")) __declspec(novta
     virtual HRESULT __stdcall get_IsCompactProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("1728cfdc-561f-4386-a7f8-090d95f68d96")) __declspec(novtable) IMediaTransportControlsStatics2 : Windows::IInspectable
+struct __declspec(uuid("1728cfdc-561f-4386-a7f8-090d95f68d96")) __declspec(novtable) IMediaTransportControlsStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsSkipForwardButtonVisibleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsSkipForwardEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3010,111 +3010,111 @@ struct __declspec(uuid("1728cfdc-561f-4386-a7f8-090d95f68d96")) __declspec(novta
     virtual HRESULT __stdcall get_FastPlayFallbackBehaviourProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ad3210f1-985b-4171-bbba-67bcc729649b")) __declspec(novtable) IMenuFlyout : Windows::IInspectable
+struct __declspec(uuid("ad3210f1-985b-4171-bbba-67bcc729649b")) __declspec(novtable) IMenuFlyout : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Items(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::MenuFlyoutItemBase> ** value) = 0;
     virtual HRESULT __stdcall get_MenuFlyoutPresenterStyle(Windows::UI::Xaml::IStyle ** value) = 0;
     virtual HRESULT __stdcall put_MenuFlyoutPresenterStyle(Windows::UI::Xaml::IStyle * value) = 0;
 };
 
-struct __declspec(uuid("507c7bad-d9d1-4c05-9d4b-cda8de9ab242")) __declspec(novtable) IMenuFlyout2 : Windows::IInspectable
+struct __declspec(uuid("507c7bad-d9d1-4c05-9d4b-cda8de9ab242")) __declspec(novtable) IMenuFlyout2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ShowAt(Windows::UI::Xaml::IUIElement * targetElement, Windows::Foundation::Point point) = 0;
 };
 
-struct __declspec(uuid("644533ab-bbb9-499b-9ff3-30d40e2c56d8")) __declspec(novtable) IMenuFlyoutFactory : Windows::IInspectable
+struct __declspec(uuid("644533ab-bbb9-499b-9ff3-30d40e2c56d8")) __declspec(novtable) IMenuFlyoutFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IMenuFlyout ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IMenuFlyout ** instance) = 0;
 };
 
-struct __declspec(uuid("160775cf-b598-44af-a488-c3ce2af6d3f0")) __declspec(novtable) IMenuFlyoutItem : Windows::IInspectable
+struct __declspec(uuid("160775cf-b598-44af-a488-c3ce2af6d3f0")) __declspec(novtable) IMenuFlyoutItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
     virtual HRESULT __stdcall put_Text(hstring value) = 0;
     virtual HRESULT __stdcall get_Command(Windows::UI::Xaml::Input::ICommand ** value) = 0;
     virtual HRESULT __stdcall put_Command(Windows::UI::Xaml::Input::ICommand * value) = 0;
-    virtual HRESULT __stdcall get_CommandParameter(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_CommandParameter(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_CommandParameter(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_CommandParameter(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall add_Click(Windows::UI::Xaml::RoutedEventHandler * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Click(event_token token) = 0;
 };
 
-struct __declspec(uuid("f9b56047-8da6-4730-9208-144125c6b396")) __declspec(novtable) IMenuFlyoutItemBase : Windows::IInspectable
+struct __declspec(uuid("f9b56047-8da6-4730-9208-144125c6b396")) __declspec(novtable) IMenuFlyoutItemBase : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("83e6dbad-fc67-41d5-8797-60acd1ceb1d9")) __declspec(novtable) IMenuFlyoutItemBaseFactory : Windows::IInspectable
+struct __declspec(uuid("83e6dbad-fc67-41d5-8797-60acd1ceb1d9")) __declspec(novtable) IMenuFlyoutItemBaseFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("c5aa39e2-44f3-455e-9c5b-62bb6afce3ad")) __declspec(novtable) IMenuFlyoutItemFactory : Windows::IInspectable
+struct __declspec(uuid("c5aa39e2-44f3-455e-9c5b-62bb6afce3ad")) __declspec(novtable) IMenuFlyoutItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IMenuFlyoutItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IMenuFlyoutItem ** instance) = 0;
 };
 
-struct __declspec(uuid("4950b424-a43a-41f7-aa3a-9ce9619747d5")) __declspec(novtable) IMenuFlyoutItemStatics : Windows::IInspectable
+struct __declspec(uuid("4950b424-a43a-41f7-aa3a-9ce9619747d5")) __declspec(novtable) IMenuFlyoutItemStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CommandProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CommandParameterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("906e0304-254e-413f-b219-c7b97f003752")) __declspec(novtable) IMenuFlyoutPresenter : Windows::IInspectable
+struct __declspec(uuid("906e0304-254e-413f-b219-c7b97f003752")) __declspec(novtable) IMenuFlyoutPresenter : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("895894df-5a9f-4a1f-85ec-6f3c1b6dcb89")) __declspec(novtable) IMenuFlyoutPresenter2 : Windows::IInspectable
+struct __declspec(uuid("895894df-5a9f-4a1f-85ec-6f3c1b6dcb89")) __declspec(novtable) IMenuFlyoutPresenter2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TemplateSettings(Windows::UI::Xaml::Controls::Primitives::IMenuFlyoutPresenterTemplateSettings ** value) = 0;
 };
 
-struct __declspec(uuid("b88b5091-101c-41f8-aac1-1b105c14fb99")) __declspec(novtable) IMenuFlyoutPresenterFactory : Windows::IInspectable
+struct __declspec(uuid("b88b5091-101c-41f8-aac1-1b105c14fb99")) __declspec(novtable) IMenuFlyoutPresenterFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IMenuFlyoutPresenter ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IMenuFlyoutPresenter ** instance) = 0;
 };
 
-struct __declspec(uuid("71fa2b7d-0b51-4950-a1a4-bbc42eac4c12")) __declspec(novtable) IMenuFlyoutSeparator : Windows::IInspectable
+struct __declspec(uuid("71fa2b7d-0b51-4950-a1a4-bbc42eac4c12")) __declspec(novtable) IMenuFlyoutSeparator : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("c159dcc8-b437-44e0-b24b-5720aea1dbac")) __declspec(novtable) IMenuFlyoutSeparatorFactory : Windows::IInspectable
+struct __declspec(uuid("c159dcc8-b437-44e0-b24b-5720aea1dbac")) __declspec(novtable) IMenuFlyoutSeparatorFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IMenuFlyoutSeparator ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IMenuFlyoutSeparator ** instance) = 0;
 };
 
-struct __declspec(uuid("3dbefba1-9522-4045-9e58-c99b13aab9b9")) __declspec(novtable) IMenuFlyoutStatics : Windows::IInspectable
+struct __declspec(uuid("3dbefba1-9522-4045-9e58-c99b13aab9b9")) __declspec(novtable) IMenuFlyoutStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MenuFlyoutPresenterStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e5386550-fe2c-43e2-a73f-62168f619973")) __declspec(novtable) IMenuFlyoutSubItem : Windows::IInspectable
+struct __declspec(uuid("e5386550-fe2c-43e2-a73f-62168f619973")) __declspec(novtable) IMenuFlyoutSubItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Items(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::MenuFlyoutItemBase> ** value) = 0;
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
     virtual HRESULT __stdcall put_Text(hstring value) = 0;
 };
 
-struct __declspec(uuid("ddb27a36-1874-4aef-837d-6fec9da4e681")) __declspec(novtable) IMenuFlyoutSubItemStatics : Windows::IInspectable
+struct __declspec(uuid("ddb27a36-1874-4aef-837d-6fec9da4e681")) __declspec(novtable) IMenuFlyoutSubItemStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("bf2195a9-f4ea-4336-977c-f8fcf78b0d9e")) __declspec(novtable) INavigate : Windows::IInspectable
+struct __declspec(uuid("bf2195a9-f4ea-4336-977c-f8fcf78b0d9e")) __declspec(novtable) INavigate : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Navigate(Windows::UI::Xaml::Interop::TypeName sourcePageType, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("af0e05f7-c4b7-44c5-b09d-5cb7052b3a97")) __declspec(novtable) INotifyEventArgs : Windows::IInspectable
+struct __declspec(uuid("af0e05f7-c4b7-44c5-b09d-5cb7052b3a97")) __declspec(novtable) INotifyEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Value(hstring * value) = 0;
 };
 
-struct __declspec(uuid("0d140f56-1dce-4fcd-85bc-5a5572273b9c")) __declspec(novtable) INotifyEventArgs2 : Windows::IInspectable
+struct __declspec(uuid("0d140f56-1dce-4fcd-85bc-5a5572273b9c")) __declspec(novtable) INotifyEventArgs2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CallingUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("c4b27075-e641-453e-824d-012fc7cf95cf")) __declspec(novtable) IPage : Windows::IInspectable
+struct __declspec(uuid("c4b27075-e641-453e-824d-012fc7cf95cf")) __declspec(novtable) IPage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Frame(Windows::UI::Xaml::Controls::IFrame ** value) = 0;
     virtual HRESULT __stdcall get_NavigationCacheMode(winrt::Windows::UI::Xaml::Navigation::NavigationCacheMode * value) = 0;
@@ -3125,26 +3125,26 @@ struct __declspec(uuid("c4b27075-e641-453e-824d-012fc7cf95cf")) __declspec(novta
     virtual HRESULT __stdcall put_BottomAppBar(Windows::UI::Xaml::Controls::IAppBar * value) = 0;
 };
 
-struct __declspec(uuid("dfa149ac-1849-445e-937c-40a9590cc076")) __declspec(novtable) IPageFactory : Windows::IInspectable
+struct __declspec(uuid("dfa149ac-1849-445e-937c-40a9590cc076")) __declspec(novtable) IPageFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IPage ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IPage ** instance) = 0;
 };
 
-struct __declspec(uuid("230b9cb8-3419-4306-aabe-4a8e680d3627")) __declspec(novtable) IPageOverrides : Windows::IInspectable
+struct __declspec(uuid("230b9cb8-3419-4306-aabe-4a8e680d3627")) __declspec(novtable) IPageOverrides : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_OnNavigatedFrom(Windows::UI::Xaml::Navigation::INavigationEventArgs * e) = 0;
     virtual HRESULT __stdcall abi_OnNavigatedTo(Windows::UI::Xaml::Navigation::INavigationEventArgs * e) = 0;
     virtual HRESULT __stdcall abi_OnNavigatingFrom(Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs * e) = 0;
 };
 
-struct __declspec(uuid("376dde71-f725-46dd-8d80-eeeaf7da74e5")) __declspec(novtable) IPageStatics : Windows::IInspectable
+struct __declspec(uuid("376dde71-f725-46dd-8d80-eeeaf7da74e5")) __declspec(novtable) IPageStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FrameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TopAppBarProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_BottomAppBarProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("a50a4bbd-8361-469c-90da-e9a40c7474df")) __declspec(novtable) IPanel : Windows::IInspectable
+struct __declspec(uuid("a50a4bbd-8361-469c-90da-e9a40c7474df")) __declspec(novtable) IPanel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Children(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::UIElement> ** value) = 0;
     virtual HRESULT __stdcall get_Background(Windows::UI::Xaml::Media::IBrush ** value) = 0;
@@ -3154,19 +3154,19 @@ struct __declspec(uuid("a50a4bbd-8361-469c-90da-e9a40c7474df")) __declspec(novta
     virtual HRESULT __stdcall put_ChildrenTransitions(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition> * value) = 0;
 };
 
-struct __declspec(uuid("eee68111-c7cc-433f-95cd-d630c34302dd")) __declspec(novtable) IPanelFactory : Windows::IInspectable
+struct __declspec(uuid("eee68111-c7cc-433f-95cd-d630c34302dd")) __declspec(novtable) IPanelFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IPanel ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IPanel ** instance) = 0;
 };
 
-struct __declspec(uuid("f23d6b5d-8330-47a6-a046-25f509b25232")) __declspec(novtable) IPanelStatics : Windows::IInspectable
+struct __declspec(uuid("f23d6b5d-8330-47a6-a046-25f509b25232")) __declspec(novtable) IPanelStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BackgroundProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsItemsHostProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ChildrenTransitionsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("02b9aa11-0b47-4e7d-ad91-3a4168ed230d")) __declspec(novtable) IPasswordBox : Windows::IInspectable
+struct __declspec(uuid("02b9aa11-0b47-4e7d-ad91-3a4168ed230d")) __declspec(novtable) IPasswordBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Password(hstring * value) = 0;
     virtual HRESULT __stdcall put_Password(hstring value) = 0;
@@ -3183,10 +3183,10 @@ struct __declspec(uuid("02b9aa11-0b47-4e7d-ad91-3a4168ed230d")) __declspec(novta
     virtual HRESULT __stdcall abi_SelectAll() = 0;
 };
 
-struct __declspec(uuid("5ed738df-212f-4aeb-b5b8-2c219aec3c0c")) __declspec(novtable) IPasswordBox2 : Windows::IInspectable
+struct __declspec(uuid("5ed738df-212f-4aeb-b5b8-2c219aec3c0c")) __declspec(novtable) IPasswordBox2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_PlaceholderText(hstring * value) = 0;
@@ -3199,7 +3199,7 @@ struct __declspec(uuid("5ed738df-212f-4aeb-b5b8-2c219aec3c0c")) __declspec(novta
     virtual HRESULT __stdcall remove_Paste(event_token token) = 0;
 };
 
-struct __declspec(uuid("6024d9d1-56b7-41f0-9558-3934c14244d6")) __declspec(novtable) IPasswordBox3 : Windows::IInspectable
+struct __declspec(uuid("6024d9d1-56b7-41f0-9558-3934c14244d6")) __declspec(novtable) IPasswordBox3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PasswordRevealMode(winrt::Windows::UI::Xaml::Controls::PasswordRevealMode * value) = 0;
     virtual HRESULT __stdcall put_PasswordRevealMode(winrt::Windows::UI::Xaml::Controls::PasswordRevealMode value) = 0;
@@ -3209,7 +3209,7 @@ struct __declspec(uuid("6024d9d1-56b7-41f0-9558-3934c14244d6")) __declspec(novta
     virtual HRESULT __stdcall put_InputScope(Windows::UI::Xaml::Input::IInputScope * value) = 0;
 };
 
-struct __declspec(uuid("5ee67563-2d74-4ace-bd79-fcab61a7d77b")) __declspec(novtable) IPasswordBoxStatics : Windows::IInspectable
+struct __declspec(uuid("5ee67563-2d74-4ace-bd79-fcab61a7d77b")) __declspec(novtable) IPasswordBoxStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PasswordProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_PasswordCharProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3217,7 +3217,7 @@ struct __declspec(uuid("5ee67563-2d74-4ace-bd79-fcab61a7d77b")) __declspec(novta
     virtual HRESULT __stdcall get_MaxLengthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("fc57935f-98fa-4066-b785-fa725ecde232")) __declspec(novtable) IPasswordBoxStatics2 : Windows::IInspectable
+struct __declspec(uuid("fc57935f-98fa-4066-b785-fa725ecde232")) __declspec(novtable) IPasswordBoxStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3226,34 +3226,34 @@ struct __declspec(uuid("fc57935f-98fa-4066-b785-fa725ecde232")) __declspec(novta
     virtual HRESULT __stdcall get_PreventKeyboardDisplayOnProgrammaticFocusProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("a2cdd319-ad6a-4352-b590-f696ffcb8e3f")) __declspec(novtable) IPasswordBoxStatics3 : Windows::IInspectable
+struct __declspec(uuid("a2cdd319-ad6a-4352-b590-f696ffcb8e3f")) __declspec(novtable) IPasswordBoxStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PasswordRevealModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TextReadingOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_InputScopeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("214c62db-c366-4a0e-b9ad-dcf168d7ec0c")) __declspec(novtable) IPathIcon : Windows::IInspectable
+struct __declspec(uuid("214c62db-c366-4a0e-b9ad-dcf168d7ec0c")) __declspec(novtable) IPathIcon : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Data(Windows::UI::Xaml::Media::IGeometry ** value) = 0;
     virtual HRESULT __stdcall put_Data(Windows::UI::Xaml::Media::IGeometry * value) = 0;
 };
 
-struct __declspec(uuid("af9d9652-9c5d-4a37-9e1a-044abeef792b")) __declspec(novtable) IPathIconFactory : Windows::IInspectable
+struct __declspec(uuid("af9d9652-9c5d-4a37-9e1a-044abeef792b")) __declspec(novtable) IPathIconFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IPathIcon ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IPathIcon ** instance) = 0;
 };
 
-struct __declspec(uuid("77b75db8-fb15-491a-b6e3-7dbba911bafe")) __declspec(novtable) IPathIconStatics : Windows::IInspectable
+struct __declspec(uuid("77b75db8-fb15-491a-b6e3-7dbba911bafe")) __declspec(novtable) IPathIconStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DataProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("447a9b51-1e23-4779-992b-986849713941")) __declspec(novtable) IPickerConfirmedEventArgs : Windows::IInspectable
+struct __declspec(uuid("447a9b51-1e23-4779-992b-986849713941")) __declspec(novtable) IPickerConfirmedEventArgs : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("a336ffdb-08d9-43e6-944e-f2e5c7cee630")) __declspec(novtable) IPickerFlyout : Windows::IInspectable
+struct __declspec(uuid("a336ffdb-08d9-43e6-944e-f2e5c7cee630")) __declspec(novtable) IPickerFlyout : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Content(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall put_Content(Windows::UI::Xaml::IUIElement * value) = 0;
@@ -3264,28 +3264,28 @@ struct __declspec(uuid("a336ffdb-08d9-43e6-944e-f2e5c7cee630")) __declspec(novta
     virtual HRESULT __stdcall abi_ShowAtAsync(Windows::UI::Xaml::IFrameworkElement * target, Windows::Foundation::IAsyncOperation<bool> ** returnValue) = 0;
 };
 
-struct __declspec(uuid("5884c978-6b27-4b38-a9ae-677c2994652e")) __declspec(novtable) IPickerFlyoutPresenter : Windows::IInspectable
+struct __declspec(uuid("5884c978-6b27-4b38-a9ae-677c2994652e")) __declspec(novtable) IPickerFlyoutPresenter : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("af18a436-f38a-4abd-b933-6286c115b07f")) __declspec(novtable) IPickerFlyoutStatics : Windows::IInspectable
+struct __declspec(uuid("af18a436-f38a-4abd-b933-6286c115b07f")) __declspec(novtable) IPickerFlyoutStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ConfirmationButtonsVisibleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("103e9b13-3400-4a16-90b9-6912bf06974e")) __declspec(novtable) IPivot : Windows::IInspectable
+struct __declspec(uuid("103e9b13-3400-4a16-90b9-6912bf06974e")) __declspec(novtable) IPivot : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Title(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Title(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Title(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Title(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_TitleTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_TitleTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_SelectedIndex(int32_t * value) = 0;
     virtual HRESULT __stdcall put_SelectedIndex(int32_t value) = 0;
-    virtual HRESULT __stdcall get_SelectedItem(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_SelectedItem(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_SelectedItem(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_SelectedItem(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_IsLocked(bool * value) = 0;
     virtual HRESULT __stdcall put_IsLocked(bool value) = 0;
     virtual HRESULT __stdcall add_SelectionChanged(Windows::UI::Xaml::Controls::SelectionChangedEventHandler * value, event_token * token) = 0;
@@ -3300,19 +3300,19 @@ struct __declspec(uuid("103e9b13-3400-4a16-90b9-6912bf06974e")) __declspec(novta
     virtual HRESULT __stdcall remove_PivotItemUnloaded(event_token token) = 0;
 };
 
-struct __declspec(uuid("8b8a8660-1a55-411c-a82d-18991c3f0d6f")) __declspec(novtable) IPivot2 : Windows::IInspectable
+struct __declspec(uuid("8b8a8660-1a55-411c-a82d-18991c3f0d6f")) __declspec(novtable) IPivot2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_LeftHeader(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_LeftHeader(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_LeftHeader(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_LeftHeader(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_LeftHeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_LeftHeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
-    virtual HRESULT __stdcall get_RightHeader(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_RightHeader(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_RightHeader(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_RightHeader(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_RightHeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_RightHeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
 };
 
-struct __declspec(uuid("95bcbf96-f0da-4089-8c65-e8b81354c766")) __declspec(novtable) IPivot3 : Windows::IInspectable
+struct __declspec(uuid("95bcbf96-f0da-4089-8c65-e8b81354c766")) __declspec(novtable) IPivot3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderFocusVisualPlacement(winrt::Windows::UI::Xaml::Controls::PivotHeaderFocusVisualPlacement * value) = 0;
     virtual HRESULT __stdcall put_HeaderFocusVisualPlacement(winrt::Windows::UI::Xaml::Controls::PivotHeaderFocusVisualPlacement value) = 0;
@@ -3320,34 +3320,34 @@ struct __declspec(uuid("95bcbf96-f0da-4089-8c65-e8b81354c766")) __declspec(novta
     virtual HRESULT __stdcall put_IsHeaderItemsCarouselEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("1b0a818e-2529-4762-ba44-9abc68c3ceca")) __declspec(novtable) IPivotFactory : Windows::IInspectable
+struct __declspec(uuid("1b0a818e-2529-4762-ba44-9abc68c3ceca")) __declspec(novtable) IPivotFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IPivot ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IPivot ** instance) = 0;
 };
 
-struct __declspec(uuid("a4764371-a502-47a3-915e-4aa096daf87f")) __declspec(novtable) IPivotItem : Windows::IInspectable
+struct __declspec(uuid("a4764371-a502-47a3-915e-4aa096daf87f")) __declspec(novtable) IPivotItem : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
 };
 
-struct __declspec(uuid("1a6f7254-1ed5-4bc5-a060-655530bca6ba")) __declspec(novtable) IPivotItemEventArgs : Windows::IInspectable
+struct __declspec(uuid("1a6f7254-1ed5-4bc5-a060-655530bca6ba")) __declspec(novtable) IPivotItemEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Item(Windows::UI::Xaml::Controls::IPivotItem ** value) = 0;
     virtual HRESULT __stdcall put_Item(Windows::UI::Xaml::Controls::IPivotItem * value) = 0;
 };
 
-struct __declspec(uuid("0dced981-636e-4a34-8a3f-8ee018639285")) __declspec(novtable) IPivotItemFactory : Windows::IInspectable
+struct __declspec(uuid("0dced981-636e-4a34-8a3f-8ee018639285")) __declspec(novtable) IPivotItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IPivotItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IPivotItem ** instance) = 0;
 };
 
-struct __declspec(uuid("e147ad0c-488b-4a6e-becd-a5dbd9941754")) __declspec(novtable) IPivotItemStatics : Windows::IInspectable
+struct __declspec(uuid("e147ad0c-488b-4a6e-becd-a5dbd9941754")) __declspec(novtable) IPivotItemStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ee22c7f4-c15d-4ff3-8a94-f50dfdfbe899")) __declspec(novtable) IPivotStatics : Windows::IInspectable
+struct __declspec(uuid("ee22c7f4-c15d-4ff3-8a94-f50dfdfbe899")) __declspec(novtable) IPivotStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TitleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TitleTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3360,7 +3360,7 @@ struct __declspec(uuid("ee22c7f4-c15d-4ff3-8a94-f50dfdfbe899")) __declspec(novta
     virtual HRESULT __stdcall abi_SetSlideInAnimationGroup(Windows::UI::Xaml::IFrameworkElement * element, winrt::Windows::UI::Xaml::Controls::PivotSlideInAnimationGroup value) = 0;
 };
 
-struct __declspec(uuid("d7518add-be75-4023-8deb-c6513c3192a3")) __declspec(novtable) IPivotStatics2 : Windows::IInspectable
+struct __declspec(uuid("d7518add-be75-4023-8deb-c6513c3192a3")) __declspec(novtable) IPivotStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LeftHeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_LeftHeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3368,13 +3368,13 @@ struct __declspec(uuid("d7518add-be75-4023-8deb-c6513c3192a3")) __declspec(novta
     virtual HRESULT __stdcall get_RightHeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("78b6274e-6616-4600-a039-922a5d09330b")) __declspec(novtable) IPivotStatics3 : Windows::IInspectable
+struct __declspec(uuid("78b6274e-6616-4600-a039-922a5d09330b")) __declspec(novtable) IPivotStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderFocusVisualPlacementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsHeaderItemsCarouselEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ae752c89-0067-4963-bf4c-29db0c4a507e")) __declspec(novtable) IProgressBar : Windows::IInspectable
+struct __declspec(uuid("ae752c89-0067-4963-bf4c-29db0c4a507e")) __declspec(novtable) IProgressBar : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsIndeterminate(bool * value) = 0;
     virtual HRESULT __stdcall put_IsIndeterminate(bool value) = 0;
@@ -3385,47 +3385,47 @@ struct __declspec(uuid("ae752c89-0067-4963-bf4c-29db0c4a507e")) __declspec(novta
     virtual HRESULT __stdcall get_TemplateSettings(Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateSettings ** value) = 0;
 };
 
-struct __declspec(uuid("da9a8c11-1591-400b-a993-0f1c5cc12f3b")) __declspec(novtable) IProgressBarFactory : Windows::IInspectable
+struct __declspec(uuid("da9a8c11-1591-400b-a993-0f1c5cc12f3b")) __declspec(novtable) IProgressBarFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IProgressBar ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IProgressBar ** instance) = 0;
 };
 
-struct __declspec(uuid("7a129fda-5837-4e26-b3b4-e1c092cebbec")) __declspec(novtable) IProgressBarStatics : Windows::IInspectable
+struct __declspec(uuid("7a129fda-5837-4e26-b3b4-e1c092cebbec")) __declspec(novtable) IProgressBarStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsIndeterminateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ShowErrorProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ShowPausedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("6da5e49e-6e9d-425c-bd7c-02173e39763f")) __declspec(novtable) IProgressRing : Windows::IInspectable
+struct __declspec(uuid("6da5e49e-6e9d-425c-bd7c-02173e39763f")) __declspec(novtable) IProgressRing : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsActive(bool * value) = 0;
     virtual HRESULT __stdcall put_IsActive(bool value) = 0;
     virtual HRESULT __stdcall get_TemplateSettings(Windows::UI::Xaml::Controls::Primitives::IProgressRingTemplateSettings ** value) = 0;
 };
 
-struct __declspec(uuid("e8b62507-4e2c-47d5-a54a-c6c48a5e6989")) __declspec(novtable) IProgressRingStatics : Windows::IInspectable
+struct __declspec(uuid("e8b62507-4e2c-47d5-a54a-c6c48a5e6989")) __declspec(novtable) IProgressRingStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsActiveProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("325c44e0-9a03-4bf3-abd6-6fbb46c9a486")) __declspec(novtable) IRadioButton : Windows::IInspectable
+struct __declspec(uuid("325c44e0-9a03-4bf3-abd6-6fbb46c9a486")) __declspec(novtable) IRadioButton : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GroupName(hstring * value) = 0;
     virtual HRESULT __stdcall put_GroupName(hstring value) = 0;
 };
 
-struct __declspec(uuid("f1d04933-34e1-4a5c-b2ae-ca3b1c0b20de")) __declspec(novtable) IRadioButtonFactory : Windows::IInspectable
+struct __declspec(uuid("f1d04933-34e1-4a5c-b2ae-ca3b1c0b20de")) __declspec(novtable) IRadioButtonFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IRadioButton ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IRadioButton ** instance) = 0;
 };
 
-struct __declspec(uuid("6b149293-f50f-4bd8-b0ac-5c162f33a208")) __declspec(novtable) IRadioButtonStatics : Windows::IInspectable
+struct __declspec(uuid("6b149293-f50f-4bd8-b0ac-5c162f33a208")) __declspec(novtable) IRadioButtonStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GroupNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("2eabfaeb-b35a-4035-acea-3c4a3730683f")) __declspec(novtable) IRelativePanel : Windows::IInspectable
+struct __declspec(uuid("2eabfaeb-b35a-4035-acea-3c4a3730683f")) __declspec(novtable) IRelativePanel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BorderBrush(Windows::UI::Xaml::Media::IBrush ** value) = 0;
     virtual HRESULT __stdcall put_BorderBrush(Windows::UI::Xaml::Media::IBrush * value) = 0;
@@ -3437,43 +3437,43 @@ struct __declspec(uuid("2eabfaeb-b35a-4035-acea-3c4a3730683f")) __declspec(novta
     virtual HRESULT __stdcall put_Padding(Windows::UI::Xaml::Thickness value) = 0;
 };
 
-struct __declspec(uuid("8460193c-361b-44ba-a17e-b84c9dcdc772")) __declspec(novtable) IRelativePanelFactory : Windows::IInspectable
+struct __declspec(uuid("8460193c-361b-44ba-a17e-b84c9dcdc772")) __declspec(novtable) IRelativePanelFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IRelativePanel ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IRelativePanel ** instance) = 0;
 };
 
-struct __declspec(uuid("15903c27-f18c-4c35-8e19-6a7459d907b6")) __declspec(novtable) IRelativePanelStatics : Windows::IInspectable
+struct __declspec(uuid("15903c27-f18c-4c35-8e19-6a7459d907b6")) __declspec(novtable) IRelativePanelStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LeftOfProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetLeftOf(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetLeftOf(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetLeftOf(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetLeftOf(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_AboveProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetAbove(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetAbove(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetAbove(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetAbove(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_RightOfProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetRightOf(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetRightOf(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetRightOf(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetRightOf(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_BelowProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetBelow(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetBelow(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetBelow(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetBelow(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_AlignHorizontalCenterWithProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetAlignHorizontalCenterWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetAlignHorizontalCenterWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetAlignHorizontalCenterWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetAlignHorizontalCenterWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_AlignVerticalCenterWithProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetAlignVerticalCenterWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetAlignVerticalCenterWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetAlignVerticalCenterWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetAlignVerticalCenterWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_AlignLeftWithProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetAlignLeftWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetAlignLeftWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetAlignLeftWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetAlignLeftWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_AlignTopWithProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetAlignTopWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetAlignTopWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetAlignTopWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetAlignTopWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_AlignRightWithProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetAlignRightWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetAlignRightWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetAlignRightWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetAlignRightWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_AlignBottomWithProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetAlignBottomWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetAlignBottomWith(Windows::UI::Xaml::IUIElement * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetAlignBottomWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetAlignBottomWith(Windows::UI::Xaml::IUIElement * element, Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_AlignLeftWithPanelProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall abi_GetAlignLeftWithPanel(Windows::UI::Xaml::IUIElement * element, bool * value) = 0;
     virtual HRESULT __stdcall abi_SetAlignLeftWithPanel(Windows::UI::Xaml::IUIElement * element, bool value) = 0;
@@ -3498,7 +3498,7 @@ struct __declspec(uuid("15903c27-f18c-4c35-8e19-6a7459d907b6")) __declspec(novta
     virtual HRESULT __stdcall get_PaddingProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("90a57a40-80b6-4fce-b1ec-e3c616284b6a")) __declspec(novtable) IRichEditBox : Windows::IInspectable
+struct __declspec(uuid("90a57a40-80b6-4fce-b1ec-e3c616284b6a")) __declspec(novtable) IRichEditBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsReadOnly(bool * value) = 0;
     virtual HRESULT __stdcall put_IsReadOnly(bool value) = 0;
@@ -3523,10 +3523,10 @@ struct __declspec(uuid("90a57a40-80b6-4fce-b1ec-e3c616284b6a")) __declspec(novta
     virtual HRESULT __stdcall remove_ContextMenuOpening(event_token token) = 0;
 };
 
-struct __declspec(uuid("bbea6ead-e805-47a4-bbe7-47e59b8f74a7")) __declspec(novtable) IRichEditBox2 : Windows::IInspectable
+struct __declspec(uuid("bbea6ead-e805-47a4-bbe7-47e59b8f74a7")) __declspec(novtable) IRichEditBox2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_PlaceholderText(hstring * value) = 0;
@@ -3541,7 +3541,7 @@ struct __declspec(uuid("bbea6ead-e805-47a4-bbe7-47e59b8f74a7")) __declspec(novta
     virtual HRESULT __stdcall remove_Paste(event_token token) = 0;
 };
 
-struct __declspec(uuid("6b17a462-fbb6-4fff-9991-9399cb9c0b90")) __declspec(novtable) IRichEditBox3 : Windows::IInspectable
+struct __declspec(uuid("6b17a462-fbb6-4fff-9991-9399cb9c0b90")) __declspec(novtable) IRichEditBox3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_TextCompositionStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_TextCompositionStarted(event_token token) = 0;
@@ -3559,19 +3559,19 @@ struct __declspec(uuid("6b17a462-fbb6-4fff-9991-9399cb9c0b90")) __declspec(novta
     virtual HRESULT __stdcall remove_TextChanging(event_token token) = 0;
 };
 
-struct __declspec(uuid("5caa8d35-c838-4bad-a07c-204183bb751f")) __declspec(novtable) IRichEditBox4 : Windows::IInspectable
+struct __declspec(uuid("5caa8d35-c838-4bad-a07c-204183bb751f")) __declspec(novtable) IRichEditBox4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetLinguisticAlternativesAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> ** returnValue) = 0;
     virtual HRESULT __stdcall get_ClipboardCopyFormat(winrt::Windows::UI::Xaml::Controls::RichEditClipboardFormat * value) = 0;
     virtual HRESULT __stdcall put_ClipboardCopyFormat(winrt::Windows::UI::Xaml::Controls::RichEditClipboardFormat value) = 0;
 };
 
-struct __declspec(uuid("61a1df62-2806-41ed-88ed-ae21f47ab422")) __declspec(novtable) IRichEditBoxFactory : Windows::IInspectable
+struct __declspec(uuid("61a1df62-2806-41ed-88ed-ae21f47ab422")) __declspec(novtable) IRichEditBoxFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IRichEditBox ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IRichEditBox ** instance) = 0;
 };
 
-struct __declspec(uuid("f5e03a74-88ea-479b-9a05-37089ff30ede")) __declspec(novtable) IRichEditBoxStatics : Windows::IInspectable
+struct __declspec(uuid("f5e03a74-88ea-479b-9a05-37089ff30ede")) __declspec(novtable) IRichEditBoxStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsReadOnlyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AcceptsReturnProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3582,7 +3582,7 @@ struct __declspec(uuid("f5e03a74-88ea-479b-9a05-37089ff30ede")) __declspec(novta
     virtual HRESULT __stdcall get_InputScopeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e3eb26de-2748-420b-b1fc-ce95b6e85eec")) __declspec(novtable) IRichEditBoxStatics2 : Windows::IInspectable
+struct __declspec(uuid("e3eb26de-2748-420b-b1fc-ce95b6e85eec")) __declspec(novtable) IRichEditBoxStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3592,22 +3592,22 @@ struct __declspec(uuid("e3eb26de-2748-420b-b1fc-ce95b6e85eec")) __declspec(novta
     virtual HRESULT __stdcall get_IsColorFontEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("6d17eec5-1fb3-4c8b-aa23-f5e15d6ab64e")) __declspec(novtable) IRichEditBoxStatics3 : Windows::IInspectable
+struct __declspec(uuid("6d17eec5-1fb3-4c8b-aa23-f5e15d6ab64e")) __declspec(novtable) IRichEditBoxStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DesiredCandidateWindowAlignmentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TextReadingOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("f5d54fd7-7796-42a5-a5e5-2cd211ee8176")) __declspec(novtable) IRichEditBoxStatics4 : Windows::IInspectable
+struct __declspec(uuid("f5d54fd7-7796-42a5-a5e5-2cd211ee8176")) __declspec(novtable) IRichEditBoxStatics4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ClipboardCopyFormatProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("54065018-2813-4922-9f8e-b6bbafd995d8")) __declspec(novtable) IRichEditBoxTextChangingEventArgs : Windows::IInspectable
+struct __declspec(uuid("54065018-2813-4922-9f8e-b6bbafd995d8")) __declspec(novtable) IRichEditBoxTextChangingEventArgs : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("e5fff9e2-b968-49e7-97d4-8cca2ac3ae7c")) __declspec(novtable) IRichTextBlock : Windows::IInspectable
+struct __declspec(uuid("e5fff9e2-b968-49e7-97d4-8cca2ac3ae7c")) __declspec(novtable) IRichTextBlock : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontSize(double * value) = 0;
     virtual HRESULT __stdcall put_FontSize(double value) = 0;
@@ -3659,7 +3659,7 @@ struct __declspec(uuid("e5fff9e2-b968-49e7-97d4-8cca2ac3ae7c")) __declspec(novta
     virtual HRESULT __stdcall put_TextIndent(double value) = 0;
 };
 
-struct __declspec(uuid("3f209013-03e7-4508-964a-91aedab3d11e")) __declspec(novtable) IRichTextBlock2 : Windows::IInspectable
+struct __declspec(uuid("3f209013-03e7-4508-964a-91aedab3d11e")) __declspec(novtable) IRichTextBlock2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxLines(int32_t * value) = 0;
     virtual HRESULT __stdcall put_MaxLines(int32_t value) = 0;
@@ -3675,13 +3675,13 @@ struct __declspec(uuid("3f209013-03e7-4508-964a-91aedab3d11e")) __declspec(novta
     virtual HRESULT __stdcall put_TextReadingOrder(winrt::Windows::UI::Xaml::TextReadingOrder value) = 0;
 };
 
-struct __declspec(uuid("7d39ae83-8918-4613-b007-7c898ba2950e")) __declspec(novtable) IRichTextBlock3 : Windows::IInspectable
+struct __declspec(uuid("7d39ae83-8918-4613-b007-7c898ba2950e")) __declspec(novtable) IRichTextBlock3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsTextScaleFactorEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("4f93749b-dac3-4a42-9cbb-99f0de37c071")) __declspec(novtable) IRichTextBlockOverflow : Windows::IInspectable
+struct __declspec(uuid("4f93749b-dac3-4a42-9cbb-99f0de37c071")) __declspec(novtable) IRichTextBlockOverflow : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OverflowContentTarget(Windows::UI::Xaml::Controls::IRichTextBlockOverflow ** value) = 0;
     virtual HRESULT __stdcall put_OverflowContentTarget(Windows::UI::Xaml::Controls::IRichTextBlockOverflow * value) = 0;
@@ -3696,25 +3696,25 @@ struct __declspec(uuid("4f93749b-dac3-4a42-9cbb-99f0de37c071")) __declspec(novta
     virtual HRESULT __stdcall abi_Focus(winrt::Windows::UI::Xaml::FocusState value, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("8742624e-a882-4826-b929-4d5c3905b9a1")) __declspec(novtable) IRichTextBlockOverflow2 : Windows::IInspectable
+struct __declspec(uuid("8742624e-a882-4826-b929-4d5c3905b9a1")) __declspec(novtable) IRichTextBlockOverflow2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxLines(int32_t * value) = 0;
     virtual HRESULT __stdcall put_MaxLines(int32_t value) = 0;
 };
 
-struct __declspec(uuid("041ac2f7-4f2b-43c3-a122-3fea9ca9dc87")) __declspec(novtable) IRichTextBlockOverflowStatics : Windows::IInspectable
+struct __declspec(uuid("041ac2f7-4f2b-43c3-a122-3fea9ca9dc87")) __declspec(novtable) IRichTextBlockOverflowStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OverflowContentTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_PaddingProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HasOverflowContentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b5ebed4c-f8c4-4a3a-907f-e53e78279fa3")) __declspec(novtable) IRichTextBlockOverflowStatics2 : Windows::IInspectable
+struct __declspec(uuid("b5ebed4c-f8c4-4a3a-907f-e53e78279fa3")) __declspec(novtable) IRichTextBlockOverflowStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxLinesProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("492d883c-adea-433c-be1c-208a164262be")) __declspec(novtable) IRichTextBlockStatics : Windows::IInspectable
+struct __declspec(uuid("492d883c-adea-433c-be1c-208a164262be")) __declspec(novtable) IRichTextBlockStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontSizeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FontFamilyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3736,7 +3736,7 @@ struct __declspec(uuid("492d883c-adea-433c-be1c-208a164262be")) __declspec(novta
     virtual HRESULT __stdcall get_TextIndentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0d6131e1-af29-48ce-8aaf-74ecc28bfbb0")) __declspec(novtable) IRichTextBlockStatics2 : Windows::IInspectable
+struct __declspec(uuid("0d6131e1-af29-48ce-8aaf-74ecc28bfbb0")) __declspec(novtable) IRichTextBlockStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxLinesProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TextLineBoundsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3746,12 +3746,12 @@ struct __declspec(uuid("0d6131e1-af29-48ce-8aaf-74ecc28bfbb0")) __declspec(novta
     virtual HRESULT __stdcall get_TextReadingOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("073f7ef4-ca2b-4b49-a59a-31d8fa743332")) __declspec(novtable) IRichTextBlockStatics3 : Windows::IInspectable
+struct __declspec(uuid("073f7ef4-ca2b-4b49-a59a-31d8fa743332")) __declspec(novtable) IRichTextBlockStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4abae829-d80c-4a5e-a48c-f8b3d3b6533d")) __declspec(novtable) IRowDefinition : Windows::IInspectable
+struct __declspec(uuid("4abae829-d80c-4a5e-a48c-f8b3d3b6533d")) __declspec(novtable) IRowDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Height(Windows::UI::Xaml::GridLength * value) = 0;
     virtual HRESULT __stdcall put_Height(Windows::UI::Xaml::GridLength value) = 0;
@@ -3762,14 +3762,14 @@ struct __declspec(uuid("4abae829-d80c-4a5e-a48c-f8b3d3b6533d")) __declspec(novta
     virtual HRESULT __stdcall get_ActualHeight(double * value) = 0;
 };
 
-struct __declspec(uuid("5adf3fe5-2056-4724-94d6-e4812b022ec8")) __declspec(novtable) IRowDefinitionStatics : Windows::IInspectable
+struct __declspec(uuid("5adf3fe5-2056-4724-94d6-e4812b022ec8")) __declspec(novtable) IRowDefinitionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MaxHeightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MinHeightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("5712ee2b-0eeb-46d3-aa31-5f6801b8de20")) __declspec(novtable) IScrollContentPresenter : Windows::IInspectable
+struct __declspec(uuid("5712ee2b-0eeb-46d3-aa31-5f6801b8de20")) __declspec(novtable) IScrollContentPresenter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CanVerticallyScroll(bool * value) = 0;
     virtual HRESULT __stdcall put_CanVerticallyScroll(bool value) = 0;
@@ -3781,8 +3781,8 @@ struct __declspec(uuid("5712ee2b-0eeb-46d3-aa31-5f6801b8de20")) __declspec(novta
     virtual HRESULT __stdcall get_ViewportHeight(double * value) = 0;
     virtual HRESULT __stdcall get_HorizontalOffset(double * value) = 0;
     virtual HRESULT __stdcall get_VerticalOffset(double * value) = 0;
-    virtual HRESULT __stdcall get_ScrollOwner(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_ScrollOwner(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_ScrollOwner(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_ScrollOwner(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall abi_LineUp() = 0;
     virtual HRESULT __stdcall abi_LineDown() = 0;
     virtual HRESULT __stdcall abi_LineLeft() = 0;
@@ -3800,7 +3800,7 @@ struct __declspec(uuid("5712ee2b-0eeb-46d3-aa31-5f6801b8de20")) __declspec(novta
     virtual HRESULT __stdcall abi_MakeVisible(Windows::UI::Xaml::IUIElement * visual, Windows::Foundation::Rect rectangle, Windows::Foundation::Rect * returnValue) = 0;
 };
 
-struct __declspec(uuid("64e9be00-4dc1-493d-abe7-cbd3c577490d")) __declspec(novtable) IScrollViewer : Windows::IInspectable
+struct __declspec(uuid("64e9be00-4dc1-493d-abe7-cbd3c577490d")) __declspec(novtable) IScrollViewer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HorizontalScrollBarVisibility(winrt::Windows::UI::Xaml::Controls::ScrollBarVisibility * value) = 0;
     virtual HRESULT __stdcall put_HorizontalScrollBarVisibility(winrt::Windows::UI::Xaml::Controls::ScrollBarVisibility value) = 0;
@@ -3864,7 +3864,7 @@ struct __declspec(uuid("64e9be00-4dc1-493d-abe7-cbd3c577490d")) __declspec(novta
     virtual HRESULT __stdcall put_BringIntoViewOnFocusChange(bool value) = 0;
 };
 
-struct __declspec(uuid("64e9be10-4dd1-494d-abf7-cbd3c577491d")) __declspec(novtable) IScrollViewer2 : Windows::IInspectable
+struct __declspec(uuid("64e9be10-4dd1-494d-abf7-cbd3c577491d")) __declspec(novtable) IScrollViewer2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TopLeftHeader(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall put_TopLeftHeader(Windows::UI::Xaml::IUIElement * value) = 0;
@@ -3878,15 +3878,15 @@ struct __declspec(uuid("64e9be10-4dd1-494d-abf7-cbd3c577491d")) __declspec(novta
     virtual HRESULT __stdcall abi_ChangeViewWithOptionalAnimation(Windows::Foundation::IReference<double> * horizontalOffset, Windows::Foundation::IReference<double> * verticalOffset, Windows::Foundation::IReference<float> * zoomFactor, bool disableAnimation, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("74e9be21-5de2-595e-bc08-dbd3c577492c")) __declspec(novtable) IScrollViewer3 : Windows::IInspectable
+struct __declspec(uuid("74e9be21-5de2-595e-bc08-dbd3c577492c")) __declspec(novtable) IScrollViewer3 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_DirectManipulationStarted(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_DirectManipulationStarted(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_DirectManipulationStarted(event_token token) = 0;
-    virtual HRESULT __stdcall add_DirectManipulationCompleted(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_DirectManipulationCompleted(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_DirectManipulationCompleted(event_token token) = 0;
 };
 
-struct __declspec(uuid("33d1299d-8d6e-4290-bf22-905cccd04d31")) __declspec(novtable) IScrollViewerStatics : Windows::IInspectable
+struct __declspec(uuid("33d1299d-8d6e-4290-bf22-905cccd04d31")) __declspec(novtable) IScrollViewerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HorizontalSnapPointsAlignmentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_VerticalSnapPointsAlignmentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -3951,33 +3951,33 @@ struct __declspec(uuid("33d1299d-8d6e-4290-bf22-905cccd04d31")) __declspec(novta
     virtual HRESULT __stdcall abi_SetBringIntoViewOnFocusChange(Windows::UI::Xaml::IDependencyObject * element, bool bringIntoViewOnFocusChange) = 0;
 };
 
-struct __declspec(uuid("33d129ad-8d7e-42a0-bf32-905cccd04d41")) __declspec(novtable) IScrollViewerStatics2 : Windows::IInspectable
+struct __declspec(uuid("33d129ad-8d7e-42a0-bf32-905cccd04d41")) __declspec(novtable) IScrollViewerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TopLeftHeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_LeftHeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TopHeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("64e9be01-4dc2-493e-abe8-cbd3c577490e")) __declspec(novtable) IScrollViewerView : Windows::IInspectable
+struct __declspec(uuid("64e9be01-4dc2-493e-abe8-cbd3c577490e")) __declspec(novtable) IScrollViewerView : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HorizontalOffset(double * value) = 0;
     virtual HRESULT __stdcall get_VerticalOffset(double * value) = 0;
     virtual HRESULT __stdcall get_ZoomFactor(float * value) = 0;
 };
 
-struct __declspec(uuid("4dd04f7e-7a11-4b2e-9933-577df39252b6")) __declspec(novtable) IScrollViewerViewChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("4dd04f7e-7a11-4b2e-9933-577df39252b6")) __declspec(novtable) IScrollViewerViewChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsIntermediate(bool * value) = 0;
 };
 
-struct __declspec(uuid("4dd04f7f-7a11-4b2e-9933-577df39252b6")) __declspec(novtable) IScrollViewerViewChangingEventArgs : Windows::IInspectable
+struct __declspec(uuid("4dd04f7f-7a11-4b2e-9933-577df39252b6")) __declspec(novtable) IScrollViewerViewChangingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NextView(Windows::UI::Xaml::Controls::IScrollViewerView ** value) = 0;
     virtual HRESULT __stdcall get_FinalView(Windows::UI::Xaml::Controls::IScrollViewerView ** value) = 0;
     virtual HRESULT __stdcall get_IsInertial(bool * value) = 0;
 };
 
-struct __declspec(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c")) __declspec(novtable) ISearchBox : Windows::IInspectable
+struct __declspec(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c")) __declspec(novtable) ISearchBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SearchHistoryEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_SearchHistoryEnabled(bool value) = 0;
@@ -4004,19 +4004,19 @@ struct __declspec(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c")) __declspec(novta
     virtual HRESULT __stdcall abi_SetLocalContentSuggestionSettings(Windows::ApplicationModel::Search::ILocalContentSuggestionSettings * settings) = 0;
 };
 
-struct __declspec(uuid("cd743f6d-8685-46b4-9ddd-202f6941b701")) __declspec(novtable) ISearchBoxFactory : Windows::IInspectable
+struct __declspec(uuid("cd743f6d-8685-46b4-9ddd-202f6941b701")) __declspec(novtable) ISearchBoxFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ISearchBox ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ISearchBox ** instance) = 0;
 };
 
-struct __declspec(uuid("a9a70f8f-0cb0-4bd2-9998-2fb57ad5e731")) __declspec(novtable) ISearchBoxQueryChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("a9a70f8f-0cb0-4bd2-9998-2fb57ad5e731")) __declspec(novtable) ISearchBoxQueryChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QueryText(hstring * value) = 0;
     virtual HRESULT __stdcall get_Language(hstring * value) = 0;
     virtual HRESULT __stdcall get_LinguisticDetails(Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails ** value) = 0;
 };
 
-struct __declspec(uuid("126e90fd-3c4e-4ccb-9aef-4705d19fe548")) __declspec(novtable) ISearchBoxQuerySubmittedEventArgs : Windows::IInspectable
+struct __declspec(uuid("126e90fd-3c4e-4ccb-9aef-4705d19fe548")) __declspec(novtable) ISearchBoxQuerySubmittedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QueryText(hstring * value) = 0;
     virtual HRESULT __stdcall get_Language(hstring * value) = 0;
@@ -4024,13 +4024,13 @@ struct __declspec(uuid("126e90fd-3c4e-4ccb-9aef-4705d19fe548")) __declspec(novta
     virtual HRESULT __stdcall get_KeyModifiers(winrt::Windows::System::VirtualKeyModifiers * value) = 0;
 };
 
-struct __declspec(uuid("18918c23-e4c3-4662-a03b-d054ffd0f905")) __declspec(novtable) ISearchBoxResultSuggestionChosenEventArgs : Windows::IInspectable
+struct __declspec(uuid("18918c23-e4c3-4662-a03b-d054ffd0f905")) __declspec(novtable) ISearchBoxResultSuggestionChosenEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Tag(hstring * value) = 0;
     virtual HRESULT __stdcall get_KeyModifiers(winrt::Windows::System::VirtualKeyModifiers * value) = 0;
 };
 
-struct __declspec(uuid("b123634f-6871-48cd-92df-4cff22459082")) __declspec(novtable) ISearchBoxStatics : Windows::IInspectable
+struct __declspec(uuid("b123634f-6871-48cd-92df-4cff22459082")) __declspec(novtable) ISearchBoxStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SearchHistoryEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_SearchHistoryContextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4040,7 +4040,7 @@ struct __declspec(uuid("b123634f-6871-48cd-92df-4cff22459082")) __declspec(novta
     virtual HRESULT __stdcall get_ChooseSuggestionOnEnterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("da15170e-e566-48cb-bd11-fe4b0f30a44d")) __declspec(novtable) ISearchBoxSuggestionsRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("da15170e-e566-48cb-bd11-fe4b0f30a44d")) __declspec(novtable) ISearchBoxSuggestionsRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QueryText(hstring * value) = 0;
     virtual HRESULT __stdcall get_Language(hstring * value) = 0;
@@ -4048,28 +4048,28 @@ struct __declspec(uuid("da15170e-e566-48cb-bd11-fe4b0f30a44d")) __declspec(novta
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Search::ISearchSuggestionsRequest ** value) = 0;
 };
 
-struct __declspec(uuid("dd49ee6b-d165-430f-a37d-b807064f85e1")) __declspec(novtable) ISectionsInViewChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("dd49ee6b-d165-430f-a37d-b807064f85e1")) __declspec(novtable) ISectionsInViewChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AddedSections(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> ** value) = 0;
     virtual HRESULT __stdcall get_RemovedSections(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> ** value) = 0;
 };
 
-struct __declspec(uuid("557f5244-92f8-4150-b730-e6346e8f50d1")) __declspec(novtable) ISectionsInViewChangedEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("557f5244-92f8-4150-b730-e6346e8f50d1")) __declspec(novtable) ISectionsInViewChangedEventArgsFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("c972d2dc-b609-4758-851e-a799c21de97d")) __declspec(novtable) ISelectionChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("c972d2dc-b609-4758-851e-a799c21de97d")) __declspec(novtable) ISelectionChangedEventArgs : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_AddedItems(Windows::Foundation::Collections::IVector<Windows::IInspectable> ** value) = 0;
-    virtual HRESULT __stdcall get_RemovedItems(Windows::Foundation::Collections::IVector<Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_AddedItems(Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_RemovedItems(Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> ** value) = 0;
 };
 
-struct __declspec(uuid("11a8b6b5-2830-4517-84cd-5524c8b88b45")) __declspec(novtable) ISelectionChangedEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("11a8b6b5-2830-4517-84cd-5524c8b88b45")) __declspec(novtable) ISelectionChangedEventArgsFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstanceWithRemovedItemsAndAddedItems(Windows::Foundation::Collections::IVector<Windows::IInspectable> * removedItems, Windows::Foundation::Collections::IVector<Windows::IInspectable> * addedItems, Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ISelectionChangedEventArgs ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstanceWithRemovedItemsAndAddedItems(Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> * removedItems, Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> * addedItems, Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ISelectionChangedEventArgs ** instance) = 0;
 };
 
-struct __declspec(uuid("019fff21-ece6-4fbc-bf40-8938d4813e27")) __declspec(novtable) ISemanticZoom : Windows::IInspectable
+struct __declspec(uuid("019fff21-ece6-4fbc-bf40-8938d4813e27")) __declspec(novtable) ISemanticZoom : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ZoomedInView(Windows::UI::Xaml::Controls::ISemanticZoomInformation ** value) = 0;
     virtual HRESULT __stdcall put_ZoomedInView(Windows::UI::Xaml::Controls::ISemanticZoomInformation * value) = 0;
@@ -4088,7 +4088,7 @@ struct __declspec(uuid("019fff21-ece6-4fbc-bf40-8938d4813e27")) __declspec(novta
     virtual HRESULT __stdcall put_IsZoomOutButtonEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("a76a3b63-229b-4dc5-aa11-9d922fbf8a98")) __declspec(novtable) ISemanticZoomInformation : Windows::IInspectable
+struct __declspec(uuid("a76a3b63-229b-4dc5-aa11-9d922fbf8a98")) __declspec(novtable) ISemanticZoomInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SemanticZoomOwner(Windows::UI::Xaml::Controls::ISemanticZoom ** value) = 0;
     virtual HRESULT __stdcall put_SemanticZoomOwner(Windows::UI::Xaml::Controls::ISemanticZoom * value) = 0;
@@ -4105,15 +4105,15 @@ struct __declspec(uuid("a76a3b63-229b-4dc5-aa11-9d922fbf8a98")) __declspec(novta
     virtual HRESULT __stdcall abi_CompleteViewChangeTo(Windows::UI::Xaml::Controls::ISemanticZoomLocation * source, Windows::UI::Xaml::Controls::ISemanticZoomLocation * destination) = 0;
 };
 
-struct __declspec(uuid("42011736-e3c2-496b-bc4e-d750d4375b9a")) __declspec(novtable) ISemanticZoomLocation : Windows::IInspectable
+struct __declspec(uuid("42011736-e3c2-496b-bc4e-d750d4375b9a")) __declspec(novtable) ISemanticZoomLocation : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Item(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Item(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Item(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Item(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_Bounds(Windows::Foundation::Rect * value) = 0;
     virtual HRESULT __stdcall put_Bounds(Windows::Foundation::Rect value) = 0;
 };
 
-struct __declspec(uuid("8ef17ef2-9898-4666-b285-3ed38a07910e")) __declspec(novtable) ISemanticZoomStatics : Windows::IInspectable
+struct __declspec(uuid("8ef17ef2-9898-4666-b285-3ed38a07910e")) __declspec(novtable) ISemanticZoomStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ZoomedInViewProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ZoomedOutViewProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4122,7 +4122,7 @@ struct __declspec(uuid("8ef17ef2-9898-4666-b285-3ed38a07910e")) __declspec(novta
     virtual HRESULT __stdcall get_IsZoomOutButtonEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("47dfc068-b569-4b19-842d-8e6cf90989af")) __declspec(novtable) ISemanticZoomViewChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("47dfc068-b569-4b19-842d-8e6cf90989af")) __declspec(novtable) ISemanticZoomViewChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsSourceZoomedInView(bool * value) = 0;
     virtual HRESULT __stdcall put_IsSourceZoomedInView(bool value) = 0;
@@ -4132,7 +4132,7 @@ struct __declspec(uuid("47dfc068-b569-4b19-842d-8e6cf90989af")) __declspec(novta
     virtual HRESULT __stdcall put_DestinationItem(Windows::UI::Xaml::Controls::ISemanticZoomLocation * value) = 0;
 };
 
-struct __declspec(uuid("830ba82b-c55b-4e32-a51c-5791e024c8af")) __declspec(novtable) ISettingsFlyout : Windows::IInspectable
+struct __declspec(uuid("830ba82b-c55b-4e32-a51c-5791e024c8af")) __declspec(novtable) ISettingsFlyout : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
     virtual HRESULT __stdcall put_Title(hstring value) = 0;
@@ -4150,12 +4150,12 @@ struct __declspec(uuid("830ba82b-c55b-4e32-a51c-5791e024c8af")) __declspec(novta
     virtual HRESULT __stdcall abi_Hide() = 0;
 };
 
-struct __declspec(uuid("480c7011-57aa-4db6-b6fd-ec676f6d414e")) __declspec(novtable) ISettingsFlyoutFactory : Windows::IInspectable
+struct __declspec(uuid("480c7011-57aa-4db6-b6fd-ec676f6d414e")) __declspec(novtable) ISettingsFlyoutFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ISettingsFlyout ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ISettingsFlyout ** instance) = 0;
 };
 
-struct __declspec(uuid("d0e3b535-9157-4be4-a42a-f591698846ac")) __declspec(novtable) ISettingsFlyoutStatics : Windows::IInspectable
+struct __declspec(uuid("d0e3b535-9157-4be4-a42a-f591698846ac")) __declspec(novtable) ISettingsFlyoutStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TitleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderBackgroundProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4163,7 +4163,7 @@ struct __declspec(uuid("d0e3b535-9157-4be4-a42a-f591698846ac")) __declspec(novta
     virtual HRESULT __stdcall get_IconSourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("89572027-4c48-4700-8076-497ba73d9c18")) __declspec(novtable) ISlider : Windows::IInspectable
+struct __declspec(uuid("89572027-4c48-4700-8076-497ba73d9c18")) __declspec(novtable) ISlider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IntermediateValue(double * value) = 0;
     virtual HRESULT __stdcall put_IntermediateValue(double value) = 0;
@@ -4185,20 +4185,20 @@ struct __declspec(uuid("89572027-4c48-4700-8076-497ba73d9c18")) __declspec(novta
     virtual HRESULT __stdcall put_ThumbToolTipValueConverter(Windows::UI::Xaml::Data::IValueConverter * value) = 0;
 };
 
-struct __declspec(uuid("40a3c50e-87d6-4d2f-b1cf-b279cc996f26")) __declspec(novtable) ISlider2 : Windows::IInspectable
+struct __declspec(uuid("40a3c50e-87d6-4d2f-b1cf-b279cc996f26")) __declspec(novtable) ISlider2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
 };
 
-struct __declspec(uuid("03a67b37-c7bf-437c-848f-8cb5b753eab4")) __declspec(novtable) ISliderFactory : Windows::IInspectable
+struct __declspec(uuid("03a67b37-c7bf-437c-848f-8cb5b753eab4")) __declspec(novtable) ISliderFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ISlider ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ISlider ** instance) = 0;
 };
 
-struct __declspec(uuid("8a4363d7-7fdf-4d30-98fe-ce78c05b31cf")) __declspec(novtable) ISliderStatics : Windows::IInspectable
+struct __declspec(uuid("8a4363d7-7fdf-4d30-98fe-ce78c05b31cf")) __declspec(novtable) ISliderStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IntermediateValueProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_StepFrequencyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4211,13 +4211,13 @@ struct __declspec(uuid("8a4363d7-7fdf-4d30-98fe-ce78c05b31cf")) __declspec(novta
     virtual HRESULT __stdcall get_ThumbToolTipValueConverterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("00e7935d-79a5-4759-96a6-29e0a94add33")) __declspec(novtable) ISliderStatics2 : Windows::IInspectable
+struct __declspec(uuid("00e7935d-79a5-4759-96a6-29e0a94add33")) __declspec(novtable) ISliderStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("97222f31-3844-429e-939c-1673155322a1")) __declspec(novtable) ISplitView : Windows::IInspectable
+struct __declspec(uuid("97222f31-3844-429e-939c-1673155322a1")) __declspec(novtable) ISplitView : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Content(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall put_Content(Windows::UI::Xaml::IUIElement * value) = 0;
@@ -4238,28 +4238,28 @@ struct __declspec(uuid("97222f31-3844-429e-939c-1673155322a1")) __declspec(novta
     virtual HRESULT __stdcall put_PaneBackground(Windows::UI::Xaml::Media::IBrush * value) = 0;
     virtual HRESULT __stdcall add_PaneClosing(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::UI::Xaml::Controls::SplitViewPaneClosingEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PaneClosing(event_token token) = 0;
-    virtual HRESULT __stdcall add_PaneClosed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_PaneClosed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PaneClosed(event_token token) = 0;
 };
 
-struct __declspec(uuid("5ea7dc10-cc83-409a-82f9-3e91d6d7084f")) __declspec(novtable) ISplitView2 : Windows::IInspectable
+struct __declspec(uuid("5ea7dc10-cc83-409a-82f9-3e91d6d7084f")) __declspec(novtable) ISplitView2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode * value) = 0;
     virtual HRESULT __stdcall put_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode value) = 0;
 };
 
-struct __declspec(uuid("f101773a-084e-4fb9-8442-63221b44533f")) __declspec(novtable) ISplitViewFactory : Windows::IInspectable
+struct __declspec(uuid("f101773a-084e-4fb9-8442-63221b44533f")) __declspec(novtable) ISplitViewFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ISplitView ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ISplitView ** instance) = 0;
 };
 
-struct __declspec(uuid("93cf494e-7a95-44d8-9562-1b348248da9f")) __declspec(novtable) ISplitViewPaneClosingEventArgs : Windows::IInspectable
+struct __declspec(uuid("93cf494e-7a95-44d8-9562-1b348248da9f")) __declspec(novtable) ISplitViewPaneClosingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
     virtual HRESULT __stdcall put_Cancel(bool value) = 0;
 };
 
-struct __declspec(uuid("859b4f6f-44ab-4e4b-91c1-17b7056d9b5f")) __declspec(novtable) ISplitViewStatics : Windows::IInspectable
+struct __declspec(uuid("859b4f6f-44ab-4e4b-91c1-17b7056d9b5f")) __declspec(novtable) ISplitViewStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_PaneProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4272,12 +4272,12 @@ struct __declspec(uuid("859b4f6f-44ab-4e4b-91c1-17b7056d9b5f")) __declspec(novta
     virtual HRESULT __stdcall get_PaneBackgroundProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("14b7cd7a-dfbc-422c-80a9-585871297113")) __declspec(novtable) ISplitViewStatics2 : Windows::IInspectable
+struct __declspec(uuid("14b7cd7a-dfbc-422c-80a9-585871297113")) __declspec(novtable) ISplitViewStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b8ae8fe2-d641-4fd7-80b4-7439207d2798")) __declspec(novtable) IStackPanel : Windows::IInspectable
+struct __declspec(uuid("b8ae8fe2-d641-4fd7-80b4-7439207d2798")) __declspec(novtable) IStackPanel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreScrollSnapPointsRegular(bool * value) = 0;
     virtual HRESULT __stdcall put_AreScrollSnapPointsRegular(bool value) = 0;
@@ -4285,7 +4285,7 @@ struct __declspec(uuid("b8ae8fe2-d641-4fd7-80b4-7439207d2798")) __declspec(novta
     virtual HRESULT __stdcall put_Orientation(winrt::Windows::UI::Xaml::Controls::Orientation value) = 0;
 };
 
-struct __declspec(uuid("36f23359-040e-48f7-9a98-f2664591959c")) __declspec(novtable) IStackPanel2 : Windows::IInspectable
+struct __declspec(uuid("36f23359-040e-48f7-9a98-f2664591959c")) __declspec(novtable) IStackPanel2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BorderBrush(Windows::UI::Xaml::Media::IBrush ** value) = 0;
     virtual HRESULT __stdcall put_BorderBrush(Windows::UI::Xaml::Media::IBrush * value) = 0;
@@ -4297,18 +4297,18 @@ struct __declspec(uuid("36f23359-040e-48f7-9a98-f2664591959c")) __declspec(novta
     virtual HRESULT __stdcall put_Padding(Windows::UI::Xaml::Thickness value) = 0;
 };
 
-struct __declspec(uuid("63d8248a-8b34-445a-808f-b6ecd62a27d9")) __declspec(novtable) IStackPanelFactory : Windows::IInspectable
+struct __declspec(uuid("63d8248a-8b34-445a-808f-b6ecd62a27d9")) __declspec(novtable) IStackPanelFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IStackPanel ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IStackPanel ** instance) = 0;
 };
 
-struct __declspec(uuid("f0d0cd93-4dbc-48a7-9914-954924657771")) __declspec(novtable) IStackPanelStatics : Windows::IInspectable
+struct __declspec(uuid("f0d0cd93-4dbc-48a7-9914-954924657771")) __declspec(novtable) IStackPanelStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreScrollSnapPointsRegularProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OrientationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("d97e6257-080d-412e-a91a-ce6e5d02aad3")) __declspec(novtable) IStackPanelStatics2 : Windows::IInspectable
+struct __declspec(uuid("d97e6257-080d-412e-a91a-ce6e5d02aad3")) __declspec(novtable) IStackPanelStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BorderBrushProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_BorderThicknessProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4316,72 +4316,72 @@ struct __declspec(uuid("d97e6257-080d-412e-a91a-ce6e5d02aad3")) __declspec(novta
     virtual HRESULT __stdcall get_PaddingProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("d1113f67-d8c1-4ae4-98f0-d8504502f08b")) __declspec(novtable) IStyleSelector : Windows::IInspectable
+struct __declspec(uuid("d1113f67-d8c1-4ae4-98f0-d8504502f08b")) __declspec(novtable) IStyleSelector : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_SelectStyle(Windows::IInspectable * item, Windows::UI::Xaml::IDependencyObject * container, Windows::UI::Xaml::IStyle ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_SelectStyle(Windows::Foundation::IInspectable * item, Windows::UI::Xaml::IDependencyObject * container, Windows::UI::Xaml::IStyle ** returnValue) = 0;
 };
 
-struct __declspec(uuid("9e942ae7-3761-447f-8f97-29e39d5eb310")) __declspec(novtable) IStyleSelectorFactory : Windows::IInspectable
+struct __declspec(uuid("9e942ae7-3761-447f-8f97-29e39d5eb310")) __declspec(novtable) IStyleSelectorFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IStyleSelector ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IStyleSelector ** instance) = 0;
 };
 
-struct __declspec(uuid("08add66d-0e2e-43a0-aeca-8faa94b9d017")) __declspec(novtable) IStyleSelectorOverrides : Windows::IInspectable
+struct __declspec(uuid("08add66d-0e2e-43a0-aeca-8faa94b9d017")) __declspec(novtable) IStyleSelectorOverrides : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_SelectStyleCore(Windows::IInspectable * item, Windows::UI::Xaml::IDependencyObject * container, Windows::UI::Xaml::IStyle ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_SelectStyleCore(Windows::Foundation::IInspectable * item, Windows::UI::Xaml::IDependencyObject * container, Windows::UI::Xaml::IStyle ** returnValue) = 0;
 };
 
-struct __declspec(uuid("1c59db48-8233-4c0c-bcf5-02a5fb35ae00")) __declspec(novtable) ISwapChainBackgroundPanel : Windows::IInspectable
+struct __declspec(uuid("1c59db48-8233-4c0c-bcf5-02a5fb35ae00")) __declspec(novtable) ISwapChainBackgroundPanel : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("21e672f2-2592-4c38-870f-28fbcf52c095")) __declspec(novtable) ISwapChainBackgroundPanel2 : Windows::IInspectable
+struct __declspec(uuid("21e672f2-2592-4c38-870f-28fbcf52c095")) __declspec(novtable) ISwapChainBackgroundPanel2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateCoreIndependentInputSource(winrt::Windows::UI::Core::CoreInputDeviceTypes deviceTypes, Windows::UI::Core::ICoreInputSourceBase ** returnValue) = 0;
 };
 
-struct __declspec(uuid("198289d4-c89b-49b2-896c-5917bf8adcae")) __declspec(novtable) ISwapChainBackgroundPanelFactory : Windows::IInspectable
+struct __declspec(uuid("198289d4-c89b-49b2-896c-5917bf8adcae")) __declspec(novtable) ISwapChainBackgroundPanelFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel ** instance) = 0;
 };
 
-struct __declspec(uuid("c589644f-eba8-427a-b75a-9f1f93a11ae9")) __declspec(novtable) ISwapChainPanel : Windows::IInspectable
+struct __declspec(uuid("c589644f-eba8-427a-b75a-9f1f93a11ae9")) __declspec(novtable) ISwapChainPanel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CompositionScaleX(float * value) = 0;
     virtual HRESULT __stdcall get_CompositionScaleY(float * value) = 0;
-    virtual HRESULT __stdcall add_CompositionScaleChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SwapChainPanel, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_CompositionScaleChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SwapChainPanel, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_CompositionScaleChanged(event_token token) = 0;
     virtual HRESULT __stdcall abi_CreateCoreIndependentInputSource(winrt::Windows::UI::Core::CoreInputDeviceTypes deviceTypes, Windows::UI::Core::ICoreInputSourceBase ** returnValue) = 0;
 };
 
-struct __declspec(uuid("f38f8d7f-1a48-49cb-86d2-10eaaaf6fd70")) __declspec(novtable) ISwapChainPanelFactory : Windows::IInspectable
+struct __declspec(uuid("f38f8d7f-1a48-49cb-86d2-10eaaaf6fd70")) __declspec(novtable) ISwapChainPanelFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ISwapChainPanel ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ISwapChainPanel ** instance) = 0;
 };
 
-struct __declspec(uuid("f89c0297-eea8-498c-99c4-257e3660df7e")) __declspec(novtable) ISwapChainPanelStatics : Windows::IInspectable
+struct __declspec(uuid("f89c0297-eea8-498c-99c4-257e3660df7e")) __declspec(novtable) ISwapChainPanelStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CompositionScaleXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CompositionScaleYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("7a4774c9-a6a3-4b30-8ff1-9081d70e9a5c")) __declspec(novtable) ISymbolIcon : Windows::IInspectable
+struct __declspec(uuid("7a4774c9-a6a3-4b30-8ff1-9081d70e9a5c")) __declspec(novtable) ISymbolIcon : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Symbol(winrt::Windows::UI::Xaml::Controls::Symbol * value) = 0;
     virtual HRESULT __stdcall put_Symbol(winrt::Windows::UI::Xaml::Controls::Symbol value) = 0;
 };
 
-struct __declspec(uuid("c7252b88-e76c-4b44-8a05-046b9dc772b8")) __declspec(novtable) ISymbolIconFactory : Windows::IInspectable
+struct __declspec(uuid("c7252b88-e76c-4b44-8a05-046b9dc772b8")) __declspec(novtable) ISymbolIconFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstanceWithSymbol(winrt::Windows::UI::Xaml::Controls::Symbol symbol, Windows::UI::Xaml::Controls::ISymbolIcon ** instance) = 0;
 };
 
-struct __declspec(uuid("8624fbdf-952c-4f76-b03f-30833be99572")) __declspec(novtable) ISymbolIconStatics : Windows::IInspectable
+struct __declspec(uuid("8624fbdf-952c-4f76-b03f-30833be99572")) __declspec(novtable) ISymbolIconStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SymbolProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ae2d9271-3b4a-45fc-8468-f7949548f4d5")) __declspec(novtable) ITextBlock : Windows::IInspectable
+struct __declspec(uuid("ae2d9271-3b4a-45fc-8468-f7949548f4d5")) __declspec(novtable) ITextBlock : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontSize(double * value) = 0;
     virtual HRESULT __stdcall put_FontSize(double value) = 0;
@@ -4429,7 +4429,7 @@ struct __declspec(uuid("ae2d9271-3b4a-45fc-8468-f7949548f4d5")) __declspec(novta
     virtual HRESULT __stdcall abi_Focus(winrt::Windows::UI::Xaml::FocusState value, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("45206a4c-0a4e-4fbf-aee9-335d5a205f6e")) __declspec(novtable) ITextBlock2 : Windows::IInspectable
+struct __declspec(uuid("45206a4c-0a4e-4fbf-aee9-335d5a205f6e")) __declspec(novtable) ITextBlock2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SelectionHighlightColor(Windows::UI::Xaml::Media::ISolidColorBrush ** value) = 0;
     virtual HRESULT __stdcall put_SelectionHighlightColor(Windows::UI::Xaml::Media::ISolidColorBrush * value) = 0;
@@ -4445,18 +4445,18 @@ struct __declspec(uuid("45206a4c-0a4e-4fbf-aee9-335d5a205f6e")) __declspec(novta
     virtual HRESULT __stdcall put_TextReadingOrder(winrt::Windows::UI::Xaml::TextReadingOrder value) = 0;
 };
 
-struct __declspec(uuid("b651dd5a-424b-48c3-9b67-486f4e139899")) __declspec(novtable) ITextBlock3 : Windows::IInspectable
+struct __declspec(uuid("b651dd5a-424b-48c3-9b67-486f4e139899")) __declspec(novtable) ITextBlock3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsTextScaleFactorEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("b014f270-9808-4adc-b452-60cda54100c1")) __declspec(novtable) ITextBlock4 : Windows::IInspectable
+struct __declspec(uuid("b014f270-9808-4adc-b452-60cda54100c1")) __declspec(novtable) ITextBlock4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAlphaMask(Windows::UI::Composition::ICompositionBrush ** returnValue) = 0;
 };
 
-struct __declspec(uuid("193ec042-a847-4552-b4e8-db36655b840a")) __declspec(novtable) ITextBlockStatics : Windows::IInspectable
+struct __declspec(uuid("193ec042-a847-4552-b4e8-db36655b840a")) __declspec(novtable) ITextBlockStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontSizeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FontFamilyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4476,7 +4476,7 @@ struct __declspec(uuid("193ec042-a847-4552-b4e8-db36655b840a")) __declspec(novta
     virtual HRESULT __stdcall get_SelectedTextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("88100b1b-ff24-4b93-a0e6-f029c94871f1")) __declspec(novtable) ITextBlockStatics2 : Windows::IInspectable
+struct __declspec(uuid("88100b1b-ff24-4b93-a0e6-f029c94871f1")) __declspec(novtable) ITextBlockStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SelectionHighlightColorProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MaxLinesProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4486,12 +4486,12 @@ struct __declspec(uuid("88100b1b-ff24-4b93-a0e6-f029c94871f1")) __declspec(novta
     virtual HRESULT __stdcall get_TextReadingOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("8d16b9eb-20a1-4eab-bbf2-1d6bdcbcd705")) __declspec(novtable) ITextBlockStatics3 : Windows::IInspectable
+struct __declspec(uuid("8d16b9eb-20a1-4eab-bbf2-1d6bdcbcd705")) __declspec(novtable) ITextBlockStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882")) __declspec(novtable) ITextBox : Windows::IInspectable
+struct __declspec(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882")) __declspec(novtable) ITextBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
     virtual HRESULT __stdcall put_Text(hstring value) = 0;
@@ -4528,10 +4528,10 @@ struct __declspec(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882")) __declspec(novta
     virtual HRESULT __stdcall abi_GetRectFromCharacterIndex(int32_t charIndex, bool trailingEdge, Windows::Foundation::Rect * returnValue) = 0;
 };
 
-struct __declspec(uuid("f7168c00-1432-462a-9405-38f385bfc37c")) __declspec(novtable) ITextBox2 : Windows::IInspectable
+struct __declspec(uuid("f7168c00-1432-462a-9405-38f385bfc37c")) __declspec(novtable) ITextBox2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_PlaceholderText(hstring * value) = 0;
@@ -4546,7 +4546,7 @@ struct __declspec(uuid("f7168c00-1432-462a-9405-38f385bfc37c")) __declspec(novta
     virtual HRESULT __stdcall remove_Paste(event_token token) = 0;
 };
 
-struct __declspec(uuid("7df18c3c-2826-425e-9a94-00b7f73f3756")) __declspec(novtable) ITextBox3 : Windows::IInspectable
+struct __declspec(uuid("7df18c3c-2826-425e-9a94-00b7f73f3756")) __declspec(novtable) ITextBox3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_TextCompositionStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_TextCompositionStarted(event_token token) = 0;
@@ -4564,17 +4564,17 @@ struct __declspec(uuid("7df18c3c-2826-425e-9a94-00b7f73f3756")) __declspec(novta
     virtual HRESULT __stdcall remove_TextChanging(event_token token) = 0;
 };
 
-struct __declspec(uuid("b5f1a675-cce1-45af-aef9-c4787bbb5e30")) __declspec(novtable) ITextBox4 : Windows::IInspectable
+struct __declspec(uuid("b5f1a675-cce1-45af-aef9-c4787bbb5e30")) __declspec(novtable) ITextBox4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetLinguisticAlternativesAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> ** returnValue) = 0;
 };
 
-struct __declspec(uuid("710e4278-8529-47d3-8d8e-307e34cff081")) __declspec(novtable) ITextBoxFactory : Windows::IInspectable
+struct __declspec(uuid("710e4278-8529-47d3-8d8e-307e34cff081")) __declspec(novtable) ITextBoxFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ITextBox ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ITextBox ** instance) = 0;
 };
 
-struct __declspec(uuid("7e37f4fb-a4bc-4625-8838-8eb2a9091283")) __declspec(novtable) ITextBoxStatics : Windows::IInspectable
+struct __declspec(uuid("7e37f4fb-a4bc-4625-8838-8eb2a9091283")) __declspec(novtable) ITextBoxStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MaxLengthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4587,7 +4587,7 @@ struct __declspec(uuid("7e37f4fb-a4bc-4625-8838-8eb2a9091283")) __declspec(novta
     virtual HRESULT __stdcall get_InputScopeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("7592f37d-4e76-4ee4-8e0f-7d6e1a23326b")) __declspec(novtable) ITextBoxStatics2 : Windows::IInspectable
+struct __declspec(uuid("7592f37d-4e76-4ee4-8e0f-7d6e1a23326b")) __declspec(novtable) ITextBoxStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4597,54 +4597,54 @@ struct __declspec(uuid("7592f37d-4e76-4ee4-8e0f-7d6e1a23326b")) __declspec(novta
     virtual HRESULT __stdcall get_IsColorFontEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0e1005c0-10b5-40f6-92c2-ce134b0d3457")) __declspec(novtable) ITextBoxStatics3 : Windows::IInspectable
+struct __declspec(uuid("0e1005c0-10b5-40f6-92c2-ce134b0d3457")) __declspec(novtable) ITextBoxStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DesiredCandidateWindowAlignmentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TextReadingOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4e6a4b75-43dd-4e33-acbe-2d8796a17927")) __declspec(novtable) ITextBoxTextChangingEventArgs : Windows::IInspectable
+struct __declspec(uuid("4e6a4b75-43dd-4e33-acbe-2d8796a17927")) __declspec(novtable) ITextBoxTextChangingEventArgs : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("4dd04f7d-7a11-4b2e-9933-577df39252b6")) __declspec(novtable) ITextChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("4dd04f7d-7a11-4b2e-9933-577df39252b6")) __declspec(novtable) ITextChangedEventArgs : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("b9c7e0f2-50b7-441d-990c-68553e2e056b")) __declspec(novtable) ITextCompositionChangedEventArgs : Windows::IInspectable
-{
-    virtual HRESULT __stdcall get_StartIndex(int32_t * value) = 0;
-    virtual HRESULT __stdcall get_Length(int32_t * value) = 0;
-};
-
-struct __declspec(uuid("46e34db2-77c0-4015-8eb4-92eefdfc5914")) __declspec(novtable) ITextCompositionEndedEventArgs : Windows::IInspectable
+struct __declspec(uuid("b9c7e0f2-50b7-441d-990c-68553e2e056b")) __declspec(novtable) ITextCompositionChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StartIndex(int32_t * value) = 0;
     virtual HRESULT __stdcall get_Length(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("df22abb2-10cf-491e-91e8-d3cd72d8a0d3")) __declspec(novtable) ITextCompositionStartedEventArgs : Windows::IInspectable
+struct __declspec(uuid("46e34db2-77c0-4015-8eb4-92eefdfc5914")) __declspec(novtable) ITextCompositionEndedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StartIndex(int32_t * value) = 0;
     virtual HRESULT __stdcall get_Length(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("4bd1d625-221a-477e-bb2c-ad0c1ed125e7")) __declspec(novtable) ITextControlPasteEventArgs : Windows::IInspectable
+struct __declspec(uuid("df22abb2-10cf-491e-91e8-d3cd72d8a0d3")) __declspec(novtable) ITextCompositionStartedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_StartIndex(int32_t * value) = 0;
+    virtual HRESULT __stdcall get_Length(int32_t * value) = 0;
+};
+
+struct __declspec(uuid("4bd1d625-221a-477e-bb2c-ad0c1ed125e7")) __declspec(novtable) ITextControlPasteEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
 };
 
-struct __declspec(uuid("8ad3ff21-5f66-4785-b999-24fef39fb6db")) __declspec(novtable) ITimePickedEventArgs : Windows::IInspectable
+struct __declspec(uuid("8ad3ff21-5f66-4785-b999-24fef39fb6db")) __declspec(novtable) ITimePickedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OldTime(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_NewTime(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("e39099f2-3aff-4792-909e-2d9941ec0357")) __declspec(novtable) ITimePicker : Windows::IInspectable
+struct __declspec(uuid("e39099f2-3aff-4792-909e-2d9941ec0357")) __declspec(novtable) ITimePicker : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_ClockIdentifier(hstring * value) = 0;
@@ -4657,18 +4657,18 @@ struct __declspec(uuid("e39099f2-3aff-4792-909e-2d9941ec0357")) __declspec(novta
     virtual HRESULT __stdcall remove_TimeChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("0ff0798c-f922-419f-8b3d-23ee7586d48e")) __declspec(novtable) ITimePicker2 : Windows::IInspectable
+struct __declspec(uuid("0ff0798c-f922-419f-8b3d-23ee7586d48e")) __declspec(novtable) ITimePicker2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode * value) = 0;
     virtual HRESULT __stdcall put_LightDismissOverlayMode(winrt::Windows::UI::Xaml::Controls::LightDismissOverlayMode value) = 0;
 };
 
-struct __declspec(uuid("553fe413-6cd7-46a9-a97b-a18bdc4b4ca3")) __declspec(novtable) ITimePickerFactory : Windows::IInspectable
+struct __declspec(uuid("553fe413-6cd7-46a9-a97b-a18bdc4b4ca3")) __declspec(novtable) ITimePickerFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::ITimePicker ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ITimePicker ** instance) = 0;
 };
 
-struct __declspec(uuid("bb739d75-e836-439e-86d5-506d2d18e404")) __declspec(novtable) ITimePickerFlyout : Windows::IInspectable
+struct __declspec(uuid("bb739d75-e836-439e-86d5-506d2d18e404")) __declspec(novtable) ITimePickerFlyout : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ClockIdentifier(hstring * value) = 0;
     virtual HRESULT __stdcall put_ClockIdentifier(hstring value) = 0;
@@ -4681,18 +4681,18 @@ struct __declspec(uuid("bb739d75-e836-439e-86d5-506d2d18e404")) __declspec(novta
     virtual HRESULT __stdcall abi_ShowAtAsync(Windows::UI::Xaml::IFrameworkElement * target, Windows::Foundation::IAsyncOperation<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> ** returnValue) = 0;
 };
 
-struct __declspec(uuid("c5320638-7a18-40ed-9fd0-4c852c09b24e")) __declspec(novtable) ITimePickerFlyoutPresenter : Windows::IInspectable
+struct __declspec(uuid("c5320638-7a18-40ed-9fd0-4c852c09b24e")) __declspec(novtable) ITimePickerFlyoutPresenter : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("3f6728ce-2169-4003-b4a8-8de7035a0ad6")) __declspec(novtable) ITimePickerFlyoutStatics : Windows::IInspectable
+struct __declspec(uuid("3f6728ce-2169-4003-b4a8-8de7035a0ad6")) __declspec(novtable) ITimePickerFlyoutStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ClockIdentifierProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TimeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MinuteIncrementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("fa71dfb1-233e-4f31-b8be-a6ea670c25cd")) __declspec(novtable) ITimePickerStatics : Windows::IInspectable
+struct __declspec(uuid("fa71dfb1-233e-4f31-b8be-a6ea670c25cd")) __declspec(novtable) ITimePickerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4701,47 +4701,47 @@ struct __declspec(uuid("fa71dfb1-233e-4f31-b8be-a6ea670c25cd")) __declspec(novta
     virtual HRESULT __stdcall get_TimeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("36d8abcd-4e10-451a-b93b-1a731ea7ee3f")) __declspec(novtable) ITimePickerStatics2 : Windows::IInspectable
+struct __declspec(uuid("36d8abcd-4e10-451a-b93b-1a731ea7ee3f")) __declspec(novtable) ITimePickerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LightDismissOverlayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("2f4edb8d-b995-4e31-8ba9-c4dcdeb21ca3")) __declspec(novtable) ITimePickerValueChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("2f4edb8d-b995-4e31-8ba9-c4dcdeb21ca3")) __declspec(novtable) ITimePickerValueChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OldTime(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_NewTime(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("49841edd-88e9-4663-a701-cd4fd25e398f")) __declspec(novtable) IToggleMenuFlyoutItem : Windows::IInspectable
+struct __declspec(uuid("49841edd-88e9-4663-a701-cd4fd25e398f")) __declspec(novtable) IToggleMenuFlyoutItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsChecked(bool * value) = 0;
     virtual HRESULT __stdcall put_IsChecked(bool value) = 0;
 };
 
-struct __declspec(uuid("a151966f-3bf7-46b6-b61c-9b2c1ba68843")) __declspec(novtable) IToggleMenuFlyoutItemFactory : Windows::IInspectable
+struct __declspec(uuid("a151966f-3bf7-46b6-b61c-9b2c1ba68843")) __declspec(novtable) IToggleMenuFlyoutItemFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem ** instance) = 0;
 };
 
-struct __declspec(uuid("16c724fb-6c1a-4852-9258-08c038367907")) __declspec(novtable) IToggleMenuFlyoutItemStatics : Windows::IInspectable
+struct __declspec(uuid("16c724fb-6c1a-4852-9258-08c038367907")) __declspec(novtable) IToggleMenuFlyoutItemStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsCheckedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("331d8f00-c5f9-46a5-b6c8-ede539304567")) __declspec(novtable) IToggleSwitch : Windows::IInspectable
+struct __declspec(uuid("331d8f00-c5f9-46a5-b6c8-ede539304567")) __declspec(novtable) IToggleSwitch : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsOn(bool * value) = 0;
     virtual HRESULT __stdcall put_IsOn(bool value) = 0;
-    virtual HRESULT __stdcall get_Header(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Header(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Header(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Header(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_HeaderTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_HeaderTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
-    virtual HRESULT __stdcall get_OnContent(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_OnContent(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_OnContent(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_OnContent(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_OnContentTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_OnContentTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
-    virtual HRESULT __stdcall get_OffContent(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_OffContent(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_OffContent(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_OffContent(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_OffContentTemplate(Windows::UI::Xaml::IDataTemplate ** value) = 0;
     virtual HRESULT __stdcall put_OffContentTemplate(Windows::UI::Xaml::IDataTemplate * value) = 0;
     virtual HRESULT __stdcall get_TemplateSettings(Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplateSettings ** value) = 0;
@@ -4749,15 +4749,15 @@ struct __declspec(uuid("331d8f00-c5f9-46a5-b6c8-ede539304567")) __declspec(novta
     virtual HRESULT __stdcall remove_Toggled(event_token token) = 0;
 };
 
-struct __declspec(uuid("bfd07f53-f8ca-4e47-949e-9e80429b3d16")) __declspec(novtable) IToggleSwitchOverrides : Windows::IInspectable
+struct __declspec(uuid("bfd07f53-f8ca-4e47-949e-9e80429b3d16")) __declspec(novtable) IToggleSwitchOverrides : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_OnToggled() = 0;
-    virtual HRESULT __stdcall abi_OnOnContentChanged(Windows::IInspectable * oldContent, Windows::IInspectable * newContent) = 0;
-    virtual HRESULT __stdcall abi_OnOffContentChanged(Windows::IInspectable * oldContent, Windows::IInspectable * newContent) = 0;
-    virtual HRESULT __stdcall abi_OnHeaderChanged(Windows::IInspectable * oldContent, Windows::IInspectable * newContent) = 0;
+    virtual HRESULT __stdcall abi_OnOnContentChanged(Windows::Foundation::IInspectable * oldContent, Windows::Foundation::IInspectable * newContent) = 0;
+    virtual HRESULT __stdcall abi_OnOffContentChanged(Windows::Foundation::IInspectable * oldContent, Windows::Foundation::IInspectable * newContent) = 0;
+    virtual HRESULT __stdcall abi_OnHeaderChanged(Windows::Foundation::IInspectable * oldContent, Windows::Foundation::IInspectable * newContent) = 0;
 };
 
-struct __declspec(uuid("1d37147f-97df-4226-92ca-ddf453d7fd5a")) __declspec(novtable) IToggleSwitchStatics : Windows::IInspectable
+struct __declspec(uuid("1d37147f-97df-4226-92ca-ddf453d7fd5a")) __declspec(novtable) IToggleSwitchStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsOnProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_HeaderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4768,7 +4768,7 @@ struct __declspec(uuid("1d37147f-97df-4226-92ca-ddf453d7fd5a")) __declspec(novta
     virtual HRESULT __stdcall get_OffContentTemplateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("7de5d75f-4415-429f-b523-699bdb8c30db")) __declspec(novtable) IToolTip : Windows::IInspectable
+struct __declspec(uuid("7de5d75f-4415-429f-b523-699bdb8c30db")) __declspec(novtable) IToolTip : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HorizontalOffset(double * value) = 0;
     virtual HRESULT __stdcall put_HorizontalOffset(double value) = 0;
@@ -4787,16 +4787,16 @@ struct __declspec(uuid("7de5d75f-4415-429f-b523-699bdb8c30db")) __declspec(novta
     virtual HRESULT __stdcall remove_Opened(event_token token) = 0;
 };
 
-struct __declspec(uuid("89839403-b538-49e3-a430-3ac037dc6fe0")) __declspec(novtable) IToolTipFactory : Windows::IInspectable
+struct __declspec(uuid("89839403-b538-49e3-a430-3ac037dc6fe0")) __declspec(novtable) IToolTipFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IToolTip ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IToolTip ** instance) = 0;
 };
 
-struct __declspec(uuid("03a55f87-bfcc-4a1e-8fea-98f610832cea")) __declspec(novtable) IToolTipService : Windows::IInspectable
+struct __declspec(uuid("03a55f87-bfcc-4a1e-8fea-98f610832cea")) __declspec(novtable) IToolTipService : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("86e649f8-e245-48aa-a8c8-d1073ed76319")) __declspec(novtable) IToolTipServiceStatics : Windows::IInspectable
+struct __declspec(uuid("86e649f8-e245-48aa-a8c8-d1073ed76319")) __declspec(novtable) IToolTipServiceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PlacementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall abi_GetPlacement(Windows::UI::Xaml::IDependencyObject * element, winrt::Windows::UI::Xaml::Controls::Primitives::PlacementMode * value) = 0;
@@ -4805,11 +4805,11 @@ struct __declspec(uuid("86e649f8-e245-48aa-a8c8-d1073ed76319")) __declspec(novta
     virtual HRESULT __stdcall abi_GetPlacementTarget(Windows::UI::Xaml::IDependencyObject * element, Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall abi_SetPlacementTarget(Windows::UI::Xaml::IDependencyObject * element, Windows::UI::Xaml::IUIElement * value) = 0;
     virtual HRESULT __stdcall get_ToolTipProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall abi_GetToolTip(Windows::UI::Xaml::IDependencyObject * element, Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall abi_SetToolTip(Windows::UI::Xaml::IDependencyObject * element, Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall abi_GetToolTip(Windows::UI::Xaml::IDependencyObject * element, Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall abi_SetToolTip(Windows::UI::Xaml::IDependencyObject * element, Windows::Foundation::IInspectable * value) = 0;
 };
 
-struct __declspec(uuid("f00285b8-4ba9-4f4f-86a7-86003813ceb3")) __declspec(novtable) IToolTipStatics : Windows::IInspectable
+struct __declspec(uuid("f00285b8-4ba9-4f4f-86a7-86003813ceb3")) __declspec(novtable) IToolTipStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsOpenProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4818,28 +4818,28 @@ struct __declspec(uuid("f00285b8-4ba9-4f4f-86a7-86003813ceb3")) __declspec(novta
     virtual HRESULT __stdcall get_VerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("d6602d54-88f6-43f6-85d8-a9d914a6dd3b")) __declspec(novtable) IUIElementCollection : Windows::IInspectable
+struct __declspec(uuid("d6602d54-88f6-43f6-85d8-a9d914a6dd3b")) __declspec(novtable) IUIElementCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Move(uint32_t oldIndex, uint32_t newIndex) = 0;
 };
 
-struct __declspec(uuid("a7a69ec9-ea35-4679-bf29-f4f09286d314")) __declspec(novtable) IUserControl : Windows::IInspectable
+struct __declspec(uuid("a7a69ec9-ea35-4679-bf29-f4f09286d314")) __declspec(novtable) IUserControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Content(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall put_Content(Windows::UI::Xaml::IUIElement * value) = 0;
 };
 
-struct __declspec(uuid("38b1ed92-a28a-4972-93df-f4f759b8afd2")) __declspec(novtable) IUserControlFactory : Windows::IInspectable
+struct __declspec(uuid("38b1ed92-a28a-4972-93df-f4f759b8afd2")) __declspec(novtable) IUserControlFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Controls::IUserControl ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IUserControl ** instance) = 0;
 };
 
-struct __declspec(uuid("e8887976-2c5c-41cf-be6a-9e44befdf655")) __declspec(novtable) IUserControlStatics : Windows::IInspectable
+struct __declspec(uuid("e8887976-2c5c-41cf-be6a-9e44befdf655")) __declspec(novtable) IUserControlStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("9ca507c7-23c9-4f01-b80f-be5c21eef474")) __declspec(novtable) IVariableSizedWrapGrid : Windows::IInspectable
+struct __declspec(uuid("9ca507c7-23c9-4f01-b80f-be5c21eef474")) __declspec(novtable) IVariableSizedWrapGrid : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemHeight(double * value) = 0;
     virtual HRESULT __stdcall put_ItemHeight(double value) = 0;
@@ -4855,7 +4855,7 @@ struct __declspec(uuid("9ca507c7-23c9-4f01-b80f-be5c21eef474")) __declspec(novta
     virtual HRESULT __stdcall put_MaximumRowsOrColumns(int32_t value) = 0;
 };
 
-struct __declspec(uuid("fe9db859-8127-4aef-b7a2-949847486e96")) __declspec(novtable) IVariableSizedWrapGridStatics : Windows::IInspectable
+struct __declspec(uuid("fe9db859-8127-4aef-b7a2-949847486e96")) __declspec(novtable) IVariableSizedWrapGridStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemHeightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ItemWidthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4871,7 +4871,7 @@ struct __declspec(uuid("fe9db859-8127-4aef-b7a2-949847486e96")) __declspec(novta
     virtual HRESULT __stdcall abi_SetColumnSpan(Windows::UI::Xaml::IUIElement * element, int32_t value) = 0;
 };
 
-struct __declspec(uuid("05252c58-ba9d-4809-9ec3-fa0d16710ba1")) __declspec(novtable) IViewbox : Windows::IInspectable
+struct __declspec(uuid("05252c58-ba9d-4809-9ec3-fa0d16710ba1")) __declspec(novtable) IViewbox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Child(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall put_Child(Windows::UI::Xaml::IUIElement * value) = 0;
@@ -4881,36 +4881,36 @@ struct __declspec(uuid("05252c58-ba9d-4809-9ec3-fa0d16710ba1")) __declspec(novta
     virtual HRESULT __stdcall put_StretchDirection(winrt::Windows::UI::Xaml::Controls::StretchDirection value) = 0;
 };
 
-struct __declspec(uuid("5cd1e72d-e8d3-4865-8f08-b6b2d689adf1")) __declspec(novtable) IViewboxStatics : Windows::IInspectable
+struct __declspec(uuid("5cd1e72d-e8d3-4865-8f08-b6b2d689adf1")) __declspec(novtable) IViewboxStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StretchProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_StretchDirectionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("38aad50c-12cf-4d1e-a884-c9df85f07cd9")) __declspec(novtable) IVirtualizingPanel : Windows::IInspectable
+struct __declspec(uuid("38aad50c-12cf-4d1e-a884-c9df85f07cd9")) __declspec(novtable) IVirtualizingPanel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemContainerGenerator(Windows::UI::Xaml::Controls::IItemContainerGenerator ** value) = 0;
 };
 
-struct __declspec(uuid("be19f839-cbd0-43e9-a5d0-0bdba0ffbd38")) __declspec(novtable) IVirtualizingPanelFactory : Windows::IInspectable
+struct __declspec(uuid("be19f839-cbd0-43e9-a5d0-0bdba0ffbd38")) __declspec(novtable) IVirtualizingPanelFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("5ef6bd7d-677f-408d-a96c-b19507750466")) __declspec(novtable) IVirtualizingPanelOverrides : Windows::IInspectable
+struct __declspec(uuid("5ef6bd7d-677f-408d-a96c-b19507750466")) __declspec(novtable) IVirtualizingPanelOverrides : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_OnItemsChanged(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs * args) = 0;
+    virtual HRESULT __stdcall abi_OnItemsChanged(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs * args) = 0;
     virtual HRESULT __stdcall abi_OnClearChildren() = 0;
     virtual HRESULT __stdcall abi_BringIndexIntoView(int32_t index) = 0;
 };
 
-struct __declspec(uuid("c9c9ab42-c232-479d-a7c9-5e7611196a45")) __declspec(novtable) IVirtualizingPanelProtected : Windows::IInspectable
+struct __declspec(uuid("c9c9ab42-c232-479d-a7c9-5e7611196a45")) __declspec(novtable) IVirtualizingPanelProtected : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddInternalChild(Windows::UI::Xaml::IUIElement * child) = 0;
     virtual HRESULT __stdcall abi_InsertInternalChild(int32_t index, Windows::UI::Xaml::IUIElement * child) = 0;
     virtual HRESULT __stdcall abi_RemoveInternalChildRange(int32_t index, int32_t range) = 0;
 };
 
-struct __declspec(uuid("7567cd9a-a3b4-4dea-bb11-549e2c2f919d")) __declspec(novtable) IVirtualizingStackPanel : Windows::IInspectable
+struct __declspec(uuid("7567cd9a-a3b4-4dea-bb11-549e2c2f919d")) __declspec(novtable) IVirtualizingStackPanel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreScrollSnapPointsRegular(bool * value) = 0;
     virtual HRESULT __stdcall put_AreScrollSnapPointsRegular(bool value) = 0;
@@ -4920,12 +4920,12 @@ struct __declspec(uuid("7567cd9a-a3b4-4dea-bb11-549e2c2f919d")) __declspec(novta
     virtual HRESULT __stdcall remove_CleanUpVirtualizedItemEvent(event_token token) = 0;
 };
 
-struct __declspec(uuid("cbe6f72c-2892-46d1-987f-58ca1081f040")) __declspec(novtable) IVirtualizingStackPanelOverrides : Windows::IInspectable
+struct __declspec(uuid("cbe6f72c-2892-46d1-987f-58ca1081f040")) __declspec(novtable) IVirtualizingStackPanelOverrides : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_OnCleanUpVirtualizedItem(Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs * e) = 0;
 };
 
-struct __declspec(uuid("8314e778-91d3-4d56-ac09-223adcd2bd3f")) __declspec(novtable) IVirtualizingStackPanelStatics : Windows::IInspectable
+struct __declspec(uuid("8314e778-91d3-4d56-ac09-223adcd2bd3f")) __declspec(novtable) IVirtualizingStackPanelStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AreScrollSnapPointsRegularProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OrientationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4936,7 +4936,7 @@ struct __declspec(uuid("8314e778-91d3-4d56-ac09-223adcd2bd3f")) __declspec(novta
     virtual HRESULT __stdcall abi_GetIsVirtualizing(Windows::UI::Xaml::IDependencyObject * o, bool * value) = 0;
 };
 
-struct __declspec(uuid("5862cc46-1f7d-479b-92a6-de7858fe8d54")) __declspec(novtable) IWebView : Windows::IInspectable
+struct __declspec(uuid("5862cc46-1f7d-479b-92a6-de7858fe8d54")) __declspec(novtable) IWebView : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Source(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall put_Source(Windows::Foundation::IUriRuntimeClass * value) = 0;
@@ -4954,7 +4954,7 @@ struct __declspec(uuid("5862cc46-1f7d-479b-92a6-de7858fe8d54")) __declspec(novta
     virtual HRESULT __stdcall abi_NavigateToString(hstring text) = 0;
 };
 
-struct __declspec(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8")) __declspec(novtable) IWebView2 : Windows::IInspectable
+struct __declspec(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8")) __declspec(novtable) IWebView2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CanGoBack(bool * value) = 0;
     virtual HRESULT __stdcall get_CanGoForward(bool * value) = 0;
@@ -4988,7 +4988,7 @@ struct __declspec(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8")) __declspec(novta
     virtual HRESULT __stdcall remove_FrameNavigationCompleted(event_token token) = 0;
     virtual HRESULT __stdcall add_LongRunningScriptDetected(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewLongRunningScriptDetectedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_LongRunningScriptDetected(event_token token) = 0;
-    virtual HRESULT __stdcall add_UnsafeContentWarningDisplaying(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_UnsafeContentWarningDisplaying(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_UnsafeContentWarningDisplaying(event_token token) = 0;
     virtual HRESULT __stdcall add_UnviewableContentIdentified(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewUnviewableContentIdentifiedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_UnviewableContentIdentified(event_token token) = 0;
@@ -4996,14 +4996,14 @@ struct __declspec(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8")) __declspec(novta
     virtual HRESULT __stdcall abi_Focus(winrt::Windows::UI::Xaml::FocusState value, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("c497789b-b499-4d69-b5c2-ae9d5d6d594e")) __declspec(novtable) IWebView3 : Windows::IInspectable
+struct __declspec(uuid("c497789b-b499-4d69-b5c2-ae9d5d6d594e")) __declspec(novtable) IWebView3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContainsFullScreenElement(bool * value) = 0;
-    virtual HRESULT __stdcall add_ContainsFullScreenElementChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_ContainsFullScreenElementChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ContainsFullScreenElementChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("e28243bc-67f3-462a-b4e0-3bbf6c3dab0b")) __declspec(novtable) IWebView4 : Windows::IInspectable
+struct __declspec(uuid("e28243bc-67f3-462a-b4e0-3bbf6c3dab0b")) __declspec(novtable) IWebView4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ExecutionMode(winrt::Windows::UI::Xaml::Controls::WebViewExecutionMode * value) = 0;
     virtual HRESULT __stdcall get_DeferredPermissionRequests(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest> ** value) = 0;
@@ -5014,11 +5014,11 @@ struct __declspec(uuid("e28243bc-67f3-462a-b4e0-3bbf6c3dab0b")) __declspec(novta
     virtual HRESULT __stdcall remove_NewWindowRequested(event_token token) = 0;
     virtual HRESULT __stdcall add_PermissionRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewPermissionRequestedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PermissionRequested(event_token token) = 0;
-    virtual HRESULT __stdcall abi_AddWebAllowedObject(hstring name, Windows::IInspectable * pObject) = 0;
+    virtual HRESULT __stdcall abi_AddWebAllowedObject(hstring name, Windows::Foundation::IInspectable * pObject) = 0;
     virtual HRESULT __stdcall abi_DeferredPermissionRequestById(uint32_t id, Windows::UI::Xaml::Controls::IWebViewDeferredPermissionRequest ** returnValue) = 0;
 };
 
-struct __declspec(uuid("8c9884a6-2f3b-4a55-a463-8444c2095d00")) __declspec(novtable) IWebView5 : Windows::IInspectable
+struct __declspec(uuid("8c9884a6-2f3b-4a55-a463-8444c2095d00")) __declspec(novtable) IWebView5 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_XYFocusLeft(Windows::UI::Xaml::IDependencyObject ** value) = 0;
     virtual HRESULT __stdcall put_XYFocusLeft(Windows::UI::Xaml::IDependencyObject * value) = 0;
@@ -5030,7 +5030,7 @@ struct __declspec(uuid("8c9884a6-2f3b-4a55-a463-8444c2095d00")) __declspec(novta
     virtual HRESULT __stdcall put_XYFocusDown(Windows::UI::Xaml::IDependencyObject * value) = 0;
 };
 
-struct __declspec(uuid("40e86f75-0cf4-4b72-a4d6-cf5d15780116")) __declspec(novtable) IWebViewBrush : Windows::IInspectable
+struct __declspec(uuid("40e86f75-0cf4-4b72-a4d6-cf5d15780116")) __declspec(novtable) IWebViewBrush : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SourceName(hstring * value) = 0;
     virtual HRESULT __stdcall put_SourceName(hstring value) = 0;
@@ -5038,22 +5038,22 @@ struct __declspec(uuid("40e86f75-0cf4-4b72-a4d6-cf5d15780116")) __declspec(novta
     virtual HRESULT __stdcall abi_SetSource(Windows::UI::Xaml::Controls::IWebView * source) = 0;
 };
 
-struct __declspec(uuid("d74daa24-1d05-463e-b028-6baa4420e762")) __declspec(novtable) IWebViewBrushStatics : Windows::IInspectable
+struct __declspec(uuid("d74daa24-1d05-463e-b028-6baa4420e762")) __declspec(novtable) IWebViewBrushStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SourceNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("6e2980bb-98b8-413e-8129-971c6f7e4c8a")) __declspec(novtable) IWebViewContentLoadingEventArgs : Windows::IInspectable
+struct __declspec(uuid("6e2980bb-98b8-413e-8129-971c6f7e4c8a")) __declspec(novtable) IWebViewContentLoadingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("c47eba15-dc6b-4b36-9d80-82fb8817b988")) __declspec(novtable) IWebViewDOMContentLoadedEventArgs : Windows::IInspectable
+struct __declspec(uuid("c47eba15-dc6b-4b36-9d80-82fb8817b988")) __declspec(novtable) IWebViewDOMContentLoadedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("a3dcc461-7350-4d3a-8fb9-40eeec2746c2")) __declspec(novtable) IWebViewDeferredPermissionRequest : Windows::IInspectable
+struct __declspec(uuid("a3dcc461-7350-4d3a-8fb9-40eeec2746c2")) __declspec(novtable) IWebViewDeferredPermissionRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall get_PermissionType(winrt::Windows::UI::Xaml::Controls::WebViewPermissionType * value) = 0;
@@ -5062,39 +5062,39 @@ struct __declspec(uuid("a3dcc461-7350-4d3a-8fb9-40eeec2746c2")) __declspec(novta
     virtual HRESULT __stdcall abi_Deny() = 0;
 };
 
-struct __declspec(uuid("82edac58-ee6a-4c9b-a3a0-9347a7d0ef4c")) __declspec(novtable) IWebViewFactory4 : Windows::IInspectable
+struct __declspec(uuid("82edac58-ee6a-4c9b-a3a0-9347a7d0ef4c")) __declspec(novtable) IWebViewFactory4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstanceWithExecutionMode(winrt::Windows::UI::Xaml::Controls::WebViewExecutionMode executionMode, Windows::UI::Xaml::Controls::IWebView ** instance) = 0;
 };
 
-struct __declspec(uuid("f3f020ab-a46c-42b0-9efe-69764d5cffa6")) __declspec(novtable) IWebViewLongRunningScriptDetectedEventArgs : Windows::IInspectable
+struct __declspec(uuid("f3f020ab-a46c-42b0-9efe-69764d5cffa6")) __declspec(novtable) IWebViewLongRunningScriptDetectedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ExecutionTime(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_StopPageScriptExecution(bool * value) = 0;
     virtual HRESULT __stdcall put_StopPageScriptExecution(bool value) = 0;
 };
 
-struct __declspec(uuid("11e6f20b-eba7-44c0-889b-edeb6a064ddd")) __declspec(novtable) IWebViewNavigationCompletedEventArgs : Windows::IInspectable
+struct __declspec(uuid("11e6f20b-eba7-44c0-889b-edeb6a064ddd")) __declspec(novtable) IWebViewNavigationCompletedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall get_IsSuccess(bool * value) = 0;
     virtual HRESULT __stdcall get_WebErrorStatus(winrt::Windows::Web::WebErrorStatus * value) = 0;
 };
 
-struct __declspec(uuid("af09609a-129c-4170-9e9c-e2cdf025dca4")) __declspec(novtable) IWebViewNavigationFailedEventArgs : Windows::IInspectable
+struct __declspec(uuid("af09609a-129c-4170-9e9c-e2cdf025dca4")) __declspec(novtable) IWebViewNavigationFailedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall get_WebErrorStatus(winrt::Windows::Web::WebErrorStatus * value) = 0;
 };
 
-struct __declspec(uuid("94cb8668-8367-43d5-91bb-96eba37ec784")) __declspec(novtable) IWebViewNavigationStartingEventArgs : Windows::IInspectable
+struct __declspec(uuid("94cb8668-8367-43d5-91bb-96eba37ec784")) __declspec(novtable) IWebViewNavigationStartingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
     virtual HRESULT __stdcall put_Cancel(bool value) = 0;
 };
 
-struct __declspec(uuid("470fa818-6862-44d9-b3d1-c0696373de35")) __declspec(novtable) IWebViewNewWindowRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("470fa818-6862-44d9-b3d1-c0696373de35")) __declspec(novtable) IWebViewNewWindowRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall get_Referrer(Windows::Foundation::IUriRuntimeClass ** value) = 0;
@@ -5102,7 +5102,7 @@ struct __declspec(uuid("470fa818-6862-44d9-b3d1-c0696373de35")) __declspec(novta
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
 };
 
-struct __declspec(uuid("17b76332-66c4-4131-999e-df7de20a8c9c")) __declspec(novtable) IWebViewPermissionRequest : Windows::IInspectable
+struct __declspec(uuid("17b76332-66c4-4131-999e-df7de20a8c9c")) __declspec(novtable) IWebViewPermissionRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall get_PermissionType(winrt::Windows::UI::Xaml::Controls::WebViewPermissionType * value) = 0;
@@ -5113,12 +5113,12 @@ struct __declspec(uuid("17b76332-66c4-4131-999e-df7de20a8c9c")) __declspec(novta
     virtual HRESULT __stdcall abi_Deny() = 0;
 };
 
-struct __declspec(uuid("dadecfd0-6e1e-473f-b0be-b02404d6a86d")) __declspec(novtable) IWebViewPermissionRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("dadecfd0-6e1e-473f-b0be-b02404d6a86d")) __declspec(novtable) IWebViewPermissionRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PermissionRequest(Windows::UI::Xaml::Controls::IWebViewPermissionRequest ** value) = 0;
 };
 
-struct __declspec(uuid("1d50ad4d-abf6-4785-8df3-fdebc1270301")) __declspec(novtable) IWebViewSettings : Windows::IInspectable
+struct __declspec(uuid("1d50ad4d-abf6-4785-8df3-fdebc1270301")) __declspec(novtable) IWebViewSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsJavaScriptEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsJavaScriptEnabled(bool value) = 0;
@@ -5126,7 +5126,7 @@ struct __declspec(uuid("1d50ad4d-abf6-4785-8df3-fdebc1270301")) __declspec(novta
     virtual HRESULT __stdcall put_IsIndexedDBEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("a0b561de-5fdb-443b-b9f0-5c30f6b7a1f4")) __declspec(novtable) IWebViewStatics : Windows::IInspectable
+struct __declspec(uuid("a0b561de-5fdb-443b-b9f0-5c30f6b7a1f4")) __declspec(novtable) IWebViewStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AnyScriptNotifyUri(Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ** value) = 0;
     virtual HRESULT __stdcall get_SourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -5134,7 +5134,7 @@ struct __declspec(uuid("a0b561de-5fdb-443b-b9f0-5c30f6b7a1f4")) __declspec(novta
     virtual HRESULT __stdcall get_DataTransferPackageProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("322f8780-e812-466b-9e50-8e9fec24018a")) __declspec(novtable) IWebViewStatics2 : Windows::IInspectable
+struct __declspec(uuid("322f8780-e812-466b-9e50-8e9fec24018a")) __declspec(novtable) IWebViewStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CanGoBackProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CanGoForwardProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -5142,18 +5142,18 @@ struct __declspec(uuid("322f8780-e812-466b-9e50-8e9fec24018a")) __declspec(novta
     virtual HRESULT __stdcall get_DefaultBackgroundColorProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("129bef8a-4509-4374-b0d1-a7104d0c3a2f")) __declspec(novtable) IWebViewStatics3 : Windows::IInspectable
+struct __declspec(uuid("129bef8a-4509-4374-b0d1-a7104d0c3a2f")) __declspec(novtable) IWebViewStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContainsFullScreenElementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("44b197b0-b746-40f3-9936-4ebbff6b47b8")) __declspec(novtable) IWebViewStatics4 : Windows::IInspectable
+struct __declspec(uuid("44b197b0-b746-40f3-9936-4ebbff6b47b8")) __declspec(novtable) IWebViewStatics4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DefaultExecutionMode(winrt::Windows::UI::Xaml::Controls::WebViewExecutionMode * value) = 0;
     virtual HRESULT __stdcall abi_ClearTemporaryWebDataAsync(Windows::Foundation::IAsyncAction ** returnValue) = 0;
 };
 
-struct __declspec(uuid("08a0b8d1-508a-4db8-97ef-0fa505e19ec2")) __declspec(novtable) IWebViewStatics5 : Windows::IInspectable
+struct __declspec(uuid("08a0b8d1-508a-4db8-97ef-0fa505e19ec2")) __declspec(novtable) IWebViewStatics5 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_XYFocusLeftProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_XYFocusRightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -5161,25 +5161,25 @@ struct __declspec(uuid("08a0b8d1-508a-4db8-97ef-0fa505e19ec2")) __declspec(novta
     virtual HRESULT __stdcall get_XYFocusDownProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b9c9e1a7-620f-4895-935d-10fbac6fd29e")) __declspec(novtable) IWebViewUnsupportedUriSchemeIdentifiedEventArgs : Windows::IInspectable
+struct __declspec(uuid("b9c9e1a7-620f-4895-935d-10fbac6fd29e")) __declspec(novtable) IWebViewUnsupportedUriSchemeIdentifiedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
 };
 
-struct __declspec(uuid("37bc16e1-6062-4678-b20b-6c36ac9c59ac")) __declspec(novtable) IWebViewUnviewableContentIdentifiedEventArgs : Windows::IInspectable
+struct __declspec(uuid("37bc16e1-6062-4678-b20b-6c36ac9c59ac")) __declspec(novtable) IWebViewUnviewableContentIdentifiedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall get_Referrer(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("9abe1154-36f0-4268-8d88-121eedf45e6a")) __declspec(novtable) IWebViewUnviewableContentIdentifiedEventArgs2 : Windows::IInspectable
+struct __declspec(uuid("9abe1154-36f0-4268-8d88-121eedf45e6a")) __declspec(novtable) IWebViewUnviewableContentIdentifiedEventArgs2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MediaType(hstring * value) = 0;
 };
 
-struct __declspec(uuid("0552178b-7567-47c2-bd5c-ad8394c828ba")) __declspec(novtable) IWrapGrid : Windows::IInspectable
+struct __declspec(uuid("0552178b-7567-47c2-bd5c-ad8394c828ba")) __declspec(novtable) IWrapGrid : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemWidth(double * value) = 0;
     virtual HRESULT __stdcall put_ItemWidth(double value) = 0;
@@ -5195,7 +5195,7 @@ struct __declspec(uuid("0552178b-7567-47c2-bd5c-ad8394c828ba")) __declspec(novta
     virtual HRESULT __stdcall put_MaximumRowsOrColumns(int32_t value) = 0;
 };
 
-struct __declspec(uuid("d04a6b97-13cb-479c-a285-e4e56846c4cb")) __declspec(novtable) IWrapGridStatics : Windows::IInspectable
+struct __declspec(uuid("d04a6b97-13cb-479c-a285-e4e56846c4cb")) __declspec(novtable) IWrapGridStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemWidthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ItemHeightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -5207,52 +5207,52 @@ struct __declspec(uuid("d04a6b97-13cb-479c-a285-e4e56846c4cb")) __declspec(novta
 
 struct __declspec(uuid("3df6d14e-e18a-4a75-9395-627c5f3cd489")) __declspec(novtable) ItemClickEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::IItemClickEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::IItemClickEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("6af5da76-7e8b-4a91-9a56-460cb47d523f")) __declspec(novtable) ListViewItemToKeyHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * item, hstring * returnValue) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * item, hstring * returnValue) = 0;
 };
 
 struct __declspec(uuid("26fd5855-b530-4688-b9f0-428249178ef8")) __declspec(novtable) ListViewKeyToItemHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(hstring key, Windows::Foundation::IAsyncOperation<Windows::IInspectable> ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_Invoke(hstring key, Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> ** returnValue) = 0;
 };
 
 struct __declspec(uuid("c2fdd1f8-7105-4a74-a109-de29dff56b98")) __declspec(novtable) NotifyEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::INotifyEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::INotifyEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("6becaa6a-63f8-47ff-b6ac-76e7da247d67")) __declspec(novtable) SectionsInViewChangedEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("e1a05352-5aa0-42ca-9cd9-068a14db6e68")) __declspec(novtable) SelectionChangedEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::ISelectionChangedEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::ISelectionChangedEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("1fa9161d-5d73-44fb-81ac-d1c9384919d4")) __declspec(novtable) SemanticZoomViewChangedEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("8eb35b97-ad87-40e8-818b-77db24759566")) __declspec(novtable) TextChangedEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::ITextChangedEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::ITextChangedEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("d56db359-6f77-4296-ab9c-794939444365")) __declspec(novtable) TextControlPasteEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::ITextControlPasteEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::ITextControlPasteEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("a31eafe1-41dc-47f8-ae22-9706c8f143d4")) __declspec(novtable) WebViewNavigationFailedEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventArgs * e) = 0;
 };
 
 }
@@ -5351,7 +5351,7 @@ template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarRulerButton> { 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarToggleButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarToggleButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarToolButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarToolButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::ItemClickEventArgs> { using default_interface = Windows::UI::Xaml::Controls::IItemClickEventArgs; };
-template <> struct traits<Windows::UI::Xaml::Controls::ItemCollection> { using default_interface = Windows::Foundation::Collections::IObservableVector<Windows::IInspectable>; };
+template <> struct traits<Windows::UI::Xaml::Controls::ItemCollection> { using default_interface = Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable>; };
 template <> struct traits<Windows::UI::Xaml::Controls::ItemContainerGenerator> { using default_interface = Windows::UI::Xaml::Controls::IItemContainerGenerator; };
 template <> struct traits<Windows::UI::Xaml::Controls::ItemsControl> { using default_interface = Windows::UI::Xaml::Controls::IItemsControl; };
 template <> struct traits<Windows::UI::Xaml::Controls::ItemsPanelTemplate> { using default_interface = Windows::UI::Xaml::Controls::IItemsPanelTemplate; };
@@ -5476,13 +5476,13 @@ struct WINRT_EBO impl_IAppBar
     void IsOpen(bool value) const;
     bool IsSticky() const;
     void IsSticky(bool value) const;
-    event_token Opened(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token Opened(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using Opened_revoker = event_revoker<IAppBar>;
-    Opened_revoker Opened(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    Opened_revoker Opened(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void Opened(event_token token) const;
-    event_token Closed(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token Closed(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using Closed_revoker = event_revoker<IAppBar>;
-    Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void Closed(event_token token) const;
 };
 
@@ -5497,13 +5497,13 @@ template <typename D>
 struct WINRT_EBO impl_IAppBar3
 {
     Windows::UI::Xaml::Controls::Primitives::AppBarTemplateSettings TemplateSettings() const;
-    event_token Opening(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token Opening(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using Opening_revoker = event_revoker<IAppBar3>;
-    Opening_revoker Opening(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    Opening_revoker Opening(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void Opening(event_token token) const;
-    event_token Closing(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token Closing(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using Closing_revoker = event_revoker<IAppBar3>;
-    Closing_revoker Closing(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    Closing_revoker Closing(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void Closing(event_token token) const;
 };
 
@@ -5533,7 +5533,7 @@ struct WINRT_EBO impl_IAppBarButton3
 template <typename D>
 struct WINRT_EBO impl_IAppBarButtonFactory
 {
-    Windows::UI::Xaml::Controls::AppBarButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::AppBarButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -5555,21 +5555,21 @@ struct WINRT_EBO impl_IAppBarButtonStatics3
 template <typename D>
 struct WINRT_EBO impl_IAppBarFactory
 {
-    Windows::UI::Xaml::Controls::AppBar CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::AppBar CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IAppBarOverrides
 {
-    void OnClosed(const Windows::IInspectable & e) const;
-    void OnOpened(const Windows::IInspectable & e) const;
+    void OnClosed(const Windows::Foundation::IInspectable & e) const;
+    void OnOpened(const Windows::Foundation::IInspectable & e) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IAppBarOverrides3
 {
-    void OnClosing(const Windows::IInspectable & e) const;
-    void OnOpening(const Windows::IInspectable & e) const;
+    void OnClosing(const Windows::Foundation::IInspectable & e) const;
+    void OnOpening(const Windows::Foundation::IInspectable & e) const;
 };
 
 template <typename D>
@@ -5580,7 +5580,7 @@ struct WINRT_EBO impl_IAppBarSeparator
 template <typename D>
 struct WINRT_EBO impl_IAppBarSeparatorFactory
 {
-    Windows::UI::Xaml::Controls::AppBarSeparator CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::AppBarSeparator CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -5634,7 +5634,7 @@ struct WINRT_EBO impl_IAppBarToggleButton3
 template <typename D>
 struct WINRT_EBO impl_IAppBarToggleButtonFactory
 {
-    Windows::UI::Xaml::Controls::AppBarToggleButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::AppBarToggleButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -5668,8 +5668,8 @@ struct WINRT_EBO impl_IAutoSuggestBox
     void UpdateTextOnSelect(bool value) const;
     hstring PlaceholderText() const;
     void PlaceholderText(hstring_view value) const;
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     bool AutoMaximizeSuggestionArea() const;
     void AutoMaximizeSuggestionArea(bool value) const;
     Windows::UI::Xaml::Style TextBoxStyle() const;
@@ -5706,7 +5706,7 @@ template <typename D>
 struct WINRT_EBO impl_IAutoSuggestBoxQuerySubmittedEventArgs
 {
     hstring QueryText() const;
-    Windows::IInspectable ChosenSuggestion() const;
+    Windows::Foundation::IInspectable ChosenSuggestion() const;
 };
 
 template <typename D>
@@ -5738,7 +5738,7 @@ struct WINRT_EBO impl_IAutoSuggestBoxStatics3
 template <typename D>
 struct WINRT_EBO impl_IAutoSuggestBoxSuggestionChosenEventArgs
 {
-    Windows::IInspectable SelectedItem() const;
+    Windows::Foundation::IInspectable SelectedItem() const;
 };
 
 template <typename D>
@@ -5772,7 +5772,7 @@ struct WINRT_EBO impl_IBitmapIcon
 template <typename D>
 struct WINRT_EBO impl_IBitmapIconFactory
 {
-    Windows::UI::Xaml::Controls::BitmapIcon CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::BitmapIcon CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -5819,7 +5819,7 @@ struct WINRT_EBO impl_IButton
 template <typename D>
 struct WINRT_EBO impl_IButtonFactory
 {
-    Windows::UI::Xaml::Controls::Button CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Button CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -5846,8 +5846,8 @@ struct WINRT_EBO impl_ICalendarDatePicker
     void DateFormat(hstring_view value) const;
     hstring PlaceholderText() const;
     void PlaceholderText(hstring_view value) const;
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Style CalendarViewStyle() const;
@@ -5878,13 +5878,13 @@ struct WINRT_EBO impl_ICalendarDatePicker
     using DateChanged_revoker = event_revoker<ICalendarDatePicker>;
     DateChanged_revoker DateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarDatePicker, Windows::UI::Xaml::Controls::CalendarDatePickerDateChangedEventArgs> & value) const;
     void DateChanged(event_token token) const;
-    event_token Opened(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token Opened(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using Opened_revoker = event_revoker<ICalendarDatePicker>;
-    Opened_revoker Opened(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    Opened_revoker Opened(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void Opened(event_token token) const;
-    event_token Closed(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token Closed(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using Closed_revoker = event_revoker<ICalendarDatePicker>;
-    Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void Closed(event_token token) const;
     void SetDisplayDate(const Windows::Foundation::DateTime & date) const;
     void SetYearDecadeDisplayDimensions(int32_t columns, int32_t rows) const;
@@ -5907,7 +5907,7 @@ struct WINRT_EBO impl_ICalendarDatePickerDateChangedEventArgs
 template <typename D>
 struct WINRT_EBO impl_ICalendarDatePickerFactory
 {
-    Windows::UI::Xaml::Controls::CalendarDatePicker CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::CalendarDatePicker CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6074,7 +6074,7 @@ struct WINRT_EBO impl_ICalendarViewDayItemChangingEventArgs
 template <typename D>
 struct WINRT_EBO impl_ICalendarViewDayItemFactory
 {
-    Windows::UI::Xaml::Controls::CalendarViewDayItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::CalendarViewDayItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6087,7 +6087,7 @@ struct WINRT_EBO impl_ICalendarViewDayItemStatics
 template <typename D>
 struct WINRT_EBO impl_ICalendarViewFactory
 {
-    Windows::UI::Xaml::Controls::CalendarView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::CalendarView CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6167,7 +6167,7 @@ struct WINRT_EBO impl_ICanvas
 template <typename D>
 struct WINRT_EBO impl_ICanvasFactory
 {
-    Windows::UI::Xaml::Controls::Canvas CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Canvas CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6208,7 +6208,7 @@ struct WINRT_EBO impl_ICheckBox
 template <typename D>
 struct WINRT_EBO impl_ICheckBoxFactory
 {
-    Windows::UI::Xaml::Controls::CheckBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::CheckBox CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6217,14 +6217,14 @@ struct WINRT_EBO impl_IChoosingGroupHeaderContainerEventArgs
     Windows::UI::Xaml::Controls::ListViewBaseHeaderItem GroupHeaderContainer() const;
     void GroupHeaderContainer(const Windows::UI::Xaml::Controls::ListViewBaseHeaderItem & value) const;
     int32_t GroupIndex() const;
-    Windows::IInspectable Group() const;
+    Windows::Foundation::IInspectable Group() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IChoosingItemContainerEventArgs
 {
     int32_t ItemIndex() const;
-    Windows::IInspectable Item() const;
+    Windows::Foundation::IInspectable Item() const;
     Windows::UI::Xaml::Controls::Primitives::SelectorItem ItemContainer() const;
     void ItemContainer(const Windows::UI::Xaml::Controls::Primitives::SelectorItem & value) const;
     bool IsContainerPrepared() const;
@@ -6234,7 +6234,7 @@ struct WINRT_EBO impl_IChoosingItemContainerEventArgs
 template <typename D>
 struct WINRT_EBO impl_ICleanUpVirtualizedItemEventArgs
 {
-    Windows::IInspectable Value() const;
+    Windows::Foundation::IInspectable Value() const;
     Windows::UI::Xaml::UIElement UIElement() const;
     bool Cancel() const;
     void Cancel(bool value) const;
@@ -6269,24 +6269,24 @@ struct WINRT_EBO impl_IComboBox
     bool IsSelectionBoxHighlighted() const;
     double MaxDropDownHeight() const;
     void MaxDropDownHeight(double value) const;
-    Windows::IInspectable SelectionBoxItem() const;
+    Windows::Foundation::IInspectable SelectionBoxItem() const;
     Windows::UI::Xaml::DataTemplate SelectionBoxItemTemplate() const;
     Windows::UI::Xaml::Controls::Primitives::ComboBoxTemplateSettings TemplateSettings() const;
-    event_token DropDownClosed(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token DropDownClosed(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using DropDownClosed_revoker = event_revoker<IComboBox>;
-    DropDownClosed_revoker DropDownClosed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    DropDownClosed_revoker DropDownClosed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void DropDownClosed(event_token token) const;
-    event_token DropDownOpened(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token DropDownOpened(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using DropDownOpened_revoker = event_revoker<IComboBox>;
-    DropDownOpened_revoker DropDownOpened(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    DropDownOpened_revoker DropDownOpened(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void DropDownOpened(event_token token) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IComboBox2
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring PlaceholderText() const;
@@ -6305,7 +6305,7 @@ struct WINRT_EBO impl_IComboBox3
 template <typename D>
 struct WINRT_EBO impl_IComboBoxFactory
 {
-    Windows::UI::Xaml::Controls::ComboBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ComboBox CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6316,14 +6316,14 @@ struct WINRT_EBO impl_IComboBoxItem
 template <typename D>
 struct WINRT_EBO impl_IComboBoxItemFactory
 {
-    Windows::UI::Xaml::Controls::ComboBoxItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ComboBoxItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IComboBoxOverrides
 {
-    void OnDropDownClosed(const Windows::IInspectable & e) const;
-    void OnDropDownOpened(const Windows::IInspectable & e) const;
+    void OnDropDownClosed(const Windows::Foundation::IInspectable & e) const;
+    void OnDropDownOpened(const Windows::Foundation::IInspectable & e) const;
 };
 
 template <typename D>
@@ -6396,7 +6396,7 @@ struct WINRT_EBO impl_ICommandBarElement2
 template <typename D>
 struct WINRT_EBO impl_ICommandBarFactory
 {
-    Windows::UI::Xaml::Controls::CommandBar CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::CommandBar CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6407,7 +6407,7 @@ struct WINRT_EBO impl_ICommandBarOverflowPresenter
 template <typename D>
 struct WINRT_EBO impl_ICommandBarOverflowPresenterFactory
 {
-    Windows::UI::Xaml::Controls::CommandBarOverflowPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::CommandBarOverflowPresenter CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6437,7 +6437,7 @@ struct WINRT_EBO impl_IContainerContentChangingEventArgs
     Windows::UI::Xaml::Controls::Primitives::SelectorItem ItemContainer() const;
     bool InRecycleQueue() const;
     int32_t ItemIndex() const;
-    Windows::IInspectable Item() const;
+    Windows::Foundation::IInspectable Item() const;
     uint32_t Phase() const;
     bool Handled() const;
     void Handled(bool value) const;
@@ -6448,8 +6448,8 @@ struct WINRT_EBO impl_IContainerContentChangingEventArgs
 template <typename D>
 struct WINRT_EBO impl_IContentControl
 {
-    Windows::IInspectable Content() const;
-    void Content(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Content() const;
+    void Content(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate ContentTemplate() const;
     void ContentTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Controls::DataTemplateSelector ContentTemplateSelector() const;
@@ -6467,13 +6467,13 @@ struct WINRT_EBO impl_IContentControl2
 template <typename D>
 struct WINRT_EBO impl_IContentControlFactory
 {
-    Windows::UI::Xaml::Controls::ContentControl CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ContentControl CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IContentControlOverrides
 {
-    void OnContentChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent) const;
+    void OnContentChanged(const Windows::Foundation::IInspectable & oldContent, const Windows::Foundation::IInspectable & newContent) const;
     void OnContentTemplateChanged(const Windows::UI::Xaml::DataTemplate & oldContentTemplate, const Windows::UI::Xaml::DataTemplate & newContentTemplate) const;
     void OnContentTemplateSelectorChanged(const Windows::UI::Xaml::Controls::DataTemplateSelector & oldContentTemplateSelector, const Windows::UI::Xaml::Controls::DataTemplateSelector & newContentTemplateSelector) const;
 };
@@ -6490,8 +6490,8 @@ struct WINRT_EBO impl_IContentControlStatics
 template <typename D>
 struct WINRT_EBO impl_IContentDialog
 {
-    Windows::IInspectable Title() const;
-    void Title(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Title() const;
+    void Title(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate TitleTemplate() const;
     void TitleTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     bool FullSizeDesired() const;
@@ -6504,10 +6504,10 @@ struct WINRT_EBO impl_IContentDialog
     void PrimaryButtonCommand(const Windows::UI::Xaml::Input::ICommand & value) const;
     Windows::UI::Xaml::Input::ICommand SecondaryButtonCommand() const;
     void SecondaryButtonCommand(const Windows::UI::Xaml::Input::ICommand & value) const;
-    Windows::IInspectable PrimaryButtonCommandParameter() const;
-    void PrimaryButtonCommandParameter(const Windows::IInspectable & value) const;
-    Windows::IInspectable SecondaryButtonCommandParameter() const;
-    void SecondaryButtonCommandParameter(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable PrimaryButtonCommandParameter() const;
+    void PrimaryButtonCommandParameter(const Windows::Foundation::IInspectable & value) const;
+    Windows::Foundation::IInspectable SecondaryButtonCommandParameter() const;
+    void SecondaryButtonCommandParameter(const Windows::Foundation::IInspectable & value) const;
     bool IsPrimaryButtonEnabled() const;
     void IsPrimaryButtonEnabled(bool value) const;
     bool IsSecondaryButtonEnabled() const;
@@ -6574,7 +6574,7 @@ struct WINRT_EBO impl_IContentDialogClosingEventArgs
 template <typename D>
 struct WINRT_EBO impl_IContentDialogFactory
 {
-    Windows::UI::Xaml::Controls::ContentDialog CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ContentDialog CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6601,8 +6601,8 @@ struct WINRT_EBO impl_IContentDialogStatics
 template <typename D>
 struct WINRT_EBO impl_IContentPresenter
 {
-    Windows::IInspectable Content() const;
-    void Content(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Content() const;
+    void Content(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate ContentTemplate() const;
     void ContentTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Controls::DataTemplateSelector ContentTemplateSelector() const;
@@ -6671,7 +6671,7 @@ struct WINRT_EBO impl_IContentPresenter4
 template <typename D>
 struct WINRT_EBO impl_IContentPresenterFactory
 {
-    Windows::UI::Xaml::Controls::ContentPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ContentPresenter CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6830,7 +6830,7 @@ struct WINRT_EBO impl_IControl4
 template <typename D>
 struct WINRT_EBO impl_IControlFactory
 {
-    Windows::UI::Xaml::Controls::Control CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Control CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -6866,8 +6866,8 @@ struct WINRT_EBO impl_IControlOverrides
 template <typename D>
 struct WINRT_EBO impl_IControlProtected
 {
-    Windows::IInspectable DefaultStyleKey() const;
-    void DefaultStyleKey(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable DefaultStyleKey() const;
+    void DefaultStyleKey(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyObject GetTemplateChild(hstring_view childName) const;
 };
 
@@ -6934,31 +6934,31 @@ struct WINRT_EBO impl_IControlTemplate
 template <typename D>
 struct WINRT_EBO impl_IDataTemplateSelector
 {
-    Windows::UI::Xaml::DataTemplate SelectTemplate(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
+    Windows::UI::Xaml::DataTemplate SelectTemplate(const Windows::Foundation::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDataTemplateSelector2
 {
-    Windows::UI::Xaml::DataTemplate SelectTemplate(const Windows::IInspectable & item) const;
+    Windows::UI::Xaml::DataTemplate SelectTemplate(const Windows::Foundation::IInspectable & item) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDataTemplateSelectorFactory
 {
-    Windows::UI::Xaml::Controls::DataTemplateSelector CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::DataTemplateSelector CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDataTemplateSelectorOverrides
 {
-    Windows::UI::Xaml::DataTemplate SelectTemplateCore(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
+    Windows::UI::Xaml::DataTemplate SelectTemplateCore(const Windows::Foundation::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDataTemplateSelectorOverrides2
 {
-    Windows::UI::Xaml::DataTemplate SelectTemplateCore(const Windows::IInspectable & item) const;
+    Windows::UI::Xaml::DataTemplate SelectTemplateCore(const Windows::Foundation::IInspectable & item) const;
 };
 
 template <typename D>
@@ -6971,8 +6971,8 @@ struct WINRT_EBO impl_IDatePickedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IDatePicker
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring CalendarIdentifier() const;
@@ -7013,7 +7013,7 @@ struct WINRT_EBO impl_IDatePicker2
 template <typename D>
 struct WINRT_EBO impl_IDatePickerFactory
 {
-    Windows::UI::Xaml::Controls::DatePicker CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::DatePicker CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7126,7 +7126,7 @@ struct WINRT_EBO impl_IDatePickerValueChangedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IDragItemsCompletedEventArgs
 {
-    Windows::Foundation::Collections::IVectorView<Windows::IInspectable> Items() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Foundation::IInspectable> Items() const;
     Windows::ApplicationModel::DataTransfer::DataPackageOperation DropResult() const;
 };
 
@@ -7135,7 +7135,7 @@ struct WINRT_EBO impl_IDragItemsStartingEventArgs
 {
     bool Cancel() const;
     void Cancel(bool value) const;
-    Windows::Foundation::Collections::IVector<Windows::IInspectable> Items() const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Items() const;
     Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
 };
 
@@ -7160,7 +7160,7 @@ struct WINRT_EBO impl_IFlipView2
 template <typename D>
 struct WINRT_EBO impl_IFlipViewFactory
 {
-    Windows::UI::Xaml::Controls::FlipView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::FlipView CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7171,7 +7171,7 @@ struct WINRT_EBO impl_IFlipViewItem
 template <typename D>
 struct WINRT_EBO impl_IFlipViewItemFactory
 {
-    Windows::UI::Xaml::Controls::FlipViewItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::FlipViewItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7192,7 +7192,7 @@ struct WINRT_EBO impl_IFlyout
 template <typename D>
 struct WINRT_EBO impl_IFlyoutFactory
 {
-    Windows::UI::Xaml::Controls::Flyout CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Flyout CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7203,7 +7203,7 @@ struct WINRT_EBO impl_IFlyoutPresenter
 template <typename D>
 struct WINRT_EBO impl_IFlyoutPresenterFactory
 {
-    Windows::UI::Xaml::Controls::FlyoutPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::FlyoutPresenter CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7255,7 +7255,7 @@ struct WINRT_EBO impl_IFontIcon3
 template <typename D>
 struct WINRT_EBO impl_IFontIconFactory
 {
-    Windows::UI::Xaml::Controls::FontIcon CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::FontIcon CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7309,7 +7309,7 @@ struct WINRT_EBO impl_IFrame
     void NavigationStopped(event_token token) const;
     void GoBack() const;
     void GoForward() const;
-    bool Navigate(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter) const;
+    bool Navigate(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::Foundation::IInspectable & parameter) const;
     hstring GetNavigationState() const;
     void SetNavigationState(hstring_view navigationState) const;
 };
@@ -7319,7 +7319,7 @@ struct WINRT_EBO impl_IFrame2
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Navigation::PageStackEntry> BackStack() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Navigation::PageStackEntry> ForwardStack() const;
-    bool Navigate(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & infoOverride) const;
+    bool Navigate(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::Foundation::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & infoOverride) const;
 };
 
 template <typename D>
@@ -7331,7 +7331,7 @@ struct WINRT_EBO impl_IFrame3
 template <typename D>
 struct WINRT_EBO impl_IFrameFactory
 {
-    Windows::UI::Xaml::Controls::Frame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Frame CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7375,7 +7375,7 @@ struct WINRT_EBO impl_IGrid2
 template <typename D>
 struct WINRT_EBO impl_IGridFactory
 {
-    Windows::UI::Xaml::Controls::Grid CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Grid CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7412,7 +7412,7 @@ struct WINRT_EBO impl_IGridView
 template <typename D>
 struct WINRT_EBO impl_IGridViewFactory
 {
-    Windows::UI::Xaml::Controls::GridView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::GridView CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7423,7 +7423,7 @@ struct WINRT_EBO impl_IGridViewHeaderItem
 template <typename D>
 struct WINRT_EBO impl_IGridViewHeaderItemFactory
 {
-    Windows::UI::Xaml::Controls::GridViewHeaderItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::GridViewHeaderItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7435,7 +7435,7 @@ struct WINRT_EBO impl_IGridViewItem
 template <typename D>
 struct WINRT_EBO impl_IGridViewItemFactory
 {
-    Windows::UI::Xaml::Controls::GridViewItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::GridViewItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7446,7 +7446,7 @@ struct WINRT_EBO impl_IGroupItem
 template <typename D>
 struct WINRT_EBO impl_IGroupItemFactory
 {
-    Windows::UI::Xaml::Controls::GroupItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::GroupItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7476,32 +7476,32 @@ struct WINRT_EBO impl_IGroupStyle2
 template <typename D>
 struct WINRT_EBO impl_IGroupStyleFactory
 {
-    Windows::UI::Xaml::Controls::GroupStyle CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::GroupStyle CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IGroupStyleSelector
 {
-    Windows::UI::Xaml::Controls::GroupStyle SelectGroupStyle(const Windows::IInspectable & group, uint32_t level) const;
+    Windows::UI::Xaml::Controls::GroupStyle SelectGroupStyle(const Windows::Foundation::IInspectable & group, uint32_t level) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IGroupStyleSelectorFactory
 {
-    Windows::UI::Xaml::Controls::GroupStyleSelector CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::GroupStyleSelector CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IGroupStyleSelectorOverrides
 {
-    Windows::UI::Xaml::Controls::GroupStyle SelectGroupStyleCore(const Windows::IInspectable & group, uint32_t level) const;
+    Windows::UI::Xaml::Controls::GroupStyle SelectGroupStyleCore(const Windows::Foundation::IInspectable & group, uint32_t level) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHub
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Controls::Orientation Orientation() const;
@@ -7510,7 +7510,7 @@ struct WINRT_EBO impl_IHub
     void DefaultSectionIndex(int32_t value) const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> Sections() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> SectionsInView() const;
-    Windows::Foundation::Collections::IObservableVector<Windows::IInspectable> SectionHeaders() const;
+    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> SectionHeaders() const;
     event_token SectionHeaderClick(const Windows::UI::Xaml::Controls::HubSectionHeaderClickEventHandler & value) const;
     using SectionHeaderClick_revoker = event_revoker<IHub>;
     SectionHeaderClick_revoker SectionHeaderClick(auto_revoke_t, const Windows::UI::Xaml::Controls::HubSectionHeaderClickEventHandler & value) const;
@@ -7525,14 +7525,14 @@ struct WINRT_EBO impl_IHub
 template <typename D>
 struct WINRT_EBO impl_IHubFactory
 {
-    Windows::UI::Xaml::Controls::Hub CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Hub CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IHubSection
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::DataTemplate ContentTemplate() const;
@@ -7544,7 +7544,7 @@ struct WINRT_EBO impl_IHubSection
 template <typename D>
 struct WINRT_EBO impl_IHubSectionFactory
 {
-    Windows::UI::Xaml::Controls::HubSection CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::HubSection CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7584,7 +7584,7 @@ struct WINRT_EBO impl_IHyperlinkButton
 template <typename D>
 struct WINRT_EBO impl_IHyperlinkButtonFactory
 {
-    Windows::UI::Xaml::Controls::HyperlinkButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::HyperlinkButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7661,7 +7661,7 @@ struct WINRT_EBO impl_IInkCanvas
 template <typename D>
 struct WINRT_EBO impl_IInkCanvasFactory
 {
-    Windows::UI::Xaml::Controls::InkCanvas CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkCanvas CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7677,21 +7677,21 @@ struct WINRT_EBO impl_IInkToolbar
     void IsRulerButtonChecked(bool value) const;
     Windows::UI::Xaml::Controls::InkCanvas TargetInkCanvas() const;
     void TargetInkCanvas(const Windows::UI::Xaml::Controls::InkCanvas & value) const;
-    event_token ActiveToolChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    event_token ActiveToolChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     using ActiveToolChanged_revoker = event_revoker<IInkToolbar>;
-    ActiveToolChanged_revoker ActiveToolChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    ActiveToolChanged_revoker ActiveToolChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     void ActiveToolChanged(event_token token) const;
-    event_token InkDrawingAttributesChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    event_token InkDrawingAttributesChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     using InkDrawingAttributesChanged_revoker = event_revoker<IInkToolbar>;
-    InkDrawingAttributesChanged_revoker InkDrawingAttributesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    InkDrawingAttributesChanged_revoker InkDrawingAttributesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     void InkDrawingAttributesChanged(event_token token) const;
-    event_token EraseAllClicked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    event_token EraseAllClicked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     using EraseAllClicked_revoker = event_revoker<IInkToolbar>;
-    EraseAllClicked_revoker EraseAllClicked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    EraseAllClicked_revoker EraseAllClicked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     void EraseAllClicked(event_token token) const;
-    event_token IsRulerButtonCheckedChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    event_token IsRulerButtonCheckedChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     using IsRulerButtonCheckedChanged_revoker = event_revoker<IInkToolbar>;
-    IsRulerButtonCheckedChanged_revoker IsRulerButtonCheckedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    IsRulerButtonCheckedChanged_revoker IsRulerButtonCheckedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     void IsRulerButtonCheckedChanged(event_token token) const;
     Windows::UI::Xaml::Controls::InkToolbarToolButton GetToolButton(Windows::UI::Xaml::Controls::InkToolbarTool tool) const;
     Windows::UI::Xaml::Controls::InkToolbarToggleButton GetToggleButton(Windows::UI::Xaml::Controls::InkToolbarToggle tool) const;
@@ -7705,7 +7705,7 @@ struct WINRT_EBO impl_IInkToolbarBallpointPenButton
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarBallpointPenButtonFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarBallpointPenButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarBallpointPenButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7726,7 +7726,7 @@ struct WINRT_EBO impl_IInkToolbarCustomPenButton
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarCustomPenButtonFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarCustomPenButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarCustomPenButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7739,7 +7739,7 @@ struct WINRT_EBO impl_IInkToolbarCustomPenButtonStatics
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarCustomPenFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarCustomPen CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarCustomPen CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7756,7 +7756,7 @@ struct WINRT_EBO impl_IInkToolbarCustomToggleButton
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarCustomToggleButtonFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarCustomToggleButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarCustomToggleButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7769,7 +7769,7 @@ struct WINRT_EBO impl_IInkToolbarCustomToolButton
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarCustomToolButtonFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarCustomToolButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarCustomToolButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7786,13 +7786,13 @@ struct WINRT_EBO impl_IInkToolbarEraserButton
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarEraserButtonFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarEraserButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarEraserButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbar CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbar CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7803,7 +7803,7 @@ struct WINRT_EBO impl_IInkToolbarHighlighterButton
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarHighlighterButtonFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarHighlighterButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarHighlighterButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7847,7 +7847,7 @@ struct WINRT_EBO impl_IInkToolbarPenConfigurationControl
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarPenConfigurationControlFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarPenConfigurationControl CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarPenConfigurationControl CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7864,7 +7864,7 @@ struct WINRT_EBO impl_IInkToolbarPencilButton
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarPencilButtonFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarPencilButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarPencilButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7876,7 +7876,7 @@ struct WINRT_EBO impl_IInkToolbarRulerButton
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarRulerButtonFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarRulerButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::InkToolbarRulerButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -7935,7 +7935,7 @@ struct WINRT_EBO impl_IInsertionPanel
 template <typename D>
 struct WINRT_EBO impl_IItemClickEventArgs
 {
-    Windows::IInspectable ClickedItem() const;
+    Windows::Foundation::IInspectable ClickedItem() const;
 };
 
 template <typename D>
@@ -7945,8 +7945,8 @@ struct WINRT_EBO impl_IItemContainerGenerator
     using ItemsChanged_revoker = event_revoker<IItemContainerGenerator>;
     ItemsChanged_revoker ItemsChanged(auto_revoke_t, const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventHandler & value) const;
     void ItemsChanged(event_token token) const;
-    [[deprecated("ItemFromContainer may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ItemFromContainer.")]] Windows::IInspectable ItemFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
-    [[deprecated("ContainerFromItem may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ContainerFromItem.")]] Windows::UI::Xaml::DependencyObject ContainerFromItem(const Windows::IInspectable & item) const;
+    [[deprecated("ItemFromContainer may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ItemFromContainer.")]] Windows::Foundation::IInspectable ItemFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+    [[deprecated("ContainerFromItem may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ContainerFromItem.")]] Windows::UI::Xaml::DependencyObject ContainerFromItem(const Windows::Foundation::IInspectable & item) const;
     [[deprecated("IndexFromContainer may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.IndexFromContainer.")]] int32_t IndexFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
     [[deprecated("ContainerFromIndex may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ContainerFromIndex.")]] Windows::UI::Xaml::DependencyObject ContainerFromIndex(int32_t index) const;
     Windows::UI::Xaml::Controls::ItemContainerGenerator GetItemContainerGeneratorForPanel(const Windows::UI::Xaml::Controls::Panel & panel) const;
@@ -7964,8 +7964,8 @@ struct WINRT_EBO impl_IItemContainerGenerator
 template <typename D>
 struct WINRT_EBO impl_IItemContainerMapping
 {
-    Windows::IInspectable ItemFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
-    Windows::UI::Xaml::DependencyObject ContainerFromItem(const Windows::IInspectable & item) const;
+    Windows::Foundation::IInspectable ItemFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+    Windows::UI::Xaml::DependencyObject ContainerFromItem(const Windows::Foundation::IInspectable & item) const;
     int32_t IndexFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
     Windows::UI::Xaml::DependencyObject ContainerFromIndex(int32_t index) const;
 };
@@ -7973,8 +7973,8 @@ struct WINRT_EBO impl_IItemContainerMapping
 template <typename D>
 struct WINRT_EBO impl_IItemsControl
 {
-    Windows::IInspectable ItemsSource() const;
-    void ItemsSource(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable ItemsSource() const;
+    void ItemsSource(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::Controls::ItemCollection Items() const;
     Windows::UI::Xaml::DataTemplate ItemTemplate() const;
     void ItemTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
@@ -8012,17 +8012,17 @@ struct WINRT_EBO impl_IItemsControl3
 template <typename D>
 struct WINRT_EBO impl_IItemsControlFactory
 {
-    Windows::UI::Xaml::Controls::ItemsControl CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ItemsControl CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IItemsControlOverrides
 {
-    bool IsItemItsOwnContainerOverride(const Windows::IInspectable & item) const;
+    bool IsItemItsOwnContainerOverride(const Windows::Foundation::IInspectable & item) const;
     Windows::UI::Xaml::DependencyObject GetContainerForItemOverride() const;
-    void ClearContainerForItemOverride(const Windows::UI::Xaml::DependencyObject & element, const Windows::IInspectable & item) const;
-    void PrepareContainerForItemOverride(const Windows::UI::Xaml::DependencyObject & element, const Windows::IInspectable & item) const;
-    void OnItemsChanged(const Windows::IInspectable & e) const;
+    void ClearContainerForItemOverride(const Windows::UI::Xaml::DependencyObject & element, const Windows::Foundation::IInspectable & item) const;
+    void PrepareContainerForItemOverride(const Windows::UI::Xaml::DependencyObject & element, const Windows::Foundation::IInspectable & item) const;
+    void OnItemsChanged(const Windows::Foundation::IInspectable & e) const;
     void OnItemContainerStyleChanged(const Windows::UI::Xaml::Style & oldItemContainerStyle, const Windows::UI::Xaml::Style & newItemContainerStyle) const;
     void OnItemContainerStyleSelectorChanged(const Windows::UI::Xaml::Controls::StyleSelector & oldItemContainerStyleSelector, const Windows::UI::Xaml::Controls::StyleSelector & newItemContainerStyleSelector) const;
     void OnItemTemplateChanged(const Windows::UI::Xaml::DataTemplate & oldItemTemplate, const Windows::UI::Xaml::DataTemplate & newItemTemplate) const;
@@ -8055,15 +8055,15 @@ struct WINRT_EBO impl_IItemsPanelTemplate
 template <typename D>
 struct WINRT_EBO impl_IItemsPickedEventArgs
 {
-    Windows::Foundation::Collections::IVector<Windows::IInspectable> AddedItems() const;
-    Windows::Foundation::Collections::IVector<Windows::IInspectable> RemovedItems() const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> AddedItems() const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> RemovedItems() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IItemsPresenter
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Media::Animation::TransitionCollection HeaderTransitions() const;
@@ -8075,8 +8075,8 @@ struct WINRT_EBO impl_IItemsPresenter
 template <typename D>
 struct WINRT_EBO impl_IItemsPresenter2
 {
-    Windows::IInspectable Footer() const;
-    void Footer(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Footer() const;
+    void Footer(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate FooterTemplate() const;
     void FooterTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Media::Animation::TransitionCollection FooterTransitions() const;
@@ -8194,10 +8194,10 @@ struct WINRT_EBO impl_IItemsWrapGridStatics2
 template <typename D>
 struct WINRT_EBO impl_IListBox
 {
-    Windows::Foundation::Collections::IVector<Windows::IInspectable> SelectedItems() const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> SelectedItems() const;
     Windows::UI::Xaml::Controls::SelectionMode SelectionMode() const;
     void SelectionMode(Windows::UI::Xaml::Controls::SelectionMode value) const;
-    void ScrollIntoView(const Windows::IInspectable & item) const;
+    void ScrollIntoView(const Windows::Foundation::IInspectable & item) const;
     void SelectAll() const;
 };
 
@@ -8211,7 +8211,7 @@ struct WINRT_EBO impl_IListBox2
 template <typename D>
 struct WINRT_EBO impl_IListBoxFactory
 {
-    Windows::UI::Xaml::Controls::ListBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ListBox CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8222,7 +8222,7 @@ struct WINRT_EBO impl_IListBoxItem
 template <typename D>
 struct WINRT_EBO impl_IListBoxItemFactory
 {
-    Windows::UI::Xaml::Controls::ListBoxItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ListBoxItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8240,8 +8240,8 @@ struct WINRT_EBO impl_IListBoxStatics2
 template <typename D>
 struct WINRT_EBO impl_IListPickerFlyout
 {
-    Windows::IInspectable ItemsSource() const;
-    void ItemsSource(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable ItemsSource() const;
+    void ItemsSource(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate ItemTemplate() const;
     void ItemTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring DisplayMemberPath() const;
@@ -8250,18 +8250,18 @@ struct WINRT_EBO impl_IListPickerFlyout
     void SelectionMode(Windows::UI::Xaml::Controls::ListPickerFlyoutSelectionMode value) const;
     int32_t SelectedIndex() const;
     void SelectedIndex(int32_t value) const;
-    Windows::IInspectable SelectedItem() const;
-    void SelectedItem(const Windows::IInspectable & value) const;
-    Windows::IInspectable SelectedValue() const;
-    void SelectedValue(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable SelectedItem() const;
+    void SelectedItem(const Windows::Foundation::IInspectable & value) const;
+    Windows::Foundation::IInspectable SelectedValue() const;
+    void SelectedValue(const Windows::Foundation::IInspectable & value) const;
     hstring SelectedValuePath() const;
     void SelectedValuePath(hstring_view value) const;
-    Windows::Foundation::Collections::IVector<Windows::IInspectable> SelectedItems() const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> SelectedItems() const;
     event_token ItemsPicked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListPickerFlyout, Windows::UI::Xaml::Controls::ItemsPickedEventArgs> & value) const;
     using ItemsPicked_revoker = event_revoker<IListPickerFlyout>;
     ItemsPicked_revoker ItemsPicked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListPickerFlyout, Windows::UI::Xaml::Controls::ItemsPickedEventArgs> & value) const;
     void ItemsPicked(event_token token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::IInspectable>> ShowAtAsync(const Windows::UI::Xaml::FrameworkElement & target) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::IInspectable>> ShowAtAsync(const Windows::UI::Xaml::FrameworkElement & target) const;
 };
 
 template <typename D>
@@ -8290,7 +8290,7 @@ struct WINRT_EBO impl_IListView
 template <typename D>
 struct WINRT_EBO impl_IListViewBase
 {
-    Windows::Foundation::Collections::IVector<Windows::IInspectable> SelectedItems() const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> SelectedItems() const;
     Windows::UI::Xaml::Controls::ListViewSelectionMode SelectionMode() const;
     void SelectionMode(Windows::UI::Xaml::Controls::ListViewSelectionMode value) const;
     bool IsSwipeEnabled() const;
@@ -8315,12 +8315,12 @@ struct WINRT_EBO impl_IListViewBase
     using DragItemsStarting_revoker = event_revoker<IListViewBase>;
     DragItemsStarting_revoker DragItemsStarting(auto_revoke_t, const Windows::UI::Xaml::Controls::DragItemsStartingEventHandler & value) const;
     void DragItemsStarting(event_token token) const;
-    void ScrollIntoView(const Windows::IInspectable & item) const;
+    void ScrollIntoView(const Windows::Foundation::IInspectable & item) const;
     void SelectAll() const;
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Data::LoadMoreItemsResult> LoadMoreItemsAsync() const;
-    void ScrollIntoView(const Windows::IInspectable & item, Windows::UI::Xaml::Controls::ScrollIntoViewAlignment alignment) const;
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    void ScrollIntoView(const Windows::Foundation::IInspectable & item, Windows::UI::Xaml::Controls::ScrollIntoViewAlignment alignment) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Media::Animation::TransitionCollection HeaderTransitions() const;
@@ -8337,8 +8337,8 @@ struct WINRT_EBO impl_IListViewBase2
     ContainerContentChanging_revoker ContainerContentChanging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs> & value) const;
     void ContainerContentChanging(event_token token) const;
     void SetDesiredContainerUpdateDuration(const Windows::Foundation::TimeSpan & duration) const;
-    Windows::IInspectable Footer() const;
-    void Footer(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Footer() const;
+    void Footer(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate FooterTemplate() const;
     void FooterTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Media::Animation::TransitionCollection FooterTransitions() const;
@@ -8385,7 +8385,7 @@ struct WINRT_EBO impl_IListViewBase5
 template <typename D>
 struct WINRT_EBO impl_IListViewBaseFactory
 {
-    Windows::UI::Xaml::Controls::ListViewBase CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ListViewBase CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8447,7 +8447,7 @@ struct WINRT_EBO impl_IListViewBaseStatics5
 template <typename D>
 struct WINRT_EBO impl_IListViewFactory
 {
-    Windows::UI::Xaml::Controls::ListView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ListView CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8458,7 +8458,7 @@ struct WINRT_EBO impl_IListViewHeaderItem
 template <typename D>
 struct WINRT_EBO impl_IListViewHeaderItemFactory
 {
-    Windows::UI::Xaml::Controls::ListViewHeaderItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ListViewHeaderItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8470,7 +8470,7 @@ struct WINRT_EBO impl_IListViewItem
 template <typename D>
 struct WINRT_EBO impl_IListViewItemFactory
 {
-    Windows::UI::Xaml::Controls::ListViewItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ListViewItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8688,7 +8688,7 @@ struct WINRT_EBO impl_IMediaPlayerElement
 template <typename D>
 struct WINRT_EBO impl_IMediaPlayerElementFactory
 {
-    Windows::UI::Xaml::Controls::MediaPlayerElement CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::MediaPlayerElement CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8717,7 +8717,7 @@ struct WINRT_EBO impl_IMediaPlayerPresenter
 template <typename D>
 struct WINRT_EBO impl_IMediaPlayerPresenterFactory
 {
-    Windows::UI::Xaml::Controls::MediaPlayerPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::MediaPlayerPresenter CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8793,7 +8793,7 @@ struct WINRT_EBO impl_IMediaTransportControls2
 template <typename D>
 struct WINRT_EBO impl_IMediaTransportControlsFactory
 {
-    Windows::UI::Xaml::Controls::MediaTransportControls CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::MediaTransportControls CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8860,7 +8860,7 @@ struct WINRT_EBO impl_IMenuFlyout2
 template <typename D>
 struct WINRT_EBO impl_IMenuFlyoutFactory
 {
-    Windows::UI::Xaml::Controls::MenuFlyout CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::MenuFlyout CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8870,8 +8870,8 @@ struct WINRT_EBO impl_IMenuFlyoutItem
     void Text(hstring_view value) const;
     Windows::UI::Xaml::Input::ICommand Command() const;
     void Command(const Windows::UI::Xaml::Input::ICommand & value) const;
-    Windows::IInspectable CommandParameter() const;
-    void CommandParameter(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable CommandParameter() const;
+    void CommandParameter(const Windows::Foundation::IInspectable & value) const;
     event_token Click(const Windows::UI::Xaml::RoutedEventHandler & value) const;
     using Click_revoker = event_revoker<IMenuFlyoutItem>;
     Click_revoker Click(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
@@ -8891,7 +8891,7 @@ struct WINRT_EBO impl_IMenuFlyoutItemBaseFactory
 template <typename D>
 struct WINRT_EBO impl_IMenuFlyoutItemFactory
 {
-    Windows::UI::Xaml::Controls::MenuFlyoutItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::MenuFlyoutItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8916,7 +8916,7 @@ struct WINRT_EBO impl_IMenuFlyoutPresenter2
 template <typename D>
 struct WINRT_EBO impl_IMenuFlyoutPresenterFactory
 {
-    Windows::UI::Xaml::Controls::MenuFlyoutPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::MenuFlyoutPresenter CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8927,7 +8927,7 @@ struct WINRT_EBO impl_IMenuFlyoutSeparator
 template <typename D>
 struct WINRT_EBO impl_IMenuFlyoutSeparatorFactory
 {
-    Windows::UI::Xaml::Controls::MenuFlyoutSeparator CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::MenuFlyoutSeparator CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -8983,7 +8983,7 @@ struct WINRT_EBO impl_IPage
 template <typename D>
 struct WINRT_EBO impl_IPageFactory
 {
-    Windows::UI::Xaml::Controls::Page CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Page CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -9016,7 +9016,7 @@ struct WINRT_EBO impl_IPanel
 template <typename D>
 struct WINRT_EBO impl_IPanelFactory
 {
-    Windows::UI::Xaml::Controls::Panel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Panel CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -9052,8 +9052,8 @@ struct WINRT_EBO impl_IPasswordBox
 template <typename D>
 struct WINRT_EBO impl_IPasswordBox2
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring PlaceholderText() const;
@@ -9116,7 +9116,7 @@ struct WINRT_EBO impl_IPathIcon
 template <typename D>
 struct WINRT_EBO impl_IPathIconFactory
 {
-    Windows::UI::Xaml::Controls::PathIcon CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::PathIcon CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -9159,16 +9159,16 @@ struct WINRT_EBO impl_IPickerFlyoutStatics
 template <typename D>
 struct WINRT_EBO impl_IPivot
 {
-    Windows::IInspectable Title() const;
-    void Title(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Title() const;
+    void Title(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate TitleTemplate() const;
     void TitleTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     int32_t SelectedIndex() const;
     void SelectedIndex(int32_t value) const;
-    Windows::IInspectable SelectedItem() const;
-    void SelectedItem(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable SelectedItem() const;
+    void SelectedItem(const Windows::Foundation::IInspectable & value) const;
     bool IsLocked() const;
     void IsLocked(bool value) const;
     event_token SelectionChanged(const Windows::UI::Xaml::Controls::SelectionChangedEventHandler & value) const;
@@ -9196,12 +9196,12 @@ struct WINRT_EBO impl_IPivot
 template <typename D>
 struct WINRT_EBO impl_IPivot2
 {
-    Windows::IInspectable LeftHeader() const;
-    void LeftHeader(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable LeftHeader() const;
+    void LeftHeader(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate LeftHeaderTemplate() const;
     void LeftHeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
-    Windows::IInspectable RightHeader() const;
-    void RightHeader(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable RightHeader() const;
+    void RightHeader(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate RightHeaderTemplate() const;
     void RightHeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
 };
@@ -9218,14 +9218,14 @@ struct WINRT_EBO impl_IPivot3
 template <typename D>
 struct WINRT_EBO impl_IPivotFactory
 {
-    Windows::UI::Xaml::Controls::Pivot CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Pivot CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPivotItem
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
 };
 
 template <typename D>
@@ -9238,7 +9238,7 @@ struct WINRT_EBO impl_IPivotItemEventArgs
 template <typename D>
 struct WINRT_EBO impl_IPivotItemFactory
 {
-    Windows::UI::Xaml::Controls::PivotItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::PivotItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -9292,7 +9292,7 @@ struct WINRT_EBO impl_IProgressBar
 template <typename D>
 struct WINRT_EBO impl_IProgressBarFactory
 {
-    Windows::UI::Xaml::Controls::ProgressBar CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ProgressBar CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -9327,7 +9327,7 @@ struct WINRT_EBO impl_IRadioButton
 template <typename D>
 struct WINRT_EBO impl_IRadioButtonFactory
 {
-    Windows::UI::Xaml::Controls::RadioButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::RadioButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -9352,42 +9352,42 @@ struct WINRT_EBO impl_IRelativePanel
 template <typename D>
 struct WINRT_EBO impl_IRelativePanelFactory
 {
-    Windows::UI::Xaml::Controls::RelativePanel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::RelativePanel CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IRelativePanelStatics
 {
     Windows::UI::Xaml::DependencyProperty LeftOfProperty() const;
-    Windows::IInspectable GetLeftOf(const Windows::UI::Xaml::UIElement & element) const;
-    void SetLeftOf(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetLeftOf(const Windows::UI::Xaml::UIElement & element) const;
+    void SetLeftOf(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty AboveProperty() const;
-    Windows::IInspectable GetAbove(const Windows::UI::Xaml::UIElement & element) const;
-    void SetAbove(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetAbove(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAbove(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty RightOfProperty() const;
-    Windows::IInspectable GetRightOf(const Windows::UI::Xaml::UIElement & element) const;
-    void SetRightOf(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetRightOf(const Windows::UI::Xaml::UIElement & element) const;
+    void SetRightOf(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty BelowProperty() const;
-    Windows::IInspectable GetBelow(const Windows::UI::Xaml::UIElement & element) const;
-    void SetBelow(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetBelow(const Windows::UI::Xaml::UIElement & element) const;
+    void SetBelow(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty AlignHorizontalCenterWithProperty() const;
-    Windows::IInspectable GetAlignHorizontalCenterWith(const Windows::UI::Xaml::UIElement & element) const;
-    void SetAlignHorizontalCenterWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetAlignHorizontalCenterWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignHorizontalCenterWith(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty AlignVerticalCenterWithProperty() const;
-    Windows::IInspectable GetAlignVerticalCenterWith(const Windows::UI::Xaml::UIElement & element) const;
-    void SetAlignVerticalCenterWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetAlignVerticalCenterWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignVerticalCenterWith(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty AlignLeftWithProperty() const;
-    Windows::IInspectable GetAlignLeftWith(const Windows::UI::Xaml::UIElement & element) const;
-    void SetAlignLeftWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetAlignLeftWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignLeftWith(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty AlignTopWithProperty() const;
-    Windows::IInspectable GetAlignTopWith(const Windows::UI::Xaml::UIElement & element) const;
-    void SetAlignTopWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetAlignTopWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignTopWith(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty AlignRightWithProperty() const;
-    Windows::IInspectable GetAlignRightWith(const Windows::UI::Xaml::UIElement & element) const;
-    void SetAlignRightWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetAlignRightWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignRightWith(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty AlignBottomWithProperty() const;
-    Windows::IInspectable GetAlignBottomWith(const Windows::UI::Xaml::UIElement & element) const;
-    void SetAlignBottomWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetAlignBottomWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignBottomWith(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DependencyProperty AlignLeftWithPanelProperty() const;
     bool GetAlignLeftWithPanel(const Windows::UI::Xaml::UIElement & element) const;
     void SetAlignLeftWithPanel(const Windows::UI::Xaml::UIElement & element, bool value) const;
@@ -9447,8 +9447,8 @@ struct WINRT_EBO impl_IRichEditBox
 template <typename D>
 struct WINRT_EBO impl_IRichEditBox2
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring PlaceholderText() const;
@@ -9505,7 +9505,7 @@ struct WINRT_EBO impl_IRichEditBox4
 template <typename D>
 struct WINRT_EBO impl_IRichEditBoxFactory
 {
-    Windows::UI::Xaml::Controls::RichEditBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::RichEditBox CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -9740,8 +9740,8 @@ struct WINRT_EBO impl_IScrollContentPresenter
     double ViewportHeight() const;
     double HorizontalOffset() const;
     double VerticalOffset() const;
-    Windows::IInspectable ScrollOwner() const;
-    void ScrollOwner(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable ScrollOwner() const;
+    void ScrollOwner(const Windows::Foundation::IInspectable & value) const;
     void LineUp() const;
     void LineDown() const;
     void LineLeft() const;
@@ -9846,13 +9846,13 @@ struct WINRT_EBO impl_IScrollViewer2
 template <typename D>
 struct WINRT_EBO impl_IScrollViewer3
 {
-    event_token DirectManipulationStarted(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token DirectManipulationStarted(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using DirectManipulationStarted_revoker = event_revoker<IScrollViewer3>;
-    DirectManipulationStarted_revoker DirectManipulationStarted(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    DirectManipulationStarted_revoker DirectManipulationStarted(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void DirectManipulationStarted(event_token token) const;
-    event_token DirectManipulationCompleted(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token DirectManipulationCompleted(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using DirectManipulationCompleted_revoker = event_revoker<IScrollViewer3>;
-    DirectManipulationCompleted_revoker DirectManipulationCompleted(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    DirectManipulationCompleted_revoker DirectManipulationCompleted(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void DirectManipulationCompleted(event_token token) const;
 };
 
@@ -9993,7 +9993,7 @@ struct WINRT_EBO impl_ISearchBox
 template <typename D>
 struct WINRT_EBO impl_ISearchBoxFactory
 {
-    Windows::UI::Xaml::Controls::SearchBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::SearchBox CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10055,14 +10055,14 @@ struct WINRT_EBO impl_ISectionsInViewChangedEventArgsFactory
 template <typename D>
 struct WINRT_EBO impl_ISelectionChangedEventArgs
 {
-    Windows::Foundation::Collections::IVector<Windows::IInspectable> AddedItems() const;
-    Windows::Foundation::Collections::IVector<Windows::IInspectable> RemovedItems() const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> AddedItems() const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> RemovedItems() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISelectionChangedEventArgsFactory
 {
-    Windows::UI::Xaml::Controls::SelectionChangedEventArgs CreateInstanceWithRemovedItemsAndAddedItems(const Windows::Foundation::Collections::IVector<Windows::IInspectable> & removedItems, const Windows::Foundation::Collections::IVector<Windows::IInspectable> & addedItems, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::SelectionChangedEventArgs CreateInstanceWithRemovedItemsAndAddedItems(const Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> & removedItems, const Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> & addedItems, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10110,8 +10110,8 @@ struct WINRT_EBO impl_ISemanticZoomInformation
 template <typename D>
 struct WINRT_EBO impl_ISemanticZoomLocation
 {
-    Windows::IInspectable Item() const;
-    void Item(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Item() const;
+    void Item(const Windows::Foundation::IInspectable & value) const;
     Windows::Foundation::Rect Bounds() const;
     void Bounds(const Windows::Foundation::Rect & value) const;
 };
@@ -10161,7 +10161,7 @@ struct WINRT_EBO impl_ISettingsFlyout
 template <typename D>
 struct WINRT_EBO impl_ISettingsFlyoutFactory
 {
-    Windows::UI::Xaml::Controls::SettingsFlyout CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::SettingsFlyout CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10199,8 +10199,8 @@ struct WINRT_EBO impl_ISlider
 template <typename D>
 struct WINRT_EBO impl_ISlider2
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
 };
@@ -10208,7 +10208,7 @@ struct WINRT_EBO impl_ISlider2
 template <typename D>
 struct WINRT_EBO impl_ISliderFactory
 {
-    Windows::UI::Xaml::Controls::Slider CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::Slider CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10256,9 +10256,9 @@ struct WINRT_EBO impl_ISplitView
     using PaneClosing_revoker = event_revoker<ISplitView>;
     PaneClosing_revoker PaneClosing(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::UI::Xaml::Controls::SplitViewPaneClosingEventArgs> & value) const;
     void PaneClosing(event_token token) const;
-    event_token PaneClosed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::IInspectable> & value) const;
+    event_token PaneClosed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::Foundation::IInspectable> & value) const;
     using PaneClosed_revoker = event_revoker<ISplitView>;
-    PaneClosed_revoker PaneClosed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::IInspectable> & value) const;
+    PaneClosed_revoker PaneClosed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::Foundation::IInspectable> & value) const;
     void PaneClosed(event_token token) const;
 };
 
@@ -10272,7 +10272,7 @@ struct WINRT_EBO impl_ISplitView2
 template <typename D>
 struct WINRT_EBO impl_ISplitViewFactory
 {
-    Windows::UI::Xaml::Controls::SplitView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::SplitView CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10327,7 +10327,7 @@ struct WINRT_EBO impl_IStackPanel2
 template <typename D>
 struct WINRT_EBO impl_IStackPanelFactory
 {
-    Windows::UI::Xaml::Controls::StackPanel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::StackPanel CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10349,19 +10349,19 @@ struct WINRT_EBO impl_IStackPanelStatics2
 template <typename D>
 struct WINRT_EBO impl_IStyleSelector
 {
-    Windows::UI::Xaml::Style SelectStyle(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
+    Windows::UI::Xaml::Style SelectStyle(const Windows::Foundation::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IStyleSelectorFactory
 {
-    Windows::UI::Xaml::Controls::StyleSelector CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::StyleSelector CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IStyleSelectorOverrides
 {
-    Windows::UI::Xaml::Style SelectStyleCore(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
+    Windows::UI::Xaml::Style SelectStyleCore(const Windows::Foundation::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
 };
 
 template <typename D>
@@ -10378,7 +10378,7 @@ struct WINRT_EBO impl_ISwapChainBackgroundPanel2
 template <typename D>
 struct WINRT_EBO impl_ISwapChainBackgroundPanelFactory
 {
-    Windows::UI::Xaml::Controls::SwapChainBackgroundPanel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::SwapChainBackgroundPanel CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10386,9 +10386,9 @@ struct WINRT_EBO impl_ISwapChainPanel
 {
     float CompositionScaleX() const;
     float CompositionScaleY() const;
-    event_token CompositionScaleChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SwapChainPanel, Windows::IInspectable> & value) const;
+    event_token CompositionScaleChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SwapChainPanel, Windows::Foundation::IInspectable> & value) const;
     using CompositionScaleChanged_revoker = event_revoker<ISwapChainPanel>;
-    CompositionScaleChanged_revoker CompositionScaleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SwapChainPanel, Windows::IInspectable> & value) const;
+    CompositionScaleChanged_revoker CompositionScaleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SwapChainPanel, Windows::Foundation::IInspectable> & value) const;
     void CompositionScaleChanged(event_token token) const;
     Windows::UI::Core::CoreIndependentInputSource CreateCoreIndependentInputSource(Windows::UI::Core::CoreInputDeviceTypes deviceTypes) const;
 };
@@ -10396,7 +10396,7 @@ struct WINRT_EBO impl_ISwapChainPanel
 template <typename D>
 struct WINRT_EBO impl_ISwapChainPanelFactory
 {
-    Windows::UI::Xaml::Controls::SwapChainPanel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::SwapChainPanel CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10593,8 +10593,8 @@ struct WINRT_EBO impl_ITextBox
 template <typename D>
 struct WINRT_EBO impl_ITextBox2
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring PlaceholderText() const;
@@ -10649,7 +10649,7 @@ struct WINRT_EBO impl_ITextBox4
 template <typename D>
 struct WINRT_EBO impl_ITextBoxFactory
 {
-    Windows::UI::Xaml::Controls::TextBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::TextBox CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10732,8 +10732,8 @@ struct WINRT_EBO impl_ITimePickedEventArgs
 template <typename D>
 struct WINRT_EBO impl_ITimePicker
 {
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     hstring ClockIdentifier() const;
@@ -10758,7 +10758,7 @@ struct WINRT_EBO impl_ITimePicker2
 template <typename D>
 struct WINRT_EBO impl_ITimePickerFactory
 {
-    Windows::UI::Xaml::Controls::TimePicker CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::TimePicker CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10823,7 +10823,7 @@ struct WINRT_EBO impl_IToggleMenuFlyoutItem
 template <typename D>
 struct WINRT_EBO impl_IToggleMenuFlyoutItemFactory
 {
-    Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10837,16 +10837,16 @@ struct WINRT_EBO impl_IToggleSwitch
 {
     bool IsOn() const;
     void IsOn(bool value) const;
-    Windows::IInspectable Header() const;
-    void Header(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Header() const;
+    void Header(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
-    Windows::IInspectable OnContent() const;
-    void OnContent(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable OnContent() const;
+    void OnContent(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate OnContentTemplate() const;
     void OnContentTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
-    Windows::IInspectable OffContent() const;
-    void OffContent(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable OffContent() const;
+    void OffContent(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::DataTemplate OffContentTemplate() const;
     void OffContentTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Controls::Primitives::ToggleSwitchTemplateSettings TemplateSettings() const;
@@ -10860,9 +10860,9 @@ template <typename D>
 struct WINRT_EBO impl_IToggleSwitchOverrides
 {
     void OnToggled() const;
-    void OnOnContentChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent) const;
-    void OnOffContentChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent) const;
-    void OnHeaderChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent) const;
+    void OnOnContentChanged(const Windows::Foundation::IInspectable & oldContent, const Windows::Foundation::IInspectable & newContent) const;
+    void OnOffContentChanged(const Windows::Foundation::IInspectable & oldContent, const Windows::Foundation::IInspectable & newContent) const;
+    void OnHeaderChanged(const Windows::Foundation::IInspectable & oldContent, const Windows::Foundation::IInspectable & newContent) const;
 };
 
 template <typename D>
@@ -10904,7 +10904,7 @@ struct WINRT_EBO impl_IToolTip
 template <typename D>
 struct WINRT_EBO impl_IToolTipFactory
 {
-    Windows::UI::Xaml::Controls::ToolTip CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::ToolTip CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -10922,8 +10922,8 @@ struct WINRT_EBO impl_IToolTipServiceStatics
     Windows::UI::Xaml::UIElement GetPlacementTarget(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetPlacementTarget(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::UIElement & value) const;
     Windows::UI::Xaml::DependencyProperty ToolTipProperty() const;
-    Windows::IInspectable GetToolTip(const Windows::UI::Xaml::DependencyObject & element) const;
-    void SetToolTip(const Windows::UI::Xaml::DependencyObject & element, const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable GetToolTip(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetToolTip(const Windows::UI::Xaml::DependencyObject & element, const Windows::Foundation::IInspectable & value) const;
 };
 
 template <typename D>
@@ -10952,7 +10952,7 @@ struct WINRT_EBO impl_IUserControl
 template <typename D>
 struct WINRT_EBO impl_IUserControlFactory
 {
-    Windows::UI::Xaml::Controls::UserControl CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Controls::UserControl CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -11027,7 +11027,7 @@ struct WINRT_EBO impl_IVirtualizingPanelFactory
 template <typename D>
 struct WINRT_EBO impl_IVirtualizingPanelOverrides
 {
-    void OnItemsChanged(const Windows::IInspectable & sender, const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs & args) const;
+    void OnItemsChanged(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs & args) const;
     void OnClearChildren() const;
     void BringIndexIntoView(int32_t index) const;
 };
@@ -11149,9 +11149,9 @@ struct WINRT_EBO impl_IWebView2
     using LongRunningScriptDetected_revoker = event_revoker<IWebView2>;
     LongRunningScriptDetected_revoker LongRunningScriptDetected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewLongRunningScriptDetectedEventArgs> & value) const;
     void LongRunningScriptDetected(event_token token) const;
-    event_token UnsafeContentWarningDisplaying(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> & value) const;
+    event_token UnsafeContentWarningDisplaying(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::Foundation::IInspectable> & value) const;
     using UnsafeContentWarningDisplaying_revoker = event_revoker<IWebView2>;
-    UnsafeContentWarningDisplaying_revoker UnsafeContentWarningDisplaying(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> & value) const;
+    UnsafeContentWarningDisplaying_revoker UnsafeContentWarningDisplaying(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::Foundation::IInspectable> & value) const;
     void UnsafeContentWarningDisplaying(event_token token) const;
     event_token UnviewableContentIdentified(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewUnviewableContentIdentifiedEventArgs> & value) const;
     using UnviewableContentIdentified_revoker = event_revoker<IWebView2>;
@@ -11165,9 +11165,9 @@ template <typename D>
 struct WINRT_EBO impl_IWebView3
 {
     bool ContainsFullScreenElement() const;
-    event_token ContainsFullScreenElementChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> & value) const;
+    event_token ContainsFullScreenElementChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::Foundation::IInspectable> & value) const;
     using ContainsFullScreenElementChanged_revoker = event_revoker<IWebView3>;
-    ContainsFullScreenElementChanged_revoker ContainsFullScreenElementChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> & value) const;
+    ContainsFullScreenElementChanged_revoker ContainsFullScreenElementChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::Foundation::IInspectable> & value) const;
     void ContainsFullScreenElementChanged(event_token token) const;
 };
 
@@ -11189,7 +11189,7 @@ struct WINRT_EBO impl_IWebView4
     using PermissionRequested_revoker = event_revoker<IWebView4>;
     PermissionRequested_revoker PermissionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewPermissionRequestedEventArgs> & value) const;
     void PermissionRequested(event_token token) const;
-    void AddWebAllowedObject(hstring_view name, const Windows::IInspectable & pObject) const;
+    void AddWebAllowedObject(hstring_view name, const Windows::Foundation::IInspectable & pObject) const;
     Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest DeferredPermissionRequestById(uint32_t id) const;
 };
 

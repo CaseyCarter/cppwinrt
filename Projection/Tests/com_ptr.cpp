@@ -73,7 +73,7 @@ TEST_CASE("com_ptr, ::IUnknown")
 //
 // Same as ::IUnknown above but using projection type deduction
 //
-TEST_CASE("com_ptr, Windows::IUnknown")
+TEST_CASE("com_ptr, Windows::Foundation::IUnknown")
 {
     bool destroyed = true;
 
@@ -81,15 +81,15 @@ TEST_CASE("com_ptr, Windows::IUnknown")
 
     REQUIRE(!destroyed);
 
-    com_ptr<Windows::IUnknown> a; // default ctor
-    com_ptr<Windows::IUnknown> b = nullptr; // nullptr_t ctor
+    com_ptr<Windows::Foundation::IUnknown> a; // default ctor
+    com_ptr<Windows::Foundation::IUnknown> b = nullptr; // nullptr_t ctor
 
     REQUIRE(S_OK == get_abi(stringable)->QueryInterface(put_abi(b))); // attach
 
-    com_ptr<Windows::IUnknown> c = b; // copy ctor, AddRef
+    com_ptr<Windows::Foundation::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
 
-    com_ptr<IUnknown> d = std::move(c); // move ctor
+    com_ptr<::IUnknown> d = std::move(c); // move ctor
     c = std::move(d); // move assign
     d = c; // copy assign, AddRef
 
@@ -115,7 +115,7 @@ TEST_CASE("com_ptr, ::IUnknown interop")
 
     com_ptr<::IUnknown> a = stringable.as<::IUnknown>();
 
-    com_ptr<Windows::IUnknown> b = a.as<abi<Windows::IUnknown>>();
+    com_ptr<Windows::Foundation::IUnknown> b = a.as<abi<Windows::Foundation::IUnknown>>();
 
     stringable = b.as<IStringable>();
 
@@ -131,11 +131,11 @@ TEST_CASE("com_ptr, convertible")
 
     com_ptr<IStringable> stringable = make<Stringable>(L"Hello world!", &destroyed).as<abi<IStringable>>();
 
-    com_ptr<Windows::IUnknown> a = stringable; // convertible copy ctor
+    com_ptr<Windows::Foundation::IUnknown> a = stringable; // convertible copy ctor
 
     REQUIRE(a);
 
-    com_ptr<Windows::IUnknown> b = std::move(stringable); // convertible move ctor
+    com_ptr<Windows::Foundation::IUnknown> b = std::move(stringable); // convertible move ctor
 
     REQUIRE(b);
     REQUIRE(!stringable);
@@ -169,11 +169,11 @@ TEST_CASE("com_ptr, convertible, abi")
 
     com_ptr<abi<IStringable>> stringable = make<Stringable>(L"Hello world!", &destroyed).as<abi<IStringable>>();
 
-    com_ptr<abi<Windows::IUnknown>> a = stringable; // convertible copy ctor
+    com_ptr<abi<Windows::Foundation::IUnknown>> a = stringable; // convertible copy ctor
 
     REQUIRE(a);
 
-    com_ptr<abi<Windows::IUnknown>> b = std::move(stringable); // convertible move ctor
+    com_ptr<abi<Windows::Foundation::IUnknown>> b = std::move(stringable); // convertible move ctor
 
     REQUIRE(b);
     REQUIRE(!stringable);
@@ -209,11 +209,11 @@ TEST_CASE("com_ptr, accessors")
 
     REQUIRE(!destroyed);
 
-    com_ptr<IUnknown> b;
+    com_ptr<::IUnknown> b;
     b.copy_from(get_abi(a)); // get
     REQUIRE(a);
 
-    com_ptr<IUnknown> c;
+    com_ptr<::IUnknown> c;
     b->QueryInterface(put_abi(c)); // put
     REQUIRE(c);
 
@@ -244,24 +244,24 @@ TEST_CASE("com_ptr, accessors")
 //
 TEST_CASE("com_ptr, nullptr")
 {
-    com_ptr<IUnknown> a;
-    com_ptr<IUnknown> b = nullptr;
+    com_ptr<::IUnknown> a;
+    com_ptr<::IUnknown> b = nullptr;
     b = nullptr;
 }
 
-static com_ptr<IUnknown> test_make_unknown()
+static com_ptr<::IUnknown> test_make_unknown()
 {
     IStringable s = make<Stringable>(L"Hello world!");
 
-    com_ptr<IUnknown> result;
+    com_ptr<::IUnknown> result;
     REQUIRE(S_OK == get_abi(s)->QueryInterface(put_abi(result)));
     return result;
 }
 
 TEST_CASE("com_ptr, copy ctor assign")
 {
-    com_ptr<IUnknown> a = test_make_unknown();
-    com_ptr<IUnknown> b = a; // copy ctor
+    com_ptr<::IUnknown> a = test_make_unknown();
+    com_ptr<::IUnknown> b = a; // copy ctor
 
     REQUIRE(a == b);
     REQUIRE(get_abi(a) == get_abi(b));
@@ -277,8 +277,8 @@ TEST_CASE("com_ptr, copy ctor assign")
 
 TEST_CASE("com_ptr, move ctor assign")
 {
-    com_ptr<IUnknown> a = test_make_unknown();
-    com_ptr<IUnknown> b = std::move(a); // move ctor
+    com_ptr<::IUnknown> a = test_make_unknown();
+    com_ptr<::IUnknown> b = std::move(a); // move ctor
 
     REQUIRE(a != b);
     REQUIRE(!a);
@@ -291,21 +291,21 @@ TEST_CASE("com_ptr, move ctor assign")
     REQUIRE(!b);
 }
 
-static com_ptr<IInspectable> test_make_inspectable()
+static com_ptr<::IInspectable> test_make_inspectable()
 {
     IStringable s = make<Stringable>(L"Hello world!");
 
-    com_ptr<IInspectable> result;
+    com_ptr<::IInspectable> result;
     REQUIRE(S_OK == get_abi(s)->QueryInterface(put_abi(result)));
     return result;
 }
 
 TEST_CASE("com_ptr, convertible copy ctor assign")
 {
-    com_ptr<IInspectable> a = test_make_inspectable();
+    com_ptr<::IInspectable> a = test_make_inspectable();
     REQUIRE(a);
     
-    com_ptr<IUnknown> b = a; // convertible copy ctor
+    com_ptr<::IUnknown> b = a; // convertible copy ctor
     REQUIRE(b);
 
     b = nullptr;
@@ -315,9 +315,9 @@ TEST_CASE("com_ptr, convertible copy ctor assign")
 
 TEST_CASE("com_ptr, convertible move ctor assign")
 {
-    com_ptr<IInspectable> a = test_make_inspectable();
+    com_ptr<::IInspectable> a = test_make_inspectable();
 
-    com_ptr<IUnknown> b = std::move(a); // convertible move ctor
+    com_ptr<::IUnknown> b = std::move(a); // convertible move ctor
 
     REQUIRE(!a);
     REQUIRE(b);
@@ -330,15 +330,15 @@ TEST_CASE("com_ptr, convertible move ctor assign")
 
 TEST_CASE("com_ptr, swap")
 {
-    com_ptr<IInspectable> a = test_make_inspectable();
-    com_ptr<IInspectable> b = test_make_inspectable();
+    com_ptr<::IInspectable> a = test_make_inspectable();
+    com_ptr<::IInspectable> b = test_make_inspectable();
 
     REQUIRE(a);
     REQUIRE(b);
     REQUIRE(a != b);
 
-    IInspectable * ga = get_abi(a);
-    IInspectable * gb = get_abi(b);
+    ::IInspectable * ga = get_abi(a);
+    ::IInspectable * gb = get_abi(b);
 
     swap(a, b);
 
@@ -352,9 +352,9 @@ TEST_CASE("com_ptr, swap")
 
 TEST_CASE("com_ptr, compare")
 {
-    com_ptr<IInspectable> a = test_make_inspectable();
-    com_ptr<IInspectable> b = test_make_inspectable();
-    com_ptr<IInspectable> c = nullptr;
+    com_ptr<::IInspectable> a = test_make_inspectable();
+    com_ptr<::IInspectable> b = test_make_inspectable();
+    com_ptr<::IInspectable> c = nullptr;
 
     if (a > b)
     {

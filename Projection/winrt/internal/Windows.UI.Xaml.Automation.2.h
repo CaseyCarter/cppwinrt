@@ -77,406 +77,406 @@ template <> struct __declspec(uuid("a4b8a26c-9009-5394-98c8-98107e80db61")) __de
 namespace Windows::UI::Xaml::Automation {
 
 struct IAnnotationPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAnnotationPatternIdentifiers>
 {
     IAnnotationPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAnnotationPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAnnotationPatternIdentifiersStatics>
 {
     IAnnotationPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationAnnotation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationAnnotation>
 {
     IAutomationAnnotation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationAnnotationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationAnnotationFactory>
 {
     IAutomationAnnotationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationAnnotationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationAnnotationStatics>
 {
     IAutomationAnnotationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationElementIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationElementIdentifiers>
 {
     IAutomationElementIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationElementIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationElementIdentifiersStatics>
 {
     IAutomationElementIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationElementIdentifiersStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationElementIdentifiersStatics2>
 {
     IAutomationElementIdentifiersStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationElementIdentifiersStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationElementIdentifiersStatics3>
 {
     IAutomationElementIdentifiersStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationElementIdentifiersStatics4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationElementIdentifiersStatics4>
 {
     IAutomationElementIdentifiersStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationElementIdentifiersStatics5 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationElementIdentifiersStatics5>
 {
     IAutomationElementIdentifiersStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationProperties>
 {
     IAutomationProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPropertiesStatics>
 {
     IAutomationPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPropertiesStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPropertiesStatics2>
 {
     IAutomationPropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPropertiesStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPropertiesStatics3>
 {
     IAutomationPropertiesStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPropertiesStatics4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPropertiesStatics4>
 {
     IAutomationPropertiesStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPropertiesStatics5 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPropertiesStatics5>
 {
     IAutomationPropertiesStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationProperty :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationProperty>
 {
     IAutomationProperty(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDockPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDockPatternIdentifiers>
 {
     IDockPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDockPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDockPatternIdentifiersStatics>
 {
     IDockPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragPatternIdentifiers>
 {
     IDragPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragPatternIdentifiersStatics>
 {
     IDragPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDropTargetPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDropTargetPatternIdentifiers>
 {
     IDropTargetPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDropTargetPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDropTargetPatternIdentifiersStatics>
 {
     IDropTargetPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExpandCollapsePatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExpandCollapsePatternIdentifiers>
 {
     IExpandCollapsePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExpandCollapsePatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExpandCollapsePatternIdentifiersStatics>
 {
     IExpandCollapsePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridItemPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridItemPatternIdentifiers>
 {
     IGridItemPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridItemPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridItemPatternIdentifiersStatics>
 {
     IGridItemPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridPatternIdentifiers>
 {
     IGridPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridPatternIdentifiersStatics>
 {
     IGridPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMultipleViewPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMultipleViewPatternIdentifiers>
 {
     IMultipleViewPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMultipleViewPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMultipleViewPatternIdentifiersStatics>
 {
     IMultipleViewPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRangeValuePatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRangeValuePatternIdentifiers>
 {
     IRangeValuePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRangeValuePatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRangeValuePatternIdentifiersStatics>
 {
     IRangeValuePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScrollPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScrollPatternIdentifiers>
 {
     IScrollPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScrollPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScrollPatternIdentifiersStatics>
 {
     IScrollPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectionItemPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectionItemPatternIdentifiers>
 {
     ISelectionItemPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectionItemPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectionItemPatternIdentifiersStatics>
 {
     ISelectionItemPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectionPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectionPatternIdentifiers>
 {
     ISelectionPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectionPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectionPatternIdentifiersStatics>
 {
     ISelectionPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpreadsheetItemPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpreadsheetItemPatternIdentifiers>
 {
     ISpreadsheetItemPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpreadsheetItemPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpreadsheetItemPatternIdentifiersStatics>
 {
     ISpreadsheetItemPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStylesPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStylesPatternIdentifiers>
 {
     IStylesPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStylesPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStylesPatternIdentifiersStatics>
 {
     IStylesPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITableItemPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITableItemPatternIdentifiers>
 {
     ITableItemPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITableItemPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITableItemPatternIdentifiersStatics>
 {
     ITableItemPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITablePatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITablePatternIdentifiers>
 {
     ITablePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITablePatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITablePatternIdentifiersStatics>
 {
     ITablePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITogglePatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITogglePatternIdentifiers>
 {
     ITogglePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITogglePatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITogglePatternIdentifiersStatics>
 {
     ITogglePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITransformPattern2Identifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITransformPattern2Identifiers>
 {
     ITransformPattern2Identifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITransformPattern2IdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITransformPattern2IdentifiersStatics>
 {
     ITransformPattern2IdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITransformPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITransformPatternIdentifiers>
 {
     ITransformPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITransformPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITransformPatternIdentifiersStatics>
 {
     ITransformPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IValuePatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IValuePatternIdentifiers>
 {
     IValuePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IValuePatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IValuePatternIdentifiersStatics>
 {
     IValuePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWindowPatternIdentifiers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWindowPatternIdentifiers>
 {
     IWindowPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWindowPatternIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWindowPatternIdentifiersStatics>
 {
     IWindowPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}

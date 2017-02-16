@@ -293,12 +293,12 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
         }
     }
 
-    HRESULT __stdcall add_TriggeredConnectionStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_TriggeredConnectionStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().TriggeredConnectionStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().TriggeredConnectionStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -321,12 +321,12 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
         }
     }
 
-    HRESULT __stdcall add_ConnectionRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_ConnectionRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().ConnectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().ConnectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -630,12 +630,12 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
         }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -658,12 +658,12 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
         }
     }
 
-    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1398,14 +1398,14 @@ template <typename D> void impl_IPeerWatcher<D>::Updated(event_token token) cons
     check_hresult(WINRT_SHIM(IPeerWatcher)->remove_Updated(token));
 }
 
-template <typename D> event_token impl_IPeerWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IPeerWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IPeerWatcher)->add_EnumerationCompleted(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IPeerWatcher> impl_IPeerWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IPeerWatcher> impl_IPeerWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IPeerWatcher>(this, &ABI::Windows::Networking::Proximity::IPeerWatcher::remove_EnumerationCompleted, EnumerationCompleted(handler));
 }
@@ -1415,14 +1415,14 @@ template <typename D> void impl_IPeerWatcher<D>::EnumerationCompleted(event_toke
     check_hresult(WINRT_SHIM(IPeerWatcher)->remove_EnumerationCompleted(token));
 }
 
-template <typename D> event_token impl_IPeerWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IPeerWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IPeerWatcher)->add_Stopped(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IPeerWatcher> impl_IPeerWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IPeerWatcher> impl_IPeerWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IPeerWatcher>(this, &ABI::Windows::Networking::Proximity::IPeerWatcher::remove_Stopped, Stopped(handler));
 }
@@ -1526,14 +1526,14 @@ template <typename D> void impl_IPeerFinderStatics<D>::Stop() const
     check_hresult(WINRT_SHIM(IPeerFinderStatics)->abi_Stop());
 }
 
-template <typename D> event_token impl_IPeerFinderStatics<D>::TriggeredConnectionStateChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler) const
+template <typename D> event_token impl_IPeerFinderStatics<D>::TriggeredConnectionStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IPeerFinderStatics)->add_TriggeredConnectionStateChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IPeerFinderStatics> impl_IPeerFinderStatics<D>::TriggeredConnectionStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler) const
+template <typename D> event_revoker<IPeerFinderStatics> impl_IPeerFinderStatics<D>::TriggeredConnectionStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler) const
 {
     return impl::make_event_revoker<D, IPeerFinderStatics>(this, &ABI::Windows::Networking::Proximity::IPeerFinderStatics::remove_TriggeredConnectionStateChanged, TriggeredConnectionStateChanged(handler));
 }
@@ -1543,14 +1543,14 @@ template <typename D> void impl_IPeerFinderStatics<D>::TriggeredConnectionStateC
     check_hresult(WINRT_SHIM(IPeerFinderStatics)->remove_TriggeredConnectionStateChanged(cookie));
 }
 
-template <typename D> event_token impl_IPeerFinderStatics<D>::ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler) const
+template <typename D> event_token impl_IPeerFinderStatics<D>::ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IPeerFinderStatics)->add_ConnectionRequested(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IPeerFinderStatics> impl_IPeerFinderStatics<D>::ConnectionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler) const
+template <typename D> event_revoker<IPeerFinderStatics> impl_IPeerFinderStatics<D>::ConnectionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler) const
 {
     return impl::make_event_revoker<D, IPeerFinderStatics>(this, &ABI::Windows::Networking::Proximity::IPeerFinderStatics::remove_ConnectionRequested, ConnectionRequested(handler));
 }
@@ -1670,12 +1670,12 @@ inline void PeerFinder::Stop()
     get_activation_factory<PeerFinder, IPeerFinderStatics>().Stop();
 }
 
-inline event_token PeerFinder::TriggeredConnectionStateChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler)
+inline event_token PeerFinder::TriggeredConnectionStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler)
 {
     return get_activation_factory<PeerFinder, IPeerFinderStatics>().TriggeredConnectionStateChanged(handler);
 }
 
-inline factory_event_revoker<IPeerFinderStatics> PeerFinder::TriggeredConnectionStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler)
+inline factory_event_revoker<IPeerFinderStatics> PeerFinder::TriggeredConnectionStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> & handler)
 {
     auto factory = get_activation_factory<PeerFinder, IPeerFinderStatics>();
     return { factory, &ABI::Windows::Networking::Proximity::IPeerFinderStatics::remove_TriggeredConnectionStateChanged, factory.TriggeredConnectionStateChanged(handler) };
@@ -1686,12 +1686,12 @@ inline void PeerFinder::TriggeredConnectionStateChanged(event_token cookie)
     get_activation_factory<PeerFinder, IPeerFinderStatics>().TriggeredConnectionStateChanged(cookie);
 }
 
-inline event_token PeerFinder::ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler)
+inline event_token PeerFinder::ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler)
 {
     return get_activation_factory<PeerFinder, IPeerFinderStatics>().ConnectionRequested(handler);
 }
 
-inline factory_event_revoker<IPeerFinderStatics> PeerFinder::ConnectionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler)
+inline factory_event_revoker<IPeerFinderStatics> PeerFinder::ConnectionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> & handler)
 {
     auto factory = get_activation_factory<PeerFinder, IPeerFinderStatics>();
     return { factory, &ABI::Windows::Networking::Proximity::IPeerFinderStatics::remove_ConnectionRequested, factory.ConnectionRequested(handler) };

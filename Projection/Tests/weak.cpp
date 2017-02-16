@@ -28,7 +28,7 @@ namespace
 
     struct Factory : implements<Factory, IActivationFactory>
     {
-        Windows::IInspectable ActivateInstance()
+        IInspectable ActivateInstance()
         {
             return nullptr;
         }
@@ -86,13 +86,13 @@ TEST_CASE("weak,source")
 
 TEST_CASE("weak,none")
 {
-    Windows::IUnknown s = make<NoWeak>().as<Windows::IUnknown>();
+    Windows::Foundation::IUnknown s = make<NoWeak>().as<Windows::Foundation::IUnknown>();
 
     REQUIRE_THROWS_AS(make_weak(s), hresult_no_interface);
 
     try
     {
-        weak_ref<Windows::IUnknown> w = s;
+        weak_ref<Windows::Foundation::IUnknown> w = s;
         REQUIRE(false);
     }
     catch (hresult_no_interface const &) {}
@@ -103,44 +103,44 @@ TEST_CASE("weak,QI")
     SECTION("weak")
     {
         IStringable object = make<Weak>();
-        REQUIRE(object.try_as<ABI::Windows::IInspectable>());
-        REQUIRE(object.try_as<ABI::Windows::IWeakReferenceSource>());
-        REQUIRE(!object.try_as<ABI::Windows::IWeakReference>());
+        REQUIRE(object.try_as<ABI::Windows::Foundation::IInspectable>());
+        REQUIRE(object.try_as<ABI::Windows::Foundation::IWeakReferenceSource>());
+        REQUIRE(!object.try_as<ABI::Windows::Foundation::IWeakReference>());
 
-        com_ptr<ABI::Windows::IWeakReferenceSource> source = object.as<ABI::Windows::IWeakReferenceSource>();
-        REQUIRE(!source.try_as<ABI::Windows::IWeakReference>());
-        REQUIRE(source.try_as<ABI::Windows::IWeakReferenceSource>());
+        com_ptr<ABI::Windows::Foundation::IWeakReferenceSource> source = object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
+        REQUIRE(!source.try_as<ABI::Windows::Foundation::IWeakReference>());
+        REQUIRE(source.try_as<ABI::Windows::Foundation::IWeakReferenceSource>());
         REQUIRE(object.as<::IUnknown>() == source.as<::IUnknown>());
-        REQUIRE(object.as<ABI::Windows::IInspectable>() == source.as<ABI::Windows::IInspectable>());
+        REQUIRE(object.as<ABI::Windows::Foundation::IInspectable>() == source.as<ABI::Windows::Foundation::IInspectable>());
 
-        com_ptr<ABI::Windows::IWeakReference> ref;
+        com_ptr<ABI::Windows::Foundation::IWeakReference> ref;
         REQUIRE(S_OK == source->abi_GetWeakReference(put_abi(ref)));
-        REQUIRE(!ref.try_as<ABI::Windows::IWeakReferenceSource>());
-        REQUIRE(!ref.try_as<ABI::Windows::IInspectable>());
-        REQUIRE(ref.as<ABI::Windows::IWeakReference>() == ref);
+        REQUIRE(!ref.try_as<ABI::Windows::Foundation::IWeakReferenceSource>());
+        REQUIRE(!ref.try_as<ABI::Windows::Foundation::IInspectable>());
+        REQUIRE(ref.as<ABI::Windows::Foundation::IWeakReference>() == ref);
         REQUIRE(ref.as<::IUnknown>() != object.as<::IUnknown>());
     }
 
     SECTION("no-weak")
     {
         com_ptr<::IUnknown> object = make<NoWeak>();
-        REQUIRE(!object.try_as<ABI::Windows::IInspectable>());
-        REQUIRE(!object.try_as<ABI::Windows::IWeakReferenceSource>());
-        REQUIRE(!object.try_as<ABI::Windows::IWeakReference>());
+        REQUIRE(!object.try_as<ABI::Windows::Foundation::IInspectable>());
+        REQUIRE(!object.try_as<ABI::Windows::Foundation::IWeakReferenceSource>());
+        REQUIRE(!object.try_as<ABI::Windows::Foundation::IWeakReference>());
     }
 
     SECTION("factory")
     {
         IActivationFactory object = make<Factory>();
-        REQUIRE(object.try_as<ABI::Windows::IInspectable>());
-        REQUIRE(!object.try_as<ABI::Windows::IWeakReferenceSource>());
+        REQUIRE(object.try_as<ABI::Windows::Foundation::IInspectable>());
+        REQUIRE(!object.try_as<ABI::Windows::Foundation::IWeakReferenceSource>());
     }
 
     SECTION("no_weak_ref")
     {
         IStringable object = make<NoWeakRef>();
-        REQUIRE(object.try_as<ABI::Windows::IInspectable>());
-        REQUIRE(!object.try_as<ABI::Windows::IWeakReferenceSource>());
+        REQUIRE(object.try_as<ABI::Windows::Foundation::IInspectable>());
+        REQUIRE(!object.try_as<ABI::Windows::Foundation::IWeakReferenceSource>());
     }
 }
 
@@ -151,22 +151,22 @@ TEST_CASE("weak,lifetime")
     }
     {
         IStringable object = make<Weak>();
-        object.as<ABI::Windows::IWeakReferenceSource>();
+        object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
     }
     {
         IStringable object = make<Weak>();
-        com_ptr<ABI::Windows::IWeakReferenceSource> source = object.as<ABI::Windows::IWeakReferenceSource>();
+        com_ptr<ABI::Windows::Foundation::IWeakReferenceSource> source = object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
     }
     {
         IStringable object = make<Weak>();
-        com_ptr<ABI::Windows::IWeakReferenceSource> source = object.as<ABI::Windows::IWeakReferenceSource>();
-        com_ptr<ABI::Windows::IWeakReference> ref;
+        com_ptr<ABI::Windows::Foundation::IWeakReferenceSource> source = object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
+        com_ptr<ABI::Windows::Foundation::IWeakReference> ref;
         check_hresult(source->abi_GetWeakReference(put_abi(ref)));
     }
     {
         IStringable object = make<Weak>();
-        com_ptr<ABI::Windows::IWeakReferenceSource> source = object.as<ABI::Windows::IWeakReferenceSource>();
-        com_ptr<ABI::Windows::IWeakReference> ref;
+        com_ptr<ABI::Windows::Foundation::IWeakReferenceSource> source = object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
+        com_ptr<ABI::Windows::Foundation::IWeakReference> ref;
         check_hresult(source->abi_GetWeakReference(put_abi(ref)));
         IStringable object2;
         check_hresult(ref->abi_Resolve(put_abi(object2)));
@@ -174,25 +174,25 @@ TEST_CASE("weak,lifetime")
     }
     {
         IStringable object = make<Weak>();
-        com_ptr<ABI::Windows::IWeakReference> ref;
-        check_hresult(object.as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put_abi(ref)));
+        com_ptr<ABI::Windows::Foundation::IWeakReference> ref;
+        check_hresult(object.as<ABI::Windows::Foundation::IWeakReferenceSource>()->abi_GetWeakReference(put_abi(ref)));
         IStringable object2;
         check_hresult(ref->abi_Resolve(put_abi(object2)));
         REQUIRE(object == object2);
     }
     {
         IStringable object = make<Weak>();
-        com_ptr<ABI::Windows::IWeakReferenceSource> source = object.as<ABI::Windows::IWeakReferenceSource>();
+        com_ptr<ABI::Windows::Foundation::IWeakReferenceSource> source = object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
         object = nullptr;
-        com_ptr<ABI::Windows::IWeakReference> ref;
+        com_ptr<ABI::Windows::Foundation::IWeakReference> ref;
         check_hresult(source->abi_GetWeakReference(put_abi(ref)));
         check_hresult(ref->abi_Resolve(put_abi(object)));
         REQUIRE(object.ToString() == L"Weak");
     }
     {
         IStringable object = make<Weak>();
-        com_ptr<ABI::Windows::IWeakReferenceSource> source = object.as<ABI::Windows::IWeakReferenceSource>();
-        com_ptr<ABI::Windows::IWeakReference> ref;
+        com_ptr<ABI::Windows::Foundation::IWeakReferenceSource> source = object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
+        com_ptr<ABI::Windows::Foundation::IWeakReference> ref;
         check_hresult(source->abi_GetWeakReference(put_abi(ref)));
         source = nullptr;
         IStringable object2;
@@ -201,9 +201,9 @@ TEST_CASE("weak,lifetime")
     }
     {
         IStringable object = make<Weak>();
-        com_ptr<ABI::Windows::IWeakReferenceSource> source = object.as<ABI::Windows::IWeakReferenceSource>();
+        com_ptr<ABI::Windows::Foundation::IWeakReferenceSource> source = object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
         object = nullptr;
-        com_ptr<ABI::Windows::IWeakReference> ref;
+        com_ptr<ABI::Windows::Foundation::IWeakReference> ref;
         check_hresult(source->abi_GetWeakReference(put_abi(ref)));
         source = nullptr;
         check_hresult(ref->abi_Resolve(put_abi(object)));
@@ -239,8 +239,8 @@ TEST_CASE("weak,lifetime")
 
     {
         IStringable object = make<Weak>();
-        com_ptr<ABI::Windows::IWeakReferenceSource> source = object.as<ABI::Windows::IWeakReferenceSource>();
-        com_ptr<ABI::Windows::IWeakReference> ref;
+        com_ptr<ABI::Windows::Foundation::IWeakReferenceSource> source = object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
+        com_ptr<ABI::Windows::Foundation::IWeakReference> ref;
         check_hresult(source->abi_GetWeakReference(put_abi(ref)));
 
         REQUIRE(object.try_as<IAgileObject>());
@@ -251,8 +251,8 @@ TEST_CASE("weak,lifetime")
 
     {
         IStringable object = make<WeakNonAgile>();
-        com_ptr<ABI::Windows::IWeakReferenceSource> source = object.as<ABI::Windows::IWeakReferenceSource>();
-        com_ptr<ABI::Windows::IWeakReference> ref;
+        com_ptr<ABI::Windows::Foundation::IWeakReferenceSource> source = object.as<ABI::Windows::Foundation::IWeakReferenceSource>();
+        com_ptr<ABI::Windows::Foundation::IWeakReference> ref;
         check_hresult(source->abi_GetWeakReference(put_abi(ref)));
 
         REQUIRE(!object.try_as<IAgileObject>());

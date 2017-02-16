@@ -26,7 +26,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_f4637d4a_0760_5431_bfc0_24eb1d4f6c4f
 #define WINRT_GENERIC_f4637d4a_0760_5431_bfc0_24eb1d4f6c4f
-template <> struct __declspec(uuid("f4637d4a-0760-5431-bfc0-24eb1d4f6c4f")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> : impl_TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f4637d4a-0760-5431-bfc0-24eb1d4f6c4f")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -44,7 +44,7 @@ template <> struct __declspec(uuid("32e54295-373c-50cb-80a1-468a990ca780")) __de
 
 namespace Windows::Foundation {
 
-struct DeferralCompletedHandler : Windows::IUnknown
+struct DeferralCompletedHandler : Windows::Foundation::IUnknown
 {
     DeferralCompletedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DeferralCompletedHandler(L lambda);
@@ -54,14 +54,14 @@ struct DeferralCompletedHandler : Windows::IUnknown
 };
 
 struct IClosable :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClosable>
 {
     IClosable(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeferral>,
     impl::require<IDeferral, Windows::Foundation::IClosable>
 {
@@ -69,21 +69,21 @@ struct IDeferral :
 };
 
 struct IDeferralFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeferralFactory>
 {
     IDeferralFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGetActivationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGetActivationFactory>
 {
     IGetActivationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMemoryBuffer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMemoryBuffer>,
     impl::require<IMemoryBuffer, Windows::Foundation::IClosable>
 {
@@ -91,14 +91,14 @@ struct IMemoryBuffer :
 };
 
 struct IMemoryBufferFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMemoryBufferFactory>
 {
     IMemoryBufferFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMemoryBufferReference :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMemoryBufferReference>,
     impl::require<IMemoryBufferReference, Windows::Foundation::IClosable>
 {
@@ -106,49 +106,49 @@ struct IMemoryBufferReference :
 };
 
 struct IStringable :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStringable>
 {
     IStringable(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUriEscapeStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUriEscapeStatics>
 {
     IUriEscapeStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUriRuntimeClass :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUriRuntimeClass>
 {
     IUriRuntimeClass(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUriRuntimeClassFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUriRuntimeClassFactory>
 {
     IUriRuntimeClassFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUriRuntimeClassWithAbsoluteCanonicalUri :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUriRuntimeClassWithAbsoluteCanonicalUri>
 {
     IUriRuntimeClassWithAbsoluteCanonicalUri(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWwwFormUrlDecoderEntry :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWwwFormUrlDecoderEntry>
 {
     IWwwFormUrlDecoderEntry(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWwwFormUrlDecoderRuntimeClass :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWwwFormUrlDecoderRuntimeClass>,
     impl::require<IWwwFormUrlDecoderRuntimeClass, Windows::Foundation::Collections::IIterable<Windows::Foundation::IWwwFormUrlDecoderEntry>, Windows::Foundation::Collections::IVectorView<Windows::Foundation::IWwwFormUrlDecoderEntry>>
 {
@@ -156,7 +156,7 @@ struct IWwwFormUrlDecoderRuntimeClass :
 };
 
 struct IWwwFormUrlDecoderRuntimeClassFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWwwFormUrlDecoderRuntimeClassFactory>
 {
     IWwwFormUrlDecoderRuntimeClassFactory(std::nullptr_t = nullptr) noexcept {}

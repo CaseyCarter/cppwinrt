@@ -659,12 +659,12 @@ struct produce<D, Windows::Media::Core::IMediaBinder> : produce_base<D, Windows:
 template <typename D>
 struct produce<D, Windows::Media::Core::IMediaBindingEventArgs> : produce_base<D, Windows::Media::Core::IMediaBindingEventArgs>
 {
-    HRESULT __stdcall add_Canceled(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Canceled(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Canceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Canceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1329,12 +1329,12 @@ struct produce<D, Windows::Media::Core::IMediaStreamDescriptor> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Windows::Media::Core::IMediaStreamSample>
 {
-    HRESULT __stdcall add_Processed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Processed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Processed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Processed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1386,7 +1386,7 @@ struct produce<D, Windows::Media::Core::IMediaStreamSample> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall get_ExtendedProperties(impl::abi_arg_out<Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_ExtendedProperties(impl::abi_arg_out<Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -1716,12 +1716,12 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall add_Paused(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Paused(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Paused(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Paused(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2515,12 +2515,12 @@ struct produce<D, Windows::Media::Core::IMediaTrack> : produce_base<D, Windows::
 template <typename D>
 struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Windows::Media::Core::IMseSourceBuffer>
 {
-    HRESULT __stdcall add_UpdateStarting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_UpdateStarting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().UpdateStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().UpdateStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2543,12 +2543,12 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_Updated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Updated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2571,12 +2571,12 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_UpdateEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_UpdateEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().UpdateEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().UpdateEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2599,12 +2599,12 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_ErrorOccurred(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ErrorOccurred(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2627,12 +2627,12 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_Aborted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Aborted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Aborted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Aborted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2871,12 +2871,12 @@ struct produce<D, Windows::Media::Core::IMseSourceBuffer> : produce_base<D, Wind
 template <typename D>
 struct produce<D, Windows::Media::Core::IMseSourceBufferList> : produce_base<D, Windows::Media::Core::IMseSourceBufferList>
 {
-    HRESULT __stdcall add_SourceBufferAdded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceBufferAdded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().SourceBufferAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().SourceBufferAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2899,12 +2899,12 @@ struct produce<D, Windows::Media::Core::IMseSourceBufferList> : produce_base<D, 
         }
     }
 
-    HRESULT __stdcall add_SourceBufferRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceBufferRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().SourceBufferRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().SourceBufferRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2946,12 +2946,12 @@ struct produce<D, Windows::Media::Core::IMseSourceBufferList> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Windows::Media::Core::IMseStreamSource>
 {
-    HRESULT __stdcall add_Opened(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Opened(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Opened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Opened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2974,12 +2974,12 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_Ended(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Ended(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Ended(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Ended(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3002,12 +3002,12 @@ struct produce<D, Windows::Media::Core::IMseStreamSource> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_Closed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Closed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3296,12 +3296,12 @@ struct produce<D, Windows::Media::Core::ISceneAnalyzedEventArgs> : produce_base<
 template <typename D>
 struct produce<D, Windows::Media::Core::ISingleSelectMediaTrackList> : produce_base<D, Windows::Media::Core::ISingleSelectMediaTrackList>
 {
-    HRESULT __stdcall add_SelectedIndexChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SelectedIndexChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().SelectedIndexChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().SelectedIndexChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -5053,14 +5053,14 @@ template <typename D> void impl_IMediaStreamSource<D>::Starting(event_token toke
     check_hresult(WINRT_SHIM(IMediaStreamSource)->remove_Starting(token));
 }
 
-template <typename D> event_token impl_IMediaStreamSource<D>::Paused(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMediaStreamSource<D>::Paused(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaStreamSource)->add_Paused(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaStreamSource> impl_IMediaStreamSource<D>::Paused(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMediaStreamSource> impl_IMediaStreamSource<D>::Paused(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMediaStreamSource>(this, &ABI::Windows::Media::Core::IMediaStreamSource::remove_Paused, Paused(handler));
 }
@@ -5229,14 +5229,14 @@ template <typename D> Windows::Media::Core::MediaStreamSource impl_IMediaStreamS
     return result;
 }
 
-template <typename D> event_token impl_IMediaStreamSample<D>::Processed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMediaStreamSample<D>::Processed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaStreamSample)->add_Processed(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaStreamSample> impl_IMediaStreamSample<D>::Processed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMediaStreamSample> impl_IMediaStreamSample<D>::Processed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMediaStreamSample>(this, &ABI::Windows::Media::Core::IMediaStreamSample::remove_Processed, Processed(handler));
 }
@@ -5501,14 +5501,14 @@ template <typename D> bool impl_IMseStreamSourceStatics<D>::IsContentTypeSupport
     return value;
 }
 
-template <typename D> event_token impl_IMseStreamSource<D>::Opened(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseStreamSource<D>::Opened(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseStreamSource)->add_Opened(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseStreamSource> impl_IMseStreamSource<D>::Opened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseStreamSource> impl_IMseStreamSource<D>::Opened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseStreamSource>(this, &ABI::Windows::Media::Core::IMseStreamSource::remove_Opened, Opened(handler));
 }
@@ -5518,14 +5518,14 @@ template <typename D> void impl_IMseStreamSource<D>::Opened(event_token token) c
     check_hresult(WINRT_SHIM(IMseStreamSource)->remove_Opened(token));
 }
 
-template <typename D> event_token impl_IMseStreamSource<D>::Ended(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseStreamSource<D>::Ended(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseStreamSource)->add_Ended(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseStreamSource> impl_IMseStreamSource<D>::Ended(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseStreamSource> impl_IMseStreamSource<D>::Ended(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseStreamSource>(this, &ABI::Windows::Media::Core::IMseStreamSource::remove_Ended, Ended(handler));
 }
@@ -5535,14 +5535,14 @@ template <typename D> void impl_IMseStreamSource<D>::Ended(event_token token) co
     check_hresult(WINRT_SHIM(IMseStreamSource)->remove_Ended(token));
 }
 
-template <typename D> event_token impl_IMseStreamSource<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseStreamSource<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseStreamSource)->add_Closed(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseStreamSource> impl_IMseStreamSource<D>::Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseStreamSource> impl_IMseStreamSource<D>::Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseStreamSource>(this, &ABI::Windows::Media::Core::IMseStreamSource::remove_Closed, Closed(handler));
 }
@@ -5602,14 +5602,14 @@ template <typename D> void impl_IMseStreamSource<D>::EndOfStream(Windows::Media:
     check_hresult(WINRT_SHIM(IMseStreamSource)->abi_EndOfStream(status));
 }
 
-template <typename D> event_token impl_IMseSourceBuffer<D>::UpdateStarting(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseSourceBuffer<D>::UpdateStarting(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->add_UpdateStarting(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::UpdateStarting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::UpdateStarting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseSourceBuffer>(this, &ABI::Windows::Media::Core::IMseSourceBuffer::remove_UpdateStarting, UpdateStarting(handler));
 }
@@ -5619,14 +5619,14 @@ template <typename D> void impl_IMseSourceBuffer<D>::UpdateStarting(event_token 
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->remove_UpdateStarting(token));
 }
 
-template <typename D> event_token impl_IMseSourceBuffer<D>::Updated(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseSourceBuffer<D>::Updated(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->add_Updated(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::Updated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::Updated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseSourceBuffer>(this, &ABI::Windows::Media::Core::IMseSourceBuffer::remove_Updated, Updated(handler));
 }
@@ -5636,14 +5636,14 @@ template <typename D> void impl_IMseSourceBuffer<D>::Updated(event_token token) 
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->remove_Updated(token));
 }
 
-template <typename D> event_token impl_IMseSourceBuffer<D>::UpdateEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseSourceBuffer<D>::UpdateEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->add_UpdateEnded(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::UpdateEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::UpdateEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseSourceBuffer>(this, &ABI::Windows::Media::Core::IMseSourceBuffer::remove_UpdateEnded, UpdateEnded(handler));
 }
@@ -5653,14 +5653,14 @@ template <typename D> void impl_IMseSourceBuffer<D>::UpdateEnded(event_token tok
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->remove_UpdateEnded(token));
 }
 
-template <typename D> event_token impl_IMseSourceBuffer<D>::ErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseSourceBuffer<D>::ErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->add_ErrorOccurred(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::ErrorOccurred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::ErrorOccurred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseSourceBuffer>(this, &ABI::Windows::Media::Core::IMseSourceBuffer::remove_ErrorOccurred, ErrorOccurred(handler));
 }
@@ -5670,14 +5670,14 @@ template <typename D> void impl_IMseSourceBuffer<D>::ErrorOccurred(event_token t
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->remove_ErrorOccurred(token));
 }
 
-template <typename D> event_token impl_IMseSourceBuffer<D>::Aborted(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseSourceBuffer<D>::Aborted(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->add_Aborted(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::Aborted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::Aborted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseSourceBuffer>(this, &ABI::Windows::Media::Core::IMseSourceBuffer::remove_Aborted, Aborted(handler));
 }
@@ -5774,14 +5774,14 @@ template <typename D> void impl_IMseSourceBuffer<D>::Remove(const Windows::Found
     check_hresult(WINRT_SHIM(IMseSourceBuffer)->abi_Remove(get_abi(start), get_abi(end)));
 }
 
-template <typename D> event_token impl_IMseSourceBufferList<D>::SourceBufferAdded(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseSourceBufferList<D>::SourceBufferAdded(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseSourceBufferList)->add_SourceBufferAdded(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseSourceBufferList> impl_IMseSourceBufferList<D>::SourceBufferAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseSourceBufferList> impl_IMseSourceBufferList<D>::SourceBufferAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseSourceBufferList>(this, &ABI::Windows::Media::Core::IMseSourceBufferList::remove_SourceBufferAdded, SourceBufferAdded(handler));
 }
@@ -5791,14 +5791,14 @@ template <typename D> void impl_IMseSourceBufferList<D>::SourceBufferAdded(event
     check_hresult(WINRT_SHIM(IMseSourceBufferList)->remove_SourceBufferAdded(token));
 }
 
-template <typename D> event_token impl_IMseSourceBufferList<D>::SourceBufferRemoved(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMseSourceBufferList<D>::SourceBufferRemoved(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMseSourceBufferList)->add_SourceBufferRemoved(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMseSourceBufferList> impl_IMseSourceBufferList<D>::SourceBufferRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMseSourceBufferList> impl_IMseSourceBufferList<D>::SourceBufferRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMseSourceBufferList>(this, &ABI::Windows::Media::Core::IMseSourceBufferList::remove_SourceBufferRemoved, SourceBufferRemoved(handler));
 }
@@ -6147,14 +6147,14 @@ template <typename D> Windows::Media::Core::MediaSource impl_IMediaBinder<D>::So
     return value;
 }
 
-template <typename D> event_token impl_IMediaBindingEventArgs<D>::Canceled(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMediaBindingEventArgs<D>::Canceled(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaBindingEventArgs)->add_Canceled(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaBindingEventArgs> impl_IMediaBindingEventArgs<D>::Canceled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMediaBindingEventArgs> impl_IMediaBindingEventArgs<D>::Canceled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMediaBindingEventArgs>(this, &ABI::Windows::Media::Core::IMediaBindingEventArgs::remove_Canceled, Canceled(handler));
 }
@@ -6684,14 +6684,14 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::
     return value;
 }
 
-template <typename D> event_token impl_ISingleSelectMediaTrackList<D>::SelectedIndexChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ISingleSelectMediaTrackList<D>::SelectedIndexChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ISingleSelectMediaTrackList)->add_SelectedIndexChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ISingleSelectMediaTrackList> impl_ISingleSelectMediaTrackList<D>::SelectedIndexChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ISingleSelectMediaTrackList> impl_ISingleSelectMediaTrackList<D>::SelectedIndexChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ISingleSelectMediaTrackList>(this, &ABI::Windows::Media::Core::ISingleSelectMediaTrackList::remove_SelectedIndexChanged, SelectedIndexChanged(handler));
 }

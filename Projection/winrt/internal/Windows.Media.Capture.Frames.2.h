@@ -22,7 +22,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_3bda1540_d089_5a1a_8f0d_94eba8068e58
 #define WINRT_GENERIC_3bda1540_d089_5a1a_8f0d_94eba8068e58
-template <> struct __declspec(uuid("3bda1540-d089-5a1a-8f0d-94eba8068e58")) __declspec(novtable) IKeyValuePair<GUID, Windows::IInspectable> : impl_IKeyValuePair<GUID, Windows::IInspectable> {};
+template <> struct __declspec(uuid("3bda1540-d089-5a1a-8f0d-94eba8068e58")) __declspec(novtable) IKeyValuePair<GUID, Windows::Foundation::IInspectable> : impl_IKeyValuePair<GUID, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_dbdb7946_9b30_51d0_9c8c_c7105af690e0
@@ -52,7 +52,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_e4d2c732_bbc1_5ef4_869f_5007ceb55f6e
 #define WINRT_GENERIC_e4d2c732_bbc1_5ef4_869f_5007ceb55f6e
-template <> struct __declspec(uuid("e4d2c732-bbc1-5ef4-869f-5007ceb55f6e")) __declspec(novtable) IMapView<GUID, Windows::IInspectable> : impl_IMapView<GUID, Windows::IInspectable> {};
+template <> struct __declspec(uuid("e4d2c732-bbc1-5ef4-869f-5007ceb55f6e")) __declspec(novtable) IMapView<GUID, Windows::Foundation::IInspectable> : impl_IMapView<GUID, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_bae2547d_3fae_55cd_b209_45c3b5b2f816
@@ -67,7 +67,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_c7e61aa7_4716_5514_a913_ef1796b98dbd
 #define WINRT_GENERIC_c7e61aa7_4716_5514_a913_ef1796b98dbd
-template <> struct __declspec(uuid("c7e61aa7-4716-5514-a913-ef1796b98dbd")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::IInspectable> {};
+template <> struct __declspec(uuid("c7e61aa7-4716-5514-a913-ef1796b98dbd")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_d3dd49cb_8d25_591a_80f7_8363d5c03ec9
@@ -167,7 +167,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_f3b20528_e3b3_5331_b2d0_0c2623aee785
 #define WINRT_GENERIC_f3b20528_e3b3_5331_b2d0_0c2623aee785
-template <> struct __declspec(uuid("f3b20528-e3b3-5331-b2d0-0c2623aee785")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("f3b20528-e3b3-5331-b2d0-0c2623aee785")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -187,7 +187,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_4f25059a_0b9a_5f25_9b9e_4b9f1d22ff65
 #define WINRT_GENERIC_4f25059a_0b9a_5f25_9b9e_4b9f1d22ff65
-template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -206,49 +206,49 @@ template <> struct __declspec(uuid("cff78a64-bd44-5638-af2f-540c23b322e7")) __de
 namespace Windows::Media::Capture::Frames {
 
 struct IBufferMediaFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBufferMediaFrame>
 {
     IBufferMediaFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDepthMediaFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDepthMediaFrame>
 {
     IDepthMediaFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDepthMediaFrameFormat :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDepthMediaFrameFormat>
 {
     IDepthMediaFrameFormat(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInfraredMediaFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInfraredMediaFrame>
 {
     IInfraredMediaFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFrameArrivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameArrivedEventArgs>
 {
     IMediaFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFrameFormat :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameFormat>
 {
     IMediaFrameFormat(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFrameReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameReader>,
     impl::require<IMediaFrameReader, Windows::Foundation::IClosable>
 {
@@ -256,7 +256,7 @@ struct IMediaFrameReader :
 };
 
 struct IMediaFrameReference :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameReference>,
     impl::require<IMediaFrameReference, Windows::Foundation::IClosable>
 {
@@ -264,56 +264,56 @@ struct IMediaFrameReference :
 };
 
 struct IMediaFrameSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameSource>
 {
     IMediaFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFrameSourceController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameSourceController>
 {
     IMediaFrameSourceController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFrameSourceGetPropertyResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameSourceGetPropertyResult>
 {
     IMediaFrameSourceGetPropertyResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFrameSourceGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameSourceGroup>
 {
     IMediaFrameSourceGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFrameSourceGroupStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameSourceGroupStatics>
 {
     IMediaFrameSourceGroupStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFrameSourceInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameSourceInfo>
 {
     IMediaFrameSourceInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoMediaFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoMediaFrame>
 {
     IVideoMediaFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoMediaFrameFormat :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoMediaFrameFormat>
 {
     IVideoMediaFrameFormat(std::nullptr_t = nullptr) noexcept {}

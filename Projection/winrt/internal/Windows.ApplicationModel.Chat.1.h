@@ -16,7 +16,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Chat {
 
-struct __declspec(uuid("3aff77bc-39c9-4dd1-ad2d-3964dd9d403f")) __declspec(novtable) IChatCapabilities : Windows::IInspectable
+struct __declspec(uuid("3aff77bc-39c9-4dd1-ad2d-3964dd9d403f")) __declspec(novtable) IChatCapabilities : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsOnline(bool * result) = 0;
     virtual HRESULT __stdcall get_IsChatCapable(bool * result) = 0;
@@ -25,13 +25,13 @@ struct __declspec(uuid("3aff77bc-39c9-4dd1-ad2d-3964dd9d403f")) __declspec(novta
     virtual HRESULT __stdcall get_IsIntegratedMessagingCapable(bool * result) = 0;
 };
 
-struct __declspec(uuid("b57a2f30-7041-458e-b0cf-7c0d9fea333a")) __declspec(novtable) IChatCapabilitiesManagerStatics : Windows::IInspectable
+struct __declspec(uuid("b57a2f30-7041-458e-b0cf-7c0d9fea333a")) __declspec(novtable) IChatCapabilitiesManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCachedCapabilitiesAsync(hstring address, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> ** result) = 0;
     virtual HRESULT __stdcall abi_GetCapabilitiesFromNetworkAsync(hstring address, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> ** result) = 0;
 };
 
-struct __declspec(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee")) __declspec(novtable) IChatConversation : Windows::IInspectable
+struct __declspec(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee")) __declspec(novtable) IChatConversation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HasUnreadMessages(bool * result) = 0;
     virtual HRESULT __stdcall get_Id(hstring * result) = 0;
@@ -53,19 +53,19 @@ struct __declspec(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee")) __declspec(novta
     virtual HRESULT __stdcall remove_RemoteParticipantComposingChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("0a030cd1-983a-47aa-9a90-ee48ee997b59")) __declspec(novtable) IChatConversation2 : Windows::IInspectable
+struct __declspec(uuid("0a030cd1-983a-47aa-9a90-ee48ee997b59")) __declspec(novtable) IChatConversation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CanModifyParticipants(bool * result) = 0;
     virtual HRESULT __stdcall put_CanModifyParticipants(bool value) = 0;
 };
 
-struct __declspec(uuid("055136d2-de32-4a47-a93a-b3dc0833852b")) __declspec(novtable) IChatConversationReader : Windows::IInspectable
+struct __declspec(uuid("055136d2-de32-4a47-a93a-b3dc0833852b")) __declspec(novtable) IChatConversationReader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ReadBatchAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatConversation>> ** result) = 0;
     virtual HRESULT __stdcall abi_ReadBatchWithCountAsync(int32_t count, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatConversation>> ** result) = 0;
 };
 
-struct __declspec(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24")) __declspec(novtable) IChatConversationThreadingInfo : Windows::IInspectable
+struct __declspec(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24")) __declspec(novtable) IChatConversationThreadingInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContactId(hstring * result) = 0;
     virtual HRESULT __stdcall put_ContactId(hstring value) = 0;
@@ -78,12 +78,12 @@ struct __declspec(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24")) __declspec(novta
     virtual HRESULT __stdcall put_Kind(winrt::Windows::ApplicationModel::Chat::ChatConversationThreadingKind value) = 0;
 };
 
-struct __declspec(uuid("8751d000-ceb1-4243-b803-15d45a1dd428")) __declspec(novtable) IChatItem : Windows::IInspectable
+struct __declspec(uuid("8751d000-ceb1-4243-b803-15d45a1dd428")) __declspec(novtable) IChatItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ItemKind(winrt::Windows::ApplicationModel::Chat::ChatItemKind * result) = 0;
 };
 
-struct __declspec(uuid("4b39052a-1142-5089-76da-f2db3d17cd05")) __declspec(novtable) IChatMessage : Windows::IInspectable
+struct __declspec(uuid("4b39052a-1142-5089-76da-f2db3d17cd05")) __declspec(novtable) IChatMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Attachments(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Chat::ChatMessageAttachment> ** value) = 0;
     virtual HRESULT __stdcall get_Body(hstring * value) = 0;
@@ -104,7 +104,7 @@ struct __declspec(uuid("4b39052a-1142-5089-76da-f2db3d17cd05")) __declspec(novta
     virtual HRESULT __stdcall put_TransportId(hstring value) = 0;
 };
 
-struct __declspec(uuid("86668332-543f-49f5-ac71-6c2afc6565fd")) __declspec(novtable) IChatMessage2 : Windows::IInspectable
+struct __declspec(uuid("86668332-543f-49f5-ac71-6c2afc6565fd")) __declspec(novtable) IChatMessage2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EstimatedDownloadSize(uint64_t * result) = 0;
     virtual HRESULT __stdcall put_EstimatedDownloadSize(uint64_t value) = 0;
@@ -136,18 +136,18 @@ struct __declspec(uuid("86668332-543f-49f5-ac71-6c2afc6565fd")) __declspec(novta
     virtual HRESULT __stdcall get_RecipientsDeliveryInfos(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Chat::ChatRecipientDeliveryInfo> ** result) = 0;
 };
 
-struct __declspec(uuid("74eb2fb0-3ba7-459f-8e0b-e8af0febd9ad")) __declspec(novtable) IChatMessage3 : Windows::IInspectable
+struct __declspec(uuid("74eb2fb0-3ba7-459f-8e0b-e8af0febd9ad")) __declspec(novtable) IChatMessage3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RemoteId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("2d144b0f-d2bf-460c-aa68-6d3f8483c9bf")) __declspec(novtable) IChatMessage4 : Windows::IInspectable
+struct __declspec(uuid("2d144b0f-d2bf-460c-aa68-6d3f8483c9bf")) __declspec(novtable) IChatMessage4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SyncId(hstring * result) = 0;
     virtual HRESULT __stdcall put_SyncId(hstring value) = 0;
 };
 
-struct __declspec(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67")) __declspec(novtable) IChatMessageAttachment : Windows::IInspectable
+struct __declspec(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67")) __declspec(novtable) IChatMessageAttachment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DataStreamReference(Windows::Storage::Streams::IRandomAccessStreamReference ** value) = 0;
     virtual HRESULT __stdcall put_DataStreamReference(Windows::Storage::Streams::IRandomAccessStreamReference * value) = 0;
@@ -159,7 +159,7 @@ struct __declspec(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67")) __declspec(novta
     virtual HRESULT __stdcall put_Text(hstring value) = 0;
 };
 
-struct __declspec(uuid("5ed99270-7dd1-4a87-a8ce-acdd87d80dc8")) __declspec(novtable) IChatMessageAttachment2 : Windows::IInspectable
+struct __declspec(uuid("5ed99270-7dd1-4a87-a8ce-acdd87d80dc8")) __declspec(novtable) IChatMessageAttachment2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Thumbnail(Windows::Storage::Streams::IRandomAccessStreamReference ** result) = 0;
     virtual HRESULT __stdcall put_Thumbnail(Windows::Storage::Streams::IRandomAccessStreamReference * value) = 0;
@@ -169,53 +169,53 @@ struct __declspec(uuid("5ed99270-7dd1-4a87-a8ce-acdd87d80dc8")) __declspec(novta
     virtual HRESULT __stdcall put_OriginalFileName(hstring value) = 0;
 };
 
-struct __declspec(uuid("205852a2-a356-5b71-6ca9-66c985b7d0d5")) __declspec(novtable) IChatMessageAttachmentFactory : Windows::IInspectable
+struct __declspec(uuid("205852a2-a356-5b71-6ca9-66c985b7d0d5")) __declspec(novtable) IChatMessageAttachmentFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateChatMessageAttachment(hstring mimeType, Windows::Storage::Streams::IRandomAccessStreamReference * dataStreamReference, Windows::ApplicationModel::Chat::IChatMessageAttachment ** value) = 0;
 };
 
-struct __declspec(uuid("f6b9a380-cdea-11e4-8830-0800200c9a66")) __declspec(novtable) IChatMessageBlockingStatic : Windows::IInspectable
+struct __declspec(uuid("f6b9a380-cdea-11e4-8830-0800200c9a66")) __declspec(novtable) IChatMessageBlockingStatic : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_MarkMessageAsBlockedAsync(hstring localChatMessageId, bool blocked, Windows::Foundation::IAsyncAction ** value) = 0;
 };
 
-struct __declspec(uuid("1c18c355-421e-54b8-6d38-6b3a6c82fccc")) __declspec(novtable) IChatMessageChange : Windows::IInspectable
+struct __declspec(uuid("1c18c355-421e-54b8-6d38-6b3a6c82fccc")) __declspec(novtable) IChatMessageChange : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ChangeType(winrt::Windows::ApplicationModel::Chat::ChatMessageChangeType * value) = 0;
     virtual HRESULT __stdcall get_Message(Windows::ApplicationModel::Chat::IChatMessage ** value) = 0;
 };
 
-struct __declspec(uuid("14267020-28ce-5f26-7b05-9a5c7cce87ca")) __declspec(novtable) IChatMessageChangeReader : Windows::IInspectable
+struct __declspec(uuid("14267020-28ce-5f26-7b05-9a5c7cce87ca")) __declspec(novtable) IChatMessageChangeReader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AcceptChanges() = 0;
     virtual HRESULT __stdcall abi_AcceptChangesThrough(Windows::ApplicationModel::Chat::IChatMessageChange * lastChangeToAcknowledge) = 0;
     virtual HRESULT __stdcall abi_ReadBatchAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatMessageChange>> ** value) = 0;
 };
 
-struct __declspec(uuid("60b7f066-70a0-5224-508c-242ef7c1d06f")) __declspec(novtable) IChatMessageChangeTracker : Windows::IInspectable
+struct __declspec(uuid("60b7f066-70a0-5224-508c-242ef7c1d06f")) __declspec(novtable) IChatMessageChangeTracker : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Enable() = 0;
     virtual HRESULT __stdcall abi_GetChangeReader(Windows::ApplicationModel::Chat::IChatMessageChangeReader ** value) = 0;
     virtual HRESULT __stdcall abi_Reset() = 0;
 };
 
-struct __declspec(uuid("fbc6b30c-788c-4dcc-ace7-6282382968cf")) __declspec(novtable) IChatMessageChangedDeferral : Windows::IInspectable
+struct __declspec(uuid("fbc6b30c-788c-4dcc-ace7-6282382968cf")) __declspec(novtable) IChatMessageChangedDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("b6b73e2d-691c-4edf-8660-6eb9896892e3")) __declspec(novtable) IChatMessageChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("b6b73e2d-691c-4edf-8660-6eb9896892e3")) __declspec(novtable) IChatMessageChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeferral(Windows::ApplicationModel::Chat::IChatMessageChangedDeferral ** result) = 0;
 };
 
-struct __declspec(uuid("1d45390f-9f4f-4e35-964e-1b9ca61ac044")) __declspec(novtable) IChatMessageManager2Statics : Windows::IInspectable
+struct __declspec(uuid("1d45390f-9f4f-4e35-964e-1b9ca61ac044")) __declspec(novtable) IChatMessageManager2Statics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RegisterTransportAsync(Windows::Foundation::IAsyncOperation<hstring> ** result) = 0;
     virtual HRESULT __stdcall abi_GetTransportAsync(hstring transportId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessageTransport> ** result) = 0;
 };
 
-struct __declspec(uuid("f15c60f7-d5e8-5e92-556d-e03b60253104")) __declspec(novtable) IChatMessageManagerStatic : Windows::IInspectable
+struct __declspec(uuid("f15c60f7-d5e8-5e92-556d-e03b60253104")) __declspec(novtable) IChatMessageManagerStatic : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetTransportsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatMessageTransport>> ** value) = 0;
     virtual HRESULT __stdcall abi_RequestStoreAsync(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessageStore> ** value) = 0;
@@ -223,17 +223,17 @@ struct __declspec(uuid("f15c60f7-d5e8-5e92-556d-e03b60253104")) __declspec(novta
     virtual HRESULT __stdcall abi_ShowSmsSettings() = 0;
 };
 
-struct __declspec(uuid("208b830d-6755-48cc-9ab3-fd03c463fc92")) __declspec(novtable) IChatMessageManagerStatics3 : Windows::IInspectable
+struct __declspec(uuid("208b830d-6755-48cc-9ab3-fd03c463fc92")) __declspec(novtable) IChatMessageManagerStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestSyncManagerAsync(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatSyncManager> ** result) = 0;
 };
 
-struct __declspec(uuid("fd344dfb-3063-4e17-8586-c6c08262e6c0")) __declspec(novtable) IChatMessageNotificationTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("fd344dfb-3063-4e17-8586-c6c08262e6c0")) __declspec(novtable) IChatMessageNotificationTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ChatMessage(Windows::ApplicationModel::Chat::IChatMessage ** value) = 0;
 };
 
-struct __declspec(uuid("6bb522e0-aa07-4fd1-9471-77934fb75ee6")) __declspec(novtable) IChatMessageNotificationTriggerDetails2 : Windows::IInspectable
+struct __declspec(uuid("6bb522e0-aa07-4fd1-9471-77934fb75ee6")) __declspec(novtable) IChatMessageNotificationTriggerDetails2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ShouldDisplayToast(bool * result) = 0;
     virtual HRESULT __stdcall get_ShouldUpdateDetailText(bool * result) = 0;
@@ -241,17 +241,17 @@ struct __declspec(uuid("6bb522e0-aa07-4fd1-9471-77934fb75ee6")) __declspec(novta
     virtual HRESULT __stdcall get_ShouldUpdateActionCenter(bool * result) = 0;
 };
 
-struct __declspec(uuid("b6ea78ce-4489-56f9-76aa-e204682514cf")) __declspec(novtable) IChatMessageReader : Windows::IInspectable
+struct __declspec(uuid("b6ea78ce-4489-56f9-76aa-e204682514cf")) __declspec(novtable) IChatMessageReader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ReadBatchAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatMessage>> ** value) = 0;
 };
 
-struct __declspec(uuid("89643683-64bb-470d-9df4-0de8be1a05bf")) __declspec(novtable) IChatMessageReader2 : Windows::IInspectable
+struct __declspec(uuid("89643683-64bb-470d-9df4-0de8be1a05bf")) __declspec(novtable) IChatMessageReader2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ReadBatchWithCountAsync(int32_t count, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatMessage>> ** result) = 0;
 };
 
-struct __declspec(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47")) __declspec(novtable) IChatMessageStore : Windows::IInspectable
+struct __declspec(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47")) __declspec(novtable) IChatMessageStore : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ChangeTracker(Windows::ApplicationModel::Chat::IChatMessageChangeTracker ** value) = 0;
     virtual HRESULT __stdcall abi_DeleteMessageAsync(hstring localMessageId, Windows::Foundation::IAsyncAction ** value) = 0;
@@ -267,7 +267,7 @@ struct __declspec(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47")) __declspec(novta
     virtual HRESULT __stdcall remove_MessageChanged(event_token value) = 0;
 };
 
-struct __declspec(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768")) __declspec(novtable) IChatMessageStore2 : Windows::IInspectable
+struct __declspec(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768")) __declspec(novtable) IChatMessageStore2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ForwardMessageAsync(hstring localChatMessageId, Windows::Foundation::Collections::IIterable<hstring> * addresses, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> ** result) = 0;
     virtual HRESULT __stdcall abi_GetConversationAsync(hstring conversationId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> ** result) = 0;
@@ -288,18 +288,18 @@ struct __declspec(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768")) __declspec(novta
     virtual HRESULT __stdcall remove_StoreChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("9adbbb09-4345-4ec1-8b74-b7338243719c")) __declspec(novtable) IChatMessageStore3 : Windows::IInspectable
+struct __declspec(uuid("9adbbb09-4345-4ec1-8b74-b7338243719c")) __declspec(novtable) IChatMessageStore3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetMessageBySyncIdAsync(hstring syncId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> ** result) = 0;
 };
 
-struct __declspec(uuid("65c66fac-fe8c-46d4-9119-57b8410311d5")) __declspec(novtable) IChatMessageStoreChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("65c66fac-fe8c-46d4-9119-57b8410311d5")) __declspec(novtable) IChatMessageStoreChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * result) = 0;
     virtual HRESULT __stdcall get_Kind(winrt::Windows::ApplicationModel::Chat::ChatStoreChangedEventKind * result) = 0;
 };
 
-struct __declspec(uuid("63a9dbf8-e6b3-5c9a-5f85-d47925b9bd18")) __declspec(novtable) IChatMessageTransport : Windows::IInspectable
+struct __declspec(uuid("63a9dbf8-e6b3-5c9a-5f85-d47925b9bd18")) __declspec(novtable) IChatMessageTransport : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsAppSetAsNotificationProvider(bool * value) = 0;
     virtual HRESULT __stdcall get_IsActive(bool * value) = 0;
@@ -308,22 +308,22 @@ struct __declspec(uuid("63a9dbf8-e6b3-5c9a-5f85-d47925b9bd18")) __declspec(novta
     virtual HRESULT __stdcall abi_RequestSetAsNotificationProviderAsync(Windows::Foundation::IAsyncAction ** value) = 0;
 };
 
-struct __declspec(uuid("90a75622-d84a-4c22-a94d-544444edc8a1")) __declspec(novtable) IChatMessageTransport2 : Windows::IInspectable
+struct __declspec(uuid("90a75622-d84a-4c22-a94d-544444edc8a1")) __declspec(novtable) IChatMessageTransport2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Configuration(Windows::ApplicationModel::Chat::IChatMessageTransportConfiguration ** result) = 0;
     virtual HRESULT __stdcall get_TransportKind(winrt::Windows::ApplicationModel::Chat::ChatMessageTransportKind * result) = 0;
 };
 
-struct __declspec(uuid("879ff725-1a08-4aca-a075-3355126312e6")) __declspec(novtable) IChatMessageTransportConfiguration : Windows::IInspectable
+struct __declspec(uuid("879ff725-1a08-4aca-a075-3355126312e6")) __declspec(novtable) IChatMessageTransportConfiguration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxAttachmentCount(int32_t * result) = 0;
     virtual HRESULT __stdcall get_MaxMessageSizeInKilobytes(int32_t * result) = 0;
     virtual HRESULT __stdcall get_MaxRecipientCount(int32_t * result) = 0;
     virtual HRESULT __stdcall get_SupportedVideoFormat(Windows::Media::MediaProperties::IMediaEncodingProfile ** result) = 0;
-    virtual HRESULT __stdcall get_ExtendedProperties(Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> ** result) = 0;
+    virtual HRESULT __stdcall get_ExtendedProperties(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> ** result) = 0;
 };
 
-struct __declspec(uuid("25e93a03-28ec-5889-569b-7e486b126f18")) __declspec(novtable) IChatMessageValidationResult : Windows::IInspectable
+struct __declspec(uuid("25e93a03-28ec-5889-569b-7e486b126f18")) __declspec(novtable) IChatMessageValidationResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxPartCount(Windows::Foundation::IReference<uint32_t> ** value) = 0;
     virtual HRESULT __stdcall get_PartCount(Windows::Foundation::IReference<uint32_t> ** value) = 0;
@@ -331,13 +331,13 @@ struct __declspec(uuid("25e93a03-28ec-5889-569b-7e486b126f18")) __declspec(novta
     virtual HRESULT __stdcall get_Status(winrt::Windows::ApplicationModel::Chat::ChatMessageValidationStatus * value) = 0;
 };
 
-struct __declspec(uuid("2fd364a6-bf36-42f7-b7e7-923c0aabfe16")) __declspec(novtable) IChatQueryOptions : Windows::IInspectable
+struct __declspec(uuid("2fd364a6-bf36-42f7-b7e7-923c0aabfe16")) __declspec(novtable) IChatQueryOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SearchString(hstring * result) = 0;
     virtual HRESULT __stdcall put_SearchString(hstring value) = 0;
 };
 
-struct __declspec(uuid("ffc7b2a2-283c-4c0a-8a0e-8c33bdbf0545")) __declspec(novtable) IChatRecipientDeliveryInfo : Windows::IInspectable
+struct __declspec(uuid("ffc7b2a2-283c-4c0a-8a0e-8c33bdbf0545")) __declspec(novtable) IChatRecipientDeliveryInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TransportAddress(hstring * result) = 0;
     virtual HRESULT __stdcall put_TransportAddress(hstring value) = 0;
@@ -352,13 +352,13 @@ struct __declspec(uuid("ffc7b2a2-283c-4c0a-8a0e-8c33bdbf0545")) __declspec(novta
     virtual HRESULT __stdcall get_Status(winrt::Windows::ApplicationModel::Chat::ChatMessageStatus * result) = 0;
 };
 
-struct __declspec(uuid("4665fe49-9020-4752-980d-39612325f589")) __declspec(novtable) IChatSearchReader : Windows::IInspectable
+struct __declspec(uuid("4665fe49-9020-4752-980d-39612325f589")) __declspec(novtable) IChatSearchReader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ReadBatchAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::IChatItem>> ** result) = 0;
     virtual HRESULT __stdcall abi_ReadBatchWithCountAsync(int32_t count, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::IChatItem>> ** result) = 0;
 };
 
-struct __declspec(uuid("09f869b2-69f4-4aff-82b6-06992ff402d2")) __declspec(novtable) IChatSyncConfiguration : Windows::IInspectable
+struct __declspec(uuid("09f869b2-69f4-4aff-82b6-06992ff402d2")) __declspec(novtable) IChatSyncConfiguration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsSyncEnabled(bool * result) = 0;
     virtual HRESULT __stdcall put_IsSyncEnabled(bool value) = 0;
@@ -366,7 +366,7 @@ struct __declspec(uuid("09f869b2-69f4-4aff-82b6-06992ff402d2")) __declspec(novta
     virtual HRESULT __stdcall put_RestoreHistorySpan(winrt::Windows::ApplicationModel::Chat::ChatRestoreHistorySpan value) = 0;
 };
 
-struct __declspec(uuid("7ba52c63-2650-486f-b4b4-6bd9d3d63c84")) __declspec(novtable) IChatSyncManager : Windows::IInspectable
+struct __declspec(uuid("7ba52c63-2650-486f-b4b4-6bd9d3d63c84")) __declspec(novtable) IChatSyncManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Configuration(Windows::ApplicationModel::Chat::IChatSyncConfiguration ** result) = 0;
     virtual HRESULT __stdcall abi_AssociateAccountAsync(Windows::Security::Credentials::IWebAccount * webAccount, Windows::Foundation::IAsyncAction ** result) = 0;
@@ -376,7 +376,7 @@ struct __declspec(uuid("7ba52c63-2650-486f-b4b4-6bd9d3d63c84")) __declspec(novta
     virtual HRESULT __stdcall abi_SetConfigurationAsync(Windows::ApplicationModel::Chat::IChatSyncConfiguration * configuration, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("d7cda5eb-cbd7-4f3b-8526-b506dec35c53")) __declspec(novtable) IRcsEndUserMessage : Windows::IInspectable
+struct __declspec(uuid("d7cda5eb-cbd7-4f3b-8526-b506dec35c53")) __declspec(novtable) IRcsEndUserMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TransportId(hstring * result) = 0;
     virtual HRESULT __stdcall get_Title(hstring * result) = 0;
@@ -387,30 +387,30 @@ struct __declspec(uuid("d7cda5eb-cbd7-4f3b-8526-b506dec35c53")) __declspec(novta
     virtual HRESULT __stdcall abi_SendResponseWithPinAsync(Windows::ApplicationModel::Chat::IRcsEndUserMessageAction * action, hstring pin, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("92378737-9b42-46d3-9d5e-3c1b2dae7cb8")) __declspec(novtable) IRcsEndUserMessageAction : Windows::IInspectable
+struct __declspec(uuid("92378737-9b42-46d3-9d5e-3c1b2dae7cb8")) __declspec(novtable) IRcsEndUserMessageAction : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Label(hstring * result) = 0;
 };
 
-struct __declspec(uuid("2d45ae01-3f89-41ea-9702-9e9ed411aa98")) __declspec(novtable) IRcsEndUserMessageAvailableEventArgs : Windows::IInspectable
+struct __declspec(uuid("2d45ae01-3f89-41ea-9702-9e9ed411aa98")) __declspec(novtable) IRcsEndUserMessageAvailableEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsMessageAvailable(bool * result) = 0;
     virtual HRESULT __stdcall get_Message(Windows::ApplicationModel::Chat::IRcsEndUserMessage ** result) = 0;
 };
 
-struct __declspec(uuid("5b97742d-351f-4692-b41e-1b035dc18986")) __declspec(novtable) IRcsEndUserMessageAvailableTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("5b97742d-351f-4692-b41e-1b035dc18986")) __declspec(novtable) IRcsEndUserMessageAvailableTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
 };
 
-struct __declspec(uuid("3054ae5a-4d1f-4b59-9433-126c734e86a6")) __declspec(novtable) IRcsEndUserMessageManager : Windows::IInspectable
+struct __declspec(uuid("3054ae5a-4d1f-4b59-9433-126c734e86a6")) __declspec(novtable) IRcsEndUserMessageManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_MessageAvailableChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::RcsEndUserMessageManager, Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_MessageAvailableChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("7d270ac5-0abd-4f31-9b99-a59e71a7b731")) __declspec(novtable) IRcsManagerStatics : Windows::IInspectable
+struct __declspec(uuid("7d270ac5-0abd-4f31-9b99-a59e71a7b731")) __declspec(novtable) IRcsManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetEndUserMessageManager(Windows::ApplicationModel::Chat::IRcsEndUserMessageManager ** result) = 0;
     virtual HRESULT __stdcall abi_GetTransportsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::RcsTransport>> ** value) = 0;
@@ -418,14 +418,14 @@ struct __declspec(uuid("7d270ac5-0abd-4f31-9b99-a59e71a7b731")) __declspec(novta
     virtual HRESULT __stdcall abi_LeaveConversationAsync(Windows::ApplicationModel::Chat::IChatConversation * conversation, Windows::Foundation::IAsyncAction ** value) = 0;
 };
 
-struct __declspec(uuid("f47ea244-e783-4866-b3a7-4e5ccf023070")) __declspec(novtable) IRcsServiceKindSupportedChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("f47ea244-e783-4866-b3a7-4e5ccf023070")) __declspec(novtable) IRcsServiceKindSupportedChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ServiceKind(winrt::Windows::ApplicationModel::Chat::RcsServiceKind * result) = 0;
 };
 
-struct __declspec(uuid("fea34759-f37c-4319-8546-ec84d21d30ff")) __declspec(novtable) IRcsTransport : Windows::IInspectable
+struct __declspec(uuid("fea34759-f37c-4319-8546-ec84d21d30ff")) __declspec(novtable) IRcsTransport : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_ExtendedProperties(Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_ExtendedProperties(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_IsActive(bool * value) = 0;
     virtual HRESULT __stdcall get_TransportFriendlyName(hstring * value) = 0;
     virtual HRESULT __stdcall get_TransportId(hstring * value) = 0;
@@ -436,7 +436,7 @@ struct __declspec(uuid("fea34759-f37c-4319-8546-ec84d21d30ff")) __declspec(novta
     virtual HRESULT __stdcall remove_ServiceKindSupportedChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("1fccb102-2472-4bb9-9988-c1211c83e8a9")) __declspec(novtable) IRcsTransportConfiguration : Windows::IInspectable
+struct __declspec(uuid("1fccb102-2472-4bb9-9988-c1211c83e8a9")) __declspec(novtable) IRcsTransportConfiguration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxAttachmentCount(int32_t * result) = 0;
     virtual HRESULT __stdcall get_MaxMessageSizeInKilobytes(int32_t * result) = 0;
@@ -446,7 +446,7 @@ struct __declspec(uuid("1fccb102-2472-4bb9-9988-c1211c83e8a9")) __declspec(novta
     virtual HRESULT __stdcall get_WarningFileSizeInKilobytes(int32_t * result) = 0;
 };
 
-struct __declspec(uuid("1ec045a7-cfc9-45c9-9876-449f2bc180f5")) __declspec(novtable) IRemoteParticipantComposingChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("1ec045a7-cfc9-45c9-9876-449f2bc180f5")) __declspec(novtable) IRemoteParticipantComposingChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TransportId(hstring * result) = 0;
     virtual HRESULT __stdcall get_ParticipantAddress(hstring * result) = 0;
@@ -838,7 +838,7 @@ struct WINRT_EBO impl_IChatMessageTransportConfiguration
     int32_t MaxMessageSizeInKilobytes() const;
     int32_t MaxRecipientCount() const;
     Windows::Media::MediaProperties::MediaEncodingProfile SupportedVideoFormat() const;
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> ExtendedProperties() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> ExtendedProperties() const;
 };
 
 template <typename D>
@@ -959,7 +959,7 @@ struct WINRT_EBO impl_IRcsServiceKindSupportedChangedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IRcsTransport
 {
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> ExtendedProperties() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> ExtendedProperties() const;
     bool IsActive() const;
     hstring TransportFriendlyName() const;
     hstring TransportId() const;

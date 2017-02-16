@@ -12,7 +12,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Graphics::DirectX::Direct3D11 {
 
 struct IDirect3DDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDirect3DDevice>,
     impl::require<IDirect3DDevice, Windows::Foundation::IClosable>
 {
@@ -20,7 +20,7 @@ struct IDirect3DDevice :
 };
 
 struct IDirect3DSurface :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDirect3DSurface>,
     impl::require<IDirect3DSurface, Windows::Foundation::IClosable>
 {

@@ -166,7 +166,7 @@ template <> struct __declspec(uuid("f1c031c8-90bf-5cae-adf6-155b4aedfb60")) __de
 namespace Windows::Web::AtomPub {
 
 struct IAtomPubClient :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAtomPubClient>,
     impl::require<IAtomPubClient, Windows::Web::Syndication::ISyndicationClient>
 {
@@ -174,14 +174,14 @@ struct IAtomPubClient :
 };
 
 struct IAtomPubClientFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAtomPubClientFactory>
 {
     IAtomPubClientFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IResourceCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IResourceCollection>,
     impl::require<IResourceCollection, Windows::Web::Syndication::ISyndicationNode>
 {
@@ -189,7 +189,7 @@ struct IResourceCollection :
 };
 
 struct IServiceDocument :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IServiceDocument>,
     impl::require<IServiceDocument, Windows::Web::Syndication::ISyndicationNode>
 {
@@ -197,7 +197,7 @@ struct IServiceDocument :
 };
 
 struct IWorkspace :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWorkspace>,
     impl::require<IWorkspace, Windows::Web::Syndication::ISyndicationNode>
 {

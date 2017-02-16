@@ -172,7 +172,7 @@ template <> struct __declspec(uuid("64662ef4-cb0e-5c6f-a820-7d0a769554c9")) __de
 
 #ifndef WINRT_GENERIC_c54fbda4_5e0b_54c3_94f2_83351e41c46f
 #define WINRT_GENERIC_c54fbda4_5e0b_54c3_94f2_83351e41c46f
-template <> struct __declspec(uuid("c54fbda4-5e0b-54c3-94f2-83351e41c46f")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::IInspectable> {};
+template <> struct __declspec(uuid("c54fbda4-5e0b-54c3-94f2-83351e41c46f")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_4f64e49a_bd8c_549d_970c_a5a250bd27ca
@@ -227,7 +227,7 @@ template <> struct __declspec(uuid("31424f6f-cfeb-5031-8a95-bea59b09e584")) __de
 
 #ifndef WINRT_GENERIC_db886581_2462_5c81_880c_06112ca70012
 #define WINRT_GENERIC_db886581_2462_5c81_880c_06112ca70012
-template <> struct __declspec(uuid("db886581-2462-5c81-880c-06112ca70012")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::IInspectable> {};
+template <> struct __declspec(uuid("db886581-2462-5c81-880c-06112ca70012")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
@@ -371,140 +371,140 @@ template <> struct __declspec(uuid("55772f29-da64-5c87-871c-074337a84573")) __de
 namespace Windows::Devices::PointOfService {
 
 struct IBarcodeScanner :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScanner>
 {
     IBarcodeScanner(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeScanner2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScanner2>
 {
     IBarcodeScanner2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeScannerCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScannerCapabilities>
 {
     IBarcodeScannerCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeScannerCapabilities1 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScannerCapabilities1>
 {
     IBarcodeScannerCapabilities1(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeScannerDataReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScannerDataReceivedEventArgs>
 {
     IBarcodeScannerDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeScannerErrorOccurredEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScannerErrorOccurredEventArgs>
 {
     IBarcodeScannerErrorOccurredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeScannerImagePreviewReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScannerImagePreviewReceivedEventArgs>
 {
     IBarcodeScannerImagePreviewReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeScannerReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScannerReport>
 {
     IBarcodeScannerReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeScannerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScannerStatics>
 {
     IBarcodeScannerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeScannerStatusUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScannerStatusUpdatedEventArgs>
 {
     IBarcodeScannerStatusUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarcodeSymbologiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarcodeSymbologiesStatics>
 {
     IBarcodeSymbologiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICashDrawer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICashDrawer>
 {
     ICashDrawer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICashDrawerCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICashDrawerCapabilities>
 {
     ICashDrawerCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICashDrawerCloseAlarm :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICashDrawerCloseAlarm>
 {
     ICashDrawerCloseAlarm(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICashDrawerEventSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICashDrawerEventSource>
 {
     ICashDrawerEventSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICashDrawerEventSourceEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICashDrawerEventSourceEventArgs>
 {
     ICashDrawerEventSourceEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICashDrawerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICashDrawerStatics>
 {
     ICashDrawerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICashDrawerStatus :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICashDrawerStatus>
 {
     ICashDrawerStatus(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICashDrawerStatusUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICashDrawerStatusUpdatedEventArgs>
 {
     ICashDrawerStatusUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IClaimedBarcodeScanner :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClaimedBarcodeScanner>,
     impl::require<IClaimedBarcodeScanner, Windows::Foundation::IClosable>
 {
@@ -512,7 +512,7 @@ struct IClaimedBarcodeScanner :
 };
 
 struct IClaimedBarcodeScanner1 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClaimedBarcodeScanner1>,
     impl::require<IClaimedBarcodeScanner1, Windows::Foundation::IClosable>
 {
@@ -520,7 +520,7 @@ struct IClaimedBarcodeScanner1 :
 };
 
 struct IClaimedCashDrawer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClaimedCashDrawer>,
     impl::require<IClaimedCashDrawer, Windows::Foundation::IClosable>
 {
@@ -528,7 +528,7 @@ struct IClaimedCashDrawer :
 };
 
 struct IClaimedJournalPrinter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClaimedJournalPrinter>,
     impl::require<IClaimedJournalPrinter, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStation>
 {
@@ -536,7 +536,7 @@ struct IClaimedJournalPrinter :
 };
 
 struct IClaimedMagneticStripeReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClaimedMagneticStripeReader>,
     impl::require<IClaimedMagneticStripeReader, Windows::Foundation::IClosable>
 {
@@ -544,7 +544,7 @@ struct IClaimedMagneticStripeReader :
 };
 
 struct IClaimedPosPrinter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClaimedPosPrinter>,
     impl::require<IClaimedPosPrinter, Windows::Foundation::IClosable>
 {
@@ -552,7 +552,7 @@ struct IClaimedPosPrinter :
 };
 
 struct IClaimedReceiptPrinter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClaimedReceiptPrinter>,
     impl::require<IClaimedReceiptPrinter, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStation>
 {
@@ -560,7 +560,7 @@ struct IClaimedReceiptPrinter :
 };
 
 struct IClaimedSlipPrinter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClaimedSlipPrinter>,
     impl::require<IClaimedSlipPrinter, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStation>
 {
@@ -568,21 +568,21 @@ struct IClaimedSlipPrinter :
 };
 
 struct ICommonClaimedPosPrinterStation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICommonClaimedPosPrinterStation>
 {
     ICommonClaimedPosPrinterStation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICommonPosPrintStationCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICommonPosPrintStationCapabilities>
 {
     ICommonPosPrintStationCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICommonReceiptSlipCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICommonReceiptSlipCapabilities>,
     impl::require<ICommonReceiptSlipCapabilities, Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities>
 {
@@ -590,7 +590,7 @@ struct ICommonReceiptSlipCapabilities :
 };
 
 struct IJournalPrinterCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJournalPrinterCapabilities>,
     impl::require<IJournalPrinterCapabilities, Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities>
 {
@@ -598,147 +598,147 @@ struct IJournalPrinterCapabilities :
 };
 
 struct IMagneticStripeReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReader>
 {
     IMagneticStripeReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderAamvaCardDataReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderAamvaCardDataReceivedEventArgs>
 {
     IMagneticStripeReaderAamvaCardDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderBankCardDataReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderBankCardDataReceivedEventArgs>
 {
     IMagneticStripeReaderBankCardDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderCapabilities>
 {
     IMagneticStripeReaderCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderCardTypesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderCardTypesStatics>
 {
     IMagneticStripeReaderCardTypesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderEncryptionAlgorithmsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderEncryptionAlgorithmsStatics>
 {
     IMagneticStripeReaderEncryptionAlgorithmsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderErrorOccurredEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderErrorOccurredEventArgs>
 {
     IMagneticStripeReaderErrorOccurredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderReport>
 {
     IMagneticStripeReaderReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderStatics>
 {
     IMagneticStripeReaderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderStatusUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderStatusUpdatedEventArgs>
 {
     IMagneticStripeReaderStatusUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderTrackData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderTrackData>
 {
     IMagneticStripeReaderTrackData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs>
 {
     IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPosPrinter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPosPrinter>
 {
     IPosPrinter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPosPrinterCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPosPrinterCapabilities>
 {
     IPosPrinterCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPosPrinterCharacterSetIdsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPosPrinterCharacterSetIdsStatics>
 {
     IPosPrinterCharacterSetIdsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPosPrinterJob :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPosPrinterJob>
 {
     IPosPrinterJob(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPosPrinterReleaseDeviceRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPosPrinterReleaseDeviceRequestedEventArgs>
 {
     IPosPrinterReleaseDeviceRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPosPrinterStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPosPrinterStatics>
 {
     IPosPrinterStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPosPrinterStatus :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPosPrinterStatus>
 {
     IPosPrinterStatus(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPosPrinterStatusUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPosPrinterStatusUpdatedEventArgs>
 {
     IPosPrinterStatusUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IReceiptOrSlipJob :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IReceiptOrSlipJob>,
     impl::require<IReceiptOrSlipJob, Windows::Devices::PointOfService::IPosPrinterJob>
 {
@@ -746,7 +746,7 @@ struct IReceiptOrSlipJob :
 };
 
 struct IReceiptPrintJob :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IReceiptPrintJob>,
     impl::require<IReceiptPrintJob, Windows::Devices::PointOfService::IPosPrinterJob, Windows::Devices::PointOfService::IReceiptOrSlipJob>
 {
@@ -754,7 +754,7 @@ struct IReceiptPrintJob :
 };
 
 struct IReceiptPrinterCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IReceiptPrinterCapabilities>,
     impl::require<IReceiptPrinterCapabilities, Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities, Windows::Devices::PointOfService::ICommonReceiptSlipCapabilities>
 {
@@ -762,7 +762,7 @@ struct IReceiptPrinterCapabilities :
 };
 
 struct ISlipPrinterCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISlipPrinterCapabilities>,
     impl::require<ISlipPrinterCapabilities, Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities, Windows::Devices::PointOfService::ICommonReceiptSlipCapabilities>
 {
@@ -770,7 +770,7 @@ struct ISlipPrinterCapabilities :
 };
 
 struct IUnifiedPosErrorData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUnifiedPosErrorData>
 {
     IUnifiedPosErrorData(std::nullptr_t = nullptr) noexcept {}

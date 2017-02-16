@@ -36,7 +36,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_8be9e6a3_f88a_5429_8da3_676b7d4f1a5b
 #define WINRT_GENERIC_8be9e6a3_f88a_5429_8da3_676b7d4f1a5b
-template <> struct __declspec(uuid("8be9e6a3-f88a-5429-8da3-676b7d4f1a5b")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> {};
+template <> struct __declspec(uuid("8be9e6a3-f88a-5429-8da3-676b7d4f1a5b")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -85,42 +85,42 @@ template <> struct __declspec(uuid("6e82dedc-b74e-503a-b00b-9c6f47f12a0f")) __de
 namespace Windows::ApplicationModel::LockScreen {
 
 struct ILockApplicationHost :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILockApplicationHost>
 {
     ILockApplicationHost(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILockApplicationHostStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILockApplicationHostStatics>
 {
     ILockApplicationHostStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILockScreenBadge :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILockScreenBadge>
 {
     ILockScreenBadge(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILockScreenInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILockScreenInfo>
 {
     ILockScreenInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILockScreenUnlockingDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILockScreenUnlockingDeferral>
 {
     ILockScreenUnlockingDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILockScreenUnlockingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILockScreenUnlockingEventArgs>
 {
     ILockScreenUnlockingEventArgs(std::nullptr_t = nullptr) noexcept {}

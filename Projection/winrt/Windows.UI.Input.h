@@ -2340,12 +2340,12 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall add_ScreenContactEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_ScreenContactEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().ScreenContactEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().ScreenContactEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2396,12 +2396,12 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall add_ControlLost(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_ControlLost(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().ControlLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().ControlLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2720,7 +2720,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
         }
     }
 
-    HRESULT __stdcall get_Tag(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Tag(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -2735,12 +2735,12 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
         }
     }
 
-    HRESULT __stdcall put_Tag(impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall put_Tag(impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Tag(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().Tag(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -2749,12 +2749,12 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_Invoked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Invoked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Invoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Invoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -4219,14 +4219,14 @@ template <typename D> void impl_IRadialController<D>::ScreenContactStarted(event
     check_hresult(WINRT_SHIM(IRadialController)->remove_ScreenContactStarted(cookie));
 }
 
-template <typename D> event_token impl_IRadialController<D>::ScreenContactEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IRadialController<D>::ScreenContactEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IRadialController)->add_ScreenContactEnded(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IRadialController> impl_IRadialController<D>::ScreenContactEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IRadialController> impl_IRadialController<D>::ScreenContactEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IRadialController>(this, &ABI::Windows::UI::Input::IRadialController::remove_ScreenContactEnded, ScreenContactEnded(handler));
 }
@@ -4253,14 +4253,14 @@ template <typename D> void impl_IRadialController<D>::ScreenContactContinued(eve
     check_hresult(WINRT_SHIM(IRadialController)->remove_ScreenContactContinued(cookie));
 }
 
-template <typename D> event_token impl_IRadialController<D>::ControlLost(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IRadialController<D>::ControlLost(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IRadialController)->add_ControlLost(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IRadialController> impl_IRadialController<D>::ControlLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IRadialController> impl_IRadialController<D>::ControlLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IRadialController>(this, &ABI::Windows::UI::Input::IRadialController::remove_ControlLost, ControlLost(handler));
 }
@@ -4394,26 +4394,26 @@ template <typename D> hstring impl_IRadialControllerMenuItem<D>::DisplayText() c
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IRadialControllerMenuItem<D>::Tag() const
+template <typename D> Windows::Foundation::IInspectable impl_IRadialControllerMenuItem<D>::Tag() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IRadialControllerMenuItem)->get_Tag(put_abi(value)));
     return value;
 }
 
-template <typename D> void impl_IRadialControllerMenuItem<D>::Tag(const Windows::IInspectable & value) const
+template <typename D> void impl_IRadialControllerMenuItem<D>::Tag(const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IRadialControllerMenuItem)->put_Tag(get_abi(value)));
 }
 
-template <typename D> event_token impl_IRadialControllerMenuItem<D>::Invoked(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IRadialControllerMenuItem<D>::Invoked(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IRadialControllerMenuItem)->add_Invoked(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IRadialControllerMenuItem> impl_IRadialControllerMenuItem<D>::Invoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IRadialControllerMenuItem> impl_IRadialControllerMenuItem<D>::Invoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IRadialControllerMenuItem>(this, &ABI::Windows::UI::Input::IRadialControllerMenuItem::remove_Invoked, Invoked(handler));
 }

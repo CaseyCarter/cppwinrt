@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Data::Html {
 
 struct IHtmlUtilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHtmlUtilities>
 {
     IHtmlUtilities(std::nullptr_t = nullptr) noexcept {}

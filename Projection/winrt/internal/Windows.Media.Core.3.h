@@ -143,7 +143,7 @@ struct WINRT_EBO MediaStreamSample :
 };
 
 struct WINRT_EBO MediaStreamSamplePropertySet :
-    Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>
+    Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>
 {
     MediaStreamSamplePropertySet(std::nullptr_t) noexcept {}
 };

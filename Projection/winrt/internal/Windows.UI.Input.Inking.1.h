@@ -18,7 +18,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Input::Inking {
 
-struct __declspec(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9")) __declspec(novtable) IInkDrawingAttributes : Windows::IInspectable
+struct __declspec(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9")) __declspec(novtable) IInkDrawingAttributes : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Color(Windows::UI::Color * value) = 0;
     virtual HRESULT __stdcall put_Color(Windows::UI::Color value) = 0;
@@ -32,7 +32,7 @@ struct __declspec(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9")) __declspec(novta
     virtual HRESULT __stdcall put_FitToCurve(bool value) = 0;
 };
 
-struct __declspec(uuid("7cab6508-8ec4-42fd-a5a5-e4b7d1d5316d")) __declspec(novtable) IInkDrawingAttributes2 : Windows::IInspectable
+struct __declspec(uuid("7cab6508-8ec4-42fd-a5a5-e4b7d1d5316d")) __declspec(novtable) IInkDrawingAttributes2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PenTipTransform(Windows::Foundation::Numerics::float3x2 * value) = 0;
     virtual HRESULT __stdcall put_PenTipTransform(Windows::Foundation::Numerics::float3x2 value) = 0;
@@ -40,24 +40,24 @@ struct __declspec(uuid("7cab6508-8ec4-42fd-a5a5-e4b7d1d5316d")) __declspec(novta
     virtual HRESULT __stdcall put_DrawAsHighlighter(bool value) = 0;
 };
 
-struct __declspec(uuid("72020002-7d5b-4690-8af4-e664cbe2b74f")) __declspec(novtable) IInkDrawingAttributes3 : Windows::IInspectable
+struct __declspec(uuid("72020002-7d5b-4690-8af4-e664cbe2b74f")) __declspec(novtable) IInkDrawingAttributes3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Kind(winrt::Windows::UI::Input::Inking::InkDrawingAttributesKind * value) = 0;
     virtual HRESULT __stdcall get_PencilProperties(Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties ** value) = 0;
 };
 
-struct __declspec(uuid("4f2534cb-2d86-41bb-b0e8-e4c2a0253c52")) __declspec(novtable) IInkDrawingAttributesPencilProperties : Windows::IInspectable
+struct __declspec(uuid("4f2534cb-2d86-41bb-b0e8-e4c2a0253c52")) __declspec(novtable) IInkDrawingAttributesPencilProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Opacity(double * value) = 0;
     virtual HRESULT __stdcall put_Opacity(double value) = 0;
 };
 
-struct __declspec(uuid("f731e03f-1a65-4862-96cb-6e1665e17f6d")) __declspec(novtable) IInkDrawingAttributesStatics : Windows::IInspectable
+struct __declspec(uuid("f731e03f-1a65-4862-96cb-6e1665e17f6d")) __declspec(novtable) IInkDrawingAttributesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateForPencil(Windows::UI::Input::Inking::IInkDrawingAttributes ** result) = 0;
 };
 
-struct __declspec(uuid("2778d85e-33ca-4b06-a6d3-ac3945116d37")) __declspec(novtable) IInkInputProcessingConfiguration : Windows::IInspectable
+struct __declspec(uuid("2778d85e-33ca-4b06-a6d3-ac3945116d37")) __declspec(novtable) IInkInputProcessingConfiguration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Mode(winrt::Windows::UI::Input::Inking::InkInputProcessingMode * value) = 0;
     virtual HRESULT __stdcall put_Mode(winrt::Windows::UI::Input::Inking::InkInputProcessingMode value) = 0;
@@ -65,29 +65,29 @@ struct __declspec(uuid("2778d85e-33ca-4b06-a6d3-ac3945116d37")) __declspec(novta
     virtual HRESULT __stdcall put_RightDragAction(winrt::Windows::UI::Input::Inking::InkInputRightDragAction value) = 0;
 };
 
-struct __declspec(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1")) __declspec(novtable) IInkManager : Windows::IInspectable
+struct __declspec(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1")) __declspec(novtable) IInkManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Mode(winrt::Windows::UI::Input::Inking::InkManipulationMode * value) = 0;
     virtual HRESULT __stdcall put_Mode(winrt::Windows::UI::Input::Inking::InkManipulationMode value) = 0;
     virtual HRESULT __stdcall abi_ProcessPointerDown(Windows::UI::Input::IPointerPoint * pointerPoint) = 0;
-    virtual HRESULT __stdcall abi_ProcessPointerUpdate(Windows::UI::Input::IPointerPoint * pointerPoint, Windows::IInspectable ** updateInformation) = 0;
+    virtual HRESULT __stdcall abi_ProcessPointerUpdate(Windows::UI::Input::IPointerPoint * pointerPoint, Windows::Foundation::IInspectable ** updateInformation) = 0;
     virtual HRESULT __stdcall abi_ProcessPointerUp(Windows::UI::Input::IPointerPoint * pointerPoint, Windows::Foundation::Rect * updateRectangle) = 0;
     virtual HRESULT __stdcall abi_SetDefaultDrawingAttributes(Windows::UI::Input::Inking::IInkDrawingAttributes * drawingAttributes) = 0;
     virtual HRESULT __stdcall abi_RecognizeAsync2(winrt::Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> ** recognitionResults) = 0;
 };
 
-struct __declspec(uuid("9f87272b-858c-46a5-9b41-d195970459fd")) __declspec(novtable) IInkPoint : Windows::IInspectable
+struct __declspec(uuid("9f87272b-858c-46a5-9b41-d195970459fd")) __declspec(novtable) IInkPoint : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall get_Pressure(float * value) = 0;
 };
 
-struct __declspec(uuid("29e5d51c-c98f-405d-9f3b-e53e31068d4d")) __declspec(novtable) IInkPointFactory : Windows::IInspectable
+struct __declspec(uuid("29e5d51c-c98f-405d-9f3b-e53e31068d4d")) __declspec(novtable) IInkPointFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInkPoint(Windows::Foundation::Point position, float pressure, Windows::UI::Input::Inking::IInkPoint ** result) = 0;
 };
 
-struct __declspec(uuid("a69b70e2-887b-458f-b173-4fe4438930a3")) __declspec(novtable) IInkPresenter : Windows::IInspectable
+struct __declspec(uuid("a69b70e2-887b-458f-b173-4fe4438930a3")) __declspec(novtable) IInkPresenter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsInputEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsInputEnabled(bool value) = 0;
@@ -108,7 +108,7 @@ struct __declspec(uuid("a69b70e2-887b-458f-b173-4fe4438930a3")) __declspec(novta
     virtual HRESULT __stdcall remove_StrokesErased(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a")) __declspec(novtable) IInkPresenterRuler : Windows::IInspectable
+struct __declspec(uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a")) __declspec(novtable) IInkPresenterRuler : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Length(double * value) = 0;
     virtual HRESULT __stdcall put_Length(double value) = 0;
@@ -116,12 +116,12 @@ struct __declspec(uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a")) __declspec(novta
     virtual HRESULT __stdcall put_Width(double value) = 0;
 };
 
-struct __declspec(uuid("34361beb-9001-4a4b-a690-69dbaf63e501")) __declspec(novtable) IInkPresenterRulerFactory : Windows::IInspectable
+struct __declspec(uuid("34361beb-9001-4a4b-a690-69dbaf63e501")) __declspec(novtable) IInkPresenterRulerFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::UI::Input::Inking::IInkPresenter * inkPresenter, Windows::UI::Input::Inking::IInkPresenterRuler ** inkPresenterRuler) = 0;
 };
 
-struct __declspec(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc")) __declspec(novtable) IInkPresenterStencil : Windows::IInspectable
+struct __declspec(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc")) __declspec(novtable) IInkPresenterStencil : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Kind(winrt::Windows::UI::Input::Inking::InkPresenterStencilKind * value) = 0;
     virtual HRESULT __stdcall get_IsVisible(bool * value) = 0;
@@ -134,26 +134,26 @@ struct __declspec(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc")) __declspec(novta
     virtual HRESULT __stdcall put_Transform(Windows::Foundation::Numerics::float3x2 value) = 0;
 };
 
-struct __declspec(uuid("36461a94-5068-40ef-8a05-2c2fb60908a2")) __declspec(novtable) IInkRecognitionResult : Windows::IInspectable
+struct __declspec(uuid("36461a94-5068-40ef-8a05-2c2fb60908a2")) __declspec(novtable) IInkRecognitionResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BoundingRect(Windows::Foundation::Rect * boundingRect) = 0;
     virtual HRESULT __stdcall abi_GetTextCandidates(Windows::Foundation::Collections::IVectorView<hstring> ** textCandidates) = 0;
     virtual HRESULT __stdcall abi_GetStrokes(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> ** strokes) = 0;
 };
 
-struct __declspec(uuid("077ccea3-904d-442a-b151-aaca3631c43b")) __declspec(novtable) IInkRecognizer : Windows::IInspectable
+struct __declspec(uuid("077ccea3-904d-442a-b151-aaca3631c43b")) __declspec(novtable) IInkRecognizer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
 };
 
-struct __declspec(uuid("a74d9a31-8047-4698-a912-f82a5085012f")) __declspec(novtable) IInkRecognizerContainer : Windows::IInspectable
+struct __declspec(uuid("a74d9a31-8047-4698-a912-f82a5085012f")) __declspec(novtable) IInkRecognizerContainer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetDefaultRecognizer(Windows::UI::Input::Inking::IInkRecognizer * recognizer) = 0;
     virtual HRESULT __stdcall abi_RecognizeAsync(Windows::UI::Input::Inking::IInkStrokeContainer * strokeCollection, winrt::Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> ** recognitionResults) = 0;
     virtual HRESULT __stdcall abi_GetRecognizers(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognizer> ** recognizerView) = 0;
 };
 
-struct __declspec(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4")) __declspec(novtable) IInkStroke : Windows::IInspectable
+struct __declspec(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4")) __declspec(novtable) IInkStroke : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DrawingAttributes(Windows::UI::Input::Inking::IInkDrawingAttributes ** value) = 0;
     virtual HRESULT __stdcall put_DrawingAttributes(Windows::UI::Input::Inking::IInkDrawingAttributes * value) = 0;
@@ -165,14 +165,14 @@ struct __declspec(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4")) __declspec(novta
     virtual HRESULT __stdcall abi_Clone(Windows::UI::Input::Inking::IInkStroke ** clonedStroke) = 0;
 };
 
-struct __declspec(uuid("5db9e4f4-bafa-4de1-89d3-201b1ed7d89b")) __declspec(novtable) IInkStroke2 : Windows::IInspectable
+struct __declspec(uuid("5db9e4f4-bafa-4de1-89d3-201b1ed7d89b")) __declspec(novtable) IInkStroke2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PointTransform(Windows::Foundation::Numerics::float3x2 * value) = 0;
     virtual HRESULT __stdcall put_PointTransform(Windows::Foundation::Numerics::float3x2 value) = 0;
     virtual HRESULT __stdcall abi_GetInkPoints(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkPoint> ** inkPoints) = 0;
 };
 
-struct __declspec(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801")) __declspec(novtable) IInkStrokeBuilder : Windows::IInspectable
+struct __declspec(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801")) __declspec(novtable) IInkStrokeBuilder : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_BeginStroke(Windows::UI::Input::IPointerPoint * pointerPoint) = 0;
     virtual HRESULT __stdcall abi_AppendToStroke(Windows::UI::Input::IPointerPoint * pointerPoint, Windows::UI::Input::IPointerPoint ** previousPointerPoint) = 0;
@@ -181,12 +181,12 @@ struct __declspec(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801")) __declspec(novta
     virtual HRESULT __stdcall abi_SetDefaultDrawingAttributes(Windows::UI::Input::Inking::IInkDrawingAttributes * drawingAttributes) = 0;
 };
 
-struct __declspec(uuid("bd82bc27-731f-4cbc-bbbf-6d468044f1e5")) __declspec(novtable) IInkStrokeBuilder2 : Windows::IInspectable
+struct __declspec(uuid("bd82bc27-731f-4cbc-bbbf-6d468044f1e5")) __declspec(novtable) IInkStrokeBuilder2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateStrokeFromInkPoints(Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> * inkPoints, Windows::Foundation::Numerics::float3x2 transform, Windows::UI::Input::Inking::IInkStroke ** result) = 0;
 };
 
-struct __declspec(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16")) __declspec(novtable) IInkStrokeContainer : Windows::IInspectable
+struct __declspec(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16")) __declspec(novtable) IInkStrokeContainer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BoundingRect(Windows::Foundation::Rect * value) = 0;
     virtual HRESULT __stdcall abi_AddStroke(Windows::UI::Input::Inking::IInkStroke * stroke) = 0;
@@ -204,13 +204,13 @@ struct __declspec(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16")) __declspec(novta
     virtual HRESULT __stdcall abi_GetRecognitionResults(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> ** recognitionResults) = 0;
 };
 
-struct __declspec(uuid("8901d364-da36-4bcf-9e5c-d195825995b4")) __declspec(novtable) IInkStrokeContainer2 : Windows::IInspectable
+struct __declspec(uuid("8901d364-da36-4bcf-9e5c-d195825995b4")) __declspec(novtable) IInkStrokeContainer2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddStrokes(Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> * strokes) = 0;
     virtual HRESULT __stdcall abi_Clear() = 0;
 };
 
-struct __declspec(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d")) __declspec(novtable) IInkStrokeInput : Windows::IInspectable
+struct __declspec(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d")) __declspec(novtable) IInkStrokeInput : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_StrokeStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_StrokeStarted(event_token cookie) = 0;
@@ -223,7 +223,7 @@ struct __declspec(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d")) __declspec(novta
     virtual HRESULT __stdcall get_InkPresenter(Windows::UI::Input::Inking::IInkPresenter ** value) = 0;
 };
 
-struct __declspec(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5")) __declspec(novtable) IInkStrokeRenderingSegment : Windows::IInspectable
+struct __declspec(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5")) __declspec(novtable) IInkStrokeRenderingSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall get_BezierControlPoint1(Windows::Foundation::Point * value) = 0;
@@ -234,23 +234,23 @@ struct __declspec(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5")) __declspec(novta
     virtual HRESULT __stdcall get_Twist(float * value) = 0;
 };
 
-struct __declspec(uuid("c4f3f229-1938-495c-b4d9-6de4b08d4811")) __declspec(novtable) IInkStrokesCollectedEventArgs : Windows::IInspectable
+struct __declspec(uuid("c4f3f229-1938-495c-b4d9-6de4b08d4811")) __declspec(novtable) IInkStrokesCollectedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Strokes(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> ** value) = 0;
 };
 
-struct __declspec(uuid("a4216a22-1503-4ebf-8ff5-2de84584a8aa")) __declspec(novtable) IInkStrokesErasedEventArgs : Windows::IInspectable
+struct __declspec(uuid("a4216a22-1503-4ebf-8ff5-2de84584a8aa")) __declspec(novtable) IInkStrokesErasedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Strokes(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> ** value) = 0;
 };
 
-struct __declspec(uuid("9b9ea160-ae9b-45f9-8407-4b493b163661")) __declspec(novtable) IInkSynchronizer : Windows::IInspectable
+struct __declspec(uuid("9b9ea160-ae9b-45f9-8407-4b493b163661")) __declspec(novtable) IInkSynchronizer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_BeginDry(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> ** inkStrokes) = 0;
     virtual HRESULT __stdcall abi_EndDry() = 0;
 };
 
-struct __declspec(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256")) __declspec(novtable) IInkUnprocessedInput : Windows::IInspectable
+struct __declspec(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256")) __declspec(novtable) IInkUnprocessedInput : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_PointerEntered(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_PointerEntered(event_token cookie) = 0;
@@ -356,7 +356,7 @@ struct WINRT_EBO impl_IInkManager
     Windows::UI::Input::Inking::InkManipulationMode Mode() const;
     void Mode(Windows::UI::Input::Inking::InkManipulationMode value) const;
     void ProcessPointerDown(const Windows::UI::Input::PointerPoint & pointerPoint) const;
-    Windows::IInspectable ProcessPointerUpdate(const Windows::UI::Input::PointerPoint & pointerPoint) const;
+    Windows::Foundation::IInspectable ProcessPointerUpdate(const Windows::UI::Input::PointerPoint & pointerPoint) const;
     Windows::Foundation::Rect ProcessPointerUp(const Windows::UI::Input::PointerPoint & pointerPoint) const;
     void SetDefaultDrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & drawingAttributes) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> RecognizeAsync(Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget) const;

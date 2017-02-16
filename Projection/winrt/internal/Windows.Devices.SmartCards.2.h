@@ -170,7 +170,7 @@ template <> struct __declspec(uuid("bfea3fad-411e-5721-88f5-92c9b9fbbe14")) __de
 
 namespace Windows::Devices::SmartCards {
 
-struct SmartCardPinResetHandler : Windows::IUnknown
+struct SmartCardPinResetHandler : Windows::Foundation::IUnknown
 {
     SmartCardPinResetHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> SmartCardPinResetHandler(L lambda);
@@ -180,28 +180,28 @@ struct SmartCardPinResetHandler : Windows::IUnknown
 };
 
 struct ICardAddedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICardAddedEventArgs>
 {
     ICardAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICardRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICardRemovedEventArgs>
 {
     ICardRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCard :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCard>
 {
     ISmartCard(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardChallengeContext :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardChallengeContext>,
     impl::require<ISmartCardChallengeContext, Windows::Foundation::IClosable>
 {
@@ -209,14 +209,14 @@ struct ISmartCardChallengeContext :
 };
 
 struct ISmartCardConnect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardConnect>
 {
     ISmartCardConnect(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardConnection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardConnection>,
     impl::require<ISmartCardConnection, Windows::Foundation::IClosable>
 {
@@ -224,63 +224,63 @@ struct ISmartCardConnection :
 };
 
 struct ISmartCardPinPolicy :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardPinPolicy>
 {
     ISmartCardPinPolicy(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardPinResetDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardPinResetDeferral>
 {
     ISmartCardPinResetDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardPinResetRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardPinResetRequest>
 {
     ISmartCardPinResetRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardProvisioning :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardProvisioning>
 {
     ISmartCardProvisioning(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardProvisioning2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardProvisioning2>
 {
     ISmartCardProvisioning2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardProvisioningStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardProvisioningStatics>
 {
     ISmartCardProvisioningStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardProvisioningStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardProvisioningStatics2>
 {
     ISmartCardProvisioningStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardReader>
 {
     ISmartCardReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmartCardReaderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmartCardReaderStatics>
 {
     ISmartCardReaderStatics(std::nullptr_t = nullptr) noexcept {}

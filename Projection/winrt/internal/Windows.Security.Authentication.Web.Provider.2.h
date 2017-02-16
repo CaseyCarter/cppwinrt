@@ -220,42 +220,42 @@ template <> struct __declspec(uuid("3fa6536f-7e7a-5bc9-b20f-d866cacaf81c")) __de
 namespace Windows::Security::Authentication::Web::Provider {
 
 struct IWebAccountClientView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountClientView>
 {
     IWebAccountClientView(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountClientViewFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountClientViewFactory>
 {
     IWebAccountClientViewFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountManagerStatics>
 {
     IWebAccountManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountManagerStatics2>
 {
     IWebAccountManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountMapManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountMapManagerStatics>
 {
     IWebAccountMapManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountProviderAddAccountOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderAddAccountOperation>,
     impl::require<IWebAccountProviderAddAccountOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
@@ -263,14 +263,14 @@ struct IWebAccountProviderAddAccountOperation :
 };
 
 struct IWebAccountProviderBaseReportOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderBaseReportOperation>
 {
     IWebAccountProviderBaseReportOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountProviderDeleteAccountOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderDeleteAccountOperation>,
     impl::require<IWebAccountProviderDeleteAccountOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
@@ -278,7 +278,7 @@ struct IWebAccountProviderDeleteAccountOperation :
 };
 
 struct IWebAccountProviderManageAccountOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderManageAccountOperation>,
     impl::require<IWebAccountProviderManageAccountOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
@@ -286,14 +286,14 @@ struct IWebAccountProviderManageAccountOperation :
 };
 
 struct IWebAccountProviderOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderOperation>
 {
     IWebAccountProviderOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountProviderRetrieveCookiesOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderRetrieveCookiesOperation>,
     impl::require<IWebAccountProviderRetrieveCookiesOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
@@ -301,7 +301,7 @@ struct IWebAccountProviderRetrieveCookiesOperation :
 };
 
 struct IWebAccountProviderSignOutAccountOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderSignOutAccountOperation>,
     impl::require<IWebAccountProviderSignOutAccountOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
@@ -309,7 +309,7 @@ struct IWebAccountProviderSignOutAccountOperation :
 };
 
 struct IWebAccountProviderSilentReportOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderSilentReportOperation>,
     impl::require<IWebAccountProviderSilentReportOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderBaseReportOperation>
 {
@@ -317,14 +317,14 @@ struct IWebAccountProviderSilentReportOperation :
 };
 
 struct IWebAccountProviderTokenObjects :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderTokenObjects>
 {
     IWebAccountProviderTokenObjects(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountProviderTokenOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderTokenOperation>,
     impl::require<IWebAccountProviderTokenOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
@@ -332,7 +332,7 @@ struct IWebAccountProviderTokenOperation :
 };
 
 struct IWebAccountProviderUIReportOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderUIReportOperation>,
     impl::require<IWebAccountProviderUIReportOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderBaseReportOperation>
 {
@@ -340,35 +340,35 @@ struct IWebAccountProviderUIReportOperation :
 };
 
 struct IWebAccountScopeManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountScopeManagerStatics>
 {
     IWebAccountScopeManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebProviderTokenRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebProviderTokenRequest>
 {
     IWebProviderTokenRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebProviderTokenRequest2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebProviderTokenRequest2>
 {
     IWebProviderTokenRequest2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebProviderTokenResponse :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebProviderTokenResponse>
 {
     IWebProviderTokenResponse(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebProviderTokenResponseFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebProviderTokenResponseFactory>
 {
     IWebProviderTokenResponseFactory(std::nullptr_t = nullptr) noexcept {}

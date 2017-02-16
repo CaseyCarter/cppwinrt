@@ -65,210 +65,210 @@ template <> struct __declspec(uuid("04ca4378-f594-5de6-a555-304f62cb4faf")) __de
 namespace Windows::Security::Cryptography::Core {
 
 struct IAsymmetricAlgorithmNamesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAsymmetricAlgorithmNamesStatics>
 {
     IAsymmetricAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAsymmetricAlgorithmNamesStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAsymmetricAlgorithmNamesStatics2>
 {
     IAsymmetricAlgorithmNamesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAsymmetricKeyAlgorithmProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAsymmetricKeyAlgorithmProvider>
 {
     IAsymmetricKeyAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAsymmetricKeyAlgorithmProvider2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAsymmetricKeyAlgorithmProvider2>
 {
     IAsymmetricKeyAlgorithmProvider2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAsymmetricKeyAlgorithmProviderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAsymmetricKeyAlgorithmProviderStatics>
 {
     IAsymmetricKeyAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICryptographicEngineStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICryptographicEngineStatics>
 {
     ICryptographicEngineStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICryptographicEngineStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICryptographicEngineStatics2>
 {
     ICryptographicEngineStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICryptographicKey :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICryptographicKey>
 {
     ICryptographicKey(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEccCurveNamesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEccCurveNamesStatics>
 {
     IEccCurveNamesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEncryptedAndAuthenticatedData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEncryptedAndAuthenticatedData>
 {
     IEncryptedAndAuthenticatedData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHashAlgorithmNamesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHashAlgorithmNamesStatics>
 {
     IHashAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHashAlgorithmProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHashAlgorithmProvider>
 {
     IHashAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHashAlgorithmProviderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHashAlgorithmProviderStatics>
 {
     IHashAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHashComputation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHashComputation>
 {
     IHashComputation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyDerivationAlgorithmNamesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyDerivationAlgorithmNamesStatics>
 {
     IKeyDerivationAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyDerivationAlgorithmNamesStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyDerivationAlgorithmNamesStatics2>
 {
     IKeyDerivationAlgorithmNamesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyDerivationAlgorithmProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyDerivationAlgorithmProvider>
 {
     IKeyDerivationAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyDerivationAlgorithmProviderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyDerivationAlgorithmProviderStatics>
 {
     IKeyDerivationAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyDerivationParameters :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyDerivationParameters>
 {
     IKeyDerivationParameters(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyDerivationParameters2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyDerivationParameters2>
 {
     IKeyDerivationParameters2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyDerivationParametersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyDerivationParametersStatics>
 {
     IKeyDerivationParametersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyDerivationParametersStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyDerivationParametersStatics2>
 {
     IKeyDerivationParametersStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMacAlgorithmNamesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMacAlgorithmNamesStatics>
 {
     IMacAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMacAlgorithmProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMacAlgorithmProvider>
 {
     IMacAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMacAlgorithmProvider2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMacAlgorithmProvider2>
 {
     IMacAlgorithmProvider2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMacAlgorithmProviderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMacAlgorithmProviderStatics>
 {
     IMacAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPersistedKeyProviderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPersistedKeyProviderStatics>
 {
     IPersistedKeyProviderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISymmetricAlgorithmNamesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISymmetricAlgorithmNamesStatics>
 {
     ISymmetricAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISymmetricKeyAlgorithmProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISymmetricKeyAlgorithmProvider>
 {
     ISymmetricKeyAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISymmetricKeyAlgorithmProviderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISymmetricKeyAlgorithmProviderStatics>
 {
     ISymmetricKeyAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}

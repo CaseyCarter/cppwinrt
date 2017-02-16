@@ -32,7 +32,7 @@ template <> struct __declspec(uuid("5061ee0f-899a-569c-a0a3-c2566eb88142")) __de
 
 #ifndef WINRT_GENERIC_f82ae043_54fb_5366_a607_19b68e6bab8c
 #define WINRT_GENERIC_f82ae043_54fb_5366_a607_19b68e6bab8c
-template <> struct __declspec(uuid("f82ae043-54fb-5366-a607-19b68e6bab8c")) __declspec(novtable) TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f82ae043-54fb-5366-a607-19b68e6bab8c")) __declspec(novtable) TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -70,7 +70,7 @@ template <> struct __declspec(uuid("19344a58-a5c1-5168-803e-632771628143")) __de
 
 namespace Windows::Media::Protection {
 
-struct ComponentLoadFailedEventHandler : Windows::IUnknown
+struct ComponentLoadFailedEventHandler : Windows::Foundation::IUnknown
 {
     ComponentLoadFailedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> ComponentLoadFailedEventHandler(L lambda);
@@ -79,7 +79,7 @@ struct ComponentLoadFailedEventHandler : Windows::IUnknown
     void operator()(const Windows::Media::Protection::MediaProtectionManager & sender, const Windows::Media::Protection::ComponentLoadFailedEventArgs & e) const;
 };
 
-struct RebootNeededEventHandler : Windows::IUnknown
+struct RebootNeededEventHandler : Windows::Foundation::IUnknown
 {
     RebootNeededEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> RebootNeededEventHandler(L lambda);
@@ -88,7 +88,7 @@ struct RebootNeededEventHandler : Windows::IUnknown
     void operator()(const Windows::Media::Protection::MediaProtectionManager & sender) const;
 };
 
-struct ServiceRequestedEventHandler : Windows::IUnknown
+struct ServiceRequestedEventHandler : Windows::Foundation::IUnknown
 {
     ServiceRequestedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> ServiceRequestedEventHandler(L lambda);
@@ -98,14 +98,14 @@ struct ServiceRequestedEventHandler : Windows::IUnknown
 };
 
 struct IComponentLoadFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IComponentLoadFailedEventArgs>
 {
     IComponentLoadFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHdcpSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHdcpSession>,
     impl::require<IHdcpSession, Windows::Foundation::IClosable>
 {
@@ -113,70 +113,70 @@ struct IHdcpSession :
 };
 
 struct IMediaProtectionManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaProtectionManager>
 {
     IMediaProtectionManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaProtectionPMPServer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaProtectionPMPServer>
 {
     IMediaProtectionPMPServer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaProtectionPMPServerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaProtectionPMPServerFactory>
 {
     IMediaProtectionPMPServerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaProtectionServiceCompletion :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaProtectionServiceCompletion>
 {
     IMediaProtectionServiceCompletion(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaProtectionServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaProtectionServiceRequest>
 {
     IMediaProtectionServiceRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProtectionCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProtectionCapabilities>
 {
     IProtectionCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRevocationAndRenewalInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRevocationAndRenewalInformation>
 {
     IRevocationAndRenewalInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRevocationAndRenewalItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRevocationAndRenewalItem>
 {
     IRevocationAndRenewalItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IServiceRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IServiceRequestedEventArgs>
 {
     IServiceRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IServiceRequestedEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IServiceRequestedEventArgs2>
 {
     IServiceRequestedEventArgs2(std::nullptr_t = nullptr) noexcept {}

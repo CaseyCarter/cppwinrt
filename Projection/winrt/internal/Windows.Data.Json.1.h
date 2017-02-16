@@ -12,7 +12,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Data::Json {
 
-struct __declspec(uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81")) __declspec(novtable) IJsonArray : Windows::IInspectable
+struct __declspec(uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81")) __declspec(novtable) IJsonArray : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetObjectAt(uint32_t index, Windows::Data::Json::IJsonObject ** returnValue) = 0;
     virtual HRESULT __stdcall abi_GetArrayAt(uint32_t index, Windows::Data::Json::IJsonArray ** returnValue) = 0;
@@ -21,18 +21,18 @@ struct __declspec(uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81")) __declspec(novta
     virtual HRESULT __stdcall abi_GetBooleanAt(uint32_t index, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("db1434a9-e164-499f-93e2-8a8f49bb90ba")) __declspec(novtable) IJsonArrayStatics : Windows::IInspectable
+struct __declspec(uuid("db1434a9-e164-499f-93e2-8a8f49bb90ba")) __declspec(novtable) IJsonArrayStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Data::Json::IJsonArray ** jsonArray) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Data::Json::IJsonArray ** result, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("404030da-87d0-436c-83ab-fc7b12c0cc26")) __declspec(novtable) IJsonErrorStatics2 : Windows::IInspectable
+struct __declspec(uuid("404030da-87d0-436c-83ab-fc7b12c0cc26")) __declspec(novtable) IJsonErrorStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetJsonStatus(int32_t hresult, winrt::Windows::Data::Json::JsonErrorStatus * status) = 0;
 };
 
-struct __declspec(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3")) __declspec(novtable) IJsonObject : Windows::IInspectable
+struct __declspec(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3")) __declspec(novtable) IJsonObject : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetNamedValue(hstring name, Windows::Data::Json::IJsonValue ** returnValue) = 0;
     virtual HRESULT __stdcall abi_SetNamedValue(hstring name, Windows::Data::Json::IJsonValue * value) = 0;
@@ -43,13 +43,13 @@ struct __declspec(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3")) __declspec(novta
     virtual HRESULT __stdcall abi_GetNamedBoolean(hstring name, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("2289f159-54de-45d8-abcc-22603fa066a0")) __declspec(novtable) IJsonObjectStatics : Windows::IInspectable
+struct __declspec(uuid("2289f159-54de-45d8-abcc-22603fa066a0")) __declspec(novtable) IJsonObjectStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Data::Json::IJsonObject ** jsonObject) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Data::Json::IJsonObject ** result, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13")) __declspec(novtable) IJsonObjectWithDefaultValues : Windows::IInspectable
+struct __declspec(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13")) __declspec(novtable) IJsonObjectWithDefaultValues : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetNamedValueOrDefault(hstring name, Windows::Data::Json::IJsonValue * defaultValue, Windows::Data::Json::IJsonValue ** returnValue) = 0;
     virtual HRESULT __stdcall abi_GetNamedObjectOrDefault(hstring name, Windows::Data::Json::IJsonObject * defaultValue, Windows::Data::Json::IJsonObject ** returnValue) = 0;
@@ -59,7 +59,7 @@ struct __declspec(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13")) __declspec(novta
     virtual HRESULT __stdcall abi_GetNamedBooleanOrDefault(hstring name, bool defaultValue, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e")) __declspec(novtable) IJsonValue : Windows::IInspectable
+struct __declspec(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e")) __declspec(novtable) IJsonValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ValueType(winrt::Windows::Data::Json::JsonValueType * value) = 0;
     virtual HRESULT __stdcall abi_Stringify(hstring * returnValue) = 0;
@@ -70,7 +70,7 @@ struct __declspec(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e")) __declspec(novta
     virtual HRESULT __stdcall abi_GetObject(Windows::Data::Json::IJsonObject ** returnValue) = 0;
 };
 
-struct __declspec(uuid("5f6b544a-2f53-48e1-91a3-f78b50a6345c")) __declspec(novtable) IJsonValueStatics : Windows::IInspectable
+struct __declspec(uuid("5f6b544a-2f53-48e1-91a3-f78b50a6345c")) __declspec(novtable) IJsonValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Data::Json::IJsonValue ** jsonValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Data::Json::IJsonValue ** result, bool * succeeded) = 0;
@@ -79,7 +79,7 @@ struct __declspec(uuid("5f6b544a-2f53-48e1-91a3-f78b50a6345c")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateStringValue(hstring input, Windows::Data::Json::IJsonValue ** jsonValue) = 0;
 };
 
-struct __declspec(uuid("1d9ecbe4-3fe8-4335-8392-93d8e36865f0")) __declspec(novtable) IJsonValueStatics2 : Windows::IInspectable
+struct __declspec(uuid("1d9ecbe4-3fe8-4335-8392-93d8e36865f0")) __declspec(novtable) IJsonValueStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateNullValue(Windows::Data::Json::IJsonValue ** jsonValue) = 0;
 };

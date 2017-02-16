@@ -151,12 +151,12 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
         }
     }
 
-    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -269,14 +269,14 @@ template <typename D> void impl_IVariablePhotoSequenceCapture<D>::PhotoCaptured(
     check_hresult(WINRT_SHIM(IVariablePhotoSequenceCapture)->remove_PhotoCaptured(token));
 }
 
-template <typename D> event_token impl_IVariablePhotoSequenceCapture<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IVariablePhotoSequenceCapture<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IVariablePhotoSequenceCapture)->add_Stopped(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IVariablePhotoSequenceCapture> impl_IVariablePhotoSequenceCapture<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IVariablePhotoSequenceCapture> impl_IVariablePhotoSequenceCapture<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IVariablePhotoSequenceCapture>(this, &ABI::Windows::Media::Capture::Core::IVariablePhotoSequenceCapture::remove_Stopped, Stopped(handler));
 }

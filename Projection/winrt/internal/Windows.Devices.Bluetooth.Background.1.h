@@ -18,33 +18,33 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Bluetooth::Background {
 
-struct __declspec(uuid("610eca86-3480-41c9-a918-7ddadf207e00")) __declspec(novtable) IBluetoothLEAdvertisementPublisherTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("610eca86-3480-41c9-a918-7ddadf207e00")) __declspec(novtable) IBluetoothLEAdvertisementPublisherTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus * value) = 0;
     virtual HRESULT __stdcall get_Error(winrt::Windows::Devices::Bluetooth::BluetoothError * value) = 0;
 };
 
-struct __declspec(uuid("a7db5ad7-2257-4e69-9784-fee645c1dce0")) __declspec(novtable) IBluetoothLEAdvertisementWatcherTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("a7db5ad7-2257-4e69-9784-fee645c1dce0")) __declspec(novtable) IBluetoothLEAdvertisementWatcherTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Error(winrt::Windows::Devices::Bluetooth::BluetoothError * value) = 0;
     virtual HRESULT __stdcall get_Advertisements(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> ** value) = 0;
     virtual HRESULT __stdcall get_SignalStrengthFilter(Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter ** value) = 0;
 };
 
-struct __declspec(uuid("9ba03b18-0fec-436a-93b1-f46c697532a2")) __declspec(novtable) IGattCharacteristicNotificationTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("9ba03b18-0fec-436a-93b1-f46c697532a2")) __declspec(novtable) IGattCharacteristicNotificationTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Characteristic(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic ** value) = 0;
     virtual HRESULT __stdcall get_Value(Windows::Storage::Streams::IBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("f922734d-2e3c-4efc-ab59-fc5cf96f97e3")) __declspec(novtable) IRfcommConnectionTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("f922734d-2e3c-4efc-ab59-fc5cf96f97e3")) __declspec(novtable) IRfcommConnectionTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Socket(Windows::Networking::Sockets::IStreamSocket ** value) = 0;
     virtual HRESULT __stdcall get_Incoming(bool * value) = 0;
     virtual HRESULT __stdcall get_RemoteDevice(Windows::Devices::Bluetooth::IBluetoothDevice ** value) = 0;
 };
 
-struct __declspec(uuid("6d3e75a8-5429-4059-92e3-1e8b65528707")) __declspec(novtable) IRfcommInboundConnectionInformation : Windows::IInspectable
+struct __declspec(uuid("6d3e75a8-5429-4059-92e3-1e8b65528707")) __declspec(novtable) IRfcommInboundConnectionInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SdpRecord(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall put_SdpRecord(Windows::Storage::Streams::IBuffer * value) = 0;
@@ -54,7 +54,7 @@ struct __declspec(uuid("6d3e75a8-5429-4059-92e3-1e8b65528707")) __declspec(novta
     virtual HRESULT __stdcall put_ServiceCapabilities(winrt::Windows::Devices::Bluetooth::BluetoothServiceCapabilities value) = 0;
 };
 
-struct __declspec(uuid("b091227b-f434-4cb0-99b1-4ab8cedaedd7")) __declspec(novtable) IRfcommOutboundConnectionInformation : Windows::IInspectable
+struct __declspec(uuid("b091227b-f434-4cb0-99b1-4ab8cedaedd7")) __declspec(novtable) IRfcommOutboundConnectionInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RemoteServiceId(Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId ** value) = 0;
     virtual HRESULT __stdcall put_RemoteServiceId(Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId * value) = 0;

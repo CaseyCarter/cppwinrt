@@ -80,21 +80,21 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 namespace Windows::ApplicationModel::SocialInfo::Provider {
 
 struct ISocialDashboardItemUpdater :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocialDashboardItemUpdater>
 {
     ISocialDashboardItemUpdater(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocialFeedUpdater :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocialFeedUpdater>
 {
     ISocialFeedUpdater(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocialInfoProviderManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocialInfoProviderManagerStatics>
 {
     ISocialInfoProviderManagerStatics(std::nullptr_t = nullptr) noexcept {}

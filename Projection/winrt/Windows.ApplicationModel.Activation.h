@@ -673,7 +673,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventAr
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs>
 {
-    HRESULT __stdcall get_Info(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Info(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -801,7 +801,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IProtocolForResultsActi
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IRestrictedLaunchActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IRestrictedLaunchActivatedEventArgs>
 {
-    HRESULT __stdcall get_SharedContext(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_SharedContext(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -906,12 +906,12 @@ struct produce<D, Windows::ApplicationModel::Activation::ISplashScreen> : produc
         }
     }
 
-    HRESULT __stdcall add_Dismissed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_Dismissed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().Dismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().Dismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1094,14 +1094,14 @@ template <typename D> Windows::Foundation::Rect impl_ISplashScreen<D>::ImageLoca
     return value;
 }
 
-template <typename D> event_token impl_ISplashScreen<D>::Dismissed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ISplashScreen<D>::Dismissed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(ISplashScreen)->add_Dismissed(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<ISplashScreen> impl_ISplashScreen<D>::Dismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ISplashScreen> impl_ISplashScreen<D>::Dismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ISplashScreen>(this, &ABI::Windows::ApplicationModel::Activation::ISplashScreen::remove_Dismissed, Dismissed(handler));
 }
@@ -1398,16 +1398,16 @@ template <typename D> hstring impl_IPickerReturnedActivatedEventArgs<D>::PickerO
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IRestrictedLaunchActivatedEventArgs<D>::SharedContext() const
+template <typename D> Windows::Foundation::IInspectable impl_IRestrictedLaunchActivatedEventArgs<D>::SharedContext() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IRestrictedLaunchActivatedEventArgs)->get_SharedContext(put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_ILockScreenActivatedEventArgs<D>::Info() const
+template <typename D> Windows::Foundation::IInspectable impl_ILockScreenActivatedEventArgs<D>::Info() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(ILockScreenActivatedEventArgs)->get_Info(put_abi(value)));
     return value;
 }

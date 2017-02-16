@@ -101,70 +101,70 @@ template <> struct __declspec(uuid("1e466dc5-840f-54f9-b877-5e3a9f4b6c74")) __de
 namespace Windows::Storage::Streams {
 
 struct IBuffer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBuffer>
 {
     IBuffer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBufferFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBufferFactory>
 {
     IBufferFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBufferStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBufferStatics>
 {
     IBufferStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContentTypeProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContentTypeProvider>
 {
     IContentTypeProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataReader>
 {
     IDataReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataReaderFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataReaderFactory>
 {
     IDataReaderFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataReaderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataReaderStatics>
 {
     IDataReaderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataWriter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataWriter>
 {
     IDataWriter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataWriterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataWriterFactory>
 {
     IDataWriterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInputStream :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInputStream>,
     impl::require<IInputStream, Windows::Foundation::IClosable>
 {
@@ -172,14 +172,14 @@ struct IInputStream :
 };
 
 struct IInputStreamReference :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInputStreamReference>
 {
     IInputStreamReference(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOutputStream :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOutputStream>,
     impl::require<IOutputStream, Windows::Foundation::IClosable>
 {
@@ -187,7 +187,7 @@ struct IOutputStream :
 };
 
 struct IRandomAccessStream :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRandomAccessStream>,
     impl::require<IRandomAccessStream, Windows::Foundation::IClosable, Windows::Storage::Streams::IInputStream, Windows::Storage::Streams::IOutputStream>
 {
@@ -195,28 +195,28 @@ struct IRandomAccessStream :
 };
 
 struct IRandomAccessStreamReference :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRandomAccessStreamReference>
 {
     IRandomAccessStreamReference(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRandomAccessStreamReferenceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRandomAccessStreamReferenceStatics>
 {
     IRandomAccessStreamReferenceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRandomAccessStreamStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRandomAccessStreamStatics>
 {
     IRandomAccessStreamStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRandomAccessStreamWithContentType :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRandomAccessStreamWithContentType>,
     impl::require<IRandomAccessStreamWithContentType, Windows::Foundation::IClosable, Windows::Storage::Streams::IContentTypeProvider, Windows::Storage::Streams::IInputStream, Windows::Storage::Streams::IOutputStream, Windows::Storage::Streams::IRandomAccessStream>
 {

@@ -13,11 +13,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Xaml::Hosting {
 
-struct __declspec(uuid("b6f1a676-cfe6-46ac-acf6-c4687bb65e60")) __declspec(novtable) IElementCompositionPreview : Windows::IInspectable
+struct __declspec(uuid("b6f1a676-cfe6-46ac-acf6-c4687bb65e60")) __declspec(novtable) IElementCompositionPreview : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("08c92b38-ec99-4c55-bc85-a1c180b27646")) __declspec(novtable) IElementCompositionPreviewStatics : Windows::IInspectable
+struct __declspec(uuid("08c92b38-ec99-4c55-bc85-a1c180b27646")) __declspec(novtable) IElementCompositionPreviewStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetElementVisual(Windows::UI::Xaml::IUIElement * element, Windows::UI::Composition::IVisual ** result) = 0;
     virtual HRESULT __stdcall abi_GetElementChildVisual(Windows::UI::Xaml::IUIElement * element, Windows::UI::Composition::IVisual ** result) = 0;

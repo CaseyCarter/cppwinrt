@@ -14,7 +14,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_5b98b352_e0cf_58de_b2ec_4fd786bbb5a7
 #define WINRT_GENERIC_5b98b352_e0cf_58de_b2ec_4fd786bbb5a7
-template <> struct __declspec(uuid("5b98b352-e0cf-58de-b2ec-4fd786bbb5a7")) __declspec(novtable) TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> : impl_TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> {};
+template <> struct __declspec(uuid("5b98b352-e0cf-58de-b2ec-4fd786bbb5a7")) __declspec(novtable) TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -108,21 +108,21 @@ template <> struct __declspec(uuid("020713ec-604a-5e45-b03f-1b9e65253804")) __de
 namespace Windows::Storage::BulkAccess {
 
 struct IFileInformationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileInformationFactory>
 {
     IFileInformationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileInformationFactoryFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileInformationFactoryFactory>
 {
     IFileInformationFactoryFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageItemInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageItemInformation>
 {
     IStorageItemInformation(std::nullptr_t = nullptr) noexcept {}

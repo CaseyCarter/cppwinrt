@@ -14,7 +14,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::AppExtensions {
 
-struct __declspec(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6")) __declspec(novtable) IAppExtension : Windows::IInspectable
+struct __declspec(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6")) __declspec(novtable) IAppExtension : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
@@ -25,7 +25,7 @@ struct __declspec(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6")) __declspec(novta
     virtual HRESULT __stdcall abi_GetPublicFolderAsync(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> ** operation) = 0;
 };
 
-struct __declspec(uuid("97872032-8426-4ad1-9084-92e88c2da200")) __declspec(novtable) IAppExtensionCatalog : Windows::IInspectable
+struct __declspec(uuid("97872032-8426-4ad1-9084-92e88c2da200")) __declspec(novtable) IAppExtensionCatalog : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FindAllAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension>> ** operation) = 0;
     virtual HRESULT __stdcall abi_RequestRemovePackageAsync(hstring packageFullName, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
@@ -41,38 +41,38 @@ struct __declspec(uuid("97872032-8426-4ad1-9084-92e88c2da200")) __declspec(novta
     virtual HRESULT __stdcall remove_PackageStatusChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("3c36668a-5f18-4f0b-9ce5-cab61d196f11")) __declspec(novtable) IAppExtensionCatalogStatics : Windows::IInspectable
+struct __declspec(uuid("3c36668a-5f18-4f0b-9ce5-cab61d196f11")) __declspec(novtable) IAppExtensionCatalogStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Open(hstring appExtensionName, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog ** value) = 0;
 };
 
-struct __declspec(uuid("39e59234-3351-4a8d-9745-e7d3dd45bc48")) __declspec(novtable) IAppExtensionPackageInstalledEventArgs : Windows::IInspectable
+struct __declspec(uuid("39e59234-3351-4a8d-9745-e7d3dd45bc48")) __declspec(novtable) IAppExtensionPackageInstalledEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppExtensionName(hstring * value) = 0;
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
     virtual HRESULT __stdcall get_Extensions(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension> ** values) = 0;
 };
 
-struct __declspec(uuid("1ce17433-1153-44fd-87b1-8ae1050303df")) __declspec(novtable) IAppExtensionPackageStatusChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("1ce17433-1153-44fd-87b1-8ae1050303df")) __declspec(novtable) IAppExtensionPackageStatusChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppExtensionName(hstring * value) = 0;
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
 };
 
-struct __declspec(uuid("60f160c5-171e-40ff-ae98-ab2c20dd4d75")) __declspec(novtable) IAppExtensionPackageUninstallingEventArgs : Windows::IInspectable
+struct __declspec(uuid("60f160c5-171e-40ff-ae98-ab2c20dd4d75")) __declspec(novtable) IAppExtensionPackageUninstallingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppExtensionName(hstring * value) = 0;
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
 };
 
-struct __declspec(uuid("3a83c43f-797e-44b5-ba24-a4c8b5a543d7")) __declspec(novtable) IAppExtensionPackageUpdatedEventArgs : Windows::IInspectable
+struct __declspec(uuid("3a83c43f-797e-44b5-ba24-a4c8b5a543d7")) __declspec(novtable) IAppExtensionPackageUpdatedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppExtensionName(hstring * value) = 0;
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
     virtual HRESULT __stdcall get_Extensions(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension> ** values) = 0;
 };
 
-struct __declspec(uuid("7ed59329-1a65-4800-a700-b321009e306a")) __declspec(novtable) IAppExtensionPackageUpdatingEventArgs : Windows::IInspectable
+struct __declspec(uuid("7ed59329-1a65-4800-a700-b321009e306a")) __declspec(novtable) IAppExtensionPackageUpdatingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppExtensionName(hstring * value) = 0;
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;

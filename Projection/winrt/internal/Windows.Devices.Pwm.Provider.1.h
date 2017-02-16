@@ -11,7 +11,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Pwm::Provider {
 
-struct __declspec(uuid("1300593b-e2e3-40a4-b7d9-48dff0377a52")) __declspec(novtable) IPwmControllerProvider : Windows::IInspectable
+struct __declspec(uuid("1300593b-e2e3-40a4-b7d9-48dff0377a52")) __declspec(novtable) IPwmControllerProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PinCount(int32_t * value) = 0;
     virtual HRESULT __stdcall get_ActualFrequency(double * value) = 0;
@@ -25,7 +25,7 @@ struct __declspec(uuid("1300593b-e2e3-40a4-b7d9-48dff0377a52")) __declspec(novta
     virtual HRESULT __stdcall abi_SetPulseParameters(int32_t pin, double dutyCycle, bool invertPolarity) = 0;
 };
 
-struct __declspec(uuid("a3301228-52f1-47b0-9349-66ba43d25902")) __declspec(novtable) IPwmProvider : Windows::IInspectable
+struct __declspec(uuid("a3301228-52f1-47b0-9349-66ba43d25902")) __declspec(novtable) IPwmProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetControllers(Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider> ** result) = 0;
 };

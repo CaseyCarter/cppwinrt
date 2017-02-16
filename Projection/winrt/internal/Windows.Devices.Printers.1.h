@@ -13,18 +13,18 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Printers {
 
-struct __declspec(uuid("041c3d19-9713-42a2-9813-7dc3337428d3")) __declspec(novtable) IPrint3DDevice : Windows::IInspectable
+struct __declspec(uuid("041c3d19-9713-42a2-9813-7dc3337428d3")) __declspec(novtable) IPrint3DDevice : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PrintSchema(Windows::Devices::Printers::IPrintSchema ** value) = 0;
 };
 
-struct __declspec(uuid("fde3620a-67cd-41b7-a344-5150a1fd75b5")) __declspec(novtable) IPrint3DDeviceStatics : Windows::IInspectable
+struct __declspec(uuid("fde3620a-67cd-41b7-a344-5150a1fd75b5")) __declspec(novtable) IPrint3DDeviceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * result) = 0;
 };
 
-struct __declspec(uuid("c2b98316-26b8-4bfb-8138-9f962c22a35b")) __declspec(novtable) IPrintSchema : Windows::IInspectable
+struct __declspec(uuid("c2b98316-26b8-4bfb-8138-9f962c22a35b")) __declspec(novtable) IPrintSchema : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDefaultPrintTicketAsync(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetCapabilitiesAsync(Windows::Storage::Streams::IRandomAccessStreamWithContentType * constrainTicket, Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> ** operation) = 0;

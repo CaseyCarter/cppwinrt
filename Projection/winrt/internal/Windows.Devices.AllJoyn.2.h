@@ -11,7 +11,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
-template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::IInspectable> : impl_IKeyValuePair<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_f6d1f700_49c2_52ae_8154_826f9908773c
@@ -41,7 +41,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
-template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::IInspectable> : impl_IMapView<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::Foundation::IInspectable> : impl_IMapView<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
@@ -286,7 +286,7 @@ template <> struct __declspec(uuid("30e99ae6-f414-5243-8db2-aab38ea3f1f1")) __de
 
 #ifndef WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
 #define WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
-template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_e9bdaaf0_cbf6_5c72_be90_29cbf3a1319b
@@ -296,7 +296,7 @@ template <> struct __declspec(uuid("e9bdaaf0-cbf6-5c72-be90-29cbf3a1319b")) __de
 
 #ifndef WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
 #define WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
-template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_05eb86f1_7140_5517_b88d_cbaebe57e6b1
@@ -310,294 +310,294 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Devices::AllJoyn {
 
 struct IAllJoynAboutData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynAboutData>
 {
     IAllJoynAboutData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynAboutDataView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynAboutDataView>
 {
     IAllJoynAboutDataView(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynAboutDataViewStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynAboutDataViewStatics>
 {
     IAllJoynAboutDataViewStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynAcceptSessionJoiner :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynAcceptSessionJoiner>
 {
     IAllJoynAcceptSessionJoiner(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynAcceptSessionJoinerEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynAcceptSessionJoinerEventArgs>
 {
     IAllJoynAcceptSessionJoinerEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynAcceptSessionJoinerEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynAcceptSessionJoinerEventArgsFactory>
 {
     IAllJoynAcceptSessionJoinerEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynAuthenticationCompleteEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynAuthenticationCompleteEventArgs>
 {
     IAllJoynAuthenticationCompleteEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynBusAttachment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynBusAttachment>
 {
     IAllJoynBusAttachment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynBusAttachment2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynBusAttachment2>
 {
     IAllJoynBusAttachment2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynBusAttachmentFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynBusAttachmentFactory>
 {
     IAllJoynBusAttachmentFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynBusAttachmentStateChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynBusAttachmentStateChangedEventArgs>
 {
     IAllJoynBusAttachmentStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynBusAttachmentStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynBusAttachmentStatics>
 {
     IAllJoynBusAttachmentStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynBusObject :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynBusObject>
 {
     IAllJoynBusObject(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynBusObjectFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynBusObjectFactory>
 {
     IAllJoynBusObjectFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynBusObjectStoppedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynBusObjectStoppedEventArgs>
 {
     IAllJoynBusObjectStoppedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynBusObjectStoppedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynBusObjectStoppedEventArgsFactory>
 {
     IAllJoynBusObjectStoppedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynCredentials :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynCredentials>
 {
     IAllJoynCredentials(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynCredentialsRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynCredentialsRequestedEventArgs>
 {
     IAllJoynCredentialsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynCredentialsVerificationRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynCredentialsVerificationRequestedEventArgs>
 {
     IAllJoynCredentialsVerificationRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynMessageInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynMessageInfo>
 {
     IAllJoynMessageInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynMessageInfoFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynMessageInfoFactory>
 {
     IAllJoynMessageInfoFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynProducer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynProducer>
 {
     IAllJoynProducer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynProducerStoppedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynProducerStoppedEventArgs>
 {
     IAllJoynProducerStoppedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynProducerStoppedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynProducerStoppedEventArgsFactory>
 {
     IAllJoynProducerStoppedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynServiceInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynServiceInfo>
 {
     IAllJoynServiceInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynServiceInfoFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynServiceInfoFactory>
 {
     IAllJoynServiceInfoFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynServiceInfoRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynServiceInfoRemovedEventArgs>
 {
     IAllJoynServiceInfoRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynServiceInfoRemovedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynServiceInfoRemovedEventArgsFactory>
 {
     IAllJoynServiceInfoRemovedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynServiceInfoStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynServiceInfoStatics>
 {
     IAllJoynServiceInfoStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSession>
 {
     IAllJoynSession(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSessionJoinedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSessionJoinedEventArgs>
 {
     IAllJoynSessionJoinedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSessionJoinedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSessionJoinedEventArgsFactory>
 {
     IAllJoynSessionJoinedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSessionLostEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSessionLostEventArgs>
 {
     IAllJoynSessionLostEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSessionLostEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSessionLostEventArgsFactory>
 {
     IAllJoynSessionLostEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSessionMemberAddedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSessionMemberAddedEventArgs>
 {
     IAllJoynSessionMemberAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSessionMemberAddedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSessionMemberAddedEventArgsFactory>
 {
     IAllJoynSessionMemberAddedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSessionMemberRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSessionMemberRemovedEventArgs>
 {
     IAllJoynSessionMemberRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSessionMemberRemovedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSessionMemberRemovedEventArgsFactory>
 {
     IAllJoynSessionMemberRemovedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynSessionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynSessionStatics>
 {
     IAllJoynSessionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynStatusStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynStatusStatics>
 {
     IAllJoynStatusStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynWatcherStoppedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynWatcherStoppedEventArgs>
 {
     IAllJoynWatcherStoppedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAllJoynWatcherStoppedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAllJoynWatcherStoppedEventArgsFactory>
 {
     IAllJoynWatcherStoppedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}

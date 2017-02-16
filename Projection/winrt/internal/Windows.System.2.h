@@ -41,7 +41,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
 #define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
-template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::IInspectable> : impl_EventHandler<Windows::IInspectable> {};
+template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -61,7 +61,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_abf53c57_ee50_5342_b52a_26e3b8cc024f
 #define WINRT_GENERIC_abf53c57_ee50_5342_b52a_26e3b8cc024f
-template <> struct __declspec(uuid("abf53c57-ee50-5342-b52a-26e3b8cc024f")) __declspec(novtable) IAsyncOperation<Windows::IInspectable> : impl_IAsyncOperation<Windows::IInspectable> {};
+template <> struct __declspec(uuid("abf53c57-ee50-5342-b52a-26e3b8cc024f")) __declspec(novtable) IAsyncOperation<Windows::Foundation::IInspectable> : impl_IAsyncOperation<Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -131,7 +131,7 @@ template <> struct __declspec(uuid("9ec3d9d5-b413-51df-8c64-640e3356e351")) __de
 
 #ifndef WINRT_GENERIC_f155e0ff_dbb5_5c34_ac0c_7e291e3300ab
 #define WINRT_GENERIC_f155e0ff_dbb5_5c34_ac0c_7e291e3300ab
-template <> struct __declspec(uuid("f155e0ff-dbb5-5c34-ac0c-7e291e3300ab")) __declspec(novtable) TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> : impl_TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f155e0ff-dbb5-5c34-ac0c-7e291e3300ab")) __declspec(novtable) TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_a895d2f9_2399_5104_a532_5ba44ab4b165
@@ -216,7 +216,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_3f08262e_a2e1_5134_9297_e9211f481a2d
 #define WINRT_GENERIC_3f08262e_a2e1_5134_9297_e9211f481a2d
-template <> struct __declspec(uuid("3f08262e-a2e1-5134-9297-e9211f481a2d")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::IInspectable> : impl_AsyncOperationCompletedHandler<Windows::IInspectable> {};
+template <> struct __declspec(uuid("3f08262e-a2e1-5134-9297-e9211f481a2d")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Foundation::IInspectable> : impl_AsyncOperationCompletedHandler<Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -315,217 +315,217 @@ template <> struct __declspec(uuid("09870533-f7cb-569c-b797-dcb48debd709")) __de
 namespace Windows::System {
 
 struct IAppMemoryReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppMemoryReport>
 {
     IAppMemoryReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppMemoryUsageLimitChangingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppMemoryUsageLimitChangingEventArgs>
 {
     IAppMemoryUsageLimitChangingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFolderLauncherOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFolderLauncherOptions>
 {
     IFolderLauncherOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownUserPropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownUserPropertiesStatics>
 {
     IKnownUserPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILaunchUriResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILaunchUriResult>
 {
     ILaunchUriResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILauncherOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILauncherOptions>
 {
     ILauncherOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILauncherOptions2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILauncherOptions2>
 {
     ILauncherOptions2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILauncherOptions3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILauncherOptions3>
 {
     ILauncherOptions3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILauncherStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILauncherStatics>
 {
     ILauncherStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILauncherStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILauncherStatics2>
 {
     ILauncherStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILauncherStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILauncherStatics3>
 {
     ILauncherStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILauncherStatics4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILauncherStatics4>
 {
     ILauncherStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILauncherUIOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILauncherUIOptions>
 {
     ILauncherUIOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILauncherViewOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILauncherViewOptions>
 {
     ILauncherViewOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMemoryManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMemoryManagerStatics>
 {
     IMemoryManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMemoryManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMemoryManagerStatics2>
 {
     IMemoryManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMemoryManagerStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMemoryManagerStatics3>
 {
     IMemoryManagerStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessMemoryReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessMemoryReport>
 {
     IProcessMemoryReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProtocolForResultsOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProtocolForResultsOperation>
 {
     IProtocolForResultsOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteLauncherOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteLauncherOptions>
 {
     IRemoteLauncherOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteLauncherStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteLauncherStatics>
 {
     IRemoteLauncherStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUser>
 {
     IUser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserAuthenticationStatusChangeDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserAuthenticationStatusChangeDeferral>
 {
     IUserAuthenticationStatusChangeDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserAuthenticationStatusChangingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserAuthenticationStatusChangingEventArgs>
 {
     IUserAuthenticationStatusChangingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserChangedEventArgs>
 {
     IUserChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDeviceAssociationChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDeviceAssociationChangedEventArgs>
 {
     IUserDeviceAssociationChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDeviceAssociationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDeviceAssociationStatics>
 {
     IUserDeviceAssociationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserPicker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserPicker>
 {
     IUserPicker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserPickerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserPickerStatics>
 {
     IUserPickerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserStatics>
 {
     IUserStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserWatcher>
 {
     IUserWatcher(std::nullptr_t = nullptr) noexcept {}

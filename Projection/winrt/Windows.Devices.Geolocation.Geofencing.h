@@ -228,12 +228,12 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
         }
     }
 
-    HRESULT __stdcall add_GeofenceStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable>> eventHandler, event_token * token) noexcept override
+    HRESULT __stdcall add_GeofenceStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable>> eventHandler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().GeofenceStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> *>(&eventHandler)));
+            *token = detach_abi(this->shim().GeofenceStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -271,12 +271,12 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
         }
     }
 
-    HRESULT __stdcall add_StatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable>> eventHandler, event_token * token) noexcept override
+    HRESULT __stdcall add_StatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable>> eventHandler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> *>(&eventHandler)));
+            *token = detach_abi(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -518,14 +518,14 @@ template <typename D> Windows::Devices::Geolocation::Geoposition impl_IGeofenceM
     return value;
 }
 
-template <typename D> event_token impl_IGeofenceMonitor<D>::GeofenceStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const
+template <typename D> event_token impl_IGeofenceMonitor<D>::GeofenceStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable> & eventHandler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IGeofenceMonitor)->add_GeofenceStateChanged(get_abi(eventHandler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IGeofenceMonitor> impl_IGeofenceMonitor<D>::GeofenceStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const
+template <typename D> event_revoker<IGeofenceMonitor> impl_IGeofenceMonitor<D>::GeofenceStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable> & eventHandler) const
 {
     return impl::make_event_revoker<D, IGeofenceMonitor>(this, &ABI::Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor::remove_GeofenceStateChanged, GeofenceStateChanged(eventHandler));
 }
@@ -542,14 +542,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
     return value;
 }
 
-template <typename D> event_token impl_IGeofenceMonitor<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const
+template <typename D> event_token impl_IGeofenceMonitor<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable> & eventHandler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IGeofenceMonitor)->add_StatusChanged(get_abi(eventHandler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IGeofenceMonitor> impl_IGeofenceMonitor<D>::StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const
+template <typename D> event_revoker<IGeofenceMonitor> impl_IGeofenceMonitor<D>::StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable> & eventHandler) const
 {
     return impl::make_event_revoker<D, IGeofenceMonitor>(this, &ABI::Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor::remove_StatusChanged, StatusChanged(eventHandler));
 }

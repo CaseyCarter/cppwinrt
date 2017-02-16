@@ -65,35 +65,35 @@ template <> struct __declspec(uuid("cded76fd-7841-52a0-a771-76cd751d13cd")) __de
 namespace Windows::Security::Authentication::OnlineId {
 
 struct IOnlineIdAuthenticator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOnlineIdAuthenticator>
 {
     IOnlineIdAuthenticator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOnlineIdServiceTicket :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOnlineIdServiceTicket>
 {
     IOnlineIdServiceTicket(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOnlineIdServiceTicketRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOnlineIdServiceTicketRequest>
 {
     IOnlineIdServiceTicketRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOnlineIdServiceTicketRequestFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOnlineIdServiceTicketRequestFactory>
 {
     IOnlineIdServiceTicketRequestFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserIdentity :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserIdentity>
 {
     IUserIdentity(std::nullptr_t = nullptr) noexcept {}

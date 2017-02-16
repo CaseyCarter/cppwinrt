@@ -154,7 +154,7 @@ template <> struct __declspec(uuid("83e14307-0be1-5560-8bfc-291095cf6d30")) __de
 
 namespace Windows::Data::Text {
 
-struct SelectableWordSegmentsTokenizingHandler : Windows::IUnknown
+struct SelectableWordSegmentsTokenizingHandler : Windows::Foundation::IUnknown
 {
     SelectableWordSegmentsTokenizingHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> SelectableWordSegmentsTokenizingHandler(L lambda);
@@ -163,7 +163,7 @@ struct SelectableWordSegmentsTokenizingHandler : Windows::IUnknown
     void operator()(const Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment> & precedingWords, const Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment> & words) const;
 };
 
-struct WordSegmentsTokenizingHandler : Windows::IUnknown
+struct WordSegmentsTokenizingHandler : Windows::Foundation::IUnknown
 {
     WordSegmentsTokenizingHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> WordSegmentsTokenizingHandler(L lambda);
@@ -173,126 +173,126 @@ struct WordSegmentsTokenizingHandler : Windows::IUnknown
 };
 
 struct IAlternateWordForm :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAlternateWordForm>
 {
     IAlternateWordForm(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectableWordSegment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectableWordSegment>
 {
     ISelectableWordSegment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectableWordsSegmenter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectableWordsSegmenter>
 {
     ISelectableWordsSegmenter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectableWordsSegmenterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectableWordsSegmenterFactory>
 {
     ISelectableWordsSegmenterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISemanticTextQuery :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISemanticTextQuery>
 {
     ISemanticTextQuery(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISemanticTextQueryFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISemanticTextQueryFactory>
 {
     ISemanticTextQueryFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextConversionGenerator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextConversionGenerator>
 {
     ITextConversionGenerator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextConversionGeneratorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextConversionGeneratorFactory>
 {
     ITextConversionGeneratorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextPhoneme :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextPhoneme>
 {
     ITextPhoneme(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextPredictionGenerator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextPredictionGenerator>
 {
     ITextPredictionGenerator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextPredictionGeneratorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextPredictionGeneratorFactory>
 {
     ITextPredictionGeneratorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextReverseConversionGenerator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextReverseConversionGenerator>
 {
     ITextReverseConversionGenerator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextReverseConversionGenerator2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextReverseConversionGenerator2>
 {
     ITextReverseConversionGenerator2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextReverseConversionGeneratorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextReverseConversionGeneratorFactory>
 {
     ITextReverseConversionGeneratorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUnicodeCharactersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUnicodeCharactersStatics>
 {
     IUnicodeCharactersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWordSegment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWordSegment>
 {
     IWordSegment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWordsSegmenter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWordsSegmenter>
 {
     IWordsSegmenter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWordsSegmenterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWordsSegmenterFactory>
 {
     IWordsSegmenterFactory(std::nullptr_t = nullptr) noexcept {}

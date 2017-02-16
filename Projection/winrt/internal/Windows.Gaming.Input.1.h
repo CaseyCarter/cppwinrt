@@ -74,13 +74,13 @@ using UINavigationReading = ABI::Windows::Gaming::Input::UINavigationReading;
 
 namespace ABI::Windows::Gaming::Input {
 
-struct __declspec(uuid("b14a539d-befb-4c81-8051-15ecf3b13036")) __declspec(novtable) IArcadeStick : Windows::IInspectable
+struct __declspec(uuid("b14a539d-befb-4c81-8051-15ecf3b13036")) __declspec(novtable) IArcadeStick : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetButtonLabel(winrt::Windows::Gaming::Input::ArcadeStickButtons button, winrt::Windows::Gaming::Input::GameControllerButtonLabel * value) = 0;
     virtual HRESULT __stdcall abi_GetCurrentReading(Windows::Gaming::Input::ArcadeStickReading * value) = 0;
 };
 
-struct __declspec(uuid("5c37b8c8-37b1-4ad8-9458-200f1a30018e")) __declspec(novtable) IArcadeStickStatics : Windows::IInspectable
+struct __declspec(uuid("5c37b8c8-37b1-4ad8-9458-200f1a30018e")) __declspec(novtable) IArcadeStickStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_ArcadeStickAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ArcadeStickAdded(event_token token) = 0;
@@ -89,7 +89,7 @@ struct __declspec(uuid("5c37b8c8-37b1-4ad8-9458-200f1a30018e")) __declspec(novta
     virtual HRESULT __stdcall get_ArcadeSticks(Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::ArcadeStick> ** value) = 0;
 };
 
-struct __declspec(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd")) __declspec(novtable) IGameController : Windows::IInspectable
+struct __declspec(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd")) __declspec(novtable) IGameController : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_HeadsetConnected(Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_HeadsetConnected(event_token token) = 0;
@@ -102,19 +102,19 @@ struct __declspec(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd")) __declspec(novta
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
 };
 
-struct __declspec(uuid("bc7bb43c-0a69-3903-9e9d-a50f86a45de5")) __declspec(novtable) IGamepad : Windows::IInspectable
+struct __declspec(uuid("bc7bb43c-0a69-3903-9e9d-a50f86a45de5")) __declspec(novtable) IGamepad : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Vibration(Windows::Gaming::Input::GamepadVibration * value) = 0;
     virtual HRESULT __stdcall put_Vibration(Windows::Gaming::Input::GamepadVibration value) = 0;
     virtual HRESULT __stdcall abi_GetCurrentReading(Windows::Gaming::Input::GamepadReading * value) = 0;
 };
 
-struct __declspec(uuid("3c1689bd-5915-4245-b0c0-c89fae0308ff")) __declspec(novtable) IGamepad2 : Windows::IInspectable
+struct __declspec(uuid("3c1689bd-5915-4245-b0c0-c89fae0308ff")) __declspec(novtable) IGamepad2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetButtonLabel(winrt::Windows::Gaming::Input::GamepadButtons button, winrt::Windows::Gaming::Input::GameControllerButtonLabel * value) = 0;
 };
 
-struct __declspec(uuid("8bbce529-d49c-39e9-9560-e47dde96b7c8")) __declspec(novtable) IGamepadStatics : Windows::IInspectable
+struct __declspec(uuid("8bbce529-d49c-39e9-9560-e47dde96b7c8")) __declspec(novtable) IGamepadStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_GamepadAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_GamepadAdded(event_token token) = 0;
@@ -123,13 +123,13 @@ struct __declspec(uuid("8bbce529-d49c-39e9-9560-e47dde96b7c8")) __declspec(novta
     virtual HRESULT __stdcall get_Gamepads(Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::Gamepad> ** value) = 0;
 };
 
-struct __declspec(uuid("3fd156ef-6925-3fa8-9181-029c5223ae3b")) __declspec(novtable) IHeadset : Windows::IInspectable
+struct __declspec(uuid("3fd156ef-6925-3fa8-9181-029c5223ae3b")) __declspec(novtable) IHeadset : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CaptureDeviceId(hstring * value) = 0;
     virtual HRESULT __stdcall get_RenderDeviceId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("f546656f-e106-4c82-a90f-554012904b85")) __declspec(novtable) IRacingWheel : Windows::IInspectable
+struct __declspec(uuid("f546656f-e106-4c82-a90f-554012904b85")) __declspec(novtable) IRacingWheel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HasClutch(bool * value) = 0;
     virtual HRESULT __stdcall get_HasHandbrake(bool * value) = 0;
@@ -141,7 +141,7 @@ struct __declspec(uuid("f546656f-e106-4c82-a90f-554012904b85")) __declspec(novta
     virtual HRESULT __stdcall abi_GetCurrentReading(Windows::Gaming::Input::RacingWheelReading * value) = 0;
 };
 
-struct __declspec(uuid("3ac12cd5-581b-4936-9f94-69f1e6514c7d")) __declspec(novtable) IRacingWheelStatics : Windows::IInspectable
+struct __declspec(uuid("3ac12cd5-581b-4936-9f94-69f1e6514c7d")) __declspec(novtable) IRacingWheelStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_RacingWheelAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_RacingWheelAdded(event_token token) = 0;
@@ -150,14 +150,14 @@ struct __declspec(uuid("3ac12cd5-581b-4936-9f94-69f1e6514c7d")) __declspec(novta
     virtual HRESULT __stdcall get_RacingWheels(Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RacingWheel> ** value) = 0;
 };
 
-struct __declspec(uuid("e5aeefdd-f50e-4a55-8cdc-d33229548175")) __declspec(novtable) IUINavigationController : Windows::IInspectable
+struct __declspec(uuid("e5aeefdd-f50e-4a55-8cdc-d33229548175")) __declspec(novtable) IUINavigationController : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCurrentReading(Windows::Gaming::Input::UINavigationReading * value) = 0;
     virtual HRESULT __stdcall abi_GetOptionalButtonLabel(winrt::Windows::Gaming::Input::OptionalUINavigationButtons button, winrt::Windows::Gaming::Input::GameControllerButtonLabel * value) = 0;
     virtual HRESULT __stdcall abi_GetRequiredButtonLabel(winrt::Windows::Gaming::Input::RequiredUINavigationButtons button, winrt::Windows::Gaming::Input::GameControllerButtonLabel * value) = 0;
 };
 
-struct __declspec(uuid("2f14930a-f6f8-4a48-8d89-94786cca0c2e")) __declspec(novtable) IUINavigationControllerStatics : Windows::IInspectable
+struct __declspec(uuid("2f14930a-f6f8-4a48-8d89-94786cca0c2e")) __declspec(novtable) IUINavigationControllerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_UINavigationControllerAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_UINavigationControllerAdded(event_token token) = 0;

@@ -31,17 +31,17 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_5ee3189c_7dbf_5998_ad07_5414fb82567c
 #define WINRT_GENERIC_5ee3189c_7dbf_5998_ad07_5414fb82567c
-template <> struct __declspec(uuid("5ee3189c-7dbf-5998-ad07-5414fb82567c")) __declspec(novtable) IMap<GUID, Windows::IInspectable> : impl_IMap<GUID, Windows::IInspectable> {};
+template <> struct __declspec(uuid("5ee3189c-7dbf-5998-ad07-5414fb82567c")) __declspec(novtable) IMap<GUID, Windows::Foundation::IInspectable> : impl_IMap<GUID, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_3bda1540_d089_5a1a_8f0d_94eba8068e58
 #define WINRT_GENERIC_3bda1540_d089_5a1a_8f0d_94eba8068e58
-template <> struct __declspec(uuid("3bda1540-d089-5a1a-8f0d-94eba8068e58")) __declspec(novtable) IKeyValuePair<GUID, Windows::IInspectable> : impl_IKeyValuePair<GUID, Windows::IInspectable> {};
+template <> struct __declspec(uuid("3bda1540-d089-5a1a-8f0d-94eba8068e58")) __declspec(novtable) IKeyValuePair<GUID, Windows::Foundation::IInspectable> : impl_IKeyValuePair<GUID, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_e4d2c732_bbc1_5ef4_869f_5007ceb55f6e
 #define WINRT_GENERIC_e4d2c732_bbc1_5ef4_869f_5007ceb55f6e
-template <> struct __declspec(uuid("e4d2c732-bbc1-5ef4-869f-5007ceb55f6e")) __declspec(novtable) IMapView<GUID, Windows::IInspectable> : impl_IMapView<GUID, Windows::IInspectable> {};
+template <> struct __declspec(uuid("e4d2c732-bbc1-5ef4-869f-5007ceb55f6e")) __declspec(novtable) IMapView<GUID, Windows::Foundation::IInspectable> : impl_IMapView<GUID, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -61,7 +61,7 @@ template <> struct __declspec(uuid("a93d5846-c660-586e-b6b5-a52fb81f9240")) __de
 
 #ifndef WINRT_GENERIC_6fd6ded7_421b_5ef5_8bf5_edea45401665
 #define WINRT_GENERIC_6fd6ded7_421b_5ef5_8bf5_edea45401665
-template <> struct __declspec(uuid("6fd6ded7-421b-5ef5-8bf5-edea45401665")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::IInspectable> {};
+template <> struct __declspec(uuid("6fd6ded7-421b-5ef5-8bf5-edea45401665")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_4f1a3ae3_b8b7_5689_901d_b0b623f5a172
@@ -81,7 +81,7 @@ template <> struct __declspec(uuid("9d812c70-9f0d-5ad5-8274-f760c9ca0c38")) __de
 
 #ifndef WINRT_GENERIC_d4dc5ef1_c1cb_5c32_803d_f2f9a7ad9916
 #define WINRT_GENERIC_d4dc5ef1_c1cb_5c32_803d_f2f9a7ad9916
-template <> struct __declspec(uuid("d4dc5ef1-c1cb-5c32-803d-f2f9a7ad9916")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> {};
+template <> struct __declspec(uuid("d4dc5ef1-c1cb-5c32-803d-f2f9a7ad9916")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_3cdc5e86_4ada_5ef7_967a_e137a4621907
@@ -91,12 +91,12 @@ template <> struct __declspec(uuid("3cdc5e86-4ada-5ef7-967a-e137a4621907")) __de
 
 #ifndef WINRT_GENERIC_724bf4ef_de7a_5dbd_815e_522a87bc3344
 #define WINRT_GENERIC_724bf4ef_de7a_5dbd_815e_522a87bc3344
-template <> struct __declspec(uuid("724bf4ef-de7a-5dbd-815e-522a87bc3344")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> {};
+template <> struct __declspec(uuid("724bf4ef-de7a-5dbd-815e-522a87bc3344")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_187fd3d7_bb9d_541a_94fd_43c31dd84a67
 #define WINRT_GENERIC_187fd3d7_bb9d_541a_94fd_43c31dd84a67
-template <> struct __declspec(uuid("187fd3d7-bb9d-541a-94fd-43c31dd84a67")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> {};
+template <> struct __declspec(uuid("187fd3d7-bb9d-541a-94fd-43c31dd84a67")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -116,7 +116,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_0ff01695_fbb2_5e95_8ec7_da17d8e99f16
 #define WINRT_GENERIC_0ff01695_fbb2_5e95_8ec7_da17d8e99f16
-template <> struct __declspec(uuid("0ff01695-fbb2-5e95-8ec7-da17d8e99f16")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> {};
+template <> struct __declspec(uuid("0ff01695-fbb2-5e95-8ec7-da17d8e99f16")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -176,7 +176,7 @@ template <> struct __declspec(uuid("5b133719-ee98-59b2-b432-1c9a5a56ab05")) __de
 
 #ifndef WINRT_GENERIC_3f3b10e2_b2e9_55c6_abb3_4a258072ebb9
 #define WINRT_GENERIC_3f3b10e2_b2e9_55c6_abb3_4a258072ebb9
-template <> struct __declspec(uuid("3f3b10e2-b2e9-55c6-abb3-4a258072ebb9")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> {};
+template <> struct __declspec(uuid("3f3b10e2-b2e9-55c6-abb3-4a258072ebb9")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_425d53e3_fba6_5ea3_b713_db4d70787436
@@ -231,7 +231,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_21eb6e39_728a_56a9_8dce_062ba4c81bf5
 #define WINRT_GENERIC_21eb6e39_728a_56a9_8dce_062ba4c81bf5
-template <> struct __declspec(uuid("21eb6e39-728a-56a9-8dce-062ba4c81bf5")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> {};
+template <> struct __declspec(uuid("21eb6e39-728a-56a9-8dce-062ba4c81bf5")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_4aac9411_c355_5c95_8c78_5a0f5ca1a54d
@@ -426,12 +426,12 @@ template <> struct __declspec(uuid("737a2098-41bf-5d9f-a1d2-2f171c578b3c")) __de
 
 #ifndef WINRT_GENERIC_f3b20528_e3b3_5331_b2d0_0c2623aee785
 #define WINRT_GENERIC_f3b20528_e3b3_5331_b2d0_0c2623aee785
-template <> struct __declspec(uuid("f3b20528-e3b3-5331-b2d0-0c2623aee785")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("f3b20528-e3b3-5331-b2d0-0c2623aee785")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_4f25059a_0b9a_5f25_9b9e_4b9f1d22ff65
 #define WINRT_GENERIC_4f25059a_0b9a_5f25_9b9e_4b9f1d22ff65
-template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -440,7 +440,7 @@ template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __de
 namespace Windows::Media::Core {
 
 struct IAudioStreamDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioStreamDescriptor>,
     impl::require<IAudioStreamDescriptor, Windows::Media::Core::IMediaStreamDescriptor>
 {
@@ -448,7 +448,7 @@ struct IAudioStreamDescriptor :
 };
 
 struct IAudioStreamDescriptor2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioStreamDescriptor2>,
     impl::require<IAudioStreamDescriptor2, Windows::Media::Core::IMediaStreamDescriptor>
 {
@@ -456,35 +456,35 @@ struct IAudioStreamDescriptor2 :
 };
 
 struct IAudioStreamDescriptorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioStreamDescriptorFactory>
 {
     IAudioStreamDescriptorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioTrack :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioTrack>
 {
     IAudioTrack(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioTrackOpenFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioTrackOpenFailedEventArgs>
 {
     IAudioTrackOpenFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioTrackSupportInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioTrackSupportInfo>
 {
     IAudioTrackSupportInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataCue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataCue>,
     impl::require<IDataCue, Windows::Media::Core::IMediaCue>
 {
@@ -492,14 +492,14 @@ struct IDataCue :
 };
 
 struct IFaceDetectedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFaceDetectedEventArgs>
 {
     IFaceDetectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFaceDetectionEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFaceDetectionEffect>,
     impl::require<IFaceDetectionEffect, Windows::Media::IMediaExtension>
 {
@@ -507,7 +507,7 @@ struct IFaceDetectionEffect :
 };
 
 struct IFaceDetectionEffectDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFaceDetectionEffectDefinition>,
     impl::require<IFaceDetectionEffectDefinition, Windows::Media::Effects::IVideoEffectDefinition>
 {
@@ -515,7 +515,7 @@ struct IFaceDetectionEffectDefinition :
 };
 
 struct IFaceDetectionEffectFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFaceDetectionEffectFrame>,
     impl::require<IFaceDetectionEffectFrame, Windows::Foundation::IClosable, Windows::Media::IMediaFrame>
 {
@@ -523,56 +523,56 @@ struct IFaceDetectionEffectFrame :
 };
 
 struct IHighDynamicRangeControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHighDynamicRangeControl>
 {
     IHighDynamicRangeControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHighDynamicRangeOutput :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHighDynamicRangeOutput>
 {
     IHighDynamicRangeOutput(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBinder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBinder>
 {
     IMediaBinder(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBindingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBindingEventArgs>
 {
     IMediaBindingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCue>
 {
     IMediaCue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCueEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCueEventArgs>
 {
     IMediaCueEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaSource>
 {
     IMediaSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaSource2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaSource2>,
     impl::require<IMediaSource2, Windows::Foundation::IClosable, Windows::Media::Playback::IMediaPlaybackSource>
 {
@@ -580,7 +580,7 @@ struct IMediaSource2 :
 };
 
 struct IMediaSource3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaSource3>,
     impl::require<IMediaSource3, Windows::Foundation::IClosable, Windows::Media::Core::IMediaSource2, Windows::Media::Playback::IMediaPlaybackSource>
 {
@@ -588,70 +588,70 @@ struct IMediaSource3 :
 };
 
 struct IMediaSourceError :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaSourceError>
 {
     IMediaSourceError(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaSourceOpenOperationCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaSourceOpenOperationCompletedEventArgs>
 {
     IMediaSourceOpenOperationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaSourceStateChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaSourceStateChangedEventArgs>
 {
     IMediaSourceStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaSourceStatics>
 {
     IMediaSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaSourceStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaSourceStatics2>
 {
     IMediaSourceStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamDescriptor>
 {
     IMediaStreamDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSample :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSample>
 {
     IMediaStreamSample(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSampleProtectionProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSampleProtectionProperties>
 {
     IMediaStreamSampleProtectionProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSampleStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSampleStatics>
 {
     IMediaStreamSampleStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSource>,
     impl::require<IMediaStreamSource, Windows::Media::Core::IMediaSource>
 {
@@ -659,7 +659,7 @@ struct IMediaStreamSource :
 };
 
 struct IMediaStreamSource2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSource2>,
     impl::require<IMediaStreamSource2, Windows::Media::Core::IMediaSource, Windows::Media::Core::IMediaStreamSource>
 {
@@ -667,119 +667,119 @@ struct IMediaStreamSource2 :
 };
 
 struct IMediaStreamSourceClosedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceClosedEventArgs>
 {
     IMediaStreamSourceClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceClosedRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceClosedRequest>
 {
     IMediaStreamSourceClosedRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceFactory>
 {
     IMediaStreamSourceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceSampleRenderedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceSampleRenderedEventArgs>
 {
     IMediaStreamSourceSampleRenderedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceSampleRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceSampleRequest>
 {
     IMediaStreamSourceSampleRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceSampleRequestDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceSampleRequestDeferral>
 {
     IMediaStreamSourceSampleRequestDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceSampleRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceSampleRequestedEventArgs>
 {
     IMediaStreamSourceSampleRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceStartingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceStartingEventArgs>
 {
     IMediaStreamSourceStartingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceStartingRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceStartingRequest>
 {
     IMediaStreamSourceStartingRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceStartingRequestDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceStartingRequestDeferral>
 {
     IMediaStreamSourceStartingRequestDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceSwitchStreamsRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceSwitchStreamsRequest>
 {
     IMediaStreamSourceSwitchStreamsRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceSwitchStreamsRequestDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceSwitchStreamsRequestDeferral>
 {
     IMediaStreamSourceSwitchStreamsRequestDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceSwitchStreamsRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaStreamSourceSwitchStreamsRequestedEventArgs>
 {
     IMediaStreamSourceSwitchStreamsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaTrack :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaTrack>
 {
     IMediaTrack(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMseSourceBuffer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMseSourceBuffer>
 {
     IMseSourceBuffer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMseSourceBufferList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMseSourceBufferList>
 {
     IMseSourceBufferList(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMseStreamSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMseStreamSource>,
     impl::require<IMseStreamSource, Windows::Media::Core::IMediaSource>
 {
@@ -787,14 +787,14 @@ struct IMseStreamSource :
 };
 
 struct IMseStreamSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMseStreamSourceStatics>
 {
     IMseStreamSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISceneAnalysisEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISceneAnalysisEffect>,
     impl::require<ISceneAnalysisEffect, Windows::Media::IMediaExtension>
 {
@@ -802,7 +802,7 @@ struct ISceneAnalysisEffect :
 };
 
 struct ISceneAnalysisEffectFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISceneAnalysisEffectFrame>,
     impl::require<ISceneAnalysisEffectFrame, Windows::Foundation::IClosable, Windows::Media::IMediaFrame>
 {
@@ -810,21 +810,21 @@ struct ISceneAnalysisEffectFrame :
 };
 
 struct ISceneAnalyzedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISceneAnalyzedEventArgs>
 {
     ISceneAnalyzedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISingleSelectMediaTrackList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISingleSelectMediaTrackList>
 {
     ISingleSelectMediaTrackList(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedMetadataTrack :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedMetadataTrack>,
     impl::require<ITimedMetadataTrack, Windows::Media::Core::IMediaTrack>
 {
@@ -832,7 +832,7 @@ struct ITimedMetadataTrack :
 };
 
 struct ITimedMetadataTrack2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedMetadataTrack2>,
     impl::require<ITimedMetadataTrack2, Windows::Media::Core::IMediaTrack, Windows::Media::Core::ITimedMetadataTrack>
 {
@@ -840,28 +840,28 @@ struct ITimedMetadataTrack2 :
 };
 
 struct ITimedMetadataTrackError :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedMetadataTrackError>
 {
     ITimedMetadataTrackError(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedMetadataTrackFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedMetadataTrackFactory>
 {
     ITimedMetadataTrackFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedMetadataTrackFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedMetadataTrackFailedEventArgs>
 {
     ITimedMetadataTrackFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedTextCue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedTextCue>,
     impl::require<ITimedTextCue, Windows::Media::Core::IMediaCue>
 {
@@ -869,56 +869,56 @@ struct ITimedTextCue :
 };
 
 struct ITimedTextLine :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedTextLine>
 {
     ITimedTextLine(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedTextRegion :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedTextRegion>
 {
     ITimedTextRegion(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedTextSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedTextSource>
 {
     ITimedTextSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedTextSourceResolveResultEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedTextSourceResolveResultEventArgs>
 {
     ITimedTextSourceResolveResultEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedTextSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedTextSourceStatics>
 {
     ITimedTextSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedTextStyle :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedTextStyle>
 {
     ITimedTextStyle(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedTextSubformat :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedTextSubformat>
 {
     ITimedTextSubformat(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoStabilizationEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoStabilizationEffect>,
     impl::require<IVideoStabilizationEffect, Windows::Media::IMediaExtension>
 {
@@ -926,14 +926,14 @@ struct IVideoStabilizationEffect :
 };
 
 struct IVideoStabilizationEffectEnabledChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoStabilizationEffectEnabledChangedEventArgs>
 {
     IVideoStabilizationEffectEnabledChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoStreamDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoStreamDescriptor>,
     impl::require<IVideoStreamDescriptor, Windows::Media::Core::IMediaStreamDescriptor>
 {
@@ -941,28 +941,28 @@ struct IVideoStreamDescriptor :
 };
 
 struct IVideoStreamDescriptorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoStreamDescriptorFactory>
 {
     IVideoStreamDescriptorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoTrack :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoTrack>
 {
     IVideoTrack(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoTrackOpenFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoTrackOpenFailedEventArgs>
 {
     IVideoTrackOpenFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoTrackSupportInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoTrackSupportInfo>
 {
     IVideoTrackSupportInfo(std::nullptr_t = nullptr) noexcept {}

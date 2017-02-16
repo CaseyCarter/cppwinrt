@@ -43,18 +43,18 @@ template <> struct traits<Windows::Storage::AccessCache::AccessListEntry>
 
 namespace ABI::Windows::Storage::AccessCache {
 
-struct __declspec(uuid("59677e5c-55be-4c66-ba66-5eaea79d2631")) __declspec(novtable) IItemRemovedEventArgs : Windows::IInspectable
+struct __declspec(uuid("59677e5c-55be-4c66-ba66-5eaea79d2631")) __declspec(novtable) IItemRemovedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RemovedEntry(Windows::Storage::AccessCache::AccessListEntry * value) = 0;
 };
 
-struct __declspec(uuid("4391dfaa-d033-48f9-8060-3ec847d2e3f1")) __declspec(novtable) IStorageApplicationPermissionsStatics : Windows::IInspectable
+struct __declspec(uuid("4391dfaa-d033-48f9-8060-3ec847d2e3f1")) __declspec(novtable) IStorageApplicationPermissionsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FutureAccessList(Windows::Storage::AccessCache::IStorageItemAccessList ** value) = 0;
     virtual HRESULT __stdcall get_MostRecentlyUsedList(Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList ** value) = 0;
 };
 
-struct __declspec(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453")) __declspec(novtable) IStorageItemAccessList : Windows::IInspectable
+struct __declspec(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453")) __declspec(novtable) IStorageItemAccessList : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddOverloadDefaultMetadata(Windows::Storage::IStorageItem * file, hstring * token) = 0;
     virtual HRESULT __stdcall abi_Add(Windows::Storage::IStorageItem * file, hstring metadata, hstring * token) = 0;
@@ -74,13 +74,13 @@ struct __declspec(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453")) __declspec(novta
     virtual HRESULT __stdcall get_MaximumItemsAllowed(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("016239d5-510d-411e-8cf1-c3d1effa4c33")) __declspec(novtable) IStorageItemMostRecentlyUsedList : Windows::IInspectable
+struct __declspec(uuid("016239d5-510d-411e-8cf1-c3d1effa4c33")) __declspec(novtable) IStorageItemMostRecentlyUsedList : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_ItemRemoved(Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> * handler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_ItemRemoved(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("da481ea0-ed8d-4731-a1db-e44ee2204093")) __declspec(novtable) IStorageItemMostRecentlyUsedList2 : Windows::IInspectable
+struct __declspec(uuid("da481ea0-ed8d-4731-a1db-e44ee2204093")) __declspec(novtable) IStorageItemMostRecentlyUsedList2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddWithMetadataAndVisibility(Windows::Storage::IStorageItem * file, hstring metadata, winrt::Windows::Storage::AccessCache::RecentStorageItemVisibility visibility, hstring * token) = 0;
     virtual HRESULT __stdcall abi_AddOrReplaceWithMetadataAndVisibility(hstring token, Windows::Storage::IStorageItem * file, hstring metadata, winrt::Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) = 0;

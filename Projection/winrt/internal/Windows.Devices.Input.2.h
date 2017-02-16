@@ -60,63 +60,63 @@ template <> struct __declspec(uuid("592d6618-eaab-5a79-a47a-c7fc0b749a4e")) __de
 namespace Windows::Devices::Input {
 
 struct IKeyboardCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyboardCapabilities>
 {
     IKeyboardCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMouseCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMouseCapabilities>
 {
     IMouseCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMouseDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMouseDevice>
 {
     IMouseDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMouseDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMouseDeviceStatics>
 {
     IMouseDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMouseEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMouseEventArgs>
 {
     IMouseEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerDevice>
 {
     IPointerDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerDevice2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerDevice2>
 {
     IPointerDevice2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerDeviceStatics>
 {
     IPointerDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITouchCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITouchCapabilities>
 {
     ITouchCapabilities(std::nullptr_t = nullptr) noexcept {}

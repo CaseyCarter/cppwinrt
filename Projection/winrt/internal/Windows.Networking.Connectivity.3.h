@@ -13,11 +13,11 @@ template <typename H> struct impl_NetworkStatusChangedEventHandler : implements<
 {
     impl_NetworkStatusChangedEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Foundation::IInspectable> sender) noexcept override
     {
         try
         {
-            (*this)(*reinterpret_cast<const Windows::IInspectable *>(&sender));
+            (*this)(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&sender));
             return S_OK;
         }
         catch (...)

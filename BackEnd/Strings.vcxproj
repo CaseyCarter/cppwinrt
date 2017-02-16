@@ -32,18 +32,23 @@
   <ItemGroup>
     <ClInclude Include="Source\Modern\base_accessors.h" />
     <ClInclude Include="Source\Modern\base_activation.h" />
+    <ClInclude Include="Source\Modern\base_agile.h" />
     <ClInclude Include="Source\Modern\base_array.h" />
     <ClInclude Include="Source\Modern\base_async_consume.h" />
     <ClInclude Include="Source\Modern\base_async_produce.h" />
     <ClInclude Include="Source\Modern\base_await_consume.h" />
+    <ClInclude Include="Source\Modern\base_await_produce.h" />
     <ClInclude Include="Source\Modern\base_chrono.h" />
     <ClInclude Include="Source\Modern\base_collections_consume.h" />
+    <ClInclude Include="Source\Modern\base_collections_impl.h" />
     <ClInclude Include="Source\Modern\base_collections_produce.h" />
     <ClInclude Include="Source\Modern\base_composable.h" />
     <ClInclude Include="Source\Modern\base_com_ptr.h" />
+    <ClInclude Include="Source\Modern\base_delegate.h" />
     <ClInclude Include="Source\Modern\base_dependencies.h" />
     <ClInclude Include="Source\Modern\base_error.h" />
     <ClInclude Include="Source\Modern\base_event_consume.h" />
+    <ClInclude Include="Source\Modern\base_event_produce.h" />
     <ClInclude Include="Source\Modern\base_foundation.h" />
     <ClInclude Include="Source\Modern\base_handle.h" />
     <ClInclude Include="Source\Modern\base_implements.h" />
@@ -52,7 +57,15 @@
     <ClInclude Include="Source\Modern\base_meta.h" />
     <ClInclude Include="Source\Modern\base_modern.h" />
     <ClInclude Include="Source\Modern\base_module.h" />
+    <ClInclude Include="Source\Modern\base_ppl.h" />
+    <ClInclude Include="Source\Modern\base_propertyvalue.h" />
     <ClInclude Include="Source\Modern\base_reference.h" />
+    <ClInclude Include="Source\Modern\base_std_async_action.h" />
+    <ClInclude Include="Source\Modern\base_std_async_action_with_progress.h" />
+    <ClInclude Include="Source\Modern\base_std_async_operation.h" />
+    <ClInclude Include="Source\Modern\base_std_async_operation_with_progress.h" />
+    <ClInclude Include="Source\Modern\base_std_fire_and_forget.h" />
+    <ClInclude Include="Source\Modern\base_std_hash.h" />
     <ClInclude Include="Source\Modern\base_string.h" />
     <ClInclude Include="Source\Modern\base_string_hstring.h" />
     <ClInclude Include="Source\Modern\base_string_hstring_ref.h" />
@@ -61,7 +74,6 @@
     <ClInclude Include="Source\Modern\base_windows.h" />
     <ClInclude Include="Source\Modern\Logo.h" />
     <ClInclude Include="Source\Modern\PragmaOnce.h" />
-    <ClInclude Include="Source\Modern\WindowsNumerics.impl.h" />
     <ClInclude Include="Source\Modern\WriteAbiClassDefault.h" />
     <ClInclude Include="Source\Modern\WriteAbiInterface.h" />
     <ClInclude Include="Source\Modern\WriteAbiInterfaceMethod.h" />
@@ -77,6 +89,7 @@
     <ClInclude Include="Source\Modern\WriteClassNullptrConstructor.h" />
     <ClInclude Include="Source\Modern\WriteComposableConstructor.h" />
     <ClInclude Include="Source\Modern\WriteDelegateDefinition.h" />
+    <ClInclude Include="Source\Modern\WriteDelegateForward.h" />
     <ClInclude Include="Source\Modern\WriteDelegateProducer.h" />
     <ClInclude Include="Source\Modern\WriteDelegateShims.h" />
     <ClInclude Include="Source\Modern\WriteDelegateTraits.h" />
@@ -85,7 +98,9 @@
     <ClInclude Include="Source\Modern\WriteEnumerator.h" />
     <ClInclude Include="Source\Modern\WriteEnumeratorFlag.h" />
     <ClInclude Include="Source\Modern\WriteGenericInterface.h" />
+    <ClInclude Include="Source\Modern\WriteInclude.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceConsumer.h" />
+    <ClInclude Include="Source\Modern\WriteInterfaceConsumerForward.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceDefinition.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceEventMethodDeclaration.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceMethodDeclaration.h" />
@@ -126,6 +141,7 @@
     <None Include="Source\Modern\DatabaseGetClasses.sql" />
     <None Include="Source\Modern\DatabaseGetClassesComposable.sql" />
     <None Include="Source\Modern\DatabaseGetClassImplementations.sql" />
+    <None Include="Source\Modern\DatabaseGetClassOverrideIncludes.sql" />
     <None Include="Source\Modern\DatabaseGetClassOverrides.sql" />
     <None Include="Source\Modern\DatabaseGetComposableConstructors.sql" />
     <None Include="Source\Modern\DatabaseGetDelegateDefinitions.sql" />
@@ -134,25 +150,32 @@
     <None Include="Source\Modern\DatabaseGetEnumerators.sql" />
     <None Include="Source\Modern\DatabaseGetEnumeratorsFlag.sql" />
     <None Include="Source\Modern\DatabaseGetFields.sql" />
+    <None Include="Source\Modern\DatabaseGetGenericInterfaceArguments.sql" />
     <None Include="Source\Modern\DatabaseGetGenericInterfaces.sql" />
     <None Include="Source\Modern\DatabaseGetInterfaceDefinitions.sql" />
     <None Include="Source\Modern\DatabaseGetInterfaceMethodDefinitions.sql" />
     <None Include="Source\Modern\DatabaseGetInterfaceMethods.sql" />
     <None Include="Source\Modern\DatabaseGetInterfaces.sql" />
     <None Include="Source\Modern\DatabaseGetInterfaceTraits.sql" />
+    <None Include="Source\Modern\DatabaseGetNamespaces.sql" />
     <None Include="Source\Modern\DatabaseGetNonAbiStructures.sql" />
     <None Include="Source\Modern\DatabaseGetOverrides.sql" />
     <None Include="Source\Modern\DatabaseGetParameters.sql" />
     <None Include="Source\Modern\DatabaseGetPublicConstructorMethods.sql" />
+    <None Include="Source\Modern\DatabaseGetRequiredAbis.sql" />
     <None Include="Source\Modern\DatabaseGetRequiredClassInterfaces.sql" />
     <None Include="Source\Modern\DatabaseGetRequiredComposableInterfaces.sql" />
+    <None Include="Source\Modern\DatabaseGetRequiredDefinitions.sql" />
+    <None Include="Source\Modern\DatabaseGetRequiredForwards.sql" />
+    <None Include="Source\Modern\DatabaseGetRequiredInterfaceHeaders.sql" />
+    <None Include="Source\Modern\DatabaseGetRequiredInterfaceIncludes.sql" />
     <None Include="Source\Modern\DatabaseGetRequiredInterfaces.sql" />
+    <None Include="Source\Modern\DatabaseGetRequiredParamImpls.sql" />
     <None Include="Source\Modern\DatabaseGetStaticMethodDeclarations.sql" />
     <None Include="Source\Modern\DatabaseGetStructures.sql" />
     <None Include="Source\Modern\DatabaseGetUsingMethodsForClass.sql" />
     <None Include="Source\Modern\DatabaseGetUsingMethodsForInterface.sql" />
     <None Include="Source\Modern\PostSql.sql" />
-    <None Include="Source\Modern\WindowsNumerics.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F11FB834-F526-4958-BD8D-84A480C58991}</ProjectGuid>

@@ -93,7 +93,7 @@ struct WINRT_EBO BitmapTypedValue :
     Windows::Graphics::Imaging::IBitmapTypedValue
 {
     BitmapTypedValue(std::nullptr_t) noexcept {}
-    BitmapTypedValue(const Windows::IInspectable & value, Windows::Foundation::PropertyType type);
+    BitmapTypedValue(const Windows::Foundation::IInspectable & value, Windows::Foundation::PropertyType type);
 };
 
 struct WINRT_EBO ImageStream :

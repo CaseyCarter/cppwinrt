@@ -30,140 +30,140 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::Globalization {
 
 struct IApplicationLanguagesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationLanguagesStatics>
 {
     IApplicationLanguagesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICalendar :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICalendar>
 {
     ICalendar(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICalendarFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICalendarFactory>
 {
     ICalendarFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICalendarFactory2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICalendarFactory2>
 {
     ICalendarFactory2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICalendarIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICalendarIdentifiersStatics>
 {
     ICalendarIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICalendarIdentifiersStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICalendarIdentifiersStatics2>
 {
     ICalendarIdentifiersStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICalendarIdentifiersStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICalendarIdentifiersStatics3>
 {
     ICalendarIdentifiersStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IClockIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClockIdentifiersStatics>
 {
     IClockIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrencyIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrencyIdentifiersStatics>
 {
     ICurrencyIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeographicRegion :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeographicRegion>
 {
     IGeographicRegion(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeographicRegionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeographicRegionFactory>
 {
     IGeographicRegionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeographicRegionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeographicRegionStatics>
 {
     IGeographicRegionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILanguage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanguage>
 {
     ILanguage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILanguageExtensionSubtags :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanguageExtensionSubtags>
 {
     ILanguageExtensionSubtags(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILanguageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanguageFactory>
 {
     ILanguageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILanguageStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanguageStatics>
 {
     ILanguageStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILanguageStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanguageStatics2>
 {
     ILanguageStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumeralSystemIdentifiersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumeralSystemIdentifiersStatics>
 {
     INumeralSystemIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumeralSystemIdentifiersStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumeralSystemIdentifiersStatics2>
 {
     INumeralSystemIdentifiersStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimeZoneOnCalendar :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimeZoneOnCalendar>
 {
     ITimeZoneOnCalendar(std::nullptr_t = nullptr) noexcept {}

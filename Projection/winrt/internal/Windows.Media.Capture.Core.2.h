@@ -21,7 +21,7 @@ template <> struct __declspec(uuid("bab30230-3dcd-58e2-aac5-a45f3e6f8097")) __de
 
 #ifndef WINRT_GENERIC_2210a640_0e7b_5e8f_a617_2cbb10314a5a
 #define WINRT_GENERIC_2210a640_0e7b_5e8f_a617_2cbb10314a5a
-template <> struct __declspec(uuid("2210a640-0e7b-5e8f-a617-2cbb10314a5a")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> {};
+template <> struct __declspec(uuid("2210a640-0e7b-5e8f-a617-2cbb10314a5a")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -30,21 +30,21 @@ template <> struct __declspec(uuid("2210a640-0e7b-5e8f-a617-2cbb10314a5a")) __de
 namespace Windows::Media::Capture::Core {
 
 struct IVariablePhotoCapturedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVariablePhotoCapturedEventArgs>
 {
     IVariablePhotoCapturedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVariablePhotoSequenceCapture :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVariablePhotoSequenceCapture>
 {
     IVariablePhotoSequenceCapture(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVariablePhotoSequenceCapture2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVariablePhotoSequenceCapture2>
 {
     IVariablePhotoSequenceCapture2(std::nullptr_t = nullptr) noexcept {}

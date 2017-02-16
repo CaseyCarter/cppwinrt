@@ -951,7 +951,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -1767,9 +1767,9 @@ template <typename D> void impl_IHttpRequestMessage<D>::Method(const Windows::We
     check_hresult(WINRT_SHIM(IHttpRequestMessage)->put_Method(get_abi(value)));
 }
 
-template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable> impl_IHttpRequestMessage<D>::Properties() const
+template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable> impl_IHttpRequestMessage<D>::Properties() const
 {
-    Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(IHttpRequestMessage)->get_Properties(put_abi(value)));
     return value;
 }

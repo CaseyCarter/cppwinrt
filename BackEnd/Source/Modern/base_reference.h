@@ -103,7 +103,7 @@ struct reference : implements<reference<T>, Windows::Foundation::IReference<T>, 
     void GetChar16Array(com_array<wchar_t> &) { throw hresult_not_implemented(); }
     void GetBooleanArray(com_array<bool> &) { throw hresult_not_implemented(); }
     void GetStringArray(com_array<hstring> &) { throw hresult_not_implemented(); }
-    void GetInspectableArray(com_array<Windows::IInspectable> &) { throw hresult_not_implemented(); }
+    void GetInspectableArray(com_array<Windows::Foundation::IInspectable> &) { throw hresult_not_implemented(); }
     void GetGuidArray(com_array<GUID> &) { throw hresult_not_implemented(); }
     void GetDateTimeArray(com_array<Windows::Foundation::DateTime> &) { throw hresult_not_implemented(); }
     void GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> &) { throw hresult_not_implemented(); }
@@ -119,127 +119,127 @@ private:
 template <typename T>
 struct reference_traits
 {
-    static Windows::IInspectable make(T const & val) { return winrt::make<impl::reference<T>>(val); }
+    static Windows::Foundation::IInspectable make(T const & val) { return winrt::make<impl::reference<T>>(val); }
 };
 
 template <>
 struct reference_traits <uint8_t>
 {
-    static Windows::IInspectable make(uint8_t val) { return Windows::Foundation::PropertyValue::CreateUInt8(val); }
+    static Windows::Foundation::IInspectable make(uint8_t val) { return Windows::Foundation::PropertyValue::CreateUInt8(val); }
 };
 
 template <>
 struct reference_traits <uint16_t>
 {
-    static Windows::IInspectable make(uint16_t val) { return Windows::Foundation::PropertyValue::CreateUInt16(val); }
+    static Windows::Foundation::IInspectable make(uint16_t val) { return Windows::Foundation::PropertyValue::CreateUInt16(val); }
 };
 
 template <>
 struct reference_traits <int16_t>
 {
-    static Windows::IInspectable make(int16_t val) { return Windows::Foundation::PropertyValue::CreateInt16(val); }
+    static Windows::Foundation::IInspectable make(int16_t val) { return Windows::Foundation::PropertyValue::CreateInt16(val); }
 };
 
 template <>
 struct reference_traits <uint32_t>
 {
-    static Windows::IInspectable make(uint32_t val) { return Windows::Foundation::PropertyValue::CreateUInt32(val); }
+    static Windows::Foundation::IInspectable make(uint32_t val) { return Windows::Foundation::PropertyValue::CreateUInt32(val); }
 };
 
 template <>
 struct reference_traits <int32_t>
 {
-    static Windows::IInspectable make(int32_t val) { return Windows::Foundation::PropertyValue::CreateInt32(val); }
+    static Windows::Foundation::IInspectable make(int32_t val) { return Windows::Foundation::PropertyValue::CreateInt32(val); }
 };
 
 template <>
 struct reference_traits <uint64_t>
 {
-    static Windows::IInspectable make(uint64_t val) { return Windows::Foundation::PropertyValue::CreateUInt64(val); }
+    static Windows::Foundation::IInspectable make(uint64_t val) { return Windows::Foundation::PropertyValue::CreateUInt64(val); }
 };
 
 template <>
 struct reference_traits <int64_t>
 {
-    static Windows::IInspectable make(int64_t val) { return Windows::Foundation::PropertyValue::CreateInt64(val); }
+    static Windows::Foundation::IInspectable make(int64_t val) { return Windows::Foundation::PropertyValue::CreateInt64(val); }
 };
 
 template <>
 struct reference_traits <float>
 {
-    static Windows::IInspectable make(float val) { return Windows::Foundation::PropertyValue::CreateSingle(val); }
+    static Windows::Foundation::IInspectable make(float val) { return Windows::Foundation::PropertyValue::CreateSingle(val); }
 };
 
 template <>
 struct reference_traits <double>
 {
-    static Windows::IInspectable make(double val) { return Windows::Foundation::PropertyValue::CreateDouble(val); }
+    static Windows::Foundation::IInspectable make(double val) { return Windows::Foundation::PropertyValue::CreateDouble(val); }
 };
 
 template <>
 struct reference_traits <wchar_t>
 {
-    static Windows::IInspectable make(wchar_t val) { return Windows::Foundation::PropertyValue::CreateChar16(val); }
+    static Windows::Foundation::IInspectable make(wchar_t val) { return Windows::Foundation::PropertyValue::CreateChar16(val); }
 };
 
 template <>
 struct reference_traits <bool>
 {
-    static Windows::IInspectable make(bool val) { return Windows::Foundation::PropertyValue::CreateBoolean(val); }
+    static Windows::Foundation::IInspectable make(bool val) { return Windows::Foundation::PropertyValue::CreateBoolean(val); }
 };
 
 template <>
 struct reference_traits <hstring>
 {
-    static Windows::IInspectable make(hstring const & val) { return Windows::Foundation::PropertyValue::CreateString(val); }
+    static Windows::Foundation::IInspectable make(hstring const & val) { return Windows::Foundation::PropertyValue::CreateString(val); }
 };
 
 template <>
 struct reference_traits <hstring_view>
 {
-    static Windows::IInspectable make(hstring_view val) { return Windows::Foundation::PropertyValue::CreateString(val); }
+    static Windows::Foundation::IInspectable make(hstring_view val) { return Windows::Foundation::PropertyValue::CreateString(val); }
 };
 
 template <>
-struct reference_traits <Windows::IInspectable>
+struct reference_traits <Windows::Foundation::IInspectable>
 {
-    static Windows::IInspectable make(Windows::IInspectable const & val) { return Windows::Foundation::PropertyValue::CreateInspectable(val); }
+    static Windows::Foundation::IInspectable make(Windows::Foundation::IInspectable const & val) { return Windows::Foundation::PropertyValue::CreateInspectable(val); }
 };
 
 template <>
 struct reference_traits <GUID>
 {
-    static Windows::IInspectable make(GUID const & val) { return Windows::Foundation::PropertyValue::CreateGuid(val); }
+    static Windows::Foundation::IInspectable make(GUID const & val) { return Windows::Foundation::PropertyValue::CreateGuid(val); }
 };
 
 template <>
 struct reference_traits <Windows::Foundation::DateTime>
 {
-    static Windows::IInspectable make(Windows::Foundation::DateTime val) { return Windows::Foundation::PropertyValue::CreateDateTime(val); }
+    static Windows::Foundation::IInspectable make(Windows::Foundation::DateTime val) { return Windows::Foundation::PropertyValue::CreateDateTime(val); }
 };
 
 template <>
 struct reference_traits <Windows::Foundation::TimeSpan>
 {
-    static Windows::IInspectable make(Windows::Foundation::TimeSpan val) { return Windows::Foundation::PropertyValue::CreateTimeSpan(val); }
+    static Windows::Foundation::IInspectable make(Windows::Foundation::TimeSpan val) { return Windows::Foundation::PropertyValue::CreateTimeSpan(val); }
 };
 
 template <>
 struct reference_traits  <Windows::Foundation::Point>
 {
-    static Windows::IInspectable make(Windows::Foundation::Point const & val) { return Windows::Foundation::PropertyValue::CreatePoint(val); }
+    static Windows::Foundation::IInspectable make(Windows::Foundation::Point const & val) { return Windows::Foundation::PropertyValue::CreatePoint(val); }
 };
 
 template <>
 struct reference_traits <Windows::Foundation::Size>
 {
-    static Windows::IInspectable make(Windows::Foundation::Size const & val) { return Windows::Foundation::PropertyValue::CreateSize(val); }
+    static Windows::Foundation::IInspectable make(Windows::Foundation::Size const & val) { return Windows::Foundation::PropertyValue::CreateSize(val); }
 };
 
 template <>
 struct reference_traits <Windows::Foundation::Rect>
 {
-    static Windows::IInspectable make(Windows::Foundation::Rect const & val) { return Windows::Foundation::PropertyValue::CreateRect(val); }
+    static Windows::Foundation::IInspectable make(Windows::Foundation::Rect const & val) { return Windows::Foundation::PropertyValue::CreateRect(val); }
 };
 
 }
@@ -248,7 +248,7 @@ namespace Windows::Foundation {
 
 template <typename T>
 struct WINRT_EBO IReference :
-    Windows::IInspectable,
+    IInspectable,
     impl::consume<IReference<T>>
 {
     IReference<T>(std::nullptr_t = nullptr) noexcept {}

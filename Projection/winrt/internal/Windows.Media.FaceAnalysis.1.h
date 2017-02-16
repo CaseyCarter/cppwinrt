@@ -15,12 +15,12 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::FaceAnalysis {
 
-struct __declspec(uuid("8200d454-66bc-34df-9410-e89400195414")) __declspec(novtable) IDetectedFace : Windows::IInspectable
+struct __declspec(uuid("8200d454-66bc-34df-9410-e89400195414")) __declspec(novtable) IDetectedFace : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FaceBox(Windows::Graphics::Imaging::BitmapBounds * returnValue) = 0;
 };
 
-struct __declspec(uuid("16b672dc-fe6f-3117-8d95-c3f04d51630c")) __declspec(novtable) IFaceDetector : Windows::IInspectable
+struct __declspec(uuid("16b672dc-fe6f-3117-8d95-c3f04d51630c")) __declspec(novtable) IFaceDetector : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_DetectFacesAsync(Windows::Graphics::Imaging::ISoftwareBitmap * image, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> ** returnValue) = 0;
     virtual HRESULT __stdcall abi_DetectFacesWithSearchAreaAsync(Windows::Graphics::Imaging::ISoftwareBitmap * image, Windows::Graphics::Imaging::BitmapBounds searchArea, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> ** returnValue) = 0;
@@ -30,7 +30,7 @@ struct __declspec(uuid("16b672dc-fe6f-3117-8d95-c3f04d51630c")) __declspec(novta
     virtual HRESULT __stdcall put_MaxDetectableFaceSize(Windows::Graphics::Imaging::BitmapSize value) = 0;
 };
 
-struct __declspec(uuid("bc042d67-9047-33f6-881b-6746c1b218b8")) __declspec(novtable) IFaceDetectorStatics : Windows::IInspectable
+struct __declspec(uuid("bc042d67-9047-33f6-881b-6746c1b218b8")) __declspec(novtable) IFaceDetectorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateAsync(Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector> ** returnValue) = 0;
     virtual HRESULT __stdcall abi_GetSupportedBitmapPixelFormats(Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> ** result) = 0;
@@ -38,7 +38,7 @@ struct __declspec(uuid("bc042d67-9047-33f6-881b-6746c1b218b8")) __declspec(novta
     virtual HRESULT __stdcall get_IsSupported(bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("6ba67d8c-a841-4420-93e6-2420a1884fcf")) __declspec(novtable) IFaceTracker : Windows::IInspectable
+struct __declspec(uuid("6ba67d8c-a841-4420-93e6-2420a1884fcf")) __declspec(novtable) IFaceTracker : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ProcessNextFrameAsync(Windows::Media::IVideoFrame * videoFrame, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> ** returnValue) = 0;
     virtual HRESULT __stdcall get_MinDetectableFaceSize(Windows::Graphics::Imaging::BitmapSize * returnValue) = 0;
@@ -47,7 +47,7 @@ struct __declspec(uuid("6ba67d8c-a841-4420-93e6-2420a1884fcf")) __declspec(novta
     virtual HRESULT __stdcall put_MaxDetectableFaceSize(Windows::Graphics::Imaging::BitmapSize value) = 0;
 };
 
-struct __declspec(uuid("e9629198-1801-3fa5-932e-31d767af6c4d")) __declspec(novtable) IFaceTrackerStatics : Windows::IInspectable
+struct __declspec(uuid("e9629198-1801-3fa5-932e-31d767af6c4d")) __declspec(novtable) IFaceTrackerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateAsync(Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> ** returnValue) = 0;
     virtual HRESULT __stdcall abi_GetSupportedBitmapPixelFormats(Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> ** result) = 0;

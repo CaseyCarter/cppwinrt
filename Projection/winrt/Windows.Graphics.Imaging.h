@@ -1162,7 +1162,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValue> : produce_base<D, Windows::Graphics::Imaging::IBitmapTypedValue>
 {
-    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -1195,12 +1195,12 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValue> : produce_base<
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValueFactory> : produce_base<D, Windows::Graphics::Imaging::IBitmapTypedValueFactory>
 {
-    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::IInspectable> value, Windows::Foundation::PropertyType type, impl::abi_arg_out<Windows::Graphics::Imaging::IBitmapTypedValue> bitmapTypedValue) noexcept override
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Foundation::IInspectable> value, Windows::Foundation::PropertyType type, impl::abi_arg_out<Windows::Graphics::Imaging::IBitmapTypedValue> bitmapTypedValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *bitmapTypedValue = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::IInspectable *>(&value), type));
+            *bitmapTypedValue = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value), type));
             return S_OK;
         }
         catch (...)
@@ -1652,9 +1652,9 @@ template <typename D> void impl_IBitmapTransform<D>::Bounds(const Windows::Graph
     check_hresult(WINRT_SHIM(IBitmapTransform)->put_Bounds(get_abi(value)));
 }
 
-template <typename D> Windows::IInspectable impl_IBitmapTypedValue<D>::Value() const
+template <typename D> Windows::Foundation::IInspectable impl_IBitmapTypedValue<D>::Value() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IBitmapTypedValue)->get_Value(put_abi(value)));
     return value;
 }
@@ -1666,7 +1666,7 @@ template <typename D> Windows::Foundation::PropertyType impl_IBitmapTypedValue<D
     return value;
 }
 
-template <typename D> Windows::Graphics::Imaging::BitmapTypedValue impl_IBitmapTypedValueFactory<D>::Create(const Windows::IInspectable & value, Windows::Foundation::PropertyType type) const
+template <typename D> Windows::Graphics::Imaging::BitmapTypedValue impl_IBitmapTypedValueFactory<D>::Create(const Windows::Foundation::IInspectable & value, Windows::Foundation::PropertyType type) const
 {
     Windows::Graphics::Imaging::BitmapTypedValue bitmapTypedValue { nullptr };
     check_hresult(WINRT_SHIM(IBitmapTypedValueFactory)->abi_Create(get_abi(value), type, put_abi(bitmapTypedValue)));
@@ -2382,7 +2382,7 @@ inline BitmapTransform::BitmapTransform() :
     BitmapTransform(activate_instance<BitmapTransform>())
 {}
 
-inline BitmapTypedValue::BitmapTypedValue(const Windows::IInspectable & value, Windows::Foundation::PropertyType type) :
+inline BitmapTypedValue::BitmapTypedValue(const Windows::Foundation::IInspectable & value, Windows::Foundation::PropertyType type) :
     BitmapTypedValue(get_activation_factory<BitmapTypedValue, IBitmapTypedValueFactory>().Create(value, type))
 {}
 

@@ -35,21 +35,21 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::ApplicationModel::DataTransfer::ShareTarget {
 
 struct IQuickLink :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IQuickLink>
 {
     IQuickLink(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IShareOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IShareOperation>
 {
     IShareOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IShareOperation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IShareOperation2>
 {
     IShareOperation2(std::nullptr_t = nullptr) noexcept {}

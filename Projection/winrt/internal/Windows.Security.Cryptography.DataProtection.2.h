@@ -25,14 +25,14 @@ template <> struct __declspec(uuid("51c3d2fd-b8a1-5620-b746-7ee6d533aca3")) __de
 namespace Windows::Security::Cryptography::DataProtection {
 
 struct IDataProtectionProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataProtectionProvider>
 {
     IDataProtectionProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataProtectionProviderFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataProtectionProviderFactory>
 {
     IDataProtectionProviderFactory(std::nullptr_t = nullptr) noexcept {}

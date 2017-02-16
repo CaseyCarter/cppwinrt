@@ -18,29 +18,29 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media {
 
-struct __declspec(uuid("35175827-724b-4c6a-b130-f6537f9ae0d0")) __declspec(novtable) IAudioBuffer : Windows::IInspectable
+struct __declspec(uuid("35175827-724b-4c6a-b130-f6537f9ae0d0")) __declspec(novtable) IAudioBuffer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Capacity(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_Length(uint32_t * value) = 0;
     virtual HRESULT __stdcall put_Length(uint32_t value) = 0;
 };
 
-struct __declspec(uuid("e36ac304-aab2-4277-9ed0-43cedf8e29c6")) __declspec(novtable) IAudioFrame : Windows::IInspectable
+struct __declspec(uuid("e36ac304-aab2-4277-9ed0-43cedf8e29c6")) __declspec(novtable) IAudioFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_LockBuffer(winrt::Windows::Media::AudioBufferAccessMode mode, Windows::Media::IAudioBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("91a90ade-2422-40a6-b9ad-30d02404317d")) __declspec(novtable) IAudioFrameFactory : Windows::IInspectable
+struct __declspec(uuid("91a90ade-2422-40a6-b9ad-30d02404317d")) __declspec(novtable) IAudioFrameFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(uint32_t capacity, Windows::Media::IAudioFrame ** value) = 0;
 };
 
-struct __declspec(uuid("ea137efa-d852-438e-882b-c990109a78f4")) __declspec(novtable) IAutoRepeatModeChangeRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("ea137efa-d852-438e-882b-c990109a78f4")) __declspec(novtable) IAutoRepeatModeChangeRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequestedAutoRepeatMode(winrt::Windows::Media::MediaPlaybackAutoRepeatMode * value) = 0;
 };
 
-struct __declspec(uuid("cd0bc7ef-54e7-411f-9933-f0e98b0a96d2")) __declspec(novtable) IImageDisplayProperties : Windows::IInspectable
+struct __declspec(uuid("cd0bc7ef-54e7-411f-9933-f0e98b0a96d2")) __declspec(novtable) IImageDisplayProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
     virtual HRESULT __stdcall put_Title(hstring value) = 0;
@@ -48,12 +48,12 @@ struct __declspec(uuid("cd0bc7ef-54e7-411f-9933-f0e98b0a96d2")) __declspec(novta
     virtual HRESULT __stdcall put_Subtitle(hstring value) = 0;
 };
 
-struct __declspec(uuid("07915118-45df-442b-8a3f-f7826a6370ab")) __declspec(novtable) IMediaExtension : Windows::IInspectable
+struct __declspec(uuid("07915118-45df-442b-8a3f-f7826a6370ab")) __declspec(novtable) IMediaExtension : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetProperties(Windows::Foundation::Collections::IPropertySet * configuration) = 0;
 };
 
-struct __declspec(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff")) __declspec(novtable) IMediaExtensionManager : Windows::IInspectable
+struct __declspec(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff")) __declspec(novtable) IMediaExtensionManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RegisterSchemeHandler(hstring activatableClassId, hstring scheme) = 0;
     virtual HRESULT __stdcall abi_RegisterSchemeHandlerWithSettings(hstring activatableClassId, hstring scheme, Windows::Foundation::Collections::IPropertySet * configuration) = 0;
@@ -69,7 +69,7 @@ struct __declspec(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff")) __declspec(novta
     virtual HRESULT __stdcall abi_RegisterVideoEncoderWithSettings(hstring activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows::Foundation::Collections::IPropertySet * configuration) = 0;
 };
 
-struct __declspec(uuid("bfb52f8c-5943-47d8-8e10-05308aa5fbd0")) __declspec(novtable) IMediaFrame : Windows::IInspectable
+struct __declspec(uuid("bfb52f8c-5943-47d8-8e10-05308aa5fbd0")) __declspec(novtable) IMediaFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(hstring * value) = 0;
     virtual HRESULT __stdcall get_IsReadOnly(bool * value) = 0;
@@ -84,29 +84,29 @@ struct __declspec(uuid("bfb52f8c-5943-47d8-8e10-05308aa5fbd0")) __declspec(novta
     virtual HRESULT __stdcall get_ExtendedProperties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
-struct __declspec(uuid("1803def8-dca5-4b6f-9c20-e3d3c0643625")) __declspec(novtable) IMediaMarker : Windows::IInspectable
+struct __declspec(uuid("1803def8-dca5-4b6f-9c20-e3d3c0643625")) __declspec(novtable) IMediaMarker : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Time(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_MediaMarkerType(hstring * value) = 0;
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
 };
 
-struct __declspec(uuid("bb198040-482f-4743-8832-45853821ece0")) __declspec(novtable) IMediaMarkerTypesStatics : Windows::IInspectable
+struct __declspec(uuid("bb198040-482f-4743-8832-45853821ece0")) __declspec(novtable) IMediaMarkerTypesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Bookmark(hstring * value) = 0;
 };
 
-struct __declspec(uuid("afeab189-f8dd-466e-aa10-920b52353fdf")) __declspec(novtable) IMediaMarkers : Windows::IInspectable
+struct __declspec(uuid("afeab189-f8dd-466e-aa10-920b52353fdf")) __declspec(novtable) IMediaMarkers : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Markers(Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker> ** value) = 0;
 };
 
-struct __declspec(uuid("eb8564ac-a351-4f4e-b4f0-9bf2408993db")) __declspec(novtable) IMediaProcessingTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("eb8564ac-a351-4f4e-b4f0-9bf2408993db")) __declspec(novtable) IMediaProcessingTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Arguments(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
-struct __declspec(uuid("8ed361f3-0b78-4360-bf71-0c841999ea1b")) __declspec(novtable) IMediaTimelineController : Windows::IInspectable
+struct __declspec(uuid("8ed361f3-0b78-4360-bf71-0c841999ea1b")) __declspec(novtable) IMediaTimelineController : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Start() = 0;
     virtual HRESULT __stdcall abi_Resume() = 0;
@@ -116,13 +116,13 @@ struct __declspec(uuid("8ed361f3-0b78-4360-bf71-0c841999ea1b")) __declspec(novta
     virtual HRESULT __stdcall get_ClockRate(double * value) = 0;
     virtual HRESULT __stdcall put_ClockRate(double value) = 0;
     virtual HRESULT __stdcall get_State(winrt::Windows::Media::MediaTimelineControllerState * value) = 0;
-    virtual HRESULT __stdcall add_PositionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> * positionChangedEventHandler, event_token * eventCookie) = 0;
+    virtual HRESULT __stdcall add_PositionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> * positionChangedEventHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_PositionChanged(event_token eventCookie) = 0;
-    virtual HRESULT __stdcall add_StateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> * stateChangedEventHandler, event_token * eventCookie) = 0;
+    virtual HRESULT __stdcall add_StateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> * stateChangedEventHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_StateChanged(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b")) __declspec(novtable) IMusicDisplayProperties : Windows::IInspectable
+struct __declspec(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b")) __declspec(novtable) IMusicDisplayProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
     virtual HRESULT __stdcall put_Title(hstring value) = 0;
@@ -132,7 +132,7 @@ struct __declspec(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b")) __declspec(novta
     virtual HRESULT __stdcall put_Artist(hstring value) = 0;
 };
 
-struct __declspec(uuid("00368462-97d3-44b9-b00f-008afcefaf18")) __declspec(novtable) IMusicDisplayProperties2 : Windows::IInspectable
+struct __declspec(uuid("00368462-97d3-44b9-b00f-008afcefaf18")) __declspec(novtable) IMusicDisplayProperties2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AlbumTitle(hstring * value) = 0;
     virtual HRESULT __stdcall put_AlbumTitle(hstring value) = 0;
@@ -141,28 +141,28 @@ struct __declspec(uuid("00368462-97d3-44b9-b00f-008afcefaf18")) __declspec(novta
     virtual HRESULT __stdcall get_Genres(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("4db51ac1-0681-4e8c-9401-b8159d9eefc7")) __declspec(novtable) IMusicDisplayProperties3 : Windows::IInspectable
+struct __declspec(uuid("4db51ac1-0681-4e8c-9401-b8159d9eefc7")) __declspec(novtable) IMusicDisplayProperties3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AlbumTrackCount(uint32_t * value) = 0;
     virtual HRESULT __stdcall put_AlbumTrackCount(uint32_t value) = 0;
 };
 
-struct __declspec(uuid("b4493f88-eb28-4961-9c14-335e44f3e125")) __declspec(novtable) IPlaybackPositionChangeRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("b4493f88-eb28-4961-9c14-335e44f3e125")) __declspec(novtable) IPlaybackPositionChangeRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequestedPlaybackPosition(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("2ce2c41f-3cd6-4f77-9ba7-eb27c26a2140")) __declspec(novtable) IPlaybackRateChangeRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("2ce2c41f-3cd6-4f77-9ba7-eb27c26a2140")) __declspec(novtable) IPlaybackRateChangeRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequestedPlaybackRate(double * value) = 0;
 };
 
-struct __declspec(uuid("49b593fe-4fd0-4666-a314-c0e01940d302")) __declspec(novtable) IShuffleEnabledChangeRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("49b593fe-4fd0-4666-a314-c0e01940d302")) __declspec(novtable) IShuffleEnabledChangeRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequestedShuffleEnabled(bool * value) = 0;
 };
 
-struct __declspec(uuid("99fa3ff4-1742-42a6-902e-087d41f965ec")) __declspec(novtable) ISystemMediaTransportControls : Windows::IInspectable
+struct __declspec(uuid("99fa3ff4-1742-42a6-902e-087d41f965ec")) __declspec(novtable) ISystemMediaTransportControls : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PlaybackStatus(winrt::Windows::Media::MediaPlaybackStatus * value) = 0;
     virtual HRESULT __stdcall put_PlaybackStatus(winrt::Windows::Media::MediaPlaybackStatus value) = 0;
@@ -196,7 +196,7 @@ struct __declspec(uuid("99fa3ff4-1742-42a6-902e-087d41f965ec")) __declspec(novta
     virtual HRESULT __stdcall remove_PropertyChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("ea98d2f6-7f3c-4af2-a586-72889808efb1")) __declspec(novtable) ISystemMediaTransportControls2 : Windows::IInspectable
+struct __declspec(uuid("ea98d2f6-7f3c-4af2-a586-72889808efb1")) __declspec(novtable) ISystemMediaTransportControls2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AutoRepeatMode(winrt::Windows::Media::MediaPlaybackAutoRepeatMode * value) = 0;
     virtual HRESULT __stdcall put_AutoRepeatMode(winrt::Windows::Media::MediaPlaybackAutoRepeatMode value) = 0;
@@ -215,12 +215,12 @@ struct __declspec(uuid("ea98d2f6-7f3c-4af2-a586-72889808efb1")) __declspec(novta
     virtual HRESULT __stdcall remove_AutoRepeatModeChangeRequested(event_token token) = 0;
 };
 
-struct __declspec(uuid("b7f47116-a56f-4dc8-9e11-92031f4a87c2")) __declspec(novtable) ISystemMediaTransportControlsButtonPressedEventArgs : Windows::IInspectable
+struct __declspec(uuid("b7f47116-a56f-4dc8-9e11-92031f4a87c2")) __declspec(novtable) ISystemMediaTransportControlsButtonPressedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Button(winrt::Windows::Media::SystemMediaTransportControlsButton * value) = 0;
 };
 
-struct __declspec(uuid("8abbc53e-fa55-4ecf-ad8e-c984e5dd1550")) __declspec(novtable) ISystemMediaTransportControlsDisplayUpdater : Windows::IInspectable
+struct __declspec(uuid("8abbc53e-fa55-4ecf-ad8e-c984e5dd1550")) __declspec(novtable) ISystemMediaTransportControlsDisplayUpdater : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::Media::MediaPlaybackType * value) = 0;
     virtual HRESULT __stdcall put_Type(winrt::Windows::Media::MediaPlaybackType value) = 0;
@@ -236,17 +236,17 @@ struct __declspec(uuid("8abbc53e-fa55-4ecf-ad8e-c984e5dd1550")) __declspec(novta
     virtual HRESULT __stdcall abi_Update() = 0;
 };
 
-struct __declspec(uuid("d0ca0936-339b-4cb3-8eeb-737607f56e08")) __declspec(novtable) ISystemMediaTransportControlsPropertyChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("d0ca0936-339b-4cb3-8eeb-737607f56e08")) __declspec(novtable) ISystemMediaTransportControlsPropertyChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Property(winrt::Windows::Media::SystemMediaTransportControlsProperty * value) = 0;
 };
 
-struct __declspec(uuid("43ba380a-eca4-4832-91ab-d415fae484c6")) __declspec(novtable) ISystemMediaTransportControlsStatics : Windows::IInspectable
+struct __declspec(uuid("43ba380a-eca4-4832-91ab-d415fae484c6")) __declspec(novtable) ISystemMediaTransportControlsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForCurrentView(Windows::Media::ISystemMediaTransportControls ** mediaControl) = 0;
 };
 
-struct __declspec(uuid("5125316a-c3a2-475b-8507-93534dc88f15")) __declspec(novtable) ISystemMediaTransportControlsTimelineProperties : Windows::IInspectable
+struct __declspec(uuid("5125316a-c3a2-475b-8507-93534dc88f15")) __declspec(novtable) ISystemMediaTransportControlsTimelineProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StartTime(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall put_StartTime(Windows::Foundation::TimeSpan value) = 0;
@@ -260,7 +260,7 @@ struct __declspec(uuid("5125316a-c3a2-475b-8507-93534dc88f15")) __declspec(novta
     virtual HRESULT __stdcall put_Position(Windows::Foundation::TimeSpan value) = 0;
 };
 
-struct __declspec(uuid("5609fdb1-5d2d-4872-8170-45dee5bc2f5c")) __declspec(novtable) IVideoDisplayProperties : Windows::IInspectable
+struct __declspec(uuid("5609fdb1-5d2d-4872-8170-45dee5bc2f5c")) __declspec(novtable) IVideoDisplayProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
     virtual HRESULT __stdcall put_Title(hstring value) = 0;
@@ -268,24 +268,24 @@ struct __declspec(uuid("5609fdb1-5d2d-4872-8170-45dee5bc2f5c")) __declspec(novta
     virtual HRESULT __stdcall put_Subtitle(hstring value) = 0;
 };
 
-struct __declspec(uuid("b410e1ce-ab52-41ab-a486-cc10fab152f9")) __declspec(novtable) IVideoDisplayProperties2 : Windows::IInspectable
+struct __declspec(uuid("b410e1ce-ab52-41ab-a486-cc10fab152f9")) __declspec(novtable) IVideoDisplayProperties2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Genres(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("1fcda5e8-baf1-4521-980c-3bcebb44cf38")) __declspec(novtable) IVideoEffectsStatics : Windows::IInspectable
+struct __declspec(uuid("1fcda5e8-baf1-4521-980c-3bcebb44cf38")) __declspec(novtable) IVideoEffectsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_VideoStabilization(hstring * value) = 0;
 };
 
-struct __declspec(uuid("0cc06625-90fc-4c92-bd95-7ded21819d1c")) __declspec(novtable) IVideoFrame : Windows::IInspectable
+struct __declspec(uuid("0cc06625-90fc-4c92-bd95-7ded21819d1c")) __declspec(novtable) IVideoFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SoftwareBitmap(Windows::Graphics::Imaging::ISoftwareBitmap ** value) = 0;
     virtual HRESULT __stdcall abi_CopyToAsync(Windows::Media::IVideoFrame * frame, Windows::Foundation::IAsyncAction ** value) = 0;
     virtual HRESULT __stdcall get_Direct3DSurface(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface ** value) = 0;
 };
 
-struct __declspec(uuid("014b6d69-2228-4c92-92ff-50c380d3e776")) __declspec(novtable) IVideoFrameFactory : Windows::IInspectable
+struct __declspec(uuid("014b6d69-2228-4c92-92ff-50c380d3e776")) __declspec(novtable) IVideoFrameFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(winrt::Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Media::IVideoFrame ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAlpha(winrt::Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, winrt::Windows::Graphics::Imaging::BitmapAlphaMode alpha, Windows::Media::IVideoFrame ** value) = 0;
@@ -429,13 +429,13 @@ struct WINRT_EBO impl_IMediaTimelineController
     double ClockRate() const;
     void ClockRate(double value) const;
     Windows::Media::MediaTimelineControllerState State() const;
-    event_token PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & positionChangedEventHandler) const;
+    event_token PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & positionChangedEventHandler) const;
     using PositionChanged_revoker = event_revoker<IMediaTimelineController>;
-    PositionChanged_revoker PositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & positionChangedEventHandler) const;
+    PositionChanged_revoker PositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & positionChangedEventHandler) const;
     void PositionChanged(event_token eventCookie) const;
-    event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & stateChangedEventHandler) const;
+    event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & stateChangedEventHandler) const;
     using StateChanged_revoker = event_revoker<IMediaTimelineController>;
-    StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & stateChangedEventHandler) const;
+    StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & stateChangedEventHandler) const;
     void StateChanged(event_token eventCookie) const;
 };
 

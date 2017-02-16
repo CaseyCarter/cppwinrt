@@ -57,13 +57,13 @@ template <> struct traits<Windows::Web::Http::HttpProgress>
 
 namespace ABI::Windows::Web::Http {
 
-struct __declspec(uuid("bc20c193-c41f-4ff7-9123-6435736eadc2")) __declspec(novtable) IHttpBufferContentFactory : Windows::IInspectable
+struct __declspec(uuid("bc20c193-c41f-4ff7-9123-6435736eadc2")) __declspec(novtable) IHttpBufferContentFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromBuffer(Windows::Storage::Streams::IBuffer * content, Windows::Web::Http::IHttpContent ** bufferContent) = 0;
     virtual HRESULT __stdcall abi_CreateFromBufferWithOffset(Windows::Storage::Streams::IBuffer * content, uint32_t offset, uint32_t count, Windows::Web::Http::IHttpContent ** bufferContent) = 0;
 };
 
-struct __declspec(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d")) __declspec(novtable) IHttpClient : Windows::IInspectable
+struct __declspec(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d")) __declspec(novtable) IHttpClient : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_DeleteAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> ** operation) = 0;
@@ -78,12 +78,12 @@ struct __declspec(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d")) __declspec(novta
     virtual HRESULT __stdcall get_DefaultRequestHeaders(Windows::Web::Http::Headers::IHttpRequestHeaderCollection ** value) = 0;
 };
 
-struct __declspec(uuid("c30c4eca-e3fa-4f99-afb4-63cc65009462")) __declspec(novtable) IHttpClientFactory : Windows::IInspectable
+struct __declspec(uuid("c30c4eca-e3fa-4f99-afb4-63cc65009462")) __declspec(novtable) IHttpClientFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Web::Http::Filters::IHttpFilter * filter, Windows::Web::Http::IHttpClient ** client) = 0;
 };
 
-struct __declspec(uuid("6b14a441-fba7-4bd2-af0a-839de7c295da")) __declspec(novtable) IHttpContent : Windows::IInspectable
+struct __declspec(uuid("6b14a441-fba7-4bd2-af0a-839de7c295da")) __declspec(novtable) IHttpContent : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Headers(Windows::Web::Http::Headers::IHttpContentHeaderCollection ** value) = 0;
     virtual HRESULT __stdcall abi_BufferAllAsync(Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> ** operation) = 0;
@@ -94,7 +94,7 @@ struct __declspec(uuid("6b14a441-fba7-4bd2-af0a-839de7c295da")) __declspec(novta
     virtual HRESULT __stdcall abi_WriteToStreamAsync(Windows::Storage::Streams::IOutputStream * outputStream, Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> ** operation) = 0;
 };
 
-struct __declspec(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249")) __declspec(novtable) IHttpCookie : Windows::IInspectable
+struct __declspec(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249")) __declspec(novtable) IHttpCookie : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Domain(hstring * value) = 0;
@@ -109,12 +109,12 @@ struct __declspec(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249")) __declspec(novta
     virtual HRESULT __stdcall put_Value(hstring value) = 0;
 };
 
-struct __declspec(uuid("6a0585a9-931c-4cd1-a96d-c21701785c5f")) __declspec(novtable) IHttpCookieFactory : Windows::IInspectable
+struct __declspec(uuid("6a0585a9-931c-4cd1-a96d-c21701785c5f")) __declspec(novtable) IHttpCookieFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring name, hstring domain, hstring path, Windows::Web::Http::IHttpCookie ** cookie) = 0;
 };
 
-struct __declspec(uuid("7a431780-cd4f-4e57-a84a-5b0a53d6bb96")) __declspec(novtable) IHttpCookieManager : Windows::IInspectable
+struct __declspec(uuid("7a431780-cd4f-4e57-a84a-5b0a53d6bb96")) __declspec(novtable) IHttpCookieManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetCookie(Windows::Web::Http::IHttpCookie * cookie, bool * replaced) = 0;
     virtual HRESULT __stdcall abi_SetCookieWithThirdParty(Windows::Web::Http::IHttpCookie * cookie, bool thirdParty, bool * replaced) = 0;
@@ -122,22 +122,22 @@ struct __declspec(uuid("7a431780-cd4f-4e57-a84a-5b0a53d6bb96")) __declspec(novta
     virtual HRESULT __stdcall abi_GetCookies(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie> ** value) = 0;
 };
 
-struct __declspec(uuid("43f0138c-2f73-4302-b5f3-eae9238a5e01")) __declspec(novtable) IHttpFormUrlEncodedContentFactory : Windows::IInspectable
+struct __declspec(uuid("43f0138c-2f73-4302-b5f3-eae9238a5e01")) __declspec(novtable) IHttpFormUrlEncodedContentFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> * content, Windows::Web::Http::IHttpContent ** formUrlEncodedContent) = 0;
 };
 
-struct __declspec(uuid("728d4022-700d-4fe0-afa5-40299c58dbfd")) __declspec(novtable) IHttpMethod : Windows::IInspectable
+struct __declspec(uuid("728d4022-700d-4fe0-afa5-40299c58dbfd")) __declspec(novtable) IHttpMethod : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Method(hstring * value) = 0;
 };
 
-struct __declspec(uuid("3c51d10d-36d7-40f8-a86d-e759caf2f83f")) __declspec(novtable) IHttpMethodFactory : Windows::IInspectable
+struct __declspec(uuid("3c51d10d-36d7-40f8-a86d-e759caf2f83f")) __declspec(novtable) IHttpMethodFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring method, Windows::Web::Http::IHttpMethod ** httpMethod) = 0;
 };
 
-struct __declspec(uuid("64d171f0-d99a-4153-8dc6-d68cc4cce317")) __declspec(novtable) IHttpMethodStatics : Windows::IInspectable
+struct __declspec(uuid("64d171f0-d99a-4153-8dc6-d68cc4cce317")) __declspec(novtable) IHttpMethodStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Delete(Windows::Web::Http::IHttpMethod ** value) = 0;
     virtual HRESULT __stdcall get_Get(Windows::Web::Http::IHttpMethod ** value) = 0;
@@ -148,48 +148,48 @@ struct __declspec(uuid("64d171f0-d99a-4153-8dc6-d68cc4cce317")) __declspec(novta
     virtual HRESULT __stdcall get_Put(Windows::Web::Http::IHttpMethod ** value) = 0;
 };
 
-struct __declspec(uuid("df916aff-9926-4ac9-aaf1-e0d04ef09bb9")) __declspec(novtable) IHttpMultipartContent : Windows::IInspectable
+struct __declspec(uuid("df916aff-9926-4ac9-aaf1-e0d04ef09bb9")) __declspec(novtable) IHttpMultipartContent : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Add(Windows::Web::Http::IHttpContent * content) = 0;
 };
 
-struct __declspec(uuid("7eb42e62-0222-4f20-b372-47d5db5d33b4")) __declspec(novtable) IHttpMultipartContentFactory : Windows::IInspectable
+struct __declspec(uuid("7eb42e62-0222-4f20-b372-47d5db5d33b4")) __declspec(novtable) IHttpMultipartContentFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithSubtype(hstring subtype, Windows::Web::Http::IHttpContent ** multipartContent) = 0;
     virtual HRESULT __stdcall abi_CreateWithSubtypeAndBoundary(hstring subtype, hstring boundary, Windows::Web::Http::IHttpContent ** multipartContent) = 0;
 };
 
-struct __declspec(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42")) __declspec(novtable) IHttpMultipartFormDataContent : Windows::IInspectable
+struct __declspec(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42")) __declspec(novtable) IHttpMultipartFormDataContent : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Add(Windows::Web::Http::IHttpContent * content) = 0;
     virtual HRESULT __stdcall abi_AddWithName(Windows::Web::Http::IHttpContent * content, hstring name) = 0;
     virtual HRESULT __stdcall abi_AddWithNameAndFileName(Windows::Web::Http::IHttpContent * content, hstring name, hstring fileName) = 0;
 };
 
-struct __declspec(uuid("a04d7311-5017-4622-93a8-49b24a4fcbfc")) __declspec(novtable) IHttpMultipartFormDataContentFactory : Windows::IInspectable
+struct __declspec(uuid("a04d7311-5017-4622-93a8-49b24a4fcbfc")) __declspec(novtable) IHttpMultipartFormDataContentFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithBoundary(hstring boundary, Windows::Web::Http::IHttpContent ** multipartFormDataContent) = 0;
 };
 
-struct __declspec(uuid("f5762b3c-74d4-4811-b5dc-9f8b4e2f9abf")) __declspec(novtable) IHttpRequestMessage : Windows::IInspectable
+struct __declspec(uuid("f5762b3c-74d4-4811-b5dc-9f8b4e2f9abf")) __declspec(novtable) IHttpRequestMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Content(Windows::Web::Http::IHttpContent ** value) = 0;
     virtual HRESULT __stdcall put_Content(Windows::Web::Http::IHttpContent * value) = 0;
     virtual HRESULT __stdcall get_Headers(Windows::Web::Http::Headers::IHttpRequestHeaderCollection ** value) = 0;
     virtual HRESULT __stdcall get_Method(Windows::Web::Http::IHttpMethod ** value) = 0;
     virtual HRESULT __stdcall put_Method(Windows::Web::Http::IHttpMethod * value) = 0;
-    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_RequestUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall put_RequestUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
     virtual HRESULT __stdcall get_TransportInformation(Windows::Web::Http::IHttpTransportInformation ** value) = 0;
 };
 
-struct __declspec(uuid("5bac994e-3886-412e-aec3-52ec7f25616f")) __declspec(novtable) IHttpRequestMessageFactory : Windows::IInspectable
+struct __declspec(uuid("5bac994e-3886-412e-aec3-52ec7f25616f")) __declspec(novtable) IHttpRequestMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Web::Http::IHttpMethod * method, Windows::Foundation::IUriRuntimeClass * uri, Windows::Web::Http::IHttpRequestMessage ** httpRequestMessage) = 0;
 };
 
-struct __declspec(uuid("fee200fb-8664-44e0-95d9-42696199bffc")) __declspec(novtable) IHttpResponseMessage : Windows::IInspectable
+struct __declspec(uuid("fee200fb-8664-44e0-95d9-42696199bffc")) __declspec(novtable) IHttpResponseMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Content(Windows::Web::Http::IHttpContent ** value) = 0;
     virtual HRESULT __stdcall put_Content(Windows::Web::Http::IHttpContent * value) = 0;
@@ -208,24 +208,24 @@ struct __declspec(uuid("fee200fb-8664-44e0-95d9-42696199bffc")) __declspec(novta
     virtual HRESULT __stdcall abi_EnsureSuccessStatusCode(Windows::Web::Http::IHttpResponseMessage ** httpResponseMessage) = 0;
 };
 
-struct __declspec(uuid("52a8af99-f095-43da-b60f-7cfc2bc7ea2f")) __declspec(novtable) IHttpResponseMessageFactory : Windows::IInspectable
+struct __declspec(uuid("52a8af99-f095-43da-b60f-7cfc2bc7ea2f")) __declspec(novtable) IHttpResponseMessageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(winrt::Windows::Web::Http::HttpStatusCode statusCode, Windows::Web::Http::IHttpResponseMessage ** httpResponseMessage) = 0;
 };
 
-struct __declspec(uuid("f3e64d9d-f725-407e-942f-0eda189809f4")) __declspec(novtable) IHttpStreamContentFactory : Windows::IInspectable
+struct __declspec(uuid("f3e64d9d-f725-407e-942f-0eda189809f4")) __declspec(novtable) IHttpStreamContentFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromInputStream(Windows::Storage::Streams::IInputStream * content, Windows::Web::Http::IHttpContent ** streamContent) = 0;
 };
 
-struct __declspec(uuid("46649d5b-2e93-48eb-8e61-19677878e57f")) __declspec(novtable) IHttpStringContentFactory : Windows::IInspectable
+struct __declspec(uuid("46649d5b-2e93-48eb-8e61-19677878e57f")) __declspec(novtable) IHttpStringContentFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromString(hstring content, Windows::Web::Http::IHttpContent ** stringContent) = 0;
     virtual HRESULT __stdcall abi_CreateFromStringWithEncoding(hstring content, winrt::Windows::Storage::Streams::UnicodeEncoding encoding, Windows::Web::Http::IHttpContent ** stringContent) = 0;
     virtual HRESULT __stdcall abi_CreateFromStringWithEncodingAndMediaType(hstring content, winrt::Windows::Storage::Streams::UnicodeEncoding encoding, hstring mediaType, Windows::Web::Http::IHttpContent ** stringContent) = 0;
 };
 
-struct __declspec(uuid("70127198-c6a7-4ed0-833a-83fd8b8f178d")) __declspec(novtable) IHttpTransportInformation : Windows::IInspectable
+struct __declspec(uuid("70127198-c6a7-4ed0-833a-83fd8b8f178d")) __declspec(novtable) IHttpTransportInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ServerCertificate(Windows::Security::Cryptography::Certificates::ICertificate ** value) = 0;
     virtual HRESULT __stdcall get_ServerCertificateErrorSeverity(winrt::Windows::Networking::Sockets::SocketSslErrorSeverity * value) = 0;
@@ -393,7 +393,7 @@ struct WINRT_EBO impl_IHttpRequestMessage
     Windows::Web::Http::Headers::HttpRequestHeaderCollection Headers() const;
     Windows::Web::Http::HttpMethod Method() const;
     void Method(const Windows::Web::Http::HttpMethod & value) const;
-    Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable> Properties() const;
+    Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable> Properties() const;
     Windows::Foundation::Uri RequestUri() const;
     void RequestUri(const Windows::Foundation::Uri & value) const;
     Windows::Web::Http::HttpTransportInformation TransportInformation() const;

@@ -31,7 +31,7 @@ template <> struct __declspec(uuid("f8c75a3a-739a-57aa-986d-1f7604d7e386")) __de
 
 #ifndef WINRT_GENERIC_f6c02d1b_43e8_5fc8_8e8e_ee7b8094b683
 #define WINRT_GENERIC_f6c02d1b_43e8_5fc8_8e8e_ee7b8094b683
-template <> struct __declspec(uuid("f6c02d1b-43e8-5fc8-8e8e-ee7b8094b683")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f6c02d1b-43e8-5fc8-8e8e-ee7b8094b683")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_ffa41f49_4c30_50d3_9549_e4f055b417b4
@@ -115,35 +115,35 @@ template <> struct __declspec(uuid("92902a07-2f18-56e9-87fb-24fe19f70688")) __de
 namespace Windows::Devices::WiFi {
 
 struct IWiFiAdapter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiAdapter>
 {
     IWiFiAdapter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiAdapterStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiAdapterStatics>
 {
     IWiFiAdapterStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiAvailableNetwork :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiAvailableNetwork>
 {
     IWiFiAvailableNetwork(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiConnectionResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiConnectionResult>
 {
     IWiFiConnectionResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiNetworkReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiNetworkReport>
 {
     IWiFiNetworkReport(std::nullptr_t = nullptr) noexcept {}

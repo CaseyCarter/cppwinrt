@@ -10,14 +10,14 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Hosting {
 
 struct IElementCompositionPreview :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IElementCompositionPreview>
 {
     IElementCompositionPreview(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IElementCompositionPreviewStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IElementCompositionPreviewStatics>
 {
     IElementCompositionPreviewStatics(std::nullptr_t = nullptr) noexcept {}

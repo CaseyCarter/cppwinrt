@@ -314,12 +314,12 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_Previewing(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable>> eventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_Previewing(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable>> eventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().Previewing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> *>(&eventHandler)));
+            *eventCookie = detach_abi(this->shim().Previewing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -342,12 +342,12 @@ struct produce<D, Windows::Graphics::Printing::IPrintTask> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_Submitting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable>> eventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_Submitting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable>> eventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().Submitting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> *>(&eventHandler)));
+            *eventCookie = detach_abi(this->shim().Submitting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -1723,14 +1723,14 @@ template <typename D> Windows::Graphics::Printing::PrintTaskOptions impl_IPrintT
     return value;
 }
 
-template <typename D> event_token impl_IPrintTask<D>::Previewing(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> & eventHandler) const
+template <typename D> event_token impl_IPrintTask<D>::Previewing(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> & eventHandler) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IPrintTask)->add_Previewing(get_abi(eventHandler), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IPrintTask> impl_IPrintTask<D>::Previewing(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> & eventHandler) const
+template <typename D> event_revoker<IPrintTask> impl_IPrintTask<D>::Previewing(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> & eventHandler) const
 {
     return impl::make_event_revoker<D, IPrintTask>(this, &ABI::Windows::Graphics::Printing::IPrintTask::remove_Previewing, Previewing(eventHandler));
 }
@@ -1740,14 +1740,14 @@ template <typename D> void impl_IPrintTask<D>::Previewing(event_token eventCooki
     check_hresult(WINRT_SHIM(IPrintTask)->remove_Previewing(eventCookie));
 }
 
-template <typename D> event_token impl_IPrintTask<D>::Submitting(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> & eventHandler) const
+template <typename D> event_token impl_IPrintTask<D>::Submitting(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> & eventHandler) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IPrintTask)->add_Submitting(get_abi(eventHandler), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IPrintTask> impl_IPrintTask<D>::Submitting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> & eventHandler) const
+template <typename D> event_revoker<IPrintTask> impl_IPrintTask<D>::Submitting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> & eventHandler) const
 {
     return impl::make_event_revoker<D, IPrintTask>(this, &ABI::Windows::Graphics::Printing::IPrintTask::remove_Submitting, Submitting(eventHandler));
 }

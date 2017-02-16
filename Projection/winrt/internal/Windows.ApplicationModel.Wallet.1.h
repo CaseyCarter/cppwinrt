@@ -17,20 +17,20 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Wallet {
 
-struct __declspec(uuid("4f857b29-de80-4ea4-a1cd-81cd084dac27")) __declspec(novtable) IWalletBarcode : Windows::IInspectable
+struct __declspec(uuid("4f857b29-de80-4ea4-a1cd-81cd084dac27")) __declspec(novtable) IWalletBarcode : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Symbology(winrt::Windows::ApplicationModel::Wallet::WalletBarcodeSymbology * value) = 0;
     virtual HRESULT __stdcall get_Value(hstring * value) = 0;
     virtual HRESULT __stdcall abi_GetImageAsync(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> ** operation) = 0;
 };
 
-struct __declspec(uuid("30117161-ed9c-469e-bbfd-306c95ea7108")) __declspec(novtable) IWalletBarcodeFactory : Windows::IInspectable
+struct __declspec(uuid("30117161-ed9c-469e-bbfd-306c95ea7108")) __declspec(novtable) IWalletBarcodeFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWalletBarcode(winrt::Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring value, Windows::ApplicationModel::Wallet::IWalletBarcode ** barcode) = 0;
     virtual HRESULT __stdcall abi_CreateCustomWalletBarcode(Windows::Storage::Streams::IRandomAccessStreamReference * streamToBarcodeImage, Windows::ApplicationModel::Wallet::IWalletBarcode ** barcode) = 0;
 };
 
-struct __declspec(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74")) __declspec(novtable) IWalletItem : Windows::IInspectable
+struct __declspec(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74")) __declspec(novtable) IWalletItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
     virtual HRESULT __stdcall put_DisplayName(hstring value) = 0;
@@ -86,7 +86,7 @@ struct __declspec(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74")) __declspec(novta
     virtual HRESULT __stdcall get_Verbs(Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletVerb> ** value) = 0;
 };
 
-struct __declspec(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7")) __declspec(novtable) IWalletItemCustomProperty : Windows::IInspectable
+struct __declspec(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7")) __declspec(novtable) IWalletItemCustomProperty : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall put_Name(hstring value) = 0;
@@ -100,17 +100,17 @@ struct __declspec(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7")) __declspec(novta
     virtual HRESULT __stdcall put_SummaryViewPosition(winrt::Windows::ApplicationModel::Wallet::WalletSummaryViewPosition value) = 0;
 };
 
-struct __declspec(uuid("d0046a44-61a1-41aa-b259-a5610ab5d575")) __declspec(novtable) IWalletItemCustomPropertyFactory : Windows::IInspectable
+struct __declspec(uuid("d0046a44-61a1-41aa-b259-a5610ab5d575")) __declspec(novtable) IWalletItemCustomPropertyFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWalletItemCustomProperty(hstring name, hstring value, Windows::ApplicationModel::Wallet::IWalletItemCustomProperty ** walletItemCustomProperty) = 0;
 };
 
-struct __declspec(uuid("53e27470-4f0b-4a3e-99e5-0bbb1eab38d4")) __declspec(novtable) IWalletItemFactory : Windows::IInspectable
+struct __declspec(uuid("53e27470-4f0b-4a3e-99e5-0bbb1eab38d4")) __declspec(novtable) IWalletItemFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWalletItem(winrt::Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring displayName, Windows::ApplicationModel::Wallet::IWalletItem ** walletItem) = 0;
 };
 
-struct __declspec(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4")) __declspec(novtable) IWalletItemStore : Windows::IInspectable
+struct __declspec(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4")) __declspec(novtable) IWalletItemStore : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddAsync(hstring id, Windows::ApplicationModel::Wallet::IWalletItem * item, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_ClearAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
@@ -124,18 +124,18 @@ struct __declspec(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4")) __declspec(novta
     virtual HRESULT __stdcall abi_UpdateAsync(Windows::ApplicationModel::Wallet::IWalletItem * item, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("65e682f0-7009-4a15-bd54-4fff379bffe2")) __declspec(novtable) IWalletItemStore2 : Windows::IInspectable
+struct __declspec(uuid("65e682f0-7009-4a15-bd54-4fff379bffe2")) __declspec(novtable) IWalletItemStore2 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_ItemsChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_ItemsChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::Foundation::IInspectable> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_ItemsChanged(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("5111d6b8-c9a4-4c64-b4dd-e1e548001c0d")) __declspec(novtable) IWalletManagerStatics : Windows::IInspectable
+struct __declspec(uuid("5111d6b8-c9a4-4c64-b4dd-e1e548001c0d")) __declspec(novtable) IWalletManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestStoreAsync(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItemStore> ** operation) = 0;
 };
 
-struct __declspec(uuid("9fd8782a-e3f9-4de1-bab3-bb192e46b3f3")) __declspec(novtable) IWalletRelevantLocation : Windows::IInspectable
+struct __declspec(uuid("9fd8782a-e3f9-4de1-bab3-bb192e46b3f3")) __declspec(novtable) IWalletRelevantLocation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Devices::Geolocation::BasicGeoposition * value) = 0;
     virtual HRESULT __stdcall put_Position(Windows::Devices::Geolocation::BasicGeoposition value) = 0;
@@ -143,7 +143,7 @@ struct __declspec(uuid("9fd8782a-e3f9-4de1-bab3-bb192e46b3f3")) __declspec(novta
     virtual HRESULT __stdcall put_DisplayMessage(hstring value) = 0;
 };
 
-struct __declspec(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79")) __declspec(novtable) IWalletTransaction : Windows::IInspectable
+struct __declspec(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79")) __declspec(novtable) IWalletTransaction : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Description(hstring * value) = 0;
     virtual HRESULT __stdcall put_Description(hstring value) = 0;
@@ -159,13 +159,13 @@ struct __declspec(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79")) __declspec(novta
     virtual HRESULT __stdcall put_IsLaunchable(bool value) = 0;
 };
 
-struct __declspec(uuid("17b826d6-e3c1-4c74-8a94-217aadbc4884")) __declspec(novtable) IWalletVerb : Windows::IInspectable
+struct __declspec(uuid("17b826d6-e3c1-4c74-8a94-217aadbc4884")) __declspec(novtable) IWalletVerb : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall put_Name(hstring value) = 0;
 };
 
-struct __declspec(uuid("76012771-be58-4d5e-83ed-58b1669c7ad9")) __declspec(novtable) IWalletVerbFactory : Windows::IInspectable
+struct __declspec(uuid("76012771-be58-4d5e-83ed-58b1669c7ad9")) __declspec(novtable) IWalletVerbFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWalletVerb(hstring name, Windows::ApplicationModel::Wallet::IWalletVerb ** WalletVerb) = 0;
 };
@@ -303,9 +303,9 @@ struct WINRT_EBO impl_IWalletItemStore
 template <typename D>
 struct WINRT_EBO impl_IWalletItemStore2
 {
-    event_token ItemsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> & handler) const;
+    event_token ItemsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::Foundation::IInspectable> & handler) const;
     using ItemsChanged_revoker = event_revoker<IWalletItemStore2>;
-    ItemsChanged_revoker ItemsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> & handler) const;
+    ItemsChanged_revoker ItemsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::Foundation::IInspectable> & handler) const;
     void ItemsChanged(event_token cookie) const;
 };
 

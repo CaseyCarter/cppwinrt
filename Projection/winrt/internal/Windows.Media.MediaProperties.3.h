@@ -118,7 +118,7 @@ struct MediaEncodingSubtypes
 };
 
 struct WINRT_EBO MediaPropertySet :
-    Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>
+    Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>
 {
     MediaPropertySet(std::nullptr_t) noexcept {}
     MediaPropertySet();

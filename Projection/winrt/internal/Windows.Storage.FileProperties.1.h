@@ -17,14 +17,14 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Storage::FileProperties {
 
-struct __declspec(uuid("d05d55db-785e-4a66-be02-9beec58aea81")) __declspec(novtable) IBasicProperties : Windows::IInspectable
+struct __declspec(uuid("d05d55db-785e-4a66-be02-9beec58aea81")) __declspec(novtable) IBasicProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Size(uint64_t * value) = 0;
     virtual HRESULT __stdcall get_DateModified(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_ItemDate(Windows::Foundation::DateTime * value) = 0;
 };
 
-struct __declspec(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070")) __declspec(novtable) IDocumentProperties : Windows::IInspectable
+struct __declspec(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070")) __declspec(novtable) IDocumentProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Author(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
@@ -34,14 +34,14 @@ struct __declspec(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070")) __declspec(novta
     virtual HRESULT __stdcall put_Comment(hstring value) = 0;
 };
 
-struct __declspec(uuid("41493244-2524-4655-86a6-ed16f5fc716b")) __declspec(novtable) IGeotagHelperStatics : Windows::IInspectable
+struct __declspec(uuid("41493244-2524-4655-86a6-ed16f5fc716b")) __declspec(novtable) IGeotagHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetGeotagAsync(Windows::Storage::IStorageFile * file, Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geopoint> ** operation) = 0;
     virtual HRESULT __stdcall abi_SetGeotagFromGeolocatorAsync(Windows::Storage::IStorageFile * file, Windows::Devices::Geolocation::IGeolocator * geolocator, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_SetGeotagAsync(Windows::Storage::IStorageFile * file, Windows::Devices::Geolocation::IGeopoint * geopoint, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("523c9424-fcff-4275-afee-ecdb9ab47973")) __declspec(novtable) IImageProperties : Windows::IInspectable
+struct __declspec(uuid("523c9424-fcff-4275-afee-ecdb9ab47973")) __declspec(novtable) IImageProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Rating(uint32_t * value) = 0;
     virtual HRESULT __stdcall put_Rating(uint32_t value) = 0;
@@ -62,7 +62,7 @@ struct __declspec(uuid("523c9424-fcff-4275-afee-ecdb9ab47973")) __declspec(novta
     virtual HRESULT __stdcall get_PeopleNames(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da")) __declspec(novtable) IMusicProperties : Windows::IInspectable
+struct __declspec(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da")) __declspec(novtable) IMusicProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Album(hstring * value) = 0;
     virtual HRESULT __stdcall put_Album(hstring value) = 0;
@@ -91,7 +91,7 @@ struct __declspec(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da")) __declspec(novta
     virtual HRESULT __stdcall put_Year(uint32_t value) = 0;
 };
 
-struct __declspec(uuid("05294bad-bc38-48bf-85d7-770e0e2ae0ba")) __declspec(novtable) IStorageItemContentProperties : Windows::IInspectable
+struct __declspec(uuid("05294bad-bc38-48bf-85d7-770e0e2ae0ba")) __declspec(novtable) IStorageItemContentProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetMusicPropertiesAsync(Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::MusicProperties> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetVideoPropertiesAsync(Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::VideoProperties> ** operation) = 0;
@@ -99,14 +99,14 @@ struct __declspec(uuid("05294bad-bc38-48bf-85d7-770e0e2ae0ba")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDocumentPropertiesAsync(Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::DocumentProperties> ** operation) = 0;
 };
 
-struct __declspec(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7")) __declspec(novtable) IStorageItemExtraProperties : Windows::IInspectable
+struct __declspec(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7")) __declspec(novtable) IStorageItemExtraProperties : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_RetrievePropertiesAsync(Windows::Foundation::Collections::IIterable<hstring> * propertiesToRetrieve, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>> ** operation) = 0;
-    virtual HRESULT __stdcall abi_SavePropertiesAsync(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> * propertiesToSave, Windows::Foundation::IAsyncAction ** operation) = 0;
+    virtual HRESULT __stdcall abi_RetrievePropertiesAsync(Windows::Foundation::Collections::IIterable<hstring> * propertiesToRetrieve, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_SavePropertiesAsync(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> * propertiesToSave, Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_SavePropertiesAsyncOverloadDefault(Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("693dd42f-dbe7-49b5-b3b3-2893ac5d3423")) __declspec(novtable) IThumbnailProperties : Windows::IInspectable
+struct __declspec(uuid("693dd42f-dbe7-49b5-b3b3-2893ac5d3423")) __declspec(novtable) IThumbnailProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OriginalWidth(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_OriginalHeight(uint32_t * value) = 0;
@@ -114,7 +114,7 @@ struct __declspec(uuid("693dd42f-dbe7-49b5-b3b3-2893ac5d3423")) __declspec(novta
     virtual HRESULT __stdcall get_Type(winrt::Windows::Storage::FileProperties::ThumbnailType * value) = 0;
 };
 
-struct __declspec(uuid("719ae507-68de-4db8-97de-49998c059f2f")) __declspec(novtable) IVideoProperties : Windows::IInspectable
+struct __declspec(uuid("719ae507-68de-4db8-97de-49998c059f2f")) __declspec(novtable) IVideoProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Rating(uint32_t * value) = 0;
     virtual HRESULT __stdcall put_Rating(uint32_t value) = 0;
@@ -246,8 +246,8 @@ struct WINRT_EBO impl_IStorageItemContentProperties
 template <typename D>
 struct WINRT_EBO impl_IStorageItemExtraProperties
 {
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>> RetrievePropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
-    Windows::Foundation::IAsyncAction SavePropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> & propertiesToSave) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> RetrievePropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
+    Windows::Foundation::IAsyncAction SavePropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> & propertiesToSave) const;
     Windows::Foundation::IAsyncAction SavePropertiesAsync() const;
 };
 

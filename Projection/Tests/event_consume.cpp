@@ -11,7 +11,7 @@ using namespace Windows::Foundation;
 // These are some basic implementations of runtime classes used for testing event consumption.
 //
 
-struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference, ABI::Windows::IWeakReference>
+struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference, ABI::Windows::Foundation::IWeakReference>
 {
     IInspectable m_reference; // not actually a weak reference! :)
 
@@ -26,7 +26,7 @@ struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference,
     }
 };
 
-struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windows::IWeakReferenceSource>
+struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windows::Foundation::IWeakReferenceSource>
 {
     operator SplashScreen() const noexcept
     {
@@ -35,7 +35,7 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windo
         return result;
     }
 
-    agile_event<TypedEventHandler<SplashScreen, Windows::IInspectable>> m_dismissed;
+    agile_event<TypedEventHandler<SplashScreen, Windows::Foundation::IInspectable>> m_dismissed;
 
     Rect ImageLocation()
     {
@@ -44,7 +44,7 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windo
         return {};
     }
 
-    event_token Dismissed(const TypedEventHandler<SplashScreen, Windows::IInspectable> & handler)
+    event_token Dismissed(const TypedEventHandler<SplashScreen, Windows::Foundation::IInspectable> & handler)
     {
         return m_dismissed.add(handler);
     }
@@ -54,7 +54,7 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windo
         m_dismissed.remove(cookie);
     }
 
-    HRESULT __stdcall abi_GetWeakReference(ABI::Windows::IWeakReference ** weakReference) override
+    HRESULT __stdcall abi_GetWeakReference(ABI::Windows::Foundation::IWeakReference ** weakReference) override
     {
         try
         {
@@ -106,14 +106,14 @@ struct TestClipboard
         GetStatics().SetContent(content);
     }
 
-    static event_token ContentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler)
+    static event_token ContentChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler)
     {
         return GetStatics().ContentChanged(changeHandler);
     }
 
     using ContentChanged_revoker = factory_event_revoker<IClipboardStatics>;
 
-    static ContentChanged_revoker ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler)
+    static ContentChanged_revoker ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler)
     {
         auto factory = GetStatics();
         return{ factory, &ABI::Windows::ApplicationModel::DataTransfer::IClipboardStatics::remove_ContentChanged, factory.ContentChanged(changeHandler) };

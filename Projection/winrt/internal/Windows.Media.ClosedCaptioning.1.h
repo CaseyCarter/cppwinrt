@@ -11,7 +11,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::ClosedCaptioning {
 
-struct __declspec(uuid("10aa1f84-cc30-4141-b503-5272289e0c20")) __declspec(novtable) IClosedCaptionPropertiesStatics : Windows::IInspectable
+struct __declspec(uuid("10aa1f84-cc30-4141-b503-5272289e0c20")) __declspec(novtable) IClosedCaptionPropertiesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontColor(winrt::Windows::Media::ClosedCaptioning::ClosedCaptionColor * value) = 0;
     virtual HRESULT __stdcall get_ComputedFontColor(Windows::UI::Color * value) = 0;

@@ -183,7 +183,7 @@ template <> struct __declspec(uuid("2ad3fb0c-0656-5302-b504-3153be845161")) __de
 namespace Windows::Graphics::Imaging {
 
 struct IBitmapBuffer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapBuffer>,
     impl::require<IBitmapBuffer, Windows::Foundation::IClosable, Windows::Foundation::IMemoryBuffer>
 {
@@ -191,56 +191,56 @@ struct IBitmapBuffer :
 };
 
 struct IBitmapCodecInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapCodecInformation>
 {
     IBitmapCodecInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapDecoder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapDecoder>
 {
     IBitmapDecoder(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapDecoderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapDecoderStatics>
 {
     IBitmapDecoderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapEncoder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapEncoder>
 {
     IBitmapEncoder(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapEncoderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapEncoderStatics>
 {
     IBitmapEncoderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapEncoderWithSoftwareBitmap :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapEncoderWithSoftwareBitmap>
 {
     IBitmapEncoderWithSoftwareBitmap(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapFrame>
 {
     IBitmapFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapFrameWithSoftwareBitmap :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapFrameWithSoftwareBitmap>,
     impl::require<IBitmapFrameWithSoftwareBitmap, Windows::Graphics::Imaging::IBitmapFrame>
 {
@@ -248,7 +248,7 @@ struct IBitmapFrameWithSoftwareBitmap :
 };
 
 struct IBitmapProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapProperties>,
     impl::require<IBitmapProperties, Windows::Graphics::Imaging::IBitmapPropertiesView>
 {
@@ -256,42 +256,42 @@ struct IBitmapProperties :
 };
 
 struct IBitmapPropertiesView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapPropertiesView>
 {
     IBitmapPropertiesView(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapTransform :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapTransform>
 {
     IBitmapTransform(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapTypedValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapTypedValue>
 {
     IBitmapTypedValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapTypedValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapTypedValueFactory>
 {
     IBitmapTypedValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPixelDataProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPixelDataProvider>
 {
     IPixelDataProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISoftwareBitmap :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISoftwareBitmap>,
     impl::require<ISoftwareBitmap, Windows::Foundation::IClosable>
 {
@@ -299,14 +299,14 @@ struct ISoftwareBitmap :
 };
 
 struct ISoftwareBitmapFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISoftwareBitmapFactory>
 {
     ISoftwareBitmapFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISoftwareBitmapStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISoftwareBitmapStatics>
 {
     ISoftwareBitmapStatics(std::nullptr_t = nullptr) noexcept {}

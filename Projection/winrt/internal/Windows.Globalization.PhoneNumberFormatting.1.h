@@ -11,7 +11,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Globalization::PhoneNumberFormatting {
 
-struct __declspec(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981")) __declspec(novtable) IPhoneNumberFormatter : Windows::IInspectable
+struct __declspec(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981")) __declspec(novtable) IPhoneNumberFormatter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Format(Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo * number, hstring * result) = 0;
     virtual HRESULT __stdcall abi_FormatWithOutputFormat(Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo * number, winrt::Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormat numberFormat, hstring * result) = 0;
@@ -20,7 +20,7 @@ struct __declspec(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981")) __declspec(novta
     virtual HRESULT __stdcall abi_FormatStringWithLeftToRightMarkers(hstring number, hstring * result) = 0;
 };
 
-struct __declspec(uuid("5ca6f931-84d9-414b-ab4e-a0552c878602")) __declspec(novtable) IPhoneNumberFormatterStatics : Windows::IInspectable
+struct __declspec(uuid("5ca6f931-84d9-414b-ab4e-a0552c878602")) __declspec(novtable) IPhoneNumberFormatterStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryCreate(hstring regionCode, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter ** phoneNumber) = 0;
     virtual HRESULT __stdcall abi_GetCountryCodeForRegion(hstring regionCode, int32_t * result) = 0;
@@ -28,7 +28,7 @@ struct __declspec(uuid("5ca6f931-84d9-414b-ab4e-a0552c878602")) __declspec(novta
     virtual HRESULT __stdcall abi_WrapWithLeftToRightMarkers(hstring number, hstring * result) = 0;
 };
 
-struct __declspec(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417")) __declspec(novtable) IPhoneNumberInfo : Windows::IInspectable
+struct __declspec(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417")) __declspec(novtable) IPhoneNumberInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CountryCode(int32_t * value) = 0;
     virtual HRESULT __stdcall get_PhoneNumber(hstring * value) = 0;
@@ -40,12 +40,12 @@ struct __declspec(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417")) __declspec(novta
     virtual HRESULT __stdcall abi_CheckNumberMatch(Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo * otherNumber, winrt::Windows::Globalization::PhoneNumberFormatting::PhoneNumberMatchResult * result) = 0;
 };
 
-struct __declspec(uuid("8202b964-adaa-4cff-8fcf-17e7516a28ff")) __declspec(novtable) IPhoneNumberInfoFactory : Windows::IInspectable
+struct __declspec(uuid("8202b964-adaa-4cff-8fcf-17e7516a28ff")) __declspec(novtable) IPhoneNumberInfoFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring number, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo ** result) = 0;
 };
 
-struct __declspec(uuid("5b3f4f6a-86a9-40e9-8649-6d61161928d4")) __declspec(novtable) IPhoneNumberInfoStatics : Windows::IInspectable
+struct __declspec(uuid("5b3f4f6a-86a9-40e9-8649-6d61161928d4")) __declspec(novtable) IPhoneNumberInfoStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo ** phoneNumber, winrt::Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult * result) = 0;
     virtual HRESULT __stdcall abi_TryParseWithRegion(hstring input, hstring regionCode, Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo ** phoneNumber, winrt::Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult * result) = 0;

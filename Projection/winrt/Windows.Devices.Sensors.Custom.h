@@ -133,7 +133,7 @@ struct produce<D, Windows::Devices::Sensors::Custom::ICustomSensorReading> : pro
         }
     }
 
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -277,9 +277,9 @@ template <typename D> Windows::Foundation::DateTime impl_ICustomSensorReading<D>
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_ICustomSensorReading<D>::Properties() const
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> impl_ICustomSensorReading<D>::Properties() const
 {
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(ICustomSensorReading)->get_Properties(put_abi(value)));
     return value;
 }

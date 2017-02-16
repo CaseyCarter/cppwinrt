@@ -17,7 +17,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::WiFiDirect {
 
-struct __declspec(uuid("ab511a2d-2a06-49a1-a584-61435c7905a6")) __declspec(novtable) IWiFiDirectAdvertisement : Windows::IInspectable
+struct __declspec(uuid("ab511a2d-2a06-49a1-a584-61435c7905a6")) __declspec(novtable) IWiFiDirectAdvertisement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InformationElements(Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> ** value) = 0;
     virtual HRESULT __stdcall put_InformationElements(Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> * value) = 0;
@@ -28,12 +28,12 @@ struct __declspec(uuid("ab511a2d-2a06-49a1-a584-61435c7905a6")) __declspec(novta
     virtual HRESULT __stdcall get_LegacySettings(Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings ** value) = 0;
 };
 
-struct __declspec(uuid("b759aa46-d816-491b-917a-b40d7dc403a2")) __declspec(novtable) IWiFiDirectAdvertisement2 : Windows::IInspectable
+struct __declspec(uuid("b759aa46-d816-491b-917a-b40d7dc403a2")) __declspec(novtable) IWiFiDirectAdvertisement2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SupportedConfigurationMethods(Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> ** value) = 0;
 };
 
-struct __declspec(uuid("b35a2d1a-9b1f-45d9-925a-694d66df68ef")) __declspec(novtable) IWiFiDirectAdvertisementPublisher : Windows::IInspectable
+struct __declspec(uuid("b35a2d1a-9b1f-45d9-925a-694d66df68ef")) __declspec(novtable) IWiFiDirectAdvertisementPublisher : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Advertisement(Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement ** value) = 0;
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus * value) = 0;
@@ -43,68 +43,68 @@ struct __declspec(uuid("b35a2d1a-9b1f-45d9-925a-694d66df68ef")) __declspec(novta
     virtual HRESULT __stdcall abi_Stop() = 0;
 };
 
-struct __declspec(uuid("aafde53c-5481-46e6-90dd-32116518f192")) __declspec(novtable) IWiFiDirectAdvertisementPublisherStatusChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("aafde53c-5481-46e6-90dd-32116518f192")) __declspec(novtable) IWiFiDirectAdvertisementPublisherStatusChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus * value) = 0;
     virtual HRESULT __stdcall get_Error(winrt::Windows::Devices::WiFiDirect::WiFiDirectError * value) = 0;
 };
 
-struct __declspec(uuid("699c1b0d-8d13-4ee9-b9ec-9c72f8251f7d")) __declspec(novtable) IWiFiDirectConnectionListener : Windows::IInspectable
+struct __declspec(uuid("699c1b0d-8d13-4ee9-b9ec-9c72f8251f7d")) __declspec(novtable) IWiFiDirectConnectionListener : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_ConnectionRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ConnectionRequested(event_token token) = 0;
 };
 
-struct __declspec(uuid("b2e55405-5702-4b16-a02c-bbcd21ef6098")) __declspec(novtable) IWiFiDirectConnectionParameters : Windows::IInspectable
+struct __declspec(uuid("b2e55405-5702-4b16-a02c-bbcd21ef6098")) __declspec(novtable) IWiFiDirectConnectionParameters : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GroupOwnerIntent(int16_t * value) = 0;
     virtual HRESULT __stdcall put_GroupOwnerIntent(int16_t value) = 0;
 };
 
-struct __declspec(uuid("ab3b0fbe-aa82-44b4-88c8-e3056b89801d")) __declspec(novtable) IWiFiDirectConnectionParameters2 : Windows::IInspectable
+struct __declspec(uuid("ab3b0fbe-aa82-44b4-88c8-e3056b89801d")) __declspec(novtable) IWiFiDirectConnectionParameters2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PreferenceOrderedConfigurationMethods(Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> ** value) = 0;
     virtual HRESULT __stdcall get_PreferredPairingProcedure(winrt::Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure * value) = 0;
     virtual HRESULT __stdcall put_PreferredPairingProcedure(winrt::Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure value) = 0;
 };
 
-struct __declspec(uuid("598af493-7642-456f-b9d8-e8a9eb1f401a")) __declspec(novtable) IWiFiDirectConnectionParametersStatics : Windows::IInspectable
+struct __declspec(uuid("598af493-7642-456f-b9d8-e8a9eb1f401a")) __declspec(novtable) IWiFiDirectConnectionParametersStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDevicePairingKinds(winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod configurationMethod, winrt::Windows::Devices::Enumeration::DevicePairingKinds * result) = 0;
 };
 
-struct __declspec(uuid("8eb99605-914f-49c3-a614-d18dc5b19b43")) __declspec(novtable) IWiFiDirectConnectionRequest : Windows::IInspectable
+struct __declspec(uuid("8eb99605-914f-49c3-a614-d18dc5b19b43")) __declspec(novtable) IWiFiDirectConnectionRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceInformation(Windows::Devices::Enumeration::IDeviceInformation ** value) = 0;
 };
 
-struct __declspec(uuid("f99d20be-d38d-484f-8215-e7b65abf244c")) __declspec(novtable) IWiFiDirectConnectionRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("f99d20be-d38d-484f-8215-e7b65abf244c")) __declspec(novtable) IWiFiDirectConnectionRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetConnectionRequest(Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest ** result) = 0;
 };
 
-struct __declspec(uuid("72deaaa8-72eb-4dae-8a28-8513355d2777")) __declspec(novtable) IWiFiDirectDevice : Windows::IInspectable
+struct __declspec(uuid("72deaaa8-72eb-4dae-8a28-8513355d2777")) __declspec(novtable) IWiFiDirectDevice : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ConnectionStatus(winrt::Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus * value) = 0;
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
-    virtual HRESULT __stdcall add_ConnectionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_ConnectionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ConnectionStatusChanged(event_token token) = 0;
     virtual HRESULT __stdcall abi_GetConnectionEndpointPairs(Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> ** value) = 0;
 };
 
-struct __declspec(uuid("e86cb57c-3aac-4851-a792-482aaf931b04")) __declspec(novtable) IWiFiDirectDeviceStatics : Windows::IInspectable
+struct __declspec(uuid("e86cb57c-3aac-4851-a792-482aaf931b04")) __declspec(novtable) IWiFiDirectDeviceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * deviceSelector) = 0;
     virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> ** asyncOp) = 0;
 };
 
-struct __declspec(uuid("1a953e49-b103-437e-9226-ab67971342f9")) __declspec(novtable) IWiFiDirectDeviceStatics2 : Windows::IInspectable
+struct __declspec(uuid("1a953e49-b103-437e-9226-ab67971342f9")) __declspec(novtable) IWiFiDirectDeviceStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeviceSelector(winrt::Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type, hstring * result) = 0;
     virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters * connectionParameters, Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> ** result) = 0;
 };
 
-struct __declspec(uuid("affb72d6-76bb-497e-ac8b-dc72838bc309")) __declspec(novtable) IWiFiDirectInformationElement : Windows::IInspectable
+struct __declspec(uuid("affb72d6-76bb-497e-ac8b-dc72838bc309")) __declspec(novtable) IWiFiDirectInformationElement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Oui(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall put_Oui(Windows::Storage::Streams::IBuffer * value) = 0;
@@ -114,13 +114,13 @@ struct __declspec(uuid("affb72d6-76bb-497e-ac8b-dc72838bc309")) __declspec(novta
     virtual HRESULT __stdcall put_Value(Windows::Storage::Streams::IBuffer * value) = 0;
 };
 
-struct __declspec(uuid("dbd02f16-11a5-4e60-8caa-34772148378a")) __declspec(novtable) IWiFiDirectInformationElementStatics : Windows::IInspectable
+struct __declspec(uuid("dbd02f16-11a5-4e60-8caa-34772148378a")) __declspec(novtable) IWiFiDirectInformationElementStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromBuffer(Windows::Storage::Streams::IBuffer * buffer, Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> ** result) = 0;
     virtual HRESULT __stdcall abi_CreateFromDeviceInformation(Windows::Devices::Enumeration::IDeviceInformation * deviceInformation, Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> ** result) = 0;
 };
 
-struct __declspec(uuid("a64fdbba-f2fd-4567-a91b-f5c2f5321057")) __declspec(novtable) IWiFiDirectLegacySettings : Windows::IInspectable
+struct __declspec(uuid("a64fdbba-f2fd-4567-a91b-f5c2f5321057")) __declspec(novtable) IWiFiDirectLegacySettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsEnabled(bool value) = 0;
@@ -234,9 +234,9 @@ struct WINRT_EBO impl_IWiFiDirectDevice
 {
     Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus ConnectionStatus() const;
     hstring DeviceId() const;
-    event_token ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> & handler) const;
+    event_token ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> & handler) const;
     using ConnectionStatusChanged_revoker = event_revoker<IWiFiDirectDevice>;
-    ConnectionStatusChanged_revoker ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> & handler) const;
+    ConnectionStatusChanged_revoker ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> & handler) const;
     void ConnectionStatusChanged(event_token token) const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> GetConnectionEndpointPairs() const;
 };

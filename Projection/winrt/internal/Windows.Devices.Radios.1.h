@@ -11,17 +11,17 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Radios {
 
-struct __declspec(uuid("252118df-b33e-416a-875f-1cf38ae2d83e")) __declspec(novtable) IRadio : Windows::IInspectable
+struct __declspec(uuid("252118df-b33e-416a-875f-1cf38ae2d83e")) __declspec(novtable) IRadio : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetStateAsync(winrt::Windows::Devices::Radios::RadioState value, Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> ** retval) = 0;
-    virtual HRESULT __stdcall add_StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> * handler, event_token * eventCookie) = 0;
+    virtual HRESULT __stdcall add_StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> * handler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_StateChanged(event_token eventCookie) = 0;
     virtual HRESULT __stdcall get_State(winrt::Windows::Devices::Radios::RadioState * value) = 0;
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Kind(winrt::Windows::Devices::Radios::RadioKind * value) = 0;
 };
 
-struct __declspec(uuid("5fb6a12e-67cb-46ae-aae9-65919f86eff4")) __declspec(novtable) IRadioStatics : Windows::IInspectable
+struct __declspec(uuid("5fb6a12e-67cb-46ae-aae9-65919f86eff4")) __declspec(novtable) IRadioStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetRadiosAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>> ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * deviceSelector) = 0;
@@ -43,9 +43,9 @@ template <typename D>
 struct WINRT_EBO impl_IRadio
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> SetStateAsync(Windows::Devices::Radios::RadioState value) const;
-    event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> & handler) const;
+    event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> & handler) const;
     using StateChanged_revoker = event_revoker<IRadio>;
-    StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> & handler) const;
+    StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> & handler) const;
     void StateChanged(event_token eventCookie) const;
     Windows::Devices::Radios::RadioState State() const;
     hstring Name() const;

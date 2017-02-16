@@ -254,7 +254,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameFormat> : produce_
         }
     }
 
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -423,7 +423,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReference> : produ
         }
     }
 
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -562,12 +562,12 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSource> : produce_
         }
     }
 
-    HRESULT __stdcall add_FormatChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FormatChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().FormatChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().FormatChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -624,12 +624,12 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceController> 
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyAsync(impl::abi_arg_in<hstring> propertyId, impl::abi_arg_in<Windows::IInspectable> propertyValue, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus>> value) noexcept override
+    HRESULT __stdcall abi_SetPropertyAsync(impl::abi_arg_in<hstring> propertyId, impl::abi_arg_in<Windows::Foundation::IInspectable> propertyValue, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus>> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().SetPropertyAsync(*reinterpret_cast<const hstring *>(&propertyId), *reinterpret_cast<const Windows::IInspectable *>(&propertyValue)));
+            *value = detach_abi(this->shim().SetPropertyAsync(*reinterpret_cast<const hstring *>(&propertyId), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&propertyValue)));
             return S_OK;
         }
         catch (...)
@@ -672,7 +672,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyR
         }
     }
 
-    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -862,7 +862,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceInfo> : prod
         }
     }
 
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -1160,9 +1160,9 @@ template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IMed
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> impl_IMediaFrameSourceInfo<D>::Properties() const
+template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> impl_IMediaFrameSourceInfo<D>::Properties() const
 {
-    Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(IMediaFrameSourceInfo)->get_Properties(put_abi(value)));
     return value;
 }
@@ -1209,14 +1209,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IMediaFrameSource<D
     return value;
 }
 
-template <typename D> event_token impl_IMediaFrameSource<D>::FormatChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMediaFrameSource<D>::FormatChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaFrameSource)->add_FormatChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaFrameSource> impl_IMediaFrameSource<D>::FormatChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMediaFrameSource> impl_IMediaFrameSource<D>::FormatChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMediaFrameSource>(this, &ABI::Windows::Media::Capture::Frames::IMediaFrameSource::remove_FormatChanged, FormatChanged(handler));
 }
@@ -1278,7 +1278,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Captu
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> impl_IMediaFrameSourceController<D>::SetPropertyAsync(hstring_view propertyId, const Windows::IInspectable & propertyValue) const
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> impl_IMediaFrameSourceController<D>::SetPropertyAsync(hstring_view propertyId, const Windows::Foundation::IInspectable & propertyValue) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> value;
     check_hresult(WINRT_SHIM(IMediaFrameSourceController)->abi_SetPropertyAsync(get_abi(propertyId), get_abi(propertyValue), put_abi(value)));
@@ -1299,9 +1299,9 @@ template <typename D> Windows::Media::Capture::Frames::MediaFrameSourceGetProper
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IMediaFrameSourceGetPropertyResult<D>::Value() const
+template <typename D> Windows::Foundation::IInspectable impl_IMediaFrameSourceGetPropertyResult<D>::Value() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IMediaFrameSourceGetPropertyResult)->get_Value(put_abi(value)));
     return value;
 }
@@ -1327,9 +1327,9 @@ template <typename D> Windows::Media::MediaProperties::MediaRatio impl_IMediaFra
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> impl_IMediaFrameFormat<D>::Properties() const
+template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> impl_IMediaFrameFormat<D>::Properties() const
 {
-    Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(IMediaFrameFormat)->get_Properties(put_abi(value)));
     return value;
 }
@@ -1397,9 +1397,9 @@ template <typename D> Windows::Foundation::TimeSpan impl_IMediaFrameReference<D>
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> impl_IMediaFrameReference<D>::Properties() const
+template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> impl_IMediaFrameReference<D>::Properties() const
 {
-    Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(IMediaFrameReference)->get_Properties(put_abi(value)));
     return value;
 }

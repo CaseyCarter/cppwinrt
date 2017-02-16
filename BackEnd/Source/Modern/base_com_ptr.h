@@ -1,8 +1,7 @@
 
-namespace Windows {
-
-struct IUnknown;
-
+namespace Windows::Foundation
+{
+    struct IUnknown;
 }
 
 template <typename T>
@@ -104,7 +103,7 @@ struct com_ptr
     template <typename U>
     auto as() const
     {
-        std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        std::conditional_t<impl::is_base_of_v<Windows::Foundation::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         check_hresult(m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp))));
         return temp;
     }
@@ -112,7 +111,7 @@ struct com_ptr
     template <typename U>
     auto try_as() const
     {
-        std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        std::conditional_t<impl::is_base_of_v<Windows::Foundation::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
         m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
         return temp;
     }

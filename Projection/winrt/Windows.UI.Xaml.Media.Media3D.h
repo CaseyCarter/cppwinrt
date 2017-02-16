@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Xaml.3.h"
 #include "internal/Windows.UI.Xaml.Media.Media3D.3.h"
 #include "Windows.UI.Xaml.Media.h"
@@ -772,12 +773,12 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ITransform3D> : produce_bas
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory> : produce_base<D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Media3D::ITransform3D> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Media3D::ITransform3D> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -835,7 +836,7 @@ template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3D
     return returnValue;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Media3D::Transform3D impl_ITransform3DFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Media::Media3D::Transform3D impl_ITransform3DFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Media3D::Transform3D instance { nullptr };
     check_hresult(WINRT_SHIM(ITransform3DFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));

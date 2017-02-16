@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Xaml.Resources.3.h"
 #include "Windows.UI.Xaml.h"
 #include "internal/Windows.UI.Xaml.Resources.4.h"
@@ -19,12 +20,12 @@ struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoader> : pro
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderFactory> : produce_base<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Resources::ICustomXamlResourceLoader> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Resources::ICustomXamlResourceLoader> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -39,7 +40,7 @@ struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderFactory
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides> : produce_base<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>
 {
-    HRESULT __stdcall abi_GetResource(impl::abi_arg_in<hstring> resourceId, impl::abi_arg_in<hstring> objectType, impl::abi_arg_in<hstring> propertyName, impl::abi_arg_in<hstring> propertyType, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetResource(impl::abi_arg_in<hstring> resourceId, impl::abi_arg_in<hstring> objectType, impl::abi_arg_in<hstring> propertyName, impl::abi_arg_in<hstring> propertyType, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -92,9 +93,9 @@ struct produce<D, Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderStatics
 
 namespace Windows::UI::Xaml::Resources {
 
-template <typename D> Windows::IInspectable impl_ICustomXamlResourceLoaderOverrides<D>::GetResource(hstring_view resourceId, hstring_view objectType, hstring_view propertyName, hstring_view propertyType) const
+template <typename D> Windows::Foundation::IInspectable impl_ICustomXamlResourceLoaderOverrides<D>::GetResource(hstring_view resourceId, hstring_view objectType, hstring_view propertyName, hstring_view propertyType) const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(ICustomXamlResourceLoaderOverrides)->abi_GetResource(get_abi(resourceId), get_abi(objectType), get_abi(propertyName), get_abi(propertyType), put_abi(returnValue)));
     return returnValue;
 }
@@ -111,7 +112,7 @@ template <typename D> void impl_ICustomXamlResourceLoaderStatics<D>::Current(con
     check_hresult(WINRT_SHIM(ICustomXamlResourceLoaderStatics)->put_Current(get_abi(value)));
 }
 
-template <typename D> Windows::UI::Xaml::Resources::CustomXamlResourceLoader impl_ICustomXamlResourceLoaderFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Resources::CustomXamlResourceLoader impl_ICustomXamlResourceLoaderFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Resources::CustomXamlResourceLoader instance { nullptr };
     check_hresult(WINRT_SHIM(ICustomXamlResourceLoaderFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -120,7 +121,7 @@ template <typename D> Windows::UI::Xaml::Resources::CustomXamlResourceLoader imp
 
 inline CustomXamlResourceLoader::CustomXamlResourceLoader()
 {
-    Windows::IInspectable outer, inner;
+    Windows::Foundation::IInspectable outer, inner;
     impl_move(get_activation_factory<CustomXamlResourceLoader, ICustomXamlResourceLoaderFactory>().CreateInstance(outer, inner));
 }
 

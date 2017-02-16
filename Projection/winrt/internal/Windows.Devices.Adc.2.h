@@ -66,7 +66,7 @@ template <> struct __declspec(uuid("7c4038c8-d920-53c7-a5d6-a976070d7637")) __de
 namespace Windows::Devices::Adc {
 
 struct IAdcChannel :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdcChannel>,
     impl::require<IAdcChannel, Windows::Foundation::IClosable>
 {
@@ -74,21 +74,21 @@ struct IAdcChannel :
 };
 
 struct IAdcController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdcController>
 {
     IAdcController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdcControllerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdcControllerStatics>
 {
     IAdcControllerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdcControllerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdcControllerStatics2>
 {
     IAdcControllerStatics2(std::nullptr_t = nullptr) noexcept {}

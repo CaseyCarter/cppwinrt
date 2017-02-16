@@ -102,7 +102,7 @@ template <> struct __declspec(uuid("a5401278-e2c1-5354-858f-6f32cbdfbea7")) __de
 
 #ifndef WINRT_GENERIC_d20f3387_b3f5_5010_9b0b_e851ae84940d
 #define WINRT_GENERIC_d20f3387_b3f5_5010_9b0b_e851ae84940d
-template <> struct __declspec(uuid("d20f3387-b3f5-5010-9b0b-e851ae84940d")) __declspec(novtable) TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::IInspectable> {};
+template <> struct __declspec(uuid("d20f3387-b3f5-5010-9b0b-e851ae84940d")) __declspec(novtable) TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_36ec9e44_25f6_5d3d_87ee_8ad10a335c83
@@ -186,161 +186,161 @@ template <> struct __declspec(uuid("f72fdf87-9055-58d8-96ab-2cc04d06ccd7")) __de
 namespace Windows::Media::Protection::PlayReady {
 
 struct INDClient :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDClient>
 {
     INDClient(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDClientFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDClientFactory>
 {
     INDClientFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDClosedCaptionDataReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDClosedCaptionDataReceivedEventArgs>
 {
     INDClosedCaptionDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDCustomData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDCustomData>
 {
     INDCustomData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDCustomDataFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDCustomDataFactory>
 {
     INDCustomDataFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDDownloadEngine :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDDownloadEngine>
 {
     INDDownloadEngine(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDDownloadEngineNotifier :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDDownloadEngineNotifier>
 {
     INDDownloadEngineNotifier(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDLicenseFetchCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDLicenseFetchCompletedEventArgs>
 {
     INDLicenseFetchCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDLicenseFetchDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDLicenseFetchDescriptor>
 {
     INDLicenseFetchDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDLicenseFetchDescriptorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDLicenseFetchDescriptorFactory>
 {
     INDLicenseFetchDescriptorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDLicenseFetchResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDLicenseFetchResult>
 {
     INDLicenseFetchResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDMessenger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDMessenger>
 {
     INDMessenger(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDProximityDetectionCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDProximityDetectionCompletedEventArgs>
 {
     INDProximityDetectionCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDRegistrationCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDRegistrationCompletedEventArgs>
 {
     INDRegistrationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDSendResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDSendResult>
 {
     INDSendResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDStartResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDStartResult>
 {
     INDStartResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDStorageFileHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDStorageFileHelper>
 {
     INDStorageFileHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDStreamParser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDStreamParser>
 {
     INDStreamParser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDStreamParserNotifier :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDStreamParserNotifier>
 {
     INDStreamParserNotifier(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDTCPMessengerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDTCPMessengerFactory>
 {
     INDTCPMessengerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INDTransmitterProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INDTransmitterProperties>
 {
     INDTransmitterProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyContentHeader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyContentHeader>
 {
     IPlayReadyContentHeader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyContentHeader2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyContentHeader2>,
     impl::require<IPlayReadyContentHeader2, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader>
 {
@@ -348,42 +348,42 @@ struct IPlayReadyContentHeader2 :
 };
 
 struct IPlayReadyContentHeaderFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyContentHeaderFactory>
 {
     IPlayReadyContentHeaderFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyContentHeaderFactory2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyContentHeaderFactory2>
 {
     IPlayReadyContentHeaderFactory2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyContentResolver :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyContentResolver>
 {
     IPlayReadyContentResolver(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyDomain :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyDomain>
 {
     IPlayReadyDomain(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyDomainIterableFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyDomainIterableFactory>
 {
     IPlayReadyDomainIterableFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyDomainJoinServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyDomainJoinServiceRequest>,
     impl::require<IPlayReadyDomainJoinServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
@@ -391,7 +391,7 @@ struct IPlayReadyDomainJoinServiceRequest :
 };
 
 struct IPlayReadyDomainLeaveServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyDomainLeaveServiceRequest>,
     impl::require<IPlayReadyDomainLeaveServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
@@ -399,14 +399,14 @@ struct IPlayReadyDomainLeaveServiceRequest :
 };
 
 struct IPlayReadyITADataGenerator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyITADataGenerator>
 {
     IPlayReadyITADataGenerator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyIndividualizationServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyIndividualizationServiceRequest>,
     impl::require<IPlayReadyIndividualizationServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
@@ -414,14 +414,14 @@ struct IPlayReadyIndividualizationServiceRequest :
 };
 
 struct IPlayReadyLicense :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyLicense>
 {
     IPlayReadyLicense(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyLicenseAcquisitionServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyLicenseAcquisitionServiceRequest>,
     impl::require<IPlayReadyLicenseAcquisitionServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
@@ -429,7 +429,7 @@ struct IPlayReadyLicenseAcquisitionServiceRequest :
 };
 
 struct IPlayReadyLicenseAcquisitionServiceRequest2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyLicenseAcquisitionServiceRequest2>,
     impl::require<IPlayReadyLicenseAcquisitionServiceRequest2, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
@@ -437,35 +437,35 @@ struct IPlayReadyLicenseAcquisitionServiceRequest2 :
 };
 
 struct IPlayReadyLicenseIterableFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyLicenseIterableFactory>
 {
     IPlayReadyLicenseIterableFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyLicenseManagement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyLicenseManagement>
 {
     IPlayReadyLicenseManagement(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyLicenseSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyLicenseSession>
 {
     IPlayReadyLicenseSession(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyLicenseSessionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyLicenseSessionFactory>
 {
     IPlayReadyLicenseSessionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyMeteringReportServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyMeteringReportServiceRequest>,
     impl::require<IPlayReadyMeteringReportServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
@@ -473,7 +473,7 @@ struct IPlayReadyMeteringReportServiceRequest :
 };
 
 struct IPlayReadyRevocationServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyRevocationServiceRequest>,
     impl::require<IPlayReadyRevocationServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
@@ -481,14 +481,14 @@ struct IPlayReadyRevocationServiceRequest :
 };
 
 struct IPlayReadySecureStopIterableFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadySecureStopIterableFactory>
 {
     IPlayReadySecureStopIterableFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadySecureStopServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadySecureStopServiceRequest>,
     impl::require<IPlayReadySecureStopServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
@@ -496,14 +496,14 @@ struct IPlayReadySecureStopServiceRequest :
 };
 
 struct IPlayReadySecureStopServiceRequestFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadySecureStopServiceRequestFactory>
 {
     IPlayReadySecureStopServiceRequestFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyServiceRequest>,
     impl::require<IPlayReadyServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest>
 {
@@ -511,21 +511,21 @@ struct IPlayReadyServiceRequest :
 };
 
 struct IPlayReadySoapMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadySoapMessage>
 {
     IPlayReadySoapMessage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyStatics>
 {
     IPlayReadyStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyStatics2>,
     impl::require<IPlayReadyStatics2, Windows::Media::Protection::PlayReady::IPlayReadyStatics>
 {
@@ -533,7 +533,7 @@ struct IPlayReadyStatics2 :
 };
 
 struct IPlayReadyStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyStatics3>,
     impl::require<IPlayReadyStatics3, Windows::Media::Protection::PlayReady::IPlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics2>
 {
@@ -541,7 +541,7 @@ struct IPlayReadyStatics3 :
 };
 
 struct IPlayReadyStatics4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyStatics4>,
     impl::require<IPlayReadyStatics4, Windows::Media::Protection::PlayReady::IPlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics2, Windows::Media::Protection::PlayReady::IPlayReadyStatics3>
 {

@@ -63,7 +63,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_9208929a_2a3c_50ad_aa08_a0a986edbabe
 #define WINRT_GENERIC_9208929a_2a3c_50ad_aa08_a0a986edbabe
-template <> struct __declspec(uuid("9208929a-2a3c-50ad-aa08-a0a986edbabe")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> {};
+template <> struct __declspec(uuid("9208929a-2a3c-50ad-aa08-a0a986edbabe")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -132,63 +132,63 @@ template <> struct __declspec(uuid("c899ff9f-e6f5-5673-810c-04e2ff98704f")) __de
 namespace Windows::Devices::WiFiDirect {
 
 struct IWiFiDirectAdvertisement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectAdvertisement>
 {
     IWiFiDirectAdvertisement(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectAdvertisement2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectAdvertisement2>
 {
     IWiFiDirectAdvertisement2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectAdvertisementPublisher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectAdvertisementPublisher>
 {
     IWiFiDirectAdvertisementPublisher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectAdvertisementPublisherStatusChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectAdvertisementPublisherStatusChangedEventArgs>
 {
     IWiFiDirectAdvertisementPublisherStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectConnectionListener :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectConnectionListener>
 {
     IWiFiDirectConnectionListener(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectConnectionParameters :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectConnectionParameters>
 {
     IWiFiDirectConnectionParameters(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectConnectionParameters2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectConnectionParameters2>
 {
     IWiFiDirectConnectionParameters2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectConnectionParametersStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectConnectionParametersStatics>
 {
     IWiFiDirectConnectionParametersStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectConnectionRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectConnectionRequest>,
     impl::require<IWiFiDirectConnectionRequest, Windows::Foundation::IClosable>
 {
@@ -196,14 +196,14 @@ struct IWiFiDirectConnectionRequest :
 };
 
 struct IWiFiDirectConnectionRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectConnectionRequestedEventArgs>
 {
     IWiFiDirectConnectionRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectDevice>,
     impl::require<IWiFiDirectDevice, Windows::Foundation::IClosable>
 {
@@ -211,35 +211,35 @@ struct IWiFiDirectDevice :
 };
 
 struct IWiFiDirectDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectDeviceStatics>
 {
     IWiFiDirectDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectDeviceStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectDeviceStatics2>
 {
     IWiFiDirectDeviceStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectInformationElement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectInformationElement>
 {
     IWiFiDirectInformationElement(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectInformationElementStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectInformationElementStatics>
 {
     IWiFiDirectInformationElementStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectLegacySettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectLegacySettings>
 {
     IWiFiDirectLegacySettings(std::nullptr_t = nullptr) noexcept {}

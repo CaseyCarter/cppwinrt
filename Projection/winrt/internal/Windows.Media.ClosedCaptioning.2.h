@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Media::ClosedCaptioning {
 
 struct IClosedCaptionPropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClosedCaptionPropertiesStatics>
 {
     IClosedCaptionPropertiesStatics(std::nullptr_t = nullptr) noexcept {}

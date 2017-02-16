@@ -92,32 +92,32 @@ template <> struct __declspec(uuid("136dff0d-f7e8-5153-b31c-86390c701880")) __de
 
 #ifndef WINRT_GENERIC_c9965f1c_3641_51b6_b823_048ec3628fb0
 #define WINRT_GENERIC_c9965f1c_3641_51b6_b823_048ec3628fb0
-template <> struct __declspec(uuid("c9965f1c-3641-51b6-b823-048ec3628fb0")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> {};
+template <> struct __declspec(uuid("c9965f1c-3641-51b6-b823-048ec3628fb0")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::InputEnabledEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::InputEnabledEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_26aabf41_a0fd_5e66_b188_6c74182d00cd
 #define WINRT_GENERIC_26aabf41_a0fd_5e66_b188_6c74182d00cd
-template <> struct __declspec(uuid("26aabf41-a0fd-5e66-b188-6c74182d00cd")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> {};
+template <> struct __declspec(uuid("26aabf41-a0fd-5e66-b188-6c74182d00cd")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::PointerEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_5aa4a848_86b2_506b_89ab_5eb5786420c6
 #define WINRT_GENERIC_5aa4a848_86b2_506b_89ab_5eb5786420c6
-template <> struct __declspec(uuid("5aa4a848-86b2-506b-89ab-5eb5786420c6")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> {};
+template <> struct __declspec(uuid("5aa4a848-86b2-506b-89ab-5eb5786420c6")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_eadffdf7_d70e_5688_906c_c2b1229ea16d
 #define WINRT_GENERIC_eadffdf7_d70e_5688_906c_c2b1229ea16d
-template <> struct __declspec(uuid("eadffdf7-d70e-5688-906c-c2b1229ea16d")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> {};
+template <> struct __declspec(uuid("eadffdf7-d70e-5688-906c-c2b1229ea16d")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::KeyEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::KeyEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_1a8ac270_a777_50f7_88a1_e34e56c09449
 #define WINRT_GENERIC_1a8ac270_a777_50f7_88a1_e34e56c09449
-template <> struct __declspec(uuid("1a8ac270-a777-50f7-88a1-e34e56c09449")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> {};
+template <> struct __declspec(uuid("1a8ac270-a777-50f7-88a1-e34e56c09449")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CoreWindowEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::CoreWindowEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_c76e9d25_6a96_58fd_874f_ae52bd603af8
 #define WINRT_GENERIC_c76e9d25_6a96_58fd_874f_ae52bd603af8
-template <> struct __declspec(uuid("c76e9d25-6a96-58fd-874f-ae52bd603af8")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> {};
+template <> struct __declspec(uuid("c76e9d25-6a96-58fd-874f-ae52bd603af8")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_e2c62d42_0577_5112_9e59_eae159bf39e9
@@ -165,7 +165,7 @@ template <> struct __declspec(uuid("f0f57411-7786-5174-8752-4c5e834b6da2")) __de
 
 namespace Windows::UI::Core {
 
-struct DispatchedHandler : Windows::IUnknown
+struct DispatchedHandler : Windows::Foundation::IUnknown
 {
     DispatchedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DispatchedHandler(L lambda);
@@ -174,7 +174,7 @@ struct DispatchedHandler : Windows::IUnknown
     void operator()() const;
 };
 
-struct IdleDispatchedHandler : Windows::IUnknown
+struct IdleDispatchedHandler : Windows::Foundation::IUnknown
 {
     IdleDispatchedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> IdleDispatchedHandler(L lambda);
@@ -184,7 +184,7 @@ struct IdleDispatchedHandler : Windows::IUnknown
 };
 
 struct IAcceleratorKeyEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAcceleratorKeyEventArgs>,
     impl::require<IAcceleratorKeyEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -192,7 +192,7 @@ struct IAcceleratorKeyEventArgs :
 };
 
 struct IAcceleratorKeyEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAcceleratorKeyEventArgs2>,
     impl::require<IAcceleratorKeyEventArgs2, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -200,7 +200,7 @@ struct IAcceleratorKeyEventArgs2 :
 };
 
 struct IAutomationProviderRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationProviderRequestedEventArgs>,
     impl::require<IAutomationProviderRequestedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -208,14 +208,14 @@ struct IAutomationProviderRequestedEventArgs :
 };
 
 struct IBackRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackRequestedEventArgs>
 {
     IBackRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICharacterReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICharacterReceivedEventArgs>,
     impl::require<ICharacterReceivedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -223,49 +223,49 @@ struct ICharacterReceivedEventArgs :
 };
 
 struct IClosestInteractiveBoundsRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClosestInteractiveBoundsRequestedEventArgs>
 {
     IClosestInteractiveBoundsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreAcceleratorKeys :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreAcceleratorKeys>
 {
     ICoreAcceleratorKeys(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreClosestInteractiveBoundsRequested :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreClosestInteractiveBoundsRequested>
 {
     ICoreClosestInteractiveBoundsRequested(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreComponentFocusable :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreComponentFocusable>
 {
     ICoreComponentFocusable(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreCursor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreCursor>
 {
     ICoreCursor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreCursorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreCursorFactory>
 {
     ICoreCursorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreDispatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDispatcher>,
     impl::require<ICoreDispatcher, Windows::UI::Core::ICoreAcceleratorKeys>
 {
@@ -273,133 +273,133 @@ struct ICoreDispatcher :
 };
 
 struct ICoreDispatcher2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDispatcher2>
 {
     ICoreDispatcher2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreDispatcherWithTaskPriority :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDispatcherWithTaskPriority>
 {
     ICoreDispatcherWithTaskPriority(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreInputSourceBase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreInputSourceBase>
 {
     ICoreInputSourceBase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreKeyboardInputSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreKeyboardInputSource>
 {
     ICoreKeyboardInputSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreKeyboardInputSource2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreKeyboardInputSource2>
 {
     ICoreKeyboardInputSource2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICorePointerInputSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICorePointerInputSource>
 {
     ICorePointerInputSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICorePointerRedirector :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICorePointerRedirector>
 {
     ICorePointerRedirector(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreTouchHitTesting :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreTouchHitTesting>
 {
     ICoreTouchHitTesting(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWindow :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWindow>
 {
     ICoreWindow(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWindow2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWindow2>
 {
     ICoreWindow2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWindow3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWindow3>
 {
     ICoreWindow3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWindowEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWindowEventArgs>
 {
     ICoreWindowEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWindowResizeManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWindowResizeManager>
 {
     ICoreWindowResizeManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWindowResizeManagerLayoutCapability :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWindowResizeManagerLayoutCapability>
 {
     ICoreWindowResizeManagerLayoutCapability(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWindowResizeManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWindowResizeManagerStatics>
 {
     ICoreWindowResizeManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWindowStatic :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWindowStatic>
 {
     ICoreWindowStatic(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IIdleDispatchedHandlerArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IIdleDispatchedHandlerArgs>
 {
     IIdleDispatchedHandlerArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInitializeWithCoreWindow :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInitializeWithCoreWindow>
 {
     IInitializeWithCoreWindow(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInputEnabledEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInputEnabledEventArgs>,
     impl::require<IInputEnabledEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -407,7 +407,7 @@ struct IInputEnabledEventArgs :
 };
 
 struct IKeyEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyEventArgs>,
     impl::require<IKeyEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -415,7 +415,7 @@ struct IKeyEventArgs :
 };
 
 struct IKeyEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyEventArgs2>,
     impl::require<IKeyEventArgs2, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -423,7 +423,7 @@ struct IKeyEventArgs2 :
 };
 
 struct IPointerEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerEventArgs>,
     impl::require<IPointerEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -431,28 +431,28 @@ struct IPointerEventArgs :
 };
 
 struct ISystemNavigationManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemNavigationManager>
 {
     ISystemNavigationManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemNavigationManager2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemNavigationManager2>
 {
     ISystemNavigationManager2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemNavigationManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemNavigationManagerStatics>
 {
     ISystemNavigationManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITouchHitTestingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITouchHitTestingEventArgs>,
     impl::require<ITouchHitTestingEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -460,7 +460,7 @@ struct ITouchHitTestingEventArgs :
 };
 
 struct IVisibilityChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisibilityChangedEventArgs>,
     impl::require<IVisibilityChangedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -468,7 +468,7 @@ struct IVisibilityChangedEventArgs :
 };
 
 struct IWindowActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWindowActivatedEventArgs>,
     impl::require<IWindowActivatedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
@@ -476,7 +476,7 @@ struct IWindowActivatedEventArgs :
 };
 
 struct IWindowSizeChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWindowSizeChangedEventArgs>,
     impl::require<IWindowSizeChangedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {

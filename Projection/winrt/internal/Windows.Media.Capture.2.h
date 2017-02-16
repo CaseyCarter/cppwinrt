@@ -38,7 +38,7 @@ template <> struct __declspec(uuid("5e52f8ce-aced-5a42-95b4-f674dd84885e")) __de
 
 #ifndef WINRT_GENERIC_f5cb24b5_ff00_58df_b460_17bbf2cd64d3
 #define WINRT_GENERIC_f5cb24b5_ff00_58df_b460_17bbf2cd64d3
-template <> struct __declspec(uuid("f5cb24b5-ff00-58df-b460-17bbf2cd64d3")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f5cb24b5-ff00-58df-b460-17bbf2cd64d3")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_3c00fd60_2950_5939_a21a_2d12c5a01b8a
@@ -103,7 +103,7 @@ template <> struct __declspec(uuid("f5cb3303-1c1f-5d30-b402-efa192e80c49")) __de
 
 #ifndef WINRT_GENERIC_44c588f1_1bb7_5e12_8413_3cf0373c0bc8
 #define WINRT_GENERIC_44c588f1_1bb7_5e12_8413_3cf0373c0bc8
-template <> struct __declspec(uuid("44c588f1-1bb7-5e12-8413-3cf0373c0bc8")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> {};
+template <> struct __declspec(uuid("44c588f1-1bb7-5e12-8413-3cf0373c0bc8")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_f12e515d_ac45_5153_96b2_ce53ab594a57
@@ -163,7 +163,7 @@ template <> struct __declspec(uuid("843e69ba-5702-5d97-ab81-ef078de3f9b1")) __de
 
 #ifndef WINRT_GENERIC_5cb4a98f_abf1_5518_9094_26db326a5f4e
 #define WINRT_GENERIC_5cb4a98f_abf1_5518_9094_26db326a5f4e
-template <> struct __declspec(uuid("5cb4a98f-abf1-5518-9094-26db326a5f4e")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> {};
+template <> struct __declspec(uuid("5cb4a98f-abf1-5518-9094-26db326a5f4e")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_80423f11_054f_5eac_afd3_63b6ce15e77b
@@ -326,7 +326,7 @@ template <> struct __declspec(uuid("a038e80f-0b3d-5cd4-849d-13036e1f506e")) __de
 
 namespace Windows::Media::Capture {
 
-struct MediaCaptureFailedEventHandler : Windows::IUnknown
+struct MediaCaptureFailedEventHandler : Windows::Foundation::IUnknown
 {
     MediaCaptureFailedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> MediaCaptureFailedEventHandler(L lambda);
@@ -335,7 +335,7 @@ struct MediaCaptureFailedEventHandler : Windows::IUnknown
     void operator()(const Windows::Media::Capture::MediaCapture & sender, const Windows::Media::Capture::MediaCaptureFailedEventArgs & errorEventArgs) const;
 };
 
-struct RecordLimitationExceededEventHandler : Windows::IUnknown
+struct RecordLimitationExceededEventHandler : Windows::Foundation::IUnknown
 {
     RecordLimitationExceededEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> RecordLimitationExceededEventHandler(L lambda);
@@ -345,63 +345,63 @@ struct RecordLimitationExceededEventHandler : Windows::IUnknown
 };
 
 struct IAdvancedCapturedPhoto :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdvancedCapturedPhoto>
 {
     IAdvancedCapturedPhoto(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdvancedCapturedPhoto2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdvancedCapturedPhoto2>
 {
     IAdvancedCapturedPhoto2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdvancedPhotoCapture :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdvancedPhotoCapture>
 {
     IAdvancedPhotoCapture(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppCapture :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppCapture>
 {
     IAppCapture(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppCaptureStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppCaptureStatics>
 {
     IAppCaptureStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICameraCaptureUI :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICameraCaptureUI>
 {
     ICameraCaptureUI(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICameraCaptureUIPhotoCaptureSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICameraCaptureUIPhotoCaptureSettings>
 {
     ICameraCaptureUIPhotoCaptureSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICameraCaptureUIVideoCaptureSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICameraCaptureUIVideoCaptureSettings>
 {
     ICameraCaptureUIVideoCaptureSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICapturedFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICapturedFrame>,
     impl::require<ICapturedFrame, Windows::Foundation::IClosable, Windows::Storage::Streams::IContentTypeProvider, Windows::Storage::Streams::IInputStream, Windows::Storage::Streams::IOutputStream, Windows::Storage::Streams::IRandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamWithContentType>
 {
@@ -409,231 +409,231 @@ struct ICapturedFrame :
 };
 
 struct ICapturedFrameControlValues :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICapturedFrameControlValues>
 {
     ICapturedFrameControlValues(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICapturedFrameControlValues2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICapturedFrameControlValues2>
 {
     ICapturedFrameControlValues2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICapturedFrameWithSoftwareBitmap :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICapturedFrameWithSoftwareBitmap>
 {
     ICapturedFrameWithSoftwareBitmap(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICapturedPhoto :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICapturedPhoto>
 {
     ICapturedPhoto(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLagMediaRecording :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLagMediaRecording>
 {
     ILowLagMediaRecording(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLagMediaRecording2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLagMediaRecording2>
 {
     ILowLagMediaRecording2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLagMediaRecording3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLagMediaRecording3>
 {
     ILowLagMediaRecording3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLagPhotoCapture :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLagPhotoCapture>
 {
     ILowLagPhotoCapture(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLagPhotoSequenceCapture :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLagPhotoSequenceCapture>
 {
     ILowLagPhotoSequenceCapture(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCapture :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCapture>
 {
     IMediaCapture(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCapture2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCapture2>
 {
     IMediaCapture2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCapture3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCapture3>
 {
     IMediaCapture3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCapture4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCapture4>
 {
     IMediaCapture4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCapture5 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCapture5>
 {
     IMediaCapture5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureFailedEventArgs>
 {
     IMediaCaptureFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureFocusChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureFocusChangedEventArgs>
 {
     IMediaCaptureFocusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureInitializationSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureInitializationSettings>
 {
     IMediaCaptureInitializationSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureInitializationSettings2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureInitializationSettings2>
 {
     IMediaCaptureInitializationSettings2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureInitializationSettings3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureInitializationSettings3>
 {
     IMediaCaptureInitializationSettings3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureInitializationSettings4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureInitializationSettings4>
 {
     IMediaCaptureInitializationSettings4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureInitializationSettings5 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureInitializationSettings5>
 {
     IMediaCaptureInitializationSettings5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCapturePauseResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCapturePauseResult>
 {
     IMediaCapturePauseResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureSettings>
 {
     IMediaCaptureSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureSettings2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureSettings2>
 {
     IMediaCaptureSettings2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureStatics>
 {
     IMediaCaptureStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureStopResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureStopResult>
 {
     IMediaCaptureStopResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureVideoPreview :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureVideoPreview>
 {
     IMediaCaptureVideoPreview(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureVideoProfile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureVideoProfile>
 {
     IMediaCaptureVideoProfile(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCaptureVideoProfileMediaDescription :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureVideoProfileMediaDescription>
 {
     IMediaCaptureVideoProfileMediaDescription(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOptionalReferencePhotoCapturedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOptionalReferencePhotoCapturedEventArgs>
 {
     IOptionalReferencePhotoCapturedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoCapturedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoCapturedEventArgs>
 {
     IPhotoCapturedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoConfirmationCapturedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoConfirmationCapturedEventArgs>
 {
     IPhotoConfirmationCapturedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoStreamConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoStreamConfiguration>
 {
     IVideoStreamConfiguration(std::nullptr_t = nullptr) noexcept {}

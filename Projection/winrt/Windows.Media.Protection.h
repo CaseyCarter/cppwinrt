@@ -150,12 +150,12 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall add_ProtectionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ProtectionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ProtectionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ProtectionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -738,14 +738,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media
     return value;
 }
 
-template <typename D> event_token impl_IHdcpSession<D>::ProtectionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IHdcpSession<D>::ProtectionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IHdcpSession)->add_ProtectionChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IHdcpSession> impl_IHdcpSession<D>::ProtectionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IHdcpSession> impl_IHdcpSession<D>::ProtectionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IHdcpSession>(this, &ABI::Windows::Media::Protection::IHdcpSession::remove_ProtectionChanged, ProtectionChanged(handler));
 }

@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Graphics.Printing.3.h"
 #include "internal/Windows.UI.Xaml.3.h"
 #include "internal/Windows.UI.Xaml.Printing.3.h"
@@ -25,7 +26,7 @@ template <typename O, typename M> AddPagesEventHandler::AddPagesEventHandler(O *
     AddPagesEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void AddPagesEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Printing::AddPagesEventArgs & e) const
+inline void AddPagesEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Printing::AddPagesEventArgs & e) const
 {
     check_hresult((*(abi<AddPagesEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -42,7 +43,7 @@ template <typename O, typename M> GetPreviewPageEventHandler::GetPreviewPageEven
     GetPreviewPageEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void GetPreviewPageEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Printing::GetPreviewPageEventArgs & e) const
+inline void GetPreviewPageEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Printing::GetPreviewPageEventArgs & e) const
 {
     check_hresult((*(abi<GetPreviewPageEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -59,7 +60,7 @@ template <typename O, typename M> PaginateEventHandler::PaginateEventHandler(O *
     PaginateEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void PaginateEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Printing::PaginateEventArgs & e) const
+inline void PaginateEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Printing::PaginateEventArgs & e) const
 {
     check_hresult((*(abi<PaginateEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -314,12 +315,12 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Printing::IPrintDocumentFactory> : produce_base<D, Windows::UI::Xaml::Printing::IPrintDocumentFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Printing::IPrintDocument> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Printing::IPrintDocument> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -472,7 +473,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPrintDocumentS
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Printing::PrintDocument impl_IPrintDocumentFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Printing::PrintDocument impl_IPrintDocumentFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Printing::PrintDocument instance { nullptr };
     check_hresult(WINRT_SHIM(IPrintDocumentFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -493,7 +494,7 @@ inline PaginateEventArgs::PaginateEventArgs() :
 
 inline PrintDocument::PrintDocument()
 {
-    Windows::IInspectable outer, inner;
+    Windows::Foundation::IInspectable outer, inner;
     impl_move(get_activation_factory<PrintDocument, IPrintDocumentFactory>().CreateInstance(outer, inner));
 }
 

@@ -13,7 +13,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::Capture::Core {
 
-struct __declspec(uuid("d1eb4c5c-1b53-4e4a-8b5c-db7887ac949b")) __declspec(novtable) IVariablePhotoCapturedEventArgs : Windows::IInspectable
+struct __declspec(uuid("d1eb4c5c-1b53-4e4a-8b5c-db7887ac949b")) __declspec(novtable) IVariablePhotoCapturedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Frame(Windows::Media::Capture::ICapturedFrame ** value) = 0;
     virtual HRESULT __stdcall get_CaptureTimeOffset(Windows::Foundation::TimeSpan * value) = 0;
@@ -21,18 +21,18 @@ struct __declspec(uuid("d1eb4c5c-1b53-4e4a-8b5c-db7887ac949b")) __declspec(novta
     virtual HRESULT __stdcall get_CapturedFrameControlValues(Windows::Media::Capture::ICapturedFrameControlValues ** value) = 0;
 };
 
-struct __declspec(uuid("d0112d1d-031e-4041-a6d6-bd742476a8ee")) __declspec(novtable) IVariablePhotoSequenceCapture : Windows::IInspectable
+struct __declspec(uuid("d0112d1d-031e-4041-a6d6-bd742476a8ee")) __declspec(novtable) IVariablePhotoSequenceCapture : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_StartAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_StopAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall abi_FinishAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
     virtual HRESULT __stdcall add_PhotoCaptured(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PhotoCaptured(event_token token) = 0;
-    virtual HRESULT __stdcall add_Stopped(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Stopped(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Stopped(event_token token) = 0;
 };
 
-struct __declspec(uuid("fe2c62bc-50b0-43e3-917c-e3b92798942f")) __declspec(novtable) IVariablePhotoSequenceCapture2 : Windows::IInspectable
+struct __declspec(uuid("fe2c62bc-50b0-43e3-917c-e3b92798942f")) __declspec(novtable) IVariablePhotoSequenceCapture2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_UpdateSettingsAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
 };
@@ -67,9 +67,9 @@ struct WINRT_EBO impl_IVariablePhotoSequenceCapture
     using PhotoCaptured_revoker = event_revoker<IVariablePhotoSequenceCapture>;
     PhotoCaptured_revoker PhotoCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs> & handler) const;
     void PhotoCaptured(event_token token) const;
-    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> & handler) const;
+    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Foundation::IInspectable> & handler) const;
     using Stopped_revoker = event_revoker<IVariablePhotoSequenceCapture>;
-    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> & handler) const;
+    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Foundation::IInspectable> & handler) const;
     void Stopped(event_token token) const;
 };
 

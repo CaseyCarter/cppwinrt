@@ -467,12 +467,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_FocusRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_FocusRemoved(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().FocusRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().FocusRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -569,12 +569,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
 template <typename D>
 struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext2> : produce_base<D, Windows::UI::Text::Core::ICoreTextEditContext2>
 {
-    HRESULT __stdcall add_NotifyFocusLeaveCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_NotifyFocusLeaveCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().NotifyFocusLeaveCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().NotifyFocusLeaveCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1061,12 +1061,12 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
         }
     }
 
-    HRESULT __stdcall add_InputLanguageChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_InputLanguageChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().InputLanguageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().InputLanguageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1682,14 +1682,14 @@ template <typename D> Windows::Foundation::Deferral impl_ICoreTextCompositionCom
     return value;
 }
 
-template <typename D> event_token impl_ICoreTextEditContext2<D>::NotifyFocusLeaveCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICoreTextEditContext2<D>::NotifyFocusLeaveCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(ICoreTextEditContext2)->add_NotifyFocusLeaveCompleted(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<ICoreTextEditContext2> impl_ICoreTextEditContext2<D>::NotifyFocusLeaveCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICoreTextEditContext2> impl_ICoreTextEditContext2<D>::NotifyFocusLeaveCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICoreTextEditContext2>(this, &ABI::Windows::UI::Text::Core::ICoreTextEditContext2::remove_NotifyFocusLeaveCompleted, NotifyFocusLeaveCompleted(handler));
 }
@@ -1883,14 +1883,14 @@ template <typename D> void impl_ICoreTextEditContext<D>::CompositionCompleted(ev
     check_hresult(WINRT_SHIM(ICoreTextEditContext)->remove_CompositionCompleted(cookie));
 }
 
-template <typename D> event_token impl_ICoreTextEditContext<D>::FocusRemoved(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICoreTextEditContext<D>::FocusRemoved(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(ICoreTextEditContext)->add_FocusRemoved(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditContext<D>::FocusRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditContext<D>::FocusRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICoreTextEditContext>(this, &ABI::Windows::UI::Text::Core::ICoreTextEditContext::remove_FocusRemoved, FocusRemoved(handler));
 }
@@ -1932,14 +1932,14 @@ template <typename D> Windows::Globalization::Language impl_ICoreTextServicesMan
     return value;
 }
 
-template <typename D> event_token impl_ICoreTextServicesManager<D>::InputLanguageChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICoreTextServicesManager<D>::InputLanguageChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(ICoreTextServicesManager)->add_InputLanguageChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<ICoreTextServicesManager> impl_ICoreTextServicesManager<D>::InputLanguageChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICoreTextServicesManager> impl_ICoreTextServicesManager<D>::InputLanguageChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICoreTextServicesManager>(this, &ABI::Windows::UI::Text::Core::ICoreTextServicesManager::remove_InputLanguageChanged, InputLanguageChanged(handler));
 }

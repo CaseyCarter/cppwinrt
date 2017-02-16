@@ -1,36 +1,31 @@
 
-namespace Windows {
-
-enum class TrustLevel
+namespace Windows::Foundation
 {
-    BaseTrust,
-    PartialTrust,
-    FullTrust,
-};
-
+enum class TrustLevel
+    {
+        BaseTrust,
+        PartialTrust,
+        FullTrust,
+    };
 }
 
-namespace ABI::Windows {
-
+namespace ABI::Windows::Foundation
+{
 struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
 {
     virtual HRESULT __stdcall abi_GetIids(uint32_t * iidCount, GUID ** iids) = 0;
     virtual HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * className) = 0;
-    virtual HRESULT __stdcall abi_GetTrustLevel(winrt::Windows::TrustLevel * trustLevel) = 0;
+    virtual HRESULT __stdcall abi_GetTrustLevel(winrt::Windows::Foundation::TrustLevel * trustLevel) = 0;
 };
-
-}
-
-namespace ABI::Windows::Foundation {
 
 struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
 {
     virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
 };
-
 }
 
-namespace Windows {
+namespace Windows::Foundation
+{
 
 struct IUnknown
 {
@@ -177,13 +172,13 @@ private:
 
 namespace impl {
 
-template <> struct traits<Windows::IUnknown>
+template <> struct traits<Windows::Foundation::IUnknown>
 {
     using abi = ::IUnknown;
 };
 
 template <typename T>
-struct accessors<T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::value>>
+struct accessors<T, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, T>::value>>
 {
     static auto get(const T & object) noexcept
     {
@@ -234,7 +229,7 @@ struct accessors<T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::valu
 
 }
 
-namespace Windows {
+namespace Windows::Foundation {
 
 inline bool operator==(const IUnknown & left, const IUnknown & right) noexcept
 {
@@ -268,7 +263,7 @@ inline bool operator>=(const IUnknown & left, const IUnknown & right) noexcept
 
 }
 
-namespace Windows {
+namespace Windows::Foundation {
 
 struct IInspectable;
 
@@ -276,14 +271,14 @@ struct IInspectable;
 
 namespace impl {
 
-template <> struct traits<Windows::IInspectable>
+template <> struct traits<Windows::Foundation::IInspectable>
 {
-    using abi = ABI::Windows::IInspectable;
+    using abi = ABI::Windows::Foundation::IInspectable;
 };
 
 }
 
-namespace Windows {
+namespace Windows::Foundation {
 
 struct IInspectable : IUnknown
 {
@@ -306,22 +301,25 @@ inline hstring GetRuntimeClassName(const IInspectable & object)
 
 inline TrustLevel GetTrustLevel(const IInspectable & object)
 {
-    Windows::TrustLevel value{};
+    TrustLevel value{};
     check_hresult((*(abi<IInspectable> **)&object)->abi_GetTrustLevel(&value));
     return value;
 }
 
 }
 
+using unknown = Windows::Foundation::IUnknown;
+using inspectable = Windows::Foundation::IInspectable;
+
 namespace impl {
 
-template <typename T, std::enable_if_t<!std::is_base_of<Windows::IUnknown, T>::value> * = nullptr>
+template <typename T, std::enable_if_t<!std::is_base_of<Windows::Foundation::IUnknown, T>::value> * = nullptr>
 T empty_value()
 {
     return {};
 }
 
-template <typename T, std::enable_if_t<std::is_base_of<Windows::IUnknown, T>::value> * = nullptr>
+template <typename T, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, T>::value> * = nullptr>
 T empty_value()
 {
     return nullptr;

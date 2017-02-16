@@ -72,266 +72,266 @@ template <> struct __declspec(uuid("c2dd082f-8cb4-51d6-b91b-7e2377780cee")) __de
 namespace Windows::UI::Xaml::Documents {
 
 struct IBlock :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBlock>
 {
     IBlock(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBlockFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBlockFactory>
 {
     IBlockFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBlockStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBlockStatics>
 {
     IBlockStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBold :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBold>
 {
     IBold(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGlyphs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGlyphs>
 {
     IGlyphs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGlyphs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGlyphs2>
 {
     IGlyphs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGlyphsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGlyphsStatics>
 {
     IGlyphsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGlyphsStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGlyphsStatics2>
 {
     IGlyphsStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHyperlink :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHyperlink>
 {
     IHyperlink(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHyperlink2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHyperlink2>
 {
     IHyperlink2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHyperlink3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHyperlink3>
 {
     IHyperlink3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHyperlinkClickEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHyperlinkClickEventArgs>
 {
     IHyperlinkClickEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHyperlinkStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHyperlinkStatics>
 {
     IHyperlinkStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHyperlinkStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHyperlinkStatics2>
 {
     IHyperlinkStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHyperlinkStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHyperlinkStatics3>
 {
     IHyperlinkStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInline :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInline>
 {
     IInline(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInlineFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInlineFactory>
 {
     IInlineFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInlineUIContainer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInlineUIContainer>
 {
     IInlineUIContainer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IItalic :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IItalic>
 {
     IItalic(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILineBreak :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILineBreak>
 {
     ILineBreak(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IParagraph :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IParagraph>
 {
     IParagraph(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IParagraphStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IParagraphStatics>
 {
     IParagraphStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRun :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRun>
 {
     IRun(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRunStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRunStatics>
 {
     IRunStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpan :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpan>
 {
     ISpan(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpanFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpanFactory>
 {
     ISpanFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextElement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextElement>
 {
     ITextElement(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextElement2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextElement2>
 {
     ITextElement2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextElement3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextElement3>
 {
     ITextElement3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextElementFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextElementFactory>
 {
     ITextElementFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextElementOverrides :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextElementOverrides>
 {
     ITextElementOverrides(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextElementStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextElementStatics>
 {
     ITextElementStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextElementStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextElementStatics2>
 {
     ITextElementStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextElementStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextElementStatics3>
 {
     ITextElementStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextPointer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextPointer>
 {
     ITextPointer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITypography :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITypography>
 {
     ITypography(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITypographyStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITypographyStatics>
 {
     ITypographyStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUnderline :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUnderline>
 {
     IUnderline(std::nullptr_t = nullptr) noexcept {}

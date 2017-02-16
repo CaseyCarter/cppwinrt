@@ -49,7 +49,7 @@ template <> struct __declspec(uuid("1164517d-e953-5415-a5b3-4249a969be7b")) __de
 
 #ifndef WINRT_GENERIC_e1407134_09e7_53de_b54c_8a0659397b88
 #define WINRT_GENERIC_e1407134_09e7_53de_b54c_8a0659397b88
-template <> struct __declspec(uuid("e1407134-09e7-53de-b54c-8a0659397b88")) __declspec(novtable) TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> {};
+template <> struct __declspec(uuid("e1407134-09e7-53de-b54c-8a0659397b88")) __declspec(novtable) TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_899670c9_dd7f_5f12_98cb_8b17fe80a47f
@@ -89,7 +89,7 @@ template <> struct __declspec(uuid("4530d121-bb9a-57fe-922f-a98eeedf59af")) __de
 
 #ifndef WINRT_GENERIC_4481085b_8b8b_5520_9825_e9671da2a89f
 #define WINRT_GENERIC_4481085b_8b8b_5520_9825_e9671da2a89f
-template <> struct __declspec(uuid("4481085b-8b8b-5520-9825-e9671da2a89f")) __declspec(novtable) TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> {};
+template <> struct __declspec(uuid("4481085b-8b8b-5520-9825-e9671da2a89f")) __declspec(novtable) TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_02132510_3899_5257_bed9_a43e5149d28c
@@ -198,7 +198,7 @@ template <> struct __declspec(uuid("6f76d148-023e-565a-9f09-4ad4a32ad74f")) __de
 namespace Windows::Media::Audio {
 
 struct IAudioDeviceInputNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioDeviceInputNode>,
     impl::require<IAudioDeviceInputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioInputNode, Windows::Media::Audio::IAudioNode>
 {
@@ -206,7 +206,7 @@ struct IAudioDeviceInputNode :
 };
 
 struct IAudioDeviceOutputNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioDeviceOutputNode>,
     impl::require<IAudioDeviceOutputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
@@ -214,7 +214,7 @@ struct IAudioDeviceOutputNode :
 };
 
 struct IAudioFileInputNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioFileInputNode>,
     impl::require<IAudioFileInputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioInputNode, Windows::Media::Audio::IAudioNode>
 {
@@ -222,7 +222,7 @@ struct IAudioFileInputNode :
 };
 
 struct IAudioFileOutputNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioFileOutputNode>,
     impl::require<IAudioFileOutputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
@@ -230,14 +230,14 @@ struct IAudioFileOutputNode :
 };
 
 struct IAudioFrameCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioFrameCompletedEventArgs>
 {
     IAudioFrameCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioFrameInputNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioFrameInputNode>,
     impl::require<IAudioFrameInputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioInputNode, Windows::Media::Audio::IAudioNode>
 {
@@ -245,7 +245,7 @@ struct IAudioFrameInputNode :
 };
 
 struct IAudioFrameOutputNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioFrameOutputNode>,
     impl::require<IAudioFrameOutputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
@@ -253,7 +253,7 @@ struct IAudioFrameOutputNode :
 };
 
 struct IAudioGraph :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioGraph>,
     impl::require<IAudioGraph, Windows::Foundation::IClosable>
 {
@@ -261,7 +261,7 @@ struct IAudioGraph :
 };
 
 struct IAudioGraph2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioGraph2>,
     impl::require<IAudioGraph2, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioGraph>
 {
@@ -277,42 +277,42 @@ struct IAudioGraph2 :
 };
 
 struct IAudioGraphConnection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioGraphConnection>
 {
     IAudioGraphConnection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioGraphSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioGraphSettings>
 {
     IAudioGraphSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioGraphSettingsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioGraphSettingsFactory>
 {
     IAudioGraphSettingsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioGraphStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioGraphStatics>
 {
     IAudioGraphStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioGraphUnrecoverableErrorOccurredEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioGraphUnrecoverableErrorOccurredEventArgs>
 {
     IAudioGraphUnrecoverableErrorOccurredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioInputNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioInputNode>,
     impl::require<IAudioInputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
@@ -320,7 +320,7 @@ struct IAudioInputNode :
 };
 
 struct IAudioInputNode2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioInputNode2>,
     impl::require<IAudioInputNode2, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioInputNode, Windows::Media::Audio::IAudioNode>
 {
@@ -328,7 +328,7 @@ struct IAudioInputNode2 :
 };
 
 struct IAudioNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNode>,
     impl::require<IAudioNode, Windows::Foundation::IClosable>
 {
@@ -336,77 +336,77 @@ struct IAudioNode :
 };
 
 struct IAudioNodeEmitter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeEmitter>
 {
     IAudioNodeEmitter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeEmitter2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeEmitter2>
 {
     IAudioNodeEmitter2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeEmitterConeProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeEmitterConeProperties>
 {
     IAudioNodeEmitterConeProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeEmitterDecayModel :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeEmitterDecayModel>
 {
     IAudioNodeEmitterDecayModel(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeEmitterDecayModelStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeEmitterDecayModelStatics>
 {
     IAudioNodeEmitterDecayModelStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeEmitterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeEmitterFactory>
 {
     IAudioNodeEmitterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeEmitterNaturalDecayModelProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeEmitterNaturalDecayModelProperties>
 {
     IAudioNodeEmitterNaturalDecayModelProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeEmitterShape :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeEmitterShape>
 {
     IAudioNodeEmitterShape(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeEmitterShapeStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeEmitterShapeStatics>
 {
     IAudioNodeEmitterShapeStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeListener :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeListener>
 {
     IAudioNodeListener(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioNodeWithListener :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioNodeWithListener>,
     impl::require<IAudioNodeWithListener, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
@@ -414,42 +414,42 @@ struct IAudioNodeWithListener :
 };
 
 struct ICreateAudioDeviceInputNodeResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICreateAudioDeviceInputNodeResult>
 {
     ICreateAudioDeviceInputNodeResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICreateAudioDeviceOutputNodeResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICreateAudioDeviceOutputNodeResult>
 {
     ICreateAudioDeviceOutputNodeResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICreateAudioFileInputNodeResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICreateAudioFileInputNodeResult>
 {
     ICreateAudioFileInputNodeResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICreateAudioFileOutputNodeResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICreateAudioFileOutputNodeResult>
 {
     ICreateAudioFileOutputNodeResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICreateAudioGraphResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICreateAudioGraphResult>
 {
     ICreateAudioGraphResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEchoEffectDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEchoEffectDefinition>,
     impl::require<IEchoEffectDefinition, Windows::Media::Effects::IAudioEffectDefinition>
 {
@@ -457,21 +457,21 @@ struct IEchoEffectDefinition :
 };
 
 struct IEchoEffectDefinitionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEchoEffectDefinitionFactory>
 {
     IEchoEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEqualizerBand :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEqualizerBand>
 {
     IEqualizerBand(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEqualizerEffectDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEqualizerEffectDefinition>,
     impl::require<IEqualizerEffectDefinition, Windows::Media::Effects::IAudioEffectDefinition>
 {
@@ -479,21 +479,21 @@ struct IEqualizerEffectDefinition :
 };
 
 struct IEqualizerEffectDefinitionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEqualizerEffectDefinitionFactory>
 {
     IEqualizerEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameInputNodeQuantumStartedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameInputNodeQuantumStartedEventArgs>
 {
     IFrameInputNodeQuantumStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILimiterEffectDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILimiterEffectDefinition>,
     impl::require<ILimiterEffectDefinition, Windows::Media::Effects::IAudioEffectDefinition>
 {
@@ -501,14 +501,14 @@ struct ILimiterEffectDefinition :
 };
 
 struct ILimiterEffectDefinitionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILimiterEffectDefinitionFactory>
 {
     ILimiterEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IReverbEffectDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IReverbEffectDefinition>,
     impl::require<IReverbEffectDefinition, Windows::Media::Effects::IAudioEffectDefinition>
 {
@@ -516,7 +516,7 @@ struct IReverbEffectDefinition :
 };
 
 struct IReverbEffectDefinitionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IReverbEffectDefinitionFactory>
 {
     IReverbEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}

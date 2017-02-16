@@ -6,6 +6,7 @@
 #include "internal/Windows.UI.Xaml.Media.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.UI.Xaml.3.h"
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Composition.3.h"
 #include "internal/Windows.UI.Xaml.Shapes.3.h"
 #include "Windows.UI.Xaml.h"
@@ -235,12 +236,12 @@ struct produce<D, Windows::UI::Xaml::Shapes::IPath> : produce_base<D, Windows::U
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Shapes::IPathFactory> : produce_base<D, Windows::UI::Xaml::Shapes::IPathFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Shapes::IPath> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Shapes::IPath> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -907,12 +908,12 @@ struct produce<D, Windows::UI::Xaml::Shapes::IShape2> : produce_base<D, Windows:
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Shapes::IShapeFactory> : produce_base<D, Windows::UI::Xaml::Shapes::IShapeFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Shapes::IShape> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Shapes::IShape> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -1313,7 +1314,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IShapeStatics<D
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Shapes::Shape impl_IShapeFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Shapes::Shape impl_IShapeFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Shapes::Shape instance { nullptr };
     check_hresult(WINRT_SHIM(IShapeFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -1422,7 +1423,7 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPathStatics<D>
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Shapes::Path impl_IPathFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Shapes::Path impl_IPathFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Shapes::Path instance { nullptr };
     check_hresult(WINRT_SHIM(IPathFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -1573,7 +1574,7 @@ inline Windows::UI::Xaml::DependencyProperty Line::Y2Property()
 
 inline Path::Path()
 {
-    Windows::IInspectable outer, inner;
+    Windows::Foundation::IInspectable outer, inner;
     impl_move(get_activation_factory<Path, IPathFactory>().CreateInstance(outer, inner));
 }
 

@@ -9,40 +9,40 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::UI::Xaml::Interop {
 
-struct BindableVectorChangedEventHandler : Windows::IUnknown
+struct BindableVectorChangedEventHandler : Windows::Foundation::IUnknown
 {
     BindableVectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> BindableVectorChangedEventHandler(L lambda);
     template <typename F> BindableVectorChangedEventHandler (F * function);
     template <typename O, typename M> BindableVectorChangedEventHandler(O * object, M method);
-    void operator()(const Windows::UI::Xaml::Interop::IBindableObservableVector & vector, const Windows::IInspectable & e) const;
+    void operator()(const Windows::UI::Xaml::Interop::IBindableObservableVector & vector, const Windows::Foundation::IInspectable & e) const;
 };
 
-struct NotifyCollectionChangedEventHandler : Windows::IUnknown
+struct NotifyCollectionChangedEventHandler : Windows::Foundation::IUnknown
 {
     NotifyCollectionChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> NotifyCollectionChangedEventHandler(L lambda);
     template <typename F> NotifyCollectionChangedEventHandler (F * function);
     template <typename O, typename M> NotifyCollectionChangedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs & e) const;
 };
 
 struct IBindableIterable :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBindableIterable>
 {
     IBindableIterable(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBindableIterator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBindableIterator>
 {
     IBindableIterator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBindableObservableVector :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBindableObservableVector>,
     impl::require<IBindableObservableVector, Windows::UI::Xaml::Interop::IBindableIterable, Windows::UI::Xaml::Interop::IBindableVector>
 {
@@ -50,7 +50,7 @@ struct IBindableObservableVector :
 };
 
 struct IBindableVector :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBindableVector>,
     impl::require<IBindableVector, Windows::UI::Xaml::Interop::IBindableIterable>
 {
@@ -58,7 +58,7 @@ struct IBindableVector :
 };
 
 struct IBindableVectorView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBindableVectorView>,
     impl::require<IBindableVectorView, Windows::UI::Xaml::Interop::IBindableIterable>
 {
@@ -66,21 +66,21 @@ struct IBindableVectorView :
 };
 
 struct INotifyCollectionChanged :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INotifyCollectionChanged>
 {
     INotifyCollectionChanged(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INotifyCollectionChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INotifyCollectionChangedEventArgs>
 {
     INotifyCollectionChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INotifyCollectionChangedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INotifyCollectionChangedEventArgsFactory>
 {
     INotifyCollectionChangedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}

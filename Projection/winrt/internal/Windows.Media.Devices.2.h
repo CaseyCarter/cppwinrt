@@ -16,12 +16,12 @@ template <> struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3")) __de
 
 #ifndef WINRT_GENERIC_97d07327_2c78_57bc_98e6_a24cd024cf5b
 #define WINRT_GENERIC_97d07327_2c78_57bc_98e6_a24cd024cf5b
-template <> struct __declspec(uuid("97d07327-2c78-57bc-98e6-a24cd024cf5b")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> {};
+template <> struct __declspec(uuid("97d07327-2c78-57bc-98e6-a24cd024cf5b")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_fd732aca_dafc_5b7d_bf72_b560b78d260c
 #define WINRT_GENERIC_fd732aca_dafc_5b7d_bf72_b560b78d260c
-template <> struct __declspec(uuid("fd732aca-dafc-5b7d-bf72-b560b78d260c")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> {};
+template <> struct __declspec(uuid("fd732aca-dafc-5b7d-bf72-b560b78d260c")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> {};
 #endif
 
 
@@ -225,49 +225,49 @@ template <> struct __declspec(uuid("d7fc75d5-3492-5bbb-9b34-dac3e24e79d0")) __de
 namespace Windows::Media::Devices {
 
 struct IAdvancedPhotoCaptureSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdvancedPhotoCaptureSettings>
 {
     IAdvancedPhotoCaptureSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdvancedPhotoControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdvancedPhotoControl>
 {
     IAdvancedPhotoControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdvancedVideoCaptureDeviceController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdvancedVideoCaptureDeviceController>
 {
     IAdvancedVideoCaptureDeviceController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdvancedVideoCaptureDeviceController2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdvancedVideoCaptureDeviceController2>
 {
     IAdvancedVideoCaptureDeviceController2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdvancedVideoCaptureDeviceController3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdvancedVideoCaptureDeviceController3>
 {
     IAdvancedVideoCaptureDeviceController3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdvancedVideoCaptureDeviceController4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdvancedVideoCaptureDeviceController4>
 {
     IAdvancedVideoCaptureDeviceController4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioDeviceController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioDeviceController>,
     impl::require<IAudioDeviceController, Windows::Media::Devices::IMediaDeviceController>
 {
@@ -275,182 +275,182 @@ struct IAudioDeviceController :
 };
 
 struct IDefaultAudioDeviceChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDefaultAudioDeviceChangedEventArgs>
 {
     IDefaultAudioDeviceChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExposureCompensationControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExposureCompensationControl>
 {
     IExposureCompensationControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExposureControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExposureControl>
 {
     IExposureControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExposurePriorityVideoControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExposurePriorityVideoControl>
 {
     IExposurePriorityVideoControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlashControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlashControl>
 {
     IFlashControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlashControl2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlashControl2>
 {
     IFlashControl2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFocusControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFocusControl>
 {
     IFocusControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFocusControl2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFocusControl2>
 {
     IFocusControl2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFocusSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFocusSettings>
 {
     IFocusSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHdrVideoControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHdrVideoControl>
 {
     IHdrVideoControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IIsoSpeedControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IIsoSpeedControl>
 {
     IIsoSpeedControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IIsoSpeedControl2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IIsoSpeedControl2>
 {
     IIsoSpeedControl2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLagPhotoControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLagPhotoControl>
 {
     ILowLagPhotoControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLagPhotoSequenceControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLagPhotoSequenceControl>
 {
     ILowLagPhotoSequenceControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaDeviceControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaDeviceControl>
 {
     IMediaDeviceControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaDeviceControlCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaDeviceControlCapabilities>
 {
     IMediaDeviceControlCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaDeviceController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaDeviceController>
 {
     IMediaDeviceController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaDeviceStatics>
 {
     IMediaDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOpticalImageStabilizationControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOpticalImageStabilizationControl>
 {
     IOpticalImageStabilizationControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoConfirmationControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoConfirmationControl>
 {
     IPhotoConfirmationControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRegionOfInterest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRegionOfInterest>
 {
     IRegionOfInterest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRegionOfInterest2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRegionOfInterest2>
 {
     IRegionOfInterest2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRegionsOfInterestControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRegionsOfInterestControl>
 {
     IRegionsOfInterestControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISceneModeControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISceneModeControl>
 {
     ISceneModeControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITorchControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITorchControl>
 {
     ITorchControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoDeviceController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoDeviceController>,
     impl::require<IVideoDeviceController, Windows::Media::Devices::IMediaDeviceController>
 {
@@ -458,28 +458,28 @@ struct IVideoDeviceController :
 };
 
 struct IWhiteBalanceControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWhiteBalanceControl>
 {
     IWhiteBalanceControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IZoomControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IZoomControl>
 {
     IZoomControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IZoomControl2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IZoomControl2>
 {
     IZoomControl2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IZoomSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IZoomSettings>
 {
     IZoomSettings(std::nullptr_t = nullptr) noexcept {}

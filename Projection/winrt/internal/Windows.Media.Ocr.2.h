@@ -95,35 +95,35 @@ template <> struct __declspec(uuid("989c1371-444a-5e7e-b197-9eaaf9d2829a")) __de
 namespace Windows::Media::Ocr {
 
 struct IOcrEngine :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOcrEngine>
 {
     IOcrEngine(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOcrEngineStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOcrEngineStatics>
 {
     IOcrEngineStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOcrLine :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOcrLine>
 {
     IOcrLine(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOcrResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOcrResult>
 {
     IOcrResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOcrWord :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOcrWord>
 {
     IOcrWord(std::nullptr_t = nullptr) noexcept {}

@@ -9,7 +9,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Media {
 
 template <typename D, typename ... Interfaces> struct BrushT :
-    overrides<D, Windows::IInspectable, Interfaces ...>,
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>
 {
     using composable = Brush;
@@ -23,7 +23,7 @@ protected:
 };
 
 template <typename D, typename ... Interfaces> struct CacheModeT :
-    overrides<D, Windows::IInspectable, Interfaces ...>,
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::ICacheMode>
 {
     using composable = CacheMode;
@@ -37,7 +37,7 @@ protected:
 };
 
 template <typename D, typename ... Interfaces> struct FontFamilyT :
-    overrides<D, Windows::IInspectable, Interfaces ...>,
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::Media::IFontFamily>
 {
     using composable = FontFamily;
@@ -65,7 +65,7 @@ protected:
 };
 
 template <typename D, typename ... Interfaces> struct GradientBrushT :
-    overrides<D, Windows::IInspectable, Interfaces ...>,
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IGradientBrush>
 {
     using composable = GradientBrush;
@@ -79,7 +79,7 @@ protected:
 };
 
 template <typename D, typename ... Interfaces> struct ProjectionT :
-    overrides<D, Windows::IInspectable, Interfaces ...>,
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IProjection>
 {
     using composable = Projection;
@@ -93,7 +93,7 @@ protected:
 };
 
 template <typename D, typename ... Interfaces> struct TileBrushT :
-    overrides<D, Windows::IInspectable, Interfaces ...>,
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::ITileBrush>
 {
     using composable = TileBrush;

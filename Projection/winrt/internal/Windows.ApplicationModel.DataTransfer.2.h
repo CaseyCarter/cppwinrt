@@ -11,12 +11,12 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
 #define WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
-template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __declspec(novtable) IMap<hstring, Windows::IInspectable> : impl_IMap<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __declspec(novtable) IMap<hstring, Windows::Foundation::IInspectable> : impl_IMap<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
-template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::IInspectable> : impl_IKeyValuePair<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -51,7 +51,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
 #define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
-template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::IInspectable> : impl_EventHandler<Windows::IInspectable> {};
+template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -61,7 +61,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
-template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::IInspectable> : impl_IMapView<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::Foundation::IInspectable> : impl_IMapView<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
@@ -81,7 +81,7 @@ template <> struct __declspec(uuid("d90442ca-543c-504b-9eb9-294bcad8a283")) __de
 
 #ifndef WINRT_GENERIC_abf53c57_ee50_5342_b52a_26e3b8cc024f
 #define WINRT_GENERIC_abf53c57_ee50_5342_b52a_26e3b8cc024f
-template <> struct __declspec(uuid("abf53c57-ee50-5342-b52a-26e3b8cc024f")) __declspec(novtable) IAsyncOperation<Windows::IInspectable> : impl_IAsyncOperation<Windows::IInspectable> {};
+template <> struct __declspec(uuid("abf53c57-ee50-5342-b52a-26e3b8cc024f")) __declspec(novtable) IAsyncOperation<Windows::Foundation::IInspectable> : impl_IAsyncOperation<Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_641cb9dd_a28d_59e2_b8db_a227eda6cf2e
@@ -121,7 +121,7 @@ template <> struct __declspec(uuid("dd48af6c-ef9a-59cb-b326-57d9e2411f21")) __de
 
 #ifndef WINRT_GENERIC_c156b0c3_1cbc_5ca4_901c_62c5a8ca5cb5
 #define WINRT_GENERIC_c156b0c3_1cbc_5ca4_901c_62c5a8ca5cb5
-template <> struct __declspec(uuid("c156b0c3-1cbc-5ca4-901c-62c5a8ca5cb5")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> {};
+template <> struct __declspec(uuid("c156b0c3-1cbc-5ca4-901c-62c5a8ca5cb5")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -186,7 +186,7 @@ template <> struct __declspec(uuid("3d203732-ded7-5d32-87e6-c179781f791f")) __de
 
 #ifndef WINRT_GENERIC_3f08262e_a2e1_5134_9297_e9211f481a2d
 #define WINRT_GENERIC_3f08262e_a2e1_5134_9297_e9211f481a2d
-template <> struct __declspec(uuid("3f08262e-a2e1-5134-9297-e9211f481a2d")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::IInspectable> : impl_AsyncOperationCompletedHandler<Windows::IInspectable> {};
+template <> struct __declspec(uuid("3f08262e-a2e1-5134-9297-e9211f481a2d")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Foundation::IInspectable> : impl_AsyncOperationCompletedHandler<Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_ad46f1cc_2bb0_585c_9885_03c2780d4d58
@@ -231,7 +231,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
 #define WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
-template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -256,7 +256,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
 #define WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
-template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_9419af53_acb8_5328_8853_70ba87eb6ad5
@@ -289,7 +289,7 @@ template <> struct __declspec(uuid("51436e75-ace1-5a68-b260-f843b846f0db")) __de
 
 namespace Windows::ApplicationModel::DataTransfer {
 
-struct DataProviderHandler : Windows::IUnknown
+struct DataProviderHandler : Windows::Foundation::IUnknown
 {
     DataProviderHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DataProviderHandler(L lambda);
@@ -299,198 +299,198 @@ struct DataProviderHandler : Windows::IUnknown
 };
 
 struct IClipboardStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IClipboardStatics>
 {
     IClipboardStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackage>
 {
     IDataPackage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackage2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackage2>
 {
     IDataPackage2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackagePropertySet :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackagePropertySet>,
-    impl::require<IDataPackagePropertySet, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>, Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>>
+    impl::require<IDataPackagePropertySet, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>, Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>>
 {
     IDataPackagePropertySet(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackagePropertySet2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackagePropertySet2>
 {
     IDataPackagePropertySet2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackagePropertySet3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackagePropertySet3>
 {
     IDataPackagePropertySet3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackagePropertySetView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackagePropertySetView>,
-    impl::require<IDataPackagePropertySetView, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>, Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>>
+    impl::require<IDataPackagePropertySetView, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>, Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>
 {
     IDataPackagePropertySetView(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackagePropertySetView2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackagePropertySetView2>
 {
     IDataPackagePropertySetView2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackagePropertySetView3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackagePropertySetView3>
 {
     IDataPackagePropertySetView3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackageView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackageView>
 {
     IDataPackageView(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackageView2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackageView2>
 {
     IDataPackageView2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackageView3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackageView3>
 {
     IDataPackageView3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackageView4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPackageView4>
 {
     IDataPackageView4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataProviderDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataProviderDeferral>
 {
     IDataProviderDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataProviderRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataProviderRequest>
 {
     IDataProviderRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataRequest>
 {
     IDataRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataRequestDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataRequestDeferral>
 {
     IDataRequestDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataRequestedEventArgs>
 {
     IDataRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTransferManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTransferManager>
 {
     IDataTransferManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTransferManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTransferManagerStatics>
 {
     IDataTransferManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTransferManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTransferManagerStatics2>
 {
     IDataTransferManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHtmlFormatHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHtmlFormatHelperStatics>
 {
     IHtmlFormatHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOperationCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOperationCompletedEventArgs>
 {
     IOperationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOperationCompletedEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOperationCompletedEventArgs2>
 {
     IOperationCompletedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISharedStorageAccessManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISharedStorageAccessManagerStatics>
 {
     ISharedStorageAccessManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStandardDataFormatsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStandardDataFormatsStatics>
 {
     IStandardDataFormatsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStandardDataFormatsStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStandardDataFormatsStatics2>
 {
     IStandardDataFormatsStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITargetApplicationChosenEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITargetApplicationChosenEventArgs>
 {
     ITargetApplicationChosenEventArgs(std::nullptr_t = nullptr) noexcept {}

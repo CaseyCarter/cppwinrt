@@ -141,14 +141,14 @@ template <> struct __declspec(uuid("92c2e4d0-7c25-596b-9135-10d1472e6968")) __de
 namespace Windows::Devices::Bluetooth::Rfcomm {
 
 struct IRfcommDeviceService :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommDeviceService>
 {
     IRfcommDeviceService(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRfcommDeviceService2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommDeviceService2>,
     impl::require<IRfcommDeviceService2, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService>
 {
@@ -156,7 +156,7 @@ struct IRfcommDeviceService2 :
 };
 
 struct IRfcommDeviceService3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommDeviceService3>,
     impl::require<IRfcommDeviceService3, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService2>
 {
@@ -164,14 +164,14 @@ struct IRfcommDeviceService3 :
 };
 
 struct IRfcommDeviceServiceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommDeviceServiceStatics>
 {
     IRfcommDeviceServiceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRfcommDeviceServiceStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommDeviceServiceStatics2>,
     impl::require<IRfcommDeviceServiceStatics2, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStatics>
 {
@@ -179,35 +179,35 @@ struct IRfcommDeviceServiceStatics2 :
 };
 
 struct IRfcommDeviceServicesResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommDeviceServicesResult>
 {
     IRfcommDeviceServicesResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRfcommServiceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommServiceId>
 {
     IRfcommServiceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRfcommServiceIdStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommServiceIdStatics>
 {
     IRfcommServiceIdStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRfcommServiceProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommServiceProvider>
 {
     IRfcommServiceProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRfcommServiceProvider2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommServiceProvider2>,
     impl::require<IRfcommServiceProvider2, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider>
 {
@@ -217,7 +217,7 @@ struct IRfcommServiceProvider2 :
 };
 
 struct IRfcommServiceProviderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommServiceProviderStatics>
 {
     IRfcommServiceProviderStatics(std::nullptr_t = nullptr) noexcept {}

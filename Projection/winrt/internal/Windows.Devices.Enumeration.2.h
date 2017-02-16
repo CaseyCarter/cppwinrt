@@ -14,7 +14,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
-template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::IInspectable> : impl_IKeyValuePair<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
@@ -29,7 +29,7 @@ template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __de
 
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
-template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::IInspectable> : impl_IMapView<hstring, Windows::IInspectable> {};
+template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::Foundation::IInspectable> : impl_IMapView<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
@@ -59,7 +59,7 @@ template <> struct __declspec(uuid("35dd0319-5723-506c-8896-1a28b82be798")) __de
 
 #ifndef WINRT_GENERIC_62c6d98c_57ee_5bb8_a41c_958d20c3f3e8
 #define WINRT_GENERIC_62c6d98c_57ee_5bb8_a41c_958d20c3f3e8
-template <> struct __declspec(uuid("62c6d98c-57ee-5bb8-a41c-958d20c3f3e8")) __declspec(novtable) TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> {};
+template <> struct __declspec(uuid("62c6d98c-57ee-5bb8-a41c-958d20c3f3e8")) __declspec(novtable) TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_07faa053_eb2f_5cba_b25b_d9d57be6715f
@@ -99,7 +99,7 @@ template <> struct __declspec(uuid("906f1254-79ad-54fc-93c4-cdb99b437899")) __de
 
 #ifndef WINRT_GENERIC_9234630f_1ff4_54f6_9e3f_ac20369b7725
 #define WINRT_GENERIC_9234630f_1ff4_54f6_9e3f_ac20369b7725
-template <> struct __declspec(uuid("9234630f-1ff4-54f6-9e3f-ac20369b7725")) __declspec(novtable) TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> {};
+template <> struct __declspec(uuid("9234630f-1ff4-54f6-9e3f-ac20369b7725")) __declspec(novtable) TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -244,12 +244,12 @@ template <> struct __declspec(uuid("b48fd051-eafa-523f-a66e-9d4151c5d522")) __de
 
 #ifndef WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
 #define WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204
-template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
 #define WINRT_GENERIC_5db5fa32_707c_5849_a06b_91c8eb9d10e8
-template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -258,14 +258,14 @@ template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __de
 namespace Windows::Devices::Enumeration {
 
 struct IDeviceAccessChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceAccessChangedEventArgs>
 {
     IDeviceAccessChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceAccessChangedEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceAccessChangedEventArgs2>,
     impl::require<IDeviceAccessChangedEventArgs2, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs>
 {
@@ -273,196 +273,196 @@ struct IDeviceAccessChangedEventArgs2 :
 };
 
 struct IDeviceAccessInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceAccessInformation>
 {
     IDeviceAccessInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceAccessInformationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceAccessInformationStatics>
 {
     IDeviceAccessInformationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceConnectionChangeTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceConnectionChangeTriggerDetails>
 {
     IDeviceConnectionChangeTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceDisconnectButtonClickedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceDisconnectButtonClickedEventArgs>
 {
     IDeviceDisconnectButtonClickedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformation>
 {
     IDeviceInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformation2>
 {
     IDeviceInformation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformationCustomPairing :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformationCustomPairing>
 {
     IDeviceInformationCustomPairing(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformationPairing :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformationPairing>
 {
     IDeviceInformationPairing(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformationPairing2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformationPairing2>
 {
     IDeviceInformationPairing2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformationPairingStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformationPairingStatics>
 {
     IDeviceInformationPairingStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformationStatics>
 {
     IDeviceInformationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformationStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformationStatics2>
 {
     IDeviceInformationStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformationUpdate :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformationUpdate>
 {
     IDeviceInformationUpdate(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceInformationUpdate2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceInformationUpdate2>
 {
     IDeviceInformationUpdate2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDevicePairingRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDevicePairingRequestedEventArgs>
 {
     IDevicePairingRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDevicePairingResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDevicePairingResult>
 {
     IDevicePairingResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDevicePairingSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDevicePairingSettings>
 {
     IDevicePairingSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDevicePicker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDevicePicker>
 {
     IDevicePicker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDevicePickerAppearance :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDevicePickerAppearance>
 {
     IDevicePickerAppearance(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDevicePickerFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDevicePickerFilter>
 {
     IDevicePickerFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceSelectedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceSelectedEventArgs>
 {
     IDeviceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceUnpairingResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceUnpairingResult>
 {
     IDeviceUnpairingResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceWatcher>
 {
     IDeviceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceWatcher2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceWatcher2>
 {
     IDeviceWatcher2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceWatcherEvent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceWatcherEvent>
 {
     IDeviceWatcherEvent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceWatcherTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceWatcherTriggerDetails>
 {
     IDeviceWatcherTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEnclosureLocation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEnclosureLocation>
 {
     IEnclosureLocation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEnclosureLocation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEnclosureLocation2>,
     impl::require<IEnclosureLocation2, Windows::Devices::Enumeration::IEnclosureLocation>
 {

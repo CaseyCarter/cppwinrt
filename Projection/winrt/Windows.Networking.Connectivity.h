@@ -27,7 +27,7 @@ template <typename O, typename M> NetworkStatusChangedEventHandler::NetworkStatu
     NetworkStatusChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void NetworkStatusChangedEventHandler::operator()(const Windows::IInspectable & sender) const
+inline void NetworkStatusChangedEventHandler::operator()(const Windows::Foundation::IInspectable & sender) const
 {
     check_hresult((*(abi<NetworkStatusChangedEventHandler> **)this)->abi_Invoke(get_abi(sender)));
 }

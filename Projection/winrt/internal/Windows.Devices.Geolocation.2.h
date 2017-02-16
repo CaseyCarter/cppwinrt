@@ -145,14 +145,14 @@ template <> struct __declspec(uuid("6c67a1d1-9441-5aee-b625-e3c1b5676a6d")) __de
 namespace Windows::Devices::Geolocation {
 
 struct ICivicAddress :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICivicAddress>
 {
     ICivicAddress(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeoboundingBox :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeoboundingBox>,
     impl::require<IGeoboundingBox, Windows::Devices::Geolocation::IGeoshape>
 {
@@ -160,21 +160,21 @@ struct IGeoboundingBox :
 };
 
 struct IGeoboundingBoxFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeoboundingBoxFactory>
 {
     IGeoboundingBoxFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeoboundingBoxStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeoboundingBoxStatics>
 {
     IGeoboundingBoxStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeocircle :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeocircle>,
     impl::require<IGeocircle, Windows::Devices::Geolocation::IGeoshape>
 {
@@ -182,35 +182,35 @@ struct IGeocircle :
 };
 
 struct IGeocircleFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeocircleFactory>
 {
     IGeocircleFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeocoordinate :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeocoordinate>
 {
     IGeocoordinate(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeocoordinateSatelliteData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeocoordinateSatelliteData>
 {
     IGeocoordinateSatelliteData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeocoordinateWithPoint :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeocoordinateWithPoint>
 {
     IGeocoordinateWithPoint(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeocoordinateWithPositionData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeocoordinateWithPositionData>,
     impl::require<IGeocoordinateWithPositionData, Windows::Devices::Geolocation::IGeocoordinate>
 {
@@ -218,42 +218,42 @@ struct IGeocoordinateWithPositionData :
 };
 
 struct IGeocoordinateWithPositionSourceTimestamp :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeocoordinateWithPositionSourceTimestamp>
 {
     IGeocoordinateWithPositionSourceTimestamp(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeolocator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeolocator>
 {
     IGeolocator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeolocator2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeolocator2>
 {
     IGeolocator2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeolocatorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeolocatorStatics>
 {
     IGeolocatorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeolocatorStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeolocatorStatics2>
 {
     IGeolocatorStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeolocatorWithScalarAccuracy :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeolocatorWithScalarAccuracy>,
     impl::require<IGeolocatorWithScalarAccuracy, Windows::Devices::Geolocation::IGeolocator>
 {
@@ -261,7 +261,7 @@ struct IGeolocatorWithScalarAccuracy :
 };
 
 struct IGeopath :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeopath>,
     impl::require<IGeopath, Windows::Devices::Geolocation::IGeoshape>
 {
@@ -269,14 +269,14 @@ struct IGeopath :
 };
 
 struct IGeopathFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeopathFactory>
 {
     IGeopathFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeopoint :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeopoint>,
     impl::require<IGeopoint, Windows::Devices::Geolocation::IGeoshape>
 {
@@ -284,21 +284,21 @@ struct IGeopoint :
 };
 
 struct IGeopointFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeopointFactory>
 {
     IGeopointFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeoposition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeoposition>
 {
     IGeoposition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeoposition2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeoposition2>,
     impl::require<IGeoposition2, Windows::Devices::Geolocation::IGeoposition>
 {
@@ -306,28 +306,28 @@ struct IGeoposition2 :
 };
 
 struct IGeoshape :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeoshape>
 {
     IGeoshape(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPositionChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPositionChangedEventArgs>
 {
     IPositionChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStatusChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStatusChangedEventArgs>
 {
     IStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVenueData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVenueData>
 {
     IVenueData(std::nullptr_t = nullptr) noexcept {}

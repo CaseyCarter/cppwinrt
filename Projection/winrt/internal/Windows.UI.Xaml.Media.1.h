@@ -40,7 +40,7 @@ using Matrix = ABI::Windows::UI::Xaml::Media::Matrix;
 
 namespace ABI::Windows::UI::Xaml::Media {
 
-struct __declspec(uuid("07940c5f-63fb-4469-91be-f1097c168052")) __declspec(novtable) IArcSegment : Windows::IInspectable
+struct __declspec(uuid("07940c5f-63fb-4469-91be-f1097c168052")) __declspec(novtable) IArcSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Point(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall put_Point(Windows::Foundation::Point value) = 0;
@@ -54,7 +54,7 @@ struct __declspec(uuid("07940c5f-63fb-4469-91be-f1097c168052")) __declspec(novta
     virtual HRESULT __stdcall put_SweepDirection(winrt::Windows::UI::Xaml::Media::SweepDirection value) = 0;
 };
 
-struct __declspec(uuid("82348f6e-8a69-4204-9c12-7207df317643")) __declspec(novtable) IArcSegmentStatics : Windows::IInspectable
+struct __declspec(uuid("82348f6e-8a69-4204-9c12-7207df317643")) __declspec(novtable) IArcSegmentStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_SizeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -63,7 +63,7 @@ struct __declspec(uuid("82348f6e-8a69-4204-9c12-7207df317643")) __declspec(novta
     virtual HRESULT __stdcall get_SweepDirectionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("af4bb9ee-8984-49b7-81df-3f35994b95eb")) __declspec(novtable) IBezierSegment : Windows::IInspectable
+struct __declspec(uuid("af4bb9ee-8984-49b7-81df-3f35994b95eb")) __declspec(novtable) IBezierSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Point1(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall put_Point1(Windows::Foundation::Point value) = 0;
@@ -73,18 +73,18 @@ struct __declspec(uuid("af4bb9ee-8984-49b7-81df-3f35994b95eb")) __declspec(novta
     virtual HRESULT __stdcall put_Point3(Windows::Foundation::Point value) = 0;
 };
 
-struct __declspec(uuid("c0287bac-1410-4530-8452-1c9d0ad1f341")) __declspec(novtable) IBezierSegmentStatics : Windows::IInspectable
+struct __declspec(uuid("c0287bac-1410-4530-8452-1c9d0ad1f341")) __declspec(novtable) IBezierSegmentStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Point1Property(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_Point2Property(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_Point3Property(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("79c2219e-44d2-4610-9735-9bec83809ecf")) __declspec(novtable) IBitmapCache : Windows::IInspectable
+struct __declspec(uuid("79c2219e-44d2-4610-9735-9bec83809ecf")) __declspec(novtable) IBitmapCache : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("8806a321-1e06-422c-a1cc-01696559e021")) __declspec(novtable) IBrush : Windows::IInspectable
+struct __declspec(uuid("8806a321-1e06-422c-a1cc-01696559e021")) __declspec(novtable) IBrush : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Opacity(double * value) = 0;
     virtual HRESULT __stdcall put_Opacity(double value) = 0;
@@ -94,28 +94,28 @@ struct __declspec(uuid("8806a321-1e06-422c-a1cc-01696559e021")) __declspec(novta
     virtual HRESULT __stdcall put_RelativeTransform(Windows::UI::Xaml::Media::ITransform * value) = 0;
 };
 
-struct __declspec(uuid("399658a2-14fb-4b8f-83e6-6e3dab12069b")) __declspec(novtable) IBrushFactory : Windows::IInspectable
+struct __declspec(uuid("399658a2-14fb-4b8f-83e6-6e3dab12069b")) __declspec(novtable) IBrushFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::IBrush ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::IBrush ** instance) = 0;
 };
 
-struct __declspec(uuid("e70c3102-0225-47f5-b22e-0467619f6a22")) __declspec(novtable) IBrushStatics : Windows::IInspectable
+struct __declspec(uuid("e70c3102-0225-47f5-b22e-0467619f6a22")) __declspec(novtable) IBrushStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OpacityProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TransformProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_RelativeTransformProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("98dc8b11-c6f9-4dab-b838-5fd5ec8c7350")) __declspec(novtable) ICacheMode : Windows::IInspectable
+struct __declspec(uuid("98dc8b11-c6f9-4dab-b838-5fd5ec8c7350")) __declspec(novtable) ICacheMode : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("eb1f8c5b-0abb-4e70-b8a8-620d0d953ab2")) __declspec(novtable) ICacheModeFactory : Windows::IInspectable
+struct __declspec(uuid("eb1f8c5b-0abb-4e70-b8a8-620d0d953ab2")) __declspec(novtable) ICacheModeFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::ICacheMode ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::ICacheMode ** instance) = 0;
 };
 
-struct __declspec(uuid("c8a4385b-f24a-4701-a265-a78846f142b9")) __declspec(novtable) ICompositeTransform : Windows::IInspectable
+struct __declspec(uuid("c8a4385b-f24a-4701-a265-a78846f142b9")) __declspec(novtable) ICompositeTransform : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterX(double * value) = 0;
     virtual HRESULT __stdcall put_CenterX(double value) = 0;
@@ -137,7 +137,7 @@ struct __declspec(uuid("c8a4385b-f24a-4701-a265-a78846f142b9")) __declspec(novta
     virtual HRESULT __stdcall put_TranslateY(double value) = 0;
 };
 
-struct __declspec(uuid("2f190c08-8266-496f-9653-a18bd4f836aa")) __declspec(novtable) ICompositeTransformStatics : Windows::IInspectable
+struct __declspec(uuid("2f190c08-8266-496f-9653-a18bd4f836aa")) __declspec(novtable) ICompositeTransformStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CenterYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -150,19 +150,19 @@ struct __declspec(uuid("2f190c08-8266-496f-9653-a18bd4f836aa")) __declspec(novta
     virtual HRESULT __stdcall get_TranslateYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("26cfbff0-713c-4bec-8803-e101f7b14ed3")) __declspec(novtable) ICompositionTarget : Windows::IInspectable
+struct __declspec(uuid("26cfbff0-713c-4bec-8803-e101f7b14ed3")) __declspec(novtable) ICompositionTarget : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("2b1af03d-1ed2-4b59-bd00-7594ee92832b")) __declspec(novtable) ICompositionTargetStatics : Windows::IInspectable
+struct __declspec(uuid("2b1af03d-1ed2-4b59-bd00-7594ee92832b")) __declspec(novtable) ICompositionTargetStatics : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_Rendering(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Rendering(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Rendering(event_token token) = 0;
-    virtual HRESULT __stdcall add_SurfaceContentsLost(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_SurfaceContentsLost(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SurfaceContentsLost(event_token token) = 0;
 };
 
-struct __declspec(uuid("d4f61bba-4ea2-40d6-aa6c-8d38aa87651f")) __declspec(novtable) IEllipseGeometry : Windows::IInspectable
+struct __declspec(uuid("d4f61bba-4ea2-40d6-aa6c-8d38aa87651f")) __declspec(novtable) IEllipseGeometry : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Center(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall put_Center(Windows::Foundation::Point value) = 0;
@@ -172,29 +172,29 @@ struct __declspec(uuid("d4f61bba-4ea2-40d6-aa6c-8d38aa87651f")) __declspec(novta
     virtual HRESULT __stdcall put_RadiusY(double value) = 0;
 };
 
-struct __declspec(uuid("1744db47-f635-4b16-aee6-e052a65defb2")) __declspec(novtable) IEllipseGeometryStatics : Windows::IInspectable
+struct __declspec(uuid("1744db47-f635-4b16-aee6-e052a65defb2")) __declspec(novtable) IEllipseGeometryStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_RadiusXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_RadiusYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("92467e64-d66a-4cf4-9322-3d23b3c0c361")) __declspec(novtable) IFontFamily : Windows::IInspectable
+struct __declspec(uuid("92467e64-d66a-4cf4-9322-3d23b3c0c361")) __declspec(novtable) IFontFamily : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Source(hstring * value) = 0;
 };
 
-struct __declspec(uuid("d5603377-3dae-4dcd-af09-f9498e9ec659")) __declspec(novtable) IFontFamilyFactory : Windows::IInspectable
+struct __declspec(uuid("d5603377-3dae-4dcd-af09-f9498e9ec659")) __declspec(novtable) IFontFamilyFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstanceWithName(hstring familyName, Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::IFontFamily ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstanceWithName(hstring familyName, Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::IFontFamily ** instance) = 0;
 };
 
-struct __declspec(uuid("52ad7af9-37e6-4297-a238-97fb6a408d9e")) __declspec(novtable) IFontFamilyStatics2 : Windows::IInspectable
+struct __declspec(uuid("52ad7af9-37e6-4297-a238-97fb6a408d9e")) __declspec(novtable) IFontFamilyStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_XamlAutoFontFamily(Windows::UI::Xaml::Media::IFontFamily ** value) = 0;
 };
 
-struct __declspec(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7")) __declspec(novtable) IGeneralTransform : Windows::IInspectable
+struct __declspec(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7")) __declspec(novtable) IGeneralTransform : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Inverse(Windows::UI::Xaml::Media::IGeneralTransform ** value) = 0;
     virtual HRESULT __stdcall abi_TransformPoint(Windows::Foundation::Point point, Windows::Foundation::Point * returnValue) = 0;
@@ -202,30 +202,30 @@ struct __declspec(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7")) __declspec(novta
     virtual HRESULT __stdcall abi_TransformBounds(Windows::Foundation::Rect rect, Windows::Foundation::Rect * returnValue) = 0;
 };
 
-struct __declspec(uuid("7a25c930-29c4-4e31-b6f9-dedd52e4df1b")) __declspec(novtable) IGeneralTransformFactory : Windows::IInspectable
+struct __declspec(uuid("7a25c930-29c4-4e31-b6f9-dedd52e4df1b")) __declspec(novtable) IGeneralTransformFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::IGeneralTransform ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::IGeneralTransform ** instance) = 0;
 };
 
-struct __declspec(uuid("4f121083-24cf-4524-90ad-8a42b1c12783")) __declspec(novtable) IGeneralTransformOverrides : Windows::IInspectable
+struct __declspec(uuid("4f121083-24cf-4524-90ad-8a42b1c12783")) __declspec(novtable) IGeneralTransformOverrides : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InverseCore(Windows::UI::Xaml::Media::IGeneralTransform ** value) = 0;
     virtual HRESULT __stdcall abi_TryTransformCore(Windows::Foundation::Point inPoint, Windows::Foundation::Point * outPoint, bool * returnValue) = 0;
     virtual HRESULT __stdcall abi_TransformBoundsCore(Windows::Foundation::Rect rect, Windows::Foundation::Rect * returnValue) = 0;
 };
 
-struct __declspec(uuid("fa123889-0acd-417b-b62d-5ca1bf4dfc0e")) __declspec(novtable) IGeometry : Windows::IInspectable
+struct __declspec(uuid("fa123889-0acd-417b-b62d-5ca1bf4dfc0e")) __declspec(novtable) IGeometry : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Transform(Windows::UI::Xaml::Media::ITransform ** value) = 0;
     virtual HRESULT __stdcall put_Transform(Windows::UI::Xaml::Media::ITransform * value) = 0;
     virtual HRESULT __stdcall get_Bounds(Windows::Foundation::Rect * value) = 0;
 };
 
-struct __declspec(uuid("f65daf23-d5fd-42f9-b32a-929c5a4b54e1")) __declspec(novtable) IGeometryFactory : Windows::IInspectable
+struct __declspec(uuid("f65daf23-d5fd-42f9-b32a-929c5a4b54e1")) __declspec(novtable) IGeometryFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("55225a61-8677-4c8c-8e46-ee3dc355114b")) __declspec(novtable) IGeometryGroup : Windows::IInspectable
+struct __declspec(uuid("55225a61-8677-4c8c-8e46-ee3dc355114b")) __declspec(novtable) IGeometryGroup : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FillRule(winrt::Windows::UI::Xaml::Media::FillRule * value) = 0;
     virtual HRESULT __stdcall put_FillRule(winrt::Windows::UI::Xaml::Media::FillRule value) = 0;
@@ -233,20 +233,20 @@ struct __declspec(uuid("55225a61-8677-4c8c-8e46-ee3dc355114b")) __declspec(novta
     virtual HRESULT __stdcall put_Children(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Geometry> * value) = 0;
 };
 
-struct __declspec(uuid("56c955f4-8496-4bb6-abf0-617b1fe78b45")) __declspec(novtable) IGeometryGroupStatics : Windows::IInspectable
+struct __declspec(uuid("56c955f4-8496-4bb6-abf0-617b1fe78b45")) __declspec(novtable) IGeometryGroupStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FillRuleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ChildrenProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("7a70aa8c-0b06-465f-b637-9a47e5a70111")) __declspec(novtable) IGeometryStatics : Windows::IInspectable
+struct __declspec(uuid("7a70aa8c-0b06-465f-b637-9a47e5a70111")) __declspec(novtable) IGeometryStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Empty(Windows::UI::Xaml::Media::IGeometry ** value) = 0;
     virtual HRESULT __stdcall get_StandardFlatteningTolerance(double * value) = 0;
     virtual HRESULT __stdcall get_TransformProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78")) __declspec(novtable) IGradientBrush : Windows::IInspectable
+struct __declspec(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78")) __declspec(novtable) IGradientBrush : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SpreadMethod(winrt::Windows::UI::Xaml::Media::GradientSpreadMethod * value) = 0;
     virtual HRESULT __stdcall put_SpreadMethod(winrt::Windows::UI::Xaml::Media::GradientSpreadMethod value) = 0;
@@ -258,12 +258,12 @@ struct __declspec(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78")) __declspec(novta
     virtual HRESULT __stdcall put_GradientStops(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::GradientStop> * value) = 0;
 };
 
-struct __declspec(uuid("ed4779ca-45bd-4131-b625-be86e07c6112")) __declspec(novtable) IGradientBrushFactory : Windows::IInspectable
+struct __declspec(uuid("ed4779ca-45bd-4131-b625-be86e07c6112")) __declspec(novtable) IGradientBrushFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::IGradientBrush ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::IGradientBrush ** instance) = 0;
 };
 
-struct __declspec(uuid("961661f9-8bb4-4e6c-b923-b5d787e0f1a9")) __declspec(novtable) IGradientBrushStatics : Windows::IInspectable
+struct __declspec(uuid("961661f9-8bb4-4e6c-b923-b5d787e0f1a9")) __declspec(novtable) IGradientBrushStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SpreadMethodProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_MappingModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -271,7 +271,7 @@ struct __declspec(uuid("961661f9-8bb4-4e6c-b923-b5d787e0f1a9")) __declspec(novta
     virtual HRESULT __stdcall get_GradientStopsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("665f44fe-2e59-4c4a-ab53-076a100ccd81")) __declspec(novtable) IGradientStop : Windows::IInspectable
+struct __declspec(uuid("665f44fe-2e59-4c4a-ab53-076a100ccd81")) __declspec(novtable) IGradientStop : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Color(Windows::UI::Color * value) = 0;
     virtual HRESULT __stdcall put_Color(Windows::UI::Color value) = 0;
@@ -279,13 +279,13 @@ struct __declspec(uuid("665f44fe-2e59-4c4a-ab53-076a100ccd81")) __declspec(novta
     virtual HRESULT __stdcall put_Offset(double value) = 0;
 };
 
-struct __declspec(uuid("602a6d75-6193-4fe5-8e82-c7c6f6febafd")) __declspec(novtable) IGradientStopStatics : Windows::IInspectable
+struct __declspec(uuid("602a6d75-6193-4fe5-8e82-c7c6f6febafd")) __declspec(novtable) IGradientStopStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ColorProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("9fd11377-c12a-4493-bf7d-f3a8ad74b554")) __declspec(novtable) IImageBrush : Windows::IInspectable
+struct __declspec(uuid("9fd11377-c12a-4493-bf7d-f3a8ad74b554")) __declspec(novtable) IImageBrush : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ImageSource(Windows::UI::Xaml::Media::IImageSource ** value) = 0;
     virtual HRESULT __stdcall put_ImageSource(Windows::UI::Xaml::Media::IImageSource * value) = 0;
@@ -295,20 +295,20 @@ struct __declspec(uuid("9fd11377-c12a-4493-bf7d-f3a8ad74b554")) __declspec(novta
     virtual HRESULT __stdcall remove_ImageOpened(event_token token) = 0;
 };
 
-struct __declspec(uuid("1255b1b2-dd18-42e5-892c-eae30c305b8c")) __declspec(novtable) IImageBrushStatics : Windows::IInspectable
+struct __declspec(uuid("1255b1b2-dd18-42e5-892c-eae30c305b8c")) __declspec(novtable) IImageBrushStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ImageSourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("737ef309-ea41-4d96-a71c-98e98efcab07")) __declspec(novtable) IImageSource : Windows::IInspectable
+struct __declspec(uuid("737ef309-ea41-4d96-a71c-98e98efcab07")) __declspec(novtable) IImageSource : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("297ec001-2540-4e5a-ab66-88035dd3ddb5")) __declspec(novtable) IImageSourceFactory : Windows::IInspectable
+struct __declspec(uuid("297ec001-2540-4e5a-ab66-88035dd3ddb5")) __declspec(novtable) IImageSourceFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("30edd4a2-8fc5-40af-a7a2-c27fe7aa1363")) __declspec(novtable) ILineGeometry : Windows::IInspectable
+struct __declspec(uuid("30edd4a2-8fc5-40af-a7a2-c27fe7aa1363")) __declspec(novtable) ILineGeometry : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StartPoint(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall put_StartPoint(Windows::Foundation::Point value) = 0;
@@ -316,24 +316,24 @@ struct __declspec(uuid("30edd4a2-8fc5-40af-a7a2-c27fe7aa1363")) __declspec(novta
     virtual HRESULT __stdcall put_EndPoint(Windows::Foundation::Point value) = 0;
 };
 
-struct __declspec(uuid("578ae763-5562-4ee4-8703-ea4036d891e3")) __declspec(novtable) ILineGeometryStatics : Windows::IInspectable
+struct __declspec(uuid("578ae763-5562-4ee4-8703-ea4036d891e3")) __declspec(novtable) ILineGeometryStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StartPointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_EndPointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ef6a2e25-3ff0-4420-a411-7182a4cecb15")) __declspec(novtable) ILineSegment : Windows::IInspectable
+struct __declspec(uuid("ef6a2e25-3ff0-4420-a411-7182a4cecb15")) __declspec(novtable) ILineSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Point(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall put_Point(Windows::Foundation::Point value) = 0;
 };
 
-struct __declspec(uuid("9fcab141-04c0-4afb-87b3-e800b969b894")) __declspec(novtable) ILineSegmentStatics : Windows::IInspectable
+struct __declspec(uuid("9fcab141-04c0-4afb-87b3-e800b969b894")) __declspec(novtable) ILineSegmentStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("8e96d16b-bb84-4c6f-9dbf-9d6c5c6d9c39")) __declspec(novtable) ILinearGradientBrush : Windows::IInspectable
+struct __declspec(uuid("8e96d16b-bb84-4c6f-9dbf-9d6c5c6d9c39")) __declspec(novtable) ILinearGradientBrush : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StartPoint(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall put_StartPoint(Windows::Foundation::Point value) = 0;
@@ -341,33 +341,33 @@ struct __declspec(uuid("8e96d16b-bb84-4c6f-9dbf-9d6c5c6d9c39")) __declspec(novta
     virtual HRESULT __stdcall put_EndPoint(Windows::Foundation::Point value) = 0;
 };
 
-struct __declspec(uuid("0ae0861c-1e7a-4fed-9857-ea8caa798490")) __declspec(novtable) ILinearGradientBrushFactory : Windows::IInspectable
+struct __declspec(uuid("0ae0861c-1e7a-4fed-9857-ea8caa798490")) __declspec(novtable) ILinearGradientBrushFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstanceWithGradientStopCollectionAndAngle(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::GradientStop> * gradientStopCollection, double angle, Windows::UI::Xaml::Media::ILinearGradientBrush ** instance) = 0;
 };
 
-struct __declspec(uuid("7af6e504-2dc3-40e3-be0b-b314c13cb991")) __declspec(novtable) ILinearGradientBrushStatics : Windows::IInspectable
+struct __declspec(uuid("7af6e504-2dc3-40e3-be0b-b314c13cb991")) __declspec(novtable) ILinearGradientBrushStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StartPointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_EndPointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("6f03e149-bfc9-4c01-b578-50338cec97fc")) __declspec(novtable) IMatrix3DProjection : Windows::IInspectable
+struct __declspec(uuid("6f03e149-bfc9-4c01-b578-50338cec97fc")) __declspec(novtable) IMatrix3DProjection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProjectionMatrix(Windows::UI::Xaml::Media::Media3D::Matrix3D * value) = 0;
     virtual HRESULT __stdcall put_ProjectionMatrix(Windows::UI::Xaml::Media::Media3D::Matrix3D value) = 0;
 };
 
-struct __declspec(uuid("ae9d5895-41ec-4e37-abaa-69f41d2f876b")) __declspec(novtable) IMatrix3DProjectionStatics : Windows::IInspectable
+struct __declspec(uuid("ae9d5895-41ec-4e37-abaa-69f41d2f876b")) __declspec(novtable) IMatrix3DProjectionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProjectionMatrixProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("f3cf4882-06b5-48c8-9eb2-1763e9364038")) __declspec(novtable) IMatrixHelper : Windows::IInspectable
+struct __declspec(uuid("f3cf4882-06b5-48c8-9eb2-1763e9364038")) __declspec(novtable) IMatrixHelper : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("c18606a6-39f4-4b8a-8403-28e5e5f033b4")) __declspec(novtable) IMatrixHelperStatics : Windows::IInspectable
+struct __declspec(uuid("c18606a6-39f4-4b8a-8403-28e5e5f033b4")) __declspec(novtable) IMatrixHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Identity(Windows::UI::Xaml::Media::Matrix * value) = 0;
     virtual HRESULT __stdcall abi_FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY, Windows::UI::Xaml::Media::Matrix * returnValue) = 0;
@@ -375,34 +375,34 @@ struct __declspec(uuid("c18606a6-39f4-4b8a-8403-28e5e5f033b4")) __declspec(novta
     virtual HRESULT __stdcall abi_Transform(Windows::UI::Xaml::Media::Matrix target, Windows::Foundation::Point point, Windows::Foundation::Point * returnValue) = 0;
 };
 
-struct __declspec(uuid("edfdd551-5fed-45fc-ae62-92a4b6cf9707")) __declspec(novtable) IMatrixTransform : Windows::IInspectable
+struct __declspec(uuid("edfdd551-5fed-45fc-ae62-92a4b6cf9707")) __declspec(novtable) IMatrixTransform : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Matrix(Windows::UI::Xaml::Media::Matrix * value) = 0;
     virtual HRESULT __stdcall put_Matrix(Windows::UI::Xaml::Media::Matrix value) = 0;
 };
 
-struct __declspec(uuid("43e02e47-15b8-4758-bb97-7d52420acc5b")) __declspec(novtable) IMatrixTransformStatics : Windows::IInspectable
+struct __declspec(uuid("43e02e47-15b8-4758-bb97-7d52420acc5b")) __declspec(novtable) IMatrixTransformStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MatrixProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e4a8b21c-e3c2-485c-ae69-f1537b76755a")) __declspec(novtable) IMediaTransportControlsThumbnailRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("e4a8b21c-e3c2-485c-ae69-f1537b76755a")) __declspec(novtable) IMediaTransportControlsThumbnailRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetThumbnailImage(Windows::Storage::Streams::IInputStream * source) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** returnValue) = 0;
 };
 
-struct __declspec(uuid("02b65a91-e5a1-442b-88d3-2dc127bfc59b")) __declspec(novtable) IPartialMediaFailureDetectedEventArgs : Windows::IInspectable
+struct __declspec(uuid("02b65a91-e5a1-442b-88d3-2dc127bfc59b")) __declspec(novtable) IPartialMediaFailureDetectedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StreamKind(winrt::Windows::Media::Playback::FailedMediaStreamKind * value) = 0;
 };
 
-struct __declspec(uuid("73074875-890d-416b-b9ae-e84dfd9c4b1b")) __declspec(novtable) IPartialMediaFailureDetectedEventArgs2 : Windows::IInspectable
+struct __declspec(uuid("73074875-890d-416b-b9ae-e84dfd9c4b1b")) __declspec(novtable) IPartialMediaFailureDetectedEventArgs2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ExtendedError(HRESULT * value) = 0;
 };
 
-struct __declspec(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7")) __declspec(novtable) IPathFigure : Windows::IInspectable
+struct __declspec(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7")) __declspec(novtable) IPathFigure : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Segments(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::PathSegment> ** value) = 0;
     virtual HRESULT __stdcall put_Segments(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::PathSegment> * value) = 0;
@@ -414,7 +414,7 @@ struct __declspec(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7")) __declspec(novta
     virtual HRESULT __stdcall put_IsFilled(bool value) = 0;
 };
 
-struct __declspec(uuid("b60591d9-2395-4317-9552-3a58526f8c7b")) __declspec(novtable) IPathFigureStatics : Windows::IInspectable
+struct __declspec(uuid("b60591d9-2395-4317-9552-3a58526f8c7b")) __declspec(novtable) IPathFigureStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SegmentsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_StartPointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -422,7 +422,7 @@ struct __declspec(uuid("b60591d9-2395-4317-9552-3a58526f8c7b")) __declspec(novta
     virtual HRESULT __stdcall get_IsFilledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("081b9df8-bae6-4bcb-813c-bde0e46dc8b7")) __declspec(novtable) IPathGeometry : Windows::IInspectable
+struct __declspec(uuid("081b9df8-bae6-4bcb-813c-bde0e46dc8b7")) __declspec(novtable) IPathGeometry : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FillRule(winrt::Windows::UI::Xaml::Media::FillRule * value) = 0;
     virtual HRESULT __stdcall put_FillRule(winrt::Windows::UI::Xaml::Media::FillRule value) = 0;
@@ -430,21 +430,21 @@ struct __declspec(uuid("081b9df8-bae6-4bcb-813c-bde0e46dc8b7")) __declspec(novta
     virtual HRESULT __stdcall put_Figures(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::PathFigure> * value) = 0;
 };
 
-struct __declspec(uuid("d9e58bba-2cba-4741-8f8d-3198cf5186b9")) __declspec(novtable) IPathGeometryStatics : Windows::IInspectable
+struct __declspec(uuid("d9e58bba-2cba-4741-8f8d-3198cf5186b9")) __declspec(novtable) IPathGeometryStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FillRuleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FiguresProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("fcfa71cf-9ce3-474f-8157-10b6435a616b")) __declspec(novtable) IPathSegment : Windows::IInspectable
+struct __declspec(uuid("fcfa71cf-9ce3-474f-8157-10b6435a616b")) __declspec(novtable) IPathSegment : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("2a1c0aae-eccd-4464-a148-6ffdb3aa281f")) __declspec(novtable) IPathSegmentFactory : Windows::IInspectable
+struct __declspec(uuid("2a1c0aae-eccd-4464-a148-6ffdb3aa281f")) __declspec(novtable) IPathSegmentFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f")) __declspec(novtable) IPlaneProjection : Windows::IInspectable
+struct __declspec(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f")) __declspec(novtable) IPlaneProjection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LocalOffsetX(double * value) = 0;
     virtual HRESULT __stdcall put_LocalOffsetX(double value) = 0;
@@ -473,7 +473,7 @@ struct __declspec(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f")) __declspec(novta
     virtual HRESULT __stdcall get_ProjectionMatrix(Windows::UI::Xaml::Media::Media3D::Matrix3D * value) = 0;
 };
 
-struct __declspec(uuid("ad919c67-3bdc-4855-8969-d1f9a3adc27d")) __declspec(novtable) IPlaneProjectionStatics : Windows::IInspectable
+struct __declspec(uuid("ad919c67-3bdc-4855-8969-d1f9a3adc27d")) __declspec(novtable) IPlaneProjectionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LocalOffsetXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_LocalOffsetYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -490,49 +490,49 @@ struct __declspec(uuid("ad919c67-3bdc-4855-8969-d1f9a3adc27d")) __declspec(novta
     virtual HRESULT __stdcall get_ProjectionMatrixProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("36805271-38c4-4bcf-96cd-028a6d38af25")) __declspec(novtable) IPolyBezierSegment : Windows::IInspectable
+struct __declspec(uuid("36805271-38c4-4bcf-96cd-028a6d38af25")) __declspec(novtable) IPolyBezierSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Points(Windows::Foundation::Collections::IVector<Windows::Foundation::Point> ** value) = 0;
     virtual HRESULT __stdcall put_Points(Windows::Foundation::Collections::IVector<Windows::Foundation::Point> * value) = 0;
 };
 
-struct __declspec(uuid("1d91a6da-1492-4acc-bd66-a496f3d829d6")) __declspec(novtable) IPolyBezierSegmentStatics : Windows::IInspectable
+struct __declspec(uuid("1d91a6da-1492-4acc-bd66-a496f3d829d6")) __declspec(novtable) IPolyBezierSegmentStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PointsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4b397f87-a2e6-479d-bdc8-6f4464646887")) __declspec(novtable) IPolyLineSegment : Windows::IInspectable
+struct __declspec(uuid("4b397f87-a2e6-479d-bdc8-6f4464646887")) __declspec(novtable) IPolyLineSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Points(Windows::Foundation::Collections::IVector<Windows::Foundation::Point> ** value) = 0;
     virtual HRESULT __stdcall put_Points(Windows::Foundation::Collections::IVector<Windows::Foundation::Point> * value) = 0;
 };
 
-struct __declspec(uuid("d64a2c87-33f1-4e70-a47f-b4981ef648a2")) __declspec(novtable) IPolyLineSegmentStatics : Windows::IInspectable
+struct __declspec(uuid("d64a2c87-33f1-4e70-a47f-b4981ef648a2")) __declspec(novtable) IPolyLineSegmentStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PointsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("dd5ced7d-e6db-4c96-b6a1-3fce96e987a6")) __declspec(novtable) IPolyQuadraticBezierSegment : Windows::IInspectable
+struct __declspec(uuid("dd5ced7d-e6db-4c96-b6a1-3fce96e987a6")) __declspec(novtable) IPolyQuadraticBezierSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Points(Windows::Foundation::Collections::IVector<Windows::Foundation::Point> ** value) = 0;
     virtual HRESULT __stdcall put_Points(Windows::Foundation::Collections::IVector<Windows::Foundation::Point> * value) = 0;
 };
 
-struct __declspec(uuid("fdf5eb75-7ad5-4c89-8169-8c9786abd9eb")) __declspec(novtable) IPolyQuadraticBezierSegmentStatics : Windows::IInspectable
+struct __declspec(uuid("fdf5eb75-7ad5-4c89-8169-8c9786abd9eb")) __declspec(novtable) IPolyQuadraticBezierSegmentStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PointsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b3443557-7f39-4d04-a89c-844338cac897")) __declspec(novtable) IProjection : Windows::IInspectable
+struct __declspec(uuid("b3443557-7f39-4d04-a89c-844338cac897")) __declspec(novtable) IProjection : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("c4f29cab-60ad-4f24-bd27-9d69c3127c9a")) __declspec(novtable) IProjectionFactory : Windows::IInspectable
+struct __declspec(uuid("c4f29cab-60ad-4f24-bd27-9d69c3127c9a")) __declspec(novtable) IProjectionFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::IProjection ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::IProjection ** instance) = 0;
 };
 
-struct __declspec(uuid("2c509a5b-bf18-455a-a078-914b5232d8af")) __declspec(novtable) IQuadraticBezierSegment : Windows::IInspectable
+struct __declspec(uuid("2c509a5b-bf18-455a-a078-914b5232d8af")) __declspec(novtable) IQuadraticBezierSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Point1(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall put_Point1(Windows::Foundation::Point value) = 0;
@@ -540,33 +540,33 @@ struct __declspec(uuid("2c509a5b-bf18-455a-a078-914b5232d8af")) __declspec(novta
     virtual HRESULT __stdcall put_Point2(Windows::Foundation::Point value) = 0;
 };
 
-struct __declspec(uuid("69c78278-3c0b-4b4f-b7a2-f003ded41bb0")) __declspec(novtable) IQuadraticBezierSegmentStatics : Windows::IInspectable
+struct __declspec(uuid("69c78278-3c0b-4b4f-b7a2-f003ded41bb0")) __declspec(novtable) IQuadraticBezierSegmentStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Point1Property(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_Point2Property(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("9016aa6f-3ca8-4c80-8e2f-8851a68f131f")) __declspec(novtable) IRateChangedRoutedEventArgs : Windows::IInspectable
+struct __declspec(uuid("9016aa6f-3ca8-4c80-8e2f-8851a68f131f")) __declspec(novtable) IRateChangedRoutedEventArgs : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("a25a1f58-c575-4196-91cf-9fdfb10445c3")) __declspec(novtable) IRectangleGeometry : Windows::IInspectable
+struct __declspec(uuid("a25a1f58-c575-4196-91cf-9fdfb10445c3")) __declspec(novtable) IRectangleGeometry : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Rect(Windows::Foundation::Rect * value) = 0;
     virtual HRESULT __stdcall put_Rect(Windows::Foundation::Rect value) = 0;
 };
 
-struct __declspec(uuid("377f8dba-7902-48e3-83be-7c8002a6653c")) __declspec(novtable) IRectangleGeometryStatics : Windows::IInspectable
+struct __declspec(uuid("377f8dba-7902-48e3-83be-7c8002a6653c")) __declspec(novtable) IRectangleGeometryStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RectProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("5bf7d30d-9748-4aed-8380-d7890eb776a0")) __declspec(novtable) IRenderingEventArgs : Windows::IInspectable
+struct __declspec(uuid("5bf7d30d-9748-4aed-8380-d7890eb776a0")) __declspec(novtable) IRenderingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RenderingTime(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("688ea9b9-1e4e-4596-86e3-428b27334faf")) __declspec(novtable) IRotateTransform : Windows::IInspectable
+struct __declspec(uuid("688ea9b9-1e4e-4596-86e3-428b27334faf")) __declspec(novtable) IRotateTransform : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterX(double * value) = 0;
     virtual HRESULT __stdcall put_CenterX(double value) = 0;
@@ -576,14 +576,14 @@ struct __declspec(uuid("688ea9b9-1e4e-4596-86e3-428b27334faf")) __declspec(novta
     virtual HRESULT __stdcall put_Angle(double value) = 0;
 };
 
-struct __declspec(uuid("a131eb8a-51a3-41b6-b9d3-a10e429054ab")) __declspec(novtable) IRotateTransformStatics : Windows::IInspectable
+struct __declspec(uuid("a131eb8a-51a3-41b6-b9d3-a10e429054ab")) __declspec(novtable) IRotateTransformStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CenterYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AngleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52")) __declspec(novtable) IScaleTransform : Windows::IInspectable
+struct __declspec(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52")) __declspec(novtable) IScaleTransform : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterX(double * value) = 0;
     virtual HRESULT __stdcall put_CenterX(double value) = 0;
@@ -595,7 +595,7 @@ struct __declspec(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52")) __declspec(novta
     virtual HRESULT __stdcall put_ScaleY(double value) = 0;
 };
 
-struct __declspec(uuid("9d9436f4-40a7-46dd-975a-07d337cd852e")) __declspec(novtable) IScaleTransformStatics : Windows::IInspectable
+struct __declspec(uuid("9d9436f4-40a7-46dd-975a-07d337cd852e")) __declspec(novtable) IScaleTransformStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CenterYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -603,7 +603,7 @@ struct __declspec(uuid("9d9436f4-40a7-46dd-975a-07d337cd852e")) __declspec(novta
     virtual HRESULT __stdcall get_ScaleYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115")) __declspec(novtable) ISkewTransform : Windows::IInspectable
+struct __declspec(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115")) __declspec(novtable) ISkewTransform : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterX(double * value) = 0;
     virtual HRESULT __stdcall put_CenterX(double value) = 0;
@@ -615,7 +615,7 @@ struct __declspec(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115")) __declspec(novta
     virtual HRESULT __stdcall put_AngleY(double value) = 0;
 };
 
-struct __declspec(uuid("ecd11d73-5614-4b31-b6af-beae10105624")) __declspec(novtable) ISkewTransformStatics : Windows::IInspectable
+struct __declspec(uuid("ecd11d73-5614-4b31-b6af-beae10105624")) __declspec(novtable) ISkewTransformStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CenterYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -623,23 +623,23 @@ struct __declspec(uuid("ecd11d73-5614-4b31-b6af-beae10105624")) __declspec(novta
     virtual HRESULT __stdcall get_AngleYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("9d850850-66f3-48df-9a8f-824bd5e070af")) __declspec(novtable) ISolidColorBrush : Windows::IInspectable
+struct __declspec(uuid("9d850850-66f3-48df-9a8f-824bd5e070af")) __declspec(novtable) ISolidColorBrush : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Color(Windows::UI::Color * value) = 0;
     virtual HRESULT __stdcall put_Color(Windows::UI::Color value) = 0;
 };
 
-struct __declspec(uuid("d935ce0c-86f5-4da6-8a27-b1619ef7f92b")) __declspec(novtable) ISolidColorBrushFactory : Windows::IInspectable
+struct __declspec(uuid("d935ce0c-86f5-4da6-8a27-b1619ef7f92b")) __declspec(novtable) ISolidColorBrushFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstanceWithColor(Windows::UI::Color color, Windows::UI::Xaml::Media::ISolidColorBrush ** instance) = 0;
 };
 
-struct __declspec(uuid("e1a65efa-2b23-41ba-b9ba-7094ec8e4e9f")) __declspec(novtable) ISolidColorBrushStatics : Windows::IInspectable
+struct __declspec(uuid("e1a65efa-2b23-41ba-b9ba-7094ec8e4e9f")) __declspec(novtable) ISolidColorBrushStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ColorProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("c201cf06-cd84-48a5-9607-664d7361cd61")) __declspec(novtable) ITileBrush : Windows::IInspectable
+struct __declspec(uuid("c201cf06-cd84-48a5-9607-664d7361cd61")) __declspec(novtable) ITileBrush : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AlignmentX(winrt::Windows::UI::Xaml::Media::AlignmentX * value) = 0;
     virtual HRESULT __stdcall put_AlignmentX(winrt::Windows::UI::Xaml::Media::AlignmentX value) = 0;
@@ -649,19 +649,19 @@ struct __declspec(uuid("c201cf06-cd84-48a5-9607-664d7361cd61")) __declspec(novta
     virtual HRESULT __stdcall put_Stretch(winrt::Windows::UI::Xaml::Media::Stretch value) = 0;
 };
 
-struct __declspec(uuid("aa159f7c-ed6a-4fb3-b014-b5c7e379a4de")) __declspec(novtable) ITileBrushFactory : Windows::IInspectable
+struct __declspec(uuid("aa159f7c-ed6a-4fb3-b014-b5c7e379a4de")) __declspec(novtable) ITileBrushFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::ITileBrush ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::ITileBrush ** instance) = 0;
 };
 
-struct __declspec(uuid("3497c25b-b562-4e68-8435-2399f6eb94d5")) __declspec(novtable) ITileBrushStatics : Windows::IInspectable
+struct __declspec(uuid("3497c25b-b562-4e68-8435-2399f6eb94d5")) __declspec(novtable) ITileBrushStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AlignmentXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AlignmentYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_StretchProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5")) __declspec(novtable) ITimelineMarker : Windows::IInspectable
+struct __declspec(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5")) __declspec(novtable) ITimelineMarker : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Time(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall put_Time(Windows::Foundation::TimeSpan value) = 0;
@@ -671,40 +671,40 @@ struct __declspec(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5")) __declspec(novta
     virtual HRESULT __stdcall put_Text(hstring value) = 0;
 };
 
-struct __declspec(uuid("7c3b3ef3-2c88-4d9c-99b6-46cdbd48d4c1")) __declspec(novtable) ITimelineMarkerRoutedEventArgs : Windows::IInspectable
+struct __declspec(uuid("7c3b3ef3-2c88-4d9c-99b6-46cdbd48d4c1")) __declspec(novtable) ITimelineMarkerRoutedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Marker(Windows::UI::Xaml::Media::ITimelineMarker ** value) = 0;
     virtual HRESULT __stdcall put_Marker(Windows::UI::Xaml::Media::ITimelineMarker * value) = 0;
 };
 
-struct __declspec(uuid("c4aef0c6-16a3-484b-87f5-6528b8f04a47")) __declspec(novtable) ITimelineMarkerStatics : Windows::IInspectable
+struct __declspec(uuid("c4aef0c6-16a3-484b-87f5-6528b8f04a47")) __declspec(novtable) ITimelineMarkerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TimeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TypeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4df74078-bfd6-4ed1-9682-d2fd8bf2fe6f")) __declspec(novtable) ITransform : Windows::IInspectable
+struct __declspec(uuid("4df74078-bfd6-4ed1-9682-d2fd8bf2fe6f")) __declspec(novtable) ITransform : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("1a955a66-7cf4-4320-b416-6181192fcc6d")) __declspec(novtable) ITransformFactory : Windows::IInspectable
+struct __declspec(uuid("1a955a66-7cf4-4320-b416-6181192fcc6d")) __declspec(novtable) ITransformFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("63418ccc-8d2d-4737-b951-2afce1ddc4c4")) __declspec(novtable) ITransformGroup : Windows::IInspectable
+struct __declspec(uuid("63418ccc-8d2d-4737-b951-2afce1ddc4c4")) __declspec(novtable) ITransformGroup : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Children(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Transform> ** value) = 0;
     virtual HRESULT __stdcall put_Children(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Transform> * value) = 0;
     virtual HRESULT __stdcall get_Value(Windows::UI::Xaml::Media::Matrix * value) = 0;
 };
 
-struct __declspec(uuid("25312f2a-cfab-4b24-9713-5bdead1929c0")) __declspec(novtable) ITransformGroupStatics : Windows::IInspectable
+struct __declspec(uuid("25312f2a-cfab-4b24-9713-5bdead1929c0")) __declspec(novtable) ITransformGroupStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ChildrenProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("c975905c-3c36-4229-817b-178f64c0e113")) __declspec(novtable) ITranslateTransform : Windows::IInspectable
+struct __declspec(uuid("c975905c-3c36-4229-817b-178f64c0e113")) __declspec(novtable) ITranslateTransform : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_X(double * value) = 0;
     virtual HRESULT __stdcall put_X(double value) = 0;
@@ -712,17 +712,17 @@ struct __declspec(uuid("c975905c-3c36-4229-817b-178f64c0e113")) __declspec(novta
     virtual HRESULT __stdcall put_Y(double value) = 0;
 };
 
-struct __declspec(uuid("f419aa91-e042-4111-9c2f-d201304123dd")) __declspec(novtable) ITranslateTransformStatics : Windows::IInspectable
+struct __declspec(uuid("f419aa91-e042-4111-9c2f-d201304123dd")) __declspec(novtable) ITranslateTransformStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_XProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_YProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("24b935e3-52c7-4141-8bac-a73d06130569")) __declspec(novtable) IVisualTreeHelper : Windows::IInspectable
+struct __declspec(uuid("24b935e3-52c7-4141-8bac-a73d06130569")) __declspec(novtable) IVisualTreeHelper : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("e75758c4-d25d-4b1d-971f-596f17f12baa")) __declspec(novtable) IVisualTreeHelperStatics : Windows::IInspectable
+struct __declspec(uuid("e75758c4-d25d-4b1d-971f-596f17f12baa")) __declspec(novtable) IVisualTreeHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FindElementsInHostCoordinatesPoint(Windows::Foundation::Point intersectingPoint, Windows::UI::Xaml::IUIElement * subtree, Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> ** elements) = 0;
     virtual HRESULT __stdcall abi_FindElementsInHostCoordinatesRect(Windows::Foundation::Rect intersectingRect, Windows::UI::Xaml::IUIElement * subtree, Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> ** elements) = 0;
@@ -734,19 +734,19 @@ struct __declspec(uuid("e75758c4-d25d-4b1d-971f-596f17f12baa")) __declspec(novta
     virtual HRESULT __stdcall abi_DisconnectChildrenRecursive(Windows::UI::Xaml::IUIElement * element) = 0;
 };
 
-struct __declspec(uuid("07bcd176-869f-44a7-8797-2103a4c3e47a")) __declspec(novtable) IVisualTreeHelperStatics2 : Windows::IInspectable
+struct __declspec(uuid("07bcd176-869f-44a7-8797-2103a4c3e47a")) __declspec(novtable) IVisualTreeHelperStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetOpenPopups(Windows::UI::Xaml::IWindow * window, Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> ** popups) = 0;
 };
 
 struct __declspec(uuid("08e9a257-ae05-489b-8839-28c6225d2349")) __declspec(novtable) RateChangedRoutedEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs * e) = 0;
 };
 
 struct __declspec(uuid("72e2fa9c-6dea-4cbe-a159-06ce95fbeced")) __declspec(novtable) TimelineMarkerRoutedEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender, Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs * e) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs * e) = 0;
 };
 
 }
@@ -877,7 +877,7 @@ struct WINRT_EBO impl_IBrush
 template <typename D>
 struct WINRT_EBO impl_IBrushFactory
 {
-    Windows::UI::Xaml::Media::Brush CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Brush CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -896,7 +896,7 @@ struct WINRT_EBO impl_ICacheMode
 template <typename D>
 struct WINRT_EBO impl_ICacheModeFactory
 {
-    Windows::UI::Xaml::Media::CacheMode CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::CacheMode CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -944,13 +944,13 @@ struct WINRT_EBO impl_ICompositionTarget
 template <typename D>
 struct WINRT_EBO impl_ICompositionTargetStatics
 {
-    event_token Rendering(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token Rendering(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using Rendering_revoker = event_revoker<ICompositionTargetStatics>;
-    Rendering_revoker Rendering(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    Rendering_revoker Rendering(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void Rendering(event_token token) const;
-    event_token SurfaceContentsLost(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token SurfaceContentsLost(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using SurfaceContentsLost_revoker = event_revoker<ICompositionTargetStatics>;
-    SurfaceContentsLost_revoker SurfaceContentsLost(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    SurfaceContentsLost_revoker SurfaceContentsLost(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void SurfaceContentsLost(event_token token) const;
 };
 
@@ -982,7 +982,7 @@ struct WINRT_EBO impl_IFontFamily
 template <typename D>
 struct WINRT_EBO impl_IFontFamilyFactory
 {
-    Windows::UI::Xaml::Media::FontFamily CreateInstanceWithName(hstring_view familyName, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::FontFamily CreateInstanceWithName(hstring_view familyName, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -1003,7 +1003,7 @@ struct WINRT_EBO impl_IGeneralTransform
 template <typename D>
 struct WINRT_EBO impl_IGeneralTransformFactory
 {
-    Windows::UI::Xaml::Media::GeneralTransform CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::GeneralTransform CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -1067,7 +1067,7 @@ struct WINRT_EBO impl_IGradientBrush
 template <typename D>
 struct WINRT_EBO impl_IGradientBrushFactory
 {
-    Windows::UI::Xaml::Media::GradientBrush CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::GradientBrush CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -1379,7 +1379,7 @@ struct WINRT_EBO impl_IProjection
 template <typename D>
 struct WINRT_EBO impl_IProjectionFactory
 {
-    Windows::UI::Xaml::Media::Projection CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Projection CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -1518,7 +1518,7 @@ struct WINRT_EBO impl_ITileBrush
 template <typename D>
 struct WINRT_EBO impl_ITileBrushFactory
 {
-    Windows::UI::Xaml::Media::TileBrush CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::TileBrush CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>

@@ -28,20 +28,20 @@ using Color = ABI::Windows::UI::Color;
 
 namespace ABI::Windows::UI {
 
-struct __declspec(uuid("193cfbe7-65c7-4540-ad08-6283ba76879a")) __declspec(novtable) IColorHelper : Windows::IInspectable
+struct __declspec(uuid("193cfbe7-65c7-4540-ad08-6283ba76879a")) __declspec(novtable) IColorHelper : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("8504dbea-fb6a-4144-a6c2-33499c9284f5")) __declspec(novtable) IColorHelperStatics : Windows::IInspectable
+struct __declspec(uuid("8504dbea-fb6a-4144-a6c2-33499c9284f5")) __declspec(novtable) IColorHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromArgb(uint8_t a, uint8_t r, uint8_t g, uint8_t b, Windows::UI::Color * returnValue) = 0;
 };
 
-struct __declspec(uuid("9b8c9326-4ca6-4ce5-8994-9eff65cabdcc")) __declspec(novtable) IColors : Windows::IInspectable
+struct __declspec(uuid("9b8c9326-4ca6-4ce5-8994-9eff65cabdcc")) __declspec(novtable) IColors : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("cff52e04-cca6-4614-a17e-754910c84a99")) __declspec(novtable) IColorsStatics : Windows::IInspectable
+struct __declspec(uuid("cff52e04-cca6-4614-a17e-754910c84a99")) __declspec(novtable) IColorsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AliceBlue(Windows::UI::Color * value) = 0;
     virtual HRESULT __stdcall get_AntiqueWhite(Windows::UI::Color * value) = 0;

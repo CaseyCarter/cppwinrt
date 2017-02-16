@@ -37,7 +37,7 @@ template <> struct __declspec(uuid("e617711e-cdd5-5975-8fb3-8eaaaed24e7b")) __de
 
 #ifndef WINRT_GENERIC_6a6cc5d5_9f43_545a_91d7_3a40055475da
 #define WINRT_GENERIC_6a6cc5d5_9f43_545a_91d7_3a40055475da
-template <> struct __declspec(uuid("6a6cc5d5-9f43-545a-91d7-3a40055475da")) __declspec(novtable) TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> : impl_TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> {};
+template <> struct __declspec(uuid("6a6cc5d5-9f43-545a-91d7-3a40055475da")) __declspec(novtable) TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_0c251e73_52c9_5026_a875_f685a50cbffd
@@ -96,28 +96,28 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Networking::ServiceDiscovery::Dnssd {
 
 struct IDnssdRegistrationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDnssdRegistrationResult>
 {
     IDnssdRegistrationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDnssdServiceInstance :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDnssdServiceInstance>
 {
     IDnssdServiceInstance(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDnssdServiceInstanceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDnssdServiceInstanceFactory>
 {
     IDnssdServiceInstanceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDnssdServiceWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDnssdServiceWatcher>
 {
     IDnssdServiceWatcher(std::nullptr_t = nullptr) noexcept {}

@@ -104,12 +104,12 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
         }
     }
 
-    HRESULT __stdcall add_UIRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_UIRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().UIRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().UIRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -382,14 +382,14 @@ template <typename D> void impl_ICachedFileUpdaterUI<D>::FileUpdateRequested(eve
     check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->remove_FileUpdateRequested(token));
 }
 
-template <typename D> event_token impl_ICachedFileUpdaterUI<D>::UIRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICachedFileUpdaterUI<D>::UIRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->add_UIRequested(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICachedFileUpdaterUI> impl_ICachedFileUpdaterUI<D>::UIRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICachedFileUpdaterUI> impl_ICachedFileUpdaterUI<D>::UIRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICachedFileUpdaterUI>(this, &ABI::Windows::Storage::Provider::ICachedFileUpdaterUI::remove_UIRequested, UIRequested(handler));
 }

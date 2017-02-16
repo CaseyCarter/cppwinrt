@@ -14,7 +14,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Diagnostics {
 
-struct __declspec(uuid("50850b26-267e-451b-a890-ab6a370245ee")) __declspec(novtable) IAsyncCausalityTracerStatics : Windows::IInspectable
+struct __declspec(uuid("50850b26-267e-451b-a890-ab6a370245ee")) __declspec(novtable) IAsyncCausalityTracerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TraceOperationCreation(winrt::Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, winrt::Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring operationName, uint64_t relatedContext) = 0;
     virtual HRESULT __stdcall abi_TraceOperationCompletion(winrt::Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, winrt::Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, winrt::Windows::Foundation::AsyncStatus status) = 0;
@@ -25,25 +25,25 @@ struct __declspec(uuid("50850b26-267e-451b-a890-ab6a370245ee")) __declspec(novta
     virtual HRESULT __stdcall remove_TracingStatusChanged(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("378cbb01-2cc9-428f-8c55-2c990d463e8f")) __declspec(novtable) IErrorDetails : Windows::IInspectable
+struct __declspec(uuid("378cbb01-2cc9-428f-8c55-2c990d463e8f")) __declspec(novtable) IErrorDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Description(hstring * value) = 0;
     virtual HRESULT __stdcall get_LongDescription(hstring * value) = 0;
     virtual HRESULT __stdcall get_HelpUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("b7703750-0b1d-46c8-aa0e-4b8178e4fce9")) __declspec(novtable) IErrorDetailsStatics : Windows::IInspectable
+struct __declspec(uuid("b7703750-0b1d-46c8-aa0e-4b8178e4fce9")) __declspec(novtable) IErrorDetailsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromHResultAsync(int32_t errorCode, Windows::Foundation::IAsyncOperation<Windows::Foundation::Diagnostics::ErrorDetails> ** operation) = 0;
 };
 
-struct __declspec(uuid("16369792-b03e-4ba1-8bb8-d28f4ab4d2c0")) __declspec(novtable) IErrorReportingSettings : Windows::IInspectable
+struct __declspec(uuid("16369792-b03e-4ba1-8bb8-d28f4ab4d2c0")) __declspec(novtable) IErrorReportingSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetErrorOptions(winrt::Windows::Foundation::Diagnostics::ErrorOptions value) = 0;
     virtual HRESULT __stdcall abi_GetErrorOptions(winrt::Windows::Foundation::Diagnostics::ErrorOptions * value) = 0;
 };
 
-struct __declspec(uuid("24c74216-fed2-404c-895f-1f9699cb02f7")) __declspec(novtable) IFileLoggingSession : Windows::IInspectable
+struct __declspec(uuid("24c74216-fed2-404c-895f-1f9699cb02f7")) __declspec(novtable) IFileLoggingSession : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall abi_AddLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel * loggingChannel) = 0;
@@ -54,23 +54,23 @@ struct __declspec(uuid("24c74216-fed2-404c-895f-1f9699cb02f7")) __declspec(novta
     virtual HRESULT __stdcall remove_LogFileGenerated(event_token token) = 0;
 };
 
-struct __declspec(uuid("eea08dce-8447-4daa-9133-12eb46f697d4")) __declspec(novtable) IFileLoggingSessionFactory : Windows::IInspectable
+struct __declspec(uuid("eea08dce-8447-4daa-9133-12eb46f697d4")) __declspec(novtable) IFileLoggingSessionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring name, Windows::Foundation::Diagnostics::IFileLoggingSession ** result) = 0;
 };
 
-struct __declspec(uuid("269e976f-0d38-4c1a-b53f-b395d881df84")) __declspec(novtable) ILogFileGeneratedEventArgs : Windows::IInspectable
+struct __declspec(uuid("269e976f-0d38-4c1a-b53f-b395d881df84")) __declspec(novtable) ILogFileGeneratedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_File(Windows::Storage::IStorageFile ** value) = 0;
 };
 
-struct __declspec(uuid("bc032941-b766-4cb5-9848-97ac6ba6d60c")) __declspec(novtable) ILoggingActivity : Windows::IInspectable
+struct __declspec(uuid("bc032941-b766-4cb5-9848-97ac6ba6d60c")) __declspec(novtable) ILoggingActivity : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Id(GUID * value) = 0;
 };
 
-struct __declspec(uuid("26c29808-6322-456a-af82-80c8642f178b")) __declspec(novtable) ILoggingActivity2 : Windows::IInspectable
+struct __declspec(uuid("26c29808-6322-456a-af82-80c8642f178b")) __declspec(novtable) ILoggingActivity2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Channel(Windows::Foundation::Diagnostics::ILoggingChannel ** value) = 0;
     virtual HRESULT __stdcall abi_StopActivity(hstring stopEventName) = 0;
@@ -78,13 +78,13 @@ struct __declspec(uuid("26c29808-6322-456a-af82-80c8642f178b")) __declspec(novta
     virtual HRESULT __stdcall abi_StopActivityWithFieldsAndOptions(hstring stopEventName, Windows::Foundation::Diagnostics::ILoggingFields * fields, Windows::Foundation::Diagnostics::ILoggingOptions * options) = 0;
 };
 
-struct __declspec(uuid("6b33b483-e10a-4c58-97d5-10fb451074fb")) __declspec(novtable) ILoggingActivityFactory : Windows::IInspectable
+struct __declspec(uuid("6b33b483-e10a-4c58-97d5-10fb451074fb")) __declspec(novtable) ILoggingActivityFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateLoggingActivity(hstring activityName, Windows::Foundation::Diagnostics::ILoggingChannel * loggingChannel, Windows::Foundation::Diagnostics::ILoggingActivity ** loggingActivity) = 0;
     virtual HRESULT __stdcall abi_CreateLoggingActivityWithLevel(hstring activityName, Windows::Foundation::Diagnostics::ILoggingChannel * loggingChannel, winrt::Windows::Foundation::Diagnostics::LoggingLevel level, Windows::Foundation::Diagnostics::ILoggingActivity ** loggingActivity) = 0;
 };
 
-struct __declspec(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8")) __declspec(novtable) ILoggingChannel : Windows::IInspectable
+struct __declspec(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8")) __declspec(novtable) ILoggingChannel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Enabled(bool * value) = 0;
@@ -93,38 +93,38 @@ struct __declspec(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8")) __declspec(novta
     virtual HRESULT __stdcall abi_LogMessageWithLevel(hstring eventString, winrt::Windows::Foundation::Diagnostics::LoggingLevel level) = 0;
     virtual HRESULT __stdcall abi_LogValuePair(hstring value1, int32_t value2) = 0;
     virtual HRESULT __stdcall abi_LogValuePairWithLevel(hstring value1, int32_t value2, winrt::Windows::Foundation::Diagnostics::LoggingLevel level) = 0;
-    virtual HRESULT __stdcall add_LoggingEnabled(Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_LoggingEnabled(Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_LoggingEnabled(event_token token) = 0;
 };
 
-struct __declspec(uuid("9f4c3cf3-0bac-45a5-9e33-baf3f3a246a5")) __declspec(novtable) ILoggingChannel2 : Windows::IInspectable
+struct __declspec(uuid("9f4c3cf3-0bac-45a5-9e33-baf3f3a246a5")) __declspec(novtable) ILoggingChannel2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(GUID * value) = 0;
 };
 
-struct __declspec(uuid("4edc5b9c-af80-4a9b-b0dc-398f9ae5207b")) __declspec(novtable) ILoggingChannelFactory : Windows::IInspectable
+struct __declspec(uuid("4edc5b9c-af80-4a9b-b0dc-398f9ae5207b")) __declspec(novtable) ILoggingChannelFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring name, Windows::Foundation::Diagnostics::ILoggingChannel ** result) = 0;
 };
 
-struct __declspec(uuid("4c6ef5dd-3b27-4dc9-99f0-299c6e4603a1")) __declspec(novtable) ILoggingChannelFactory2 : Windows::IInspectable
+struct __declspec(uuid("4c6ef5dd-3b27-4dc9-99f0-299c6e4603a1")) __declspec(novtable) ILoggingChannelFactory2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithOptions(hstring name, Windows::Foundation::Diagnostics::ILoggingChannelOptions * options, Windows::Foundation::Diagnostics::ILoggingChannel ** result) = 0;
     virtual HRESULT __stdcall abi_CreateWithOptionsAndId(hstring name, Windows::Foundation::Diagnostics::ILoggingChannelOptions * options, GUID id, Windows::Foundation::Diagnostics::ILoggingChannel ** result) = 0;
 };
 
-struct __declspec(uuid("c3e847ff-0ebb-4a53-8c54-dec24926cb2c")) __declspec(novtable) ILoggingChannelOptions : Windows::IInspectable
+struct __declspec(uuid("c3e847ff-0ebb-4a53-8c54-dec24926cb2c")) __declspec(novtable) ILoggingChannelOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Group(GUID * value) = 0;
     virtual HRESULT __stdcall put_Group(GUID value) = 0;
 };
 
-struct __declspec(uuid("a93151da-7faf-4191-8755-5e86dc65d896")) __declspec(novtable) ILoggingChannelOptionsFactory : Windows::IInspectable
+struct __declspec(uuid("a93151da-7faf-4191-8755-5e86dc65d896")) __declspec(novtable) ILoggingChannelOptionsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(GUID group, Windows::Foundation::Diagnostics::ILoggingChannelOptions ** result) = 0;
 };
 
-struct __declspec(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc")) __declspec(novtable) ILoggingFields : Windows::IInspectable
+struct __declspec(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc")) __declspec(novtable) ILoggingFields : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Clear() = 0;
     virtual HRESULT __stdcall abi_BeginStruct(hstring name) = 0;
@@ -243,7 +243,7 @@ struct __declspec(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc")) __declspec(novta
     virtual HRESULT __stdcall abi_AddRectArrayWithFormatAndTags(hstring name, uint32_t __valueSize, Windows::Foundation::Rect * value, winrt::Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) = 0;
 };
 
-struct __declspec(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8")) __declspec(novtable) ILoggingOptions : Windows::IInspectable
+struct __declspec(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8")) __declspec(novtable) ILoggingOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Keywords(int64_t * value) = 0;
     virtual HRESULT __stdcall put_Keywords(int64_t value) = 0;
@@ -259,12 +259,12 @@ struct __declspec(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8")) __declspec(novta
     virtual HRESULT __stdcall put_RelatedActivityId(GUID value) = 0;
 };
 
-struct __declspec(uuid("d713c6cb-98ab-464b-9f22-a3268478368a")) __declspec(novtable) ILoggingOptionsFactory : Windows::IInspectable
+struct __declspec(uuid("d713c6cb-98ab-464b-9f22-a3268478368a")) __declspec(novtable) ILoggingOptionsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithKeywords(int64_t keywords, Windows::Foundation::Diagnostics::ILoggingOptions ** result) = 0;
 };
 
-struct __declspec(uuid("6221f306-9380-4ad7-baf5-41ea9310d768")) __declspec(novtable) ILoggingSession : Windows::IInspectable
+struct __declspec(uuid("6221f306-9380-4ad7-baf5-41ea9310d768")) __declspec(novtable) ILoggingSession : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall abi_SaveToFileAsync(Windows::Storage::IStorageFolder * folder, hstring fileName, Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ** operation) = 0;
@@ -273,12 +273,12 @@ struct __declspec(uuid("6221f306-9380-4ad7-baf5-41ea9310d768")) __declspec(novta
     virtual HRESULT __stdcall abi_RemoveLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel * loggingChannel) = 0;
 };
 
-struct __declspec(uuid("4e937ee5-58fd-45e0-8c2f-a132eff95c1e")) __declspec(novtable) ILoggingSessionFactory : Windows::IInspectable
+struct __declspec(uuid("4e937ee5-58fd-45e0-8c2f-a132eff95c1e")) __declspec(novtable) ILoggingSessionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring name, Windows::Foundation::Diagnostics::ILoggingSession ** result) = 0;
 };
 
-struct __declspec(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916")) __declspec(novtable) ILoggingTarget : Windows::IInspectable
+struct __declspec(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916")) __declspec(novtable) ILoggingTarget : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_IsEnabled(bool * result) = 0;
     virtual HRESULT __stdcall abi_IsEnabledWithLevel(winrt::Windows::Foundation::Diagnostics::LoggingLevel level, bool * result) = 0;
@@ -293,7 +293,7 @@ struct __declspec(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916")) __declspec(novta
     virtual HRESULT __stdcall abi_StartActivityWithFieldsAndOptions(hstring startEventName, Windows::Foundation::Diagnostics::ILoggingFields * fields, winrt::Windows::Foundation::Diagnostics::LoggingLevel level, Windows::Foundation::Diagnostics::ILoggingOptions * options, Windows::Foundation::Diagnostics::ILoggingActivity ** result) = 0;
 };
 
-struct __declspec(uuid("410b7711-ff3b-477f-9c9a-d2efda302dc3")) __declspec(novtable) ITracingStatusChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("410b7711-ff3b-477f-9c9a-d2efda302dc3")) __declspec(novtable) ITracingStatusChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Enabled(bool * enabled) = 0;
     virtual HRESULT __stdcall get_TraceLevel(winrt::Windows::Foundation::Diagnostics::CausalityTraceLevel * value) = 0;
@@ -413,9 +413,9 @@ struct WINRT_EBO impl_ILoggingChannel
     void LogMessage(hstring_view eventString, Windows::Foundation::Diagnostics::LoggingLevel level) const;
     void LogValuePair(hstring_view value1, int32_t value2) const;
     void LogValuePair(hstring_view value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) const;
-    event_token LoggingEnabled(const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> & handler) const;
+    event_token LoggingEnabled(const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> & handler) const;
     using LoggingEnabled_revoker = event_revoker<ILoggingChannel>;
-    LoggingEnabled_revoker LoggingEnabled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> & handler) const;
+    LoggingEnabled_revoker LoggingEnabled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> & handler) const;
     void LoggingEnabled(event_token token) const;
 };
 

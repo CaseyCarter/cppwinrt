@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Security::Cryptography {
 
 struct ICryptographicBufferStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICryptographicBufferStatics>
 {
     ICryptographicBufferStatics(std::nullptr_t = nullptr) noexcept {}

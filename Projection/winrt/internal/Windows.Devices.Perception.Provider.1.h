@@ -16,56 +16,56 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Perception::Provider {
 
-struct __declspec(uuid("3ae651d6-9669-4106-9fae-4835c1b96104")) __declspec(novtable) IKnownPerceptionFrameKindStatics : Windows::IInspectable
+struct __declspec(uuid("3ae651d6-9669-4106-9fae-4835c1b96104")) __declspec(novtable) IKnownPerceptionFrameKindStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Color(hstring * value) = 0;
     virtual HRESULT __stdcall get_Depth(hstring * value) = 0;
     virtual HRESULT __stdcall get_Infrared(hstring * value) = 0;
 };
 
-struct __declspec(uuid("172c4882-2fd9-4c4e-ba34-fdf20a73dde5")) __declspec(novtable) IPerceptionControlGroup : Windows::IInspectable
+struct __declspec(uuid("172c4882-2fd9-4c4e-ba34-fdf20a73dde5")) __declspec(novtable) IPerceptionControlGroup : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FrameProviderIds(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("2f1af2e0-baf1-453b-bed4-cd9d4619154c")) __declspec(novtable) IPerceptionControlGroupFactory : Windows::IInspectable
+struct __declspec(uuid("2f1af2e0-baf1-453b-bed4-cd9d4619154c")) __declspec(novtable) IPerceptionControlGroupFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Foundation::Collections::IIterable<hstring> * ids, Windows::Devices::Perception::Provider::IPerceptionControlGroup ** result) = 0;
 };
 
-struct __declspec(uuid("b4131a82-dff5-4047-8a19-3b4d805f7176")) __declspec(novtable) IPerceptionCorrelation : Windows::IInspectable
+struct __declspec(uuid("b4131a82-dff5-4047-8a19-3b4d805f7176")) __declspec(novtable) IPerceptionCorrelation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Position(Windows::Foundation::Numerics::float3 * value) = 0;
     virtual HRESULT __stdcall get_Orientation(Windows::Foundation::Numerics::quaternion * value) = 0;
 };
 
-struct __declspec(uuid("d4a6c425-2884-4a8f-8134-2835d7286cbf")) __declspec(novtable) IPerceptionCorrelationFactory : Windows::IInspectable
+struct __declspec(uuid("d4a6c425-2884-4a8f-8134-2835d7286cbf")) __declspec(novtable) IPerceptionCorrelationFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring targetId, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::quaternion orientation, Windows::Devices::Perception::Provider::IPerceptionCorrelation ** result) = 0;
 };
 
-struct __declspec(uuid("752a0906-36a7-47bb-9b79-56cc6b746770")) __declspec(novtable) IPerceptionCorrelationGroup : Windows::IInspectable
+struct __declspec(uuid("752a0906-36a7-47bb-9b79-56cc6b746770")) __declspec(novtable) IPerceptionCorrelationGroup : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RelativeLocations(Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::Provider::PerceptionCorrelation> ** value) = 0;
 };
 
-struct __declspec(uuid("7dfe2088-63df-48ed-83b1-4ab829132995")) __declspec(novtable) IPerceptionCorrelationGroupFactory : Windows::IInspectable
+struct __declspec(uuid("7dfe2088-63df-48ed-83b1-4ab829132995")) __declspec(novtable) IPerceptionCorrelationGroupFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> * relativeLocations, Windows::Devices::Perception::Provider::IPerceptionCorrelationGroup ** result) = 0;
 };
 
-struct __declspec(uuid("e8019814-4a91-41b0-83a6-881a1775353e")) __declspec(novtable) IPerceptionFaceAuthenticationGroup : Windows::IInspectable
+struct __declspec(uuid("e8019814-4a91-41b0-83a6-881a1775353e")) __declspec(novtable) IPerceptionFaceAuthenticationGroup : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FrameProviderIds(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("e68a05d4-b60c-40f4-bcb9-f24d46467320")) __declspec(novtable) IPerceptionFaceAuthenticationGroupFactory : Windows::IInspectable
+struct __declspec(uuid("e68a05d4-b60c-40f4-bcb9-f24d46467320")) __declspec(novtable) IPerceptionFaceAuthenticationGroupFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Foundation::Collections::IIterable<hstring> * ids, Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler * startHandler, Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler * stopHandler, Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup ** result) = 0;
 };
 
-struct __declspec(uuid("7cfe7825-54bb-4d9d-bec5-8ef66151d2ac")) __declspec(novtable) IPerceptionFrame : Windows::IInspectable
+struct __declspec(uuid("7cfe7825-54bb-4d9d-bec5-8ef66151d2ac")) __declspec(novtable) IPerceptionFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RelativeTime(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall put_RelativeTime(Windows::Foundation::TimeSpan value) = 0;
@@ -73,7 +73,7 @@ struct __declspec(uuid("7cfe7825-54bb-4d9d-bec5-8ef66151d2ac")) __declspec(novta
     virtual HRESULT __stdcall get_FrameData(Windows::Foundation::IMemoryBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("794f7ab9-b37d-3b33-a10d-30626419ce65")) __declspec(novtable) IPerceptionFrameProvider : Windows::IInspectable
+struct __declspec(uuid("794f7ab9-b37d-3b33-a10d-30626419ce65")) __declspec(novtable) IPerceptionFrameProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FrameProviderInfo(Windows::Devices::Perception::Provider::IPerceptionFrameProviderInfo ** result) = 0;
     virtual HRESULT __stdcall get_Available(bool * value) = 0;
@@ -83,7 +83,7 @@ struct __declspec(uuid("794f7ab9-b37d-3b33-a10d-30626419ce65")) __declspec(novta
     virtual HRESULT __stdcall abi_SetProperty(Windows::Devices::Perception::Provider::IPerceptionPropertyChangeRequest * value) = 0;
 };
 
-struct __declspec(uuid("cca959e8-797e-4e83-9b87-036a74142fc4")) __declspec(novtable) IPerceptionFrameProviderInfo : Windows::IInspectable
+struct __declspec(uuid("cca959e8-797e-4e83-9b87-036a74142fc4")) __declspec(novtable) IPerceptionFrameProviderInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall put_Id(hstring value) = 0;
@@ -97,12 +97,12 @@ struct __declspec(uuid("cca959e8-797e-4e83-9b87-036a74142fc4")) __declspec(novta
     virtual HRESULT __stdcall put_Hidden(bool value) = 0;
 };
 
-struct __declspec(uuid("a959ce07-ead3-33df-8ec1-b924abe019c4")) __declspec(novtable) IPerceptionFrameProviderManager : Windows::IInspectable
+struct __declspec(uuid("a959ce07-ead3-33df-8ec1-b924abe019c4")) __declspec(novtable) IPerceptionFrameProviderManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetFrameProvider(Windows::Devices::Perception::Provider::IPerceptionFrameProviderInfo * frameProviderInfo, Windows::Devices::Perception::Provider::IPerceptionFrameProvider ** result) = 0;
 };
 
-struct __declspec(uuid("ae8386e6-cad9-4359-8f96-8eae51810526")) __declspec(novtable) IPerceptionFrameProviderManagerServiceStatics : Windows::IInspectable
+struct __declspec(uuid("ae8386e6-cad9-4359-8f96-8eae51810526")) __declspec(novtable) IPerceptionFrameProviderManagerServiceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RegisterFrameProviderInfo(Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager * manager, Windows::Devices::Perception::Provider::IPerceptionFrameProviderInfo * frameProviderInfo) = 0;
     virtual HRESULT __stdcall abi_UnregisterFrameProviderInfo(Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager * manager, Windows::Devices::Perception::Provider::IPerceptionFrameProviderInfo * frameProviderInfo) = 0;
@@ -116,22 +116,22 @@ struct __declspec(uuid("ae8386e6-cad9-4359-8f96-8eae51810526")) __declspec(novta
     virtual HRESULT __stdcall abi_PublishFrameForProvider(Windows::Devices::Perception::Provider::IPerceptionFrameProvider * provider, Windows::Devices::Perception::Provider::IPerceptionFrame * frame) = 0;
 };
 
-struct __declspec(uuid("3c5aeb51-350b-4df8-9414-59e09815510b")) __declspec(novtable) IPerceptionPropertyChangeRequest : Windows::IInspectable
+struct __declspec(uuid("3c5aeb51-350b-4df8-9414-59e09815510b")) __declspec(novtable) IPerceptionPropertyChangeRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
-    virtual HRESULT __stdcall get_Value(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_Value(Windows::Foundation::IInspectable ** value) = 0;
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus * value) = 0;
     virtual HRESULT __stdcall put_Status(winrt::Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** result) = 0;
 };
 
-struct __declspec(uuid("4c38a7da-fdd8-4ed4-a039-2a6f9b235038")) __declspec(novtable) IPerceptionVideoFrameAllocator : Windows::IInspectable
+struct __declspec(uuid("4c38a7da-fdd8-4ed4-a039-2a6f9b235038")) __declspec(novtable) IPerceptionVideoFrameAllocator : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AllocateFrame(Windows::Devices::Perception::Provider::IPerceptionFrame ** value) = 0;
     virtual HRESULT __stdcall abi_CopyFromVideoFrame(Windows::Media::IVideoFrame * frame, Windows::Devices::Perception::Provider::IPerceptionFrame ** value) = 0;
 };
 
-struct __declspec(uuid("1a58b0e1-e91a-481e-b876-a89e2bbc6b33")) __declspec(novtable) IPerceptionVideoFrameAllocatorFactory : Windows::IInspectable
+struct __declspec(uuid("1a58b0e1-e91a-481e-b876-a89e2bbc6b33")) __declspec(novtable) IPerceptionVideoFrameAllocatorFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(uint32_t maxOutstandingFrameCountForWrite, winrt::Windows::Graphics::Imaging::BitmapPixelFormat format, Windows::Foundation::Size resolution, winrt::Windows::Graphics::Imaging::BitmapAlphaMode alpha, Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocator ** result) = 0;
 };
@@ -281,7 +281,7 @@ template <typename D>
 struct WINRT_EBO impl_IPerceptionPropertyChangeRequest
 {
     hstring Name() const;
-    Windows::IInspectable Value() const;
+    Windows::Foundation::IInspectable Value() const;
     Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus Status() const;
     void Status(Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus value) const;
     Windows::Foundation::Deferral GetDeferral() const;

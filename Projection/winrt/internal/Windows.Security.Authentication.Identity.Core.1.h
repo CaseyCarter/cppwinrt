@@ -13,7 +13,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Security::Authentication::Identity::Core {
 
-struct __declspec(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa")) __declspec(novtable) IMicrosoftAccountMultiFactorAuthenticationManager : Windows::IInspectable
+struct __declspec(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa")) __declspec(novtable) IMicrosoftAccountMultiFactorAuthenticationManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetOneTimePassCodeAsync(hstring userAccountId, uint32_t codeLength, Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo> ** asyncOperation) = 0;
     virtual HRESULT __stdcall abi_AddDeviceAsync(hstring userAccountId, hstring authenticationToken, hstring wnsChannelId, Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> ** asyncOperation) = 0;
@@ -27,18 +27,18 @@ struct __declspec(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa")) __declspec(novta
     virtual HRESULT __stdcall abi_DenySessionAsync(hstring userAccountId, hstring sessionId, winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType, Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> ** asyncOperation) = 0;
 };
 
-struct __declspec(uuid("d964c2e6-f446-4c71-8b79-6ea4024aa9b8")) __declspec(novtable) IMicrosoftAccountMultiFactorAuthenticatorStatics : Windows::IInspectable
+struct __declspec(uuid("d964c2e6-f446-4c71-8b79-6ea4024aa9b8")) __declspec(novtable) IMicrosoftAccountMultiFactorAuthenticatorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Current(Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticationManager ** value) = 0;
 };
 
-struct __declspec(uuid("4e23a9a0-e9fa-497a-95de-6d5747bf974c")) __declspec(novtable) IMicrosoftAccountMultiFactorGetSessionsResult : Windows::IInspectable
+struct __declspec(uuid("4e23a9a0-e9fa-497a-95de-6d5747bf974c")) __declspec(novtable) IMicrosoftAccountMultiFactorGetSessionsResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Sessions(Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> ** value) = 0;
     virtual HRESULT __stdcall get_ServiceResponse(winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse * value) = 0;
 };
 
-struct __declspec(uuid("82ba264b-d87c-4668-a976-40cfae547d08")) __declspec(novtable) IMicrosoftAccountMultiFactorOneTimeCodedInfo : Windows::IInspectable
+struct __declspec(uuid("82ba264b-d87c-4668-a976-40cfae547d08")) __declspec(novtable) IMicrosoftAccountMultiFactorOneTimeCodedInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Code(hstring * value) = 0;
     virtual HRESULT __stdcall get_TimeInterval(Windows::Foundation::TimeSpan * value) = 0;
@@ -46,7 +46,7 @@ struct __declspec(uuid("82ba264b-d87c-4668-a976-40cfae547d08")) __declspec(novta
     virtual HRESULT __stdcall get_ServiceResponse(winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse * value) = 0;
 };
 
-struct __declspec(uuid("5f7eabb4-a278-4635-b765-b494eb260af4")) __declspec(novtable) IMicrosoftAccountMultiFactorSessionInfo : Windows::IInspectable
+struct __declspec(uuid("5f7eabb4-a278-4635-b765-b494eb260af4")) __declspec(novtable) IMicrosoftAccountMultiFactorSessionInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UserAccountId(hstring * value) = 0;
     virtual HRESULT __stdcall get_SessionId(hstring * value) = 0;
@@ -57,7 +57,7 @@ struct __declspec(uuid("5f7eabb4-a278-4635-b765-b494eb260af4")) __declspec(novta
     virtual HRESULT __stdcall get_ExpirationTime(Windows::Foundation::DateTime * value) = 0;
 };
 
-struct __declspec(uuid("aa7ec5fb-da3f-4088-a20d-5618afadb2e5")) __declspec(novtable) IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo : Windows::IInspectable
+struct __declspec(uuid("aa7ec5fb-da3f-4088-a20d-5618afadb2e5")) __declspec(novtable) IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Sessions(Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> ** value) = 0;
     virtual HRESULT __stdcall get_UnregisteredAccounts(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;

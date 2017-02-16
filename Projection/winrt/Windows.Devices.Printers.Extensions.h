@@ -29,7 +29,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
         }
     }
 
-    HRESULT __stdcall abi_GetPrintModelPackage(impl::abi_arg_out<Windows::IInspectable> printModelPackage) noexcept override
+    HRESULT __stdcall abi_GetPrintModelPackage(impl::abi_arg_out<Windows::Foundation::IInspectable> printModelPackage) noexcept override
     {
         try
         {
@@ -164,12 +164,12 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
         }
     }
 
-    HRESULT __stdcall abi_SetSource(impl::abi_arg_in<Windows::IInspectable> source) noexcept override
+    HRESULT __stdcall abi_SetSource(impl::abi_arg_in<Windows::Foundation::IInspectable> source) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetSource(*reinterpret_cast<const Windows::IInspectable *>(&source));
+            this->shim().SetSource(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&source));
             return S_OK;
         }
         catch (...)
@@ -228,7 +228,7 @@ template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetE
     check_hresult(WINRT_SHIM(IPrint3DWorkflowPrintRequestedEventArgs)->abi_SetExtendedStatus(value));
 }
 
-template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetSource(const Windows::IInspectable & source) const
+template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetSource(const Windows::Foundation::IInspectable & source) const
 {
     check_hresult(WINRT_SHIM(IPrint3DWorkflowPrintRequestedEventArgs)->abi_SetSource(get_abi(source)));
 }
@@ -252,9 +252,9 @@ template <typename D> hstring impl_IPrint3DWorkflow<D>::DeviceID() const
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IPrint3DWorkflow<D>::GetPrintModelPackage() const
+template <typename D> Windows::Foundation::IInspectable impl_IPrint3DWorkflow<D>::GetPrintModelPackage() const
 {
-    Windows::IInspectable printModelPackage;
+    Windows::Foundation::IInspectable printModelPackage;
     check_hresult(WINRT_SHIM(IPrint3DWorkflow)->abi_GetPrintModelPackage(put_abi(printModelPackage)));
     return printModelPackage;
 }

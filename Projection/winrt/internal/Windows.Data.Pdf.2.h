@@ -26,35 +26,35 @@ template <> struct __declspec(uuid("8d4950b3-629d-5d7d-84cc-04c0dcf7942b")) __de
 namespace Windows::Data::Pdf {
 
 struct IPdfDocument :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPdfDocument>
 {
     IPdfDocument(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPdfDocumentStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPdfDocumentStatics>
 {
     IPdfDocumentStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPdfPage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPdfPage>
 {
     IPdfPage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPdfPageDimensions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPdfPageDimensions>
 {
     IPdfPageDimensions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPdfPageRenderOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPdfPageRenderOptions>
 {
     IPdfPageRenderOptions(std::nullptr_t = nullptr) noexcept {}

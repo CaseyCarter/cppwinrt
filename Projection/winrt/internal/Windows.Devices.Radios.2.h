@@ -31,7 +31,7 @@ template <> struct __declspec(uuid("21fb30ef-072f-502c-9898-d0c3b2cd9ac5")) __de
 
 #ifndef WINRT_GENERIC_fc6aa329_b586_5ebb_9e85_3f6b84ebdf18
 #define WINRT_GENERIC_fc6aa329_b586_5ebb_9e85_3f6b84ebdf18
-template <> struct __declspec(uuid("fc6aa329-b586-5ebb-9e85-3f6b84ebdf18")) __declspec(novtable) TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> {};
+template <> struct __declspec(uuid("fc6aa329-b586-5ebb-9e85-3f6b84ebdf18")) __declspec(novtable) TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -80,14 +80,14 @@ template <> struct __declspec(uuid("d30691e6-60a0-59c9-8965-5bbe282e8208")) __de
 namespace Windows::Devices::Radios {
 
 struct IRadio :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadio>
 {
     IRadio(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadioStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadioStatics>
 {
     IRadioStatics(std::nullptr_t = nullptr) noexcept {}

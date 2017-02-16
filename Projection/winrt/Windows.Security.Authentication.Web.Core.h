@@ -92,12 +92,12 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebAccountMonit
         }
     }
 
-    HRESULT __stdcall add_DefaultSignInAccountChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_DefaultSignInAccountChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().DefaultSignInAccountChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().DefaultSignInAccountChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -850,14 +850,14 @@ template <typename D> void impl_IWebAccountMonitor<D>::Removed(event_token token
     check_hresult(WINRT_SHIM(IWebAccountMonitor)->remove_Removed(token));
 }
 
-template <typename D> event_token impl_IWebAccountMonitor<D>::DefaultSignInAccountChanged(const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IWebAccountMonitor<D>::DefaultSignInAccountChanged(const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IWebAccountMonitor)->add_DefaultSignInAccountChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IWebAccountMonitor> impl_IWebAccountMonitor<D>::DefaultSignInAccountChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IWebAccountMonitor> impl_IWebAccountMonitor<D>::DefaultSignInAccountChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IWebAccountMonitor>(this, &ABI::Windows::Security::Authentication::Web::Core::IWebAccountMonitor::remove_DefaultSignInAccountChanged, DefaultSignInAccountChanged(handler));
 }

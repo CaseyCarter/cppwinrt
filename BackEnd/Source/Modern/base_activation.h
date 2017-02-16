@@ -22,7 +22,7 @@ template <> struct traits<Windows::Foundation::IActivationFactory>
 template <typename D>
 struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Windows::Foundation::IActivationFactory>
 {
-    HRESULT __stdcall abi_ActivateInstance(abi_arg_out<Windows::IInspectable> instance) noexcept final
+    HRESULT __stdcall abi_ActivateInstance(abi_arg_out<Windows::Foundation::IInspectable> instance) noexcept final
     {
         try
         {

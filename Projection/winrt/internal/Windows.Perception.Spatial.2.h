@@ -71,7 +71,7 @@ template <> struct __declspec(uuid("b425d126-1069-563f-a863-44a30a8f071d")) __de
 
 #ifndef WINRT_GENERIC_dbb08ab5_6b40_55fb_83d3_50d5373a3b20
 #define WINRT_GENERIC_dbb08ab5_6b40_55fb_83d3_50d5373a3b20
-template <> struct __declspec(uuid("dbb08ab5-6b40-55fb-83d3-50d5373a3b20")) __declspec(novtable) TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> : impl_TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> {};
+template <> struct __declspec(uuid("dbb08ab5-6b40-55fb-83d3-50d5373a3b20")) __declspec(novtable) TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_34bf236c_e5d6_501f_8693_bc1d8d431d7e
@@ -130,112 +130,112 @@ template <> struct __declspec(uuid("3a950aa3-9c65-586e-af75-1acf07190e90")) __de
 namespace Windows::Perception::Spatial {
 
 struct ISpatialAnchor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialAnchor>
 {
     ISpatialAnchor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialAnchor2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialAnchor2>
 {
     ISpatialAnchor2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialAnchorManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialAnchorManagerStatics>
 {
     ISpatialAnchorManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialAnchorRawCoordinateSystemAdjustedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>
 {
     ISpatialAnchorRawCoordinateSystemAdjustedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialAnchorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialAnchorStatics>
 {
     ISpatialAnchorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialAnchorStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialAnchorStore>
 {
     ISpatialAnchorStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialAnchorTransferManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialAnchorTransferManagerStatics>
 {
     ISpatialAnchorTransferManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialBoundingVolume :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialBoundingVolume>
 {
     ISpatialBoundingVolume(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialBoundingVolumeStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialBoundingVolumeStatics>
 {
     ISpatialBoundingVolumeStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialCoordinateSystem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialCoordinateSystem>
 {
     ISpatialCoordinateSystem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialLocation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialLocation>
 {
     ISpatialLocation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialLocator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialLocator>
 {
     ISpatialLocator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialLocatorAttachedFrameOfReference :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialLocatorAttachedFrameOfReference>
 {
     ISpatialLocatorAttachedFrameOfReference(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialLocatorPositionalTrackingDeactivatingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialLocatorPositionalTrackingDeactivatingEventArgs>
 {
     ISpatialLocatorPositionalTrackingDeactivatingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialLocatorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialLocatorStatics>
 {
     ISpatialLocatorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialStationaryFrameOfReference :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialStationaryFrameOfReference>
 {
     ISpatialStationaryFrameOfReference(std::nullptr_t = nullptr) noexcept {}

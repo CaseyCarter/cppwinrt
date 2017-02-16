@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Perception::People {
 
 struct IHeadPose :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHeadPose>
 {
     IHeadPose(std::nullptr_t = nullptr) noexcept {}

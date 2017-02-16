@@ -45,21 +45,21 @@ template <> struct __declspec(uuid("67746c40-ade0-5981-ae23-104891748853")) __de
 namespace Windows::Security::Authentication::Identity {
 
 struct IEnterpriseKeyCredentialRegistrationInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEnterpriseKeyCredentialRegistrationInfo>
 {
     IEnterpriseKeyCredentialRegistrationInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEnterpriseKeyCredentialRegistrationManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEnterpriseKeyCredentialRegistrationManager>
 {
     IEnterpriseKeyCredentialRegistrationManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEnterpriseKeyCredentialRegistrationManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEnterpriseKeyCredentialRegistrationManagerStatics>
 {
     IEnterpriseKeyCredentialRegistrationManagerStatics(std::nullptr_t = nullptr) noexcept {}

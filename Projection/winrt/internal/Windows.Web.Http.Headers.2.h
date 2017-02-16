@@ -346,7 +346,7 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Web::Http::Headers {
 
 struct IHttpCacheDirectiveHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCacheDirectiveHeaderValueCollection>,
     impl::require<IHttpCacheDirectiveHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpNameValueHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue>>
 {
@@ -354,14 +354,14 @@ struct IHttpCacheDirectiveHeaderValueCollection :
 };
 
 struct IHttpChallengeHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpChallengeHeaderValue>
 {
     IHttpChallengeHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpChallengeHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpChallengeHeaderValueCollection>,
     impl::require<IHttpChallengeHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpChallengeHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpChallengeHeaderValue>>
 {
@@ -369,28 +369,28 @@ struct IHttpChallengeHeaderValueCollection :
 };
 
 struct IHttpChallengeHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpChallengeHeaderValueFactory>
 {
     IHttpChallengeHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpChallengeHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpChallengeHeaderValueStatics>
 {
     IHttpChallengeHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpConnectionOptionHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpConnectionOptionHeaderValue>
 {
     IHttpConnectionOptionHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpConnectionOptionHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpConnectionOptionHeaderValueCollection>,
     impl::require<IHttpConnectionOptionHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue>>
 {
@@ -398,28 +398,28 @@ struct IHttpConnectionOptionHeaderValueCollection :
 };
 
 struct IHttpConnectionOptionHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpConnectionOptionHeaderValueFactory>
 {
     IHttpConnectionOptionHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpConnectionOptionHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpConnectionOptionHeaderValueStatics>
 {
     IHttpConnectionOptionHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentCodingHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentCodingHeaderValue>
 {
     IHttpContentCodingHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentCodingHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentCodingHeaderValueCollection>,
     impl::require<IHttpContentCodingHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpContentCodingHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpContentCodingHeaderValue>>
 {
@@ -427,28 +427,28 @@ struct IHttpContentCodingHeaderValueCollection :
 };
 
 struct IHttpContentCodingHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentCodingHeaderValueFactory>
 {
     IHttpContentCodingHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentCodingHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentCodingHeaderValueStatics>
 {
     IHttpContentCodingHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentCodingWithQualityHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentCodingWithQualityHeaderValue>
 {
     IHttpContentCodingWithQualityHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentCodingWithQualityHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentCodingWithQualityHeaderValueCollection>,
     impl::require<IHttpContentCodingWithQualityHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue>>
 {
@@ -456,42 +456,42 @@ struct IHttpContentCodingWithQualityHeaderValueCollection :
 };
 
 struct IHttpContentCodingWithQualityHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentCodingWithQualityHeaderValueFactory>
 {
     IHttpContentCodingWithQualityHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentCodingWithQualityHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentCodingWithQualityHeaderValueStatics>
 {
     IHttpContentCodingWithQualityHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentDispositionHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentDispositionHeaderValue>
 {
     IHttpContentDispositionHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentDispositionHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentDispositionHeaderValueFactory>
 {
     IHttpContentDispositionHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentDispositionHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentDispositionHeaderValueStatics>
 {
     IHttpContentDispositionHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentHeaderCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentHeaderCollection>,
     impl::require<IHttpContentHeaderCollection, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>, Windows::Foundation::Collections::IMap<hstring, hstring>>
 {
@@ -499,35 +499,35 @@ struct IHttpContentHeaderCollection :
 };
 
 struct IHttpContentRangeHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentRangeHeaderValue>
 {
     IHttpContentRangeHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentRangeHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentRangeHeaderValueFactory>
 {
     IHttpContentRangeHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpContentRangeHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpContentRangeHeaderValueStatics>
 {
     IHttpContentRangeHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpCookiePairHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCookiePairHeaderValue>
 {
     IHttpCookiePairHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpCookiePairHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCookiePairHeaderValueCollection>,
     impl::require<IHttpCookiePairHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpCookiePairHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpCookiePairHeaderValue>>
 {
@@ -535,63 +535,63 @@ struct IHttpCookiePairHeaderValueCollection :
 };
 
 struct IHttpCookiePairHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCookiePairHeaderValueFactory>
 {
     IHttpCookiePairHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpCookiePairHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCookiePairHeaderValueStatics>
 {
     IHttpCookiePairHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpCredentialsHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCredentialsHeaderValue>
 {
     IHttpCredentialsHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpCredentialsHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCredentialsHeaderValueFactory>
 {
     IHttpCredentialsHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpCredentialsHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCredentialsHeaderValueStatics>
 {
     IHttpCredentialsHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpDateOrDeltaHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpDateOrDeltaHeaderValue>
 {
     IHttpDateOrDeltaHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpDateOrDeltaHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpDateOrDeltaHeaderValueStatics>
 {
     IHttpDateOrDeltaHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpExpectationHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpExpectationHeaderValue>
 {
     IHttpExpectationHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpExpectationHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpExpectationHeaderValueCollection>,
     impl::require<IHttpExpectationHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpExpectationHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpExpectationHeaderValue>>
 {
@@ -599,21 +599,21 @@ struct IHttpExpectationHeaderValueCollection :
 };
 
 struct IHttpExpectationHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpExpectationHeaderValueFactory>
 {
     IHttpExpectationHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpExpectationHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpExpectationHeaderValueStatics>
 {
     IHttpExpectationHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpLanguageHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpLanguageHeaderValueCollection>,
     impl::require<IHttpLanguageHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Globalization::Language>, Windows::Foundation::Collections::IVector<Windows::Globalization::Language>>
 {
@@ -621,14 +621,14 @@ struct IHttpLanguageHeaderValueCollection :
 };
 
 struct IHttpLanguageRangeWithQualityHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpLanguageRangeWithQualityHeaderValue>
 {
     IHttpLanguageRangeWithQualityHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpLanguageRangeWithQualityHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpLanguageRangeWithQualityHeaderValueCollection>,
     impl::require<IHttpLanguageRangeWithQualityHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue>>
 {
@@ -636,49 +636,49 @@ struct IHttpLanguageRangeWithQualityHeaderValueCollection :
 };
 
 struct IHttpLanguageRangeWithQualityHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpLanguageRangeWithQualityHeaderValueFactory>
 {
     IHttpLanguageRangeWithQualityHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpLanguageRangeWithQualityHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpLanguageRangeWithQualityHeaderValueStatics>
 {
     IHttpLanguageRangeWithQualityHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMediaTypeHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMediaTypeHeaderValue>
 {
     IHttpMediaTypeHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMediaTypeHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMediaTypeHeaderValueFactory>
 {
     IHttpMediaTypeHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMediaTypeHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMediaTypeHeaderValueStatics>
 {
     IHttpMediaTypeHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMediaTypeWithQualityHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMediaTypeWithQualityHeaderValue>
 {
     IHttpMediaTypeWithQualityHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMediaTypeWithQualityHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMediaTypeWithQualityHeaderValueCollection>,
     impl::require<IHttpMediaTypeWithQualityHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue>>
 {
@@ -686,21 +686,21 @@ struct IHttpMediaTypeWithQualityHeaderValueCollection :
 };
 
 struct IHttpMediaTypeWithQualityHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMediaTypeWithQualityHeaderValueFactory>
 {
     IHttpMediaTypeWithQualityHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMediaTypeWithQualityHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMediaTypeWithQualityHeaderValueStatics>
 {
     IHttpMediaTypeWithQualityHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpMethodHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpMethodHeaderValueCollection>,
     impl::require<IHttpMethodHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::HttpMethod>, Windows::Foundation::Collections::IVector<Windows::Web::Http::HttpMethod>>
 {
@@ -708,56 +708,56 @@ struct IHttpMethodHeaderValueCollection :
 };
 
 struct IHttpNameValueHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpNameValueHeaderValue>
 {
     IHttpNameValueHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpNameValueHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpNameValueHeaderValueFactory>
 {
     IHttpNameValueHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpNameValueHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpNameValueHeaderValueStatics>
 {
     IHttpNameValueHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpProductHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpProductHeaderValue>
 {
     IHttpProductHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpProductHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpProductHeaderValueFactory>
 {
     IHttpProductHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpProductHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpProductHeaderValueStatics>
 {
     IHttpProductHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpProductInfoHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpProductInfoHeaderValue>
 {
     IHttpProductInfoHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpProductInfoHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpProductInfoHeaderValueCollection>,
     impl::require<IHttpProductInfoHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpProductInfoHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpProductInfoHeaderValue>>
 {
@@ -765,21 +765,21 @@ struct IHttpProductInfoHeaderValueCollection :
 };
 
 struct IHttpProductInfoHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpProductInfoHeaderValueFactory>
 {
     IHttpProductInfoHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpProductInfoHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpProductInfoHeaderValueStatics>
 {
     IHttpProductInfoHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpRequestHeaderCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpRequestHeaderCollection>,
     impl::require<IHttpRequestHeaderCollection, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>, Windows::Foundation::Collections::IMap<hstring, hstring>>
 {
@@ -787,7 +787,7 @@ struct IHttpRequestHeaderCollection :
 };
 
 struct IHttpResponseHeaderCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpResponseHeaderCollection>,
     impl::require<IHttpResponseHeaderCollection, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>, Windows::Foundation::Collections::IMap<hstring, hstring>>
 {
@@ -795,14 +795,14 @@ struct IHttpResponseHeaderCollection :
 };
 
 struct IHttpTransferCodingHeaderValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpTransferCodingHeaderValue>
 {
     IHttpTransferCodingHeaderValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpTransferCodingHeaderValueCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpTransferCodingHeaderValueCollection>,
     impl::require<IHttpTransferCodingHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpTransferCodingHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpTransferCodingHeaderValue>>
 {
@@ -810,14 +810,14 @@ struct IHttpTransferCodingHeaderValueCollection :
 };
 
 struct IHttpTransferCodingHeaderValueFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpTransferCodingHeaderValueFactory>
 {
     IHttpTransferCodingHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpTransferCodingHeaderValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpTransferCodingHeaderValueStatics>
 {
     IHttpTransferCodingHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}

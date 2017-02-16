@@ -28,20 +28,20 @@ using TextSegment = ABI::Windows::Data::Text::TextSegment;
 
 namespace ABI::Windows::Data::Text {
 
-struct __declspec(uuid("47396c1e-51b9-4207-9146-248e636a1d1d")) __declspec(novtable) IAlternateWordForm : Windows::IInspectable
+struct __declspec(uuid("47396c1e-51b9-4207-9146-248e636a1d1d")) __declspec(novtable) IAlternateWordForm : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SourceTextSegment(Windows::Data::Text::TextSegment * value) = 0;
     virtual HRESULT __stdcall get_AlternateText(hstring * value) = 0;
     virtual HRESULT __stdcall get_NormalizationFormat(winrt::Windows::Data::Text::AlternateNormalizationFormat * value) = 0;
 };
 
-struct __declspec(uuid("916a4cb7-8aa7-4c78-b374-5dedb752e60b")) __declspec(novtable) ISelectableWordSegment : Windows::IInspectable
+struct __declspec(uuid("916a4cb7-8aa7-4c78-b374-5dedb752e60b")) __declspec(novtable) ISelectableWordSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
     virtual HRESULT __stdcall get_SourceTextSegment(Windows::Data::Text::TextSegment * value) = 0;
 };
 
-struct __declspec(uuid("f6dc31e7-4b13-45c5-8897-7d71269e085d")) __declspec(novtable) ISelectableWordsSegmenter : Windows::IInspectable
+struct __declspec(uuid("f6dc31e7-4b13-45c5-8897-7d71269e085d")) __declspec(novtable) ISelectableWordsSegmenter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResolvedLanguage(hstring * value) = 0;
     virtual HRESULT __stdcall abi_GetTokenAt(hstring text, uint32_t startIndex, Windows::Data::Text::ISelectableWordSegment ** result) = 0;
@@ -49,24 +49,24 @@ struct __declspec(uuid("f6dc31e7-4b13-45c5-8897-7d71269e085d")) __declspec(novta
     virtual HRESULT __stdcall abi_Tokenize(hstring text, uint32_t startIndex, Windows::Data::Text::SelectableWordSegmentsTokenizingHandler * handler) = 0;
 };
 
-struct __declspec(uuid("8c7a7648-6057-4339-bc70-f210010a4150")) __declspec(novtable) ISelectableWordsSegmenterFactory : Windows::IInspectable
+struct __declspec(uuid("8c7a7648-6057-4339-bc70-f210010a4150")) __declspec(novtable) ISelectableWordsSegmenterFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithLanguage(hstring language, Windows::Data::Text::ISelectableWordsSegmenter ** result) = 0;
 };
 
-struct __declspec(uuid("6a1cab51-1fb2-4909-80b8-35731a2b3e7f")) __declspec(novtable) ISemanticTextQuery : Windows::IInspectable
+struct __declspec(uuid("6a1cab51-1fb2-4909-80b8-35731a2b3e7f")) __declspec(novtable) ISemanticTextQuery : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Find(hstring content, Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> ** result) = 0;
     virtual HRESULT __stdcall abi_FindInProperty(hstring propertyContent, hstring propertyName, Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> ** result) = 0;
 };
 
-struct __declspec(uuid("238c0503-f995-4587-8777-a2b7d80acfef")) __declspec(novtable) ISemanticTextQueryFactory : Windows::IInspectable
+struct __declspec(uuid("238c0503-f995-4587-8777-a2b7d80acfef")) __declspec(novtable) ISemanticTextQueryFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring aqsFilter, Windows::Data::Text::ISemanticTextQuery ** result) = 0;
     virtual HRESULT __stdcall abi_CreateWithLanguage(hstring aqsFilter, hstring filterLanguage, Windows::Data::Text::ISemanticTextQuery ** result) = 0;
 };
 
-struct __declspec(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992")) __declspec(novtable) ITextConversionGenerator : Windows::IInspectable
+struct __declspec(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992")) __declspec(novtable) ITextConversionGenerator : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResolvedLanguage(hstring * value) = 0;
     virtual HRESULT __stdcall get_LanguageAvailableButNotInstalled(bool * value) = 0;
@@ -74,18 +74,18 @@ struct __declspec(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992")) __declspec(novta
     virtual HRESULT __stdcall abi_GetCandidatesWithMaxCountAsync(hstring input, uint32_t maxCandidates, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> ** result) = 0;
 };
 
-struct __declspec(uuid("fcaa3781-3083-49ab-be15-56dfbbb74d6f")) __declspec(novtable) ITextConversionGeneratorFactory : Windows::IInspectable
+struct __declspec(uuid("fcaa3781-3083-49ab-be15-56dfbbb74d6f")) __declspec(novtable) ITextConversionGeneratorFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring languageTag, Windows::Data::Text::ITextConversionGenerator ** result) = 0;
 };
 
-struct __declspec(uuid("9362a40a-9b7a-4569-94cf-d84f2f38cf9b")) __declspec(novtable) ITextPhoneme : Windows::IInspectable
+struct __declspec(uuid("9362a40a-9b7a-4569-94cf-d84f2f38cf9b")) __declspec(novtable) ITextPhoneme : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DisplayText(hstring * value) = 0;
     virtual HRESULT __stdcall get_ReadingText(hstring * value) = 0;
 };
 
-struct __declspec(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756")) __declspec(novtable) ITextPredictionGenerator : Windows::IInspectable
+struct __declspec(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756")) __declspec(novtable) ITextPredictionGenerator : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResolvedLanguage(hstring * value) = 0;
     virtual HRESULT __stdcall get_LanguageAvailableButNotInstalled(bool * value) = 0;
@@ -93,29 +93,29 @@ struct __declspec(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756")) __declspec(novta
     virtual HRESULT __stdcall abi_GetCandidatesWithMaxCountAsync(hstring input, uint32_t maxCandidates, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> ** result) = 0;
 };
 
-struct __declspec(uuid("7257b416-8ba2-4751-9d30-9d85435653a2")) __declspec(novtable) ITextPredictionGeneratorFactory : Windows::IInspectable
+struct __declspec(uuid("7257b416-8ba2-4751-9d30-9d85435653a2")) __declspec(novtable) ITextPredictionGeneratorFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring languageTag, Windows::Data::Text::ITextPredictionGenerator ** result) = 0;
 };
 
-struct __declspec(uuid("51e7f514-9c51-4d86-ae1b-b498fbad8313")) __declspec(novtable) ITextReverseConversionGenerator : Windows::IInspectable
+struct __declspec(uuid("51e7f514-9c51-4d86-ae1b-b498fbad8313")) __declspec(novtable) ITextReverseConversionGenerator : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResolvedLanguage(hstring * value) = 0;
     virtual HRESULT __stdcall get_LanguageAvailableButNotInstalled(bool * value) = 0;
     virtual HRESULT __stdcall abi_ConvertBackAsync(hstring input, Windows::Foundation::IAsyncOperation<hstring> ** result) = 0;
 };
 
-struct __declspec(uuid("1aafd2ec-85d6-46fd-828a-3a4830fa6e18")) __declspec(novtable) ITextReverseConversionGenerator2 : Windows::IInspectable
+struct __declspec(uuid("1aafd2ec-85d6-46fd-828a-3a4830fa6e18")) __declspec(novtable) ITextReverseConversionGenerator2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetPhonemesAsync(hstring input, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> ** result) = 0;
 };
 
-struct __declspec(uuid("63bed326-1fda-41f6-89d5-23ddea3c729a")) __declspec(novtable) ITextReverseConversionGeneratorFactory : Windows::IInspectable
+struct __declspec(uuid("63bed326-1fda-41f6-89d5-23ddea3c729a")) __declspec(novtable) ITextReverseConversionGeneratorFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring languageTag, Windows::Data::Text::ITextReverseConversionGenerator ** result) = 0;
 };
 
-struct __declspec(uuid("97909e87-9291-4f91-b6c8-b6e359d7a7fb")) __declspec(novtable) IUnicodeCharactersStatics : Windows::IInspectable
+struct __declspec(uuid("97909e87-9291-4f91-b6c8-b6e359d7a7fb")) __declspec(novtable) IUnicodeCharactersStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCodepointFromSurrogatePair(uint32_t highSurrogate, uint32_t lowSurrogate, uint32_t * codepoint) = 0;
     virtual HRESULT __stdcall abi_GetSurrogatePairFromCodepoint(uint32_t codepoint, wchar_t * highSurrogate, wchar_t * lowSurrogate) = 0;
@@ -136,14 +136,14 @@ struct __declspec(uuid("97909e87-9291-4f91-b6c8-b6e359d7a7fb")) __declspec(novta
     virtual HRESULT __stdcall abi_GetGeneralCategory(uint32_t codepoint, winrt::Windows::Data::Text::UnicodeGeneralCategory * value) = 0;
 };
 
-struct __declspec(uuid("d2d4ba6d-987c-4cc0-b6bd-d49a11b38f9a")) __declspec(novtable) IWordSegment : Windows::IInspectable
+struct __declspec(uuid("d2d4ba6d-987c-4cc0-b6bd-d49a11b38f9a")) __declspec(novtable) IWordSegment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
     virtual HRESULT __stdcall get_SourceTextSegment(Windows::Data::Text::TextSegment * value) = 0;
     virtual HRESULT __stdcall get_AlternateForms(Windows::Foundation::Collections::IVectorView<Windows::Data::Text::AlternateWordForm> ** value) = 0;
 };
 
-struct __declspec(uuid("86b4d4d1-b2fe-4e34-a81d-66640300454f")) __declspec(novtable) IWordsSegmenter : Windows::IInspectable
+struct __declspec(uuid("86b4d4d1-b2fe-4e34-a81d-66640300454f")) __declspec(novtable) IWordsSegmenter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResolvedLanguage(hstring * value) = 0;
     virtual HRESULT __stdcall abi_GetTokenAt(hstring text, uint32_t startIndex, Windows::Data::Text::IWordSegment ** result) = 0;
@@ -151,7 +151,7 @@ struct __declspec(uuid("86b4d4d1-b2fe-4e34-a81d-66640300454f")) __declspec(novta
     virtual HRESULT __stdcall abi_Tokenize(hstring text, uint32_t startIndex, Windows::Data::Text::WordSegmentsTokenizingHandler * handler) = 0;
 };
 
-struct __declspec(uuid("e6977274-fc35-455c-8bfb-6d7f4653ca97")) __declspec(novtable) IWordsSegmenterFactory : Windows::IInspectable
+struct __declspec(uuid("e6977274-fc35-455c-8bfb-6d7f4653ca97")) __declspec(novtable) IWordsSegmenterFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithLanguage(hstring language, Windows::Data::Text::IWordsSegmenter ** result) = 0;
 };

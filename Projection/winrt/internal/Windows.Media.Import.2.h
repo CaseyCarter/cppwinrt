@@ -271,70 +271,70 @@ template <> struct __declspec(uuid("72cde698-9247-5053-8cbd-d9076bfdfda5")) __de
 namespace Windows::Media::Import {
 
 struct IPhotoImportDeleteImportedItemsFromSourceResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportDeleteImportedItemsFromSourceResult>
 {
     IPhotoImportDeleteImportedItemsFromSourceResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportFindItemsResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportFindItemsResult>
 {
     IPhotoImportFindItemsResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportFindItemsResult2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportFindItemsResult2>
 {
     IPhotoImportFindItemsResult2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportImportItemsResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportImportItemsResult>
 {
     IPhotoImportImportItemsResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportItem>
 {
     IPhotoImportItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportItemImportedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportItemImportedEventArgs>
 {
     IPhotoImportItemImportedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportManagerStatics>
 {
     IPhotoImportManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportOperation>
 {
     IPhotoImportOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportSelectionChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportSelectionChangedEventArgs>
 {
     IPhotoImportSelectionChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportSession>,
     impl::require<IPhotoImportSession, Windows::Foundation::IClosable>
 {
@@ -342,42 +342,42 @@ struct IPhotoImportSession :
 };
 
 struct IPhotoImportSession2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportSession2>
 {
     IPhotoImportSession2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportSidecar :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportSidecar>
 {
     IPhotoImportSidecar(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportSource>
 {
     IPhotoImportSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportSourceStatics>
 {
     IPhotoImportSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportStorageMedium :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportStorageMedium>
 {
     IPhotoImportStorageMedium(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhotoImportVideoSegment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhotoImportVideoSegment>
 {
     IPhotoImportVideoSegment(std::nullptr_t = nullptr) noexcept {}

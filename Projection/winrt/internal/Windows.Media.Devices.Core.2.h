@@ -61,28 +61,28 @@ template <> struct __declspec(uuid("bd8eeadc-2dd9-5ad8-ac5d-f3b13b94b9c2")) __de
 namespace Windows::Media::Devices::Core {
 
 struct ICameraIntrinsics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICameraIntrinsics>
 {
     ICameraIntrinsics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICameraIntrinsics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICameraIntrinsics2>
 {
     ICameraIntrinsics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICameraIntrinsicsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICameraIntrinsicsFactory>
 {
     ICameraIntrinsicsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDepthCorrelatedCoordinateMapper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDepthCorrelatedCoordinateMapper>,
     impl::require<IDepthCorrelatedCoordinateMapper, Windows::Foundation::IClosable>
 {
@@ -90,105 +90,105 @@ struct IDepthCorrelatedCoordinateMapper :
 };
 
 struct IFrameControlCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameControlCapabilities>
 {
     IFrameControlCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameControlCapabilities2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameControlCapabilities2>
 {
     IFrameControlCapabilities2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameController>
 {
     IFrameController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameController2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameController2>
 {
     IFrameController2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameExposureCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameExposureCapabilities>
 {
     IFrameExposureCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameExposureCompensationCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameExposureCompensationCapabilities>
 {
     IFrameExposureCompensationCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameExposureCompensationControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameExposureCompensationControl>
 {
     IFrameExposureCompensationControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameExposureControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameExposureControl>
 {
     IFrameExposureControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameFlashCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameFlashCapabilities>
 {
     IFrameFlashCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameFlashControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameFlashControl>
 {
     IFrameFlashControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameFocusCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameFocusCapabilities>
 {
     IFrameFocusCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameFocusControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameFocusControl>
 {
     IFrameFocusControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameIsoSpeedCapabilities :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameIsoSpeedCapabilities>
 {
     IFrameIsoSpeedCapabilities(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameIsoSpeedControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameIsoSpeedControl>
 {
     IFrameIsoSpeedControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVariablePhotoSequenceController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVariablePhotoSequenceController>
 {
     IVariablePhotoSequenceController(std::nullptr_t = nullptr) noexcept {}

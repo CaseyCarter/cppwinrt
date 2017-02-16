@@ -101,9 +101,6 @@
     <ClInclude Include="Source\Modern\PragmaOnce.h">
       <Filter>Assets</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Modern\WindowsNumerics.impl.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Modern\WriteAbiClassDefault.h">
       <Filter>Assets</Filter>
     </ClInclude>
@@ -251,6 +248,54 @@
     <ClInclude Include="Source\Modern\base_chrono.h">
       <Filter>Assets</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Modern\base_delegate.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_propertyvalue.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_ppl.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_agile.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_await_produce.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_collections_impl.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_event_produce.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_std_async_action.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_std_async_action_with_progress.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_std_async_operation.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_std_async_operation_with_progress.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_std_fire_and_forget.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_std_hash.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\WriteDelegateForward.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\WriteInclude.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\WriteInterfaceConsumerForward.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\Modern\ConsoleHeader.txt">
@@ -363,9 +408,6 @@
     <None Include="Source\Modern\PostSql.sql">
       <Filter>Assets</Filter>
     </None>
-    <None Include="Source\Modern\WindowsNumerics.inl">
-      <Filter>Assets</Filter>
-    </None>
     <None Include="Source\Modern\DatabaseGetPublicConstructorMethods.sql">
       <Filter>Assets</Filter>
     </None>
@@ -373,6 +415,33 @@
       <Filter>Assets</Filter>
     </None>
     <None Include="Source\Modern\DatabaseGetStaticMethodDeclarations.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetClassOverrideIncludes.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetGenericInterfaceArguments.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetNamespaces.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetRequiredForwards.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetRequiredInterfaceHeaders.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetRequiredInterfaceIncludes.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetRequiredParamImpls.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetRequiredAbis.sql">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="Source\Modern\DatabaseGetRequiredDefinitions.sql">
       <Filter>Assets</Filter>
     </None>
   </ItemGroup>

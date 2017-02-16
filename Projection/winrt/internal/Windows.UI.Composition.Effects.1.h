@@ -11,7 +11,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Composition::Effects {
 
-struct __declspec(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a")) __declspec(novtable) ISceneLightingEffect : Windows::IInspectable
+struct __declspec(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a")) __declspec(novtable) ISceneLightingEffect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AmbientAmount(float * value) = 0;
     virtual HRESULT __stdcall put_AmbientAmount(float value) = 0;

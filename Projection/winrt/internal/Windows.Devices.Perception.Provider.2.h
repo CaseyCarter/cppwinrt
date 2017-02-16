@@ -45,7 +45,7 @@ template <> struct __declspec(uuid("c4db1093-d705-5503-8bce-68535cd42ffa")) __de
 
 namespace Windows::Devices::Perception::Provider {
 
-struct PerceptionStartFaceAuthenticationHandler : Windows::IUnknown
+struct PerceptionStartFaceAuthenticationHandler : Windows::Foundation::IUnknown
 {
     PerceptionStartFaceAuthenticationHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> PerceptionStartFaceAuthenticationHandler(L lambda);
@@ -54,7 +54,7 @@ struct PerceptionStartFaceAuthenticationHandler : Windows::IUnknown
     bool operator()(const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & sender) const;
 };
 
-struct PerceptionStopFaceAuthenticationHandler : Windows::IUnknown
+struct PerceptionStopFaceAuthenticationHandler : Windows::Foundation::IUnknown
 {
     PerceptionStopFaceAuthenticationHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> PerceptionStopFaceAuthenticationHandler(L lambda);
@@ -64,77 +64,77 @@ struct PerceptionStopFaceAuthenticationHandler : Windows::IUnknown
 };
 
 struct IKnownPerceptionFrameKindStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownPerceptionFrameKindStatics>
 {
     IKnownPerceptionFrameKindStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionControlGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionControlGroup>
 {
     IPerceptionControlGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionControlGroupFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionControlGroupFactory>
 {
     IPerceptionControlGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionCorrelation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionCorrelation>
 {
     IPerceptionCorrelation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionCorrelationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionCorrelationFactory>
 {
     IPerceptionCorrelationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionCorrelationGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionCorrelationGroup>
 {
     IPerceptionCorrelationGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionCorrelationGroupFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionCorrelationGroupFactory>
 {
     IPerceptionCorrelationGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionFaceAuthenticationGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionFaceAuthenticationGroup>
 {
     IPerceptionFaceAuthenticationGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionFaceAuthenticationGroupFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionFaceAuthenticationGroupFactory>
 {
     IPerceptionFaceAuthenticationGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionFrame>
 {
     IPerceptionFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionFrameProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionFrameProvider>,
     impl::require<IPerceptionFrameProvider, Windows::Foundation::IClosable>
 {
@@ -142,14 +142,14 @@ struct IPerceptionFrameProvider :
 };
 
 struct IPerceptionFrameProviderInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionFrameProviderInfo>
 {
     IPerceptionFrameProviderInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionFrameProviderManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionFrameProviderManager>,
     impl::require<IPerceptionFrameProviderManager, Windows::Foundation::IClosable>
 {
@@ -157,21 +157,21 @@ struct IPerceptionFrameProviderManager :
 };
 
 struct IPerceptionFrameProviderManagerServiceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionFrameProviderManagerServiceStatics>
 {
     IPerceptionFrameProviderManagerServiceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionPropertyChangeRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionPropertyChangeRequest>
 {
     IPerceptionPropertyChangeRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionVideoFrameAllocator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionVideoFrameAllocator>,
     impl::require<IPerceptionVideoFrameAllocator, Windows::Foundation::IClosable>
 {
@@ -179,7 +179,7 @@ struct IPerceptionVideoFrameAllocator :
 };
 
 struct IPerceptionVideoFrameAllocatorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionVideoFrameAllocatorFactory>
 {
     IPerceptionVideoFrameAllocatorFactory(std::nullptr_t = nullptr) noexcept {}

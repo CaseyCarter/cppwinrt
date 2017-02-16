@@ -49,13 +49,13 @@ using BitmapPlaneDescription = ABI::Windows::Graphics::Imaging::BitmapPlaneDescr
 
 namespace ABI::Windows::Graphics::Imaging {
 
-struct __declspec(uuid("a53e04c4-399c-438c-b28f-a63a6b83d1a1")) __declspec(novtable) IBitmapBuffer : Windows::IInspectable
+struct __declspec(uuid("a53e04c4-399c-438c-b28f-a63a6b83d1a1")) __declspec(novtable) IBitmapBuffer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetPlaneCount(int32_t * value) = 0;
     virtual HRESULT __stdcall abi_GetPlaneDescription(int32_t index, Windows::Graphics::Imaging::BitmapPlaneDescription * value) = 0;
 };
 
-struct __declspec(uuid("400caaf2-c4b0-4392-a3b0-6f6f9ba95cb4")) __declspec(novtable) IBitmapCodecInformation : Windows::IInspectable
+struct __declspec(uuid("400caaf2-c4b0-4392-a3b0-6f6f9ba95cb4")) __declspec(novtable) IBitmapCodecInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CodecId(GUID * value) = 0;
     virtual HRESULT __stdcall get_FileExtensions(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
@@ -63,7 +63,7 @@ struct __declspec(uuid("400caaf2-c4b0-4392-a3b0-6f6f9ba95cb4")) __declspec(novta
     virtual HRESULT __stdcall get_MimeTypes(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("acef22ba-1d74-4c91-9dfc-9620745233e6")) __declspec(novtable) IBitmapDecoder : Windows::IInspectable
+struct __declspec(uuid("acef22ba-1d74-4c91-9dfc-9620745233e6")) __declspec(novtable) IBitmapDecoder : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BitmapContainerProperties(Windows::Graphics::Imaging::IBitmapPropertiesView ** value) = 0;
     virtual HRESULT __stdcall get_DecoderInformation(Windows::Graphics::Imaging::IBitmapCodecInformation ** value) = 0;
@@ -72,7 +72,7 @@ struct __declspec(uuid("acef22ba-1d74-4c91-9dfc-9620745233e6")) __declspec(novta
     virtual HRESULT __stdcall abi_GetFrameAsync(uint32_t frameIndex, Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapFrame> ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("438ccb26-bcef-4e95-bad6-23a822e58d01")) __declspec(novtable) IBitmapDecoderStatics : Windows::IInspectable
+struct __declspec(uuid("438ccb26-bcef-4e95-bad6-23a822e58d01")) __declspec(novtable) IBitmapDecoderStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BmpDecoderId(GUID * value) = 0;
     virtual HRESULT __stdcall get_JpegDecoderId(GUID * value) = 0;
@@ -86,7 +86,7 @@ struct __declspec(uuid("438ccb26-bcef-4e95-bad6-23a822e58d01")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateWithIdAsync(GUID decoderId, Windows::Storage::Streams::IRandomAccessStream * stream, Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("2bc468e3-e1f8-4b54-95e8-32919551ce62")) __declspec(novtable) IBitmapEncoder : Windows::IInspectable
+struct __declspec(uuid("2bc468e3-e1f8-4b54-95e8-32919551ce62")) __declspec(novtable) IBitmapEncoder : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EncoderInformation(Windows::Graphics::Imaging::IBitmapCodecInformation ** value) = 0;
     virtual HRESULT __stdcall get_BitmapProperties(Windows::Graphics::Imaging::IBitmapProperties ** value) = 0;
@@ -104,7 +104,7 @@ struct __declspec(uuid("2bc468e3-e1f8-4b54-95e8-32919551ce62")) __declspec(novta
     virtual HRESULT __stdcall abi_FlushAsync(Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("a74356a7-a4e4-4eb9-8e40-564de7e1ccb2")) __declspec(novtable) IBitmapEncoderStatics : Windows::IInspectable
+struct __declspec(uuid("a74356a7-a4e4-4eb9-8e40-564de7e1ccb2")) __declspec(novtable) IBitmapEncoderStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BmpEncoderId(GUID * value) = 0;
     virtual HRESULT __stdcall get_JpegEncoderId(GUID * value) = 0;
@@ -119,12 +119,12 @@ struct __declspec(uuid("a74356a7-a4e4-4eb9-8e40-564de7e1ccb2")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateForInPlacePropertyEncodingAsync(Windows::Graphics::Imaging::IBitmapDecoder * bitmapDecoder, Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("686cd241-4330-4c77-ace4-0334968b1768")) __declspec(novtable) IBitmapEncoderWithSoftwareBitmap : Windows::IInspectable
+struct __declspec(uuid("686cd241-4330-4c77-ace4-0334968b1768")) __declspec(novtable) IBitmapEncoderWithSoftwareBitmap : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetSoftwareBitmap(Windows::Graphics::Imaging::ISoftwareBitmap * bitmap) = 0;
 };
 
-struct __declspec(uuid("72a49a1c-8081-438d-91bc-94ecfc8185c6")) __declspec(novtable) IBitmapFrame : Windows::IInspectable
+struct __declspec(uuid("72a49a1c-8081-438d-91bc-94ecfc8185c6")) __declspec(novtable) IBitmapFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetThumbnailAsync(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream> ** asyncInfo) = 0;
     virtual HRESULT __stdcall get_BitmapProperties(Windows::Graphics::Imaging::IBitmapPropertiesView ** value) = 0;
@@ -140,24 +140,24 @@ struct __declspec(uuid("72a49a1c-8081-438d-91bc-94ecfc8185c6")) __declspec(novta
     virtual HRESULT __stdcall abi_GetPixelDataTransformedAsync(winrt::Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, winrt::Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, Windows::Graphics::Imaging::IBitmapTransform * transform, winrt::Windows::Graphics::Imaging::ExifOrientationMode exifOrientationMode, winrt::Windows::Graphics::Imaging::ColorManagementMode colorManagementMode, Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::PixelDataProvider> ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("fe287c9a-420c-4963-87ad-691436e08383")) __declspec(novtable) IBitmapFrameWithSoftwareBitmap : Windows::IInspectable
+struct __declspec(uuid("fe287c9a-420c-4963-87ad-691436e08383")) __declspec(novtable) IBitmapFrameWithSoftwareBitmap : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetSoftwareBitmapAsync(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> ** value) = 0;
     virtual HRESULT __stdcall abi_GetSoftwareBitmapConvertedAsync(winrt::Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, winrt::Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> ** value) = 0;
     virtual HRESULT __stdcall abi_GetSoftwareBitmapTransformedAsync(winrt::Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, winrt::Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, Windows::Graphics::Imaging::IBitmapTransform * transform, winrt::Windows::Graphics::Imaging::ExifOrientationMode exifOrientationMode, winrt::Windows::Graphics::Imaging::ColorManagementMode colorManagementMode, Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> ** value) = 0;
 };
 
-struct __declspec(uuid("ea9f4f1b-b505-4450-a4d1-e8ca94529d8d")) __declspec(novtable) IBitmapProperties : Windows::IInspectable
+struct __declspec(uuid("ea9f4f1b-b505-4450-a4d1-e8ca94529d8d")) __declspec(novtable) IBitmapProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetPropertiesAsync(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> * propertiesToSet, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("7e0fe87a-3a70-48f8-9c55-196cf5a545f5")) __declspec(novtable) IBitmapPropertiesView : Windows::IInspectable
+struct __declspec(uuid("7e0fe87a-3a70-48f8-9c55-196cf5a545f5")) __declspec(novtable) IBitmapPropertiesView : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetPropertiesAsync(Windows::Foundation::Collections::IIterable<hstring> * propertiesToRetrieve, Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet> ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("ae755344-e268-4d35-adcf-e995d31a8d34")) __declspec(novtable) IBitmapTransform : Windows::IInspectable
+struct __declspec(uuid("ae755344-e268-4d35-adcf-e995d31a8d34")) __declspec(novtable) IBitmapTransform : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ScaledWidth(uint32_t * value) = 0;
     virtual HRESULT __stdcall put_ScaledWidth(uint32_t value) = 0;
@@ -173,23 +173,23 @@ struct __declspec(uuid("ae755344-e268-4d35-adcf-e995d31a8d34")) __declspec(novta
     virtual HRESULT __stdcall put_Bounds(Windows::Graphics::Imaging::BitmapBounds value) = 0;
 };
 
-struct __declspec(uuid("cd8044a9-2443-4000-b0cd-79316c56f589")) __declspec(novtable) IBitmapTypedValue : Windows::IInspectable
+struct __declspec(uuid("cd8044a9-2443-4000-b0cd-79316c56f589")) __declspec(novtable) IBitmapTypedValue : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Value(Windows::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall get_Value(Windows::Foundation::IInspectable ** value) = 0;
     virtual HRESULT __stdcall get_Type(winrt::Windows::Foundation::PropertyType * value) = 0;
 };
 
-struct __declspec(uuid("92dbb599-ce13-46bb-9545-cb3a3f63eb8b")) __declspec(novtable) IBitmapTypedValueFactory : Windows::IInspectable
+struct __declspec(uuid("92dbb599-ce13-46bb-9545-cb3a3f63eb8b")) __declspec(novtable) IBitmapTypedValueFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_Create(Windows::IInspectable * value, winrt::Windows::Foundation::PropertyType type, Windows::Graphics::Imaging::IBitmapTypedValue ** bitmapTypedValue) = 0;
+    virtual HRESULT __stdcall abi_Create(Windows::Foundation::IInspectable * value, winrt::Windows::Foundation::PropertyType type, Windows::Graphics::Imaging::IBitmapTypedValue ** bitmapTypedValue) = 0;
 };
 
-struct __declspec(uuid("dd831f25-185c-4595-9fb9-ccbe6ec18a6f")) __declspec(novtable) IPixelDataProvider : Windows::IInspectable
+struct __declspec(uuid("dd831f25-185c-4595-9fb9-ccbe6ec18a6f")) __declspec(novtable) IPixelDataProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_DetachPixelData(uint32_t * __pixelDataSize, uint8_t ** pixelData) = 0;
 };
 
-struct __declspec(uuid("689e0708-7eef-483f-963f-da938818e073")) __declspec(novtable) ISoftwareBitmap : Windows::IInspectable
+struct __declspec(uuid("689e0708-7eef-483f-963f-da938818e073")) __declspec(novtable) ISoftwareBitmap : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BitmapPixelFormat(winrt::Windows::Graphics::Imaging::BitmapPixelFormat * value) = 0;
     virtual HRESULT __stdcall get_BitmapAlphaMode(winrt::Windows::Graphics::Imaging::BitmapAlphaMode * value) = 0;
@@ -207,13 +207,13 @@ struct __declspec(uuid("689e0708-7eef-483f-963f-da938818e073")) __declspec(novta
     virtual HRESULT __stdcall abi_GetReadOnlyView(Windows::Graphics::Imaging::ISoftwareBitmap ** value) = 0;
 };
 
-struct __declspec(uuid("c99feb69-2d62-4d47-a6b3-4fdb6a07fdf8")) __declspec(novtable) ISoftwareBitmapFactory : Windows::IInspectable
+struct __declspec(uuid("c99feb69-2d62-4d47-a6b3-4fdb6a07fdf8")) __declspec(novtable) ISoftwareBitmapFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(winrt::Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::ISoftwareBitmap ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAlpha(winrt::Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, winrt::Windows::Graphics::Imaging::BitmapAlphaMode alpha, Windows::Graphics::Imaging::ISoftwareBitmap ** value) = 0;
 };
 
-struct __declspec(uuid("df0385db-672f-4a9d-806e-c2442f343e86")) __declspec(novtable) ISoftwareBitmapStatics : Windows::IInspectable
+struct __declspec(uuid("df0385db-672f-4a9d-806e-c2442f343e86")) __declspec(novtable) ISoftwareBitmapStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Copy(Windows::Graphics::Imaging::ISoftwareBitmap * source, Windows::Graphics::Imaging::ISoftwareBitmap ** value) = 0;
     virtual HRESULT __stdcall abi_Convert(Windows::Graphics::Imaging::ISoftwareBitmap * source, winrt::Windows::Graphics::Imaging::BitmapPixelFormat format, Windows::Graphics::Imaging::ISoftwareBitmap ** value) = 0;
@@ -385,14 +385,14 @@ struct WINRT_EBO impl_IBitmapTransform
 template <typename D>
 struct WINRT_EBO impl_IBitmapTypedValue
 {
-    Windows::IInspectable Value() const;
+    Windows::Foundation::IInspectable Value() const;
     Windows::Foundation::PropertyType Type() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IBitmapTypedValueFactory
 {
-    Windows::Graphics::Imaging::BitmapTypedValue Create(const Windows::IInspectable & value, Windows::Foundation::PropertyType type) const;
+    Windows::Graphics::Imaging::BitmapTypedValue Create(const Windows::Foundation::IInspectable & value, Windows::Foundation::PropertyType type) const;
 };
 
 template <typename D>

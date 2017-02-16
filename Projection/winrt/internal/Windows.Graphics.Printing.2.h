@@ -42,7 +42,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_4cc141d4_c0d9_5220_b1ce_80fff3bd2d44
 #define WINRT_GENERIC_4cc141d4_c0d9_5220_b1ce_80fff3bd2d44
-template <> struct __declspec(uuid("4cc141d4-c0d9-5220-b1ce-80fff3bd2d44")) __declspec(novtable) TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> : impl_TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> {};
+template <> struct __declspec(uuid("4cc141d4-c0d9-5220-b1ce-80fff3bd2d44")) __declspec(novtable) TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c08d0524_5899_536c_8f46_55fdaa4cf78b
@@ -80,7 +80,7 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 
 namespace Windows::Graphics::Printing {
 
-struct PrintTaskSourceRequestedHandler : Windows::IUnknown
+struct PrintTaskSourceRequestedHandler : Windows::Foundation::IUnknown
 {
     PrintTaskSourceRequestedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> PrintTaskSourceRequestedHandler(L lambda);
@@ -90,147 +90,147 @@ struct PrintTaskSourceRequestedHandler : Windows::IUnknown
 };
 
 struct IPrintDocumentSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintDocumentSource>
 {
     IPrintDocumentSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintManager>
 {
     IPrintManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintManagerStatic :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintManagerStatic>
 {
     IPrintManagerStatic(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintManagerStatic2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintManagerStatic2>
 {
     IPrintManagerStatic2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintPageInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintPageInfo>
 {
     IPrintPageInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTask :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTask>
 {
     IPrintTask(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTask2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTask2>
 {
     IPrintTask2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskCompletedEventArgs>
 {
     IPrintTaskCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskOptions>
 {
     IPrintTaskOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskOptionsCore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskOptionsCore>
 {
     IPrintTaskOptionsCore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskOptionsCoreProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskOptionsCoreProperties>
 {
     IPrintTaskOptionsCoreProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskOptionsCoreUIConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskOptionsCoreUIConfiguration>
 {
     IPrintTaskOptionsCoreUIConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskProgressingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskProgressingEventArgs>
 {
     IPrintTaskProgressingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskRequest>
 {
     IPrintTaskRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskRequestedDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskRequestedDeferral>
 {
     IPrintTaskRequestedDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskRequestedEventArgs>
 {
     IPrintTaskRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskSourceRequestedArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskSourceRequestedArgs>
 {
     IPrintTaskSourceRequestedArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskSourceRequestedDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskSourceRequestedDeferral>
 {
     IPrintTaskSourceRequestedDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskTargetDeviceSupport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskTargetDeviceSupport>
 {
     IPrintTaskTargetDeviceSupport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStandardPrintTaskOptionsStatic :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStandardPrintTaskOptionsStatic>
 {
     IStandardPrintTaskOptionsStatic(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStandardPrintTaskOptionsStatic2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStandardPrintTaskOptionsStatic2>
 {
     IStandardPrintTaskOptionsStatic2(std::nullptr_t = nullptr) noexcept {}

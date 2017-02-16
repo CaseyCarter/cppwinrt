@@ -510,12 +510,12 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<D, Windows::Media::Playback::IMediaBreakSchedule>
 {
-    HRESULT __stdcall add_ScheduleChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ScheduleChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ScheduleChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ScheduleChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1476,12 +1476,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerCommandB
         }
     }
 
-    HRESULT __stdcall add_IsEnabledChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_IsEnabledChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().IsEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().IsEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2707,12 +2707,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList2> : produce_base<
 template <typename D>
 struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_base<D, Windows::Media::Playback::IMediaPlaybackSession>
 {
-    HRESULT __stdcall add_PlaybackStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_PlaybackStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().PlaybackStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().PlaybackStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -2735,12 +2735,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_PlaybackRateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_PlaybackRateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().PlaybackRateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().PlaybackRateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -2763,12 +2763,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_SeekCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_SeekCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().SeekCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().SeekCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -2791,12 +2791,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_BufferingStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_BufferingStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().BufferingStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().BufferingStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -2819,12 +2819,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_BufferingEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_BufferingEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().BufferingEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().BufferingEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -2847,12 +2847,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_BufferingProgressChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_BufferingProgressChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().BufferingProgressChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().BufferingProgressChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -2875,12 +2875,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_DownloadProgressChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_DownloadProgressChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().DownloadProgressChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().DownloadProgressChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -2903,12 +2903,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_NaturalDurationChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_NaturalDurationChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().NaturalDurationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().NaturalDurationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -2931,12 +2931,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_PositionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_PositionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().PositionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().PositionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -2959,12 +2959,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_NaturalVideoSizeChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_NaturalVideoSizeChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().NaturalVideoSizeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().NaturalVideoSizeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -3575,12 +3575,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_MediaOpened(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_MediaOpened(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().MediaOpened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().MediaOpened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -3603,12 +3603,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_MediaEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_MediaEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().MediaEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().MediaEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -3659,12 +3659,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_CurrentStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_CurrentStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().CurrentStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().CurrentStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -3743,12 +3743,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_VolumeChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_VolumeChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().VolumeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().VolumeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -3771,12 +3771,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_SeekCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_SeekCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().SeekCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().SeekCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -3799,12 +3799,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_BufferingStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_BufferingStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().BufferingStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().BufferingStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -3827,12 +3827,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_BufferingEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_BufferingEnded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().BufferingEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().BufferingEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -3976,12 +3976,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer2> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Windows::Media::Playback::IMediaPlayer3>
 {
-    HRESULT __stdcall add_IsMutedChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_IsMutedChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().IsMutedChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().IsMutedChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -4004,12 +4004,12 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_SourceChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_SourceChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().SourceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().SourceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -5028,14 +5028,14 @@ template <typename D> Windows::Media::Playback::PlaybackMediaMarkerSequence impl
     return value;
 }
 
-template <typename D> event_token impl_IMediaPlayer<D>::MediaOpened(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlayer<D>::MediaOpened(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlayer)->add_MediaOpened(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::MediaOpened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::MediaOpened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlayer>(this, &ABI::Windows::Media::Playback::IMediaPlayer::remove_MediaOpened, MediaOpened(value));
 }
@@ -5045,14 +5045,14 @@ template <typename D> void impl_IMediaPlayer<D>::MediaOpened(event_token token) 
     check_hresult(WINRT_SHIM(IMediaPlayer)->remove_MediaOpened(token));
 }
 
-template <typename D> event_token impl_IMediaPlayer<D>::MediaEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlayer<D>::MediaEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlayer)->add_MediaEnded(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::MediaEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::MediaEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlayer>(this, &ABI::Windows::Media::Playback::IMediaPlayer::remove_MediaEnded, MediaEnded(value));
 }
@@ -5079,14 +5079,14 @@ template <typename D> void impl_IMediaPlayer<D>::MediaFailed(event_token token) 
     check_hresult(WINRT_SHIM(IMediaPlayer)->remove_MediaFailed(token));
 }
 
-template <typename D> event_token impl_IMediaPlayer<D>::CurrentStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlayer<D>::CurrentStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlayer)->add_CurrentStateChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::CurrentStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::CurrentStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlayer>(this, &ABI::Windows::Media::Playback::IMediaPlayer::remove_CurrentStateChanged, CurrentStateChanged(value));
 }
@@ -5130,14 +5130,14 @@ template <typename D> void impl_IMediaPlayer<D>::MediaPlayerRateChanged(event_to
     check_hresult(WINRT_SHIM(IMediaPlayer)->remove_MediaPlayerRateChanged(token));
 }
 
-template <typename D> event_token impl_IMediaPlayer<D>::VolumeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlayer<D>::VolumeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlayer)->add_VolumeChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::VolumeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::VolumeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlayer>(this, &ABI::Windows::Media::Playback::IMediaPlayer::remove_VolumeChanged, VolumeChanged(value));
 }
@@ -5147,14 +5147,14 @@ template <typename D> void impl_IMediaPlayer<D>::VolumeChanged(event_token token
     check_hresult(WINRT_SHIM(IMediaPlayer)->remove_VolumeChanged(token));
 }
 
-template <typename D> event_token impl_IMediaPlayer<D>::SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlayer<D>::SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlayer)->add_SeekCompleted(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlayer>(this, &ABI::Windows::Media::Playback::IMediaPlayer::remove_SeekCompleted, SeekCompleted(value));
 }
@@ -5164,14 +5164,14 @@ template <typename D> void impl_IMediaPlayer<D>::SeekCompleted(event_token token
     check_hresult(WINRT_SHIM(IMediaPlayer)->remove_SeekCompleted(token));
 }
 
-template <typename D> event_token impl_IMediaPlayer<D>::BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlayer<D>::BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlayer)->add_BufferingStarted(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlayer>(this, &ABI::Windows::Media::Playback::IMediaPlayer::remove_BufferingStarted, BufferingStarted(value));
 }
@@ -5181,14 +5181,14 @@ template <typename D> void impl_IMediaPlayer<D>::BufferingStarted(event_token to
     check_hresult(WINRT_SHIM(IMediaPlayer)->remove_BufferingStarted(token));
 }
 
-template <typename D> event_token impl_IMediaPlayer<D>::BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlayer<D>::BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlayer)->add_BufferingEnded(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlayer>(this, &ABI::Windows::Media::Playback::IMediaPlayer::remove_BufferingEnded, BufferingEnded(value));
 }
@@ -5244,14 +5244,14 @@ template <typename D> void impl_IMediaPlayer2<D>::AudioDeviceType(Windows::Media
     check_hresult(WINRT_SHIM(IMediaPlayer2)->put_AudioDeviceType(value));
 }
 
-template <typename D> event_token impl_IMediaPlayer3<D>::IsMutedChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlayer3<D>::IsMutedChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlayer3)->add_IsMutedChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlayer3> impl_IMediaPlayer3<D>::IsMutedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlayer3> impl_IMediaPlayer3<D>::IsMutedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlayer3>(this, &ABI::Windows::Media::Playback::IMediaPlayer3::remove_IsMutedChanged, IsMutedChanged(value));
 }
@@ -5261,14 +5261,14 @@ template <typename D> void impl_IMediaPlayer3<D>::IsMutedChanged(event_token tok
     check_hresult(WINRT_SHIM(IMediaPlayer3)->remove_IsMutedChanged(token));
 }
 
-template <typename D> event_token impl_IMediaPlayer3<D>::SourceChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlayer3<D>::SourceChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlayer3)->add_SourceChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlayer3> impl_IMediaPlayer3<D>::SourceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlayer3> impl_IMediaPlayer3<D>::SourceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlayer3>(this, &ABI::Windows::Media::Playback::IMediaPlayer3::remove_SourceChanged, SourceChanged(value));
 }
@@ -5400,14 +5400,14 @@ template <typename D> Windows::Media::Playback::MediaPlayerSurface impl_IMediaPl
     return result;
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::PlaybackStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::PlaybackStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_PlaybackStateChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::PlaybackStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::PlaybackStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_PlaybackStateChanged, PlaybackStateChanged(value));
 }
@@ -5417,14 +5417,14 @@ template <typename D> void impl_IMediaPlaybackSession<D>::PlaybackStateChanged(e
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_PlaybackStateChanged(token));
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::PlaybackRateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::PlaybackRateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_PlaybackRateChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::PlaybackRateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::PlaybackRateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_PlaybackRateChanged, PlaybackRateChanged(value));
 }
@@ -5434,14 +5434,14 @@ template <typename D> void impl_IMediaPlaybackSession<D>::PlaybackRateChanged(ev
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_PlaybackRateChanged(token));
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_SeekCompleted(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_SeekCompleted, SeekCompleted(value));
 }
@@ -5451,14 +5451,14 @@ template <typename D> void impl_IMediaPlaybackSession<D>::SeekCompleted(event_to
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_SeekCompleted(token));
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_BufferingStarted(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_BufferingStarted, BufferingStarted(value));
 }
@@ -5468,14 +5468,14 @@ template <typename D> void impl_IMediaPlaybackSession<D>::BufferingStarted(event
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_BufferingStarted(token));
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_BufferingEnded(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_BufferingEnded, BufferingEnded(value));
 }
@@ -5485,14 +5485,14 @@ template <typename D> void impl_IMediaPlaybackSession<D>::BufferingEnded(event_t
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_BufferingEnded(token));
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::BufferingProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::BufferingProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_BufferingProgressChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::BufferingProgressChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::BufferingProgressChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_BufferingProgressChanged, BufferingProgressChanged(value));
 }
@@ -5502,14 +5502,14 @@ template <typename D> void impl_IMediaPlaybackSession<D>::BufferingProgressChang
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_BufferingProgressChanged(token));
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::DownloadProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::DownloadProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_DownloadProgressChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::DownloadProgressChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::DownloadProgressChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_DownloadProgressChanged, DownloadProgressChanged(value));
 }
@@ -5519,14 +5519,14 @@ template <typename D> void impl_IMediaPlaybackSession<D>::DownloadProgressChange
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_DownloadProgressChanged(token));
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::NaturalDurationChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::NaturalDurationChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_NaturalDurationChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::NaturalDurationChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::NaturalDurationChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_NaturalDurationChanged, NaturalDurationChanged(value));
 }
@@ -5536,14 +5536,14 @@ template <typename D> void impl_IMediaPlaybackSession<D>::NaturalDurationChanged
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_NaturalDurationChanged(token));
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_PositionChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::PositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::PositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_PositionChanged, PositionChanged(value));
 }
@@ -5553,14 +5553,14 @@ template <typename D> void impl_IMediaPlaybackSession<D>::PositionChanged(event_
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_PositionChanged(token));
 }
 
-template <typename D> event_token impl_IMediaPlaybackSession<D>::NaturalVideoSizeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IMediaPlaybackSession<D>::NaturalVideoSizeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_NaturalVideoSizeChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::NaturalVideoSizeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSession<D>::NaturalVideoSizeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackSession>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession::remove_NaturalVideoSizeChanged, NaturalVideoSizeChanged(value));
 }
@@ -6204,14 +6204,14 @@ template <typename D> void impl_IMediaPlaybackCommandManagerCommandBehavior<D>::
     check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerCommandBehavior)->put_EnablingRule(value));
 }
 
-template <typename D> event_token impl_IMediaPlaybackCommandManagerCommandBehavior<D>::IsEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMediaPlaybackCommandManagerCommandBehavior<D>::IsEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerCommandBehavior)->add_IsEnabledChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaPlaybackCommandManagerCommandBehavior> impl_IMediaPlaybackCommandManagerCommandBehavior<D>::IsEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMediaPlaybackCommandManagerCommandBehavior> impl_IMediaPlaybackCommandManagerCommandBehavior<D>::IsEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMediaPlaybackCommandManagerCommandBehavior>(this, &ABI::Windows::Media::Playback::IMediaPlaybackCommandManagerCommandBehavior::remove_IsEnabledChanged, IsEnabledChanged(handler));
 }
@@ -6729,14 +6729,14 @@ template <typename D> void impl_IMediaBreak<D>::CanStart(bool value) const
     check_hresult(WINRT_SHIM(IMediaBreak)->put_CanStart(value));
 }
 
-template <typename D> event_token impl_IMediaBreakSchedule<D>::ScheduleChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMediaBreakSchedule<D>::ScheduleChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaBreakSchedule)->add_ScheduleChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaBreakSchedule> impl_IMediaBreakSchedule<D>::ScheduleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMediaBreakSchedule> impl_IMediaBreakSchedule<D>::ScheduleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMediaBreakSchedule>(this, &ABI::Windows::Media::Playback::IMediaBreakSchedule::remove_ScheduleChanged, ScheduleChanged(handler));
 }

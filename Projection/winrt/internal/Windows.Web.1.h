@@ -13,12 +13,12 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Web {
 
-struct __declspec(uuid("b0aba86a-9aeb-4d3a-9590-003e3ca7e290")) __declspec(novtable) IUriToStreamResolver : Windows::IInspectable
+struct __declspec(uuid("b0aba86a-9aeb-4d3a-9590-003e3ca7e290")) __declspec(novtable) IUriToStreamResolver : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_UriToStreamAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> ** operation) = 0;
 };
 
-struct __declspec(uuid("fe616766-bf27-4064-87b7-6563bb11ce2e")) __declspec(novtable) IWebErrorStatics : Windows::IInspectable
+struct __declspec(uuid("fe616766-bf27-4064-87b7-6563bb11ce2e")) __declspec(novtable) IWebErrorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetStatus(int32_t hresult, winrt::Windows::Web::WebErrorStatus * status) = 0;
 };

@@ -38,9 +38,9 @@ struct PlatformDiagnosticsAndUsageDataSettings
 {
     PlatformDiagnosticsAndUsageDataSettings() = delete;
     static Windows::System::Profile::PlatformDataCollectionLevel CollectionLevel();
-    static event_token CollectionLevelChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static event_token CollectionLevelChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     using CollectionLevelChanged_revoker = factory_event_revoker<IPlatformDiagnosticsAndUsageDataSettingsStatics>;
-    static CollectionLevelChanged_revoker CollectionLevelChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static CollectionLevelChanged_revoker CollectionLevelChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     static void CollectionLevelChanged(event_token token);
     static bool CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel level);
 };

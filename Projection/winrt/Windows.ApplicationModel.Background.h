@@ -608,7 +608,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
         }
     }
 
-    HRESULT __stdcall get_TriggerDetails(impl::abi_arg_out<Windows::IInspectable> triggerDetails) noexcept override
+    HRESULT __stdcall get_TriggerDetails(impl::abi_arg_out<Windows::Foundation::IInspectable> triggerDetails) noexcept override
     {
         try
         {
@@ -2075,9 +2075,9 @@ template <typename D> void impl_IBackgroundTaskInstance<D>::Progress(uint32_t va
     check_hresult(WINRT_SHIM(IBackgroundTaskInstance)->put_Progress(value));
 }
 
-template <typename D> Windows::IInspectable impl_IBackgroundTaskInstance<D>::TriggerDetails() const
+template <typename D> Windows::Foundation::IInspectable impl_IBackgroundTaskInstance<D>::TriggerDetails() const
 {
-    Windows::IInspectable triggerDetails;
+    Windows::Foundation::IInspectable triggerDetails;
     check_hresult(WINRT_SHIM(IBackgroundTaskInstance)->get_TriggerDetails(put_abi(triggerDetails)));
     return triggerDetails;
 }

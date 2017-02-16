@@ -89,7 +89,7 @@ struct produce<D, Windows::Foundation::IDeferralFactory> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::Foundation::IGetActivationFactory> : produce_base<D, Windows::Foundation::IGetActivationFactory>
 {
-    HRESULT __stdcall abi_GetActivationFactory(impl::abi_arg_in<hstring> activatableClassId, impl::abi_arg_out<Windows::IInspectable> factory) noexcept override
+    HRESULT __stdcall abi_GetActivationFactory(impl::abi_arg_in<hstring> activatableClassId, impl::abi_arg_out<Windows::Foundation::IInspectable> factory) noexcept override
     {
         try
         {
@@ -160,12 +160,12 @@ struct produce<D, Windows::Foundation::IMemoryBufferReference> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_Closed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_Closed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -855,9 +855,9 @@ template <typename D> Windows::Foundation::WwwFormUrlDecoder impl_IWwwFormUrlDec
     return instance;
 }
 
-template <typename D> Windows::IInspectable impl_IGetActivationFactory<D>::GetActivationFactory(hstring_view activatableClassId) const
+template <typename D> Windows::Foundation::IInspectable impl_IGetActivationFactory<D>::GetActivationFactory(hstring_view activatableClassId) const
 {
-    Windows::IInspectable factory;
+    Windows::Foundation::IInspectable factory;
     check_hresult(WINRT_SHIM(IGetActivationFactory)->abi_GetActivationFactory(get_abi(activatableClassId), put_abi(factory)));
     return factory;
 }
@@ -869,14 +869,14 @@ template <typename D> uint32_t impl_IMemoryBufferReference<D>::Capacity() const
     return value;
 }
 
-template <typename D> event_token impl_IMemoryBufferReference<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMemoryBufferReference<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IMemoryBufferReference)->add_Closed(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IMemoryBufferReference> impl_IMemoryBufferReference<D>::Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMemoryBufferReference> impl_IMemoryBufferReference<D>::Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMemoryBufferReference>(this, &ABI::Windows::Foundation::IMemoryBufferReference::remove_Closed, Closed(handler));
 }

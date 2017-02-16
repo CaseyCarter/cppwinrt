@@ -71,7 +71,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_07fc9084_9ea1_5505_89cc_4d754719f582
 #define WINRT_GENERIC_07fc9084_9ea1_5505_89cc_4d754719f582
-template <> struct __declspec(uuid("07fc9084-9ea1-5505-89cc-4d754719f582")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> {};
+template <> struct __declspec(uuid("07fc9084-9ea1-5505-89cc-4d754719f582")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_9664f3ba_0049_5cbf_845f_8f0bcad2b14c
@@ -230,91 +230,91 @@ template <> struct __declspec(uuid("9302d49e-dda3-5971-b48a-dfdf02c572af")) __de
 namespace Windows::ApplicationModel::Wallet {
 
 struct IWalletBarcode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletBarcode>
 {
     IWalletBarcode(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletBarcodeFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletBarcodeFactory>
 {
     IWalletBarcodeFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletItem>
 {
     IWalletItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletItemCustomProperty :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletItemCustomProperty>
 {
     IWalletItemCustomProperty(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletItemCustomPropertyFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletItemCustomPropertyFactory>
 {
     IWalletItemCustomPropertyFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletItemFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletItemFactory>
 {
     IWalletItemFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletItemStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletItemStore>
 {
     IWalletItemStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletItemStore2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletItemStore2>
 {
     IWalletItemStore2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletManagerStatics>
 {
     IWalletManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletRelevantLocation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletRelevantLocation>
 {
     IWalletRelevantLocation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletTransaction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletTransaction>
 {
     IWalletTransaction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletVerb :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletVerb>
 {
     IWalletVerb(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWalletVerbFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWalletVerbFactory>
 {
     IWalletVerbFactory(std::nullptr_t = nullptr) noexcept {}

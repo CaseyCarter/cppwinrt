@@ -46,7 +46,7 @@ using InjectedInputPointerInfo = ABI::Windows::UI::Input::Preview::Injection::In
 
 namespace ABI::Windows::UI::Input::Preview::Injection {
 
-struct __declspec(uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd")) __declspec(novtable) IInjectedInputKeyboardInfo : Windows::IInspectable
+struct __declspec(uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd")) __declspec(novtable) IInjectedInputKeyboardInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeyOptions(winrt::Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions * value) = 0;
     virtual HRESULT __stdcall put_KeyOptions(winrt::Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions value) = 0;
@@ -56,7 +56,7 @@ struct __declspec(uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd")) __declspec(novta
     virtual HRESULT __stdcall put_VirtualKey(uint16_t value) = 0;
 };
 
-struct __declspec(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d")) __declspec(novtable) IInjectedInputMouseInfo : Windows::IInspectable
+struct __declspec(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d")) __declspec(novtable) IInjectedInputMouseInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MouseOptions(winrt::Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions * value) = 0;
     virtual HRESULT __stdcall put_MouseOptions(winrt::Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions value) = 0;
@@ -70,7 +70,7 @@ struct __declspec(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d")) __declspec(novta
     virtual HRESULT __stdcall put_TimeOffsetInMilliseconds(uint32_t value) = 0;
 };
 
-struct __declspec(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4")) __declspec(novtable) IInjectedInputPenInfo : Windows::IInspectable
+struct __declspec(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4")) __declspec(novtable) IInjectedInputPenInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PointerInfo(Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo * value) = 0;
     virtual HRESULT __stdcall put_PointerInfo(Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo value) = 0;
@@ -88,7 +88,7 @@ struct __declspec(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4")) __declspec(novta
     virtual HRESULT __stdcall put_TiltY(int32_t value) = 0;
 };
 
-struct __declspec(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28")) __declspec(novtable) IInjectedInputTouchInfo : Windows::IInspectable
+struct __declspec(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28")) __declspec(novtable) IInjectedInputTouchInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Contact(Windows::UI::Input::Preview::Injection::InjectedInputRectangle * value) = 0;
     virtual HRESULT __stdcall put_Contact(Windows::UI::Input::Preview::Injection::InjectedInputRectangle value) = 0;
@@ -102,7 +102,7 @@ struct __declspec(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28")) __declspec(novta
     virtual HRESULT __stdcall put_TouchParameters(winrt::Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters value) = 0;
 };
 
-struct __declspec(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18")) __declspec(novtable) IInputInjector : Windows::IInspectable
+struct __declspec(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18")) __declspec(novtable) IInputInjector : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_InjectKeyboardInput(Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> * input) = 0;
     virtual HRESULT __stdcall abi_InjectMouseInput(Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> * input) = 0;
@@ -115,7 +115,7 @@ struct __declspec(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18")) __declspec(novta
     virtual HRESULT __stdcall abi_InjectShortcut(winrt::Windows::UI::Input::Preview::Injection::InjectedInputShortcut shortcut) = 0;
 };
 
-struct __declspec(uuid("deae6943-7402-4141-a5c6-0c01aa57b16a")) __declspec(novtable) IInputInjectorStatics : Windows::IInspectable
+struct __declspec(uuid("deae6943-7402-4141-a5c6-0c01aa57b16a")) __declspec(novtable) IInputInjectorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryCreate(Windows::UI::Input::Preview::Injection::IInputInjector ** instance) = 0;
 };

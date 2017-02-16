@@ -11,35 +11,35 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Networking {
 
 struct IEndpointPair :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEndpointPair>
 {
     IEndpointPair(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEndpointPairFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEndpointPairFactory>
 {
     IEndpointPairFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHostName :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHostName>
 {
     IHostName(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHostNameFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHostNameFactory>
 {
     IHostNameFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHostNameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHostNameStatics>
 {
     IHostNameStatics(std::nullptr_t = nullptr) noexcept {}

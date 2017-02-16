@@ -18,7 +18,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Web::AtomPub {
 
-struct __declspec(uuid("35392c38-cded-4d4c-9637-05f15c1c9406")) __declspec(novtable) IAtomPubClient : Windows::IInspectable
+struct __declspec(uuid("35392c38-cded-4d4c-9637-05f15c1c9406")) __declspec(novtable) IAtomPubClient : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RetrieveServiceDocumentAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::AtomPub::ServiceDocument, Windows::Web::Syndication::RetrievalProgress> ** operation) = 0;
     virtual HRESULT __stdcall abi_RetrieveMediaResourceAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Syndication::RetrievalProgress> ** operation) = 0;
@@ -33,12 +33,12 @@ struct __declspec(uuid("35392c38-cded-4d4c-9637-05f15c1c9406")) __declspec(novta
     virtual HRESULT __stdcall abi_CancelAsyncOperations() = 0;
 };
 
-struct __declspec(uuid("49d55012-57cb-4bde-ab9f-2610b172777b")) __declspec(novtable) IAtomPubClientFactory : Windows::IInspectable
+struct __declspec(uuid("49d55012-57cb-4bde-ab9f-2610b172777b")) __declspec(novtable) IAtomPubClientFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateAtomPubClientWithCredentials(Windows::Security::Credentials::IPasswordCredential * serverCredential, Windows::Web::AtomPub::IAtomPubClient ** atomPubClient) = 0;
 };
 
-struct __declspec(uuid("7f5fd609-bc88-41d4-88fa-3de6704d428e")) __declspec(novtable) IResourceCollection : Windows::IInspectable
+struct __declspec(uuid("7f5fd609-bc88-41d4-88fa-3de6704d428e")) __declspec(novtable) IResourceCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(Windows::Web::Syndication::ISyndicationText ** value) = 0;
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
@@ -46,12 +46,12 @@ struct __declspec(uuid("7f5fd609-bc88-41d4-88fa-3de6704d428e")) __declspec(novta
     virtual HRESULT __stdcall get_Accepts(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("8b7ec771-2ab3-4dbe-8bcc-778f92b75e51")) __declspec(novtable) IServiceDocument : Windows::IInspectable
+struct __declspec(uuid("8b7ec771-2ab3-4dbe-8bcc-778f92b75e51")) __declspec(novtable) IServiceDocument : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Workspaces(Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::Workspace> ** value) = 0;
 };
 
-struct __declspec(uuid("b41da63b-a4b8-4036-89c5-83c31266ba49")) __declspec(novtable) IWorkspace : Windows::IInspectable
+struct __declspec(uuid("b41da63b-a4b8-4036-89c5-83c31266ba49")) __declspec(novtable) IWorkspace : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(Windows::Web::Syndication::ISyndicationText ** value) = 0;
     virtual HRESULT __stdcall get_Collections(Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::ResourceCollection> ** value) = 0;

@@ -12,112 +12,112 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Shapes {
 
 struct IEllipse :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEllipse>
 {
     IEllipse(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILine :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILine>
 {
     ILine(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILineStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILineStatics>
 {
     ILineStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPath :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPath>
 {
     IPath(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPathFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPathFactory>
 {
     IPathFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPathStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPathStatics>
 {
     IPathStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPolygon :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPolygon>
 {
     IPolygon(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPolygonStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPolygonStatics>
 {
     IPolygonStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPolyline :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPolyline>
 {
     IPolyline(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPolylineStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPolylineStatics>
 {
     IPolylineStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRectangle :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRectangle>
 {
     IRectangle(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRectangleStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRectangleStatics>
 {
     IRectangleStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IShape :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IShape>
 {
     IShape(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IShape2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IShape2>
 {
     IShape2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IShapeFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IShapeFactory>
 {
     IShapeFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IShapeStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IShapeStatics>
 {
     IShapeStatics(std::nullptr_t = nullptr) noexcept {}

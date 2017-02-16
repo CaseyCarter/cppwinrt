@@ -12,7 +12,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Globalization {
 
-struct __declspec(uuid("75b40847-0a4c-4a92-9565-fd63c95f7aed")) __declspec(novtable) IApplicationLanguagesStatics : Windows::IInspectable
+struct __declspec(uuid("75b40847-0a4c-4a92-9565-fd63c95f7aed")) __declspec(novtable) IApplicationLanguagesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PrimaryLanguageOverride(hstring * value) = 0;
     virtual HRESULT __stdcall put_PrimaryLanguageOverride(hstring value) = 0;
@@ -20,7 +20,7 @@ struct __declspec(uuid("75b40847-0a4c-4a92-9565-fd63c95f7aed")) __declspec(novta
     virtual HRESULT __stdcall get_ManifestLanguages(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea")) __declspec(novtable) ICalendar : Windows::IInspectable
+struct __declspec(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea")) __declspec(novtable) ICalendar : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Clone(Windows::Globalization::ICalendar ** value) = 0;
     virtual HRESULT __stdcall abi_SetToMin() = 0;
@@ -122,18 +122,18 @@ struct __declspec(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea")) __declspec(novta
     virtual HRESULT __stdcall get_IsDaylightSavingTime(bool * value) = 0;
 };
 
-struct __declspec(uuid("83f58412-e56b-4c75-a66e-0f63d57758a6")) __declspec(novtable) ICalendarFactory : Windows::IInspectable
+struct __declspec(uuid("83f58412-e56b-4c75-a66e-0f63d57758a6")) __declspec(novtable) ICalendarFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateCalendarDefaultCalendarAndClock(Windows::Foundation::Collections::IIterable<hstring> * languages, Windows::Globalization::ICalendar ** result) = 0;
     virtual HRESULT __stdcall abi_CreateCalendar(Windows::Foundation::Collections::IIterable<hstring> * languages, hstring calendar, hstring clock, Windows::Globalization::ICalendar ** result) = 0;
 };
 
-struct __declspec(uuid("b44b378c-ca7e-4590-9e72-ea2bec1a5115")) __declspec(novtable) ICalendarFactory2 : Windows::IInspectable
+struct __declspec(uuid("b44b378c-ca7e-4590-9e72-ea2bec1a5115")) __declspec(novtable) ICalendarFactory2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateCalendarWithTimeZone(Windows::Foundation::Collections::IIterable<hstring> * languages, hstring calendar, hstring clock, hstring timeZoneId, Windows::Globalization::ICalendar ** result) = 0;
 };
 
-struct __declspec(uuid("80653f68-2cb2-4c1f-b590-f0f52bf4fd1a")) __declspec(novtable) ICalendarIdentifiersStatics : Windows::IInspectable
+struct __declspec(uuid("80653f68-2cb2-4c1f-b590-f0f52bf4fd1a")) __declspec(novtable) ICalendarIdentifiersStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Gregorian(hstring * value) = 0;
     virtual HRESULT __stdcall get_Hebrew(hstring * value) = 0;
@@ -146,12 +146,12 @@ struct __declspec(uuid("80653f68-2cb2-4c1f-b590-f0f52bf4fd1a")) __declspec(novta
     virtual HRESULT __stdcall get_UmAlQura(hstring * value) = 0;
 };
 
-struct __declspec(uuid("7df4d488-5fd0-42a7-95b5-7d98d823075f")) __declspec(novtable) ICalendarIdentifiersStatics2 : Windows::IInspectable
+struct __declspec(uuid("7df4d488-5fd0-42a7-95b5-7d98d823075f")) __declspec(novtable) ICalendarIdentifiersStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Persian(hstring * value) = 0;
 };
 
-struct __declspec(uuid("2c225423-1fad-40c0-9334-a8eb90db04f5")) __declspec(novtable) ICalendarIdentifiersStatics3 : Windows::IInspectable
+struct __declspec(uuid("2c225423-1fad-40c0-9334-a8eb90db04f5")) __declspec(novtable) ICalendarIdentifiersStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ChineseLunar(hstring * value) = 0;
     virtual HRESULT __stdcall get_JapaneseLunar(hstring * value) = 0;
@@ -160,13 +160,13 @@ struct __declspec(uuid("2c225423-1fad-40c0-9334-a8eb90db04f5")) __declspec(novta
     virtual HRESULT __stdcall get_VietnameseLunar(hstring * value) = 0;
 };
 
-struct __declspec(uuid("523805bb-12ec-4f83-bc31-b1b4376b0808")) __declspec(novtable) IClockIdentifiersStatics : Windows::IInspectable
+struct __declspec(uuid("523805bb-12ec-4f83-bc31-b1b4376b0808")) __declspec(novtable) IClockIdentifiersStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TwelveHour(hstring * value) = 0;
     virtual HRESULT __stdcall get_TwentyFourHour(hstring * value) = 0;
 };
 
-struct __declspec(uuid("9f1d091b-d586-4913-9b6a-a9bd2dc12874")) __declspec(novtable) ICurrencyIdentifiersStatics : Windows::IInspectable
+struct __declspec(uuid("9f1d091b-d586-4913-9b6a-a9bd2dc12874")) __declspec(novtable) ICurrencyIdentifiersStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AED(hstring * value) = 0;
     virtual HRESULT __stdcall get_AFN(hstring * value) = 0;
@@ -327,7 +327,7 @@ struct __declspec(uuid("9f1d091b-d586-4913-9b6a-a9bd2dc12874")) __declspec(novta
     virtual HRESULT __stdcall get_ZWL(hstring * value) = 0;
 };
 
-struct __declspec(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903")) __declspec(novtable) IGeographicRegion : Windows::IInspectable
+struct __declspec(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903")) __declspec(novtable) IGeographicRegion : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Code(hstring * value) = 0;
     virtual HRESULT __stdcall get_CodeTwoLetter(hstring * value) = 0;
@@ -338,17 +338,17 @@ struct __declspec(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903")) __declspec(novta
     virtual HRESULT __stdcall get_CurrenciesInUse(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("53425270-77b4-426b-859f-81e19d512546")) __declspec(novtable) IGeographicRegionFactory : Windows::IInspectable
+struct __declspec(uuid("53425270-77b4-426b-859f-81e19d512546")) __declspec(novtable) IGeographicRegionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateGeographicRegion(hstring geographicRegionCode, Windows::Globalization::IGeographicRegion ** result) = 0;
 };
 
-struct __declspec(uuid("29e28974-7ad9-4ef4-8799-b3b44fadec08")) __declspec(novtable) IGeographicRegionStatics : Windows::IInspectable
+struct __declspec(uuid("29e28974-7ad9-4ef4-8799-b3b44fadec08")) __declspec(novtable) IGeographicRegionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_IsSupported(hstring geographicRegionCode, bool * result) = 0;
 };
 
-struct __declspec(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080")) __declspec(novtable) ILanguage : Windows::IInspectable
+struct __declspec(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080")) __declspec(novtable) ILanguage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LanguageTag(hstring * value) = 0;
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
@@ -356,28 +356,28 @@ struct __declspec(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080")) __declspec(novta
     virtual HRESULT __stdcall get_Script(hstring * value) = 0;
 };
 
-struct __declspec(uuid("7d7daf45-368d-4364-852b-dec927037b85")) __declspec(novtable) ILanguageExtensionSubtags : Windows::IInspectable
+struct __declspec(uuid("7d7daf45-368d-4364-852b-dec927037b85")) __declspec(novtable) ILanguageExtensionSubtags : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetExtensionSubtags(hstring singleton, Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("9b0252ac-0c27-44f8-b792-9793fb66c63e")) __declspec(novtable) ILanguageFactory : Windows::IInspectable
+struct __declspec(uuid("9b0252ac-0c27-44f8-b792-9793fb66c63e")) __declspec(novtable) ILanguageFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateLanguage(hstring languageTag, Windows::Globalization::ILanguage ** result) = 0;
 };
 
-struct __declspec(uuid("b23cd557-0865-46d4-89b8-d59be8990f0d")) __declspec(novtable) ILanguageStatics : Windows::IInspectable
+struct __declspec(uuid("b23cd557-0865-46d4-89b8-d59be8990f0d")) __declspec(novtable) ILanguageStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_IsWellFormed(hstring languageTag, bool * result) = 0;
     virtual HRESULT __stdcall get_CurrentInputMethodLanguageTag(hstring * value) = 0;
 };
 
-struct __declspec(uuid("30199f6e-914b-4b2a-9d6e-e3b0e27dbe4f")) __declspec(novtable) ILanguageStatics2 : Windows::IInspectable
+struct __declspec(uuid("30199f6e-914b-4b2a-9d6e-e3b0e27dbe4f")) __declspec(novtable) ILanguageStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TrySetInputMethodLanguageTag(hstring languageTag, bool * result) = 0;
 };
 
-struct __declspec(uuid("a5c662c3-68c9-4d3d-b765-972029e21dec")) __declspec(novtable) INumeralSystemIdentifiersStatics : Windows::IInspectable
+struct __declspec(uuid("a5c662c3-68c9-4d3d-b765-972029e21dec")) __declspec(novtable) INumeralSystemIdentifiersStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Arab(hstring * value) = 0;
     virtual HRESULT __stdcall get_ArabExt(hstring * value) = 0;
@@ -417,7 +417,7 @@ struct __declspec(uuid("a5c662c3-68c9-4d3d-b765-972029e21dec")) __declspec(novta
     virtual HRESULT __stdcall get_Vaii(hstring * value) = 0;
 };
 
-struct __declspec(uuid("7f003228-9ddb-4a34-9104-0260c091a7c7")) __declspec(novtable) INumeralSystemIdentifiersStatics2 : Windows::IInspectable
+struct __declspec(uuid("7f003228-9ddb-4a34-9104-0260c091a7c7")) __declspec(novtable) INumeralSystemIdentifiersStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Brah(hstring * value) = 0;
     virtual HRESULT __stdcall get_Osma(hstring * value) = 0;
@@ -433,7 +433,7 @@ struct __declspec(uuid("7f003228-9ddb-4a34-9104-0260c091a7c7")) __declspec(novta
     virtual HRESULT __stdcall get_ZmthMono(hstring * value) = 0;
 };
 
-struct __declspec(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478")) __declspec(novtable) ITimeZoneOnCalendar : Windows::IInspectable
+struct __declspec(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478")) __declspec(novtable) ITimeZoneOnCalendar : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetTimeZone(hstring * value) = 0;
     virtual HRESULT __stdcall abi_ChangeTimeZone(hstring timeZoneId) = 0;

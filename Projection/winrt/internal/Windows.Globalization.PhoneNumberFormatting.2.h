@@ -11,35 +11,35 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Globalization::PhoneNumberFormatting {
 
 struct IPhoneNumberFormatter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneNumberFormatter>
 {
     IPhoneNumberFormatter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneNumberFormatterStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneNumberFormatterStatics>
 {
     IPhoneNumberFormatterStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneNumberInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneNumberInfo>
 {
     IPhoneNumberInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneNumberInfoFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneNumberInfoFactory>
 {
     IPhoneNumberInfoFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPhoneNumberInfoStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPhoneNumberInfoStatics>
 {
     IPhoneNumberInfoStatics(std::nullptr_t = nullptr) noexcept {}

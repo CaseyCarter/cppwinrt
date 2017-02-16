@@ -11,7 +11,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Security::Cryptography {
 
-struct __declspec(uuid("320b7e22-3cb0-4cdf-8663-1d28910065eb")) __declspec(novtable) ICryptographicBufferStatics : Windows::IInspectable
+struct __declspec(uuid("320b7e22-3cb0-4cdf-8663-1d28910065eb")) __declspec(novtable) ICryptographicBufferStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Compare(Windows::Storage::Streams::IBuffer * object1, Windows::Storage::Streams::IBuffer * object2, bool * isEqual) = 0;
     virtual HRESULT __stdcall abi_GenerateRandom(uint32_t length, Windows::Storage::Streams::IBuffer ** buffer) = 0;

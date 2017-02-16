@@ -145,56 +145,56 @@ template <> struct __declspec(uuid("7e7946ef-f8f0-53fd-9613-7261cb35daf4")) __de
 namespace Windows::ApplicationModel::Store::Preview {
 
 struct IStoreConfigurationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreConfigurationStatics>
 {
     IStoreConfigurationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreConfigurationStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreConfigurationStatics2>
 {
     IStoreConfigurationStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreConfigurationStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreConfigurationStatics3>
 {
     IStoreConfigurationStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreHardwareManufacturerInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreHardwareManufacturerInfo>
 {
     IStoreHardwareManufacturerInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePreview :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePreview>
 {
     IStorePreview(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePreviewProductInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePreviewProductInfo>
 {
     IStorePreviewProductInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePreviewPurchaseResults :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePreviewPurchaseResults>
 {
     IStorePreviewPurchaseResults(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePreviewSkuInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePreviewSkuInfo>
 {
     IStorePreviewSkuInfo(std::nullptr_t = nullptr) noexcept {}

@@ -20,7 +20,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Contacts {
 
-struct __declspec(uuid("0379d5dd-db5a-4fd3-b54e-4df17917a212")) __declspec(novtable) IAggregateContactManager : Windows::IInspectable
+struct __declspec(uuid("0379d5dd-db5a-4fd3-b54e-4df17917a212")) __declspec(novtable) IAggregateContactManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FindRawContactsAsync(Windows::ApplicationModel::Contacts::IContact * contact, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> ** value) = 0;
     virtual HRESULT __stdcall abi_TryLinkContactsAsync(Windows::ApplicationModel::Contacts::IContact * primaryContact, Windows::ApplicationModel::Contacts::IContact * secondaryContact, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> ** contact) = 0;
@@ -28,12 +28,12 @@ struct __declspec(uuid("0379d5dd-db5a-4fd3-b54e-4df17917a212")) __declspec(novta
     virtual HRESULT __stdcall abi_TrySetPreferredSourceForPictureAsync(Windows::ApplicationModel::Contacts::IContact * aggregateContact, Windows::ApplicationModel::Contacts::IContact * rawContact, Windows::Foundation::IAsyncOperation<bool> ** value) = 0;
 };
 
-struct __declspec(uuid("5e8cc2d8-a9cd-4430-9c4b-01348db2ca50")) __declspec(novtable) IAggregateContactManager2 : Windows::IInspectable
+struct __declspec(uuid("5e8cc2d8-a9cd-4430-9c4b-01348db2ca50")) __declspec(novtable) IAggregateContactManager2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetRemoteIdentificationInformationAsync(hstring contactListId, hstring remoteSourceId, hstring accountId, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("ec0072f3-2118-4049-9ebc-17f0ab692b64")) __declspec(novtable) IContact : Windows::IInspectable
+struct __declspec(uuid("ec0072f3-2118-4049-9ebc-17f0ab692b64")) __declspec(novtable) IContact : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall put_Name(hstring value) = 0;
@@ -42,7 +42,7 @@ struct __declspec(uuid("ec0072f3-2118-4049-9ebc-17f0ab692b64")) __declspec(novta
     virtual HRESULT __stdcall get_Fields(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::IContactField> ** value) = 0;
 };
 
-struct __declspec(uuid("f312f365-bb77-4c94-802d-8328cee40c08")) __declspec(novtable) IContact2 : Windows::IInspectable
+struct __declspec(uuid("f312f365-bb77-4c94-802d-8328cee40c08")) __declspec(novtable) IContact2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall put_Id(hstring value) = 0;
@@ -60,7 +60,7 @@ struct __declspec(uuid("f312f365-bb77-4c94-802d-8328cee40c08")) __declspec(novta
     virtual HRESULT __stdcall get_ProviderProperties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
-struct __declspec(uuid("48201e67-e08e-42a4-b561-41d08ca9575d")) __declspec(novtable) IContact3 : Windows::IInspectable
+struct __declspec(uuid("48201e67-e08e-42a4-b561-41d08ca9575d")) __declspec(novtable) IContact3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContactListId(hstring * value) = 0;
     virtual HRESULT __stdcall get_DisplayPictureUserUpdateTime(Windows::Foundation::DateTime * value) = 0;
@@ -87,7 +87,7 @@ struct __declspec(uuid("48201e67-e08e-42a4-b561-41d08ca9575d")) __declspec(novta
     virtual HRESULT __stdcall get_SortName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("9739d39a-42ce-4872-8d70-3063aa584b70")) __declspec(novtable) IContactAddress : Windows::IInspectable
+struct __declspec(uuid("9739d39a-42ce-4872-8d70-3063aa584b70")) __declspec(novtable) IContactAddress : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StreetAddress(hstring * value) = 0;
     virtual HRESULT __stdcall put_StreetAddress(hstring value) = 0;
@@ -105,7 +105,7 @@ struct __declspec(uuid("9739d39a-42ce-4872-8d70-3063aa584b70")) __declspec(novta
     virtual HRESULT __stdcall put_Description(hstring value) = 0;
 };
 
-struct __declspec(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86")) __declspec(novtable) IContactAnnotation : Windows::IInspectable
+struct __declspec(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86")) __declspec(novtable) IContactAnnotation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_AnnotationListId(hstring * value) = 0;
@@ -119,7 +119,7 @@ struct __declspec(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86")) __declspec(novta
     virtual HRESULT __stdcall get_ProviderProperties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
-struct __declspec(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a")) __declspec(novtable) IContactAnnotationList : Windows::IInspectable
+struct __declspec(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a")) __declspec(novtable) IContactAnnotationList : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_ProviderPackageFamilyName(hstring * value) = 0;
@@ -132,7 +132,7 @@ struct __declspec(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a")) __declspec(novta
     virtual HRESULT __stdcall abi_DeleteAnnotationAsync(Windows::ApplicationModel::Contacts::IContactAnnotation * annotation, Windows::Foundation::IAsyncAction ** value) = 0;
 };
 
-struct __declspec(uuid("23acf4aa-7a77-457d-8203-987f4b31af09")) __declspec(novtable) IContactAnnotationStore : Windows::IInspectable
+struct __declspec(uuid("23acf4aa-7a77-457d-8203-987f4b31af09")) __declspec(novtable) IContactAnnotationStore : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FindContactIdsByEmailAsync(hstring emailAddress, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> ** contactIds) = 0;
     virtual HRESULT __stdcall abi_FindContactIdsByPhoneNumberAsync(hstring phoneNumber, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> ** contactIds) = 0;
@@ -144,18 +144,18 @@ struct __declspec(uuid("23acf4aa-7a77-457d-8203-987f4b31af09")) __declspec(novta
     virtual HRESULT __stdcall abi_FindAnnotationListsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>> ** lists) = 0;
 };
 
-struct __declspec(uuid("35d1972d-bfce-46bb-93f8-a5b06ec5e201")) __declspec(novtable) IContactBatch : Windows::IInspectable
+struct __declspec(uuid("35d1972d-bfce-46bb-93f8-a5b06ec5e201")) __declspec(novtable) IContactBatch : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Contacts(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact> ** value) = 0;
     virtual HRESULT __stdcall get_Status(winrt::Windows::ApplicationModel::Contacts::ContactBatchStatus * value) = 0;
 };
 
-struct __declspec(uuid("b60af902-1546-434d-869c-6e3520760ef3")) __declspec(novtable) IContactCardDelayedDataLoader : Windows::IInspectable
+struct __declspec(uuid("b60af902-1546-434d-869c-6e3520760ef3")) __declspec(novtable) IContactCardDelayedDataLoader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetData(Windows::ApplicationModel::Contacts::IContact * contact) = 0;
 };
 
-struct __declspec(uuid("8c0a4f7e-6ab6-4f3f-be72-817236eeea5b")) __declspec(novtable) IContactCardOptions : Windows::IInspectable
+struct __declspec(uuid("8c0a4f7e-6ab6-4f3f-be72-817236eeea5b")) __declspec(novtable) IContactCardOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HeaderKind(winrt::Windows::ApplicationModel::Contacts::ContactCardHeaderKind * value) = 0;
     virtual HRESULT __stdcall put_HeaderKind(winrt::Windows::ApplicationModel::Contacts::ContactCardHeaderKind value) = 0;
@@ -163,42 +163,42 @@ struct __declspec(uuid("8c0a4f7e-6ab6-4f3f-be72-817236eeea5b")) __declspec(novta
     virtual HRESULT __stdcall put_InitialTabKind(winrt::Windows::ApplicationModel::Contacts::ContactCardTabKind value) = 0;
 };
 
-struct __declspec(uuid("8f271ba0-d74b-4cc6-9f53-1b0eb5d1273c")) __declspec(novtable) IContactCardOptions2 : Windows::IInspectable
+struct __declspec(uuid("8f271ba0-d74b-4cc6-9f53-1b0eb5d1273c")) __declspec(novtable) IContactCardOptions2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ServerSearchContactListIds(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("951d4b10-6a59-4720-a4e1-363d98c135d5")) __declspec(novtable) IContactChange : Windows::IInspectable
+struct __declspec(uuid("951d4b10-6a59-4720-a4e1-363d98c135d5")) __declspec(novtable) IContactChange : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ChangeType(winrt::Windows::ApplicationModel::Contacts::ContactChangeType * value) = 0;
     virtual HRESULT __stdcall get_Contact(Windows::ApplicationModel::Contacts::IContact ** value) = 0;
 };
 
-struct __declspec(uuid("217319fa-2d0c-42e0-a9da-3ecd56a78a47")) __declspec(novtable) IContactChangeReader : Windows::IInspectable
+struct __declspec(uuid("217319fa-2d0c-42e0-a9da-3ecd56a78a47")) __declspec(novtable) IContactChangeReader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AcceptChanges() = 0;
     virtual HRESULT __stdcall abi_AcceptChangesThrough(Windows::ApplicationModel::Contacts::IContactChange * lastChangeToAccept) = 0;
     virtual HRESULT __stdcall abi_ReadBatchAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactChange>> ** value) = 0;
 };
 
-struct __declspec(uuid("6e992952-309b-404d-9712-b37bd30278aa")) __declspec(novtable) IContactChangeTracker : Windows::IInspectable
+struct __declspec(uuid("6e992952-309b-404d-9712-b37bd30278aa")) __declspec(novtable) IContactChangeTracker : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Enable() = 0;
     virtual HRESULT __stdcall abi_GetChangeReader(Windows::ApplicationModel::Contacts::IContactChangeReader ** value) = 0;
     virtual HRESULT __stdcall abi_Reset() = 0;
 };
 
-struct __declspec(uuid("c5143ae8-1b03-46f8-b694-a523e83cfcb6")) __declspec(novtable) IContactChangedDeferral : Windows::IInspectable
+struct __declspec(uuid("c5143ae8-1b03-46f8-b694-a523e83cfcb6")) __declspec(novtable) IContactChangedDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("525e7fd1-73f3-4b7d-a918-580be4366121")) __declspec(novtable) IContactChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("525e7fd1-73f3-4b7d-a918-580be4366121")) __declspec(novtable) IContactChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeferral(Windows::ApplicationModel::Contacts::IContactChangedDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("f6f83553-aa27-4731-8e4a-3dec5ce9eec9")) __declspec(novtable) IContactConnectedServiceAccount : Windows::IInspectable
+struct __declspec(uuid("f6f83553-aa27-4731-8e4a-3dec5ce9eec9")) __declspec(novtable) IContactConnectedServiceAccount : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall put_Id(hstring value) = 0;
@@ -206,7 +206,7 @@ struct __declspec(uuid("f6f83553-aa27-4731-8e4a-3dec5ce9eec9")) __declspec(novta
     virtual HRESULT __stdcall put_ServiceName(hstring value) = 0;
 };
 
-struct __declspec(uuid("fe98ae66-b205-4934-9174-0ff2b0565707")) __declspec(novtable) IContactDate : Windows::IInspectable
+struct __declspec(uuid("fe98ae66-b205-4934-9174-0ff2b0565707")) __declspec(novtable) IContactDate : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Day(Windows::Foundation::IReference<uint32_t> ** value) = 0;
     virtual HRESULT __stdcall put_Day(Windows::Foundation::IReference<uint32_t> * value) = 0;
@@ -220,7 +220,7 @@ struct __declspec(uuid("fe98ae66-b205-4934-9174-0ff2b0565707")) __declspec(novta
     virtual HRESULT __stdcall put_Description(hstring value) = 0;
 };
 
-struct __declspec(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf")) __declspec(novtable) IContactEmail : Windows::IInspectable
+struct __declspec(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf")) __declspec(novtable) IContactEmail : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Address(hstring * value) = 0;
     virtual HRESULT __stdcall put_Address(hstring value) = 0;
@@ -230,7 +230,7 @@ struct __declspec(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf")) __declspec(novta
     virtual HRESULT __stdcall put_Description(hstring value) = 0;
 };
 
-struct __declspec(uuid("b176486a-d293-492c-a058-db575b3e3c0f")) __declspec(novtable) IContactField : Windows::IInspectable
+struct __declspec(uuid("b176486a-d293-492c-a058-db575b3e3c0f")) __declspec(novtable) IContactField : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::ApplicationModel::Contacts::ContactFieldType * value) = 0;
     virtual HRESULT __stdcall get_Category(winrt::Windows::ApplicationModel::Contacts::ContactFieldCategory * value) = 0;
@@ -238,14 +238,14 @@ struct __declspec(uuid("b176486a-d293-492c-a058-db575b3e3c0f")) __declspec(novta
     virtual HRESULT __stdcall get_Value(hstring * value) = 0;
 };
 
-struct __declspec(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e")) __declspec(novtable) IContactFieldFactory : Windows::IInspectable
+struct __declspec(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e")) __declspec(novtable) IContactFieldFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateField_Default(hstring value, winrt::Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::IContactField ** field) = 0;
     virtual HRESULT __stdcall abi_CreateField_Category(hstring value, winrt::Windows::ApplicationModel::Contacts::ContactFieldType type, winrt::Windows::ApplicationModel::Contacts::ContactFieldCategory category, Windows::ApplicationModel::Contacts::IContactField ** field) = 0;
     virtual HRESULT __stdcall abi_CreateField_Custom(hstring name, hstring value, winrt::Windows::ApplicationModel::Contacts::ContactFieldType type, winrt::Windows::ApplicationModel::Contacts::ContactFieldCategory category, Windows::ApplicationModel::Contacts::IContactField ** field) = 0;
 };
 
-struct __declspec(uuid("275eb6d4-6a2e-4278-a914-e460d5f088f6")) __declspec(novtable) IContactInformation : Windows::IInspectable
+struct __declspec(uuid("275eb6d4-6a2e-4278-a914-e460d5f088f6")) __declspec(novtable) IContactInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall abi_GetThumbnailAsync(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> ** operation) = 0;
@@ -257,7 +257,7 @@ struct __declspec(uuid("275eb6d4-6a2e-4278-a914-e460d5f088f6")) __declspec(novta
     virtual HRESULT __stdcall abi_QueryCustomFields(hstring customName, Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> ** value) = 0;
 };
 
-struct __declspec(uuid("cce33b37-0d85-41fa-b43d-da599c3eb009")) __declspec(novtable) IContactInstantMessageField : Windows::IInspectable
+struct __declspec(uuid("cce33b37-0d85-41fa-b43d-da599c3eb009")) __declspec(novtable) IContactInstantMessageField : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UserName(hstring * value) = 0;
     virtual HRESULT __stdcall get_Service(hstring * value) = 0;
@@ -265,14 +265,14 @@ struct __declspec(uuid("cce33b37-0d85-41fa-b43d-da599c3eb009")) __declspec(novta
     virtual HRESULT __stdcall get_LaunchUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09")) __declspec(novtable) IContactInstantMessageFieldFactory : Windows::IInspectable
+struct __declspec(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09")) __declspec(novtable) IContactInstantMessageFieldFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstantMessage_Default(hstring userName, Windows::ApplicationModel::Contacts::IContactInstantMessageField ** field) = 0;
     virtual HRESULT __stdcall abi_CreateInstantMessage_Category(hstring userName, winrt::Windows::ApplicationModel::Contacts::ContactFieldCategory category, Windows::ApplicationModel::Contacts::IContactInstantMessageField ** field) = 0;
     virtual HRESULT __stdcall abi_CreateInstantMessage_All(hstring userName, winrt::Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring service, hstring displayText, Windows::Foundation::IUriRuntimeClass * verb, Windows::ApplicationModel::Contacts::IContactInstantMessageField ** field) = 0;
 };
 
-struct __declspec(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315")) __declspec(novtable) IContactJobInfo : Windows::IInspectable
+struct __declspec(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315")) __declspec(novtable) IContactJobInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CompanyName(hstring * value) = 0;
     virtual HRESULT __stdcall put_CompanyName(hstring value) = 0;
@@ -292,7 +292,7 @@ struct __declspec(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315")) __declspec(novta
     virtual HRESULT __stdcall put_Description(hstring value) = 0;
 };
 
-struct __declspec(uuid("fb1232d6-ee73-46e7-8761-11cd0157728f")) __declspec(novtable) IContactLaunchActionVerbsStatics : Windows::IInspectable
+struct __declspec(uuid("fb1232d6-ee73-46e7-8761-11cd0157728f")) __declspec(novtable) IContactLaunchActionVerbsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Call(hstring * value) = 0;
     virtual HRESULT __stdcall get_Message(hstring * value) = 0;
@@ -301,7 +301,7 @@ struct __declspec(uuid("fb1232d6-ee73-46e7-8761-11cd0157728f")) __declspec(novta
     virtual HRESULT __stdcall get_VideoCall(hstring * value) = 0;
 };
 
-struct __declspec(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42")) __declspec(novtable) IContactList : Windows::IInspectable
+struct __declspec(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42")) __declspec(novtable) IContactList : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
@@ -330,14 +330,14 @@ struct __declspec(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42")) __declspec(novta
     virtual HRESULT __stdcall abi_GetContactAsync(hstring contactId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> ** contacts) = 0;
 };
 
-struct __declspec(uuid("cb3943b4-4550-4dcb-9229-40ff91fb0203")) __declspec(novtable) IContactList2 : Windows::IInspectable
+struct __declspec(uuid("cb3943b4-4550-4dcb-9229-40ff91fb0203")) __declspec(novtable) IContactList2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RegisterSyncManagerAsync(Windows::Foundation::IAsyncAction ** result) = 0;
     virtual HRESULT __stdcall put_SupportsServerSearch(bool value) = 0;
     virtual HRESULT __stdcall get_SyncConstraints(Windows::ApplicationModel::Contacts::IContactListSyncConstraints ** value) = 0;
 };
 
-struct __declspec(uuid("b2b0bf01-3062-4e2e-969d-018d1987f314")) __declspec(novtable) IContactListSyncConstraints : Windows::IInspectable
+struct __declspec(uuid("b2b0bf01-3062-4e2e-969d-018d1987f314")) __declspec(novtable) IContactListSyncConstraints : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CanSyncDescriptions(bool * value) = 0;
     virtual HRESULT __stdcall put_CanSyncDescriptions(bool value) = 0;
@@ -397,24 +397,24 @@ struct __declspec(uuid("b2b0bf01-3062-4e2e-969d-018d1987f314")) __declspec(novta
     virtual HRESULT __stdcall put_MaxWebsites(Windows::Foundation::IReference<int32_t> * value) = 0;
 };
 
-struct __declspec(uuid("146e83be-7925-4acc-9de5-21ddd06f8674")) __declspec(novtable) IContactListSyncManager : Windows::IInspectable
+struct __declspec(uuid("146e83be-7925-4acc-9de5-21ddd06f8674")) __declspec(novtable) IContactListSyncManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::ApplicationModel::Contacts::ContactListSyncStatus * value) = 0;
     virtual HRESULT __stdcall get_LastSuccessfulSyncTime(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_LastAttemptedSyncTime(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall abi_SyncAsync(Windows::Foundation::IAsyncOperation<bool> ** result) = 0;
-    virtual HRESULT __stdcall add_SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SyncStatusChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("a9591247-bb55-4e23-8128-370134a85d0d")) __declspec(novtable) IContactListSyncManager2 : Windows::IInspectable
+struct __declspec(uuid("a9591247-bb55-4e23-8128-370134a85d0d")) __declspec(novtable) IContactListSyncManager2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Status(winrt::Windows::ApplicationModel::Contacts::ContactListSyncStatus value) = 0;
     virtual HRESULT __stdcall put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) = 0;
     virtual HRESULT __stdcall put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) = 0;
 };
 
-struct __declspec(uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc")) __declspec(novtable) IContactLocationField : Windows::IInspectable
+struct __declspec(uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc")) __declspec(novtable) IContactLocationField : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UnstructuredAddress(hstring * value) = 0;
     virtual HRESULT __stdcall get_Street(hstring * value) = 0;
@@ -424,14 +424,14 @@ struct __declspec(uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc")) __declspec(novta
     virtual HRESULT __stdcall get_PostalCode(hstring * value) = 0;
 };
 
-struct __declspec(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe")) __declspec(novtable) IContactLocationFieldFactory : Windows::IInspectable
+struct __declspec(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe")) __declspec(novtable) IContactLocationFieldFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateLocation_Default(hstring unstructuredAddress, Windows::ApplicationModel::Contacts::IContactLocationField ** field) = 0;
     virtual HRESULT __stdcall abi_CreateLocation_Category(hstring unstructuredAddress, winrt::Windows::ApplicationModel::Contacts::ContactFieldCategory category, Windows::ApplicationModel::Contacts::IContactLocationField ** field) = 0;
     virtual HRESULT __stdcall abi_CreateLocation_All(hstring unstructuredAddress, winrt::Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring street, hstring city, hstring region, hstring country, hstring postalCode, Windows::ApplicationModel::Contacts::IContactLocationField ** field) = 0;
 };
 
-struct __declspec(uuid("b74bba57-1076-4bef-aef3-54686d18387d")) __declspec(novtable) IContactManagerForUser : Windows::IInspectable
+struct __declspec(uuid("b74bba57-1076-4bef-aef3-54686d18387d")) __declspec(novtable) IContactManagerForUser : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ConvertContactToVCardAsync(Windows::ApplicationModel::Contacts::IContact * contact, Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ** result) = 0;
     virtual HRESULT __stdcall abi_ConvertContactToVCardAsyncWithMaxBytes(Windows::ApplicationModel::Contacts::IContact * contact, uint32_t maxBytes, Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ** result) = 0;
@@ -445,19 +445,19 @@ struct __declspec(uuid("b74bba57-1076-4bef-aef3-54686d18387d")) __declspec(novta
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
 };
 
-struct __declspec(uuid("81f21ac0-f661-4708-ba4f-d386bd0d622e")) __declspec(novtable) IContactManagerStatics : Windows::IInspectable
+struct __declspec(uuid("81f21ac0-f661-4708-ba4f-d386bd0d622e")) __declspec(novtable) IContactManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ShowContactCard(Windows::ApplicationModel::Contacts::IContact * contact, Windows::Foundation::Rect selection) = 0;
     virtual HRESULT __stdcall abi_ShowContactCardWithPlacement(Windows::ApplicationModel::Contacts::IContact * contact, Windows::Foundation::Rect selection, winrt::Windows::UI::Popups::Placement preferredPlacement) = 0;
     virtual HRESULT __stdcall abi_ShowDelayLoadedContactCard(Windows::ApplicationModel::Contacts::IContact * contact, Windows::Foundation::Rect selection, winrt::Windows::UI::Popups::Placement preferredPlacement, Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader ** dataLoader) = 0;
 };
 
-struct __declspec(uuid("a178e620-47d8-48cc-963c-9592b6e510c6")) __declspec(novtable) IContactManagerStatics2 : Windows::IInspectable
+struct __declspec(uuid("a178e620-47d8-48cc-963c-9592b6e510c6")) __declspec(novtable) IContactManagerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestStoreAsync(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> ** store) = 0;
 };
 
-struct __declspec(uuid("c4cc3d42-7586-492a-930b-7bc138fc2139")) __declspec(novtable) IContactManagerStatics3 : Windows::IInspectable
+struct __declspec(uuid("c4cc3d42-7586-492a-930b-7bc138fc2139")) __declspec(novtable) IContactManagerStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ConvertContactToVCardAsync(Windows::ApplicationModel::Contacts::IContact * contact, Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ** vCard) = 0;
     virtual HRESULT __stdcall abi_ConvertContactToVCardAsyncWithMaxBytes(Windows::ApplicationModel::Contacts::IContact * contact, uint32_t maxBytes, Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ** vCard) = 0;
@@ -475,19 +475,19 @@ struct __declspec(uuid("c4cc3d42-7586-492a-930b-7bc138fc2139")) __declspec(novta
     virtual HRESULT __stdcall put_SystemSortOrder(winrt::Windows::ApplicationModel::Contacts::ContactNameOrder value) = 0;
 };
 
-struct __declspec(uuid("24982272-347b-46dc-8d95-51bd41e15aaf")) __declspec(novtable) IContactManagerStatics4 : Windows::IInspectable
+struct __declspec(uuid("24982272-347b-46dc-8d95-51bd41e15aaf")) __declspec(novtable) IContactManagerStatics4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForUser(Windows::System::IUser * user, Windows::ApplicationModel::Contacts::IContactManagerForUser ** result) = 0;
 };
 
-struct __declspec(uuid("bc922504-e7d8-413e-95f4-b75c54c74077")) __declspec(novtable) IContactMatchReason : Windows::IInspectable
+struct __declspec(uuid("bc922504-e7d8-413e-95f4-b75c54c74077")) __declspec(novtable) IContactMatchReason : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Field(winrt::Windows::ApplicationModel::Contacts::ContactMatchReasonKind * value) = 0;
     virtual HRESULT __stdcall get_Segments(Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> ** value) = 0;
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
 };
 
-struct __declspec(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d")) __declspec(novtable) IContactName : Windows::IInspectable
+struct __declspec(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d")) __declspec(novtable) IContactName : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FirstName(hstring * value) = 0;
     virtual HRESULT __stdcall put_FirstName(hstring value) = 0;
@@ -507,7 +507,7 @@ struct __declspec(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d")) __declspec(novta
     virtual HRESULT __stdcall get_YomiDisplayName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("467dab65-2712-4f52-b783-9ea8111c63cd")) __declspec(novtable) IContactPhone : Windows::IInspectable
+struct __declspec(uuid("467dab65-2712-4f52-b783-9ea8111c63cd")) __declspec(novtable) IContactPhone : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Number(hstring * value) = 0;
     virtual HRESULT __stdcall put_Number(hstring value) = 0;
@@ -517,7 +517,7 @@ struct __declspec(uuid("467dab65-2712-4f52-b783-9ea8111c63cd")) __declspec(novta
     virtual HRESULT __stdcall put_Description(hstring value) = 0;
 };
 
-struct __declspec(uuid("0e09fd91-42f8-4055-90a0-896f96738936")) __declspec(novtable) IContactPicker : Windows::IInspectable
+struct __declspec(uuid("0e09fd91-42f8-4055-90a0-896f96738936")) __declspec(novtable) IContactPicker : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CommitButtonText(hstring * value) = 0;
     virtual HRESULT __stdcall put_CommitButtonText(hstring value) = 0;
@@ -528,14 +528,14 @@ struct __declspec(uuid("0e09fd91-42f8-4055-90a0-896f96738936")) __declspec(novta
     virtual HRESULT __stdcall abi_PickMultipleContactsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInformation>> ** result) = 0;
 };
 
-struct __declspec(uuid("b35011cf-5cef-4d24-aa0c-340c5208725d")) __declspec(novtable) IContactPicker2 : Windows::IInspectable
+struct __declspec(uuid("b35011cf-5cef-4d24-aa0c-340c5208725d")) __declspec(novtable) IContactPicker2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DesiredFieldsWithContactFieldType(Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> ** value) = 0;
     virtual HRESULT __stdcall abi_PickContactAsync(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> ** result) = 0;
     virtual HRESULT __stdcall abi_PickContactsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::Contact>> ** result) = 0;
 };
 
-struct __declspec(uuid("4408cc9e-7d7c-42f0-8ac7-f50733ecdbc1")) __declspec(novtable) IContactQueryOptions : Windows::IInspectable
+struct __declspec(uuid("4408cc9e-7d7c-42f0-8ac7-f50733ecdbc1")) __declspec(novtable) IContactQueryOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextSearch(Windows::ApplicationModel::Contacts::IContactQueryTextSearch ** value) = 0;
     virtual HRESULT __stdcall get_ContactListIds(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
@@ -548,13 +548,13 @@ struct __declspec(uuid("4408cc9e-7d7c-42f0-8ac7-f50733ecdbc1")) __declspec(novta
     virtual HRESULT __stdcall get_AnnotationListIds(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("543fba47-8ce7-46cb-9dac-9aa42a1bc8e2")) __declspec(novtable) IContactQueryOptionsFactory : Windows::IInspectable
+struct __declspec(uuid("543fba47-8ce7-46cb-9dac-9aa42a1bc8e2")) __declspec(novtable) IContactQueryOptionsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithText(hstring text, Windows::ApplicationModel::Contacts::IContactQueryOptions ** result) = 0;
     virtual HRESULT __stdcall abi_CreateWithTextAndFields(hstring text, winrt::Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields, Windows::ApplicationModel::Contacts::IContactQueryOptions ** result) = 0;
 };
 
-struct __declspec(uuid("f7e3f9cb-a957-439b-a0b7-1c02a1963ff0")) __declspec(novtable) IContactQueryTextSearch : Windows::IInspectable
+struct __declspec(uuid("f7e3f9cb-a957-439b-a0b7-1c02a1963ff0")) __declspec(novtable) IContactQueryTextSearch : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Fields(winrt::Windows::ApplicationModel::Contacts::ContactQuerySearchFields * value) = 0;
     virtual HRESULT __stdcall put_Fields(winrt::Windows::ApplicationModel::Contacts::ContactQuerySearchFields value) = 0;
@@ -564,13 +564,13 @@ struct __declspec(uuid("f7e3f9cb-a957-439b-a0b7-1c02a1963ff0")) __declspec(novta
     virtual HRESULT __stdcall put_SearchScope(winrt::Windows::ApplicationModel::Contacts::ContactQuerySearchScope value) = 0;
 };
 
-struct __declspec(uuid("d397e42e-1488-42f2-bf64-253f4884bfed")) __declspec(novtable) IContactReader : Windows::IInspectable
+struct __declspec(uuid("d397e42e-1488-42f2-bf64-253f4884bfed")) __declspec(novtable) IContactReader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ReadBatchAsync(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactBatch> ** value) = 0;
     virtual HRESULT __stdcall abi_GetMatchingPropertiesWithMatchReason(Windows::ApplicationModel::Contacts::IContact * contact, Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactMatchReason> ** ppRetVal) = 0;
 };
 
-struct __declspec(uuid("8873b5ab-c5fb-46d8-93fe-da3ff1934054")) __declspec(novtable) IContactSignificantOther : Windows::IInspectable
+struct __declspec(uuid("8873b5ab-c5fb-46d8-93fe-da3ff1934054")) __declspec(novtable) IContactSignificantOther : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall put_Name(hstring value) = 0;
@@ -578,20 +578,20 @@ struct __declspec(uuid("8873b5ab-c5fb-46d8-93fe-da3ff1934054")) __declspec(novta
     virtual HRESULT __stdcall put_Description(hstring value) = 0;
 };
 
-struct __declspec(uuid("8d7bd474-3f03-45f8-ba0f-c4ed37d64219")) __declspec(novtable) IContactSignificantOther2 : Windows::IInspectable
+struct __declspec(uuid("8d7bd474-3f03-45f8-ba0f-c4ed37d64219")) __declspec(novtable) IContactSignificantOther2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Relationship(winrt::Windows::ApplicationModel::Contacts::ContactRelationship * value) = 0;
     virtual HRESULT __stdcall put_Relationship(winrt::Windows::ApplicationModel::Contacts::ContactRelationship value) = 0;
 };
 
-struct __declspec(uuid("2c220b10-3a6c-4293-b9bc-fe987f6e0d52")) __declspec(novtable) IContactStore : Windows::IInspectable
+struct __declspec(uuid("2c220b10-3a6c-4293-b9bc-fe987f6e0d52")) __declspec(novtable) IContactStore : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FindContactsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> ** contacts) = 0;
     virtual HRESULT __stdcall abi_FindContactsWithSearchTextAsync(hstring searchText, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> ** contacts) = 0;
     virtual HRESULT __stdcall abi_GetContactAsync(hstring contactId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> ** contacts) = 0;
 };
 
-struct __declspec(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8")) __declspec(novtable) IContactStore2 : Windows::IInspectable
+struct __declspec(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8")) __declspec(novtable) IContactStore2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ChangeTracker(Windows::ApplicationModel::Contacts::IContactChangeTracker ** value) = 0;
     virtual HRESULT __stdcall add_ContactChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> * value, event_token * returnValue) = 0;
@@ -606,11 +606,11 @@ struct __declspec(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateContactListInAccountAsync(hstring displayName, hstring userDataAccountId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> ** value) = 0;
 };
 
-struct __declspec(uuid("abb298d6-878a-4f8b-a9ce-46bb7d1c84ce")) __declspec(novtable) IContactStoreNotificationTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("abb298d6-878a-4f8b-a9ce-46bb7d1c84ce")) __declspec(novtable) IContactStoreNotificationTriggerDetails : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("9f130176-dc1b-4055-ad66-652f39d990e8")) __declspec(novtable) IContactWebsite : Windows::IInspectable
+struct __declspec(uuid("9f130176-dc1b-4055-ad66-652f39d990e8")) __declspec(novtable) IContactWebsite : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall put_Uri(Windows::Foundation::IUriRuntimeClass * value) = 0;
@@ -618,19 +618,19 @@ struct __declspec(uuid("9f130176-dc1b-4055-ad66-652f39d990e8")) __declspec(novta
     virtual HRESULT __stdcall put_Description(hstring value) = 0;
 };
 
-struct __declspec(uuid("f87ee91e-5647-4068-bb5e-4b6f437ce308")) __declspec(novtable) IContactWebsite2 : Windows::IInspectable
+struct __declspec(uuid("f87ee91e-5647-4068-bb5e-4b6f437ce308")) __declspec(novtable) IContactWebsite2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RawValue(hstring * value) = 0;
     virtual HRESULT __stdcall put_RawValue(hstring value) = 0;
 };
 
-struct __declspec(uuid("8744436c-5cf9-4683-bdca-a1fdebf8dbce")) __declspec(novtable) IFullContactCardOptions : Windows::IInspectable
+struct __declspec(uuid("8744436c-5cf9-4683-bdca-a1fdebf8dbce")) __declspec(novtable) IFullContactCardOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DesiredRemainingView(winrt::Windows::UI::ViewManagement::ViewSizePreference * value) = 0;
     virtual HRESULT __stdcall put_DesiredRemainingView(winrt::Windows::UI::ViewManagement::ViewSizePreference value) = 0;
 };
 
-struct __declspec(uuid("2e0e1b12-d627-4fca-bad4-1faf168c7d14")) __declspec(novtable) IKnownContactFieldStatics : Windows::IInspectable
+struct __declspec(uuid("2e0e1b12-d627-4fca-bad4-1faf168c7d14")) __declspec(novtable) IKnownContactFieldStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Email(hstring * value) = 0;
     virtual HRESULT __stdcall get_PhoneNumber(hstring * value) = 0;
@@ -1104,9 +1104,9 @@ struct WINRT_EBO impl_IContactListSyncManager
     Windows::Foundation::DateTime LastSuccessfulSyncTime() const;
     Windows::Foundation::DateTime LastAttemptedSyncTime() const;
     Windows::Foundation::IAsyncOperation<bool> SyncAsync() const;
-    event_token SyncStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::IInspectable> & handler) const;
+    event_token SyncStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> & handler) const;
     using SyncStatusChanged_revoker = event_revoker<IContactListSyncManager>;
-    SyncStatusChanged_revoker SyncStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::IInspectable> & handler) const;
+    SyncStatusChanged_revoker SyncStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> & handler) const;
     void SyncStatusChanged(event_token token) const;
 };
 

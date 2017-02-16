@@ -14,7 +14,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::UserDataAccounts::SystemAccess {
 
-struct __declspec(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63")) __declspec(novtable) IDeviceAccountConfiguration : Windows::IInspectable
+struct __declspec(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63")) __declspec(novtable) IDeviceAccountConfiguration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AccountName(hstring * value) = 0;
     virtual HRESULT __stdcall put_AccountName(hstring value) = 0;
@@ -50,7 +50,7 @@ struct __declspec(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63")) __declspec(novta
     virtual HRESULT __stdcall put_OutgoingServerUsername(hstring value) = 0;
 };
 
-struct __declspec(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de")) __declspec(novtable) IDeviceAccountConfiguration2 : Windows::IInspectable
+struct __declspec(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de")) __declspec(novtable) IDeviceAccountConfiguration2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IncomingServerCredential(Windows::Security::Credentials::IPasswordCredential ** value) = 0;
     virtual HRESULT __stdcall put_IncomingServerCredential(Windows::Security::Credentials::IPasswordCredential * value) = 0;
@@ -110,12 +110,12 @@ struct __declspec(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de")) __declspec(novta
     virtual HRESULT __stdcall put_IsSyncScheduleManagedBySystem(bool value) = 0;
 };
 
-struct __declspec(uuid("9d6b11b9-cbe5-45f5-822b-c267b81dbdb6")) __declspec(novtable) IUserDataAccountSystemAccessManagerStatics : Windows::IInspectable
+struct __declspec(uuid("9d6b11b9-cbe5-45f5-822b-c267b81dbdb6")) __declspec(novtable) IUserDataAccountSystemAccessManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddAndShowDeviceAccountsAsync(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> * accounts, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> ** result) = 0;
 };
 
-struct __declspec(uuid("943f854d-4b4e-439f-83d3-979b27c05ac7")) __declspec(novtable) IUserDataAccountSystemAccessManagerStatics2 : Windows::IInspectable
+struct __declspec(uuid("943f854d-4b4e-439f-83d3-979b27c05ac7")) __declspec(novtable) IUserDataAccountSystemAccessManagerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SuppressLocalAccountWithAccountAsync(hstring userDataAccountId, Windows::Foundation::IAsyncAction ** result) = 0;
     virtual HRESULT __stdcall abi_CreateDeviceAccountAsync(Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration * account, Windows::Foundation::IAsyncOperation<hstring> ** result) = 0;

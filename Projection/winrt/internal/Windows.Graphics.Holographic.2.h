@@ -70,63 +70,63 @@ template <> struct __declspec(uuid("b2afd154-8db0-5bb2-ad7a-684afd479264")) __de
 namespace Windows::Graphics::Holographic {
 
 struct IHolographicCamera :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHolographicCamera>
 {
     IHolographicCamera(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHolographicCameraPose :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHolographicCameraPose>
 {
     IHolographicCameraPose(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHolographicCameraRenderingParameters :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHolographicCameraRenderingParameters>
 {
     IHolographicCameraRenderingParameters(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHolographicFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHolographicFrame>
 {
     IHolographicFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHolographicFramePrediction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHolographicFramePrediction>
 {
     IHolographicFramePrediction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHolographicSpace :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHolographicSpace>
 {
     IHolographicSpace(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHolographicSpaceCameraAddedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHolographicSpaceCameraAddedEventArgs>
 {
     IHolographicSpaceCameraAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHolographicSpaceCameraRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHolographicSpaceCameraRemovedEventArgs>
 {
     IHolographicSpaceCameraRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHolographicSpaceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHolographicSpaceStatics>
 {
     IHolographicSpaceStatics(std::nullptr_t = nullptr) noexcept {}

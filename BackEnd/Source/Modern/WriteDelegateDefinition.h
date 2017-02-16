@@ -1,5 +1,5 @@
 
-struct %% : Windows::IUnknown
+struct %% : Windows::Foundation::IUnknown
 {
     %(std::nullptr_t = nullptr) noexcept {}
     template <typename L> %(L lambda);

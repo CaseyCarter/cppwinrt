@@ -15,7 +15,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::StartScreen {
 
-struct __declspec(uuid("b0234c3e-cd6f-4cb6-a611-61fd505f3ed1")) __declspec(novtable) IJumpList : Windows::IInspectable
+struct __declspec(uuid("b0234c3e-cd6f-4cb6-a611-61fd505f3ed1")) __declspec(novtable) IJumpList : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Items(Windows::Foundation::Collections::IVector<Windows::UI::StartScreen::JumpListItem> ** value) = 0;
     virtual HRESULT __stdcall get_SystemGroupKind(winrt::Windows::UI::StartScreen::JumpListSystemGroupKind * value) = 0;
@@ -23,7 +23,7 @@ struct __declspec(uuid("b0234c3e-cd6f-4cb6-a611-61fd505f3ed1")) __declspec(novta
     virtual HRESULT __stdcall abi_SaveAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0")) __declspec(novtable) IJumpListItem : Windows::IInspectable
+struct __declspec(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0")) __declspec(novtable) IJumpListItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Kind(winrt::Windows::UI::StartScreen::JumpListItemKind * value) = 0;
     virtual HRESULT __stdcall get_Arguments(hstring * value) = 0;
@@ -38,19 +38,19 @@ struct __declspec(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0")) __declspec(novta
     virtual HRESULT __stdcall put_Logo(Windows::Foundation::IUriRuntimeClass * value) = 0;
 };
 
-struct __declspec(uuid("f1bfc4e8-c7aa-49cb-8dde-ecfccd7ad7e4")) __declspec(novtable) IJumpListItemStatics : Windows::IInspectable
+struct __declspec(uuid("f1bfc4e8-c7aa-49cb-8dde-ecfccd7ad7e4")) __declspec(novtable) IJumpListItemStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithArguments(hstring arguments, hstring displayName, Windows::UI::StartScreen::IJumpListItem ** result) = 0;
     virtual HRESULT __stdcall abi_CreateSeparator(Windows::UI::StartScreen::IJumpListItem ** result) = 0;
 };
 
-struct __declspec(uuid("a7e0c681-e67e-4b74-8250-3f322c4d92c3")) __declspec(novtable) IJumpListStatics : Windows::IInspectable
+struct __declspec(uuid("a7e0c681-e67e-4b74-8250-3f322c4d92c3")) __declspec(novtable) IJumpListStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_LoadCurrentAsync(Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList> ** result) = 0;
     virtual HRESULT __stdcall abi_IsSupported(bool * result) = 0;
 };
 
-struct __declspec(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d")) __declspec(novtable) ISecondaryTile : Windows::IInspectable
+struct __declspec(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d")) __declspec(novtable) ISecondaryTile : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_TileId(hstring value) = 0;
     virtual HRESULT __stdcall get_TileId(hstring * value) = 0;
@@ -87,7 +87,7 @@ struct __declspec(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d")) __declspec(novta
     virtual HRESULT __stdcall abi_UpdateAsync(Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
 };
 
-struct __declspec(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd")) __declspec(novtable) ISecondaryTile2 : Windows::IInspectable
+struct __declspec(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd")) __declspec(novtable) ISecondaryTile2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_PhoneticName(hstring value) = 0;
     virtual HRESULT __stdcall get_PhoneticName(hstring * value) = 0;
@@ -98,19 +98,19 @@ struct __declspec(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd")) __declspec(novta
     virtual HRESULT __stdcall remove_VisualElementsRequested(event_token token) = 0;
 };
 
-struct __declspec(uuid("57f52ca0-51bc-4abf-8ebf-627a0398b05a")) __declspec(novtable) ISecondaryTileFactory : Windows::IInspectable
+struct __declspec(uuid("57f52ca0-51bc-4abf-8ebf-627a0398b05a")) __declspec(novtable) ISecondaryTileFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateTile(hstring tileId, hstring shortName, hstring displayName, hstring arguments, winrt::Windows::UI::StartScreen::TileOptions tileOptions, Windows::Foundation::IUriRuntimeClass * logoReference, Windows::UI::StartScreen::ISecondaryTile ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWideTile(hstring tileId, hstring shortName, hstring displayName, hstring arguments, winrt::Windows::UI::StartScreen::TileOptions tileOptions, Windows::Foundation::IUriRuntimeClass * logoReference, Windows::Foundation::IUriRuntimeClass * wideLogoReference, Windows::UI::StartScreen::ISecondaryTile ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithId(hstring tileId, Windows::UI::StartScreen::ISecondaryTile ** value) = 0;
 };
 
-struct __declspec(uuid("274b8a3b-522d-448e-9eb2-d0672ab345c8")) __declspec(novtable) ISecondaryTileFactory2 : Windows::IInspectable
+struct __declspec(uuid("274b8a3b-522d-448e-9eb2-d0672ab345c8")) __declspec(novtable) ISecondaryTileFactory2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateMinimalTile(hstring tileId, hstring displayName, hstring arguments, Windows::Foundation::IUriRuntimeClass * square150x150Logo, winrt::Windows::UI::StartScreen::TileSize desiredSize, Windows::UI::StartScreen::ISecondaryTile ** value) = 0;
 };
 
-struct __declspec(uuid("99908dae-d051-4676-87fe-9ec242d83c74")) __declspec(novtable) ISecondaryTileStatics : Windows::IInspectable
+struct __declspec(uuid("99908dae-d051-4676-87fe-9ec242d83c74")) __declspec(novtable) ISecondaryTileStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Exists(hstring tileId, bool * exists) = 0;
     virtual HRESULT __stdcall abi_FindAllAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> ** operation) = 0;
@@ -118,7 +118,7 @@ struct __declspec(uuid("99908dae-d051-4676-87fe-9ec242d83c74")) __declspec(novta
     virtual HRESULT __stdcall abi_FindAllForPackageAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> ** operation) = 0;
 };
 
-struct __declspec(uuid("1d8df333-815e-413f-9f50-a81da70a96b2")) __declspec(novtable) ISecondaryTileVisualElements : Windows::IInspectable
+struct __declspec(uuid("1d8df333-815e-413f-9f50-a81da70a96b2")) __declspec(novtable) ISecondaryTileVisualElements : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Square30x30Logo(Windows::Foundation::IUriRuntimeClass * value) = 0;
     virtual HRESULT __stdcall get_Square30x30Logo(Windows::Foundation::IUriRuntimeClass ** value) = 0;
@@ -142,19 +142,19 @@ struct __declspec(uuid("1d8df333-815e-413f-9f50-a81da70a96b2")) __declspec(novta
     virtual HRESULT __stdcall get_ShowNameOnSquare310x310Logo(bool * value) = 0;
 };
 
-struct __declspec(uuid("fd2e31d0-57dc-4794-8ecf-5682f5f3e6ef")) __declspec(novtable) ISecondaryTileVisualElements2 : Windows::IInspectable
+struct __declspec(uuid("fd2e31d0-57dc-4794-8ecf-5682f5f3e6ef")) __declspec(novtable) ISecondaryTileVisualElements2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Square71x71Logo(Windows::Foundation::IUriRuntimeClass * value) = 0;
     virtual HRESULT __stdcall get_Square71x71Logo(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("56b55ad6-d15c-40f4-81e7-57ffd8f8a4e9")) __declspec(novtable) ISecondaryTileVisualElements3 : Windows::IInspectable
+struct __declspec(uuid("56b55ad6-d15c-40f4-81e7-57ffd8f8a4e9")) __declspec(novtable) ISecondaryTileVisualElements3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Square44x44Logo(Windows::Foundation::IUriRuntimeClass * value) = 0;
     virtual HRESULT __stdcall get_Square44x44Logo(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("c138333a-9308-4072-88cc-d068db347c68")) __declspec(novtable) IVisualElementsRequest : Windows::IInspectable
+struct __declspec(uuid("c138333a-9308-4072-88cc-d068db347c68")) __declspec(novtable) IVisualElementsRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_VisualElements(Windows::UI::StartScreen::ISecondaryTileVisualElements ** value) = 0;
     virtual HRESULT __stdcall get_AlternateVisualElements(Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTileVisualElements> ** value) = 0;
@@ -162,12 +162,12 @@ struct __declspec(uuid("c138333a-9308-4072-88cc-d068db347c68")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeferral(Windows::UI::StartScreen::IVisualElementsRequestDeferral ** deferral) = 0;
 };
 
-struct __declspec(uuid("a1656eb0-0126-4357-8204-bd82bb2a046d")) __declspec(novtable) IVisualElementsRequestDeferral : Windows::IInspectable
+struct __declspec(uuid("a1656eb0-0126-4357-8204-bd82bb2a046d")) __declspec(novtable) IVisualElementsRequestDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("7b6fc982-3a0d-4ece-af96-cd17e1b00b2d")) __declspec(novtable) IVisualElementsRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("7b6fc982-3a0d-4ece-af96-cd17e1b00b2d")) __declspec(novtable) IVisualElementsRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::UI::StartScreen::IVisualElementsRequest ** value) = 0;
 };

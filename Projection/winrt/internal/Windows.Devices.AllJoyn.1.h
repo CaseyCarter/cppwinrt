@@ -20,7 +20,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::AllJoyn {
 
-struct __declspec(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7")) __declspec(novtable) IAllJoynAboutData : Windows::IInspectable
+struct __declspec(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7")) __declspec(novtable) IAllJoynAboutData : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsEnabled(bool value) = 0;
@@ -45,10 +45,10 @@ struct __declspec(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7")) __declspec(novta
     virtual HRESULT __stdcall put_AppId(GUID value) = 0;
 };
 
-struct __declspec(uuid("6823111f-6212-4934-9c48-e19ca4984288")) __declspec(novtable) IAllJoynAboutDataView : Windows::IInspectable
+struct __declspec(uuid("6823111f-6212-4934-9c48-e19ca4984288")) __declspec(novtable) IAllJoynAboutDataView : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(int32_t * value) = 0;
-    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_AJSoftwareVersion(hstring * value) = 0;
     virtual HRESULT __stdcall get_AppId(GUID * value) = 0;
     virtual HRESULT __stdcall get_DateOfManufacture(Windows::Foundation::IReference<Windows::Foundation::DateTime> ** value) = 0;
@@ -65,18 +65,18 @@ struct __declspec(uuid("6823111f-6212-4934-9c48-e19ca4984288")) __declspec(novta
     virtual HRESULT __stdcall get_Manufacturer(hstring * value) = 0;
 };
 
-struct __declspec(uuid("57edb688-0c5e-416e-88b5-39b32d25c47d")) __declspec(novtable) IAllJoynAboutDataViewStatics : Windows::IInspectable
+struct __declspec(uuid("57edb688-0c5e-416e-88b5-39b32d25c47d")) __declspec(novtable) IAllJoynAboutDataViewStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDataBySessionPortAsync(hstring uniqueName, Windows::Devices::AllJoyn::IAllJoynBusAttachment * busAttachment, uint16_t sessionPort, Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetDataBySessionPortWithLanguageAsync(hstring uniqueName, Windows::Devices::AllJoyn::IAllJoynBusAttachment * busAttachment, uint16_t sessionPort, Windows::Globalization::ILanguage * language, Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> ** operation) = 0;
 };
 
-struct __declspec(uuid("4da817d2-cd1d-4023-a7c4-16def89c28df")) __declspec(novtable) IAllJoynAcceptSessionJoiner : Windows::IInspectable
+struct __declspec(uuid("4da817d2-cd1d-4023-a7c4-16def89c28df")) __declspec(novtable) IAllJoynAcceptSessionJoiner : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Accept() = 0;
 };
 
-struct __declspec(uuid("4efb5365-3e8a-4257-8f10-539ce0d56c0f")) __declspec(novtable) IAllJoynAcceptSessionJoinerEventArgs : Windows::IInspectable
+struct __declspec(uuid("4efb5365-3e8a-4257-8f10-539ce0d56c0f")) __declspec(novtable) IAllJoynAcceptSessionJoinerEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UniqueName(hstring * value) = 0;
     virtual HRESULT __stdcall get_SessionPort(uint16_t * value) = 0;
@@ -86,19 +86,19 @@ struct __declspec(uuid("4efb5365-3e8a-4257-8f10-539ce0d56c0f")) __declspec(novta
     virtual HRESULT __stdcall abi_Accept() = 0;
 };
 
-struct __declspec(uuid("b4435bc0-6145-429e-84db-d5bfe772b14f")) __declspec(novtable) IAllJoynAcceptSessionJoinerEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("b4435bc0-6145-429e-84db-d5bfe772b14f")) __declspec(novtable) IAllJoynAcceptSessionJoinerEventArgsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring uniqueName, uint16_t sessionPort, winrt::Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner * acceptSessionJoiner, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs ** result) = 0;
 };
 
-struct __declspec(uuid("97b4701c-15dc-4b53-b6a4-7d134300d7bf")) __declspec(novtable) IAllJoynAuthenticationCompleteEventArgs : Windows::IInspectable
+struct __declspec(uuid("97b4701c-15dc-4b53-b6a4-7d134300d7bf")) __declspec(novtable) IAllJoynAuthenticationCompleteEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AuthenticationMechanism(winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism * value) = 0;
     virtual HRESULT __stdcall get_PeerUniqueName(hstring * value) = 0;
     virtual HRESULT __stdcall get_Succeeded(bool * value) = 0;
 };
 
-struct __declspec(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6")) __declspec(novtable) IAllJoynBusAttachment : Windows::IInspectable
+struct __declspec(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6")) __declspec(novtable) IAllJoynBusAttachment : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AboutData(Windows::Devices::AllJoyn::IAllJoynAboutData ** value) = 0;
     virtual HRESULT __stdcall get_ConnectionSpecification(hstring * value) = 0;
@@ -118,7 +118,7 @@ struct __declspec(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6")) __declspec(novta
     virtual HRESULT __stdcall remove_AuthenticationComplete(event_token token) = 0;
 };
 
-struct __declspec(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98")) __declspec(novtable) IAllJoynBusAttachment2 : Windows::IInspectable
+struct __declspec(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98")) __declspec(novtable) IAllJoynBusAttachment2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAboutDataAsync(Windows::Devices::AllJoyn::IAllJoynServiceInfo * serviceInfo, Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetAboutDataWithLanguageAsync(Windows::Devices::AllJoyn::IAllJoynServiceInfo * serviceInfo, Windows::Globalization::ILanguage * language, Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> ** operation) = 0;
@@ -128,24 +128,24 @@ struct __declspec(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98")) __declspec(novta
     virtual HRESULT __stdcall remove_SessionJoined(event_token token) = 0;
 };
 
-struct __declspec(uuid("642ef1a4-ad85-4ddf-90ae-604452b22288")) __declspec(novtable) IAllJoynBusAttachmentFactory : Windows::IInspectable
+struct __declspec(uuid("642ef1a4-ad85-4ddf-90ae-604452b22288")) __declspec(novtable) IAllJoynBusAttachmentFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring connectionSpecification, Windows::Devices::AllJoyn::IAllJoynBusAttachment ** result) = 0;
 };
 
-struct __declspec(uuid("d82e75f4-c02a-41ec-a8d5-eab1558953aa")) __declspec(novtable) IAllJoynBusAttachmentStateChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("d82e75f4-c02a-41ec-a8d5-eab1558953aa")) __declspec(novtable) IAllJoynBusAttachmentStateChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_State(winrt::Windows::Devices::AllJoyn::AllJoynBusAttachmentState * value) = 0;
     virtual HRESULT __stdcall get_Status(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("839d4d3d-1051-40d7-872a-8d0141115b1f")) __declspec(novtable) IAllJoynBusAttachmentStatics : Windows::IInspectable
+struct __declspec(uuid("839d4d3d-1051-40d7-872a-8d0141115b1f")) __declspec(novtable) IAllJoynBusAttachmentStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDefault(Windows::Devices::AllJoyn::IAllJoynBusAttachment ** defaultBusAttachment) = 0;
     virtual HRESULT __stdcall abi_GetWatcher(Windows::Foundation::Collections::IIterable<hstring> * requiredInterfaces, Windows::Devices::Enumeration::IDeviceWatcher ** deviceWatcher) = 0;
 };
 
-struct __declspec(uuid("e8fd825e-f73a-490c-8804-04e026643047")) __declspec(novtable) IAllJoynBusObject : Windows::IInspectable
+struct __declspec(uuid("e8fd825e-f73a-490c-8804-04e026643047")) __declspec(novtable) IAllJoynBusObject : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Start() = 0;
     virtual HRESULT __stdcall abi_Stop() = 0;
@@ -156,23 +156,23 @@ struct __declspec(uuid("e8fd825e-f73a-490c-8804-04e026643047")) __declspec(novta
     virtual HRESULT __stdcall remove_Stopped(event_token token) = 0;
 };
 
-struct __declspec(uuid("2c2f9f0b-8e02-4f9c-ac27-ea6dad5d3b50")) __declspec(novtable) IAllJoynBusObjectFactory : Windows::IInspectable
+struct __declspec(uuid("2c2f9f0b-8e02-4f9c-ac27-ea6dad5d3b50")) __declspec(novtable) IAllJoynBusObjectFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring objectPath, Windows::Devices::AllJoyn::IAllJoynBusObject ** result) = 0;
     virtual HRESULT __stdcall abi_CreateWithBusAttachment(hstring objectPath, Windows::Devices::AllJoyn::IAllJoynBusAttachment * busAttachment, Windows::Devices::AllJoyn::IAllJoynBusObject ** result) = 0;
 };
 
-struct __declspec(uuid("de102115-ef8e-4d42-b93b-a2ae74519766")) __declspec(novtable) IAllJoynBusObjectStoppedEventArgs : Windows::IInspectable
+struct __declspec(uuid("de102115-ef8e-4d42-b93b-a2ae74519766")) __declspec(novtable) IAllJoynBusObjectStoppedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("6b22fd48-d0a3-4255-953a-4772b4028073")) __declspec(novtable) IAllJoynBusObjectStoppedEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("6b22fd48-d0a3-4255-953a-4772b4028073")) __declspec(novtable) IAllJoynBusObjectStoppedEventArgsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(int32_t status, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs ** result) = 0;
 };
 
-struct __declspec(uuid("824650f2-a190-40b1-abab-349ec244dfaa")) __declspec(novtable) IAllJoynCredentials : Windows::IInspectable
+struct __declspec(uuid("824650f2-a190-40b1-abab-349ec244dfaa")) __declspec(novtable) IAllJoynCredentials : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AuthenticationMechanism(winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism * value) = 0;
     virtual HRESULT __stdcall get_Certificate(Windows::Security::Cryptography::Certificates::ICertificate ** value) = 0;
@@ -183,7 +183,7 @@ struct __declspec(uuid("824650f2-a190-40b1-abab-349ec244dfaa")) __declspec(novta
     virtual HRESULT __stdcall put_Timeout(Windows::Foundation::TimeSpan value) = 0;
 };
 
-struct __declspec(uuid("6a87e34e-b069-4b80-9e1a-41bc837c65d2")) __declspec(novtable) IAllJoynCredentialsRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("6a87e34e-b069-4b80-9e1a-41bc837c65d2")) __declspec(novtable) IAllJoynCredentialsRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AttemptCount(uint16_t * value) = 0;
     virtual HRESULT __stdcall get_Credentials(Windows::Devices::AllJoyn::IAllJoynCredentials ** value) = 0;
@@ -192,7 +192,7 @@ struct __declspec(uuid("6a87e34e-b069-4b80-9e1a-41bc837c65d2")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** result) = 0;
 };
 
-struct __declspec(uuid("800a7612-b805-44af-a2e1-792ab655a2d0")) __declspec(novtable) IAllJoynCredentialsVerificationRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("800a7612-b805-44af-a2e1-792ab655a2d0")) __declspec(novtable) IAllJoynCredentialsVerificationRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AuthenticationMechanism(winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism * value) = 0;
     virtual HRESULT __stdcall get_PeerUniqueName(hstring * value) = 0;
@@ -204,59 +204,59 @@ struct __declspec(uuid("800a7612-b805-44af-a2e1-792ab655a2d0")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** result) = 0;
 };
 
-struct __declspec(uuid("ff2b0127-2c12-4859-aa3a-c74461ee814c")) __declspec(novtable) IAllJoynMessageInfo : Windows::IInspectable
+struct __declspec(uuid("ff2b0127-2c12-4859-aa3a-c74461ee814c")) __declspec(novtable) IAllJoynMessageInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SenderUniqueName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("34664c2a-8289-43d4-b4a8-3f4de359f043")) __declspec(novtable) IAllJoynMessageInfoFactory : Windows::IInspectable
+struct __declspec(uuid("34664c2a-8289-43d4-b4a8-3f4de359f043")) __declspec(novtable) IAllJoynMessageInfoFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring senderUniqueName, Windows::Devices::AllJoyn::IAllJoynMessageInfo ** result) = 0;
 };
 
-struct __declspec(uuid("9d084679-469b-495a-a710-ac50f123069f")) __declspec(novtable) IAllJoynProducer : Windows::IInspectable
+struct __declspec(uuid("9d084679-469b-495a-a710-ac50f123069f")) __declspec(novtable) IAllJoynProducer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetBusObject(Windows::Devices::AllJoyn::IAllJoynBusObject * busObject) = 0;
 };
 
-struct __declspec(uuid("51309770-4937-492d-8080-236439987ceb")) __declspec(novtable) IAllJoynProducerStoppedEventArgs : Windows::IInspectable
+struct __declspec(uuid("51309770-4937-492d-8080-236439987ceb")) __declspec(novtable) IAllJoynProducerStoppedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("56529961-b219-4d6e-9f78-fa3f99fa8fe5")) __declspec(novtable) IAllJoynProducerStoppedEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("56529961-b219-4d6e-9f78-fa3f99fa8fe5")) __declspec(novtable) IAllJoynProducerStoppedEventArgsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(int32_t status, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs ** result) = 0;
 };
 
-struct __declspec(uuid("4cbe8209-b93e-4182-999b-ddd000f9c575")) __declspec(novtable) IAllJoynServiceInfo : Windows::IInspectable
+struct __declspec(uuid("4cbe8209-b93e-4182-999b-ddd000f9c575")) __declspec(novtable) IAllJoynServiceInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UniqueName(hstring * value) = 0;
     virtual HRESULT __stdcall get_ObjectPath(hstring * value) = 0;
     virtual HRESULT __stdcall get_SessionPort(uint16_t * value) = 0;
 };
 
-struct __declspec(uuid("7581dabd-fe03-4f4b-94a4-f02fdcbd11b8")) __declspec(novtable) IAllJoynServiceInfoFactory : Windows::IInspectable
+struct __declspec(uuid("7581dabd-fe03-4f4b-94a4-f02fdcbd11b8")) __declspec(novtable) IAllJoynServiceInfoFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring uniqueName, hstring objectPath, uint16_t sessionPort, Windows::Devices::AllJoyn::IAllJoynServiceInfo ** result) = 0;
 };
 
-struct __declspec(uuid("3057a95f-1d3f-41f3-8969-e32792627396")) __declspec(novtable) IAllJoynServiceInfoRemovedEventArgs : Windows::IInspectable
+struct __declspec(uuid("3057a95f-1d3f-41f3-8969-e32792627396")) __declspec(novtable) IAllJoynServiceInfoRemovedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UniqueName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("0dbf8627-9aff-4955-9227-6953baf41569")) __declspec(novtable) IAllJoynServiceInfoRemovedEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("0dbf8627-9aff-4955-9227-6953baf41569")) __declspec(novtable) IAllJoynServiceInfoRemovedEventArgsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring uniqueName, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs ** result) = 0;
 };
 
-struct __declspec(uuid("5678570a-603a-49fc-b750-0ef13609213c")) __declspec(novtable) IAllJoynServiceInfoStatics : Windows::IInspectable
+struct __declspec(uuid("5678570a-603a-49fc-b750-0ef13609213c")) __declspec(novtable) IAllJoynServiceInfoStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> ** operation) = 0;
 };
 
-struct __declspec(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1")) __declspec(novtable) IAllJoynSession : Windows::IInspectable
+struct __declspec(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1")) __declspec(novtable) IAllJoynSession : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(int32_t * value) = 0;
     virtual HRESULT __stdcall get_Status(int32_t * value) = 0;
@@ -269,53 +269,53 @@ struct __declspec(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1")) __declspec(novta
     virtual HRESULT __stdcall remove_Lost(event_token token) = 0;
 };
 
-struct __declspec(uuid("9e9f5bd0-b5d7-47c5-8dab-b040cc192871")) __declspec(novtable) IAllJoynSessionJoinedEventArgs : Windows::IInspectable
+struct __declspec(uuid("9e9f5bd0-b5d7-47c5-8dab-b040cc192871")) __declspec(novtable) IAllJoynSessionJoinedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Session(Windows::Devices::AllJoyn::IAllJoynSession ** value) = 0;
 };
 
-struct __declspec(uuid("6824d689-d6cb-4d9e-a09e-35806870b17f")) __declspec(novtable) IAllJoynSessionJoinedEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("6824d689-d6cb-4d9e-a09e-35806870b17f")) __declspec(novtable) IAllJoynSessionJoinedEventArgsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Devices::AllJoyn::IAllJoynSession * session, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs ** result) = 0;
 };
 
-struct __declspec(uuid("e766a48a-8bb8-4954-ae67-d2fa43d1f96b")) __declspec(novtable) IAllJoynSessionLostEventArgs : Windows::IInspectable
+struct __declspec(uuid("e766a48a-8bb8-4954-ae67-d2fa43d1f96b")) __declspec(novtable) IAllJoynSessionLostEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Reason(winrt::Windows::Devices::AllJoyn::AllJoynSessionLostReason * value) = 0;
 };
 
-struct __declspec(uuid("13bbfd32-d2f4-49c9-980e-2805e13586b1")) __declspec(novtable) IAllJoynSessionLostEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("13bbfd32-d2f4-49c9-980e-2805e13586b1")) __declspec(novtable) IAllJoynSessionLostEventArgsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(winrt::Windows::Devices::AllJoyn::AllJoynSessionLostReason reason, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs ** result) = 0;
 };
 
-struct __declspec(uuid("49a2798a-0dd1-46c1-9cd6-27190e503a5e")) __declspec(novtable) IAllJoynSessionMemberAddedEventArgs : Windows::IInspectable
+struct __declspec(uuid("49a2798a-0dd1-46c1-9cd6-27190e503a5e")) __declspec(novtable) IAllJoynSessionMemberAddedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UniqueName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("341de352-1d33-40a1-a1d3-e5777020e1f1")) __declspec(novtable) IAllJoynSessionMemberAddedEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("341de352-1d33-40a1-a1d3-e5777020e1f1")) __declspec(novtable) IAllJoynSessionMemberAddedEventArgsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring uniqueName, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs ** result) = 0;
 };
 
-struct __declspec(uuid("409a219f-aa4a-4893-b430-baa1b63c6219")) __declspec(novtable) IAllJoynSessionMemberRemovedEventArgs : Windows::IInspectable
+struct __declspec(uuid("409a219f-aa4a-4893-b430-baa1b63c6219")) __declspec(novtable) IAllJoynSessionMemberRemovedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UniqueName(hstring * value) = 0;
 };
 
-struct __declspec(uuid("c4d355e8-42b8-4b67-b757-d0cfcad59280")) __declspec(novtable) IAllJoynSessionMemberRemovedEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("c4d355e8-42b8-4b67-b757-d0cfcad59280")) __declspec(novtable) IAllJoynSessionMemberRemovedEventArgsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring uniqueName, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs ** result) = 0;
 };
 
-struct __declspec(uuid("9e05d604-a06c-46d4-b46c-0b0b54105b44")) __declspec(novtable) IAllJoynSessionStatics : Windows::IInspectable
+struct __declspec(uuid("9e05d604-a06c-46d4-b46c-0b0b54105b44")) __declspec(novtable) IAllJoynSessionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetFromServiceInfoAsync(Windows::Devices::AllJoyn::IAllJoynServiceInfo * serviceInfo, Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetFromServiceInfoAndBusAttachmentAsync(Windows::Devices::AllJoyn::IAllJoynServiceInfo * serviceInfo, Windows::Devices::AllJoyn::IAllJoynBusAttachment * busAttachment, Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> ** operation) = 0;
 };
 
-struct __declspec(uuid("d0b7a17e-0d29-4da9-8ac6-54c554bedbc5")) __declspec(novtable) IAllJoynStatusStatics : Windows::IInspectable
+struct __declspec(uuid("d0b7a17e-0d29-4da9-8ac6-54c554bedbc5")) __declspec(novtable) IAllJoynStatusStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Ok(int32_t * value) = 0;
     virtual HRESULT __stdcall get_Fail(int32_t * value) = 0;
@@ -337,12 +337,12 @@ struct __declspec(uuid("d0b7a17e-0d29-4da9-8ac6-54c554bedbc5")) __declspec(novta
     virtual HRESULT __stdcall get_InvalidArgument8(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("c9fca03b-701d-4aa8-97dd-a2bb0a8f5fa3")) __declspec(novtable) IAllJoynWatcherStoppedEventArgs : Windows::IInspectable
+struct __declspec(uuid("c9fca03b-701d-4aa8-97dd-a2bb0a8f5fa3")) __declspec(novtable) IAllJoynWatcherStoppedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("878fa5a8-2d50-47e1-904a-20bf0d48c782")) __declspec(novtable) IAllJoynWatcherStoppedEventArgsFactory : Windows::IInspectable
+struct __declspec(uuid("878fa5a8-2d50-47e1-904a-20bf0d48c782")) __declspec(novtable) IAllJoynWatcherStoppedEventArgsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(int32_t status, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs ** result) = 0;
 };
@@ -407,7 +407,7 @@ template <typename D>
 struct WINRT_EBO impl_IAllJoynAboutDataView
 {
     int32_t Status() const;
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
     hstring AJSoftwareVersion() const;
     GUID AppId() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> DateOfManufacture() const;

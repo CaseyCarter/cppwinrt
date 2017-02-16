@@ -22,7 +22,7 @@ template <typename O, typename M> DisplayPropertiesEventHandler::DisplayProperti
     DisplayPropertiesEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void DisplayPropertiesEventHandler::operator()(const Windows::IInspectable & sender) const
+inline void DisplayPropertiesEventHandler::operator()(const Windows::Foundation::IInspectable & sender) const
 {
     check_hresult((*(abi<DisplayPropertiesEventHandler> **)this)->abi_Invoke(get_abi(sender)));
 }
@@ -62,12 +62,12 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_OrientationChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_OrientationChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().OrientationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().OrientationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -146,12 +146,12 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_DpiChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_DpiChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().DpiChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().DpiChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -188,12 +188,12 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_StereoEnabledChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_StereoEnabledChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().StereoEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().StereoEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -231,12 +231,12 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_ColorProfileChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ColorProfileChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ColorProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ColorProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -375,12 +375,12 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
         }
     }
 
-    HRESULT __stdcall add_DisplayContentsInvalidated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_DisplayContentsInvalidated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().DisplayContentsInvalidated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().DisplayContentsInvalidated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -684,14 +684,14 @@ template <typename D> void impl_IDisplayInformationStatics<D>::AutoRotationPrefe
     check_hresult(WINRT_SHIM(IDisplayInformationStatics)->put_AutoRotationPreferences(value));
 }
 
-template <typename D> event_token impl_IDisplayInformationStatics<D>::DisplayContentsInvalidated(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDisplayInformationStatics<D>::DisplayContentsInvalidated(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDisplayInformationStatics)->add_DisplayContentsInvalidated(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDisplayInformationStatics> impl_IDisplayInformationStatics<D>::DisplayContentsInvalidated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDisplayInformationStatics> impl_IDisplayInformationStatics<D>::DisplayContentsInvalidated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDisplayInformationStatics>(this, &ABI::Windows::Graphics::Display::IDisplayInformationStatics::remove_DisplayContentsInvalidated, DisplayContentsInvalidated(handler));
 }
@@ -715,14 +715,14 @@ template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IDisp
     return value;
 }
 
-template <typename D> event_token impl_IDisplayInformation<D>::OrientationChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDisplayInformation<D>::OrientationChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDisplayInformation)->add_OrientationChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformation<D>::OrientationChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformation<D>::OrientationChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDisplayInformation>(this, &ABI::Windows::Graphics::Display::IDisplayInformation::remove_OrientationChanged, OrientationChanged(handler));
 }
@@ -760,14 +760,14 @@ template <typename D> float impl_IDisplayInformation<D>::RawDpiY() const
     return value;
 }
 
-template <typename D> event_token impl_IDisplayInformation<D>::DpiChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDisplayInformation<D>::DpiChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDisplayInformation)->add_DpiChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformation<D>::DpiChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformation<D>::DpiChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDisplayInformation>(this, &ABI::Windows::Graphics::Display::IDisplayInformation::remove_DpiChanged, DpiChanged(handler));
 }
@@ -784,14 +784,14 @@ template <typename D> bool impl_IDisplayInformation<D>::StereoEnabled() const
     return value;
 }
 
-template <typename D> event_token impl_IDisplayInformation<D>::StereoEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDisplayInformation<D>::StereoEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDisplayInformation)->add_StereoEnabledChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformation<D>::StereoEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformation<D>::StereoEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDisplayInformation>(this, &ABI::Windows::Graphics::Display::IDisplayInformation::remove_StereoEnabledChanged, StereoEnabledChanged(handler));
 }
@@ -808,14 +808,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
     return asyncInfo;
 }
 
-template <typename D> event_token impl_IDisplayInformation<D>::ColorProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IDisplayInformation<D>::ColorProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IDisplayInformation)->add_ColorProfileChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformation<D>::ColorProfileChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformation<D>::ColorProfileChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IDisplayInformation>(this, &ABI::Windows::Graphics::Display::IDisplayInformation::remove_ColorProfileChanged, ColorProfileChanged(handler));
 }
@@ -1007,12 +1007,12 @@ inline void DisplayInformation::AutoRotationPreferences(Windows::Graphics::Displ
     get_activation_factory<DisplayInformation, IDisplayInformationStatics>().AutoRotationPreferences(value);
 }
 
-inline event_token DisplayInformation::DisplayContentsInvalidated(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler)
+inline event_token DisplayInformation::DisplayContentsInvalidated(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler)
 {
     return get_activation_factory<DisplayInformation, IDisplayInformationStatics>().DisplayContentsInvalidated(handler);
 }
 
-inline factory_event_revoker<IDisplayInformationStatics> DisplayInformation::DisplayContentsInvalidated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler)
+inline factory_event_revoker<IDisplayInformationStatics> DisplayInformation::DisplayContentsInvalidated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler)
 {
     auto factory = get_activation_factory<DisplayInformation, IDisplayInformationStatics>();
     return { factory, &ABI::Windows::Graphics::Display::IDisplayInformationStatics::remove_DisplayContentsInvalidated, factory.DisplayContentsInvalidated(handler) };

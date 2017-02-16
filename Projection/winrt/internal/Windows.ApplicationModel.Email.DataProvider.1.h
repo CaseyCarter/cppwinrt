@@ -16,7 +16,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Email::DataProvider {
 
-struct __declspec(uuid("3b9c9dc7-37b2-4bf0-ae30-7b644a1c96e1")) __declspec(novtable) IEmailDataProviderConnection : Windows::IInspectable
+struct __declspec(uuid("3b9c9dc7-37b2-4bf0-ae30-7b644a1c96e1")) __declspec(novtable) IEmailDataProviderConnection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_MailboxSyncRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequestEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_MailboxSyncRequested(event_token token) = 0;
@@ -51,12 +51,12 @@ struct __declspec(uuid("3b9c9dc7-37b2-4bf0-ae30-7b644a1c96e1")) __declspec(novta
     virtual HRESULT __stdcall abi_Start() = 0;
 };
 
-struct __declspec(uuid("8f3e4e50-341e-45f3-bba0-84a005e1319a")) __declspec(novtable) IEmailDataProviderTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("8f3e4e50-341e-45f3-bba0-84a005e1319a")) __declspec(novtable) IEmailDataProviderTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Connection(Windows::ApplicationModel::Email::DataProvider::IEmailDataProviderConnection ** value) = 0;
 };
 
-struct __declspec(uuid("184d3775-c921-4c39-a309-e16c9f22b04b")) __declspec(novtable) IEmailMailboxCreateFolderRequest : Windows::IInspectable
+struct __declspec(uuid("184d3775-c921-4c39-a309-e16c9f22b04b")) __declspec(novtable) IEmailMailboxCreateFolderRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_ParentFolderId(hstring * value) = 0;
@@ -65,13 +65,13 @@ struct __declspec(uuid("184d3775-c921-4c39-a309-e16c9f22b04b")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(winrt::Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus status, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("03e4c02c-241c-4ea9-a68f-ff20bc5afc85")) __declspec(novtable) IEmailMailboxCreateFolderRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("03e4c02c-241c-4ea9-a68f-ff20bc5afc85")) __declspec(novtable) IEmailMailboxCreateFolderRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxCreateFolderRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("9469e88a-a931-4779-923d-09a3ea292e29")) __declspec(novtable) IEmailMailboxDeleteFolderRequest : Windows::IInspectable
+struct __declspec(uuid("9469e88a-a931-4779-923d-09a3ea292e29")) __declspec(novtable) IEmailMailboxDeleteFolderRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_EmailFolderId(hstring * value) = 0;
@@ -79,13 +79,13 @@ struct __declspec(uuid("9469e88a-a931-4779-923d-09a3ea292e29")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(winrt::Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus status, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("b4d32d06-2332-4678-8378-28b579336846")) __declspec(novtable) IEmailMailboxDeleteFolderRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("b4d32d06-2332-4678-8378-28b579336846")) __declspec(novtable) IEmailMailboxDeleteFolderRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDeleteFolderRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("0b1dbbb4-750c-48e1-bce4-8d589684ffbc")) __declspec(novtable) IEmailMailboxDownloadAttachmentRequest : Windows::IInspectable
+struct __declspec(uuid("0b1dbbb4-750c-48e1-bce4-8d589684ffbc")) __declspec(novtable) IEmailMailboxDownloadAttachmentRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_EmailMessageId(hstring * value) = 0;
@@ -94,13 +94,13 @@ struct __declspec(uuid("0b1dbbb4-750c-48e1-bce4-8d589684ffbc")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("ccddc46d-ffa8-4877-9f9d-fed7bcaf4104")) __declspec(novtable) IEmailMailboxDownloadAttachmentRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("ccddc46d-ffa8-4877-9f9d-fed7bcaf4104")) __declspec(novtable) IEmailMailboxDownloadAttachmentRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDownloadAttachmentRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("497b4187-5b4d-4b23-816c-f3842beb753e")) __declspec(novtable) IEmailMailboxDownloadMessageRequest : Windows::IInspectable
+struct __declspec(uuid("497b4187-5b4d-4b23-816c-f3842beb753e")) __declspec(novtable) IEmailMailboxDownloadMessageRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_EmailMessageId(hstring * value) = 0;
@@ -108,13 +108,13 @@ struct __declspec(uuid("497b4187-5b4d-4b23-816c-f3842beb753e")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("470409ad-d0a0-4a5b-bb2a-37621039c53e")) __declspec(novtable) IEmailMailboxDownloadMessageRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("470409ad-d0a0-4a5b-bb2a-37621039c53e")) __declspec(novtable) IEmailMailboxDownloadMessageRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxDownloadMessageRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("fe4b03ab-f86d-46d9-b4ce-bc8a6d9e9268")) __declspec(novtable) IEmailMailboxEmptyFolderRequest : Windows::IInspectable
+struct __declspec(uuid("fe4b03ab-f86d-46d9-b4ce-bc8a6d9e9268")) __declspec(novtable) IEmailMailboxEmptyFolderRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_EmailFolderId(hstring * value) = 0;
@@ -122,13 +122,13 @@ struct __declspec(uuid("fe4b03ab-f86d-46d9-b4ce-bc8a6d9e9268")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(winrt::Windows::ApplicationModel::Email::EmailMailboxEmptyFolderStatus status, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("7183f484-985a-4ac0-b33f-ee0e2627a3c0")) __declspec(novtable) IEmailMailboxEmptyFolderRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("7183f484-985a-4ac0-b33f-ee0e2627a3c0")) __declspec(novtable) IEmailMailboxEmptyFolderRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxEmptyFolderRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("616d6af1-70d4-4832-b869-b80542ae9be8")) __declspec(novtable) IEmailMailboxForwardMeetingRequest : Windows::IInspectable
+struct __declspec(uuid("616d6af1-70d4-4832-b869-b80542ae9be8")) __declspec(novtable) IEmailMailboxForwardMeetingRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_EmailMessageId(hstring * value) = 0;
@@ -141,13 +141,13 @@ struct __declspec(uuid("616d6af1-70d4-4832-b869-b80542ae9be8")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("2bd8f33a-2974-4759-a5a5-58f44d3c0275")) __declspec(novtable) IEmailMailboxForwardMeetingRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("2bd8f33a-2974-4759-a5a5-58f44d3c0275")) __declspec(novtable) IEmailMailboxForwardMeetingRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxForwardMeetingRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("9b380789-1e88-4e01-84cc-1386ad9a2c2f")) __declspec(novtable) IEmailMailboxGetAutoReplySettingsRequest : Windows::IInspectable
+struct __declspec(uuid("9b380789-1e88-4e01-84cc-1386ad9a2c2f")) __declspec(novtable) IEmailMailboxGetAutoReplySettingsRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_RequestedFormat(winrt::Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind * value) = 0;
@@ -155,13 +155,13 @@ struct __declspec(uuid("9b380789-1e88-4e01-84cc-1386ad9a2c2f")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("d79f55c2-fd45-4004-8a91-9bacf38b7022")) __declspec(novtable) IEmailMailboxGetAutoReplySettingsRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("d79f55c2-fd45-4004-8a91-9bacf38b7022")) __declspec(novtable) IEmailMailboxGetAutoReplySettingsRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxGetAutoReplySettingsRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("10ba2856-4a95-4068-91cc-67cc7acf454f")) __declspec(novtable) IEmailMailboxMoveFolderRequest : Windows::IInspectable
+struct __declspec(uuid("10ba2856-4a95-4068-91cc-67cc7acf454f")) __declspec(novtable) IEmailMailboxMoveFolderRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_EmailFolderId(hstring * value) = 0;
@@ -171,13 +171,13 @@ struct __declspec(uuid("10ba2856-4a95-4068-91cc-67cc7acf454f")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("38623020-14ba-4c88-8698-7239e3c8aaa7")) __declspec(novtable) IEmailMailboxMoveFolderRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("38623020-14ba-4c88-8698-7239e3c8aaa7")) __declspec(novtable) IEmailMailboxMoveFolderRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxMoveFolderRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("5aeff152-9799-4f9f-a399-ff07f3eef04e")) __declspec(novtable) IEmailMailboxProposeNewTimeForMeetingRequest : Windows::IInspectable
+struct __declspec(uuid("5aeff152-9799-4f9f-a399-ff07f3eef04e")) __declspec(novtable) IEmailMailboxProposeNewTimeForMeetingRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_EmailMessageId(hstring * value) = 0;
@@ -189,13 +189,13 @@ struct __declspec(uuid("5aeff152-9799-4f9f-a399-ff07f3eef04e")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("fb480b98-33ad-4a67-8251-0f9c249b6a20")) __declspec(novtable) IEmailMailboxProposeNewTimeForMeetingRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("fb480b98-33ad-4a67-8251-0f9c249b6a20")) __declspec(novtable) IEmailMailboxProposeNewTimeForMeetingRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxProposeNewTimeForMeetingRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("efa4cf70-7b39-4c9b-811e-41eaf43a332d")) __declspec(novtable) IEmailMailboxResolveRecipientsRequest : Windows::IInspectable
+struct __declspec(uuid("efa4cf70-7b39-4c9b-811e-41eaf43a332d")) __declspec(novtable) IEmailMailboxResolveRecipientsRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Recipients(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
@@ -203,13 +203,13 @@ struct __declspec(uuid("efa4cf70-7b39-4c9b-811e-41eaf43a332d")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("260f9e02-b2cf-40f8-8c28-e3ed43b1e89a")) __declspec(novtable) IEmailMailboxResolveRecipientsRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("260f9e02-b2cf-40f8-8c28-e3ed43b1e89a")) __declspec(novtable) IEmailMailboxResolveRecipientsRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxResolveRecipientsRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("090eebdf-5a96-41d3-8ad8-34912f9aa60e")) __declspec(novtable) IEmailMailboxServerSearchReadBatchRequest : Windows::IInspectable
+struct __declspec(uuid("090eebdf-5a96-41d3-8ad8-34912f9aa60e")) __declspec(novtable) IEmailMailboxServerSearchReadBatchRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SessionId(hstring * value) = 0;
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
@@ -221,13 +221,13 @@ struct __declspec(uuid("090eebdf-5a96-41d3-8ad8-34912f9aa60e")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(winrt::Windows::ApplicationModel::Email::EmailBatchStatus batchStatus, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("14101b4e-ed9e-45d1-ad7a-cc9b7f643ae2")) __declspec(novtable) IEmailMailboxServerSearchReadBatchRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("14101b4e-ed9e-45d1-ad7a-cc9b7f643ae2")) __declspec(novtable) IEmailMailboxServerSearchReadBatchRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxServerSearchReadBatchRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("75a422d0-a88e-4e54-8dc7-c243186b774e")) __declspec(novtable) IEmailMailboxSetAutoReplySettingsRequest : Windows::IInspectable
+struct __declspec(uuid("75a422d0-a88e-4e54-8dc7-c243186b774e")) __declspec(novtable) IEmailMailboxSetAutoReplySettingsRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_AutoReplySettings(Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings ** value) = 0;
@@ -235,26 +235,26 @@ struct __declspec(uuid("75a422d0-a88e-4e54-8dc7-c243186b774e")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("09da11ad-d7ca-4087-ac86-53fa67f76246")) __declspec(novtable) IEmailMailboxSetAutoReplySettingsRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("09da11ad-d7ca-4087-ac86-53fa67f76246")) __declspec(novtable) IEmailMailboxSetAutoReplySettingsRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxSetAutoReplySettingsRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("4e10e8e4-7e67-405a-b673-dc60c91090fc")) __declspec(novtable) IEmailMailboxSyncManagerSyncRequest : Windows::IInspectable
+struct __declspec(uuid("4e10e8e4-7e67-405a-b673-dc60c91090fc")) __declspec(novtable) IEmailMailboxSyncManagerSyncRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall abi_ReportCompletedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("439a031a-8fcc-4ae5-b9b5-d434e0a65aa8")) __declspec(novtable) IEmailMailboxSyncManagerSyncRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("439a031a-8fcc-4ae5-b9b5-d434e0a65aa8")) __declspec(novtable) IEmailMailboxSyncManagerSyncRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxSyncManagerSyncRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("5b99ac93-b2cf-4888-ba4f-306b6b66df30")) __declspec(novtable) IEmailMailboxUpdateMeetingResponseRequest : Windows::IInspectable
+struct __declspec(uuid("5b99ac93-b2cf-4888-ba4f-306b6b66df30")) __declspec(novtable) IEmailMailboxUpdateMeetingResponseRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_EmailMessageId(hstring * value) = 0;
@@ -266,13 +266,13 @@ struct __declspec(uuid("5b99ac93-b2cf-4888-ba4f-306b6b66df30")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("6898d761-56c9-4f17-be31-66fda94ba159")) __declspec(novtable) IEmailMailboxUpdateMeetingResponseRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("6898d761-56c9-4f17-be31-66fda94ba159")) __declspec(novtable) IEmailMailboxUpdateMeetingResponseRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxUpdateMeetingResponseRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("a94d3931-e11a-4f97-b81a-187a70a8f41a")) __declspec(novtable) IEmailMailboxValidateCertificatesRequest : Windows::IInspectable
+struct __declspec(uuid("a94d3931-e11a-4f97-b81a-187a70a8f41a")) __declspec(novtable) IEmailMailboxValidateCertificatesRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EmailMailboxId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Certificates(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> ** value) = 0;
@@ -280,7 +280,7 @@ struct __declspec(uuid("a94d3931-e11a-4f97-b81a-187a70a8f41a")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("2583bf17-02ff-49fe-a73c-03f37566c691")) __declspec(novtable) IEmailMailboxValidateCertificatesRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("2583bf17-02ff-49fe-a73c-03f37566c691")) __declspec(novtable) IEmailMailboxValidateCertificatesRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Email::DataProvider::IEmailMailboxValidateCertificatesRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;

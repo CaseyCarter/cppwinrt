@@ -12,7 +12,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Globalization::DateTimeFormatting {
 
-struct __declspec(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec")) __declspec(novtable) IDateTimeFormatter : Windows::IInspectable
+struct __declspec(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec")) __declspec(novtable) IDateTimeFormatter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Languages(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
     virtual HRESULT __stdcall get_GeographicRegion(hstring * value) = 0;
@@ -34,12 +34,12 @@ struct __declspec(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec")) __declspec(novta
     virtual HRESULT __stdcall get_ResolvedGeographicRegion(hstring * value) = 0;
 };
 
-struct __declspec(uuid("27c91a86-bdaa-4fd0-9e36-671d5aa5ee03")) __declspec(novtable) IDateTimeFormatter2 : Windows::IInspectable
+struct __declspec(uuid("27c91a86-bdaa-4fd0-9e36-671d5aa5ee03")) __declspec(novtable) IDateTimeFormatter2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FormatUsingTimeZone(Windows::Foundation::DateTime datetime, hstring timeZoneId, hstring * result) = 0;
 };
 
-struct __declspec(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0")) __declspec(novtable) IDateTimeFormatterFactory : Windows::IInspectable
+struct __declspec(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0")) __declspec(novtable) IDateTimeFormatterFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateDateTimeFormatter(hstring formatTemplate, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter ** result) = 0;
     virtual HRESULT __stdcall abi_CreateDateTimeFormatterLanguages(hstring formatTemplate, Windows::Foundation::Collections::IIterable<hstring> * languages, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter ** result) = 0;
@@ -50,7 +50,7 @@ struct __declspec(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateDateTimeFormatterDateTimeContext(winrt::Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, winrt::Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, winrt::Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, winrt::Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, winrt::Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, winrt::Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, winrt::Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, Windows::Foundation::Collections::IIterable<hstring> * languages, hstring geographicRegion, hstring calendar, hstring clock, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter ** result) = 0;
 };
 
-struct __declspec(uuid("bfcde7c0-df4c-4a2e-9012-f47daf3f1212")) __declspec(novtable) IDateTimeFormatterStatics : Windows::IInspectable
+struct __declspec(uuid("bfcde7c0-df4c-4a2e-9012-f47daf3f1212")) __declspec(novtable) IDateTimeFormatterStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LongDate(Windows::Globalization::DateTimeFormatting::IDateTimeFormatter ** value) = 0;
     virtual HRESULT __stdcall get_LongTime(Windows::Globalization::DateTimeFormatting::IDateTimeFormatter ** value) = 0;

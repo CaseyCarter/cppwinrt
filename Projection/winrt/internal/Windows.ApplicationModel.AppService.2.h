@@ -101,21 +101,21 @@ template <> struct __declspec(uuid("07f25b6f-f054-5649-a5ce-b348ddc618b6")) __de
 namespace Windows::ApplicationModel::AppService {
 
 struct IAppServiceCatalogStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceCatalogStatics>
 {
     IAppServiceCatalogStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppServiceClosedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceClosedEventArgs>
 {
     IAppServiceClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppServiceConnection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceConnection>,
     impl::require<IAppServiceConnection, Windows::Foundation::IClosable>
 {
@@ -123,49 +123,49 @@ struct IAppServiceConnection :
 };
 
 struct IAppServiceConnection2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceConnection2>
 {
     IAppServiceConnection2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppServiceDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceDeferral>
 {
     IAppServiceDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppServiceRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceRequest>
 {
     IAppServiceRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppServiceRequestReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceRequestReceivedEventArgs>
 {
     IAppServiceRequestReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppServiceResponse :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceResponse>
 {
     IAppServiceResponse(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppServiceTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceTriggerDetails>
 {
     IAppServiceTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppServiceTriggerDetails2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppServiceTriggerDetails2>
 {
     IAppServiceTriggerDetails2(std::nullptr_t = nullptr) noexcept {}

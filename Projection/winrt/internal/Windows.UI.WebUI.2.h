@@ -16,83 +16,83 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::UI::WebUI {
 
-struct ActivatedEventHandler : Windows::IUnknown
+struct ActivatedEventHandler : Windows::Foundation::IUnknown
 {
     ActivatedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> ActivatedEventHandler(L lambda);
     template <typename F> ActivatedEventHandler (F * function);
     template <typename O, typename M> ActivatedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::Activation::IActivatedEventArgs & eventArgs) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::Activation::IActivatedEventArgs & eventArgs) const;
 };
 
-struct EnteredBackgroundEventHandler : Windows::IUnknown
+struct EnteredBackgroundEventHandler : Windows::Foundation::IUnknown
 {
     EnteredBackgroundEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> EnteredBackgroundEventHandler(L lambda);
     template <typename F> EnteredBackgroundEventHandler (F * function);
     template <typename O, typename M> EnteredBackgroundEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::IEnteredBackgroundEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::IEnteredBackgroundEventArgs & e) const;
 };
 
-struct LeavingBackgroundEventHandler : Windows::IUnknown
+struct LeavingBackgroundEventHandler : Windows::Foundation::IUnknown
 {
     LeavingBackgroundEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> LeavingBackgroundEventHandler(L lambda);
     template <typename F> LeavingBackgroundEventHandler (F * function);
     template <typename O, typename M> LeavingBackgroundEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::ILeavingBackgroundEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::ILeavingBackgroundEventArgs & e) const;
 };
 
-struct NavigatedEventHandler : Windows::IUnknown
+struct NavigatedEventHandler : Windows::Foundation::IUnknown
 {
     NavigatedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> NavigatedEventHandler(L lambda);
     template <typename F> NavigatedEventHandler (F * function);
     template <typename O, typename M> NavigatedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::WebUI::IWebUINavigatedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::WebUI::IWebUINavigatedEventArgs & e) const;
 };
 
-struct ResumingEventHandler : Windows::IUnknown
+struct ResumingEventHandler : Windows::Foundation::IUnknown
 {
     ResumingEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> ResumingEventHandler(L lambda);
     template <typename F> ResumingEventHandler (F * function);
     template <typename O, typename M> ResumingEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender) const;
+    void operator()(const Windows::Foundation::IInspectable & sender) const;
 };
 
-struct SuspendingEventHandler : Windows::IUnknown
+struct SuspendingEventHandler : Windows::Foundation::IUnknown
 {
     SuspendingEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> SuspendingEventHandler(L lambda);
     template <typename F> SuspendingEventHandler (F * function);
     template <typename O, typename M> SuspendingEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::ISuspendingEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::ISuspendingEventArgs & e) const;
 };
 
 struct IActivatedDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivatedDeferral>
 {
     IActivatedDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IActivatedEventArgsDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivatedEventArgsDeferral>
 {
     IActivatedEventArgsDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IActivatedOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivatedOperation>
 {
     IActivatedOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHtmlPrintDocumentSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHtmlPrintDocumentSource>,
     impl::require<IHtmlPrintDocumentSource, Windows::Graphics::Printing::IPrintDocumentSource>
 {
@@ -100,49 +100,49 @@ struct IHtmlPrintDocumentSource :
 };
 
 struct IWebUIActivationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebUIActivationStatics>
 {
     IWebUIActivationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebUIActivationStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebUIActivationStatics2>
 {
     IWebUIActivationStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebUIBackgroundTaskInstance :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebUIBackgroundTaskInstance>
 {
     IWebUIBackgroundTaskInstance(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebUIBackgroundTaskInstanceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebUIBackgroundTaskInstanceStatics>
 {
     IWebUIBackgroundTaskInstanceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebUINavigatedDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebUINavigatedDeferral>
 {
     IWebUINavigatedDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebUINavigatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebUINavigatedEventArgs>
 {
     IWebUINavigatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebUINavigatedOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebUINavigatedOperation>
 {
     IWebUINavigatedOperation(std::nullptr_t = nullptr) noexcept {}

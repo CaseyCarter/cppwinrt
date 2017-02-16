@@ -14,7 +14,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Networking::PushNotifications {
 
-struct __declspec(uuid("2b28102e-ef0b-4f39-9b8a-a3c194de7081")) __declspec(novtable) IPushNotificationChannel : Windows::IInspectable
+struct __declspec(uuid("2b28102e-ef0b-4f39-9b8a-a3c194de7081")) __declspec(novtable) IPushNotificationChannel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Uri(hstring * value) = 0;
     virtual HRESULT __stdcall get_ExpirationTime(Windows::Foundation::DateTime * value) = 0;
@@ -23,7 +23,7 @@ struct __declspec(uuid("2b28102e-ef0b-4f39-9b8a-a3c194de7081")) __declspec(novta
     virtual HRESULT __stdcall remove_PushNotificationReceived(event_token token) = 0;
 };
 
-struct __declspec(uuid("a4c45704-1182-42c7-8890-f563c4890dc4")) __declspec(novtable) IPushNotificationChannelManagerForUser : Windows::IInspectable
+struct __declspec(uuid("a4c45704-1182-42c7-8890-f563c4890dc4")) __declspec(novtable) IPushNotificationChannelManagerForUser : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreatePushNotificationChannelForApplicationAsync(Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> ** operation) = 0;
     virtual HRESULT __stdcall abi_CreatePushNotificationChannelForApplicationAsyncWithId(hstring applicationId, Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> ** operation) = 0;
@@ -31,19 +31,19 @@ struct __declspec(uuid("a4c45704-1182-42c7-8890-f563c4890dc4")) __declspec(novta
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
 };
 
-struct __declspec(uuid("8baf9b65-77a1-4588-bd19-861529a9dcf0")) __declspec(novtable) IPushNotificationChannelManagerStatics : Windows::IInspectable
+struct __declspec(uuid("8baf9b65-77a1-4588-bd19-861529a9dcf0")) __declspec(novtable) IPushNotificationChannelManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreatePushNotificationChannelForApplicationAsync(Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> ** operation) = 0;
     virtual HRESULT __stdcall abi_CreatePushNotificationChannelForApplicationAsyncWithId(hstring applicationId, Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> ** operation) = 0;
     virtual HRESULT __stdcall abi_CreatePushNotificationChannelForSecondaryTileAsync(hstring tileId, Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> ** operation) = 0;
 };
 
-struct __declspec(uuid("b444a65d-a7e9-4b28-950e-f375a907f9df")) __declspec(novtable) IPushNotificationChannelManagerStatics2 : Windows::IInspectable
+struct __declspec(uuid("b444a65d-a7e9-4b28-950e-f375a907f9df")) __declspec(novtable) IPushNotificationChannelManagerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForUser(Windows::System::IUser * user, Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser ** result) = 0;
 };
 
-struct __declspec(uuid("d1065e0c-36cd-484c-b935-0a99b753cf00")) __declspec(novtable) IPushNotificationReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("d1065e0c-36cd-484c-b935-0a99b753cf00")) __declspec(novtable) IPushNotificationReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Cancel(bool value) = 0;
     virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
@@ -54,7 +54,7 @@ struct __declspec(uuid("d1065e0c-36cd-484c-b935-0a99b753cf00")) __declspec(novta
     virtual HRESULT __stdcall get_RawNotification(Windows::Networking::PushNotifications::IRawNotification ** value) = 0;
 };
 
-struct __declspec(uuid("1a227281-3b79-42ac-9963-22ab00d4f0b7")) __declspec(novtable) IRawNotification : Windows::IInspectable
+struct __declspec(uuid("1a227281-3b79-42ac-9963-22ab00d4f0b7")) __declspec(novtable) IRawNotification : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Content(hstring * value) = 0;
 };

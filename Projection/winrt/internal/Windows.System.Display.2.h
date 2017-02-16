@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::System::Display {
 
 struct IDisplayRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDisplayRequest>
 {
     IDisplayRequest(std::nullptr_t = nullptr) noexcept {}

@@ -772,7 +772,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProperties> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {

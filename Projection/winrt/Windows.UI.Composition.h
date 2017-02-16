@@ -671,12 +671,12 @@ struct produce<D, Windows::UI::Composition::ICompositionCommitBatch> : produce_b
         }
     }
 
-    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1849,12 +1849,12 @@ struct produce<D, Windows::UI::Composition::ICompositionScopedBatch> : produce_b
         }
     }
 
-    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -5311,14 +5311,14 @@ template <typename D> bool impl_ICompositionCommitBatch<D>::IsEnded() const
     return value;
 }
 
-template <typename D> event_token impl_ICompositionCommitBatch<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const
+template <typename D> event_token impl_ICompositionCommitBatch<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICompositionCommitBatch)->add_Completed(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICompositionCommitBatch> impl_ICompositionCommitBatch<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const
+template <typename D> event_revoker<ICompositionCommitBatch> impl_ICompositionCommitBatch<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const
 {
     return impl::make_event_revoker<D, ICompositionCommitBatch>(this, &ABI::Windows::UI::Composition::ICompositionCommitBatch::remove_Completed, Completed(handler));
 }
@@ -5793,14 +5793,14 @@ template <typename D> void impl_ICompositionScopedBatch<D>::Suspend() const
     check_hresult(WINRT_SHIM(ICompositionScopedBatch)->abi_Suspend());
 }
 
-template <typename D> event_token impl_ICompositionScopedBatch<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const
+template <typename D> event_token impl_ICompositionScopedBatch<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICompositionScopedBatch)->add_Completed(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICompositionScopedBatch> impl_ICompositionScopedBatch<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const
+template <typename D> event_revoker<ICompositionScopedBatch> impl_ICompositionScopedBatch<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const
 {
     return impl::make_event_revoker<D, ICompositionScopedBatch>(this, &ABI::Windows::UI::Composition::ICompositionScopedBatch::remove_Completed, Completed(handler));
 }

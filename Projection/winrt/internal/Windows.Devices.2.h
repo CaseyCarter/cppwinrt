@@ -10,28 +10,28 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Devices {
 
 struct ILowLevelDevicesAggregateProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLevelDevicesAggregateProvider>
 {
     ILowLevelDevicesAggregateProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLevelDevicesAggregateProviderFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLevelDevicesAggregateProviderFactory>
 {
     ILowLevelDevicesAggregateProviderFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLevelDevicesController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLevelDevicesController>
 {
     ILowLevelDevicesController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILowLevelDevicesControllerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILowLevelDevicesControllerStatics>
 {
     ILowLevelDevicesControllerStatics(std::nullptr_t = nullptr) noexcept {}

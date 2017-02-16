@@ -30,42 +30,42 @@ template <> struct __declspec(uuid("61b95949-a027-51d8-9f33-37927451502b")) __de
 namespace Windows::Gaming::Input::Custom {
 
 struct ICustomGameControllerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICustomGameControllerFactory>
 {
     ICustomGameControllerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGameControllerFactoryManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGameControllerFactoryManagerStatics>
 {
     IGameControllerFactoryManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGameControllerInputSink :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGameControllerInputSink>
 {
     IGameControllerInputSink(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGameControllerProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGameControllerProvider>
 {
     IGameControllerProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGipFirmwareUpdateResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGipFirmwareUpdateResult>
 {
     IGipFirmwareUpdateResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGipGameControllerInputSink :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGipGameControllerInputSink>,
     impl::require<IGipGameControllerInputSink, Windows::Gaming::Input::Custom::IGameControllerInputSink>
 {
@@ -73,7 +73,7 @@ struct IGipGameControllerInputSink :
 };
 
 struct IGipGameControllerProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGipGameControllerProvider>,
     impl::require<IGipGameControllerProvider, Windows::Gaming::Input::Custom::IGameControllerProvider>
 {
@@ -81,7 +81,7 @@ struct IGipGameControllerProvider :
 };
 
 struct IXusbGameControllerInputSink :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXusbGameControllerInputSink>,
     impl::require<IXusbGameControllerInputSink, Windows::Gaming::Input::Custom::IGameControllerInputSink>
 {
@@ -89,7 +89,7 @@ struct IXusbGameControllerInputSink :
 };
 
 struct IXusbGameControllerProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXusbGameControllerProvider>,
     impl::require<IXusbGameControllerProvider, Windows::Gaming::Input::Custom::IGameControllerProvider>
 {

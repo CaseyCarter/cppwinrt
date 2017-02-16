@@ -130,112 +130,112 @@ template <> struct __declspec(uuid("a7d9983a-a11f-572e-89fb-683ea429bcbc")) __de
 namespace Windows::Devices::Bluetooth::Advertisement {
 
 struct IBluetoothLEAdvertisement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisement>
 {
     IBluetoothLEAdvertisement(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementBytePattern :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementBytePattern>
 {
     IBluetoothLEAdvertisementBytePattern(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementBytePatternFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementBytePatternFactory>
 {
     IBluetoothLEAdvertisementBytePatternFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementDataSection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementDataSection>
 {
     IBluetoothLEAdvertisementDataSection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementDataSectionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementDataSectionFactory>
 {
     IBluetoothLEAdvertisementDataSectionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementDataTypesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementDataTypesStatics>
 {
     IBluetoothLEAdvertisementDataTypesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementFilter>
 {
     IBluetoothLEAdvertisementFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementPublisher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementPublisher>
 {
     IBluetoothLEAdvertisementPublisher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementPublisherFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementPublisherFactory>
 {
     IBluetoothLEAdvertisementPublisherFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementPublisherStatusChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>
 {
     IBluetoothLEAdvertisementPublisherStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementReceivedEventArgs>
 {
     IBluetoothLEAdvertisementReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementWatcher>
 {
     IBluetoothLEAdvertisementWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementWatcherFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementWatcherFactory>
 {
     IBluetoothLEAdvertisementWatcherFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementWatcherStoppedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementWatcherStoppedEventArgs>
 {
     IBluetoothLEAdvertisementWatcherStoppedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEManufacturerData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEManufacturerData>
 {
     IBluetoothLEManufacturerData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEManufacturerDataFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEManufacturerDataFactory>
 {
     IBluetoothLEManufacturerDataFactory(std::nullptr_t = nullptr) noexcept {}

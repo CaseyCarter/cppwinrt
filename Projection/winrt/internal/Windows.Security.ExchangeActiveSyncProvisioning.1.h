@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Security::ExchangeActiveSyncProvisioning {
 
-struct __declspec(uuid("54dfd981-1968-4ca3-b958-e595d16505eb")) __declspec(novtable) IEasClientDeviceInformation : Windows::IInspectable
+struct __declspec(uuid("54dfd981-1968-4ca3-b958-e595d16505eb")) __declspec(novtable) IEasClientDeviceInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(GUID * value) = 0;
     virtual HRESULT __stdcall get_OperatingSystem(hstring * value) = 0;
@@ -20,7 +20,7 @@ struct __declspec(uuid("54dfd981-1968-4ca3-b958-e595d16505eb")) __declspec(novta
     virtual HRESULT __stdcall get_SystemSku(hstring * value) = 0;
 };
 
-struct __declspec(uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754")) __declspec(novtable) IEasClientDeviceInformation2 : Windows::IInspectable
+struct __declspec(uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754")) __declspec(novtable) IEasClientDeviceInformation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SystemHardwareVersion(hstring * value) = 0;
     virtual HRESULT __stdcall get_SystemFirmwareVersion(hstring * value) = 0;

@@ -27,12 +27,12 @@ using ProviderI2cTransferResult = ABI::Windows::Devices::I2c::Provider::Provider
 
 namespace ABI::Windows::Devices::I2c::Provider {
 
-struct __declspec(uuid("61c2bb82-4510-4163-a87c-4e15a9558980")) __declspec(novtable) II2cControllerProvider : Windows::IInspectable
+struct __declspec(uuid("61c2bb82-4510-4163-a87c-4e15a9558980")) __declspec(novtable) II2cControllerProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeviceProvider(Windows::Devices::I2c::Provider::IProviderI2cConnectionSettings * settings, Windows::Devices::I2c::Provider::II2cDeviceProvider ** device) = 0;
 };
 
-struct __declspec(uuid("ad342654-57e8-453e-8329-d1e447d103a9")) __declspec(novtable) II2cDeviceProvider : Windows::IInspectable
+struct __declspec(uuid("ad342654-57e8-453e-8329-d1e447d103a9")) __declspec(novtable) II2cDeviceProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
     virtual HRESULT __stdcall abi_Write(uint32_t __bufferSize, uint8_t * buffer) = 0;
@@ -43,12 +43,12 @@ struct __declspec(uuid("ad342654-57e8-453e-8329-d1e447d103a9")) __declspec(novta
     virtual HRESULT __stdcall abi_WriteReadPartial(uint32_t __writeBufferSize, uint8_t * writeBuffer, uint32_t __readBufferSize, uint8_t * readBuffer, Windows::Devices::I2c::Provider::ProviderI2cTransferResult * result) = 0;
 };
 
-struct __declspec(uuid("6f13083e-bf62-4fe2-a95a-f08999669818")) __declspec(novtable) II2cProvider : Windows::IInspectable
+struct __declspec(uuid("6f13083e-bf62-4fe2-a95a-f08999669818")) __declspec(novtable) II2cProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetControllersAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::I2c::Provider::II2cControllerProvider>> ** operation) = 0;
 };
 
-struct __declspec(uuid("e9db4e34-e510-44b7-809d-f2f85b555339")) __declspec(novtable) IProviderI2cConnectionSettings : Windows::IInspectable
+struct __declspec(uuid("e9db4e34-e510-44b7-809d-f2f85b555339")) __declspec(novtable) IProviderI2cConnectionSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SlaveAddress(int32_t * value) = 0;
     virtual HRESULT __stdcall put_SlaveAddress(int32_t value) = 0;

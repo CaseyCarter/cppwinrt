@@ -16,17 +16,17 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::SpeechRecognition {
 
-struct __declspec(uuid("e3d069bb-e30c-5e18-424b-7fbe81f8fbd0")) __declspec(novtable) ISpeechContinuousRecognitionCompletedEventArgs : Windows::IInspectable
+struct __declspec(uuid("e3d069bb-e30c-5e18-424b-7fbe81f8fbd0")) __declspec(novtable) ISpeechContinuousRecognitionCompletedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus * value) = 0;
 };
 
-struct __declspec(uuid("19091e1e-6e7e-5a46-40fb-76594f786504")) __declspec(novtable) ISpeechContinuousRecognitionResultGeneratedEventArgs : Windows::IInspectable
+struct __declspec(uuid("19091e1e-6e7e-5a46-40fb-76594f786504")) __declspec(novtable) ISpeechContinuousRecognitionResultGeneratedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Result(Windows::Media::SpeechRecognition::ISpeechRecognitionResult ** value) = 0;
 };
 
-struct __declspec(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8")) __declspec(novtable) ISpeechContinuousRecognitionSession : Windows::IInspectable
+struct __declspec(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8")) __declspec(novtable) ISpeechContinuousRecognitionSession : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AutoStopSilenceTimeout(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall put_AutoStopSilenceTimeout(Windows::Foundation::TimeSpan value) = 0;
@@ -42,12 +42,12 @@ struct __declspec(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8")) __declspec(novta
     virtual HRESULT __stdcall remove_ResultGenerated(event_token value) = 0;
 };
 
-struct __declspec(uuid("407e6c5d-6ac7-4da4-9cc1-2fce32cf7489")) __declspec(novtable) ISpeechRecognitionCompilationResult : Windows::IInspectable
+struct __declspec(uuid("407e6c5d-6ac7-4da4-9cc1-2fce32cf7489")) __declspec(novtable) ISpeechRecognitionCompilationResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus * value) = 0;
 };
 
-struct __declspec(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b")) __declspec(novtable) ISpeechRecognitionConstraint : Windows::IInspectable
+struct __declspec(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b")) __declspec(novtable) ISpeechRecognitionConstraint : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsEnabled(bool value) = 0;
@@ -58,44 +58,44 @@ struct __declspec(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b")) __declspec(novta
     virtual HRESULT __stdcall put_Probability(winrt::Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability value) = 0;
 };
 
-struct __declspec(uuid("b5031a8f-85ca-4fa4-b11a-474fc41b3835")) __declspec(novtable) ISpeechRecognitionGrammarFileConstraint : Windows::IInspectable
+struct __declspec(uuid("b5031a8f-85ca-4fa4-b11a-474fc41b3835")) __declspec(novtable) ISpeechRecognitionGrammarFileConstraint : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GrammarFile(Windows::Storage::IStorageFile ** value) = 0;
 };
 
-struct __declspec(uuid("3da770eb-c479-4c27-9f19-89974ef392d1")) __declspec(novtable) ISpeechRecognitionGrammarFileConstraintFactory : Windows::IInspectable
+struct __declspec(uuid("3da770eb-c479-4c27-9f19-89974ef392d1")) __declspec(novtable) ISpeechRecognitionGrammarFileConstraintFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Storage::IStorageFile * file, Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint ** constraint) = 0;
     virtual HRESULT __stdcall abi_CreateWithTag(Windows::Storage::IStorageFile * file, hstring tag, Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint ** constraint) = 0;
 };
 
-struct __declspec(uuid("7a7b25b0-99c5-4f7d-bf84-10aa1302b634")) __declspec(novtable) ISpeechRecognitionHypothesis : Windows::IInspectable
+struct __declspec(uuid("7a7b25b0-99c5-4f7d-bf84-10aa1302b634")) __declspec(novtable) ISpeechRecognitionHypothesis : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
 };
 
-struct __declspec(uuid("55161a7a-8023-5866-411d-1213bb271476")) __declspec(novtable) ISpeechRecognitionHypothesisGeneratedEventArgs : Windows::IInspectable
+struct __declspec(uuid("55161a7a-8023-5866-411d-1213bb271476")) __declspec(novtable) ISpeechRecognitionHypothesisGeneratedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Hypothesis(Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesis ** value) = 0;
 };
 
-struct __declspec(uuid("09c487e9-e4ad-4526-81f2-4946fb481d98")) __declspec(novtable) ISpeechRecognitionListConstraint : Windows::IInspectable
+struct __declspec(uuid("09c487e9-e4ad-4526-81f2-4946fb481d98")) __declspec(novtable) ISpeechRecognitionListConstraint : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Commands(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("40f3cdc7-562a-426a-9f3b-3b4e282be1d5")) __declspec(novtable) ISpeechRecognitionListConstraintFactory : Windows::IInspectable
+struct __declspec(uuid("40f3cdc7-562a-426a-9f3b-3b4e282be1d5")) __declspec(novtable) ISpeechRecognitionListConstraintFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Foundation::Collections::IIterable<hstring> * commands, Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint ** constraint) = 0;
     virtual HRESULT __stdcall abi_CreateWithTag(Windows::Foundation::Collections::IIterable<hstring> * commands, hstring tag, Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint ** constraint) = 0;
 };
 
-struct __declspec(uuid("4fe24105-8c3a-4c7e-8d0a-5bd4f5b14ad8")) __declspec(novtable) ISpeechRecognitionQualityDegradingEventArgs : Windows::IInspectable
+struct __declspec(uuid("4fe24105-8c3a-4c7e-8d0a-5bd4f5b14ad8")) __declspec(novtable) ISpeechRecognitionQualityDegradingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Problem(winrt::Windows::Media::SpeechRecognition::SpeechRecognitionAudioProblem * value) = 0;
 };
 
-struct __declspec(uuid("4e303157-034e-4652-857e-d0454cc4beec")) __declspec(novtable) ISpeechRecognitionResult : Windows::IInspectable
+struct __declspec(uuid("4e303157-034e-4652-857e-d0454cc4beec")) __declspec(novtable) ISpeechRecognitionResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus * value) = 0;
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
@@ -107,34 +107,34 @@ struct __declspec(uuid("4e303157-034e-4652-857e-d0454cc4beec")) __declspec(novta
     virtual HRESULT __stdcall get_RawConfidence(double * value) = 0;
 };
 
-struct __declspec(uuid("af7ed1ba-451b-4166-a0c1-1ffe84032d03")) __declspec(novtable) ISpeechRecognitionResult2 : Windows::IInspectable
+struct __declspec(uuid("af7ed1ba-451b-4166-a0c1-1ffe84032d03")) __declspec(novtable) ISpeechRecognitionResult2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PhraseStartTime(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_PhraseDuration(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("aae1da9b-7e32-4c1f-89fe-0c65f486f52e")) __declspec(novtable) ISpeechRecognitionSemanticInterpretation : Windows::IInspectable
+struct __declspec(uuid("aae1da9b-7e32-4c1f-89fe-0c65f486f52e")) __declspec(novtable) ISpeechRecognitionSemanticInterpretation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVectorView<hstring>> ** value) = 0;
 };
 
-struct __declspec(uuid("bf6fdf19-825d-4e69-a681-36e48cf1c93e")) __declspec(novtable) ISpeechRecognitionTopicConstraint : Windows::IInspectable
+struct __declspec(uuid("bf6fdf19-825d-4e69-a681-36e48cf1c93e")) __declspec(novtable) ISpeechRecognitionTopicConstraint : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Scenario(winrt::Windows::Media::SpeechRecognition::SpeechRecognitionScenario * value) = 0;
     virtual HRESULT __stdcall get_TopicHint(hstring * value) = 0;
 };
 
-struct __declspec(uuid("6e6863df-ec05-47d7-a5df-56a3431e58d2")) __declspec(novtable) ISpeechRecognitionTopicConstraintFactory : Windows::IInspectable
+struct __declspec(uuid("6e6863df-ec05-47d7-a5df-56a3431e58d2")) __declspec(novtable) ISpeechRecognitionTopicConstraintFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(winrt::Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring topicHint, Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint ** constraint) = 0;
     virtual HRESULT __stdcall abi_CreateWithTag(winrt::Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring topicHint, hstring tag, Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint ** constraint) = 0;
 };
 
-struct __declspec(uuid("f2791c2b-1ef4-4ae7-9d77-b6ff10b8a3c2")) __declspec(novtable) ISpeechRecognitionVoiceCommandDefinitionConstraint : Windows::IInspectable
+struct __declspec(uuid("f2791c2b-1ef4-4ae7-9d77-b6ff10b8a3c2")) __declspec(novtable) ISpeechRecognitionVoiceCommandDefinitionConstraint : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073")) __declspec(novtable) ISpeechRecognizer : Windows::IInspectable
+struct __declspec(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073")) __declspec(novtable) ISpeechRecognizer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CurrentLanguage(Windows::Globalization::ILanguage ** language) = 0;
     virtual HRESULT __stdcall get_Constraints(Windows::Foundation::Collections::IVector<Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint> ** value) = 0;
@@ -149,7 +149,7 @@ struct __declspec(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073")) __declspec(novta
     virtual HRESULT __stdcall remove_StateChanged(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("63c9baf1-91e3-4ea4-86a1-7c3867d084a6")) __declspec(novtable) ISpeechRecognizer2 : Windows::IInspectable
+struct __declspec(uuid("63c9baf1-91e3-4ea4-86a1-7c3867d084a6")) __declspec(novtable) ISpeechRecognizer2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContinuousRecognitionSession(Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession ** value) = 0;
     virtual HRESULT __stdcall get_State(winrt::Windows::Media::SpeechRecognition::SpeechRecognizerState * value) = 0;
@@ -158,24 +158,24 @@ struct __declspec(uuid("63c9baf1-91e3-4ea4-86a1-7c3867d084a6")) __declspec(novta
     virtual HRESULT __stdcall remove_HypothesisGenerated(event_token value) = 0;
 };
 
-struct __declspec(uuid("60c488dd-7fb8-4033-ac70-d046f64818e1")) __declspec(novtable) ISpeechRecognizerFactory : Windows::IInspectable
+struct __declspec(uuid("60c488dd-7fb8-4033-ac70-d046f64818e1")) __declspec(novtable) ISpeechRecognizerFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Globalization::ILanguage * language, Windows::Media::SpeechRecognition::ISpeechRecognizer ** recognizer) = 0;
 };
 
-struct __declspec(uuid("563d4f09-ba03-4bad-ad81-ddc6c4dab0c3")) __declspec(novtable) ISpeechRecognizerStateChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("563d4f09-ba03-4bad-ad81-ddc6c4dab0c3")) __declspec(novtable) ISpeechRecognizerStateChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_State(winrt::Windows::Media::SpeechRecognition::SpeechRecognizerState * value) = 0;
 };
 
-struct __declspec(uuid("87a35eac-a7dc-4b0b-bcc9-24f47c0b7ebf")) __declspec(novtable) ISpeechRecognizerStatics : Windows::IInspectable
+struct __declspec(uuid("87a35eac-a7dc-4b0b-bcc9-24f47c0b7ebf")) __declspec(novtable) ISpeechRecognizerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SystemSpeechLanguage(Windows::Globalization::ILanguage ** language) = 0;
     virtual HRESULT __stdcall get_SupportedTopicLanguages(Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> ** languages) = 0;
     virtual HRESULT __stdcall get_SupportedGrammarLanguages(Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> ** languages) = 0;
 };
 
-struct __declspec(uuid("2ef76fca-6a3c-4dca-a153-df1bc88a79af")) __declspec(novtable) ISpeechRecognizerTimeouts : Windows::IInspectable
+struct __declspec(uuid("2ef76fca-6a3c-4dca-a153-df1bc88a79af")) __declspec(novtable) ISpeechRecognizerTimeouts : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InitialSilenceTimeout(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall put_InitialSilenceTimeout(Windows::Foundation::TimeSpan value) = 0;
@@ -185,7 +185,7 @@ struct __declspec(uuid("2ef76fca-6a3c-4dca-a153-df1bc88a79af")) __declspec(novta
     virtual HRESULT __stdcall put_BabbleTimeout(Windows::Foundation::TimeSpan value) = 0;
 };
 
-struct __declspec(uuid("7888d641-b92b-44ba-a25f-d1864630641f")) __declspec(novtable) ISpeechRecognizerUIOptions : Windows::IInspectable
+struct __declspec(uuid("7888d641-b92b-44ba-a25f-d1864630641f")) __declspec(novtable) ISpeechRecognizerUIOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ExampleText(hstring * value) = 0;
     virtual HRESULT __stdcall put_ExampleText(hstring value) = 0;

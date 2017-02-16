@@ -16,7 +16,7 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::Gaming::Input::Custom::ICustomGameControllerFactory> : produce_base<D, Windows::Gaming::Input::Custom::ICustomGameControllerFactory>
 {
-    HRESULT __stdcall abi_CreateGameController(impl::abi_arg_in<Windows::Gaming::Input::Custom::IGameControllerProvider> provider, impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_CreateGameController(impl::abi_arg_in<Windows::Gaming::Input::Custom::IGameControllerProvider> provider, impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -480,9 +480,9 @@ template <typename D> void impl_IXusbGameControllerProvider<D>::SetVibration(dou
     check_hresult(WINRT_SHIM(IXusbGameControllerProvider)->abi_SetVibration(lowFrequencyMotorSpeed, highFrequencyMotorSpeed));
 }
 
-template <typename D> Windows::IInspectable impl_ICustomGameControllerFactory<D>::CreateGameController(const Windows::Gaming::Input::Custom::IGameControllerProvider & provider) const
+template <typename D> Windows::Foundation::IInspectable impl_ICustomGameControllerFactory<D>::CreateGameController(const Windows::Gaming::Input::Custom::IGameControllerProvider & provider) const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(ICustomGameControllerFactory)->abi_CreateGameController(get_abi(provider), put_abi(value)));
     return value;
 }

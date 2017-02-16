@@ -18,7 +18,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Perception::Spatial::Surfaces {
 
-struct __declspec(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1")) __declspec(novtable) ISpatialSurfaceInfo : Windows::IInspectable
+struct __declspec(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1")) __declspec(novtable) ISpatialSurfaceInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(GUID * value) = 0;
     virtual HRESULT __stdcall get_UpdateTime(Windows::Foundation::DateTime * value) = 0;
@@ -27,7 +27,7 @@ struct __declspec(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1")) __declspec(novta
     virtual HRESULT __stdcall abi_TryComputeLatestMeshWithOptionsAsync(double maxTrianglesPerCubicMeter, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptions * options, Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh> ** value) = 0;
 };
 
-struct __declspec(uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4")) __declspec(novtable) ISpatialSurfaceMesh : Windows::IInspectable
+struct __declspec(uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4")) __declspec(novtable) ISpatialSurfaceMesh : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SurfaceInfo(Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo ** value) = 0;
     virtual HRESULT __stdcall get_CoordinateSystem(Windows::Perception::Spatial::ISpatialCoordinateSystem ** value) = 0;
@@ -37,7 +37,7 @@ struct __declspec(uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4")) __declspec(novta
     virtual HRESULT __stdcall get_VertexNormals(Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("93cf59e0-871f-33f8-98b2-03d101458f6f")) __declspec(novtable) ISpatialSurfaceMeshBuffer : Windows::IInspectable
+struct __declspec(uuid("93cf59e0-871f-33f8-98b2-03d101458f6f")) __declspec(novtable) ISpatialSurfaceMeshBuffer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Format(winrt::Windows::Graphics::DirectX::DirectXPixelFormat * value) = 0;
     virtual HRESULT __stdcall get_Stride(uint32_t * value) = 0;
@@ -45,7 +45,7 @@ struct __declspec(uuid("93cf59e0-871f-33f8-98b2-03d101458f6f")) __declspec(novta
     virtual HRESULT __stdcall get_Data(Windows::Storage::Streams::IBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37")) __declspec(novtable) ISpatialSurfaceMeshOptions : Windows::IInspectable
+struct __declspec(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37")) __declspec(novtable) ISpatialSurfaceMeshOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_VertexPositionFormat(winrt::Windows::Graphics::DirectX::DirectXPixelFormat * value) = 0;
     virtual HRESULT __stdcall put_VertexPositionFormat(winrt::Windows::Graphics::DirectX::DirectXPixelFormat value) = 0;
@@ -57,23 +57,23 @@ struct __declspec(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37")) __declspec(novta
     virtual HRESULT __stdcall put_IncludeVertexNormals(bool value) = 0;
 };
 
-struct __declspec(uuid("9b340abf-9781-4505-8935-013575caae5e")) __declspec(novtable) ISpatialSurfaceMeshOptionsStatics : Windows::IInspectable
+struct __declspec(uuid("9b340abf-9781-4505-8935-013575caae5e")) __declspec(novtable) ISpatialSurfaceMeshOptionsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SupportedVertexPositionFormats(Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> ** value) = 0;
     virtual HRESULT __stdcall get_SupportedTriangleIndexFormats(Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> ** value) = 0;
     virtual HRESULT __stdcall get_SupportedVertexNormalFormats(Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> ** value) = 0;
 };
 
-struct __declspec(uuid("10b69819-ddca-3483-ac3a-748fe8c86df5")) __declspec(novtable) ISpatialSurfaceObserver : Windows::IInspectable
+struct __declspec(uuid("10b69819-ddca-3483-ac3a-748fe8c86df5")) __declspec(novtable) ISpatialSurfaceObserver : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetObservedSurfaces(Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> ** value) = 0;
     virtual HRESULT __stdcall abi_SetBoundingVolume(Windows::Perception::Spatial::ISpatialBoundingVolume * bounds) = 0;
     virtual HRESULT __stdcall abi_SetBoundingVolumes(Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> * bounds) = 0;
-    virtual HRESULT __stdcall add_ObservedSurfacesChanged(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_ObservedSurfacesChanged(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ObservedSurfacesChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("165951ed-2108-4168-9175-87e027bc9285")) __declspec(novtable) ISpatialSurfaceObserverStatics : Windows::IInspectable
+struct __declspec(uuid("165951ed-2108-4168-9175-87e027bc9285")) __declspec(novtable) ISpatialSurfaceObserverStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestAccessAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> ** result) = 0;
 };
@@ -149,9 +149,9 @@ struct WINRT_EBO impl_ISpatialSurfaceObserver
     Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> GetObservedSurfaces() const;
     void SetBoundingVolume(const Windows::Perception::Spatial::SpatialBoundingVolume & bounds) const;
     void SetBoundingVolumes(const Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> & bounds) const;
-    event_token ObservedSurfacesChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> & handler) const;
+    event_token ObservedSurfacesChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> & handler) const;
     using ObservedSurfacesChanged_revoker = event_revoker<ISpatialSurfaceObserver>;
-    ObservedSurfacesChanged_revoker ObservedSurfacesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> & handler) const;
+    ObservedSurfacesChanged_revoker ObservedSurfacesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> & handler) const;
     void ObservedSurfacesChanged(event_token token) const;
 };
 

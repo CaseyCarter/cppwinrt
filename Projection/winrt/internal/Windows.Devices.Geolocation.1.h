@@ -30,7 +30,7 @@ using BasicGeoposition = ABI::Windows::Devices::Geolocation::BasicGeoposition;
 
 namespace ABI::Windows::Devices::Geolocation {
 
-struct __declspec(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c")) __declspec(novtable) ICivicAddress : Windows::IInspectable
+struct __declspec(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c")) __declspec(novtable) ICivicAddress : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Country(hstring * value) = 0;
     virtual HRESULT __stdcall get_State(hstring * value) = 0;
@@ -39,7 +39,7 @@ struct __declspec(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c")) __declspec(novta
     virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime * value) = 0;
 };
 
-struct __declspec(uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2")) __declspec(novtable) IGeoboundingBox : Windows::IInspectable
+struct __declspec(uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2")) __declspec(novtable) IGeoboundingBox : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NorthwestCorner(Windows::Devices::Geolocation::BasicGeoposition * value) = 0;
     virtual HRESULT __stdcall get_SoutheastCorner(Windows::Devices::Geolocation::BasicGeoposition * value) = 0;
@@ -48,34 +48,34 @@ struct __declspec(uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2")) __declspec(novta
     virtual HRESULT __stdcall get_MaxAltitude(double * value) = 0;
 };
 
-struct __declspec(uuid("4dfba589-0411-4abc-b3b5-5bbccb57d98c")) __declspec(novtable) IGeoboundingBoxFactory : Windows::IInspectable
+struct __declspec(uuid("4dfba589-0411-4abc-b3b5-5bbccb57d98c")) __declspec(novtable) IGeoboundingBoxFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Devices::Geolocation::BasicGeoposition northwestCorner, Windows::Devices::Geolocation::BasicGeoposition southeastCorner, Windows::Devices::Geolocation::IGeoboundingBox ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAltitudeReference(Windows::Devices::Geolocation::BasicGeoposition northwestCorner, Windows::Devices::Geolocation::BasicGeoposition southeastCorner, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, Windows::Devices::Geolocation::IGeoboundingBox ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAltitudeReferenceAndSpatialReference(Windows::Devices::Geolocation::BasicGeoposition northwestCorner, Windows::Devices::Geolocation::BasicGeoposition southeastCorner, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, Windows::Devices::Geolocation::IGeoboundingBox ** value) = 0;
 };
 
-struct __declspec(uuid("67b80708-e61a-4cd0-841b-93233792b5ca")) __declspec(novtable) IGeoboundingBoxStatics : Windows::IInspectable
+struct __declspec(uuid("67b80708-e61a-4cd0-841b-93233792b5ca")) __declspec(novtable) IGeoboundingBoxStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryCompute(Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> * positions, Windows::Devices::Geolocation::IGeoboundingBox ** value) = 0;
     virtual HRESULT __stdcall abi_TryComputeWithAltitudeReference(Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> * positions, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, Windows::Devices::Geolocation::IGeoboundingBox ** value) = 0;
     virtual HRESULT __stdcall abi_TryComputeWithAltitudeReferenceAndSpatialReference(Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> * positions, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId, Windows::Devices::Geolocation::IGeoboundingBox ** value) = 0;
 };
 
-struct __declspec(uuid("39e45843-a7f9-4e63-92a7-ba0c28d124b1")) __declspec(novtable) IGeocircle : Windows::IInspectable
+struct __declspec(uuid("39e45843-a7f9-4e63-92a7-ba0c28d124b1")) __declspec(novtable) IGeocircle : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Center(Windows::Devices::Geolocation::BasicGeoposition * value) = 0;
     virtual HRESULT __stdcall get_Radius(double * value) = 0;
 };
 
-struct __declspec(uuid("afd6531f-72b1-4f7d-87cc-4ed4c9849c05")) __declspec(novtable) IGeocircleFactory : Windows::IInspectable
+struct __declspec(uuid("afd6531f-72b1-4f7d-87cc-4ed4c9849c05")) __declspec(novtable) IGeocircleFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Devices::Geolocation::BasicGeoposition position, double radius, Windows::Devices::Geolocation::IGeocircle ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAltitudeReferenceSystem(Windows::Devices::Geolocation::BasicGeoposition position, double radius, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, Windows::Devices::Geolocation::IGeocircle ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(Windows::Devices::Geolocation::BasicGeoposition position, double radius, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, Windows::Devices::Geolocation::IGeocircle ** value) = 0;
 };
 
-struct __declspec(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4")) __declspec(novtable) IGeocoordinate : Windows::IInspectable
+struct __declspec(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4")) __declspec(novtable) IGeocoordinate : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Latitude(double * value) = 0;
     virtual HRESULT __stdcall get_Longitude(double * value) = 0;
@@ -87,30 +87,30 @@ struct __declspec(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4")) __declspec(novta
     virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime * value) = 0;
 };
 
-struct __declspec(uuid("c32a74d9-2608-474c-912c-06dd490f4af7")) __declspec(novtable) IGeocoordinateSatelliteData : Windows::IInspectable
+struct __declspec(uuid("c32a74d9-2608-474c-912c-06dd490f4af7")) __declspec(novtable) IGeocoordinateSatelliteData : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PositionDilutionOfPrecision(Windows::Foundation::IReference<double> ** ppValue) = 0;
     virtual HRESULT __stdcall get_HorizontalDilutionOfPrecision(Windows::Foundation::IReference<double> ** ppValue) = 0;
     virtual HRESULT __stdcall get_VerticalDilutionOfPrecision(Windows::Foundation::IReference<double> ** ppValue) = 0;
 };
 
-struct __declspec(uuid("feea0525-d22c-4d46-b527-0b96066fc7db")) __declspec(novtable) IGeocoordinateWithPoint : Windows::IInspectable
+struct __declspec(uuid("feea0525-d22c-4d46-b527-0b96066fc7db")) __declspec(novtable) IGeocoordinateWithPoint : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Point(Windows::Devices::Geolocation::IGeopoint ** value) = 0;
 };
 
-struct __declspec(uuid("95e634be-dbd6-40ac-b8f2-a65c0340d9a6")) __declspec(novtable) IGeocoordinateWithPositionData : Windows::IInspectable
+struct __declspec(uuid("95e634be-dbd6-40ac-b8f2-a65c0340d9a6")) __declspec(novtable) IGeocoordinateWithPositionData : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PositionSource(winrt::Windows::Devices::Geolocation::PositionSource * pValue) = 0;
     virtual HRESULT __stdcall get_SatelliteData(Windows::Devices::Geolocation::IGeocoordinateSatelliteData ** ppValue) = 0;
 };
 
-struct __declspec(uuid("8543fc02-c9f1-4610-afe0-8bc3a6a87036")) __declspec(novtable) IGeocoordinateWithPositionSourceTimestamp : Windows::IInspectable
+struct __declspec(uuid("8543fc02-c9f1-4610-afe0-8bc3a6a87036")) __declspec(novtable) IGeocoordinateWithPositionSourceTimestamp : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PositionSourceTimestamp(Windows::Foundation::IReference<Windows::Foundation::DateTime> ** value) = 0;
 };
 
-struct __declspec(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f")) __declspec(novtable) IGeolocator : Windows::IInspectable
+struct __declspec(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f")) __declspec(novtable) IGeolocator : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DesiredAccuracy(winrt::Windows::Devices::Geolocation::PositionAccuracy * value) = 0;
     virtual HRESULT __stdcall put_DesiredAccuracy(winrt::Windows::Devices::Geolocation::PositionAccuracy value) = 0;
@@ -127,84 +127,84 @@ struct __declspec(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f")) __declspec(novta
     virtual HRESULT __stdcall remove_StatusChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("d1b42e6d-8891-43b4-ad36-27c6fe9a97b1")) __declspec(novtable) IGeolocator2 : Windows::IInspectable
+struct __declspec(uuid("d1b42e6d-8891-43b4-ad36-27c6fe9a97b1")) __declspec(novtable) IGeolocator2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AllowFallbackToConsentlessPositions() = 0;
 };
 
-struct __declspec(uuid("9a8e7571-2df5-4591-9f87-eb5fd894e9b7")) __declspec(novtable) IGeolocatorStatics : Windows::IInspectable
+struct __declspec(uuid("9a8e7571-2df5-4591-9f87-eb5fd894e9b7")) __declspec(novtable) IGeolocatorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestAccessAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus> ** result) = 0;
     virtual HRESULT __stdcall abi_GetGeopositionHistoryAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> ** result) = 0;
     virtual HRESULT __stdcall abi_GetGeopositionHistoryWithDurationAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::TimeSpan duration, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> ** result) = 0;
 };
 
-struct __declspec(uuid("993011a2-fa1c-4631-a71d-0dbeb1250d9c")) __declspec(novtable) IGeolocatorStatics2 : Windows::IInspectable
+struct __declspec(uuid("993011a2-fa1c-4631-a71d-0dbeb1250d9c")) __declspec(novtable) IGeolocatorStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsDefaultGeopositionRecommended(bool * value) = 0;
     virtual HRESULT __stdcall put_DefaultGeoposition(Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> * value) = 0;
     virtual HRESULT __stdcall get_DefaultGeoposition(Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> ** value) = 0;
 };
 
-struct __declspec(uuid("96f5d3c1-b80f-460a-994d-a96c47a51aa4")) __declspec(novtable) IGeolocatorWithScalarAccuracy : Windows::IInspectable
+struct __declspec(uuid("96f5d3c1-b80f-460a-994d-a96c47a51aa4")) __declspec(novtable) IGeolocatorWithScalarAccuracy : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DesiredAccuracyInMeters(Windows::Foundation::IReference<uint32_t> ** value) = 0;
     virtual HRESULT __stdcall put_DesiredAccuracyInMeters(Windows::Foundation::IReference<uint32_t> * value) = 0;
 };
 
-struct __declspec(uuid("e53fd7b9-2da4-4714-a652-de8593289898")) __declspec(novtable) IGeopath : Windows::IInspectable
+struct __declspec(uuid("e53fd7b9-2da4-4714-a652-de8593289898")) __declspec(novtable) IGeopath : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Positions(Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::BasicGeoposition> ** value) = 0;
 };
 
-struct __declspec(uuid("27bea9c8-c7e7-4359-9b9b-fca3e05ef593")) __declspec(novtable) IGeopathFactory : Windows::IInspectable
+struct __declspec(uuid("27bea9c8-c7e7-4359-9b9b-fca3e05ef593")) __declspec(novtable) IGeopathFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> * positions, Windows::Devices::Geolocation::IGeopath ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAltitudeReference(Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> * positions, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, Windows::Devices::Geolocation::IGeopath ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAltitudeReferenceAndSpatialReference(Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> * positions, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, Windows::Devices::Geolocation::IGeopath ** value) = 0;
 };
 
-struct __declspec(uuid("6bfa00eb-e56e-49bb-9caf-cbaa78a8bcef")) __declspec(novtable) IGeopoint : Windows::IInspectable
+struct __declspec(uuid("6bfa00eb-e56e-49bb-9caf-cbaa78a8bcef")) __declspec(novtable) IGeopoint : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Devices::Geolocation::BasicGeoposition * value) = 0;
 };
 
-struct __declspec(uuid("db6b8d33-76bd-4e30-8af7-a844dc37b7a0")) __declspec(novtable) IGeopointFactory : Windows::IInspectable
+struct __declspec(uuid("db6b8d33-76bd-4e30-8af7-a844dc37b7a0")) __declspec(novtable) IGeopointFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Devices::Geolocation::BasicGeoposition position, Windows::Devices::Geolocation::IGeopoint ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAltitudeReferenceSystem(Windows::Devices::Geolocation::BasicGeoposition position, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, Windows::Devices::Geolocation::IGeopoint ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(Windows::Devices::Geolocation::BasicGeoposition position, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, Windows::Devices::Geolocation::IGeopoint ** value) = 0;
 };
 
-struct __declspec(uuid("c18d0454-7d41-4ff7-a957-9dffb4ef7f5b")) __declspec(novtable) IGeoposition : Windows::IInspectable
+struct __declspec(uuid("c18d0454-7d41-4ff7-a957-9dffb4ef7f5b")) __declspec(novtable) IGeoposition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Coordinate(Windows::Devices::Geolocation::IGeocoordinate ** value) = 0;
     virtual HRESULT __stdcall get_CivicAddress(Windows::Devices::Geolocation::ICivicAddress ** value) = 0;
 };
 
-struct __declspec(uuid("7f62f697-8671-4b0d-86f8-474a8496187c")) __declspec(novtable) IGeoposition2 : Windows::IInspectable
+struct __declspec(uuid("7f62f697-8671-4b0d-86f8-474a8496187c")) __declspec(novtable) IGeoposition2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_VenueData(Windows::Devices::Geolocation::IVenueData ** value) = 0;
 };
 
-struct __declspec(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e")) __declspec(novtable) IGeoshape : Windows::IInspectable
+struct __declspec(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e")) __declspec(novtable) IGeoshape : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_GeoshapeType(winrt::Windows::Devices::Geolocation::GeoshapeType * value) = 0;
     virtual HRESULT __stdcall get_SpatialReferenceId(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_AltitudeReferenceSystem(winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem * value) = 0;
 };
 
-struct __declspec(uuid("37859ce5-9d1e-46c5-bf3b-6ad8cac1a093")) __declspec(novtable) IPositionChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("37859ce5-9d1e-46c5-bf3b-6ad8cac1a093")) __declspec(novtable) IPositionChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Devices::Geolocation::IGeoposition ** value) = 0;
 };
 
-struct __declspec(uuid("3453d2da-8c93-4111-a205-9aecfc9be5c0")) __declspec(novtable) IStatusChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("3453d2da-8c93-4111-a205-9aecfc9be5c0")) __declspec(novtable) IStatusChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::Geolocation::PositionStatus * value) = 0;
 };
 
-struct __declspec(uuid("66f39187-60e3-4b2f-b527-4f53f1c3c677")) __declspec(novtable) IVenueData : Windows::IInspectable
+struct __declspec(uuid("66f39187-60e3-4b2f-b527-4f53f1c3c677")) __declspec(novtable) IVenueData : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_Level(hstring * value) = 0;

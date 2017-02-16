@@ -75,21 +75,21 @@ template <> struct __declspec(uuid("ac935021-e04b-5226-8119-5b73d0b8be5b")) __de
 namespace Windows::ApplicationModel::Store::LicenseManagement {
 
 struct ILicenseManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILicenseManagerStatics>
 {
     ILicenseManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILicenseSatisfactionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILicenseSatisfactionInfo>
 {
     ILicenseSatisfactionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILicenseSatisfactionResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILicenseSatisfactionResult>
 {
     ILicenseSatisfactionResult(std::nullptr_t = nullptr) noexcept {}

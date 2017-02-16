@@ -18,12 +18,12 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Security::Credentials {
 
-struct __declspec(uuid("54ef13a1-bf26-47b5-97dd-de779b7cad58")) __declspec(novtable) ICredentialFactory : Windows::IInspectable
+struct __declspec(uuid("54ef13a1-bf26-47b5-97dd-de779b7cad58")) __declspec(novtable) ICredentialFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreatePasswordCredential(hstring resource, hstring userName, hstring password, Windows::Security::Credentials::IPasswordCredential ** credential) = 0;
 };
 
-struct __declspec(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138")) __declspec(novtable) IKeyCredential : Windows::IInspectable
+struct __declspec(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138")) __declspec(novtable) IKeyCredential : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall abi_RetrievePublicKeyWithDefaultBlobType(Windows::Storage::Streams::IBuffer ** value) = 0;
@@ -32,14 +32,14 @@ struct __declspec(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138")) __declspec(novta
     virtual HRESULT __stdcall abi_GetAttestationAsync(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialAttestationResult> ** value) = 0;
 };
 
-struct __declspec(uuid("78aab3a1-a3c1-4103-b6cc-472c44171cbb")) __declspec(novtable) IKeyCredentialAttestationResult : Windows::IInspectable
+struct __declspec(uuid("78aab3a1-a3c1-4103-b6cc-472c44171cbb")) __declspec(novtable) IKeyCredentialAttestationResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CertificateChainBuffer(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall get_AttestationBuffer(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall get_Status(winrt::Windows::Security::Credentials::KeyCredentialAttestationStatus * value) = 0;
 };
 
-struct __declspec(uuid("6aac468b-0ef1-4ce0-8290-4106da6a63b5")) __declspec(novtable) IKeyCredentialManagerStatics : Windows::IInspectable
+struct __declspec(uuid("6aac468b-0ef1-4ce0-8290-4106da6a63b5")) __declspec(novtable) IKeyCredentialManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_IsSupportedAsync(Windows::Foundation::IAsyncOperation<bool> ** value) = 0;
     virtual HRESULT __stdcall abi_RenewAttestationAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
@@ -48,19 +48,19 @@ struct __declspec(uuid("6aac468b-0ef1-4ce0-8290-4106da6a63b5")) __declspec(novta
     virtual HRESULT __stdcall abi_DeleteAsync(hstring name, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("f53786c1-5261-4cdd-976d-cc909ac71620")) __declspec(novtable) IKeyCredentialOperationResult : Windows::IInspectable
+struct __declspec(uuid("f53786c1-5261-4cdd-976d-cc909ac71620")) __declspec(novtable) IKeyCredentialOperationResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Result(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall get_Status(winrt::Windows::Security::Credentials::KeyCredentialStatus * value) = 0;
 };
 
-struct __declspec(uuid("58cd7703-8d87-4249-9b58-f6598cc9644e")) __declspec(novtable) IKeyCredentialRetrievalResult : Windows::IInspectable
+struct __declspec(uuid("58cd7703-8d87-4249-9b58-f6598cc9644e")) __declspec(novtable) IKeyCredentialRetrievalResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Credential(Windows::Security::Credentials::IKeyCredential ** value) = 0;
     virtual HRESULT __stdcall get_Status(winrt::Windows::Security::Credentials::KeyCredentialStatus * value) = 0;
 };
 
-struct __declspec(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0")) __declspec(novtable) IPasswordCredential : Windows::IInspectable
+struct __declspec(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0")) __declspec(novtable) IPasswordCredential : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Resource(hstring * resource) = 0;
     virtual HRESULT __stdcall put_Resource(hstring resource) = 0;
@@ -72,7 +72,7 @@ struct __declspec(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0")) __declspec(novta
     virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IPropertySet ** props) = 0;
 };
 
-struct __declspec(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2")) __declspec(novtable) IPasswordVault : Windows::IInspectable
+struct __declspec(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2")) __declspec(novtable) IPasswordVault : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Add(Windows::Security::Credentials::IPasswordCredential * credential) = 0;
     virtual HRESULT __stdcall abi_Remove(Windows::Security::Credentials::IPasswordCredential * credential) = 0;
@@ -82,14 +82,14 @@ struct __declspec(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2")) __declspec(novta
     virtual HRESULT __stdcall abi_RetrieveAll(Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> ** credentials) = 0;
 };
 
-struct __declspec(uuid("69473eb2-8031-49be-80bb-96cb46d99aba")) __declspec(novtable) IWebAccount : Windows::IInspectable
+struct __declspec(uuid("69473eb2-8031-49be-80bb-96cb46d99aba")) __declspec(novtable) IWebAccount : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_WebAccountProvider(Windows::Security::Credentials::IWebAccountProvider ** value) = 0;
     virtual HRESULT __stdcall get_UserName(hstring * value) = 0;
     virtual HRESULT __stdcall get_State(winrt::Windows::Security::Credentials::WebAccountState * value) = 0;
 };
 
-struct __declspec(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824")) __declspec(novtable) IWebAccount2 : Windows::IInspectable
+struct __declspec(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824")) __declspec(novtable) IWebAccount2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMapView<hstring, hstring> ** value) = 0;
@@ -98,30 +98,30 @@ struct __declspec(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824")) __declspec(novta
     virtual HRESULT __stdcall abi_SignOutWithClientIdAsync(hstring clientId, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("ac9afb39-1de9-4e92-b78f-0581a87f6e5c")) __declspec(novtable) IWebAccountFactory : Windows::IInspectable
+struct __declspec(uuid("ac9afb39-1de9-4e92-b78f-0581a87f6e5c")) __declspec(novtable) IWebAccountFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWebAccount(Windows::Security::Credentials::IWebAccountProvider * webAccountProvider, hstring userName, winrt::Windows::Security::Credentials::WebAccountState state, Windows::Security::Credentials::IWebAccount ** instance) = 0;
 };
 
-struct __declspec(uuid("29dcc8c3-7ab9-4a7c-a336-b942f9dbf7c7")) __declspec(novtable) IWebAccountProvider : Windows::IInspectable
+struct __declspec(uuid("29dcc8c3-7ab9-4a7c-a336-b942f9dbf7c7")) __declspec(novtable) IWebAccountProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
     virtual HRESULT __stdcall get_IconUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("4a01eb05-4e42-41d4-b518-e008a5163614")) __declspec(novtable) IWebAccountProvider2 : Windows::IInspectable
+struct __declspec(uuid("4a01eb05-4e42-41d4-b518-e008a5163614")) __declspec(novtable) IWebAccountProvider2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DisplayPurpose(hstring * value) = 0;
     virtual HRESULT __stdcall get_Authority(hstring * value) = 0;
 };
 
-struct __declspec(uuid("da1c518b-970d-4d49-825c-f2706f8ca7fe")) __declspec(novtable) IWebAccountProvider3 : Windows::IInspectable
+struct __declspec(uuid("da1c518b-970d-4d49-825c-f2706f8ca7fe")) __declspec(novtable) IWebAccountProvider3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** user) = 0;
 };
 
-struct __declspec(uuid("1d767df1-e1e1-4b9a-a774-5c7c7e3bf371")) __declspec(novtable) IWebAccountProviderFactory : Windows::IInspectable
+struct __declspec(uuid("1d767df1-e1e1-4b9a-a774-5c7c7e3bf371")) __declspec(novtable) IWebAccountProviderFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWebAccountProvider(hstring id, hstring displayName, Windows::Foundation::IUriRuntimeClass * iconUri, Windows::Security::Credentials::IWebAccountProvider ** instance) = 0;
 };

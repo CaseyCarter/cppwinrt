@@ -193,12 +193,12 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall add_DataChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_DataChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().DataChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().DataChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2312,12 +2312,12 @@ struct produce<D, Windows::Storage::IStorageLibrary> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall add_DefinitionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::IInspectable>> handler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_DefinitionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::Foundation::IInspectable>> handler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().DefinitionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::IInspectable> *>(&handler)));
+            *eventCookie = detach_abi(this->shim().DefinitionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3350,14 +3350,14 @@ template <typename D> Windows::Storage::StorageFolder impl_IStorageLibrary<D>::S
     return value;
 }
 
-template <typename D> event_token impl_IStorageLibrary<D>::DefinitionChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IStorageLibrary<D>::DefinitionChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::Foundation::IInspectable> & handler) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IStorageLibrary)->add_DefinitionChanged(get_abi(handler), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IStorageLibrary> impl_IStorageLibrary<D>::DefinitionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IStorageLibrary> impl_IStorageLibrary<D>::DefinitionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IStorageLibrary>(this, &ABI::Windows::Storage::IStorageLibrary::remove_DefinitionChanged, DefinitionChanged(handler));
 }
@@ -4612,14 +4612,14 @@ template <typename D> Windows::Storage::StorageFolder impl_IApplicationData<D>::
     return value;
 }
 
-template <typename D> event_token impl_IApplicationData<D>::DataChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IApplicationData<D>::DataChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IApplicationData)->add_DataChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IApplicationData> impl_IApplicationData<D>::DataChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IApplicationData> impl_IApplicationData<D>::DataChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IApplicationData>(this, &ABI::Windows::Storage::IApplicationData::remove_DataChanged, DataChanged(handler));
 }

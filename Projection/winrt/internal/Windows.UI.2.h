@@ -10,28 +10,28 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI {
 
 struct IColorHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorHelper>
 {
     IColorHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorHelperStatics>
 {
     IColorHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColors :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColors>
 {
     IColors(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorsStatics>
 {
     IColorsStatics(std::nullptr_t = nullptr) noexcept {}

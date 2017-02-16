@@ -13,7 +13,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Contacts::DataProvider {
 
-struct __declspec(uuid("1a398a52-8c9d-4d6f-a4e0-111e9a125a30")) __declspec(novtable) IContactDataProviderConnection : Windows::IInspectable
+struct __declspec(uuid("1a398a52-8c9d-4d6f-a4e0-111e9a125a30")) __declspec(novtable) IContactDataProviderConnection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_SyncRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SyncRequested(event_token token) = 0;
@@ -22,12 +22,12 @@ struct __declspec(uuid("1a398a52-8c9d-4d6f-a4e0-111e9a125a30")) __declspec(novta
     virtual HRESULT __stdcall abi_Start() = 0;
 };
 
-struct __declspec(uuid("527104be-3c62-43c8-9ae7-db531685cd99")) __declspec(novtable) IContactDataProviderTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("527104be-3c62-43c8-9ae7-db531685cd99")) __declspec(novtable) IContactDataProviderTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Connection(Windows::ApplicationModel::Contacts::DataProvider::IContactDataProviderConnection ** value) = 0;
 };
 
-struct __declspec(uuid("ba776a97-4030-4925-9fb4-143b295e653b")) __declspec(novtable) IContactListServerSearchReadBatchRequest : Windows::IInspectable
+struct __declspec(uuid("ba776a97-4030-4925-9fb4-143b295e653b")) __declspec(novtable) IContactListServerSearchReadBatchRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SessionId(hstring * value) = 0;
     virtual HRESULT __stdcall get_ContactListId(hstring * value) = 0;
@@ -38,20 +38,20 @@ struct __declspec(uuid("ba776a97-4030-4925-9fb4-143b295e653b")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(winrt::Windows::ApplicationModel::Contacts::ContactBatchStatus batchStatus, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("1a27e87b-69d7-4e4e-8042-861cba61471e")) __declspec(novtable) IContactListServerSearchReadBatchRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("1a27e87b-69d7-4e4e-8042-861cba61471e")) __declspec(novtable) IContactListServerSearchReadBatchRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Contacts::DataProvider::IContactListServerSearchReadBatchRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("3c0e57a4-c4e7-4970-9a8f-9a66a2bb6c1a")) __declspec(novtable) IContactListSyncManagerSyncRequest : Windows::IInspectable
+struct __declspec(uuid("3c0e57a4-c4e7-4970-9a8f-9a66a2bb6c1a")) __declspec(novtable) IContactListSyncManagerSyncRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContactListId(hstring * value) = 0;
     virtual HRESULT __stdcall abi_ReportCompletedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("158e4dac-446d-4f10-afc2-02683ec533a6")) __declspec(novtable) IContactListSyncManagerSyncRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("158e4dac-446d-4f10-afc2-02683ec533a6")) __declspec(novtable) IContactListSyncManagerSyncRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Contacts::DataProvider::IContactListSyncManagerSyncRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;

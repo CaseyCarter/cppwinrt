@@ -11,14 +11,14 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Background {
 
-struct __declspec(uuid("4aabee29-2344-4ac4-8527-4a8ef6905645")) __declspec(novtable) IDeviceServicingDetails : Windows::IInspectable
+struct __declspec(uuid("4aabee29-2344-4ac4-8527-4a8ef6905645")) __declspec(novtable) IDeviceServicingDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Arguments(hstring * value) = 0;
     virtual HRESULT __stdcall get_ExpectedDuration(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("7d565141-557e-4154-b994-e4f7a11fb323")) __declspec(novtable) IDeviceUseDetails : Windows::IInspectable
+struct __declspec(uuid("7d565141-557e-4154-b994-e4f7a11fb323")) __declspec(novtable) IDeviceUseDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Arguments(hstring * value) = 0;

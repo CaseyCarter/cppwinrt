@@ -9,7 +9,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::System::Threading {
 
-struct TimerDestroyedHandler : Windows::IUnknown
+struct TimerDestroyedHandler : Windows::Foundation::IUnknown
 {
     TimerDestroyedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> TimerDestroyedHandler(L lambda);
@@ -18,7 +18,7 @@ struct TimerDestroyedHandler : Windows::IUnknown
     void operator()(const Windows::System::Threading::ThreadPoolTimer & timer) const;
 };
 
-struct TimerElapsedHandler : Windows::IUnknown
+struct TimerElapsedHandler : Windows::Foundation::IUnknown
 {
     TimerElapsedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> TimerElapsedHandler(L lambda);
@@ -27,7 +27,7 @@ struct TimerElapsedHandler : Windows::IUnknown
     void operator()(const Windows::System::Threading::ThreadPoolTimer & timer) const;
 };
 
-struct WorkItemHandler : Windows::IUnknown
+struct WorkItemHandler : Windows::Foundation::IUnknown
 {
     WorkItemHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> WorkItemHandler(L lambda);
@@ -37,21 +37,21 @@ struct WorkItemHandler : Windows::IUnknown
 };
 
 struct IThreadPoolStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IThreadPoolStatics>
 {
     IThreadPoolStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IThreadPoolTimer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IThreadPoolTimer>
 {
     IThreadPoolTimer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IThreadPoolTimerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IThreadPoolTimerStatics>
 {
     IThreadPoolTimerStatics(std::nullptr_t = nullptr) noexcept {}

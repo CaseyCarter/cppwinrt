@@ -94,12 +94,12 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2> : produce_base<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2>
 {
-    HRESULT __stdcall add_ItemsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_ItemsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().ItemsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().ItemsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -181,14 +181,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IWalletIte
     return operation;
 }
 
-template <typename D> event_token impl_IWalletItemSystemStore2<D>::ItemsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IWalletItemSystemStore2<D>::ItemsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IWalletItemSystemStore2)->add_ItemsChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IWalletItemSystemStore2> impl_IWalletItemSystemStore2<D>::ItemsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IWalletItemSystemStore2> impl_IWalletItemSystemStore2<D>::ItemsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IWalletItemSystemStore2>(this, &ABI::Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2::remove_ItemsChanged, ItemsChanged(handler));
 }

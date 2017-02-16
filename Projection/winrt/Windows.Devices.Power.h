@@ -45,12 +45,12 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
         }
     }
 
-    HRESULT __stdcall add_ReportUpdated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ReportUpdated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ReportUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ReportUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -219,14 +219,14 @@ template <typename D> Windows::Devices::Power::BatteryReport impl_IBattery<D>::G
     return result;
 }
 
-template <typename D> event_token impl_IBattery<D>::ReportUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IBattery<D>::ReportUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IBattery)->add_ReportUpdated(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IBattery> impl_IBattery<D>::ReportUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IBattery> impl_IBattery<D>::ReportUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IBattery>(this, &ABI::Windows::Devices::Power::IBattery::remove_ReportUpdated, ReportUpdated(handler));
 }

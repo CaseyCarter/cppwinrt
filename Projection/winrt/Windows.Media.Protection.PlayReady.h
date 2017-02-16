@@ -103,12 +103,12 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
         }
     }
 
-    HRESULT __stdcall add_ReRegistrationNeeded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ReRegistrationNeeded(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ReRegistrationNeeded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ReRegistrationNeeded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3367,14 +3367,14 @@ template <typename D> void impl_INDClient<D>::LicenseFetchCompleted(event_token 
     check_hresult(WINRT_SHIM(INDClient)->remove_LicenseFetchCompleted(token));
 }
 
-template <typename D> event_token impl_INDClient<D>::ReRegistrationNeeded(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_INDClient<D>::ReRegistrationNeeded(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(INDClient)->add_ReRegistrationNeeded(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<INDClient> impl_INDClient<D>::ReRegistrationNeeded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<INDClient> impl_INDClient<D>::ReRegistrationNeeded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, INDClient>(this, &ABI::Windows::Media::Protection::PlayReady::INDClient::remove_ReRegistrationNeeded, ReRegistrationNeeded(handler));
 }

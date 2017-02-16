@@ -30,42 +30,42 @@ template <> struct __declspec(uuid("cf7c902f-0f0d-5b22-90b1-85141b5816cd")) __de
 namespace Windows::Networking::PushNotifications {
 
 struct IPushNotificationChannel :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPushNotificationChannel>
 {
     IPushNotificationChannel(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPushNotificationChannelManagerForUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPushNotificationChannelManagerForUser>
 {
     IPushNotificationChannelManagerForUser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPushNotificationChannelManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPushNotificationChannelManagerStatics>
 {
     IPushNotificationChannelManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPushNotificationChannelManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPushNotificationChannelManagerStatics2>
 {
     IPushNotificationChannelManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPushNotificationReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPushNotificationReceivedEventArgs>
 {
     IPushNotificationReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRawNotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRawNotification>
 {
     IRawNotification(std::nullptr_t = nullptr) noexcept {}

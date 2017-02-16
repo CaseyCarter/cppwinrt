@@ -16,7 +16,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::DataTransfer::DragDrop::Core {
 
-struct __declspec(uuid("7d56d344-8464-4faf-aa49-37ea6e2d7bd1")) __declspec(novtable) ICoreDragDropManager : Windows::IInspectable
+struct __declspec(uuid("7d56d344-8464-4faf-aa49-37ea6e2d7bd1")) __declspec(novtable) ICoreDragDropManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_TargetRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager, Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs> * value, event_token * returnValue) = 0;
     virtual HRESULT __stdcall remove_TargetRequested(event_token value) = 0;
@@ -24,24 +24,24 @@ struct __declspec(uuid("7d56d344-8464-4faf-aa49-37ea6e2d7bd1")) __declspec(novta
     virtual HRESULT __stdcall put_AreConcurrentOperationsEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("9542fdca-da12-4c1c-8d06-041db29733c3")) __declspec(novtable) ICoreDragDropManagerStatics : Windows::IInspectable
+struct __declspec(uuid("9542fdca-da12-4c1c-8d06-041db29733c3")) __declspec(novtable) ICoreDragDropManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForCurrentView(Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManager ** value) = 0;
 };
 
-struct __declspec(uuid("48353a8b-cb50-464e-9575-cd4e3a7ab028")) __declspec(novtable) ICoreDragInfo : Windows::IInspectable
+struct __declspec(uuid("48353a8b-cb50-464e-9575-cd4e3a7ab028")) __declspec(novtable) ICoreDragInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Data(Windows::ApplicationModel::DataTransfer::IDataPackageView ** value) = 0;
     virtual HRESULT __stdcall get_Modifiers(winrt::Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers * value) = 0;
     virtual HRESULT __stdcall get_Position(Windows::Foundation::Point * value) = 0;
 };
 
-struct __declspec(uuid("c54691e5-e6fb-4d74-b4b1-8a3c17f25e9e")) __declspec(novtable) ICoreDragInfo2 : Windows::IInspectable
+struct __declspec(uuid("c54691e5-e6fb-4d74-b4b1-8a3c17f25e9e")) __declspec(novtable) ICoreDragInfo2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllowedOperations(winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation * value) = 0;
 };
 
-struct __declspec(uuid("cc06de4f-6db0-4e62-ab1b-a74a02dc6d85")) __declspec(novtable) ICoreDragOperation : Windows::IInspectable
+struct __declspec(uuid("cc06de4f-6db0-4e62-ab1b-a74a02dc6d85")) __declspec(novtable) ICoreDragOperation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Data(Windows::ApplicationModel::DataTransfer::IDataPackage ** value) = 0;
     virtual HRESULT __stdcall abi_SetPointerId(uint32_t pointerId) = 0;
@@ -52,13 +52,13 @@ struct __declspec(uuid("cc06de4f-6db0-4e62-ab1b-a74a02dc6d85")) __declspec(novta
     virtual HRESULT __stdcall abi_StartAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> ** value) = 0;
 };
 
-struct __declspec(uuid("824b1e2c-d99a-4fc3-8507-6c182f33b46a")) __declspec(novtable) ICoreDragOperation2 : Windows::IInspectable
+struct __declspec(uuid("824b1e2c-d99a-4fc3-8507-6c182f33b46a")) __declspec(novtable) ICoreDragOperation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllowedOperations(winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation * value) = 0;
     virtual HRESULT __stdcall put_AllowedOperations(winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation value) = 0;
 };
 
-struct __declspec(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93")) __declspec(novtable) ICoreDragUIOverride : Windows::IInspectable
+struct __declspec(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93")) __declspec(novtable) ICoreDragUIOverride : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetContentFromSoftwareBitmap(Windows::Graphics::Imaging::ISoftwareBitmap * softwareBitmap) = 0;
     virtual HRESULT __stdcall abi_SetContentFromSoftwareBitmapWithAnchorPoint(Windows::Graphics::Imaging::ISoftwareBitmap * softwareBitmap, Windows::Foundation::Point anchorPoint) = 0;
@@ -73,7 +73,7 @@ struct __declspec(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93")) __declspec(novta
     virtual HRESULT __stdcall abi_Clear() = 0;
 };
 
-struct __declspec(uuid("d9126196-4c5b-417d-bb37-76381def8db4")) __declspec(novtable) ICoreDropOperationTarget : Windows::IInspectable
+struct __declspec(uuid("d9126196-4c5b-417d-bb37-76381def8db4")) __declspec(novtable) ICoreDropOperationTarget : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_EnterAsync(Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo * dragInfo, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragUIOverride * dragUIOverride, Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> ** returnValue) = 0;
     virtual HRESULT __stdcall abi_OverAsync(Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo * dragInfo, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragUIOverride * dragUIOverride, Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> ** returnValue) = 0;
@@ -81,7 +81,7 @@ struct __declspec(uuid("d9126196-4c5b-417d-bb37-76381def8db4")) __declspec(novta
     virtual HRESULT __stdcall abi_DropAsync(Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo * dragInfo, Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> ** returnValue) = 0;
 };
 
-struct __declspec(uuid("2aca929a-5e28-4ea6-829e-29134e665d6d")) __declspec(novtable) ICoreDropOperationTargetRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("2aca929a-5e28-4ea6-829e-29134e665d6d")) __declspec(novtable) ICoreDropOperationTargetRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetTarget(Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTarget * target) = 0;
 };

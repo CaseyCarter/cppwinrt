@@ -93,7 +93,7 @@ struct produce<D, Windows::Media::Capture::IAdvancedCapturedPhoto> : produce_bas
         }
     }
 
-    HRESULT __stdcall get_Context(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Context(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -146,12 +146,12 @@ struct produce<D, Windows::Media::Capture::IAdvancedPhotoCapture> : produce_base
         }
     }
 
-    HRESULT __stdcall abi_CaptureWithContextAsync(impl::abi_arg_in<Windows::IInspectable> context, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto>> operation) noexcept override
+    HRESULT __stdcall abi_CaptureWithContextAsync(impl::abi_arg_in<Windows::Foundation::IInspectable> context, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto>> operation) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *operation = detach_abi(this->shim().CaptureAsync(*reinterpret_cast<const Windows::IInspectable *>(&context)));
+            *operation = detach_abi(this->shim().CaptureAsync(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&context)));
             return S_OK;
         }
         catch (...)
@@ -189,12 +189,12 @@ struct produce<D, Windows::Media::Capture::IAdvancedPhotoCapture> : produce_base
         }
     }
 
-    HRESULT __stdcall add_AllPhotosCaptured(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AllPhotosCaptured(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().AllPhotosCaptured(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AllPhotosCaptured(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -264,12 +264,12 @@ struct produce<D, Windows::Media::Capture::IAppCapture> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall add_CapturingChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CapturingChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().CapturingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().CapturingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1320,12 +1320,12 @@ struct produce<D, Windows::Media::Capture::IMediaCapture> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_SetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, impl::abi_arg_in<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_SetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, impl::abi_arg_in<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetEncoderProperty(mediaStreamType, propertyId, *reinterpret_cast<const Windows::IInspectable *>(&propertyValue));
+            this->shim().SetEncoderProperty(mediaStreamType, propertyId, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&propertyValue));
             return S_OK;
         }
         catch (...)
@@ -1334,7 +1334,7 @@ struct produce<D, Windows::Media::Capture::IMediaCapture> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_GetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, impl::abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_GetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, impl::abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -1628,7 +1628,7 @@ struct produce<D, Windows::Media::Capture::IMediaCapture2> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_SetEncodingPropertiesAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, impl::abi_arg_in<Windows::Media::MediaProperties::IMediaEncodingProperties> mediaEncodingProperties, impl::abi_arg_in<Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>> encoderProperties, impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
+    HRESULT __stdcall abi_SetEncodingPropertiesAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, impl::abi_arg_in<Windows::Media::MediaProperties::IMediaEncodingProperties> mediaEncodingProperties, impl::abi_arg_in<Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>> encoderProperties, impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
     {
         try
         {
@@ -1782,12 +1782,12 @@ struct produce<D, Windows::Media::Capture::IMediaCapture4> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_CameraStreamStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CameraStreamStateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().CameraStreamStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().CameraStreamStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1854,12 +1854,12 @@ struct produce<D, Windows::Media::Capture::IMediaCapture4> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_ThermalStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ThermalStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ThermalStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ThermalStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3095,7 +3095,7 @@ struct produce<D, Windows::Media::Capture::IOptionalReferencePhotoCapturedEventA
         }
     }
 
-    HRESULT __stdcall get_Context(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Context(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -3244,14 +3244,14 @@ template <typename D> bool impl_IAppCapture<D>::IsCapturingVideo() const
     return value;
 }
 
-template <typename D> event_token impl_IAppCapture<D>::CapturingChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAppCapture<D>::CapturingChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAppCapture)->add_CapturingChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAppCapture> impl_IAppCapture<D>::CapturingChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAppCapture> impl_IAppCapture<D>::CapturingChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAppCapture>(this, &ABI::Windows::Media::Capture::IAppCapture::remove_CapturingChanged, CapturingChanged(handler));
 }
@@ -3773,14 +3773,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCapture<D>::C
     return asyncInfo;
 }
 
-template <typename D> void impl_IMediaCapture<D>::SetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, const Windows::IInspectable & propertyValue) const
+template <typename D> void impl_IMediaCapture<D>::SetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, const Windows::Foundation::IInspectable & propertyValue) const
 {
     check_hresult(WINRT_SHIM(IMediaCapture)->abi_SetEncoderProperty(mediaStreamType, propertyId, get_abi(propertyValue)));
 }
 
-template <typename D> Windows::IInspectable impl_IMediaCapture<D>::GetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId) const
+template <typename D> Windows::Foundation::IInspectable impl_IMediaCapture<D>::GetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IMediaCapture)->abi_GetEncoderProperty(mediaStreamType, propertyId, put_abi(propertyValue)));
     return propertyValue;
 }
@@ -3994,14 +3994,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IMediaCapture4<D>::
     return asyncInfo;
 }
 
-template <typename D> event_token impl_IMediaCapture4<D>::CameraStreamStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMediaCapture4<D>::CameraStreamStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaCapture4)->add_CameraStreamStateChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaCapture4> impl_IMediaCapture4<D>::CameraStreamStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMediaCapture4> impl_IMediaCapture4<D>::CameraStreamStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMediaCapture4>(this, &ABI::Windows::Media::Capture::IMediaCapture4::remove_CameraStreamStateChanged, CameraStreamStateChanged(handler));
 }
@@ -4032,14 +4032,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Video
     return operation;
 }
 
-template <typename D> event_token impl_IMediaCapture4<D>::ThermalStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMediaCapture4<D>::ThermalStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMediaCapture4)->add_ThermalStatusChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMediaCapture4> impl_IMediaCapture4<D>::ThermalStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMediaCapture4> impl_IMediaCapture4<D>::ThermalStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMediaCapture4>(this, &ABI::Windows::Media::Capture::IMediaCapture4::remove_ThermalStatusChanged, ThermalStatusChanged(handler));
 }
@@ -4133,7 +4133,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Captu
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> impl_IAdvancedPhotoCapture<D>::CaptureAsync(const Windows::IInspectable & context) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> impl_IAdvancedPhotoCapture<D>::CaptureAsync(const Windows::Foundation::IInspectable & context) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> operation;
     check_hresult(WINRT_SHIM(IAdvancedPhotoCapture)->abi_CaptureWithContextAsync(get_abi(context), put_abi(operation)));
@@ -4157,14 +4157,14 @@ template <typename D> void impl_IAdvancedPhotoCapture<D>::OptionalReferencePhoto
     check_hresult(WINRT_SHIM(IAdvancedPhotoCapture)->remove_OptionalReferencePhotoCaptured(token));
 }
 
-template <typename D> event_token impl_IAdvancedPhotoCapture<D>::AllPhotosCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAdvancedPhotoCapture<D>::AllPhotosCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAdvancedPhotoCapture)->add_AllPhotosCaptured(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAdvancedPhotoCapture> impl_IAdvancedPhotoCapture<D>::AllPhotosCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAdvancedPhotoCapture> impl_IAdvancedPhotoCapture<D>::AllPhotosCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAdvancedPhotoCapture>(this, &ABI::Windows::Media::Capture::IAdvancedPhotoCapture::remove_AllPhotosCaptured, AllPhotosCaptured(handler));
 }
@@ -4195,9 +4195,9 @@ template <typename D> Windows::Media::Devices::AdvancedPhotoMode impl_IAdvancedC
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IAdvancedCapturedPhoto<D>::Context() const
+template <typename D> Windows::Foundation::IInspectable impl_IAdvancedCapturedPhoto<D>::Context() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IAdvancedCapturedPhoto)->get_Context(put_abi(value)));
     return value;
 }
@@ -4216,9 +4216,9 @@ template <typename D> Windows::Media::Capture::CapturedFrame impl_IOptionalRefer
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IOptionalReferencePhotoCapturedEventArgs<D>::Context() const
+template <typename D> Windows::Foundation::IInspectable impl_IOptionalReferencePhotoCapturedEventArgs<D>::Context() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IOptionalReferencePhotoCapturedEventArgs)->get_Context(put_abi(value)));
     return value;
 }

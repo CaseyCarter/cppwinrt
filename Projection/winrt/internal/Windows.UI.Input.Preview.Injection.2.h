@@ -45,42 +45,42 @@ template <> struct __declspec(uuid("4bc92e92-d32e-597a-ae24-b38861c5fb08")) __de
 namespace Windows::UI::Input::Preview::Injection {
 
 struct IInjectedInputKeyboardInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInjectedInputKeyboardInfo>
 {
     IInjectedInputKeyboardInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInjectedInputMouseInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInjectedInputMouseInfo>
 {
     IInjectedInputMouseInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInjectedInputPenInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInjectedInputPenInfo>
 {
     IInjectedInputPenInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInjectedInputTouchInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInjectedInputTouchInfo>
 {
     IInjectedInputTouchInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInputInjector :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInputInjector>
 {
     IInputInjector(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInputInjectorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInputInjectorStatics>
 {
     IInputInjectorStatics(std::nullptr_t = nullptr) noexcept {}

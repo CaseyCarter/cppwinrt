@@ -16,55 +16,55 @@ struct __declspec(uuid("ed32a372-f3c8-4faa-9cfb-470148da3888")) __declspec(novta
     virtual HRESULT __stdcall abi_Invoke() = 0;
 };
 
-struct __declspec(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")) __declspec(novtable) IClosable : Windows::IInspectable
+struct __declspec(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")) __declspec(novtable) IClosable : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Close() = 0;
 };
 
-struct __declspec(uuid("d6269732-3b7f-46a7-b40b-4fdca2a2c693")) __declspec(novtable) IDeferral : Windows::IInspectable
+struct __declspec(uuid("d6269732-3b7f-46a7-b40b-4fdca2a2c693")) __declspec(novtable) IDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("65a1ecc5-3fb5-4832-8ca9-f061b281d13a")) __declspec(novtable) IDeferralFactory : Windows::IInspectable
+struct __declspec(uuid("65a1ecc5-3fb5-4832-8ca9-f061b281d13a")) __declspec(novtable) IDeferralFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Foundation::DeferralCompletedHandler * handler, Windows::Foundation::IDeferral ** result) = 0;
 };
 
-struct __declspec(uuid("4edb8ee2-96dd-49a7-94f7-4607ddab8e3c")) __declspec(novtable) IGetActivationFactory : Windows::IInspectable
+struct __declspec(uuid("4edb8ee2-96dd-49a7-94f7-4607ddab8e3c")) __declspec(novtable) IGetActivationFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_GetActivationFactory(hstring activatableClassId, Windows::IInspectable ** factory) = 0;
+    virtual HRESULT __stdcall abi_GetActivationFactory(hstring activatableClassId, Windows::Foundation::IInspectable ** factory) = 0;
 };
 
-struct __declspec(uuid("fbc4dd2a-245b-11e4-af98-689423260cf8")) __declspec(novtable) IMemoryBuffer : Windows::IInspectable
+struct __declspec(uuid("fbc4dd2a-245b-11e4-af98-689423260cf8")) __declspec(novtable) IMemoryBuffer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateReference(Windows::Foundation::IMemoryBufferReference ** reference) = 0;
 };
 
-struct __declspec(uuid("fbc4dd2b-245b-11e4-af98-689423260cf8")) __declspec(novtable) IMemoryBufferFactory : Windows::IInspectable
+struct __declspec(uuid("fbc4dd2b-245b-11e4-af98-689423260cf8")) __declspec(novtable) IMemoryBufferFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(uint32_t capacity, Windows::Foundation::IMemoryBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("fbc4dd29-245b-11e4-af98-689423260cf8")) __declspec(novtable) IMemoryBufferReference : Windows::IInspectable
+struct __declspec(uuid("fbc4dd29-245b-11e4-af98-689423260cf8")) __declspec(novtable) IMemoryBufferReference : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Capacity(uint32_t * value) = 0;
-    virtual HRESULT __stdcall add_Closed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_Closed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_Closed(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3")) __declspec(novtable) IStringable : Windows::IInspectable
+struct __declspec(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3")) __declspec(novtable) IStringable : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ToString(hstring * value) = 0;
 };
 
-struct __declspec(uuid("c1d432ba-c824-4452-a7fd-512bc3bbe9a1")) __declspec(novtable) IUriEscapeStatics : Windows::IInspectable
+struct __declspec(uuid("c1d432ba-c824-4452-a7fd-512bc3bbe9a1")) __declspec(novtable) IUriEscapeStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_UnescapeComponent(hstring toUnescape, hstring * value) = 0;
     virtual HRESULT __stdcall abi_EscapeComponent(hstring toEscape, hstring * value) = 0;
 };
 
-struct __declspec(uuid("9e365e57-48b2-4160-956f-c7385120bbfc")) __declspec(novtable) IUriRuntimeClass : Windows::IInspectable
+struct __declspec(uuid("9e365e57-48b2-4160-956f-c7385120bbfc")) __declspec(novtable) IUriRuntimeClass : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AbsoluteUri(hstring * value) = 0;
     virtual HRESULT __stdcall get_DisplayUri(hstring * value) = 0;
@@ -85,30 +85,30 @@ struct __declspec(uuid("9e365e57-48b2-4160-956f-c7385120bbfc")) __declspec(novta
     virtual HRESULT __stdcall abi_CombineUri(hstring relativeUri, Windows::Foundation::IUriRuntimeClass ** instance) = 0;
 };
 
-struct __declspec(uuid("44a9796f-723e-4fdf-a218-033e75b0c084")) __declspec(novtable) IUriRuntimeClassFactory : Windows::IInspectable
+struct __declspec(uuid("44a9796f-723e-4fdf-a218-033e75b0c084")) __declspec(novtable) IUriRuntimeClassFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateUri(hstring uri, Windows::Foundation::IUriRuntimeClass ** instance) = 0;
     virtual HRESULT __stdcall abi_CreateWithRelativeUri(hstring baseUri, hstring relativeUri, Windows::Foundation::IUriRuntimeClass ** instance) = 0;
 };
 
-struct __declspec(uuid("758d9661-221c-480f-a339-50656673f46f")) __declspec(novtable) IUriRuntimeClassWithAbsoluteCanonicalUri : Windows::IInspectable
+struct __declspec(uuid("758d9661-221c-480f-a339-50656673f46f")) __declspec(novtable) IUriRuntimeClassWithAbsoluteCanonicalUri : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AbsoluteCanonicalUri(hstring * value) = 0;
     virtual HRESULT __stdcall get_DisplayIri(hstring * value) = 0;
 };
 
-struct __declspec(uuid("125e7431-f678-4e8e-b670-20a9b06c512d")) __declspec(novtable) IWwwFormUrlDecoderEntry : Windows::IInspectable
+struct __declspec(uuid("125e7431-f678-4e8e-b670-20a9b06c512d")) __declspec(novtable) IWwwFormUrlDecoderEntry : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Value(hstring * value) = 0;
 };
 
-struct __declspec(uuid("d45a0451-f225-4542-9296-0e1df5d254df")) __declspec(novtable) IWwwFormUrlDecoderRuntimeClass : Windows::IInspectable
+struct __declspec(uuid("d45a0451-f225-4542-9296-0e1df5d254df")) __declspec(novtable) IWwwFormUrlDecoderRuntimeClass : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetFirstValueByName(hstring name, hstring * phstrValue) = 0;
 };
 
-struct __declspec(uuid("5b8c6b3d-24ae-41b5-a1bf-f0c3d544845b")) __declspec(novtable) IWwwFormUrlDecoderRuntimeClassFactory : Windows::IInspectable
+struct __declspec(uuid("5b8c6b3d-24ae-41b5-a1bf-f0c3d544845b")) __declspec(novtable) IWwwFormUrlDecoderRuntimeClassFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWwwFormUrlDecoder(hstring query, Windows::Foundation::IWwwFormUrlDecoderRuntimeClass ** instance) = 0;
 };
@@ -148,7 +148,7 @@ struct WINRT_EBO impl_IDeferralFactory
 template <typename D>
 struct WINRT_EBO impl_IGetActivationFactory
 {
-    Windows::IInspectable GetActivationFactory(hstring_view activatableClassId) const;
+    Windows::Foundation::IInspectable GetActivationFactory(hstring_view activatableClassId) const;
 };
 
 template <typename D>
@@ -167,9 +167,9 @@ template <typename D>
 struct WINRT_EBO impl_IMemoryBufferReference
 {
     uint32_t Capacity() const;
-    event_token Closed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> & handler) const;
+    event_token Closed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> & handler) const;
     using Closed_revoker = event_revoker<IMemoryBufferReference>;
-    Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> & handler) const;
+    Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> & handler) const;
     void Closed(event_token cookie) const;
 };
 

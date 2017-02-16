@@ -11,7 +11,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Adc::Provider {
 
-struct __declspec(uuid("be545828-816d-4de5-a048-aba06958aaa8")) __declspec(novtable) IAdcControllerProvider : Windows::IInspectable
+struct __declspec(uuid("be545828-816d-4de5-a048-aba06958aaa8")) __declspec(novtable) IAdcControllerProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ChannelCount(int32_t * value) = 0;
     virtual HRESULT __stdcall get_ResolutionInBits(int32_t * value) = 0;
@@ -25,7 +25,7 @@ struct __declspec(uuid("be545828-816d-4de5-a048-aba06958aaa8")) __declspec(novta
     virtual HRESULT __stdcall abi_ReadValue(int32_t channelNumber, int32_t * result) = 0;
 };
 
-struct __declspec(uuid("28953668-9359-4c57-bc88-e275e81638c9")) __declspec(novtable) IAdcProvider : Windows::IInspectable
+struct __declspec(uuid("28953668-9359-4c57-bc88-e275e81638c9")) __declspec(novtable) IAdcProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetControllers(Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> ** result) = 0;
 };

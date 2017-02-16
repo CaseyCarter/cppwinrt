@@ -30,42 +30,42 @@ template <> struct __declspec(uuid("34f6412f-8314-5205-967c-db357c9a42a7")) __de
 namespace Windows::Devices::Bluetooth::Background {
 
 struct IBluetoothLEAdvertisementPublisherTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementPublisherTriggerDetails>
 {
     IBluetoothLEAdvertisementPublisherTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementWatcherTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementWatcherTriggerDetails>
 {
     IBluetoothLEAdvertisementWatcherTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattCharacteristicNotificationTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattCharacteristicNotificationTriggerDetails>
 {
     IGattCharacteristicNotificationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRfcommConnectionTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommConnectionTriggerDetails>
 {
     IRfcommConnectionTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRfcommInboundConnectionInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommInboundConnectionInformation>
 {
     IRfcommInboundConnectionInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRfcommOutboundConnectionInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommOutboundConnectionInformation>
 {
     IRfcommOutboundConnectionInformation(std::nullptr_t = nullptr) noexcept {}

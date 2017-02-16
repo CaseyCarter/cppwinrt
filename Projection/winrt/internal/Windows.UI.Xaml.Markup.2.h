@@ -35,84 +35,84 @@ template <> struct __declspec(uuid("92cd0a46-2266-5cd6-9293-e111299f2793")) __de
 namespace Windows::UI::Xaml::Markup {
 
 struct IComponentConnector :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IComponentConnector>
 {
     IComponentConnector(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IComponentConnector2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IComponentConnector2>
 {
     IComponentConnector2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTemplateComponent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTemplateComponent>
 {
     IDataTemplateComponent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlBinaryWriter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlBinaryWriter>
 {
     IXamlBinaryWriter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlBinaryWriterStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlBinaryWriterStatics>
 {
     IXamlBinaryWriterStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlBindingHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlBindingHelper>
 {
     IXamlBindingHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlBindingHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlBindingHelperStatics>
 {
     IXamlBindingHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlMember :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlMember>
 {
     IXamlMember(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlMetadataProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlMetadataProvider>
 {
     IXamlMetadataProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlReader>
 {
     IXamlReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlReaderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlReaderStatics>
 {
     IXamlReaderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlType :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlType>
 {
     IXamlType(std::nullptr_t = nullptr) noexcept {}

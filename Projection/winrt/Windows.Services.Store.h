@@ -471,12 +471,12 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_OfflineLicensesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_OfflineLicensesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().OfflineLicensesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().OfflineLicensesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -961,12 +961,12 @@ struct produce<D, Windows::Services::Store::IStoreLicense> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::Services::Store::IStorePackageLicense> : produce_base<D, Windows::Services::Store::IStorePackageLicense>
 {
-    HRESULT __stdcall add_LicenseLost(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_LicenseLost(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().LicenseLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().LicenseLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2992,14 +2992,14 @@ template <typename D> Windows::System::User impl_IStoreContext<D>::User() const
     return value;
 }
 
-template <typename D> event_token impl_IStoreContext<D>::OfflineLicensesChanged(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IStoreContext<D>::OfflineLicensesChanged(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IStoreContext)->add_OfflineLicensesChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IStoreContext> impl_IStoreContext<D>::OfflineLicensesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IStoreContext> impl_IStoreContext<D>::OfflineLicensesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IStoreContext>(this, &ABI::Windows::Services::Store::IStoreContext::remove_OfflineLicensesChanged, OfflineLicensesChanged(handler));
 }
@@ -3177,14 +3177,14 @@ template <typename D> HRESULT impl_IStoreAcquireLicenseResult<D>::ExtendedError(
     return value;
 }
 
-template <typename D> event_token impl_IStorePackageLicense<D>::LicenseLost(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IStorePackageLicense<D>::LicenseLost(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IStorePackageLicense)->add_LicenseLost(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IStorePackageLicense> impl_IStorePackageLicense<D>::LicenseLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IStorePackageLicense> impl_IStorePackageLicense<D>::LicenseLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IStorePackageLicense>(this, &ABI::Windows::Services::Store::IStorePackageLicense::remove_LicenseLost, LicenseLost(handler));
 }

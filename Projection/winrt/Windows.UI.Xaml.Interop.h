@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Xaml.Interop.3.h"
 #include "Windows.UI.Xaml.h"
 #include "internal/Windows.UI.Xaml.Interop.5.h"
@@ -23,7 +24,7 @@ template <typename O, typename M> BindableVectorChangedEventHandler::BindableVec
     BindableVectorChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void BindableVectorChangedEventHandler::operator()(const Windows::UI::Xaml::Interop::IBindableObservableVector & vector, const Windows::IInspectable & e) const
+inline void BindableVectorChangedEventHandler::operator()(const Windows::UI::Xaml::Interop::IBindableObservableVector & vector, const Windows::Foundation::IInspectable & e) const
 {
     check_hresult((*(abi<BindableVectorChangedEventHandler> **)this)->abi_Invoke(get_abi(vector), get_abi(e)));
 }
@@ -40,7 +41,7 @@ template <typename O, typename M> NotifyCollectionChangedEventHandler::NotifyCol
     NotifyCollectionChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void NotifyCollectionChangedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs & e) const
+inline void NotifyCollectionChangedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs & e) const
 {
     check_hresult((*(abi<NotifyCollectionChangedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -71,7 +72,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableIterable> : produce_base<
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Interop::IBindableIterator> : produce_base<D, Windows::UI::Xaml::Interop::IBindableIterator>
 {
-    HRESULT __stdcall get_Current(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Current(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -150,7 +151,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableObservableVector> : produ
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D, Windows::UI::Xaml::Interop::IBindableVector>
 {
-    HRESULT __stdcall abi_GetAt(uint32_t index, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetAt(uint32_t index, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -194,12 +195,12 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_IndexOf(impl::abi_arg_in<Windows::IInspectable> value, uint32_t * index, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_IndexOf(impl::abi_arg_in<Windows::Foundation::IInspectable> value, uint32_t * index, bool * returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_abi(this->shim().IndexOf(*reinterpret_cast<const Windows::IInspectable *>(&value), *index));
+            *returnValue = detach_abi(this->shim().IndexOf(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value), *index));
             return S_OK;
         }
         catch (...)
@@ -208,12 +209,12 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_SetAt(uint32_t index, impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_SetAt(uint32_t index, impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetAt(index, *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SetAt(index, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -222,12 +223,12 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_InsertAt(uint32_t index, impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_InsertAt(uint32_t index, impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().InsertAt(index, *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().InsertAt(index, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -250,12 +251,12 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall abi_Append(impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_Append(impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Append(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().Append(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -296,7 +297,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Interop::IBindableVectorView> : produce_base<D, Windows::UI::Xaml::Interop::IBindableVectorView>
 {
-    HRESULT __stdcall abi_GetAt(uint32_t index, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetAt(uint32_t index, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -325,12 +326,12 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVectorView> : produce_bas
         }
     }
 
-    HRESULT __stdcall abi_IndexOf(impl::abi_arg_in<Windows::IInspectable> value, uint32_t * index, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_IndexOf(impl::abi_arg_in<Windows::Foundation::IInspectable> value, uint32_t * index, bool * returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_abi(this->shim().IndexOf(*reinterpret_cast<const Windows::IInspectable *>(&value), *index));
+            *returnValue = detach_abi(this->shim().IndexOf(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value), *index));
             return S_OK;
         }
         catch (...)
@@ -451,12 +452,12 @@ struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory> : produce_base<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory>
 {
-    HRESULT __stdcall abi_CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, impl::abi_arg_in<Windows::UI::Xaml::Interop::IBindableVector> newItems, impl::abi_arg_in<Windows::UI::Xaml::Interop::IBindableVector> oldItems, int32_t newIndex, int32_t oldIndex, impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, impl::abi_arg_in<Windows::UI::Xaml::Interop::IBindableVector> newItems, impl::abi_arg_in<Windows::UI::Xaml::Interop::IBindableVector> oldItems, int32_t newIndex, int32_t oldIndex, impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstanceWithAllParameters(action, *reinterpret_cast<const Windows::UI::Xaml::Interop::IBindableVector *>(&newItems), *reinterpret_cast<const Windows::UI::Xaml::Interop::IBindableVector *>(&oldItems), newIndex, oldIndex, *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstanceWithAllParameters(action, *reinterpret_cast<const Windows::UI::Xaml::Interop::IBindableVector *>(&newItems), *reinterpret_cast<const Windows::UI::Xaml::Interop::IBindableVector *>(&oldItems), newIndex, oldIndex, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -479,9 +480,9 @@ template <typename D> Windows::UI::Xaml::Interop::IBindableIterator impl_IBindab
     return returnValue;
 }
 
-template <typename D> Windows::IInspectable impl_IBindableVector<D>::GetAt(uint32_t index) const
+template <typename D> Windows::Foundation::IInspectable impl_IBindableVector<D>::GetAt(uint32_t index) const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IBindableVector)->abi_GetAt(index, put_abi(returnValue)));
     return returnValue;
 }
@@ -500,19 +501,19 @@ template <typename D> Windows::UI::Xaml::Interop::IBindableVectorView impl_IBind
     return returnValue;
 }
 
-template <typename D> bool impl_IBindableVector<D>::IndexOf(const Windows::IInspectable & value, uint32_t & index) const
+template <typename D> bool impl_IBindableVector<D>::IndexOf(const Windows::Foundation::IInspectable & value, uint32_t & index) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(IBindableVector)->abi_IndexOf(get_abi(value), &index, &returnValue));
     return returnValue;
 }
 
-template <typename D> void impl_IBindableVector<D>::SetAt(uint32_t index, const Windows::IInspectable & value) const
+template <typename D> void impl_IBindableVector<D>::SetAt(uint32_t index, const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IBindableVector)->abi_SetAt(index, get_abi(value)));
 }
 
-template <typename D> void impl_IBindableVector<D>::InsertAt(uint32_t index, const Windows::IInspectable & value) const
+template <typename D> void impl_IBindableVector<D>::InsertAt(uint32_t index, const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IBindableVector)->abi_InsertAt(index, get_abi(value)));
 }
@@ -522,7 +523,7 @@ template <typename D> void impl_IBindableVector<D>::RemoveAt(uint32_t index) con
     check_hresult(WINRT_SHIM(IBindableVector)->abi_RemoveAt(index));
 }
 
-template <typename D> void impl_IBindableVector<D>::Append(const Windows::IInspectable & value) const
+template <typename D> void impl_IBindableVector<D>::Append(const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IBindableVector)->abi_Append(get_abi(value)));
 }
@@ -554,9 +555,9 @@ template <typename D> void impl_IBindableObservableVector<D>::VectorChanged(even
     check_hresult(WINRT_SHIM(IBindableObservableVector)->remove_VectorChanged(token));
 }
 
-template <typename D> Windows::IInspectable impl_IBindableVectorView<D>::GetAt(uint32_t index) const
+template <typename D> Windows::Foundation::IInspectable impl_IBindableVectorView<D>::GetAt(uint32_t index) const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IBindableVectorView)->abi_GetAt(index, put_abi(returnValue)));
     return returnValue;
 }
@@ -568,16 +569,16 @@ template <typename D> uint32_t impl_IBindableVectorView<D>::Size() const
     return value;
 }
 
-template <typename D> bool impl_IBindableVectorView<D>::IndexOf(const Windows::IInspectable & value, uint32_t & index) const
+template <typename D> bool impl_IBindableVectorView<D>::IndexOf(const Windows::Foundation::IInspectable & value, uint32_t & index) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(IBindableVectorView)->abi_IndexOf(get_abi(value), &index, &returnValue));
     return returnValue;
 }
 
-template <typename D> Windows::IInspectable impl_IBindableIterator<D>::Current() const
+template <typename D> Windows::Foundation::IInspectable impl_IBindableIterator<D>::Current() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IBindableIterator)->get_Current(put_abi(value)));
     return value;
 }
@@ -648,7 +649,7 @@ template <typename D> int32_t impl_INotifyCollectionChangedEventArgs<D>::OldStar
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs impl_INotifyCollectionChangedEventArgsFactory<D>::CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, const Windows::UI::Xaml::Interop::IBindableVector & newItems, const Windows::UI::Xaml::Interop::IBindableVector & oldItems, int32_t newIndex, int32_t oldIndex, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs impl_INotifyCollectionChangedEventArgsFactory<D>::CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, const Windows::UI::Xaml::Interop::IBindableVector & newItems, const Windows::UI::Xaml::Interop::IBindableVector & oldItems, int32_t newIndex, int32_t oldIndex, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs instance { nullptr };
     check_hresult(WINRT_SHIM(INotifyCollectionChangedEventArgsFactory)->abi_CreateInstanceWithAllParameters(action, get_abi(newItems), get_abi(oldItems), newIndex, oldIndex, get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -657,7 +658,7 @@ template <typename D> Windows::UI::Xaml::Interop::NotifyCollectionChangedEventAr
 
 inline NotifyCollectionChangedEventArgs::NotifyCollectionChangedEventArgs(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, const Windows::UI::Xaml::Interop::IBindableVector & newItems, const Windows::UI::Xaml::Interop::IBindableVector & oldItems, int32_t newIndex, int32_t oldIndex)
 {
-    Windows::IInspectable outer, inner;
+    Windows::Foundation::IInspectable outer, inner;
     impl_move(get_activation_factory<NotifyCollectionChangedEventArgs, INotifyCollectionChangedEventArgsFactory>().CreateInstanceWithAllParameters(action, newItems, oldItems, newIndex, oldIndex, outer, inner));
 }
 

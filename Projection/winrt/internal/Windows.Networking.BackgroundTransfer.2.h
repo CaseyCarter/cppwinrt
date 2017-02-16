@@ -265,7 +265,7 @@ template <> struct __declspec(uuid("608a29a8-bbc5-5ea3-b3f7-87edc4e7bbbc")) __de
 namespace Windows::Networking::BackgroundTransfer {
 
 struct IBackgroundDownloader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundDownloader>,
     impl::require<IBackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>
 {
@@ -273,119 +273,119 @@ struct IBackgroundDownloader :
 };
 
 struct IBackgroundDownloader2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundDownloader2>
 {
     IBackgroundDownloader2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundDownloader3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundDownloader3>
 {
     IBackgroundDownloader3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundDownloaderFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundDownloaderFactory>
 {
     IBackgroundDownloaderFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundDownloaderStaticMethods :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundDownloaderStaticMethods>
 {
     IBackgroundDownloaderStaticMethods(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundDownloaderStaticMethods2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundDownloaderStaticMethods2>
 {
     IBackgroundDownloaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("IBackgroundDownloaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundDownloaderUserConsent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundDownloaderUserConsent>
 {
     IBackgroundDownloaderUserConsent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferBase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferBase>
 {
     IBackgroundTransferBase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferCompletionGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferCompletionGroup>
 {
     IBackgroundTransferCompletionGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferCompletionGroupTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferCompletionGroupTriggerDetails>
 {
     IBackgroundTransferCompletionGroupTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferContentPart :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferContentPart>
 {
     IBackgroundTransferContentPart(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferContentPartFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferContentPartFactory>
 {
     IBackgroundTransferContentPartFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferErrorStaticMethods :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferErrorStaticMethods>
 {
     IBackgroundTransferErrorStaticMethods(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferGroup>
 {
     IBackgroundTransferGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferGroupStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferGroupStatics>
 {
     IBackgroundTransferGroupStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferOperation>
 {
     IBackgroundTransferOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTransferOperationPriority :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTransferOperationPriority>
 {
     IBackgroundTransferOperationPriority(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundUploader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundUploader>,
     impl::require<IBackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>
 {
@@ -393,63 +393,63 @@ struct IBackgroundUploader :
 };
 
 struct IBackgroundUploader2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundUploader2>
 {
     IBackgroundUploader2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundUploader3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundUploader3>
 {
     IBackgroundUploader3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundUploaderFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundUploaderFactory>
 {
     IBackgroundUploaderFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundUploaderStaticMethods :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundUploaderStaticMethods>
 {
     IBackgroundUploaderStaticMethods(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundUploaderStaticMethods2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundUploaderStaticMethods2>
 {
     IBackgroundUploaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("IBackgroundUploaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundUploaderUserConsent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundUploaderUserConsent>
 {
     IBackgroundUploaderUserConsent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContentPrefetcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContentPrefetcher>
 {
     IContentPrefetcher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContentPrefetcherTime :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContentPrefetcherTime>
 {
     IContentPrefetcherTime(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDownloadOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDownloadOperation>,
     impl::require<IDownloadOperation, Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>
 {
@@ -457,28 +457,28 @@ struct IDownloadOperation :
 };
 
 struct IDownloadOperation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDownloadOperation2>
 {
     IDownloadOperation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IResponseInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IResponseInformation>
 {
     IResponseInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("IUnconstrainedTransferRequestResult is deprecated and may not work on all platforms. For more info, see MSDN.")]] IUnconstrainedTransferRequestResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUnconstrainedTransferRequestResult>
 {
     IUnconstrainedTransferRequestResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUploadOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUploadOperation>,
     impl::require<IUploadOperation, Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>
 {
@@ -486,7 +486,7 @@ struct IUploadOperation :
 };
 
 struct IUploadOperation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUploadOperation2>
 {
     IUploadOperation2(std::nullptr_t = nullptr) noexcept {}

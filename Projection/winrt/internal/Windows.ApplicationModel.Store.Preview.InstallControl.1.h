@@ -14,7 +14,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Store::Preview::InstallControl {
 
-struct __declspec(uuid("49d3dfab-168a-4cbf-a93a-9e448c82737d")) __declspec(novtable) IAppInstallItem : Windows::IInspectable
+struct __declspec(uuid("49d3dfab-168a-4cbf-a93a-9e448c82737d")) __declspec(novtable) IAppInstallItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProductId(hstring * value) = 0;
     virtual HRESULT __stdcall get_PackageFamilyName(hstring * value) = 0;
@@ -24,20 +24,20 @@ struct __declspec(uuid("49d3dfab-168a-4cbf-a93a-9e448c82737d")) __declspec(novta
     virtual HRESULT __stdcall abi_Cancel() = 0;
     virtual HRESULT __stdcall abi_Pause() = 0;
     virtual HRESULT __stdcall abi_Restart() = 0;
-    virtual HRESULT __stdcall add_Completed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Completed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Completed(event_token token) = 0;
-    virtual HRESULT __stdcall add_StatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_StatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_StatusChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("d3972af8-40c0-4fd7-aa6c-0aa13ca6188c")) __declspec(novtable) IAppInstallItem2 : Windows::IInspectable
+struct __declspec(uuid("d3972af8-40c0-4fd7-aa6c-0aa13ca6188c")) __declspec(novtable) IAppInstallItem2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CancelWithTelemetry(hstring correlationVector) = 0;
     virtual HRESULT __stdcall abi_PauseWithTelemetry(hstring correlationVector) = 0;
     virtual HRESULT __stdcall abi_RestartWithTelemetry(hstring correlationVector) = 0;
 };
 
-struct __declspec(uuid("9353e170-8441-4b45-bd72-7c2fa925beee")) __declspec(novtable) IAppInstallManager : Windows::IInspectable
+struct __declspec(uuid("9353e170-8441-4b45-bd72-7c2fa925beee")) __declspec(novtable) IAppInstallManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppInstallItems(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> ** value) = 0;
     virtual HRESULT __stdcall abi_Cancel(hstring productId) = 0;
@@ -60,7 +60,7 @@ struct __declspec(uuid("9353e170-8441-4b45-bd72-7c2fa925beee")) __declspec(novta
     virtual HRESULT __stdcall abi_GetIsAppAllowedToInstallAsync(hstring productId, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
 };
 
-struct __declspec(uuid("16937851-ed37-480d-8314-52e27c03f04a")) __declspec(novtable) IAppInstallManager2 : Windows::IInspectable
+struct __declspec(uuid("16937851-ed37-480d-8314-52e27c03f04a")) __declspec(novtable) IAppInstallManager2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_StartAppInstallWithTelemetryAsync(hstring productId, hstring skuId, bool repair, bool forceUseOfNonRemovableStorage, hstring catalogId, hstring bundleId, hstring correlationVector, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> ** operation) = 0;
     virtual HRESULT __stdcall abi_UpdateAppByPackageFamilyNameWithTelemetryAsync(hstring packageFamilyName, hstring correlationVector, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> ** operation) = 0;
@@ -72,7 +72,7 @@ struct __declspec(uuid("16937851-ed37-480d-8314-52e27c03f04a")) __declspec(novta
     virtual HRESULT __stdcall abi_RestartWithTelemetry(hstring productId, hstring correlationVector) = 0;
 };
 
-struct __declspec(uuid("95b24b17-e96a-4d0e-84e1-c8cb417a0178")) __declspec(novtable) IAppInstallManager3 : Windows::IInspectable
+struct __declspec(uuid("95b24b17-e96a-4d0e-84e1-c8cb417a0178")) __declspec(novtable) IAppInstallManager3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_StartProductInstallAsync(hstring productId, hstring catalogId, hstring flightId, hstring clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring correlationVector, Windows::Management::Deployment::IPackageVolume * targetVolume, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> ** operation) = 0;
     virtual HRESULT __stdcall abi_StartProductInstallForUserAsync(Windows::System::IUser * user, hstring productId, hstring catalogId, hstring flightId, hstring clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring correlationVector, Windows::Management::Deployment::IPackageVolume * targetVolume, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> ** operation) = 0;
@@ -84,12 +84,12 @@ struct __declspec(uuid("95b24b17-e96a-4d0e-84e1-c8cb417a0178")) __declspec(novta
     virtual HRESULT __stdcall abi_MoveToFrontOfDownloadQueue(hstring productId, hstring correlationVector) = 0;
 };
 
-struct __declspec(uuid("bc505743-4674-4dd1-957e-c25682086a14")) __declspec(novtable) IAppInstallManagerItemEventArgs : Windows::IInspectable
+struct __declspec(uuid("bc505743-4674-4dd1-957e-c25682086a14")) __declspec(novtable) IAppInstallManagerItemEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Item(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem ** value) = 0;
 };
 
-struct __declspec(uuid("936dccfa-2450-4126-88b1-6127a644dd5c")) __declspec(novtable) IAppInstallStatus : Windows::IInspectable
+struct __declspec(uuid("936dccfa-2450-4126-88b1-6127a644dd5c")) __declspec(novtable) IAppInstallStatus : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InstallState(winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState * value) = 0;
     virtual HRESULT __stdcall get_DownloadSizeInBytes(uint64_t * value) = 0;
@@ -98,7 +98,7 @@ struct __declspec(uuid("936dccfa-2450-4126-88b1-6127a644dd5c")) __declspec(novta
     virtual HRESULT __stdcall get_ErrorCode(HRESULT * value) = 0;
 };
 
-struct __declspec(uuid("96e7818a-5e92-4aa9-8edc-58fed4b87e00")) __declspec(novtable) IAppInstallStatus2 : Windows::IInspectable
+struct __declspec(uuid("96e7818a-5e92-4aa9-8edc-58fed4b87e00")) __declspec(novtable) IAppInstallStatus2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
     virtual HRESULT __stdcall get_ReadyForLaunch(bool * value) = 0;
@@ -128,13 +128,13 @@ struct WINRT_EBO impl_IAppInstallItem
     void Cancel() const;
     void Pause() const;
     void Restart() const;
-    event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const;
+    event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> & handler) const;
     using Completed_revoker = event_revoker<IAppInstallItem>;
-    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const;
+    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> & handler) const;
     void Completed(event_token token) const;
-    event_token StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const;
+    event_token StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> & handler) const;
     using StatusChanged_revoker = event_revoker<IAppInstallItem>;
-    StatusChanged_revoker StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const;
+    StatusChanged_revoker StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> & handler) const;
     void StatusChanged(event_token token) const;
 };
 

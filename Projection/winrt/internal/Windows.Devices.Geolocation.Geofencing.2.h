@@ -21,7 +21,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_ecc5af2c_e47a_59ce_86be_9c3066fe26f7
 #define WINRT_GENERIC_ecc5af2c_e47a_59ce_86be_9c3066fe26f7
-template <> struct __declspec(uuid("ecc5af2c-e47a-59ce-86be-9c3066fe26f7")) __declspec(novtable) TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> {};
+template <> struct __declspec(uuid("ecc5af2c-e47a-59ce-86be-9c3066fe26f7")) __declspec(novtable) TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -65,35 +65,35 @@ template <> struct __declspec(uuid("76f50b4e-7aa7-565b-aada-b0c1cc144ed0")) __de
 namespace Windows::Devices::Geolocation::Geofencing {
 
 struct IGeofence :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeofence>
 {
     IGeofence(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeofenceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeofenceFactory>
 {
     IGeofenceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeofenceMonitor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeofenceMonitor>
 {
     IGeofenceMonitor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeofenceMonitorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeofenceMonitorStatics>
 {
     IGeofenceMonitorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeofenceStateChangeReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGeofenceStateChangeReport>
 {
     IGeofenceStateChangeReport(std::nullptr_t = nullptr) noexcept {}

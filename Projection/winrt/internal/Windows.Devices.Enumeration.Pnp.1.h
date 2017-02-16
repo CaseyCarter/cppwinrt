@@ -13,15 +13,15 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Enumeration::Pnp {
 
-struct __declspec(uuid("95c66258-733b-4a8f-93a3-db078ac870c1")) __declspec(novtable) IPnpObject : Windows::IInspectable
+struct __declspec(uuid("95c66258-733b-4a8f-93a3-db078ac870c1")) __declspec(novtable) IPnpObject : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::Devices::Enumeration::Pnp::PnpObjectType * value) = 0;
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
-    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall abi_Update(Windows::Devices::Enumeration::Pnp::IPnpObjectUpdate * updateInfo) = 0;
 };
 
-struct __declspec(uuid("b3c32a3d-d168-4660-bbf3-a733b14b6e01")) __declspec(novtable) IPnpObjectStatics : Windows::IInspectable
+struct __declspec(uuid("b3c32a3d-d168-4660-bbf3-a733b14b6e01")) __declspec(novtable) IPnpObjectStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromIdAsync(winrt::Windows::Devices::Enumeration::Pnp::PnpObjectType type, hstring id, Windows::Foundation::Collections::IIterable<hstring> * requestedProperties, Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObject> ** asyncOp) = 0;
     virtual HRESULT __stdcall abi_FindAllAsync(winrt::Windows::Devices::Enumeration::Pnp::PnpObjectType type, Windows::Foundation::Collections::IIterable<hstring> * requestedProperties, Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObjectCollection> ** asyncOp) = 0;
@@ -30,14 +30,14 @@ struct __declspec(uuid("b3c32a3d-d168-4660-bbf3-a733b14b6e01")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateWatcherAqsFilter(winrt::Windows::Devices::Enumeration::Pnp::PnpObjectType type, Windows::Foundation::Collections::IIterable<hstring> * requestedProperties, hstring aqsFilter, Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher ** watcher) = 0;
 };
 
-struct __declspec(uuid("6f59e812-001e-4844-bcc6-432886856a17")) __declspec(novtable) IPnpObjectUpdate : Windows::IInspectable
+struct __declspec(uuid("6f59e812-001e-4844-bcc6-432886856a17")) __declspec(novtable) IPnpObjectUpdate : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::Devices::Enumeration::Pnp::PnpObjectType * value) = 0;
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
-    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> ** value) = 0;
+    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> ** value) = 0;
 };
 
-struct __declspec(uuid("83c95ca8-4772-4a7a-aca8-e48c42a89c44")) __declspec(novtable) IPnpObjectWatcher : Windows::IInspectable
+struct __declspec(uuid("83c95ca8-4772-4a7a-aca8-e48c42a89c44")) __declspec(novtable) IPnpObjectWatcher : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_Added(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObject> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Added(event_token token) = 0;
@@ -45,9 +45,9 @@ struct __declspec(uuid("83c95ca8-4772-4a7a-aca8-e48c42a89c44")) __declspec(novta
     virtual HRESULT __stdcall remove_Updated(event_token token) = 0;
     virtual HRESULT __stdcall add_Removed(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObjectUpdate> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Removed(event_token token) = 0;
-    virtual HRESULT __stdcall add_EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_EnumerationCompleted(event_token token) = 0;
-    virtual HRESULT __stdcall add_Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Stopped(event_token token) = 0;
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::Enumeration::DeviceWatcherStatus * status) = 0;
     virtual HRESULT __stdcall abi_Start() = 0;
@@ -72,7 +72,7 @@ struct WINRT_EBO impl_IPnpObject
 {
     Windows::Devices::Enumeration::Pnp::PnpObjectType Type() const;
     hstring Id() const;
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
     void Update(const Windows::Devices::Enumeration::Pnp::PnpObjectUpdate & updateInfo) const;
 };
 
@@ -91,7 +91,7 @@ struct WINRT_EBO impl_IPnpObjectUpdate
 {
     Windows::Devices::Enumeration::Pnp::PnpObjectType Type() const;
     hstring Id() const;
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
 };
 
 template <typename D>
@@ -109,13 +109,13 @@ struct WINRT_EBO impl_IPnpObjectWatcher
     using Removed_revoker = event_revoker<IPnpObjectWatcher>;
     Removed_revoker Removed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObjectUpdate> & handler) const;
     void Removed(event_token token) const;
-    event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> & handler) const;
+    event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Foundation::IInspectable> & handler) const;
     using EnumerationCompleted_revoker = event_revoker<IPnpObjectWatcher>;
-    EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> & handler) const;
+    EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Foundation::IInspectable> & handler) const;
     void EnumerationCompleted(event_token token) const;
-    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> & handler) const;
+    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Foundation::IInspectable> & handler) const;
     using Stopped_revoker = event_revoker<IPnpObjectWatcher>;
-    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::IInspectable> & handler) const;
+    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Foundation::IInspectable> & handler) const;
     void Stopped(event_token token) const;
     Windows::Devices::Enumeration::DeviceWatcherStatus Status() const;
     void Start() const;

@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.ApplicationModel.Activation.3.h"
 #include "internal/Windows.ApplicationModel.3.h"
 #include "internal/Windows.UI.WebUI.3.h"
@@ -29,7 +30,7 @@ template <typename O, typename M> ActivatedEventHandler::ActivatedEventHandler(O
     ActivatedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void ActivatedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::Activation::IActivatedEventArgs & eventArgs) const
+inline void ActivatedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::Activation::IActivatedEventArgs & eventArgs) const
 {
     check_hresult((*(abi<ActivatedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(eventArgs)));
 }
@@ -46,7 +47,7 @@ template <typename O, typename M> EnteredBackgroundEventHandler::EnteredBackgrou
     EnteredBackgroundEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void EnteredBackgroundEventHandler::operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::IEnteredBackgroundEventArgs & e) const
+inline void EnteredBackgroundEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::IEnteredBackgroundEventArgs & e) const
 {
     check_hresult((*(abi<EnteredBackgroundEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -63,7 +64,7 @@ template <typename O, typename M> LeavingBackgroundEventHandler::LeavingBackgrou
     LeavingBackgroundEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void LeavingBackgroundEventHandler::operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::ILeavingBackgroundEventArgs & e) const
+inline void LeavingBackgroundEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::ILeavingBackgroundEventArgs & e) const
 {
     check_hresult((*(abi<LeavingBackgroundEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -80,7 +81,7 @@ template <typename O, typename M> NavigatedEventHandler::NavigatedEventHandler(O
     NavigatedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void NavigatedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::WebUI::IWebUINavigatedEventArgs & e) const
+inline void NavigatedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::WebUI::IWebUINavigatedEventArgs & e) const
 {
     check_hresult((*(abi<NavigatedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -97,7 +98,7 @@ template <typename O, typename M> ResumingEventHandler::ResumingEventHandler(O *
     ResumingEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void ResumingEventHandler::operator()(const Windows::IInspectable & sender) const
+inline void ResumingEventHandler::operator()(const Windows::Foundation::IInspectable & sender) const
 {
     check_hresult((*(abi<ResumingEventHandler> **)this)->abi_Invoke(get_abi(sender)));
 }
@@ -114,7 +115,7 @@ template <typename O, typename M> SuspendingEventHandler::SuspendingEventHandler
     SuspendingEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void SuspendingEventHandler::operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::ISuspendingEventArgs & e) const
+inline void SuspendingEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::ISuspendingEventArgs & e) const
 {
     check_hresult((*(abi<SuspendingEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }

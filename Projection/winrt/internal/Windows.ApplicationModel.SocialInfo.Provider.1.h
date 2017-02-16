@@ -15,7 +15,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::SocialInfo::Provider {
 
-struct __declspec(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde")) __declspec(novtable) ISocialDashboardItemUpdater : Windows::IInspectable
+struct __declspec(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde")) __declspec(novtable) ISocialDashboardItemUpdater : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OwnerRemoteId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Content(Windows::ApplicationModel::SocialInfo::ISocialFeedContent ** value) = 0;
@@ -28,7 +28,7 @@ struct __declspec(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde")) __declspec(novta
     virtual HRESULT __stdcall put_TargetUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
 };
 
-struct __declspec(uuid("7a0c0aa7-ed89-4bd5-a8d9-15f4d9861c10")) __declspec(novtable) ISocialFeedUpdater : Windows::IInspectable
+struct __declspec(uuid("7a0c0aa7-ed89-4bd5-a8d9-15f4d9861c10")) __declspec(novtable) ISocialFeedUpdater : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OwnerRemoteId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Kind(winrt::Windows::ApplicationModel::SocialInfo::SocialFeedKind * value) = 0;
@@ -36,7 +36,7 @@ struct __declspec(uuid("7a0c0aa7-ed89-4bd5-a8d9-15f4d9861c10")) __declspec(novta
     virtual HRESULT __stdcall abi_CommitAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("1b88e52b-7787-48d6-aa12-d8e8f47ab85a")) __declspec(novtable) ISocialInfoProviderManagerStatics : Windows::IInspectable
+struct __declspec(uuid("1b88e52b-7787-48d6-aa12-d8e8f47ab85a")) __declspec(novtable) ISocialInfoProviderManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateSocialFeedUpdaterAsync(winrt::Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, winrt::Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring ownerRemoteId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> ** operation) = 0;
     virtual HRESULT __stdcall abi_CreateDashboardItemUpdaterAsync(hstring ownerRemoteId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> ** operation) = 0;

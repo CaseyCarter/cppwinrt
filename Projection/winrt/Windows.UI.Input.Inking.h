@@ -409,7 +409,7 @@ struct produce<D, Windows::UI::Input::Inking::IInkManager> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall abi_ProcessPointerUpdate(impl::abi_arg_in<Windows::UI::Input::IPointerPoint> pointerPoint, impl::abi_arg_out<Windows::IInspectable> updateInformation) noexcept override
+    HRESULT __stdcall abi_ProcessPointerUpdate(impl::abi_arg_in<Windows::UI::Input::IPointerPoint> pointerPoint, impl::abi_arg_out<Windows::Foundation::IInspectable> updateInformation) noexcept override
     {
         try
         {
@@ -3026,9 +3026,9 @@ template <typename D> void impl_IInkManager<D>::ProcessPointerDown(const Windows
     check_hresult(WINRT_SHIM(IInkManager)->abi_ProcessPointerDown(get_abi(pointerPoint)));
 }
 
-template <typename D> Windows::IInspectable impl_IInkManager<D>::ProcessPointerUpdate(const Windows::UI::Input::PointerPoint & pointerPoint) const
+template <typename D> Windows::Foundation::IInspectable impl_IInkManager<D>::ProcessPointerUpdate(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
-    Windows::IInspectable updateInformation;
+    Windows::Foundation::IInspectable updateInformation;
     check_hresult(WINRT_SHIM(IInkManager)->abi_ProcessPointerUpdate(get_abi(pointerPoint), put_abi(updateInformation)));
     return updateInformation;
 }

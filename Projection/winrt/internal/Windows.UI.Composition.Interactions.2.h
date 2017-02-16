@@ -53,14 +53,14 @@ template <> struct __declspec(uuid("46617d87-2cd2-5e31-9a30-ea86f8aa7ca1")) __de
 namespace Windows::UI::Composition::Interactions {
 
 struct ICompositionInteractionSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionInteractionSource>
 {
     ICompositionInteractionSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionInteractionSourceCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionInteractionSourceCollection>,
     impl::require<ICompositionInteractionSourceCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::ICompositionInteractionSource>>
 {
@@ -68,119 +68,119 @@ struct ICompositionInteractionSourceCollection :
 };
 
 struct IInteractionTracker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTracker>
 {
     IInteractionTracker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerCustomAnimationStateEnteredArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerCustomAnimationStateEnteredArgs>
 {
     IInteractionTrackerCustomAnimationStateEnteredArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerIdleStateEnteredArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerIdleStateEnteredArgs>
 {
     IInteractionTrackerIdleStateEnteredArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerInertiaModifier :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerInertiaModifier>
 {
     IInteractionTrackerInertiaModifier(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerInertiaModifierFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerInertiaModifierFactory>
 {
     IInteractionTrackerInertiaModifierFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerInertiaMotion :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerInertiaMotion>
 {
     IInteractionTrackerInertiaMotion(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerInertiaMotionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerInertiaMotionStatics>
 {
     IInteractionTrackerInertiaMotionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerInertiaRestingValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerInertiaRestingValue>
 {
     IInteractionTrackerInertiaRestingValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerInertiaRestingValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerInertiaRestingValueStatics>
 {
     IInteractionTrackerInertiaRestingValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerInertiaStateEnteredArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerInertiaStateEnteredArgs>
 {
     IInteractionTrackerInertiaStateEnteredArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerInteractingStateEnteredArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerInteractingStateEnteredArgs>
 {
     IInteractionTrackerInteractingStateEnteredArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerOwner :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerOwner>
 {
     IInteractionTrackerOwner(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerRequestIgnoredArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerRequestIgnoredArgs>
 {
     IInteractionTrackerRequestIgnoredArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerStatics>
 {
     IInteractionTrackerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerValuesChangedArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractionTrackerValuesChangedArgs>
 {
     IInteractionTrackerValuesChangedArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualInteractionSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualInteractionSource>
 {
     IVisualInteractionSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualInteractionSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualInteractionSourceStatics>
 {
     IVisualInteractionSourceStatics(std::nullptr_t = nullptr) noexcept {}

@@ -766,7 +766,7 @@ struct produce<D, Windows::Devices::Perception::Provider::IPerceptionPropertyCha
         }
     }
 
-    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -1123,9 +1123,9 @@ template <typename D> hstring impl_IPerceptionPropertyChangeRequest<D>::Name() c
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IPerceptionPropertyChangeRequest<D>::Value() const
+template <typename D> Windows::Foundation::IInspectable impl_IPerceptionPropertyChangeRequest<D>::Value() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IPerceptionPropertyChangeRequest)->get_Value(put_abi(value)));
     return value;
 }

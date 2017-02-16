@@ -14,7 +14,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Security::Cryptography::DataProtection {
 
-struct __declspec(uuid("09639948-ed22-4270-bd1c-6d72c00f8787")) __declspec(novtable) IDataProtectionProvider : Windows::IInspectable
+struct __declspec(uuid("09639948-ed22-4270-bd1c-6d72c00f8787")) __declspec(novtable) IDataProtectionProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ProtectAsync(Windows::Storage::Streams::IBuffer * data, Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ** value) = 0;
     virtual HRESULT __stdcall abi_UnprotectAsync(Windows::Storage::Streams::IBuffer * data, Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ** value) = 0;
@@ -22,7 +22,7 @@ struct __declspec(uuid("09639948-ed22-4270-bd1c-6d72c00f8787")) __declspec(novta
     virtual HRESULT __stdcall abi_UnprotectStreamAsync(Windows::Storage::Streams::IInputStream * src, Windows::Storage::Streams::IOutputStream * dest, Windows::Foundation::IAsyncAction ** value) = 0;
 };
 
-struct __declspec(uuid("adf33dac-4932-4cdf-ac41-7214333514ca")) __declspec(novtable) IDataProtectionProviderFactory : Windows::IInspectable
+struct __declspec(uuid("adf33dac-4932-4cdf-ac41-7214333514ca")) __declspec(novtable) IDataProtectionProviderFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateOverloadExplicit(hstring protectionDescriptor, Windows::Security::Cryptography::DataProtection::IDataProtectionProvider ** value) = 0;
 };

@@ -59,7 +59,7 @@ template <> struct __declspec(uuid("dd33fd5b-a24d-5a44-91fe-dd6441770103")) __de
 
 namespace Windows::UI::Popups {
 
-struct UICommandInvokedHandler : Windows::IUnknown
+struct UICommandInvokedHandler : Windows::Foundation::IUnknown
 {
     UICommandInvokedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> UICommandInvokedHandler(L lambda);
@@ -69,35 +69,35 @@ struct UICommandInvokedHandler : Windows::IUnknown
 };
 
 struct IMessageDialog :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMessageDialog>
 {
     IMessageDialog(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMessageDialogFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMessageDialogFactory>
 {
     IMessageDialogFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPopupMenu :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPopupMenu>
 {
     IPopupMenu(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUICommand :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUICommand>
 {
     IUICommand(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUICommandFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUICommandFactory>
 {
     IUICommandFactory(std::nullptr_t = nullptr) noexcept {}

@@ -325,80 +325,80 @@ template <> struct __declspec(uuid("c523d9dd-4ea6-5115-80e9-4e7ad4769798")) __de
 
 namespace Windows::Networking::Connectivity {
 
-struct NetworkStatusChangedEventHandler : Windows::IUnknown
+struct NetworkStatusChangedEventHandler : Windows::Foundation::IUnknown
 {
     NetworkStatusChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> NetworkStatusChangedEventHandler(L lambda);
     template <typename F> NetworkStatusChangedEventHandler (F * function);
     template <typename O, typename M> NetworkStatusChangedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender) const;
+    void operator()(const Windows::Foundation::IInspectable & sender) const;
 };
 
 struct IAttributedNetworkUsage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAttributedNetworkUsage>
 {
     IAttributedNetworkUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICellularApnContext :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICellularApnContext>
 {
     ICellularApnContext(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectionCost :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectionCost>
 {
     IConnectionCost(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectionCost2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectionCost2>
 {
     IConnectionCost2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectionProfile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectionProfile>
 {
     IConnectionProfile(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectionProfile2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectionProfile2>
 {
     IConnectionProfile2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectionProfile3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectionProfile3>
 {
     IConnectionProfile3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectionProfileFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectionProfileFilter>
 {
     IConnectionProfileFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectionProfileFilter2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectionProfileFilter2>
 {
     IConnectionProfileFilter2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectionSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectionSession>,
     impl::require<IConnectionSession, Windows::Foundation::IClosable>
 {
@@ -406,147 +406,147 @@ struct IConnectionSession :
 };
 
 struct IConnectivityInterval :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectivityInterval>
 {
     IConnectivityInterval(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectivityManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectivityManagerStatics>
 {
     IConnectivityManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPlanStatus :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPlanStatus>
 {
     IDataPlanStatus(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPlanUsage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataPlanUsage>
 {
     IDataPlanUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")]] IDataUsage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataUsage>
 {
     IDataUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IIPInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IIPInformation>
 {
     IIPInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILanIdentifier :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanIdentifier>
 {
     ILanIdentifier(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILanIdentifierData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILanIdentifierData>
 {
     ILanIdentifierData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkAdapter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkAdapter>
 {
     INetworkAdapter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkInformationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkInformationStatics>
 {
     INetworkInformationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkInformationStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkInformationStatics2>
 {
     INetworkInformationStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkItem>
 {
     INetworkItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkSecuritySettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkSecuritySettings>
 {
     INetworkSecuritySettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkStateChangeEventDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkStateChangeEventDetails>
 {
     INetworkStateChangeEventDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkStateChangeEventDetails2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkStateChangeEventDetails2>
 {
     INetworkStateChangeEventDetails2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkUsage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkUsage>
 {
     INetworkUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProxyConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProxyConfiguration>
 {
     IProxyConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRoutePolicy :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRoutePolicy>
 {
     IRoutePolicy(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRoutePolicyFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRoutePolicyFactory>
 {
     IRoutePolicyFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWlanConnectionProfileDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWlanConnectionProfileDetails>
 {
     IWlanConnectionProfileDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWwanConnectionProfileDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWwanConnectionProfileDetails>
 {
     IWwanConnectionProfileDetails(std::nullptr_t = nullptr) noexcept {}

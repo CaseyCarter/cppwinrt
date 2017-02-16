@@ -15,7 +15,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Appointments::DataProvider {
 
-struct __declspec(uuid("49460f8d-6434-40d7-ad46-6297419314d1")) __declspec(novtable) IAppointmentCalendarCancelMeetingRequest : Windows::IInspectable
+struct __declspec(uuid("49460f8d-6434-40d7-ad46-6297419314d1")) __declspec(novtable) IAppointmentCalendarCancelMeetingRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppointmentCalendarLocalId(hstring * value) = 0;
     virtual HRESULT __stdcall get_AppointmentLocalId(hstring * value) = 0;
@@ -27,13 +27,13 @@ struct __declspec(uuid("49460f8d-6434-40d7-ad46-6297419314d1")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("1a79be16-7f30-4e35-beef-9d2c7b6dcae1")) __declspec(novtable) IAppointmentCalendarCancelMeetingRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("1a79be16-7f30-4e35-beef-9d2c7b6dcae1")) __declspec(novtable) IAppointmentCalendarCancelMeetingRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarCancelMeetingRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70")) __declspec(novtable) IAppointmentCalendarCreateOrUpdateAppointmentRequest : Windows::IInspectable
+struct __declspec(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70")) __declspec(novtable) IAppointmentCalendarCreateOrUpdateAppointmentRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppointmentCalendarLocalId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Appointment(Windows::ApplicationModel::Appointments::IAppointment ** value) = 0;
@@ -43,13 +43,13 @@ struct __declspec(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("cf8ded28-002e-4bf7-8e9d-5e20d49aa3ba")) __declspec(novtable) IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("cf8ded28-002e-4bf7-8e9d-5e20d49aa3ba")) __declspec(novtable) IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarCreateOrUpdateAppointmentRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884")) __declspec(novtable) IAppointmentCalendarForwardMeetingRequest : Windows::IInspectable
+struct __declspec(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884")) __declspec(novtable) IAppointmentCalendarForwardMeetingRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppointmentCalendarLocalId(hstring * value) = 0;
     virtual HRESULT __stdcall get_AppointmentLocalId(hstring * value) = 0;
@@ -62,13 +62,13 @@ struct __declspec(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("3109151a-23a2-42fd-9c82-c9a60d59f8a8")) __declspec(novtable) IAppointmentCalendarForwardMeetingRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("3109151a-23a2-42fd-9c82-c9a60d59f8a8")) __declspec(novtable) IAppointmentCalendarForwardMeetingRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarForwardMeetingRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900")) __declspec(novtable) IAppointmentCalendarProposeNewTimeForMeetingRequest : Windows::IInspectable
+struct __declspec(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900")) __declspec(novtable) IAppointmentCalendarProposeNewTimeForMeetingRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppointmentCalendarLocalId(hstring * value) = 0;
     virtual HRESULT __stdcall get_AppointmentLocalId(hstring * value) = 0;
@@ -81,26 +81,26 @@ struct __declspec(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("d2d777d8-fed1-4280-a3ba-2e1f47609aa2")) __declspec(novtable) IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("d2d777d8-fed1-4280-a3ba-2e1f47609aa2")) __declspec(novtable) IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarProposeNewTimeForMeetingRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("12ab382b-7163-4a56-9a4e-7223a84adf46")) __declspec(novtable) IAppointmentCalendarSyncManagerSyncRequest : Windows::IInspectable
+struct __declspec(uuid("12ab382b-7163-4a56-9a4e-7223a84adf46")) __declspec(novtable) IAppointmentCalendarSyncManagerSyncRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppointmentCalendarLocalId(hstring * value) = 0;
     virtual HRESULT __stdcall abi_ReportCompletedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("ca17c6f7-0284-4edd-87ba-4d8f69dcf5c0")) __declspec(novtable) IAppointmentCalendarSyncManagerSyncRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("ca17c6f7-0284-4edd-87ba-4d8f69dcf5c0")) __declspec(novtable) IAppointmentCalendarSyncManagerSyncRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarSyncManagerSyncRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0")) __declspec(novtable) IAppointmentCalendarUpdateMeetingResponseRequest : Windows::IInspectable
+struct __declspec(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0")) __declspec(novtable) IAppointmentCalendarUpdateMeetingResponseRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppointmentCalendarLocalId(hstring * value) = 0;
     virtual HRESULT __stdcall get_AppointmentLocalId(hstring * value) = 0;
@@ -113,13 +113,13 @@ struct __declspec(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportFailedAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("88759883-97bf-479d-aed5-0be8ce567d1e")) __declspec(novtable) IAppointmentCalendarUpdateMeetingResponseRequestEventArgs : Windows::IInspectable
+struct __declspec(uuid("88759883-97bf-479d-aed5-0be8ce567d1e")) __declspec(novtable) IAppointmentCalendarUpdateMeetingResponseRequestEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::Appointments::DataProvider::IAppointmentCalendarUpdateMeetingResponseRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("f3dd9d83-3254-465f-abdb-928046552cf4")) __declspec(novtable) IAppointmentDataProviderConnection : Windows::IInspectable
+struct __declspec(uuid("f3dd9d83-3254-465f-abdb-928046552cf4")) __declspec(novtable) IAppointmentDataProviderConnection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_SyncRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequestEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SyncRequested(event_token token) = 0;
@@ -136,7 +136,7 @@ struct __declspec(uuid("f3dd9d83-3254-465f-abdb-928046552cf4")) __declspec(novta
     virtual HRESULT __stdcall abi_Start() = 0;
 };
 
-struct __declspec(uuid("b3283c01-7e12-4e5e-b1ef-74fb68ac6f2a")) __declspec(novtable) IAppointmentDataProviderTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("b3283c01-7e12-4e5e-b1ef-74fb68ac6f2a")) __declspec(novtable) IAppointmentDataProviderTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Connection(Windows::ApplicationModel::Appointments::DataProvider::IAppointmentDataProviderConnection ** value) = 0;
 };

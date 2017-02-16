@@ -42,7 +42,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_db56ce1c_5e9f_5138_9227_b1a66d60bc1b
 #define WINRT_GENERIC_db56ce1c_5e9f_5138_9227_b1a66d60bc1b
-template <> struct __declspec(uuid("db56ce1c-5e9f-5138-9227-b1a66d60bc1b")) __declspec(novtable) TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> {};
+template <> struct __declspec(uuid("db56ce1c-5e9f-5138-9227-b1a66d60bc1b")) __declspec(novtable) TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c00bc2f2_a7f8_5f3f_80d1_2808ef6bca10
@@ -72,7 +72,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_a90661e2_372e_5d1e_bbbb_b8a2ce0e7c4d
 #define WINRT_GENERIC_a90661e2_372e_5d1e_bbbb_b8a2ce0e7c4d
-template <> struct __declspec(uuid("a90661e2-372e-5d1e-bbbb-b8a2ce0e7c4d")) __declspec(novtable) TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> {};
+template <> struct __declspec(uuid("a90661e2-372e-5d1e-bbbb-b8a2ce0e7c4d")) __declspec(novtable) TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_375f9d67_74a2_5f91_a11d_169093718d41
@@ -161,28 +161,28 @@ template <> struct __declspec(uuid("9156b79f-c54a-5277-8f8b-d2cc43c7e004")) __de
 namespace Windows::Devices::Bluetooth {
 
 struct IBluetoothClassOfDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothClassOfDevice>
 {
     IBluetoothClassOfDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothClassOfDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothClassOfDeviceStatics>
 {
     IBluetoothClassOfDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothDevice>
 {
     IBluetoothDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothDevice2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothDevice2>,
     impl::require<IBluetoothDevice2, Windows::Devices::Bluetooth::IBluetoothDevice>
 {
@@ -190,7 +190,7 @@ struct IBluetoothDevice2 :
 };
 
 struct IBluetoothDevice3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothDevice3>,
     impl::require<IBluetoothDevice3, Windows::Devices::Bluetooth::IBluetoothDevice, Windows::Devices::Bluetooth::IBluetoothDevice2>
 {
@@ -198,14 +198,14 @@ struct IBluetoothDevice3 :
 };
 
 struct IBluetoothDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothDeviceStatics>
 {
     IBluetoothDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothDeviceStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothDeviceStatics2>,
     impl::require<IBluetoothDeviceStatics2, Windows::Devices::Bluetooth::IBluetoothDeviceStatics>
 {
@@ -213,42 +213,42 @@ struct IBluetoothDeviceStatics2 :
 };
 
 struct IBluetoothLEAppearance :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAppearance>
 {
     IBluetoothLEAppearance(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAppearanceCategoriesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAppearanceCategoriesStatics>
 {
     IBluetoothLEAppearanceCategoriesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAppearanceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAppearanceStatics>
 {
     IBluetoothLEAppearanceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAppearanceSubcategoriesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAppearanceSubcategoriesStatics>
 {
     IBluetoothLEAppearanceSubcategoriesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEDevice>
 {
     IBluetoothLEDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEDevice2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEDevice2>,
     impl::require<IBluetoothLEDevice2, Windows::Devices::Bluetooth::IBluetoothLEDevice>
 {
@@ -256,21 +256,21 @@ struct IBluetoothLEDevice2 :
 };
 
 struct IBluetoothLEDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEDeviceStatics>
 {
     IBluetoothLEDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEDeviceStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEDeviceStatics2>
 {
     IBluetoothLEDeviceStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothSignalStrengthFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothSignalStrengthFilter>
 {
     IBluetoothSignalStrengthFilter(std::nullptr_t = nullptr) noexcept {}

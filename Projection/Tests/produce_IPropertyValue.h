@@ -40,7 +40,7 @@ struct produce_IPropertyValue : winrt::implements<produce_IPropertyValue, winrt:
     void GetBooleanArray(winrt::com_array<bool> &) { throw winrt::hresult_not_implemented(); }
     void GetStringArray(winrt::com_array<winrt::hstring> &) { throw winrt::hresult_not_implemented(); }
 
-    void GetInspectableArray(winrt::com_array<winrt::Windows::IInspectable> & value)
+    void GetInspectableArray(winrt::com_array<winrt::Windows::Foundation::IInspectable> & value)
     {
         value = { winrt::Windows::Foundation::Uri(L"http://one/"), winrt::Windows::Foundation::Uri(L"http://two/"), winrt::Windows::Foundation::Uri(L"http://three/") };
     }

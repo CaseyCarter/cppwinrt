@@ -73,1169 +73,1169 @@ template <> struct __declspec(uuid("00775c79-589b-5c36-ae72-2e7aab0270c6")) __de
 namespace Windows::UI::Xaml::Automation::Peers {
 
 struct IAppBarAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppBarAutomationPeer>
 {
     IAppBarAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppBarAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppBarAutomationPeerFactory>
 {
     IAppBarAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppBarButtonAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppBarButtonAutomationPeer>
 {
     IAppBarButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppBarButtonAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppBarButtonAutomationPeerFactory>
 {
     IAppBarButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppBarToggleButtonAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppBarToggleButtonAutomationPeer>
 {
     IAppBarToggleButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppBarToggleButtonAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppBarToggleButtonAutomationPeerFactory>
 {
     IAppBarToggleButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutoSuggestBoxAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutoSuggestBoxAutomationPeer>
 {
     IAutoSuggestBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutoSuggestBoxAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutoSuggestBoxAutomationPeerFactory>
 {
     IAutoSuggestBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeer>
 {
     IAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeer2>
 {
     IAutomationPeer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeer3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeer3>
 {
     IAutomationPeer3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeer4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeer4>
 {
     IAutomationPeer4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeer5 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeer5>
 {
     IAutomationPeer5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerAnnotation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerAnnotation>
 {
     IAutomationPeerAnnotation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerAnnotationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerAnnotationFactory>
 {
     IAutomationPeerAnnotationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerAnnotationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerAnnotationStatics>
 {
     IAutomationPeerAnnotationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerFactory>
 {
     IAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerOverrides :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerOverrides>
 {
     IAutomationPeerOverrides(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerOverrides2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerOverrides2>
 {
     IAutomationPeerOverrides2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerOverrides3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerOverrides3>
 {
     IAutomationPeerOverrides3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerOverrides4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerOverrides4>
 {
     IAutomationPeerOverrides4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerOverrides5 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerOverrides5>
 {
     IAutomationPeerOverrides5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerProtected :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerProtected>
 {
     IAutomationPeerProtected(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerStatics>
 {
     IAutomationPeerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerStatics3>
 {
     IAutomationPeerStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IButtonAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IButtonAutomationPeer>
 {
     IButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IButtonAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IButtonAutomationPeerFactory>
 {
     IButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IButtonBaseAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IButtonBaseAutomationPeer>
 {
     IButtonBaseAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IButtonBaseAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IButtonBaseAutomationPeerFactory>
 {
     IButtonBaseAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICaptureElementAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICaptureElementAutomationPeer>
 {
     ICaptureElementAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICaptureElementAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICaptureElementAutomationPeerFactory>
 {
     ICaptureElementAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICheckBoxAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICheckBoxAutomationPeer>
 {
     ICheckBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICheckBoxAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICheckBoxAutomationPeerFactory>
 {
     ICheckBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IComboBoxAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IComboBoxAutomationPeer>
 {
     IComboBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IComboBoxAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IComboBoxAutomationPeerFactory>
 {
     IComboBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IComboBoxItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IComboBoxItemAutomationPeer>
 {
     IComboBoxItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IComboBoxItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IComboBoxItemAutomationPeerFactory>
 {
     IComboBoxItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IComboBoxItemDataAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IComboBoxItemDataAutomationPeer>
 {
     IComboBoxItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IComboBoxItemDataAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IComboBoxItemDataAutomationPeerFactory>
 {
     IComboBoxItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDatePickerAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatePickerAutomationPeer>
 {
     IDatePickerAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDatePickerAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatePickerAutomationPeerFactory>
 {
     IDatePickerAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDatePickerFlyoutPresenterAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatePickerFlyoutPresenterAutomationPeer>
 {
     IDatePickerFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlipViewAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlipViewAutomationPeer>
 {
     IFlipViewAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlipViewAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlipViewAutomationPeerFactory>
 {
     IFlipViewAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlipViewItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlipViewItemAutomationPeer>
 {
     IFlipViewItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlipViewItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlipViewItemAutomationPeerFactory>
 {
     IFlipViewItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlipViewItemDataAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlipViewItemDataAutomationPeer>
 {
     IFlipViewItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlipViewItemDataAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlipViewItemDataAutomationPeerFactory>
 {
     IFlipViewItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlyoutPresenterAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlyoutPresenterAutomationPeer>
 {
     IFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFlyoutPresenterAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFlyoutPresenterAutomationPeerFactory>
 {
     IFlyoutPresenterAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElementAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElementAutomationPeer>
 {
     IFrameworkElementAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElementAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElementAutomationPeerFactory>
 {
     IFrameworkElementAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElementAutomationPeerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElementAutomationPeerStatics>
 {
     IFrameworkElementAutomationPeerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridViewAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridViewAutomationPeer>
 {
     IGridViewAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridViewAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridViewAutomationPeerFactory>
 {
     IGridViewAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridViewHeaderItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridViewHeaderItemAutomationPeer>
 {
     IGridViewHeaderItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridViewHeaderItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridViewHeaderItemAutomationPeerFactory>
 {
     IGridViewHeaderItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridViewItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridViewItemAutomationPeer>
 {
     IGridViewItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridViewItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridViewItemAutomationPeerFactory>
 {
     IGridViewItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridViewItemDataAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridViewItemDataAutomationPeer>
 {
     IGridViewItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridViewItemDataAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridViewItemDataAutomationPeerFactory>
 {
     IGridViewItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGroupItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGroupItemAutomationPeer>
 {
     IGroupItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGroupItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGroupItemAutomationPeerFactory>
 {
     IGroupItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHubAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHubAutomationPeer>
 {
     IHubAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHubAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHubAutomationPeerFactory>
 {
     IHubAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHubSectionAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHubSectionAutomationPeer>
 {
     IHubSectionAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHubSectionAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHubSectionAutomationPeerFactory>
 {
     IHubSectionAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHyperlinkButtonAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHyperlinkButtonAutomationPeer>
 {
     IHyperlinkButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHyperlinkButtonAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHyperlinkButtonAutomationPeerFactory>
 {
     IHyperlinkButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IImageAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IImageAutomationPeer>
 {
     IImageAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IImageAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IImageAutomationPeerFactory>
 {
     IImageAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkToolbarAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkToolbarAutomationPeer>
 {
     IInkToolbarAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IItemAutomationPeer>
 {
     IItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IItemAutomationPeerFactory>
 {
     IItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IItemsControlAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IItemsControlAutomationPeer>
 {
     IItemsControlAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IItemsControlAutomationPeer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IItemsControlAutomationPeer2>
 {
     IItemsControlAutomationPeer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IItemsControlAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IItemsControlAutomationPeerFactory>
 {
     IItemsControlAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IItemsControlAutomationPeerOverrides2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IItemsControlAutomationPeerOverrides2>
 {
     IItemsControlAutomationPeerOverrides2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListBoxAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListBoxAutomationPeer>
 {
     IListBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListBoxAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListBoxAutomationPeerFactory>
 {
     IListBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListBoxItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListBoxItemAutomationPeer>
 {
     IListBoxItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListBoxItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListBoxItemAutomationPeerFactory>
 {
     IListBoxItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListBoxItemDataAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListBoxItemDataAutomationPeer>
 {
     IListBoxItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListBoxItemDataAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListBoxItemDataAutomationPeerFactory>
 {
     IListBoxItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListPickerFlyoutPresenterAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListPickerFlyoutPresenterAutomationPeer>
 {
     IListPickerFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewAutomationPeer>
 {
     IListViewAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewAutomationPeerFactory>
 {
     IListViewAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewBaseAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewBaseAutomationPeer>
 {
     IListViewBaseAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewBaseAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewBaseAutomationPeerFactory>
 {
     IListViewBaseAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewBaseHeaderItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewBaseHeaderItemAutomationPeer>
 {
     IListViewBaseHeaderItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewBaseHeaderItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewBaseHeaderItemAutomationPeerFactory>
 {
     IListViewBaseHeaderItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewHeaderItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewHeaderItemAutomationPeer>
 {
     IListViewHeaderItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewHeaderItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewHeaderItemAutomationPeerFactory>
 {
     IListViewHeaderItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewItemAutomationPeer>
 {
     IListViewItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewItemAutomationPeerFactory>
 {
     IListViewItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewItemDataAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewItemDataAutomationPeer>
 {
     IListViewItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListViewItemDataAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListViewItemDataAutomationPeerFactory>
 {
     IListViewItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoopingSelectorAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoopingSelectorAutomationPeer>
 {
     ILoopingSelectorAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoopingSelectorItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoopingSelectorItemAutomationPeer>
 {
     ILoopingSelectorItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoopingSelectorItemDataAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoopingSelectorItemDataAutomationPeer>
 {
     ILoopingSelectorItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapControlAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapControlAutomationPeer>
 {
     IMapControlAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaElementAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaElementAutomationPeer>
 {
     IMediaElementAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaElementAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaElementAutomationPeerFactory>
 {
     IMediaElementAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerElementAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerElementAutomationPeer>
 {
     IMediaPlayerElementAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerElementAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerElementAutomationPeerFactory>
 {
     IMediaPlayerElementAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaTransportControlsAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaTransportControlsAutomationPeer>
 {
     IMediaTransportControlsAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaTransportControlsAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaTransportControlsAutomationPeerFactory>
 {
     IMediaTransportControlsAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMenuFlyoutItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMenuFlyoutItemAutomationPeer>
 {
     IMenuFlyoutItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMenuFlyoutItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMenuFlyoutItemAutomationPeerFactory>
 {
     IMenuFlyoutItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMenuFlyoutPresenterAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMenuFlyoutPresenterAutomationPeer>
 {
     IMenuFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMenuFlyoutPresenterAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMenuFlyoutPresenterAutomationPeerFactory>
 {
     IMenuFlyoutPresenterAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPasswordBoxAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPasswordBoxAutomationPeer>
 {
     IPasswordBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPasswordBoxAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPasswordBoxAutomationPeerFactory>
 {
     IPasswordBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPickerFlyoutPresenterAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPickerFlyoutPresenterAutomationPeer>
 {
     IPickerFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPivotAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPivotAutomationPeer>
 {
     IPivotAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPivotAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPivotAutomationPeerFactory>
 {
     IPivotAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPivotItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPivotItemAutomationPeer>
 {
     IPivotItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPivotItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPivotItemAutomationPeerFactory>
 {
     IPivotItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPivotItemDataAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPivotItemDataAutomationPeer>
 {
     IPivotItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPivotItemDataAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPivotItemDataAutomationPeerFactory>
 {
     IPivotItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProgressBarAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProgressBarAutomationPeer>
 {
     IProgressBarAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProgressBarAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProgressBarAutomationPeerFactory>
 {
     IProgressBarAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProgressRingAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProgressRingAutomationPeer>
 {
     IProgressRingAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProgressRingAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProgressRingAutomationPeerFactory>
 {
     IProgressRingAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadioButtonAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadioButtonAutomationPeer>
 {
     IRadioButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadioButtonAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadioButtonAutomationPeerFactory>
 {
     IRadioButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRangeBaseAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRangeBaseAutomationPeer>
 {
     IRangeBaseAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRangeBaseAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRangeBaseAutomationPeerFactory>
 {
     IRangeBaseAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRepeatButtonAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRepeatButtonAutomationPeer>
 {
     IRepeatButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRepeatButtonAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRepeatButtonAutomationPeerFactory>
 {
     IRepeatButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRichEditBoxAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRichEditBoxAutomationPeer>
 {
     IRichEditBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRichEditBoxAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRichEditBoxAutomationPeerFactory>
 {
     IRichEditBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRichTextBlockAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRichTextBlockAutomationPeer>
 {
     IRichTextBlockAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRichTextBlockAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRichTextBlockAutomationPeerFactory>
 {
     IRichTextBlockAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRichTextBlockOverflowAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRichTextBlockOverflowAutomationPeer>
 {
     IRichTextBlockOverflowAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRichTextBlockOverflowAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRichTextBlockOverflowAutomationPeerFactory>
 {
     IRichTextBlockOverflowAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScrollBarAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScrollBarAutomationPeer>
 {
     IScrollBarAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScrollBarAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScrollBarAutomationPeerFactory>
 {
     IScrollBarAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScrollViewerAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScrollViewerAutomationPeer>
 {
     IScrollViewerAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScrollViewerAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScrollViewerAutomationPeerFactory>
 {
     IScrollViewerAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISearchBoxAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchBoxAutomationPeer>
 {
     ISearchBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISearchBoxAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchBoxAutomationPeerFactory>
 {
     ISearchBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectorAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectorAutomationPeer>
 {
     ISelectorAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectorAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectorAutomationPeerFactory>
 {
     ISelectorAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectorItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectorItemAutomationPeer>
 {
     ISelectorItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISelectorItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISelectorItemAutomationPeerFactory>
 {
     ISelectorItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISemanticZoomAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISemanticZoomAutomationPeer>
 {
     ISemanticZoomAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISemanticZoomAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISemanticZoomAutomationPeerFactory>
 {
     ISemanticZoomAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISettingsFlyoutAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISettingsFlyoutAutomationPeer>
 {
     ISettingsFlyoutAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISettingsFlyoutAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISettingsFlyoutAutomationPeerFactory>
 {
     ISettingsFlyoutAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISliderAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISliderAutomationPeer>
 {
     ISliderAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISliderAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISliderAutomationPeerFactory>
 {
     ISliderAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextBlockAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextBlockAutomationPeer>
 {
     ITextBlockAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextBlockAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextBlockAutomationPeerFactory>
 {
     ITextBlockAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextBoxAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextBoxAutomationPeer>
 {
     ITextBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextBoxAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITextBoxAutomationPeerFactory>
 {
     ITextBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IThumbAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IThumbAutomationPeer>
 {
     IThumbAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IThumbAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IThumbAutomationPeerFactory>
 {
     IThumbAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimePickerAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimePickerAutomationPeer>
 {
     ITimePickerAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimePickerAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimePickerAutomationPeerFactory>
 {
     ITimePickerAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimePickerFlyoutPresenterAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimePickerFlyoutPresenterAutomationPeer>
 {
     ITimePickerFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToggleButtonAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToggleButtonAutomationPeer>
 {
     IToggleButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToggleButtonAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToggleButtonAutomationPeerFactory>
 {
     IToggleButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToggleMenuFlyoutItemAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToggleMenuFlyoutItemAutomationPeer>
 {
     IToggleMenuFlyoutItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToggleMenuFlyoutItemAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToggleMenuFlyoutItemAutomationPeerFactory>
 {
     IToggleMenuFlyoutItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToggleSwitchAutomationPeer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToggleSwitchAutomationPeer>
 {
     IToggleSwitchAutomationPeer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToggleSwitchAutomationPeerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToggleSwitchAutomationPeerFactory>
 {
     IToggleSwitchAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}

@@ -111,12 +111,12 @@ struct produce<D, Windows::Media::Devices::IAdvancedPhotoControl> : produce_base
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController> : produce_base<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController>
 {
-    HRESULT __stdcall abi_SetDeviceProperty(impl::abi_arg_in<hstring> propertyId, impl::abi_arg_in<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_SetDeviceProperty(impl::abi_arg_in<hstring> propertyId, impl::abi_arg_in<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetDeviceProperty(*reinterpret_cast<const hstring *>(&propertyId), *reinterpret_cast<const Windows::IInspectable *>(&propertyValue));
+            this->shim().SetDeviceProperty(*reinterpret_cast<const hstring *>(&propertyId), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&propertyValue));
             return S_OK;
         }
         catch (...)
@@ -125,7 +125,7 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
         }
     }
 
-    HRESULT __stdcall abi_GetDeviceProperty(impl::abi_arg_in<hstring> propertyId, impl::abi_arg_out<Windows::IInspectable> propertyValue) noexcept override
+    HRESULT __stdcall abi_GetDeviceProperty(impl::abi_arg_in<hstring> propertyId, impl::abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
     {
         try
         {
@@ -2394,12 +2394,12 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
         }
     }
 
-    HRESULT __stdcall add_DefaultAudioCaptureDeviceChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_DefaultAudioCaptureDeviceChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().DefaultAudioCaptureDeviceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().DefaultAudioCaptureDeviceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2422,12 +2422,12 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
         }
     }
 
-    HRESULT __stdcall add_DefaultAudioRenderDeviceChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_DefaultAudioRenderDeviceChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().DefaultAudioRenderDeviceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> *>(&handler)));
+            *cookie = detach_abi(this->shim().DefaultAudioRenderDeviceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3594,14 +3594,14 @@ template <typename D> hstring impl_IMediaDeviceStatics<D>::GetDefaultAudioRender
     return deviceId;
 }
 
-template <typename D> event_token impl_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const
+template <typename D> event_token impl_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IMediaDeviceStatics)->add_DefaultAudioCaptureDeviceChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IMediaDeviceStatics> impl_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const
+template <typename D> event_revoker<IMediaDeviceStatics> impl_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const
 {
     return impl::make_event_revoker<D, IMediaDeviceStatics>(this, &ABI::Windows::Media::Devices::IMediaDeviceStatics::remove_DefaultAudioCaptureDeviceChanged, DefaultAudioCaptureDeviceChanged(handler));
 }
@@ -3611,14 +3611,14 @@ template <typename D> void impl_IMediaDeviceStatics<D>::DefaultAudioCaptureDevic
     check_hresult(WINRT_SHIM(IMediaDeviceStatics)->remove_DefaultAudioCaptureDeviceChanged(cookie));
 }
 
-template <typename D> event_token impl_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const
+template <typename D> event_token impl_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IMediaDeviceStatics)->add_DefaultAudioRenderDeviceChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IMediaDeviceStatics> impl_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const
+template <typename D> event_revoker<IMediaDeviceStatics> impl_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const
 {
     return impl::make_event_revoker<D, IMediaDeviceStatics>(this, &ABI::Windows::Media::Devices::IMediaDeviceStatics::remove_DefaultAudioRenderDeviceChanged, DefaultAudioRenderDeviceChanged(handler));
 }
@@ -4911,14 +4911,14 @@ template <typename D> bool impl_IMediaDeviceControlCapabilities<D>::AutoModeSupp
     return value;
 }
 
-template <typename D> void impl_IAdvancedVideoCaptureDeviceController<D>::SetDeviceProperty(hstring_view propertyId, const Windows::IInspectable & propertyValue) const
+template <typename D> void impl_IAdvancedVideoCaptureDeviceController<D>::SetDeviceProperty(hstring_view propertyId, const Windows::Foundation::IInspectable & propertyValue) const
 {
     check_hresult(WINRT_SHIM(IAdvancedVideoCaptureDeviceController)->abi_SetDeviceProperty(get_abi(propertyId), get_abi(propertyValue)));
 }
 
-template <typename D> Windows::IInspectable impl_IAdvancedVideoCaptureDeviceController<D>::GetDeviceProperty(hstring_view propertyId) const
+template <typename D> Windows::Foundation::IInspectable impl_IAdvancedVideoCaptureDeviceController<D>::GetDeviceProperty(hstring_view propertyId) const
 {
-    Windows::IInspectable propertyValue;
+    Windows::Foundation::IInspectable propertyValue;
     check_hresult(WINRT_SHIM(IAdvancedVideoCaptureDeviceController)->abi_GetDeviceProperty(get_abi(propertyId), put_abi(propertyValue)));
     return propertyValue;
 }
@@ -5146,12 +5146,12 @@ inline hstring MediaDevice::GetDefaultAudioRenderId(Windows::Media::Devices::Aud
     return get_activation_factory<MediaDevice, IMediaDeviceStatics>().GetDefaultAudioRenderId(role);
 }
 
-inline event_token MediaDevice::DefaultAudioCaptureDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler)
+inline event_token MediaDevice::DefaultAudioCaptureDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler)
 {
     return get_activation_factory<MediaDevice, IMediaDeviceStatics>().DefaultAudioCaptureDeviceChanged(handler);
 }
 
-inline factory_event_revoker<IMediaDeviceStatics> MediaDevice::DefaultAudioCaptureDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler)
+inline factory_event_revoker<IMediaDeviceStatics> MediaDevice::DefaultAudioCaptureDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler)
 {
     auto factory = get_activation_factory<MediaDevice, IMediaDeviceStatics>();
     return { factory, &ABI::Windows::Media::Devices::IMediaDeviceStatics::remove_DefaultAudioCaptureDeviceChanged, factory.DefaultAudioCaptureDeviceChanged(handler) };
@@ -5162,12 +5162,12 @@ inline void MediaDevice::DefaultAudioCaptureDeviceChanged(event_token cookie)
     get_activation_factory<MediaDevice, IMediaDeviceStatics>().DefaultAudioCaptureDeviceChanged(cookie);
 }
 
-inline event_token MediaDevice::DefaultAudioRenderDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler)
+inline event_token MediaDevice::DefaultAudioRenderDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler)
 {
     return get_activation_factory<MediaDevice, IMediaDeviceStatics>().DefaultAudioRenderDeviceChanged(handler);
 }
 
-inline factory_event_revoker<IMediaDeviceStatics> MediaDevice::DefaultAudioRenderDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler)
+inline factory_event_revoker<IMediaDeviceStatics> MediaDevice::DefaultAudioRenderDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler)
 {
     auto factory = get_activation_factory<MediaDevice, IMediaDeviceStatics>();
     return { factory, &ABI::Windows::Media::Devices::IMediaDeviceStatics::remove_DefaultAudioRenderDeviceChanged, factory.DefaultAudioRenderDeviceChanged(handler) };

@@ -342,7 +342,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
         }
     }
 
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -3179,9 +3179,9 @@ template <typename D> int32_t impl_IAllJoynAboutDataView<D>::Status() const
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IAllJoynAboutDataView<D>::Properties() const
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> impl_IAllJoynAboutDataView<D>::Properties() const
 {
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Properties(put_abi(value)));
     return value;
 }

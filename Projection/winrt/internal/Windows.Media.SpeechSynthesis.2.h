@@ -72,14 +72,14 @@ template <> struct __declspec(uuid("c972b996-6165-50d4-af60-a8c3df51d092")) __de
 namespace Windows::Media::SpeechSynthesis {
 
 struct IInstalledVoicesStatic :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInstalledVoicesStatic>
 {
     IInstalledVoicesStatic(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechSynthesisStream :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechSynthesisStream>,
     impl::require<ISpeechSynthesisStream, Windows::Foundation::IClosable, Windows::Storage::Streams::IContentTypeProvider, Windows::Storage::Streams::IInputStream, Windows::Storage::Streams::IOutputStream, Windows::Storage::Streams::IRandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamWithContentType>
 {
@@ -87,14 +87,14 @@ struct ISpeechSynthesisStream :
 };
 
 struct ISpeechSynthesizer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechSynthesizer>
 {
     ISpeechSynthesizer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceInformation>
 {
     IVoiceInformation(std::nullptr_t = nullptr) noexcept {}

@@ -753,12 +753,12 @@ struct produce<D, Windows::Media::IMediaTimelineController> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall add_PositionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable>> positionChangedEventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_PositionChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable>> positionChangedEventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().PositionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> *>(&positionChangedEventHandler)));
+            *eventCookie = detach_abi(this->shim().PositionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> *>(&positionChangedEventHandler)));
             return S_OK;
         }
         catch (...)
@@ -781,12 +781,12 @@ struct produce<D, Windows::Media::IMediaTimelineController> : produce_base<D, Wi
         }
     }
 
-    HRESULT __stdcall add_StateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable>> stateChangedEventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_StateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable>> stateChangedEventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> *>(&stateChangedEventHandler)));
+            *eventCookie = detach_abi(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> *>(&stateChangedEventHandler)));
             return S_OK;
         }
         catch (...)
@@ -3181,14 +3181,14 @@ template <typename D> Windows::Media::MediaTimelineControllerState impl_IMediaTi
     return value;
 }
 
-template <typename D> event_token impl_IMediaTimelineController<D>::PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & positionChangedEventHandler) const
+template <typename D> event_token impl_IMediaTimelineController<D>::PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & positionChangedEventHandler) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IMediaTimelineController)->add_PositionChanged(get_abi(positionChangedEventHandler), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IMediaTimelineController> impl_IMediaTimelineController<D>::PositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & positionChangedEventHandler) const
+template <typename D> event_revoker<IMediaTimelineController> impl_IMediaTimelineController<D>::PositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & positionChangedEventHandler) const
 {
     return impl::make_event_revoker<D, IMediaTimelineController>(this, &ABI::Windows::Media::IMediaTimelineController::remove_PositionChanged, PositionChanged(positionChangedEventHandler));
 }
@@ -3198,14 +3198,14 @@ template <typename D> void impl_IMediaTimelineController<D>::PositionChanged(eve
     check_hresult(WINRT_SHIM(IMediaTimelineController)->remove_PositionChanged(eventCookie));
 }
 
-template <typename D> event_token impl_IMediaTimelineController<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & stateChangedEventHandler) const
+template <typename D> event_token impl_IMediaTimelineController<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & stateChangedEventHandler) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IMediaTimelineController)->add_StateChanged(get_abi(stateChangedEventHandler), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IMediaTimelineController> impl_IMediaTimelineController<D>::StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & stateChangedEventHandler) const
+template <typename D> event_revoker<IMediaTimelineController> impl_IMediaTimelineController<D>::StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & stateChangedEventHandler) const
 {
     return impl::make_event_revoker<D, IMediaTimelineController>(this, &ABI::Windows::Media::IMediaTimelineController::remove_StateChanged, StateChanged(stateChangedEventHandler));
 }

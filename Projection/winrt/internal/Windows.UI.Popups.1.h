@@ -13,7 +13,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Popups {
 
-struct __declspec(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121")) __declspec(novtable) IMessageDialog : Windows::IInspectable
+struct __declspec(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121")) __declspec(novtable) IMessageDialog : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
     virtual HRESULT __stdcall put_Title(hstring value) = 0;
@@ -29,13 +29,13 @@ struct __declspec(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121")) __declspec(novta
     virtual HRESULT __stdcall put_Options(winrt::Windows::UI::Popups::MessageDialogOptions value) = 0;
 };
 
-struct __declspec(uuid("2d161777-a66f-4ea5-bb87-793ffa4941f2")) __declspec(novtable) IMessageDialogFactory : Windows::IInspectable
+struct __declspec(uuid("2d161777-a66f-4ea5-bb87-793ffa4941f2")) __declspec(novtable) IMessageDialogFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring content, Windows::UI::Popups::IMessageDialog ** messageDialog) = 0;
     virtual HRESULT __stdcall abi_CreateWithTitle(hstring content, hstring title, Windows::UI::Popups::IMessageDialog ** messageDialog) = 0;
 };
 
-struct __declspec(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559")) __declspec(novtable) IPopupMenu : Windows::IInspectable
+struct __declspec(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559")) __declspec(novtable) IPopupMenu : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Commands(Windows::Foundation::Collections::IVector<Windows::UI::Popups::IUICommand> ** value) = 0;
     virtual HRESULT __stdcall abi_ShowAsync(Windows::Foundation::Point invocationPoint, Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ** asyncOperation) = 0;
@@ -43,21 +43,21 @@ struct __declspec(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559")) __declspec(novta
     virtual HRESULT __stdcall abi_ShowAsyncWithRectAndPlacement(Windows::Foundation::Rect selection, winrt::Windows::UI::Popups::Placement preferredPlacement, Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ** asyncOperation) = 0;
 };
 
-struct __declspec(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f")) __declspec(novtable) IUICommand : Windows::IInspectable
+struct __declspec(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f")) __declspec(novtable) IUICommand : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Label(hstring * value) = 0;
     virtual HRESULT __stdcall put_Label(hstring value) = 0;
     virtual HRESULT __stdcall get_Invoked(Windows::UI::Popups::UICommandInvokedHandler ** value) = 0;
     virtual HRESULT __stdcall put_Invoked(Windows::UI::Popups::UICommandInvokedHandler * value) = 0;
-    virtual HRESULT __stdcall get_Id(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Id(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Id(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Id(Windows::Foundation::IInspectable * value) = 0;
 };
 
-struct __declspec(uuid("a21a8189-26b0-4676-ae94-54041bc125e8")) __declspec(novtable) IUICommandFactory : Windows::IInspectable
+struct __declspec(uuid("a21a8189-26b0-4676-ae94-54041bc125e8")) __declspec(novtable) IUICommandFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring label, Windows::UI::Popups::IUICommand ** instance) = 0;
     virtual HRESULT __stdcall abi_CreateWithHandler(hstring label, Windows::UI::Popups::UICommandInvokedHandler * action, Windows::UI::Popups::IUICommand ** instance) = 0;
-    virtual HRESULT __stdcall abi_CreateWithHandlerAndId(hstring label, Windows::UI::Popups::UICommandInvokedHandler * action, Windows::IInspectable * commandId, Windows::UI::Popups::IUICommand ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateWithHandlerAndId(hstring label, Windows::UI::Popups::UICommandInvokedHandler * action, Windows::Foundation::IInspectable * commandId, Windows::UI::Popups::IUICommand ** instance) = 0;
 };
 
 struct __declspec(uuid("daf77a4f-c27a-4298-9ac6-2922c45e7da6")) __declspec(novtable) UICommandInvokedHandler : IUnknown
@@ -118,8 +118,8 @@ struct WINRT_EBO impl_IUICommand
     void Label(hstring_view value) const;
     Windows::UI::Popups::UICommandInvokedHandler Invoked() const;
     void Invoked(const Windows::UI::Popups::UICommandInvokedHandler & value) const;
-    Windows::IInspectable Id() const;
-    void Id(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Id() const;
+    void Id(const Windows::Foundation::IInspectable & value) const;
 };
 
 template <typename D>
@@ -127,7 +127,7 @@ struct WINRT_EBO impl_IUICommandFactory
 {
     Windows::UI::Popups::UICommand Create(hstring_view label) const;
     Windows::UI::Popups::UICommand CreateWithHandler(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action) const;
-    Windows::UI::Popups::UICommand CreateWithHandlerAndId(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) const;
+    Windows::UI::Popups::UICommand CreateWithHandlerAndId(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::Foundation::IInspectable & commandId) const;
 };
 
 }

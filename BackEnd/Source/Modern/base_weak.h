@@ -1,7 +1,7 @@
 
-namespace ABI::Windows {
+namespace ABI::Windows::Foundation {
 
-struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : IUnknown
+struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : ::IUnknown
 {
     virtual HRESULT __stdcall abi_Resolve(const GUID & iid, IInspectable ** objectReference) = 0;
 
@@ -11,7 +11,7 @@ struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novta
     }
 };
 
-struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReferenceSource : IUnknown
+struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReferenceSource : ::IUnknown
 {
     virtual HRESULT __stdcall abi_GetWeakReference(IWeakReference ** weakReference) = 0;
 };
@@ -25,7 +25,7 @@ struct weak_ref
 
     weak_ref(const T & object)
     {
-        check_hresult(object.template as<ABI::Windows::IWeakReferenceSource>()->abi_GetWeakReference(put_abi(m_ref)));
+        check_hresult(object.template as<ABI::Windows::Foundation::IWeakReferenceSource>()->abi_GetWeakReference(put_abi(m_ref)));
     }
 
     T get() const noexcept
@@ -42,7 +42,7 @@ struct weak_ref
 
 private:
 
-    com_ptr<ABI::Windows::IWeakReference> m_ref;
+    com_ptr<ABI::Windows::Foundation::IWeakReference> m_ref;
 };
 
 template <typename T>

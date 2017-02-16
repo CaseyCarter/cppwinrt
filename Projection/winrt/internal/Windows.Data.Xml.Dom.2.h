@@ -55,7 +55,7 @@ template <> struct __declspec(uuid("5eef7817-93dd-5c0b-9e5a-eb490408f3a9")) __de
 namespace Windows::Data::Xml::Dom {
 
 struct IDtdEntity :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDtdEntity>,
     impl::require<IDtdEntity, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -63,7 +63,7 @@ struct IDtdEntity :
 };
 
 struct IDtdNotation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDtdNotation>,
     impl::require<IDtdNotation, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -71,7 +71,7 @@ struct IDtdNotation :
 };
 
 struct IXmlAttribute :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlAttribute>,
     impl::require<IXmlAttribute, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -79,7 +79,7 @@ struct IXmlAttribute :
 };
 
 struct IXmlCDataSection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlCDataSection>,
     impl::require<IXmlCDataSection, Windows::Data::Xml::Dom::IXmlCharacterData, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer, Windows::Data::Xml::Dom::IXmlText>
 {
@@ -87,7 +87,7 @@ struct IXmlCDataSection :
 };
 
 struct IXmlCharacterData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlCharacterData>,
     impl::require<IXmlCharacterData, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -95,7 +95,7 @@ struct IXmlCharacterData :
 };
 
 struct IXmlComment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlComment>,
     impl::require<IXmlComment, Windows::Data::Xml::Dom::IXmlCharacterData, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -103,7 +103,7 @@ struct IXmlComment :
 };
 
 struct IXmlDocument :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlDocument>,
     impl::require<IXmlDocument, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -111,7 +111,7 @@ struct IXmlDocument :
 };
 
 struct IXmlDocumentFragment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlDocumentFragment>,
     impl::require<IXmlDocumentFragment, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -119,28 +119,28 @@ struct IXmlDocumentFragment :
 };
 
 struct IXmlDocumentIO :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlDocumentIO>
 {
     IXmlDocumentIO(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXmlDocumentIO2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlDocumentIO2>
 {
     IXmlDocumentIO2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXmlDocumentStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlDocumentStatics>
 {
     IXmlDocumentStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXmlDocumentType :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlDocumentType>,
     impl::require<IXmlDocumentType, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -148,14 +148,14 @@ struct IXmlDocumentType :
 };
 
 struct IXmlDomImplementation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlDomImplementation>
 {
     IXmlDomImplementation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXmlElement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlElement>,
     impl::require<IXmlElement, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -163,7 +163,7 @@ struct IXmlElement :
 };
 
 struct IXmlEntityReference :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlEntityReference>,
     impl::require<IXmlEntityReference, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -171,14 +171,14 @@ struct IXmlEntityReference :
 };
 
 struct IXmlLoadSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlLoadSettings>
 {
     IXmlLoadSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXmlNamedNodeMap :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlNamedNodeMap>,
     impl::require<IXmlNamedNodeMap, Windows::Foundation::Collections::IIterable<Windows::Data::Xml::Dom::IXmlNode>, Windows::Foundation::Collections::IVectorView<Windows::Data::Xml::Dom::IXmlNode>>
 {
@@ -186,7 +186,7 @@ struct IXmlNamedNodeMap :
 };
 
 struct IXmlNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlNode>,
     impl::require<IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -194,7 +194,7 @@ struct IXmlNode :
 };
 
 struct IXmlNodeList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlNodeList>,
     impl::require<IXmlNodeList, Windows::Foundation::Collections::IIterable<Windows::Data::Xml::Dom::IXmlNode>, Windows::Foundation::Collections::IVectorView<Windows::Data::Xml::Dom::IXmlNode>>
 {
@@ -202,21 +202,21 @@ struct IXmlNodeList :
 };
 
 struct IXmlNodeSelector :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlNodeSelector>
 {
     IXmlNodeSelector(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXmlNodeSerializer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlNodeSerializer>
 {
     IXmlNodeSerializer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXmlProcessingInstruction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlProcessingInstruction>,
     impl::require<IXmlProcessingInstruction, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
@@ -224,7 +224,7 @@ struct IXmlProcessingInstruction :
 };
 
 struct IXmlText :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXmlText>,
     impl::require<IXmlText, Windows::Data::Xml::Dom::IXmlCharacterData, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {

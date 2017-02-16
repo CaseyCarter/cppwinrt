@@ -4,12 +4,12 @@ namespace winrt {
 
 namespace ABI::Windows::Foundation {
 
-struct __declspec(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")) __declspec(novtable) IClosable : Windows::IInspectable
+struct __declspec(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")) __declspec(novtable) IClosable : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Close() = 0;
 };
 
-struct __declspec(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3")) __declspec(novtable) IStringable : Windows::IInspectable
+struct __declspec(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3")) __declspec(novtable) IStringable : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ToString(hstring * value) = 0;
 };
@@ -73,7 +73,7 @@ template <> struct traits<Windows::Foundation::IStringable>
 namespace Windows::Foundation {
 
 struct IClosable :
-    Windows::IInspectable,
+    IInspectable,
     impl::consume<IClosable>
 {
     IClosable(std::nullptr_t = nullptr) noexcept {}
@@ -81,7 +81,7 @@ struct IClosable :
 };
 
 struct IStringable :
-    Windows::IInspectable,
+    IInspectable,
     impl::consume<IStringable>
 {
     IStringable(std::nullptr_t = nullptr) noexcept {}

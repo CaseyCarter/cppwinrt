@@ -135,140 +135,140 @@ template <> struct __declspec(uuid("88225b39-8be9-5c03-9714-8f1642d8a43f")) __de
 namespace Windows::Services::Maps {
 
 struct IMapAddress :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapAddress>
 {
     IMapAddress(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapAddress2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapAddress2>
 {
     IMapAddress2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapLocation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapLocation>
 {
     IMapLocation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapLocationFinderResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapLocationFinderResult>
 {
     IMapLocationFinderResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapLocationFinderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapLocationFinderStatics>
 {
     IMapLocationFinderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapLocationFinderStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapLocationFinderStatics2>
 {
     IMapLocationFinderStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapManagerStatics>
 {
     IMapManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRoute :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRoute>
 {
     IMapRoute(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRoute2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRoute2>
 {
     IMapRoute2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteDrivingOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteDrivingOptions>
 {
     IMapRouteDrivingOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteFinderResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteFinderResult>
 {
     IMapRouteFinderResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteFinderResult2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteFinderResult2>
 {
     IMapRouteFinderResult2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteFinderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteFinderStatics>
 {
     IMapRouteFinderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteFinderStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteFinderStatics2>
 {
     IMapRouteFinderStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteLeg :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteLeg>
 {
     IMapRouteLeg(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteManeuver :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteManeuver>
 {
     IMapRouteManeuver(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteManeuver2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapRouteManeuver2>
 {
     IMapRouteManeuver2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapServiceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapServiceStatics>
 {
     IMapServiceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapServiceStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapServiceStatics2>
 {
     IMapServiceStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapServiceStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMapServiceStatics3>
 {
     IMapServiceStatics3(std::nullptr_t = nullptr) noexcept {}

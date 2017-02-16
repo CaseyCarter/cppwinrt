@@ -103,9 +103,9 @@ struct ProjectionManager
     static Windows::Foundation::IAsyncAction SwapDisplaysForViewsAsync(int32_t projectionViewId, int32_t anchorViewId);
     static Windows::Foundation::IAsyncAction StopProjectingAsync(int32_t projectionViewId, int32_t anchorViewId);
     static bool ProjectionDisplayAvailable();
-    static event_token ProjectionDisplayAvailableChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static event_token ProjectionDisplayAvailableChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     using ProjectionDisplayAvailableChanged_revoker = factory_event_revoker<IProjectionManagerStatics>;
-    static ProjectionDisplayAvailableChanged_revoker ProjectionDisplayAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static ProjectionDisplayAvailableChanged_revoker ProjectionDisplayAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     static void ProjectionDisplayAvailableChanged(event_token token);
     static Windows::Foundation::IAsyncAction StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Devices::Enumeration::DeviceInformation & displayDeviceInfo);
     static Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Foundation::Rect & selection);

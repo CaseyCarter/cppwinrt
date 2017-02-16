@@ -12,18 +12,18 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::System::Diagnostics {
 
-struct __declspec(uuid("0bbb2472-c8bf-423a-a810-b559ae4354e2")) __declspec(novtable) IProcessCpuUsage : Windows::IInspectable
+struct __declspec(uuid("0bbb2472-c8bf-423a-a810-b559ae4354e2")) __declspec(novtable) IProcessCpuUsage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetReport(Windows::System::Diagnostics::IProcessCpuUsageReport ** value) = 0;
 };
 
-struct __declspec(uuid("8a6d9cac-3987-4e2f-a119-6b5fa214f1b4")) __declspec(novtable) IProcessCpuUsageReport : Windows::IInspectable
+struct __declspec(uuid("8a6d9cac-3987-4e2f-a119-6b5fa214f1b4")) __declspec(novtable) IProcessCpuUsageReport : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KernelTime(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_UserTime(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434")) __declspec(novtable) IProcessDiagnosticInfo : Windows::IInspectable
+struct __declspec(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434")) __declspec(novtable) IProcessDiagnosticInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProcessId(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_ExecutableFileName(hstring * value) = 0;
@@ -34,18 +34,18 @@ struct __declspec(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434")) __declspec(novta
     virtual HRESULT __stdcall get_CpuUsage(Windows::System::Diagnostics::IProcessCpuUsage ** value) = 0;
 };
 
-struct __declspec(uuid("2f41b260-b49f-428c-aa0e-84744f49ca95")) __declspec(novtable) IProcessDiagnosticInfoStatics : Windows::IInspectable
+struct __declspec(uuid("2f41b260-b49f-428c-aa0e-84744f49ca95")) __declspec(novtable) IProcessDiagnosticInfoStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForProcesses(Windows::Foundation::Collections::IVectorView<Windows::System::Diagnostics::ProcessDiagnosticInfo> ** processes) = 0;
     virtual HRESULT __stdcall abi_GetForCurrentProcess(Windows::System::Diagnostics::IProcessDiagnosticInfo ** processes) = 0;
 };
 
-struct __declspec(uuid("5ad78bfd-7e51-4e53-bfaa-5a6ee1aabbf8")) __declspec(novtable) IProcessDiskUsage : Windows::IInspectable
+struct __declspec(uuid("5ad78bfd-7e51-4e53-bfaa-5a6ee1aabbf8")) __declspec(novtable) IProcessDiskUsage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetReport(Windows::System::Diagnostics::IProcessDiskUsageReport ** value) = 0;
 };
 
-struct __declspec(uuid("401627fd-535d-4c1f-81b8-da54e1be635e")) __declspec(novtable) IProcessDiskUsageReport : Windows::IInspectable
+struct __declspec(uuid("401627fd-535d-4c1f-81b8-da54e1be635e")) __declspec(novtable) IProcessDiskUsageReport : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ReadOperationCount(int64_t * value) = 0;
     virtual HRESULT __stdcall get_WriteOperationCount(int64_t * value) = 0;
@@ -55,12 +55,12 @@ struct __declspec(uuid("401627fd-535d-4c1f-81b8-da54e1be635e")) __declspec(novta
     virtual HRESULT __stdcall get_OtherBytesCount(int64_t * value) = 0;
 };
 
-struct __declspec(uuid("f50b229b-827c-42b7-b07c-0e32627e6b3e")) __declspec(novtable) IProcessMemoryUsage : Windows::IInspectable
+struct __declspec(uuid("f50b229b-827c-42b7-b07c-0e32627e6b3e")) __declspec(novtable) IProcessMemoryUsage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetReport(Windows::System::Diagnostics::IProcessMemoryUsageReport ** value) = 0;
 };
 
-struct __declspec(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb")) __declspec(novtable) IProcessMemoryUsageReport : Windows::IInspectable
+struct __declspec(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb")) __declspec(novtable) IProcessMemoryUsageReport : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NonPagedPoolSizeInBytes(uint64_t * value) = 0;
     virtual HRESULT __stdcall get_PageFaultCount(uint32_t * value) = 0;

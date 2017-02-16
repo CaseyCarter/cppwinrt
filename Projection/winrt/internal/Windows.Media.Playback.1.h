@@ -24,7 +24,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::Playback {
 
-struct __declspec(uuid("856ddbc1-55f7-471f-a0f2-68ac4c904592")) __declspec(novtable) IBackgroundMediaPlayerStatics : Windows::IInspectable
+struct __declspec(uuid("856ddbc1-55f7-471f-a0f2-68ac4c904592")) __declspec(novtable) IBackgroundMediaPlayerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Current(Windows::Media::Playback::IMediaPlayer ** player) = 0;
     virtual HRESULT __stdcall add_MessageReceivedFromBackground(Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> * value, event_token * token) = 0;
@@ -37,13 +37,13 @@ struct __declspec(uuid("856ddbc1-55f7-471f-a0f2-68ac4c904592")) __declspec(novta
     virtual HRESULT __stdcall abi_Shutdown() = 0;
 };
 
-struct __declspec(uuid("1743a892-5c43-4a15-967a-572d2d0f26c6")) __declspec(novtable) ICurrentMediaPlaybackItemChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("1743a892-5c43-4a15-967a-572d2d0f26c6")) __declspec(novtable) ICurrentMediaPlaybackItemChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NewItem(Windows::Media::Playback::IMediaPlaybackItem ** value) = 0;
     virtual HRESULT __stdcall get_OldItem(Windows::Media::Playback::IMediaPlaybackItem ** value) = 0;
 };
 
-struct __declspec(uuid("714be270-0def-4ebc-a489-6b34930e1558")) __declspec(novtable) IMediaBreak : Windows::IInspectable
+struct __declspec(uuid("714be270-0def-4ebc-a489-6b34930e1558")) __declspec(novtable) IMediaBreak : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PlaybackList(Windows::Media::Playback::IMediaPlaybackList ** value) = 0;
     virtual HRESULT __stdcall get_PresentationPosition(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ** value) = 0;
@@ -53,18 +53,18 @@ struct __declspec(uuid("714be270-0def-4ebc-a489-6b34930e1558")) __declspec(novta
     virtual HRESULT __stdcall put_CanStart(bool value) = 0;
 };
 
-struct __declspec(uuid("32b93276-1c5d-4fee-8732-236dc3a88580")) __declspec(novtable) IMediaBreakEndedEventArgs : Windows::IInspectable
+struct __declspec(uuid("32b93276-1c5d-4fee-8732-236dc3a88580")) __declspec(novtable) IMediaBreakEndedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MediaBreak(Windows::Media::Playback::IMediaBreak ** value) = 0;
 };
 
-struct __declspec(uuid("4516e002-18e0-4079-8b5f-d33495c15d2e")) __declspec(novtable) IMediaBreakFactory : Windows::IInspectable
+struct __declspec(uuid("4516e002-18e0-4079-8b5f-d33495c15d2e")) __declspec(novtable) IMediaBreakFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(winrt::Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod, Windows::Media::Playback::IMediaBreak ** result) = 0;
     virtual HRESULT __stdcall abi_CreateWithPresentationPosition(winrt::Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod, Windows::Foundation::TimeSpan presentationPosition, Windows::Media::Playback::IMediaBreak ** result) = 0;
 };
 
-struct __declspec(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39")) __declspec(novtable) IMediaBreakManager : Windows::IInspectable
+struct __declspec(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39")) __declspec(novtable) IMediaBreakManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_BreaksSeekedOver(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakSeekedOverEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_BreaksSeekedOver(event_token token) = 0;
@@ -80,9 +80,9 @@ struct __declspec(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39")) __declspec(novta
     virtual HRESULT __stdcall abi_SkipCurrentBreak() = 0;
 };
 
-struct __declspec(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba")) __declspec(novtable) IMediaBreakSchedule : Windows::IInspectable
+struct __declspec(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba")) __declspec(novtable) IMediaBreakSchedule : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_ScheduleChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_ScheduleChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ScheduleChanged(event_token token) = 0;
     virtual HRESULT __stdcall abi_InsertMidrollBreak(Windows::Media::Playback::IMediaBreak * mediaBreak) = 0;
     virtual HRESULT __stdcall abi_RemoveMidrollBreak(Windows::Media::Playback::IMediaBreak * mediaBreak) = 0;
@@ -94,30 +94,30 @@ struct __declspec(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba")) __declspec(novta
     virtual HRESULT __stdcall get_PlaybackItem(Windows::Media::Playback::IMediaPlaybackItem ** value) = 0;
 };
 
-struct __declspec(uuid("e5aa6746-0606-4492-b9d3-c3c8fde0a4ea")) __declspec(novtable) IMediaBreakSeekedOverEventArgs : Windows::IInspectable
+struct __declspec(uuid("e5aa6746-0606-4492-b9d3-c3c8fde0a4ea")) __declspec(novtable) IMediaBreakSeekedOverEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SeekedOverBreaks(Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaBreak> ** value) = 0;
     virtual HRESULT __stdcall get_OldPosition(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_NewPosition(Windows::Foundation::TimeSpan * value) = 0;
 };
 
-struct __declspec(uuid("6ee94c05-2f54-4a3e-a3ab-24c3b270b4a3")) __declspec(novtable) IMediaBreakSkippedEventArgs : Windows::IInspectable
+struct __declspec(uuid("6ee94c05-2f54-4a3e-a3ab-24c3b270b4a3")) __declspec(novtable) IMediaBreakSkippedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MediaBreak(Windows::Media::Playback::IMediaBreak ** value) = 0;
 };
 
-struct __declspec(uuid("a87efe71-dfd4-454a-956e-0a4a648395f8")) __declspec(novtable) IMediaBreakStartedEventArgs : Windows::IInspectable
+struct __declspec(uuid("a87efe71-dfd4-454a-956e-0a4a648395f8")) __declspec(novtable) IMediaBreakStartedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MediaBreak(Windows::Media::Playback::IMediaBreak ** value) = 0;
 };
 
-struct __declspec(uuid("5c1d0ba7-3856-48b9-8dc6-244bf107bf8c")) __declspec(novtable) IMediaEnginePlaybackSource : Windows::IInspectable
+struct __declspec(uuid("5c1d0ba7-3856-48b9-8dc6-244bf107bf8c")) __declspec(novtable) IMediaEnginePlaybackSource : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CurrentItem(Windows::Media::Playback::IMediaPlaybackItem ** value) = 0;
     virtual HRESULT __stdcall abi_SetPlaybackSource(Windows::Media::Playback::IMediaPlaybackSource * source) = 0;
 };
 
-struct __declspec(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16")) __declspec(novtable) IMediaItemDisplayProperties : Windows::IInspectable
+struct __declspec(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16")) __declspec(novtable) IMediaItemDisplayProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::Media::MediaPlaybackType * value) = 0;
     virtual HRESULT __stdcall put_Type(winrt::Windows::Media::MediaPlaybackType value) = 0;
@@ -128,7 +128,7 @@ struct __declspec(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16")) __declspec(novta
     virtual HRESULT __stdcall abi_ClearAll() = 0;
 };
 
-struct __declspec(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37")) __declspec(novtable) IMediaPlaybackCommandManager : Windows::IInspectable
+struct __declspec(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37")) __declspec(novtable) IMediaPlaybackCommandManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsEnabled(bool value) = 0;
@@ -165,7 +165,7 @@ struct __declspec(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37")) __declspec(novta
     virtual HRESULT __stdcall remove_RateReceived(event_token token) = 0;
 };
 
-struct __declspec(uuid("3d6f4f23-5230-4411-a0e9-bad94c2a045c")) __declspec(novtable) IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("3d6f4f23-5230-4411-a0e9-bad94c2a045c")) __declspec(novtable) IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
@@ -173,45 +173,45 @@ struct __declspec(uuid("3d6f4f23-5230-4411-a0e9-bad94c2a045c")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("786c1e78-ce78-4a10-afd6-843fcbb90c2e")) __declspec(novtable) IMediaPlaybackCommandManagerCommandBehavior : Windows::IInspectable
+struct __declspec(uuid("786c1e78-ce78-4a10-afd6-843fcbb90c2e")) __declspec(novtable) IMediaPlaybackCommandManagerCommandBehavior : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CommandManager(Windows::Media::Playback::IMediaPlaybackCommandManager ** value) = 0;
     virtual HRESULT __stdcall get_IsEnabled(bool * value) = 0;
     virtual HRESULT __stdcall get_EnablingRule(winrt::Windows::Media::Playback::MediaCommandEnablingRule * value) = 0;
     virtual HRESULT __stdcall put_EnablingRule(winrt::Windows::Media::Playback::MediaCommandEnablingRule value) = 0;
-    virtual HRESULT __stdcall add_IsEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_IsEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_IsEnabledChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("30f064d9-b491-4d0a-bc21-3098bd1332e9")) __declspec(novtable) IMediaPlaybackCommandManagerFastForwardReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("30f064d9-b491-4d0a-bc21-3098bd1332e9")) __declspec(novtable) IMediaPlaybackCommandManagerFastForwardReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("e1504433-a2b0-45d4-b9de-5f42ac14a839")) __declspec(novtable) IMediaPlaybackCommandManagerNextReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("e1504433-a2b0-45d4-b9de-5f42ac14a839")) __declspec(novtable) IMediaPlaybackCommandManagerNextReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("5ceccd1c-c25c-4221-b16c-c3c98ce012d6")) __declspec(novtable) IMediaPlaybackCommandManagerPauseReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("5ceccd1c-c25c-4221-b16c-c3c98ce012d6")) __declspec(novtable) IMediaPlaybackCommandManagerPauseReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("9af0004e-578b-4c56-a006-16159d888a48")) __declspec(novtable) IMediaPlaybackCommandManagerPlayReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("9af0004e-578b-4c56-a006-16159d888a48")) __declspec(novtable) IMediaPlaybackCommandManagerPlayReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("5591a754-d627-4bdd-a90d-86a015b24902")) __declspec(novtable) IMediaPlaybackCommandManagerPositionReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("5591a754-d627-4bdd-a90d-86a015b24902")) __declspec(novtable) IMediaPlaybackCommandManagerPositionReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
@@ -219,14 +219,14 @@ struct __declspec(uuid("5591a754-d627-4bdd-a90d-86a015b24902")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("525e3081-4632-4f76-99b1-d771623f6287")) __declspec(novtable) IMediaPlaybackCommandManagerPreviousReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("525e3081-4632-4f76-99b1-d771623f6287")) __declspec(novtable) IMediaPlaybackCommandManagerPreviousReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("18ea3939-4a16-4169-8b05-3eb9f5ff78eb")) __declspec(novtable) IMediaPlaybackCommandManagerRateReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("18ea3939-4a16-4169-8b05-3eb9f5ff78eb")) __declspec(novtable) IMediaPlaybackCommandManagerRateReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
@@ -234,14 +234,14 @@ struct __declspec(uuid("18ea3939-4a16-4169-8b05-3eb9f5ff78eb")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("9f085947-a3c0-425d-aaef-97ba7898b141")) __declspec(novtable) IMediaPlaybackCommandManagerRewindReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("9f085947-a3c0-425d-aaef-97ba7898b141")) __declspec(novtable) IMediaPlaybackCommandManagerRewindReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("50a05cef-63ee-4a96-b7b5-fee08b9ff90c")) __declspec(novtable) IMediaPlaybackCommandManagerShuffleReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("50a05cef-63ee-4a96-b7b5-fee08b9ff90c")) __declspec(novtable) IMediaPlaybackCommandManagerShuffleReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
@@ -249,7 +249,7 @@ struct __declspec(uuid("50a05cef-63ee-4a96-b7b5-fee08b9ff90c")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("047097d2-e4af-48ab-b283-6929e674ece2")) __declspec(novtable) IMediaPlaybackItem : Windows::IInspectable
+struct __declspec(uuid("047097d2-e4af-48ab-b283-6929e674ece2")) __declspec(novtable) IMediaPlaybackItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_AudioTracksChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackItem, Windows::Foundation::Collections::IVectorChangedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_AudioTracksChanged(event_token token) = 0;
@@ -263,7 +263,7 @@ struct __declspec(uuid("047097d2-e4af-48ab-b283-6929e674ece2")) __declspec(novta
     virtual HRESULT __stdcall get_TimedMetadataTracks(Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack> ** value) = 0;
 };
 
-struct __declspec(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091")) __declspec(novtable) IMediaPlaybackItem2 : Windows::IInspectable
+struct __declspec(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091")) __declspec(novtable) IMediaPlaybackItem2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BreakSchedule(Windows::Media::Playback::IMediaBreakSchedule ** value) = 0;
     virtual HRESULT __stdcall get_StartTime(Windows::Foundation::TimeSpan * value) = 0;
@@ -274,40 +274,40 @@ struct __declspec(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091")) __declspec(novta
     virtual HRESULT __stdcall abi_ApplyDisplayProperties(Windows::Media::Playback::IMediaItemDisplayProperties * value) = 0;
 };
 
-struct __declspec(uuid("69fbef2b-dcd6-4df9-a450-dbf4c6f1c2c2")) __declspec(novtable) IMediaPlaybackItemError : Windows::IInspectable
+struct __declspec(uuid("69fbef2b-dcd6-4df9-a450-dbf4c6f1c2c2")) __declspec(novtable) IMediaPlaybackItemError : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ErrorCode(winrt::Windows::Media::Playback::MediaPlaybackItemErrorCode * value) = 0;
     virtual HRESULT __stdcall get_ExtendedError(HRESULT * value) = 0;
 };
 
-struct __declspec(uuid("7133fce1-1769-4ff9-a7c1-38d2c4d42360")) __declspec(novtable) IMediaPlaybackItemFactory : Windows::IInspectable
+struct __declspec(uuid("7133fce1-1769-4ff9-a7c1-38d2c4d42360")) __declspec(novtable) IMediaPlaybackItemFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Media::Core::IMediaSource2 * source, Windows::Media::Playback::IMediaPlaybackItem ** value) = 0;
 };
 
-struct __declspec(uuid("d77cdf3a-b947-4972-b35d-adfb931a71e6")) __declspec(novtable) IMediaPlaybackItemFactory2 : Windows::IInspectable
+struct __declspec(uuid("d77cdf3a-b947-4972-b35d-adfb931a71e6")) __declspec(novtable) IMediaPlaybackItemFactory2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithStartTime(Windows::Media::Core::IMediaSource2 * source, Windows::Foundation::TimeSpan startTime, Windows::Media::Playback::IMediaPlaybackItem ** result) = 0;
     virtual HRESULT __stdcall abi_CreateWithStartTimeAndDurationLimit(Windows::Media::Core::IMediaSource2 * source, Windows::Foundation::TimeSpan startTime, Windows::Foundation::TimeSpan durationLimit, Windows::Media::Playback::IMediaPlaybackItem ** result) = 0;
 };
 
-struct __declspec(uuid("7703134a-e9a7-47c3-862c-c656d30683d4")) __declspec(novtable) IMediaPlaybackItemFailedEventArgs : Windows::IInspectable
+struct __declspec(uuid("7703134a-e9a7-47c3-862c-c656d30683d4")) __declspec(novtable) IMediaPlaybackItemFailedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Item(Windows::Media::Playback::IMediaPlaybackItem ** value) = 0;
     virtual HRESULT __stdcall get_Error(Windows::Media::Playback::IMediaPlaybackItemError ** value) = 0;
 };
 
-struct __declspec(uuid("cbd9bd82-3037-4fbe-ae8f-39fc39edf4ef")) __declspec(novtable) IMediaPlaybackItemOpenedEventArgs : Windows::IInspectable
+struct __declspec(uuid("cbd9bd82-3037-4fbe-ae8f-39fc39edf4ef")) __declspec(novtable) IMediaPlaybackItemOpenedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Item(Windows::Media::Playback::IMediaPlaybackItem ** value) = 0;
 };
 
-struct __declspec(uuid("4b1be7f4-4345-403c-8a67-f5de91df4c86")) __declspec(novtable) IMediaPlaybackItemStatics : Windows::IInspectable
+struct __declspec(uuid("4b1be7f4-4345-403c-8a67-f5de91df4c86")) __declspec(novtable) IMediaPlaybackItemStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FindFromMediaSource(Windows::Media::Core::IMediaSource2 * source, Windows::Media::Playback::IMediaPlaybackItem ** value) = 0;
 };
 
-struct __declspec(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925")) __declspec(novtable) IMediaPlaybackList : Windows::IInspectable
+struct __declspec(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925")) __declspec(novtable) IMediaPlaybackList : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_ItemFailed(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::MediaPlaybackItemFailedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_ItemFailed(event_token token) = 0;
@@ -327,7 +327,7 @@ struct __declspec(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925")) __declspec(novta
     virtual HRESULT __stdcall abi_MoveTo(uint32_t itemIndex, Windows::Media::Playback::IMediaPlaybackItem ** item) = 0;
 };
 
-struct __declspec(uuid("0e09b478-600a-4274-a14b-0b6723d0f48b")) __declspec(novtable) IMediaPlaybackList2 : Windows::IInspectable
+struct __declspec(uuid("0e09b478-600a-4274-a14b-0b6723d0f48b")) __declspec(novtable) IMediaPlaybackList2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxPrefetchTime(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ** value) = 0;
     virtual HRESULT __stdcall put_MaxPrefetchTime(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> * value) = 0;
@@ -337,27 +337,27 @@ struct __declspec(uuid("0e09b478-600a-4274-a14b-0b6723d0f48b")) __declspec(novta
     virtual HRESULT __stdcall abi_SetShuffledItems(Windows::Foundation::Collections::IIterable<Windows::Media::Playback::MediaPlaybackItem> * value) = 0;
 };
 
-struct __declspec(uuid("c32b683d-0407-41ba-8946-8b345a5a5435")) __declspec(novtable) IMediaPlaybackSession : Windows::IInspectable
+struct __declspec(uuid("c32b683d-0407-41ba-8946-8b345a5a5435")) __declspec(novtable) IMediaPlaybackSession : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_PlaybackStateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_PlaybackStateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PlaybackStateChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_PlaybackRateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_PlaybackRateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PlaybackRateChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_SeekCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_SeekCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SeekCompleted(event_token token) = 0;
-    virtual HRESULT __stdcall add_BufferingStarted(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_BufferingStarted(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_BufferingStarted(event_token token) = 0;
-    virtual HRESULT __stdcall add_BufferingEnded(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_BufferingEnded(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_BufferingEnded(event_token token) = 0;
-    virtual HRESULT __stdcall add_BufferingProgressChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_BufferingProgressChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_BufferingProgressChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_DownloadProgressChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_DownloadProgressChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_DownloadProgressChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_NaturalDurationChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_NaturalDurationChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_NaturalDurationChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_PositionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_PositionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PositionChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_NaturalVideoSizeChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_NaturalVideoSizeChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_NaturalVideoSizeChanged(event_token token) = 0;
     virtual HRESULT __stdcall get_MediaPlayer(Windows::Media::Playback::IMediaPlayer ** value) = 0;
     virtual HRESULT __stdcall get_NaturalDuration(Windows::Foundation::TimeSpan * value) = 0;
@@ -379,11 +379,11 @@ struct __declspec(uuid("c32b683d-0407-41ba-8946-8b345a5a5435")) __declspec(novta
     virtual HRESULT __stdcall put_StereoscopicVideoPackingMode(winrt::Windows::Media::MediaProperties::StereoscopicVideoPackingMode value) = 0;
 };
 
-struct __declspec(uuid("ef9dc2bc-9317-4696-b051-2bad643177b5")) __declspec(novtable) IMediaPlaybackSource : Windows::IInspectable
+struct __declspec(uuid("ef9dc2bc-9317-4696-b051-2bad643177b5")) __declspec(novtable) IMediaPlaybackSource : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("72b41319-bbfb-46a3-9372-9c9c744b9438")) __declspec(novtable) IMediaPlaybackTimedMetadataTrackList : Windows::IInspectable
+struct __declspec(uuid("72b41319-bbfb-46a3-9372-9c9c744b9438")) __declspec(novtable) IMediaPlaybackTimedMetadataTrackList : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_PresentationModeChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList, Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PresentationModeChanged(event_token token) = 0;
@@ -391,7 +391,7 @@ struct __declspec(uuid("72b41319-bbfb-46a3-9372-9c9c744b9438")) __declspec(novta
     virtual HRESULT __stdcall abi_SetPresentationMode(uint32_t index, winrt::Windows::Media::Playback::TimedMetadataTrackPresentationMode value) = 0;
 };
 
-struct __declspec(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e")) __declspec(novtable) IMediaPlayer : Windows::IInspectable
+struct __declspec(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e")) __declspec(novtable) IMediaPlayer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AutoPlay(bool * value) = 0;
     virtual HRESULT __stdcall put_AutoPlay(bool value) = 0;
@@ -412,32 +412,32 @@ struct __declspec(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e")) __declspec(novta
     virtual HRESULT __stdcall get_Volume(double * value) = 0;
     virtual HRESULT __stdcall put_Volume(double value) = 0;
     virtual HRESULT __stdcall get_PlaybackMediaMarkers(Windows::Media::Playback::IPlaybackMediaMarkerSequence ** value) = 0;
-    virtual HRESULT __stdcall add_MediaOpened(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_MediaOpened(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_MediaOpened(event_token token) = 0;
-    virtual HRESULT __stdcall add_MediaEnded(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_MediaEnded(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_MediaEnded(event_token token) = 0;
     virtual HRESULT __stdcall add_MediaFailed(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerFailedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_MediaFailed(event_token token) = 0;
-    virtual HRESULT __stdcall add_CurrentStateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_CurrentStateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_CurrentStateChanged(event_token token) = 0;
     virtual HRESULT __stdcall add_PlaybackMediaMarkerReached(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_PlaybackMediaMarkerReached(event_token token) = 0;
     virtual HRESULT __stdcall add_MediaPlayerRateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerRateChangedEventArgs> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_MediaPlayerRateChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_VolumeChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_VolumeChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_VolumeChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_SeekCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_SeekCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SeekCompleted(event_token token) = 0;
-    virtual HRESULT __stdcall add_BufferingStarted(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_BufferingStarted(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_BufferingStarted(event_token token) = 0;
-    virtual HRESULT __stdcall add_BufferingEnded(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_BufferingEnded(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_BufferingEnded(event_token token) = 0;
     virtual HRESULT __stdcall abi_Play() = 0;
     virtual HRESULT __stdcall abi_Pause() = 0;
     virtual HRESULT __stdcall abi_SetUriSource(Windows::Foundation::IUriRuntimeClass * value) = 0;
 };
 
-struct __declspec(uuid("3c841218-2123-4fc5-9082-2f883f77bdf5")) __declspec(novtable) IMediaPlayer2 : Windows::IInspectable
+struct __declspec(uuid("3c841218-2123-4fc5-9082-2f883f77bdf5")) __declspec(novtable) IMediaPlayer2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SystemMediaTransportControls(Windows::Media::ISystemMediaTransportControls ** value) = 0;
     virtual HRESULT __stdcall get_AudioCategory(winrt::Windows::Media::Playback::MediaPlayerAudioCategory * value) = 0;
@@ -446,11 +446,11 @@ struct __declspec(uuid("3c841218-2123-4fc5-9082-2f883f77bdf5")) __declspec(novta
     virtual HRESULT __stdcall put_AudioDeviceType(winrt::Windows::Media::Playback::MediaPlayerAudioDeviceType value) = 0;
 };
 
-struct __declspec(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299")) __declspec(novtable) IMediaPlayer3 : Windows::IInspectable
+struct __declspec(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299")) __declspec(novtable) IMediaPlayer3 : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_IsMutedChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_IsMutedChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_IsMutedChanged(event_token token) = 0;
-    virtual HRESULT __stdcall add_SourceChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_SourceChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SourceChanged(event_token token) = 0;
     virtual HRESULT __stdcall get_AudioBalance(double * value) = 0;
     virtual HRESULT __stdcall put_AudioBalance(double value) = 0;
@@ -472,41 +472,41 @@ struct __declspec(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299")) __declspec(novta
     virtual HRESULT __stdcall abi_GetAsCastingSource(Windows::Media::Casting::ICastingSource ** returnValue) = 0;
 };
 
-struct __declspec(uuid("80035db0-7448-4770-afcf-2a57450914c5")) __declspec(novtable) IMediaPlayer4 : Windows::IInspectable
+struct __declspec(uuid("80035db0-7448-4770-afcf-2a57450914c5")) __declspec(novtable) IMediaPlayer4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetSurfaceSize(Windows::Foundation::Size size) = 0;
     virtual HRESULT __stdcall abi_GetSurface(Windows::UI::Composition::ICompositor * compositor, Windows::Media::Playback::IMediaPlayerSurface ** result) = 0;
 };
 
-struct __declspec(uuid("c75a9405-c801-412a-835b-83fc0e622a8e")) __declspec(novtable) IMediaPlayerDataReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("c75a9405-c801-412a-835b-83fc0e622a8e")) __declspec(novtable) IMediaPlayerDataReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Data(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
-struct __declspec(uuid("85a1deda-cab6-4cc0-8be3-6035f4de2591")) __declspec(novtable) IMediaPlayerEffects : Windows::IInspectable
+struct __declspec(uuid("85a1deda-cab6-4cc0-8be3-6035f4de2591")) __declspec(novtable) IMediaPlayerEffects : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddAudioEffect(hstring activatableClassId, bool effectOptional, Windows::Foundation::Collections::IPropertySet * configuration) = 0;
     virtual HRESULT __stdcall abi_RemoveAllEffects() = 0;
 };
 
-struct __declspec(uuid("fa419a79-1bbe-46c5-ae1f-8ee69fb3c2c7")) __declspec(novtable) IMediaPlayerEffects2 : Windows::IInspectable
+struct __declspec(uuid("fa419a79-1bbe-46c5-ae1f-8ee69fb3c2c7")) __declspec(novtable) IMediaPlayerEffects2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddVideoEffect(hstring activatableClassId, bool effectOptional, Windows::Foundation::Collections::IPropertySet * effectConfiguration) = 0;
 };
 
-struct __declspec(uuid("2744e9b9-a7e3-4f16-bac4-7914ebc08301")) __declspec(novtable) IMediaPlayerFailedEventArgs : Windows::IInspectable
+struct __declspec(uuid("2744e9b9-a7e3-4f16-bac4-7914ebc08301")) __declspec(novtable) IMediaPlayerFailedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Error(winrt::Windows::Media::Playback::MediaPlayerError * value) = 0;
     virtual HRESULT __stdcall get_ExtendedErrorCode(HRESULT * value) = 0;
     virtual HRESULT __stdcall get_ErrorMessage(hstring * value) = 0;
 };
 
-struct __declspec(uuid("40600d58-3b61-4bb2-989f-fc65608b6cab")) __declspec(novtable) IMediaPlayerRateChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("40600d58-3b61-4bb2-989f-fc65608b6cab")) __declspec(novtable) IMediaPlayerRateChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NewRate(double * value) = 0;
 };
 
-struct __declspec(uuid("bd4f8897-1423-4c3e-82c5-0fb1af94f715")) __declspec(novtable) IMediaPlayerSource : Windows::IInspectable
+struct __declspec(uuid("bd4f8897-1423-4c3e-82c5-0fb1af94f715")) __declspec(novtable) IMediaPlayerSource : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProtectionManager(Windows::Media::Protection::IMediaProtectionManager ** value) = 0;
     virtual HRESULT __stdcall put_ProtectionManager(Windows::Media::Protection::IMediaProtectionManager * value) = 0;
@@ -515,45 +515,45 @@ struct __declspec(uuid("bd4f8897-1423-4c3e-82c5-0fb1af94f715")) __declspec(novta
     virtual HRESULT __stdcall abi_SetMediaSource(Windows::Media::Core::IMediaSource * source) = 0;
 };
 
-struct __declspec(uuid("82449b9f-7322-4c0b-b03b-3e69a48260c5")) __declspec(novtable) IMediaPlayerSource2 : Windows::IInspectable
+struct __declspec(uuid("82449b9f-7322-4c0b-b03b-3e69a48260c5")) __declspec(novtable) IMediaPlayerSource2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Source(Windows::Media::Playback::IMediaPlaybackSource ** value) = 0;
     virtual HRESULT __stdcall put_Source(Windows::Media::Playback::IMediaPlaybackSource * value) = 0;
 };
 
-struct __declspec(uuid("0ed653bc-b736-49c3-830b-764a3845313a")) __declspec(novtable) IMediaPlayerSurface : Windows::IInspectable
+struct __declspec(uuid("0ed653bc-b736-49c3-830b-764a3845313a")) __declspec(novtable) IMediaPlayerSurface : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CompositionSurface(Windows::UI::Composition::ICompositionSurface ** value) = 0;
     virtual HRESULT __stdcall get_Compositor(Windows::UI::Composition::ICompositor ** value) = 0;
     virtual HRESULT __stdcall get_MediaPlayer(Windows::Media::Playback::IMediaPlayer ** value) = 0;
 };
 
-struct __declspec(uuid("c4d22f5c-3c1c-4444-b6b9-778b0422d41a")) __declspec(novtable) IPlaybackMediaMarker : Windows::IInspectable
+struct __declspec(uuid("c4d22f5c-3c1c-4444-b6b9-778b0422d41a")) __declspec(novtable) IPlaybackMediaMarker : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Time(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_MediaMarkerType(hstring * value) = 0;
     virtual HRESULT __stdcall get_Text(hstring * value) = 0;
 };
 
-struct __declspec(uuid("8c530a78-e0ae-4e1a-a8c8-e23f982a937b")) __declspec(novtable) IPlaybackMediaMarkerFactory : Windows::IInspectable
+struct __declspec(uuid("8c530a78-e0ae-4e1a-a8c8-e23f982a937b")) __declspec(novtable) IPlaybackMediaMarkerFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromTime(Windows::Foundation::TimeSpan value, Windows::Media::Playback::IPlaybackMediaMarker ** marker) = 0;
     virtual HRESULT __stdcall abi_Create(Windows::Foundation::TimeSpan value, hstring mediaMarketType, hstring text, Windows::Media::Playback::IPlaybackMediaMarker ** marker) = 0;
 };
 
-struct __declspec(uuid("578cd1b9-90e2-4e60-abc4-8740b01f6196")) __declspec(novtable) IPlaybackMediaMarkerReachedEventArgs : Windows::IInspectable
+struct __declspec(uuid("578cd1b9-90e2-4e60-abc4-8740b01f6196")) __declspec(novtable) IPlaybackMediaMarkerReachedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PlaybackMediaMarker(Windows::Media::Playback::IPlaybackMediaMarker ** value) = 0;
 };
 
-struct __declspec(uuid("f2810cee-638b-46cf-8817-1d111fe9d8c4")) __declspec(novtable) IPlaybackMediaMarkerSequence : Windows::IInspectable
+struct __declspec(uuid("f2810cee-638b-46cf-8817-1d111fe9d8c4")) __declspec(novtable) IPlaybackMediaMarkerSequence : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Size(uint32_t * value) = 0;
     virtual HRESULT __stdcall abi_Insert(Windows::Media::Playback::IPlaybackMediaMarker * value) = 0;
     virtual HRESULT __stdcall abi_Clear() = 0;
 };
 
-struct __declspec(uuid("d1636099-65df-45ae-8cef-dc0b53fdc2bb")) __declspec(novtable) ITimedMetadataPresentationModeChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("d1636099-65df-45ae-8cef-dc0b53fdc2bb")) __declspec(novtable) ITimedMetadataPresentationModeChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Track(Windows::Media::Core::ITimedMetadataTrack ** value) = 0;
     virtual HRESULT __stdcall get_OldPresentationMode(winrt::Windows::Media::Playback::TimedMetadataTrackPresentationMode * value) = 0;
@@ -685,9 +685,9 @@ struct WINRT_EBO impl_IMediaBreakManager
 template <typename D>
 struct WINRT_EBO impl_IMediaBreakSchedule
 {
-    event_token ScheduleChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> & handler) const;
+    event_token ScheduleChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::Foundation::IInspectable> & handler) const;
     using ScheduleChanged_revoker = event_revoker<IMediaBreakSchedule>;
-    ScheduleChanged_revoker ScheduleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> & handler) const;
+    ScheduleChanged_revoker ScheduleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::Foundation::IInspectable> & handler) const;
     void ScheduleChanged(event_token token) const;
     void InsertMidrollBreak(const Windows::Media::Playback::MediaBreak & mediaBreak) const;
     void RemoveMidrollBreak(const Windows::Media::Playback::MediaBreak & mediaBreak) const;
@@ -812,9 +812,9 @@ struct WINRT_EBO impl_IMediaPlaybackCommandManagerCommandBehavior
     bool IsEnabled() const;
     Windows::Media::Playback::MediaCommandEnablingRule EnablingRule() const;
     void EnablingRule(Windows::Media::Playback::MediaCommandEnablingRule value) const;
-    event_token IsEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> & handler) const;
+    event_token IsEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::Foundation::IInspectable> & handler) const;
     using IsEnabledChanged_revoker = event_revoker<IMediaPlaybackCommandManagerCommandBehavior>;
-    IsEnabledChanged_revoker IsEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> & handler) const;
+    IsEnabledChanged_revoker IsEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::Foundation::IInspectable> & handler) const;
     void IsEnabledChanged(event_token token) const;
 };
 
@@ -1006,45 +1006,45 @@ struct WINRT_EBO impl_IMediaPlaybackList2
 template <typename D>
 struct WINRT_EBO impl_IMediaPlaybackSession
 {
-    event_token PlaybackStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token PlaybackStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using PlaybackStateChanged_revoker = event_revoker<IMediaPlaybackSession>;
-    PlaybackStateChanged_revoker PlaybackStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    PlaybackStateChanged_revoker PlaybackStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void PlaybackStateChanged(event_token token) const;
-    event_token PlaybackRateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token PlaybackRateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using PlaybackRateChanged_revoker = event_revoker<IMediaPlaybackSession>;
-    PlaybackRateChanged_revoker PlaybackRateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    PlaybackRateChanged_revoker PlaybackRateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void PlaybackRateChanged(event_token token) const;
-    event_token SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using SeekCompleted_revoker = event_revoker<IMediaPlaybackSession>;
-    SeekCompleted_revoker SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    SeekCompleted_revoker SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void SeekCompleted(event_token token) const;
-    event_token BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using BufferingStarted_revoker = event_revoker<IMediaPlaybackSession>;
-    BufferingStarted_revoker BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    BufferingStarted_revoker BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void BufferingStarted(event_token token) const;
-    event_token BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using BufferingEnded_revoker = event_revoker<IMediaPlaybackSession>;
-    BufferingEnded_revoker BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    BufferingEnded_revoker BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void BufferingEnded(event_token token) const;
-    event_token BufferingProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token BufferingProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using BufferingProgressChanged_revoker = event_revoker<IMediaPlaybackSession>;
-    BufferingProgressChanged_revoker BufferingProgressChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    BufferingProgressChanged_revoker BufferingProgressChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void BufferingProgressChanged(event_token token) const;
-    event_token DownloadProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token DownloadProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using DownloadProgressChanged_revoker = event_revoker<IMediaPlaybackSession>;
-    DownloadProgressChanged_revoker DownloadProgressChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    DownloadProgressChanged_revoker DownloadProgressChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void DownloadProgressChanged(event_token token) const;
-    event_token NaturalDurationChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token NaturalDurationChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using NaturalDurationChanged_revoker = event_revoker<IMediaPlaybackSession>;
-    NaturalDurationChanged_revoker NaturalDurationChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    NaturalDurationChanged_revoker NaturalDurationChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void NaturalDurationChanged(event_token token) const;
-    event_token PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using PositionChanged_revoker = event_revoker<IMediaPlaybackSession>;
-    PositionChanged_revoker PositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    PositionChanged_revoker PositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void PositionChanged(event_token token) const;
-    event_token NaturalVideoSizeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    event_token NaturalVideoSizeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     using NaturalVideoSizeChanged_revoker = event_revoker<IMediaPlaybackSession>;
-    NaturalVideoSizeChanged_revoker NaturalVideoSizeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
+    NaturalVideoSizeChanged_revoker NaturalVideoSizeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const;
     void NaturalVideoSizeChanged(event_token token) const;
     Windows::Media::Playback::MediaPlayer MediaPlayer() const;
     Windows::Foundation::TimeSpan NaturalDuration() const;
@@ -1104,21 +1104,21 @@ struct WINRT_EBO impl_IMediaPlayer
     double Volume() const;
     void Volume(double value) const;
     [[deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]] Windows::Media::Playback::PlaybackMediaMarkerSequence PlaybackMediaMarkers() const;
-    event_token MediaOpened(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    event_token MediaOpened(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     using MediaOpened_revoker = event_revoker<IMediaPlayer>;
-    MediaOpened_revoker MediaOpened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    MediaOpened_revoker MediaOpened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     void MediaOpened(event_token token) const;
-    event_token MediaEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    event_token MediaEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     using MediaEnded_revoker = event_revoker<IMediaPlayer>;
-    MediaEnded_revoker MediaEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    MediaEnded_revoker MediaEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     void MediaEnded(event_token token) const;
     event_token MediaFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerFailedEventArgs> & value) const;
     using MediaFailed_revoker = event_revoker<IMediaPlayer>;
     MediaFailed_revoker MediaFailed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerFailedEventArgs> & value) const;
     void MediaFailed(event_token token) const;
-    [[deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]] event_token CurrentStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]] event_token CurrentStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     using CurrentStateChanged_revoker = event_revoker<IMediaPlayer>;
-    [[deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]] CurrentStateChanged_revoker CurrentStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]] CurrentStateChanged_revoker CurrentStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     [[deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]] void CurrentStateChanged(event_token token) const;
     [[deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]] event_token PlaybackMediaMarkerReached(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs> & value) const;
     using PlaybackMediaMarkerReached_revoker = event_revoker<IMediaPlayer>;
@@ -1128,21 +1128,21 @@ struct WINRT_EBO impl_IMediaPlayer
     using MediaPlayerRateChanged_revoker = event_revoker<IMediaPlayer>;
     [[deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]] MediaPlayerRateChanged_revoker MediaPlayerRateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerRateChangedEventArgs> & value) const;
     [[deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]] void MediaPlayerRateChanged(event_token token) const;
-    event_token VolumeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    event_token VolumeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     using VolumeChanged_revoker = event_revoker<IMediaPlayer>;
-    VolumeChanged_revoker VolumeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    VolumeChanged_revoker VolumeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     void VolumeChanged(event_token token) const;
-    [[deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]] event_token SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]] event_token SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     using SeekCompleted_revoker = event_revoker<IMediaPlayer>;
-    [[deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]] SeekCompleted_revoker SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]] SeekCompleted_revoker SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     [[deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]] void SeekCompleted(event_token token) const;
-    [[deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]] event_token BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]] event_token BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     using BufferingStarted_revoker = event_revoker<IMediaPlayer>;
-    [[deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]] BufferingStarted_revoker BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]] BufferingStarted_revoker BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     [[deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]] void BufferingStarted(event_token token) const;
-    [[deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]] event_token BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]] event_token BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     using BufferingEnded_revoker = event_revoker<IMediaPlayer>;
-    [[deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]] BufferingEnded_revoker BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]] BufferingEnded_revoker BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     [[deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]] void BufferingEnded(event_token token) const;
     void Play() const;
     void Pause() const;
@@ -1162,13 +1162,13 @@ struct WINRT_EBO impl_IMediaPlayer2
 template <typename D>
 struct WINRT_EBO impl_IMediaPlayer3
 {
-    event_token IsMutedChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    event_token IsMutedChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     using IsMutedChanged_revoker = event_revoker<IMediaPlayer3>;
-    IsMutedChanged_revoker IsMutedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    IsMutedChanged_revoker IsMutedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     void IsMutedChanged(event_token token) const;
-    event_token SourceChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    event_token SourceChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     using SourceChanged_revoker = event_revoker<IMediaPlayer3>;
-    SourceChanged_revoker SourceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    SourceChanged_revoker SourceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const;
     void SourceChanged(event_token token) const;
     double AudioBalance() const;
     void AudioBalance(double value) const;

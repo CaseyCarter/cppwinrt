@@ -10,14 +10,14 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Security::ExchangeActiveSyncProvisioning {
 
 struct IEasClientDeviceInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasClientDeviceInformation>
 {
     IEasClientDeviceInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasClientDeviceInformation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasClientDeviceInformation2>,
     impl::require<IEasClientDeviceInformation2, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation>
 {

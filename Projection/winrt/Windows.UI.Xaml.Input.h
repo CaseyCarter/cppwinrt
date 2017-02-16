@@ -30,7 +30,7 @@ template <typename O, typename M> DoubleTappedEventHandler::DoubleTappedEventHan
     DoubleTappedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void DoubleTappedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs & e) const
+inline void DoubleTappedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs & e) const
 {
     check_hresult((*(abi<DoubleTappedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -47,7 +47,7 @@ template <typename O, typename M> HoldingEventHandler::HoldingEventHandler(O * o
     HoldingEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void HoldingEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::HoldingRoutedEventArgs & e) const
+inline void HoldingEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::HoldingRoutedEventArgs & e) const
 {
     check_hresult((*(abi<HoldingEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -64,7 +64,7 @@ template <typename O, typename M> KeyEventHandler::KeyEventHandler(O * object, M
     KeyEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void KeyEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::KeyRoutedEventArgs & e) const
+inline void KeyEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::KeyRoutedEventArgs & e) const
 {
     check_hresult((*(abi<KeyEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -81,7 +81,7 @@ template <typename O, typename M> ManipulationCompletedEventHandler::Manipulatio
     ManipulationCompletedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void ManipulationCompletedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs & e) const
+inline void ManipulationCompletedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs & e) const
 {
     check_hresult((*(abi<ManipulationCompletedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -98,7 +98,7 @@ template <typename O, typename M> ManipulationDeltaEventHandler::ManipulationDel
     ManipulationDeltaEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void ManipulationDeltaEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs & e) const
+inline void ManipulationDeltaEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs & e) const
 {
     check_hresult((*(abi<ManipulationDeltaEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -115,7 +115,7 @@ template <typename O, typename M> ManipulationInertiaStartingEventHandler::Manip
     ManipulationInertiaStartingEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void ManipulationInertiaStartingEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs & e) const
+inline void ManipulationInertiaStartingEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs & e) const
 {
     check_hresult((*(abi<ManipulationInertiaStartingEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -132,7 +132,7 @@ template <typename O, typename M> ManipulationStartedEventHandler::ManipulationS
     ManipulationStartedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void ManipulationStartedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs & e) const
+inline void ManipulationStartedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs & e) const
 {
     check_hresult((*(abi<ManipulationStartedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -149,7 +149,7 @@ template <typename O, typename M> ManipulationStartingEventHandler::Manipulation
     ManipulationStartingEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void ManipulationStartingEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs & e) const
+inline void ManipulationStartingEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs & e) const
 {
     check_hresult((*(abi<ManipulationStartingEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -166,7 +166,7 @@ template <typename O, typename M> PointerEventHandler::PointerEventHandler(O * o
     PointerEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void PointerEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const
+inline void PointerEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const
 {
     check_hresult((*(abi<PointerEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -183,7 +183,7 @@ template <typename O, typename M> RightTappedEventHandler::RightTappedEventHandl
     RightTappedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void RightTappedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::RightTappedRoutedEventArgs & e) const
+inline void RightTappedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::RightTappedRoutedEventArgs & e) const
 {
     check_hresult((*(abi<RightTappedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -200,7 +200,7 @@ template <typename O, typename M> TappedEventHandler::TappedEventHandler(O * obj
     TappedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void TappedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Input::TappedRoutedEventArgs & e) const
+inline void TappedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Input::TappedRoutedEventArgs & e) const
 {
     check_hresult((*(abi<TappedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -285,12 +285,12 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyManagerStatics> : produce_
         }
     }
 
-    HRESULT __stdcall add_IsDisplayModeEnabledChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_IsDisplayModeEnabledChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().IsDisplayModeEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().IsDisplayModeEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -331,12 +331,12 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyManagerStatics> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Input::ICommand> : produce_base<D, Windows::UI::Xaml::Input::ICommand>
 {
-    HRESULT __stdcall add_CanExecuteChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> value, event_token * token) noexcept override
+    HRESULT __stdcall add_CanExecuteChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().CanExecuteChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
+            *token = detach_abi(this->shim().CanExecuteChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -359,12 +359,12 @@ struct produce<D, Windows::UI::Xaml::Input::ICommand> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_CanExecute(impl::abi_arg_in<Windows::IInspectable> parameter, bool * returnValue) noexcept override
+    HRESULT __stdcall abi_CanExecute(impl::abi_arg_in<Windows::Foundation::IInspectable> parameter, bool * returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_abi(this->shim().CanExecute(*reinterpret_cast<const Windows::IInspectable *>(&parameter)));
+            *returnValue = detach_abi(this->shim().CanExecute(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&parameter)));
             return S_OK;
         }
         catch (...)
@@ -373,12 +373,12 @@ struct produce<D, Windows::UI::Xaml::Input::ICommand> : produce_base<D, Windows:
         }
     }
 
-    HRESULT __stdcall abi_Execute(impl::abi_arg_in<Windows::IInspectable> parameter) noexcept override
+    HRESULT __stdcall abi_Execute(impl::abi_arg_in<Windows::Foundation::IInspectable> parameter) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Execute(*reinterpret_cast<const Windows::IInspectable *>(&parameter));
+            this->shim().Execute(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&parameter));
             return S_OK;
         }
         catch (...)
@@ -501,7 +501,7 @@ struct produce<D, Windows::UI::Xaml::Input::IFocusManager> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Input::IFocusManagerStatics> : produce_base<D, Windows::UI::Xaml::Input::IFocusManagerStatics>
 {
-    HRESULT __stdcall abi_GetFocusedElement(impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_GetFocusedElement(impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -1627,12 +1627,12 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgsFactory> : produce_base<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgsFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::IInspectable> outer, impl::abi_arg_out<Windows::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
             return S_OK;
         }
         catch (...)
@@ -2037,14 +2037,14 @@ struct produce<D, Windows::UI::Xaml::Input::ITappedRoutedEventArgs> : produce_ba
 
 namespace Windows::UI::Xaml::Input {
 
-template <typename D> event_token impl_ICommand<D>::CanExecuteChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
+template <typename D> event_token impl_ICommand<D>::CanExecuteChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICommand)->add_CanExecuteChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICommand> impl_ICommand<D>::CanExecuteChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
+template <typename D> event_revoker<ICommand> impl_ICommand<D>::CanExecuteChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, ICommand>(this, &ABI::Windows::UI::Xaml::Input::ICommand::remove_CanExecuteChanged, CanExecuteChanged(value));
 }
@@ -2054,14 +2054,14 @@ template <typename D> void impl_ICommand<D>::CanExecuteChanged(event_token token
     check_hresult(WINRT_SHIM(ICommand)->remove_CanExecuteChanged(token));
 }
 
-template <typename D> bool impl_ICommand<D>::CanExecute(const Windows::IInspectable & parameter) const
+template <typename D> bool impl_ICommand<D>::CanExecute(const Windows::Foundation::IInspectable & parameter) const
 {
     bool returnValue {};
     check_hresult(WINRT_SHIM(ICommand)->abi_CanExecute(get_abi(parameter), &returnValue));
     return returnValue;
 }
 
-template <typename D> void impl_ICommand<D>::Execute(const Windows::IInspectable & parameter) const
+template <typename D> void impl_ICommand<D>::Execute(const Windows::Foundation::IInspectable & parameter) const
 {
     check_hresult(WINRT_SHIM(ICommand)->abi_Execute(get_abi(parameter)));
 }
@@ -2092,14 +2092,14 @@ template <typename D> bool impl_IAccessKeyManagerStatics<D>::IsDisplayModeEnable
     return value;
 }
 
-template <typename D> event_token impl_IAccessKeyManagerStatics<D>::IsDisplayModeEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value) const
+template <typename D> event_token impl_IAccessKeyManagerStatics<D>::IsDisplayModeEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAccessKeyManagerStatics)->add_IsDisplayModeEnabledChanged(get_abi(value), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAccessKeyManagerStatics> impl_IAccessKeyManagerStatics<D>::IsDisplayModeEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value) const
+template <typename D> event_revoker<IAccessKeyManagerStatics> impl_IAccessKeyManagerStatics<D>::IsDisplayModeEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> & value) const
 {
     return impl::make_event_revoker<D, IAccessKeyManagerStatics>(this, &ABI::Windows::UI::Xaml::Input::IAccessKeyManagerStatics::remove_IsDisplayModeEnabledChanged, IsDisplayModeEnabledChanged(value));
 }
@@ -2114,9 +2114,9 @@ template <typename D> void impl_IAccessKeyManagerStatics<D>::ExitDisplayMode() c
     check_hresult(WINRT_SHIM(IAccessKeyManagerStatics)->abi_ExitDisplayMode());
 }
 
-template <typename D> Windows::IInspectable impl_IFocusManagerStatics<D>::GetFocusedElement() const
+template <typename D> Windows::Foundation::IInspectable impl_IFocusManagerStatics<D>::GetFocusedElement() const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IFocusManagerStatics)->abi_GetFocusedElement(put_abi(returnValue)));
     return returnValue;
 }
@@ -2665,7 +2665,7 @@ template <typename D> void impl_IManipulationStartedRoutedEventArgs<D>::Complete
     check_hresult(WINRT_SHIM(IManipulationStartedRoutedEventArgs)->abi_Complete());
 }
 
-template <typename D> Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs impl_IManipulationStartedRoutedEventArgsFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
+template <typename D> Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs impl_IManipulationStartedRoutedEventArgsFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs instance { nullptr };
     check_hresult(WINRT_SHIM(IManipulationStartedRoutedEventArgsFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
@@ -2829,12 +2829,12 @@ inline bool AccessKeyManager::IsDisplayModeEnabled()
     return get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics>().IsDisplayModeEnabled();
 }
 
-inline event_token AccessKeyManager::IsDisplayModeEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value)
+inline event_token AccessKeyManager::IsDisplayModeEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> & value)
 {
     return get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics>().IsDisplayModeEnabledChanged(value);
 }
 
-inline factory_event_revoker<IAccessKeyManagerStatics> AccessKeyManager::IsDisplayModeEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value)
+inline factory_event_revoker<IAccessKeyManagerStatics> AccessKeyManager::IsDisplayModeEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> & value)
 {
     auto factory = get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics>();
     return { factory, &ABI::Windows::UI::Xaml::Input::IAccessKeyManagerStatics::remove_IsDisplayModeEnabledChanged, factory.IsDisplayModeEnabledChanged(value) };
@@ -2858,7 +2858,7 @@ inline DoubleTappedRoutedEventArgs::DoubleTappedRoutedEventArgs() :
     DoubleTappedRoutedEventArgs(activate_instance<DoubleTappedRoutedEventArgs>())
 {}
 
-inline Windows::IInspectable FocusManager::GetFocusedElement()
+inline Windows::Foundation::IInspectable FocusManager::GetFocusedElement()
 {
     return get_activation_factory<FocusManager, IFocusManagerStatics>().GetFocusedElement();
 }
@@ -2916,7 +2916,7 @@ inline ManipulationPivot::ManipulationPivot(const Windows::Foundation::Point & c
 
 inline ManipulationStartedRoutedEventArgs::ManipulationStartedRoutedEventArgs()
 {
-    Windows::IInspectable outer, inner;
+    Windows::Foundation::IInspectable outer, inner;
     impl_move(get_activation_factory<ManipulationStartedRoutedEventArgs, IManipulationStartedRoutedEventArgsFactory>().CreateInstance(outer, inner));
 }
 

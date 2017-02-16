@@ -71,28 +71,28 @@ template <> struct __declspec(uuid("ee427f2e-7d37-558f-9718-9cbcbff40c94")) __de
 namespace Windows::Devices::Gpio {
 
 struct IGpioController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioController>
 {
     IGpioController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGpioControllerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioControllerStatics>
 {
     IGpioControllerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGpioControllerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioControllerStatics2>
 {
     IGpioControllerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGpioPin :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioPin>,
     impl::require<IGpioPin, Windows::Foundation::IClosable>
 {
@@ -100,7 +100,7 @@ struct IGpioPin :
 };
 
 struct IGpioPinValueChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioPinValueChangedEventArgs>
 {
     IGpioPinValueChangedEventArgs(std::nullptr_t = nullptr) noexcept {}

@@ -374,12 +374,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManagerStatics> : produce_base<
 template <typename D>
 struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Windows::Media::PlayTo::IPlayToReceiver>
 {
-    HRESULT __stdcall add_PlayRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_PlayRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().PlayRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().PlayRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -402,12 +402,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_PauseRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_PauseRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().PauseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().PauseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -570,12 +570,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_TimeUpdateRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_TimeUpdateRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().TimeUpdateRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().TimeUpdateRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -598,12 +598,12 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
         }
     }
 
-    HRESULT __stdcall add_StopRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_StopRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().StopRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().StopRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1378,7 +1378,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
         }
     }
 
-    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -1479,9 +1479,9 @@ template <typename D> Windows::Foundation::IReference<uint32_t> impl_ISourceChan
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_ISourceChangeRequestedEventArgs<D>::Properties() const
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> impl_ISourceChangeRequestedEventArgs<D>::Properties() const
 {
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(ISourceChangeRequestedEventArgs)->get_Properties(put_abi(value)));
     return value;
 }
@@ -1514,14 +1514,14 @@ template <typename D> double impl_IVolumeChangeRequestedEventArgs<D>::Volume() c
     return value;
 }
 
-template <typename D> event_token impl_IPlayToReceiver<D>::PlayRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IPlayToReceiver<D>::PlayRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IPlayToReceiver)->add_PlayRequested(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::PlayRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::PlayRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IPlayToReceiver>(this, &ABI::Windows::Media::PlayTo::IPlayToReceiver::remove_PlayRequested, PlayRequested(handler));
 }
@@ -1531,14 +1531,14 @@ template <typename D> void impl_IPlayToReceiver<D>::PlayRequested(event_token to
     check_hresult(WINRT_SHIM(IPlayToReceiver)->remove_PlayRequested(token));
 }
 
-template <typename D> event_token impl_IPlayToReceiver<D>::PauseRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IPlayToReceiver<D>::PauseRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IPlayToReceiver)->add_PauseRequested(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::PauseRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::PauseRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IPlayToReceiver>(this, &ABI::Windows::Media::PlayTo::IPlayToReceiver::remove_PauseRequested, PauseRequested(handler));
 }
@@ -1633,14 +1633,14 @@ template <typename D> void impl_IPlayToReceiver<D>::VolumeChangeRequested(event_
     check_hresult(WINRT_SHIM(IPlayToReceiver)->remove_VolumeChangeRequested(token));
 }
 
-template <typename D> event_token impl_IPlayToReceiver<D>::TimeUpdateRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IPlayToReceiver<D>::TimeUpdateRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IPlayToReceiver)->add_TimeUpdateRequested(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::TimeUpdateRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::TimeUpdateRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IPlayToReceiver>(this, &ABI::Windows::Media::PlayTo::IPlayToReceiver::remove_TimeUpdateRequested, TimeUpdateRequested(handler));
 }
@@ -1650,14 +1650,14 @@ template <typename D> void impl_IPlayToReceiver<D>::TimeUpdateRequested(event_to
     check_hresult(WINRT_SHIM(IPlayToReceiver)->remove_TimeUpdateRequested(token));
 }
 
-template <typename D> event_token impl_IPlayToReceiver<D>::StopRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IPlayToReceiver<D>::StopRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IPlayToReceiver)->add_StopRequested(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::StopRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::StopRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IPlayToReceiver>(this, &ABI::Windows::Media::PlayTo::IPlayToReceiver::remove_StopRequested, StopRequested(handler));
 }

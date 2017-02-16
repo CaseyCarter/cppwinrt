@@ -125,203 +125,203 @@ template <> struct __declspec(uuid("7ecce0f5-0874-506f-8d42-4c9519156407")) __de
 namespace Windows::UI::Input::Spatial {
 
 struct ISpatialGestureRecognizer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialGestureRecognizer>
 {
     ISpatialGestureRecognizer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialGestureRecognizerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialGestureRecognizerFactory>
 {
     ISpatialGestureRecognizerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialHoldCanceledEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialHoldCanceledEventArgs>
 {
     ISpatialHoldCanceledEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialHoldCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialHoldCompletedEventArgs>
 {
     ISpatialHoldCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialHoldStartedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialHoldStartedEventArgs>
 {
     ISpatialHoldStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteraction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteraction>
 {
     ISpatialInteraction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionDetectedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionDetectedEventArgs>
 {
     ISpatialInteractionDetectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionManager>
 {
     ISpatialInteractionManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionManagerStatics>
 {
     ISpatialInteractionManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionSource>
 {
     ISpatialInteractionSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionSourceEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionSourceEventArgs>
 {
     ISpatialInteractionSourceEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionSourceLocation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionSourceLocation>
 {
     ISpatialInteractionSourceLocation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionSourceLocation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionSourceLocation2>
 {
     ISpatialInteractionSourceLocation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionSourceProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionSourceProperties>
 {
     ISpatialInteractionSourceProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionSourceState :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionSourceState>
 {
     ISpatialInteractionSourceState(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialManipulationCanceledEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialManipulationCanceledEventArgs>
 {
     ISpatialManipulationCanceledEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialManipulationCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialManipulationCompletedEventArgs>
 {
     ISpatialManipulationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialManipulationDelta :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialManipulationDelta>
 {
     ISpatialManipulationDelta(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialManipulationStartedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialManipulationStartedEventArgs>
 {
     ISpatialManipulationStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialManipulationUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialManipulationUpdatedEventArgs>
 {
     ISpatialManipulationUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialNavigationCanceledEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialNavigationCanceledEventArgs>
 {
     ISpatialNavigationCanceledEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialNavigationCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialNavigationCompletedEventArgs>
 {
     ISpatialNavigationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialNavigationStartedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialNavigationStartedEventArgs>
 {
     ISpatialNavigationStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialNavigationUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialNavigationUpdatedEventArgs>
 {
     ISpatialNavigationUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialPointerPose :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialPointerPose>
 {
     ISpatialPointerPose(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialPointerPoseStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialPointerPoseStatics>
 {
     ISpatialPointerPoseStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialRecognitionEndedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialRecognitionEndedEventArgs>
 {
     ISpatialRecognitionEndedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialRecognitionStartedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialRecognitionStartedEventArgs>
 {
     ISpatialRecognitionStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialTappedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialTappedEventArgs>
 {
     ISpatialTappedEventArgs(std::nullptr_t = nullptr) noexcept {}

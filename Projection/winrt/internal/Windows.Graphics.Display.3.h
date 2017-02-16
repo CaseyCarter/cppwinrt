@@ -13,11 +13,11 @@ template <typename H> struct impl_DisplayPropertiesEventHandler : implements<imp
 {
     impl_DisplayPropertiesEventHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::IInspectable> sender) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::Foundation::IInspectable> sender) noexcept override
     {
         try
         {
-            (*this)(*reinterpret_cast<const Windows::IInspectable *>(&sender));
+            (*this)(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&sender));
             return S_OK;
         }
         catch (...)
@@ -39,9 +39,9 @@ struct WINRT_EBO DisplayInformation :
     static Windows::Graphics::Display::DisplayInformation GetForCurrentView();
     static Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences();
     static void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value);
-    static event_token DisplayContentsInvalidated(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler);
+    static event_token DisplayContentsInvalidated(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler);
     using DisplayContentsInvalidated_revoker = factory_event_revoker<IDisplayInformationStatics>;
-    static DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler);
+    static DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> & handler);
     static void DisplayContentsInvalidated(event_token token);
 };
 

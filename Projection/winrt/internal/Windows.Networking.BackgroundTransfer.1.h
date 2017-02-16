@@ -50,14 +50,14 @@ using BackgroundUploadProgress = ABI::Windows::Networking::BackgroundTransfer::B
 
 namespace ABI::Windows::Networking::BackgroundTransfer {
 
-struct __declspec(uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b")) __declspec(novtable) IBackgroundDownloader : Windows::IInspectable
+struct __declspec(uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b")) __declspec(novtable) IBackgroundDownloader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateDownload(Windows::Foundation::IUriRuntimeClass * uri, Windows::Storage::IStorageFile * resultFile, Windows::Networking::BackgroundTransfer::IDownloadOperation ** operation) = 0;
     virtual HRESULT __stdcall abi_CreateDownloadFromFile(Windows::Foundation::IUriRuntimeClass * uri, Windows::Storage::IStorageFile * resultFile, Windows::Storage::IStorageFile * requestBodyFile, Windows::Networking::BackgroundTransfer::IDownloadOperation ** operation) = 0;
     virtual HRESULT __stdcall abi_CreateDownloadAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Storage::IStorageFile * resultFile, Windows::Storage::Streams::IInputStream * requestBodyStream, Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::DownloadOperation> ** operation) = 0;
 };
 
-struct __declspec(uuid("a94a5847-348d-4a35-890e-8a1ef3798479")) __declspec(novtable) IBackgroundDownloader2 : Windows::IInspectable
+struct __declspec(uuid("a94a5847-348d-4a35-890e-8a1ef3798479")) __declspec(novtable) IBackgroundDownloader2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TransferGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup ** value) = 0;
     virtual HRESULT __stdcall put_TransferGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * value) = 0;
@@ -71,33 +71,33 @@ struct __declspec(uuid("a94a5847-348d-4a35-890e-8a1ef3798479")) __declspec(novta
     virtual HRESULT __stdcall put_FailureTileNotification(Windows::UI::Notifications::ITileNotification * value) = 0;
 };
 
-struct __declspec(uuid("d11a8c48-86e8-48e2-b615-6976aabf861d")) __declspec(novtable) IBackgroundDownloader3 : Windows::IInspectable
+struct __declspec(uuid("d11a8c48-86e8-48e2-b615-6976aabf861d")) __declspec(novtable) IBackgroundDownloader3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CompletionGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup ** value) = 0;
 };
 
-struct __declspec(uuid("26836c24-d89e-46f4-a29a-4f4d4f144155")) __declspec(novtable) IBackgroundDownloaderFactory : Windows::IInspectable
+struct __declspec(uuid("26836c24-d89e-46f4-a29a-4f4d4f144155")) __declspec(novtable) IBackgroundDownloaderFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithCompletionGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup * completionGroup, Windows::Networking::BackgroundTransfer::IBackgroundDownloader ** backgroundDownloader) = 0;
 };
 
-struct __declspec(uuid("52a65a35-c64e-426c-9919-540d0d21a650")) __declspec(novtable) IBackgroundDownloaderStaticMethods : Windows::IInspectable
+struct __declspec(uuid("52a65a35-c64e-426c-9919-540d0d21a650")) __declspec(novtable) IBackgroundDownloaderStaticMethods : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCurrentDownloadsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetCurrentDownloadsForGroupAsync(hstring group, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> ** operation) = 0;
 };
 
-struct __declspec(uuid("2faa1327-1ad4-4ca5-b2cd-08dbf0746afe")) __declspec(novtable) IBackgroundDownloaderStaticMethods2 : Windows::IInspectable
+struct __declspec(uuid("2faa1327-1ad4-4ca5-b2cd-08dbf0746afe")) __declspec(novtable) IBackgroundDownloaderStaticMethods2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCurrentDownloadsForTransferGroupAsync(Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * group, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> ** operation) = 0;
 };
 
-struct __declspec(uuid("5d14e906-9266-4808-bd71-5925f2a3130a")) __declspec(novtable) IBackgroundDownloaderUserConsent : Windows::IInspectable
+struct __declspec(uuid("5d14e906-9266-4808-bd71-5925f2a3130a")) __declspec(novtable) IBackgroundDownloaderUserConsent : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestUnconstrainedDownloadsAsync(Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> * operations, Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> ** operation) = 0;
 };
 
-struct __declspec(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef")) __declspec(novtable) IBackgroundTransferBase : Windows::IInspectable
+struct __declspec(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef")) __declspec(novtable) IBackgroundTransferBase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetRequestHeader(hstring headerName, hstring headerValue) = 0;
     virtual HRESULT __stdcall get_ServerCredential(Windows::Security::Credentials::IPasswordCredential ** credential) = 0;
@@ -112,50 +112,50 @@ struct __declspec(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef")) __declspec(novta
     virtual HRESULT __stdcall put_CostPolicy(winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) = 0;
 };
 
-struct __declspec(uuid("2d930225-986b-574d-7950-0add47f5d706")) __declspec(novtable) IBackgroundTransferCompletionGroup : Windows::IInspectable
+struct __declspec(uuid("2d930225-986b-574d-7950-0add47f5d706")) __declspec(novtable) IBackgroundTransferCompletionGroup : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Trigger(Windows::ApplicationModel::Background::IBackgroundTrigger ** value) = 0;
     virtual HRESULT __stdcall get_IsEnabled(bool * value) = 0;
     virtual HRESULT __stdcall abi_Enable() = 0;
 };
 
-struct __declspec(uuid("7b6be286-6e47-5136-7fcb-fa4389f46f5b")) __declspec(novtable) IBackgroundTransferCompletionGroupTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("7b6be286-6e47-5136-7fcb-fa4389f46f5b")) __declspec(novtable) IBackgroundTransferCompletionGroupTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Downloads(Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation> ** value) = 0;
     virtual HRESULT __stdcall get_Uploads(Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation> ** value) = 0;
 };
 
-struct __declspec(uuid("e8e15657-d7d1-4ed8-838e-674ac217ace6")) __declspec(novtable) IBackgroundTransferContentPart : Windows::IInspectable
+struct __declspec(uuid("e8e15657-d7d1-4ed8-838e-674ac217ace6")) __declspec(novtable) IBackgroundTransferContentPart : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SetHeader(hstring headerName, hstring headerValue) = 0;
     virtual HRESULT __stdcall abi_SetText(hstring value) = 0;
     virtual HRESULT __stdcall abi_SetFile(Windows::Storage::IStorageFile * value) = 0;
 };
 
-struct __declspec(uuid("90ef98a9-7a01-4a0b-9f80-a0b0bb370f8d")) __declspec(novtable) IBackgroundTransferContentPartFactory : Windows::IInspectable
+struct __declspec(uuid("90ef98a9-7a01-4a0b-9f80-a0b0bb370f8d")) __declspec(novtable) IBackgroundTransferContentPartFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithName(hstring name, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithNameAndFileName(hstring name, hstring fileName, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart ** value) = 0;
 };
 
-struct __declspec(uuid("aad33b04-1192-4bf4-8b68-39c5add244e2")) __declspec(novtable) IBackgroundTransferErrorStaticMethods : Windows::IInspectable
+struct __declspec(uuid("aad33b04-1192-4bf4-8b68-39c5add244e2")) __declspec(novtable) IBackgroundTransferErrorStaticMethods : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetStatus(int32_t hresult, winrt::Windows::Web::WebErrorStatus * status) = 0;
 };
 
-struct __declspec(uuid("d8c3e3e4-6459-4540-85eb-aaa1c8903677")) __declspec(novtable) IBackgroundTransferGroup : Windows::IInspectable
+struct __declspec(uuid("d8c3e3e4-6459-4540-85eb-aaa1c8903677")) __declspec(novtable) IBackgroundTransferGroup : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_TransferBehavior(winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior * value) = 0;
     virtual HRESULT __stdcall put_TransferBehavior(winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior value) = 0;
 };
 
-struct __declspec(uuid("02ec50b2-7d18-495b-aa22-32a97d45d3e2")) __declspec(novtable) IBackgroundTransferGroupStatics : Windows::IInspectable
+struct __declspec(uuid("02ec50b2-7d18-495b-aa22-32a97d45d3e2")) __declspec(novtable) IBackgroundTransferGroupStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateGroup(hstring name, Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup ** value) = 0;
 };
 
-struct __declspec(uuid("ded06846-90ca-44fb-8fb1-124154c0d539")) __declspec(novtable) IBackgroundTransferOperation : Windows::IInspectable
+struct __declspec(uuid("ded06846-90ca-44fb-8fb1-124154c0d539")) __declspec(novtable) IBackgroundTransferOperation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Guid(GUID * value) = 0;
     virtual HRESULT __stdcall get_RequestedUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
@@ -167,13 +167,13 @@ struct __declspec(uuid("ded06846-90ca-44fb-8fb1-124154c0d539")) __declspec(novta
     virtual HRESULT __stdcall abi_GetResponseInformation(Windows::Networking::BackgroundTransfer::IResponseInformation ** value) = 0;
 };
 
-struct __declspec(uuid("04854327-5254-4b3a-915e-0aa49275c0f9")) __declspec(novtable) IBackgroundTransferOperationPriority : Windows::IInspectable
+struct __declspec(uuid("04854327-5254-4b3a-915e-0aa49275c0f9")) __declspec(novtable) IBackgroundTransferOperationPriority : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Priority(winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferPriority * value) = 0;
     virtual HRESULT __stdcall put_Priority(winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferPriority value) = 0;
 };
 
-struct __declspec(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce")) __declspec(novtable) IBackgroundUploader : Windows::IInspectable
+struct __declspec(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce")) __declspec(novtable) IBackgroundUploader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateUpload(Windows::Foundation::IUriRuntimeClass * uri, Windows::Storage::IStorageFile * sourceFile, Windows::Networking::BackgroundTransfer::IUploadOperation ** operation) = 0;
     virtual HRESULT __stdcall abi_CreateUploadFromStreamAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Storage::Streams::IInputStream * sourceStream, Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> ** operation) = 0;
@@ -182,7 +182,7 @@ struct __declspec(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateUploadWithSubTypeAndBoundaryAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> * parts, hstring subType, hstring boundary, Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> ** operation) = 0;
 };
 
-struct __declspec(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad")) __declspec(novtable) IBackgroundUploader2 : Windows::IInspectable
+struct __declspec(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad")) __declspec(novtable) IBackgroundUploader2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TransferGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup ** value) = 0;
     virtual HRESULT __stdcall put_TransferGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * value) = 0;
@@ -196,45 +196,45 @@ struct __declspec(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad")) __declspec(novta
     virtual HRESULT __stdcall put_FailureTileNotification(Windows::UI::Notifications::ITileNotification * value) = 0;
 };
 
-struct __declspec(uuid("b95e9439-5bf0-4b3a-8c47-2c6199a854b9")) __declspec(novtable) IBackgroundUploader3 : Windows::IInspectable
+struct __declspec(uuid("b95e9439-5bf0-4b3a-8c47-2c6199a854b9")) __declspec(novtable) IBackgroundUploader3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CompletionGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup ** value) = 0;
 };
 
-struct __declspec(uuid("736203c7-10e7-48a0-ac3c-1ac71095ec57")) __declspec(novtable) IBackgroundUploaderFactory : Windows::IInspectable
+struct __declspec(uuid("736203c7-10e7-48a0-ac3c-1ac71095ec57")) __declspec(novtable) IBackgroundUploaderFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithCompletionGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup * completionGroup, Windows::Networking::BackgroundTransfer::IBackgroundUploader ** backgroundUploader) = 0;
 };
 
-struct __declspec(uuid("f2875cfb-9b05-4741-9121-740a83e247df")) __declspec(novtable) IBackgroundUploaderStaticMethods : Windows::IInspectable
+struct __declspec(uuid("f2875cfb-9b05-4741-9121-740a83e247df")) __declspec(novtable) IBackgroundUploaderStaticMethods : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCurrentUploadsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetCurrentUploadsForGroupAsync(hstring group, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> ** operation) = 0;
 };
 
-struct __declspec(uuid("e919ac62-ea08-42f0-a2ac-07e467549080")) __declspec(novtable) IBackgroundUploaderStaticMethods2 : Windows::IInspectable
+struct __declspec(uuid("e919ac62-ea08-42f0-a2ac-07e467549080")) __declspec(novtable) IBackgroundUploaderStaticMethods2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCurrentUploadsForTransferGroupAsync(Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup * group, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> ** operation) = 0;
 };
 
-struct __declspec(uuid("3bb384cb-0760-461d-907f-5138f84d44c1")) __declspec(novtable) IBackgroundUploaderUserConsent : Windows::IInspectable
+struct __declspec(uuid("3bb384cb-0760-461d-907f-5138f84d44c1")) __declspec(novtable) IBackgroundUploaderUserConsent : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestUnconstrainedUploadsAsync(Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> * operations, Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> ** operation) = 0;
 };
 
-struct __declspec(uuid("a8d6f754-7dc1-4cd9-8810-2a6aa9417e11")) __declspec(novtable) IContentPrefetcher : Windows::IInspectable
+struct __declspec(uuid("a8d6f754-7dc1-4cd9-8810-2a6aa9417e11")) __declspec(novtable) IContentPrefetcher : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentUris(Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ** value) = 0;
     virtual HRESULT __stdcall put_IndirectContentUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
     virtual HRESULT __stdcall get_IndirectContentUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
-struct __declspec(uuid("e361fd08-132a-4fde-a7cc-fcb0e66523af")) __declspec(novtable) IContentPrefetcherTime : Windows::IInspectable
+struct __declspec(uuid("e361fd08-132a-4fde-a7cc-fcb0e66523af")) __declspec(novtable) IContentPrefetcherTime : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LastSuccessfulPrefetchTime(Windows::Foundation::IReference<Windows::Foundation::DateTime> ** value) = 0;
 };
 
-struct __declspec(uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7")) __declspec(novtable) IDownloadOperation : Windows::IInspectable
+struct __declspec(uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7")) __declspec(novtable) IDownloadOperation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResultFile(Windows::Storage::IStorageFile ** value) = 0;
     virtual HRESULT __stdcall get_Progress(Windows::Networking::BackgroundTransfer::BackgroundDownloadProgress * value) = 0;
@@ -244,12 +244,12 @@ struct __declspec(uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7")) __declspec(novta
     virtual HRESULT __stdcall abi_Resume() = 0;
 };
 
-struct __declspec(uuid("a3cced40-8f9c-4353-9cd4-290dee387c38")) __declspec(novtable) IDownloadOperation2 : Windows::IInspectable
+struct __declspec(uuid("a3cced40-8f9c-4353-9cd4-290dee387c38")) __declspec(novtable) IDownloadOperation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TransferGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup ** value) = 0;
 };
 
-struct __declspec(uuid("f8bb9a12-f713-4792-8b68-d9d297f91d2e")) __declspec(novtable) IResponseInformation : Windows::IInspectable
+struct __declspec(uuid("f8bb9a12-f713-4792-8b68-d9d297f91d2e")) __declspec(novtable) IResponseInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsResumable(bool * value) = 0;
     virtual HRESULT __stdcall get_ActualUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
@@ -257,12 +257,12 @@ struct __declspec(uuid("f8bb9a12-f713-4792-8b68-d9d297f91d2e")) __declspec(novta
     virtual HRESULT __stdcall get_Headers(Windows::Foundation::Collections::IMapView<hstring, hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("4c24b81f-d944-4112-a98e-6a69522b7ebb")) __declspec(novtable) IUnconstrainedTransferRequestResult : Windows::IInspectable
+struct __declspec(uuid("4c24b81f-d944-4112-a98e-6a69522b7ebb")) __declspec(novtable) IUnconstrainedTransferRequestResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsUnconstrained(bool * value) = 0;
 };
 
-struct __declspec(uuid("3e5624e0-7389-434c-8b35-427fd36bbdae")) __declspec(novtable) IUploadOperation : Windows::IInspectable
+struct __declspec(uuid("3e5624e0-7389-434c-8b35-427fd36bbdae")) __declspec(novtable) IUploadOperation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SourceFile(Windows::Storage::IStorageFile ** value) = 0;
     virtual HRESULT __stdcall get_Progress(Windows::Networking::BackgroundTransfer::BackgroundUploadProgress * value) = 0;
@@ -270,7 +270,7 @@ struct __declspec(uuid("3e5624e0-7389-434c-8b35-427fd36bbdae")) __declspec(novta
     virtual HRESULT __stdcall abi_AttachAsync(Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation> ** operation) = 0;
 };
 
-struct __declspec(uuid("556189f2-2774-4df6-9fa5-209f2bfb12f7")) __declspec(novtable) IUploadOperation2 : Windows::IInspectable
+struct __declspec(uuid("556189f2-2774-4df6-9fa5-209f2bfb12f7")) __declspec(novtable) IUploadOperation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TransferGroup(Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup ** value) = 0;
 };

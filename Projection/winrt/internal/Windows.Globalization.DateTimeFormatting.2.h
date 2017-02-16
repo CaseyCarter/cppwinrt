@@ -30,28 +30,28 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::Globalization::DateTimeFormatting {
 
 struct IDateTimeFormatter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDateTimeFormatter>
 {
     IDateTimeFormatter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDateTimeFormatter2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDateTimeFormatter2>
 {
     IDateTimeFormatter2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDateTimeFormatterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDateTimeFormatterFactory>
 {
     IDateTimeFormatterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDateTimeFormatterStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDateTimeFormatterStatics>
 {
     IDateTimeFormatterStatics(std::nullptr_t = nullptr) noexcept {}

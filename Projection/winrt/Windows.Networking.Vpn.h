@@ -100,12 +100,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppIdFactory> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windows::Networking::Vpn::IVpnChannel>
 {
-    HRESULT __stdcall abi_AssociateTransport(impl::abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport, impl::abi_arg_in<Windows::IInspectable> optionalOuterTunnelTransport) noexcept override
+    HRESULT __stdcall abi_AssociateTransport(impl::abi_arg_in<Windows::Foundation::IInspectable> mainOuterTunnelTransport, impl::abi_arg_in<Windows::Foundation::IInspectable> optionalOuterTunnelTransport) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AssociateTransport(*reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport));
+            this->shim().AssociateTransport(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&optionalOuterTunnelTransport));
             return S_OK;
         }
         catch (...)
@@ -114,12 +114,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_Start(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> routeScope, impl::abi_arg_in<Windows::Networking::Vpn::IVpnNamespaceAssignment> namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, impl::abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport, impl::abi_arg_in<Windows::IInspectable> optionalOuterTunnelTransport) noexcept override
+    HRESULT __stdcall abi_Start(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> routeScope, impl::abi_arg_in<Windows::Networking::Vpn::IVpnNamespaceAssignment> namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, impl::abi_arg_in<Windows::Foundation::IInspectable> mainOuterTunnelTransport, impl::abi_arg_in<Windows::Foundation::IInspectable> optionalOuterTunnelTransport) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Start(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&routeScope), *reinterpret_cast<const Windows::Networking::Vpn::VpnNamespaceAssignment *>(&namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport));
+            this->shim().Start(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&routeScope), *reinterpret_cast<const Windows::Networking::Vpn::VpnNamespaceAssignment *>(&namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&optionalOuterTunnelTransport));
             return S_OK;
         }
         catch (...)
@@ -243,12 +243,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall put_PlugInContext(impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall put_PlugInContext(impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().PlugInContext(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().PlugInContext(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -257,7 +257,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall get_PlugInContext(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_PlugInContext(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -315,12 +315,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_SetAllowedSslTlsVersions(impl::abi_arg_in<Windows::IInspectable> tunnelTransport, bool useTls12) noexcept override
+    HRESULT __stdcall abi_SetAllowedSslTlsVersions(impl::abi_arg_in<Windows::Foundation::IInspectable> tunnelTransport, bool useTls12) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetAllowedSslTlsVersions(*reinterpret_cast<const Windows::IInspectable *>(&tunnelTransport), useTls12);
+            this->shim().SetAllowedSslTlsVersions(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&tunnelTransport), useTls12);
             return S_OK;
         }
         catch (...)
@@ -333,12 +333,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Windows::Networking::Vpn::IVpnChannel2>
 {
-    HRESULT __stdcall abi_StartWithMainTransport(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, impl::abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, impl::abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport) noexcept override
+    HRESULT __stdcall abi_StartWithMainTransport(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv4list, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIPv6list, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, impl::abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, impl::abi_arg_in<Windows::Foundation::IInspectable> mainOuterTunnelTransport) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().StartWithMainTransport(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedDomainName), mtuSize, maxFrameSize, Reserved, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport));
+            this->shim().StartWithMainTransport(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedDomainName), mtuSize, maxFrameSize, Reserved, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&mainOuterTunnelTransport));
             return S_OK;
         }
         catch (...)
@@ -493,12 +493,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_StartWithTrafficFilter(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIpv4List, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIpv6List, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, impl::abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, impl::abi_arg_in<Windows::IInspectable> mainOuterTunnelTransport, impl::abi_arg_in<Windows::IInspectable> optionalOuterTunnelTransport, impl::abi_arg_in<Windows::Networking::Vpn::IVpnTrafficFilterAssignment> assignedTrafficFilters) noexcept override
+    HRESULT __stdcall abi_StartWithTrafficFilter(impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIpv4List, impl::abi_arg_in<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>> assignedClientIpv6List, impl::abi_arg_in<Windows::Networking::Vpn::IVpnInterfaceId> vpnInterfaceId, impl::abi_arg_in<Windows::Networking::Vpn::IVpnRouteAssignment> assignedRoutes, impl::abi_arg_in<Windows::Networking::Vpn::IVpnDomainNameAssignment> assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, impl::abi_arg_in<Windows::Foundation::IInspectable> mainOuterTunnelTransport, impl::abi_arg_in<Windows::Foundation::IInspectable> optionalOuterTunnelTransport, impl::abi_arg_in<Windows::Networking::Vpn::IVpnTrafficFilterAssignment> assignedTrafficFilters) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().StartWithTrafficFilter(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv4List), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv6List), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedNamespace), mtuSize, maxFrameSize, reserved, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport), *reinterpret_cast<const Windows::Networking::Vpn::VpnTrafficFilterAssignment *>(&assignedTrafficFilters));
+            this->shim().StartWithTrafficFilter(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv4List), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv6List), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedNamespace), mtuSize, maxFrameSize, reserved, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&optionalOuterTunnelTransport), *reinterpret_cast<const Windows::Networking::Vpn::VpnTrafficFilterAssignment *>(&assignedTrafficFilters));
             return S_OK;
         }
         catch (...)
@@ -615,12 +615,12 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration2> : produce
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannelStatics> : produce_base<D, Windows::Networking::Vpn::IVpnChannelStatics>
 {
-    HRESULT __stdcall abi_ProcessEventAsync(impl::abi_arg_in<Windows::IInspectable> thirdPartyPlugIn, impl::abi_arg_in<Windows::IInspectable> event) noexcept override
+    HRESULT __stdcall abi_ProcessEventAsync(impl::abi_arg_in<Windows::Foundation::IInspectable> thirdPartyPlugIn, impl::abi_arg_in<Windows::Foundation::IInspectable> event) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ProcessEventAsync(*reinterpret_cast<const Windows::IInspectable *>(&thirdPartyPlugIn), *reinterpret_cast<const Windows::IInspectable *>(&event));
+            this->shim().ProcessEventAsync(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&thirdPartyPlugIn), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&event));
             return S_OK;
         }
         catch (...)
@@ -3600,12 +3600,12 @@ template <typename D> Windows::Networking::Vpn::VpnChannelActivityEventType impl
     return value;
 }
 
-template <typename D> void impl_IVpnChannel<D>::AssociateTransport(const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const
+template <typename D> void impl_IVpnChannel<D>::AssociateTransport(const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_AssociateTransport(get_abi(mainOuterTunnelTransport), get_abi(optionalOuterTunnelTransport)));
 }
 
-template <typename D> void impl_IVpnChannel<D>::Start(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const
+template <typename D> void impl_IVpnChannel<D>::Start(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_Start(get_abi(assignedClientIPv4list), get_abi(assignedClientIPv6list), get_abi(vpnInterfaceId), get_abi(routeScope), get_abi(namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, get_abi(mainOuterTunnelTransport), get_abi(optionalOuterTunnelTransport)));
 }
@@ -3663,14 +3663,14 @@ template <typename D> void impl_IVpnChannel<D>::ActivityChange(event_token token
     check_hresult(WINRT_SHIM(IVpnChannel)->remove_ActivityChange(token));
 }
 
-template <typename D> void impl_IVpnChannel<D>::PlugInContext(const Windows::IInspectable & value) const
+template <typename D> void impl_IVpnChannel<D>::PlugInContext(const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel)->put_PlugInContext(get_abi(value)));
 }
 
-template <typename D> Windows::IInspectable impl_IVpnChannel<D>::PlugInContext() const
+template <typename D> Windows::Foundation::IInspectable impl_IVpnChannel<D>::PlugInContext() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IVpnChannel)->get_PlugInContext(put_abi(value)));
     return value;
 }
@@ -3692,12 +3692,12 @@ template <typename D> void impl_IVpnChannel<D>::SetErrorMessage(hstring_view mes
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetErrorMessage(get_abi(message)));
 }
 
-template <typename D> void impl_IVpnChannel<D>::SetAllowedSslTlsVersions(const Windows::IInspectable & tunnelTransport, bool useTls12) const
+template <typename D> void impl_IVpnChannel<D>::SetAllowedSslTlsVersions(const Windows::Foundation::IInspectable & tunnelTransport, bool useTls12) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetAllowedSslTlsVersions(get_abi(tunnelTransport), useTls12));
 }
 
-template <typename D> void impl_IVpnChannel2<D>::StartWithMainTransport(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::IInspectable & mainOuterTunnelTransport) const
+template <typename D> void impl_IVpnChannel2<D>::StartWithMainTransport(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithMainTransport(get_abi(assignedClientIPv4list), get_abi(assignedClientIPv6list), get_abi(vpnInterfaceId), get_abi(assignedRoutes), get_abi(assignedDomainName), mtuSize, maxFrameSize, Reserved, get_abi(mainOuterTunnelTransport)));
 }
@@ -3771,7 +3771,7 @@ template <typename D> void impl_IVpnChannel2<D>::TerminateConnection(hstring_vie
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_TerminateConnection(get_abi(message)));
 }
 
-template <typename D> void impl_IVpnChannel2<D>::StartWithTrafficFilter(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv4List, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const
+template <typename D> void impl_IVpnChannel2<D>::StartWithTrafficFilter(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv4List, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithTrafficFilter(get_abi(assignedClientIpv4List), get_abi(assignedClientIpv6List), get_abi(vpnInterfaceId), get_abi(assignedRoutes), get_abi(assignedNamespace), mtuSize, maxFrameSize, reserved, get_abi(mainOuterTunnelTransport), get_abi(optionalOuterTunnelTransport), get_abi(assignedTrafficFilters)));
 }
@@ -3812,7 +3812,7 @@ template <typename D> bool impl_IVpnCustomPromptElement<D>::Emphasized() const
     return value;
 }
 
-template <typename D> void impl_IVpnChannelStatics<D>::ProcessEventAsync(const Windows::IInspectable & thirdPartyPlugIn, const Windows::IInspectable & event) const
+template <typename D> void impl_IVpnChannelStatics<D>::ProcessEventAsync(const Windows::Foundation::IInspectable & thirdPartyPlugIn, const Windows::Foundation::IInspectable & event) const
 {
     check_hresult(WINRT_SHIM(IVpnChannelStatics)->abi_ProcessEventAsync(get_abi(thirdPartyPlugIn), get_abi(event)));
 }
@@ -4495,7 +4495,7 @@ inline VpnAppId::VpnAppId(Windows::Networking::Vpn::VpnAppIdType type, hstring_v
     VpnAppId(get_activation_factory<VpnAppId, IVpnAppIdFactory>().Create(type, value))
 {}
 
-inline void VpnChannel::ProcessEventAsync(const Windows::IInspectable & thirdPartyPlugIn, const Windows::IInspectable & event)
+inline void VpnChannel::ProcessEventAsync(const Windows::Foundation::IInspectable & thirdPartyPlugIn, const Windows::Foundation::IInspectable & event)
 {
     get_activation_factory<VpnChannel, IVpnChannelStatics>().ProcessEventAsync(thirdPartyPlugIn, event);
 }

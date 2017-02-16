@@ -23,9 +23,9 @@ struct CoreApplication
     using Suspending_revoker = factory_event_revoker<ICoreApplication>;
     static Suspending_revoker Suspending(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::ApplicationModel::SuspendingEventArgs> & handler);
     static void Suspending(event_token token);
-    static event_token Resuming(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static event_token Resuming(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     using Resuming_revoker = factory_event_revoker<ICoreApplication>;
-    static Resuming_revoker Resuming(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static Resuming_revoker Resuming(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     static void Resuming(event_token token);
     static Windows::Foundation::Collections::IPropertySet Properties();
     static Windows::ApplicationModel::Core::CoreApplicationView GetCurrentView();
@@ -45,9 +45,9 @@ struct CoreApplication
     static void EnteredBackground(event_token token);
     static void EnablePrelaunch(bool value);
     static void Exit();
-    static event_token Exiting(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static event_token Exiting(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     using Exiting_revoker = factory_event_revoker<ICoreApplicationExit>;
-    static Exiting_revoker Exiting(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler);
+    static Exiting_revoker Exiting(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler);
     static void Exiting(event_token token);
     static event_token UnhandledErrorDetected(const Windows::Foundation::EventHandler<Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs> & handler);
     using UnhandledErrorDetected_revoker = factory_event_revoker<ICoreApplicationUnhandledError>;

@@ -13,14 +13,14 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Security::Authentication::Web {
 
-struct __declspec(uuid("2f149f1a-e673-40b5-bc22-201a6864a37b")) __declspec(novtable) IWebAuthenticationBrokerStatics : Windows::IInspectable
+struct __declspec(uuid("2f149f1a-e673-40b5-bc22-201a6864a37b")) __declspec(novtable) IWebAuthenticationBrokerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AuthenticateWithCallbackUriAsync(winrt::Windows::Security::Authentication::Web::WebAuthenticationOptions options, Windows::Foundation::IUriRuntimeClass * requestUri, Windows::Foundation::IUriRuntimeClass * callbackUri, Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> ** asyncInfo) = 0;
     virtual HRESULT __stdcall abi_AuthenticateWithoutCallbackUriAsync(winrt::Windows::Security::Authentication::Web::WebAuthenticationOptions options, Windows::Foundation::IUriRuntimeClass * requestUri, Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> ** asyncInfo) = 0;
     virtual HRESULT __stdcall abi_GetCurrentApplicationCallbackUri(Windows::Foundation::IUriRuntimeClass ** callbackUri) = 0;
 };
 
-struct __declspec(uuid("73cdfb9e-14e7-41da-a971-aaf4410b621e")) __declspec(novtable) IWebAuthenticationBrokerStatics2 : Windows::IInspectable
+struct __declspec(uuid("73cdfb9e-14e7-41da-a971-aaf4410b621e")) __declspec(novtable) IWebAuthenticationBrokerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AuthenticateAndContinue(Windows::Foundation::IUriRuntimeClass * requestUri) = 0;
     virtual HRESULT __stdcall abi_AuthenticateWithCallbackUriAndContinue(Windows::Foundation::IUriRuntimeClass * requestUri, Windows::Foundation::IUriRuntimeClass * callbackUri) = 0;
@@ -29,7 +29,7 @@ struct __declspec(uuid("73cdfb9e-14e7-41da-a971-aaf4410b621e")) __declspec(novta
     virtual HRESULT __stdcall abi_AuthenticateSilentlyWithOptionsAsync(Windows::Foundation::IUriRuntimeClass * requestUri, winrt::Windows::Security::Authentication::Web::WebAuthenticationOptions options, Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("64002b4b-ede9-470a-a5cd-0323faf6e262")) __declspec(novtable) IWebAuthenticationResult : Windows::IInspectable
+struct __declspec(uuid("64002b4b-ede9-470a-a5cd-0323faf6e262")) __declspec(novtable) IWebAuthenticationResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResponseData(hstring * value) = 0;
     virtual HRESULT __stdcall get_ResponseStatus(winrt::Windows::Security::Authentication::Web::WebAuthenticationStatus * value) = 0;

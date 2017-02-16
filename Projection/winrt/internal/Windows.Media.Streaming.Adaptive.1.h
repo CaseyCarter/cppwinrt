@@ -16,7 +16,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::Streaming::Adaptive {
 
-struct __declspec(uuid("4c7332ef-d39f-4396-b4d9-043957a7c964")) __declspec(novtable) IAdaptiveMediaSource : Windows::IInspectable
+struct __declspec(uuid("4c7332ef-d39f-4396-b4d9-043957a7c964")) __declspec(novtable) IAdaptiveMediaSource : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsLive(bool * value) = 0;
     virtual HRESULT __stdcall get_DesiredLiveOffset(Windows::Foundation::TimeSpan * value) = 0;
@@ -46,12 +46,12 @@ struct __declspec(uuid("4c7332ef-d39f-4396-b4d9-043957a7c964")) __declspec(novta
     virtual HRESULT __stdcall remove_DownloadFailed(event_token token) = 0;
 };
 
-struct __declspec(uuid("17890342-6760-4bb9-a58a-f7aa98b08c0e")) __declspec(novtable) IAdaptiveMediaSource2 : Windows::IInspectable
+struct __declspec(uuid("17890342-6760-4bb9-a58a-f7aa98b08c0e")) __declspec(novtable) IAdaptiveMediaSource2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AdvancedSettings(Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceAdvancedSettings ** value) = 0;
 };
 
-struct __declspec(uuid("55db1680-1aeb-47dc-aa08-9a11610ba45a")) __declspec(novtable) IAdaptiveMediaSourceAdvancedSettings : Windows::IInspectable
+struct __declspec(uuid("55db1680-1aeb-47dc-aa08-9a11610ba45a")) __declspec(novtable) IAdaptiveMediaSourceAdvancedSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllSegmentsIndependent(bool * value) = 0;
     virtual HRESULT __stdcall put_AllSegmentsIndependent(bool value) = 0;
@@ -61,20 +61,20 @@ struct __declspec(uuid("55db1680-1aeb-47dc-aa08-9a11610ba45a")) __declspec(novta
     virtual HRESULT __stdcall put_BitrateDowngradeTriggerRatio(Windows::Foundation::IReference<double> * value) = 0;
 };
 
-struct __declspec(uuid("4686b6b2-800f-4e31-9093-76d4782013e7")) __declspec(novtable) IAdaptiveMediaSourceCreationResult : Windows::IInspectable
+struct __declspec(uuid("4686b6b2-800f-4e31-9093-76d4782013e7")) __declspec(novtable) IAdaptiveMediaSourceCreationResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationStatus * value) = 0;
     virtual HRESULT __stdcall get_MediaSource(Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource ** value) = 0;
     virtual HRESULT __stdcall get_HttpResponseMessage(Windows::Web::Http::IHttpResponseMessage ** value) = 0;
 };
 
-struct __declspec(uuid("670c0a44-e04e-4eff-816a-17399f78f4ba")) __declspec(novtable) IAdaptiveMediaSourceDownloadBitrateChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("670c0a44-e04e-4eff-816a-17399f78f4ba")) __declspec(novtable) IAdaptiveMediaSourceDownloadBitrateChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OldValue(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_NewValue(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("19240dc3-5b37-4a1a-8970-d621cb6ca83b")) __declspec(novtable) IAdaptiveMediaSourceDownloadCompletedEventArgs : Windows::IInspectable
+struct __declspec(uuid("19240dc3-5b37-4a1a-8970-d621cb6ca83b")) __declspec(novtable) IAdaptiveMediaSourceDownloadCompletedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResourceType(winrt::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType * value) = 0;
     virtual HRESULT __stdcall get_ResourceUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
@@ -83,7 +83,7 @@ struct __declspec(uuid("19240dc3-5b37-4a1a-8970-d621cb6ca83b")) __declspec(novta
     virtual HRESULT __stdcall get_HttpResponseMessage(Windows::Web::Http::IHttpResponseMessage ** value) = 0;
 };
 
-struct __declspec(uuid("37739048-f4ab-40a4-b135-c6dfd8bd7ff1")) __declspec(novtable) IAdaptiveMediaSourceDownloadFailedEventArgs : Windows::IInspectable
+struct __declspec(uuid("37739048-f4ab-40a4-b135-c6dfd8bd7ff1")) __declspec(novtable) IAdaptiveMediaSourceDownloadFailedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResourceType(winrt::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType * value) = 0;
     virtual HRESULT __stdcall get_ResourceUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
@@ -92,12 +92,12 @@ struct __declspec(uuid("37739048-f4ab-40a4-b135-c6dfd8bd7ff1")) __declspec(novta
     virtual HRESULT __stdcall get_HttpResponseMessage(Windows::Web::Http::IHttpResponseMessage ** value) = 0;
 };
 
-struct __declspec(uuid("05c68f64-fa20-4dbd-9821-4bf4c9bf77ab")) __declspec(novtable) IAdaptiveMediaSourceDownloadRequestedDeferral : Windows::IInspectable
+struct __declspec(uuid("05c68f64-fa20-4dbd-9821-4bf4c9bf77ab")) __declspec(novtable) IAdaptiveMediaSourceDownloadRequestedDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("c83fdffd-44a9-47a2-bf96-03398b4bfaaf")) __declspec(novtable) IAdaptiveMediaSourceDownloadRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("c83fdffd-44a9-47a2-bf96-03398b4bfaaf")) __declspec(novtable) IAdaptiveMediaSourceDownloadRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResourceType(winrt::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType * value) = 0;
     virtual HRESULT __stdcall get_ResourceUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
@@ -107,7 +107,7 @@ struct __declspec(uuid("c83fdffd-44a9-47a2-bf96-03398b4bfaaf")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeferral(Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadRequestedDeferral ** deferral) = 0;
 };
 
-struct __declspec(uuid("f4afdc73-bcee-4a6a-9f0a-fec41e2339b0")) __declspec(novtable) IAdaptiveMediaSourceDownloadResult : Windows::IInspectable
+struct __declspec(uuid("f4afdc73-bcee-4a6a-9f0a-fec41e2339b0")) __declspec(novtable) IAdaptiveMediaSourceDownloadResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResourceUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall put_ResourceUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
@@ -121,7 +121,7 @@ struct __declspec(uuid("f4afdc73-bcee-4a6a-9f0a-fec41e2339b0")) __declspec(novta
     virtual HRESULT __stdcall put_ExtendedStatus(uint32_t value) = 0;
 };
 
-struct __declspec(uuid("15552cb7-7b80-4ac4-8660-a4b97f7c70f0")) __declspec(novtable) IAdaptiveMediaSourceDownloadResult2 : Windows::IInspectable
+struct __declspec(uuid("15552cb7-7b80-4ac4-8660-a4b97f7c70f0")) __declspec(novtable) IAdaptiveMediaSourceDownloadResult2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ResourceByteRangeOffset(Windows::Foundation::IReference<uint64_t> ** value) = 0;
     virtual HRESULT __stdcall put_ResourceByteRangeOffset(Windows::Foundation::IReference<uint64_t> * value) = 0;
@@ -129,14 +129,14 @@ struct __declspec(uuid("15552cb7-7b80-4ac4-8660-a4b97f7c70f0")) __declspec(novta
     virtual HRESULT __stdcall put_ResourceByteRangeLength(Windows::Foundation::IReference<uint64_t> * value) = 0;
 };
 
-struct __declspec(uuid("23a29f6d-7dda-4a51-87a9-6fa8c5b292be")) __declspec(novtable) IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("23a29f6d-7dda-4a51-87a9-6fa8c5b292be")) __declspec(novtable) IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OldValue(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_NewValue(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_AudioOnly(bool * value) = 0;
 };
 
-struct __declspec(uuid("50a6bd5d-66ef-4cd3-9579-9e660507dc3f")) __declspec(novtable) IAdaptiveMediaSourceStatics : Windows::IInspectable
+struct __declspec(uuid("50a6bd5d-66ef-4cd3-9579-9e660507dc3f")) __declspec(novtable) IAdaptiveMediaSourceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_IsContentTypeSupported(hstring contentType, bool * result) = 0;
     virtual HRESULT __stdcall abi_CreateFromUriAsync(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> ** result) = 0;

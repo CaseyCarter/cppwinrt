@@ -17,7 +17,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::Transcoding {
 
-struct __declspec(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b")) __declspec(novtable) IMediaTranscoder : Windows::IInspectable
+struct __declspec(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b")) __declspec(novtable) IMediaTranscoder : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_TrimStartTime(Windows::Foundation::TimeSpan value) = 0;
     virtual HRESULT __stdcall get_TrimStartTime(Windows::Foundation::TimeSpan * value) = 0;
@@ -36,14 +36,14 @@ struct __declspec(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b")) __declspec(novta
     virtual HRESULT __stdcall abi_PrepareStreamTranscodeAsync(Windows::Storage::Streams::IRandomAccessStream * source, Windows::Storage::Streams::IRandomAccessStream * destination, Windows::Media::MediaProperties::IMediaEncodingProfile * profile, Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> ** operation) = 0;
 };
 
-struct __declspec(uuid("40531d74-35e0-4f04-8574-ca8bc4e5a082")) __declspec(novtable) IMediaTranscoder2 : Windows::IInspectable
+struct __declspec(uuid("40531d74-35e0-4f04-8574-ca8bc4e5a082")) __declspec(novtable) IMediaTranscoder2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_PrepareMediaStreamSourceTranscodeAsync(Windows::Media::Core::IMediaSource * source, Windows::Storage::Streams::IRandomAccessStream * destination, Windows::Media::MediaProperties::IMediaEncodingProfile * profile, Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> ** operation) = 0;
     virtual HRESULT __stdcall put_VideoProcessingAlgorithm(winrt::Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) = 0;
     virtual HRESULT __stdcall get_VideoProcessingAlgorithm(winrt::Windows::Media::Transcoding::MediaVideoProcessingAlgorithm * value) = 0;
 };
 
-struct __declspec(uuid("05f25dce-994f-4a34-9d68-97ccce1730d6")) __declspec(novtable) IPrepareTranscodeResult : Windows::IInspectable
+struct __declspec(uuid("05f25dce-994f-4a34-9d68-97ccce1730d6")) __declspec(novtable) IPrepareTranscodeResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CanTranscode(bool * value) = 0;
     virtual HRESULT __stdcall get_FailureReason(winrt::Windows::Media::Transcoding::TranscodeFailureReason * value) = 0;

@@ -30,28 +30,28 @@ template <> struct __declspec(uuid("add21d46-17df-5a43-a685-3262fce84643")) __de
 namespace Windows::ApplicationModel::DataTransfer::DragDrop::Core {
 
 struct ICoreDragDropManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDragDropManager>
 {
     ICoreDragDropManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreDragDropManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDragDropManagerStatics>
 {
     ICoreDragDropManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreDragInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDragInfo>
 {
     ICoreDragInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreDragInfo2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDragInfo2>,
     impl::require<ICoreDragInfo2, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo>
 {
@@ -59,14 +59,14 @@ struct ICoreDragInfo2 :
 };
 
 struct ICoreDragOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDragOperation>
 {
     ICoreDragOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreDragOperation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDragOperation2>,
     impl::require<ICoreDragOperation2, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragOperation>
 {
@@ -74,21 +74,21 @@ struct ICoreDragOperation2 :
 };
 
 struct ICoreDragUIOverride :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDragUIOverride>
 {
     ICoreDragUIOverride(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreDropOperationTarget :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDropOperationTarget>
 {
     ICoreDropOperationTarget(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreDropOperationTargetRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreDropOperationTargetRequestedEventArgs>
 {
     ICoreDropOperationTargetRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}

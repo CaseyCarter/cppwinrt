@@ -92,7 +92,7 @@ template <> struct __declspec(uuid("1f2d584e-3ad8-5049-b451-3a44a102fa82")) __de
 
 #ifndef WINRT_GENERIC_5e0f93b1_c2f2_5351_82aa_6cf5f4c2d068
 #define WINRT_GENERIC_5e0f93b1_c2f2_5351_82aa_6cf5f4c2d068
-template <> struct __declspec(uuid("5e0f93b1-c2f2-5351-82aa-6cf5f4c2d068")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> : impl_TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> {};
+template <> struct __declspec(uuid("5e0f93b1-c2f2-5351-82aa-6cf5f4c2d068")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_30579e67_fb4f_5d38_83b4_9cb610090def
@@ -132,7 +132,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_5c90d6fb_e4f8_5be2_8544_9de33f82c41a
 #define WINRT_GENERIC_5c90d6fb_e4f8_5be2_8544_9de33f82c41a
-template <> struct __declspec(uuid("5c90d6fb-e4f8-5be2-8544-9de33f82c41a")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable> : impl_TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable> {};
+template <> struct __declspec(uuid("5c90d6fb-e4f8-5be2-8544-9de33f82c41a")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -186,252 +186,252 @@ template <> struct __declspec(uuid("3fbc1858-a43e-54dc-b0e2-8b098bddacf6")) __de
 namespace Windows::UI::Input {
 
 struct ICrossSlidingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICrossSlidingEventArgs>
 {
     ICrossSlidingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDraggingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDraggingEventArgs>
 {
     IDraggingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEdgeGesture :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEdgeGesture>
 {
     IEdgeGesture(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEdgeGestureEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEdgeGestureEventArgs>
 {
     IEdgeGestureEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEdgeGestureStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEdgeGestureStatics>
 {
     IEdgeGestureStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGestureRecognizer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGestureRecognizer>
 {
     IGestureRecognizer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHoldingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHoldingEventArgs>
 {
     IHoldingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyboardDeliveryInterceptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyboardDeliveryInterceptor>
 {
     IKeyboardDeliveryInterceptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyboardDeliveryInterceptorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyboardDeliveryInterceptorStatics>
 {
     IKeyboardDeliveryInterceptorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IManipulationCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IManipulationCompletedEventArgs>
 {
     IManipulationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IManipulationInertiaStartingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IManipulationInertiaStartingEventArgs>
 {
     IManipulationInertiaStartingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IManipulationStartedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IManipulationStartedEventArgs>
 {
     IManipulationStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IManipulationUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IManipulationUpdatedEventArgs>
 {
     IManipulationUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMouseWheelParameters :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMouseWheelParameters>
 {
     IMouseWheelParameters(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerPoint :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerPoint>
 {
     IPointerPoint(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerPointProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerPointProperties>
 {
     IPointerPointProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerPointProperties2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerPointProperties2>
 {
     IPointerPointProperties2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerPointStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerPointStatics>
 {
     IPointerPointStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerPointTransform :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerPointTransform>
 {
     IPointerPointTransform(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerVisualizationSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerVisualizationSettings>
 {
     IPointerVisualizationSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerVisualizationSettingsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerVisualizationSettingsStatics>
 {
     IPointerVisualizationSettingsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialController>
 {
     IRadialController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerButtonClickedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerButtonClickedEventArgs>
 {
     IRadialControllerButtonClickedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerConfiguration>
 {
     IRadialControllerConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerConfigurationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerConfigurationStatics>
 {
     IRadialControllerConfigurationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerControlAcquiredEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerControlAcquiredEventArgs>
 {
     IRadialControllerControlAcquiredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerMenu :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerMenu>
 {
     IRadialControllerMenu(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerMenuItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerMenuItem>
 {
     IRadialControllerMenuItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerMenuItemStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerMenuItemStatics>
 {
     IRadialControllerMenuItemStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerRotationChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerRotationChangedEventArgs>
 {
     IRadialControllerRotationChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerScreenContact :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerScreenContact>
 {
     IRadialControllerScreenContact(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerScreenContactContinuedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerScreenContactContinuedEventArgs>
 {
     IRadialControllerScreenContactContinuedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerScreenContactStartedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerScreenContactStartedEventArgs>
 {
     IRadialControllerScreenContactStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerStatics>
 {
     IRadialControllerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRightTappedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRightTappedEventArgs>
 {
     IRightTappedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITappedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITappedEventArgs>
 {
     ITappedEventArgs(std::nullptr_t = nullptr) noexcept {}

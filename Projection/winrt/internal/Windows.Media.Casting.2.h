@@ -22,7 +22,7 @@ template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __de
 
 #ifndef WINRT_GENERIC_f1576170_9b08_5a9b_87d2_c1ac47bc6681
 #define WINRT_GENERIC_f1576170_9b08_5a9b_87d2_c1ac47bc6681
-template <> struct __declspec(uuid("f1576170-9b08-5a9b-87d2-c1ac47bc6681")) __declspec(novtable) TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f1576170-9b08-5a9b-87d2-c1ac47bc6681")) __declspec(novtable) TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_78afbbd0_9811_5f0e_9566_47c3e8cdd929
@@ -67,7 +67,7 @@ template <> struct __declspec(uuid("b3655b33-c4ad-5f4c-a187-b2e4c770a16b")) __de
 
 #ifndef WINRT_GENERIC_a64b972b_aa63_5c61_9cde_cd6ffea8a247
 #define WINRT_GENERIC_a64b972b_aa63_5c61_9cde_cd6ffea8a247
-template <> struct __declspec(uuid("a64b972b-aa63-5c61-9cde-cd6ffea8a247")) __declspec(novtable) TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::IInspectable> {};
+template <> struct __declspec(uuid("a64b972b-aa63-5c61-9cde-cd6ffea8a247")) __declspec(novtable) TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
@@ -121,7 +121,7 @@ template <> struct __declspec(uuid("7828da61-dea4-5485-b27a-8f78e0472402")) __de
 namespace Windows::Media::Casting {
 
 struct ICastingConnection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICastingConnection>,
     impl::require<ICastingConnection, Windows::Foundation::IClosable>
 {
@@ -129,49 +129,49 @@ struct ICastingConnection :
 };
 
 struct ICastingConnectionErrorOccurredEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICastingConnectionErrorOccurredEventArgs>
 {
     ICastingConnectionErrorOccurredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICastingDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICastingDevice>
 {
     ICastingDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICastingDevicePicker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICastingDevicePicker>
 {
     ICastingDevicePicker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICastingDevicePickerFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICastingDevicePickerFilter>
 {
     ICastingDevicePickerFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICastingDeviceSelectedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICastingDeviceSelectedEventArgs>
 {
     ICastingDeviceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICastingDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICastingDeviceStatics>
 {
     ICastingDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICastingSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICastingSource>
 {
     ICastingSource(std::nullptr_t = nullptr) noexcept {}

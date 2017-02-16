@@ -9,7 +9,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Interop {
 
 template <typename D, typename ... Interfaces> struct NotifyCollectionChangedEventArgsT :
-    overrides<D, Windows::IInspectable, Interfaces ...>,
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
 {
     using composable = NotifyCollectionChangedEventArgs;

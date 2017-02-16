@@ -230,49 +230,49 @@ template <> struct __declspec(uuid("ece8567f-8080-5ced-8988-bb0364c803d4")) __de
 namespace Windows::UI::Input::Inking {
 
 struct IInkDrawingAttributes :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkDrawingAttributes>
 {
     IInkDrawingAttributes(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkDrawingAttributes2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkDrawingAttributes2>
 {
     IInkDrawingAttributes2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkDrawingAttributes3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkDrawingAttributes3>
 {
     IInkDrawingAttributes3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkDrawingAttributesPencilProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkDrawingAttributesPencilProperties>
 {
     IInkDrawingAttributesPencilProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkDrawingAttributesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkDrawingAttributesStatics>
 {
     IInkDrawingAttributesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkInputProcessingConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkInputProcessingConfiguration>
 {
     IInkInputProcessingConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkManager>,
     impl::require<IInkManager, Windows::UI::Input::Inking::IInkRecognizerContainer, Windows::UI::Input::Inking::IInkStrokeContainer>
 {
@@ -282,28 +282,28 @@ struct IInkManager :
 };
 
 struct IInkPoint :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkPoint>
 {
     IInkPoint(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkPointFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkPointFactory>
 {
     IInkPointFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkPresenter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkPresenter>
 {
     IInkPresenter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkPresenterRuler :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkPresenterRuler>,
     impl::require<IInkPresenterRuler, Windows::UI::Input::Inking::IInkPresenterStencil>
 {
@@ -311,119 +311,119 @@ struct IInkPresenterRuler :
 };
 
 struct IInkPresenterRulerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkPresenterRulerFactory>
 {
     IInkPresenterRulerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkPresenterStencil :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkPresenterStencil>
 {
     IInkPresenterStencil(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkRecognitionResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkRecognitionResult>
 {
     IInkRecognitionResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkRecognizer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkRecognizer>
 {
     IInkRecognizer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkRecognizerContainer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkRecognizerContainer>
 {
     IInkRecognizerContainer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStroke :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStroke>
 {
     IInkStroke(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStroke2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStroke2>
 {
     IInkStroke2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStrokeBuilder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStrokeBuilder>
 {
     IInkStrokeBuilder(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStrokeBuilder2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStrokeBuilder2>
 {
     IInkStrokeBuilder2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStrokeContainer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStrokeContainer>
 {
     IInkStrokeContainer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStrokeContainer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStrokeContainer2>
 {
     IInkStrokeContainer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStrokeInput :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStrokeInput>
 {
     IInkStrokeInput(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStrokeRenderingSegment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStrokeRenderingSegment>
 {
     IInkStrokeRenderingSegment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStrokesCollectedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStrokesCollectedEventArgs>
 {
     IInkStrokesCollectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStrokesErasedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkStrokesErasedEventArgs>
 {
     IInkStrokesErasedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkSynchronizer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkSynchronizer>
 {
     IInkSynchronizer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkUnprocessedInput :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInkUnprocessedInput>
 {
     IInkUnprocessedInput(std::nullptr_t = nullptr) noexcept {}

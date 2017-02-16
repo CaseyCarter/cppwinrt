@@ -62,12 +62,12 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall add_AvailableNetworksChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable>> args, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_AvailableNetworksChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::Foundation::IInspectable>> args, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().AvailableNetworksChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> *>(&args)));
+            *eventCookie = detach_abi(this->shim().AvailableNetworksChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::Foundation::IInspectable> *>(&args)));
             return S_OK;
         }
         catch (...)
@@ -479,14 +479,14 @@ template <typename D> Windows::Devices::WiFi::WiFiNetworkReport impl_IWiFiAdapte
     return value;
 }
 
-template <typename D> event_token impl_IWiFiAdapter<D>::AvailableNetworksChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> & args) const
+template <typename D> event_token impl_IWiFiAdapter<D>::AvailableNetworksChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::Foundation::IInspectable> & args) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IWiFiAdapter)->add_AvailableNetworksChanged(get_abi(args), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IWiFiAdapter> impl_IWiFiAdapter<D>::AvailableNetworksChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> & args) const
+template <typename D> event_revoker<IWiFiAdapter> impl_IWiFiAdapter<D>::AvailableNetworksChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::Foundation::IInspectable> & args) const
 {
     return impl::make_event_revoker<D, IWiFiAdapter>(this, &ABI::Windows::Devices::WiFi::IWiFiAdapter::remove_AvailableNetworksChanged, AvailableNetworksChanged(args));
 }

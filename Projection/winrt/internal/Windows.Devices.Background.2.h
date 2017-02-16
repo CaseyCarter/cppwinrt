@@ -10,14 +10,14 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Devices::Background {
 
 struct IDeviceServicingDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceServicingDetails>
 {
     IDeviceServicingDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceUseDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceUseDetails>
 {
     IDeviceUseDetails(std::nullptr_t = nullptr) noexcept {}

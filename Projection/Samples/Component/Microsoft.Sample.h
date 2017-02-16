@@ -12,7 +12,7 @@ namespace winrt::Microsoft::Sample
     template <typename D, typename T>
     struct HenFactoryT : implements<D, Windows::Foundation::IActivationFactory>
     {
-        Windows::IInspectable ActivateInstance()
+        Windows::Foundation::IInspectable ActivateInstance()
         {
             return make<T>();
         }

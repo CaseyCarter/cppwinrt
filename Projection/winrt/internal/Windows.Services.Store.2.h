@@ -107,7 +107,7 @@ template <> struct __declspec(uuid("2acdffe8-259c-5eae-93c1-13a23c74dfee")) __de
 
 #ifndef WINRT_GENERIC_d5a00ac7_082d_547c_a04b_2540c1cde97a
 #define WINRT_GENERIC_d5a00ac7_082d_547c_a04b_2540c1cde97a
-template <> struct __declspec(uuid("d5a00ac7-082d-547c-a04b-2540c1cde97a")) __declspec(novtable) TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> : impl_TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> {};
+template <> struct __declspec(uuid("d5a00ac7-082d-547c-a04b-2540c1cde97a")) __declspec(novtable) TypedEventHandler<Windows::Services::Store::StoreContext, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Services::Store::StoreContext, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_3866370b_afc6_5d01_84c2_4574628de539
@@ -177,7 +177,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_6c59d637_2970_5f64_9511_d39ac245bc94
 #define WINRT_GENERIC_6c59d637_2970_5f64_9511_d39ac245bc94
-template <> struct __declspec(uuid("6c59d637-2970-5f64-9511-d39ac245bc94")) __declspec(novtable) TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> : impl_TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> {};
+template <> struct __declspec(uuid("6c59d637-2970-5f64-9511-d39ac245bc94")) __declspec(novtable) TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
@@ -406,70 +406,70 @@ template <> struct __declspec(uuid("f8491bcd-2db5-58e0-8c47-44e6eb10c12d")) __de
 namespace Windows::Services::Store {
 
 struct IStoreAcquireLicenseResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreAcquireLicenseResult>
 {
     IStoreAcquireLicenseResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreAppLicense :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreAppLicense>
 {
     IStoreAppLicense(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreAvailability :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreAvailability>
 {
     IStoreAvailability(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreCollectionData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreCollectionData>
 {
     IStoreCollectionData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreConsumableResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreConsumableResult>
 {
     IStoreConsumableResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreContext :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreContext>
 {
     IStoreContext(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreContextStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreContextStatics>
 {
     IStoreContextStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreImage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreImage>
 {
     IStoreImage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreLicense :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreLicense>
 {
     IStoreLicense(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePackageLicense :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePackageLicense>,
     impl::require<IStorePackageLicense, Windows::Foundation::IClosable>
 {
@@ -477,105 +477,105 @@ struct IStorePackageLicense :
 };
 
 struct IStorePackageUpdate :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePackageUpdate>
 {
     IStorePackageUpdate(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePackageUpdateResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePackageUpdateResult>
 {
     IStorePackageUpdateResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePrice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePrice>
 {
     IStorePrice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreProduct :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreProduct>
 {
     IStoreProduct(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreProductPagedQueryResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreProductPagedQueryResult>
 {
     IStoreProductPagedQueryResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreProductQueryResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreProductQueryResult>
 {
     IStoreProductQueryResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreProductResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreProductResult>
 {
     IStoreProductResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePurchaseProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePurchaseProperties>
 {
     IStorePurchaseProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePurchasePropertiesFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePurchasePropertiesFactory>
 {
     IStorePurchasePropertiesFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorePurchaseResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorePurchaseResult>
 {
     IStorePurchaseResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreRequestHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreRequestHelperStatics>
 {
     IStoreRequestHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreSendRequestResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreSendRequestResult>
 {
     IStoreSendRequestResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreSku :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreSku>
 {
     IStoreSku(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreSubscriptionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreSubscriptionInfo>
 {
     IStoreSubscriptionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoreVideo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoreVideo>
 {
     IStoreVideo(std::nullptr_t = nullptr) noexcept {}

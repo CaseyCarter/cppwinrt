@@ -36,17 +36,17 @@ template <> struct __declspec(uuid("ad674bbf-6281-5943-9772-e0fd7664d4e1")) __de
 
 #ifndef WINRT_GENERIC_f4979ea1_7e06_50a8_88dc_3f29524e4fdb
 #define WINRT_GENERIC_f4979ea1_7e06_50a8_88dc_3f29524e4fdb
-template <> struct __declspec(uuid("f4979ea1-7e06-50a8-88dc-3f29524e4fdb")) __declspec(novtable) TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> : impl_TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f4979ea1-7e06-50a8-88dc-3f29524e4fdb")) __declspec(novtable) TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_2e5ad6fa_3ca6_5518_bd4d_fefc4535580e
 #define WINRT_GENERIC_2e5ad6fa_3ca6_5518_bd4d_fefc4535580e
-template <> struct __declspec(uuid("2e5ad6fa-3ca6-5518-bd4d-fefc4535580e")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> {};
+template <> struct __declspec(uuid("2e5ad6fa-3ca6-5518-bd4d-fefc4535580e")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_512c383c_8b29_5079_953e_8dee8f8a8224
 #define WINRT_GENERIC_512c383c_8b29_5079_953e_8dee8f8a8224
-template <> struct __declspec(uuid("512c383c-8b29-5079-953e-8dee8f8a8224")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> {};
+template <> struct __declspec(uuid("512c383c-8b29-5079-953e-8dee8f8a8224")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> {};
 #endif
 
 
@@ -139,7 +139,7 @@ template <> struct __declspec(uuid("ecf90f2c-e3f4-5b62-a066-8b9c818fd41a")) __de
 
 namespace Windows::Networking::Proximity {
 
-struct DeviceArrivedEventHandler : Windows::IUnknown
+struct DeviceArrivedEventHandler : Windows::Foundation::IUnknown
 {
     DeviceArrivedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DeviceArrivedEventHandler(L lambda);
@@ -148,7 +148,7 @@ struct DeviceArrivedEventHandler : Windows::IUnknown
     void operator()(const Windows::Networking::Proximity::ProximityDevice & sender) const;
 };
 
-struct DeviceDepartedEventHandler : Windows::IUnknown
+struct DeviceDepartedEventHandler : Windows::Foundation::IUnknown
 {
     DeviceDepartedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DeviceDepartedEventHandler(L lambda);
@@ -157,7 +157,7 @@ struct DeviceDepartedEventHandler : Windows::IUnknown
     void operator()(const Windows::Networking::Proximity::ProximityDevice & sender) const;
 };
 
-struct MessageReceivedHandler : Windows::IUnknown
+struct MessageReceivedHandler : Windows::Foundation::IUnknown
 {
     MessageReceivedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> MessageReceivedHandler(L lambda);
@@ -166,7 +166,7 @@ struct MessageReceivedHandler : Windows::IUnknown
     void operator()(const Windows::Networking::Proximity::ProximityDevice & sender, const Windows::Networking::Proximity::ProximityMessage & message) const;
 };
 
-struct MessageTransmittedHandler : Windows::IUnknown
+struct MessageTransmittedHandler : Windows::Foundation::IUnknown
 {
     MessageTransmittedHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> MessageTransmittedHandler(L lambda);
@@ -176,77 +176,77 @@ struct MessageTransmittedHandler : Windows::IUnknown
 };
 
 struct IConnectionRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectionRequestedEventArgs>
 {
     IConnectionRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPeerFinderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPeerFinderStatics>
 {
     IPeerFinderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPeerFinderStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPeerFinderStatics2>
 {
     IPeerFinderStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPeerInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPeerInformation>
 {
     IPeerInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPeerInformation3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPeerInformation3>
 {
     IPeerInformation3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPeerInformationWithHostAndService :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPeerInformationWithHostAndService>
 {
     IPeerInformationWithHostAndService(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPeerWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPeerWatcher>
 {
     IPeerWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProximityDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProximityDevice>
 {
     IProximityDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProximityDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProximityDeviceStatics>
 {
     IProximityDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProximityMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProximityMessage>
 {
     IProximityMessage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITriggeredConnectionStateChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITriggeredConnectionStateChangedEventArgs>
 {
     ITriggeredConnectionStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}

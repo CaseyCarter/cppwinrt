@@ -161,14 +161,14 @@ template <> struct __declspec(uuid("e3c56728-7f2d-5a0d-ad38-030d39c60f9f")) __de
 namespace Windows::Devices::Bluetooth::GenericAttributeProfile {
 
 struct IGattCharacteristic :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattCharacteristic>
 {
     IGattCharacteristic(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattCharacteristic2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattCharacteristic2>,
     impl::require<IGattCharacteristic2, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic>
 {
@@ -176,49 +176,49 @@ struct IGattCharacteristic2 :
 };
 
 struct IGattCharacteristicStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattCharacteristicStatics>
 {
     IGattCharacteristicStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattCharacteristicUuidsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattCharacteristicUuidsStatics>
 {
     IGattCharacteristicUuidsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattCharacteristicUuidsStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattCharacteristicUuidsStatics2>
 {
     IGattCharacteristicUuidsStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattDescriptor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattDescriptor>
 {
     IGattDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattDescriptorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattDescriptorStatics>
 {
     IGattDescriptorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattDescriptorUuidsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattDescriptorUuidsStatics>
 {
     IGattDescriptorUuidsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattDeviceService :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattDeviceService>,
     impl::require<IGattDeviceService, Windows::Foundation::IClosable>
 {
@@ -226,7 +226,7 @@ struct IGattDeviceService :
 };
 
 struct IGattDeviceService2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattDeviceService2>,
     impl::require<IGattDeviceService2, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService, Windows::Foundation::IClosable>
 {
@@ -234,70 +234,70 @@ struct IGattDeviceService2 :
 };
 
 struct IGattDeviceServiceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattDeviceServiceStatics>
 {
     IGattDeviceServiceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattPresentationFormat :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattPresentationFormat>
 {
     IGattPresentationFormat(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattPresentationFormatStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattPresentationFormatStatics>
 {
     IGattPresentationFormatStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattPresentationFormatTypesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattPresentationFormatTypesStatics>
 {
     IGattPresentationFormatTypesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattReadClientCharacteristicConfigurationDescriptorResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattReadClientCharacteristicConfigurationDescriptorResult>
 {
     IGattReadClientCharacteristicConfigurationDescriptorResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattReadResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattReadResult>
 {
     IGattReadResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattReliableWriteTransaction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattReliableWriteTransaction>
 {
     IGattReliableWriteTransaction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattServiceUuidsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattServiceUuidsStatics>
 {
     IGattServiceUuidsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattServiceUuidsStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattServiceUuidsStatics2>
 {
     IGattServiceUuidsStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGattValueChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattValueChangedEventArgs>
 {
     IGattValueChangedEventArgs(std::nullptr_t = nullptr) noexcept {}

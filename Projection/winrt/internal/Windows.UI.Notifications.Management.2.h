@@ -75,14 +75,14 @@ template <> struct __declspec(uuid("9e42ed08-45b3-5643-b5c7-b216f5781594")) __de
 namespace Windows::UI::Notifications::Management {
 
 struct IUserNotificationListener :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserNotificationListener>
 {
     IUserNotificationListener(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserNotificationListenerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserNotificationListenerStatics>
 {
     IUserNotificationListenerStatics(std::nullptr_t = nullptr) noexcept {}

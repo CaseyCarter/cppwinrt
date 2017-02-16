@@ -15,7 +15,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Bluetooth::GenericAttributeProfile {
 
-struct __declspec(uuid("59cb50c1-5934-4f68-a198-eb864fa44e6b")) __declspec(novtable) IGattCharacteristic : Windows::IInspectable
+struct __declspec(uuid("59cb50c1-5934-4f68-a198-eb864fa44e6b")) __declspec(novtable) IGattCharacteristic : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDescriptors(GUID descriptorUuid, Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> ** value) = 0;
     virtual HRESULT __stdcall get_CharacteristicProperties(winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties * value) = 0;
@@ -35,18 +35,18 @@ struct __declspec(uuid("59cb50c1-5934-4f68-a198-eb864fa44e6b")) __declspec(novta
     virtual HRESULT __stdcall remove_ValueChanged(event_token valueChangedEventCookie) = 0;
 };
 
-struct __declspec(uuid("ae1ab578-ec06-4764-b780-9835a1d35d6e")) __declspec(novtable) IGattCharacteristic2 : Windows::IInspectable
+struct __declspec(uuid("ae1ab578-ec06-4764-b780-9835a1d35d6e")) __declspec(novtable) IGattCharacteristic2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Service(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService ** value) = 0;
     virtual HRESULT __stdcall abi_GetAllDescriptors(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> ** descriptors) = 0;
 };
 
-struct __declspec(uuid("59cb50c3-5934-4f68-a198-eb864fa44e6b")) __declspec(novtable) IGattCharacteristicStatics : Windows::IInspectable
+struct __declspec(uuid("59cb50c3-5934-4f68-a198-eb864fa44e6b")) __declspec(novtable) IGattCharacteristicStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ConvertShortIdToUuid(uint16_t shortId, GUID * characteristicUuid) = 0;
 };
 
-struct __declspec(uuid("58fa4586-b1de-470c-b7de-0d11ff44f4b7")) __declspec(novtable) IGattCharacteristicUuidsStatics : Windows::IInspectable
+struct __declspec(uuid("58fa4586-b1de-470c-b7de-0d11ff44f4b7")) __declspec(novtable) IGattCharacteristicUuidsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BatteryLevel(GUID * value) = 0;
     virtual HRESULT __stdcall get_BloodPressureFeature(GUID * value) = 0;
@@ -71,7 +71,7 @@ struct __declspec(uuid("58fa4586-b1de-470c-b7de-0d11ff44f4b7")) __declspec(novta
     virtual HRESULT __stdcall get_TemperatureType(GUID * value) = 0;
 };
 
-struct __declspec(uuid("1855b425-d46e-4a2c-9c3f-ed6dea29e7be")) __declspec(novtable) IGattCharacteristicUuidsStatics2 : Windows::IInspectable
+struct __declspec(uuid("1855b425-d46e-4a2c-9c3f-ed6dea29e7be")) __declspec(novtable) IGattCharacteristicUuidsStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AlertCategoryId(GUID * value) = 0;
     virtual HRESULT __stdcall get_AlertCategoryIdBitMask(GUID * value) = 0;
@@ -135,7 +135,7 @@ struct __declspec(uuid("1855b425-d46e-4a2c-9c3f-ed6dea29e7be")) __declspec(novta
     virtual HRESULT __stdcall get_UnreadAlertStatus(GUID * value) = 0;
 };
 
-struct __declspec(uuid("92055f2b-8084-4344-b4c2-284de19a8506")) __declspec(novtable) IGattDescriptor : Windows::IInspectable
+struct __declspec(uuid("92055f2b-8084-4344-b4c2-284de19a8506")) __declspec(novtable) IGattDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProtectionLevel(winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel * value) = 0;
     virtual HRESULT __stdcall put_ProtectionLevel(winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) = 0;
@@ -146,12 +146,12 @@ struct __declspec(uuid("92055f2b-8084-4344-b4c2-284de19a8506")) __declspec(novta
     virtual HRESULT __stdcall abi_WriteValueAsync(Windows::Storage::Streams::IBuffer * value, Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> ** action) = 0;
 };
 
-struct __declspec(uuid("92055f2d-8084-4344-b4c2-284de19a8506")) __declspec(novtable) IGattDescriptorStatics : Windows::IInspectable
+struct __declspec(uuid("92055f2d-8084-4344-b4c2-284de19a8506")) __declspec(novtable) IGattDescriptorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ConvertShortIdToUuid(uint16_t shortId, GUID * descriptorUuid) = 0;
 };
 
-struct __declspec(uuid("a6f862ce-9cfc-42f1-9185-ff37b75181d3")) __declspec(novtable) IGattDescriptorUuidsStatics : Windows::IInspectable
+struct __declspec(uuid("a6f862ce-9cfc-42f1-9185-ff37b75181d3")) __declspec(novtable) IGattDescriptorUuidsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CharacteristicAggregateFormat(GUID * value) = 0;
     virtual HRESULT __stdcall get_CharacteristicExtendedProperties(GUID * value) = 0;
@@ -161,7 +161,7 @@ struct __declspec(uuid("a6f862ce-9cfc-42f1-9185-ff37b75181d3")) __declspec(novta
     virtual HRESULT __stdcall get_ServerCharacteristicConfiguration(GUID * value) = 0;
 };
 
-struct __declspec(uuid("ac7b7c05-b33c-47cf-990f-6b8f5577df71")) __declspec(novtable) IGattDeviceService : Windows::IInspectable
+struct __declspec(uuid("ac7b7c05-b33c-47cf-990f-6b8f5577df71")) __declspec(novtable) IGattDeviceService : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetCharacteristics(GUID characteristicUuid, Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> ** value) = 0;
     virtual HRESULT __stdcall abi_GetIncludedServices(GUID serviceUuid, Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> ** value) = 0;
@@ -170,7 +170,7 @@ struct __declspec(uuid("ac7b7c05-b33c-47cf-990f-6b8f5577df71")) __declspec(novta
     virtual HRESULT __stdcall get_AttributeHandle(uint16_t * value) = 0;
 };
 
-struct __declspec(uuid("fc54520b-0b0d-4708-bae0-9ffd9489bc59")) __declspec(novtable) IGattDeviceService2 : Windows::IInspectable
+struct __declspec(uuid("fc54520b-0b0d-4708-bae0-9ffd9489bc59")) __declspec(novtable) IGattDeviceService2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Device(Windows::Devices::Bluetooth::IBluetoothLEDevice ** value) = 0;
     virtual HRESULT __stdcall get_ParentServices(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> ** value) = 0;
@@ -178,7 +178,7 @@ struct __declspec(uuid("fc54520b-0b0d-4708-bae0-9ffd9489bc59")) __declspec(novta
     virtual HRESULT __stdcall abi_GetAllIncludedServices(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> ** includedServices) = 0;
 };
 
-struct __declspec(uuid("196d0022-faad-45dc-ae5b-2ac3184e84db")) __declspec(novtable) IGattDeviceServiceStatics : Windows::IInspectable
+struct __declspec(uuid("196d0022-faad-45dc-ae5b-2ac3184e84db")) __declspec(novtable) IGattDeviceServiceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> ** gattDeviceService) = 0;
     virtual HRESULT __stdcall abi_GetDeviceSelectorFromUuid(GUID serviceUuid, hstring * selector) = 0;
@@ -186,7 +186,7 @@ struct __declspec(uuid("196d0022-faad-45dc-ae5b-2ac3184e84db")) __declspec(novta
     virtual HRESULT __stdcall abi_ConvertShortIdToUuid(uint16_t shortId, GUID * serviceUuid) = 0;
 };
 
-struct __declspec(uuid("196d0021-faad-45dc-ae5b-2ac3184e84db")) __declspec(novtable) IGattPresentationFormat : Windows::IInspectable
+struct __declspec(uuid("196d0021-faad-45dc-ae5b-2ac3184e84db")) __declspec(novtable) IGattPresentationFormat : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FormatType(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Exponent(int32_t * value) = 0;
@@ -195,12 +195,12 @@ struct __declspec(uuid("196d0021-faad-45dc-ae5b-2ac3184e84db")) __declspec(novta
     virtual HRESULT __stdcall get_Description(uint16_t * value) = 0;
 };
 
-struct __declspec(uuid("196d0020-faad-45dc-ae5b-2ac3184e84db")) __declspec(novtable) IGattPresentationFormatStatics : Windows::IInspectable
+struct __declspec(uuid("196d0020-faad-45dc-ae5b-2ac3184e84db")) __declspec(novtable) IGattPresentationFormatStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BluetoothSigAssignedNumbers(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("faf1ba0a-30ba-409c-bef7-cffb6d03b8fb")) __declspec(novtable) IGattPresentationFormatTypesStatics : Windows::IInspectable
+struct __declspec(uuid("faf1ba0a-30ba-409c-bef7-cffb6d03b8fb")) __declspec(novtable) IGattPresentationFormatTypesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Boolean(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Bit2(uint8_t * value) = 0;
@@ -231,25 +231,25 @@ struct __declspec(uuid("faf1ba0a-30ba-409c-bef7-cffb6d03b8fb")) __declspec(novta
     virtual HRESULT __stdcall get_Struct(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("63a66f09-1aea-4c4c-a50f-97bae474b348")) __declspec(novtable) IGattReadClientCharacteristicConfigurationDescriptorResult : Windows::IInspectable
+struct __declspec(uuid("63a66f09-1aea-4c4c-a50f-97bae474b348")) __declspec(novtable) IGattReadClientCharacteristicConfigurationDescriptorResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus * value) = 0;
     virtual HRESULT __stdcall get_ClientCharacteristicConfigurationDescriptor(winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue * value) = 0;
 };
 
-struct __declspec(uuid("63a66f08-1aea-4c4c-a50f-97bae474b348")) __declspec(novtable) IGattReadResult : Windows::IInspectable
+struct __declspec(uuid("63a66f08-1aea-4c4c-a50f-97bae474b348")) __declspec(novtable) IGattReadResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus * value) = 0;
     virtual HRESULT __stdcall get_Value(Windows::Storage::Streams::IBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("63a66f07-1aea-4c4c-a50f-97bae474b348")) __declspec(novtable) IGattReliableWriteTransaction : Windows::IInspectable
+struct __declspec(uuid("63a66f07-1aea-4c4c-a50f-97bae474b348")) __declspec(novtable) IGattReliableWriteTransaction : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_WriteValue(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic * characteristic, Windows::Storage::Streams::IBuffer * value) = 0;
     virtual HRESULT __stdcall abi_CommitAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> ** asyncOp) = 0;
 };
 
-struct __declspec(uuid("6dc57058-9aba-4417-b8f2-dce016d34ee2")) __declspec(novtable) IGattServiceUuidsStatics : Windows::IInspectable
+struct __declspec(uuid("6dc57058-9aba-4417-b8f2-dce016d34ee2")) __declspec(novtable) IGattServiceUuidsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Battery(GUID * value) = 0;
     virtual HRESULT __stdcall get_BloodPressure(GUID * value) = 0;
@@ -262,7 +262,7 @@ struct __declspec(uuid("6dc57058-9aba-4417-b8f2-dce016d34ee2")) __declspec(novta
     virtual HRESULT __stdcall get_RunningSpeedAndCadence(GUID * value) = 0;
 };
 
-struct __declspec(uuid("d2ae94f5-3d15-4f79-9c0c-eaafa675155c")) __declspec(novtable) IGattServiceUuidsStatics2 : Windows::IInspectable
+struct __declspec(uuid("d2ae94f5-3d15-4f79-9c0c-eaafa675155c")) __declspec(novtable) IGattServiceUuidsStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AlertNotification(GUID * value) = 0;
     virtual HRESULT __stdcall get_CurrentTime(GUID * value) = 0;
@@ -279,7 +279,7 @@ struct __declspec(uuid("d2ae94f5-3d15-4f79-9c0c-eaafa675155c")) __declspec(novta
     virtual HRESULT __stdcall get_TxPower(GUID * value) = 0;
 };
 
-struct __declspec(uuid("d21bdb54-06e3-4ed8-a263-acfac8ba7313")) __declspec(novtable) IGattValueChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("d21bdb54-06e3-4ed8-a263-acfac8ba7313")) __declspec(novtable) IGattValueChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CharacteristicValue(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime * timestamp) = 0;

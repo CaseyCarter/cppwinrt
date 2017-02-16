@@ -66,7 +66,7 @@ template <> struct __declspec(uuid("fc0a0b0f-4dcc-5257-bc61-3435e302ce1f")) __de
 
 #ifndef WINRT_GENERIC_3f3808e6_3dee_57a6_a88d_bacfb066c7fb
 #define WINRT_GENERIC_3f3808e6_3dee_57a6_a88d_bacfb066c7fb
-template <> struct __declspec(uuid("3f3808e6-3dee-57a6-a88d-bacfb066c7fb")) __declspec(novtable) TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::IInspectable> {};
+template <> struct __declspec(uuid("3f3808e6-3dee-57a6-a88d-bacfb066c7fb")) __declspec(novtable) TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -200,7 +200,7 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Devices::Sms {
 
 struct ISmsAppMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsAppMessage>,
     impl::require<ISmsAppMessage, Windows::Devices::Sms::ISmsMessageBase>
 {
@@ -208,7 +208,7 @@ struct ISmsAppMessage :
 };
 
 struct ISmsBroadcastMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsBroadcastMessage>,
     impl::require<ISmsBroadcastMessage, Windows::Devices::Sms::ISmsMessageBase>
 {
@@ -216,84 +216,84 @@ struct ISmsBroadcastMessage :
 };
 
 struct ISmsDevice2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsDevice2>
 {
     ISmsDevice2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsDevice2Statics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsDevice2Statics>
 {
     ISmsDevice2Statics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsFilterRule :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsFilterRule>
 {
     ISmsFilterRule(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsFilterRuleFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsFilterRuleFactory>
 {
     ISmsFilterRuleFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsFilterRules :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsFilterRules>
 {
     ISmsFilterRules(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsFilterRulesFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsFilterRulesFactory>
 {
     ISmsFilterRulesFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsMessageBase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsMessageBase>
 {
     ISmsMessageBase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsMessageReceivedTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsMessageReceivedTriggerDetails>
 {
     ISmsMessageReceivedTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsMessageRegistration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsMessageRegistration>
 {
     ISmsMessageRegistration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsMessageRegistrationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsMessageRegistrationStatics>
 {
     ISmsMessageRegistrationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsSendMessageResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsSendMessageResult>
 {
     ISmsSendMessageResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsStatusMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsStatusMessage>,
     impl::require<ISmsStatusMessage, Windows::Devices::Sms::ISmsMessageBase>
 {
@@ -301,7 +301,7 @@ struct ISmsStatusMessage :
 };
 
 struct ISmsTextMessage2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsTextMessage2>,
     impl::require<ISmsTextMessage2, Windows::Devices::Sms::ISmsMessageBase>
 {
@@ -309,7 +309,7 @@ struct ISmsTextMessage2 :
 };
 
 struct ISmsVoicemailMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsVoicemailMessage>,
     impl::require<ISmsVoicemailMessage, Windows::Devices::Sms::ISmsMessageBase>
 {
@@ -317,7 +317,7 @@ struct ISmsVoicemailMessage :
 };
 
 struct ISmsWapMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsWapMessage>,
     impl::require<ISmsWapMessage, Windows::Devices::Sms::ISmsMessageBase>
 {

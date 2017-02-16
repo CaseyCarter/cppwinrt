@@ -60,35 +60,35 @@ template <> struct __declspec(uuid("47415452-db79-567e-84d5-e9912330f944")) __de
 namespace Windows::UI::Input::Inking::Core {
 
 struct ICoreInkIndependentInputSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreInkIndependentInputSource>
 {
     ICoreInkIndependentInputSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreInkIndependentInputSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreInkIndependentInputSourceStatics>
 {
     ICoreInkIndependentInputSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWetStrokeUpdateEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWetStrokeUpdateEventArgs>
 {
     ICoreWetStrokeUpdateEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWetStrokeUpdateSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWetStrokeUpdateSource>
 {
     ICoreWetStrokeUpdateSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWetStrokeUpdateSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreWetStrokeUpdateSourceStatics>
 {
     ICoreWetStrokeUpdateSourceStatics(std::nullptr_t = nullptr) noexcept {}

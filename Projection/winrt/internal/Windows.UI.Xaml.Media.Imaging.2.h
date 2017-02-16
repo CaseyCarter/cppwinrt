@@ -29,171 +29,171 @@ template <> struct __declspec(uuid("51c3d2fd-b8a1-5620-b746-7ee6d533aca3")) __de
 
 namespace Windows::UI::Xaml::Media::Imaging {
 
-struct DownloadProgressEventHandler : Windows::IUnknown
+struct DownloadProgressEventHandler : Windows::Foundation::IUnknown
 {
     DownloadProgressEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DownloadProgressEventHandler(L lambda);
     template <typename F> DownloadProgressEventHandler (F * function);
     template <typename O, typename M> DownloadProgressEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Media::Imaging::DownloadProgressEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Media::Imaging::DownloadProgressEventArgs & e) const;
 };
 
 struct IBitmapImage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapImage>
 {
     IBitmapImage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapImage2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapImage2>
 {
     IBitmapImage2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapImage3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapImage3>
 {
     IBitmapImage3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapImageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapImageFactory>
 {
     IBitmapImageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapImageStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapImageStatics>
 {
     IBitmapImageStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapImageStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapImageStatics2>
 {
     IBitmapImageStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapImageStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapImageStatics3>
 {
     IBitmapImageStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapSource>
 {
     IBitmapSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapSourceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapSourceFactory>
 {
     IBitmapSourceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBitmapSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBitmapSourceStatics>
 {
     IBitmapSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDownloadProgressEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDownloadProgressEventArgs>
 {
     IDownloadProgressEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRenderTargetBitmap :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRenderTargetBitmap>
 {
     IRenderTargetBitmap(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRenderTargetBitmapStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRenderTargetBitmapStatics>
 {
     IRenderTargetBitmapStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISoftwareBitmapSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISoftwareBitmapSource>
 {
     ISoftwareBitmapSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISurfaceImageSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISurfaceImageSource>
 {
     ISurfaceImageSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISurfaceImageSourceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISurfaceImageSourceFactory>
 {
     ISurfaceImageSourceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVirtualSurfaceImageSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVirtualSurfaceImageSource>
 {
     IVirtualSurfaceImageSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVirtualSurfaceImageSourceFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVirtualSurfaceImageSourceFactory>
 {
     IVirtualSurfaceImageSourceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWriteableBitmap :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWriteableBitmap>
 {
     IWriteableBitmap(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWriteableBitmapFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWriteableBitmapFactory>
 {
     IWriteableBitmapFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlRenderingBackgroundTask :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlRenderingBackgroundTask>
 {
     IXamlRenderingBackgroundTask(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlRenderingBackgroundTaskFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlRenderingBackgroundTaskFactory>
 {
     IXamlRenderingBackgroundTaskFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXamlRenderingBackgroundTaskOverrides :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IXamlRenderingBackgroundTaskOverrides>
 {
     IXamlRenderingBackgroundTaskOverrides(std::nullptr_t = nullptr) noexcept {}

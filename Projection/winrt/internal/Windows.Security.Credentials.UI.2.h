@@ -45,28 +45,28 @@ template <> struct __declspec(uuid("0cffc6c9-4c2b-5cd4-b38c-7b8df3ff5afb")) __de
 namespace Windows::Security::Credentials::UI {
 
 struct ICredentialPickerOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICredentialPickerOptions>
 {
     ICredentialPickerOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICredentialPickerResults :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICredentialPickerResults>
 {
     ICredentialPickerResults(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICredentialPickerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICredentialPickerStatics>
 {
     ICredentialPickerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserConsentVerifierStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserConsentVerifierStatics>
 {
     IUserConsentVerifierStatics(std::nullptr_t = nullptr) noexcept {}

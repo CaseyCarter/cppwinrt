@@ -36,12 +36,12 @@ using Direct3DSurfaceDescription = ABI::Windows::Graphics::DirectX::Direct3D11::
 
 namespace ABI::Windows::Graphics::DirectX::Direct3D11 {
 
-struct __declspec(uuid("a37624ab-8d5f-4650-9d3e-9eae3d9bc670")) __declspec(novtable) IDirect3DDevice : Windows::IInspectable
+struct __declspec(uuid("a37624ab-8d5f-4650-9d3e-9eae3d9bc670")) __declspec(novtable) IDirect3DDevice : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Trim() = 0;
 };
 
-struct __declspec(uuid("0bf4a146-13c1-4694-bee3-7abf15eaf586")) __declspec(novtable) IDirect3DSurface : Windows::IInspectable
+struct __declspec(uuid("0bf4a146-13c1-4694-bee3-7abf15eaf586")) __declspec(novtable) IDirect3DSurface : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Description(Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription * value) = 0;
 };

@@ -35,42 +35,42 @@ template <> struct __declspec(uuid("9a3e6d46-e880-5deb-9006-92fe5c43ace1")) __de
 namespace Windows::ApplicationModel::SocialInfo {
 
 struct ISocialFeedChildItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocialFeedChildItem>
 {
     ISocialFeedChildItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocialFeedContent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocialFeedContent>
 {
     ISocialFeedContent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocialFeedItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocialFeedItem>
 {
     ISocialFeedItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocialFeedSharedItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocialFeedSharedItem>
 {
     ISocialFeedSharedItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocialItemThumbnail :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocialItemThumbnail>
 {
     ISocialItemThumbnail(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocialUserInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocialUserInfo>
 {
     ISocialUserInfo(std::nullptr_t = nullptr) noexcept {}

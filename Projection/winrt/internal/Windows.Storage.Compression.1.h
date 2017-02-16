@@ -13,24 +13,24 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Storage::Compression {
 
-struct __declspec(uuid("0ac3645a-57ac-4ee1-b702-84d39d5424e0")) __declspec(novtable) ICompressor : Windows::IInspectable
+struct __declspec(uuid("0ac3645a-57ac-4ee1-b702-84d39d5424e0")) __declspec(novtable) ICompressor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FinishAsync(Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
     virtual HRESULT __stdcall abi_DetachStream(Windows::Storage::Streams::IOutputStream ** stream) = 0;
 };
 
-struct __declspec(uuid("5f3d96a4-2cfb-442c-a8ba-d7d11b039da0")) __declspec(novtable) ICompressorFactory : Windows::IInspectable
+struct __declspec(uuid("5f3d96a4-2cfb-442c-a8ba-d7d11b039da0")) __declspec(novtable) ICompressorFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateCompressor(Windows::Storage::Streams::IOutputStream * underlyingStream, Windows::Storage::Compression::ICompressor ** createdCompressor) = 0;
     virtual HRESULT __stdcall abi_CreateCompressorEx(Windows::Storage::Streams::IOutputStream * underlyingStream, winrt::Windows::Storage::Compression::CompressAlgorithm algorithm, uint32_t blockSize, Windows::Storage::Compression::ICompressor ** createdCompressor) = 0;
 };
 
-struct __declspec(uuid("b883fe46-d68a-4c8b-ada0-4ee813fc5283")) __declspec(novtable) IDecompressor : Windows::IInspectable
+struct __declspec(uuid("b883fe46-d68a-4c8b-ada0-4ee813fc5283")) __declspec(novtable) IDecompressor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_DetachStream(Windows::Storage::Streams::IInputStream ** stream) = 0;
 };
 
-struct __declspec(uuid("5337e252-1da2-42e1-8834-0379d28d742f")) __declspec(novtable) IDecompressorFactory : Windows::IInspectable
+struct __declspec(uuid("5337e252-1da2-42e1-8834-0379d28d742f")) __declspec(novtable) IDecompressorFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateDecompressor(Windows::Storage::Streams::IInputStream * underlyingStream, Windows::Storage::Compression::IDecompressor ** createdDecompressor) = 0;
 };

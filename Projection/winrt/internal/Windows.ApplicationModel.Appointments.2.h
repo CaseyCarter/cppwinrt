@@ -91,7 +91,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_bd1308de_6d2e_5541_b254_bdb61839bac1
 #define WINRT_GENERIC_bd1308de_6d2e_5541_b254_bdb61839bac1
-template <> struct __declspec(uuid("bd1308de-6d2e-5541-b254-bdb61839bac1")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager, Windows::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager, Windows::IInspectable> {};
+template <> struct __declspec(uuid("bd1308de-6d2e-5541-b254-bdb61839bac1")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -340,14 +340,14 @@ template <> struct __declspec(uuid("7c7899be-5f2e-5bf3-ade5-ad98b772c7cd")) __de
 namespace Windows::ApplicationModel::Appointments {
 
 struct IAppointment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointment>
 {
     IAppointment(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointment2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointment2>,
     impl::require<IAppointment2, Windows::ApplicationModel::Appointments::IAppointment>
 {
@@ -355,7 +355,7 @@ struct IAppointment2 :
 };
 
 struct IAppointment3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointment3>,
     impl::require<IAppointment3, Windows::ApplicationModel::Appointments::IAppointment, Windows::ApplicationModel::Appointments::IAppointment2>
 {
@@ -363,14 +363,14 @@ struct IAppointment3 :
 };
 
 struct IAppointmentCalendar :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendar>
 {
     IAppointmentCalendar(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendar2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendar2>,
     impl::require<IAppointmentCalendar2, Windows::ApplicationModel::Appointments::IAppointmentCalendar>
 {
@@ -382,42 +382,42 @@ struct IAppointmentCalendar2 :
 };
 
 struct IAppointmentCalendar3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendar3>
 {
     IAppointmentCalendar3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarSyncManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarSyncManager>
 {
     IAppointmentCalendarSyncManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentCalendarSyncManager2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentCalendarSyncManager2>
 {
     IAppointmentCalendarSyncManager2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentConflictResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentConflictResult>
 {
     IAppointmentConflictResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentException :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentException>
 {
     IAppointmentException(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentInvitee :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentInvitee>,
     impl::require<IAppointmentInvitee, Windows::ApplicationModel::Appointments::IAppointmentParticipant>
 {
@@ -425,49 +425,49 @@ struct IAppointmentInvitee :
 };
 
 struct IAppointmentManagerForUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentManagerForUser>
 {
     IAppointmentManagerForUser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentManagerStatics>
 {
     IAppointmentManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentManagerStatics2>
 {
     IAppointmentManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentManagerStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentManagerStatics3>
 {
     IAppointmentManagerStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentParticipant :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentParticipant>
 {
     IAppointmentParticipant(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentPropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentPropertiesStatics>
 {
     IAppointmentPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentPropertiesStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentPropertiesStatics2>,
     impl::require<IAppointmentPropertiesStatics2, Windows::ApplicationModel::Appointments::IAppointmentPropertiesStatics>
 {
@@ -475,14 +475,14 @@ struct IAppointmentPropertiesStatics2 :
 };
 
 struct IAppointmentRecurrence :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentRecurrence>
 {
     IAppointmentRecurrence(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentRecurrence2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentRecurrence2>,
     impl::require<IAppointmentRecurrence2, Windows::ApplicationModel::Appointments::IAppointmentRecurrence>
 {
@@ -490,7 +490,7 @@ struct IAppointmentRecurrence2 :
 };
 
 struct IAppointmentRecurrence3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentRecurrence3>,
     impl::require<IAppointmentRecurrence3, Windows::ApplicationModel::Appointments::IAppointmentRecurrence, Windows::ApplicationModel::Appointments::IAppointmentRecurrence2>
 {
@@ -498,14 +498,14 @@ struct IAppointmentRecurrence3 :
 };
 
 struct IAppointmentStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStore>
 {
     IAppointmentStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentStore2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStore2>,
     impl::require<IAppointmentStore2, Windows::ApplicationModel::Appointments::IAppointmentStore>
 {
@@ -515,14 +515,14 @@ struct IAppointmentStore2 :
 };
 
 struct IAppointmentStoreChange :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStoreChange>
 {
     IAppointmentStoreChange(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentStoreChange2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStoreChange2>,
     impl::require<IAppointmentStoreChange2, Windows::ApplicationModel::Appointments::IAppointmentStoreChange>
 {
@@ -530,42 +530,42 @@ struct IAppointmentStoreChange2 :
 };
 
 struct IAppointmentStoreChangeReader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStoreChangeReader>
 {
     IAppointmentStoreChangeReader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentStoreChangeTracker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStoreChangeTracker>
 {
     IAppointmentStoreChangeTracker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentStoreChangedDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStoreChangedDeferral>
 {
     IAppointmentStoreChangedDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentStoreChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStoreChangedEventArgs>
 {
     IAppointmentStoreChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentStoreNotificationTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStoreNotificationTriggerDetails>
 {
     IAppointmentStoreNotificationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFindAppointmentsOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFindAppointmentsOptions>
 {
     IFindAppointmentsOptions(std::nullptr_t = nullptr) noexcept {}

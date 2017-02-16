@@ -368,7 +368,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
         }
     }
 
-    HRESULT __stdcall get_Id(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Id(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -383,12 +383,12 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
         }
     }
 
-    HRESULT __stdcall put_Id(impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall put_Id(impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Id(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().Id(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -431,12 +431,12 @@ struct produce<D, Windows::UI::Popups::IUICommandFactory> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_CreateWithHandlerAndId(impl::abi_arg_in<hstring> label, impl::abi_arg_in<Windows::UI::Popups::UICommandInvokedHandler> action, impl::abi_arg_in<Windows::IInspectable> commandId, impl::abi_arg_out<Windows::UI::Popups::IUICommand> instance) noexcept override
+    HRESULT __stdcall abi_CreateWithHandlerAndId(impl::abi_arg_in<hstring> label, impl::abi_arg_in<Windows::UI::Popups::UICommandInvokedHandler> action, impl::abi_arg_in<Windows::Foundation::IInspectable> commandId, impl::abi_arg_out<Windows::UI::Popups::IUICommand> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateWithHandlerAndId(*reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&action), *reinterpret_cast<const Windows::IInspectable *>(&commandId)));
+            *instance = detach_abi(this->shim().CreateWithHandlerAndId(*reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&action), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&commandId)));
             return S_OK;
         }
         catch (...)
@@ -563,14 +563,14 @@ template <typename D> void impl_IUICommand<D>::Invoked(const Windows::UI::Popups
     check_hresult(WINRT_SHIM(IUICommand)->put_Invoked(get_abi(value)));
 }
 
-template <typename D> Windows::IInspectable impl_IUICommand<D>::Id() const
+template <typename D> Windows::Foundation::IInspectable impl_IUICommand<D>::Id() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IUICommand)->get_Id(put_abi(value)));
     return value;
 }
 
-template <typename D> void impl_IUICommand<D>::Id(const Windows::IInspectable & value) const
+template <typename D> void impl_IUICommand<D>::Id(const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IUICommand)->put_Id(get_abi(value)));
 }
@@ -589,7 +589,7 @@ template <typename D> Windows::UI::Popups::UICommand impl_IUICommandFactory<D>::
     return instance;
 }
 
-template <typename D> Windows::UI::Popups::UICommand impl_IUICommandFactory<D>::CreateWithHandlerAndId(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) const
+template <typename D> Windows::UI::Popups::UICommand impl_IUICommandFactory<D>::CreateWithHandlerAndId(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::Foundation::IInspectable & commandId) const
 {
     Windows::UI::Popups::UICommand instance { nullptr };
     check_hresult(WINRT_SHIM(IUICommandFactory)->abi_CreateWithHandlerAndId(get_abi(label), get_abi(action), get_abi(commandId), put_abi(instance)));
@@ -648,7 +648,7 @@ inline UICommand::UICommand(hstring_view label, const Windows::UI::Popups::UICom
     UICommand(get_activation_factory<UICommand, IUICommandFactory>().CreateWithHandler(label, action))
 {}
 
-inline UICommand::UICommand(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) :
+inline UICommand::UICommand(hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::Foundation::IInspectable & commandId) :
     UICommand(get_activation_factory<UICommand, IUICommandFactory>().CreateWithHandlerAndId(label, action, commandId))
 {}
 

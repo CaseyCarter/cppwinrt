@@ -118,12 +118,12 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::IExtendedExecuti
         }
     }
 
-    HRESULT __stdcall add_Revoked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Revoked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Revoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Revoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -209,14 +209,14 @@ template <typename D> void impl_IExtendedExecutionSession<D>::PercentProgress(ui
     check_hresult(WINRT_SHIM(IExtendedExecutionSession)->put_PercentProgress(value));
 }
 
-template <typename D> event_token impl_IExtendedExecutionSession<D>::Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> & handler) const
+template <typename D> event_token impl_IExtendedExecutionSession<D>::Revoked(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IExtendedExecutionSession)->add_Revoked(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IExtendedExecutionSession> impl_IExtendedExecutionSession<D>::Revoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> & handler) const
+template <typename D> event_revoker<IExtendedExecutionSession> impl_IExtendedExecutionSession<D>::Revoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> & handler) const
 {
     return impl::make_event_revoker<D, IExtendedExecutionSession>(this, &ABI::Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession::remove_Revoked, Revoked(handler));
 }

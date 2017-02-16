@@ -61,7 +61,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_8b31274a_7693_52be_9014_b0f5f65a3539
 #define WINRT_GENERIC_8b31274a_7693_52be_9014_b0f5f65a3539
-template <> struct __declspec(uuid("8b31274a-7693-52be-9014-b0f5f65a3539")) __declspec(novtable) TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> : impl_TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> {};
+template <> struct __declspec(uuid("8b31274a-7693-52be-9014-b0f5f65a3539")) __declspec(novtable) TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_6ced54c8_7689_525a_80e1_956a9d85cd83
@@ -125,49 +125,49 @@ template <> struct __declspec(uuid("868757d1-be21-51d9-8dee-a958b9deec71")) __de
 namespace Windows::Perception::Spatial::Surfaces {
 
 struct ISpatialSurfaceInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialSurfaceInfo>
 {
     ISpatialSurfaceInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialSurfaceMesh :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialSurfaceMesh>
 {
     ISpatialSurfaceMesh(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialSurfaceMeshBuffer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialSurfaceMeshBuffer>
 {
     ISpatialSurfaceMeshBuffer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialSurfaceMeshOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialSurfaceMeshOptions>
 {
     ISpatialSurfaceMeshOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialSurfaceMeshOptionsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialSurfaceMeshOptionsStatics>
 {
     ISpatialSurfaceMeshOptionsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialSurfaceObserver :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialSurfaceObserver>
 {
     ISpatialSurfaceObserver(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialSurfaceObserverStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpatialSurfaceObserverStatics>
 {
     ISpatialSurfaceObserverStatics(std::nullptr_t = nullptr) noexcept {}

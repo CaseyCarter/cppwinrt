@@ -46,7 +46,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_7725b2a5_287d_5ed2_a789_2a6a2673c7fe
 #define WINRT_GENERIC_7725b2a5_287d_5ed2_a789_2a6a2673c7fe
-template <> struct __declspec(uuid("7725b2a5-287d-5ed2-a789-2a6a2673c7fe")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> {};
+template <> struct __declspec(uuid("7725b2a5-287d-5ed2-a789-2a6a2673c7fe")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -85,14 +85,14 @@ template <> struct __declspec(uuid("1863baee-44f1-5e51-bcdf-a3cdab826a15")) __de
 namespace Windows::ApplicationModel::Activation {
 
 struct IActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivatedEventArgs>
 {
     IActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IActivatedEventArgsWithUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivatedEventArgsWithUser>,
     impl::require<IActivatedEventArgsWithUser, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -100,7 +100,7 @@ struct IActivatedEventArgsWithUser :
 };
 
 struct IApplicationViewActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationViewActivatedEventArgs>,
     impl::require<IApplicationViewActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -108,7 +108,7 @@ struct IApplicationViewActivatedEventArgs :
 };
 
 struct IAppointmentsProviderActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentsProviderActivatedEventArgs>,
     impl::require<IAppointmentsProviderActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -116,7 +116,7 @@ struct IAppointmentsProviderActivatedEventArgs :
 };
 
 struct IAppointmentsProviderAddAppointmentActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentsProviderAddAppointmentActivatedEventArgs>,
     impl::require<IAppointmentsProviderAddAppointmentActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
@@ -124,7 +124,7 @@ struct IAppointmentsProviderAddAppointmentActivatedEventArgs :
 };
 
 struct IAppointmentsProviderRemoveAppointmentActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentsProviderRemoveAppointmentActivatedEventArgs>,
     impl::require<IAppointmentsProviderRemoveAppointmentActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
@@ -132,7 +132,7 @@ struct IAppointmentsProviderRemoveAppointmentActivatedEventArgs :
 };
 
 struct IAppointmentsProviderReplaceAppointmentActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentsProviderReplaceAppointmentActivatedEventArgs>,
     impl::require<IAppointmentsProviderReplaceAppointmentActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
@@ -140,7 +140,7 @@ struct IAppointmentsProviderReplaceAppointmentActivatedEventArgs :
 };
 
 struct IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs>,
     impl::require<IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
@@ -148,7 +148,7 @@ struct IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs :
 };
 
 struct IAppointmentsProviderShowTimeFrameActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentsProviderShowTimeFrameActivatedEventArgs>,
     impl::require<IAppointmentsProviderShowTimeFrameActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
@@ -156,14 +156,14 @@ struct IAppointmentsProviderShowTimeFrameActivatedEventArgs :
 };
 
 struct IBackgroundActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundActivatedEventArgs>
 {
     IBackgroundActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICachedFileUpdaterActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICachedFileUpdaterActivatedEventArgs>,
     impl::require<ICachedFileUpdaterActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -171,7 +171,7 @@ struct ICachedFileUpdaterActivatedEventArgs :
 };
 
 struct IContinuationActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContinuationActivatedEventArgs>,
     impl::require<IContinuationActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -179,7 +179,7 @@ struct IContinuationActivatedEventArgs :
 };
 
 struct IDeviceActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceActivatedEventArgs>,
     impl::require<IDeviceActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -187,7 +187,7 @@ struct IDeviceActivatedEventArgs :
 };
 
 struct IDevicePairingActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDevicePairingActivatedEventArgs>,
     impl::require<IDevicePairingActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -195,7 +195,7 @@ struct IDevicePairingActivatedEventArgs :
 };
 
 struct IDialReceiverActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialReceiverActivatedEventArgs>,
     impl::require<IDialReceiverActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs>
 {
@@ -203,7 +203,7 @@ struct IDialReceiverActivatedEventArgs :
 };
 
 struct IFileActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileActivatedEventArgs>,
     impl::require<IFileActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -211,7 +211,7 @@ struct IFileActivatedEventArgs :
 };
 
 struct IFileActivatedEventArgsWithCallerPackageFamilyName :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileActivatedEventArgsWithCallerPackageFamilyName>,
     impl::require<IFileActivatedEventArgsWithCallerPackageFamilyName, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -219,7 +219,7 @@ struct IFileActivatedEventArgsWithCallerPackageFamilyName :
 };
 
 struct IFileActivatedEventArgsWithNeighboringFiles :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileActivatedEventArgsWithNeighboringFiles>,
     impl::require<IFileActivatedEventArgsWithNeighboringFiles, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IFileActivatedEventArgs>
 {
@@ -227,7 +227,7 @@ struct IFileActivatedEventArgsWithNeighboringFiles :
 };
 
 struct IFileOpenPickerActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileOpenPickerActivatedEventArgs>,
     impl::require<IFileOpenPickerActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -235,14 +235,14 @@ struct IFileOpenPickerActivatedEventArgs :
 };
 
 struct IFileOpenPickerActivatedEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileOpenPickerActivatedEventArgs2>
 {
     IFileOpenPickerActivatedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileOpenPickerContinuationEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileOpenPickerContinuationEventArgs>,
     impl::require<IFileOpenPickerContinuationEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {
@@ -250,7 +250,7 @@ struct IFileOpenPickerContinuationEventArgs :
 };
 
 struct IFileSavePickerActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileSavePickerActivatedEventArgs>,
     impl::require<IFileSavePickerActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -258,14 +258,14 @@ struct IFileSavePickerActivatedEventArgs :
 };
 
 struct IFileSavePickerActivatedEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileSavePickerActivatedEventArgs2>
 {
     IFileSavePickerActivatedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileSavePickerContinuationEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileSavePickerContinuationEventArgs>,
     impl::require<IFileSavePickerContinuationEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {
@@ -273,7 +273,7 @@ struct IFileSavePickerContinuationEventArgs :
 };
 
 struct IFolderPickerContinuationEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFolderPickerContinuationEventArgs>,
     impl::require<IFolderPickerContinuationEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {
@@ -281,7 +281,7 @@ struct IFolderPickerContinuationEventArgs :
 };
 
 struct ILaunchActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILaunchActivatedEventArgs>,
     impl::require<ILaunchActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -289,7 +289,7 @@ struct ILaunchActivatedEventArgs :
 };
 
 struct ILaunchActivatedEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILaunchActivatedEventArgs2>,
     impl::require<ILaunchActivatedEventArgs2, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs>
 {
@@ -297,7 +297,7 @@ struct ILaunchActivatedEventArgs2 :
 };
 
 struct ILockScreenActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILockScreenActivatedEventArgs>,
     impl::require<ILockScreenActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -305,7 +305,7 @@ struct ILockScreenActivatedEventArgs :
 };
 
 struct IPickerReturnedActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPickerReturnedActivatedEventArgs>,
     impl::require<IPickerReturnedActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -313,7 +313,7 @@ struct IPickerReturnedActivatedEventArgs :
 };
 
 struct IPrelaunchActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrelaunchActivatedEventArgs>,
     impl::require<IPrelaunchActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -321,7 +321,7 @@ struct IPrelaunchActivatedEventArgs :
 };
 
 struct IProtocolActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProtocolActivatedEventArgs>,
     impl::require<IProtocolActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -329,7 +329,7 @@ struct IProtocolActivatedEventArgs :
 };
 
 struct IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData>,
     impl::require<IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -337,7 +337,7 @@ struct IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData :
 };
 
 struct IProtocolForResultsActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProtocolForResultsActivatedEventArgs>,
     impl::require<IProtocolForResultsActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -345,7 +345,7 @@ struct IProtocolForResultsActivatedEventArgs :
 };
 
 struct IRestrictedLaunchActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRestrictedLaunchActivatedEventArgs>,
     impl::require<IRestrictedLaunchActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -353,7 +353,7 @@ struct IRestrictedLaunchActivatedEventArgs :
 };
 
 struct ISearchActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchActivatedEventArgs>,
     impl::require<ISearchActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -361,14 +361,14 @@ struct ISearchActivatedEventArgs :
 };
 
 struct ISearchActivatedEventArgsWithLinguisticDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISearchActivatedEventArgsWithLinguisticDetails>
 {
     ISearchActivatedEventArgsWithLinguisticDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IShareTargetActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IShareTargetActivatedEventArgs>,
     impl::require<IShareTargetActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -376,21 +376,21 @@ struct IShareTargetActivatedEventArgs :
 };
 
 struct ISplashScreen :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplashScreen>
 {
     ISplashScreen(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileActivatedInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileActivatedInfo>
 {
     ITileActivatedInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationActivatedEventArgs>,
     impl::require<IToastNotificationActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -398,7 +398,7 @@ struct IToastNotificationActivatedEventArgs :
 };
 
 struct IUserDataAccountProviderActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountProviderActivatedEventArgs>,
     impl::require<IUserDataAccountProviderActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -406,7 +406,7 @@ struct IUserDataAccountProviderActivatedEventArgs :
 };
 
 struct IViewSwitcherProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IViewSwitcherProvider>,
     impl::require<IViewSwitcherProvider, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -414,7 +414,7 @@ struct IViewSwitcherProvider :
 };
 
 struct IVoiceCommandActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandActivatedEventArgs>,
     impl::require<IVoiceCommandActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -422,7 +422,7 @@ struct IVoiceCommandActivatedEventArgs :
 };
 
 struct IWebAccountProviderActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountProviderActivatedEventArgs>,
     impl::require<IWebAccountProviderActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
@@ -430,7 +430,7 @@ struct IWebAccountProviderActivatedEventArgs :
 };
 
 struct IWebAuthenticationBrokerContinuationEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAuthenticationBrokerContinuationEventArgs>,
     impl::require<IWebAuthenticationBrokerContinuationEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {

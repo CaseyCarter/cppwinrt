@@ -132,12 +132,12 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
         }
     }
 
-    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Completed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -160,12 +160,12 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
         }
     }
 
-    HRESULT __stdcall add_StatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_StatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -987,14 +987,14 @@ template <typename D> void impl_IAppInstallItem<D>::Restart() const
     check_hresult(WINRT_SHIM(IAppInstallItem)->abi_Restart());
 }
 
-template <typename D> event_token impl_IAppInstallItem<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAppInstallItem<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAppInstallItem)->add_Completed(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAppInstallItem> impl_IAppInstallItem<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAppInstallItem> impl_IAppInstallItem<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAppInstallItem>(this, &ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem::remove_Completed, Completed(handler));
 }
@@ -1004,14 +1004,14 @@ template <typename D> void impl_IAppInstallItem<D>::Completed(event_token token)
     check_hresult(WINRT_SHIM(IAppInstallItem)->remove_Completed(token));
 }
 
-template <typename D> event_token impl_IAppInstallItem<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IAppInstallItem<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IAppInstallItem)->add_StatusChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IAppInstallItem> impl_IAppInstallItem<D>::StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IAppInstallItem> impl_IAppInstallItem<D>::StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IAppInstallItem>(this, &ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem::remove_StatusChanged, StatusChanged(handler));
 }

@@ -17,7 +17,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Web::Http::Headers {
 
-struct __declspec(uuid("9a586b89-d5d0-4fbe-bd9d-b5b3636811b4")) __declspec(novtable) IHttpCacheDirectiveHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("9a586b89-d5d0-4fbe-bd9d-b5b3636811b4")) __declspec(novtable) IHttpCacheDirectiveHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxAge(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ** value) = 0;
     virtual HRESULT __stdcall put_MaxAge(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> * value) = 0;
@@ -31,100 +31,100 @@ struct __declspec(uuid("9a586b89-d5d0-4fbe-bd9d-b5b3636811b4")) __declspec(novta
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("393361af-0f7d-4820-9fdd-a2b956eeaeab")) __declspec(novtable) IHttpChallengeHeaderValue : Windows::IInspectable
+struct __declspec(uuid("393361af-0f7d-4820-9fdd-a2b956eeaeab")) __declspec(novtable) IHttpChallengeHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Parameters(Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> ** value) = 0;
     virtual HRESULT __stdcall get_Scheme(hstring * value) = 0;
     virtual HRESULT __stdcall get_Token(hstring * value) = 0;
 };
 
-struct __declspec(uuid("ca9e5f81-aee0-4353-a10b-e625babd64c2")) __declspec(novtable) IHttpChallengeHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("ca9e5f81-aee0-4353-a10b-e625babd64c2")) __declspec(novtable) IHttpChallengeHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("c452c451-d99c-40aa-9399-90eeb98fc613")) __declspec(novtable) IHttpChallengeHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("c452c451-d99c-40aa-9399-90eeb98fc613")) __declspec(novtable) IHttpChallengeHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromScheme(hstring scheme, Windows::Web::Http::Headers::IHttpChallengeHeaderValue ** challengeHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromSchemeWithToken(hstring scheme, hstring token, Windows::Web::Http::Headers::IHttpChallengeHeaderValue ** challengeHeaderValue) = 0;
 };
 
-struct __declspec(uuid("f3d38a72-fc01-4d01-a008-fcb7c459d635")) __declspec(novtable) IHttpChallengeHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("f3d38a72-fc01-4d01-a008-fcb7c459d635")) __declspec(novtable) IHttpChallengeHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpChallengeHeaderValue ** challengeHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpChallengeHeaderValue ** challengeHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("cb4af27a-4e90-45eb-8dcd-fd1408f4c44f")) __declspec(novtable) IHttpConnectionOptionHeaderValue : Windows::IInspectable
+struct __declspec(uuid("cb4af27a-4e90-45eb-8dcd-fd1408f4c44f")) __declspec(novtable) IHttpConnectionOptionHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Token(hstring * value) = 0;
 };
 
-struct __declspec(uuid("e4f56c1d-5142-4e00-8e0f-019509337629")) __declspec(novtable) IHttpConnectionOptionHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("e4f56c1d-5142-4e00-8e0f-019509337629")) __declspec(novtable) IHttpConnectionOptionHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("d93ccc1e-0b7d-4c3f-a58d-a2a1bdeabc0a")) __declspec(novtable) IHttpConnectionOptionHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("d93ccc1e-0b7d-4c3f-a58d-a2a1bdeabc0a")) __declspec(novtable) IHttpConnectionOptionHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring token, Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValue ** connectionOptionHeaderValue) = 0;
 };
 
-struct __declspec(uuid("aaa75d37-a946-4b1f-85af-48b68b3c50bd")) __declspec(novtable) IHttpConnectionOptionHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("aaa75d37-a946-4b1f-85af-48b68b3c50bd")) __declspec(novtable) IHttpConnectionOptionHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValue ** connectionOptionHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValue ** connectionOptionHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("bcf7f92a-9376-4d85-bccc-9f4f9acab434")) __declspec(novtable) IHttpContentCodingHeaderValue : Windows::IInspectable
+struct __declspec(uuid("bcf7f92a-9376-4d85-bccc-9f4f9acab434")) __declspec(novtable) IHttpContentCodingHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentCoding(hstring * value) = 0;
 };
 
-struct __declspec(uuid("7d221721-a6db-436e-8e83-91596192819c")) __declspec(novtable) IHttpContentCodingHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("7d221721-a6db-436e-8e83-91596192819c")) __declspec(novtable) IHttpContentCodingHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("c53d2bd7-332b-4350-8510-2e67a2289a5a")) __declspec(novtable) IHttpContentCodingHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("c53d2bd7-332b-4350-8510-2e67a2289a5a")) __declspec(novtable) IHttpContentCodingHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring contentCoding, Windows::Web::Http::Headers::IHttpContentCodingHeaderValue ** contentCodingHeaderValue) = 0;
 };
 
-struct __declspec(uuid("94d8602e-f9bf-42f7-aa46-ed272a41e212")) __declspec(novtable) IHttpContentCodingHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("94d8602e-f9bf-42f7-aa46-ed272a41e212")) __declspec(novtable) IHttpContentCodingHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpContentCodingHeaderValue ** contentCodingHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpContentCodingHeaderValue ** contentCodingHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("94531cd5-8b13-4d73-8651-f76b38f88495")) __declspec(novtable) IHttpContentCodingWithQualityHeaderValue : Windows::IInspectable
+struct __declspec(uuid("94531cd5-8b13-4d73-8651-f76b38f88495")) __declspec(novtable) IHttpContentCodingWithQualityHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentCoding(hstring * value) = 0;
     virtual HRESULT __stdcall get_Quality(Windows::Foundation::IReference<double> ** value) = 0;
 };
 
-struct __declspec(uuid("7c0d753e-e899-4378-b5c8-412d820711cc")) __declspec(novtable) IHttpContentCodingWithQualityHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("7c0d753e-e899-4378-b5c8-412d820711cc")) __declspec(novtable) IHttpContentCodingWithQualityHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("c45eee1a-c553-46fc-ade2-d75c1d53df7b")) __declspec(novtable) IHttpContentCodingWithQualityHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("c45eee1a-c553-46fc-ade2-d75c1d53df7b")) __declspec(novtable) IHttpContentCodingWithQualityHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromValue(hstring contentCoding, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHeaderValue ** contentCodingWithQualityHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromValueWithQuality(hstring contentCoding, double quality, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHeaderValue ** contentCodingWithQualityHeaderValue) = 0;
 };
 
-struct __declspec(uuid("e8c9357c-8f89-4801-8e75-4c9abfc3de71")) __declspec(novtable) IHttpContentCodingWithQualityHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("e8c9357c-8f89-4801-8e75-4c9abfc3de71")) __declspec(novtable) IHttpContentCodingWithQualityHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHeaderValue ** contentCodingWithQualityHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHeaderValue ** contentCodingWithQualityHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("f2a2eedc-2629-4b49-9908-96a168e9365e")) __declspec(novtable) IHttpContentDispositionHeaderValue : Windows::IInspectable
+struct __declspec(uuid("f2a2eedc-2629-4b49-9908-96a168e9365e")) __declspec(novtable) IHttpContentDispositionHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DispositionType(hstring * value) = 0;
     virtual HRESULT __stdcall put_DispositionType(hstring value) = 0;
@@ -139,18 +139,18 @@ struct __declspec(uuid("f2a2eedc-2629-4b49-9908-96a168e9365e")) __declspec(novta
     virtual HRESULT __stdcall put_Size(Windows::Foundation::IReference<uint64_t> * value) = 0;
 };
 
-struct __declspec(uuid("9915bbc4-456c-4e81-8295-b2ab3cbcf545")) __declspec(novtable) IHttpContentDispositionHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("9915bbc4-456c-4e81-8295-b2ab3cbcf545")) __declspec(novtable) IHttpContentDispositionHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring dispositionType, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValue ** contentDispositionHeaderValue) = 0;
 };
 
-struct __declspec(uuid("29c56067-5a37-46e4-b074-c5177d69ca66")) __declspec(novtable) IHttpContentDispositionHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("29c56067-5a37-46e4-b074-c5177d69ca66")) __declspec(novtable) IHttpContentDispositionHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValue ** contentDispositionHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValue ** contentDispositionHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("40612a44-47ae-4b7e-9124-69628b64aa18")) __declspec(novtable) IHttpContentHeaderCollection : Windows::IInspectable
+struct __declspec(uuid("40612a44-47ae-4b7e-9124-69628b64aa18")) __declspec(novtable) IHttpContentHeaderCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentDisposition(Windows::Web::Http::Headers::IHttpContentDispositionHeaderValue ** value) = 0;
     virtual HRESULT __stdcall put_ContentDisposition(Windows::Web::Http::Headers::IHttpContentDispositionHeaderValue * value) = 0;
@@ -174,7 +174,7 @@ struct __declspec(uuid("40612a44-47ae-4b7e-9124-69628b64aa18")) __declspec(novta
     virtual HRESULT __stdcall abi_TryAppendWithoutValidation(hstring name, hstring value, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("04d967d3-a4f6-495c-9530-8579fcba8aa9")) __declspec(novtable) IHttpContentRangeHeaderValue : Windows::IInspectable
+struct __declspec(uuid("04d967d3-a4f6-495c-9530-8579fcba8aa9")) __declspec(novtable) IHttpContentRangeHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FirstBytePosition(Windows::Foundation::IReference<uint64_t> ** value) = 0;
     virtual HRESULT __stdcall get_LastBytePosition(Windows::Foundation::IReference<uint64_t> ** value) = 0;
@@ -183,76 +183,76 @@ struct __declspec(uuid("04d967d3-a4f6-495c-9530-8579fcba8aa9")) __declspec(novta
     virtual HRESULT __stdcall put_Unit(hstring value) = 0;
 };
 
-struct __declspec(uuid("3f5bd691-a03c-4456-9a6f-ef27ecd03cae")) __declspec(novtable) IHttpContentRangeHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("3f5bd691-a03c-4456-9a6f-ef27ecd03cae")) __declspec(novtable) IHttpContentRangeHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromLength(uint64_t length, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue ** contentRangeHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromRange(uint64_t from, uint64_t to, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue ** contentRangeHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromRangeWithLength(uint64_t from, uint64_t to, uint64_t length, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue ** contentRangeHeaderValue) = 0;
 };
 
-struct __declspec(uuid("80a346ca-174c-4fae-821c-134cd294aa38")) __declspec(novtable) IHttpContentRangeHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("80a346ca-174c-4fae-821c-134cd294aa38")) __declspec(novtable) IHttpContentRangeHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue ** contentRangeHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue ** contentRangeHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("cbd46217-4b29-412b-bd90-b3d814ab8e1b")) __declspec(novtable) IHttpCookiePairHeaderValue : Windows::IInspectable
+struct __declspec(uuid("cbd46217-4b29-412b-bd90-b3d814ab8e1b")) __declspec(novtable) IHttpCookiePairHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Value(hstring * value) = 0;
     virtual HRESULT __stdcall put_Value(hstring value) = 0;
 };
 
-struct __declspec(uuid("f3f44350-581e-4ecc-9f59-e507d04f06e6")) __declspec(novtable) IHttpCookiePairHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("f3f44350-581e-4ecc-9f59-e507d04f06e6")) __declspec(novtable) IHttpCookiePairHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("635e326f-146f-4f56-aa21-2cb7d6d58b1e")) __declspec(novtable) IHttpCookiePairHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("635e326f-146f-4f56-aa21-2cb7d6d58b1e")) __declspec(novtable) IHttpCookiePairHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromName(hstring name, Windows::Web::Http::Headers::IHttpCookiePairHeaderValue ** cookiePairHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromNameWithValue(hstring name, hstring value, Windows::Web::Http::Headers::IHttpCookiePairHeaderValue ** cookiePairHeaderValue) = 0;
 };
 
-struct __declspec(uuid("6e866d48-06af-4462-8158-99388d5dca81")) __declspec(novtable) IHttpCookiePairHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("6e866d48-06af-4462-8158-99388d5dca81")) __declspec(novtable) IHttpCookiePairHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpCookiePairHeaderValue ** cookiePairHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpCookiePairHeaderValue ** cookiePairHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("c34cc3cb-542e-4177-a6c7-b674ce193fbf")) __declspec(novtable) IHttpCredentialsHeaderValue : Windows::IInspectable
+struct __declspec(uuid("c34cc3cb-542e-4177-a6c7-b674ce193fbf")) __declspec(novtable) IHttpCredentialsHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Parameters(Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> ** value) = 0;
     virtual HRESULT __stdcall get_Scheme(hstring * value) = 0;
     virtual HRESULT __stdcall get_Token(hstring * value) = 0;
 };
 
-struct __declspec(uuid("f21d9e91-4d1c-4182-bfd1-34470a62f950")) __declspec(novtable) IHttpCredentialsHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("f21d9e91-4d1c-4182-bfd1-34470a62f950")) __declspec(novtable) IHttpCredentialsHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromScheme(hstring scheme, Windows::Web::Http::Headers::IHttpCredentialsHeaderValue ** credentialsHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromSchemeWithToken(hstring scheme, hstring token, Windows::Web::Http::Headers::IHttpCredentialsHeaderValue ** credentialsHeaderValue) = 0;
 };
 
-struct __declspec(uuid("a69b2be6-ce8c-4443-a35a-1b727b131036")) __declspec(novtable) IHttpCredentialsHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("a69b2be6-ce8c-4443-a35a-1b727b131036")) __declspec(novtable) IHttpCredentialsHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpCredentialsHeaderValue ** credentialsHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpCredentialsHeaderValue ** credentialsHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("eafcaa6a-c4dc-49e2-a27d-043adf5867a3")) __declspec(novtable) IHttpDateOrDeltaHeaderValue : Windows::IInspectable
+struct __declspec(uuid("eafcaa6a-c4dc-49e2-a27d-043adf5867a3")) __declspec(novtable) IHttpDateOrDeltaHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Date(Windows::Foundation::IReference<Windows::Foundation::DateTime> ** value) = 0;
     virtual HRESULT __stdcall get_Delta(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ** value) = 0;
 };
 
-struct __declspec(uuid("7c2659a8-6672-4e90-9a9a-f39766f7f576")) __declspec(novtable) IHttpDateOrDeltaHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("7c2659a8-6672-4e90-9a9a-f39766f7f576")) __declspec(novtable) IHttpDateOrDeltaHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValue ** dateOrDeltaHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValue ** dateOrDeltaHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("4ce585cd-3a99-43af-a2e6-ec232fea9658")) __declspec(novtable) IHttpExpectationHeaderValue : Windows::IInspectable
+struct __declspec(uuid("4ce585cd-3a99-43af-a2e6-ec232fea9658")) __declspec(novtable) IHttpExpectationHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Value(hstring * value) = 0;
@@ -260,55 +260,55 @@ struct __declspec(uuid("4ce585cd-3a99-43af-a2e6-ec232fea9658")) __declspec(novta
     virtual HRESULT __stdcall get_Parameters(Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> ** value) = 0;
 };
 
-struct __declspec(uuid("e78521b3-a0e2-4ac4-9e66-79706cb9fd58")) __declspec(novtable) IHttpExpectationHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("e78521b3-a0e2-4ac4-9e66-79706cb9fd58")) __declspec(novtable) IHttpExpectationHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("4ea275cb-d53e-4868-8856-1e21a5030dc0")) __declspec(novtable) IHttpExpectationHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("4ea275cb-d53e-4868-8856-1e21a5030dc0")) __declspec(novtable) IHttpExpectationHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromName(hstring name, Windows::Web::Http::Headers::IHttpExpectationHeaderValue ** expectationHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromNameWithValue(hstring name, hstring value, Windows::Web::Http::Headers::IHttpExpectationHeaderValue ** expectationHeaderValue) = 0;
 };
 
-struct __declspec(uuid("3019abe2-cfe5-473b-a57f-fba5b14eb257")) __declspec(novtable) IHttpExpectationHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("3019abe2-cfe5-473b-a57f-fba5b14eb257")) __declspec(novtable) IHttpExpectationHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpExpectationHeaderValue ** expectationHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpExpectationHeaderValue ** expectationHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("9ebd7ca3-8219-44f6-9902-8c56dfd3340c")) __declspec(novtable) IHttpLanguageHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("9ebd7ca3-8219-44f6-9902-8c56dfd3340c")) __declspec(novtable) IHttpLanguageHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("7256e102-0080-4db4-a083-7de7b2e5ba4c")) __declspec(novtable) IHttpLanguageRangeWithQualityHeaderValue : Windows::IInspectable
+struct __declspec(uuid("7256e102-0080-4db4-a083-7de7b2e5ba4c")) __declspec(novtable) IHttpLanguageRangeWithQualityHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LanguageRange(hstring * languageRange) = 0;
     virtual HRESULT __stdcall get_Quality(Windows::Foundation::IReference<double> ** value) = 0;
 };
 
-struct __declspec(uuid("885d5abd-4b4f-480a-89ce-8aedcee6e3a0")) __declspec(novtable) IHttpLanguageRangeWithQualityHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("885d5abd-4b4f-480a-89ce-8aedcee6e3a0")) __declspec(novtable) IHttpLanguageRangeWithQualityHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("7bb83970-780f-4c83-9fe4-dc3087f6bd55")) __declspec(novtable) IHttpLanguageRangeWithQualityHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("7bb83970-780f-4c83-9fe4-dc3087f6bd55")) __declspec(novtable) IHttpLanguageRangeWithQualityHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromLanguageRange(hstring languageRange, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHeaderValue ** languageRangeWithQualityHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromLanguageRangeWithQuality(hstring languageRange, double quality, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHeaderValue ** languageRangeWithQualityHeaderValue) = 0;
 };
 
-struct __declspec(uuid("2541e146-f308-46f5-b695-42f54024ec68")) __declspec(novtable) IHttpLanguageRangeWithQualityHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("2541e146-f308-46f5-b695-42f54024ec68")) __declspec(novtable) IHttpLanguageRangeWithQualityHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHeaderValue ** languageRangeWithQualityHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHeaderValue ** languageRangeWithQualityHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("16b28533-e728-4fcb-bdb0-08a431a14844")) __declspec(novtable) IHttpMediaTypeHeaderValue : Windows::IInspectable
+struct __declspec(uuid("16b28533-e728-4fcb-bdb0-08a431a14844")) __declspec(novtable) IHttpMediaTypeHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CharSet(hstring * value) = 0;
     virtual HRESULT __stdcall put_CharSet(hstring value) = 0;
@@ -317,18 +317,18 @@ struct __declspec(uuid("16b28533-e728-4fcb-bdb0-08a431a14844")) __declspec(novta
     virtual HRESULT __stdcall get_Parameters(Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> ** value) = 0;
 };
 
-struct __declspec(uuid("bed747a8-cd17-42dd-9367-ab9c5b56dd7d")) __declspec(novtable) IHttpMediaTypeHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("bed747a8-cd17-42dd-9367-ab9c5b56dd7d")) __declspec(novtable) IHttpMediaTypeHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring mediaType, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue ** mediaTypeHeaderValue) = 0;
 };
 
-struct __declspec(uuid("e04d83df-1d41-4d8c-a2de-6fd2ed87399b")) __declspec(novtable) IHttpMediaTypeHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("e04d83df-1d41-4d8c-a2de-6fd2ed87399b")) __declspec(novtable) IHttpMediaTypeHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue ** mediaTypeHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue ** mediaTypeHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("188d5e32-76be-44a0-b1cd-2074bded2dde")) __declspec(novtable) IHttpMediaTypeWithQualityHeaderValue : Windows::IInspectable
+struct __declspec(uuid("188d5e32-76be-44a0-b1cd-2074bded2dde")) __declspec(novtable) IHttpMediaTypeWithQualityHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CharSet(hstring * value) = 0;
     virtual HRESULT __stdcall put_CharSet(hstring value) = 0;
@@ -339,92 +339,92 @@ struct __declspec(uuid("188d5e32-76be-44a0-b1cd-2074bded2dde")) __declspec(novta
     virtual HRESULT __stdcall put_Quality(Windows::Foundation::IReference<double> * value) = 0;
 };
 
-struct __declspec(uuid("3c0c6b73-1342-4587-a056-18d02ff67165")) __declspec(novtable) IHttpMediaTypeWithQualityHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("3c0c6b73-1342-4587-a056-18d02ff67165")) __declspec(novtable) IHttpMediaTypeWithQualityHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("4c6d20f4-9457-44e6-a323-d122b958780b")) __declspec(novtable) IHttpMediaTypeWithQualityHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("4c6d20f4-9457-44e6-a323-d122b958780b")) __declspec(novtable) IHttpMediaTypeWithQualityHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromMediaType(hstring mediaType, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderValue ** mediaTypeWithQualityHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromMediaTypeWithQuality(hstring mediaType, double quality, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderValue ** mediaTypeWithQualityHeaderValue) = 0;
 };
 
-struct __declspec(uuid("5b070cd9-b560-4fc8-9835-7e6c0a657b24")) __declspec(novtable) IHttpMediaTypeWithQualityHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("5b070cd9-b560-4fc8-9835-7e6c0a657b24")) __declspec(novtable) IHttpMediaTypeWithQualityHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderValue ** mediaTypeWithQualityHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderValue ** mediaTypeWithQualityHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("43bc3ff4-6119-4adf-938c-34bfffcf92ed")) __declspec(novtable) IHttpMethodHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("43bc3ff4-6119-4adf-938c-34bfffcf92ed")) __declspec(novtable) IHttpMethodHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("d8ba7463-5b9a-4d1b-93f9-aa5b44ecfddf")) __declspec(novtable) IHttpNameValueHeaderValue : Windows::IInspectable
+struct __declspec(uuid("d8ba7463-5b9a-4d1b-93f9-aa5b44ecfddf")) __declspec(novtable) IHttpNameValueHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Value(hstring * value) = 0;
     virtual HRESULT __stdcall put_Value(hstring value) = 0;
 };
 
-struct __declspec(uuid("770e2267-cbf8-4736-a925-93fbe10c7ca8")) __declspec(novtable) IHttpNameValueHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("770e2267-cbf8-4736-a925-93fbe10c7ca8")) __declspec(novtable) IHttpNameValueHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromName(hstring name, Windows::Web::Http::Headers::IHttpNameValueHeaderValue ** nameValueHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromNameWithValue(hstring name, hstring value, Windows::Web::Http::Headers::IHttpNameValueHeaderValue ** nameValueHeaderValue) = 0;
 };
 
-struct __declspec(uuid("ffd4030f-1130-4152-8659-256909a9d115")) __declspec(novtable) IHttpNameValueHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("ffd4030f-1130-4152-8659-256909a9d115")) __declspec(novtable) IHttpNameValueHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpNameValueHeaderValue ** nameValueHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpNameValueHeaderValue ** nameValueHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("f4feee03-ebd4-4160-b9ff-807c5183b6e6")) __declspec(novtable) IHttpProductHeaderValue : Windows::IInspectable
+struct __declspec(uuid("f4feee03-ebd4-4160-b9ff-807c5183b6e6")) __declspec(novtable) IHttpProductHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_Version(hstring * value) = 0;
 };
 
-struct __declspec(uuid("611aa4f5-82bc-42fb-977b-dc00536e5e86")) __declspec(novtable) IHttpProductHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("611aa4f5-82bc-42fb-977b-dc00536e5e86")) __declspec(novtable) IHttpProductHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromName(hstring productName, Windows::Web::Http::Headers::IHttpProductHeaderValue ** productHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromNameWithVersion(hstring productName, hstring productVersion, Windows::Web::Http::Headers::IHttpProductHeaderValue ** productHeaderValue) = 0;
 };
 
-struct __declspec(uuid("90c33e29-befc-4337-be62-49f097975f53")) __declspec(novtable) IHttpProductHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("90c33e29-befc-4337-be62-49f097975f53")) __declspec(novtable) IHttpProductHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpProductHeaderValue ** productHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpProductHeaderValue ** productHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("1b1a8732-4c35-486a-966f-646489198e4d")) __declspec(novtable) IHttpProductInfoHeaderValue : Windows::IInspectable
+struct __declspec(uuid("1b1a8732-4c35-486a-966f-646489198e4d")) __declspec(novtable) IHttpProductInfoHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Product(Windows::Web::Http::Headers::IHttpProductHeaderValue ** value) = 0;
     virtual HRESULT __stdcall get_Comment(hstring * value) = 0;
 };
 
-struct __declspec(uuid("877df74a-d69b-44f8-ad4f-453af9c42ed0")) __declspec(novtable) IHttpProductInfoHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("877df74a-d69b-44f8-ad4f-453af9c42ed0")) __declspec(novtable) IHttpProductInfoHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("24220fbe-eabe-4464-b460-ec010b7c41e2")) __declspec(novtable) IHttpProductInfoHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("24220fbe-eabe-4464-b460-ec010b7c41e2")) __declspec(novtable) IHttpProductInfoHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromComment(hstring productComment, Windows::Web::Http::Headers::IHttpProductInfoHeaderValue ** productInfoHeaderValue) = 0;
     virtual HRESULT __stdcall abi_CreateFromNameWithVersion(hstring productName, hstring productVersion, Windows::Web::Http::Headers::IHttpProductInfoHeaderValue ** productInfoHeaderValue) = 0;
 };
 
-struct __declspec(uuid("db7fd857-327a-4e73-81e5-7059a302b042")) __declspec(novtable) IHttpProductInfoHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("db7fd857-327a-4e73-81e5-7059a302b042")) __declspec(novtable) IHttpProductInfoHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpProductInfoHeaderValue ** productInfoHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpProductInfoHeaderValue ** productInfoHeaderValue, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("af40329b-b544-469b-86b9-ac3d466fea36")) __declspec(novtable) IHttpRequestHeaderCollection : Windows::IInspectable
+struct __declspec(uuid("af40329b-b544-469b-86b9-ac3d466fea36")) __declspec(novtable) IHttpRequestHeaderCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Accept(Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderValueCollection ** value) = 0;
     virtual HRESULT __stdcall get_AcceptEncoding(Windows::Web::Http::Headers::IHttpContentCodingWithQualityHeaderValueCollection ** value) = 0;
@@ -457,7 +457,7 @@ struct __declspec(uuid("af40329b-b544-469b-86b9-ac3d466fea36")) __declspec(novta
     virtual HRESULT __stdcall abi_TryAppendWithoutValidation(hstring name, hstring value, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("7a990969-fa3f-41ed-aac6-bf957975c16b")) __declspec(novtable) IHttpResponseHeaderCollection : Windows::IInspectable
+struct __declspec(uuid("7a990969-fa3f-41ed-aac6-bf957975c16b")) __declspec(novtable) IHttpResponseHeaderCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Age(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ** value) = 0;
     virtual HRESULT __stdcall put_Age(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> * value) = 0;
@@ -477,24 +477,24 @@ struct __declspec(uuid("7a990969-fa3f-41ed-aac6-bf957975c16b")) __declspec(novta
     virtual HRESULT __stdcall abi_TryAppendWithoutValidation(hstring name, hstring value, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("436f32f9-3ded-42bd-b38a-5496a2511ce6")) __declspec(novtable) IHttpTransferCodingHeaderValue : Windows::IInspectable
+struct __declspec(uuid("436f32f9-3ded-42bd-b38a-5496a2511ce6")) __declspec(novtable) IHttpTransferCodingHeaderValue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Parameters(Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> ** value) = 0;
     virtual HRESULT __stdcall get_Value(hstring * value) = 0;
 };
 
-struct __declspec(uuid("202c8c34-2c03-49b8-9665-73e27cb2fc79")) __declspec(novtable) IHttpTransferCodingHeaderValueCollection : Windows::IInspectable
+struct __declspec(uuid("202c8c34-2c03-49b8-9665-73e27cb2fc79")) __declspec(novtable) IHttpTransferCodingHeaderValueCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ParseAdd(hstring input) = 0;
     virtual HRESULT __stdcall abi_TryParseAdd(hstring input, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("bb62dffc-e361-4f08-8e4f-c9e723de703b")) __declspec(novtable) IHttpTransferCodingHeaderValueFactory : Windows::IInspectable
+struct __declspec(uuid("bb62dffc-e361-4f08-8e4f-c9e723de703b")) __declspec(novtable) IHttpTransferCodingHeaderValueFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring input, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValue ** transferCodingHeaderValue) = 0;
 };
 
-struct __declspec(uuid("6ab8892a-1a98-4d32-a906-7470a9875ce5")) __declspec(novtable) IHttpTransferCodingHeaderValueStatics : Windows::IInspectable
+struct __declspec(uuid("6ab8892a-1a98-4d32-a906-7470a9875ce5")) __declspec(novtable) IHttpTransferCodingHeaderValueStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Parse(hstring input, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValue ** transferCodingHeaderValue) = 0;
     virtual HRESULT __stdcall abi_TryParse(hstring input, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValue ** transferCodingHeaderValue, bool * succeeded) = 0;

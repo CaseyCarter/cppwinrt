@@ -145,14 +145,14 @@ template <> struct __declspec(uuid("a11824c9-e458-502a-afd8-ce3ce0abd6fe")) __de
 namespace Windows::Storage::Pickers {
 
 struct IFileOpenPicker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileOpenPicker>
 {
     IFileOpenPicker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileOpenPicker2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileOpenPicker2>,
     impl::require<IFileOpenPicker2, Windows::Storage::Pickers::IFileOpenPicker>
 {
@@ -160,28 +160,28 @@ struct IFileOpenPicker2 :
 };
 
 struct IFileOpenPickerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileOpenPickerStatics>
 {
     IFileOpenPickerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileOpenPickerWithOperationId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileOpenPickerWithOperationId>
 {
     IFileOpenPickerWithOperationId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileSavePicker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileSavePicker>
 {
     IFileSavePicker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileSavePicker2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileSavePicker2>,
     impl::require<IFileSavePicker2, Windows::Storage::Pickers::IFileSavePicker>
 {
@@ -189,7 +189,7 @@ struct IFileSavePicker2 :
 };
 
 struct IFileSavePicker3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileSavePicker3>,
     impl::require<IFileSavePicker3, Windows::Storage::Pickers::IFileSavePicker>
 {
@@ -197,14 +197,14 @@ struct IFileSavePicker3 :
 };
 
 struct IFolderPicker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFolderPicker>
 {
     IFolderPicker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFolderPicker2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFolderPicker2>,
     impl::require<IFolderPicker2, Windows::Storage::Pickers::IFolderPicker>
 {

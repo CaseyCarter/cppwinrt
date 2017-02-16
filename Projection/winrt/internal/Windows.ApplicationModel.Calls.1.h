@@ -14,27 +14,27 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Calls {
 
-struct __declspec(uuid("fd789617-2dd7-4c8c-b2bd-95d17a5bb733")) __declspec(novtable) ICallAnswerEventArgs : Windows::IInspectable
+struct __declspec(uuid("fd789617-2dd7-4c8c-b2bd-95d17a5bb733")) __declspec(novtable) ICallAnswerEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AcceptedMedia(winrt::Windows::ApplicationModel::Calls::VoipPhoneCallMedia * value) = 0;
 };
 
-struct __declspec(uuid("da47fad7-13d4-4d92-a1c2-b77811ee37ec")) __declspec(novtable) ICallRejectEventArgs : Windows::IInspectable
+struct __declspec(uuid("da47fad7-13d4-4d92-a1c2-b77811ee37ec")) __declspec(novtable) ICallRejectEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RejectReason(winrt::Windows::ApplicationModel::Calls::VoipPhoneCallRejectReason * value) = 0;
 };
 
-struct __declspec(uuid("eab2349e-66f5-47f9-9fb5-459c5198c720")) __declspec(novtable) ICallStateChangeEventArgs : Windows::IInspectable
+struct __declspec(uuid("eab2349e-66f5-47f9-9fb5-459c5198c720")) __declspec(novtable) ICallStateChangeEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_State(winrt::Windows::ApplicationModel::Calls::VoipPhoneCallState * value) = 0;
 };
 
-struct __declspec(uuid("8585e159-0c41-432c-814d-c5f1fdf530be")) __declspec(novtable) IMuteChangeEventArgs : Windows::IInspectable
+struct __declspec(uuid("8585e159-0c41-432c-814d-c5f1fdf530be")) __declspec(novtable) IMuteChangeEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Muted(bool * value) = 0;
 };
 
-struct __declspec(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857")) __declspec(novtable) IPhoneCallHistoryEntry : Windows::IInspectable
+struct __declspec(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857")) __declspec(novtable) IPhoneCallHistoryEntry : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_Address(Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddress ** value) = 0;
@@ -72,7 +72,7 @@ struct __declspec(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857")) __declspec(novta
     virtual HRESULT __stdcall put_StartTime(Windows::Foundation::DateTime value) = 0;
 };
 
-struct __declspec(uuid("30f159da-3955-4042-84e6-66eebf82e67f")) __declspec(novtable) IPhoneCallHistoryEntryAddress : Windows::IInspectable
+struct __declspec(uuid("30f159da-3955-4042-84e6-66eebf82e67f")) __declspec(novtable) IPhoneCallHistoryEntryAddress : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContactId(hstring * value) = 0;
     virtual HRESULT __stdcall put_ContactId(hstring value) = 0;
@@ -84,40 +84,40 @@ struct __declspec(uuid("30f159da-3955-4042-84e6-66eebf82e67f")) __declspec(novta
     virtual HRESULT __stdcall put_RawAddressKind(winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind value) = 0;
 };
 
-struct __declspec(uuid("fb0fadba-c7f0-4bb6-9f6b-ba5d73209aca")) __declspec(novtable) IPhoneCallHistoryEntryAddressFactory : Windows::IInspectable
+struct __declspec(uuid("fb0fadba-c7f0-4bb6-9f6b-ba5d73209aca")) __declspec(novtable) IPhoneCallHistoryEntryAddressFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring rawAddress, winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddress ** result) = 0;
 };
 
-struct __declspec(uuid("9c5fe15c-8bed-40ca-b06e-c4ca8eae5c87")) __declspec(novtable) IPhoneCallHistoryEntryQueryOptions : Windows::IInspectable
+struct __declspec(uuid("9c5fe15c-8bed-40ca-b06e-c4ca8eae5c87")) __declspec(novtable) IPhoneCallHistoryEntryQueryOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DesiredMedia(winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia * value) = 0;
     virtual HRESULT __stdcall put_DesiredMedia(winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia value) = 0;
     virtual HRESULT __stdcall get_SourceIds(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("61ece4be-8d86-479f-8404-a9846920fee6")) __declspec(novtable) IPhoneCallHistoryEntryReader : Windows::IInspectable
+struct __declspec(uuid("61ece4be-8d86-479f-8404-a9846920fee6")) __declspec(novtable) IPhoneCallHistoryEntryReader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ReadBatchAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry>> ** result) = 0;
 };
 
-struct __declspec(uuid("d925c523-f55f-4353-9db4-0205a5265a55")) __declspec(novtable) IPhoneCallHistoryManagerForUser : Windows::IInspectable
+struct __declspec(uuid("d925c523-f55f-4353-9db4-0205a5265a55")) __declspec(novtable) IPhoneCallHistoryManagerForUser : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestStoreAsync(winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> ** result) = 0;
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
 };
 
-struct __declspec(uuid("f5a6da39-b31f-4f45-ac8e-1b08893c1b50")) __declspec(novtable) IPhoneCallHistoryManagerStatics : Windows::IInspectable
+struct __declspec(uuid("f5a6da39-b31f-4f45-ac8e-1b08893c1b50")) __declspec(novtable) IPhoneCallHistoryManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestStoreAsync(winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> ** result) = 0;
 };
 
-struct __declspec(uuid("efd474f0-a2db-4188-9e92-bc3cfa6813cf")) __declspec(novtable) IPhoneCallHistoryManagerStatics2 : Windows::IInspectable
+struct __declspec(uuid("efd474f0-a2db-4188-9e92-bc3cfa6813cf")) __declspec(novtable) IPhoneCallHistoryManagerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForUser(Windows::System::IUser * user, Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerForUser ** result) = 0;
 };
 
-struct __declspec(uuid("2f907db8-b40e-422b-8545-cb1910a61c52")) __declspec(novtable) IPhoneCallHistoryStore : Windows::IInspectable
+struct __declspec(uuid("2f907db8-b40e-422b-8545-cb1910a61c52")) __declspec(novtable) IPhoneCallHistoryStore : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetEntryAsync(hstring callHistoryEntryId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> ** result) = 0;
     virtual HRESULT __stdcall abi_GetEntryReader(Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryReader ** result) = 0;
@@ -133,7 +133,7 @@ struct __declspec(uuid("2f907db8-b40e-422b-8545-cb1910a61c52")) __declspec(novta
     virtual HRESULT __stdcall abi_MarkSourcesAsSeenAsync(Windows::Foundation::Collections::IIterable<hstring> * sourceIds, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79")) __declspec(novtable) IVoipCallCoordinator : Windows::IInspectable
+struct __declspec(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79")) __declspec(novtable) IVoipCallCoordinator : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ReserveCallResourcesAsync(hstring taskEntryPoint, Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> ** operation) = 0;
     virtual HRESULT __stdcall add_MuteStateChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipCallCoordinator, Windows::ApplicationModel::Calls::MuteChangeEventArgs> * muteChangeHandler, event_token * token) = 0;
@@ -148,12 +148,12 @@ struct __declspec(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79")) __declspec(novta
     virtual HRESULT __stdcall abi_CancelUpgrade(GUID callUpgradeGuid) = 0;
 };
 
-struct __declspec(uuid("7f5d1f2b-e04a-4d10-b31a-a55c922cc2fb")) __declspec(novtable) IVoipCallCoordinatorStatics : Windows::IInspectable
+struct __declspec(uuid("7f5d1f2b-e04a-4d10-b31a-a55c922cc2fb")) __declspec(novtable) IVoipCallCoordinatorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDefault(Windows::ApplicationModel::Calls::IVoipCallCoordinator ** coordinator) = 0;
 };
 
-struct __declspec(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990")) __declspec(novtable) IVoipPhoneCall : Windows::IInspectable
+struct __declspec(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990")) __declspec(novtable) IVoipPhoneCall : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_EndRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_EndRequested(event_token token) = 0;

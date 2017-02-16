@@ -82,7 +82,7 @@ template <> struct __declspec(uuid("a6214bde-02d5-55b3-ab0d-c6031be70da1")) __de
 
 #ifndef WINRT_GENERIC_5c43e195_7d39_5d0d_a309_1991e68acdb7
 #define WINRT_GENERIC_5c43e195_7d39_5d0d_a309_1991e68acdb7
-template <> struct __declspec(uuid("5c43e195-7d39-5d0d-a309-1991e68acdb7")) __declspec(novtable) TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> {};
+template <> struct __declspec(uuid("5c43e195-7d39-5d0d-a309-1991e68acdb7")) __declspec(novtable) TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
@@ -116,7 +116,7 @@ template <> struct __declspec(uuid("a1c0a397-0364-5e4c-9dca-7cd7011bd114")) __de
 namespace Windows::Media {
 
 struct IAudioBuffer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioBuffer>,
     impl::require<IAudioBuffer, Windows::Foundation::IClosable, Windows::Foundation::IMemoryBuffer>
 {
@@ -124,7 +124,7 @@ struct IAudioBuffer :
 };
 
 struct IAudioFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioFrame>,
     impl::require<IAudioFrame, Windows::Foundation::IClosable, Windows::Media::IMediaFrame>
 {
@@ -132,42 +132,42 @@ struct IAudioFrame :
 };
 
 struct IAudioFrameFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioFrameFactory>
 {
     IAudioFrameFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutoRepeatModeChangeRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAutoRepeatModeChangeRequestedEventArgs>
 {
     IAutoRepeatModeChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IImageDisplayProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IImageDisplayProperties>
 {
     IImageDisplayProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaExtension :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaExtension>
 {
     IMediaExtension(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaExtensionManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaExtensionManager>
 {
     IMediaExtensionManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFrame>,
     impl::require<IMediaFrame, Windows::Foundation::IClosable>
 {
@@ -175,154 +175,154 @@ struct IMediaFrame :
 };
 
 struct IMediaMarker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaMarker>
 {
     IMediaMarker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaMarkerTypesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaMarkerTypesStatics>
 {
     IMediaMarkerTypesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaMarkers :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaMarkers>
 {
     IMediaMarkers(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaProcessingTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaProcessingTriggerDetails>
 {
     IMediaProcessingTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaTimelineController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaTimelineController>
 {
     IMediaTimelineController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMusicDisplayProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMusicDisplayProperties>
 {
     IMusicDisplayProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMusicDisplayProperties2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMusicDisplayProperties2>
 {
     IMusicDisplayProperties2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMusicDisplayProperties3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMusicDisplayProperties3>
 {
     IMusicDisplayProperties3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlaybackPositionChangeRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlaybackPositionChangeRequestedEventArgs>
 {
     IPlaybackPositionChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlaybackRateChangeRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlaybackRateChangeRequestedEventArgs>
 {
     IPlaybackRateChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IShuffleEnabledChangeRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IShuffleEnabledChangeRequestedEventArgs>
 {
     IShuffleEnabledChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemMediaTransportControls :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemMediaTransportControls>
 {
     ISystemMediaTransportControls(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemMediaTransportControls2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemMediaTransportControls2>
 {
     ISystemMediaTransportControls2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemMediaTransportControlsButtonPressedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemMediaTransportControlsButtonPressedEventArgs>
 {
     ISystemMediaTransportControlsButtonPressedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemMediaTransportControlsDisplayUpdater :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemMediaTransportControlsDisplayUpdater>
 {
     ISystemMediaTransportControlsDisplayUpdater(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemMediaTransportControlsPropertyChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemMediaTransportControlsPropertyChangedEventArgs>
 {
     ISystemMediaTransportControlsPropertyChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemMediaTransportControlsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemMediaTransportControlsStatics>
 {
     ISystemMediaTransportControlsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemMediaTransportControlsTimelineProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemMediaTransportControlsTimelineProperties>
 {
     ISystemMediaTransportControlsTimelineProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoDisplayProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoDisplayProperties>
 {
     IVideoDisplayProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoDisplayProperties2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoDisplayProperties2>
 {
     IVideoDisplayProperties2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoEffectsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoEffectsStatics>
 {
     IVideoEffectsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoFrame>,
     impl::require<IVideoFrame, Windows::Foundation::IClosable, Windows::Media::IMediaFrame>
 {
@@ -330,7 +330,7 @@ struct IVideoFrame :
 };
 
 struct IVideoFrameFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoFrameFactory>
 {
     IVideoFrameFactory(std::nullptr_t = nullptr) noexcept {}

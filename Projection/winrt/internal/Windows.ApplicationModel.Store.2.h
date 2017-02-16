@@ -174,7 +174,7 @@ template <> struct __declspec(uuid("3a7d9a2f-2a82-59f8-bd7c-d691ca169863")) __de
 
 namespace Windows::ApplicationModel::Store {
 
-struct LicenseChangedEventHandler : Windows::IUnknown
+struct LicenseChangedEventHandler : Windows::Foundation::IUnknown
 {
     LicenseChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> LicenseChangedEventHandler(L lambda);
@@ -184,98 +184,98 @@ struct LicenseChangedEventHandler : Windows::IUnknown
 };
 
 struct ICurrentApp :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentApp>
 {
     ICurrentApp(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrentApp2Statics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentApp2Statics>
 {
     ICurrentApp2Statics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrentAppSimulator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentAppSimulator>
 {
     ICurrentAppSimulator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrentAppSimulatorStaticsWithFiltering :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentAppSimulatorStaticsWithFiltering>
 {
     ICurrentAppSimulatorStaticsWithFiltering(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrentAppSimulatorWithCampaignId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentAppSimulatorWithCampaignId>
 {
     ICurrentAppSimulatorWithCampaignId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrentAppSimulatorWithConsumables :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentAppSimulatorWithConsumables>
 {
     ICurrentAppSimulatorWithConsumables(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrentAppStaticsWithFiltering :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentAppStaticsWithFiltering>
 {
     ICurrentAppStaticsWithFiltering(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrentAppWithCampaignId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentAppWithCampaignId>
 {
     ICurrentAppWithCampaignId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrentAppWithConsumables :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentAppWithConsumables>
 {
     ICurrentAppWithConsumables(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILicenseInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILicenseInformation>
 {
     ILicenseInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListingInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListingInformation>
 {
     IListingInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IListingInformation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IListingInformation2>
 {
     IListingInformation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProductLicense :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProductLicense>
 {
     IProductLicense(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProductLicenseWithFulfillment :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProductLicenseWithFulfillment>,
     impl::require<IProductLicenseWithFulfillment, Windows::ApplicationModel::Store::IProductLicense>
 {
@@ -283,28 +283,28 @@ struct IProductLicenseWithFulfillment :
 };
 
 struct IProductListing :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProductListing>
 {
     IProductListing(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProductListing2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProductListing2>
 {
     IProductListing2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProductListingWithConsumables :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProductListingWithConsumables>
 {
     IProductListingWithConsumables(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProductListingWithMetadata :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProductListingWithMetadata>,
     impl::require<IProductListingWithMetadata, Windows::ApplicationModel::Store::IProductListing>
 {
@@ -312,28 +312,28 @@ struct IProductListingWithMetadata :
 };
 
 struct IProductPurchaseDisplayProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProductPurchaseDisplayProperties>
 {
     IProductPurchaseDisplayProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProductPurchaseDisplayPropertiesFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProductPurchaseDisplayPropertiesFactory>
 {
     IProductPurchaseDisplayPropertiesFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPurchaseResults :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPurchaseResults>
 {
     IPurchaseResults(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUnfulfilledConsumable :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUnfulfilledConsumable>
 {
     IUnfulfilledConsumable(std::nullptr_t = nullptr) noexcept {}

@@ -16,7 +16,7 @@ template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __de
 
 #ifndef WINRT_GENERIC_92730467_501e_5b05_8826_926f86925b03
 #define WINRT_GENERIC_92730467_501e_5b05_8826_926f86925b03
-template <> struct __declspec(uuid("92730467-501e-5b05-8826-926f86925b03")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> {};
+template <> struct __declspec(uuid("92730467-501e-5b05-8826-926f86925b03")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -90,56 +90,56 @@ template <> struct __declspec(uuid("f92bfe4e-cf96-54cf-ab89-388ca004b5a9")) __de
 namespace Windows::ApplicationModel::Store::Preview::InstallControl {
 
 struct IAppInstallItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppInstallItem>
 {
     IAppInstallItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppInstallItem2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppInstallItem2>
 {
     IAppInstallItem2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppInstallManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppInstallManager>
 {
     IAppInstallManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppInstallManager2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppInstallManager2>
 {
     IAppInstallManager2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppInstallManager3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppInstallManager3>
 {
     IAppInstallManager3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppInstallManagerItemEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppInstallManagerItemEventArgs>
 {
     IAppInstallManagerItemEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppInstallStatus :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppInstallStatus>
 {
     IAppInstallStatus(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppInstallStatus2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppInstallStatus2>
 {
     IAppInstallStatus2(std::nullptr_t = nullptr) noexcept {}

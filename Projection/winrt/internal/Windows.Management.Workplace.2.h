@@ -10,14 +10,14 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Management::Workplace {
 
 struct IMdmAllowPolicyStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMdmAllowPolicyStatics>
 {
     IMdmAllowPolicyStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMdmPolicyStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMdmPolicyStatics2>
 {
     IMdmPolicyStatics2(std::nullptr_t = nullptr) noexcept {}

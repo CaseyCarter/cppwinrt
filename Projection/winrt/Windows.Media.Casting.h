@@ -77,12 +77,12 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_StateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_StateChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -337,12 +337,12 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_CastingDevicePickerDismissed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_CastingDevicePickerDismissed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().CastingDevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().CastingDevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -683,14 +683,14 @@ template <typename D> void impl_ICastingConnection<D>::Source(const Windows::Med
     check_hresult(WINRT_SHIM(ICastingConnection)->put_Source(get_abi(value)));
 }
 
-template <typename D> event_token impl_ICastingConnection<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICastingConnection<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICastingConnection)->add_StateChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICastingConnection> impl_ICastingConnection<D>::StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICastingConnection> impl_ICastingConnection<D>::StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICastingConnection>(this, &ABI::Windows::Media::Casting::ICastingConnection::remove_StateChanged, StateChanged(handler));
 }
@@ -875,14 +875,14 @@ template <typename D> void impl_ICastingDevicePicker<D>::CastingDeviceSelected(e
     check_hresult(WINRT_SHIM(ICastingDevicePicker)->remove_CastingDeviceSelected(token));
 }
 
-template <typename D> event_token impl_ICastingDevicePicker<D>::CastingDevicePickerDismissed(const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICastingDevicePicker<D>::CastingDevicePickerDismissed(const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICastingDevicePicker)->add_CastingDevicePickerDismissed(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICastingDevicePicker> impl_ICastingDevicePicker<D>::CastingDevicePickerDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICastingDevicePicker> impl_ICastingDevicePicker<D>::CastingDevicePickerDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICastingDevicePicker>(this, &ABI::Windows::Media::Casting::ICastingDevicePicker::remove_CastingDevicePickerDismissed, CastingDevicePickerDismissed(handler));
 }

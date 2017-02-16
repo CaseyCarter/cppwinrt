@@ -496,12 +496,12 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
         }
     }
 
-    HRESULT __stdcall add_AdvertisementStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AdvertisementStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().AdvertisementStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AdvertisementStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -820,12 +820,12 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
         }
     }
 
-    HRESULT __stdcall add_SessionStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SessionStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().SessionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().SessionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1251,14 +1251,14 @@ template <typename D> void impl_IWiFiDirectServiceAdvertiser<D>::AutoAcceptSessi
     check_hresult(WINRT_SHIM(IWiFiDirectServiceAdvertiser)->remove_AutoAcceptSessionConnected(token));
 }
 
-template <typename D> event_token impl_IWiFiDirectServiceAdvertiser<D>::AdvertisementStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IWiFiDirectServiceAdvertiser<D>::AdvertisementStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IWiFiDirectServiceAdvertiser)->add_AdvertisementStatusChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IWiFiDirectServiceAdvertiser> impl_IWiFiDirectServiceAdvertiser<D>::AdvertisementStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IWiFiDirectServiceAdvertiser> impl_IWiFiDirectServiceAdvertiser<D>::AdvertisementStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IWiFiDirectServiceAdvertiser>(this, &ABI::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdvertiser::remove_AdvertisementStatusChanged, AdvertisementStatusChanged(handler));
 }
@@ -1473,14 +1473,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Net
     return value;
 }
 
-template <typename D> event_token impl_IWiFiDirectServiceSession<D>::SessionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IWiFiDirectServiceSession<D>::SessionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IWiFiDirectServiceSession)->add_SessionStatusChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IWiFiDirectServiceSession> impl_IWiFiDirectServiceSession<D>::SessionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IWiFiDirectServiceSession> impl_IWiFiDirectServiceSession<D>::SessionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IWiFiDirectServiceSession>(this, &ABI::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSession::remove_SessionStatusChanged, SessionStatusChanged(handler));
 }

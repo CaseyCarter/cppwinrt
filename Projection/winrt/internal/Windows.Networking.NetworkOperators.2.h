@@ -82,7 +82,7 @@ template <> struct __declspec(uuid("0e865096-1ffa-5792-8d4f-8623e3c77f56")) __de
 
 #ifndef WINRT_GENERIC_e4dc9cfc_f462_5afd_856d_04ace229d00e
 #define WINRT_GENERIC_e4dc9cfc_f462_5afd_856d_04ace229d00e
-template <> struct __declspec(uuid("e4dc9cfc-f462-5afd-856d-04ace229d00e")) __declspec(novtable) TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> : impl_TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> {};
+template <> struct __declspec(uuid("e4dc9cfc-f462-5afd-856d-04ace229d00e")) __declspec(novtable) TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -441,420 +441,420 @@ template <> struct __declspec(uuid("9385bd8f-5e14-557a-a7f1-63f33d9ecacf")) __de
 namespace Windows::Networking::NetworkOperators {
 
 struct IHotspotAuthenticationContext :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHotspotAuthenticationContext>
 {
     IHotspotAuthenticationContext(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHotspotAuthenticationContext2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHotspotAuthenticationContext2>
 {
     IHotspotAuthenticationContext2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHotspotAuthenticationContextStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHotspotAuthenticationContextStatics>
 {
     IHotspotAuthenticationContextStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHotspotAuthenticationEventDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHotspotAuthenticationEventDetails>
 {
     IHotspotAuthenticationEventDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHotspotCredentialsAuthenticationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHotspotCredentialsAuthenticationResult>
 {
     IHotspotCredentialsAuthenticationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownCSimFilePathsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownCSimFilePathsStatics>
 {
     IKnownCSimFilePathsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownRuimFilePathsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownRuimFilePathsStatics>
 {
     IKnownRuimFilePathsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownSimFilePathsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownSimFilePathsStatics>
 {
     IKnownSimFilePathsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownUSimFilePathsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownUSimFilePathsStatics>
 {
     IKnownUSimFilePathsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandAccount :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandAccount>
 {
     IMobileBroadbandAccount(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandAccount2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandAccount2>
 {
     IMobileBroadbandAccount2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandAccountEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandAccountEventArgs>
 {
     IMobileBroadbandAccountEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandAccountStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandAccountStatics>
 {
     IMobileBroadbandAccountStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandAccountUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandAccountUpdatedEventArgs>
 {
     IMobileBroadbandAccountUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandAccountWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandAccountWatcher>
 {
     IMobileBroadbandAccountWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandDeviceInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandDeviceInformation>
 {
     IMobileBroadbandDeviceInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandDeviceInformation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandDeviceInformation2>
 {
     IMobileBroadbandDeviceInformation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandDeviceService :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandDeviceService>
 {
     IMobileBroadbandDeviceService(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandDeviceServiceCommandResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandDeviceServiceCommandResult>
 {
     IMobileBroadbandDeviceServiceCommandResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandDeviceServiceCommandSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandDeviceServiceCommandSession>
 {
     IMobileBroadbandDeviceServiceCommandSession(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandDeviceServiceDataReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandDeviceServiceDataReceivedEventArgs>
 {
     IMobileBroadbandDeviceServiceDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandDeviceServiceDataSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandDeviceServiceDataSession>
 {
     IMobileBroadbandDeviceServiceDataSession(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandDeviceServiceInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandDeviceServiceInformation>
 {
     IMobileBroadbandDeviceServiceInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandDeviceServiceTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandDeviceServiceTriggerDetails>
 {
     IMobileBroadbandDeviceServiceTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandModem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandModem>
 {
     IMobileBroadbandModem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandModemConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandModemConfiguration>
 {
     IMobileBroadbandModemConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandModemStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandModemStatics>
 {
     IMobileBroadbandModemStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandNetwork :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandNetwork>
 {
     IMobileBroadbandNetwork(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandNetwork2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandNetwork2>
 {
     IMobileBroadbandNetwork2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandNetworkRegistrationStateChange :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandNetworkRegistrationStateChange>
 {
     IMobileBroadbandNetworkRegistrationStateChange(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>
 {
     IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandPin :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandPin>
 {
     IMobileBroadbandPin(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandPinLockStateChange :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandPinLockStateChange>
 {
     IMobileBroadbandPinLockStateChange(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandPinLockStateChangeTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandPinLockStateChangeTriggerDetails>
 {
     IMobileBroadbandPinLockStateChangeTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandPinManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandPinManager>
 {
     IMobileBroadbandPinManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandPinOperationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandPinOperationResult>
 {
     IMobileBroadbandPinOperationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandRadioStateChange :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandRadioStateChange>
 {
     IMobileBroadbandRadioStateChange(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandRadioStateChangeTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandRadioStateChangeTriggerDetails>
 {
     IMobileBroadbandRadioStateChangeTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandUicc :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandUicc>
 {
     IMobileBroadbandUicc(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandUiccApp :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandUiccApp>
 {
     IMobileBroadbandUiccApp(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandUiccAppReadRecordResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandUiccAppReadRecordResult>
 {
     IMobileBroadbandUiccAppReadRecordResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandUiccAppRecordDetailsResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandUiccAppRecordDetailsResult>
 {
     IMobileBroadbandUiccAppRecordDetailsResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMobileBroadbandUiccAppsResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMobileBroadbandUiccAppsResult>
 {
     IMobileBroadbandUiccAppsResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkOperatorTetheringAccessPointConfiguration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorTetheringAccessPointConfiguration>
 {
     INetworkOperatorTetheringAccessPointConfiguration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkOperatorTetheringClient :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorTetheringClient>
 {
     INetworkOperatorTetheringClient(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkOperatorTetheringClientManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorTetheringClientManager>
 {
     INetworkOperatorTetheringClientManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkOperatorTetheringManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorTetheringManager>
 {
     INetworkOperatorTetheringManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkOperatorTetheringManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorTetheringManagerStatics>
 {
     INetworkOperatorTetheringManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkOperatorTetheringManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorTetheringManagerStatics2>
 {
     INetworkOperatorTetheringManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkOperatorTetheringManagerStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorTetheringManagerStatics3>
 {
     INetworkOperatorTetheringManagerStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INetworkOperatorTetheringOperationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorTetheringOperationResult>
 {
     INetworkOperatorTetheringOperationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProvisionFromXmlDocumentResults :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProvisionFromXmlDocumentResults>
 {
     IProvisionFromXmlDocumentResults(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProvisionedProfile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProvisionedProfile>
 {
     IProvisionedProfile(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProvisioningAgent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProvisioningAgent>
 {
     IProvisioningAgent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProvisioningAgentStaticMethods :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProvisioningAgentStaticMethods>
 {
     IProvisioningAgentStaticMethods(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUssdMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUssdMessage>
 {
     IUssdMessage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUssdMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUssdMessageFactory>
 {
     IUssdMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUssdReply :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUssdReply>
 {
     IUssdReply(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUssdSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUssdSession>
 {
     IUssdSession(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUssdSessionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUssdSessionStatics>
 {
     IUssdSessionStatics(std::nullptr_t = nullptr) noexcept {}

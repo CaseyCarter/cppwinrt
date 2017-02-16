@@ -10,28 +10,28 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Resources {
 
 struct ICustomXamlResourceLoader :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICustomXamlResourceLoader>
 {
     ICustomXamlResourceLoader(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICustomXamlResourceLoaderFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICustomXamlResourceLoaderFactory>
 {
     ICustomXamlResourceLoaderFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICustomXamlResourceLoaderOverrides :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICustomXamlResourceLoaderOverrides>
 {
     ICustomXamlResourceLoaderOverrides(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICustomXamlResourceLoaderStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICustomXamlResourceLoaderStatics>
 {
     ICustomXamlResourceLoaderStatics(std::nullptr_t = nullptr) noexcept {}

@@ -13,7 +13,7 @@ namespace winrt::ppl
     {
         adapter() noexcept = default;
 
-        adapter(Windows::IUnknown const & object) : m_object(object)
+        adapter(Windows::Foundation::IUnknown const & object) : m_object(object)
         {
             m_object = object;
             m_agile = !!object.try_as<IAgileObject>();
@@ -60,7 +60,7 @@ namespace winrt::ppl
         }
 
     private:
-        Windows::IUnknown m_object;
+        Windows::Foundation::IUnknown m_object;
         bool m_agile = false;
         com_ptr<IContextCallback> m_context;
     };
@@ -99,7 +99,7 @@ namespace winrt::ppl
     template <typename TResult>
     auto create_task(Windows::Foundation::IAsyncOperation<TResult> const & async)
     {
-        using adapted_result = std::conditional_t<impl::is_base_of_v<Windows::IUnknown, TResult>, adapter, TResult>;
+        using adapted_result = std::conditional_t<impl::is_base_of_v<Windows::Foundation::IUnknown, TResult>, adapter, TResult>;
 
         concurrency::task_completion_event<void> event;
 
@@ -117,7 +117,7 @@ namespace winrt::ppl
     template <typename TResult, typename TProgress>
     auto create_task(Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const & async)
     {
-        using adapted_result = std::conditional_t<impl::is_base_of_v<Windows::IUnknown, TResult>, adapter, TResult>;
+        using adapted_result = std::conditional_t<impl::is_base_of_v<Windows::Foundation::IUnknown, TResult>, adapter, TResult>;
         concurrency::task_completion_event<void> event;
 
         async.Completed([event](auto && ...)

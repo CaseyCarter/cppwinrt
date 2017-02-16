@@ -17,13 +17,13 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::Devices {
 
-struct __declspec(uuid("08f3863a-0018-445b-93d2-646d1c5ed05c")) __declspec(novtable) IAdvancedPhotoCaptureSettings : Windows::IInspectable
+struct __declspec(uuid("08f3863a-0018-445b-93d2-646d1c5ed05c")) __declspec(novtable) IAdvancedPhotoCaptureSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Mode(winrt::Windows::Media::Devices::AdvancedPhotoMode * value) = 0;
     virtual HRESULT __stdcall put_Mode(winrt::Windows::Media::Devices::AdvancedPhotoMode value) = 0;
 };
 
-struct __declspec(uuid("c5b15486-9001-4682-9309-68eae0080eec")) __declspec(novtable) IAdvancedPhotoControl : Windows::IInspectable
+struct __declspec(uuid("c5b15486-9001-4682-9309-68eae0080eec")) __declspec(novtable) IAdvancedPhotoControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_SupportedModes(Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::AdvancedPhotoMode> ** value) = 0;
@@ -31,13 +31,13 @@ struct __declspec(uuid("c5b15486-9001-4682-9309-68eae0080eec")) __declspec(novta
     virtual HRESULT __stdcall abi_Configure(Windows::Media::Devices::IAdvancedPhotoCaptureSettings * settings) = 0;
 };
 
-struct __declspec(uuid("de6ff4d3-2b96-4583-80ab-b5b01dc6a8d7")) __declspec(novtable) IAdvancedVideoCaptureDeviceController : Windows::IInspectable
+struct __declspec(uuid("de6ff4d3-2b96-4583-80ab-b5b01dc6a8d7")) __declspec(novtable) IAdvancedVideoCaptureDeviceController : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_SetDeviceProperty(hstring propertyId, Windows::IInspectable * propertyValue) = 0;
-    virtual HRESULT __stdcall abi_GetDeviceProperty(hstring propertyId, Windows::IInspectable ** propertyValue) = 0;
+    virtual HRESULT __stdcall abi_SetDeviceProperty(hstring propertyId, Windows::Foundation::IInspectable * propertyValue) = 0;
+    virtual HRESULT __stdcall abi_GetDeviceProperty(hstring propertyId, Windows::Foundation::IInspectable ** propertyValue) = 0;
 };
 
-struct __declspec(uuid("8bb94f8f-f11a-43db-b402-11930b80ae56")) __declspec(novtable) IAdvancedVideoCaptureDeviceController2 : Windows::IInspectable
+struct __declspec(uuid("8bb94f8f-f11a-43db-b402-11930b80ae56")) __declspec(novtable) IAdvancedVideoCaptureDeviceController2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_LowLagPhotoSequence(Windows::Media::Devices::ILowLagPhotoSequenceControl ** value) = 0;
     virtual HRESULT __stdcall get_LowLagPhoto(Windows::Media::Devices::ILowLagPhotoControl ** value) = 0;
@@ -54,14 +54,14 @@ struct __declspec(uuid("8bb94f8f-f11a-43db-b402-11930b80ae56")) __declspec(novta
     virtual HRESULT __stdcall put_PrimaryUse(winrt::Windows::Media::Devices::CaptureUse value) = 0;
 };
 
-struct __declspec(uuid("a98b8f34-ee0d-470c-b9f0-4229c4bbd089")) __declspec(novtable) IAdvancedVideoCaptureDeviceController3 : Windows::IInspectable
+struct __declspec(uuid("a98b8f34-ee0d-470c-b9f0-4229c4bbd089")) __declspec(novtable) IAdvancedVideoCaptureDeviceController3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_VariablePhotoSequenceController(Windows::Media::Devices::Core::IVariablePhotoSequenceController ** value) = 0;
     virtual HRESULT __stdcall get_PhotoConfirmationControl(Windows::Media::Devices::IPhotoConfirmationControl ** value) = 0;
     virtual HRESULT __stdcall get_ZoomControl(Windows::Media::Devices::IZoomControl ** value) = 0;
 };
 
-struct __declspec(uuid("ea9fbfaf-d371-41c3-9a17-824a87ebdfd2")) __declspec(novtable) IAdvancedVideoCaptureDeviceController4 : Windows::IInspectable
+struct __declspec(uuid("ea9fbfaf-d371-41c3-9a17-824a87ebdfd2")) __declspec(novtable) IAdvancedVideoCaptureDeviceController4 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ExposurePriorityVideoControl(Windows::Media::Devices::IExposurePriorityVideoControl ** value) = 0;
     virtual HRESULT __stdcall get_DesiredOptimization(winrt::Windows::Media::Devices::MediaCaptureOptimization * value) = 0;
@@ -71,7 +71,7 @@ struct __declspec(uuid("ea9fbfaf-d371-41c3-9a17-824a87ebdfd2")) __declspec(novta
     virtual HRESULT __stdcall get_AdvancedPhotoControl(Windows::Media::Devices::IAdvancedPhotoControl ** value) = 0;
 };
 
-struct __declspec(uuid("edd4a388-79c7-4f7c-90e8-ef934b21580a")) __declspec(novtable) IAudioDeviceController : Windows::IInspectable
+struct __declspec(uuid("edd4a388-79c7-4f7c-90e8-ef934b21580a")) __declspec(novtable) IAudioDeviceController : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Muted(bool value) = 0;
     virtual HRESULT __stdcall get_Muted(bool * value) = 0;
@@ -79,13 +79,13 @@ struct __declspec(uuid("edd4a388-79c7-4f7c-90e8-ef934b21580a")) __declspec(novta
     virtual HRESULT __stdcall get_VolumePercent(float * value) = 0;
 };
 
-struct __declspec(uuid("110f882f-1c05-4657-a18e-47c9b69f07ab")) __declspec(novtable) IDefaultAudioDeviceChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("110f882f-1c05-4657-a18e-47c9b69f07ab")) __declspec(novtable) IDefaultAudioDeviceChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall get_Role(winrt::Windows::Media::Devices::AudioDeviceRole * value) = 0;
 };
 
-struct __declspec(uuid("81c8e834-dcec-4011-a610-1f3847e64aca")) __declspec(novtable) IExposureCompensationControl : Windows::IInspectable
+struct __declspec(uuid("81c8e834-dcec-4011-a610-1f3847e64aca")) __declspec(novtable) IExposureCompensationControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_Min(float * value) = 0;
@@ -95,7 +95,7 @@ struct __declspec(uuid("81c8e834-dcec-4011-a610-1f3847e64aca")) __declspec(novta
     virtual HRESULT __stdcall abi_SetValueAsync(float value, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("09e8cbe2-ad96-4f28-a0e0-96ed7e1b5fd2")) __declspec(novtable) IExposureControl : Windows::IInspectable
+struct __declspec(uuid("09e8cbe2-ad96-4f28-a0e0-96ed7e1b5fd2")) __declspec(novtable) IExposureControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_Auto(bool * value) = 0;
@@ -107,14 +107,14 @@ struct __declspec(uuid("09e8cbe2-ad96-4f28-a0e0-96ed7e1b5fd2")) __declspec(novta
     virtual HRESULT __stdcall abi_SetValueAsync(Windows::Foundation::TimeSpan shutterDuration, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("2cb240a3-5168-4271-9ea5-47621a98a352")) __declspec(novtable) IExposurePriorityVideoControl : Windows::IInspectable
+struct __declspec(uuid("2cb240a3-5168-4271-9ea5-47621a98a352")) __declspec(novtable) IExposurePriorityVideoControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_Enabled(bool * value) = 0;
     virtual HRESULT __stdcall put_Enabled(bool value) = 0;
 };
 
-struct __declspec(uuid("def41dbe-7d68-45e3-8c0f-be7bb32837d0")) __declspec(novtable) IFlashControl : Windows::IInspectable
+struct __declspec(uuid("def41dbe-7d68-45e3-8c0f-be7bb32837d0")) __declspec(novtable) IFlashControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_PowerSupported(bool * value) = 0;
@@ -129,14 +129,14 @@ struct __declspec(uuid("def41dbe-7d68-45e3-8c0f-be7bb32837d0")) __declspec(novta
     virtual HRESULT __stdcall put_PowerPercent(float value) = 0;
 };
 
-struct __declspec(uuid("7d29cc9e-75e1-4af7-bd7d-4e38e1c06cd6")) __declspec(novtable) IFlashControl2 : Windows::IInspectable
+struct __declspec(uuid("7d29cc9e-75e1-4af7-bd7d-4e38e1c06cd6")) __declspec(novtable) IFlashControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AssistantLightSupported(bool * value) = 0;
     virtual HRESULT __stdcall get_AssistantLightEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_AssistantLightEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("c0d889f6-5228-4453-b153-85606592b238")) __declspec(novtable) IFocusControl : Windows::IInspectable
+struct __declspec(uuid("c0d889f6-5228-4453-b153-85606592b238")) __declspec(novtable) IFocusControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_SupportedPresets(Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::FocusPreset> ** value) = 0;
@@ -151,7 +151,7 @@ struct __declspec(uuid("c0d889f6-5228-4453-b153-85606592b238")) __declspec(novta
     virtual HRESULT __stdcall abi_FocusAsync(Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("3f7cff48-c534-4e9e-94c3-52ef2afd5d07")) __declspec(novtable) IFocusControl2 : Windows::IInspectable
+struct __declspec(uuid("3f7cff48-c534-4e9e-94c3-52ef2afd5d07")) __declspec(novtable) IFocusControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FocusChangedSupported(bool * value) = 0;
     virtual HRESULT __stdcall get_WaitForFocusSupported(bool * value) = 0;
@@ -165,7 +165,7 @@ struct __declspec(uuid("3f7cff48-c534-4e9e-94c3-52ef2afd5d07")) __declspec(novta
     virtual HRESULT __stdcall abi_Configure(Windows::Media::Devices::IFocusSettings * settings) = 0;
 };
 
-struct __declspec(uuid("79958f6b-3263-4275-85d6-aeae891c96ee")) __declspec(novtable) IFocusSettings : Windows::IInspectable
+struct __declspec(uuid("79958f6b-3263-4275-85d6-aeae891c96ee")) __declspec(novtable) IFocusSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Mode(winrt::Windows::Media::Devices::FocusMode * value) = 0;
     virtual HRESULT __stdcall put_Mode(winrt::Windows::Media::Devices::FocusMode value) = 0;
@@ -181,7 +181,7 @@ struct __declspec(uuid("79958f6b-3263-4275-85d6-aeae891c96ee")) __declspec(novta
     virtual HRESULT __stdcall put_DisableDriverFallback(bool value) = 0;
 };
 
-struct __declspec(uuid("55d8e2d0-30c0-43bf-9b9a-9799d70ced94")) __declspec(novtable) IHdrVideoControl : Windows::IInspectable
+struct __declspec(uuid("55d8e2d0-30c0-43bf-9b9a-9799d70ced94")) __declspec(novtable) IHdrVideoControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_SupportedModes(Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::HdrVideoMode> ** value) = 0;
@@ -189,7 +189,7 @@ struct __declspec(uuid("55d8e2d0-30c0-43bf-9b9a-9799d70ced94")) __declspec(novta
     virtual HRESULT __stdcall put_Mode(winrt::Windows::Media::Devices::HdrVideoMode value) = 0;
 };
 
-struct __declspec(uuid("27b6c322-25ad-4f1b-aaab-524ab376ca33")) __declspec(novtable) IIsoSpeedControl : Windows::IInspectable
+struct __declspec(uuid("27b6c322-25ad-4f1b-aaab-524ab376ca33")) __declspec(novtable) IIsoSpeedControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_SupportedPresets(Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::IsoSpeedPreset> ** value) = 0;
@@ -197,7 +197,7 @@ struct __declspec(uuid("27b6c322-25ad-4f1b-aaab-524ab376ca33")) __declspec(novta
     virtual HRESULT __stdcall abi_SetPresetAsync(winrt::Windows::Media::Devices::IsoSpeedPreset preset, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("6f1578f2-6d77-4f8a-8c2f-6130b6395053")) __declspec(novtable) IIsoSpeedControl2 : Windows::IInspectable
+struct __declspec(uuid("6f1578f2-6d77-4f8a-8c2f-6130b6395053")) __declspec(novtable) IIsoSpeedControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Min(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_Max(uint32_t * value) = 0;
@@ -208,7 +208,7 @@ struct __declspec(uuid("6f1578f2-6d77-4f8a-8c2f-6130b6395053")) __declspec(novta
     virtual HRESULT __stdcall abi_SetAutoAsync(Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("6d5c4dd0-fadf-415d-aee6-3baa529300c9")) __declspec(novtable) ILowLagPhotoControl : Windows::IInspectable
+struct __declspec(uuid("6d5c4dd0-fadf-415d-aee6-3baa529300c9")) __declspec(novtable) ILowLagPhotoControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetHighestConcurrentFrameRate(Windows::Media::MediaProperties::IMediaEncodingProperties * captureProperties, Windows::Media::MediaProperties::IMediaRatio ** value) = 0;
     virtual HRESULT __stdcall abi_GetCurrentFrameRate(Windows::Media::MediaProperties::IMediaRatio ** value) = 0;
@@ -221,7 +221,7 @@ struct __declspec(uuid("6d5c4dd0-fadf-415d-aee6-3baa529300c9")) __declspec(novta
     virtual HRESULT __stdcall get_HardwareAcceleratedThumbnailSupported(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("3dcf909d-6d16-409c-bafe-b9a594c6fde6")) __declspec(novtable) ILowLagPhotoSequenceControl : Windows::IInspectable
+struct __declspec(uuid("3dcf909d-6d16-409c-bafe-b9a594c6fde6")) __declspec(novtable) ILowLagPhotoSequenceControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_MaxPastPhotos(uint32_t * value) = 0;
@@ -241,7 +241,7 @@ struct __declspec(uuid("3dcf909d-6d16-409c-bafe-b9a594c6fde6")) __declspec(novta
     virtual HRESULT __stdcall get_HardwareAcceleratedThumbnailSupported(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("efa8dfa9-6f75-4863-ba0b-583f3036b4de")) __declspec(novtable) IMediaDeviceControl : Windows::IInspectable
+struct __declspec(uuid("efa8dfa9-6f75-4863-ba0b-583f3036b4de")) __declspec(novtable) IMediaDeviceControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Capabilities(Windows::Media::Devices::IMediaDeviceControlCapabilities ** value) = 0;
     virtual HRESULT __stdcall abi_TryGetValue(double * value, bool * succeeded) = 0;
@@ -250,7 +250,7 @@ struct __declspec(uuid("efa8dfa9-6f75-4863-ba0b-583f3036b4de")) __declspec(novta
     virtual HRESULT __stdcall abi_TrySetAuto(bool value, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("23005816-eb85-43e2-b92b-8240d5ee70ec")) __declspec(novtable) IMediaDeviceControlCapabilities : Windows::IInspectable
+struct __declspec(uuid("23005816-eb85-43e2-b92b-8240d5ee70ec")) __declspec(novtable) IMediaDeviceControlCapabilities : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_Min(double * value) = 0;
@@ -260,27 +260,27 @@ struct __declspec(uuid("23005816-eb85-43e2-b92b-8240d5ee70ec")) __declspec(novta
     virtual HRESULT __stdcall get_AutoModeSupported(bool * value) = 0;
 };
 
-struct __declspec(uuid("f6f8f5ce-209a-48fb-86fc-d44578f317e6")) __declspec(novtable) IMediaDeviceController : Windows::IInspectable
+struct __declspec(uuid("f6f8f5ce-209a-48fb-86fc-d44578f317e6")) __declspec(novtable) IMediaDeviceController : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAvailableMediaStreamProperties(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties> ** value) = 0;
     virtual HRESULT __stdcall abi_GetMediaStreamProperties(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, Windows::Media::MediaProperties::IMediaEncodingProperties ** value) = 0;
     virtual HRESULT __stdcall abi_SetMediaStreamPropertiesAsync(winrt::Windows::Media::Capture::MediaStreamType mediaStreamType, Windows::Media::MediaProperties::IMediaEncodingProperties * mediaEncodingProperties, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("aa2d9a40-909f-4bba-bf8b-0c0d296f14f0")) __declspec(novtable) IMediaDeviceStatics : Windows::IInspectable
+struct __declspec(uuid("aa2d9a40-909f-4bba-bf8b-0c0d296f14f0")) __declspec(novtable) IMediaDeviceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAudioCaptureSelector(hstring * selector) = 0;
     virtual HRESULT __stdcall abi_GetAudioRenderSelector(hstring * selector) = 0;
     virtual HRESULT __stdcall abi_GetVideoCaptureSelector(hstring * selector) = 0;
     virtual HRESULT __stdcall abi_GetDefaultAudioCaptureId(winrt::Windows::Media::Devices::AudioDeviceRole role, hstring * deviceId) = 0;
     virtual HRESULT __stdcall abi_GetDefaultAudioRenderId(winrt::Windows::Media::Devices::AudioDeviceRole role, hstring * deviceId) = 0;
-    virtual HRESULT __stdcall add_DefaultAudioCaptureDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_DefaultAudioCaptureDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_DefaultAudioCaptureDeviceChanged(event_token cookie) = 0;
-    virtual HRESULT __stdcall add_DefaultAudioRenderDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall add_DefaultAudioRenderDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> * handler, event_token * cookie) = 0;
     virtual HRESULT __stdcall remove_DefaultAudioRenderDeviceChanged(event_token cookie) = 0;
 };
 
-struct __declspec(uuid("bfad9c1d-00bc-423b-8eb2-a0178ca94247")) __declspec(novtable) IOpticalImageStabilizationControl : Windows::IInspectable
+struct __declspec(uuid("bfad9c1d-00bc-423b-8eb2-a0178ca94247")) __declspec(novtable) IOpticalImageStabilizationControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_SupportedModes(Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> ** value) = 0;
@@ -288,7 +288,7 @@ struct __declspec(uuid("bfad9c1d-00bc-423b-8eb2-a0178ca94247")) __declspec(novta
     virtual HRESULT __stdcall put_Mode(winrt::Windows::Media::Devices::OpticalImageStabilizationMode value) = 0;
 };
 
-struct __declspec(uuid("c8f3f363-ff5e-4582-a9a8-0550f85a4a76")) __declspec(novtable) IPhotoConfirmationControl : Windows::IInspectable
+struct __declspec(uuid("c8f3f363-ff5e-4582-a9a8-0550f85a4a76")) __declspec(novtable) IPhotoConfirmationControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * pbSupported) = 0;
     virtual HRESULT __stdcall get_Enabled(bool * value) = 0;
@@ -297,7 +297,7 @@ struct __declspec(uuid("c8f3f363-ff5e-4582-a9a8-0550f85a4a76")) __declspec(novta
     virtual HRESULT __stdcall put_PixelFormat(winrt::Windows::Media::MediaProperties::MediaPixelFormat format) = 0;
 };
 
-struct __declspec(uuid("e5ecc834-ce66-4e05-a78f-cf391a5ec2d1")) __declspec(novtable) IRegionOfInterest : Windows::IInspectable
+struct __declspec(uuid("e5ecc834-ce66-4e05-a78f-cf391a5ec2d1")) __declspec(novtable) IRegionOfInterest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AutoFocusEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_AutoFocusEnabled(bool value) = 0;
@@ -309,7 +309,7 @@ struct __declspec(uuid("e5ecc834-ce66-4e05-a78f-cf391a5ec2d1")) __declspec(novta
     virtual HRESULT __stdcall put_Bounds(Windows::Foundation::Rect value) = 0;
 };
 
-struct __declspec(uuid("19fe2a91-73aa-4d51-8a9d-56ccf7db7f54")) __declspec(novtable) IRegionOfInterest2 : Windows::IInspectable
+struct __declspec(uuid("19fe2a91-73aa-4d51-8a9d-56ccf7db7f54")) __declspec(novtable) IRegionOfInterest2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::Media::Devices::RegionOfInterestType * value) = 0;
     virtual HRESULT __stdcall put_Type(winrt::Windows::Media::Devices::RegionOfInterestType value) = 0;
@@ -319,7 +319,7 @@ struct __declspec(uuid("19fe2a91-73aa-4d51-8a9d-56ccf7db7f54")) __declspec(novta
     virtual HRESULT __stdcall put_Weight(uint32_t value) = 0;
 };
 
-struct __declspec(uuid("c323f527-ab0b-4558-8b5b-df5693db0378")) __declspec(novtable) IRegionsOfInterestControl : Windows::IInspectable
+struct __declspec(uuid("c323f527-ab0b-4558-8b5b-df5693db0378")) __declspec(novtable) IRegionsOfInterestControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxRegions(uint32_t * value) = 0;
     virtual HRESULT __stdcall abi_SetRegionsAsync(Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> * regions, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
@@ -330,14 +330,14 @@ struct __declspec(uuid("c323f527-ab0b-4558-8b5b-df5693db0378")) __declspec(novta
     virtual HRESULT __stdcall get_AutoExposureSupported(bool * value) = 0;
 };
 
-struct __declspec(uuid("d48e5af7-8d59-4854-8c62-12c70ba89b7c")) __declspec(novtable) ISceneModeControl : Windows::IInspectable
+struct __declspec(uuid("d48e5af7-8d59-4854-8c62-12c70ba89b7c")) __declspec(novtable) ISceneModeControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SupportedModes(Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::CaptureSceneMode> ** value) = 0;
     virtual HRESULT __stdcall get_Value(winrt::Windows::Media::Devices::CaptureSceneMode * value) = 0;
     virtual HRESULT __stdcall abi_SetValueAsync(winrt::Windows::Media::Devices::CaptureSceneMode sceneMode, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("a6053665-8250-416c-919a-724296afa306")) __declspec(novtable) ITorchControl : Windows::IInspectable
+struct __declspec(uuid("a6053665-8250-416c-919a-724296afa306")) __declspec(novtable) ITorchControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_PowerSupported(bool * value) = 0;
@@ -347,7 +347,7 @@ struct __declspec(uuid("a6053665-8250-416c-919a-724296afa306")) __declspec(novta
     virtual HRESULT __stdcall put_PowerPercent(float value) = 0;
 };
 
-struct __declspec(uuid("99555575-2e2e-40b8-b6c7-f82d10013210")) __declspec(novtable) IVideoDeviceController : Windows::IInspectable
+struct __declspec(uuid("99555575-2e2e-40b8-b6c7-f82d10013210")) __declspec(novtable) IVideoDeviceController : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Brightness(Windows::Media::Devices::IMediaDeviceControl ** value) = 0;
     virtual HRESULT __stdcall get_Contrast(Windows::Media::Devices::IMediaDeviceControl ** value) = 0;
@@ -364,7 +364,7 @@ struct __declspec(uuid("99555575-2e2e-40b8-b6c7-f82d10013210")) __declspec(novta
     virtual HRESULT __stdcall abi_TryGetPowerlineFrequency(winrt::Windows::Media::Capture::PowerlineFrequency * value, bool * succeeded) = 0;
 };
 
-struct __declspec(uuid("781f047e-7162-49c8-a8f9-9481c565363e")) __declspec(novtable) IWhiteBalanceControl : Windows::IInspectable
+struct __declspec(uuid("781f047e-7162-49c8-a8f9-9481c565363e")) __declspec(novtable) IWhiteBalanceControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_Preset(winrt::Windows::Media::Devices::ColorTemperaturePreset * value) = 0;
@@ -376,7 +376,7 @@ struct __declspec(uuid("781f047e-7162-49c8-a8f9-9481c565363e")) __declspec(novta
     virtual HRESULT __stdcall abi_SetValueAsync(uint32_t temperature, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
 };
 
-struct __declspec(uuid("3a1e0b12-32da-4c17-bfd7-8d0c73c8f5a5")) __declspec(novtable) IZoomControl : Windows::IInspectable
+struct __declspec(uuid("3a1e0b12-32da-4c17-bfd7-8d0c73c8f5a5")) __declspec(novtable) IZoomControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
     virtual HRESULT __stdcall get_Min(float * value) = 0;
@@ -386,14 +386,14 @@ struct __declspec(uuid("3a1e0b12-32da-4c17-bfd7-8d0c73c8f5a5")) __declspec(novta
     virtual HRESULT __stdcall put_Value(float value) = 0;
 };
 
-struct __declspec(uuid("69843db0-2e99-4641-8529-184f319d1671")) __declspec(novtable) IZoomControl2 : Windows::IInspectable
+struct __declspec(uuid("69843db0-2e99-4641-8529-184f319d1671")) __declspec(novtable) IZoomControl2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SupportedModes(Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::ZoomTransitionMode> ** value) = 0;
     virtual HRESULT __stdcall get_Mode(winrt::Windows::Media::Devices::ZoomTransitionMode * value) = 0;
     virtual HRESULT __stdcall abi_Configure(Windows::Media::Devices::IZoomSettings * settings) = 0;
 };
 
-struct __declspec(uuid("6ad66b24-14b4-4bfd-b18f-88fe24463b52")) __declspec(novtable) IZoomSettings : Windows::IInspectable
+struct __declspec(uuid("6ad66b24-14b4-4bfd-b18f-88fe24463b52")) __declspec(novtable) IZoomSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Mode(winrt::Windows::Media::Devices::ZoomTransitionMode * value) = 0;
     virtual HRESULT __stdcall put_Mode(winrt::Windows::Media::Devices::ZoomTransitionMode value) = 0;
@@ -456,8 +456,8 @@ struct WINRT_EBO impl_IAdvancedPhotoControl
 template <typename D>
 struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController
 {
-    void SetDeviceProperty(hstring_view propertyId, const Windows::IInspectable & propertyValue) const;
-    Windows::IInspectable GetDeviceProperty(hstring_view propertyId) const;
+    void SetDeviceProperty(hstring_view propertyId, const Windows::Foundation::IInspectable & propertyValue) const;
+    Windows::Foundation::IInspectable GetDeviceProperty(hstring_view propertyId) const;
 };
 
 template <typename D>
@@ -719,13 +719,13 @@ struct WINRT_EBO impl_IMediaDeviceStatics
     hstring GetVideoCaptureSelector() const;
     hstring GetDefaultAudioCaptureId(Windows::Media::Devices::AudioDeviceRole role) const;
     hstring GetDefaultAudioRenderId(Windows::Media::Devices::AudioDeviceRole role) const;
-    event_token DefaultAudioCaptureDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const;
+    event_token DefaultAudioCaptureDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const;
     using DefaultAudioCaptureDeviceChanged_revoker = event_revoker<IMediaDeviceStatics>;
-    DefaultAudioCaptureDeviceChanged_revoker DefaultAudioCaptureDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const;
+    DefaultAudioCaptureDeviceChanged_revoker DefaultAudioCaptureDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const;
     void DefaultAudioCaptureDeviceChanged(event_token cookie) const;
-    event_token DefaultAudioRenderDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const;
+    event_token DefaultAudioRenderDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const;
     using DefaultAudioRenderDeviceChanged_revoker = event_revoker<IMediaDeviceStatics>;
-    DefaultAudioRenderDeviceChanged_revoker DefaultAudioRenderDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const;
+    DefaultAudioRenderDeviceChanged_revoker DefaultAudioRenderDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const;
     void DefaultAudioRenderDeviceChanged(event_token cookie) const;
 };
 

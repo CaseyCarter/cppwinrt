@@ -55,7 +55,7 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::Globalization::NumberFormatting {
 
 struct ICurrencyFormatter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrencyFormatter>,
     impl::require<ICurrencyFormatter, Windows::Globalization::NumberFormatting::INumberFormatter, Windows::Globalization::NumberFormatting::INumberFormatter2, Windows::Globalization::NumberFormatting::INumberFormatterOptions, Windows::Globalization::NumberFormatting::INumberParser>
 {
@@ -63,119 +63,119 @@ struct ICurrencyFormatter :
 };
 
 struct ICurrencyFormatter2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrencyFormatter2>
 {
     ICurrencyFormatter2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrencyFormatterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrencyFormatterFactory>
 {
     ICurrencyFormatterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDecimalFormatterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDecimalFormatterFactory>
 {
     IDecimalFormatterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IIncrementNumberRounder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IIncrementNumberRounder>
 {
     IIncrementNumberRounder(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumberFormatter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumberFormatter>
 {
     INumberFormatter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumberFormatter2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumberFormatter2>
 {
     INumberFormatter2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumberFormatterOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumberFormatterOptions>
 {
     INumberFormatterOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumberParser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumberParser>
 {
     INumberParser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumberRounder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumberRounder>
 {
     INumberRounder(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumberRounderOption :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumberRounderOption>
 {
     INumberRounderOption(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumeralSystemTranslator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumeralSystemTranslator>
 {
     INumeralSystemTranslator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INumeralSystemTranslatorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INumeralSystemTranslatorFactory>
 {
     INumeralSystemTranslatorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPercentFormatterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPercentFormatterFactory>
 {
     IPercentFormatterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPermilleFormatterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPermilleFormatterFactory>
 {
     IPermilleFormatterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISignedZeroOption :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISignedZeroOption>
 {
     ISignedZeroOption(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISignificantDigitsNumberRounder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISignificantDigitsNumberRounder>
 {
     ISignificantDigitsNumberRounder(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISignificantDigitsOption :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISignificantDigitsOption>
 {
     ISignificantDigitsOption(std::nullptr_t = nullptr) noexcept {}

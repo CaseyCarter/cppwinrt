@@ -215,14 +215,14 @@ template <> struct __declspec(uuid("dc12096d-7e54-54a2-ab99-280f30f0ff81")) __de
 namespace Windows::ApplicationModel::UserDataAccounts {
 
 struct IUserDataAccount :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccount>
 {
     IUserDataAccount(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccount2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccount2>,
     impl::require<IUserDataAccount2, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
 {
@@ -230,42 +230,42 @@ struct IUserDataAccount2 :
 };
 
 struct IUserDataAccount3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccount3>
 {
     IUserDataAccount3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccountManagerForUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountManagerForUser>
 {
     IUserDataAccountManagerForUser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccountManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountManagerStatics>
 {
     IUserDataAccountManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccountManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountManagerStatics2>
 {
     IUserDataAccountManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccountStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountStore>
 {
     IUserDataAccountStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccountStore2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountStore2>,
     impl::require<IUserDataAccountStore2, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore>
 {
@@ -275,7 +275,7 @@ struct IUserDataAccountStore2 :
 };
 
 struct IUserDataAccountStoreChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountStoreChangedEventArgs>
 {
     IUserDataAccountStoreChangedEventArgs(std::nullptr_t = nullptr) noexcept {}

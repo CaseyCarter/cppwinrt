@@ -25,28 +25,28 @@ template <> struct __declspec(uuid("b4b5ddc2-1a74-5905-9fc5-ddaae9a3ab93")) __de
 namespace Windows::Devices::Printers::Extensions {
 
 struct IPrint3DWorkflow :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DWorkflow>
 {
     IPrint3DWorkflow(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DWorkflow2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DWorkflow2>
 {
     IPrint3DWorkflow2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DWorkflowPrintRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DWorkflowPrintRequestedEventArgs>
 {
     IPrint3DWorkflowPrintRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DWorkflowPrinterChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DWorkflowPrinterChangedEventArgs>
 {
     IPrint3DWorkflowPrinterChangedEventArgs(std::nullptr_t = nullptr) noexcept {}

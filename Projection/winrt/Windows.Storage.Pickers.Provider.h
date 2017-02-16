@@ -312,12 +312,12 @@ struct produce<D, Windows::Storage::Pickers::Provider::IFileSavePickerUI> : prod
         }
     }
 
-    HRESULT __stdcall add_FileNameChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_FileNameChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().FileNameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().FileNameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -715,14 +715,14 @@ template <typename D> Windows::Storage::Pickers::Provider::SetFileNameResult imp
     return result;
 }
 
-template <typename D> event_token impl_IFileSavePickerUI<D>::FileNameChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IFileSavePickerUI<D>::FileNameChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IFileSavePickerUI)->add_FileNameChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IFileSavePickerUI> impl_IFileSavePickerUI<D>::FileNameChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IFileSavePickerUI> impl_IFileSavePickerUI<D>::FileNameChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IFileSavePickerUI>(this, &ABI::Windows::Storage::Pickers::Provider::IFileSavePickerUI::remove_FileNameChanged, FileNameChanged(handler));
 }

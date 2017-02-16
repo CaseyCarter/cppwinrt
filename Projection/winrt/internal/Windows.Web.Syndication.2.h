@@ -165,21 +165,21 @@ template <> struct __declspec(uuid("0e3d7f70-4e8c-5260-a7e5-786e05bded99")) __de
 namespace Windows::Web::Syndication {
 
 struct ISyndicationAttribute :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationAttribute>
 {
     ISyndicationAttribute(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationAttributeFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationAttributeFactory>
 {
     ISyndicationAttributeFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationCategory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationCategory>,
     impl::require<ISyndicationCategory, Windows::Web::Syndication::ISyndicationNode>
 {
@@ -187,28 +187,28 @@ struct ISyndicationCategory :
 };
 
 struct ISyndicationCategoryFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationCategoryFactory>
 {
     ISyndicationCategoryFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationClient :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationClient>
 {
     ISyndicationClient(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationClientFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationClientFactory>
 {
     ISyndicationClientFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationContent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationContent>,
     impl::require<ISyndicationContent, Windows::Web::Syndication::ISyndicationNode, Windows::Web::Syndication::ISyndicationText>
 {
@@ -216,21 +216,21 @@ struct ISyndicationContent :
 };
 
 struct ISyndicationContentFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationContentFactory>
 {
     ISyndicationContentFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationErrorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationErrorStatics>
 {
     ISyndicationErrorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationFeed :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationFeed>,
     impl::require<ISyndicationFeed, Windows::Web::Syndication::ISyndicationNode>
 {
@@ -238,28 +238,28 @@ struct ISyndicationFeed :
 };
 
 struct ISyndicationFeedFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationFeedFactory>
 {
     ISyndicationFeedFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationGenerator :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationGenerator>
 {
     ISyndicationGenerator(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationGeneratorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationGeneratorFactory>
 {
     ISyndicationGeneratorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationItem>,
     impl::require<ISyndicationItem, Windows::Web::Syndication::ISyndicationNode>
 {
@@ -267,14 +267,14 @@ struct ISyndicationItem :
 };
 
 struct ISyndicationItemFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationItemFactory>
 {
     ISyndicationItemFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationLink :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationLink>,
     impl::require<ISyndicationLink, Windows::Web::Syndication::ISyndicationNode>
 {
@@ -282,28 +282,28 @@ struct ISyndicationLink :
 };
 
 struct ISyndicationLinkFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationLinkFactory>
 {
     ISyndicationLinkFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationNode :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationNode>
 {
     ISyndicationNode(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationNodeFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationNodeFactory>
 {
     ISyndicationNodeFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationPerson :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationPerson>,
     impl::require<ISyndicationPerson, Windows::Web::Syndication::ISyndicationNode>
 {
@@ -311,14 +311,14 @@ struct ISyndicationPerson :
 };
 
 struct ISyndicationPersonFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationPersonFactory>
 {
     ISyndicationPersonFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISyndicationText :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationText>,
     impl::require<ISyndicationText, Windows::Web::Syndication::ISyndicationNode>
 {
@@ -326,7 +326,7 @@ struct ISyndicationText :
 };
 
 struct ISyndicationTextFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISyndicationTextFactory>
 {
     ISyndicationTextFactory(std::nullptr_t = nullptr) noexcept {}

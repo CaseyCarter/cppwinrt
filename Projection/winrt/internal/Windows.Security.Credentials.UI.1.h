@@ -12,7 +12,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Security::Credentials::UI {
 
-struct __declspec(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6")) __declspec(novtable) ICredentialPickerOptions : Windows::IInspectable
+struct __declspec(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6")) __declspec(novtable) ICredentialPickerOptions : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Caption(hstring value) = 0;
     virtual HRESULT __stdcall get_Caption(hstring * value) = 0;
@@ -36,7 +36,7 @@ struct __declspec(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6")) __declspec(novta
     virtual HRESULT __stdcall get_CredentialSaveOption(winrt::Windows::Security::Credentials::UI::CredentialSaveOption * value) = 0;
 };
 
-struct __declspec(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7")) __declspec(novtable) ICredentialPickerResults : Windows::IInspectable
+struct __declspec(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7")) __declspec(novtable) ICredentialPickerResults : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ErrorCode(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_CredentialSaveOption(winrt::Windows::Security::Credentials::UI::CredentialSaveOption * value) = 0;
@@ -47,14 +47,14 @@ struct __declspec(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7")) __declspec(novta
     virtual HRESULT __stdcall get_CredentialPassword(hstring * value) = 0;
 };
 
-struct __declspec(uuid("aa3a5c73-c9ea-4782-99fb-e6d7e938e12d")) __declspec(novtable) ICredentialPickerStatics : Windows::IInspectable
+struct __declspec(uuid("aa3a5c73-c9ea-4782-99fb-e6d7e938e12d")) __declspec(novtable) ICredentialPickerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_PickWithOptionsAsync(Windows::Security::Credentials::UI::ICredentialPickerOptions * options, Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> ** operation) = 0;
     virtual HRESULT __stdcall abi_PickWithMessageAsync(hstring targetName, hstring message, Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> ** operation) = 0;
     virtual HRESULT __stdcall abi_PickWithCaptionAsync(hstring targetName, hstring message, hstring caption, Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> ** operation) = 0;
 };
 
-struct __declspec(uuid("af4f3f91-564c-4ddc-b8b5-973447627c65")) __declspec(novtable) IUserConsentVerifierStatics : Windows::IInspectable
+struct __declspec(uuid("af4f3f91-564c-4ddc-b8b5-973447627c65")) __declspec(novtable) IUserConsentVerifierStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CheckAvailabilityAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability> ** result) = 0;
     virtual HRESULT __stdcall abi_RequestVerificationAsync(hstring message, Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> ** result) = 0;

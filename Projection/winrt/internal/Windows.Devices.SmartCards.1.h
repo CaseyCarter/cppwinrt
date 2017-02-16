@@ -14,24 +14,24 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::SmartCards {
 
-struct __declspec(uuid("18bbef98-f18b-4dd3-b118-dfb2c8e23cc6")) __declspec(novtable) ICardAddedEventArgs : Windows::IInspectable
+struct __declspec(uuid("18bbef98-f18b-4dd3-b118-dfb2c8e23cc6")) __declspec(novtable) ICardAddedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SmartCard(Windows::Devices::SmartCards::ISmartCard ** value) = 0;
 };
 
-struct __declspec(uuid("15331aaf-22d7-4945-afc9-03b46f42a6cd")) __declspec(novtable) ICardRemovedEventArgs : Windows::IInspectable
+struct __declspec(uuid("15331aaf-22d7-4945-afc9-03b46f42a6cd")) __declspec(novtable) ICardRemovedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SmartCard(Windows::Devices::SmartCards::ISmartCard ** value) = 0;
 };
 
-struct __declspec(uuid("1b718871-6434-43f4-b55a-6a29623870aa")) __declspec(novtable) ISmartCard : Windows::IInspectable
+struct __declspec(uuid("1b718871-6434-43f4-b55a-6a29623870aa")) __declspec(novtable) ISmartCard : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Reader(Windows::Devices::SmartCards::ISmartCardReader ** value) = 0;
     virtual HRESULT __stdcall abi_GetStatusAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardStatus> ** result) = 0;
     virtual HRESULT __stdcall abi_GetAnswerToResetAsync(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ** result) = 0;
 };
 
-struct __declspec(uuid("192a5319-c9c4-4947-81cc-44794a61ef91")) __declspec(novtable) ISmartCardChallengeContext : Windows::IInspectable
+struct __declspec(uuid("192a5319-c9c4-4947-81cc-44794a61ef91")) __declspec(novtable) ISmartCardChallengeContext : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Challenge(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall abi_VerifyResponseAsync(Windows::Storage::Streams::IBuffer * response, Windows::Foundation::IAsyncOperation<bool> ** result) = 0;
@@ -40,17 +40,17 @@ struct __declspec(uuid("192a5319-c9c4-4947-81cc-44794a61ef91")) __declspec(novta
     virtual HRESULT __stdcall abi_ChangeAdministrativeKeyAsync(Windows::Storage::Streams::IBuffer * response, Windows::Storage::Streams::IBuffer * newAdministrativeKey, Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
-struct __declspec(uuid("2fdf87e5-028d-491e-a058-3382c3986f40")) __declspec(novtable) ISmartCardConnect : Windows::IInspectable
+struct __declspec(uuid("2fdf87e5-028d-491e-a058-3382c3986f40")) __declspec(novtable) ISmartCardConnect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ConnectAsync(Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardConnection> ** result) = 0;
 };
 
-struct __declspec(uuid("7edb991a-a81a-47bc-a649-156be6b7f231")) __declspec(novtable) ISmartCardConnection : Windows::IInspectable
+struct __declspec(uuid("7edb991a-a81a-47bc-a649-156be6b7f231")) __declspec(novtable) ISmartCardConnection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TransmitAsync(Windows::Storage::Streams::IBuffer * command, Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ** result) = 0;
 };
 
-struct __declspec(uuid("183ce184-4db6-4841-ac9e-2ac1f39b7304")) __declspec(novtable) ISmartCardPinPolicy : Windows::IInspectable
+struct __declspec(uuid("183ce184-4db6-4841-ac9e-2ac1f39b7304")) __declspec(novtable) ISmartCardPinPolicy : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MinLength(uint32_t * value) = 0;
     virtual HRESULT __stdcall put_MinLength(uint32_t value) = 0;
@@ -66,12 +66,12 @@ struct __declspec(uuid("183ce184-4db6-4841-ac9e-2ac1f39b7304")) __declspec(novta
     virtual HRESULT __stdcall put_SpecialCharacters(winrt::Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value) = 0;
 };
 
-struct __declspec(uuid("18c94aac-7805-4004-85e4-bbefac8f6884")) __declspec(novtable) ISmartCardPinResetDeferral : Windows::IInspectable
+struct __declspec(uuid("18c94aac-7805-4004-85e4-bbefac8f6884")) __declspec(novtable) ISmartCardPinResetDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("12fe3c4d-5fb9-4e8e-9ff6-61f475124fef")) __declspec(novtable) ISmartCardPinResetRequest : Windows::IInspectable
+struct __declspec(uuid("12fe3c4d-5fb9-4e8e-9ff6-61f475124fef")) __declspec(novtable) ISmartCardPinResetRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Challenge(Windows::Storage::Streams::IBuffer ** value) = 0;
     virtual HRESULT __stdcall get_Deadline(Windows::Foundation::DateTime * value) = 0;
@@ -79,7 +79,7 @@ struct __declspec(uuid("12fe3c4d-5fb9-4e8e-9ff6-61f475124fef")) __declspec(novta
     virtual HRESULT __stdcall abi_SetResponse(Windows::Storage::Streams::IBuffer * response) = 0;
 };
 
-struct __declspec(uuid("19eeedbd-1fab-477c-b712-1a2c5af1fd6e")) __declspec(novtable) ISmartCardProvisioning : Windows::IInspectable
+struct __declspec(uuid("19eeedbd-1fab-477c-b712-1a2c5af1fd6e")) __declspec(novtable) ISmartCardProvisioning : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SmartCard(Windows::Devices::SmartCards::ISmartCard ** value) = 0;
     virtual HRESULT __stdcall abi_GetIdAsync(Windows::Foundation::IAsyncOperation<GUID> ** result) = 0;
@@ -89,12 +89,12 @@ struct __declspec(uuid("19eeedbd-1fab-477c-b712-1a2c5af1fd6e")) __declspec(novta
     virtual HRESULT __stdcall abi_RequestPinResetAsync(Windows::Devices::SmartCards::SmartCardPinResetHandler * handler, Windows::Foundation::IAsyncOperation<bool> ** result) = 0;
 };
 
-struct __declspec(uuid("10fd28eb-3f79-4b66-9b7c-11c149b7d0bc")) __declspec(novtable) ISmartCardProvisioning2 : Windows::IInspectable
+struct __declspec(uuid("10fd28eb-3f79-4b66-9b7c-11c149b7d0bc")) __declspec(novtable) ISmartCardProvisioning2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAuthorityKeyContainerNameAsync(Windows::Foundation::IAsyncOperation<hstring> ** result) = 0;
 };
 
-struct __declspec(uuid("13882848-0d13-4e70-9735-51daeca5254f")) __declspec(novtable) ISmartCardProvisioningStatics : Windows::IInspectable
+struct __declspec(uuid("13882848-0d13-4e70-9735-51daeca5254f")) __declspec(novtable) ISmartCardProvisioningStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromSmartCardAsync(Windows::Devices::SmartCards::ISmartCard * card, Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> ** result) = 0;
     virtual HRESULT __stdcall abi_RequestVirtualSmartCardCreationAsync(hstring friendlyName, Windows::Storage::Streams::IBuffer * administrativeKey, Windows::Devices::SmartCards::ISmartCardPinPolicy * pinPolicy, Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> ** result) = 0;
@@ -102,13 +102,13 @@ struct __declspec(uuid("13882848-0d13-4e70-9735-51daeca5254f")) __declspec(novta
     virtual HRESULT __stdcall abi_RequestVirtualSmartCardDeletionAsync(Windows::Devices::SmartCards::ISmartCard * card, Windows::Foundation::IAsyncOperation<bool> ** result) = 0;
 };
 
-struct __declspec(uuid("3447c6a8-c9a0-4bd6-b50d-251f4e8d3a62")) __declspec(novtable) ISmartCardProvisioningStatics2 : Windows::IInspectable
+struct __declspec(uuid("3447c6a8-c9a0-4bd6-b50d-251f4e8d3a62")) __declspec(novtable) ISmartCardProvisioningStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestAttestedVirtualSmartCardCreationAsync(hstring friendlyName, Windows::Storage::Streams::IBuffer * administrativeKey, Windows::Devices::SmartCards::ISmartCardPinPolicy * pinPolicy, Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> ** result) = 0;
     virtual HRESULT __stdcall abi_RequestAttestedVirtualSmartCardCreationAsyncWithCardId(hstring friendlyName, Windows::Storage::Streams::IBuffer * administrativeKey, Windows::Devices::SmartCards::ISmartCardPinPolicy * pinPolicy, GUID cardId, Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> ** result) = 0;
 };
 
-struct __declspec(uuid("1074b4e0-54c2-4df0-817a-14c14378f06c")) __declspec(novtable) ISmartCardReader : Windows::IInspectable
+struct __declspec(uuid("1074b4e0-54c2-4df0-817a-14c14378f06c")) __declspec(novtable) ISmartCardReader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
@@ -121,7 +121,7 @@ struct __declspec(uuid("1074b4e0-54c2-4df0-817a-14c14378f06c")) __declspec(novta
     virtual HRESULT __stdcall remove_CardRemoved(event_token token) = 0;
 };
 
-struct __declspec(uuid("103c04e1-a1ca-48f2-a281-5b6f669af107")) __declspec(novtable) ISmartCardReaderStatics : Windows::IInspectable
+struct __declspec(uuid("103c04e1-a1ca-48f2-a281-5b6f669af107")) __declspec(novtable) ISmartCardReaderStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * selector) = 0;
     virtual HRESULT __stdcall abi_GetDeviceSelectorWithKind(winrt::Windows::Devices::SmartCards::SmartCardReaderKind kind, hstring * selector) = 0;

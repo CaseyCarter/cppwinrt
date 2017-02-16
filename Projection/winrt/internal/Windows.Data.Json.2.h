@@ -61,7 +61,7 @@ template <> struct __declspec(uuid("f948eac5-33eb-50f5-b5af-e7cecf0e4501")) __de
 namespace Windows::Data::Json {
 
 struct IJsonArray :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJsonArray>,
     impl::require<IJsonArray, Windows::Data::Json::IJsonValue>
 {
@@ -69,21 +69,21 @@ struct IJsonArray :
 };
 
 struct IJsonArrayStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJsonArrayStatics>
 {
     IJsonArrayStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IJsonErrorStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJsonErrorStatics2>
 {
     IJsonErrorStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IJsonObject :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJsonObject>,
     impl::require<IJsonObject, Windows::Data::Json::IJsonValue>
 {
@@ -91,14 +91,14 @@ struct IJsonObject :
 };
 
 struct IJsonObjectStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJsonObjectStatics>
 {
     IJsonObjectStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IJsonObjectWithDefaultValues :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJsonObjectWithDefaultValues>,
     impl::require<IJsonObjectWithDefaultValues, Windows::Data::Json::IJsonObject, Windows::Data::Json::IJsonValue>
 {
@@ -118,21 +118,21 @@ struct IJsonObjectWithDefaultValues :
 };
 
 struct IJsonValue :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJsonValue>
 {
     IJsonValue(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IJsonValueStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJsonValueStatics>
 {
     IJsonValueStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IJsonValueStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IJsonValueStatics2>
 {
     IJsonValueStatics2(std::nullptr_t = nullptr) noexcept {}

@@ -482,12 +482,12 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_LocatabilityChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_LocatabilityChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().LocatabilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().LocatabilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1088,14 +1088,14 @@ template <typename D> Windows::Perception::Spatial::SpatialLocatability impl_ISp
     return value;
 }
 
-template <typename D> event_token impl_ISpatialLocator<D>::LocatabilityChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ISpatialLocator<D>::LocatabilityChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(ISpatialLocator)->add_LocatabilityChanged(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<ISpatialLocator> impl_ISpatialLocator<D>::LocatabilityChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ISpatialLocator> impl_ISpatialLocator<D>::LocatabilityChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ISpatialLocator>(this, &ABI::Windows::Perception::Spatial::ISpatialLocator::remove_LocatabilityChanged, LocatabilityChanged(handler));
 }

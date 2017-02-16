@@ -3,10 +3,10 @@
 
 #pragma once
 
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Popups.3.h"
 #include "internal/Windows.Security.Credentials.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
-#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.ApplicationSettings.3.h"
 #include "Windows.UI.h"
 #include "Windows.UI.Popups.h"
@@ -366,12 +366,12 @@ struct produce<D, Windows::UI::ApplicationSettings::ICredentialCommandFactory> :
 template <typename D>
 struct produce<D, Windows::UI::ApplicationSettings::ISettingsCommandFactory> : produce_base<D, Windows::UI::ApplicationSettings::ISettingsCommandFactory>
 {
-    HRESULT __stdcall abi_CreateSettingsCommand(impl::abi_arg_in<Windows::IInspectable> settingsCommandId, impl::abi_arg_in<hstring> label, impl::abi_arg_in<Windows::UI::Popups::UICommandInvokedHandler> handler, impl::abi_arg_out<Windows::UI::Popups::IUICommand> instance) noexcept override
+    HRESULT __stdcall abi_CreateSettingsCommand(impl::abi_arg_in<Windows::Foundation::IInspectable> settingsCommandId, impl::abi_arg_in<hstring> label, impl::abi_arg_in<Windows::UI::Popups::UICommandInvokedHandler> handler, impl::abi_arg_out<Windows::UI::Popups::IUICommand> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateSettingsCommand(*reinterpret_cast<const Windows::IInspectable *>(&settingsCommandId), *reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&handler)));
+            *instance = detach_abi(this->shim().CreateSettingsCommand(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&settingsCommandId), *reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -543,7 +543,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountProviderCommandFa
 
 namespace Windows::UI::ApplicationSettings {
 
-template <typename D> Windows::UI::ApplicationSettings::SettingsCommand impl_ISettingsCommandFactory<D>::CreateSettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & handler) const
+template <typename D> Windows::UI::ApplicationSettings::SettingsCommand impl_ISettingsCommandFactory<D>::CreateSettingsCommand(const Windows::Foundation::IInspectable & settingsCommandId, hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & handler) const
 {
     Windows::UI::ApplicationSettings::SettingsCommand instance { nullptr };
     check_hresult(WINRT_SHIM(ISettingsCommandFactory)->abi_CreateSettingsCommand(get_abi(settingsCommandId), get_abi(label), get_abi(handler), put_abi(instance)));
@@ -764,7 +764,7 @@ inline CredentialCommand::CredentialCommand(const Windows::Security::Credentials
     CredentialCommand(get_activation_factory<CredentialCommand, ICredentialCommandFactory>().CreateCredentialCommandWithHandler(passwordCredential, deleted))
 {}
 
-inline SettingsCommand::SettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & handler) :
+inline SettingsCommand::SettingsCommand(const Windows::Foundation::IInspectable & settingsCommandId, hstring_view label, const Windows::UI::Popups::UICommandInvokedHandler & handler) :
     SettingsCommand(get_activation_factory<SettingsCommand, ISettingsCommandFactory>().CreateSettingsCommand(settingsCommandId, label, handler))
 {}
 

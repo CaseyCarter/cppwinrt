@@ -3,9 +3,9 @@
 
 #pragma once
 
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Xaml.Interop.3.h"
 #include "internal/Windows.UI.Xaml.Media.Animation.3.h"
-#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Xaml.3.h"
 #include "internal/Windows.UI.Xaml.Navigation.3.h"
 #include "Windows.UI.Xaml.h"
@@ -26,7 +26,7 @@ template <typename O, typename M> LoadCompletedEventHandler::LoadCompletedEventH
     LoadCompletedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void LoadCompletedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const
+inline void LoadCompletedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const
 {
     check_hresult((*(abi<LoadCompletedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -43,7 +43,7 @@ template <typename O, typename M> NavigatedEventHandler::NavigatedEventHandler(O
     NavigatedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void NavigatedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const
+inline void NavigatedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const
 {
     check_hresult((*(abi<NavigatedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -60,7 +60,7 @@ template <typename O, typename M> NavigatingCancelEventHandler::NavigatingCancel
     NavigatingCancelEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void NavigatingCancelEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs & e) const
+inline void NavigatingCancelEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs & e) const
 {
     check_hresult((*(abi<NavigatingCancelEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -77,7 +77,7 @@ template <typename O, typename M> NavigationFailedEventHandler::NavigationFailed
     NavigationFailedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void NavigationFailedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationFailedEventArgs & e) const
+inline void NavigationFailedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationFailedEventArgs & e) const
 {
     check_hresult((*(abi<NavigationFailedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -94,7 +94,7 @@ template <typename O, typename M> NavigationStoppedEventHandler::NavigationStopp
     NavigationStoppedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void NavigationStoppedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const
+inline void NavigationStoppedEventHandler::operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const
 {
     check_hresult((*(abi<NavigationStoppedEventHandler> **)this)->abi_Invoke(get_abi(sender), get_abi(e)));
 }
@@ -166,7 +166,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs> : p
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2> : produce_base<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2>
 {
-    HRESULT __stdcall get_Parameter(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Parameter(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -200,7 +200,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2> : 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Navigation::INavigationEventArgs> : produce_base<D, Windows::UI::Xaml::Navigation::INavigationEventArgs>
 {
-    HRESULT __stdcall get_Content(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Content(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -215,7 +215,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::INavigationEventArgs> : produce
         }
     }
 
-    HRESULT __stdcall get_Parameter(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Parameter(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -384,7 +384,7 @@ struct produce<D, Windows::UI::Xaml::Navigation::IPageStackEntry> : produce_base
         }
     }
 
-    HRESULT __stdcall get_Parameter(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_Parameter(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -418,12 +418,12 @@ struct produce<D, Windows::UI::Xaml::Navigation::IPageStackEntry> : produce_base
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Navigation::IPageStackEntryFactory> : produce_base<D, Windows::UI::Xaml::Navigation::IPageStackEntryFactory>
 {
-    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::UI::Xaml::Interop::TypeName> sourcePageType, impl::abi_arg_in<Windows::IInspectable> parameter, impl::abi_arg_in<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo> navigationTransitionInfo, impl::abi_arg_out<Windows::UI::Xaml::Navigation::IPageStackEntry> instance) noexcept override
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::UI::Xaml::Interop::TypeName> sourcePageType, impl::abi_arg_in<Windows::Foundation::IInspectable> parameter, impl::abi_arg_in<Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo> navigationTransitionInfo, impl::abi_arg_out<Windows::UI::Xaml::Navigation::IPageStackEntry> instance) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&sourcePageType), *reinterpret_cast<const Windows::IInspectable *>(&parameter), *reinterpret_cast<const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo *>(&navigationTransitionInfo)));
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&sourcePageType), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&parameter), *reinterpret_cast<const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo *>(&navigationTransitionInfo)));
             return S_OK;
         }
         catch (...)
@@ -483,9 +483,9 @@ template <typename D> Windows::UI::Xaml::Interop::TypeName impl_INavigatingCance
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_INavigatingCancelEventArgs2<D>::Parameter() const
+template <typename D> Windows::Foundation::IInspectable impl_INavigatingCancelEventArgs2<D>::Parameter() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(INavigatingCancelEventArgs2)->get_Parameter(put_abi(value)));
     return value;
 }
@@ -497,16 +497,16 @@ template <typename D> Windows::UI::Xaml::Media::Animation::NavigationTransitionI
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_INavigationEventArgs<D>::Content() const
+template <typename D> Windows::Foundation::IInspectable impl_INavigationEventArgs<D>::Content() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(INavigationEventArgs)->get_Content(put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_INavigationEventArgs<D>::Parameter() const
+template <typename D> Windows::Foundation::IInspectable impl_INavigationEventArgs<D>::Parameter() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(INavigationEventArgs)->get_Parameter(put_abi(value)));
     return value;
 }
@@ -577,9 +577,9 @@ template <typename D> Windows::UI::Xaml::Interop::TypeName impl_IPageStackEntry<
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IPageStackEntry<D>::Parameter() const
+template <typename D> Windows::Foundation::IInspectable impl_IPageStackEntry<D>::Parameter() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IPageStackEntry)->get_Parameter(put_abi(value)));
     return value;
 }
@@ -598,14 +598,14 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPageStackEntry
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Navigation::PageStackEntry impl_IPageStackEntryFactory<D>::CreateInstance(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & navigationTransitionInfo) const
+template <typename D> Windows::UI::Xaml::Navigation::PageStackEntry impl_IPageStackEntryFactory<D>::CreateInstance(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::Foundation::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & navigationTransitionInfo) const
 {
     Windows::UI::Xaml::Navigation::PageStackEntry instance { nullptr };
     check_hresult(WINRT_SHIM(IPageStackEntryFactory)->abi_CreateInstance(get_abi(sourcePageType), get_abi(parameter), get_abi(navigationTransitionInfo), put_abi(instance)));
     return instance;
 }
 
-inline PageStackEntry::PageStackEntry(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & navigationTransitionInfo) :
+inline PageStackEntry::PageStackEntry(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::Foundation::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & navigationTransitionInfo) :
     PageStackEntry(get_activation_factory<PageStackEntry, IPageStackEntryFactory>().CreateInstance(sourcePageType, parameter, navigationTransitionInfo))
 {}
 

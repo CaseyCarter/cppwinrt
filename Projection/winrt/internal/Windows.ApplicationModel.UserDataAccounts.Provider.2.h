@@ -30,14 +30,14 @@ template <> struct __declspec(uuid("5cdb425e-da5a-55fa-b349-5467996cab32")) __de
 namespace Windows::ApplicationModel::UserDataAccounts::Provider {
 
 struct IUserDataAccountPartnerAccountInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountPartnerAccountInfo>
 {
     IUserDataAccountPartnerAccountInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccountProviderAddAccountOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountProviderAddAccountOperation>,
     impl::require<IUserDataAccountProviderAddAccountOperation, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation>
 {
@@ -45,14 +45,14 @@ struct IUserDataAccountProviderAddAccountOperation :
 };
 
 struct IUserDataAccountProviderOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountProviderOperation>
 {
     IUserDataAccountProviderOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserDataAccountProviderResolveErrorsOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountProviderResolveErrorsOperation>,
     impl::require<IUserDataAccountProviderResolveErrorsOperation, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation>
 {
@@ -60,7 +60,7 @@ struct IUserDataAccountProviderResolveErrorsOperation :
 };
 
 struct IUserDataAccountProviderSettingsOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserDataAccountProviderSettingsOperation>,
     impl::require<IUserDataAccountProviderSettingsOperation, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation>
 {

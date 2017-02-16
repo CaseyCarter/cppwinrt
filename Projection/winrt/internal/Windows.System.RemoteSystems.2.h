@@ -110,112 +110,112 @@ template <> struct __declspec(uuid("543a221d-ef39-57f5-9741-b052dbc29249")) __de
 namespace Windows::System::RemoteSystems {
 
 struct IRemoteSystem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystem>
 {
     IRemoteSystem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemAddedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemAddedEventArgs>
 {
     IRemoteSystemAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemConnectionRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemConnectionRequest>
 {
     IRemoteSystemConnectionRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemConnectionRequestFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemConnectionRequestFactory>
 {
     IRemoteSystemConnectionRequestFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemDiscoveryTypeFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemDiscoveryTypeFilter>
 {
     IRemoteSystemDiscoveryTypeFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemDiscoveryTypeFilterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemDiscoveryTypeFilterFactory>
 {
     IRemoteSystemDiscoveryTypeFilterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemFilter>
 {
     IRemoteSystemFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemKindFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemKindFilter>
 {
     IRemoteSystemKindFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemKindFilterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemKindFilterFactory>
 {
     IRemoteSystemKindFilterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemKindStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemKindStatics>
 {
     IRemoteSystemKindStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemRemovedEventArgs>
 {
     IRemoteSystemRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemStatics>
 {
     IRemoteSystemStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemStatusTypeFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemStatusTypeFilter>
 {
     IRemoteSystemStatusTypeFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemStatusTypeFilterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemStatusTypeFilterFactory>
 {
     IRemoteSystemStatusTypeFilterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemUpdatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemUpdatedEventArgs>
 {
     IRemoteSystemUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRemoteSystemWatcher :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRemoteSystemWatcher>
 {
     IRemoteSystemWatcher(std::nullptr_t = nullptr) noexcept {}

@@ -2168,12 +2168,12 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
         }
     }
 
-    HRESULT __stdcall add_AlarmTimeoutExpired(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AlarmTimeoutExpired(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().AlarmTimeoutExpired(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AlarmTimeoutExpired(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2937,12 +2937,12 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
         }
     }
 
-    HRESULT __stdcall add_ReleaseDeviceRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ReleaseDeviceRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ReleaseDeviceRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ReleaseDeviceRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -9215,14 +9215,14 @@ template <typename D> Windows::Foundation::TimeSpan impl_ICashDrawerCloseAlarm<D
     return value;
 }
 
-template <typename D> event_token impl_ICashDrawerCloseAlarm<D>::AlarmTimeoutExpired(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ICashDrawerCloseAlarm<D>::AlarmTimeoutExpired(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->add_AlarmTimeoutExpired(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ICashDrawerCloseAlarm> impl_ICashDrawerCloseAlarm<D>::AlarmTimeoutExpired(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ICashDrawerCloseAlarm> impl_ICashDrawerCloseAlarm<D>::AlarmTimeoutExpired(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ICashDrawerCloseAlarm>(this, &ABI::Windows::Devices::PointOfService::ICashDrawerCloseAlarm::remove_AlarmTimeoutExpired, AlarmTimeoutExpired(handler));
 }
@@ -9872,14 +9872,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCa
     return result;
 }
 
-template <typename D> event_token impl_IClaimedCashDrawer<D>::ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IClaimedCashDrawer<D>::ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IClaimedCashDrawer)->add_ReleaseDeviceRequested(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IClaimedCashDrawer> impl_IClaimedCashDrawer<D>::ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IClaimedCashDrawer> impl_IClaimedCashDrawer<D>::ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IClaimedCashDrawer>(this, &ABI::Windows::Devices::PointOfService::IClaimedCashDrawer::remove_ReleaseDeviceRequested, ReleaseDeviceRequested(handler));
 }

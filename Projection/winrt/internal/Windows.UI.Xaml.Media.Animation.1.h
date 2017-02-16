@@ -42,33 +42,33 @@ using RepeatBehavior = ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior;
 
 namespace ABI::Windows::UI::Xaml::Media::Animation {
 
-struct __declspec(uuid("adec852e-4424-4dab-99c1-3a04e36a3c48")) __declspec(novtable) IAddDeleteThemeTransition : Windows::IInspectable
+struct __declspec(uuid("adec852e-4424-4dab-99c1-3a04e36a3c48")) __declspec(novtable) IAddDeleteThemeTransition : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("e47796e7-f805-4a8f-81c9-38e6472caa94")) __declspec(novtable) IBackEase : Windows::IInspectable
+struct __declspec(uuid("e47796e7-f805-4a8f-81c9-38e6472caa94")) __declspec(novtable) IBackEase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Amplitude(double * value) = 0;
     virtual HRESULT __stdcall put_Amplitude(double value) = 0;
 };
 
-struct __declspec(uuid("3c70a2ff-a0a0-4786-926c-22321f8f25b7")) __declspec(novtable) IBackEaseStatics : Windows::IInspectable
+struct __declspec(uuid("3c70a2ff-a0a0-4786-926c-22321f8f25b7")) __declspec(novtable) IBackEaseStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AmplitudeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("64189fcd-49ec-4e52-a6f6-55324c921053")) __declspec(novtable) IBeginStoryboard : Windows::IInspectable
+struct __declspec(uuid("64189fcd-49ec-4e52-a6f6-55324c921053")) __declspec(novtable) IBeginStoryboard : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Storyboard(Windows::UI::Xaml::Media::Animation::IStoryboard ** value) = 0;
     virtual HRESULT __stdcall put_Storyboard(Windows::UI::Xaml::Media::Animation::IStoryboard * value) = 0;
 };
 
-struct __declspec(uuid("12cff18c-aa91-4c4a-b82f-df34fc57f94b")) __declspec(novtable) IBeginStoryboardStatics : Windows::IInspectable
+struct __declspec(uuid("12cff18c-aa91-4c4a-b82f-df34fc57f94b")) __declspec(novtable) IBeginStoryboardStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StoryboardProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("2bf1464e-fc71-47ed-85a1-3ba9577718b4")) __declspec(novtable) IBounceEase : Windows::IInspectable
+struct __declspec(uuid("2bf1464e-fc71-47ed-85a1-3ba9577718b4")) __declspec(novtable) IBounceEase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Bounces(int32_t * value) = 0;
     virtual HRESULT __stdcall put_Bounces(int32_t value) = 0;
@@ -76,17 +76,17 @@ struct __declspec(uuid("2bf1464e-fc71-47ed-85a1-3ba9577718b4")) __declspec(novta
     virtual HRESULT __stdcall put_Bounciness(double value) = 0;
 };
 
-struct __declspec(uuid("c0701da2-4f73-41c9-b2cb-2ea3105107ff")) __declspec(novtable) IBounceEaseStatics : Windows::IInspectable
+struct __declspec(uuid("c0701da2-4f73-41c9-b2cb-2ea3105107ff")) __declspec(novtable) IBounceEaseStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BouncesProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_BouncinessProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("53a3bdb2-9177-4e6e-a043-5082d889ab1f")) __declspec(novtable) ICircleEase : Windows::IInspectable
+struct __declspec(uuid("53a3bdb2-9177-4e6e-a043-5082d889ab1f")) __declspec(novtable) ICircleEase : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea")) __declspec(novtable) IColorAnimation : Windows::IInspectable
+struct __declspec(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea")) __declspec(novtable) IColorAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_From(Windows::Foundation::IReference<Windows::UI::Color> ** value) = 0;
     virtual HRESULT __stdcall put_From(Windows::Foundation::IReference<Windows::UI::Color> * value) = 0;
@@ -100,7 +100,7 @@ struct __declspec(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea")) __declspec(novta
     virtual HRESULT __stdcall put_EnableDependentAnimation(bool value) = 0;
 };
 
-struct __declspec(uuid("55eaf6e2-87e3-4f48-958f-855b2f9ea9ec")) __declspec(novtable) IColorAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("55eaf6e2-87e3-4f48-958f-855b2f9ea9ec")) __declspec(novtable) IColorAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FromProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ToProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -109,19 +109,19 @@ struct __declspec(uuid("55eaf6e2-87e3-4f48-958f-855b2f9ea9ec")) __declspec(novta
     virtual HRESULT __stdcall get_EnableDependentAnimationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("f5c82640-13c3-42aa-9ae2-7e6b51c92f95")) __declspec(novtable) IColorAnimationUsingKeyFrames : Windows::IInspectable
+struct __declspec(uuid("f5c82640-13c3-42aa-9ae2-7e6b51c92f95")) __declspec(novtable) IColorAnimationUsingKeyFrames : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeyFrames(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> ** value) = 0;
     virtual HRESULT __stdcall get_EnableDependentAnimation(bool * value) = 0;
     virtual HRESULT __stdcall put_EnableDependentAnimation(bool value) = 0;
 };
 
-struct __declspec(uuid("b4723cdc-96e9-48f9-8d92-9b648b2f1cc6")) __declspec(novtable) IColorAnimationUsingKeyFramesStatics : Windows::IInspectable
+struct __declspec(uuid("b4723cdc-96e9-48f9-8d92-9b648b2f1cc6")) __declspec(novtable) IColorAnimationUsingKeyFramesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EnableDependentAnimationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b51d82d9-0910-4589-a284-b0c9205858e9")) __declspec(novtable) IColorKeyFrame : Windows::IInspectable
+struct __declspec(uuid("b51d82d9-0910-4589-a284-b0c9205858e9")) __declspec(novtable) IColorKeyFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Value(Windows::UI::Color * value) = 0;
     virtual HRESULT __stdcall put_Value(Windows::UI::Color value) = 0;
@@ -129,24 +129,24 @@ struct __declspec(uuid("b51d82d9-0910-4589-a284-b0c9205858e9")) __declspec(novta
     virtual HRESULT __stdcall put_KeyTime(Windows::UI::Xaml::Media::Animation::KeyTime value) = 0;
 };
 
-struct __declspec(uuid("769bd88a-9cfb-4a7d-96c4-a1e7de6fdb4b")) __declspec(novtable) IColorKeyFrameFactory : Windows::IInspectable
+struct __declspec(uuid("769bd88a-9cfb-4a7d-96c4-a1e7de6fdb4b")) __declspec(novtable) IColorKeyFrameFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::IColorKeyFrame ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::IColorKeyFrame ** instance) = 0;
 };
 
-struct __declspec(uuid("c043ae99-210c-430f-9da5-df1082692055")) __declspec(novtable) IColorKeyFrameStatics : Windows::IInspectable
+struct __declspec(uuid("c043ae99-210c-430f-9da5-df1082692055")) __declspec(novtable) IColorKeyFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ValueProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_KeyTimeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("50345692-a555-4624-a361-0a91c1706473")) __declspec(novtable) ICommonNavigationTransitionInfo : Windows::IInspectable
+struct __declspec(uuid("50345692-a555-4624-a361-0a91c1706473")) __declspec(novtable) ICommonNavigationTransitionInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsStaggeringEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsStaggeringEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("1e3efe33-50be-4443-883c-e5627201c2e5")) __declspec(novtable) ICommonNavigationTransitionInfoStatics : Windows::IInspectable
+struct __declspec(uuid("1e3efe33-50be-4443-883c-e5627201c2e5")) __declspec(novtable) ICommonNavigationTransitionInfoStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsStaggeringEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsStaggerElementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -154,15 +154,15 @@ struct __declspec(uuid("1e3efe33-50be-4443-883c-e5627201c2e5")) __declspec(novta
     virtual HRESULT __stdcall abi_SetIsStaggerElement(Windows::UI::Xaml::IUIElement * element, bool value) = 0;
 };
 
-struct __declspec(uuid("3518628c-f387-4c25-ac98-44e86c3cadf0")) __declspec(novtable) IConnectedAnimation : Windows::IInspectable
+struct __declspec(uuid("3518628c-f387-4c25-ac98-44e86c3cadf0")) __declspec(novtable) IConnectedAnimation : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_Completed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Completed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Completed(event_token token) = 0;
     virtual HRESULT __stdcall abi_TryStart(Windows::UI::Xaml::IUIElement * destination, bool * returnValue) = 0;
     virtual HRESULT __stdcall abi_Cancel() = 0;
 };
 
-struct __declspec(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff")) __declspec(novtable) IConnectedAnimationService : Windows::IInspectable
+struct __declspec(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff")) __declspec(novtable) IConnectedAnimationService : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DefaultDuration(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall put_DefaultDuration(Windows::Foundation::TimeSpan value) = 0;
@@ -172,12 +172,12 @@ struct __declspec(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff")) __declspec(novta
     virtual HRESULT __stdcall abi_GetAnimation(hstring key, Windows::UI::Xaml::Media::Animation::IConnectedAnimation ** returnValue) = 0;
 };
 
-struct __declspec(uuid("c7078ea5-d688-40e8-8f90-96a6279273d2")) __declspec(novtable) IConnectedAnimationServiceStatics : Windows::IInspectable
+struct __declspec(uuid("c7078ea5-d688-40e8-8f90-96a6279273d2")) __declspec(novtable) IConnectedAnimationServiceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForCurrentView(Windows::UI::Xaml::Media::Animation::IConnectedAnimationService ** returnValue) = 0;
 };
 
-struct __declspec(uuid("f66fc5c3-5915-437d-8e3b-adf8e7f0ab57")) __declspec(novtable) IContentThemeTransition : Windows::IInspectable
+struct __declspec(uuid("f66fc5c3-5915-437d-8e3b-adf8e7f0ab57")) __declspec(novtable) IContentThemeTransition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HorizontalOffset(double * value) = 0;
     virtual HRESULT __stdcall put_HorizontalOffset(double value) = 0;
@@ -185,19 +185,19 @@ struct __declspec(uuid("f66fc5c3-5915-437d-8e3b-adf8e7f0ab57")) __declspec(novta
     virtual HRESULT __stdcall put_VerticalOffset(double value) = 0;
 };
 
-struct __declspec(uuid("0e8ee385-9a42-4459-afa9-337dc41e1587")) __declspec(novtable) IContentThemeTransitionStatics : Windows::IInspectable
+struct __declspec(uuid("0e8ee385-9a42-4459-afa9-337dc41e1587")) __declspec(novtable) IContentThemeTransitionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_VerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4be1dbad-8ba6-4004-8438-8a9017978543")) __declspec(novtable) IContinuumNavigationTransitionInfo : Windows::IInspectable
+struct __declspec(uuid("4be1dbad-8ba6-4004-8438-8a9017978543")) __declspec(novtable) IContinuumNavigationTransitionInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ExitElement(Windows::UI::Xaml::IUIElement ** value) = 0;
     virtual HRESULT __stdcall put_ExitElement(Windows::UI::Xaml::IUIElement * value) = 0;
 };
 
-struct __declspec(uuid("3e25dd53-b18f-4bf1-b3bc-92f516f29903")) __declspec(novtable) IContinuumNavigationTransitionInfoStatics : Windows::IInspectable
+struct __declspec(uuid("3e25dd53-b18f-4bf1-b3bc-92f516f29903")) __declspec(novtable) IContinuumNavigationTransitionInfoStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ExitElementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsEntranceElementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -211,27 +211,27 @@ struct __declspec(uuid("3e25dd53-b18f-4bf1-b3bc-92f516f29903")) __declspec(novta
     virtual HRESULT __stdcall abi_SetExitElementContainer(Windows::UI::Xaml::Controls::IListViewBase * element, bool value) = 0;
 };
 
-struct __declspec(uuid("1b94fc76-dad7-4354-b1a2-7969fbf6a70d")) __declspec(novtable) ICubicEase : Windows::IInspectable
+struct __declspec(uuid("1b94fc76-dad7-4354-b1a2-7969fbf6a70d")) __declspec(novtable) ICubicEase : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("230c08f4-e062-4cb1-8e2a-14093d73ed8c")) __declspec(novtable) IDiscreteColorKeyFrame : Windows::IInspectable
+struct __declspec(uuid("230c08f4-e062-4cb1-8e2a-14093d73ed8c")) __declspec(novtable) IDiscreteColorKeyFrame : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("f5f51f3a-ad11-49ce-8e1c-08fdf1447446")) __declspec(novtable) IDiscreteDoubleKeyFrame : Windows::IInspectable
+struct __declspec(uuid("f5f51f3a-ad11-49ce-8e1c-08fdf1447446")) __declspec(novtable) IDiscreteDoubleKeyFrame : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("c7dcde89-f12d-4a9c-8199-e7a9ece3a473")) __declspec(novtable) IDiscreteObjectKeyFrame : Windows::IInspectable
+struct __declspec(uuid("c7dcde89-f12d-4a9c-8199-e7a9ece3a473")) __declspec(novtable) IDiscreteObjectKeyFrame : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("e0a9070d-4c42-4a90-983a-75f5a83a2fbe")) __declspec(novtable) IDiscretePointKeyFrame : Windows::IInspectable
+struct __declspec(uuid("e0a9070d-4c42-4a90-983a-75f5a83a2fbe")) __declspec(novtable) IDiscretePointKeyFrame : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f")) __declspec(novtable) IDoubleAnimation : Windows::IInspectable
+struct __declspec(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f")) __declspec(novtable) IDoubleAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_From(Windows::Foundation::IReference<double> ** value) = 0;
     virtual HRESULT __stdcall put_From(Windows::Foundation::IReference<double> * value) = 0;
@@ -245,7 +245,7 @@ struct __declspec(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f")) __declspec(novta
     virtual HRESULT __stdcall put_EnableDependentAnimation(bool value) = 0;
 };
 
-struct __declspec(uuid("e27a935d-f111-43b7-b824-832b58d7786b")) __declspec(novtable) IDoubleAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("e27a935d-f111-43b7-b824-832b58d7786b")) __declspec(novtable) IDoubleAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FromProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ToProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -254,19 +254,19 @@ struct __declspec(uuid("e27a935d-f111-43b7-b824-832b58d7786b")) __declspec(novta
     virtual HRESULT __stdcall get_EnableDependentAnimationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4fee628f-bfee-4f75-83c2-a93b39488473")) __declspec(novtable) IDoubleAnimationUsingKeyFrames : Windows::IInspectable
+struct __declspec(uuid("4fee628f-bfee-4f75-83c2-a93b39488473")) __declspec(novtable) IDoubleAnimationUsingKeyFrames : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeyFrames(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::DoubleKeyFrame> ** value) = 0;
     virtual HRESULT __stdcall get_EnableDependentAnimation(bool * value) = 0;
     virtual HRESULT __stdcall put_EnableDependentAnimation(bool value) = 0;
 };
 
-struct __declspec(uuid("109bf2f6-c60f-49aa-abf6-f696d492116b")) __declspec(novtable) IDoubleAnimationUsingKeyFramesStatics : Windows::IInspectable
+struct __declspec(uuid("109bf2f6-c60f-49aa-abf6-f696d492116b")) __declspec(novtable) IDoubleAnimationUsingKeyFramesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EnableDependentAnimationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68")) __declspec(novtable) IDoubleKeyFrame : Windows::IInspectable
+struct __declspec(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68")) __declspec(novtable) IDoubleKeyFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Value(double * value) = 0;
     virtual HRESULT __stdcall put_Value(double value) = 0;
@@ -274,29 +274,29 @@ struct __declspec(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68")) __declspec(novta
     virtual HRESULT __stdcall put_KeyTime(Windows::UI::Xaml::Media::Animation::KeyTime value) = 0;
 };
 
-struct __declspec(uuid("ac97dec3-7538-40b9-b152-696f7fbf4722")) __declspec(novtable) IDoubleKeyFrameFactory : Windows::IInspectable
+struct __declspec(uuid("ac97dec3-7538-40b9-b152-696f7fbf4722")) __declspec(novtable) IDoubleKeyFrameFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame ** instance) = 0;
 };
 
-struct __declspec(uuid("324641b0-7d37-427a-adeb-43f38bb61a4d")) __declspec(novtable) IDoubleKeyFrameStatics : Windows::IInspectable
+struct __declspec(uuid("324641b0-7d37-427a-adeb-43f38bb61a4d")) __declspec(novtable) IDoubleKeyFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ValueProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_KeyTimeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0c7d5db5-7ed6-4949-b4e6-a78c9f4f978d")) __declspec(novtable) IDragItemThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("0c7d5db5-7ed6-4949-b4e6-a78c9f4f978d")) __declspec(novtable) IDragItemThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
 };
 
-struct __declspec(uuid("6218b9f5-013a-4fb1-86fc-92bc4e8d0241")) __declspec(novtable) IDragItemThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("6218b9f5-013a-4fb1-86fc-92bc4e8d0241")) __declspec(novtable) IDragItemThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458")) __declspec(novtable) IDragOverThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458")) __declspec(novtable) IDragOverThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
@@ -306,38 +306,18 @@ struct __declspec(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458")) __declspec(novta
     virtual HRESULT __stdcall put_Direction(winrt::Windows::UI::Xaml::Controls::Primitives::AnimationDirection value) = 0;
 };
 
-struct __declspec(uuid("146ffe57-3c9d-41d9-a5ff-8d7239516810")) __declspec(novtable) IDragOverThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("146ffe57-3c9d-41d9-a5ff-8d7239516810")) __declspec(novtable) IDragOverThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ToOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_DirectionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("3b86201a-45d3-463b-939e-c8595f439bcc")) __declspec(novtable) IDrillInNavigationTransitionInfo : Windows::IInspectable
+struct __declspec(uuid("3b86201a-45d3-463b-939e-c8595f439bcc")) __declspec(novtable) IDrillInNavigationTransitionInfo : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("b090b824-f1d2-41b8-87ba-78034126594c")) __declspec(novtable) IDrillInThemeAnimation : Windows::IInspectable
-{
-    virtual HRESULT __stdcall get_EntranceTargetName(hstring * value) = 0;
-    virtual HRESULT __stdcall put_EntranceTargetName(hstring value) = 0;
-    virtual HRESULT __stdcall get_EntranceTarget(Windows::UI::Xaml::IDependencyObject ** value) = 0;
-    virtual HRESULT __stdcall put_EntranceTarget(Windows::UI::Xaml::IDependencyObject * value) = 0;
-    virtual HRESULT __stdcall get_ExitTargetName(hstring * value) = 0;
-    virtual HRESULT __stdcall put_ExitTargetName(hstring value) = 0;
-    virtual HRESULT __stdcall get_ExitTarget(Windows::UI::Xaml::IDependencyObject ** value) = 0;
-    virtual HRESULT __stdcall put_ExitTarget(Windows::UI::Xaml::IDependencyObject * value) = 0;
-};
-
-struct __declspec(uuid("c61fe488-a17a-4b11-b53b-a4f1a07d4ba9")) __declspec(novtable) IDrillInThemeAnimationStatics : Windows::IInspectable
-{
-    virtual HRESULT __stdcall get_EntranceTargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall get_EntranceTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall get_ExitTargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-    virtual HRESULT __stdcall get_ExitTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-};
-
-struct __declspec(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139")) __declspec(novtable) IDrillOutThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("b090b824-f1d2-41b8-87ba-78034126594c")) __declspec(novtable) IDrillInThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EntranceTargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_EntranceTargetName(hstring value) = 0;
@@ -349,7 +329,7 @@ struct __declspec(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139")) __declspec(novta
     virtual HRESULT __stdcall put_ExitTarget(Windows::UI::Xaml::IDependencyObject * value) = 0;
 };
 
-struct __declspec(uuid("beb5db9b-2617-4888-80dd-72fa7bb6fac3")) __declspec(novtable) IDrillOutThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("c61fe488-a17a-4b11-b53b-a4f1a07d4ba9")) __declspec(novtable) IDrillInThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EntranceTargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_EntranceTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -357,78 +337,98 @@ struct __declspec(uuid("beb5db9b-2617-4888-80dd-72fa7bb6fac3")) __declspec(novta
     virtual HRESULT __stdcall get_ExitTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("1881c968-1824-462b-87e8-c357212b977b")) __declspec(novtable) IDropTargetItemThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139")) __declspec(novtable) IDrillOutThemeAnimation : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_EntranceTargetName(hstring * value) = 0;
+    virtual HRESULT __stdcall put_EntranceTargetName(hstring value) = 0;
+    virtual HRESULT __stdcall get_EntranceTarget(Windows::UI::Xaml::IDependencyObject ** value) = 0;
+    virtual HRESULT __stdcall put_EntranceTarget(Windows::UI::Xaml::IDependencyObject * value) = 0;
+    virtual HRESULT __stdcall get_ExitTargetName(hstring * value) = 0;
+    virtual HRESULT __stdcall put_ExitTargetName(hstring value) = 0;
+    virtual HRESULT __stdcall get_ExitTarget(Windows::UI::Xaml::IDependencyObject ** value) = 0;
+    virtual HRESULT __stdcall put_ExitTarget(Windows::UI::Xaml::IDependencyObject * value) = 0;
+};
+
+struct __declspec(uuid("beb5db9b-2617-4888-80dd-72fa7bb6fac3")) __declspec(novtable) IDrillOutThemeAnimationStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_EntranceTargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_EntranceTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_ExitTargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_ExitTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("1881c968-1824-462b-87e8-c357212b977b")) __declspec(novtable) IDropTargetItemThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
 };
 
-struct __declspec(uuid("ae80f486-2e56-4513-bf18-d77470164ae5")) __declspec(novtable) IDropTargetItemThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("ae80f486-2e56-4513-bf18-d77470164ae5")) __declspec(novtable) IDropTargetItemThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("c733d630-f4b9-4934-9bdd-27ac5ed1cfd8")) __declspec(novtable) IEasingColorKeyFrame : Windows::IInspectable
+struct __declspec(uuid("c733d630-f4b9-4934-9bdd-27ac5ed1cfd8")) __declspec(novtable) IEasingColorKeyFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EasingFunction(Windows::UI::Xaml::Media::Animation::IEasingFunctionBase ** value) = 0;
     virtual HRESULT __stdcall put_EasingFunction(Windows::UI::Xaml::Media::Animation::IEasingFunctionBase * value) = 0;
 };
 
-struct __declspec(uuid("6f3837fc-8e3d-4522-9b0f-003db8609851")) __declspec(novtable) IEasingColorKeyFrameStatics : Windows::IInspectable
+struct __declspec(uuid("6f3837fc-8e3d-4522-9b0f-003db8609851")) __declspec(novtable) IEasingColorKeyFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EasingFunctionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("965adb8d-9a54-4108-b4ff-b5a5212cb338")) __declspec(novtable) IEasingDoubleKeyFrame : Windows::IInspectable
+struct __declspec(uuid("965adb8d-9a54-4108-b4ff-b5a5212cb338")) __declspec(novtable) IEasingDoubleKeyFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EasingFunction(Windows::UI::Xaml::Media::Animation::IEasingFunctionBase ** value) = 0;
     virtual HRESULT __stdcall put_EasingFunction(Windows::UI::Xaml::Media::Animation::IEasingFunctionBase * value) = 0;
 };
 
-struct __declspec(uuid("c8d3d845-dbae-4e5b-8b84-d9537398e5b1")) __declspec(novtable) IEasingDoubleKeyFrameStatics : Windows::IInspectable
+struct __declspec(uuid("c8d3d845-dbae-4e5b-8b84-d9537398e5b1")) __declspec(novtable) IEasingDoubleKeyFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EasingFunctionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("c108383f-2c02-4151-8ecd-68ddaa3f0d9b")) __declspec(novtable) IEasingFunctionBase : Windows::IInspectable
+struct __declspec(uuid("c108383f-2c02-4151-8ecd-68ddaa3f0d9b")) __declspec(novtable) IEasingFunctionBase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EasingMode(winrt::Windows::UI::Xaml::Media::Animation::EasingMode * value) = 0;
     virtual HRESULT __stdcall put_EasingMode(winrt::Windows::UI::Xaml::Media::Animation::EasingMode value) = 0;
     virtual HRESULT __stdcall abi_Ease(double normalizedTime, double * returnValue) = 0;
 };
 
-struct __declspec(uuid("1830fe6a-f01b-43e0-b61f-b452a1c66fd2")) __declspec(novtable) IEasingFunctionBaseFactory : Windows::IInspectable
+struct __declspec(uuid("1830fe6a-f01b-43e0-b61f-b452a1c66fd2")) __declspec(novtable) IEasingFunctionBaseFactory : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("2a5031aa-2c50-4a1d-bb04-d75e07b71548")) __declspec(novtable) IEasingFunctionBaseStatics : Windows::IInspectable
+struct __declspec(uuid("2a5031aa-2c50-4a1d-bb04-d75e07b71548")) __declspec(novtable) IEasingFunctionBaseStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EasingModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b3c91380-6868-4225-a70b-3981cc0b2947")) __declspec(novtable) IEasingPointKeyFrame : Windows::IInspectable
+struct __declspec(uuid("b3c91380-6868-4225-a70b-3981cc0b2947")) __declspec(novtable) IEasingPointKeyFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EasingFunction(Windows::UI::Xaml::Media::Animation::IEasingFunctionBase ** value) = 0;
     virtual HRESULT __stdcall put_EasingFunction(Windows::UI::Xaml::Media::Animation::IEasingFunctionBase * value) = 0;
 };
 
-struct __declspec(uuid("e22dbfc4-080c-402c-a6b5-f48d0a98116b")) __declspec(novtable) IEasingPointKeyFrameStatics : Windows::IInspectable
+struct __declspec(uuid("e22dbfc4-080c-402c-a6b5-f48d0a98116b")) __declspec(novtable) IEasingPointKeyFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EasingFunctionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("5c86c19b-49d7-19ec-cf19-83a73c6de75e")) __declspec(novtable) IEdgeUIThemeTransition : Windows::IInspectable
+struct __declspec(uuid("5c86c19b-49d7-19ec-cf19-83a73c6de75e")) __declspec(novtable) IEdgeUIThemeTransition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Edge(winrt::Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation * value) = 0;
     virtual HRESULT __stdcall put_Edge(winrt::Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) = 0;
 };
 
-struct __declspec(uuid("16a2b13b-4705-302b-27c6-2aac92f645ac")) __declspec(novtable) IEdgeUIThemeTransitionStatics : Windows::IInspectable
+struct __declspec(uuid("16a2b13b-4705-302b-27c6-2aac92f645ac")) __declspec(novtable) IEdgeUIThemeTransitionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EdgeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ef5ba58c-b0b6-4a6c-9ca8-fb4233f12459")) __declspec(novtable) IElasticEase : Windows::IInspectable
+struct __declspec(uuid("ef5ba58c-b0b6-4a6c-9ca8-fb4233f12459")) __declspec(novtable) IElasticEase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Oscillations(int32_t * value) = 0;
     virtual HRESULT __stdcall put_Oscillations(int32_t value) = 0;
@@ -436,24 +436,24 @@ struct __declspec(uuid("ef5ba58c-b0b6-4a6c-9ca8-fb4233f12459")) __declspec(novta
     virtual HRESULT __stdcall put_Springiness(double value) = 0;
 };
 
-struct __declspec(uuid("a9f566ec-fe9c-4b2b-8e52-bb785d562185")) __declspec(novtable) IElasticEaseStatics : Windows::IInspectable
+struct __declspec(uuid("a9f566ec-fe9c-4b2b-8e52-bb785d562185")) __declspec(novtable) IElasticEaseStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OscillationsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_SpringinessProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("720a256b-1c8a-41ee-82ec-8a87c0cf47da")) __declspec(novtable) IEntranceNavigationTransitionInfo : Windows::IInspectable
+struct __declspec(uuid("720a256b-1c8a-41ee-82ec-8a87c0cf47da")) __declspec(novtable) IEntranceNavigationTransitionInfo : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("f948c27a-40c9-469f-8f33-bf45c8811f21")) __declspec(novtable) IEntranceNavigationTransitionInfoStatics : Windows::IInspectable
+struct __declspec(uuid("f948c27a-40c9-469f-8f33-bf45c8811f21")) __declspec(novtable) IEntranceNavigationTransitionInfoStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTargetElementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall abi_GetIsTargetElement(Windows::UI::Xaml::IUIElement * element, bool * value) = 0;
     virtual HRESULT __stdcall abi_SetIsTargetElement(Windows::UI::Xaml::IUIElement * element, bool value) = 0;
 };
 
-struct __declspec(uuid("07698c09-a8e3-419a-a01d-7410a0ae8ec8")) __declspec(novtable) IEntranceThemeTransition : Windows::IInspectable
+struct __declspec(uuid("07698c09-a8e3-419a-a01d-7410a0ae8ec8")) __declspec(novtable) IEntranceThemeTransition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FromHorizontalOffset(double * value) = 0;
     virtual HRESULT __stdcall put_FromHorizontalOffset(double value) = 0;
@@ -463,47 +463,47 @@ struct __declspec(uuid("07698c09-a8e3-419a-a01d-7410a0ae8ec8")) __declspec(novta
     virtual HRESULT __stdcall put_IsStaggeringEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("37cc0577-ff98-4aed-b86e-5ec23702f877")) __declspec(novtable) IEntranceThemeTransitionStatics : Windows::IInspectable
+struct __declspec(uuid("37cc0577-ff98-4aed-b86e-5ec23702f877")) __declspec(novtable) IEntranceThemeTransitionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FromHorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FromVerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsStaggeringEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("7cb9e41d-f0bb-4bca-9da5-9ba3a11734c4")) __declspec(novtable) IExponentialEase : Windows::IInspectable
+struct __declspec(uuid("7cb9e41d-f0bb-4bca-9da5-9ba3a11734c4")) __declspec(novtable) IExponentialEase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Exponent(double * value) = 0;
     virtual HRESULT __stdcall put_Exponent(double value) = 0;
 };
 
-struct __declspec(uuid("f37ee7e3-a761-4352-9ad6-70794567581a")) __declspec(novtable) IExponentialEaseStatics : Windows::IInspectable
+struct __declspec(uuid("f37ee7e3-a761-4352-9ad6-70794567581a")) __declspec(novtable) IExponentialEaseStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ExponentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("6d4bc8f5-a918-4477-8078-554c68812ab8")) __declspec(novtable) IFadeInThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("6d4bc8f5-a918-4477-8078-554c68812ab8")) __declspec(novtable) IFadeInThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
 };
 
-struct __declspec(uuid("7f0117e1-bea9-4923-b23a-0ddf4d7b8737")) __declspec(novtable) IFadeInThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("7f0117e1-bea9-4923-b23a-0ddf4d7b8737")) __declspec(novtable) IFadeInThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("89276ba9-ffd4-45b6-9b9a-ced48951e712")) __declspec(novtable) IFadeOutThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("89276ba9-ffd4-45b6-9b9a-ced48951e712")) __declspec(novtable) IFadeOutThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
 };
 
-struct __declspec(uuid("fe17a81a-4168-4f68-a28c-e5dd98cf680f")) __declspec(novtable) IFadeOutThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("fe17a81a-4168-4f68-a28c-e5dd98cf680f")) __declspec(novtable) IFadeOutThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("77a163bb-d5ca-4a32-ba0b-7dff988e58a0")) __declspec(novtable) IKeySpline : Windows::IInspectable
+struct __declspec(uuid("77a163bb-d5ca-4a32-ba0b-7dff988e58a0")) __declspec(novtable) IKeySpline : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ControlPoint1(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall put_ControlPoint1(Windows::Foundation::Point value) = 0;
@@ -511,96 +511,96 @@ struct __declspec(uuid("77a163bb-d5ca-4a32-ba0b-7dff988e58a0")) __declspec(novta
     virtual HRESULT __stdcall put_ControlPoint2(Windows::Foundation::Point value) = 0;
 };
 
-struct __declspec(uuid("3643e480-4823-466a-abe5-5e79c8ed77ed")) __declspec(novtable) IKeyTimeHelper : Windows::IInspectable
+struct __declspec(uuid("3643e480-4823-466a-abe5-5e79c8ed77ed")) __declspec(novtable) IKeyTimeHelper : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("7fa2612c-22a9-45e9-9af7-c7416efff7a5")) __declspec(novtable) IKeyTimeHelperStatics : Windows::IInspectable
+struct __declspec(uuid("7fa2612c-22a9-45e9-9af7-c7416efff7a5")) __declspec(novtable) IKeyTimeHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromTimeSpan(Windows::Foundation::TimeSpan timeSpan, Windows::UI::Xaml::Media::Animation::KeyTime * returnValue) = 0;
 };
 
-struct __declspec(uuid("66fdb6ef-ac81-4611-b1d2-61f545983f03")) __declspec(novtable) ILinearColorKeyFrame : Windows::IInspectable
+struct __declspec(uuid("66fdb6ef-ac81-4611-b1d2-61f545983f03")) __declspec(novtable) ILinearColorKeyFrame : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("8efdf265-9a7b-431d-8f0c-14c56b5ea4d9")) __declspec(novtable) ILinearDoubleKeyFrame : Windows::IInspectable
+struct __declspec(uuid("8efdf265-9a7b-431d-8f0c-14c56b5ea4d9")) __declspec(novtable) ILinearDoubleKeyFrame : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("e7c9b8ef-af24-49ee-84f1-a86600a4e319")) __declspec(novtable) ILinearPointKeyFrame : Windows::IInspectable
+struct __declspec(uuid("e7c9b8ef-af24-49ee-84f1-a86600a4e319")) __declspec(novtable) ILinearPointKeyFrame : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("8833848c-4eb7-41f2-8799-9eef0a213b73")) __declspec(novtable) INavigationThemeTransition : Windows::IInspectable
+struct __declspec(uuid("8833848c-4eb7-41f2-8799-9eef0a213b73")) __declspec(novtable) INavigationThemeTransition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DefaultNavigationTransitionInfo(Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo ** value) = 0;
     virtual HRESULT __stdcall put_DefaultNavigationTransitionInfo(Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * value) = 0;
 };
 
-struct __declspec(uuid("ea2f06e0-5e60-4f8e-bcaf-431487a294ab")) __declspec(novtable) INavigationThemeTransitionStatics : Windows::IInspectable
+struct __declspec(uuid("ea2f06e0-5e60-4f8e-bcaf-431487a294ab")) __declspec(novtable) INavigationThemeTransitionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DefaultNavigationTransitionInfoProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("a9b05091-ae4a-4372-8625-21b7a8b98ca4")) __declspec(novtable) INavigationTransitionInfo : Windows::IInspectable
+struct __declspec(uuid("a9b05091-ae4a-4372-8625-21b7a8b98ca4")) __declspec(novtable) INavigationTransitionInfo : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("edf4f8d5-af63-4fab-9d4a-87927f82dd6b")) __declspec(novtable) INavigationTransitionInfoFactory : Windows::IInspectable
+struct __declspec(uuid("edf4f8d5-af63-4fab-9d4a-87927f82dd6b")) __declspec(novtable) INavigationTransitionInfoFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo ** instance) = 0;
 };
 
-struct __declspec(uuid("d9517e6a-a9d0-4bf7-9db0-4633a69daff2")) __declspec(novtable) INavigationTransitionInfoOverrides : Windows::IInspectable
+struct __declspec(uuid("d9517e6a-a9d0-4bf7-9db0-4633a69daff2")) __declspec(novtable) INavigationTransitionInfoOverrides : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetNavigationStateCore(hstring * returnValue) = 0;
     virtual HRESULT __stdcall abi_SetNavigationStateCore(hstring navigationState) = 0;
 };
 
-struct __declspec(uuid("334a2d92-b74a-4c64-b9a6-58bcfa314f22")) __declspec(novtable) IObjectAnimationUsingKeyFrames : Windows::IInspectable
+struct __declspec(uuid("334a2d92-b74a-4c64-b9a6-58bcfa314f22")) __declspec(novtable) IObjectAnimationUsingKeyFrames : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeyFrames(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::ObjectKeyFrame> ** value) = 0;
     virtual HRESULT __stdcall get_EnableDependentAnimation(bool * value) = 0;
     virtual HRESULT __stdcall put_EnableDependentAnimation(bool value) = 0;
 };
 
-struct __declspec(uuid("eb736182-6af1-49a3-97b6-783ed97400fe")) __declspec(novtable) IObjectAnimationUsingKeyFramesStatics : Windows::IInspectable
+struct __declspec(uuid("eb736182-6af1-49a3-97b6-783ed97400fe")) __declspec(novtable) IObjectAnimationUsingKeyFramesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EnableDependentAnimationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a")) __declspec(novtable) IObjectKeyFrame : Windows::IInspectable
+struct __declspec(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a")) __declspec(novtable) IObjectKeyFrame : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall get_Value(Windows::IInspectable ** value) = 0;
-    virtual HRESULT __stdcall put_Value(Windows::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_Value(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Value(Windows::Foundation::IInspectable * value) = 0;
     virtual HRESULT __stdcall get_KeyTime(Windows::UI::Xaml::Media::Animation::KeyTime * value) = 0;
     virtual HRESULT __stdcall put_KeyTime(Windows::UI::Xaml::Media::Animation::KeyTime value) = 0;
 };
 
-struct __declspec(uuid("1626143e-3e6d-44d8-9b9a-04aea70f8492")) __declspec(novtable) IObjectKeyFrameFactory : Windows::IInspectable
+struct __declspec(uuid("1626143e-3e6d-44d8-9b9a-04aea70f8492")) __declspec(novtable) IObjectKeyFrameFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame ** instance) = 0;
 };
 
-struct __declspec(uuid("2cd6ab00-5319-4286-8eed-4e755ea0cf9c")) __declspec(novtable) IObjectKeyFrameStatics : Windows::IInspectable
+struct __declspec(uuid("2cd6ab00-5319-4286-8eed-4e755ea0cf9c")) __declspec(novtable) IObjectKeyFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ValueProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_KeyTimeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4708eb8e-4bfc-ee46-d4f9-708def3fbb2b")) __declspec(novtable) IPaneThemeTransition : Windows::IInspectable
+struct __declspec(uuid("4708eb8e-4bfc-ee46-d4f9-708def3fbb2b")) __declspec(novtable) IPaneThemeTransition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Edge(winrt::Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation * value) = 0;
     virtual HRESULT __stdcall put_Edge(winrt::Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) = 0;
 };
 
-struct __declspec(uuid("316b382f-4be4-1797-b45c-cd900bbe0caa")) __declspec(novtable) IPaneThemeTransitionStatics : Windows::IInspectable
+struct __declspec(uuid("316b382f-4be4-1797-b45c-cd900bbe0caa")) __declspec(novtable) IPaneThemeTransitionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EdgeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("30f04312-7726-4f88-b8e2-2fa54518963b")) __declspec(novtable) IPointAnimation : Windows::IInspectable
+struct __declspec(uuid("30f04312-7726-4f88-b8e2-2fa54518963b")) __declspec(novtable) IPointAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_From(Windows::Foundation::IReference<Windows::Foundation::Point> ** value) = 0;
     virtual HRESULT __stdcall put_From(Windows::Foundation::IReference<Windows::Foundation::Point> * value) = 0;
@@ -614,7 +614,7 @@ struct __declspec(uuid("30f04312-7726-4f88-b8e2-2fa54518963b")) __declspec(novta
     virtual HRESULT __stdcall put_EnableDependentAnimation(bool value) = 0;
 };
 
-struct __declspec(uuid("2f99b356-e737-408b-a0fd-327826d32255")) __declspec(novtable) IPointAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("2f99b356-e737-408b-a0fd-327826d32255")) __declspec(novtable) IPointAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FromProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ToProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -623,19 +623,19 @@ struct __declspec(uuid("2f99b356-e737-408b-a0fd-327826d32255")) __declspec(novta
     virtual HRESULT __stdcall get_EnableDependentAnimationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("9b944f72-446a-41d0-a129-41a620f4595d")) __declspec(novtable) IPointAnimationUsingKeyFrames : Windows::IInspectable
+struct __declspec(uuid("9b944f72-446a-41d0-a129-41a620f4595d")) __declspec(novtable) IPointAnimationUsingKeyFrames : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeyFrames(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::PointKeyFrame> ** value) = 0;
     virtual HRESULT __stdcall get_EnableDependentAnimation(bool * value) = 0;
     virtual HRESULT __stdcall put_EnableDependentAnimation(bool value) = 0;
 };
 
-struct __declspec(uuid("5f454c87-2390-46ea-baa7-762f4bc30d04")) __declspec(novtable) IPointAnimationUsingKeyFramesStatics : Windows::IInspectable
+struct __declspec(uuid("5f454c87-2390-46ea-baa7-762f4bc30d04")) __declspec(novtable) IPointAnimationUsingKeyFramesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EnableDependentAnimationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3")) __declspec(novtable) IPointKeyFrame : Windows::IInspectable
+struct __declspec(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3")) __declspec(novtable) IPointKeyFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Value(Windows::Foundation::Point * value) = 0;
     virtual HRESULT __stdcall put_Value(Windows::Foundation::Point value) = 0;
@@ -643,40 +643,40 @@ struct __declspec(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3")) __declspec(novta
     virtual HRESULT __stdcall put_KeyTime(Windows::UI::Xaml::Media::Animation::KeyTime value) = 0;
 };
 
-struct __declspec(uuid("cb214bdf-426a-4392-8355-c2ae52852623")) __declspec(novtable) IPointKeyFrameFactory : Windows::IInspectable
+struct __declspec(uuid("cb214bdf-426a-4392-8355-c2ae52852623")) __declspec(novtable) IPointKeyFrameFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::IPointKeyFrame ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::IPointKeyFrame ** instance) = 0;
 };
 
-struct __declspec(uuid("95cf1b27-7965-4bec-b9fb-fbe94b65518e")) __declspec(novtable) IPointKeyFrameStatics : Windows::IInspectable
+struct __declspec(uuid("95cf1b27-7965-4bec-b9fb-fbe94b65518e")) __declspec(novtable) IPointKeyFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ValueProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_KeyTimeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("b58e714e-c49d-4788-a233-0ae85d99dd5a")) __declspec(novtable) IPointerDownThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("b58e714e-c49d-4788-a233-0ae85d99dd5a")) __declspec(novtable) IPointerDownThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
 };
 
-struct __declspec(uuid("63a7cb7b-6d46-4494-b94a-e72f3b492a61")) __declspec(novtable) IPointerDownThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("63a7cb7b-6d46-4494-b94a-e72f3b492a61")) __declspec(novtable) IPointerDownThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e9e9d07d-6340-4828-ad12-690694b9910b")) __declspec(novtable) IPointerUpThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("e9e9d07d-6340-4828-ad12-690694b9910b")) __declspec(novtable) IPointerUpThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
 };
 
-struct __declspec(uuid("7c618f9c-7992-4139-8bfc-0883b9727a7e")) __declspec(novtable) IPointerUpThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("7c618f9c-7992-4139-8bfc-0883b9727a7e")) __declspec(novtable) IPointerUpThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("196938c1-1c07-4c28-8847-f9f055b32855")) __declspec(novtable) IPopInThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("196938c1-1c07-4c28-8847-f9f055b32855")) __declspec(novtable) IPopInThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
@@ -686,25 +686,25 @@ struct __declspec(uuid("196938c1-1c07-4c28-8847-f9f055b32855")) __declspec(novta
     virtual HRESULT __stdcall put_FromVerticalOffset(double value) = 0;
 };
 
-struct __declspec(uuid("efaa99d3-218a-4701-977f-f1bfae8ba649")) __declspec(novtable) IPopInThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("efaa99d3-218a-4701-977f-f1bfae8ba649")) __declspec(novtable) IPopInThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FromHorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FromVerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4786ab49-0e48-4e81-a2e5-cc5aa19e48d3")) __declspec(novtable) IPopOutThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("4786ab49-0e48-4e81-a2e5-cc5aa19e48d3")) __declspec(novtable) IPopOutThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
 };
 
-struct __declspec(uuid("1d492c09-03c1-4490-99dc-909feab357fb")) __declspec(novtable) IPopOutThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("1d492c09-03c1-4490-99dc-909feab357fb")) __declspec(novtable) IPopOutThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("47843552-4283-545e-c791-268dca22ce4b")) __declspec(novtable) IPopupThemeTransition : Windows::IInspectable
+struct __declspec(uuid("47843552-4283-545e-c791-268dca22ce4b")) __declspec(novtable) IPopupThemeTransition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FromHorizontalOffset(double * value) = 0;
     virtual HRESULT __stdcall put_FromHorizontalOffset(double value) = 0;
@@ -712,44 +712,44 @@ struct __declspec(uuid("47843552-4283-545e-c791-268dca22ce4b")) __declspec(novta
     virtual HRESULT __stdcall put_FromVerticalOffset(double value) = 0;
 };
 
-struct __declspec(uuid("e5a1640e-490d-1505-9f6b-8fafc044dec5")) __declspec(novtable) IPopupThemeTransitionStatics : Windows::IInspectable
+struct __declspec(uuid("e5a1640e-490d-1505-9f6b-8fafc044dec5")) __declspec(novtable) IPopupThemeTransitionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FromHorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FromVerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("69c80579-eedf-405b-8680-d9606880c937")) __declspec(novtable) IPowerEase : Windows::IInspectable
+struct __declspec(uuid("69c80579-eedf-405b-8680-d9606880c937")) __declspec(novtable) IPowerEase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Power(double * value) = 0;
     virtual HRESULT __stdcall put_Power(double value) = 0;
 };
 
-struct __declspec(uuid("a5955103-91a2-460c-9c41-d28f6a939bda")) __declspec(novtable) IPowerEaseStatics : Windows::IInspectable
+struct __declspec(uuid("a5955103-91a2-460c-9c41-d28f6a939bda")) __declspec(novtable) IPowerEaseStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PowerProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e1510e91-ef6d-44f0-803d-68d16de0ddfc")) __declspec(novtable) IQuadraticEase : Windows::IInspectable
+struct __declspec(uuid("e1510e91-ef6d-44f0-803d-68d16de0ddfc")) __declspec(novtable) IQuadraticEase : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("e8698814-fe42-4a05-b5b8-081f41157815")) __declspec(novtable) IQuarticEase : Windows::IInspectable
+struct __declspec(uuid("e8698814-fe42-4a05-b5b8-081f41157815")) __declspec(novtable) IQuarticEase : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("92ee793b-3c49-4108-aa11-ab786603da21")) __declspec(novtable) IQuinticEase : Windows::IInspectable
+struct __declspec(uuid("92ee793b-3c49-4108-aa11-ab786603da21")) __declspec(novtable) IQuinticEase : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("f2065c6c-d052-4ad1-8362-b71b36df7497")) __declspec(novtable) IReorderThemeTransition : Windows::IInspectable
+struct __declspec(uuid("f2065c6c-d052-4ad1-8362-b71b36df7497")) __declspec(novtable) IReorderThemeTransition : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("6863ab72-4997-47f9-87ad-37efb75993ea")) __declspec(novtable) IRepeatBehaviorHelper : Windows::IInspectable
+struct __declspec(uuid("6863ab72-4997-47f9-87ad-37efb75993ea")) __declspec(novtable) IRepeatBehaviorHelper : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("7a795033-79f3-4dd9-b267-9cf50fb51f84")) __declspec(novtable) IRepeatBehaviorHelperStatics : Windows::IInspectable
+struct __declspec(uuid("7a795033-79f3-4dd9-b267-9cf50fb51f84")) __declspec(novtable) IRepeatBehaviorHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Forever(Windows::UI::Xaml::Media::Animation::RepeatBehavior * value) = 0;
     virtual HRESULT __stdcall abi_FromCount(double count, Windows::UI::Xaml::Media::Animation::RepeatBehavior * returnValue) = 0;
@@ -759,7 +759,7 @@ struct __declspec(uuid("7a795033-79f3-4dd9-b267-9cf50fb51f84")) __declspec(novta
     virtual HRESULT __stdcall abi_Equals(Windows::UI::Xaml::Media::Animation::RepeatBehavior target, Windows::UI::Xaml::Media::Animation::RepeatBehavior value, bool * returnValue) = 0;
 };
 
-struct __declspec(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9")) __declspec(novtable) IRepositionThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9")) __declspec(novtable) IRepositionThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
@@ -769,70 +769,70 @@ struct __declspec(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9")) __declspec(novta
     virtual HRESULT __stdcall put_FromVerticalOffset(double value) = 0;
 };
 
-struct __declspec(uuid("4d92b1b1-860b-4bf9-a59d-1eb1ccbe8fe0")) __declspec(novtable) IRepositionThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("4d92b1b1-860b-4bf9-a59d-1eb1ccbe8fe0")) __declspec(novtable) IRepositionThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FromHorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FromVerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("88329b82-98f3-455a-ac53-2e7083b6e22c")) __declspec(novtable) IRepositionThemeTransition : Windows::IInspectable
+struct __declspec(uuid("88329b82-98f3-455a-ac53-2e7083b6e22c")) __declspec(novtable) IRepositionThemeTransition : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("cebfe864-dbea-4404-8e6e-de55ada75239")) __declspec(novtable) IRepositionThemeTransition2 : Windows::IInspectable
+struct __declspec(uuid("cebfe864-dbea-4404-8e6e-de55ada75239")) __declspec(novtable) IRepositionThemeTransition2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsStaggeringEnabled(bool * value) = 0;
     virtual HRESULT __stdcall put_IsStaggeringEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("9240e930-0a19-468b-8c2a-68fab4500027")) __declspec(novtable) IRepositionThemeTransitionStatics2 : Windows::IInspectable
+struct __declspec(uuid("9240e930-0a19-468b-8c2a-68fab4500027")) __declspec(novtable) IRepositionThemeTransitionStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsStaggeringEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("a9382962-230b-49da-9e0d-664987892343")) __declspec(novtable) ISineEase : Windows::IInspectable
+struct __declspec(uuid("a9382962-230b-49da-9e0d-664987892343")) __declspec(novtable) ISineEase : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("d6ac9d77-2e03-405f-80ed-e62beef3668f")) __declspec(novtable) ISlideNavigationTransitionInfo : Windows::IInspectable
+struct __declspec(uuid("d6ac9d77-2e03-405f-80ed-e62beef3668f")) __declspec(novtable) ISlideNavigationTransitionInfo : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("1a4a5941-1fe0-473a-8efe-4316d8c86229")) __declspec(novtable) ISplineColorKeyFrame : Windows::IInspectable
-{
-    virtual HRESULT __stdcall get_KeySpline(Windows::UI::Xaml::Media::Animation::IKeySpline ** value) = 0;
-    virtual HRESULT __stdcall put_KeySpline(Windows::UI::Xaml::Media::Animation::IKeySpline * value) = 0;
-};
-
-struct __declspec(uuid("61d1d997-8589-4f2f-8fbb-7d03edc98dd3")) __declspec(novtable) ISplineColorKeyFrameStatics : Windows::IInspectable
-{
-    virtual HRESULT __stdcall get_KeySplineProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
-};
-
-struct __declspec(uuid("00d72d38-6b2b-4843-838e-c8b115eec801")) __declspec(novtable) ISplineDoubleKeyFrame : Windows::IInspectable
+struct __declspec(uuid("1a4a5941-1fe0-473a-8efe-4316d8c86229")) __declspec(novtable) ISplineColorKeyFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeySpline(Windows::UI::Xaml::Media::Animation::IKeySpline ** value) = 0;
     virtual HRESULT __stdcall put_KeySpline(Windows::UI::Xaml::Media::Animation::IKeySpline * value) = 0;
 };
 
-struct __declspec(uuid("060a8ffc-975f-4e4e-9ec7-13c5aee02062")) __declspec(novtable) ISplineDoubleKeyFrameStatics : Windows::IInspectable
+struct __declspec(uuid("61d1d997-8589-4f2f-8fbb-7d03edc98dd3")) __declspec(novtable) ISplineColorKeyFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeySplineProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0f19f306-7036-494f-bc3c-780df0cc524a")) __declspec(novtable) ISplinePointKeyFrame : Windows::IInspectable
+struct __declspec(uuid("00d72d38-6b2b-4843-838e-c8b115eec801")) __declspec(novtable) ISplineDoubleKeyFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeySpline(Windows::UI::Xaml::Media::Animation::IKeySpline ** value) = 0;
     virtual HRESULT __stdcall put_KeySpline(Windows::UI::Xaml::Media::Animation::IKeySpline * value) = 0;
 };
 
-struct __declspec(uuid("e97a32c2-0a7a-4766-95cb-0d692611cb4c")) __declspec(novtable) ISplinePointKeyFrameStatics : Windows::IInspectable
+struct __declspec(uuid("060a8ffc-975f-4e4e-9ec7-13c5aee02062")) __declspec(novtable) ISplineDoubleKeyFrameStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_KeySplineProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("4f799518-ff39-4e90-bb74-2abd56027402")) __declspec(novtable) ISplitCloseThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("0f19f306-7036-494f-bc3c-780df0cc524a")) __declspec(novtable) ISplinePointKeyFrame : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_KeySpline(Windows::UI::Xaml::Media::Animation::IKeySpline ** value) = 0;
+    virtual HRESULT __stdcall put_KeySpline(Windows::UI::Xaml::Media::Animation::IKeySpline * value) = 0;
+};
+
+struct __declspec(uuid("e97a32c2-0a7a-4766-95cb-0d692611cb4c")) __declspec(novtable) ISplinePointKeyFrameStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_KeySplineProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("4f799518-ff39-4e90-bb74-2abd56027402")) __declspec(novtable) ISplitCloseThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OpenedTargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_OpenedTargetName(hstring value) = 0;
@@ -858,7 +858,7 @@ struct __declspec(uuid("4f799518-ff39-4e90-bb74-2abd56027402")) __declspec(novta
     virtual HRESULT __stdcall put_ContentTranslationOffset(double value) = 0;
 };
 
-struct __declspec(uuid("7aa94de9-cc9b-4e90-a11a-0050a2216a9e")) __declspec(novtable) ISplitCloseThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("7aa94de9-cc9b-4e90-a11a-0050a2216a9e")) __declspec(novtable) ISplitCloseThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OpenedTargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OpenedTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -873,7 +873,7 @@ struct __declspec(uuid("7aa94de9-cc9b-4e90-a11a-0050a2216a9e")) __declspec(novta
     virtual HRESULT __stdcall get_ContentTranslationOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4")) __declspec(novtable) ISplitOpenThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4")) __declspec(novtable) ISplitOpenThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OpenedTargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_OpenedTargetName(hstring value) = 0;
@@ -899,7 +899,7 @@ struct __declspec(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4")) __declspec(novta
     virtual HRESULT __stdcall put_ContentTranslationOffset(double value) = 0;
 };
 
-struct __declspec(uuid("8d4cfa89-3a91-458d-b0fb-4cad625cbf8d")) __declspec(novtable) ISplitOpenThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("8d4cfa89-3a91-458d-b0fb-4cad625cbf8d")) __declspec(novtable) ISplitOpenThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OpenedTargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OpenedTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -914,7 +914,7 @@ struct __declspec(uuid("8d4cfa89-3a91-458d-b0fb-4cad625cbf8d")) __declspec(novta
     virtual HRESULT __stdcall get_ContentTranslationOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06")) __declspec(novtable) IStoryboard : Windows::IInspectable
+struct __declspec(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06")) __declspec(novtable) IStoryboard : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Children(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Timeline> ** value) = 0;
     virtual HRESULT __stdcall abi_Seek(Windows::Foundation::TimeSpan offset) = 0;
@@ -928,7 +928,7 @@ struct __declspec(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06")) __declspec(novta
     virtual HRESULT __stdcall abi_SkipToFill() = 0;
 };
 
-struct __declspec(uuid("d82f07d8-73d5-4379-bd48-7e05184a8bad")) __declspec(novtable) IStoryboardStatics : Windows::IInspectable
+struct __declspec(uuid("d82f07d8-73d5-4379-bd48-7e05184a8bad")) __declspec(novtable) IStoryboardStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetPropertyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall abi_GetTargetProperty(Windows::UI::Xaml::Media::Animation::ITimeline * element, hstring * path) = 0;
@@ -939,11 +939,11 @@ struct __declspec(uuid("d82f07d8-73d5-4379-bd48-7e05184a8bad")) __declspec(novta
     virtual HRESULT __stdcall abi_SetTarget(Windows::UI::Xaml::Media::Animation::ITimeline * timeline, Windows::UI::Xaml::IDependencyObject * target) = 0;
 };
 
-struct __declspec(uuid("244d7b0c-b1b7-4871-9d3e-d56203a3a5b4")) __declspec(novtable) ISuppressNavigationTransitionInfo : Windows::IInspectable
+struct __declspec(uuid("244d7b0c-b1b7-4871-9d3e-d56203a3a5b4")) __declspec(novtable) ISuppressNavigationTransitionInfo : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60")) __declspec(novtable) ISwipeBackThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60")) __declspec(novtable) ISwipeBackThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
@@ -953,14 +953,14 @@ struct __declspec(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60")) __declspec(novta
     virtual HRESULT __stdcall put_FromVerticalOffset(double value) = 0;
 };
 
-struct __declspec(uuid("693f31bf-4da6-468a-8ce0-996c9aad42e0")) __declspec(novtable) ISwipeBackThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("693f31bf-4da6-468a-8ce0-996c9aad42e0")) __declspec(novtable) ISwipeBackThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FromHorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FromVerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("cdd067c0-580e-4e40-be98-f202d3d84365")) __declspec(novtable) ISwipeHintThemeAnimation : Windows::IInspectable
+struct __declspec(uuid("cdd067c0-580e-4e40-be98-f202d3d84365")) __declspec(novtable) ISwipeHintThemeAnimation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetName(hstring * value) = 0;
     virtual HRESULT __stdcall put_TargetName(hstring value) = 0;
@@ -970,14 +970,14 @@ struct __declspec(uuid("cdd067c0-580e-4e40-be98-f202d3d84365")) __declspec(novta
     virtual HRESULT __stdcall put_ToVerticalOffset(double value) = 0;
 };
 
-struct __declspec(uuid("23d61a57-9115-4d63-b04a-b89f1c744dc0")) __declspec(novtable) ISwipeHintThemeAnimationStatics : Windows::IInspectable
+struct __declspec(uuid("23d61a57-9115-4d63-b04a-b89f1c744dc0")) __declspec(novtable) ISwipeHintThemeAnimationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetNameProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ToHorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ToVerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d")) __declspec(novtable) ITimeline : Windows::IInspectable
+struct __declspec(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d")) __declspec(novtable) ITimeline : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AutoReverse(bool * value) = 0;
     virtual HRESULT __stdcall put_AutoReverse(bool value) = 0;
@@ -991,16 +991,16 @@ struct __declspec(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d")) __declspec(novta
     virtual HRESULT __stdcall put_FillBehavior(winrt::Windows::UI::Xaml::Media::Animation::FillBehavior value) = 0;
     virtual HRESULT __stdcall get_RepeatBehavior(Windows::UI::Xaml::Media::Animation::RepeatBehavior * value) = 0;
     virtual HRESULT __stdcall put_RepeatBehavior(Windows::UI::Xaml::Media::Animation::RepeatBehavior value) = 0;
-    virtual HRESULT __stdcall add_Completed(Windows::Foundation::EventHandler<Windows::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall add_Completed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
     virtual HRESULT __stdcall remove_Completed(event_token token) = 0;
 };
 
-struct __declspec(uuid("1d56bb07-bda4-478b-8ada-eb04d580cd5e")) __declspec(novtable) ITimelineFactory : Windows::IInspectable
+struct __declspec(uuid("1d56bb07-bda4-478b-8ada-eb04d580cd5e")) __declspec(novtable) ITimelineFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::ITimeline ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Animation::ITimeline ** instance) = 0;
 };
 
-struct __declspec(uuid("a902ed4e-ef10-4d6f-9a40-93cb8895f4e5")) __declspec(novtable) ITimelineStatics : Windows::IInspectable
+struct __declspec(uuid("a902ed4e-ef10-4d6f-9a40-93cb8895f4e5")) __declspec(novtable) ITimelineStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllowDependentAnimations(bool * value) = 0;
     virtual HRESULT __stdcall put_AllowDependentAnimations(bool value) = 0;
@@ -1012,11 +1012,11 @@ struct __declspec(uuid("a902ed4e-ef10-4d6f-9a40-93cb8895f4e5")) __declspec(novta
     virtual HRESULT __stdcall get_RepeatBehaviorProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("3c677c7c-01d0-4dce-b333-976f93312b08")) __declspec(novtable) ITransition : Windows::IInspectable
+struct __declspec(uuid("3c677c7c-01d0-4dce-b333-976f93312b08")) __declspec(novtable) ITransition : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("dc9ab2cf-3bc9-44aa-b3fc-883a83233a2c")) __declspec(novtable) ITransitionFactory : Windows::IInspectable
+struct __declspec(uuid("dc9ab2cf-3bc9-44aa-b3fc-883a83233a2c")) __declspec(novtable) ITransitionFactory : Windows::Foundation::IInspectable
 {
 };
 
@@ -1215,7 +1215,7 @@ struct WINRT_EBO impl_IColorKeyFrame
 template <typename D>
 struct WINRT_EBO impl_IColorKeyFrameFactory
 {
-    Windows::UI::Xaml::Media::Animation::ColorKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Animation::ColorKeyFrame CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -1244,9 +1244,9 @@ struct WINRT_EBO impl_ICommonNavigationTransitionInfoStatics
 template <typename D>
 struct WINRT_EBO impl_IConnectedAnimation
 {
-    event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> & value) const;
+    event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> & value) const;
     using Completed_revoker = event_revoker<IConnectedAnimation>;
-    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> & value) const;
+    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> & value) const;
     void Completed(event_token token) const;
     bool TryStart(const Windows::UI::Xaml::UIElement & destination) const;
     void Cancel() const;
@@ -1383,7 +1383,7 @@ struct WINRT_EBO impl_IDoubleKeyFrame
 template <typename D>
 struct WINRT_EBO impl_IDoubleKeyFrameFactory
 {
-    Windows::UI::Xaml::Media::Animation::DoubleKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Animation::DoubleKeyFrame CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -1701,7 +1701,7 @@ struct WINRT_EBO impl_INavigationTransitionInfo
 template <typename D>
 struct WINRT_EBO impl_INavigationTransitionInfoFactory
 {
-    Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -1728,8 +1728,8 @@ struct WINRT_EBO impl_IObjectAnimationUsingKeyFramesStatics
 template <typename D>
 struct WINRT_EBO impl_IObjectKeyFrame
 {
-    Windows::IInspectable Value() const;
-    void Value(const Windows::IInspectable & value) const;
+    Windows::Foundation::IInspectable Value() const;
+    void Value(const Windows::Foundation::IInspectable & value) const;
     Windows::UI::Xaml::Media::Animation::KeyTime KeyTime() const;
     void KeyTime(const Windows::UI::Xaml::Media::Animation::KeyTime & value) const;
 };
@@ -1737,7 +1737,7 @@ struct WINRT_EBO impl_IObjectKeyFrame
 template <typename D>
 struct WINRT_EBO impl_IObjectKeyFrameFactory
 {
-    Windows::UI::Xaml::Media::Animation::ObjectKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Animation::ObjectKeyFrame CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -1811,7 +1811,7 @@ struct WINRT_EBO impl_IPointKeyFrame
 template <typename D>
 struct WINRT_EBO impl_IPointKeyFrameFactory
 {
-    Windows::UI::Xaml::Media::Animation::PointKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Animation::PointKeyFrame CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
@@ -2201,16 +2201,16 @@ struct WINRT_EBO impl_ITimeline
     void FillBehavior(Windows::UI::Xaml::Media::Animation::FillBehavior value) const;
     Windows::UI::Xaml::Media::Animation::RepeatBehavior RepeatBehavior() const;
     void RepeatBehavior(const Windows::UI::Xaml::Media::Animation::RepeatBehavior & value) const;
-    event_token Completed(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    event_token Completed(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     using Completed_revoker = event_revoker<ITimeline>;
-    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
     void Completed(event_token token) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ITimelineFactory
 {
-    Windows::UI::Xaml::Media::Animation::Timeline CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Animation::Timeline CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>

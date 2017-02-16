@@ -332,616 +332,616 @@ template <> struct __declspec(uuid("098f29cb-bc91-5639-a541-d5a4811ec35b")) __de
 namespace Windows::Devices::Sensors {
 
 struct IAccelerometer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometer>
 {
     IAccelerometer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccelerometer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometer2>
 {
     IAccelerometer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccelerometer3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometer3>
 {
     IAccelerometer3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccelerometer4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometer4>
 {
     IAccelerometer4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccelerometerDeviceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometerDeviceId>
 {
     IAccelerometerDeviceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccelerometerReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometerReading>
 {
     IAccelerometerReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccelerometerReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometerReadingChangedEventArgs>
 {
     IAccelerometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccelerometerShakenEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometerShakenEventArgs>
 {
     IAccelerometerShakenEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccelerometerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometerStatics>
 {
     IAccelerometerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAccelerometerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAccelerometerStatics2>
 {
     IAccelerometerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IActivitySensor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivitySensor>
 {
     IActivitySensor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IActivitySensorReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivitySensorReading>
 {
     IActivitySensorReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IActivitySensorReadingChangeReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivitySensorReadingChangeReport>
 {
     IActivitySensorReadingChangeReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IActivitySensorReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivitySensorReadingChangedEventArgs>
 {
     IActivitySensorReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IActivitySensorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivitySensorStatics>
 {
     IActivitySensorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IActivitySensorTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivitySensorTriggerDetails>
 {
     IActivitySensorTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAltimeter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAltimeter>
 {
     IAltimeter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAltimeterReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAltimeterReading>
 {
     IAltimeterReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAltimeterReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAltimeterReadingChangedEventArgs>
 {
     IAltimeterReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAltimeterStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAltimeterStatics>
 {
     IAltimeterStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarometer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarometer>
 {
     IBarometer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarometerReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarometerReading>
 {
     IBarometerReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarometerReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarometerReadingChangedEventArgs>
 {
     IBarometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBarometerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBarometerStatics>
 {
     IBarometerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompass :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompass>
 {
     ICompass(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompass2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompass2>
 {
     ICompass2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompassDeviceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompassDeviceId>
 {
     ICompassDeviceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompassReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompassReading>
 {
     ICompassReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompassReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompassReadingChangedEventArgs>
 {
     ICompassReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompassReadingHeadingAccuracy :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompassReadingHeadingAccuracy>
 {
     ICompassReadingHeadingAccuracy(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompassStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompassStatics>
 {
     ICompassStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGyrometer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGyrometer>
 {
     IGyrometer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGyrometer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGyrometer2>
 {
     IGyrometer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGyrometerDeviceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGyrometerDeviceId>
 {
     IGyrometerDeviceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGyrometerReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGyrometerReading>
 {
     IGyrometerReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGyrometerReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGyrometerReadingChangedEventArgs>
 {
     IGyrometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGyrometerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGyrometerStatics>
 {
     IGyrometerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInclinometer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInclinometer>
 {
     IInclinometer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInclinometer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInclinometer2>
 {
     IInclinometer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInclinometerDeviceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInclinometerDeviceId>
 {
     IInclinometerDeviceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInclinometerReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInclinometerReading>
 {
     IInclinometerReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInclinometerReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInclinometerReadingChangedEventArgs>
 {
     IInclinometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInclinometerReadingYawAccuracy :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInclinometerReadingYawAccuracy>
 {
     IInclinometerReadingYawAccuracy(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInclinometerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInclinometerStatics>
 {
     IInclinometerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInclinometerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInclinometerStatics2>
 {
     IInclinometerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInclinometerStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInclinometerStatics3>
 {
     IInclinometerStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILightSensor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILightSensor>
 {
     ILightSensor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILightSensorDeviceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILightSensorDeviceId>
 {
     ILightSensorDeviceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILightSensorReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILightSensorReading>
 {
     ILightSensorReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILightSensorReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILightSensorReadingChangedEventArgs>
 {
     ILightSensorReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILightSensorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILightSensorStatics>
 {
     ILightSensorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagnetometer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagnetometer>
 {
     IMagnetometer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagnetometer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagnetometer2>
 {
     IMagnetometer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagnetometerDeviceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagnetometerDeviceId>
 {
     IMagnetometerDeviceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagnetometerReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagnetometerReading>
 {
     IMagnetometerReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagnetometerReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagnetometerReadingChangedEventArgs>
 {
     IMagnetometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagnetometerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMagnetometerStatics>
 {
     IMagnetometerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOrientationSensor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOrientationSensor>
 {
     IOrientationSensor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOrientationSensor2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOrientationSensor2>
 {
     IOrientationSensor2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOrientationSensorDeviceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOrientationSensorDeviceId>
 {
     IOrientationSensorDeviceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOrientationSensorReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOrientationSensorReading>
 {
     IOrientationSensorReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOrientationSensorReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOrientationSensorReadingChangedEventArgs>
 {
     IOrientationSensorReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOrientationSensorReadingYawAccuracy :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOrientationSensorReadingYawAccuracy>
 {
     IOrientationSensorReadingYawAccuracy(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOrientationSensorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOrientationSensorStatics>
 {
     IOrientationSensorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOrientationSensorStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOrientationSensorStatics2>
 {
     IOrientationSensorStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IOrientationSensorStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IOrientationSensorStatics3>
 {
     IOrientationSensorStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPedometer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPedometer>
 {
     IPedometer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPedometer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPedometer2>
 {
     IPedometer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPedometerDataThresholdFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPedometerDataThresholdFactory>
 {
     IPedometerDataThresholdFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPedometerReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPedometerReading>
 {
     IPedometerReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPedometerReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPedometerReadingChangedEventArgs>
 {
     IPedometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPedometerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPedometerStatics>
 {
     IPedometerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPedometerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPedometerStatics2>
 {
     IPedometerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProximitySensor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProximitySensor>
 {
     IProximitySensor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProximitySensorDataThresholdFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProximitySensorDataThresholdFactory>
 {
     IProximitySensorDataThresholdFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProximitySensorReading :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProximitySensorReading>
 {
     IProximitySensorReading(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProximitySensorReadingChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProximitySensorReadingChangedEventArgs>
 {
     IProximitySensorReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProximitySensorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProximitySensorStatics>
 {
     IProximitySensorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProximitySensorStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProximitySensorStatics2>
 {
     IProximitySensorStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISensorDataThreshold :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISensorDataThreshold>
 {
     ISensorDataThreshold(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISensorDataThresholdTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISensorDataThresholdTriggerDetails>
 {
     ISensorDataThresholdTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISensorQuaternion :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISensorQuaternion>
 {
     ISensorQuaternion(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISensorRotationMatrix :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISensorRotationMatrix>
 {
     ISensorRotationMatrix(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISimpleOrientationSensor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISimpleOrientationSensor>
 {
     ISimpleOrientationSensor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISimpleOrientationSensor2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISimpleOrientationSensor2>
 {
     ISimpleOrientationSensor2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISimpleOrientationSensorDeviceId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISimpleOrientationSensorDeviceId>
 {
     ISimpleOrientationSensorDeviceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISimpleOrientationSensorOrientationChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISimpleOrientationSensorOrientationChangedEventArgs>
 {
     ISimpleOrientationSensorOrientationChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISimpleOrientationSensorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISimpleOrientationSensorStatics>
 {
     ISimpleOrientationSensorStatics(std::nullptr_t = nullptr) noexcept {}

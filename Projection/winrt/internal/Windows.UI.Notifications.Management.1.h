@@ -13,7 +13,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Notifications::Management {
 
-struct __declspec(uuid("62553e41-8a06-4cef-8215-6033a5be4b03")) __declspec(novtable) IUserNotificationListener : Windows::IInspectable
+struct __declspec(uuid("62553e41-8a06-4cef-8215-6033a5be4b03")) __declspec(novtable) IUserNotificationListener : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestAccessAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> ** result) = 0;
     virtual HRESULT __stdcall abi_GetAccessStatus(winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus * accessStatus) = 0;
@@ -25,7 +25,7 @@ struct __declspec(uuid("62553e41-8a06-4cef-8215-6033a5be4b03")) __declspec(novta
     virtual HRESULT __stdcall abi_RemoveNotification(uint32_t notificationId) = 0;
 };
 
-struct __declspec(uuid("ff6123cf-4386-4aa3-b73d-b804e5b63b23")) __declspec(novtable) IUserNotificationListenerStatics : Windows::IInspectable
+struct __declspec(uuid("ff6123cf-4386-4aa3-b73d-b804e5b63b23")) __declspec(novtable) IUserNotificationListenerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Current(Windows::UI::Notifications::Management::IUserNotificationListener ** result) = 0;
 };

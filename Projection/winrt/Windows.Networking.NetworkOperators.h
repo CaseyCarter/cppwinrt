@@ -796,12 +796,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -824,12 +824,12 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
         }
     }
 
-    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable>> handler, event_token * cookie) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> *>(&handler)));
+            *cookie = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -3717,14 +3717,14 @@ template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::AccountRemove
     check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->remove_AccountRemoved(cookie));
 }
 
-template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_EnumerationCompleted(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IMobileBroadbandAccountWatcher> impl_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMobileBroadbandAccountWatcher> impl_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMobileBroadbandAccountWatcher>(this, &ABI::Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher::remove_EnumerationCompleted, EnumerationCompleted(handler));
 }
@@ -3734,14 +3734,14 @@ template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::EnumerationCo
     check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->remove_EnumerationCompleted(cookie));
 }
 
-template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token cookie {};
     check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_Stopped(get_abi(handler), &cookie));
     return cookie;
 }
 
-template <typename D> event_revoker<IMobileBroadbandAccountWatcher> impl_IMobileBroadbandAccountWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMobileBroadbandAccountWatcher> impl_IMobileBroadbandAccountWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMobileBroadbandAccountWatcher>(this, &ABI::Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher::remove_Stopped, Stopped(handler));
 }

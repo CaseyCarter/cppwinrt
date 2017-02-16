@@ -24,7 +24,7 @@ template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __de
 
 #ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
 #define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
-template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::IInspectable> : impl_EventHandler<Windows::IInspectable> {};
+template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_2f2d6c29_5473_5f3e_92e7_96572bb990e2
@@ -109,7 +109,7 @@ template <> struct __declspec(uuid("84f14c22-a00a-5272-8d3d-82112e66df00")) __de
 
 #ifndef WINRT_GENERIC_44caa9ea_7598_517a_b78e_abd20d93d587
 #define WINRT_GENERIC_44caa9ea_7598_517a_b78e_abd20d93d587
-template <> struct __declspec(uuid("44caa9ea-7598-517a-b78e-abd20d93d587")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> {};
+template <> struct __declspec(uuid("44caa9ea-7598-517a-b78e-abd20d93d587")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -183,994 +183,994 @@ template <> struct __declspec(uuid("541af22b-280b-5276-bfcb-3e60a157d62c")) __de
 namespace Windows::UI::Xaml::Media::Animation {
 
 struct IAddDeleteThemeTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAddDeleteThemeTransition>
 {
     IAddDeleteThemeTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackEase>
 {
     IBackEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackEaseStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackEaseStatics>
 {
     IBackEaseStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBeginStoryboard :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBeginStoryboard>
 {
     IBeginStoryboard(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBeginStoryboardStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBeginStoryboardStatics>
 {
     IBeginStoryboardStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBounceEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBounceEase>
 {
     IBounceEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBounceEaseStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBounceEaseStatics>
 {
     IBounceEaseStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICircleEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICircleEase>
 {
     ICircleEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorAnimation>
 {
     IColorAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorAnimationStatics>
 {
     IColorAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorAnimationUsingKeyFrames :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorAnimationUsingKeyFrames>
 {
     IColorAnimationUsingKeyFrames(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorAnimationUsingKeyFramesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorAnimationUsingKeyFramesStatics>
 {
     IColorAnimationUsingKeyFramesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorKeyFrame>
 {
     IColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorKeyFrameFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorKeyFrameFactory>
 {
     IColorKeyFrameFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorKeyFrameStatics>
 {
     IColorKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICommonNavigationTransitionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICommonNavigationTransitionInfo>
 {
     ICommonNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICommonNavigationTransitionInfoStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICommonNavigationTransitionInfoStatics>
 {
     ICommonNavigationTransitionInfoStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectedAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectedAnimation>
 {
     IConnectedAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectedAnimationService :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectedAnimationService>
 {
     IConnectedAnimationService(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectedAnimationServiceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConnectedAnimationServiceStatics>
 {
     IConnectedAnimationServiceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContentThemeTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContentThemeTransition>
 {
     IContentThemeTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContentThemeTransitionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContentThemeTransitionStatics>
 {
     IContentThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContinuumNavigationTransitionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContinuumNavigationTransitionInfo>
 {
     IContinuumNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContinuumNavigationTransitionInfoStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContinuumNavigationTransitionInfoStatics>
 {
     IContinuumNavigationTransitionInfoStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICubicEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICubicEase>
 {
     ICubicEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDiscreteColorKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDiscreteColorKeyFrame>
 {
     IDiscreteColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDiscreteDoubleKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDiscreteDoubleKeyFrame>
 {
     IDiscreteDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDiscreteObjectKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDiscreteObjectKeyFrame>
 {
     IDiscreteObjectKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDiscretePointKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDiscretePointKeyFrame>
 {
     IDiscretePointKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDoubleAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDoubleAnimation>
 {
     IDoubleAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDoubleAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDoubleAnimationStatics>
 {
     IDoubleAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDoubleAnimationUsingKeyFrames :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDoubleAnimationUsingKeyFrames>
 {
     IDoubleAnimationUsingKeyFrames(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDoubleAnimationUsingKeyFramesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDoubleAnimationUsingKeyFramesStatics>
 {
     IDoubleAnimationUsingKeyFramesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDoubleKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDoubleKeyFrame>
 {
     IDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDoubleKeyFrameFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDoubleKeyFrameFactory>
 {
     IDoubleKeyFrameFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDoubleKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDoubleKeyFrameStatics>
 {
     IDoubleKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragItemThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragItemThemeAnimation>
 {
     IDragItemThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragItemThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragItemThemeAnimationStatics>
 {
     IDragItemThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragOverThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragOverThemeAnimation>
 {
     IDragOverThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragOverThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragOverThemeAnimationStatics>
 {
     IDragOverThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDrillInNavigationTransitionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDrillInNavigationTransitionInfo>
 {
     IDrillInNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDrillInThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDrillInThemeAnimation>
 {
     IDrillInThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDrillInThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDrillInThemeAnimationStatics>
 {
     IDrillInThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDrillOutThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDrillOutThemeAnimation>
 {
     IDrillOutThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDrillOutThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDrillOutThemeAnimationStatics>
 {
     IDrillOutThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDropTargetItemThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDropTargetItemThemeAnimation>
 {
     IDropTargetItemThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDropTargetItemThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDropTargetItemThemeAnimationStatics>
 {
     IDropTargetItemThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasingColorKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasingColorKeyFrame>
 {
     IEasingColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasingColorKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasingColorKeyFrameStatics>
 {
     IEasingColorKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasingDoubleKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasingDoubleKeyFrame>
 {
     IEasingDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasingDoubleKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasingDoubleKeyFrameStatics>
 {
     IEasingDoubleKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasingFunctionBase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasingFunctionBase>
 {
     IEasingFunctionBase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasingFunctionBaseFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasingFunctionBaseFactory>
 {
     IEasingFunctionBaseFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasingFunctionBaseStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasingFunctionBaseStatics>
 {
     IEasingFunctionBaseStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasingPointKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasingPointKeyFrame>
 {
     IEasingPointKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEasingPointKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEasingPointKeyFrameStatics>
 {
     IEasingPointKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEdgeUIThemeTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEdgeUIThemeTransition>
 {
     IEdgeUIThemeTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEdgeUIThemeTransitionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEdgeUIThemeTransitionStatics>
 {
     IEdgeUIThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IElasticEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IElasticEase>
 {
     IElasticEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IElasticEaseStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IElasticEaseStatics>
 {
     IElasticEaseStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEntranceNavigationTransitionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEntranceNavigationTransitionInfo>
 {
     IEntranceNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEntranceNavigationTransitionInfoStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEntranceNavigationTransitionInfoStatics>
 {
     IEntranceNavigationTransitionInfoStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEntranceThemeTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEntranceThemeTransition>
 {
     IEntranceThemeTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEntranceThemeTransitionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEntranceThemeTransitionStatics>
 {
     IEntranceThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExponentialEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExponentialEase>
 {
     IExponentialEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExponentialEaseStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExponentialEaseStatics>
 {
     IExponentialEaseStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFadeInThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFadeInThemeAnimation>
 {
     IFadeInThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFadeInThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFadeInThemeAnimationStatics>
 {
     IFadeInThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFadeOutThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFadeOutThemeAnimation>
 {
     IFadeOutThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFadeOutThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFadeOutThemeAnimationStatics>
 {
     IFadeOutThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeySpline :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeySpline>
 {
     IKeySpline(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyTimeHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyTimeHelper>
 {
     IKeyTimeHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyTimeHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyTimeHelperStatics>
 {
     IKeyTimeHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILinearColorKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILinearColorKeyFrame>
 {
     ILinearColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILinearDoubleKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILinearDoubleKeyFrame>
 {
     ILinearDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILinearPointKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILinearPointKeyFrame>
 {
     ILinearPointKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INavigationThemeTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INavigationThemeTransition>
 {
     INavigationThemeTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INavigationThemeTransitionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INavigationThemeTransitionStatics>
 {
     INavigationThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INavigationTransitionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INavigationTransitionInfo>
 {
     INavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INavigationTransitionInfoFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INavigationTransitionInfoFactory>
 {
     INavigationTransitionInfoFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INavigationTransitionInfoOverrides :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INavigationTransitionInfoOverrides>
 {
     INavigationTransitionInfoOverrides(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IObjectAnimationUsingKeyFrames :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IObjectAnimationUsingKeyFrames>
 {
     IObjectAnimationUsingKeyFrames(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IObjectAnimationUsingKeyFramesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IObjectAnimationUsingKeyFramesStatics>
 {
     IObjectAnimationUsingKeyFramesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IObjectKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IObjectKeyFrame>
 {
     IObjectKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IObjectKeyFrameFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IObjectKeyFrameFactory>
 {
     IObjectKeyFrameFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IObjectKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IObjectKeyFrameStatics>
 {
     IObjectKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPaneThemeTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPaneThemeTransition>
 {
     IPaneThemeTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPaneThemeTransitionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPaneThemeTransitionStatics>
 {
     IPaneThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointAnimation>
 {
     IPointAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointAnimationStatics>
 {
     IPointAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointAnimationUsingKeyFrames :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointAnimationUsingKeyFrames>
 {
     IPointAnimationUsingKeyFrames(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointAnimationUsingKeyFramesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointAnimationUsingKeyFramesStatics>
 {
     IPointAnimationUsingKeyFramesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointKeyFrame>
 {
     IPointKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointKeyFrameFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointKeyFrameFactory>
 {
     IPointKeyFrameFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointKeyFrameStatics>
 {
     IPointKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerDownThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerDownThemeAnimation>
 {
     IPointerDownThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerDownThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerDownThemeAnimationStatics>
 {
     IPointerDownThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerUpThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerUpThemeAnimation>
 {
     IPointerUpThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointerUpThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointerUpThemeAnimationStatics>
 {
     IPointerUpThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPopInThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPopInThemeAnimation>
 {
     IPopInThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPopInThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPopInThemeAnimationStatics>
 {
     IPopInThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPopOutThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPopOutThemeAnimation>
 {
     IPopOutThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPopOutThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPopOutThemeAnimationStatics>
 {
     IPopOutThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPopupThemeTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPopupThemeTransition>
 {
     IPopupThemeTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPopupThemeTransitionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPopupThemeTransitionStatics>
 {
     IPopupThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPowerEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPowerEase>
 {
     IPowerEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPowerEaseStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPowerEaseStatics>
 {
     IPowerEaseStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IQuadraticEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IQuadraticEase>
 {
     IQuadraticEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IQuarticEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IQuarticEase>
 {
     IQuarticEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IQuinticEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IQuinticEase>
 {
     IQuinticEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IReorderThemeTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IReorderThemeTransition>
 {
     IReorderThemeTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRepeatBehaviorHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRepeatBehaviorHelper>
 {
     IRepeatBehaviorHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRepeatBehaviorHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRepeatBehaviorHelperStatics>
 {
     IRepeatBehaviorHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRepositionThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRepositionThemeAnimation>
 {
     IRepositionThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRepositionThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRepositionThemeAnimationStatics>
 {
     IRepositionThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRepositionThemeTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRepositionThemeTransition>
 {
     IRepositionThemeTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRepositionThemeTransition2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRepositionThemeTransition2>
 {
     IRepositionThemeTransition2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRepositionThemeTransitionStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRepositionThemeTransitionStatics2>
 {
     IRepositionThemeTransitionStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISineEase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISineEase>
 {
     ISineEase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISlideNavigationTransitionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISlideNavigationTransitionInfo>
 {
     ISlideNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplineColorKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplineColorKeyFrame>
 {
     ISplineColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplineColorKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplineColorKeyFrameStatics>
 {
     ISplineColorKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplineDoubleKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplineDoubleKeyFrame>
 {
     ISplineDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplineDoubleKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplineDoubleKeyFrameStatics>
 {
     ISplineDoubleKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplinePointKeyFrame :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplinePointKeyFrame>
 {
     ISplinePointKeyFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplinePointKeyFrameStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplinePointKeyFrameStatics>
 {
     ISplinePointKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplitCloseThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplitCloseThemeAnimation>
 {
     ISplitCloseThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplitCloseThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplitCloseThemeAnimationStatics>
 {
     ISplitCloseThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplitOpenThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplitOpenThemeAnimation>
 {
     ISplitOpenThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISplitOpenThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISplitOpenThemeAnimationStatics>
 {
     ISplitOpenThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoryboard :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoryboard>
 {
     IStoryboard(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStoryboardStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStoryboardStatics>
 {
     IStoryboardStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISuppressNavigationTransitionInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISuppressNavigationTransitionInfo>
 {
     ISuppressNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISwipeBackThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISwipeBackThemeAnimation>
 {
     ISwipeBackThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISwipeBackThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISwipeBackThemeAnimationStatics>
 {
     ISwipeBackThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISwipeHintThemeAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISwipeHintThemeAnimation>
 {
     ISwipeHintThemeAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISwipeHintThemeAnimationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISwipeHintThemeAnimationStatics>
 {
     ISwipeHintThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimeline :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimeline>
 {
     ITimeline(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimelineFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimelineFactory>
 {
     ITimelineFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimelineStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimelineStatics>
 {
     ITimelineStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITransition>
 {
     ITransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITransitionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITransitionFactory>
 {
     ITransitionFactory(std::nullptr_t = nullptr) noexcept {}

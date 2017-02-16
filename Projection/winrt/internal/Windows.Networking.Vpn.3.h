@@ -21,7 +21,7 @@ struct WINRT_EBO VpnChannel :
     impl::require<VpnChannel, Windows::Networking::Vpn::IVpnChannel2>
 {
     VpnChannel(std::nullptr_t) noexcept {}
-    static void ProcessEventAsync(const Windows::IInspectable & thirdPartyPlugIn, const Windows::IInspectable & event);
+    static void ProcessEventAsync(const Windows::Foundation::IInspectable & thirdPartyPlugIn, const Windows::Foundation::IInspectable & event);
 };
 
 struct WINRT_EBO VpnChannelActivityEventArgs :

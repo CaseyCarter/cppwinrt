@@ -52,7 +52,7 @@ template <> struct __declspec(uuid("3be2d508-a856-5c09-9998-522597b44b07")) __de
 
 #ifndef WINRT_GENERIC_67fc3121_c1a0_5c23_af58_ecb7f2a7d773
 #define WINRT_GENERIC_67fc3121_c1a0_5c23_af58_ecb7f2a7d773
-template <> struct __declspec(uuid("67fc3121-c1a0-5c23-af58-ecb7f2a7d773")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::IInspectable> {};
+template <> struct __declspec(uuid("67fc3121-c1a0-5c23-af58-ecb7f2a7d773")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c2da4e97_728b_5401_a9d9_3a0185450af2
@@ -92,7 +92,7 @@ template <> struct __declspec(uuid("d7fa4dc4-4730-506e-bff0-801eb4a831a8")) __de
 
 #ifndef WINRT_GENERIC_10c33301_e31c_5cce_b2a0_c1dc2d8d0e13
 #define WINRT_GENERIC_10c33301_e31c_5cce_b2a0_c1dc2d8d0e13
-template <> struct __declspec(uuid("10c33301-e31c-5cce-b2a0-c1dc2d8d0e13")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::IInspectable> {};
+template <> struct __declspec(uuid("10c33301-e31c-5cce-b2a0-c1dc2d8d0e13")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_8326a337_3c19_57a7_80ec_cca2ea62ef12
@@ -156,49 +156,49 @@ template <> struct __declspec(uuid("94cb9568-040a-5186-a3c9-52680ee17984")) __de
 namespace Windows::Devices::WiFiDirect::Services {
 
 struct IWiFiDirectService :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectService>
 {
     IWiFiDirectService(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectServiceAdvertiser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceAdvertiser>
 {
     IWiFiDirectServiceAdvertiser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectServiceAdvertiserFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceAdvertiserFactory>
 {
     IWiFiDirectServiceAdvertiserFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs>
 {
     IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectServiceProvisioningInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceProvisioningInfo>
 {
     IWiFiDirectServiceProvisioningInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectServiceRemotePortAddedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceRemotePortAddedEventArgs>
 {
     IWiFiDirectServiceRemotePortAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectServiceSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceSession>,
     impl::require<IWiFiDirectServiceSession, Windows::Foundation::IClosable>
 {
@@ -206,14 +206,14 @@ struct IWiFiDirectServiceSession :
 };
 
 struct IWiFiDirectServiceSessionDeferredEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceSessionDeferredEventArgs>
 {
     IWiFiDirectServiceSessionDeferredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectServiceSessionRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceSessionRequest>,
     impl::require<IWiFiDirectServiceSessionRequest, Windows::Foundation::IClosable>
 {
@@ -221,14 +221,14 @@ struct IWiFiDirectServiceSessionRequest :
 };
 
 struct IWiFiDirectServiceSessionRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceSessionRequestedEventArgs>
 {
     IWiFiDirectServiceSessionRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWiFiDirectServiceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWiFiDirectServiceStatics>
 {
     IWiFiDirectServiceStatics(std::nullptr_t = nullptr) noexcept {}

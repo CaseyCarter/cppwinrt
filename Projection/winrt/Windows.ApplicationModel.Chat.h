@@ -2613,7 +2613,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransportConfigur
         }
     }
 
-    HRESULT __stdcall get_ExtendedProperties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> result) noexcept override
+    HRESULT __stdcall get_ExtendedProperties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> result) noexcept override
     {
         try
         {
@@ -3383,7 +3383,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsServiceKindSupportedChang
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base<D, Windows::ApplicationModel::Chat::IRcsTransport>
 {
-    HRESULT __stdcall get_ExtendedProperties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>> value) noexcept override
+    HRESULT __stdcall get_ExtendedProperties(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> value) noexcept override
     {
         try
         {
@@ -3731,9 +3731,9 @@ template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl
     return result;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IChatMessageTransportConfiguration<D>::ExtendedProperties() const
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> impl_IChatMessageTransportConfiguration<D>::ExtendedProperties() const
 {
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> result;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> result;
     check_hresult(WINRT_SHIM(IChatMessageTransportConfiguration)->get_ExtendedProperties(put_abi(result)));
     return result;
 }
@@ -5021,9 +5021,9 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IRcsManagerStatics<
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IRcsTransport<D>::ExtendedProperties() const
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> impl_IRcsTransport<D>::ExtendedProperties() const
 {
-    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> value;
     check_hresult(WINRT_SHIM(IRcsTransport)->get_ExtendedProperties(put_abi(value)));
     return value;
 }

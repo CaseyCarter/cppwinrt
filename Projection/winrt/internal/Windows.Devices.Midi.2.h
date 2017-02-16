@@ -51,7 +51,7 @@ template <> struct __declspec(uuid("5d716335-d087-516f-ad0a-63f61cbcf342")) __de
 namespace Windows::Devices::Midi {
 
 struct IMidiChannelPressureMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiChannelPressureMessage>,
     impl::require<IMidiChannelPressureMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -59,14 +59,14 @@ struct IMidiChannelPressureMessage :
 };
 
 struct IMidiChannelPressureMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiChannelPressureMessageFactory>
 {
     IMidiChannelPressureMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiControlChangeMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiControlChangeMessage>,
     impl::require<IMidiControlChangeMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -74,14 +74,14 @@ struct IMidiControlChangeMessage :
 };
 
 struct IMidiControlChangeMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiControlChangeMessageFactory>
 {
     IMidiControlChangeMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiInPort :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiInPort>,
     impl::require<IMidiInPort, Windows::Foundation::IClosable>
 {
@@ -89,28 +89,28 @@ struct IMidiInPort :
 };
 
 struct IMidiInPortStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiInPortStatics>
 {
     IMidiInPortStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiMessage>
 {
     IMidiMessage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiMessageReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiMessageReceivedEventArgs>
 {
     IMidiMessageReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiNoteOffMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiNoteOffMessage>,
     impl::require<IMidiNoteOffMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -118,14 +118,14 @@ struct IMidiNoteOffMessage :
 };
 
 struct IMidiNoteOffMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiNoteOffMessageFactory>
 {
     IMidiNoteOffMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiNoteOnMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiNoteOnMessage>,
     impl::require<IMidiNoteOnMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -133,14 +133,14 @@ struct IMidiNoteOnMessage :
 };
 
 struct IMidiNoteOnMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiNoteOnMessageFactory>
 {
     IMidiNoteOnMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiOutPort :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiOutPort>,
     impl::require<IMidiOutPort, Windows::Foundation::IClosable>
 {
@@ -148,14 +148,14 @@ struct IMidiOutPort :
 };
 
 struct IMidiOutPortStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiOutPortStatics>
 {
     IMidiOutPortStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiPitchBendChangeMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiPitchBendChangeMessage>,
     impl::require<IMidiPitchBendChangeMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -163,14 +163,14 @@ struct IMidiPitchBendChangeMessage :
 };
 
 struct IMidiPitchBendChangeMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiPitchBendChangeMessageFactory>
 {
     IMidiPitchBendChangeMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiPolyphonicKeyPressureMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiPolyphonicKeyPressureMessage>,
     impl::require<IMidiPolyphonicKeyPressureMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -178,14 +178,14 @@ struct IMidiPolyphonicKeyPressureMessage :
 };
 
 struct IMidiPolyphonicKeyPressureMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiPolyphonicKeyPressureMessageFactory>
 {
     IMidiPolyphonicKeyPressureMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiProgramChangeMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiProgramChangeMessage>,
     impl::require<IMidiProgramChangeMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -193,14 +193,14 @@ struct IMidiProgramChangeMessage :
 };
 
 struct IMidiProgramChangeMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiProgramChangeMessageFactory>
 {
     IMidiProgramChangeMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiSongPositionPointerMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiSongPositionPointerMessage>,
     impl::require<IMidiSongPositionPointerMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -208,14 +208,14 @@ struct IMidiSongPositionPointerMessage :
 };
 
 struct IMidiSongPositionPointerMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiSongPositionPointerMessageFactory>
 {
     IMidiSongPositionPointerMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiSongSelectMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiSongSelectMessage>,
     impl::require<IMidiSongSelectMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -223,14 +223,14 @@ struct IMidiSongSelectMessage :
 };
 
 struct IMidiSongSelectMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiSongSelectMessageFactory>
 {
     IMidiSongSelectMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiSynthesizer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiSynthesizer>,
     impl::require<IMidiSynthesizer, Windows::Devices::Midi::IMidiOutPort, Windows::Foundation::IClosable>
 {
@@ -238,21 +238,21 @@ struct IMidiSynthesizer :
 };
 
 struct IMidiSynthesizerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiSynthesizerStatics>
 {
     IMidiSynthesizerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiSystemExclusiveMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiSystemExclusiveMessageFactory>
 {
     IMidiSystemExclusiveMessageFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMidiTimeCodeMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiTimeCodeMessage>,
     impl::require<IMidiTimeCodeMessage, Windows::Devices::Midi::IMidiMessage>
 {
@@ -260,7 +260,7 @@ struct IMidiTimeCodeMessage :
 };
 
 struct IMidiTimeCodeMessageFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMidiTimeCodeMessageFactory>
 {
     IMidiTimeCodeMessageFactory(std::nullptr_t = nullptr) noexcept {}

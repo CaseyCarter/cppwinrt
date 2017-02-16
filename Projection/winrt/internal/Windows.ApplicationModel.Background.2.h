@@ -149,7 +149,7 @@ template <> struct __declspec(uuid("80fb0327-5a00-55cc-85db-a852719981b9")) __de
 
 namespace Windows::ApplicationModel::Background {
 
-struct BackgroundTaskCanceledEventHandler : Windows::IUnknown
+struct BackgroundTaskCanceledEventHandler : Windows::Foundation::IUnknown
 {
     BackgroundTaskCanceledEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> BackgroundTaskCanceledEventHandler(L lambda);
@@ -158,7 +158,7 @@ struct BackgroundTaskCanceledEventHandler : Windows::IUnknown
     void operator()(const Windows::ApplicationModel::Background::IBackgroundTaskInstance & sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason) const;
 };
 
-struct BackgroundTaskCompletedEventHandler : Windows::IUnknown
+struct BackgroundTaskCompletedEventHandler : Windows::Foundation::IUnknown
 {
     BackgroundTaskCompletedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> BackgroundTaskCompletedEventHandler(L lambda);
@@ -167,7 +167,7 @@ struct BackgroundTaskCompletedEventHandler : Windows::IUnknown
     void operator()(const Windows::ApplicationModel::Background::BackgroundTaskRegistration & sender, const Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs & args) const;
 };
 
-struct BackgroundTaskProgressEventHandler : Windows::IUnknown
+struct BackgroundTaskProgressEventHandler : Windows::Foundation::IUnknown
 {
     BackgroundTaskProgressEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> BackgroundTaskProgressEventHandler(L lambda);
@@ -177,7 +177,7 @@ struct BackgroundTaskProgressEventHandler : Windows::IUnknown
 };
 
 struct IActivitySensorTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivitySensorTrigger>,
     impl::require<IActivitySensorTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -185,14 +185,14 @@ struct IActivitySensorTrigger :
 };
 
 struct IActivitySensorTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IActivitySensorTriggerFactory>
 {
     IActivitySensorTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationTrigger>,
     impl::require<IApplicationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -200,14 +200,14 @@ struct IApplicationTrigger :
 };
 
 struct IApplicationTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationTriggerDetails>
 {
     IApplicationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppointmentStoreNotificationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppointmentStoreNotificationTrigger>,
     impl::require<IAppointmentStoreNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -215,35 +215,35 @@ struct IAppointmentStoreNotificationTrigger :
 };
 
 struct IBackgroundCondition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundCondition>
 {
     IBackgroundCondition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundExecutionManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundExecutionManagerStatics>
 {
     IBackgroundExecutionManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTask :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTask>
 {
     IBackgroundTask(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTaskBuilder :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskBuilder>
 {
     IBackgroundTaskBuilder(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTaskBuilder2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskBuilder2>,
     impl::require<IBackgroundTaskBuilder2, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
 {
@@ -251,7 +251,7 @@ struct IBackgroundTaskBuilder2 :
 };
 
 struct IBackgroundTaskBuilder3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskBuilder3>,
     impl::require<IBackgroundTaskBuilder3, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
 {
@@ -259,28 +259,28 @@ struct IBackgroundTaskBuilder3 :
 };
 
 struct IBackgroundTaskCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskCompletedEventArgs>
 {
     IBackgroundTaskCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTaskDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskDeferral>
 {
     IBackgroundTaskDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTaskInstance :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskInstance>
 {
     IBackgroundTaskInstance(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTaskInstance2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskInstance2>,
     impl::require<IBackgroundTaskInstance2, Windows::ApplicationModel::Background::IBackgroundTaskInstance>
 {
@@ -288,7 +288,7 @@ struct IBackgroundTaskInstance2 :
 };
 
 struct IBackgroundTaskInstance4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskInstance4>,
     impl::require<IBackgroundTaskInstance4, Windows::ApplicationModel::Background::IBackgroundTaskInstance>
 {
@@ -296,21 +296,21 @@ struct IBackgroundTaskInstance4 :
 };
 
 struct IBackgroundTaskProgressEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskProgressEventArgs>
 {
     IBackgroundTaskProgressEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTaskRegistration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskRegistration>
 {
     IBackgroundTaskRegistration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTaskRegistration2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskRegistration2>,
     impl::require<IBackgroundTaskRegistration2, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>
 {
@@ -318,28 +318,28 @@ struct IBackgroundTaskRegistration2 :
 };
 
 struct IBackgroundTaskRegistrationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskRegistrationStatics>
 {
     IBackgroundTaskRegistrationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTrigger>
 {
     IBackgroundTrigger(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundWorkCostStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundWorkCostStatics>
 {
     IBackgroundWorkCostStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothLEAdvertisementPublisherTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementPublisherTrigger>,
     impl::require<IBluetoothLEAdvertisementPublisherTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -347,7 +347,7 @@ struct IBluetoothLEAdvertisementPublisherTrigger :
 };
 
 struct IBluetoothLEAdvertisementWatcherTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEAdvertisementWatcherTrigger>,
     impl::require<IBluetoothLEAdvertisementWatcherTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -355,7 +355,7 @@ struct IBluetoothLEAdvertisementWatcherTrigger :
 };
 
 struct ICachedFileUpdaterTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICachedFileUpdaterTrigger>,
     impl::require<ICachedFileUpdaterTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -363,14 +363,14 @@ struct ICachedFileUpdaterTrigger :
 };
 
 struct ICachedFileUpdaterTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICachedFileUpdaterTriggerDetails>
 {
     ICachedFileUpdaterTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChatMessageNotificationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageNotificationTrigger>,
     impl::require<IChatMessageNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -378,7 +378,7 @@ struct IChatMessageNotificationTrigger :
 };
 
 struct IChatMessageReceivedNotificationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChatMessageReceivedNotificationTrigger>,
     impl::require<IChatMessageReceivedNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -386,7 +386,7 @@ struct IChatMessageReceivedNotificationTrigger :
 };
 
 struct IContactStoreNotificationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactStoreNotificationTrigger>,
     impl::require<IContactStoreNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -394,7 +394,7 @@ struct IContactStoreNotificationTrigger :
 };
 
 struct IContentPrefetchTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContentPrefetchTrigger>,
     impl::require<IContentPrefetchTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -402,14 +402,14 @@ struct IContentPrefetchTrigger :
 };
 
 struct IContentPrefetchTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContentPrefetchTriggerFactory>
 {
     IContentPrefetchTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceConnectionChangeTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceConnectionChangeTrigger>,
     impl::require<IDeviceConnectionChangeTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -417,14 +417,14 @@ struct IDeviceConnectionChangeTrigger :
 };
 
 struct IDeviceConnectionChangeTriggerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceConnectionChangeTriggerStatics>
 {
     IDeviceConnectionChangeTriggerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceManufacturerNotificationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceManufacturerNotificationTrigger>,
     impl::require<IDeviceManufacturerNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -432,14 +432,14 @@ struct IDeviceManufacturerNotificationTrigger :
 };
 
 struct IDeviceManufacturerNotificationTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceManufacturerNotificationTriggerFactory>
 {
     IDeviceManufacturerNotificationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDeviceServicingTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceServicingTrigger>,
     impl::require<IDeviceServicingTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -447,7 +447,7 @@ struct IDeviceServicingTrigger :
 };
 
 struct IDeviceUseTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceUseTrigger>,
     impl::require<IDeviceUseTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -455,7 +455,7 @@ struct IDeviceUseTrigger :
 };
 
 struct IDeviceWatcherTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDeviceWatcherTrigger>,
     impl::require<IDeviceWatcherTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -463,7 +463,7 @@ struct IDeviceWatcherTrigger :
 };
 
 struct IEmailStoreNotificationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEmailStoreNotificationTrigger>,
     impl::require<IEmailStoreNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -471,7 +471,7 @@ struct IEmailStoreNotificationTrigger :
 };
 
 struct IGattCharacteristicNotificationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattCharacteristicNotificationTrigger>,
     impl::require<IGattCharacteristicNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -479,14 +479,14 @@ struct IGattCharacteristicNotificationTrigger :
 };
 
 struct IGattCharacteristicNotificationTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGattCharacteristicNotificationTriggerFactory>
 {
     IGattCharacteristicNotificationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILocationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILocationTrigger>,
     impl::require<ILocationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -494,14 +494,14 @@ struct ILocationTrigger :
 };
 
 struct ILocationTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILocationTriggerFactory>
 {
     ILocationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMaintenanceTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMaintenanceTrigger>,
     impl::require<IMaintenanceTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -509,14 +509,14 @@ struct IMaintenanceTrigger :
 };
 
 struct IMaintenanceTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMaintenanceTriggerFactory>
 {
     IMaintenanceTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaProcessingTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaProcessingTrigger>,
     impl::require<IMediaProcessingTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -524,7 +524,7 @@ struct IMediaProcessingTrigger :
 };
 
 struct INetworkOperatorHotspotAuthenticationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorHotspotAuthenticationTrigger>,
     impl::require<INetworkOperatorHotspotAuthenticationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -532,7 +532,7 @@ struct INetworkOperatorHotspotAuthenticationTrigger :
 };
 
 struct INetworkOperatorNotificationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorNotificationTrigger>,
     impl::require<INetworkOperatorNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -540,21 +540,21 @@ struct INetworkOperatorNotificationTrigger :
 };
 
 struct INetworkOperatorNotificationTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INetworkOperatorNotificationTriggerFactory>
 {
     INetworkOperatorNotificationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPushNotificationTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPushNotificationTriggerFactory>
 {
     IPushNotificationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRcsEndUserMessageAvailableTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRcsEndUserMessageAvailableTrigger>,
     impl::require<IRcsEndUserMessageAvailableTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -562,7 +562,7 @@ struct IRcsEndUserMessageAvailableTrigger :
 };
 
 struct IRfcommConnectionTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRfcommConnectionTrigger>,
     impl::require<IRfcommConnectionTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -570,7 +570,7 @@ struct IRfcommConnectionTrigger :
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorAuthenticationTrigger>,
     impl::require<ISecondaryAuthenticationFactorAuthenticationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -578,7 +578,7 @@ struct ISecondaryAuthenticationFactorAuthenticationTrigger :
 };
 
 struct ISensorDataThresholdTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISensorDataThresholdTrigger>,
     impl::require<ISensorDataThresholdTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -586,28 +586,28 @@ struct ISensorDataThresholdTrigger :
 };
 
 struct ISensorDataThresholdTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISensorDataThresholdTriggerFactory>
 {
     ISensorDataThresholdTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISmsMessageReceivedTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISmsMessageReceivedTriggerFactory>
 {
     ISmsMessageReceivedTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocketActivityTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocketActivityTrigger>
 {
     ISocketActivityTrigger(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageLibraryContentChangedTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageLibraryContentChangedTrigger>,
     impl::require<IStorageLibraryContentChangedTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -615,14 +615,14 @@ struct IStorageLibraryContentChangedTrigger :
 };
 
 struct IStorageLibraryContentChangedTriggerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageLibraryContentChangedTriggerStatics>
 {
     IStorageLibraryContentChangedTriggerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemCondition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemCondition>,
     impl::require<ISystemCondition, Windows::ApplicationModel::Background::IBackgroundCondition>
 {
@@ -630,14 +630,14 @@ struct ISystemCondition :
 };
 
 struct ISystemConditionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemConditionFactory>
 {
     ISystemConditionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemTrigger>,
     impl::require<ISystemTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -645,14 +645,14 @@ struct ISystemTrigger :
 };
 
 struct ISystemTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISystemTriggerFactory>
 {
     ISystemTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimeTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimeTrigger>,
     impl::require<ITimeTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
@@ -660,28 +660,28 @@ struct ITimeTrigger :
 };
 
 struct ITimeTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimeTriggerFactory>
 {
     ITimeTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationActionTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationActionTriggerFactory>
 {
     IToastNotificationActionTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationHistoryChangedTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationHistoryChangedTriggerFactory>
 {
     IToastNotificationHistoryChangedTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserNotificationChangedTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserNotificationChangedTriggerFactory>
 {
     IUserNotificationChangedTriggerFactory(std::nullptr_t = nullptr) noexcept {}

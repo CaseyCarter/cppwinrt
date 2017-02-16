@@ -140,7 +140,7 @@ template <> struct __declspec(uuid("8dea85a0-0204-57dd-abad-90e37c0ef240")) __de
 namespace Windows::Gaming::Input {
 
 struct IArcadeStick :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IArcadeStick>,
     impl::require<IArcadeStick, Windows::Gaming::Input::IGameController>
 {
@@ -148,21 +148,21 @@ struct IArcadeStick :
 };
 
 struct IArcadeStickStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IArcadeStickStatics>
 {
     IArcadeStickStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGameController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGameController>
 {
     IGameController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGamepad :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGamepad>,
     impl::require<IGamepad, Windows::Gaming::Input::IGameController>
 {
@@ -170,7 +170,7 @@ struct IGamepad :
 };
 
 struct IGamepad2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGamepad2>,
     impl::require<IGamepad2, Windows::Gaming::Input::IGameController, Windows::Gaming::Input::IGamepad>
 {
@@ -178,21 +178,21 @@ struct IGamepad2 :
 };
 
 struct IGamepadStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGamepadStatics>
 {
     IGamepadStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHeadset :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHeadset>
 {
     IHeadset(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRacingWheel :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRacingWheel>,
     impl::require<IRacingWheel, Windows::Gaming::Input::IGameController>
 {
@@ -200,14 +200,14 @@ struct IRacingWheel :
 };
 
 struct IRacingWheelStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRacingWheelStatics>
 {
     IRacingWheelStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUINavigationController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUINavigationController>,
     impl::require<IUINavigationController, Windows::Gaming::Input::IGameController>
 {
@@ -215,7 +215,7 @@ struct IUINavigationController :
 };
 
 struct IUINavigationControllerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUINavigationControllerStatics>
 {
     IUINavigationControllerStatics(std::nullptr_t = nullptr) noexcept {}

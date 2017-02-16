@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::System::RemoteDesktop {
 
 struct IInteractiveSessionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInteractiveSessionStatics>
 {
     IInteractiveSessionStatics(std::nullptr_t = nullptr) noexcept {}

@@ -28,11 +28,11 @@ using FontWeight = ABI::Windows::UI::Text::FontWeight;
 
 namespace ABI::Windows::UI::Text {
 
-struct __declspec(uuid("7880a444-01ab-4997-8517-df822a0c45f1")) __declspec(novtable) IFontWeights : Windows::IInspectable
+struct __declspec(uuid("7880a444-01ab-4997-8517-df822a0c45f1")) __declspec(novtable) IFontWeights : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("b3b579d5-1ba9-48eb-9dad-c095e8c23ba3")) __declspec(novtable) IFontWeightsStatics : Windows::IInspectable
+struct __declspec(uuid("b3b579d5-1ba9-48eb-9dad-c095e8c23ba3")) __declspec(novtable) IFontWeightsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Black(Windows::UI::Text::FontWeight * value) = 0;
     virtual HRESULT __stdcall get_Bold(Windows::UI::Text::FontWeight * value) = 0;
@@ -47,7 +47,7 @@ struct __declspec(uuid("b3b579d5-1ba9-48eb-9dad-c095e8c23ba3")) __declspec(novta
     virtual HRESULT __stdcall get_Thin(Windows::UI::Text::FontWeight * value) = 0;
 };
 
-struct __declspec(uuid("5adef3db-05fb-442d-8065-642afea02ced")) __declspec(novtable) ITextCharacterFormat : Windows::IInspectable
+struct __declspec(uuid("5adef3db-05fb-442d-8065-642afea02ced")) __declspec(novtable) ITextCharacterFormat : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllCaps(winrt::Windows::UI::Text::FormatEffect * value) = 0;
     virtual HRESULT __stdcall put_AllCaps(winrt::Windows::UI::Text::FormatEffect value) = 0;
@@ -101,7 +101,7 @@ struct __declspec(uuid("5adef3db-05fb-442d-8065-642afea02ced")) __declspec(novta
     virtual HRESULT __stdcall abi_IsEqual(Windows::UI::Text::ITextCharacterFormat * format, bool * value) = 0;
 };
 
-struct __declspec(uuid("779e7c33-189d-4bfa-97c8-10db135d976e")) __declspec(novtable) ITextConstantsStatics : Windows::IInspectable
+struct __declspec(uuid("779e7c33-189d-4bfa-97c8-10db135d976e")) __declspec(novtable) ITextConstantsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AutoColor(Windows::UI::Color * value) = 0;
     virtual HRESULT __stdcall get_MinUnitCount(int32_t * value) = 0;
@@ -113,7 +113,7 @@ struct __declspec(uuid("779e7c33-189d-4bfa-97c8-10db135d976e")) __declspec(novta
     virtual HRESULT __stdcall get_UndefinedFontStyle(winrt::Windows::UI::Text::FontStyle * value) = 0;
 };
 
-struct __declspec(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4")) __declspec(novtable) ITextDocument : Windows::IInspectable
+struct __declspec(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4")) __declspec(novtable) ITextDocument : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CaretType(winrt::Windows::UI::Text::CaretType * value) = 0;
     virtual HRESULT __stdcall put_CaretType(winrt::Windows::UI::Text::CaretType value) = 0;
@@ -144,7 +144,7 @@ struct __declspec(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4")) __declspec(novta
     virtual HRESULT __stdcall abi_Undo() = 0;
 };
 
-struct __declspec(uuid("2cf8cfa6-4676-498a-93f5-bbdbfc0bd883")) __declspec(novtable) ITextParagraphFormat : Windows::IInspectable
+struct __declspec(uuid("2cf8cfa6-4676-498a-93f5-bbdbfc0bd883")) __declspec(novtable) ITextParagraphFormat : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Alignment(winrt::Windows::UI::Text::ParagraphAlignment * value) = 0;
     virtual HRESULT __stdcall put_Alignment(winrt::Windows::UI::Text::ParagraphAlignment value) = 0;
@@ -196,7 +196,7 @@ struct __declspec(uuid("2cf8cfa6-4676-498a-93f5-bbdbfc0bd883")) __declspec(novta
     virtual HRESULT __stdcall abi_SetLineSpacing(winrt::Windows::UI::Text::LineSpacingRule rule, float spacing) = 0;
 };
 
-struct __declspec(uuid("5b9e4e57-c072-42a0-8945-af503ee54768")) __declspec(novtable) ITextRange : Windows::IInspectable
+struct __declspec(uuid("5b9e4e57-c072-42a0-8945-af503ee54768")) __declspec(novtable) ITextRange : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Character(wchar_t * value) = 0;
     virtual HRESULT __stdcall put_Character(wchar_t value) = 0;
@@ -252,7 +252,7 @@ struct __declspec(uuid("5b9e4e57-c072-42a0-8945-af503ee54768")) __declspec(novta
     virtual HRESULT __stdcall abi_StartOf(winrt::Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t * delta) = 0;
 };
 
-struct __declspec(uuid("a6d36724-f28f-430a-b2cf-c343671ec0e9")) __declspec(novtable) ITextSelection : Windows::IInspectable
+struct __declspec(uuid("a6d36724-f28f-430a-b2cf-c343671ec0e9")) __declspec(novtable) ITextSelection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Options(winrt::Windows::UI::Text::SelectionOptions * value) = 0;
     virtual HRESULT __stdcall put_Options(winrt::Windows::UI::Text::SelectionOptions value) = 0;

@@ -105,63 +105,63 @@ template <> struct __declspec(uuid("06752d25-d43e-5d2e-a305-4e1576846fee")) __de
 namespace Windows::Security::Authentication::Identity::Provider {
 
 struct ISecondaryAuthenticationFactorAuthentication :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorAuthentication>
 {
     ISecondaryAuthenticationFactorAuthentication(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorAuthenticationResult>
 {
     ISecondaryAuthenticationFactorAuthenticationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs>
 {
     ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationStageInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorAuthenticationStageInfo>
 {
     ISecondaryAuthenticationFactorAuthenticationStageInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorAuthenticationStatics>
 {
     ISecondaryAuthenticationFactorAuthenticationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryAuthenticationFactorInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorInfo>
 {
     ISecondaryAuthenticationFactorInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryAuthenticationFactorRegistration :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorRegistration>
 {
     ISecondaryAuthenticationFactorRegistration(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryAuthenticationFactorRegistrationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorRegistrationResult>
 {
     ISecondaryAuthenticationFactorRegistrationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryAuthenticationFactorRegistrationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorRegistrationStatics>
 {
     ISecondaryAuthenticationFactorRegistrationStatics(std::nullptr_t = nullptr) noexcept {}

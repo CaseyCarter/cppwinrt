@@ -81,35 +81,35 @@ template <> struct __declspec(uuid("3b9d7cb1-ae0b-56af-8ed5-6856b1e7cd5b")) __de
 namespace Windows::Devices::I2c {
 
 struct II2cConnectionSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<II2cConnectionSettings>
 {
     II2cConnectionSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct II2cConnectionSettingsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<II2cConnectionSettingsFactory>
 {
     II2cConnectionSettingsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct II2cController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<II2cController>
 {
     II2cController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct II2cControllerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<II2cControllerStatics>
 {
     II2cControllerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct II2cDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<II2cDevice>,
     impl::require<II2cDevice, Windows::Foundation::IClosable>
 {
@@ -117,7 +117,7 @@ struct II2cDevice :
 };
 
 struct II2cDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<II2cDeviceStatics>
 {
     II2cDeviceStatics(std::nullptr_t = nullptr) noexcept {}

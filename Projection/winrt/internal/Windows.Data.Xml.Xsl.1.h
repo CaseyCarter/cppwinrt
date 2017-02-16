@@ -11,17 +11,17 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Data::Xml::Xsl {
 
-struct __declspec(uuid("7b64703f-550c-48c6-a90f-93a5b964518f")) __declspec(novtable) IXsltProcessor : Windows::IInspectable
+struct __declspec(uuid("7b64703f-550c-48c6-a90f-93a5b964518f")) __declspec(novtable) IXsltProcessor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TransformToString(Windows::Data::Xml::Dom::IXmlNode * inputNode, hstring * output) = 0;
 };
 
-struct __declspec(uuid("8da45c56-97a5-44cb-a8be-27d86280c70a")) __declspec(novtable) IXsltProcessor2 : Windows::IInspectable
+struct __declspec(uuid("8da45c56-97a5-44cb-a8be-27d86280c70a")) __declspec(novtable) IXsltProcessor2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TransformToDocument(Windows::Data::Xml::Dom::IXmlNode * inputNode, Windows::Data::Xml::Dom::IXmlDocument ** output) = 0;
 };
 
-struct __declspec(uuid("274146c0-9a51-4663-bf30-0ef742146f20")) __declspec(novtable) IXsltProcessorFactory : Windows::IInspectable
+struct __declspec(uuid("274146c0-9a51-4663-bf30-0ef742146f20")) __declspec(novtable) IXsltProcessorFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Data::Xml::Dom::IXmlDocument * document, Windows::Data::Xml::Xsl::IXsltProcessor ** xsltProcessor) = 0;
 };

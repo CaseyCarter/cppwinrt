@@ -66,28 +66,28 @@ template <> struct __declspec(uuid("e72bd078-ce02-55ac-a7b9-abd01248d888")) __de
 namespace Windows::Devices::Pwm {
 
 struct IPwmController :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPwmController>
 {
     IPwmController(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPwmControllerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPwmControllerStatics>
 {
     IPwmControllerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPwmControllerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPwmControllerStatics2>
 {
     IPwmControllerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPwmPin :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPwmPin>,
     impl::require<IPwmPin, Windows::Foundation::IClosable>
 {

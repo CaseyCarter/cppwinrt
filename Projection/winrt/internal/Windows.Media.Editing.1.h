@@ -22,7 +22,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::Editing {
 
-struct __declspec(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357")) __declspec(novtable) IBackgroundAudioTrack : Windows::IInspectable
+struct __declspec(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357")) __declspec(novtable) IBackgroundAudioTrack : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TrimTimeFromStart(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) = 0;
@@ -40,18 +40,18 @@ struct __declspec(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357")) __declspec(novta
     virtual HRESULT __stdcall get_AudioEffectDefinitions(Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> ** value) = 0;
 };
 
-struct __declspec(uuid("d9b1c0d7-d018-42a8-a559-cb4d9e97e664")) __declspec(novtable) IBackgroundAudioTrackStatics : Windows::IInspectable
+struct __declspec(uuid("d9b1c0d7-d018-42a8-a559-cb4d9e97e664")) __declspec(novtable) IBackgroundAudioTrackStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromEmbeddedAudioTrack(Windows::Media::Editing::IEmbeddedAudioTrack * embeddedAudioTrack, Windows::Media::Editing::IBackgroundAudioTrack ** value) = 0;
     virtual HRESULT __stdcall abi_CreateFromFileAsync(Windows::Storage::IStorageFile * file, Windows::Foundation::IAsyncOperation<Windows::Media::Editing::BackgroundAudioTrack> ** operation) = 0;
 };
 
-struct __declspec(uuid("55ee5a7a-2d30-3fba-a190-4f1a6454f88f")) __declspec(novtable) IEmbeddedAudioTrack : Windows::IInspectable
+struct __declspec(uuid("55ee5a7a-2d30-3fba-a190-4f1a6454f88f")) __declspec(novtable) IEmbeddedAudioTrack : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAudioEncodingProperties(Windows::Media::MediaProperties::IAudioEncodingProperties ** value) = 0;
 };
 
-struct __declspec(uuid("53f25366-5fba-3ea4-8693-24761811140a")) __declspec(novtable) IMediaClip : Windows::IInspectable
+struct __declspec(uuid("53f25366-5fba-3ea4-8693-24761811140a")) __declspec(novtable) IMediaClip : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TrimTimeFromStart(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) = 0;
@@ -73,19 +73,19 @@ struct __declspec(uuid("53f25366-5fba-3ea4-8693-24761811140a")) __declspec(novta
     virtual HRESULT __stdcall get_VideoEffectDefinitions(Windows::Foundation::Collections::IVector<Windows::Media::Effects::IVideoEffectDefinition> ** value) = 0;
 };
 
-struct __declspec(uuid("fa402b68-928f-43c4-bc6e-783a1a359656")) __declspec(novtable) IMediaClipStatics : Windows::IInspectable
+struct __declspec(uuid("fa402b68-928f-43c4-bc6e-783a1a359656")) __declspec(novtable) IMediaClipStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromColor(Windows::UI::Color color, Windows::Foundation::TimeSpan originalDuration, Windows::Media::Editing::IMediaClip ** value) = 0;
     virtual HRESULT __stdcall abi_CreateFromFileAsync(Windows::Storage::IStorageFile * file, Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> ** operation) = 0;
     virtual HRESULT __stdcall abi_CreateFromImageFileAsync(Windows::Storage::IStorageFile * file, Windows::Foundation::TimeSpan originalDuration, Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> ** operation) = 0;
 };
 
-struct __declspec(uuid("5b1dd7b3-854e-4d9b-877d-4774a556cd12")) __declspec(novtable) IMediaClipStatics2 : Windows::IInspectable
+struct __declspec(uuid("5b1dd7b3-854e-4d9b-877d-4774a556cd12")) __declspec(novtable) IMediaClipStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFromSurface(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface * surface, Windows::Foundation::TimeSpan originalDuration, Windows::Media::Editing::IMediaClip ** value) = 0;
 };
 
-struct __declspec(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947")) __declspec(novtable) IMediaComposition : Windows::IInspectable
+struct __declspec(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947")) __declspec(novtable) IMediaComposition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_Clips(Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaClip> ** value) = 0;
@@ -104,17 +104,17 @@ struct __declspec(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947")) __declspec(novta
     virtual HRESULT __stdcall abi_GeneratePreviewMediaStreamSource(int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Core::IMediaStreamSource ** value) = 0;
 };
 
-struct __declspec(uuid("a59e5372-2366-492c-bec8-e6dfba6d0281")) __declspec(novtable) IMediaComposition2 : Windows::IInspectable
+struct __declspec(uuid("a59e5372-2366-492c-bec8-e6dfba6d0281")) __declspec(novtable) IMediaComposition2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OverlayLayers(Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlayLayer> ** value) = 0;
 };
 
-struct __declspec(uuid("87a08f04-e32a-45ce-8f66-a30df0766224")) __declspec(novtable) IMediaCompositionStatics : Windows::IInspectable
+struct __declspec(uuid("87a08f04-e32a-45ce-8f66-a30df0766224")) __declspec(novtable) IMediaCompositionStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_LoadAsync(Windows::Storage::IStorageFile * file, Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaComposition> ** operation) = 0;
 };
 
-struct __declspec(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4")) __declspec(novtable) IMediaOverlay : Windows::IInspectable
+struct __declspec(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4")) __declspec(novtable) IMediaOverlay : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Foundation::Rect * value) = 0;
     virtual HRESULT __stdcall put_Position(Windows::Foundation::Rect value) = 0;
@@ -128,20 +128,20 @@ struct __declspec(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4")) __declspec(novta
     virtual HRESULT __stdcall put_AudioEnabled(bool value) = 0;
 };
 
-struct __declspec(uuid("b584828a-6188-4f8f-a2e0-aa552d598e18")) __declspec(novtable) IMediaOverlayFactory : Windows::IInspectable
+struct __declspec(uuid("b584828a-6188-4f8f-a2e0-aa552d598e18")) __declspec(novtable) IMediaOverlayFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Media::Editing::IMediaClip * clip, Windows::Media::Editing::IMediaOverlay ** mediaOverlay) = 0;
     virtual HRESULT __stdcall abi_CreateWithPositionAndOpacity(Windows::Media::Editing::IMediaClip * clip, Windows::Foundation::Rect position, double opacity, Windows::Media::Editing::IMediaOverlay ** mediaOverlay) = 0;
 };
 
-struct __declspec(uuid("a6d9ba57-eeda-46c6-bbe5-e398c84168ac")) __declspec(novtable) IMediaOverlayLayer : Windows::IInspectable
+struct __declspec(uuid("a6d9ba57-eeda-46c6-bbe5-e398c84168ac")) __declspec(novtable) IMediaOverlayLayer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Clone(Windows::Media::Editing::IMediaOverlayLayer ** result) = 0;
     virtual HRESULT __stdcall get_Overlays(Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlay> ** value) = 0;
     virtual HRESULT __stdcall get_CustomCompositorDefinition(Windows::Media::Effects::IVideoCompositorDefinition ** value) = 0;
 };
 
-struct __declspec(uuid("947cb473-a39e-4362-abbf-9f8b5070a062")) __declspec(novtable) IMediaOverlayLayerFactory : Windows::IInspectable
+struct __declspec(uuid("947cb473-a39e-4362-abbf-9f8b5070a062")) __declspec(novtable) IMediaOverlayLayerFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithCompositorDefinition(Windows::Media::Effects::IVideoCompositorDefinition * compositorDefinition, Windows::Media::Editing::IMediaOverlayLayer ** mediaOverlayLayer) = 0;
 };

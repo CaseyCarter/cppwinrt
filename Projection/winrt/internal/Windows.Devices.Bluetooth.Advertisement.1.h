@@ -15,7 +15,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Bluetooth::Advertisement {
 
-struct __declspec(uuid("066fb2b7-33d1-4e7d-8367-cf81d0f79653")) __declspec(novtable) IBluetoothLEAdvertisement : Windows::IInspectable
+struct __declspec(uuid("066fb2b7-33d1-4e7d-8367-cf81d0f79653")) __declspec(novtable) IBluetoothLEAdvertisement : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Flags(Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> ** value) = 0;
     virtual HRESULT __stdcall put_Flags(Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> * value) = 0;
@@ -28,7 +28,7 @@ struct __declspec(uuid("066fb2b7-33d1-4e7d-8367-cf81d0f79653")) __declspec(novta
     virtual HRESULT __stdcall abi_GetSectionsByType(uint8_t type, Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> ** sectionList) = 0;
 };
 
-struct __declspec(uuid("fbfad7f2-b9c5-4a08-bc51-502f8ef68a79")) __declspec(novtable) IBluetoothLEAdvertisementBytePattern : Windows::IInspectable
+struct __declspec(uuid("fbfad7f2-b9c5-4a08-bc51-502f8ef68a79")) __declspec(novtable) IBluetoothLEAdvertisementBytePattern : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DataType(uint8_t * value) = 0;
     virtual HRESULT __stdcall put_DataType(uint8_t value) = 0;
@@ -38,12 +38,12 @@ struct __declspec(uuid("fbfad7f2-b9c5-4a08-bc51-502f8ef68a79")) __declspec(novta
     virtual HRESULT __stdcall put_Data(Windows::Storage::Streams::IBuffer * value) = 0;
 };
 
-struct __declspec(uuid("c2e24d73-fd5c-4ec3-be2a-9ca6fa11b7bd")) __declspec(novtable) IBluetoothLEAdvertisementBytePatternFactory : Windows::IInspectable
+struct __declspec(uuid("c2e24d73-fd5c-4ec3-be2a-9ca6fa11b7bd")) __declspec(novtable) IBluetoothLEAdvertisementBytePatternFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(uint8_t dataType, int16_t offset, Windows::Storage::Streams::IBuffer * data, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePattern ** value) = 0;
 };
 
-struct __declspec(uuid("d7213314-3a43-40f9-b6f0-92bfefc34ae3")) __declspec(novtable) IBluetoothLEAdvertisementDataSection : Windows::IInspectable
+struct __declspec(uuid("d7213314-3a43-40f9-b6f0-92bfefc34ae3")) __declspec(novtable) IBluetoothLEAdvertisementDataSection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DataType(uint8_t * value) = 0;
     virtual HRESULT __stdcall put_DataType(uint8_t value) = 0;
@@ -51,12 +51,12 @@ struct __declspec(uuid("d7213314-3a43-40f9-b6f0-92bfefc34ae3")) __declspec(novta
     virtual HRESULT __stdcall put_Data(Windows::Storage::Streams::IBuffer * value) = 0;
 };
 
-struct __declspec(uuid("e7a40942-a845-4045-bf7e-3e9971db8a6b")) __declspec(novtable) IBluetoothLEAdvertisementDataSectionFactory : Windows::IInspectable
+struct __declspec(uuid("e7a40942-a845-4045-bf7e-3e9971db8a6b")) __declspec(novtable) IBluetoothLEAdvertisementDataSectionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(uint8_t dataType, Windows::Storage::Streams::IBuffer * data, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSection ** value) = 0;
 };
 
-struct __declspec(uuid("3bb6472f-0606-434b-a76e-74159f0684d3")) __declspec(novtable) IBluetoothLEAdvertisementDataTypesStatics : Windows::IInspectable
+struct __declspec(uuid("3bb6472f-0606-434b-a76e-74159f0684d3")) __declspec(novtable) IBluetoothLEAdvertisementDataTypesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Flags(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_IncompleteService16BitUuids(uint8_t * value) = 0;
@@ -82,14 +82,14 @@ struct __declspec(uuid("3bb6472f-0606-434b-a76e-74159f0684d3")) __declspec(novta
     virtual HRESULT __stdcall get_ManufacturerSpecificData(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("131eb0d3-d04e-47b1-837e-49405bf6f80f")) __declspec(novtable) IBluetoothLEAdvertisementFilter : Windows::IInspectable
+struct __declspec(uuid("131eb0d3-d04e-47b1-837e-49405bf6f80f")) __declspec(novtable) IBluetoothLEAdvertisementFilter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Advertisement(Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement ** value) = 0;
     virtual HRESULT __stdcall put_Advertisement(Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement * value) = 0;
     virtual HRESULT __stdcall get_BytePatterns(Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern> ** value) = 0;
 };
 
-struct __declspec(uuid("cde820f9-d9fa-43d6-a264-ddd8b7da8b78")) __declspec(novtable) IBluetoothLEAdvertisementPublisher : Windows::IInspectable
+struct __declspec(uuid("cde820f9-d9fa-43d6-a264-ddd8b7da8b78")) __declspec(novtable) IBluetoothLEAdvertisementPublisher : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus * value) = 0;
     virtual HRESULT __stdcall get_Advertisement(Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement ** value) = 0;
@@ -99,18 +99,18 @@ struct __declspec(uuid("cde820f9-d9fa-43d6-a264-ddd8b7da8b78")) __declspec(novta
     virtual HRESULT __stdcall remove_StatusChanged(event_token token) = 0;
 };
 
-struct __declspec(uuid("5c5f065e-b863-4981-a1af-1c544d8b0c0d")) __declspec(novtable) IBluetoothLEAdvertisementPublisherFactory : Windows::IInspectable
+struct __declspec(uuid("5c5f065e-b863-4981-a1af-1c544d8b0c0d")) __declspec(novtable) IBluetoothLEAdvertisementPublisherFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement * advertisement, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher ** value) = 0;
 };
 
-struct __declspec(uuid("09c2bd9f-2dff-4b23-86ee-0d14fb94aeae")) __declspec(novtable) IBluetoothLEAdvertisementPublisherStatusChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("09c2bd9f-2dff-4b23-86ee-0d14fb94aeae")) __declspec(novtable) IBluetoothLEAdvertisementPublisherStatusChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus * value) = 0;
     virtual HRESULT __stdcall get_Error(winrt::Windows::Devices::Bluetooth::BluetoothError * value) = 0;
 };
 
-struct __declspec(uuid("27987ddf-e596-41be-8d43-9e6731d4a913")) __declspec(novtable) IBluetoothLEAdvertisementReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("27987ddf-e596-41be-8d43-9e6731d4a913")) __declspec(novtable) IBluetoothLEAdvertisementReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RawSignalStrengthInDBm(int16_t * value) = 0;
     virtual HRESULT __stdcall get_BluetoothAddress(uint64_t * value) = 0;
@@ -119,7 +119,7 @@ struct __declspec(uuid("27987ddf-e596-41be-8d43-9e6731d4a913")) __declspec(novta
     virtual HRESULT __stdcall get_Advertisement(Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement ** value) = 0;
 };
 
-struct __declspec(uuid("a6ac336f-f3d3-4297-8d6c-c81ea6623f40")) __declspec(novtable) IBluetoothLEAdvertisementWatcher : Windows::IInspectable
+struct __declspec(uuid("a6ac336f-f3d3-4297-8d6c-c81ea6623f40")) __declspec(novtable) IBluetoothLEAdvertisementWatcher : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MinSamplingInterval(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_MaxSamplingInterval(Windows::Foundation::TimeSpan * value) = 0;
@@ -140,17 +140,17 @@ struct __declspec(uuid("a6ac336f-f3d3-4297-8d6c-c81ea6623f40")) __declspec(novta
     virtual HRESULT __stdcall remove_Stopped(event_token token) = 0;
 };
 
-struct __declspec(uuid("9aaf2d56-39ac-453e-b32a-85c657e017f1")) __declspec(novtable) IBluetoothLEAdvertisementWatcherFactory : Windows::IInspectable
+struct __declspec(uuid("9aaf2d56-39ac-453e-b32a-85c657e017f1")) __declspec(novtable) IBluetoothLEAdvertisementWatcherFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementFilter * advertisementFilter, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher ** value) = 0;
 };
 
-struct __declspec(uuid("dd40f84d-e7b9-43e3-9c04-0685d085fd8c")) __declspec(novtable) IBluetoothLEAdvertisementWatcherStoppedEventArgs : Windows::IInspectable
+struct __declspec(uuid("dd40f84d-e7b9-43e3-9c04-0685d085fd8c")) __declspec(novtable) IBluetoothLEAdvertisementWatcherStoppedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Error(winrt::Windows::Devices::Bluetooth::BluetoothError * value) = 0;
 };
 
-struct __declspec(uuid("912dba18-6963-4533-b061-4694dafb34e5")) __declspec(novtable) IBluetoothLEManufacturerData : Windows::IInspectable
+struct __declspec(uuid("912dba18-6963-4533-b061-4694dafb34e5")) __declspec(novtable) IBluetoothLEManufacturerData : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CompanyId(uint16_t * value) = 0;
     virtual HRESULT __stdcall put_CompanyId(uint16_t value) = 0;
@@ -158,7 +158,7 @@ struct __declspec(uuid("912dba18-6963-4533-b061-4694dafb34e5")) __declspec(novta
     virtual HRESULT __stdcall put_Data(Windows::Storage::Streams::IBuffer * value) = 0;
 };
 
-struct __declspec(uuid("c09b39f8-319a-441e-8de5-66a81e877a6c")) __declspec(novtable) IBluetoothLEManufacturerDataFactory : Windows::IInspectable
+struct __declspec(uuid("c09b39f8-319a-441e-8de5-66a81e877a6c")) __declspec(novtable) IBluetoothLEManufacturerDataFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(uint16_t companyId, Windows::Storage::Streams::IBuffer * data, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerData ** value) = 0;
 };

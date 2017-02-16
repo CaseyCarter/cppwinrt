@@ -25,42 +25,42 @@ template <> struct __declspec(uuid("baee1b2f-a5b6-5a03-ae59-fb18f3e025b7")) __de
 namespace Windows::ApplicationModel::Contacts::DataProvider {
 
 struct IContactDataProviderConnection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactDataProviderConnection>
 {
     IContactDataProviderConnection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactDataProviderTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactDataProviderTriggerDetails>
 {
     IContactDataProviderTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactListServerSearchReadBatchRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactListServerSearchReadBatchRequest>
 {
     IContactListServerSearchReadBatchRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactListServerSearchReadBatchRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactListServerSearchReadBatchRequestEventArgs>
 {
     IContactListServerSearchReadBatchRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactListSyncManagerSyncRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactListSyncManagerSyncRequest>
 {
     IContactListSyncManagerSyncRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactListSyncManagerSyncRequestEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactListSyncManagerSyncRequestEventArgs>
 {
     IContactListSyncManagerSyncRequestEventArgs(std::nullptr_t = nullptr) noexcept {}

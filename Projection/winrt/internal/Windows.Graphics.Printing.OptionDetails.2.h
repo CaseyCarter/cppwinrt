@@ -12,7 +12,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_a6487363_b074_5c60_ab16_866dce4ee54d
 #define WINRT_GENERIC_a6487363_b074_5c60_ab16_866dce4ee54d
-template <> struct __declspec(uuid("a6487363-b074-5c60-ab16-866dce4ee54d")) __declspec(novtable) IVectorView<Windows::IInspectable> : impl_IVectorView<Windows::IInspectable> {};
+template <> struct __declspec(uuid("a6487363-b074-5c60-ab16-866dce4ee54d")) __declspec(novtable) IVectorView<Windows::Foundation::IInspectable> : impl_IVectorView<Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_79e5168f_702a_5030_bd44_ef23d8887aed
@@ -32,7 +32,7 @@ template <> struct __declspec(uuid("1b1f456b-8821-592e-b4a7-9b4c3712518e")) __de
 
 #ifndef WINRT_GENERIC_5c88455c_5b59_557c_8064_5e4f3d59a8ec
 #define WINRT_GENERIC_5c88455c_5b59_557c_8064_5e4f3d59a8ec
-template <> struct __declspec(uuid("5c88455c-5b59-557c-8064-5e4f3d59a8ec")) __declspec(novtable) TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> : impl_TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> {};
+template <> struct __declspec(uuid("5c88455c-5b59-557c-8064-5e4f3d59a8ec")) __declspec(novtable) TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -42,12 +42,12 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_092b849b_60b1_52be_a44a_6fe8e933cbe4
 #define WINRT_GENERIC_092b849b_60b1_52be_a44a_6fe8e933cbe4
-template <> struct __declspec(uuid("092b849b-60b1-52be-a44a-6fe8e933cbe4")) __declspec(novtable) IIterable<Windows::IInspectable> : impl_IIterable<Windows::IInspectable> {};
+template <> struct __declspec(uuid("092b849b-60b1-52be-a44a-6fe8e933cbe4")) __declspec(novtable) IIterable<Windows::Foundation::IInspectable> : impl_IIterable<Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_44a94f2d_04f8_5091_b336_be7892dd10be
 #define WINRT_GENERIC_44a94f2d_04f8_5091_b336_be7892dd10be
-template <> struct __declspec(uuid("44a94f2d-04f8-5091-b336-be7892dd10be")) __declspec(novtable) IIterator<Windows::IInspectable> : impl_IIterator<Windows::IInspectable> {};
+template <> struct __declspec(uuid("44a94f2d-04f8-5091-b336-be7892dd10be")) __declspec(novtable) IIterator<Windows::Foundation::IInspectable> : impl_IIterator<Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_f5d9c723_a4b1_5fc8_9f78_0b95b716720b
@@ -71,14 +71,14 @@ template <> struct __declspec(uuid("6770cf39-094f-59c5-8a5d-e3b5dc64db0f")) __de
 namespace Windows::Graphics::Printing::OptionDetails {
 
 struct IPrintCustomItemDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintCustomItemDetails>
 {
     IPrintCustomItemDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintCustomItemListOptionDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintCustomItemListOptionDetails>,
     impl::require<IPrintCustomItemListOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintCustomOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintItemListOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
@@ -86,7 +86,7 @@ struct IPrintCustomItemListOptionDetails :
 };
 
 struct IPrintCustomOptionDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintCustomOptionDetails>,
     impl::require<IPrintCustomOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
@@ -94,7 +94,7 @@ struct IPrintCustomOptionDetails :
 };
 
 struct IPrintCustomTextOptionDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintCustomTextOptionDetails>,
     impl::require<IPrintCustomTextOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintCustomOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
@@ -102,7 +102,7 @@ struct IPrintCustomTextOptionDetails :
 };
 
 struct IPrintItemListOptionDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintItemListOptionDetails>,
     impl::require<IPrintItemListOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
@@ -110,7 +110,7 @@ struct IPrintItemListOptionDetails :
 };
 
 struct IPrintNumberOptionDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintNumberOptionDetails>,
     impl::require<IPrintNumberOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
@@ -118,35 +118,35 @@ struct IPrintNumberOptionDetails :
 };
 
 struct IPrintOptionDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintOptionDetails>
 {
     IPrintOptionDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskOptionChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskOptionChangedEventArgs>
 {
     IPrintTaskOptionChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskOptionDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskOptionDetails>
 {
     IPrintTaskOptionDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTaskOptionDetailsStatic :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTaskOptionDetailsStatic>
 {
     IPrintTaskOptionDetailsStatic(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintTextOptionDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintTextOptionDetails>,
     impl::require<IPrintTextOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {

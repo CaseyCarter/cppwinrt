@@ -180,280 +180,280 @@ template <> struct __declspec(uuid("1896faee-23e2-59ca-9802-0f48eed98ef4")) __de
 namespace Windows::Security::Cryptography::Certificates {
 
 struct ICertificate :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificate>
 {
     ICertificate(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificate2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificate2>
 {
     ICertificate2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificate3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificate3>
 {
     ICertificate3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateChain :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateChain>
 {
     ICertificateChain(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateEnrollmentManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateEnrollmentManagerStatics>
 {
     ICertificateEnrollmentManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateEnrollmentManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateEnrollmentManagerStatics2>
 {
     ICertificateEnrollmentManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateEnrollmentManagerStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateEnrollmentManagerStatics3>
 {
     ICertificateEnrollmentManagerStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateFactory>
 {
     ICertificateFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateKeyUsages :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateKeyUsages>
 {
     ICertificateKeyUsages(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateQuery :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateQuery>
 {
     ICertificateQuery(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateQuery2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateQuery2>
 {
     ICertificateQuery2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateRequestProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateRequestProperties>
 {
     ICertificateRequestProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateRequestProperties2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateRequestProperties2>
 {
     ICertificateRequestProperties2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateRequestProperties3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateRequestProperties3>
 {
     ICertificateRequestProperties3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateStore>
 {
     ICertificateStore(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateStore2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateStore2>
 {
     ICertificateStore2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateStoresStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateStoresStatics>
 {
     ICertificateStoresStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateStoresStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICertificateStoresStatics2>
 {
     ICertificateStoresStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChainBuildingParameters :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChainBuildingParameters>
 {
     IChainBuildingParameters(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IChainValidationParameters :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IChainValidationParameters>
 {
     IChainValidationParameters(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICmsAttachedSignature :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICmsAttachedSignature>
 {
     ICmsAttachedSignature(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICmsAttachedSignatureFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICmsAttachedSignatureFactory>
 {
     ICmsAttachedSignatureFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICmsAttachedSignatureStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICmsAttachedSignatureStatics>
 {
     ICmsAttachedSignatureStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICmsDetachedSignature :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICmsDetachedSignature>
 {
     ICmsDetachedSignature(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICmsDetachedSignatureFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICmsDetachedSignatureFactory>
 {
     ICmsDetachedSignatureFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICmsDetachedSignatureStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICmsDetachedSignatureStatics>
 {
     ICmsDetachedSignatureStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICmsSignerInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICmsSignerInfo>
 {
     ICmsSignerInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICmsTimestampInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICmsTimestampInfo>
 {
     ICmsTimestampInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyAlgorithmNamesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyAlgorithmNamesStatics>
 {
     IKeyAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyAlgorithmNamesStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyAlgorithmNamesStatics2>
 {
     IKeyAlgorithmNamesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyAttestationHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyAttestationHelperStatics>
 {
     IKeyAttestationHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyAttestationHelperStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyAttestationHelperStatics2>
 {
     IKeyAttestationHelperStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyStorageProviderNamesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyStorageProviderNamesStatics>
 {
     IKeyStorageProviderNamesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyStorageProviderNamesStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyStorageProviderNamesStatics2>
 {
     IKeyStorageProviderNamesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPfxImportParameters :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPfxImportParameters>
 {
     IPfxImportParameters(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStandardCertificateStoreNamesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStandardCertificateStoreNamesStatics>
 {
     IStandardCertificateStoreNamesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISubjectAlternativeNameInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISubjectAlternativeNameInfo>
 {
     ISubjectAlternativeNameInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserCertificateEnrollmentManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserCertificateEnrollmentManager>
 {
     IUserCertificateEnrollmentManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserCertificateEnrollmentManager2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserCertificateEnrollmentManager2>
 {
     IUserCertificateEnrollmentManager2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserCertificateStore :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserCertificateStore>
 {
     IUserCertificateStore(std::nullptr_t = nullptr) noexcept {}

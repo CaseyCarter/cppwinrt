@@ -36,7 +36,7 @@ template <> struct __declspec(uuid("2b06bdac-983b-5552-b5c9-b0990a2db3a1")) __de
 
 #ifndef WINRT_GENERIC_f1e6a632_f97f_54d9_9e1b_a714edc3ff06
 #define WINRT_GENERIC_f1e6a632_f97f_54d9_9e1b_a714edc3ff06
-template <> struct __declspec(uuid("f1e6a632-f97f-54d9-9e1b-a714edc3ff06")) __declspec(novtable) TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> : impl_TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f1e6a632-f97f-54d9-9e1b-a714edc3ff06")) __declspec(novtable) TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_d3e1f8c7_45c5_5249_b336_a111bfaa985b
@@ -60,63 +60,63 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::Storage::Pickers::Provider {
 
 struct IFileOpenPickerUI :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileOpenPickerUI>
 {
     IFileOpenPickerUI(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]] IFileRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileRemovedEventArgs>
 {
     IFileRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileSavePickerUI :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileSavePickerUI>
 {
     IFileSavePickerUI(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPickerClosingDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPickerClosingDeferral>
 {
     IPickerClosingDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPickerClosingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPickerClosingEventArgs>
 {
     IPickerClosingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPickerClosingOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPickerClosingOperation>
 {
     IPickerClosingOperation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITargetFileRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITargetFileRequest>
 {
     ITargetFileRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITargetFileRequestDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITargetFileRequestDeferral>
 {
     ITargetFileRequestDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITargetFileRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITargetFileRequestedEventArgs>
 {
     ITargetFileRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}

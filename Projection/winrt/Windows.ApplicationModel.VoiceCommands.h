@@ -249,7 +249,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
         }
     }
 
-    HRESULT __stdcall get_AppContext(impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall get_AppContext(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
@@ -264,12 +264,12 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
         }
     }
 
-    HRESULT __stdcall put_AppContext(impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall put_AppContext(impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AppContext(*reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().AppContext(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -954,14 +954,14 @@ template <typename D> void impl_IVoiceCommandContentTile<D>::Image(const Windows
     check_hresult(WINRT_SHIM(IVoiceCommandContentTile)->put_Image(get_abi(value)));
 }
 
-template <typename D> Windows::IInspectable impl_IVoiceCommandContentTile<D>::AppContext() const
+template <typename D> Windows::Foundation::IInspectable impl_IVoiceCommandContentTile<D>::AppContext() const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IVoiceCommandContentTile)->get_AppContext(put_abi(value)));
     return value;
 }
 
-template <typename D> void impl_IVoiceCommandContentTile<D>::AppContext(const Windows::IInspectable & value) const
+template <typename D> void impl_IVoiceCommandContentTile<D>::AppContext(const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IVoiceCommandContentTile)->put_AppContext(get_abi(value)));
 }

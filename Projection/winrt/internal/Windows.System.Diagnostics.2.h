@@ -30,56 +30,56 @@ template <> struct __declspec(uuid("97b73627-b296-5076-b8cd-6bd8a240e966")) __de
 namespace Windows::System::Diagnostics {
 
 struct IProcessCpuUsage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessCpuUsage>
 {
     IProcessCpuUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessCpuUsageReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessCpuUsageReport>
 {
     IProcessCpuUsageReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessDiagnosticInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessDiagnosticInfo>
 {
     IProcessDiagnosticInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessDiagnosticInfoStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessDiagnosticInfoStatics>
 {
     IProcessDiagnosticInfoStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessDiskUsage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessDiskUsage>
 {
     IProcessDiskUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessDiskUsageReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessDiskUsageReport>
 {
     IProcessDiskUsageReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessMemoryUsage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessMemoryUsage>
 {
     IProcessMemoryUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IProcessMemoryUsageReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IProcessMemoryUsageReport>
 {
     IProcessMemoryUsageReport(std::nullptr_t = nullptr) noexcept {}

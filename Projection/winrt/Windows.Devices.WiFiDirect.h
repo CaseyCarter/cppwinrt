@@ -460,12 +460,12 @@ struct produce<D, Windows::Devices::WiFiDirect::IWiFiDirectDevice> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_ConnectionStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ConnectionStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1085,14 +1085,14 @@ template <typename D> hstring impl_IWiFiDirectDevice<D>::DeviceId() const
     return value;
 }
 
-template <typename D> event_token impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IWiFiDirectDevice)->add_ConnectionStatusChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IWiFiDirectDevice> impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IWiFiDirectDevice> impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IWiFiDirectDevice>(this, &ABI::Windows::Devices::WiFiDirect::IWiFiDirectDevice::remove_ConnectionStatusChanged, ConnectionStatusChanged(handler));
 }

@@ -232,12 +232,12 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_NameChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_NameChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().NameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().NameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -260,12 +260,12 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_SdpRecordsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_SdpRecordsChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().SdpRecordsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().SdpRecordsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -288,12 +288,12 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice> : produce_base<
         }
     }
 
-    HRESULT __stdcall add_ConnectionStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ConnectionStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1452,12 +1452,12 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_NameChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_NameChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().NameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().NameChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1480,12 +1480,12 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_GattServicesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_GattServicesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().GattServicesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().GattServicesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1508,12 +1508,12 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice> : produce_bas
         }
     }
 
-    HRESULT __stdcall add_ConnectionStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ConnectionStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ConnectionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1986,14 +1986,14 @@ template <typename D> uint64_t impl_IBluetoothDevice<D>::BluetoothAddress() cons
     return value;
 }
 
-template <typename D> event_token impl_IBluetoothDevice<D>::NameChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IBluetoothDevice<D>::NameChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IBluetoothDevice)->add_NameChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IBluetoothDevice> impl_IBluetoothDevice<D>::NameChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IBluetoothDevice> impl_IBluetoothDevice<D>::NameChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IBluetoothDevice>(this, &ABI::Windows::Devices::Bluetooth::IBluetoothDevice::remove_NameChanged, NameChanged(handler));
 }
@@ -2003,14 +2003,14 @@ template <typename D> void impl_IBluetoothDevice<D>::NameChanged(event_token tok
     check_hresult(WINRT_SHIM(IBluetoothDevice)->remove_NameChanged(token));
 }
 
-template <typename D> event_token impl_IBluetoothDevice<D>::SdpRecordsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IBluetoothDevice<D>::SdpRecordsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IBluetoothDevice)->add_SdpRecordsChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IBluetoothDevice> impl_IBluetoothDevice<D>::SdpRecordsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IBluetoothDevice> impl_IBluetoothDevice<D>::SdpRecordsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IBluetoothDevice>(this, &ABI::Windows::Devices::Bluetooth::IBluetoothDevice::remove_SdpRecordsChanged, SdpRecordsChanged(handler));
 }
@@ -2020,14 +2020,14 @@ template <typename D> void impl_IBluetoothDevice<D>::SdpRecordsChanged(event_tok
     check_hresult(WINRT_SHIM(IBluetoothDevice)->remove_SdpRecordsChanged(token));
 }
 
-template <typename D> event_token impl_IBluetoothDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IBluetoothDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IBluetoothDevice)->add_ConnectionStatusChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IBluetoothDevice> impl_IBluetoothDevice<D>::ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IBluetoothDevice> impl_IBluetoothDevice<D>::ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IBluetoothDevice>(this, &ABI::Windows::Devices::Bluetooth::IBluetoothDevice::remove_ConnectionStatusChanged, ConnectionStatusChanged(handler));
 }
@@ -2513,14 +2513,14 @@ template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::Gatt
     return service;
 }
 
-template <typename D> event_token impl_IBluetoothLEDevice<D>::NameChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IBluetoothLEDevice<D>::NameChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IBluetoothLEDevice)->add_NameChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IBluetoothLEDevice> impl_IBluetoothLEDevice<D>::NameChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IBluetoothLEDevice> impl_IBluetoothLEDevice<D>::NameChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IBluetoothLEDevice>(this, &ABI::Windows::Devices::Bluetooth::IBluetoothLEDevice::remove_NameChanged, NameChanged(handler));
 }
@@ -2530,14 +2530,14 @@ template <typename D> void impl_IBluetoothLEDevice<D>::NameChanged(event_token t
     check_hresult(WINRT_SHIM(IBluetoothLEDevice)->remove_NameChanged(token));
 }
 
-template <typename D> event_token impl_IBluetoothLEDevice<D>::GattServicesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IBluetoothLEDevice<D>::GattServicesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IBluetoothLEDevice)->add_GattServicesChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IBluetoothLEDevice> impl_IBluetoothLEDevice<D>::GattServicesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IBluetoothLEDevice> impl_IBluetoothLEDevice<D>::GattServicesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IBluetoothLEDevice>(this, &ABI::Windows::Devices::Bluetooth::IBluetoothLEDevice::remove_GattServicesChanged, GattServicesChanged(handler));
 }
@@ -2547,14 +2547,14 @@ template <typename D> void impl_IBluetoothLEDevice<D>::GattServicesChanged(event
     check_hresult(WINRT_SHIM(IBluetoothLEDevice)->remove_GattServicesChanged(token));
 }
 
-template <typename D> event_token impl_IBluetoothLEDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IBluetoothLEDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IBluetoothLEDevice)->add_ConnectionStatusChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IBluetoothLEDevice> impl_IBluetoothLEDevice<D>::ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IBluetoothLEDevice> impl_IBluetoothLEDevice<D>::ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IBluetoothLEDevice>(this, &ABI::Windows::Devices::Bluetooth::IBluetoothLEDevice::remove_ConnectionStatusChanged, ConnectionStatusChanged(handler));
 }

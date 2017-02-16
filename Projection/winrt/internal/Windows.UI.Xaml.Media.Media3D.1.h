@@ -5,6 +5,7 @@
 
 #include "../base.h"
 #include "Windows.UI.Xaml.Media.Media3D.0.h"
+#include "Windows.Foundation.0.h"
 #include "Windows.UI.Xaml.0.h"
 
 WINRT_EXPORT namespace winrt {
@@ -41,7 +42,7 @@ using Matrix3D = ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D;
 
 namespace ABI::Windows::UI::Xaml::Media::Media3D {
 
-struct __declspec(uuid("8977cb01-af8d-4af5-b084-c08eb9704abe")) __declspec(novtable) ICompositeTransform3D : Windows::IInspectable
+struct __declspec(uuid("8977cb01-af8d-4af5-b084-c08eb9704abe")) __declspec(novtable) ICompositeTransform3D : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterX(double * value) = 0;
     virtual HRESULT __stdcall put_CenterX(double value) = 0;
@@ -69,7 +70,7 @@ struct __declspec(uuid("8977cb01-af8d-4af5-b084-c08eb9704abe")) __declspec(novta
     virtual HRESULT __stdcall put_TranslateZ(double value) = 0;
 };
 
-struct __declspec(uuid("ddbf4d67-2a25-48f3-9808-c51ec3d55bec")) __declspec(novtable) ICompositeTransform3DStatics : Windows::IInspectable
+struct __declspec(uuid("ddbf4d67-2a25-48f3-9808-c51ec3d55bec")) __declspec(novtable) ICompositeTransform3DStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CenterYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -85,11 +86,11 @@ struct __declspec(uuid("ddbf4d67-2a25-48f3-9808-c51ec3d55bec")) __declspec(novta
     virtual HRESULT __stdcall get_TranslateZProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("e48c10ef-9927-4c9b-8213-07775512ba04")) __declspec(novtable) IMatrix3DHelper : Windows::IInspectable
+struct __declspec(uuid("e48c10ef-9927-4c9b-8213-07775512ba04")) __declspec(novtable) IMatrix3DHelper : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("9264545e-e158-4e74-8899-689160bd2f8c")) __declspec(novtable) IMatrix3DHelperStatics : Windows::IInspectable
+struct __declspec(uuid("9264545e-e158-4e74-8899-689160bd2f8c")) __declspec(novtable) IMatrix3DHelperStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Identity(Windows::UI::Xaml::Media::Media3D::Matrix3D * value) = 0;
     virtual HRESULT __stdcall abi_Multiply(Windows::UI::Xaml::Media::Media3D::Matrix3D matrix1, Windows::UI::Xaml::Media::Media3D::Matrix3D matrix2, Windows::UI::Xaml::Media::Media3D::Matrix3D * returnValue) = 0;
@@ -99,7 +100,7 @@ struct __declspec(uuid("9264545e-e158-4e74-8899-689160bd2f8c")) __declspec(novta
     virtual HRESULT __stdcall abi_Invert(Windows::UI::Xaml::Media::Media3D::Matrix3D target, Windows::UI::Xaml::Media::Media3D::Matrix3D * returnValue) = 0;
 };
 
-struct __declspec(uuid("9a7b532a-30f9-40a1-96c9-c59d87f95ac3")) __declspec(novtable) IPerspectiveTransform3D : Windows::IInspectable
+struct __declspec(uuid("9a7b532a-30f9-40a1-96c9-c59d87f95ac3")) __declspec(novtable) IPerspectiveTransform3D : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Depth(double * value) = 0;
     virtual HRESULT __stdcall put_Depth(double value) = 0;
@@ -109,20 +110,20 @@ struct __declspec(uuid("9a7b532a-30f9-40a1-96c9-c59d87f95ac3")) __declspec(novta
     virtual HRESULT __stdcall put_OffsetY(double value) = 0;
 };
 
-struct __declspec(uuid("8e6f6400-620c-48c7-844d-3f0984da5b17")) __declspec(novtable) IPerspectiveTransform3DStatics : Windows::IInspectable
+struct __declspec(uuid("8e6f6400-620c-48c7-844d-3f0984da5b17")) __declspec(novtable) IPerspectiveTransform3DStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DepthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OffsetXProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_OffsetYProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
-struct __declspec(uuid("ae3ed43a-a9fc-4c31-86cd-56d9ca251a69")) __declspec(novtable) ITransform3D : Windows::IInspectable
+struct __declspec(uuid("ae3ed43a-a9fc-4c31-86cd-56d9ca251a69")) __declspec(novtable) ITransform3D : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("052c1f7a-8d73-48cd-bbb8-d00434caae5d")) __declspec(novtable) ITransform3DFactory : Windows::IInspectable
+struct __declspec(uuid("052c1f7a-8d73-48cd-bbb8-d00434caae5d")) __declspec(novtable) ITransform3DFactory : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall abi_CreateInstance(Windows::IInspectable * outer, Windows::IInspectable ** inner, Windows::UI::Xaml::Media::Media3D::ITransform3D ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Media3D::ITransform3D ** instance) = 0;
 };
 
 }
@@ -227,7 +228,7 @@ struct WINRT_EBO impl_ITransform3D
 template <typename D>
 struct WINRT_EBO impl_ITransform3DFactory
 {
-    Windows::UI::Xaml::Media::Media3D::Transform3D CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Media3D::Transform3D CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 }

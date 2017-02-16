@@ -16,17 +16,17 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::AppService {
 
-struct __declspec(uuid("ef0d2507-d132-4c85-8395-3c31d5a1e941")) __declspec(novtable) IAppServiceCatalogStatics : Windows::IInspectable
+struct __declspec(uuid("ef0d2507-d132-4c85-8395-3c31d5a1e941")) __declspec(novtable) IAppServiceCatalogStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FindAppServiceProvidersAsync(hstring appServiceName, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> ** operation) = 0;
 };
 
-struct __declspec(uuid("de6016f6-cb03-4d35-ac8d-cc6303239731")) __declspec(novtable) IAppServiceClosedEventArgs : Windows::IInspectable
+struct __declspec(uuid("de6016f6-cb03-4d35-ac8d-cc6303239731")) __declspec(novtable) IAppServiceClosedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::ApplicationModel::AppService::AppServiceClosedStatus * value) = 0;
 };
 
-struct __declspec(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27")) __declspec(novtable) IAppServiceConnection : Windows::IInspectable
+struct __declspec(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27")) __declspec(novtable) IAppServiceConnection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppServiceName(hstring * value) = 0;
     virtual HRESULT __stdcall put_AppServiceName(hstring value) = 0;
@@ -40,44 +40,44 @@ struct __declspec(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27")) __declspec(novta
     virtual HRESULT __stdcall remove_ServiceClosed(event_token token) = 0;
 };
 
-struct __declspec(uuid("8bdfcd5f-2302-4fbd-8061-52511c2f8bf9")) __declspec(novtable) IAppServiceConnection2 : Windows::IInspectable
+struct __declspec(uuid("8bdfcd5f-2302-4fbd-8061-52511c2f8bf9")) __declspec(novtable) IAppServiceConnection2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_OpenRemoteAsync(Windows::System::RemoteSystems::IRemoteSystemConnectionRequest * remoteSystemConnectionRequest, Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> ** operation) = 0;
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
     virtual HRESULT __stdcall put_User(Windows::System::IUser * value) = 0;
 };
 
-struct __declspec(uuid("7e1b5322-eab0-4248-ae04-fdf93838e472")) __declspec(novtable) IAppServiceDeferral : Windows::IInspectable
+struct __declspec(uuid("7e1b5322-eab0-4248-ae04-fdf93838e472")) __declspec(novtable) IAppServiceDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
 
-struct __declspec(uuid("20e58d9d-18de-4b01-80ba-90a76204e3c8")) __declspec(novtable) IAppServiceRequest : Windows::IInspectable
+struct __declspec(uuid("20e58d9d-18de-4b01-80ba-90a76204e3c8")) __declspec(novtable) IAppServiceRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Message(Windows::Foundation::Collections::IPropertySet ** value) = 0;
     virtual HRESULT __stdcall abi_SendResponseAsync(Windows::Foundation::Collections::IPropertySet * message, Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceResponseStatus> ** operation) = 0;
 };
 
-struct __declspec(uuid("6e122360-ff65-44ae-9e45-857fe4180681")) __declspec(novtable) IAppServiceRequestReceivedEventArgs : Windows::IInspectable
+struct __declspec(uuid("6e122360-ff65-44ae-9e45-857fe4180681")) __declspec(novtable) IAppServiceRequestReceivedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Request(Windows::ApplicationModel::AppService::IAppServiceRequest ** value) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::ApplicationModel::AppService::IAppServiceDeferral ** value) = 0;
 };
 
-struct __declspec(uuid("8d503cec-9aa3-4e68-9559-9de63e372ce4")) __declspec(novtable) IAppServiceResponse : Windows::IInspectable
+struct __declspec(uuid("8d503cec-9aa3-4e68-9559-9de63e372ce4")) __declspec(novtable) IAppServiceResponse : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Message(Windows::Foundation::Collections::IPropertySet ** value) = 0;
     virtual HRESULT __stdcall get_Status(winrt::Windows::ApplicationModel::AppService::AppServiceResponseStatus * value) = 0;
 };
 
-struct __declspec(uuid("88a2dcac-ad28-41b8-80bb-bdf1b2169e19")) __declspec(novtable) IAppServiceTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("88a2dcac-ad28-41b8-80bb-bdf1b2169e19")) __declspec(novtable) IAppServiceTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
     virtual HRESULT __stdcall get_CallerPackageFamilyName(hstring * value) = 0;
     virtual HRESULT __stdcall get_AppServiceConnection(Windows::ApplicationModel::AppService::IAppServiceConnection ** value) = 0;
 };
 
-struct __declspec(uuid("e83d54b2-28cc-43f2-b465-c0482e59e2dc")) __declspec(novtable) IAppServiceTriggerDetails2 : Windows::IInspectable
+struct __declspec(uuid("e83d54b2-28cc-43f2-b465-c0482e59e2dc")) __declspec(novtable) IAppServiceTriggerDetails2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsRemoteSystemConnection(bool * value) = 0;
 };

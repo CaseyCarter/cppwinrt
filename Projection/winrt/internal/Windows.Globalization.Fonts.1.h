@@ -11,7 +11,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Globalization::Fonts {
 
-struct __declspec(uuid("b12e5c3a-b76d-459b-beeb-901151cd77d1")) __declspec(novtable) ILanguageFont : Windows::IInspectable
+struct __declspec(uuid("b12e5c3a-b76d-459b-beeb-901151cd77d1")) __declspec(novtable) ILanguageFont : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontFamily(hstring * value) = 0;
     virtual HRESULT __stdcall get_FontWeight(Windows::UI::Text::FontWeight * weight) = 0;
@@ -20,7 +20,7 @@ struct __declspec(uuid("b12e5c3a-b76d-459b-beeb-901151cd77d1")) __declspec(novta
     virtual HRESULT __stdcall get_ScaleFactor(double * scale) = 0;
 };
 
-struct __declspec(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6")) __declspec(novtable) ILanguageFontGroup : Windows::IInspectable
+struct __declspec(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6")) __declspec(novtable) ILanguageFontGroup : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UITextFont(Windows::Globalization::Fonts::ILanguageFont ** value) = 0;
     virtual HRESULT __stdcall get_UIHeadingFont(Windows::Globalization::Fonts::ILanguageFont ** value) = 0;
@@ -35,7 +35,7 @@ struct __declspec(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6")) __declspec(novta
     virtual HRESULT __stdcall get_DocumentAlternate2Font(Windows::Globalization::Fonts::ILanguageFont ** value) = 0;
 };
 
-struct __declspec(uuid("fcaeac67-4e77-49c7-b856-dde934fc735b")) __declspec(novtable) ILanguageFontGroupFactory : Windows::IInspectable
+struct __declspec(uuid("fcaeac67-4e77-49c7-b856-dde934fc735b")) __declspec(novtable) ILanguageFontGroupFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateLanguageFontGroup(hstring languageTag, Windows::Globalization::Fonts::ILanguageFontGroup ** recommendedFonts) = 0;
 };

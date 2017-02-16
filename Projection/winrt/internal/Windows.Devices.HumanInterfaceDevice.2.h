@@ -156,35 +156,35 @@ template <> struct __declspec(uuid("868f060d-e0d4-571b-b2f7-431d6984a513")) __de
 namespace Windows::Devices::HumanInterfaceDevice {
 
 struct IHidBooleanControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidBooleanControl>
 {
     IHidBooleanControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidBooleanControlDescription :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidBooleanControlDescription>
 {
     IHidBooleanControlDescription(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidBooleanControlDescription2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidBooleanControlDescription2>
 {
     IHidBooleanControlDescription2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidCollection>
 {
     IHidCollection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidDevice>,
     impl::require<IHidDevice, Windows::Foundation::IClosable>
 {
@@ -192,49 +192,49 @@ struct IHidDevice :
 };
 
 struct IHidDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidDeviceStatics>
 {
     IHidDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidFeatureReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidFeatureReport>
 {
     IHidFeatureReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidInputReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidInputReport>
 {
     IHidInputReport(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidInputReportReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidInputReportReceivedEventArgs>
 {
     IHidInputReportReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidNumericControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidNumericControl>
 {
     IHidNumericControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidNumericControlDescription :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidNumericControlDescription>
 {
     IHidNumericControlDescription(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHidOutputReport :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHidOutputReport>
 {
     IHidOutputReport(std::nullptr_t = nullptr) noexcept {}

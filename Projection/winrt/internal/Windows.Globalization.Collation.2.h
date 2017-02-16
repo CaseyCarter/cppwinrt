@@ -30,14 +30,14 @@ template <> struct __declspec(uuid("57e89bbc-9220-5df2-844b-ddfe6605db5f")) __de
 namespace Windows::Globalization::Collation {
 
 struct ICharacterGrouping :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICharacterGrouping>
 {
     ICharacterGrouping(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICharacterGroupings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICharacterGroupings>,
     impl::require<ICharacterGroupings, Windows::Foundation::Collections::IIterable<Windows::Globalization::Collation::CharacterGrouping>, Windows::Foundation::Collections::IVectorView<Windows::Globalization::Collation::CharacterGrouping>>
 {

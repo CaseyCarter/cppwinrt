@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Graphics::Effects {
 
 struct IGraphicsEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGraphicsEffect>,
     impl::require<IGraphicsEffect, Windows::Graphics::Effects::IGraphicsEffectSource>
 {
@@ -18,7 +18,7 @@ struct IGraphicsEffect :
 };
 
 struct IGraphicsEffectSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGraphicsEffectSource>
 {
     IGraphicsEffectSource(std::nullptr_t = nullptr) noexcept {}

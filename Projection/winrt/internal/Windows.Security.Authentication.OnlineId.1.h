@@ -13,7 +13,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Security::Authentication::OnlineId {
 
-struct __declspec(uuid("a003f58a-29ab-4817-b884-d7516dad18b9")) __declspec(novtable) IOnlineIdAuthenticator : Windows::IInspectable
+struct __declspec(uuid("a003f58a-29ab-4817-b884-d7516dad18b9")) __declspec(novtable) IOnlineIdAuthenticator : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AuthenticateUserAsync(Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest * request, Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::OnlineId::UserIdentity> ** authenticationOperation) = 0;
     virtual HRESULT __stdcall abi_AuthenticateUserAsyncAdvanced(Windows::Foundation::Collections::IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> * requests, winrt::Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType, Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::OnlineId::UserIdentity> ** authenticationOperation) = 0;
@@ -24,26 +24,26 @@ struct __declspec(uuid("a003f58a-29ab-4817-b884-d7516dad18b9")) __declspec(novta
     virtual HRESULT __stdcall get_AuthenticatedSafeCustomerId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("c95c547f-d781-4a94-acb8-c59874238c26")) __declspec(novtable) IOnlineIdServiceTicket : Windows::IInspectable
+struct __declspec(uuid("c95c547f-d781-4a94-acb8-c59874238c26")) __declspec(novtable) IOnlineIdServiceTicket : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Value(hstring * value) = 0;
     virtual HRESULT __stdcall get_Request(Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest ** value) = 0;
     virtual HRESULT __stdcall get_ErrorCode(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("297445d3-fb63-4135-8909-4e354c061466")) __declspec(novtable) IOnlineIdServiceTicketRequest : Windows::IInspectable
+struct __declspec(uuid("297445d3-fb63-4135-8909-4e354c061466")) __declspec(novtable) IOnlineIdServiceTicketRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Service(hstring * value) = 0;
     virtual HRESULT __stdcall get_Policy(hstring * value) = 0;
 };
 
-struct __declspec(uuid("bebb0a08-9e73-4077-9614-08614c0bc245")) __declspec(novtable) IOnlineIdServiceTicketRequestFactory : Windows::IInspectable
+struct __declspec(uuid("bebb0a08-9e73-4077-9614-08614c0bc245")) __declspec(novtable) IOnlineIdServiceTicketRequestFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateOnlineIdServiceTicketRequest(hstring service, hstring policy, Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest ** onlineIdServiceTicketRequest) = 0;
     virtual HRESULT __stdcall abi_CreateOnlineIdServiceTicketRequestAdvanced(hstring service, Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest ** onlineIdServiceTicketRequest) = 0;
 };
 
-struct __declspec(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88")) __declspec(novtable) IUserIdentity : Windows::IInspectable
+struct __declspec(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88")) __declspec(novtable) IUserIdentity : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Tickets(Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> ** value) = 0;
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;

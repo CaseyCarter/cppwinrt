@@ -14,7 +14,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::SocialInfo {
 
-struct __declspec(uuid("0b6a985a-d59d-40be-980c-488a2ab30a83")) __declspec(novtable) ISocialFeedChildItem : Windows::IInspectable
+struct __declspec(uuid("0b6a985a-d59d-40be-980c-488a2ab30a83")) __declspec(novtable) ISocialFeedChildItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Author(Windows::ApplicationModel::SocialInfo::ISocialUserInfo ** value) = 0;
     virtual HRESULT __stdcall get_PrimaryContent(Windows::ApplicationModel::SocialInfo::ISocialFeedContent ** value) = 0;
@@ -28,7 +28,7 @@ struct __declspec(uuid("0b6a985a-d59d-40be-980c-488a2ab30a83")) __declspec(novta
     virtual HRESULT __stdcall put_SharedItem(Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem * value) = 0;
 };
 
-struct __declspec(uuid("a234e429-3e39-494d-a37c-f462a2494514")) __declspec(novtable) ISocialFeedContent : Windows::IInspectable
+struct __declspec(uuid("a234e429-3e39-494d-a37c-f462a2494514")) __declspec(novtable) ISocialFeedContent : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
     virtual HRESULT __stdcall put_Title(hstring value) = 0;
@@ -38,7 +38,7 @@ struct __declspec(uuid("a234e429-3e39-494d-a37c-f462a2494514")) __declspec(novta
     virtual HRESULT __stdcall put_TargetUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
 };
 
-struct __declspec(uuid("4f1392ab-1f72-4d33-b695-de3e1db60317")) __declspec(novtable) ISocialFeedItem : Windows::IInspectable
+struct __declspec(uuid("4f1392ab-1f72-4d33-b695-de3e1db60317")) __declspec(novtable) ISocialFeedItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Author(Windows::ApplicationModel::SocialInfo::ISocialUserInfo ** value) = 0;
     virtual HRESULT __stdcall get_PrimaryContent(Windows::ApplicationModel::SocialInfo::ISocialFeedContent ** value) = 0;
@@ -62,7 +62,7 @@ struct __declspec(uuid("4f1392ab-1f72-4d33-b695-de3e1db60317")) __declspec(novta
     virtual HRESULT __stdcall put_Style(winrt::Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle value) = 0;
 };
 
-struct __declspec(uuid("7bfb9e40-a6aa-45a7-9ff6-54c42105dd1f")) __declspec(novtable) ISocialFeedSharedItem : Windows::IInspectable
+struct __declspec(uuid("7bfb9e40-a6aa-45a7-9ff6-54c42105dd1f")) __declspec(novtable) ISocialFeedSharedItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OriginalSource(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall put_OriginalSource(Windows::Foundation::IUriRuntimeClass * value) = 0;
@@ -75,7 +75,7 @@ struct __declspec(uuid("7bfb9e40-a6aa-45a7-9ff6-54c42105dd1f")) __declspec(novta
     virtual HRESULT __stdcall get_Thumbnail(Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail ** value) = 0;
 };
 
-struct __declspec(uuid("5cbf831a-3f08-497f-917f-57e09d84b141")) __declspec(novtable) ISocialItemThumbnail : Windows::IInspectable
+struct __declspec(uuid("5cbf831a-3f08-497f-917f-57e09d84b141")) __declspec(novtable) ISocialItemThumbnail : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TargetUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
     virtual HRESULT __stdcall put_TargetUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
@@ -86,7 +86,7 @@ struct __declspec(uuid("5cbf831a-3f08-497f-917f-57e09d84b141")) __declspec(novta
     virtual HRESULT __stdcall abi_SetImageAsync(Windows::Storage::Streams::IInputStream * image, Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
-struct __declspec(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61")) __declspec(novtable) ISocialUserInfo : Windows::IInspectable
+struct __declspec(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61")) __declspec(novtable) ISocialUserInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
     virtual HRESULT __stdcall put_DisplayName(hstring value) = 0;

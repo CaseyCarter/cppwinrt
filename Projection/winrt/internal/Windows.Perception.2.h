@@ -10,14 +10,14 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Perception {
 
 struct IPerceptionTimestamp :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionTimestamp>
 {
     IPerceptionTimestamp(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPerceptionTimestampHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPerceptionTimestampHelperStatics>
 {
     IPerceptionTimestampHelperStatics(std::nullptr_t = nullptr) noexcept {}

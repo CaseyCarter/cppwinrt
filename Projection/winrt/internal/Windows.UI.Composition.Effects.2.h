@@ -11,7 +11,7 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Composition::Effects {
 
 struct ISceneLightingEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISceneLightingEffect>
 {
     ISceneLightingEffect(std::nullptr_t = nullptr) noexcept {}

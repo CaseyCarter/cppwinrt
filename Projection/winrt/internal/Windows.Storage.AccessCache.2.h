@@ -80,28 +80,28 @@ template <> struct __declspec(uuid("d1a0a6c4-889d-519b-8508-26241b329b7e")) __de
 namespace Windows::Storage::AccessCache {
 
 struct IItemRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IItemRemovedEventArgs>
 {
     IItemRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageApplicationPermissionsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageApplicationPermissionsStatics>
 {
     IStorageApplicationPermissionsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageItemAccessList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageItemAccessList>
 {
     IStorageItemAccessList(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStorageItemMostRecentlyUsedList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageItemMostRecentlyUsedList>,
     impl::require<IStorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::IStorageItemAccessList>
 {
@@ -109,7 +109,7 @@ struct IStorageItemMostRecentlyUsedList :
 };
 
 struct IStorageItemMostRecentlyUsedList2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStorageItemMostRecentlyUsedList2>,
     impl::require<IStorageItemMostRecentlyUsedList2, Windows::Storage::AccessCache::IStorageItemAccessList, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>
 {

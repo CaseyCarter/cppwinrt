@@ -457,12 +457,12 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserve
         }
     }
 
-    HRESULT __stdcall add_ObservedSurfacesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_ObservedSurfacesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().ObservedSurfacesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().ObservedSurfacesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -707,14 +707,14 @@ template <typename D> void impl_ISpatialSurfaceObserver<D>::SetBoundingVolumes(c
     check_hresult(WINRT_SHIM(ISpatialSurfaceObserver)->abi_SetBoundingVolumes(get_abi(bounds)));
 }
 
-template <typename D> event_token impl_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ISpatialSurfaceObserver)->add_ObservedSurfacesChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ISpatialSurfaceObserver> impl_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ISpatialSurfaceObserver> impl_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ISpatialSurfaceObserver>(this, &ABI::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver::remove_ObservedSurfacesChanged, ObservedSurfacesChanged(handler));
 }

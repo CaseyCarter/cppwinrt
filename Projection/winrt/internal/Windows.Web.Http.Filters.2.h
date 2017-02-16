@@ -86,7 +86,7 @@ template <> struct __declspec(uuid("beadb572-f9a3-5e93-b6ca-e311b65933fc")) __de
 namespace Windows::Web::Http::Filters {
 
 struct IHttpBaseProtocolFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpBaseProtocolFilter>,
     impl::require<IHttpBaseProtocolFilter, Windows::Foundation::IClosable, Windows::Web::Http::Filters::IHttpFilter>
 {
@@ -94,7 +94,7 @@ struct IHttpBaseProtocolFilter :
 };
 
 struct IHttpBaseProtocolFilter2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpBaseProtocolFilter2>,
     impl::require<IHttpBaseProtocolFilter2, Windows::Foundation::IClosable, Windows::Web::Http::Filters::IHttpFilter>
 {
@@ -102,7 +102,7 @@ struct IHttpBaseProtocolFilter2 :
 };
 
 struct IHttpBaseProtocolFilter3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpBaseProtocolFilter3>,
     impl::require<IHttpBaseProtocolFilter3, Windows::Foundation::IClosable, Windows::Web::Http::Filters::IHttpFilter>
 {
@@ -110,7 +110,7 @@ struct IHttpBaseProtocolFilter3 :
 };
 
 struct IHttpBaseProtocolFilter4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpBaseProtocolFilter4>,
     impl::require<IHttpBaseProtocolFilter4, Windows::Foundation::IClosable, Windows::Web::Http::Filters::IHttpFilter>
 {
@@ -118,14 +118,14 @@ struct IHttpBaseProtocolFilter4 :
 };
 
 struct IHttpCacheControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpCacheControl>
 {
     IHttpCacheControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHttpFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpFilter>,
     impl::require<IHttpFilter, Windows::Foundation::IClosable>
 {
@@ -133,7 +133,7 @@ struct IHttpFilter :
 };
 
 struct IHttpServerCustomValidationRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHttpServerCustomValidationRequestedEventArgs>
 {
     IHttpServerCustomValidationRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}

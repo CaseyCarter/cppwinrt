@@ -171,42 +171,42 @@ template <> struct __declspec(uuid("a4cd6151-2cc1-56f1-9014-df6ba3410beb")) __de
 namespace Windows::Media::SpeechRecognition {
 
 struct ISpeechContinuousRecognitionCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechContinuousRecognitionCompletedEventArgs>
 {
     ISpeechContinuousRecognitionCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechContinuousRecognitionResultGeneratedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechContinuousRecognitionResultGeneratedEventArgs>
 {
     ISpeechContinuousRecognitionResultGeneratedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechContinuousRecognitionSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechContinuousRecognitionSession>
 {
     ISpeechContinuousRecognitionSession(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionCompilationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionCompilationResult>
 {
     ISpeechRecognitionCompilationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionConstraint :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionConstraint>
 {
     ISpeechRecognitionConstraint(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionGrammarFileConstraint :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionGrammarFileConstraint>,
     impl::require<ISpeechRecognitionGrammarFileConstraint, Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>
 {
@@ -214,28 +214,28 @@ struct ISpeechRecognitionGrammarFileConstraint :
 };
 
 struct ISpeechRecognitionGrammarFileConstraintFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionGrammarFileConstraintFactory>
 {
     ISpeechRecognitionGrammarFileConstraintFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionHypothesis :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionHypothesis>
 {
     ISpeechRecognitionHypothesis(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionHypothesisGeneratedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionHypothesisGeneratedEventArgs>
 {
     ISpeechRecognitionHypothesisGeneratedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionListConstraint :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionListConstraint>,
     impl::require<ISpeechRecognitionListConstraint, Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>
 {
@@ -243,42 +243,42 @@ struct ISpeechRecognitionListConstraint :
 };
 
 struct ISpeechRecognitionListConstraintFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionListConstraintFactory>
 {
     ISpeechRecognitionListConstraintFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionQualityDegradingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionQualityDegradingEventArgs>
 {
     ISpeechRecognitionQualityDegradingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionResult>
 {
     ISpeechRecognitionResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionResult2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionResult2>
 {
     ISpeechRecognitionResult2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionSemanticInterpretation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionSemanticInterpretation>
 {
     ISpeechRecognitionSemanticInterpretation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionTopicConstraint :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionTopicConstraint>,
     impl::require<ISpeechRecognitionTopicConstraint, Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>
 {
@@ -286,14 +286,14 @@ struct ISpeechRecognitionTopicConstraint :
 };
 
 struct ISpeechRecognitionTopicConstraintFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionTopicConstraintFactory>
 {
     ISpeechRecognitionTopicConstraintFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognitionVoiceCommandDefinitionConstraint :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognitionVoiceCommandDefinitionConstraint>,
     impl::require<ISpeechRecognitionVoiceCommandDefinitionConstraint, Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>
 {
@@ -301,7 +301,7 @@ struct ISpeechRecognitionVoiceCommandDefinitionConstraint :
 };
 
 struct ISpeechRecognizer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognizer>,
     impl::require<ISpeechRecognizer, Windows::Foundation::IClosable>
 {
@@ -309,42 +309,42 @@ struct ISpeechRecognizer :
 };
 
 struct ISpeechRecognizer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognizer2>
 {
     ISpeechRecognizer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognizerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognizerFactory>
 {
     ISpeechRecognizerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognizerStateChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognizerStateChangedEventArgs>
 {
     ISpeechRecognizerStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognizerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognizerStatics>
 {
     ISpeechRecognizerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognizerTimeouts :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognizerTimeouts>
 {
     ISpeechRecognizerTimeouts(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpeechRecognizerUIOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpeechRecognizerUIOptions>
 {
     ISpeechRecognizerUIOptions(std::nullptr_t = nullptr) noexcept {}

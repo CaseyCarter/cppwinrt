@@ -28,7 +28,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_9df03456_3383_508b_9c75_ee840a7e1a39
 #define WINRT_GENERIC_9df03456_3383_508b_9c75_ee840a7e1a39
-template <> struct __declspec(uuid("9df03456-3383-508b-9c75-ee840a7e1a39")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> {};
+template <> struct __declspec(uuid("9df03456-3383-508b-9c75-ee840a7e1a39")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_259b32be_bd06_53c2_bd51_89e8e0f9e239
@@ -92,49 +92,49 @@ template <> struct __declspec(uuid("85924e77-fc46-5a0d-bdaf-463c4f86c172")) __de
 namespace Windows::UI::Composition {
 
 struct IAmbientLight :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAmbientLight>
 {
     IAmbientLight(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IColorKeyFrameAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IColorKeyFrameAnimation>
 {
     IColorKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionAnimation>
 {
     ICompositionAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionAnimation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionAnimation2>
 {
     ICompositionAnimation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionAnimationBase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionAnimationBase>
 {
     ICompositionAnimationBase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionAnimationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionAnimationFactory>
 {
     ICompositionAnimationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionAnimationGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionAnimationGroup>,
     impl::require<ICompositionAnimationGroup, Windows::Foundation::Collections::IIterable<Windows::UI::Composition::CompositionAnimation>>
 {
@@ -142,105 +142,105 @@ struct ICompositionAnimationGroup :
 };
 
 struct ICompositionBackdropBrush :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionBackdropBrush>
 {
     ICompositionBackdropBrush(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionBatchCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionBatchCompletedEventArgs>
 {
     ICompositionBatchCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionBrush :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionBrush>
 {
     ICompositionBrush(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionBrushFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionBrushFactory>
 {
     ICompositionBrushFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionClip :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionClip>
 {
     ICompositionClip(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionClip2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionClip2>
 {
     ICompositionClip2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionClipFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionClipFactory>
 {
     ICompositionClipFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionColorBrush :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionColorBrush>
 {
     ICompositionColorBrush(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionCommitBatch :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionCommitBatch>
 {
     ICompositionCommitBatch(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionDrawingSurface :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionDrawingSurface>
 {
     ICompositionDrawingSurface(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionEasingFunction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionEasingFunction>
 {
     ICompositionEasingFunction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionEasingFunctionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionEasingFunctionFactory>
 {
     ICompositionEasingFunctionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionEffectBrush :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionEffectBrush>
 {
     ICompositionEffectBrush(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionEffectFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionEffectFactory>
 {
     ICompositionEffectFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionEffectSourceParameter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionEffectSourceParameter>,
     impl::require<ICompositionEffectSourceParameter, Windows::Graphics::Effects::IGraphicsEffectSource>
 {
@@ -248,189 +248,189 @@ struct ICompositionEffectSourceParameter :
 };
 
 struct ICompositionEffectSourceParameterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionEffectSourceParameterFactory>
 {
     ICompositionEffectSourceParameterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionGraphicsDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionGraphicsDevice>
 {
     ICompositionGraphicsDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionLight :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionLight>
 {
     ICompositionLight(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionLightFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionLightFactory>
 {
     ICompositionLightFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionMaskBrush :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionMaskBrush>
 {
     ICompositionMaskBrush(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionNineGridBrush :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionNineGridBrush>
 {
     ICompositionNineGridBrush(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionObject :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionObject>
 {
     ICompositionObject(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionObject2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionObject2>
 {
     ICompositionObject2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionObjectFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionObjectFactory>
 {
     ICompositionObjectFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionPropertySet :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionPropertySet>
 {
     ICompositionPropertySet(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionPropertySet2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionPropertySet2>
 {
     ICompositionPropertySet2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionScopedBatch :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionScopedBatch>
 {
     ICompositionScopedBatch(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionShadow :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionShadow>
 {
     ICompositionShadow(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionShadowFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionShadowFactory>
 {
     ICompositionShadowFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionSurface :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionSurface>
 {
     ICompositionSurface(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionSurfaceBrush :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionSurfaceBrush>
 {
     ICompositionSurfaceBrush(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionSurfaceBrush2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionSurfaceBrush2>
 {
     ICompositionSurfaceBrush2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionTarget :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositionTarget>
 {
     ICompositionTarget(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositor>
 {
     ICompositor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositor2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICompositor2>
 {
     ICompositor2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContainerVisual :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContainerVisual>
 {
     IContainerVisual(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContainerVisualFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContainerVisualFactory>
 {
     IContainerVisualFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICubicBezierEasingFunction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICubicBezierEasingFunction>
 {
     ICubicBezierEasingFunction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDistantLight :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDistantLight>
 {
     IDistantLight(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDropShadow :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDropShadow>
 {
     IDropShadow(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExpressionAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExpressionAnimation>
 {
     IExpressionAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IImplicitAnimationCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IImplicitAnimationCollection>,
     impl::require<IImplicitAnimationCollection, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::UI::Composition::ICompositionAnimationBase>>, Windows::Foundation::Collections::IMap<hstring, Windows::UI::Composition::ICompositionAnimationBase>>
 {
@@ -438,133 +438,133 @@ struct IImplicitAnimationCollection :
 };
 
 struct IInsetClip :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IInsetClip>
 {
     IInsetClip(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyFrameAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyFrameAnimation>
 {
     IKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyFrameAnimation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyFrameAnimation2>
 {
     IKeyFrameAnimation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyFrameAnimationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKeyFrameAnimationFactory>
 {
     IKeyFrameAnimationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILayerVisual :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILayerVisual>
 {
     ILayerVisual(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILinearEasingFunction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILinearEasingFunction>
 {
     ILinearEasingFunction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointLight :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointLight>
 {
     IPointLight(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IQuaternionKeyFrameAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IQuaternionKeyFrameAnimation>
 {
     IQuaternionKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRenderingDeviceReplacedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRenderingDeviceReplacedEventArgs>
 {
     IRenderingDeviceReplacedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScalarKeyFrameAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScalarKeyFrameAnimation>
 {
     IScalarKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpotLight :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpotLight>
 {
     ISpotLight(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpriteVisual :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpriteVisual>
 {
     ISpriteVisual(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpriteVisual2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISpriteVisual2>
 {
     ISpriteVisual2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStepEasingFunction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStepEasingFunction>
 {
     IStepEasingFunction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVector2KeyFrameAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVector2KeyFrameAnimation>
 {
     IVector2KeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVector3KeyFrameAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVector3KeyFrameAnimation>
 {
     IVector3KeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVector4KeyFrameAnimation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVector4KeyFrameAnimation>
 {
     IVector4KeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisual :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisual>
 {
     IVisual(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualCollection>,
     impl::require<IVisualCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Visual>>
 {
@@ -572,14 +572,14 @@ struct IVisualCollection :
 };
 
 struct IVisualFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualFactory>
 {
     IVisualFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualUnorderedCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualUnorderedCollection>,
     impl::require<IVisualUnorderedCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Visual>>
 {

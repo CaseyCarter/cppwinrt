@@ -11,7 +11,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Spi::Provider {
 
-struct __declspec(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b")) __declspec(novtable) IProviderSpiConnectionSettings : Windows::IInspectable
+struct __declspec(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b")) __declspec(novtable) IProviderSpiConnectionSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ChipSelectLine(int32_t * value) = 0;
     virtual HRESULT __stdcall put_ChipSelectLine(int32_t value) = 0;
@@ -25,17 +25,17 @@ struct __declspec(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b")) __declspec(novta
     virtual HRESULT __stdcall put_SharingMode(winrt::Windows::Devices::Spi::Provider::ProviderSpiSharingMode value) = 0;
 };
 
-struct __declspec(uuid("66456b5a-0c79-43e3-9f3c-e59780ac18fa")) __declspec(novtable) IProviderSpiConnectionSettingsFactory : Windows::IInspectable
+struct __declspec(uuid("66456b5a-0c79-43e3-9f3c-e59780ac18fa")) __declspec(novtable) IProviderSpiConnectionSettingsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(int32_t chipSelectLine, Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings ** value) = 0;
 };
 
-struct __declspec(uuid("c1686504-02ce-4226-a385-4f11fb04b41b")) __declspec(novtable) ISpiControllerProvider : Windows::IInspectable
+struct __declspec(uuid("c1686504-02ce-4226-a385-4f11fb04b41b")) __declspec(novtable) ISpiControllerProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeviceProvider(Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings * settings, Windows::Devices::Spi::Provider::ISpiDeviceProvider ** result) = 0;
 };
 
-struct __declspec(uuid("0d1c3443-304b-405c-b4f7-f5ab1074461e")) __declspec(novtable) ISpiDeviceProvider : Windows::IInspectable
+struct __declspec(uuid("0d1c3443-304b-405c-b4f7-f5ab1074461e")) __declspec(novtable) ISpiDeviceProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
     virtual HRESULT __stdcall get_ConnectionSettings(Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings ** value) = 0;
@@ -45,7 +45,7 @@ struct __declspec(uuid("0d1c3443-304b-405c-b4f7-f5ab1074461e")) __declspec(novta
     virtual HRESULT __stdcall abi_TransferFullDuplex(uint32_t __writeBufferSize, uint8_t * writeBuffer, uint32_t __readBufferSize, uint8_t * readBuffer) = 0;
 };
 
-struct __declspec(uuid("96b461e2-77d4-48ce-aaa0-75715a8362cf")) __declspec(novtable) ISpiProvider : Windows::IInspectable
+struct __declspec(uuid("96b461e2-77d4-48ce-aaa0-75715a8362cf")) __declspec(novtable) ISpiProvider : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetControllersAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::Provider::ISpiControllerProvider>> ** result) = 0;
 };

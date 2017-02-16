@@ -66,7 +66,7 @@ template <> struct __declspec(uuid("fa704f04-87b6-516b-9596-cd7cc092169b")) __de
 
 #ifndef WINRT_GENERIC_c8cb498d_e0da_52a1_abf9_7198c7f5cb42
 #define WINRT_GENERIC_c8cb498d_e0da_52a1_abf9_7198c7f5cb42
-template <> struct __declspec(uuid("c8cb498d-e0da-52a1-abf9-7198c7f5cb42")) __declspec(novtable) TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::IInspectable> : impl_TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::IInspectable> {};
+template <> struct __declspec(uuid("c8cb498d-e0da-52a1-abf9-7198c7f5cb42")) __declspec(novtable) TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -135,28 +135,28 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Security::Authentication::Web::Core {
 
 struct IWebAccountEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountEventArgs>
 {
     IWebAccountEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountMonitor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAccountMonitor>
 {
     IWebAccountMonitor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAuthenticationCoreManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAuthenticationCoreManagerStatics>
 {
     IWebAuthenticationCoreManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAuthenticationCoreManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAuthenticationCoreManagerStatics2>,
     impl::require<IWebAuthenticationCoreManagerStatics2, Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics>
 {
@@ -166,7 +166,7 @@ struct IWebAuthenticationCoreManagerStatics2 :
 };
 
 struct IWebAuthenticationCoreManagerStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebAuthenticationCoreManagerStatics3>,
     impl::require<IWebAuthenticationCoreManagerStatics3, Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics>
 {
@@ -174,56 +174,56 @@ struct IWebAuthenticationCoreManagerStatics3 :
 };
 
 struct IWebProviderError :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebProviderError>
 {
     IWebProviderError(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebProviderErrorFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebProviderErrorFactory>
 {
     IWebProviderErrorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebTokenRequest :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebTokenRequest>
 {
     IWebTokenRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebTokenRequest2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebTokenRequest2>
 {
     IWebTokenRequest2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebTokenRequestFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebTokenRequestFactory>
 {
     IWebTokenRequestFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebTokenRequestResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebTokenRequestResult>
 {
     IWebTokenRequestResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebTokenResponse :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebTokenResponse>
 {
     IWebTokenResponse(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebTokenResponseFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebTokenResponseFactory>
 {
     IWebTokenResponseFactory(std::nullptr_t = nullptr) noexcept {}

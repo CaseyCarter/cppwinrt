@@ -13,7 +13,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
 #define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
-template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::IInspectable> : impl_EventHandler<Windows::IInspectable> {};
+template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_8b98aea9_64f0_5672_b30e_dfd9c2e4f6fe
@@ -83,12 +83,12 @@ template <> struct __declspec(uuid("fe820a0c-694d-518b-8ec5-372993f6ceaf")) __de
 
 #ifndef WINRT_GENERIC_f5f69427_55ed_5512_8429_d4f6626dfcdd
 #define WINRT_GENERIC_f5f69427_55ed_5512_8429_d4f6626dfcdd
-template <> struct __declspec(uuid("f5f69427-55ed-5512-8429-d4f6626dfcdd")) __declspec(novtable) IMap<Windows::IInspectable, Windows::IInspectable> : impl_IMap<Windows::IInspectable, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f5f69427-55ed-5512-8429-d4f6626dfcdd")) __declspec(novtable) IMap<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> : impl_IMap<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_59e7ae0c_c29d_5ad6_bef5_dedb52a198e1
 #define WINRT_GENERIC_59e7ae0c_c29d_5ad6_bef5_dedb52a198e1
-template <> struct __declspec(uuid("59e7ae0c-c29d-5ad6-bef5-dedb52a198e1")) __declspec(novtable) IKeyValuePair<Windows::IInspectable, Windows::IInspectable> : impl_IKeyValuePair<Windows::IInspectable, Windows::IInspectable> {};
+template <> struct __declspec(uuid("59e7ae0c-c29d-5ad6-bef5-dedb52a198e1")) __declspec(novtable) IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> : impl_IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_6250f79f_7668_51e9_86a3_3821217a6631
@@ -173,7 +173,7 @@ template <> struct __declspec(uuid("b01c8a21-de6f-5edd-8796-300e3fe66382")) __de
 
 #ifndef WINRT_GENERIC_c229f252_dede_5d42_a01a_8479d56a7d2f
 #define WINRT_GENERIC_c229f252_dede_5d42_a01a_8479d56a7d2f
-template <> struct __declspec(uuid("c229f252-dede-5d42-a01a-8479d56a7d2f")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::IInspectable> {};
+template <> struct __declspec(uuid("c229f252-dede-5d42-a01a-8479d56a7d2f")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_add21d46_17df_5a43_a685_3262fce84643
@@ -253,7 +253,7 @@ template <> struct __declspec(uuid("36ce8ed8-c1a9-55b7-86dc-b41b8ed8edf4")) __de
 
 #ifndef WINRT_GENERIC_efe76d10_cb60_50ad_8a4f_6885cd6212a1
 #define WINRT_GENERIC_efe76d10_cb60_50ad_8a4f_6885cd6212a1
-template <> struct __declspec(uuid("efe76d10-cb60-50ad-8a4f-6885cd6212a1")) __declspec(novtable) IMapView<Windows::IInspectable, Windows::IInspectable> : impl_IMapView<Windows::IInspectable, Windows::IInspectable> {};
+template <> struct __declspec(uuid("efe76d10-cb60-50ad-8a4f-6885cd6212a1")) __declspec(novtable) IMapView<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> : impl_IMapView<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_8cb1347d_8888_5fb3_bffd_e6caf61b4f03
@@ -328,7 +328,7 @@ template <> struct __declspec(uuid("adf1746e-8936-546a-9733-8626880c4ce1")) __de
 
 #ifndef WINRT_GENERIC_33ac68f0_1084_529a_8a17_4e7c8adb7a0c
 #define WINRT_GENERIC_33ac68f0_1084_529a_8a17_4e7c8adb7a0c
-template <> struct __declspec(uuid("33ac68f0-1084-529a-8a17-4e7c8adb7a0c")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<Windows::IInspectable, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<Windows::IInspectable, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("33ac68f0-1084-529a-8a17-4e7c8adb7a0c")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_ae44597e_d411_5b7f_bbec_6a96c94a107a
@@ -338,7 +338,7 @@ template <> struct __declspec(uuid("ae44597e-d411-5b7f-bbec-6a96c94a107a")) __de
 
 #ifndef WINRT_GENERIC_31e55e8a_0f05_52fd_90d3_b04aa331aaa4
 #define WINRT_GENERIC_31e55e8a_0f05_52fd_90d3_b04aa331aaa4
-template <> struct __declspec(uuid("31e55e8a-0f05-52fd-90d3-b04aa331aaa4")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<Windows::IInspectable, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<Windows::IInspectable, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("31e55e8a-0f05-52fd-90d3-b04aa331aaa4")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_377f6162_6e4d_574e_bf01_77f4fd021d0e
@@ -351,7 +351,7 @@ template <> struct __declspec(uuid("377f6162-6e4d-574e-bf01-77f4fd021d0e")) __de
 
 namespace Windows::UI::Xaml {
 
-struct ApplicationInitializationCallback : Windows::IUnknown
+struct ApplicationInitializationCallback : Windows::Foundation::IUnknown
 {
     ApplicationInitializationCallback(std::nullptr_t = nullptr) noexcept {}
     template <typename L> ApplicationInitializationCallback(L lambda);
@@ -360,25 +360,25 @@ struct ApplicationInitializationCallback : Windows::IUnknown
     void operator()(const Windows::UI::Xaml::ApplicationInitializationCallbackParams & p) const;
 };
 
-struct BindingFailedEventHandler : Windows::IUnknown
+struct BindingFailedEventHandler : Windows::Foundation::IUnknown
 {
     BindingFailedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> BindingFailedEventHandler(L lambda);
     template <typename F> BindingFailedEventHandler (F * function);
     template <typename O, typename M> BindingFailedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::BindingFailedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::BindingFailedEventArgs & e) const;
 };
 
-struct CreateDefaultValueCallback : Windows::IUnknown
+struct CreateDefaultValueCallback : Windows::Foundation::IUnknown
 {
     CreateDefaultValueCallback(std::nullptr_t = nullptr) noexcept {}
     template <typename L> CreateDefaultValueCallback(L lambda);
     template <typename F> CreateDefaultValueCallback (F * function);
     template <typename O, typename M> CreateDefaultValueCallback(O * object, M method);
-    Windows::IInspectable operator()() const;
+    Windows::Foundation::IInspectable operator()() const;
 };
 
-struct DependencyPropertyChangedCallback : Windows::IUnknown
+struct DependencyPropertyChangedCallback : Windows::Foundation::IUnknown
 {
     DependencyPropertyChangedCallback(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DependencyPropertyChangedCallback(L lambda);
@@ -387,52 +387,52 @@ struct DependencyPropertyChangedCallback : Windows::IUnknown
     void operator()(const Windows::UI::Xaml::DependencyObject & sender, const Windows::UI::Xaml::DependencyProperty & dp) const;
 };
 
-struct DependencyPropertyChangedEventHandler : Windows::IUnknown
+struct DependencyPropertyChangedEventHandler : Windows::Foundation::IUnknown
 {
     DependencyPropertyChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DependencyPropertyChangedEventHandler(L lambda);
     template <typename F> DependencyPropertyChangedEventHandler (F * function);
     template <typename O, typename M> DependencyPropertyChangedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::DependencyPropertyChangedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::DependencyPropertyChangedEventArgs & e) const;
 };
 
-struct DragEventHandler : Windows::IUnknown
+struct DragEventHandler : Windows::Foundation::IUnknown
 {
     DragEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DragEventHandler(L lambda);
     template <typename F> DragEventHandler (F * function);
     template <typename O, typename M> DragEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::DragEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::DragEventArgs & e) const;
 };
 
-struct EnteredBackgroundEventHandler : Windows::IUnknown
+struct EnteredBackgroundEventHandler : Windows::Foundation::IUnknown
 {
     EnteredBackgroundEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> EnteredBackgroundEventHandler(L lambda);
     template <typename F> EnteredBackgroundEventHandler (F * function);
     template <typename O, typename M> EnteredBackgroundEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::EnteredBackgroundEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::EnteredBackgroundEventArgs & e) const;
 };
 
-struct ExceptionRoutedEventHandler : Windows::IUnknown
+struct ExceptionRoutedEventHandler : Windows::Foundation::IUnknown
 {
     ExceptionRoutedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> ExceptionRoutedEventHandler(L lambda);
     template <typename F> ExceptionRoutedEventHandler (F * function);
     template <typename O, typename M> ExceptionRoutedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::ExceptionRoutedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::ExceptionRoutedEventArgs & e) const;
 };
 
-struct LeavingBackgroundEventHandler : Windows::IUnknown
+struct LeavingBackgroundEventHandler : Windows::Foundation::IUnknown
 {
     LeavingBackgroundEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> LeavingBackgroundEventHandler(L lambda);
     template <typename F> LeavingBackgroundEventHandler (F * function);
     template <typename O, typename M> LeavingBackgroundEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::LeavingBackgroundEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::LeavingBackgroundEventArgs & e) const;
 };
 
-struct PropertyChangedCallback : Windows::IUnknown
+struct PropertyChangedCallback : Windows::Foundation::IUnknown
 {
     PropertyChangedCallback(std::nullptr_t = nullptr) noexcept {}
     template <typename L> PropertyChangedCallback(L lambda);
@@ -441,663 +441,663 @@ struct PropertyChangedCallback : Windows::IUnknown
     void operator()(const Windows::UI::Xaml::DependencyObject & d, const Windows::UI::Xaml::DependencyPropertyChangedEventArgs & e) const;
 };
 
-struct RoutedEventHandler : Windows::IUnknown
+struct RoutedEventHandler : Windows::Foundation::IUnknown
 {
     RoutedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> RoutedEventHandler(L lambda);
     template <typename F> RoutedEventHandler (F * function);
     template <typename O, typename M> RoutedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::RoutedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::RoutedEventArgs & e) const;
 };
 
-struct SizeChangedEventHandler : Windows::IUnknown
+struct SizeChangedEventHandler : Windows::Foundation::IUnknown
 {
     SizeChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> SizeChangedEventHandler(L lambda);
     template <typename F> SizeChangedEventHandler (F * function);
     template <typename O, typename M> SizeChangedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::SizeChangedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::SizeChangedEventArgs & e) const;
 };
 
-struct SuspendingEventHandler : Windows::IUnknown
+struct SuspendingEventHandler : Windows::Foundation::IUnknown
 {
     SuspendingEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> SuspendingEventHandler(L lambda);
     template <typename F> SuspendingEventHandler (F * function);
     template <typename O, typename M> SuspendingEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::SuspendingEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::ApplicationModel::SuspendingEventArgs & e) const;
 };
 
-struct UnhandledExceptionEventHandler : Windows::IUnknown
+struct UnhandledExceptionEventHandler : Windows::Foundation::IUnknown
 {
     UnhandledExceptionEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> UnhandledExceptionEventHandler(L lambda);
     template <typename F> UnhandledExceptionEventHandler (F * function);
     template <typename O, typename M> UnhandledExceptionEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::UnhandledExceptionEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::UnhandledExceptionEventArgs & e) const;
 };
 
-struct VisualStateChangedEventHandler : Windows::IUnknown
+struct VisualStateChangedEventHandler : Windows::Foundation::IUnknown
 {
     VisualStateChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> VisualStateChangedEventHandler(L lambda);
     template <typename F> VisualStateChangedEventHandler (F * function);
     template <typename O, typename M> VisualStateChangedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::VisualStateChangedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Xaml::VisualStateChangedEventArgs & e) const;
 };
 
-struct WindowActivatedEventHandler : Windows::IUnknown
+struct WindowActivatedEventHandler : Windows::Foundation::IUnknown
 {
     WindowActivatedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> WindowActivatedEventHandler(L lambda);
     template <typename F> WindowActivatedEventHandler (F * function);
     template <typename O, typename M> WindowActivatedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Core::WindowActivatedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Core::WindowActivatedEventArgs & e) const;
 };
 
-struct WindowClosedEventHandler : Windows::IUnknown
+struct WindowClosedEventHandler : Windows::Foundation::IUnknown
 {
     WindowClosedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> WindowClosedEventHandler(L lambda);
     template <typename F> WindowClosedEventHandler (F * function);
     template <typename O, typename M> WindowClosedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Core::CoreWindowEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Core::CoreWindowEventArgs & e) const;
 };
 
-struct WindowSizeChangedEventHandler : Windows::IUnknown
+struct WindowSizeChangedEventHandler : Windows::Foundation::IUnknown
 {
     WindowSizeChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> WindowSizeChangedEventHandler(L lambda);
     template <typename F> WindowSizeChangedEventHandler (F * function);
     template <typename O, typename M> WindowSizeChangedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Core::WindowSizeChangedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Core::WindowSizeChangedEventArgs & e) const;
 };
 
-struct WindowVisibilityChangedEventHandler : Windows::IUnknown
+struct WindowVisibilityChangedEventHandler : Windows::Foundation::IUnknown
 {
     WindowVisibilityChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> WindowVisibilityChangedEventHandler(L lambda);
     template <typename F> WindowVisibilityChangedEventHandler (F * function);
     template <typename O, typename M> WindowVisibilityChangedEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender, const Windows::UI::Core::VisibilityChangedEventArgs & e) const;
+    void operator()(const Windows::Foundation::IInspectable & sender, const Windows::UI::Core::VisibilityChangedEventArgs & e) const;
 };
 
 struct IAdaptiveTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveTrigger>
 {
     IAdaptiveTrigger(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveTriggerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveTriggerFactory>
 {
     IAdaptiveTriggerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveTriggerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveTriggerStatics>
 {
     IAdaptiveTriggerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplication :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplication>
 {
     IApplication(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplication2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplication2>
 {
     IApplication2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationFactory>
 {
     IApplicationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationInitializationCallbackParams :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationInitializationCallbackParams>
 {
     IApplicationInitializationCallbackParams(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationOverrides :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationOverrides>
 {
     IApplicationOverrides(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationOverrides2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationOverrides2>
 {
     IApplicationOverrides2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IApplicationStatics>
 {
     IApplicationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBindingFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBindingFailedEventArgs>
 {
     IBindingFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICornerRadiusHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICornerRadiusHelper>
 {
     ICornerRadiusHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICornerRadiusHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICornerRadiusHelperStatics>
 {
     ICornerRadiusHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataContextChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataContextChangedEventArgs>
 {
     IDataContextChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTemplate :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTemplate>
 {
     IDataTemplate(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTemplateExtension :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTemplateExtension>
 {
     IDataTemplateExtension(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTemplateFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTemplateFactory>
 {
     IDataTemplateFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTemplateKey :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTemplateKey>
 {
     IDataTemplateKey(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTemplateKeyFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTemplateKeyFactory>
 {
     IDataTemplateKeyFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataTemplateStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDataTemplateStatics2>
 {
     IDataTemplateStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDebugSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDebugSettings>
 {
     IDebugSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDebugSettings2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDebugSettings2>
 {
     IDebugSettings2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDebugSettings3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDebugSettings3>
 {
     IDebugSettings3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDependencyObject :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDependencyObject>
 {
     IDependencyObject(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDependencyObject2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDependencyObject2>
 {
     IDependencyObject2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDependencyObjectCollectionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDependencyObjectCollectionFactory>
 {
     IDependencyObjectCollectionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDependencyObjectFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDependencyObjectFactory>
 {
     IDependencyObjectFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDependencyProperty :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDependencyProperty>
 {
     IDependencyProperty(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDependencyPropertyChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDependencyPropertyChangedEventArgs>
 {
     IDependencyPropertyChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDependencyPropertyStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDependencyPropertyStatics>
 {
     IDependencyPropertyStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDispatcherTimer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDispatcherTimer>
 {
     IDispatcherTimer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDispatcherTimerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDispatcherTimerFactory>
 {
     IDispatcherTimerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragEventArgs>
 {
     IDragEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragEventArgs2>
 {
     IDragEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragEventArgs3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragEventArgs3>
 {
     IDragEventArgs3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragOperationDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragOperationDeferral>
 {
     IDragOperationDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragStartingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragStartingEventArgs>
 {
     IDragStartingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragStartingEventArgs2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragStartingEventArgs2>
 {
     IDragStartingEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragUI :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragUI>
 {
     IDragUI(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDragUIOverride :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDragUIOverride>
 {
     IDragUIOverride(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDropCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDropCompletedEventArgs>
 {
     IDropCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDurationHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDurationHelper>
 {
     IDurationHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDurationHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDurationHelperStatics>
 {
     IDurationHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IElementSoundPlayer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IElementSoundPlayer>
 {
     IElementSoundPlayer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IElementSoundPlayerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IElementSoundPlayerStatics>
 {
     IElementSoundPlayerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEventTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEventTrigger>
 {
     IEventTrigger(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExceptionRoutedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExceptionRoutedEventArgs>
 {
     IExceptionRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExceptionRoutedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExceptionRoutedEventArgsFactory>
 {
     IExceptionRoutedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElement>
 {
     IFrameworkElement(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElement2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElement2>
 {
     IFrameworkElement2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElement3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElement3>
 {
     IFrameworkElement3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElement4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElement4>
 {
     IFrameworkElement4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElementFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElementFactory>
 {
     IFrameworkElementFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElementOverrides :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElementOverrides>
 {
     IFrameworkElementOverrides(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElementOverrides2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElementOverrides2>
 {
     IFrameworkElementOverrides2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElementStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElementStatics>
 {
     IFrameworkElementStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElementStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElementStatics2>
 {
     IFrameworkElementStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkElementStatics4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkElementStatics4>
 {
     IFrameworkElementStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkTemplate :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkTemplate>
 {
     IFrameworkTemplate(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkTemplateFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkTemplateFactory>
 {
     IFrameworkTemplateFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkView>
 {
     IFrameworkView(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkViewSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkViewSource>
 {
     IFrameworkViewSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridLengthHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridLengthHelper>
 {
     IGridLengthHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGridLengthHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGridLengthHelperStatics>
 {
     IGridLengthHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaFailedRoutedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaFailedRoutedEventArgs>
 {
     IMediaFailedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointHelper>
 {
     IPointHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPointHelperStatics>
 {
     IPointHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPropertyMetadata :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPropertyMetadata>
 {
     IPropertyMetadata(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPropertyMetadataFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPropertyMetadataFactory>
 {
     IPropertyMetadataFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPropertyMetadataStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPropertyMetadataStatics>
 {
     IPropertyMetadataStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPropertyPath :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPropertyPath>
 {
     IPropertyPath(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPropertyPathFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPropertyPathFactory>
 {
     IPropertyPathFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRectHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRectHelper>
 {
     IRectHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRectHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRectHelperStatics>
 {
     IRectHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IResourceDictionary :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IResourceDictionary>
 {
     IResourceDictionary(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IResourceDictionaryFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IResourceDictionaryFactory>
 {
     IResourceDictionaryFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRoutedEvent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRoutedEvent>
 {
     IRoutedEvent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRoutedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRoutedEventArgs>
 {
     IRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRoutedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRoutedEventArgsFactory>
 {
     IRoutedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISetter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISetter>
 {
     ISetter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISetter2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISetter2>
 {
     ISetter2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISetterBase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISetterBase>
 {
     ISetterBase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISetterBaseCollection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISetterBaseCollection>,
     impl::require<ISetterBaseCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::SetterBase>, Windows::Foundation::Collections::IVector<Windows::UI::Xaml::SetterBase>>
 {
@@ -1105,322 +1105,322 @@ struct ISetterBaseCollection :
 };
 
 struct ISetterBaseFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISetterBaseFactory>
 {
     ISetterBaseFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISetterFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISetterFactory>
 {
     ISetterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISizeChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISizeChangedEventArgs>
 {
     ISizeChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISizeHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISizeHelper>
 {
     ISizeHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISizeHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISizeHelperStatics>
 {
     ISizeHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStateTrigger :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStateTrigger>
 {
     IStateTrigger(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStateTriggerBase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStateTriggerBase>
 {
     IStateTriggerBase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStateTriggerBaseFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStateTriggerBaseFactory>
 {
     IStateTriggerBaseFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStateTriggerBaseProtected :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStateTriggerBaseProtected>
 {
     IStateTriggerBaseProtected(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStateTriggerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStateTriggerStatics>
 {
     IStateTriggerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStyle :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStyle>
 {
     IStyle(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStyleFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStyleFactory>
 {
     IStyleFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITargetPropertyPath :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITargetPropertyPath>
 {
     ITargetPropertyPath(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITargetPropertyPathFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITargetPropertyPathFactory>
 {
     ITargetPropertyPathFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IThicknessHelper :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IThicknessHelper>
 {
     IThicknessHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IThicknessHelperStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IThicknessHelperStatics>
 {
     IThicknessHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITriggerAction :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITriggerAction>
 {
     ITriggerAction(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITriggerActionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITriggerActionFactory>
 {
     ITriggerActionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITriggerBase :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITriggerBase>
 {
     ITriggerBase(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITriggerBaseFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITriggerBaseFactory>
 {
     ITriggerBaseFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElement :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElement>
 {
     IUIElement(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElement2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElement2>
 {
     IUIElement2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElement3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElement3>
 {
     IUIElement3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElement4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElement4>
 {
     IUIElement4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElementFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElementFactory>
 {
     IUIElementFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElementOverrides :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElementOverrides>
 {
     IUIElementOverrides(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElementStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElementStatics>
 {
     IUIElementStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElementStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElementStatics2>
 {
     IUIElementStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElementStatics3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElementStatics3>
 {
     IUIElementStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUIElementStatics4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUIElementStatics4>
 {
     IUIElementStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUnhandledExceptionEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUnhandledExceptionEventArgs>
 {
     IUnhandledExceptionEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualState :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualState>
 {
     IVisualState(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualState2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualState2>
 {
     IVisualState2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualStateChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualStateChangedEventArgs>
 {
     IVisualStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualStateGroup :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualStateGroup>
 {
     IVisualStateGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualStateManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualStateManager>
 {
     IVisualStateManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualStateManagerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualStateManagerFactory>
 {
     IVisualStateManagerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualStateManagerOverrides :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualStateManagerOverrides>
 {
     IVisualStateManagerOverrides(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualStateManagerProtected :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualStateManagerProtected>
 {
     IVisualStateManagerProtected(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualStateManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualStateManagerStatics>
 {
     IVisualStateManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualTransition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualTransition>
 {
     IVisualTransition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualTransitionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVisualTransitionFactory>
 {
     IVisualTransitionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWindow :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWindow>
 {
     IWindow(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWindow2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWindow2>
 {
     IWindow2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWindowCreatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWindowCreatedEventArgs>
 {
     IWindowCreatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWindowStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWindowStatics>
 {
     IWindowStatics(std::nullptr_t = nullptr) noexcept {}

@@ -22,17 +22,17 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::Audio {
 
-struct __declspec(uuid("b01b6be1-6f4e-49e2-ac01-559d62beb3a9")) __declspec(novtable) IAudioDeviceInputNode : Windows::IInspectable
+struct __declspec(uuid("b01b6be1-6f4e-49e2-ac01-559d62beb3a9")) __declspec(novtable) IAudioDeviceInputNode : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Device(Windows::Devices::Enumeration::IDeviceInformation ** value) = 0;
 };
 
-struct __declspec(uuid("362edbff-ff1c-4434-9e0f-bd2ef522ac82")) __declspec(novtable) IAudioDeviceOutputNode : Windows::IInspectable
+struct __declspec(uuid("362edbff-ff1c-4434-9e0f-bd2ef522ac82")) __declspec(novtable) IAudioDeviceOutputNode : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Device(Windows::Devices::Enumeration::IDeviceInformation ** value) = 0;
 };
 
-struct __declspec(uuid("905b67c8-6f65-4cd4-8890-4694843c276d")) __declspec(novtable) IAudioFileInputNode : Windows::IInspectable
+struct __declspec(uuid("905b67c8-6f65-4cd4-8890-4694843c276d")) __declspec(novtable) IAudioFileInputNode : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_PlaybackSpeedFactor(double value) = 0;
     virtual HRESULT __stdcall get_PlaybackSpeedFactor(double * value) = 0;
@@ -46,23 +46,23 @@ struct __declspec(uuid("905b67c8-6f65-4cd4-8890-4694843c276d")) __declspec(novta
     virtual HRESULT __stdcall put_LoopCount(Windows::Foundation::IReference<int32_t> * value) = 0;
     virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan * value) = 0;
     virtual HRESULT __stdcall get_SourceFile(Windows::Storage::IStorageFile ** value) = 0;
-    virtual HRESULT __stdcall add_FileCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_FileCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_FileCompleted(event_token token) = 0;
 };
 
-struct __declspec(uuid("50e01980-5166-4093-80f8-ada00089e9cf")) __declspec(novtable) IAudioFileOutputNode : Windows::IInspectable
+struct __declspec(uuid("50e01980-5166-4093-80f8-ada00089e9cf")) __declspec(novtable) IAudioFileOutputNode : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_File(Windows::Storage::IStorageFile ** value) = 0;
     virtual HRESULT __stdcall get_FileEncodingProfile(Windows::Media::MediaProperties::IMediaEncodingProfile ** value) = 0;
     virtual HRESULT __stdcall abi_FinalizeAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Transcoding::TranscodeFailureReason> ** result) = 0;
 };
 
-struct __declspec(uuid("dc7c829e-0208-4504-a5a8-f0f268920a65")) __declspec(novtable) IAudioFrameCompletedEventArgs : Windows::IInspectable
+struct __declspec(uuid("dc7c829e-0208-4504-a5a8-f0f268920a65")) __declspec(novtable) IAudioFrameCompletedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Frame(Windows::Media::IAudioFrame ** value) = 0;
 };
 
-struct __declspec(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237")) __declspec(novtable) IAudioFrameInputNode : Windows::IInspectable
+struct __declspec(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237")) __declspec(novtable) IAudioFrameInputNode : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_PlaybackSpeedFactor(double value) = 0;
     virtual HRESULT __stdcall get_PlaybackSpeedFactor(double * value) = 0;
@@ -75,12 +75,12 @@ struct __declspec(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237")) __declspec(novta
     virtual HRESULT __stdcall remove_QuantumStarted(event_token token) = 0;
 };
 
-struct __declspec(uuid("b847371b-3299-45f5-88b3-c9d12a3f1cc8")) __declspec(novtable) IAudioFrameOutputNode : Windows::IInspectable
+struct __declspec(uuid("b847371b-3299-45f5-88b3-c9d12a3f1cc8")) __declspec(novtable) IAudioFrameOutputNode : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetFrame(Windows::Media::IAudioFrame ** audioFrame) = 0;
 };
 
-struct __declspec(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8")) __declspec(novtable) IAudioGraph : Windows::IInspectable
+struct __declspec(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8")) __declspec(novtable) IAudioGraph : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFrameInputNode(Windows::Media::Audio::IAudioFrameInputNode ** frameInputNode) = 0;
     virtual HRESULT __stdcall abi_CreateFrameInputNodeWithFormat(Windows::Media::MediaProperties::IAudioEncodingProperties * encodingProperties, Windows::Media::Audio::IAudioFrameInputNode ** frameInputNode) = 0;
@@ -98,9 +98,9 @@ struct __declspec(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8")) __declspec(novta
     virtual HRESULT __stdcall abi_Start() = 0;
     virtual HRESULT __stdcall abi_Stop() = 0;
     virtual HRESULT __stdcall abi_ResetAllNodes() = 0;
-    virtual HRESULT __stdcall add_QuantumStarted(Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_QuantumStarted(Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_QuantumStarted(event_token token) = 0;
-    virtual HRESULT __stdcall add_QuantumProcessed(Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_QuantumProcessed(Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_QuantumProcessed(event_token token) = 0;
     virtual HRESULT __stdcall add_UnrecoverableErrorOccurred(Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_UnrecoverableErrorOccurred(event_token token) = 0;
@@ -112,7 +112,7 @@ struct __declspec(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8")) __declspec(novta
     virtual HRESULT __stdcall get_SamplesPerQuantum(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839")) __declspec(novtable) IAudioGraph2 : Windows::IInspectable
+struct __declspec(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839")) __declspec(novtable) IAudioGraph2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFrameInputNodeWithFormatAndEmitter(Windows::Media::MediaProperties::IAudioEncodingProperties * encodingProperties, Windows::Media::Audio::IAudioNodeEmitter * emitter, Windows::Media::Audio::IAudioFrameInputNode ** frameInputNode) = 0;
     virtual HRESULT __stdcall abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(winrt::Windows::Media::Capture::MediaCategory category, Windows::Media::MediaProperties::IAudioEncodingProperties * encodingProperties, Windows::Devices::Enumeration::IDeviceInformation * device, Windows::Media::Audio::IAudioNodeEmitter * emitter, Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> ** result) = 0;
@@ -121,14 +121,14 @@ struct __declspec(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateBatchUpdater(Windows::Foundation::IClosable ** updater) = 0;
 };
 
-struct __declspec(uuid("763070ed-d04e-4fac-b233-600b42edd469")) __declspec(novtable) IAudioGraphConnection : Windows::IInspectable
+struct __declspec(uuid("763070ed-d04e-4fac-b233-600b42edd469")) __declspec(novtable) IAudioGraphConnection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Destination(Windows::Media::Audio::IAudioNode ** value) = 0;
     virtual HRESULT __stdcall put_Gain(double value) = 0;
     virtual HRESULT __stdcall get_Gain(double * value) = 0;
 };
 
-struct __declspec(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785")) __declspec(novtable) IAudioGraphSettings : Windows::IInspectable
+struct __declspec(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785")) __declspec(novtable) IAudioGraphSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EncodingProperties(Windows::Media::MediaProperties::IAudioEncodingProperties ** value) = 0;
     virtual HRESULT __stdcall put_EncodingProperties(Windows::Media::MediaProperties::IAudioEncodingProperties * value) = 0;
@@ -144,22 +144,22 @@ struct __declspec(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785")) __declspec(novta
     virtual HRESULT __stdcall put_DesiredRenderDeviceAudioProcessing(winrt::Windows::Media::AudioProcessing value) = 0;
 };
 
-struct __declspec(uuid("a5d91cc6-c2eb-4a61-a214-1d66d75f83da")) __declspec(novtable) IAudioGraphSettingsFactory : Windows::IInspectable
+struct __declspec(uuid("a5d91cc6-c2eb-4a61-a214-1d66d75f83da")) __declspec(novtable) IAudioGraphSettingsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(winrt::Windows::Media::Render::AudioRenderCategory audioRenderCategory, Windows::Media::Audio::IAudioGraphSettings ** value) = 0;
 };
 
-struct __declspec(uuid("76ec3132-e159-4ab7-a82a-17beb4b31e94")) __declspec(novtable) IAudioGraphStatics : Windows::IInspectable
+struct __declspec(uuid("76ec3132-e159-4ab7-a82a-17beb4b31e94")) __declspec(novtable) IAudioGraphStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateAsync(Windows::Media::Audio::IAudioGraphSettings * settings, Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioGraphResult> ** result) = 0;
 };
 
-struct __declspec(uuid("c3d9cbe0-3ff6-4fb3-b262-50d435c55423")) __declspec(novtable) IAudioGraphUnrecoverableErrorOccurredEventArgs : Windows::IInspectable
+struct __declspec(uuid("c3d9cbe0-3ff6-4fb3-b262-50d435c55423")) __declspec(novtable) IAudioGraphUnrecoverableErrorOccurredEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Error(winrt::Windows::Media::Audio::AudioGraphUnrecoverableError * value) = 0;
 };
 
-struct __declspec(uuid("d148005c-8428-4784-b7fd-a99d468c5d20")) __declspec(novtable) IAudioInputNode : Windows::IInspectable
+struct __declspec(uuid("d148005c-8428-4784-b7fd-a99d468c5d20")) __declspec(novtable) IAudioInputNode : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OutgoingConnections(Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::AudioGraphConnection> ** value) = 0;
     virtual HRESULT __stdcall abi_AddOutgoingConnection(Windows::Media::Audio::IAudioNode * destination) = 0;
@@ -167,12 +167,12 @@ struct __declspec(uuid("d148005c-8428-4784-b7fd-a99d468c5d20")) __declspec(novta
     virtual HRESULT __stdcall abi_RemoveOutgoingConnection(Windows::Media::Audio::IAudioNode * destination) = 0;
 };
 
-struct __declspec(uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2")) __declspec(novtable) IAudioInputNode2 : Windows::IInspectable
+struct __declspec(uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2")) __declspec(novtable) IAudioInputNode2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Emitter(Windows::Media::Audio::IAudioNodeEmitter ** value) = 0;
 };
 
-struct __declspec(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d")) __declspec(novtable) IAudioNode : Windows::IInspectable
+struct __declspec(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d")) __declspec(novtable) IAudioNode : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EffectDefinitions(Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> ** value) = 0;
     virtual HRESULT __stdcall put_OutgoingGain(double value) = 0;
@@ -187,7 +187,7 @@ struct __declspec(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d")) __declspec(novta
     virtual HRESULT __stdcall abi_EnableEffectsByDefinition(Windows::Media::Effects::IAudioEffectDefinition * definition) = 0;
 };
 
-struct __declspec(uuid("3676971d-880a-47b8-adf7-1323a9d965be")) __declspec(novtable) IAudioNodeEmitter : Windows::IInspectable
+struct __declspec(uuid("3676971d-880a-47b8-adf7-1323a9d965be")) __declspec(novtable) IAudioNodeEmitter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Foundation::Numerics::float3 * value) = 0;
     virtual HRESULT __stdcall put_Position(Windows::Foundation::Numerics::float3 value) = 0;
@@ -206,20 +206,20 @@ struct __declspec(uuid("3676971d-880a-47b8-adf7-1323a9d965be")) __declspec(novta
     virtual HRESULT __stdcall get_IsDopplerDisabled(bool * value) = 0;
 };
 
-struct __declspec(uuid("4ab6eecb-ec29-47f8-818c-b6b660a5aeb1")) __declspec(novtable) IAudioNodeEmitter2 : Windows::IInspectable
+struct __declspec(uuid("4ab6eecb-ec29-47f8-818c-b6b660a5aeb1")) __declspec(novtable) IAudioNodeEmitter2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SpatialAudioModel(winrt::Windows::Media::Audio::SpatialAudioModel * value) = 0;
     virtual HRESULT __stdcall put_SpatialAudioModel(winrt::Windows::Media::Audio::SpatialAudioModel value) = 0;
 };
 
-struct __declspec(uuid("e99b2cee-02ca-4375-9326-0c6ae4bcdfb5")) __declspec(novtable) IAudioNodeEmitterConeProperties : Windows::IInspectable
+struct __declspec(uuid("e99b2cee-02ca-4375-9326-0c6ae4bcdfb5")) __declspec(novtable) IAudioNodeEmitterConeProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InnerAngle(double * value) = 0;
     virtual HRESULT __stdcall get_OuterAngle(double * value) = 0;
     virtual HRESULT __stdcall get_OuterAngleGain(double * value) = 0;
 };
 
-struct __declspec(uuid("1d1d5af7-0d53-4fa9-bd84-d5816a86f3ff")) __declspec(novtable) IAudioNodeEmitterDecayModel : Windows::IInspectable
+struct __declspec(uuid("1d1d5af7-0d53-4fa9-bd84-d5816a86f3ff")) __declspec(novtable) IAudioNodeEmitterDecayModel : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Kind(winrt::Windows::Media::Audio::AudioNodeEmitterDecayKind * value) = 0;
     virtual HRESULT __stdcall get_MinGain(double * value) = 0;
@@ -227,36 +227,36 @@ struct __declspec(uuid("1d1d5af7-0d53-4fa9-bd84-d5816a86f3ff")) __declspec(novta
     virtual HRESULT __stdcall get_NaturalProperties(Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelProperties ** value) = 0;
 };
 
-struct __declspec(uuid("c7787ca8-f178-462f-bc81-8dd5cbe5dae8")) __declspec(novtable) IAudioNodeEmitterDecayModelStatics : Windows::IInspectable
+struct __declspec(uuid("c7787ca8-f178-462f-bc81-8dd5cbe5dae8")) __declspec(novtable) IAudioNodeEmitterDecayModelStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance, Windows::Media::Audio::IAudioNodeEmitterDecayModel ** decayModel) = 0;
     virtual HRESULT __stdcall abi_CreateCustom(double minGain, double maxGain, Windows::Media::Audio::IAudioNodeEmitterDecayModel ** decayModel) = 0;
 };
 
-struct __declspec(uuid("fdc8489a-6ad6-4ce4-b7f7-a99370df7ee9")) __declspec(novtable) IAudioNodeEmitterFactory : Windows::IInspectable
+struct __declspec(uuid("fdc8489a-6ad6-4ce4-b7f7-a99370df7ee9")) __declspec(novtable) IAudioNodeEmitterFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateAudioNodeEmitter(Windows::Media::Audio::IAudioNodeEmitterShape * shape, Windows::Media::Audio::IAudioNodeEmitterDecayModel * decayModel, winrt::Windows::Media::Audio::AudioNodeEmitterSettings settings, Windows::Media::Audio::IAudioNodeEmitter ** emitter) = 0;
 };
 
-struct __declspec(uuid("48934bcf-cf2c-4efc-9331-75bd22df1f0c")) __declspec(novtable) IAudioNodeEmitterNaturalDecayModelProperties : Windows::IInspectable
+struct __declspec(uuid("48934bcf-cf2c-4efc-9331-75bd22df1f0c")) __declspec(novtable) IAudioNodeEmitterNaturalDecayModelProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UnityGainDistance(double * value) = 0;
     virtual HRESULT __stdcall get_CutoffDistance(double * value) = 0;
 };
 
-struct __declspec(uuid("ea0311c5-e73d-44bc-859c-45553bbc4828")) __declspec(novtable) IAudioNodeEmitterShape : Windows::IInspectable
+struct __declspec(uuid("ea0311c5-e73d-44bc-859c-45553bbc4828")) __declspec(novtable) IAudioNodeEmitterShape : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Kind(winrt::Windows::Media::Audio::AudioNodeEmitterShapeKind * value) = 0;
     virtual HRESULT __stdcall get_ConeProperties(Windows::Media::Audio::IAudioNodeEmitterConeProperties ** value) = 0;
 };
 
-struct __declspec(uuid("57bb2771-ffa5-4b86-a779-e264aeb9145f")) __declspec(novtable) IAudioNodeEmitterShapeStatics : Windows::IInspectable
+struct __declspec(uuid("57bb2771-ffa5-4b86-a779-e264aeb9145f")) __declspec(novtable) IAudioNodeEmitterShapeStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateCone(double innerAngle, double outerAngle, double outerAngleGain, Windows::Media::Audio::IAudioNodeEmitterShape ** shape) = 0;
     virtual HRESULT __stdcall abi_CreateOmnidirectional(Windows::Media::Audio::IAudioNodeEmitterShape ** shape) = 0;
 };
 
-struct __declspec(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb")) __declspec(novtable) IAudioNodeListener : Windows::IInspectable
+struct __declspec(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb")) __declspec(novtable) IAudioNodeListener : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Position(Windows::Foundation::Numerics::float3 * value) = 0;
     virtual HRESULT __stdcall put_Position(Windows::Foundation::Numerics::float3 value) = 0;
@@ -268,43 +268,43 @@ struct __declspec(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb")) __declspec(novta
     virtual HRESULT __stdcall put_DopplerVelocity(Windows::Foundation::Numerics::float3 value) = 0;
 };
 
-struct __declspec(uuid("0e0f907c-79ff-4544-9eeb-01257b15105a")) __declspec(novtable) IAudioNodeWithListener : Windows::IInspectable
+struct __declspec(uuid("0e0f907c-79ff-4544-9eeb-01257b15105a")) __declspec(novtable) IAudioNodeWithListener : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Listener(Windows::Media::Audio::IAudioNodeListener * value) = 0;
     virtual HRESULT __stdcall get_Listener(Windows::Media::Audio::IAudioNodeListener ** value) = 0;
 };
 
-struct __declspec(uuid("16eec7a8-1ca7-40ef-91a4-d346e0aa1bba")) __declspec(novtable) ICreateAudioDeviceInputNodeResult : Windows::IInspectable
+struct __declspec(uuid("16eec7a8-1ca7-40ef-91a4-d346e0aa1bba")) __declspec(novtable) ICreateAudioDeviceInputNodeResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Audio::AudioDeviceNodeCreationStatus * value) = 0;
     virtual HRESULT __stdcall get_DeviceInputNode(Windows::Media::Audio::IAudioDeviceInputNode ** value) = 0;
 };
 
-struct __declspec(uuid("f7776d27-1d9a-47f7-9cd4-2859cc1b7bff")) __declspec(novtable) ICreateAudioDeviceOutputNodeResult : Windows::IInspectable
+struct __declspec(uuid("f7776d27-1d9a-47f7-9cd4-2859cc1b7bff")) __declspec(novtable) ICreateAudioDeviceOutputNodeResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Audio::AudioDeviceNodeCreationStatus * value) = 0;
     virtual HRESULT __stdcall get_DeviceOutputNode(Windows::Media::Audio::IAudioDeviceOutputNode ** value) = 0;
 };
 
-struct __declspec(uuid("ce83d61c-e297-4c50-9ce7-1c7a69d6bd09")) __declspec(novtable) ICreateAudioFileInputNodeResult : Windows::IInspectable
+struct __declspec(uuid("ce83d61c-e297-4c50-9ce7-1c7a69d6bd09")) __declspec(novtable) ICreateAudioFileInputNodeResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Audio::AudioFileNodeCreationStatus * value) = 0;
     virtual HRESULT __stdcall get_FileInputNode(Windows::Media::Audio::IAudioFileInputNode ** value) = 0;
 };
 
-struct __declspec(uuid("47d6ba7b-e909-453f-866e-5540cda734ff")) __declspec(novtable) ICreateAudioFileOutputNodeResult : Windows::IInspectable
+struct __declspec(uuid("47d6ba7b-e909-453f-866e-5540cda734ff")) __declspec(novtable) ICreateAudioFileOutputNodeResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Audio::AudioFileNodeCreationStatus * value) = 0;
     virtual HRESULT __stdcall get_FileOutputNode(Windows::Media::Audio::IAudioFileOutputNode ** value) = 0;
 };
 
-struct __declspec(uuid("5453ef7e-7bde-4b76-bb5d-48f79cfc8c0b")) __declspec(novtable) ICreateAudioGraphResult : Windows::IInspectable
+struct __declspec(uuid("5453ef7e-7bde-4b76-bb5d-48f79cfc8c0b")) __declspec(novtable) ICreateAudioGraphResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Audio::AudioGraphCreationStatus * value) = 0;
     virtual HRESULT __stdcall get_Graph(Windows::Media::Audio::IAudioGraph ** value) = 0;
 };
 
-struct __declspec(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610")) __declspec(novtable) IEchoEffectDefinition : Windows::IInspectable
+struct __declspec(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610")) __declspec(novtable) IEchoEffectDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_WetDryMix(double value) = 0;
     virtual HRESULT __stdcall get_WetDryMix(double * value) = 0;
@@ -314,12 +314,12 @@ struct __declspec(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610")) __declspec(novta
     virtual HRESULT __stdcall get_Delay(double * value) = 0;
 };
 
-struct __declspec(uuid("0d4e2257-aaf2-4e86-a54c-fb79db8f6c12")) __declspec(novtable) IEchoEffectDefinitionFactory : Windows::IInspectable
+struct __declspec(uuid("0d4e2257-aaf2-4e86-a54c-fb79db8f6c12")) __declspec(novtable) IEchoEffectDefinitionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Media::Audio::IAudioGraph * audioGraph, Windows::Media::Audio::IEchoEffectDefinition ** value) = 0;
 };
 
-struct __declspec(uuid("c00a5a6a-262d-4b85-9bb7-43280b62ed0c")) __declspec(novtable) IEqualizerBand : Windows::IInspectable
+struct __declspec(uuid("c00a5a6a-262d-4b85-9bb7-43280b62ed0c")) __declspec(novtable) IEqualizerBand : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Bandwidth(double * value) = 0;
     virtual HRESULT __stdcall put_Bandwidth(double value) = 0;
@@ -329,22 +329,22 @@ struct __declspec(uuid("c00a5a6a-262d-4b85-9bb7-43280b62ed0c")) __declspec(novta
     virtual HRESULT __stdcall put_Gain(double value) = 0;
 };
 
-struct __declspec(uuid("023f6f1f-83fe-449a-a822-c696442d16b0")) __declspec(novtable) IEqualizerEffectDefinition : Windows::IInspectable
+struct __declspec(uuid("023f6f1f-83fe-449a-a822-c696442d16b0")) __declspec(novtable) IEqualizerEffectDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Bands(Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::EqualizerBand> ** value) = 0;
 };
 
-struct __declspec(uuid("d2876fc4-d410-4eb5-9e69-c9aa1277eaf0")) __declspec(novtable) IEqualizerEffectDefinitionFactory : Windows::IInspectable
+struct __declspec(uuid("d2876fc4-d410-4eb5-9e69-c9aa1277eaf0")) __declspec(novtable) IEqualizerEffectDefinitionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Media::Audio::IAudioGraph * audioGraph, Windows::Media::Audio::IEqualizerEffectDefinition ** value) = 0;
 };
 
-struct __declspec(uuid("3d9bd498-a306-4f06-bd9f-e9efc8226304")) __declspec(novtable) IFrameInputNodeQuantumStartedEventArgs : Windows::IInspectable
+struct __declspec(uuid("3d9bd498-a306-4f06-bd9f-e9efc8226304")) __declspec(novtable) IFrameInputNodeQuantumStartedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequiredSamples(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("6b755d19-2603-47ba-bdeb-39055e3486dc")) __declspec(novtable) ILimiterEffectDefinition : Windows::IInspectable
+struct __declspec(uuid("6b755d19-2603-47ba-bdeb-39055e3486dc")) __declspec(novtable) ILimiterEffectDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Release(uint32_t value) = 0;
     virtual HRESULT __stdcall get_Release(uint32_t * value) = 0;
@@ -352,12 +352,12 @@ struct __declspec(uuid("6b755d19-2603-47ba-bdeb-39055e3486dc")) __declspec(novta
     virtual HRESULT __stdcall get_Loudness(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("ecbae6f1-61ff-45ef-b8f5-48659a57c72d")) __declspec(novtable) ILimiterEffectDefinitionFactory : Windows::IInspectable
+struct __declspec(uuid("ecbae6f1-61ff-45ef-b8f5-48659a57c72d")) __declspec(novtable) ILimiterEffectDefinitionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Media::Audio::IAudioGraph * audioGraph, Windows::Media::Audio::ILimiterEffectDefinition ** value) = 0;
 };
 
-struct __declspec(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84")) __declspec(novtable) IReverbEffectDefinition : Windows::IInspectable
+struct __declspec(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84")) __declspec(novtable) IReverbEffectDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_WetDryMix(double value) = 0;
     virtual HRESULT __stdcall get_WetDryMix(double * value) = 0;
@@ -407,7 +407,7 @@ struct __declspec(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84")) __declspec(novta
     virtual HRESULT __stdcall get_DisableLateField(bool * value) = 0;
 };
 
-struct __declspec(uuid("a7d5cbfe-100b-4ff0-9da6-dc4e05a759f0")) __declspec(novtable) IReverbEffectDefinitionFactory : Windows::IInspectable
+struct __declspec(uuid("a7d5cbfe-100b-4ff0-9da6-dc4e05a759f0")) __declspec(novtable) IReverbEffectDefinitionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Media::Audio::IAudioGraph * audioGraph, Windows::Media::Audio::IReverbEffectDefinition ** value) = 0;
 };
@@ -478,9 +478,9 @@ struct WINRT_EBO impl_IAudioFileInputNode
     void LoopCount(const optional<int32_t> & value) const;
     Windows::Foundation::TimeSpan Duration() const;
     Windows::Storage::StorageFile SourceFile() const;
-    event_token FileCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> & handler) const;
+    event_token FileCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::Foundation::IInspectable> & handler) const;
     using FileCompleted_revoker = event_revoker<IAudioFileInputNode>;
-    FileCompleted_revoker FileCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> & handler) const;
+    FileCompleted_revoker FileCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::Foundation::IInspectable> & handler) const;
     void FileCompleted(event_token token) const;
 };
 
@@ -541,13 +541,13 @@ struct WINRT_EBO impl_IAudioGraph
     void Start() const;
     void Stop() const;
     void ResetAllNodes() const;
-    event_token QuantumStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const;
+    event_token QuantumStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> & handler) const;
     using QuantumStarted_revoker = event_revoker<IAudioGraph>;
-    QuantumStarted_revoker QuantumStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const;
+    QuantumStarted_revoker QuantumStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> & handler) const;
     void QuantumStarted(event_token token) const;
-    event_token QuantumProcessed(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const;
+    event_token QuantumProcessed(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> & handler) const;
     using QuantumProcessed_revoker = event_revoker<IAudioGraph>;
-    QuantumProcessed_revoker QuantumProcessed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const;
+    QuantumProcessed_revoker QuantumProcessed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Foundation::IInspectable> & handler) const;
     void QuantumProcessed(event_token token) const;
     event_token UnrecoverableErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs> & handler) const;
     using UnrecoverableErrorOccurred_revoker = event_revoker<IAudioGraph>;

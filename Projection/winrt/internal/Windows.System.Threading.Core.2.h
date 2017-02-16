@@ -9,7 +9,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::System::Threading::Core {
 
-struct SignalHandler : Windows::IUnknown
+struct SignalHandler : Windows::Foundation::IUnknown
 {
     SignalHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> SignalHandler(L lambda);
@@ -19,28 +19,28 @@ struct SignalHandler : Windows::IUnknown
 };
 
 struct IPreallocatedWorkItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPreallocatedWorkItem>
 {
     IPreallocatedWorkItem(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPreallocatedWorkItemFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPreallocatedWorkItemFactory>
 {
     IPreallocatedWorkItemFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISignalNotifier :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISignalNotifier>
 {
     ISignalNotifier(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISignalNotifierStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISignalNotifierStatics>
 {
     ISignalNotifierStatics(std::nullptr_t = nullptr) noexcept {}

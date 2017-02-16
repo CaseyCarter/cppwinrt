@@ -28,7 +28,7 @@ namespace impl
     using uncloak_t = typename uncloak<T>::type;
 
     template <typename I>
-    struct is_cloaked : std::negation<std::is_base_of<ABI::Windows::IInspectable, abi<I>>> {};
+    struct is_cloaked : std::negation<std::is_base_of<ABI::Windows::Foundation::IInspectable, abi<I>>> {};
 
     template <typename I>
     struct is_cloaked<cloaked<I>> : std::true_type {};
@@ -82,7 +82,7 @@ D * from_abi(const I & from) noexcept
     return &static_cast<impl::produce<D, I> *>(get_abi(from))->shim();
 }
 
-template <typename I, typename D, std::enable_if_t<std::is_base_of<Windows::IUnknown, I>::value> * = nullptr>
+template <typename I, typename D, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, I>::value> * = nullptr>
 abi<I> * to_abi(impl::producer<D, I> const * from) noexcept
 {
     return reinterpret_cast<abi<I> *>(const_cast<impl::producer<D, I> *>(from));
@@ -97,7 +97,7 @@ abi<I> * to_abi(impl::producer<D, I> const * from) noexcept
 template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value> * = nullptr>
 auto make(Args && ... args)
 {
-    std::conditional_t<impl::is_base_of_v<Windows::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
+    std::conditional_t<impl::is_base_of_v<Windows::Foundation::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
     *put_abi(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
     return instance;
 }
@@ -176,7 +176,7 @@ namespace impl
             return shim().abi_GetRuntimeClassName(name);
         }
 
-        HRESULT __stdcall abi_GetTrustLevel(Windows::TrustLevel * trustLevel) noexcept override
+        HRESULT __stdcall abi_GetTrustLevel(Windows::Foundation::TrustLevel * trustLevel) noexcept override
         {
             return shim().abi_GetTrustLevel(trustLevel);
         }
@@ -191,11 +191,11 @@ namespace impl
     {};
 
     template <typename D>
-    struct produce<D, Windows::IInspectable> : produce_base<D, Windows::IInspectable>
+    struct produce<D, Windows::Foundation::IInspectable> : produce_base<D, Windows::Foundation::IInspectable>
     {};
 
     template <bool Agile>
-    struct weak_ref : ABI::Windows::IWeakReference
+    struct weak_ref : ABI::Windows::Foundation::IWeakReference
     {
         weak_ref(::IUnknown * object, const uint32_t strong) :
             m_object(object),
@@ -206,9 +206,9 @@ namespace impl
 
         HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
         {
-            if (id == __uuidof(ABI::Windows::IWeakReference) || id == __uuidof(::IUnknown))
+            if (id == __uuidof(ABI::Windows::Foundation::IWeakReference) || id == __uuidof(::IUnknown))
             {
-                *object = static_cast<ABI::Windows::IWeakReference *>(this);
+                *object = static_cast<ABI::Windows::Foundation::IWeakReference *>(this);
                 m_weak.fetch_add(1, std::memory_order_relaxed);
                 return S_OK;
             }
@@ -258,7 +258,7 @@ namespace impl
 
         }
 
-        HRESULT __stdcall abi_Resolve(const GUID & id, ABI::Windows::IInspectable ** objectReference) noexcept override
+        HRESULT __stdcall abi_Resolve(const GUID & id, ABI::Windows::Foundation::IInspectable ** objectReference) noexcept override
         {
             uint32_t target = m_strong.load(std::memory_order_relaxed);
 
@@ -301,7 +301,7 @@ namespace impl
             return target;
         }
 
-        ABI::Windows::IWeakReferenceSource * get_source()
+        ABI::Windows::Foundation::IWeakReferenceSource * get_source()
         {
             increment_strong();
             return &m_source;
@@ -309,7 +309,7 @@ namespace impl
 
     private:
 
-        struct weak_source : ABI::Windows::IWeakReferenceSource
+        struct weak_source : ABI::Windows::Foundation::IWeakReferenceSource
         {
             weak_ref * that() noexcept
             {
@@ -318,9 +318,9 @@ namespace impl
 
             HRESULT __stdcall QueryInterface(const GUID & id, void ** object) noexcept override
             {
-                if (id == __uuidof(ABI::Windows::IWeakReferenceSource))
+                if (id == __uuidof(ABI::Windows::Foundation::IWeakReferenceSource))
                 {
-                    *object = static_cast<ABI::Windows::IWeakReferenceSource *>(this);
+                    *object = static_cast<ABI::Windows::Foundation::IWeakReferenceSource *>(this);
                     that()->increment_strong();
                     return S_OK;
                 }
@@ -338,7 +338,7 @@ namespace impl
                 return that()->m_object->Release();
             }
 
-            HRESULT __stdcall abi_GetWeakReference(ABI::Windows::IWeakReference ** weakReference) noexcept override
+            HRESULT __stdcall abi_GetWeakReference(ABI::Windows::Foundation::IWeakReference ** weakReference) noexcept override
             {
                 *weakReference = that();
                 that()->AddRef();
@@ -357,7 +357,7 @@ template <typename D, typename ... I>
 struct implements : impl::producer<D, impl::uncloak_t<I>> ...
 {
     using first_interface = typename impl::first_interface<impl::uncloak_t<I> ...>::type;
-    using IInspectable = Windows::IInspectable;
+    using IInspectable = Windows::Foundation::IInspectable;
 
     operator IInspectable() const noexcept
     {
@@ -444,7 +444,7 @@ protected:
         catch (...) { return impl::to_hresult(); }
     }
 
-    HRESULT __stdcall abi_GetTrustLevel(Windows::TrustLevel * trustLevel) noexcept
+    HRESULT __stdcall abi_GetTrustLevel(Windows::Foundation::TrustLevel * trustLevel) noexcept
     {
         try
         {
@@ -466,7 +466,7 @@ private:
 
     using is_agile = std::negation<impl::disjunction<std::is_same<non_agile, I> ...>>;
     using is_factory = impl::disjunction<std::is_same<ABI::Windows::Foundation::IActivationFactory, abi<I>> ...>;
-    using is_inspectable = impl::disjunction<std::is_base_of<ABI::Windows::IInspectable, abi<I>> ...>;
+    using is_inspectable = impl::disjunction<std::is_base_of<ABI::Windows::Foundation::IInspectable, abi<I>> ...>;
     using is_weak_ref_source = impl::conjunction<is_inspectable, std::negation<is_factory>, std::negation<impl::disjunction<std::is_same<no_weak_ref, I> ...>>>;
     using weak_ref_t = impl::weak_ref<is_agile::value>;
 
@@ -483,7 +483,7 @@ private:
             return S_OK;
         }
 
-        if (id == __uuidof(ABI::Windows::IWeakReferenceSource))
+        if (id == __uuidof(ABI::Windows::Foundation::IWeakReferenceSource))
         {
             *object = make_weak_ref();
             return *object ? S_OK : E_OUTOFMEMORY;
@@ -527,7 +527,7 @@ private:
 
         if (is_inspectable::value)
         {
-            if (id == __uuidof(ABI::Windows::IInspectable))
+            if (id == __uuidof(ABI::Windows::Foundation::IInspectable))
             {
                 *object = find_inspectable<I ...>();
                 AddRef();
@@ -597,7 +597,7 @@ private:
         }
     }
 
-    ABI::Windows::IWeakReferenceSource * make_weak_ref() noexcept
+    ABI::Windows::Foundation::IWeakReferenceSource * make_weak_ref() noexcept
     {
         static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
         uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
@@ -621,7 +621,7 @@ private:
         {
             if (m_references.compare_exchange_weak(count_or_pointer, encoding, std::memory_order_acq_rel, std::memory_order_relaxed))
             {
-                ABI::Windows::IWeakReferenceSource * result = weak_ref->get_source();
+                ABI::Windows::Foundation::IWeakReferenceSource * result = weak_ref->get_source();
                 detach_abi(weak_ref);
                 return result;
             }
@@ -686,19 +686,19 @@ private:
     }
 
     template <int = 0>
-    ABI::Windows::IInspectable * find_inspectable() const noexcept
+    ABI::Windows::Foundation::IInspectable * find_inspectable() const noexcept
     {
         return nullptr;
     }
 
     template <typename First, typename ... Rest>
-    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<impl::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
+    ABI::Windows::Foundation::IInspectable * find_inspectable(std::enable_if_t<impl::is_base_of_v<ABI::Windows::Foundation::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
         return to_abi<First>(this);
     }
 
     template <typename First, typename ... Rest>
-    ABI::Windows::IInspectable * find_inspectable(std::enable_if_t<!impl::is_base_of_v<ABI::Windows::IInspectable, abi<First>>> * = nullptr) const noexcept
+    ABI::Windows::Foundation::IInspectable * find_inspectable(std::enable_if_t<!impl::is_base_of_v<ABI::Windows::Foundation::IInspectable, abi<First>>> * = nullptr) const noexcept
     {
         return find_inspectable<Rest ...>();
     }
@@ -736,9 +736,9 @@ private:
         throw hresult_not_implemented();
     }
 
-    Windows::TrustLevel GetTrustLevel() const noexcept
+    Windows::Foundation::TrustLevel GetTrustLevel() const noexcept
     {
-        return Windows::TrustLevel::BaseTrust;
+        return Windows::Foundation::TrustLevel::BaseTrust;
     }
 
     template <typename D, typename I>

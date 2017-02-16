@@ -3,10 +3,10 @@
 
 #pragma once
 
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Xaml.Interop.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.UI.Xaml.3.h"
-#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Xaml.Markup.3.h"
 #include "Windows.UI.Xaml.h"
 
@@ -17,12 +17,12 @@ namespace impl {
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Markup::IComponentConnector> : produce_base<D, Windows::UI::Xaml::Markup::IComponentConnector>
 {
-    HRESULT __stdcall abi_Connect(int32_t connectionId, impl::abi_arg_in<Windows::IInspectable> target) noexcept override
+    HRESULT __stdcall abi_Connect(int32_t connectionId, impl::abi_arg_in<Windows::Foundation::IInspectable> target) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Connect(connectionId, *reinterpret_cast<const Windows::IInspectable *>(&target));
+            this->shim().Connect(connectionId, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&target));
             return S_OK;
         }
         catch (...)
@@ -35,12 +35,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IComponentConnector> : produce_base
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Markup::IComponentConnector2> : produce_base<D, Windows::UI::Xaml::Markup::IComponentConnector2>
 {
-    HRESULT __stdcall abi_GetBindingConnector(int32_t connectionId, impl::abi_arg_in<Windows::IInspectable> target, impl::abi_arg_out<Windows::UI::Xaml::Markup::IComponentConnector> returnValue) noexcept override
+    HRESULT __stdcall abi_GetBindingConnector(int32_t connectionId, impl::abi_arg_in<Windows::Foundation::IInspectable> target, impl::abi_arg_out<Windows::UI::Xaml::Markup::IComponentConnector> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_abi(this->shim().GetBindingConnector(connectionId, *reinterpret_cast<const Windows::IInspectable *>(&target)));
+            *returnValue = detach_abi(this->shim().GetBindingConnector(connectionId, *reinterpret_cast<const Windows::Foundation::IInspectable *>(&target)));
             return S_OK;
         }
         catch (...)
@@ -68,12 +68,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IDataTemplateComponent> : produce_b
         }
     }
 
-    HRESULT __stdcall abi_ProcessBindings(impl::abi_arg_in<Windows::IInspectable> item, int32_t itemIndex, int32_t phase, int32_t * nextPhase) noexcept override
+    HRESULT __stdcall abi_ProcessBindings(impl::abi_arg_in<Windows::Foundation::IInspectable> item, int32_t itemIndex, int32_t phase, int32_t * nextPhase) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ProcessBindings(*reinterpret_cast<const Windows::IInspectable *>(&item), itemIndex, phase, *nextPhase);
+            this->shim().ProcessBindings(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&item), itemIndex, phase, *nextPhase);
             return S_OK;
         }
         catch (...)
@@ -184,12 +184,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_ConvertValue(impl::abi_arg_in<Windows::UI::Xaml::Interop::TypeName> type, impl::abi_arg_in<Windows::IInspectable> value, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_ConvertValue(impl::abi_arg_in<Windows::UI::Xaml::Interop::TypeName> type, impl::abi_arg_in<Windows::Foundation::IInspectable> value, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_abi(this->shim().ConvertValue(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&type), *reinterpret_cast<const Windows::IInspectable *>(&value)));
+            *returnValue = detach_abi(this->shim().ConvertValue(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&type), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value)));
             return S_OK;
         }
         catch (...)
@@ -199,12 +199,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromString(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<hstring> value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromString(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<hstring> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromString(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const hstring *>(&value));
+            this->shim().SetPropertyFromString(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
         catch (...)
@@ -213,12 +213,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromBoolean(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, bool value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromBoolean(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, bool value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromBoolean(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromBoolean(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -227,12 +227,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromChar16(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, wchar_t value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromChar16(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, wchar_t value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromChar16(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromChar16(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -241,12 +241,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromDateTime(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::DateTime> value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromDateTime(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::DateTime> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromDateTime(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
+            this->shim().SetPropertyFromDateTime(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
         catch (...)
@@ -255,12 +255,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromDouble(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, double value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromDouble(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, double value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromDouble(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromDouble(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -269,12 +269,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromInt32(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, int32_t value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromInt32(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, int32_t value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromInt32(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromInt32(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -283,12 +283,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromUInt32(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, uint32_t value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromUInt32(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, uint32_t value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromUInt32(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromUInt32(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -297,12 +297,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromInt64(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, int64_t value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromInt64(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, int64_t value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromInt64(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromInt64(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -311,12 +311,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromUInt64(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, uint64_t value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromUInt64(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, uint64_t value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromUInt64(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromUInt64(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -325,12 +325,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromSingle(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, float value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromSingle(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, float value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromSingle(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromSingle(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -339,12 +339,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromPoint(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::Point> value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromPoint(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::Point> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromPoint(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            this->shim().SetPropertyFromPoint(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
         catch (...)
@@ -353,12 +353,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromRect(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::Rect> value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromRect(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::Rect> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromRect(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            this->shim().SetPropertyFromRect(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
         catch (...)
@@ -367,12 +367,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromSize(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::Size> value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromSize(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::Size> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromSize(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Size *>(&value));
+            this->shim().SetPropertyFromSize(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Size *>(&value));
             return S_OK;
         }
         catch (...)
@@ -381,12 +381,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromTimeSpan(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromTimeSpan(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromTimeSpan(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            this->shim().SetPropertyFromTimeSpan(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
         catch (...)
@@ -395,12 +395,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromByte(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, uint8_t value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromByte(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, uint8_t value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromByte(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
+            this->shim().SetPropertyFromByte(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), value);
             return S_OK;
         }
         catch (...)
@@ -409,12 +409,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromUri(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromUri(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromUri(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            this->shim().SetPropertyFromUri(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
         catch (...)
@@ -423,12 +423,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
         }
     }
 
-    HRESULT __stdcall abi_SetPropertyFromObject(impl::abi_arg_in<Windows::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_SetPropertyFromObject(impl::abi_arg_in<Windows::Foundation::IInspectable> dependencyObject, impl::abi_arg_in<Windows::UI::Xaml::IDependencyProperty> propertyToSet, impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetPropertyFromObject(*reinterpret_cast<const Windows::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SetPropertyFromObject(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&dependencyObject), *reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&propertyToSet), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -528,12 +528,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_GetValue(impl::abi_arg_in<Windows::IInspectable> instance, impl::abi_arg_out<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_GetValue(impl::abi_arg_in<Windows::Foundation::IInspectable> instance, impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetValue(*reinterpret_cast<const Windows::IInspectable *>(&instance)));
+            *value = detach_abi(this->shim().GetValue(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&instance)));
             return S_OK;
         }
         catch (...)
@@ -543,12 +543,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall abi_SetValue(impl::abi_arg_in<Windows::IInspectable> instance, impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_SetValue(impl::abi_arg_in<Windows::Foundation::IInspectable> instance, impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetValue(*reinterpret_cast<const Windows::IInspectable *>(&instance), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().SetValue(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&instance), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -615,7 +615,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlReader> : produce_base<D, Wind
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Markup::IXamlReaderStatics> : produce_base<D, Windows::UI::Xaml::Markup::IXamlReaderStatics>
 {
-    HRESULT __stdcall abi_Load(impl::abi_arg_in<hstring> xaml, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_Load(impl::abi_arg_in<hstring> xaml, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -630,7 +630,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlReaderStatics> : produce_base<
         }
     }
 
-    HRESULT __stdcall abi_LoadWithInitialTemplateValidation(impl::abi_arg_in<hstring> xaml, impl::abi_arg_out<Windows::IInspectable> returnValue) noexcept override
+    HRESULT __stdcall abi_LoadWithInitialTemplateValidation(impl::abi_arg_in<hstring> xaml, impl::abi_arg_out<Windows::Foundation::IInspectable> returnValue) noexcept override
     {
         try
         {
@@ -822,7 +822,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_ActivateInstance(impl::abi_arg_out<Windows::IInspectable> instance) noexcept override
+    HRESULT __stdcall abi_ActivateInstance(impl::abi_arg_out<Windows::Foundation::IInspectable> instance) noexcept override
     {
         try
         {
@@ -837,7 +837,7 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_CreateFromString(impl::abi_arg_in<hstring> value, impl::abi_arg_out<Windows::IInspectable> instance) noexcept override
+    HRESULT __stdcall abi_CreateFromString(impl::abi_arg_in<hstring> value, impl::abi_arg_out<Windows::Foundation::IInspectable> instance) noexcept override
     {
         try
         {
@@ -867,12 +867,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_AddToVector(impl::abi_arg_in<Windows::IInspectable> instance, impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_AddToVector(impl::abi_arg_in<Windows::Foundation::IInspectable> instance, impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddToVector(*reinterpret_cast<const Windows::IInspectable *>(&instance), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().AddToVector(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&instance), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -881,12 +881,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
         }
     }
 
-    HRESULT __stdcall abi_AddToMap(impl::abi_arg_in<Windows::IInspectable> instance, impl::abi_arg_in<Windows::IInspectable> key, impl::abi_arg_in<Windows::IInspectable> value) noexcept override
+    HRESULT __stdcall abi_AddToMap(impl::abi_arg_in<Windows::Foundation::IInspectable> instance, impl::abi_arg_in<Windows::Foundation::IInspectable> key, impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AddToMap(*reinterpret_cast<const Windows::IInspectable *>(&instance), *reinterpret_cast<const Windows::IInspectable *>(&key), *reinterpret_cast<const Windows::IInspectable *>(&value));
+            this->shim().AddToMap(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&instance), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&key), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
             return S_OK;
         }
         catch (...)
@@ -914,12 +914,12 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlType> : produce_base<D, Window
 
 namespace Windows::UI::Xaml::Markup {
 
-template <typename D> void impl_IComponentConnector<D>::Connect(int32_t connectionId, const Windows::IInspectable & target) const
+template <typename D> void impl_IComponentConnector<D>::Connect(int32_t connectionId, const Windows::Foundation::IInspectable & target) const
 {
     check_hresult(WINRT_SHIM(IComponentConnector)->abi_Connect(connectionId, get_abi(target)));
 }
 
-template <typename D> Windows::UI::Xaml::Markup::IComponentConnector impl_IComponentConnector2<D>::GetBindingConnector(int32_t connectionId, const Windows::IInspectable & target) const
+template <typename D> Windows::UI::Xaml::Markup::IComponentConnector impl_IComponentConnector2<D>::GetBindingConnector(int32_t connectionId, const Windows::Foundation::IInspectable & target) const
 {
     Windows::UI::Xaml::Markup::IComponentConnector returnValue;
     check_hresult(WINRT_SHIM(IComponentConnector2)->abi_GetBindingConnector(connectionId, get_abi(target), put_abi(returnValue)));
@@ -968,14 +968,14 @@ template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlMember<D>::
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IXamlMember<D>::GetValue(const Windows::IInspectable & instance) const
+template <typename D> Windows::Foundation::IInspectable impl_IXamlMember<D>::GetValue(const Windows::Foundation::IInspectable & instance) const
 {
-    Windows::IInspectable value;
+    Windows::Foundation::IInspectable value;
     check_hresult(WINRT_SHIM(IXamlMember)->abi_GetValue(get_abi(instance), put_abi(value)));
     return value;
 }
 
-template <typename D> void impl_IXamlMember<D>::SetValue(const Windows::IInspectable & instance, const Windows::IInspectable & value) const
+template <typename D> void impl_IXamlMember<D>::SetValue(const Windows::Foundation::IInspectable & instance, const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IXamlMember)->abi_SetValue(get_abi(instance), get_abi(value)));
 }
@@ -1064,16 +1064,16 @@ template <typename D> Windows::UI::Xaml::Interop::TypeName impl_IXamlType<D>::Un
     return value;
 }
 
-template <typename D> Windows::IInspectable impl_IXamlType<D>::ActivateInstance() const
+template <typename D> Windows::Foundation::IInspectable impl_IXamlType<D>::ActivateInstance() const
 {
-    Windows::IInspectable instance;
+    Windows::Foundation::IInspectable instance;
     check_hresult(WINRT_SHIM(IXamlType)->abi_ActivateInstance(put_abi(instance)));
     return instance;
 }
 
-template <typename D> Windows::IInspectable impl_IXamlType<D>::CreateFromString(hstring_view value) const
+template <typename D> Windows::Foundation::IInspectable impl_IXamlType<D>::CreateFromString(hstring_view value) const
 {
-    Windows::IInspectable instance;
+    Windows::Foundation::IInspectable instance;
     check_hresult(WINRT_SHIM(IXamlType)->abi_CreateFromString(get_abi(value), put_abi(instance)));
     return instance;
 }
@@ -1085,12 +1085,12 @@ template <typename D> Windows::UI::Xaml::Markup::IXamlMember impl_IXamlType<D>::
     return xamlMember;
 }
 
-template <typename D> void impl_IXamlType<D>::AddToVector(const Windows::IInspectable & instance, const Windows::IInspectable & value) const
+template <typename D> void impl_IXamlType<D>::AddToVector(const Windows::Foundation::IInspectable & instance, const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IXamlType)->abi_AddToVector(get_abi(instance), get_abi(value)));
 }
 
-template <typename D> void impl_IXamlType<D>::AddToMap(const Windows::IInspectable & instance, const Windows::IInspectable & key, const Windows::IInspectable & value) const
+template <typename D> void impl_IXamlType<D>::AddToMap(const Windows::Foundation::IInspectable & instance, const Windows::Foundation::IInspectable & key, const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IXamlType)->abi_AddToMap(get_abi(instance), get_abi(key), get_abi(value)));
 }
@@ -1128,16 +1128,16 @@ template <typename D> Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformatio
     return returnValue;
 }
 
-template <typename D> Windows::IInspectable impl_IXamlReaderStatics<D>::Load(hstring_view xaml) const
+template <typename D> Windows::Foundation::IInspectable impl_IXamlReaderStatics<D>::Load(hstring_view xaml) const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IXamlReaderStatics)->abi_Load(get_abi(xaml), put_abi(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::IInspectable impl_IXamlReaderStatics<D>::LoadWithInitialTemplateValidation(hstring_view xaml) const
+template <typename D> Windows::Foundation::IInspectable impl_IXamlReaderStatics<D>::LoadWithInitialTemplateValidation(hstring_view xaml) const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IXamlReaderStatics)->abi_LoadWithInitialTemplateValidation(get_abi(xaml), put_abi(returnValue)));
     return returnValue;
 }
@@ -1147,7 +1147,7 @@ template <typename D> void impl_IDataTemplateComponent<D>::Recycle() const
     check_hresult(WINRT_SHIM(IDataTemplateComponent)->abi_Recycle());
 }
 
-template <typename D> void impl_IDataTemplateComponent<D>::ProcessBindings(const Windows::IInspectable & item, int32_t itemIndex, int32_t phase, int32_t & nextPhase) const
+template <typename D> void impl_IDataTemplateComponent<D>::ProcessBindings(const Windows::Foundation::IInspectable & item, int32_t itemIndex, int32_t phase, int32_t & nextPhase) const
 {
     check_hresult(WINRT_SHIM(IDataTemplateComponent)->abi_ProcessBindings(get_abi(item), itemIndex, phase, &nextPhase));
 }
@@ -1181,94 +1181,94 @@ template <typename D> void impl_IXamlBindingHelperStatics<D>::ResumeRendering(co
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_ResumeRendering(get_abi(target)));
 }
 
-template <typename D> Windows::IInspectable impl_IXamlBindingHelperStatics<D>::ConvertValue(const Windows::UI::Xaml::Interop::TypeName & type, const Windows::IInspectable & value) const
+template <typename D> Windows::Foundation::IInspectable impl_IXamlBindingHelperStatics<D>::ConvertValue(const Windows::UI::Xaml::Interop::TypeName & type, const Windows::Foundation::IInspectable & value) const
 {
-    Windows::IInspectable returnValue;
+    Windows::Foundation::IInspectable returnValue;
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_ConvertValue(get_abi(type), get_abi(value), put_abi(returnValue)));
     return returnValue;
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_view value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromString(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromString(get_abi(dependencyObject), get_abi(propertyToSet), get_abi(value)));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromBoolean(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, bool value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromBoolean(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, bool value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromBoolean(get_abi(dependencyObject), get_abi(propertyToSet), value));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromChar16(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, wchar_t value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromChar16(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, wchar_t value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromChar16(get_abi(dependencyObject), get_abi(propertyToSet), value));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromDateTime(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::DateTime & value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromDateTime(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::DateTime & value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromDateTime(get_abi(dependencyObject), get_abi(propertyToSet), get_abi(value)));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromDouble(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, double value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromDouble(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, double value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromDouble(get_abi(dependencyObject), get_abi(propertyToSet), value));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int32_t value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromInt32(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int32_t value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromInt32(get_abi(dependencyObject), get_abi(propertyToSet), value));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromUInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint32_t value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromUInt32(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint32_t value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromUInt32(get_abi(dependencyObject), get_abi(propertyToSet), value));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int64_t value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromInt64(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int64_t value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromInt64(get_abi(dependencyObject), get_abi(propertyToSet), value));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromUInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint64_t value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromUInt64(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint64_t value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromUInt64(get_abi(dependencyObject), get_abi(propertyToSet), value));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromSingle(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, float value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromSingle(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, float value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromSingle(get_abi(dependencyObject), get_abi(propertyToSet), value));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromPoint(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Point & value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromPoint(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Point & value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromPoint(get_abi(dependencyObject), get_abi(propertyToSet), get_abi(value)));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromRect(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Rect & value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromRect(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Rect & value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromRect(get_abi(dependencyObject), get_abi(propertyToSet), get_abi(value)));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromSize(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Size & value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromSize(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Size & value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromSize(get_abi(dependencyObject), get_abi(propertyToSet), get_abi(value)));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromTimeSpan(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::TimeSpan & value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromTimeSpan(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::TimeSpan & value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromTimeSpan(get_abi(dependencyObject), get_abi(propertyToSet), get_abi(value)));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromByte(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint8_t value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromByte(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint8_t value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromByte(get_abi(dependencyObject), get_abi(propertyToSet), value));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromUri(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Uri & value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromUri(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Uri & value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromUri(get_abi(dependencyObject), get_abi(propertyToSet), get_abi(value)));
 }
 
-template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromObject(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::IInspectable & value) const
+template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromObject(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::IInspectable & value) const
 {
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromObject(get_abi(dependencyObject), get_abi(propertyToSet), get_abi(value)));
 }
@@ -1303,102 +1303,102 @@ inline void XamlBindingHelper::ResumeRendering(const Windows::UI::Xaml::UIElemen
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().ResumeRendering(target);
 }
 
-inline Windows::IInspectable XamlBindingHelper::ConvertValue(const Windows::UI::Xaml::Interop::TypeName & type, const Windows::IInspectable & value)
+inline Windows::Foundation::IInspectable XamlBindingHelper::ConvertValue(const Windows::UI::Xaml::Interop::TypeName & type, const Windows::Foundation::IInspectable & value)
 {
     return get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().ConvertValue(type, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_view value)
+inline void XamlBindingHelper::SetPropertyFromString(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_view value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromString(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromBoolean(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, bool value)
+inline void XamlBindingHelper::SetPropertyFromBoolean(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, bool value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromBoolean(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromChar16(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, wchar_t value)
+inline void XamlBindingHelper::SetPropertyFromChar16(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, wchar_t value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromChar16(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromDateTime(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::DateTime & value)
+inline void XamlBindingHelper::SetPropertyFromDateTime(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::DateTime & value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromDateTime(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromDouble(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, double value)
+inline void XamlBindingHelper::SetPropertyFromDouble(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, double value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromDouble(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int32_t value)
+inline void XamlBindingHelper::SetPropertyFromInt32(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int32_t value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromInt32(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromUInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint32_t value)
+inline void XamlBindingHelper::SetPropertyFromUInt32(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint32_t value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromUInt32(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int64_t value)
+inline void XamlBindingHelper::SetPropertyFromInt64(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int64_t value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromInt64(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromUInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint64_t value)
+inline void XamlBindingHelper::SetPropertyFromUInt64(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint64_t value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromUInt64(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromSingle(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, float value)
+inline void XamlBindingHelper::SetPropertyFromSingle(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, float value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromSingle(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromPoint(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Point & value)
+inline void XamlBindingHelper::SetPropertyFromPoint(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Point & value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromPoint(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromRect(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Rect & value)
+inline void XamlBindingHelper::SetPropertyFromRect(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Rect & value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromRect(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromSize(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Size & value)
+inline void XamlBindingHelper::SetPropertyFromSize(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Size & value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromSize(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromTimeSpan(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::TimeSpan & value)
+inline void XamlBindingHelper::SetPropertyFromTimeSpan(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::TimeSpan & value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromTimeSpan(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromByte(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint8_t value)
+inline void XamlBindingHelper::SetPropertyFromByte(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint8_t value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromByte(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromUri(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Uri & value)
+inline void XamlBindingHelper::SetPropertyFromUri(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Uri & value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromUri(dependencyObject, propertyToSet, value);
 }
 
-inline void XamlBindingHelper::SetPropertyFromObject(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::IInspectable & value)
+inline void XamlBindingHelper::SetPropertyFromObject(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::IInspectable & value)
 {
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromObject(dependencyObject, propertyToSet, value);
 }
 
-inline Windows::IInspectable XamlReader::Load(hstring_view xaml)
+inline Windows::Foundation::IInspectable XamlReader::Load(hstring_view xaml)
 {
     return get_activation_factory<XamlReader, IXamlReaderStatics>().Load(xaml);
 }
 
-inline Windows::IInspectable XamlReader::LoadWithInitialTemplateValidation(hstring_view xaml)
+inline Windows::Foundation::IInspectable XamlReader::LoadWithInitialTemplateValidation(hstring_view xaml)
 {
     return get_activation_factory<XamlReader, IXamlReaderStatics>().LoadWithInitialTemplateValidation(xaml);
 }

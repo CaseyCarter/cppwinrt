@@ -35,7 +35,7 @@ template <> struct __declspec(uuid("f8220a41-f738-51e8-89ba-76bbd66158cb")) __de
 namespace Windows::Gaming::Input::ForceFeedback {
 
 struct IConditionForceEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConditionForceEffect>,
     impl::require<IConditionForceEffect, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
 {
@@ -43,14 +43,14 @@ struct IConditionForceEffect :
 };
 
 struct IConditionForceEffectFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConditionForceEffectFactory>
 {
     IConditionForceEffectFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConstantForceEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IConstantForceEffect>,
     impl::require<IConstantForceEffect, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
 {
@@ -58,21 +58,21 @@ struct IConstantForceEffect :
 };
 
 struct IForceFeedbackEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IForceFeedbackEffect>
 {
     IForceFeedbackEffect(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IForceFeedbackMotor :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IForceFeedbackMotor>
 {
     IForceFeedbackMotor(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPeriodicForceEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPeriodicForceEffect>,
     impl::require<IPeriodicForceEffect, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
 {
@@ -80,14 +80,14 @@ struct IPeriodicForceEffect :
 };
 
 struct IPeriodicForceEffectFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPeriodicForceEffectFactory>
 {
     IPeriodicForceEffectFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRampForceEffect :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IRampForceEffect>,
     impl::require<IRampForceEffect, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
 {

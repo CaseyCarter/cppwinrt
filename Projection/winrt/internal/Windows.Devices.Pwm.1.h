@@ -13,7 +13,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Pwm {
 
-struct __declspec(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7")) __declspec(novtable) IPwmController : Windows::IInspectable
+struct __declspec(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7")) __declspec(novtable) IPwmController : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PinCount(int32_t * value) = 0;
     virtual HRESULT __stdcall get_ActualFrequency(double * value) = 0;
@@ -23,17 +23,17 @@ struct __declspec(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7")) __declspec(novta
     virtual HRESULT __stdcall abi_OpenPin(int32_t pinNumber, Windows::Devices::Pwm::IPwmPin ** pin) = 0;
 };
 
-struct __declspec(uuid("4263bda1-8946-4404-bd48-81dd124af4d9")) __declspec(novtable) IPwmControllerStatics : Windows::IInspectable
+struct __declspec(uuid("4263bda1-8946-4404-bd48-81dd124af4d9")) __declspec(novtable) IPwmControllerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetControllersAsync(Windows::Devices::Pwm::Provider::IPwmProvider * provider, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> ** operation) = 0;
 };
 
-struct __declspec(uuid("44fc5b1f-f119-4bdd-97ad-f76ef986736d")) __declspec(novtable) IPwmControllerStatics2 : Windows::IInspectable
+struct __declspec(uuid("44fc5b1f-f119-4bdd-97ad-f76ef986736d")) __declspec(novtable) IPwmControllerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDefaultAsync(Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> ** operation) = 0;
 };
 
-struct __declspec(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79")) __declspec(novtable) IPwmPin : Windows::IInspectable
+struct __declspec(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79")) __declspec(novtable) IPwmPin : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Controller(Windows::Devices::Pwm::IPwmController ** value) = 0;
     virtual HRESULT __stdcall abi_GetActiveDutyCyclePercentage(double * result) = 0;

@@ -109,7 +109,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
         }
     }
 
-    HRESULT __stdcall abi_GetVirtualizedItemsVector(impl::abi_arg_out<Windows::IInspectable> vector) noexcept override
+    HRESULT __stdcall abi_GetVirtualizedItemsVector(impl::abi_arg_out<Windows::Foundation::IInspectable> vector) noexcept override
     {
         try
         {
@@ -124,7 +124,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
         }
     }
 
-    HRESULT __stdcall abi_GetVirtualizedFilesVector(impl::abi_arg_out<Windows::IInspectable> vector) noexcept override
+    HRESULT __stdcall abi_GetVirtualizedFilesVector(impl::abi_arg_out<Windows::Foundation::IInspectable> vector) noexcept override
     {
         try
         {
@@ -139,7 +139,7 @@ struct produce<D, Windows::Storage::BulkAccess::IFileInformationFactory> : produ
         }
     }
 
-    HRESULT __stdcall abi_GetVirtualizedFoldersVector(impl::abi_arg_out<Windows::IInspectable> vector) noexcept override
+    HRESULT __stdcall abi_GetVirtualizedFoldersVector(impl::abi_arg_out<Windows::Foundation::IInspectable> vector) noexcept override
     {
         try
         {
@@ -312,12 +312,12 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
         }
     }
 
-    HRESULT __stdcall add_ThumbnailUpdated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable>> changedHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_ThumbnailUpdated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable>> changedHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().ThumbnailUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> *>(&changedHandler)));
+            *eventCookie = detach_abi(this->shim().ThumbnailUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> *>(&changedHandler)));
             return S_OK;
         }
         catch (...)
@@ -340,12 +340,12 @@ struct produce<D, Windows::Storage::BulkAccess::IStorageItemInformation> : produ
         }
     }
 
-    HRESULT __stdcall add_PropertiesUpdated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable>> changedHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_PropertiesUpdated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable>> changedHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().PropertiesUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> *>(&changedHandler)));
+            *eventCookie = detach_abi(this->shim().PropertiesUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> *>(&changedHandler)));
             return S_OK;
         }
         catch (...)
@@ -415,14 +415,14 @@ template <typename D> Windows::Storage::FileProperties::StorageItemThumbnail imp
     return value;
 }
 
-template <typename D> event_token impl_IStorageItemInformation<D>::ThumbnailUpdated(const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> & changedHandler) const
+template <typename D> event_token impl_IStorageItemInformation<D>::ThumbnailUpdated(const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> & changedHandler) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IStorageItemInformation)->add_ThumbnailUpdated(get_abi(changedHandler), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IStorageItemInformation> impl_IStorageItemInformation<D>::ThumbnailUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> & changedHandler) const
+template <typename D> event_revoker<IStorageItemInformation> impl_IStorageItemInformation<D>::ThumbnailUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> & changedHandler) const
 {
     return impl::make_event_revoker<D, IStorageItemInformation>(this, &ABI::Windows::Storage::BulkAccess::IStorageItemInformation::remove_ThumbnailUpdated, ThumbnailUpdated(changedHandler));
 }
@@ -432,14 +432,14 @@ template <typename D> void impl_IStorageItemInformation<D>::ThumbnailUpdated(eve
     check_hresult(WINRT_SHIM(IStorageItemInformation)->remove_ThumbnailUpdated(eventCookie));
 }
 
-template <typename D> event_token impl_IStorageItemInformation<D>::PropertiesUpdated(const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> & changedHandler) const
+template <typename D> event_token impl_IStorageItemInformation<D>::PropertiesUpdated(const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> & changedHandler) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IStorageItemInformation)->add_PropertiesUpdated(get_abi(changedHandler), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IStorageItemInformation> impl_IStorageItemInformation<D>::PropertiesUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> & changedHandler) const
+template <typename D> event_revoker<IStorageItemInformation> impl_IStorageItemInformation<D>::PropertiesUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> & changedHandler) const
 {
     return impl::make_event_revoker<D, IStorageItemInformation>(this, &ABI::Windows::Storage::BulkAccess::IStorageItemInformation::remove_PropertiesUpdated, PropertiesUpdated(changedHandler));
 }
@@ -519,23 +519,23 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::IInspectable impl_IFileInformationFactory<D>::GetVirtualizedItemsVector() const
+template <typename D> Windows::Foundation::IInspectable impl_IFileInformationFactory<D>::GetVirtualizedItemsVector() const
 {
-    Windows::IInspectable vector;
+    Windows::Foundation::IInspectable vector;
     check_hresult(WINRT_SHIM(IFileInformationFactory)->abi_GetVirtualizedItemsVector(put_abi(vector)));
     return vector;
 }
 
-template <typename D> Windows::IInspectable impl_IFileInformationFactory<D>::GetVirtualizedFilesVector() const
+template <typename D> Windows::Foundation::IInspectable impl_IFileInformationFactory<D>::GetVirtualizedFilesVector() const
 {
-    Windows::IInspectable vector;
+    Windows::Foundation::IInspectable vector;
     check_hresult(WINRT_SHIM(IFileInformationFactory)->abi_GetVirtualizedFilesVector(put_abi(vector)));
     return vector;
 }
 
-template <typename D> Windows::IInspectable impl_IFileInformationFactory<D>::GetVirtualizedFoldersVector() const
+template <typename D> Windows::Foundation::IInspectable impl_IFileInformationFactory<D>::GetVirtualizedFoldersVector() const
 {
-    Windows::IInspectable vector;
+    Windows::Foundation::IInspectable vector;
     check_hresult(WINRT_SHIM(IFileInformationFactory)->abi_GetVirtualizedFoldersVector(put_abi(vector)));
     return vector;
 }

@@ -71,7 +71,7 @@ template <> struct __declspec(uuid("13492af0-1c7f-57e8-b57e-a5ae8f2c462e")) __de
 
 #ifndef WINRT_GENERIC_dac94028_1b44_5f45_b9e3_abcf4ab044bf
 #define WINRT_GENERIC_dac94028_1b44_5f45_b9e3_abcf4ab044bf
-template <> struct __declspec(uuid("dac94028-1b44-5f45-b9e3-abcf4ab044bf")) __declspec(novtable) TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::IInspectable> {};
+template <> struct __declspec(uuid("dac94028-1b44-5f45-b9e3-abcf4ab044bf")) __declspec(novtable) TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
@@ -120,63 +120,63 @@ template <> struct __declspec(uuid("81bc7d1b-7d06-555f-811b-42ec0fa71b55")) __de
 namespace Windows::Media::DialProtocol {
 
 struct IDialApp :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialApp>
 {
     IDialApp(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDialAppStateDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialAppStateDetails>
 {
     IDialAppStateDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDialDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialDevice>
 {
     IDialDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDialDevice2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialDevice2>
 {
     IDialDevice2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDialDevicePicker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialDevicePicker>
 {
     IDialDevicePicker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDialDevicePickerFilter :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialDevicePickerFilter>
 {
     IDialDevicePickerFilter(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDialDeviceSelectedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialDeviceSelectedEventArgs>
 {
     IDialDeviceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDialDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialDeviceStatics>
 {
     IDialDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDialDisconnectButtonClickedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDialDisconnectButtonClickedEventArgs>
 {
     IDialDisconnectButtonClickedEventArgs(std::nullptr_t = nullptr) noexcept {}

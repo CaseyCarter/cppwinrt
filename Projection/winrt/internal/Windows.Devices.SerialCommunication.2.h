@@ -36,21 +36,21 @@ template <> struct __declspec(uuid("84a34b33-06fc-5e63-8ee2-eab4ff69acb7")) __de
 namespace Windows::Devices::SerialCommunication {
 
 struct IErrorReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IErrorReceivedEventArgs>
 {
     IErrorReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPinChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPinChangedEventArgs>
 {
     IPinChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISerialDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISerialDevice>,
     impl::require<ISerialDevice, Windows::Foundation::IClosable>
 {
@@ -58,7 +58,7 @@ struct ISerialDevice :
 };
 
 struct ISerialDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISerialDeviceStatics>
 {
     ISerialDeviceStatics(std::nullptr_t = nullptr) noexcept {}

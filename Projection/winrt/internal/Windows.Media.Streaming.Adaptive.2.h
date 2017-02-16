@@ -101,7 +101,7 @@ template <> struct __declspec(uuid("bd68cc00-724c-5a76-a437-1464ebdda4ac")) __de
 namespace Windows::Media::Streaming::Adaptive {
 
 struct IAdaptiveMediaSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSource>,
     impl::require<IAdaptiveMediaSource, Windows::Media::Core::IMediaSource>
 {
@@ -109,84 +109,84 @@ struct IAdaptiveMediaSource :
 };
 
 struct IAdaptiveMediaSource2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSource2>
 {
     IAdaptiveMediaSource2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceAdvancedSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceAdvancedSettings>
 {
     IAdaptiveMediaSourceAdvancedSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceCreationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceCreationResult>
 {
     IAdaptiveMediaSourceCreationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceDownloadBitrateChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceDownloadBitrateChangedEventArgs>
 {
     IAdaptiveMediaSourceDownloadBitrateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceDownloadCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceDownloadCompletedEventArgs>
 {
     IAdaptiveMediaSourceDownloadCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceDownloadFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceDownloadFailedEventArgs>
 {
     IAdaptiveMediaSourceDownloadFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceDownloadRequestedDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceDownloadRequestedDeferral>
 {
     IAdaptiveMediaSourceDownloadRequestedDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceDownloadRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceDownloadRequestedEventArgs>
 {
     IAdaptiveMediaSourceDownloadRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceDownloadResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceDownloadResult>
 {
     IAdaptiveMediaSourceDownloadResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceDownloadResult2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceDownloadResult2>
 {
     IAdaptiveMediaSourceDownloadResult2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs>
 {
     IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveMediaSourceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveMediaSourceStatics>
 {
     IAdaptiveMediaSourceStatics(std::nullptr_t = nullptr) noexcept {}

@@ -110,168 +110,168 @@ template <> struct __declspec(uuid("51c74372-9452-57ce-9270-762009fbfe4d")) __de
 namespace Windows::ApplicationModel {
 
 struct IAppDisplayInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppDisplayInfo>
 {
     IAppDisplayInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAppInfo :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppInfo>
 {
     IAppInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDesignModeStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDesignModeStatics>
 {
     IDesignModeStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEnteredBackgroundEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IEnteredBackgroundEventArgs>
 {
     IEnteredBackgroundEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILeavingBackgroundEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILeavingBackgroundEventArgs>
 {
     ILeavingBackgroundEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackage>
 {
     IPackage(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackage2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackage2>
 {
     IPackage2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackage3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackage3>
 {
     IPackage3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackage4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackage4>
 {
     IPackage4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageCatalog :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageCatalog>
 {
     IPackageCatalog(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageCatalogStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageCatalogStatics>
 {
     IPackageCatalogStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageId :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageId>
 {
     IPackageId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageIdWithMetadata :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageIdWithMetadata>
 {
     IPackageIdWithMetadata(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageInstallingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageInstallingEventArgs>
 {
     IPackageInstallingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageStagingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageStagingEventArgs>
 {
     IPackageStagingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageStatics>
 {
     IPackageStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageStatus :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageStatus>
 {
     IPackageStatus(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageStatusChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageStatusChangedEventArgs>
 {
     IPackageStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageUninstallingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageUninstallingEventArgs>
 {
     IPackageUninstallingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageUpdatingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageUpdatingEventArgs>
 {
     IPackageUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPackageWithMetadata :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPackageWithMetadata>
 {
     IPackageWithMetadata(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISuspendingDeferral :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISuspendingDeferral>
 {
     ISuspendingDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISuspendingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISuspendingEventArgs>
 {
     ISuspendingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISuspendingOperation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISuspendingOperation>
 {
     ISuspendingOperation(std::nullptr_t = nullptr) noexcept {}

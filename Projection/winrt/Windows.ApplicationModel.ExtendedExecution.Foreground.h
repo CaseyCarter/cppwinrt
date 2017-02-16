@@ -62,12 +62,12 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
         }
     }
 
-    HRESULT __stdcall add_Revoked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Revoked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Revoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> *>(&handler)));
+            *token = detach_abi(this->shim().Revoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -157,14 +157,14 @@ template <typename D> void impl_IExtendedExecutionForegroundSession<D>::Descript
     check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->put_Description(get_abi(value)));
 }
 
-template <typename D> event_token impl_IExtendedExecutionForegroundSession<D>::Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const
+template <typename D> event_token impl_IExtendedExecutionForegroundSession<D>::Revoked(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IExtendedExecutionForegroundSession)->add_Revoked(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IExtendedExecutionForegroundSession> impl_IExtendedExecutionForegroundSession<D>::Revoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const
+template <typename D> event_revoker<IExtendedExecutionForegroundSession> impl_IExtendedExecutionForegroundSession<D>::Revoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const
 {
     return impl::make_event_revoker<D, IExtendedExecutionForegroundSession>(this, &ABI::Windows::ApplicationModel::ExtendedExecution::Foreground::IExtendedExecutionForegroundSession::remove_Revoked, Revoked(handler));
 }

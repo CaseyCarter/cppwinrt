@@ -11,12 +11,12 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_5ee3189c_7dbf_5998_ad07_5414fb82567c
 #define WINRT_GENERIC_5ee3189c_7dbf_5998_ad07_5414fb82567c
-template <> struct __declspec(uuid("5ee3189c-7dbf-5998-ad07-5414fb82567c")) __declspec(novtable) IMap<GUID, Windows::IInspectable> : impl_IMap<GUID, Windows::IInspectable> {};
+template <> struct __declspec(uuid("5ee3189c-7dbf-5998-ad07-5414fb82567c")) __declspec(novtable) IMap<GUID, Windows::Foundation::IInspectable> : impl_IMap<GUID, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_3bda1540_d089_5a1a_8f0d_94eba8068e58
 #define WINRT_GENERIC_3bda1540_d089_5a1a_8f0d_94eba8068e58
-template <> struct __declspec(uuid("3bda1540-d089-5a1a-8f0d-94eba8068e58")) __declspec(novtable) IKeyValuePair<GUID, Windows::IInspectable> : impl_IKeyValuePair<GUID, Windows::IInspectable> {};
+template <> struct __declspec(uuid("3bda1540-d089-5a1a-8f0d-94eba8068e58")) __declspec(novtable) IKeyValuePair<GUID, Windows::Foundation::IInspectable> : impl_IKeyValuePair<GUID, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -36,7 +36,7 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_e4d2c732_bbc1_5ef4_869f_5007ceb55f6e
 #define WINRT_GENERIC_e4d2c732_bbc1_5ef4_869f_5007ceb55f6e
-template <> struct __declspec(uuid("e4d2c732-bbc1-5ef4-869f-5007ceb55f6e")) __declspec(novtable) IMapView<GUID, Windows::IInspectable> : impl_IMapView<GUID, Windows::IInspectable> {};
+template <> struct __declspec(uuid("e4d2c732-bbc1-5ef4-869f-5007ceb55f6e")) __declspec(novtable) IMapView<GUID, Windows::Foundation::IInspectable> : impl_IMapView<GUID, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -56,12 +56,12 @@ namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_f3b20528_e3b3_5331_b2d0_0c2623aee785
 #define WINRT_GENERIC_f3b20528_e3b3_5331_b2d0_0c2623aee785
-template <> struct __declspec(uuid("f3b20528-e3b3-5331-b2d0-0c2623aee785")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("f3b20528-e3b3-5331-b2d0-0c2623aee785")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> {};
 #endif
 
 #ifndef WINRT_GENERIC_4f25059a_0b9a_5f25_9b9e_4b9f1d22ff65
 #define WINRT_GENERIC_4f25059a_0b9a_5f25_9b9e_4b9f1d22ff65
-template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::IInspectable>> {};
+template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> {};
 #endif
 
 
@@ -70,7 +70,7 @@ template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __de
 namespace Windows::Media::MediaProperties {
 
 struct IAudioEncodingProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioEncodingProperties>,
     impl::require<IAudioEncodingProperties, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
@@ -78,21 +78,21 @@ struct IAudioEncodingProperties :
 };
 
 struct IAudioEncodingPropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioEncodingPropertiesStatics>
 {
     IAudioEncodingPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioEncodingPropertiesWithFormatUserData :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAudioEncodingPropertiesWithFormatUserData>
 {
     IAudioEncodingPropertiesWithFormatUserData(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContainerEncodingProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContainerEncodingProperties>,
     impl::require<IContainerEncodingProperties, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
@@ -100,14 +100,14 @@ struct IContainerEncodingProperties :
 };
 
 struct IH264ProfileIdsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IH264ProfileIdsStatics>
 {
     IH264ProfileIdsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IImageEncodingProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IImageEncodingProperties>,
     impl::require<IImageEncodingProperties, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
@@ -115,70 +115,70 @@ struct IImageEncodingProperties :
 };
 
 struct IImageEncodingPropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IImageEncodingPropertiesStatics>
 {
     IImageEncodingPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IImageEncodingPropertiesStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IImageEncodingPropertiesStatics2>
 {
     IImageEncodingPropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaEncodingProfile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaEncodingProfile>
 {
     IMediaEncodingProfile(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaEncodingProfileStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaEncodingProfileStatics>
 {
     IMediaEncodingProfileStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaEncodingProfileStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaEncodingProfileStatics2>
 {
     IMediaEncodingProfileStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaEncodingProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaEncodingProperties>
 {
     IMediaEncodingProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaEncodingSubtypesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaEncodingSubtypesStatics>
 {
     IMediaEncodingSubtypesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaRatio :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaRatio>
 {
     IMediaRatio(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMpeg2ProfileIdsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMpeg2ProfileIdsStatics>
 {
     IMpeg2ProfileIdsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoEncodingProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoEncodingProperties>,
     impl::require<IVideoEncodingProperties, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
@@ -186,21 +186,21 @@ struct IVideoEncodingProperties :
 };
 
 struct IVideoEncodingProperties2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoEncodingProperties2>
 {
     IVideoEncodingProperties2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoEncodingProperties3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoEncodingProperties3>
 {
     IVideoEncodingProperties3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoEncodingPropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVideoEncodingPropertiesStatics>
 {
     IVideoEncodingPropertiesStatics(std::nullptr_t = nullptr) noexcept {}

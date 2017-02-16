@@ -277,12 +277,12 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
         }
     }
 
-    HRESULT __stdcall add_RestrictionsChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_RestrictionsChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().RestrictionsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().RestrictionsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -438,14 +438,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IRatedCont
     return operation;
 }
 
-template <typename D> event_token impl_IRatedContentRestrictions<D>::RestrictionsChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IRatedContentRestrictions<D>::RestrictionsChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IRatedContentRestrictions)->add_RestrictionsChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IRatedContentRestrictions> impl_IRatedContentRestrictions<D>::RestrictionsChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IRatedContentRestrictions> impl_IRatedContentRestrictions<D>::RestrictionsChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IRatedContentRestrictions>(this, &ABI::Windows::Media::ContentRestrictions::IRatedContentRestrictions::remove_RestrictionsChanged, RestrictionsChanged(handler));
 }

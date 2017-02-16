@@ -11,7 +11,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_86c4f619_67b6_51c7_b30d_d8cf13625327
 #define WINRT_GENERIC_86c4f619_67b6_51c7_b30d_d8cf13625327
-template <> struct __declspec(uuid("86c4f619-67b6-51c7-b30d-d8cf13625327")) __declspec(novtable) TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> : impl_TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> {};
+template <> struct __declspec(uuid("86c4f619-67b6-51c7-b30d-d8cf13625327")) __declspec(novtable) TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_430ecece_1418_5d19_81b2_5ddb381603cc
@@ -34,24 +34,24 @@ template <> struct __declspec(uuid("398c4183-793d-5b00-819b-4aef92485e94")) __de
 
 namespace Windows::Graphics::Display {
 
-struct [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] DisplayPropertiesEventHandler : Windows::IUnknown
+struct [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] DisplayPropertiesEventHandler : Windows::Foundation::IUnknown
 {
     DisplayPropertiesEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DisplayPropertiesEventHandler(L lambda);
     template <typename F> DisplayPropertiesEventHandler (F * function);
     template <typename O, typename M> DisplayPropertiesEventHandler(O * object, M method);
-    void operator()(const Windows::IInspectable & sender) const;
+    void operator()(const Windows::Foundation::IInspectable & sender) const;
 };
 
 struct IDisplayInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDisplayInformation>
 {
     IDisplayInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDisplayInformation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDisplayInformation2>,
     impl::require<IDisplayInformation2, Windows::Graphics::Display::IDisplayInformation>
 {
@@ -59,28 +59,28 @@ struct IDisplayInformation2 :
 };
 
 struct IDisplayInformation3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDisplayInformation3>
 {
     IDisplayInformation3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDisplayInformation4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDisplayInformation4>
 {
     IDisplayInformation4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDisplayInformationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDisplayInformationStatics>
 {
     IDisplayInformationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] IDisplayPropertiesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDisplayPropertiesStatics>
 {
     IDisplayPropertiesStatics(std::nullptr_t = nullptr) noexcept {}

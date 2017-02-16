@@ -85,11 +85,11 @@ struct KeyValuePairIterator : implements<KeyValuePairIterator<C>,
     using value_type = Windows::Foundation::Collections::IKeyValuePair<key_type, mapped_type>;
     using const_iterator = typename C::const_iterator;
 
-    Windows::IInspectable m_reference;
+    Windows::Foundation::IInspectable m_reference;
     const_iterator m_iterator;
     const_iterator m_end;
 
-    KeyValuePairIterator(const Windows::IInspectable & reference,
+    KeyValuePairIterator(const Windows::Foundation::IInspectable & reference,
                          const C & container) :
         m_reference(reference),
         m_iterator(begin(container)),

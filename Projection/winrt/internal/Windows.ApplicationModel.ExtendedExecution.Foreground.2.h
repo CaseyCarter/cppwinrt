@@ -12,7 +12,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_f874197a_bf19_5482_9ab1_34923de6738d
 #define WINRT_GENERIC_f874197a_bf19_5482_9ab1_34923de6738d
-template <> struct __declspec(uuid("f874197a-bf19-5482-9ab1-34923de6738d")) __declspec(novtable) TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> : impl_TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> {};
+template <> struct __declspec(uuid("f874197a-bf19-5482-9ab1-34923de6738d")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_b18ea00f_8c20_5ac2_9246_3ef405271f1a
@@ -31,14 +31,14 @@ template <> struct __declspec(uuid("07e1dc01-18ba-596a-b745-79f9cde44ccc")) __de
 namespace Windows::ApplicationModel::ExtendedExecution::Foreground {
 
 struct IExtendedExecutionForegroundRevokedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExtendedExecutionForegroundRevokedEventArgs>
 {
     IExtendedExecutionForegroundRevokedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IExtendedExecutionForegroundSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IExtendedExecutionForegroundSession>,
     impl::require<IExtendedExecutionForegroundSession, Windows::Foundation::IClosable>
 {

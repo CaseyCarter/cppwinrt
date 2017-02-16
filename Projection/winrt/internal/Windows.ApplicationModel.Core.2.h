@@ -16,7 +16,7 @@ template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __de
 
 #ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
 #define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
-template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::IInspectable> : impl_EventHandler<Windows::IInspectable> {};
+template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_338579bf_1a35_5cc4_a622_a6f384fd892c
@@ -71,7 +71,7 @@ template <> struct __declspec(uuid("d9a3f433-9bcc-54d6-b3cf-7b01f026d4cd")) __de
 
 #ifndef WINRT_GENERIC_28342e21_dad3_5e32_bae1_afe7b26c66fb
 #define WINRT_GENERIC_28342e21_dad3_5e32_bae1_afe7b26c66fb
-template <> struct __declspec(uuid("28342e21-dad3-5e32-bae1-afe7b26c66fb")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> {};
+template <> struct __declspec(uuid("28342e21-dad3-5e32-bae1-afe7b26c66fb")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
@@ -100,126 +100,126 @@ template <> struct __declspec(uuid("32bc12d1-2653-5a41-a55e-88a12af2026a")) __de
 namespace Windows::ApplicationModel::Core {
 
 struct IAppListEntry :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAppListEntry>
 {
     IAppListEntry(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreApplication :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreApplication>
 {
     ICoreApplication(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreApplication2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreApplication2>
 {
     ICoreApplication2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreApplicationExit :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreApplicationExit>
 {
     ICoreApplicationExit(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreApplicationUnhandledError :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreApplicationUnhandledError>
 {
     ICoreApplicationUnhandledError(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreApplicationUseCount :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreApplicationUseCount>
 {
     ICoreApplicationUseCount(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreApplicationView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreApplicationView>
 {
     ICoreApplicationView(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreApplicationView2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreApplicationView2>
 {
     ICoreApplicationView2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreApplicationView3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreApplicationView3>
 {
     ICoreApplicationView3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreApplicationViewTitleBar :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreApplicationViewTitleBar>
 {
     ICoreApplicationViewTitleBar(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreImmersiveApplication :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreImmersiveApplication>
 {
     ICoreImmersiveApplication(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreImmersiveApplication2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreImmersiveApplication2>
 {
     ICoreImmersiveApplication2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreImmersiveApplication3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICoreImmersiveApplication3>
 {
     ICoreImmersiveApplication3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkView :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkView>
 {
     IFrameworkView(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkViewSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFrameworkViewSource>
 {
     IFrameworkViewSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHostedViewClosingEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IHostedViewClosingEventArgs>
 {
     IHostedViewClosingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUnhandledError :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUnhandledError>
 {
     IUnhandledError(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUnhandledErrorDetectedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUnhandledErrorDetectedEventArgs>
 {
     IUnhandledErrorDetectedEventArgs(std::nullptr_t = nullptr) noexcept {}

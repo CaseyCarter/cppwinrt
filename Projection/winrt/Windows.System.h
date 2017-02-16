@@ -1127,12 +1127,12 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_AppMemoryUsageIncreased(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AppMemoryUsageIncreased(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().AppMemoryUsageIncreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AppMemoryUsageIncreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1155,12 +1155,12 @@ struct produce<D, Windows::System::IMemoryManagerStatics> : produce_base<D, Wind
         }
     }
 
-    HRESULT __stdcall add_AppMemoryUsageDecreased(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AppMemoryUsageDecreased(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().AppMemoryUsageDecreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AppMemoryUsageDecreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -1457,7 +1457,7 @@ struct produce<D, Windows::System::IUser> : produce_base<D, Windows::System::IUs
         }
     }
 
-    HRESULT __stdcall abi_GetPropertyAsync(impl::abi_arg_in<hstring> value, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::IInspectable>> operation) noexcept override
+    HRESULT __stdcall abi_GetPropertyAsync(impl::abi_arg_in<hstring> value, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable>> operation) noexcept override
     {
         try
         {
@@ -2056,12 +2056,12 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
         }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2084,12 +2084,12 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
         }
     }
 
-    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_Stopped(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -2194,14 +2194,14 @@ template <typename D> Windows::System::AppMemoryUsageLevel impl_IMemoryManagerSt
     return value;
 }
 
-template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMemoryManagerStatics)->add_AppMemoryUsageIncreased(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMemoryManagerStatics>(this, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageIncreased, AppMemoryUsageIncreased(handler));
 }
@@ -2211,14 +2211,14 @@ template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageIncrease
     check_hresult(WINRT_SHIM(IMemoryManagerStatics)->remove_AppMemoryUsageIncreased(token));
 }
 
-template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IMemoryManagerStatics)->add_AppMemoryUsageDecreased(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IMemoryManagerStatics>(this, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageDecreased, AppMemoryUsageDecreased(handler));
 }
@@ -2292,9 +2292,9 @@ template <typename D> Windows::System::UserType impl_IUser<D>::Type() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::IInspectable> impl_IUser<D>::GetPropertyAsync(hstring_view value) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> impl_IUser<D>::GetPropertyAsync(hstring_view value) const
 {
-    Windows::Foundation::IAsyncOperation<Windows::IInspectable> operation;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> operation;
     check_hresult(WINRT_SHIM(IUser)->abi_GetPropertyAsync(get_abi(value), put_abi(operation)));
     return operation;
 }
@@ -2450,14 +2450,14 @@ template <typename D> void impl_IUserWatcher<D>::AuthenticationStatusChanging(ev
     check_hresult(WINRT_SHIM(IUserWatcher)->remove_AuthenticationStatusChanging(token));
 }
 
-template <typename D> event_token impl_IUserWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IUserWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IUserWatcher)->add_EnumerationCompleted(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IUserWatcher>(this, &ABI::Windows::System::IUserWatcher::remove_EnumerationCompleted, EnumerationCompleted(handler));
 }
@@ -2467,14 +2467,14 @@ template <typename D> void impl_IUserWatcher<D>::EnumerationCompleted(event_toke
     check_hresult(WINRT_SHIM(IUserWatcher)->remove_EnumerationCompleted(token));
 }
 
-template <typename D> event_token impl_IUserWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_IUserWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(IUserWatcher)->add_Stopped(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, IUserWatcher>(this, &ABI::Windows::System::IUserWatcher::remove_Stopped, Stopped(handler));
 }
@@ -3250,12 +3250,12 @@ inline Windows::System::AppMemoryUsageLevel MemoryManager::AppMemoryUsageLevel()
     return get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageLevel();
 }
 
-inline event_token MemoryManager::AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline event_token MemoryManager::AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     return get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageIncreased(handler);
 }
 
-inline factory_event_revoker<IMemoryManagerStatics> MemoryManager::AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline factory_event_revoker<IMemoryManagerStatics> MemoryManager::AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     auto factory = get_activation_factory<MemoryManager, IMemoryManagerStatics>();
     return { factory, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageIncreased, factory.AppMemoryUsageIncreased(handler) };
@@ -3266,12 +3266,12 @@ inline void MemoryManager::AppMemoryUsageIncreased(event_token token)
     get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageIncreased(token);
 }
 
-inline event_token MemoryManager::AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline event_token MemoryManager::AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     return get_activation_factory<MemoryManager, IMemoryManagerStatics>().AppMemoryUsageDecreased(handler);
 }
 
-inline factory_event_revoker<IMemoryManagerStatics> MemoryManager::AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler)
+inline factory_event_revoker<IMemoryManagerStatics> MemoryManager::AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
 {
     auto factory = get_activation_factory<MemoryManager, IMemoryManagerStatics>();
     return { factory, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageDecreased, factory.AppMemoryUsageDecreased(handler) };

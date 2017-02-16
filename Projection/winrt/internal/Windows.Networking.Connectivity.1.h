@@ -32,7 +32,7 @@ using NetworkUsageStates = ABI::Windows::Networking::Connectivity::NetworkUsageS
 
 namespace ABI::Windows::Networking::Connectivity {
 
-struct __declspec(uuid("f769b039-eca2-45eb-ade1-b0368b756c49")) __declspec(novtable) IAttributedNetworkUsage : Windows::IInspectable
+struct __declspec(uuid("f769b039-eca2-45eb-ade1-b0368b756c49")) __declspec(novtable) IAttributedNetworkUsage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BytesSent(uint64_t * value) = 0;
     virtual HRESULT __stdcall get_BytesReceived(uint64_t * value) = 0;
@@ -41,7 +41,7 @@ struct __declspec(uuid("f769b039-eca2-45eb-ade1-b0368b756c49")) __declspec(novta
     virtual HRESULT __stdcall get_AttributionThumbnail(Windows::Storage::Streams::IRandomAccessStreamReference ** value) = 0;
 };
 
-struct __declspec(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a")) __declspec(novtable) ICellularApnContext : Windows::IInspectable
+struct __declspec(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a")) __declspec(novtable) ICellularApnContext : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProviderId(hstring * value) = 0;
     virtual HRESULT __stdcall put_ProviderId(hstring value) = 0;
@@ -57,7 +57,7 @@ struct __declspec(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a")) __declspec(novta
     virtual HRESULT __stdcall put_AuthenticationType(winrt::Windows::Networking::Connectivity::CellularApnAuthenticationType value) = 0;
 };
 
-struct __declspec(uuid("bad7d829-3416-4b10-a202-bac0b075bdae")) __declspec(novtable) IConnectionCost : Windows::IInspectable
+struct __declspec(uuid("bad7d829-3416-4b10-a202-bac0b075bdae")) __declspec(novtable) IConnectionCost : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NetworkCostType(winrt::Windows::Networking::Connectivity::NetworkCostType * value) = 0;
     virtual HRESULT __stdcall get_Roaming(bool * value) = 0;
@@ -65,12 +65,12 @@ struct __declspec(uuid("bad7d829-3416-4b10-a202-bac0b075bdae")) __declspec(novta
     virtual HRESULT __stdcall get_ApproachingDataLimit(bool * value) = 0;
 };
 
-struct __declspec(uuid("8e113a05-e209-4549-bb25-5e0db691cb05")) __declspec(novtable) IConnectionCost2 : Windows::IInspectable
+struct __declspec(uuid("8e113a05-e209-4549-bb25-5e0db691cb05")) __declspec(novtable) IConnectionCost2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BackgroundDataUsageRestricted(bool * value) = 0;
 };
 
-struct __declspec(uuid("71ba143c-598e-49d0-84eb-8febaedcc195")) __declspec(novtable) IConnectionProfile : Windows::IInspectable
+struct __declspec(uuid("71ba143c-598e-49d0-84eb-8febaedcc195")) __declspec(novtable) IConnectionProfile : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProfileName(hstring * value) = 0;
     virtual HRESULT __stdcall abi_GetNetworkConnectivityLevel(winrt::Windows::Networking::Connectivity::NetworkConnectivityLevel * value) = 0;
@@ -83,7 +83,7 @@ struct __declspec(uuid("71ba143c-598e-49d0-84eb-8febaedcc195")) __declspec(novta
     virtual HRESULT __stdcall get_NetworkSecuritySettings(Windows::Networking::Connectivity::INetworkSecuritySettings ** value) = 0;
 };
 
-struct __declspec(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a")) __declspec(novtable) IConnectionProfile2 : Windows::IInspectable
+struct __declspec(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a")) __declspec(novtable) IConnectionProfile2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsWwanConnectionProfile(bool * value) = 0;
     virtual HRESULT __stdcall get_IsWlanConnectionProfile(bool * value) = 0;
@@ -96,12 +96,12 @@ struct __declspec(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a")) __declspec(novta
     virtual HRESULT __stdcall abi_GetConnectivityIntervalsAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::DateTime endTime, Windows::Networking::Connectivity::NetworkUsageStates states, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectivityInterval>> ** value) = 0;
 };
 
-struct __declspec(uuid("578c2528-4cd9-4161-8045-201cfd5b115c")) __declspec(novtable) IConnectionProfile3 : Windows::IInspectable
+struct __declspec(uuid("578c2528-4cd9-4161-8045-201cfd5b115c")) __declspec(novtable) IConnectionProfile3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetAttributedNetworkUsageAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::DateTime endTime, Windows::Networking::Connectivity::NetworkUsageStates states, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::AttributedNetworkUsage>> ** value) = 0;
 };
 
-struct __declspec(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a")) __declspec(novtable) IConnectionProfileFilter : Windows::IInspectable
+struct __declspec(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a")) __declspec(novtable) IConnectionProfileFilter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_IsConnected(bool value) = 0;
     virtual HRESULT __stdcall get_IsConnected(bool * value) = 0;
@@ -115,7 +115,7 @@ struct __declspec(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a")) __declspec(novta
     virtual HRESULT __stdcall get_ServiceProviderGuid(Windows::Foundation::IReference<GUID> ** value) = 0;
 };
 
-struct __declspec(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885")) __declspec(novtable) IConnectionProfileFilter2 : Windows::IInspectable
+struct __declspec(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885")) __declspec(novtable) IConnectionProfileFilter2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_IsRoaming(Windows::Foundation::IReference<bool> * value) = 0;
     virtual HRESULT __stdcall get_IsRoaming(Windows::Foundation::IReference<bool> ** value) = 0;
@@ -126,25 +126,25 @@ struct __declspec(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885")) __declspec(novta
     virtual HRESULT __stdcall get_RawData(Windows::Storage::Streams::IBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("ff905d4c-f83b-41b0-8a0c-1462d9c56b73")) __declspec(novtable) IConnectionSession : Windows::IInspectable
+struct __declspec(uuid("ff905d4c-f83b-41b0-8a0c-1462d9c56b73")) __declspec(novtable) IConnectionSession : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ConnectionProfile(Windows::Networking::Connectivity::IConnectionProfile ** value) = 0;
 };
 
-struct __declspec(uuid("4faa3fff-6746-4824-a964-eed8e87f8709")) __declspec(novtable) IConnectivityInterval : Windows::IInspectable
+struct __declspec(uuid("4faa3fff-6746-4824-a964-eed8e87f8709")) __declspec(novtable) IConnectivityInterval : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StartTime(Windows::Foundation::DateTime * startTime) = 0;
     virtual HRESULT __stdcall get_ConnectionDuration(Windows::Foundation::TimeSpan * duration) = 0;
 };
 
-struct __declspec(uuid("5120d4b1-4fb1-48b0-afc9-42e0092a8164")) __declspec(novtable) IConnectivityManagerStatics : Windows::IInspectable
+struct __declspec(uuid("5120d4b1-4fb1-48b0-afc9-42e0092a8164")) __declspec(novtable) IConnectivityManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AcquireConnectionAsync(Windows::Networking::Connectivity::ICellularApnContext * cellularApnContext, Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ConnectionSession> ** operation) = 0;
     virtual HRESULT __stdcall abi_AddHttpRoutePolicy(Windows::Networking::Connectivity::IRoutePolicy * routePolicy) = 0;
     virtual HRESULT __stdcall abi_RemoveHttpRoutePolicy(Windows::Networking::Connectivity::IRoutePolicy * routePolicy) = 0;
 };
 
-struct __declspec(uuid("977a8b8c-3885-40f3-8851-42cd2bd568bb")) __declspec(novtable) IDataPlanStatus : Windows::IInspectable
+struct __declspec(uuid("977a8b8c-3885-40f3-8851-42cd2bd568bb")) __declspec(novtable) IDataPlanStatus : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DataPlanUsage(Windows::Networking::Connectivity::IDataPlanUsage ** value) = 0;
     virtual HRESULT __stdcall get_DataLimitInMegabytes(Windows::Foundation::IReference<uint32_t> ** value) = 0;
@@ -154,38 +154,38 @@ struct __declspec(uuid("977a8b8c-3885-40f3-8851-42cd2bd568bb")) __declspec(novta
     virtual HRESULT __stdcall get_MaxTransferSizeInMegabytes(Windows::Foundation::IReference<uint32_t> ** value) = 0;
 };
 
-struct __declspec(uuid("b921492d-3b44-47ff-b361-be59e69ed1b0")) __declspec(novtable) IDataPlanUsage : Windows::IInspectable
+struct __declspec(uuid("b921492d-3b44-47ff-b361-be59e69ed1b0")) __declspec(novtable) IDataPlanUsage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MegabytesUsed(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_LastSyncTime(Windows::Foundation::DateTime * value) = 0;
 };
 
-struct __declspec(uuid("c1431dd3-b146-4d39-b959-0c69b096c512")) __declspec(novtable) IDataUsage : Windows::IInspectable
+struct __declspec(uuid("c1431dd3-b146-4d39-b959-0c69b096c512")) __declspec(novtable) IDataUsage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BytesSent(uint64_t * value) = 0;
     virtual HRESULT __stdcall get_BytesReceived(uint64_t * value) = 0;
 };
 
-struct __declspec(uuid("d85145e0-138f-47d7-9b3a-36bb488cef33")) __declspec(novtable) IIPInformation : Windows::IInspectable
+struct __declspec(uuid("d85145e0-138f-47d7-9b3a-36bb488cef33")) __declspec(novtable) IIPInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NetworkAdapter(Windows::Networking::Connectivity::INetworkAdapter ** value) = 0;
     virtual HRESULT __stdcall get_PrefixLength(Windows::Foundation::IReference<uint8_t> ** value) = 0;
 };
 
-struct __declspec(uuid("48aa53aa-1108-4546-a6cb-9a74da4b7ba0")) __declspec(novtable) ILanIdentifier : Windows::IInspectable
+struct __declspec(uuid("48aa53aa-1108-4546-a6cb-9a74da4b7ba0")) __declspec(novtable) ILanIdentifier : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InfrastructureId(Windows::Networking::Connectivity::ILanIdentifierData ** value) = 0;
     virtual HRESULT __stdcall get_PortId(Windows::Networking::Connectivity::ILanIdentifierData ** value) = 0;
     virtual HRESULT __stdcall get_NetworkAdapterId(GUID * value) = 0;
 };
 
-struct __declspec(uuid("a74e83c3-d639-45be-a36a-c4e4aeaf6d9b")) __declspec(novtable) ILanIdentifierData : Windows::IInspectable
+struct __declspec(uuid("a74e83c3-d639-45be-a36a-c4e4aeaf6d9b")) __declspec(novtable) ILanIdentifierData : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_Value(Windows::Foundation::Collections::IVectorView<uint8_t> ** value) = 0;
 };
 
-struct __declspec(uuid("3b542e03-5388-496c-a8a3-affd39aec2e6")) __declspec(novtable) INetworkAdapter : Windows::IInspectable
+struct __declspec(uuid("3b542e03-5388-496c-a8a3-affd39aec2e6")) __declspec(novtable) INetworkAdapter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OutboundMaxBitsPerSecond(uint64_t * value) = 0;
     virtual HRESULT __stdcall get_InboundMaxBitsPerSecond(uint64_t * value) = 0;
@@ -195,7 +195,7 @@ struct __declspec(uuid("3b542e03-5388-496c-a8a3-affd39aec2e6")) __declspec(novta
     virtual HRESULT __stdcall abi_GetConnectedProfileAsync(Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ConnectionProfile> ** value) = 0;
 };
 
-struct __declspec(uuid("5074f851-950d-4165-9c15-365619481eea")) __declspec(novtable) INetworkInformationStatics : Windows::IInspectable
+struct __declspec(uuid("5074f851-950d-4165-9c15-365619481eea")) __declspec(novtable) INetworkInformationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetConnectionProfiles(Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> ** value) = 0;
     virtual HRESULT __stdcall abi_GetInternetConnectionProfile(Windows::Networking::Connectivity::IConnectionProfile ** value) = 0;
@@ -207,24 +207,24 @@ struct __declspec(uuid("5074f851-950d-4165-9c15-365619481eea")) __declspec(novta
     virtual HRESULT __stdcall remove_NetworkStatusChanged(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("459ced14-2832-49b6-ba6e-e265f04786a8")) __declspec(novtable) INetworkInformationStatics2 : Windows::IInspectable
+struct __declspec(uuid("459ced14-2832-49b6-ba6e-e265f04786a8")) __declspec(novtable) INetworkInformationStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FindConnectionProfilesAsync(Windows::Networking::Connectivity::IConnectionProfileFilter * pProfileFilter, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>> ** value) = 0;
 };
 
-struct __declspec(uuid("01bc4d39-f5e0-4567-a28c-42080c831b2b")) __declspec(novtable) INetworkItem : Windows::IInspectable
+struct __declspec(uuid("01bc4d39-f5e0-4567-a28c-42080c831b2b")) __declspec(novtable) INetworkItem : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NetworkId(GUID * value) = 0;
     virtual HRESULT __stdcall abi_GetNetworkTypes(winrt::Windows::Networking::Connectivity::NetworkTypes * value) = 0;
 };
 
-struct __declspec(uuid("7ca07e8d-917b-4b5f-b84d-28f7a5ac5402")) __declspec(novtable) INetworkSecuritySettings : Windows::IInspectable
+struct __declspec(uuid("7ca07e8d-917b-4b5f-b84d-28f7a5ac5402")) __declspec(novtable) INetworkSecuritySettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NetworkAuthenticationType(winrt::Windows::Networking::Connectivity::NetworkAuthenticationType * value) = 0;
     virtual HRESULT __stdcall get_NetworkEncryptionType(winrt::Windows::Networking::Connectivity::NetworkEncryptionType * value) = 0;
 };
 
-struct __declspec(uuid("1f0cf333-d7a6-44dd-a4e9-687c476b903d")) __declspec(novtable) INetworkStateChangeEventDetails : Windows::IInspectable
+struct __declspec(uuid("1f0cf333-d7a6-44dd-a4e9-687c476b903d")) __declspec(novtable) INetworkStateChangeEventDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HasNewInternetConnectionProfile(bool * value) = 0;
     virtual HRESULT __stdcall get_HasNewConnectionCost(bool * value) = 0;
@@ -234,43 +234,43 @@ struct __declspec(uuid("1f0cf333-d7a6-44dd-a4e9-687c476b903d")) __declspec(novta
     virtual HRESULT __stdcall get_HasNewWwanRegistrationState(bool * value) = 0;
 };
 
-struct __declspec(uuid("d643c0e8-30d3-4f6a-ad47-6a1873ceb3c1")) __declspec(novtable) INetworkStateChangeEventDetails2 : Windows::IInspectable
+struct __declspec(uuid("d643c0e8-30d3-4f6a-ad47-6a1873ceb3c1")) __declspec(novtable) INetworkStateChangeEventDetails2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HasNewTetheringOperationalState(bool * value) = 0;
     virtual HRESULT __stdcall get_HasNewTetheringClientCount(bool * value) = 0;
 };
 
-struct __declspec(uuid("49da8fce-9985-4927-bf5b-072b5c65f8d9")) __declspec(novtable) INetworkUsage : Windows::IInspectable
+struct __declspec(uuid("49da8fce-9985-4927-bf5b-072b5c65f8d9")) __declspec(novtable) INetworkUsage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BytesSent(uint64_t * value) = 0;
     virtual HRESULT __stdcall get_BytesReceived(uint64_t * value) = 0;
     virtual HRESULT __stdcall get_ConnectionDuration(Windows::Foundation::TimeSpan * duration) = 0;
 };
 
-struct __declspec(uuid("ef3a60b4-9004-4dd6-b7d8-b3e502f4aad0")) __declspec(novtable) IProxyConfiguration : Windows::IInspectable
+struct __declspec(uuid("ef3a60b4-9004-4dd6-b7d8-b3e502f4aad0")) __declspec(novtable) IProxyConfiguration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ProxyUris(Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> ** value) = 0;
     virtual HRESULT __stdcall get_CanConnectDirectly(bool * value) = 0;
 };
 
-struct __declspec(uuid("11abc4ac-0fc7-42e4-8742-569923b1ca11")) __declspec(novtable) IRoutePolicy : Windows::IInspectable
+struct __declspec(uuid("11abc4ac-0fc7-42e4-8742-569923b1ca11")) __declspec(novtable) IRoutePolicy : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ConnectionProfile(Windows::Networking::Connectivity::IConnectionProfile ** value) = 0;
     virtual HRESULT __stdcall get_HostName(Windows::Networking::IHostName ** value) = 0;
     virtual HRESULT __stdcall get_HostNameType(winrt::Windows::Networking::DomainNameType * value) = 0;
 };
 
-struct __declspec(uuid("36027933-a18e-4db5-a697-f58fa7364e44")) __declspec(novtable) IRoutePolicyFactory : Windows::IInspectable
+struct __declspec(uuid("36027933-a18e-4db5-a697-f58fa7364e44")) __declspec(novtable) IRoutePolicyFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateRoutePolicy(Windows::Networking::Connectivity::IConnectionProfile * connectionProfile, Windows::Networking::IHostName * hostName, winrt::Windows::Networking::DomainNameType type, Windows::Networking::Connectivity::IRoutePolicy ** routePolicy) = 0;
 };
 
-struct __declspec(uuid("562098cb-b35a-4bf1-a884-b7557e88ff86")) __declspec(novtable) IWlanConnectionProfileDetails : Windows::IInspectable
+struct __declspec(uuid("562098cb-b35a-4bf1-a884-b7557e88ff86")) __declspec(novtable) IWlanConnectionProfileDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetConnectedSsid(hstring * value) = 0;
 };
 
-struct __declspec(uuid("0e4da8fe-835f-4df3-82fd-df556ebc09ef")) __declspec(novtable) IWwanConnectionProfileDetails : Windows::IInspectable
+struct __declspec(uuid("0e4da8fe-835f-4df3-82fd-df556ebc09ef")) __declspec(novtable) IWwanConnectionProfileDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HomeProviderId(hstring * value) = 0;
     virtual HRESULT __stdcall get_AccessPointName(hstring * value) = 0;
@@ -280,7 +280,7 @@ struct __declspec(uuid("0e4da8fe-835f-4df3-82fd-df556ebc09ef")) __declspec(novta
 
 struct __declspec(uuid("71ba143f-598e-49d0-84eb-8febaedcc195")) __declspec(novtable) NetworkStatusChangedEventHandler : IUnknown
 {
-    virtual HRESULT __stdcall abi_Invoke(Windows::IInspectable * sender) = 0;
+    virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender) = 0;
 };
 
 }

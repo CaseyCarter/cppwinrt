@@ -5,37 +5,38 @@
 
 #include "../base.h"
 #include "Windows.Devices.Printers.Extensions.0.h"
+#include "Windows.Foundation.0.h"
 #include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Printers::Extensions {
 
-struct __declspec(uuid("c56f74bd-3669-4a66-ab42-c8151930cd34")) __declspec(novtable) IPrint3DWorkflow : Windows::IInspectable
+struct __declspec(uuid("c56f74bd-3669-4a66-ab42-c8151930cd34")) __declspec(novtable) IPrint3DWorkflow : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceID(hstring * value) = 0;
-    virtual HRESULT __stdcall abi_GetPrintModelPackage(Windows::IInspectable ** printModelPackage) = 0;
+    virtual HRESULT __stdcall abi_GetPrintModelPackage(Windows::Foundation::IInspectable ** printModelPackage) = 0;
     virtual HRESULT __stdcall get_IsPrintReady(bool * value) = 0;
     virtual HRESULT __stdcall put_IsPrintReady(bool value) = 0;
     virtual HRESULT __stdcall add_PrintRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> * eventHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_PrintRequested(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("a2a6c54f-8ac1-4918-9741-e34f3004239e")) __declspec(novtable) IPrint3DWorkflow2 : Windows::IInspectable
+struct __declspec(uuid("a2a6c54f-8ac1-4918-9741-e34f3004239e")) __declspec(novtable) IPrint3DWorkflow2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_PrinterChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> * eventHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_PrinterChanged(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("19f8c858-5ac8-4b55-8a5f-e61567dafb4d")) __declspec(novtable) IPrint3DWorkflowPrintRequestedEventArgs : Windows::IInspectable
+struct __declspec(uuid("19f8c858-5ac8-4b55-8a5f-e61567dafb4d")) __declspec(novtable) IPrint3DWorkflowPrintRequestedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::Printers::Extensions::Print3DWorkflowStatus * value) = 0;
     virtual HRESULT __stdcall abi_SetExtendedStatus(winrt::Windows::Devices::Printers::Extensions::Print3DWorkflowDetail value) = 0;
-    virtual HRESULT __stdcall abi_SetSource(Windows::IInspectable * source) = 0;
+    virtual HRESULT __stdcall abi_SetSource(Windows::Foundation::IInspectable * source) = 0;
     virtual HRESULT __stdcall abi_SetSourceChanged(bool value) = 0;
 };
 
-struct __declspec(uuid("45226402-95fc-4847-93b3-134dbf5c60f7")) __declspec(novtable) IPrint3DWorkflowPrinterChangedEventArgs : Windows::IInspectable
+struct __declspec(uuid("45226402-95fc-4847-93b3-134dbf5c60f7")) __declspec(novtable) IPrint3DWorkflowPrinterChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NewDeviceId(hstring * value) = 0;
 };
@@ -56,7 +57,7 @@ template <typename D>
 struct WINRT_EBO impl_IPrint3DWorkflow
 {
     hstring DeviceID() const;
-    Windows::IInspectable GetPrintModelPackage() const;
+    Windows::Foundation::IInspectable GetPrintModelPackage() const;
     bool IsPrintReady() const;
     void IsPrintReady(bool value) const;
     event_token PrintRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> & eventHandler) const;
@@ -79,7 +80,7 @@ struct WINRT_EBO impl_IPrint3DWorkflowPrintRequestedEventArgs
 {
     Windows::Devices::Printers::Extensions::Print3DWorkflowStatus Status() const;
     void SetExtendedStatus(Windows::Devices::Printers::Extensions::Print3DWorkflowDetail value) const;
-    void SetSource(const Windows::IInspectable & source) const;
+    void SetSource(const Windows::Foundation::IInspectable & source) const;
     void SetSourceChanged(bool value) const;
 };
 

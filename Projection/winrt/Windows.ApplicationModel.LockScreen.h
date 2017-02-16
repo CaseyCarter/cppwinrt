@@ -159,12 +159,12 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenBadge> : pro
 template <typename D>
 struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : produce_base<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo>
 {
-    HRESULT __stdcall add_LockScreenImageChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_LockScreenImageChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().LockScreenImageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().LockScreenImageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -202,12 +202,12 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
         }
     }
 
-    HRESULT __stdcall add_BadgesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_BadgesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().BadgesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().BadgesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -245,12 +245,12 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
         }
     }
 
-    HRESULT __stdcall add_DetailTextChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_DetailTextChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().DetailTextChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().DetailTextChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -288,12 +288,12 @@ struct produce<D, Windows::ApplicationModel::LockScreen::ILockScreenInfo> : prod
         }
     }
 
-    HRESULT __stdcall add_AlarmIconChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable>> handler, event_token * token) noexcept override
+    HRESULT __stdcall add_AlarmIconChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_abi(this->shim().AlarmIconChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> *>(&handler)));
+            *token = detach_abi(this->shim().AlarmIconChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> *>(&handler)));
             return S_OK;
         }
         catch (...)
@@ -420,14 +420,14 @@ template <typename D> void impl_ILockScreenBadge<D>::LaunchApp() const
     check_hresult(WINRT_SHIM(ILockScreenBadge)->abi_LaunchApp());
 }
 
-template <typename D> event_token impl_ILockScreenInfo<D>::LockScreenImageChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ILockScreenInfo<D>::LockScreenImageChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ILockScreenInfo)->add_LockScreenImageChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::LockScreenImageChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::LockScreenImageChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ILockScreenInfo>(this, &ABI::Windows::ApplicationModel::LockScreen::ILockScreenInfo::remove_LockScreenImageChanged, LockScreenImageChanged(handler));
 }
@@ -444,14 +444,14 @@ template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_ILockS
     return value;
 }
 
-template <typename D> event_token impl_ILockScreenInfo<D>::BadgesChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ILockScreenInfo<D>::BadgesChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ILockScreenInfo)->add_BadgesChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::BadgesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::BadgesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ILockScreenInfo>(this, &ABI::Windows::ApplicationModel::LockScreen::ILockScreenInfo::remove_BadgesChanged, BadgesChanged(handler));
 }
@@ -468,14 +468,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::App
     return value;
 }
 
-template <typename D> event_token impl_ILockScreenInfo<D>::DetailTextChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ILockScreenInfo<D>::DetailTextChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ILockScreenInfo)->add_DetailTextChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::DetailTextChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::DetailTextChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ILockScreenInfo>(this, &ABI::Windows::ApplicationModel::LockScreen::ILockScreenInfo::remove_DetailTextChanged, DetailTextChanged(handler));
 }
@@ -492,14 +492,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
     return value;
 }
 
-template <typename D> event_token impl_ILockScreenInfo<D>::AlarmIconChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
+template <typename D> event_token impl_ILockScreenInfo<D>::AlarmIconChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> & handler) const
 {
     event_token token {};
     check_hresult(WINRT_SHIM(ILockScreenInfo)->add_AlarmIconChanged(get_abi(handler), &token));
     return token;
 }
 
-template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::AlarmIconChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
+template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::AlarmIconChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::Foundation::IInspectable> & handler) const
 {
     return impl::make_event_revoker<D, ILockScreenInfo>(this, &ABI::Windows::ApplicationModel::LockScreen::ILockScreenInfo::remove_AlarmIconChanged, AlarmIconChanged(handler));
 }

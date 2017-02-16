@@ -145,84 +145,84 @@ template <> struct __declspec(uuid("a4cd6151-2cc1-56f1-9014-df6ba3410beb")) __de
 namespace Windows::ApplicationModel::VoiceCommands {
 
 struct IVoiceCommand :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommand>
 {
     IVoiceCommand(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandCompletedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandCompletedEventArgs>
 {
     IVoiceCommandCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandConfirmationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandConfirmationResult>
 {
     IVoiceCommandConfirmationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandContentTile :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandContentTile>
 {
     IVoiceCommandContentTile(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandDefinition :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandDefinition>
 {
     IVoiceCommandDefinition(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandDefinitionManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandDefinitionManagerStatics>
 {
     IVoiceCommandDefinitionManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandDisambiguationResult :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandDisambiguationResult>
 {
     IVoiceCommandDisambiguationResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandResponse :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandResponse>
 {
     IVoiceCommandResponse(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandResponseStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandResponseStatics>
 {
     IVoiceCommandResponseStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandServiceConnection :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandServiceConnection>
 {
     IVoiceCommandServiceConnection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandServiceConnectionStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandServiceConnectionStatics>
 {
     IVoiceCommandServiceConnectionStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceCommandUserMessage :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IVoiceCommandUserMessage>
 {
     IVoiceCommandUserMessage(std::nullptr_t = nullptr) noexcept {}

@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Metadata {
 
-struct __declspec(uuid("997439fe-f681-4a11-b416-c13a47e8ba36")) __declspec(novtable) IApiInformationStatics : Windows::IInspectable
+struct __declspec(uuid("997439fe-f681-4a11-b416-c13a47e8ba36")) __declspec(novtable) IApiInformationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_IsTypePresent(hstring typeName, bool * value) = 0;
     virtual HRESULT __stdcall abi_IsMethodPresent(hstring typeName, hstring methodName, bool * value) = 0;

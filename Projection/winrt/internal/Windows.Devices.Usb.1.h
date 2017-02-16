@@ -15,14 +15,14 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Usb {
 
-struct __declspec(uuid("3c6e4846-06cf-42a9-9dc2-971c1b14b6e3")) __declspec(novtable) IUsbBulkInEndpointDescriptor : Windows::IInspectable
+struct __declspec(uuid("3c6e4846-06cf-42a9-9dc2-971c1b14b6e3")) __declspec(novtable) IUsbBulkInEndpointDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxPacketSize(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_EndpointNumber(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Pipe(Windows::Devices::Usb::IUsbBulkInPipe ** value) = 0;
 };
 
-struct __declspec(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220")) __declspec(novtable) IUsbBulkInPipe : Windows::IInspectable
+struct __declspec(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220")) __declspec(novtable) IUsbBulkInPipe : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxTransferSizeBytes(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_EndpointDescriptor(Windows::Devices::Usb::IUsbBulkInEndpointDescriptor ** value) = 0;
@@ -33,14 +33,14 @@ struct __declspec(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220")) __declspec(novta
     virtual HRESULT __stdcall get_InputStream(Windows::Storage::Streams::IInputStream ** value) = 0;
 };
 
-struct __declspec(uuid("2820847a-ffee-4f60-9be1-956cac3ecb65")) __declspec(novtable) IUsbBulkOutEndpointDescriptor : Windows::IInspectable
+struct __declspec(uuid("2820847a-ffee-4f60-9be1-956cac3ecb65")) __declspec(novtable) IUsbBulkOutEndpointDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxPacketSize(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_EndpointNumber(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Pipe(Windows::Devices::Usb::IUsbBulkOutPipe ** value) = 0;
 };
 
-struct __declspec(uuid("a8e9ee6e-0115-45aa-8b21-37b225bccee7")) __declspec(novtable) IUsbBulkOutPipe : Windows::IInspectable
+struct __declspec(uuid("a8e9ee6e-0115-45aa-8b21-37b225bccee7")) __declspec(novtable) IUsbBulkOutPipe : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EndpointDescriptor(Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor ** value) = 0;
     virtual HRESULT __stdcall abi_ClearStallAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
@@ -49,14 +49,14 @@ struct __declspec(uuid("a8e9ee6e-0115-45aa-8b21-37b225bccee7")) __declspec(novta
     virtual HRESULT __stdcall get_OutputStream(Windows::Storage::Streams::IOutputStream ** value) = 0;
 };
 
-struct __declspec(uuid("68177429-36a9-46d7-b873-fc689251ec30")) __declspec(novtable) IUsbConfiguration : Windows::IInspectable
+struct __declspec(uuid("68177429-36a9-46d7-b873-fc689251ec30")) __declspec(novtable) IUsbConfiguration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UsbInterfaces(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface> ** value) = 0;
     virtual HRESULT __stdcall get_ConfigurationDescriptor(Windows::Devices::Usb::IUsbConfigurationDescriptor ** value) = 0;
     virtual HRESULT __stdcall get_Descriptors(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> ** value) = 0;
 };
 
-struct __declspec(uuid("f2176d92-b442-407a-8207-7d646c0385f3")) __declspec(novtable) IUsbConfigurationDescriptor : Windows::IInspectable
+struct __declspec(uuid("f2176d92-b442-407a-8207-7d646c0385f3")) __declspec(novtable) IUsbConfigurationDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ConfigurationValue(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_MaxPowerMilliamps(uint32_t * value) = 0;
@@ -64,13 +64,13 @@ struct __declspec(uuid("f2176d92-b442-407a-8207-7d646c0385f3")) __declspec(novta
     virtual HRESULT __stdcall get_RemoteWakeup(bool * value) = 0;
 };
 
-struct __declspec(uuid("424ced93-e740-40a1-92bd-da120ea04914")) __declspec(novtable) IUsbConfigurationDescriptorStatics : Windows::IInspectable
+struct __declspec(uuid("424ced93-e740-40a1-92bd-da120ea04914")) __declspec(novtable) IUsbConfigurationDescriptorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryParse(Windows::Devices::Usb::IUsbDescriptor * descriptor, Windows::Devices::Usb::IUsbConfigurationDescriptor ** parsed, bool * success) = 0;
     virtual HRESULT __stdcall abi_Parse(Windows::Devices::Usb::IUsbDescriptor * descriptor, Windows::Devices::Usb::IUsbConfigurationDescriptor ** parsed) = 0;
 };
 
-struct __declspec(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c")) __declspec(novtable) IUsbControlRequestType : Windows::IInspectable
+struct __declspec(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c")) __declspec(novtable) IUsbControlRequestType : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Direction(winrt::Windows::Devices::Usb::UsbTransferDirection * value) = 0;
     virtual HRESULT __stdcall put_Direction(winrt::Windows::Devices::Usb::UsbTransferDirection value) = 0;
@@ -82,14 +82,14 @@ struct __declspec(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c")) __declspec(novta
     virtual HRESULT __stdcall put_AsByte(uint8_t value) = 0;
 };
 
-struct __declspec(uuid("0a89f216-5f9d-4874-8904-da9ad3f5528f")) __declspec(novtable) IUsbDescriptor : Windows::IInspectable
+struct __declspec(uuid("0a89f216-5f9d-4874-8904-da9ad3f5528f")) __declspec(novtable) IUsbDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Length(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_DescriptorType(uint8_t * value) = 0;
     virtual HRESULT __stdcall abi_ReadDescriptorBuffer(Windows::Storage::Streams::IBuffer * buffer) = 0;
 };
 
-struct __declspec(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b")) __declspec(novtable) IUsbDevice : Windows::IInspectable
+struct __declspec(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b")) __declspec(novtable) IUsbDevice : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_SendControlOutTransferAsync(Windows::Devices::Usb::IUsbSetupPacket * setupPacket, Windows::Storage::Streams::IBuffer * buffer, Windows::Foundation::IAsyncOperation<uint32_t> ** operation) = 0;
     virtual HRESULT __stdcall abi_SendControlOutTransferAsyncNoBuffer(Windows::Devices::Usb::IUsbSetupPacket * setupPacket, Windows::Foundation::IAsyncOperation<uint32_t> ** operation) = 0;
@@ -100,7 +100,7 @@ struct __declspec(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b")) __declspec(novta
     virtual HRESULT __stdcall get_Configuration(Windows::Devices::Usb::IUsbConfiguration ** value) = 0;
 };
 
-struct __declspec(uuid("051942f9-845e-47eb-b12a-38f2f617afe7")) __declspec(novtable) IUsbDeviceClass : Windows::IInspectable
+struct __declspec(uuid("051942f9-845e-47eb-b12a-38f2f617afe7")) __declspec(novtable) IUsbDeviceClass : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ClassCode(uint8_t * value) = 0;
     virtual HRESULT __stdcall put_ClassCode(uint8_t value) = 0;
@@ -110,11 +110,11 @@ struct __declspec(uuid("051942f9-845e-47eb-b12a-38f2f617afe7")) __declspec(novta
     virtual HRESULT __stdcall put_ProtocolCode(Windows::Foundation::IReference<uint8_t> * value) = 0;
 };
 
-struct __declspec(uuid("686f955d-9b92-4b30-9781-c22c55ac35cb")) __declspec(novtable) IUsbDeviceClasses : Windows::IInspectable
+struct __declspec(uuid("686f955d-9b92-4b30-9781-c22c55ac35cb")) __declspec(novtable) IUsbDeviceClasses : Windows::Foundation::IInspectable
 {
 };
 
-struct __declspec(uuid("b20b0527-c580-4599-a165-981b4fd03230")) __declspec(novtable) IUsbDeviceClassesStatics : Windows::IInspectable
+struct __declspec(uuid("b20b0527-c580-4599-a165-981b4fd03230")) __declspec(novtable) IUsbDeviceClassesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CdcControl(Windows::Devices::Usb::IUsbDeviceClass ** value) = 0;
     virtual HRESULT __stdcall get_Physical(Windows::Devices::Usb::IUsbDeviceClass ** value) = 0;
@@ -127,7 +127,7 @@ struct __declspec(uuid("b20b0527-c580-4599-a165-981b4fd03230")) __declspec(novta
     virtual HRESULT __stdcall get_VendorSpecific(Windows::Devices::Usb::IUsbDeviceClass ** value) = 0;
 };
 
-struct __declspec(uuid("1f48d1f6-ba97-4322-b92c-b5b189216588")) __declspec(novtable) IUsbDeviceDescriptor : Windows::IInspectable
+struct __declspec(uuid("1f48d1f6-ba97-4322-b92c-b5b189216588")) __declspec(novtable) IUsbDeviceDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BcdUsb(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_MaxPacketSize0(uint8_t * value) = 0;
@@ -137,7 +137,7 @@ struct __declspec(uuid("1f48d1f6-ba97-4322-b92c-b5b189216588")) __declspec(novta
     virtual HRESULT __stdcall get_NumberOfConfigurations(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("066b85a2-09b7-4446-8502-6fe6dcaa7309")) __declspec(novtable) IUsbDeviceStatics : Windows::IInspectable
+struct __declspec(uuid("066b85a2-09b7-4446-8502-6fe6dcaa7309")) __declspec(novtable) IUsbDeviceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID winUsbInterfaceClass, hstring * value) = 0;
     virtual HRESULT __stdcall abi_GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass, hstring * value) = 0;
@@ -146,7 +146,7 @@ struct __declspec(uuid("066b85a2-09b7-4446-8502-6fe6dcaa7309")) __declspec(novta
     virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> ** operation) = 0;
 };
 
-struct __declspec(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575")) __declspec(novtable) IUsbEndpointDescriptor : Windows::IInspectable
+struct __declspec(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575")) __declspec(novtable) IUsbEndpointDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EndpointNumber(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_Direction(winrt::Windows::Devices::Usb::UsbTransferDirection * value) = 0;
@@ -157,13 +157,13 @@ struct __declspec(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575")) __declspec(novta
     virtual HRESULT __stdcall get_AsInterruptOutEndpointDescriptor(Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor ** value) = 0;
 };
 
-struct __declspec(uuid("c890b201-9a6a-495e-a82c-295b9e708106")) __declspec(novtable) IUsbEndpointDescriptorStatics : Windows::IInspectable
+struct __declspec(uuid("c890b201-9a6a-495e-a82c-295b9e708106")) __declspec(novtable) IUsbEndpointDescriptorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryParse(Windows::Devices::Usb::IUsbDescriptor * descriptor, Windows::Devices::Usb::IUsbEndpointDescriptor ** parsed, bool * success) = 0;
     virtual HRESULT __stdcall abi_Parse(Windows::Devices::Usb::IUsbDescriptor * descriptor, Windows::Devices::Usb::IUsbEndpointDescriptor ** parsed) = 0;
 };
 
-struct __declspec(uuid("a0322b95-7f47-48ab-a727-678c25be2112")) __declspec(novtable) IUsbInterface : Windows::IInspectable
+struct __declspec(uuid("a0322b95-7f47-48ab-a727-678c25be2112")) __declspec(novtable) IUsbInterface : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BulkInPipes(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe> ** value) = 0;
     virtual HRESULT __stdcall get_InterruptInPipes(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe> ** value) = 0;
@@ -174,7 +174,7 @@ struct __declspec(uuid("a0322b95-7f47-48ab-a727-678c25be2112")) __declspec(novta
     virtual HRESULT __stdcall get_Descriptors(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> ** value) = 0;
 };
 
-struct __declspec(uuid("199670c7-b7ee-4f90-8cd5-94a2e257598a")) __declspec(novtable) IUsbInterfaceDescriptor : Windows::IInspectable
+struct __declspec(uuid("199670c7-b7ee-4f90-8cd5-94a2e257598a")) __declspec(novtable) IUsbInterfaceDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ClassCode(uint8_t * value) = 0;
     virtual HRESULT __stdcall get_SubclassCode(uint8_t * value) = 0;
@@ -183,13 +183,13 @@ struct __declspec(uuid("199670c7-b7ee-4f90-8cd5-94a2e257598a")) __declspec(novta
     virtual HRESULT __stdcall get_InterfaceNumber(uint8_t * value) = 0;
 };
 
-struct __declspec(uuid("e34a9ff5-77d6-48b6-b0be-16c6422316fe")) __declspec(novtable) IUsbInterfaceDescriptorStatics : Windows::IInspectable
+struct __declspec(uuid("e34a9ff5-77d6-48b6-b0be-16c6422316fe")) __declspec(novtable) IUsbInterfaceDescriptorStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_TryParse(Windows::Devices::Usb::IUsbDescriptor * descriptor, Windows::Devices::Usb::IUsbInterfaceDescriptor ** parsed, bool * success) = 0;
     virtual HRESULT __stdcall abi_Parse(Windows::Devices::Usb::IUsbDescriptor * descriptor, Windows::Devices::Usb::IUsbInterfaceDescriptor ** parsed) = 0;
 };
 
-struct __declspec(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5")) __declspec(novtable) IUsbInterfaceSetting : Windows::IInspectable
+struct __declspec(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5")) __declspec(novtable) IUsbInterfaceSetting : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_BulkInEndpoints(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> ** value) = 0;
     virtual HRESULT __stdcall get_InterruptInEndpoints(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> ** value) = 0;
@@ -201,7 +201,7 @@ struct __declspec(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5")) __declspec(novta
     virtual HRESULT __stdcall get_Descriptors(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> ** value) = 0;
 };
 
-struct __declspec(uuid("c0528967-c911-4c3a-86b2-419c2da89039")) __declspec(novtable) IUsbInterruptInEndpointDescriptor : Windows::IInspectable
+struct __declspec(uuid("c0528967-c911-4c3a-86b2-419c2da89039")) __declspec(novtable) IUsbInterruptInEndpointDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxPacketSize(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_EndpointNumber(uint8_t * value) = 0;
@@ -209,12 +209,12 @@ struct __declspec(uuid("c0528967-c911-4c3a-86b2-419c2da89039")) __declspec(novta
     virtual HRESULT __stdcall get_Pipe(Windows::Devices::Usb::IUsbInterruptInPipe ** value) = 0;
 };
 
-struct __declspec(uuid("b7b04092-1418-4936-8209-299cf5605583")) __declspec(novtable) IUsbInterruptInEventArgs : Windows::IInspectable
+struct __declspec(uuid("b7b04092-1418-4936-8209-299cf5605583")) __declspec(novtable) IUsbInterruptInEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InterruptData(Windows::Storage::Streams::IBuffer ** value) = 0;
 };
 
-struct __declspec(uuid("fa007116-84d7-48c7-8a3f-4c0b235f2ea6")) __declspec(novtable) IUsbInterruptInPipe : Windows::IInspectable
+struct __declspec(uuid("fa007116-84d7-48c7-8a3f-4c0b235f2ea6")) __declspec(novtable) IUsbInterruptInPipe : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EndpointDescriptor(Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor ** value) = 0;
     virtual HRESULT __stdcall abi_ClearStallAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
@@ -222,7 +222,7 @@ struct __declspec(uuid("fa007116-84d7-48c7-8a3f-4c0b235f2ea6")) __declspec(novta
     virtual HRESULT __stdcall remove_DataReceived(event_token token) = 0;
 };
 
-struct __declspec(uuid("cc9fed81-10ca-4533-952d-9e278341e80f")) __declspec(novtable) IUsbInterruptOutEndpointDescriptor : Windows::IInspectable
+struct __declspec(uuid("cc9fed81-10ca-4533-952d-9e278341e80f")) __declspec(novtable) IUsbInterruptOutEndpointDescriptor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MaxPacketSize(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_EndpointNumber(uint8_t * value) = 0;
@@ -230,7 +230,7 @@ struct __declspec(uuid("cc9fed81-10ca-4533-952d-9e278341e80f")) __declspec(novta
     virtual HRESULT __stdcall get_Pipe(Windows::Devices::Usb::IUsbInterruptOutPipe ** value) = 0;
 };
 
-struct __declspec(uuid("e984c8a9-aaf9-49d0-b96c-f661ab4a7f95")) __declspec(novtable) IUsbInterruptOutPipe : Windows::IInspectable
+struct __declspec(uuid("e984c8a9-aaf9-49d0-b96c-f661ab4a7f95")) __declspec(novtable) IUsbInterruptOutPipe : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EndpointDescriptor(Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor ** value) = 0;
     virtual HRESULT __stdcall abi_ClearStallAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
@@ -239,7 +239,7 @@ struct __declspec(uuid("e984c8a9-aaf9-49d0-b96c-f661ab4a7f95")) __declspec(novta
     virtual HRESULT __stdcall get_OutputStream(Windows::Storage::Streams::IOutputStream ** value) = 0;
 };
 
-struct __declspec(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03")) __declspec(novtable) IUsbSetupPacket : Windows::IInspectable
+struct __declspec(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03")) __declspec(novtable) IUsbSetupPacket : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RequestType(Windows::Devices::Usb::IUsbControlRequestType ** value) = 0;
     virtual HRESULT __stdcall put_RequestType(Windows::Devices::Usb::IUsbControlRequestType * value) = 0;
@@ -253,7 +253,7 @@ struct __declspec(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03")) __declspec(novta
     virtual HRESULT __stdcall put_Length(uint32_t value) = 0;
 };
 
-struct __declspec(uuid("c9257d50-1b2e-4a41-a2a7-338f0cef3c14")) __declspec(novtable) IUsbSetupPacketFactory : Windows::IInspectable
+struct __declspec(uuid("c9257d50-1b2e-4a41-a2a7-338f0cef3c14")) __declspec(novtable) IUsbSetupPacketFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateWithEightByteBuffer(Windows::Storage::Streams::IBuffer * eightByteBuffer, Windows::Devices::Usb::IUsbSetupPacket ** value) = 0;
 };

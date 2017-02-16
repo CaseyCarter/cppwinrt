@@ -25,31 +25,31 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::Effects {
 
-struct __declspec(uuid("8f85c271-038d-4393-8298-540110608eef")) __declspec(novtable) IAudioCaptureEffectsManager : Windows::IInspectable
+struct __declspec(uuid("8f85c271-038d-4393-8298-540110608eef")) __declspec(novtable) IAudioCaptureEffectsManager : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_AudioCaptureEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_AudioCaptureEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_AudioCaptureEffectsChanged(event_token token) = 0;
     virtual HRESULT __stdcall abi_GetAudioCaptureEffects(Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> ** effects) = 0;
 };
 
-struct __declspec(uuid("34aafa51-9207-4055-be93-6e5734a86ae4")) __declspec(novtable) IAudioEffect : Windows::IInspectable
+struct __declspec(uuid("34aafa51-9207-4055-be93-6e5734a86ae4")) __declspec(novtable) IAudioEffect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AudioEffectType(winrt::Windows::Media::Effects::AudioEffectType * value) = 0;
 };
 
-struct __declspec(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294")) __declspec(novtable) IAudioEffectDefinition : Windows::IInspectable
+struct __declspec(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294")) __declspec(novtable) IAudioEffectDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ActivatableClassId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
-struct __declspec(uuid("8e1da646-e705-45ed-8a2b-fc4e4f405a97")) __declspec(novtable) IAudioEffectDefinitionFactory : Windows::IInspectable
+struct __declspec(uuid("8e1da646-e705-45ed-8a2b-fc4e4f405a97")) __declspec(novtable) IAudioEffectDefinitionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring activatableClassId, Windows::Media::Effects::IAudioEffectDefinition ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithProperties(hstring activatableClassId, Windows::Foundation::Collections::IPropertySet * props, Windows::Media::Effects::IAudioEffectDefinition ** value) = 0;
 };
 
-struct __declspec(uuid("66406c04-86fa-47cc-a315-f489d8c3fe10")) __declspec(novtable) IAudioEffectsManagerStatics : Windows::IInspectable
+struct __declspec(uuid("66406c04-86fa-47cc-a315-f489d8c3fe10")) __declspec(novtable) IAudioEffectsManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateAudioRenderEffectsManager(hstring deviceId, winrt::Windows::Media::Render::AudioRenderCategory category, Windows::Media::Effects::IAudioRenderEffectsManager ** value) = 0;
     virtual HRESULT __stdcall abi_CreateAudioRenderEffectsManagerWithMode(hstring deviceId, winrt::Windows::Media::Render::AudioRenderCategory category, winrt::Windows::Media::AudioProcessing mode, Windows::Media::Effects::IAudioRenderEffectsManager ** value) = 0;
@@ -57,21 +57,21 @@ struct __declspec(uuid("66406c04-86fa-47cc-a315-f489d8c3fe10")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateAudioCaptureEffectsManagerWithMode(hstring deviceId, winrt::Windows::Media::Capture::MediaCategory category, winrt::Windows::Media::AudioProcessing mode, Windows::Media::Effects::IAudioCaptureEffectsManager ** value) = 0;
 };
 
-struct __declspec(uuid("4dc98966-8751-42b2-bfcb-39ca7864bd47")) __declspec(novtable) IAudioRenderEffectsManager : Windows::IInspectable
+struct __declspec(uuid("4dc98966-8751-42b2-bfcb-39ca7864bd47")) __declspec(novtable) IAudioRenderEffectsManager : Windows::Foundation::IInspectable
 {
-    virtual HRESULT __stdcall add_AudioRenderEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall add_AudioRenderEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_AudioRenderEffectsChanged(event_token token) = 0;
     virtual HRESULT __stdcall abi_GetAudioRenderEffects(Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> ** effects) = 0;
 };
 
-struct __declspec(uuid("a844cd09-5ecc-44b3-bb4e-1db07287139c")) __declspec(novtable) IAudioRenderEffectsManager2 : Windows::IInspectable
+struct __declspec(uuid("a844cd09-5ecc-44b3-bb4e-1db07287139c")) __declspec(novtable) IAudioRenderEffectsManager2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_EffectsProviderThumbnail(Windows::Storage::Streams::IRandomAccessStreamWithContentType ** value) = 0;
     virtual HRESULT __stdcall get_EffectsProviderSettingsLabel(hstring * value) = 0;
     virtual HRESULT __stdcall abi_ShowSettingsUI() = 0;
 };
 
-struct __declspec(uuid("8c062c53-6bc0-48b8-a99a-4b41550f1359")) __declspec(novtable) IBasicAudioEffect : Windows::IInspectable
+struct __declspec(uuid("8c062c53-6bc0-48b8-a99a-4b41550f1359")) __declspec(novtable) IBasicAudioEffect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UseInputFrameForOutput(bool * value) = 0;
     virtual HRESULT __stdcall get_SupportedEncodingProperties(Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::AudioEncodingProperties> ** value) = 0;
@@ -81,7 +81,7 @@ struct __declspec(uuid("8c062c53-6bc0-48b8-a99a-4b41550f1359")) __declspec(novta
     virtual HRESULT __stdcall abi_DiscardQueuedFrames() = 0;
 };
 
-struct __declspec(uuid("8262c7ef-b360-40be-949b-2ff42ff35693")) __declspec(novtable) IBasicVideoEffect : Windows::IInspectable
+struct __declspec(uuid("8262c7ef-b360-40be-949b-2ff42ff35693")) __declspec(novtable) IBasicVideoEffect : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsReadOnly(bool * value) = 0;
     virtual HRESULT __stdcall get_SupportedMemoryTypes(winrt::Windows::Media::Effects::MediaMemoryTypes * value) = 0;
@@ -93,7 +93,7 @@ struct __declspec(uuid("8262c7ef-b360-40be-949b-2ff42ff35693")) __declspec(novta
     virtual HRESULT __stdcall abi_DiscardQueuedFrames() = 0;
 };
 
-struct __declspec(uuid("6c30024b-f514-4278-a5f7-b9188049d110")) __declspec(novtable) ICompositeVideoFrameContext : Windows::IInspectable
+struct __declspec(uuid("6c30024b-f514-4278-a5f7-b9188049d110")) __declspec(novtable) ICompositeVideoFrameContext : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SurfacesToOverlay(Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> ** value) = 0;
     virtual HRESULT __stdcall get_BackgroundFrame(Windows::Media::IVideoFrame ** value) = 0;
@@ -101,19 +101,19 @@ struct __declspec(uuid("6c30024b-f514-4278-a5f7-b9188049d110")) __declspec(novta
     virtual HRESULT __stdcall abi_GetOverlayForSurface(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface * surfaceToOverlay, Windows::Media::Editing::IMediaOverlay ** value) = 0;
 };
 
-struct __declspec(uuid("4cd92946-1222-4a27-a586-fb3e20273255")) __declspec(novtable) IProcessAudioFrameContext : Windows::IInspectable
+struct __declspec(uuid("4cd92946-1222-4a27-a586-fb3e20273255")) __declspec(novtable) IProcessAudioFrameContext : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InputFrame(Windows::Media::IAudioFrame ** value) = 0;
     virtual HRESULT __stdcall get_OutputFrame(Windows::Media::IAudioFrame ** value) = 0;
 };
 
-struct __declspec(uuid("276f0e2b-6461-401e-ba78-0fdad6114eec")) __declspec(novtable) IProcessVideoFrameContext : Windows::IInspectable
+struct __declspec(uuid("276f0e2b-6461-401e-ba78-0fdad6114eec")) __declspec(novtable) IProcessVideoFrameContext : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InputFrame(Windows::Media::IVideoFrame ** value) = 0;
     virtual HRESULT __stdcall get_OutputFrame(Windows::Media::IVideoFrame ** value) = 0;
 };
 
-struct __declspec(uuid("8510b43e-420c-420f-96c7-7c98bba1fc55")) __declspec(novtable) IVideoCompositor : Windows::IInspectable
+struct __declspec(uuid("8510b43e-420c-420f-96c7-7c98bba1fc55")) __declspec(novtable) IVideoCompositor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TimeIndependent(bool * value) = 0;
     virtual HRESULT __stdcall abi_SetEncodingProperties(Windows::Media::MediaProperties::IVideoEncodingProperties * backgroundProperties, Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice * device) = 0;
@@ -122,31 +122,31 @@ struct __declspec(uuid("8510b43e-420c-420f-96c7-7c98bba1fc55")) __declspec(novta
     virtual HRESULT __stdcall abi_DiscardQueuedFrames() = 0;
 };
 
-struct __declspec(uuid("7946b8d0-2010-4ae3-9ab2-2cef42edd4d2")) __declspec(novtable) IVideoCompositorDefinition : Windows::IInspectable
+struct __declspec(uuid("7946b8d0-2010-4ae3-9ab2-2cef42edd4d2")) __declspec(novtable) IVideoCompositorDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ActivatableClassId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
-struct __declspec(uuid("4366fd10-68b8-4d52-89b6-02a968cca899")) __declspec(novtable) IVideoCompositorDefinitionFactory : Windows::IInspectable
+struct __declspec(uuid("4366fd10-68b8-4d52-89b6-02a968cca899")) __declspec(novtable) IVideoCompositorDefinitionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring activatableClassId, Windows::Media::Effects::IVideoCompositorDefinition ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithProperties(hstring activatableClassId, Windows::Foundation::Collections::IPropertySet * props, Windows::Media::Effects::IVideoCompositorDefinition ** value) = 0;
 };
 
-struct __declspec(uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943")) __declspec(novtable) IVideoEffectDefinition : Windows::IInspectable
+struct __declspec(uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943")) __declspec(novtable) IVideoEffectDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ActivatableClassId(hstring * value) = 0;
     virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
-struct __declspec(uuid("81439b4e-6e33-428f-9d21-b5aafef7617c")) __declspec(novtable) IVideoEffectDefinitionFactory : Windows::IInspectable
+struct __declspec(uuid("81439b4e-6e33-428f-9d21-b5aafef7617c")) __declspec(novtable) IVideoEffectDefinitionFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(hstring activatableClassId, Windows::Media::Effects::IVideoEffectDefinition ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWithProperties(hstring activatableClassId, Windows::Foundation::Collections::IPropertySet * props, Windows::Media::Effects::IVideoEffectDefinition ** value) = 0;
 };
 
-struct __declspec(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2")) __declspec(novtable) IVideoTransformEffectDefinition : Windows::IInspectable
+struct __declspec(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2")) __declspec(novtable) IVideoTransformEffectDefinition : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_PaddingColor(Windows::UI::Color * value) = 0;
     virtual HRESULT __stdcall put_PaddingColor(Windows::UI::Color value) = 0;
@@ -184,9 +184,9 @@ namespace Windows::Media::Effects {
 template <typename D>
 struct WINRT_EBO impl_IAudioCaptureEffectsManager
 {
-    event_token AudioCaptureEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> & handler) const;
+    event_token AudioCaptureEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> & handler) const;
     using AudioCaptureEffectsChanged_revoker = event_revoker<IAudioCaptureEffectsManager>;
-    AudioCaptureEffectsChanged_revoker AudioCaptureEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> & handler) const;
+    AudioCaptureEffectsChanged_revoker AudioCaptureEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> & handler) const;
     void AudioCaptureEffectsChanged(event_token token) const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> GetAudioCaptureEffects() const;
 };
@@ -223,9 +223,9 @@ struct WINRT_EBO impl_IAudioEffectsManagerStatics
 template <typename D>
 struct WINRT_EBO impl_IAudioRenderEffectsManager
 {
-    event_token AudioRenderEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> & handler) const;
+    event_token AudioRenderEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> & handler) const;
     using AudioRenderEffectsChanged_revoker = event_revoker<IAudioRenderEffectsManager>;
-    AudioRenderEffectsChanged_revoker AudioRenderEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> & handler) const;
+    AudioRenderEffectsChanged_revoker AudioRenderEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> & handler) const;
     void AudioRenderEffectsChanged(event_token token) const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> GetAudioRenderEffects() const;
 };

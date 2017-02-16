@@ -33,7 +33,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_f1a6a51e_d078_5c40_ba3f_348870ba5c87
 #define WINRT_GENERIC_f1a6a51e_d078_5c40_ba3f_348870ba5c87
-template <> struct __declspec(uuid("f1a6a51e-d078-5c40-ba3f-348870ba5c87")) __declspec(novtable) TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> {};
+template <> struct __declspec(uuid("f1a6a51e-d078-5c40-ba3f-348870ba5c87")) __declspec(novtable) TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_362c45a7_3a0a_5e27_99ce_cff6d1b770e1
@@ -53,7 +53,7 @@ template <> struct __declspec(uuid("ba51d31a-5688-5d4d-af42-122070b1eefa")) __de
 
 #ifndef WINRT_GENERIC_7c70f38d_2aa1_5522_a6d6_34b52b988ae7
 #define WINRT_GENERIC_7c70f38d_2aa1_5522_a6d6_34b52b988ae7
-template <> struct __declspec(uuid("7c70f38d-2aa1-5522-a6d6-34b52b988ae7")) __declspec(novtable) TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> {};
+template <> struct __declspec(uuid("7c70f38d-2aa1-5522-a6d6-34b52b988ae7")) __declspec(novtable) TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -98,7 +98,7 @@ template <> struct __declspec(uuid("078fc818-19f5-5b8a-ac82-25193bea56ee")) __de
 
 #ifndef WINRT_GENERIC_2675973a_eb2d_56a1_82a0_340b0ff041e6
 #define WINRT_GENERIC_2675973a_eb2d_56a1_82a0_340b0ff041e6
-template <> struct __declspec(uuid("2675973a-eb2d-56a1-82a0-340b0ff041e6")) __declspec(novtable) TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> {};
+template <> struct __declspec(uuid("2675973a-eb2d-56a1-82a0-340b0ff041e6")) __declspec(novtable) TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_76d59f7c_edf3_5dde_9529_6f806bdb1fcb
@@ -208,7 +208,7 @@ namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_3c57acbf_ca07_586a_8adb_8047dc9165a6
 #define WINRT_GENERIC_3c57acbf_ca07_586a_8adb_8047dc9165a6
-template <> struct __declspec(uuid("3c57acbf-ca07-586a-8adb-8047dc9165a6")) __declspec(novtable) TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> : impl_TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> {};
+template <> struct __declspec(uuid("3c57acbf-ca07-586a-8adb-8047dc9165a6")) __declspec(novtable) TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_23319e7d_34b1_57b7_97e5_844948ba4719
@@ -312,175 +312,175 @@ template <> struct __declspec(uuid("e1504f46-c4a6-5a29-8fc9-a934d12d7242")) __de
 namespace Windows::Media::Playback {
 
 struct IBackgroundMediaPlayerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundMediaPlayerStatics>
 {
     IBackgroundMediaPlayerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICurrentMediaPlaybackItemChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ICurrentMediaPlaybackItemChangedEventArgs>
 {
     ICurrentMediaPlaybackItemChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBreak :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBreak>
 {
     IMediaBreak(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBreakEndedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBreakEndedEventArgs>
 {
     IMediaBreakEndedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBreakFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBreakFactory>
 {
     IMediaBreakFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBreakManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBreakManager>
 {
     IMediaBreakManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBreakSchedule :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBreakSchedule>
 {
     IMediaBreakSchedule(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBreakSeekedOverEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBreakSeekedOverEventArgs>
 {
     IMediaBreakSeekedOverEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBreakSkippedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBreakSkippedEventArgs>
 {
     IMediaBreakSkippedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBreakStartedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaBreakStartedEventArgs>
 {
     IMediaBreakStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct [[deprecated("Use MediaPlayer instead of MediaEngine. For more info, see MSDN.")]] IMediaEnginePlaybackSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaEnginePlaybackSource>
 {
     IMediaEnginePlaybackSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaItemDisplayProperties :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaItemDisplayProperties>
 {
     IMediaItemDisplayProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManager :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManager>
 {
     IMediaPlaybackCommandManager(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerCommandBehavior :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerCommandBehavior>
 {
     IMediaPlaybackCommandManagerCommandBehavior(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerFastForwardReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerFastForwardReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerFastForwardReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerNextReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerNextReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerNextReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerPauseReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerPauseReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerPauseReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerPlayReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerPlayReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerPlayReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerPositionReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerPositionReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerPositionReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerPreviousReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerPreviousReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerPreviousReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerRateReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerRateReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerRateReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerRewindReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerRewindReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerRewindReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackCommandManagerShuffleReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackCommandManagerShuffleReceivedEventArgs>
 {
     IMediaPlaybackCommandManagerShuffleReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackItem :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackItem>,
     impl::require<IMediaPlaybackItem, Windows::Media::Playback::IMediaPlaybackSource>
 {
@@ -488,7 +488,7 @@ struct IMediaPlaybackItem :
 };
 
 struct IMediaPlaybackItem2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackItem2>,
     impl::require<IMediaPlaybackItem2, Windows::Media::Playback::IMediaPlaybackItem, Windows::Media::Playback::IMediaPlaybackSource>
 {
@@ -496,21 +496,21 @@ struct IMediaPlaybackItem2 :
 };
 
 struct IMediaPlaybackItemError :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackItemError>
 {
     IMediaPlaybackItemError(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackItemFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackItemFactory>
 {
     IMediaPlaybackItemFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackItemFactory2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackItemFactory2>,
     impl::require<IMediaPlaybackItemFactory2, Windows::Media::Playback::IMediaPlaybackItemFactory>
 {
@@ -518,28 +518,28 @@ struct IMediaPlaybackItemFactory2 :
 };
 
 struct IMediaPlaybackItemFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackItemFailedEventArgs>
 {
     IMediaPlaybackItemFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackItemOpenedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackItemOpenedEventArgs>
 {
     IMediaPlaybackItemOpenedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackItemStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackItemStatics>
 {
     IMediaPlaybackItemStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackList>,
     impl::require<IMediaPlaybackList, Windows::Media::Playback::IMediaPlaybackSource>
 {
@@ -547,7 +547,7 @@ struct IMediaPlaybackList :
 };
 
 struct IMediaPlaybackList2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackList2>,
     impl::require<IMediaPlaybackList2, Windows::Media::Playback::IMediaPlaybackList, Windows::Media::Playback::IMediaPlaybackSource>
 {
@@ -555,133 +555,133 @@ struct IMediaPlaybackList2 :
 };
 
 struct IMediaPlaybackSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackSession>
 {
     IMediaPlaybackSession(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackSource>
 {
     IMediaPlaybackSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackTimedMetadataTrackList :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackTimedMetadataTrackList>
 {
     IMediaPlaybackTimedMetadataTrackList(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayer :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayer>
 {
     IMediaPlayer(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayer2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayer2>
 {
     IMediaPlayer2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayer3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayer3>
 {
     IMediaPlayer3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayer4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayer4>
 {
     IMediaPlayer4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerDataReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerDataReceivedEventArgs>
 {
     IMediaPlayerDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerEffects :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerEffects>
 {
     IMediaPlayerEffects(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerEffects2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerEffects2>
 {
     IMediaPlayerEffects2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerFailedEventArgs>
 {
     IMediaPlayerFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerRateChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerRateChangedEventArgs>
 {
     IMediaPlayerRateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerSource :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerSource>
 {
     IMediaPlayerSource(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerSource2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerSource2>
 {
     IMediaPlayerSource2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerSurface :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMediaPlayerSurface>
 {
     IMediaPlayerSurface(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlaybackMediaMarker :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlaybackMediaMarker>
 {
     IPlaybackMediaMarker(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlaybackMediaMarkerFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlaybackMediaMarkerFactory>
 {
     IPlaybackMediaMarkerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlaybackMediaMarkerReachedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlaybackMediaMarkerReachedEventArgs>
 {
     IPlaybackMediaMarkerReachedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlaybackMediaMarkerSequence :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPlaybackMediaMarkerSequence>,
     impl::require<IPlaybackMediaMarkerSequence, Windows::Foundation::Collections::IIterable<Windows::Media::Playback::PlaybackMediaMarker>>
 {
@@ -689,7 +689,7 @@ struct IPlaybackMediaMarkerSequence :
 };
 
 struct ITimedMetadataPresentationModeChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITimedMetadataPresentationModeChangedEventArgs>
 {
     ITimedMetadataPresentationModeChangedEventArgs(std::nullptr_t = nullptr) noexcept {}

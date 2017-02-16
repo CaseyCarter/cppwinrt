@@ -13,7 +13,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::DataTransfer::ShareTarget {
 
-struct __declspec(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556")) __declspec(novtable) IQuickLink : Windows::IInspectable
+struct __declspec(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556")) __declspec(novtable) IQuickLink : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
     virtual HRESULT __stdcall put_Title(hstring value) = 0;
@@ -25,7 +25,7 @@ struct __declspec(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556")) __declspec(novta
     virtual HRESULT __stdcall get_SupportedFileTypes(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb")) __declspec(novtable) IShareOperation : Windows::IInspectable
+struct __declspec(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb")) __declspec(novtable) IShareOperation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Data(Windows::ApplicationModel::DataTransfer::IDataPackageView ** value) = 0;
     virtual HRESULT __stdcall get_QuickLinkId(hstring * value) = 0;
@@ -38,7 +38,7 @@ struct __declspec(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb")) __declspec(novta
     virtual HRESULT __stdcall abi_ReportError(hstring value) = 0;
 };
 
-struct __declspec(uuid("0ffb97c1-9778-4a09-8e5b-cb5e482d0555")) __declspec(novtable) IShareOperation2 : Windows::IInspectable
+struct __declspec(uuid("0ffb97c1-9778-4a09-8e5b-cb5e482d0555")) __declspec(novtable) IShareOperation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_DismissUI() = 0;
 };

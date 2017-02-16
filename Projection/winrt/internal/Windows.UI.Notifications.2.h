@@ -81,7 +81,7 @@ template <> struct __declspec(uuid("61c2402f-0ed0-5a18-ab69-59f4aa99a368")) __de
 
 #ifndef WINRT_GENERIC_ab54de2d_97d9_5528_b6ad_105afe156530
 #define WINRT_GENERIC_ab54de2d_97d9_5528_b6ad_105afe156530
-template <> struct __declspec(uuid("ab54de2d-97d9-5528-b6ad-105afe156530")) __declspec(novtable) TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::IInspectable> : impl_TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::IInspectable> {};
+template <> struct __declspec(uuid("ab54de2d-97d9-5528-b6ad-105afe156530")) __declspec(novtable) TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_95e3e803_c969_5e3a_9753_ea2ad22a9a33
@@ -175,14 +175,14 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::UI::Notifications {
 
 struct IAdaptiveNotificationContent :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveNotificationContent>
 {
     IAdaptiveNotificationContent(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdaptiveNotificationText :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdaptiveNotificationText>,
     impl::require<IAdaptiveNotificationText, Windows::UI::Notifications::IAdaptiveNotificationContent>
 {
@@ -190,336 +190,336 @@ struct IAdaptiveNotificationText :
 };
 
 struct IBadgeNotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBadgeNotification>
 {
     IBadgeNotification(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBadgeNotificationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBadgeNotificationFactory>
 {
     IBadgeNotificationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBadgeUpdateManagerForUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBadgeUpdateManagerForUser>
 {
     IBadgeUpdateManagerForUser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBadgeUpdateManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBadgeUpdateManagerStatics>
 {
     IBadgeUpdateManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBadgeUpdateManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBadgeUpdateManagerStatics2>
 {
     IBadgeUpdateManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBadgeUpdater :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBadgeUpdater>
 {
     IBadgeUpdater(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownAdaptiveNotificationHintsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownAdaptiveNotificationHintsStatics>
 {
     IKnownAdaptiveNotificationHintsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownAdaptiveNotificationTextStylesStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownAdaptiveNotificationTextStylesStatics>
 {
     IKnownAdaptiveNotificationTextStylesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKnownNotificationBindingsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IKnownNotificationBindingsStatics>
 {
     IKnownNotificationBindingsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INotification>
 {
     INotification(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INotificationBinding :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INotificationBinding>
 {
     INotificationBinding(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INotificationVisual :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<INotificationVisual>
 {
     INotificationVisual(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScheduledTileNotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScheduledTileNotification>
 {
     IScheduledTileNotification(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScheduledTileNotificationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScheduledTileNotificationFactory>
 {
     IScheduledTileNotificationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScheduledToastNotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScheduledToastNotification>
 {
     IScheduledToastNotification(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScheduledToastNotification2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScheduledToastNotification2>
 {
     IScheduledToastNotification2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScheduledToastNotification3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScheduledToastNotification3>
 {
     IScheduledToastNotification3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IScheduledToastNotificationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IScheduledToastNotificationFactory>
 {
     IScheduledToastNotificationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IShownTileNotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IShownTileNotification>
 {
     IShownTileNotification(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileFlyoutNotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileFlyoutNotification>
 {
     ITileFlyoutNotification(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileFlyoutNotificationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileFlyoutNotificationFactory>
 {
     ITileFlyoutNotificationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileFlyoutUpdateManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileFlyoutUpdateManagerStatics>
 {
     ITileFlyoutUpdateManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileFlyoutUpdater :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileFlyoutUpdater>
 {
     ITileFlyoutUpdater(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileNotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileNotification>
 {
     ITileNotification(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileNotificationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileNotificationFactory>
 {
     ITileNotificationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileUpdateManagerForUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileUpdateManagerForUser>
 {
     ITileUpdateManagerForUser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileUpdateManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileUpdateManagerStatics>
 {
     ITileUpdateManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileUpdateManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileUpdateManagerStatics2>
 {
     ITileUpdateManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileUpdater :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileUpdater>
 {
     ITileUpdater(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITileUpdater2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITileUpdater2>
 {
     ITileUpdater2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastActivatedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastActivatedEventArgs>
 {
     IToastActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastDismissedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastDismissedEventArgs>
 {
     IToastDismissedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastFailedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastFailedEventArgs>
 {
     IToastFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotification>
 {
     IToastNotification(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotification2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotification2>
 {
     IToastNotification2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotification3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotification3>
 {
     IToastNotification3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationActionTriggerDetail :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationActionTriggerDetail>
 {
     IToastNotificationActionTriggerDetail(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationFactory>
 {
     IToastNotificationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationHistory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationHistory>
 {
     IToastNotificationHistory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationHistory2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationHistory2>
 {
     IToastNotificationHistory2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationHistoryChangedTriggerDetail :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationHistoryChangedTriggerDetail>
 {
     IToastNotificationHistoryChangedTriggerDetail(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationManagerForUser :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationManagerForUser>
 {
     IToastNotificationManagerForUser(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationManagerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationManagerStatics>
 {
     IToastNotificationManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationManagerStatics2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationManagerStatics2>
 {
     IToastNotificationManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationManagerStatics4 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationManagerStatics4>
 {
     IToastNotificationManagerStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotifier :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IToastNotifier>
 {
     IToastNotifier(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserNotification :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserNotification>
 {
     IUserNotification(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserNotificationChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IUserNotificationChangedEventArgs>
 {
     IUserNotificationChangedEventArgs(std::nullptr_t = nullptr) noexcept {}

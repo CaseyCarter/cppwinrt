@@ -14,7 +14,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Contacts::Provider {
 
-struct __declspec(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746")) __declspec(novtable) IContactPickerUI : Windows::IInspectable
+struct __declspec(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746")) __declspec(novtable) IContactPickerUI : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddContact(hstring id, Windows::ApplicationModel::Contacts::IContact * contact, winrt::Windows::ApplicationModel::Contacts::Provider::AddContactResult * result) = 0;
     virtual HRESULT __stdcall abi_RemoveContact(hstring id) = 0;
@@ -25,13 +25,13 @@ struct __declspec(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746")) __declspec(novta
     virtual HRESULT __stdcall remove_ContactRemoved(event_token token) = 0;
 };
 
-struct __declspec(uuid("6e449e28-7b25-4999-9b0b-875400a1e8c8")) __declspec(novtable) IContactPickerUI2 : Windows::IInspectable
+struct __declspec(uuid("6e449e28-7b25-4999-9b0b-875400a1e8c8")) __declspec(novtable) IContactPickerUI2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddContact(Windows::ApplicationModel::Contacts::IContact * contact, winrt::Windows::ApplicationModel::Contacts::Provider::AddContactResult * result) = 0;
     virtual HRESULT __stdcall get_DesiredFieldsWithContactFieldType(Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> ** value) = 0;
 };
 
-struct __declspec(uuid("6f354338-3302-4d13-ad8d-adcc0ff9e47c")) __declspec(novtable) IContactRemovedEventArgs : Windows::IInspectable
+struct __declspec(uuid("6f354338-3302-4d13-ad8d-adcc0ff9e47c")) __declspec(novtable) IContactRemovedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
 };

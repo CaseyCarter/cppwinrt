@@ -65,21 +65,21 @@ template <> struct __declspec(uuid("39d6abda-a00a-5777-8611-82d7c326c18d")) __de
 namespace Windows::ApplicationModel::Contacts::Provider {
 
 struct IContactPickerUI :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactPickerUI>
 {
     IContactPickerUI(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactPickerUI2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactPickerUI2>
 {
     IContactPickerUI2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContactRemovedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IContactRemovedEventArgs>
 {
     IContactRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}

@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Data::Html {
 
-struct __declspec(uuid("fec00add-2399-4fac-b5a7-05e9acd7181d")) __declspec(novtable) IHtmlUtilities : Windows::IInspectable
+struct __declspec(uuid("fec00add-2399-4fac-b5a7-05e9acd7181d")) __declspec(novtable) IHtmlUtilities : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ConvertToText(hstring html, hstring * text) = 0;
 };

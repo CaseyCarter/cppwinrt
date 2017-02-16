@@ -10,14 +10,14 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::System::Power::Diagnostics {
 
 struct IBackgroundEnergyDiagnosticsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IBackgroundEnergyDiagnosticsStatics>
 {
     IBackgroundEnergyDiagnosticsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IForegroundEnergyDiagnosticsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IForegroundEnergyDiagnosticsStatics>
 {
     IForegroundEnergyDiagnosticsStatics(std::nullptr_t = nullptr) noexcept {}

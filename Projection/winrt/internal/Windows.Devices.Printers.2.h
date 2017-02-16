@@ -35,21 +35,21 @@ template <> struct __declspec(uuid("3dddecf4-1d39-58e8-83b1-dbed541c7f35")) __de
 namespace Windows::Devices::Printers {
 
 struct IPrint3DDevice :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DDevice>
 {
     IPrint3DDevice(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrint3DDeviceStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrint3DDeviceStatics>
 {
     IPrint3DDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPrintSchema :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IPrintSchema>
 {
     IPrintSchema(std::nullptr_t = nullptr) noexcept {}

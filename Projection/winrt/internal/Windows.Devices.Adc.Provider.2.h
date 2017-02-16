@@ -30,14 +30,14 @@ template <> struct __declspec(uuid("30047155-1f71-5223-8482-e5159d0137d0")) __de
 namespace Windows::Devices::Adc::Provider {
 
 struct IAdcControllerProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdcControllerProvider>
 {
     IAdcControllerProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAdcProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAdcProvider>
 {
     IAdcProvider(std::nullptr_t = nullptr) noexcept {}

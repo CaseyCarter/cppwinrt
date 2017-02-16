@@ -118,12 +118,12 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
         }
     }
 
-    HRESULT __stdcall add_Submitting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable>> eventHandler, event_token * eventCookie) noexcept override
+    HRESULT __stdcall add_Submitting(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Foundation::IInspectable>> eventHandler, event_token * eventCookie) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_abi(this->shim().Submitting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> *>(&eventHandler)));
+            *eventCookie = detach_abi(this->shim().Submitting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Foundation::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
         catch (...)
@@ -2396,14 +2396,14 @@ template <typename D> Windows::Graphics::Printing3D::Printing3D3MFPackage impl_I
     return value;
 }
 
-template <typename D> event_token impl_IPrint3DTask<D>::Submitting(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> & eventHandler) const
+template <typename D> event_token impl_IPrint3DTask<D>::Submitting(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Foundation::IInspectable> & eventHandler) const
 {
     event_token eventCookie {};
     check_hresult(WINRT_SHIM(IPrint3DTask)->add_Submitting(get_abi(eventHandler), &eventCookie));
     return eventCookie;
 }
 
-template <typename D> event_revoker<IPrint3DTask> impl_IPrint3DTask<D>::Submitting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> & eventHandler) const
+template <typename D> event_revoker<IPrint3DTask> impl_IPrint3DTask<D>::Submitting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Foundation::IInspectable> & eventHandler) const
 {
     return impl::make_event_revoker<D, IPrint3DTask>(this, &ABI::Windows::Graphics::Printing3D::IPrint3DTask::remove_Submitting, Submitting(eventHandler));
 }

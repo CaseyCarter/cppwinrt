@@ -27,7 +27,7 @@ template <> struct __declspec(uuid("9b05106d-77e0-5c24-82b0-9b2dc8f79671")) __de
 
 #ifndef WINRT_GENERIC_52c9c2a1_54a3_5ef9_9aff_014e7c454655
 #define WINRT_GENERIC_52c9c2a1_54a3_5ef9_9aff_014e7c454655
-template <> struct __declspec(uuid("52c9c2a1-54a3-5ef9-9aff-014e7c454655")) __declspec(novtable) TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> : impl_TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> {};
+template <> struct __declspec(uuid("52c9c2a1-54a3-5ef9-9aff-014e7c454655")) __declspec(novtable) TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_0c6563b0_9d8b_5b60_994b_dee1174d1efb
@@ -51,35 +51,35 @@ template <> struct __declspec(uuid("a6997f9d-7195-5972-8ecd-1c73aa5cb312")) __de
 namespace Windows::Foundation::Diagnostics {
 
 struct IAsyncCausalityTracerStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IAsyncCausalityTracerStatics>
 {
     IAsyncCausalityTracerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IErrorDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IErrorDetails>
 {
     IErrorDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IErrorDetailsStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IErrorDetailsStatics>
 {
     IErrorDetailsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IErrorReportingSettings :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IErrorReportingSettings>
 {
     IErrorReportingSettings(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFileLoggingSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileLoggingSession>,
     impl::require<IFileLoggingSession, Windows::Foundation::IClosable>
 {
@@ -87,21 +87,21 @@ struct IFileLoggingSession :
 };
 
 struct IFileLoggingSessionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IFileLoggingSessionFactory>
 {
     IFileLoggingSessionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILogFileGeneratedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILogFileGeneratedEventArgs>
 {
     ILogFileGeneratedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingActivity :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingActivity>,
     impl::require<ILoggingActivity, Windows::Foundation::IClosable>
 {
@@ -109,7 +109,7 @@ struct ILoggingActivity :
 };
 
 struct ILoggingActivity2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingActivity2>,
     impl::require<ILoggingActivity2, Windows::Foundation::Diagnostics::ILoggingActivity, Windows::Foundation::Diagnostics::ILoggingTarget, Windows::Foundation::IClosable>
 {
@@ -117,14 +117,14 @@ struct ILoggingActivity2 :
 };
 
 struct ILoggingActivityFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingActivityFactory>
 {
     ILoggingActivityFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingChannel :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingChannel>,
     impl::require<ILoggingChannel, Windows::Foundation::IClosable>
 {
@@ -132,7 +132,7 @@ struct ILoggingChannel :
 };
 
 struct ILoggingChannel2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingChannel2>,
     impl::require<ILoggingChannel2, Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::Diagnostics::ILoggingTarget, Windows::Foundation::IClosable>
 {
@@ -140,56 +140,56 @@ struct ILoggingChannel2 :
 };
 
 struct ILoggingChannelFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingChannelFactory>
 {
     ILoggingChannelFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingChannelFactory2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingChannelFactory2>
 {
     ILoggingChannelFactory2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingChannelOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingChannelOptions>
 {
     ILoggingChannelOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingChannelOptionsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingChannelOptionsFactory>
 {
     ILoggingChannelOptionsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingFields :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingFields>
 {
     ILoggingFields(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingOptions :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingOptions>
 {
     ILoggingOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingOptionsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingOptionsFactory>
 {
     ILoggingOptionsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingSession :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingSession>,
     impl::require<ILoggingSession, Windows::Foundation::IClosable>
 {
@@ -197,21 +197,21 @@ struct ILoggingSession :
 };
 
 struct ILoggingSessionFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingSessionFactory>
 {
     ILoggingSessionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILoggingTarget :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ILoggingTarget>
 {
     ILoggingTarget(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITracingStatusChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ITracingStatusChangedEventArgs>
 {
     ITracingStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}

@@ -33,7 +33,7 @@ using SmsEncodedLength = ABI::Windows::Devices::Sms::SmsEncodedLength;
 
 namespace ABI::Windows::Devices::Sms {
 
-struct __declspec(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54")) __declspec(novtable) ISmsAppMessage : Windows::IInspectable
+struct __declspec(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54")) __declspec(novtable) ISmsAppMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_To(hstring * value) = 0;
@@ -59,7 +59,7 @@ struct __declspec(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54")) __declspec(novta
     virtual HRESULT __stdcall put_BinaryBody(Windows::Storage::Streams::IBuffer * value) = 0;
 };
 
-struct __declspec(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957")) __declspec(novtable) ISmsBroadcastMessage : Windows::IInspectable
+struct __declspec(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957")) __declspec(novtable) ISmsBroadcastMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_To(hstring * value) = 0;
@@ -73,7 +73,7 @@ struct __declspec(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957")) __declspec(novta
     virtual HRESULT __stdcall get_IsUserPopupRequested(bool * value) = 0;
 };
 
-struct __declspec(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47")) __declspec(novtable) ISmsDevice2 : Windows::IInspectable
+struct __declspec(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47")) __declspec(novtable) ISmsDevice2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SmscAddress(hstring * value) = 0;
     virtual HRESULT __stdcall put_SmscAddress(hstring value) = 0;
@@ -84,11 +84,11 @@ struct __declspec(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47")) __declspec(novta
     virtual HRESULT __stdcall get_DeviceStatus(winrt::Windows::Devices::Sms::SmsDeviceStatus * value) = 0;
     virtual HRESULT __stdcall abi_CalculateLength(Windows::Devices::Sms::ISmsMessageBase * message, Windows::Devices::Sms::SmsEncodedLength * value) = 0;
     virtual HRESULT __stdcall abi_SendMessageAndGetResultAsync(Windows::Devices::Sms::ISmsMessageBase * message, Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsSendMessageResult> ** asyncInfo) = 0;
-    virtual HRESULT __stdcall add_DeviceStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::IInspectable> * eventHandler, event_token * eventCookie) = 0;
+    virtual HRESULT __stdcall add_DeviceStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> * eventHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_DeviceStatusChanged(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("65c78325-1031-491e-8fb6-ef9991afe363")) __declspec(novtable) ISmsDevice2Statics : Windows::IInspectable
+struct __declspec(uuid("65c78325-1031-491e-8fb6-ef9991afe363")) __declspec(novtable) ISmsDevice2Statics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * value) = 0;
     virtual HRESULT __stdcall abi_FromId(hstring deviceId, Windows::Devices::Sms::ISmsDevice2 ** value) = 0;
@@ -96,7 +96,7 @@ struct __declspec(uuid("65c78325-1031-491e-8fb6-ef9991afe363")) __declspec(novta
     virtual HRESULT __stdcall abi_FromParentId(hstring parentDeviceId, Windows::Devices::Sms::ISmsDevice2 ** value) = 0;
 };
 
-struct __declspec(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c")) __declspec(novtable) ISmsFilterRule : Windows::IInspectable
+struct __declspec(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c")) __declspec(novtable) ISmsFilterRule : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MessageType(winrt::Windows::Devices::Sms::SmsMessageType * value) = 0;
     virtual HRESULT __stdcall get_ImsiPrefixes(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
@@ -114,23 +114,23 @@ struct __declspec(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c")) __declspec(novta
     virtual HRESULT __stdcall get_BroadcastChannels(Windows::Foundation::Collections::IVector<int32_t> ** value) = 0;
 };
 
-struct __declspec(uuid("00c36508-6296-4f29-9aad-8920ceba3ce8")) __declspec(novtable) ISmsFilterRuleFactory : Windows::IInspectable
+struct __declspec(uuid("00c36508-6296-4f29-9aad-8920ceba3ce8")) __declspec(novtable) ISmsFilterRuleFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFilterRule(winrt::Windows::Devices::Sms::SmsMessageType messageType, Windows::Devices::Sms::ISmsFilterRule ** value) = 0;
 };
 
-struct __declspec(uuid("4e47eafb-79cd-4881-9894-55a4135b23fa")) __declspec(novtable) ISmsFilterRules : Windows::IInspectable
+struct __declspec(uuid("4e47eafb-79cd-4881-9894-55a4135b23fa")) __declspec(novtable) ISmsFilterRules : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ActionType(winrt::Windows::Devices::Sms::SmsFilterActionType * value) = 0;
     virtual HRESULT __stdcall get_Rules(Windows::Foundation::Collections::IVector<Windows::Devices::Sms::SmsFilterRule> ** value) = 0;
 };
 
-struct __declspec(uuid("a09924ed-6e2e-4530-9fde-465d02eed00e")) __declspec(novtable) ISmsFilterRulesFactory : Windows::IInspectable
+struct __declspec(uuid("a09924ed-6e2e-4530-9fde-465d02eed00e")) __declspec(novtable) ISmsFilterRulesFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateFilterRules(winrt::Windows::Devices::Sms::SmsFilterActionType actionType, Windows::Devices::Sms::ISmsFilterRules ** value) = 0;
 };
 
-struct __declspec(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea")) __declspec(novtable) ISmsMessageBase : Windows::IInspectable
+struct __declspec(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea")) __declspec(novtable) ISmsMessageBase : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MessageType(winrt::Windows::Devices::Sms::SmsMessageType * value) = 0;
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
@@ -139,7 +139,7 @@ struct __declspec(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea")) __declspec(novta
     virtual HRESULT __stdcall get_SimIccId(hstring * value) = 0;
 };
 
-struct __declspec(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1")) __declspec(novtable) ISmsMessageReceivedTriggerDetails : Windows::IInspectable
+struct __declspec(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1")) __declspec(novtable) ISmsMessageReceivedTriggerDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_MessageType(winrt::Windows::Devices::Sms::SmsMessageType * value) = 0;
     virtual HRESULT __stdcall get_TextMessage(Windows::Devices::Sms::ISmsTextMessage2 ** value) = 0;
@@ -152,7 +152,7 @@ struct __declspec(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1")) __declspec(novta
     virtual HRESULT __stdcall abi_Accept() = 0;
 };
 
-struct __declspec(uuid("1720503e-f34f-446b-83b3-0ff19923b409")) __declspec(novtable) ISmsMessageRegistration : Windows::IInspectable
+struct __declspec(uuid("1720503e-f34f-446b-83b3-0ff19923b409")) __declspec(novtable) ISmsMessageRegistration : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
     virtual HRESULT __stdcall abi_Unregister() = 0;
@@ -160,13 +160,13 @@ struct __declspec(uuid("1720503e-f34f-446b-83b3-0ff19923b409")) __declspec(novta
     virtual HRESULT __stdcall remove_MessageReceived(event_token eventCookie) = 0;
 };
 
-struct __declspec(uuid("63a05464-2898-4778-a03c-6f994907d63a")) __declspec(novtable) ISmsMessageRegistrationStatics : Windows::IInspectable
+struct __declspec(uuid("63a05464-2898-4778-a03c-6f994907d63a")) __declspec(novtable) ISmsMessageRegistrationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllRegistrations(Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> ** value) = 0;
     virtual HRESULT __stdcall abi_Register(hstring id, Windows::Devices::Sms::ISmsFilterRules * filterRules, Windows::Devices::Sms::ISmsMessageRegistration ** value) = 0;
 };
 
-struct __declspec(uuid("db139af2-78c9-4feb-9622-452328088d62")) __declspec(novtable) ISmsSendMessageResult : Windows::IInspectable
+struct __declspec(uuid("db139af2-78c9-4feb-9622-452328088d62")) __declspec(novtable) ISmsSendMessageResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsSuccessful(bool * value) = 0;
     virtual HRESULT __stdcall get_MessageReferenceNumbers(Windows::Foundation::Collections::IVectorView<int32_t> ** value) = 0;
@@ -177,7 +177,7 @@ struct __declspec(uuid("db139af2-78c9-4feb-9622-452328088d62")) __declspec(novta
     virtual HRESULT __stdcall get_TransportFailureCause(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4")) __declspec(novtable) ISmsStatusMessage : Windows::IInspectable
+struct __declspec(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4")) __declspec(novtable) ISmsStatusMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_To(hstring * value) = 0;
     virtual HRESULT __stdcall get_From(hstring * value) = 0;
@@ -188,7 +188,7 @@ struct __declspec(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4")) __declspec(novta
     virtual HRESULT __stdcall get_DischargeTime(Windows::Foundation::DateTime * value) = 0;
 };
 
-struct __declspec(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d")) __declspec(novtable) ISmsTextMessage2 : Windows::IInspectable
+struct __declspec(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d")) __declspec(novtable) ISmsTextMessage2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_To(hstring * value) = 0;
@@ -208,7 +208,7 @@ struct __declspec(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d")) __declspec(novta
     virtual HRESULT __stdcall get_ProtocolId(int32_t * value) = 0;
 };
 
-struct __declspec(uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3")) __declspec(novtable) ISmsVoicemailMessage : Windows::IInspectable
+struct __declspec(uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3")) __declspec(novtable) ISmsVoicemailMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_To(hstring * value) = 0;
@@ -216,7 +216,7 @@ struct __declspec(uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3")) __declspec(novta
     virtual HRESULT __stdcall get_MessageCount(Windows::Foundation::IReference<int32_t> ** value) = 0;
 };
 
-struct __declspec(uuid("cd937743-7a55-4d3b-9021-f22e022d09c5")) __declspec(novtable) ISmsWapMessage : Windows::IInspectable
+struct __declspec(uuid("cd937743-7a55-4d3b-9021-f22e022d09c5")) __declspec(novtable) ISmsWapMessage : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime * value) = 0;
     virtual HRESULT __stdcall get_To(hstring * value) = 0;
@@ -302,9 +302,9 @@ struct WINRT_EBO impl_ISmsDevice2
     Windows::Devices::Sms::SmsDeviceStatus DeviceStatus() const;
     Windows::Devices::Sms::SmsEncodedLength CalculateLength(const Windows::Devices::Sms::ISmsMessageBase & message) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsSendMessageResult> SendMessageAndGetResultAsync(const Windows::Devices::Sms::ISmsMessageBase & message) const;
-    event_token DeviceStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::IInspectable> & eventHandler) const;
+    event_token DeviceStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> & eventHandler) const;
     using DeviceStatusChanged_revoker = event_revoker<ISmsDevice2>;
-    DeviceStatusChanged_revoker DeviceStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::IInspectable> & eventHandler) const;
+    DeviceStatusChanged_revoker DeviceStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> & eventHandler) const;
     void DeviceStatusChanged(event_token eventCookie) const;
 };
 

@@ -40,35 +40,35 @@ template <> struct __declspec(uuid("09212bd4-851b-52bd-b82c-421bf3d6f511")) __de
 namespace Windows::Devices::Gpio::Provider {
 
 struct IGpioControllerProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioControllerProvider>
 {
     IGpioControllerProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGpioPinProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioPinProvider>
 {
     IGpioPinProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGpioPinProviderValueChangedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioPinProviderValueChangedEventArgs>
 {
     IGpioPinProviderValueChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGpioPinProviderValueChangedEventArgsFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioPinProviderValueChangedEventArgsFactory>
 {
     IGpioPinProviderValueChangedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGpioProvider :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IGpioProvider>
 {
     IGpioProvider(std::nullptr_t = nullptr) noexcept {}

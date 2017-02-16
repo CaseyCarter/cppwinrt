@@ -193,7 +193,7 @@ template <> struct __declspec(uuid("20d6faab-3b8e-5a1f-8397-b01cb219a18d")) __de
 namespace Windows::Networking::Sockets {
 
 struct IDatagramSocket :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatagramSocket>,
     impl::require<IDatagramSocket, Windows::Foundation::IClosable>
 {
@@ -201,7 +201,7 @@ struct IDatagramSocket :
 };
 
 struct IDatagramSocket2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatagramSocket2>,
     impl::require<IDatagramSocket2, Windows::Foundation::IClosable>
 {
@@ -209,56 +209,56 @@ struct IDatagramSocket2 :
 };
 
 struct IDatagramSocket3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatagramSocket3>
 {
     IDatagramSocket3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDatagramSocketControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatagramSocketControl>
 {
     IDatagramSocketControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDatagramSocketControl2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatagramSocketControl2>
 {
     IDatagramSocketControl2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDatagramSocketControl3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatagramSocketControl3>
 {
     IDatagramSocketControl3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDatagramSocketInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatagramSocketInformation>
 {
     IDatagramSocketInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDatagramSocketMessageReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatagramSocketMessageReceivedEventArgs>
 {
     IDatagramSocketMessageReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDatagramSocketStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IDatagramSocketStatics>
 {
     IDatagramSocketStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMessageWebSocket :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMessageWebSocket>,
     impl::require<IMessageWebSocket, Windows::Foundation::IClosable, Windows::Networking::Sockets::IWebSocket>
 {
@@ -268,7 +268,7 @@ struct IMessageWebSocket :
 };
 
 struct IMessageWebSocket2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMessageWebSocket2>,
     impl::require<IMessageWebSocket2, Windows::Foundation::IClosable, Windows::Networking::Sockets::IMessageWebSocket, Windows::Networking::Sockets::IWebSocket>
 {
@@ -278,7 +278,7 @@ struct IMessageWebSocket2 :
 };
 
 struct IMessageWebSocketControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMessageWebSocketControl>,
     impl::require<IMessageWebSocketControl, Windows::Networking::Sockets::IWebSocketControl>
 {
@@ -286,56 +286,56 @@ struct IMessageWebSocketControl :
 };
 
 struct IMessageWebSocketMessageReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IMessageWebSocketMessageReceivedEventArgs>
 {
     IMessageWebSocketMessageReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocketActivityContext :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocketActivityContext>
 {
     ISocketActivityContext(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocketActivityContextFactory :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocketActivityContextFactory>
 {
     ISocketActivityContextFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocketActivityInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocketActivityInformation>
 {
     ISocketActivityInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocketActivityInformationStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocketActivityInformationStatics>
 {
     ISocketActivityInformationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocketActivityTriggerDetails :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocketActivityTriggerDetails>
 {
     ISocketActivityTriggerDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISocketErrorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<ISocketErrorStatics>
 {
     ISocketErrorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocket :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocket>,
     impl::require<IStreamSocket, Windows::Foundation::IClosable>
 {
@@ -343,7 +343,7 @@ struct IStreamSocket :
 };
 
 struct IStreamSocket2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocket2>,
     impl::require<IStreamSocket2, Windows::Foundation::IClosable>
 {
@@ -351,49 +351,49 @@ struct IStreamSocket2 :
 };
 
 struct IStreamSocket3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocket3>
 {
     IStreamSocket3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketControl>
 {
     IStreamSocketControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketControl2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketControl2>
 {
     IStreamSocketControl2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketControl3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketControl3>
 {
     IStreamSocketControl3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketInformation>
 {
     IStreamSocketInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketInformation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketInformation2>
 {
     IStreamSocketInformation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketListener :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketListener>,
     impl::require<IStreamSocketListener, Windows::Foundation::IClosable>
 {
@@ -401,7 +401,7 @@ struct IStreamSocketListener :
 };
 
 struct IStreamSocketListener2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketListener2>,
     impl::require<IStreamSocketListener2, Windows::Foundation::IClosable>
 {
@@ -409,49 +409,49 @@ struct IStreamSocketListener2 :
 };
 
 struct IStreamSocketListener3 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketListener3>
 {
     IStreamSocketListener3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketListenerConnectionReceivedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketListenerConnectionReceivedEventArgs>
 {
     IStreamSocketListenerConnectionReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketListenerControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketListenerControl>
 {
     IStreamSocketListenerControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketListenerControl2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketListenerControl2>
 {
     IStreamSocketListenerControl2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketListenerInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketListenerInformation>
 {
     IStreamSocketListenerInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamSocketStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamSocketStatics>
 {
     IStreamSocketStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IStreamWebSocket :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamWebSocket>,
     impl::require<IStreamWebSocket, Windows::Foundation::IClosable, Windows::Networking::Sockets::IWebSocket>
 {
@@ -461,7 +461,7 @@ struct IStreamWebSocket :
 };
 
 struct IStreamWebSocket2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamWebSocket2>,
     impl::require<IStreamWebSocket2, Windows::Foundation::IClosable, Windows::Networking::Sockets::IStreamWebSocket, Windows::Networking::Sockets::IWebSocket>
 {
@@ -471,7 +471,7 @@ struct IStreamWebSocket2 :
 };
 
 struct IStreamWebSocketControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IStreamWebSocketControl>,
     impl::require<IStreamWebSocketControl, Windows::Networking::Sockets::IWebSocketControl>
 {
@@ -479,7 +479,7 @@ struct IStreamWebSocketControl :
 };
 
 struct IWebSocket :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebSocket>,
     impl::require<IWebSocket, Windows::Foundation::IClosable>
 {
@@ -489,21 +489,21 @@ struct IWebSocket :
 };
 
 struct IWebSocketClosedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebSocketClosedEventArgs>
 {
     IWebSocketClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebSocketControl :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebSocketControl>
 {
     IWebSocketControl(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebSocketControl2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebSocketControl2>,
     impl::require<IWebSocketControl2, Windows::Networking::Sockets::IWebSocketControl>
 {
@@ -511,21 +511,21 @@ struct IWebSocketControl2 :
 };
 
 struct IWebSocketErrorStatics :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebSocketErrorStatics>
 {
     IWebSocketErrorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebSocketInformation :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebSocketInformation>
 {
     IWebSocketInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebSocketInformation2 :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebSocketInformation2>,
     impl::require<IWebSocketInformation2, Windows::Networking::Sockets::IWebSocketInformation>
 {
@@ -533,7 +533,7 @@ struct IWebSocketInformation2 :
 };
 
 struct IWebSocketServerCustomValidationRequestedEventArgs :
-    Windows::IInspectable,
+    Windows::Foundation::IInspectable,
     impl::consume<IWebSocketServerCustomValidationRequestedEventArgs>
 {
     IWebSocketServerCustomValidationRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
