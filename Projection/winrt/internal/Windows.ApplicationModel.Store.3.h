@@ -38,7 +38,7 @@ struct CurrentApp
     static Windows::Foundation::Uri LinkUri();
     static GUID AppId();
     static Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt);
-    static Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt);
+    [[deprecated("RequestProductPurchaseAsync(productId, includeReceipt) may be altered or unavailable for releases after Windows 8.1. Instead, use RequestProductPurchaseAsync(productId).")]] static Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync();
     static Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync();
     static Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_view productId);
@@ -61,7 +61,7 @@ struct CurrentAppSimulator
     static Windows::Foundation::Uri LinkUri();
     static GUID AppId();
     static Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt);
-    static Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt);
+    [[deprecated("RequestProductPurchaseAsync(productId, includeReceipt) may be altered or unavailable for releases after Windows 8.1. Instead, use RequestProductPurchaseAsync(productId).")]] static Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync();
     static Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync();
     static Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_view productId);

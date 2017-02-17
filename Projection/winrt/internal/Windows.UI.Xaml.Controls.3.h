@@ -1212,7 +1212,7 @@ struct WINRT_EBO Image :
     static Windows::UI::Xaml::DependencyProperty SourceProperty();
     static Windows::UI::Xaml::DependencyProperty StretchProperty();
     static Windows::UI::Xaml::DependencyProperty NineGridProperty();
-    static Windows::UI::Xaml::DependencyProperty PlayToSourceProperty();
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")]] static Windows::UI::Xaml::DependencyProperty PlayToSourceProperty();
 };
 
 struct WINRT_EBO InkCanvas :
@@ -1616,7 +1616,7 @@ struct WINRT_EBO MediaElement :
     static Windows::UI::Xaml::DependencyProperty AudioStreamIndexProperty();
     static Windows::UI::Xaml::DependencyProperty PlaybackRateProperty();
     static Windows::UI::Xaml::DependencyProperty IsLoopingProperty();
-    static Windows::UI::Xaml::DependencyProperty PlayToSourceProperty();
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")]] static Windows::UI::Xaml::DependencyProperty PlayToSourceProperty();
     static Windows::UI::Xaml::DependencyProperty DefaultPlaybackRateProperty();
     static Windows::UI::Xaml::DependencyProperty AspectRatioWidthProperty();
     static Windows::UI::Xaml::DependencyProperty AspectRatioHeightProperty();
@@ -1631,7 +1631,7 @@ struct WINRT_EBO MediaElement :
     static Windows::UI::Xaml::DependencyProperty AreTransportControlsEnabledProperty();
     static Windows::UI::Xaml::DependencyProperty StretchProperty();
     static Windows::UI::Xaml::DependencyProperty IsFullWindowProperty();
-    static Windows::UI::Xaml::DependencyProperty PlayToPreferredSourceUriProperty();
+    [[deprecated("PlayToPreferredSourceUri may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource().PreferredSourceUri.")]] static Windows::UI::Xaml::DependencyProperty PlayToPreferredSourceUriProperty();
 };
 
 struct WINRT_EBO MediaPlayerElement :
@@ -1803,7 +1803,7 @@ struct WINRT_EBO PasswordBox :
     PasswordBox();
     static Windows::UI::Xaml::DependencyProperty PasswordProperty();
     static Windows::UI::Xaml::DependencyProperty PasswordCharProperty();
-    static Windows::UI::Xaml::DependencyProperty IsPasswordRevealButtonEnabledProperty();
+    [[deprecated("IsPasswordRevealButtonEnabledProperty may be altered or unavailable for releases after Windows 10.0. Instead, use PasswordRevealModeProperty.")]] static Windows::UI::Xaml::DependencyProperty IsPasswordRevealButtonEnabledProperty();
     static Windows::UI::Xaml::DependencyProperty MaxLengthProperty();
     static Windows::UI::Xaml::DependencyProperty HeaderProperty();
     static Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty();
@@ -2661,10 +2661,10 @@ struct WINRT_EBO WebView :
     WebView(std::nullptr_t) noexcept {}
     WebView();
     WebView(Windows::UI::Xaml::Controls::WebViewExecutionMode executionMode);
-    static Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> AnyScriptNotifyUri();
+    [[deprecated("AnyScriptNotifyUri is unavailable for releases beginning with Windows 8.1. Instead, list URIs under ApplicationContentUriRules in the package manifest. For more info, see the AnyScriptNotifyUri documentation.")]] static Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> AnyScriptNotifyUri();
     static Windows::UI::Xaml::DependencyProperty SourceProperty();
-    static Windows::UI::Xaml::DependencyProperty AllowedScriptNotifyUrisProperty();
-    static Windows::UI::Xaml::DependencyProperty DataTransferPackageProperty();
+    [[deprecated("AllowedScriptNotifyUris is unavailable for releases beginning with Windows 8.1. Instead, list URIs under ApplicationContentUriRules in the package manifest. For more info, see the AllowedScriptNotifyUris documentation.")]] static Windows::UI::Xaml::DependencyProperty AllowedScriptNotifyUrisProperty();
+    [[deprecated("Use CaptureSelectedContentToDataPackageAsync instead of DataTransferPackage. For more info, see MSDN.")]] static Windows::UI::Xaml::DependencyProperty DataTransferPackageProperty();
     static Windows::UI::Xaml::DependencyProperty CanGoBackProperty();
     static Windows::UI::Xaml::DependencyProperty CanGoForwardProperty();
     static Windows::UI::Xaml::DependencyProperty DocumentTitleProperty();

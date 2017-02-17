@@ -157,34 +157,34 @@ struct WINRT_EBO impl_IDisplayInformationStatics
 template <typename D>
 struct WINRT_EBO impl_IDisplayPropertiesStatics
 {
-    Windows::Graphics::Display::DisplayOrientations CurrentOrientation() const;
-    Windows::Graphics::Display::DisplayOrientations NativeOrientation() const;
-    Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences() const;
-    void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) const;
-    event_token OrientationChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Graphics::Display::DisplayOrientations CurrentOrientation() const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Graphics::Display::DisplayOrientations NativeOrientation() const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences() const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token OrientationChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
     using OrientationChanged_revoker = event_revoker<IDisplayPropertiesStatics>;
-    OrientationChanged_revoker OrientationChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
-    void OrientationChanged(event_token token) const;
-    Windows::Graphics::Display::ResolutionScale ResolutionScale() const;
-    float LogicalDpi() const;
-    event_token LogicalDpiChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] OrientationChanged_revoker OrientationChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void OrientationChanged(event_token token) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Graphics::Display::ResolutionScale ResolutionScale() const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] float LogicalDpi() const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token LogicalDpiChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
     using LogicalDpiChanged_revoker = event_revoker<IDisplayPropertiesStatics>;
-    LogicalDpiChanged_revoker LogicalDpiChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
-    void LogicalDpiChanged(event_token token) const;
-    bool StereoEnabled() const;
-    event_token StereoEnabledChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] LogicalDpiChanged_revoker LogicalDpiChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void LogicalDpiChanged(event_token token) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] bool StereoEnabled() const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token StereoEnabledChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
     using StereoEnabledChanged_revoker = event_revoker<IDisplayPropertiesStatics>;
-    StereoEnabledChanged_revoker StereoEnabledChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
-    void StereoEnabledChanged(event_token token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetColorProfileAsync() const;
-    event_token ColorProfileChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] StereoEnabledChanged_revoker StereoEnabledChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void StereoEnabledChanged(event_token token) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetColorProfileAsync() const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token ColorProfileChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
     using ColorProfileChanged_revoker = event_revoker<IDisplayPropertiesStatics>;
-    ColorProfileChanged_revoker ColorProfileChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
-    void ColorProfileChanged(event_token token) const;
-    event_token DisplayContentsInvalidated(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] ColorProfileChanged_revoker ColorProfileChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void ColorProfileChanged(event_token token) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token DisplayContentsInvalidated(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
     using DisplayContentsInvalidated_revoker = event_revoker<IDisplayPropertiesStatics>;
-    DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
-    void DisplayContentsInvalidated(event_token token) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void DisplayContentsInvalidated(event_token token) const;
 };
 
 }

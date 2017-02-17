@@ -3,6 +3,7 @@
 
 namespace Modern::Settings {
 
+std::string Deprecated;
 Modern::Options Options;
 std::string OutPath;
 std::string DatabasePath;
@@ -54,7 +55,6 @@ std::string UsingMethod;
 int MethodId;
 std::string MethodName;
 std::string MethodAbi;
-bool MethodDeprecated;
 std::string MethodShim;
 std::string UsingInterfaceName;
 std::string UsingMethodName;

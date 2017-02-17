@@ -428,7 +428,7 @@ struct WINRT_EBO impl_ILoggingChannel2
 template <typename D>
 struct WINRT_EBO impl_ILoggingChannelFactory
 {
-    Windows::Foundation::Diagnostics::LoggingChannel Create(hstring_view name) const;
+    [[deprecated("This constructor creates a LoggingChannel in Windows 8.1 compatibility mode. Prefer the two-parameter constructor.")]] Windows::Foundation::Diagnostics::LoggingChannel Create(hstring_view name) const;
 };
 
 template <typename D>

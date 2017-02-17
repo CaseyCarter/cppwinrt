@@ -15,7 +15,7 @@ struct WINRT_EBO FileOpenPickerUI :
     FileOpenPickerUI(std::nullptr_t) noexcept {}
 };
 
-struct WINRT_EBO FileRemovedEventArgs :
+struct [[deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]] WINRT_EBO FileRemovedEventArgs :
     Windows::Storage::Pickers::Provider::IFileRemovedEventArgs
 {
     FileRemovedEventArgs(std::nullptr_t) noexcept {}

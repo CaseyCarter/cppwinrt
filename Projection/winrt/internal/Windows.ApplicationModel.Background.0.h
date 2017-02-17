@@ -343,9 +343,9 @@ enum class ApplicationTriggerResult
 enum class BackgroundAccessStatus
 {
     Unspecified = 0,
-    AllowedWithAlwaysOnRealTimeConnectivity = 1,
-    AllowedMayUseActiveRealTimeConnectivity = 2,
-    Denied = 3,
+    AllowedWithAlwaysOnRealTimeConnectivity [[deprecated("Use AlwaysAllowed or AllowedSubjectToSystemPolicy instead of AllowedWithAlwaysOnRealTimeConnectivity. For more info, see MSDN.")]] = 1,
+    AllowedMayUseActiveRealTimeConnectivity [[deprecated("Use AlwaysAllowed or AllowedSubjectToSystemPolicy instead of AllowedMayUseActiveRealTimeConnectivity. For more info, see MSDN.")]] = 2,
+    Denied [[deprecated("Use DeniedByUser or DeniedBySystemPolicy instead of Denied. For more info, see MSDN.")]] = 3,
     AlwaysAllowed = 4,
     AllowedSubjectToSystemPolicy = 5,
     DeniedBySystemPolicy = 6,
@@ -362,7 +362,7 @@ enum class BackgroundTaskCancellationReason
     Uninstall = 5,
     ConditionLoss = 6,
     SystemPolicy = 7,
-    QuietHoursEntered = 8,
+    QuietHoursEntered [[deprecated("QuietHoursEntered is deprecated after Windows 8.1")]] = 8,
     ExecutionTimeExceeded = 9,
     ResourceRevocation = 10,
     EnergySaver = 11,

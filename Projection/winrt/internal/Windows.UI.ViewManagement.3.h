@@ -27,10 +27,10 @@ struct WINRT_EBO ApplicationView :
     impl::require<ApplicationView, Windows::UI::ViewManagement::IApplicationView2, Windows::UI::ViewManagement::IApplicationView3>
 {
     ApplicationView(std::nullptr_t) noexcept {}
-    static bool TryUnsnapToFullscreen();
+    [[deprecated("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")]] static bool TryUnsnapToFullscreen();
     static int32_t GetApplicationViewIdForWindow(const Windows::UI::Core::ICoreWindow & window);
-    static Windows::UI::ViewManagement::ApplicationViewState Value();
-    static bool TryUnsnap();
+    [[deprecated("Value may be altered or unavailable for releases after Windows 8.1. Instead, query for window layout sizes directly.")]] static Windows::UI::ViewManagement::ApplicationViewState Value();
+    [[deprecated("TryUnsnap may be altered or unavailable for releases after Windows 8.1. Apps can be continuously resized, but cannot be snapped, starting in Windows 8.1.")]] static bool TryUnsnap();
     static Windows::UI::ViewManagement::ApplicationView GetForCurrentView();
     static bool TerminateAppOnFinalViewClose();
     static void TerminateAppOnFinalViewClose(bool value);

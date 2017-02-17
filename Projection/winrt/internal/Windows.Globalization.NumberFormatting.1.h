@@ -163,7 +163,7 @@ template <typename D>
 struct WINRT_EBO impl_ICurrencyFormatter
 {
     hstring Currency() const;
-    void Currency(hstring_view value) const;
+    [[deprecated("Currency may be read-only for releases after Windows 8.1. Instead, use a new CurrencyFormatter.")]] void Currency(hstring_view value) const;
 };
 
 template <typename D>

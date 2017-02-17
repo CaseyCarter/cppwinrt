@@ -156,9 +156,9 @@ struct WINRT_EBO impl_INamedResource
 {
     Windows::Foundation::Uri Uri() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate> Candidates() const;
-    Windows::ApplicationModel::Resources::Core::ResourceCandidate Resolve() const;
+    [[deprecated("Resolve may be altered or unavailable for releases after Windows 8.1. Instead, use Resolve(ResourceContext).")]] Windows::ApplicationModel::Resources::Core::ResourceCandidate Resolve() const;
     Windows::ApplicationModel::Resources::Core::ResourceCandidate Resolve(const Windows::ApplicationModel::Resources::Core::ResourceContext & resourceContext) const;
-    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate> ResolveAll() const;
+    [[deprecated("ResolveAll may be altered or unavailable for releases after Windows 8.1. Instead, use ResolveAll(ResourceContext).")]] Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate> ResolveAll() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate> ResolveAll(const Windows::ApplicationModel::Resources::Core::ResourceContext & resourceContext) const;
 };
 
@@ -195,7 +195,7 @@ struct WINRT_EBO impl_IResourceContext
 template <typename D>
 struct WINRT_EBO impl_IResourceContextStatics
 {
-    Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result) const;
+    [[deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")]] Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result) const;
 };
 
 template <typename D>
@@ -219,7 +219,7 @@ struct WINRT_EBO impl_IResourceManager
 {
     Windows::ApplicationModel::Resources::Core::ResourceMap MainResourceMap() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Resources::Core::ResourceMap> AllResourceMaps() const;
-    Windows::ApplicationModel::Resources::Core::ResourceContext DefaultContext() const;
+    [[deprecated("DefaultContext may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use ResourceContext.GetForCurrentView.")]] Windows::ApplicationModel::Resources::Core::ResourceContext DefaultContext() const;
     void LoadPriFiles(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> & files) const;
     void UnloadPriFiles(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> & files) const;
 };
@@ -242,7 +242,7 @@ template <typename D>
 struct WINRT_EBO impl_IResourceMap
 {
     Windows::Foundation::Uri Uri() const;
-    Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_view resource) const;
+    [[deprecated("GetValue(string) may be altered or unavailable for releases after Windows 8.1. Instead, use GetValue(string, ResourceContext).")]] Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_view resource) const;
     Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_view resource, const Windows::ApplicationModel::Resources::Core::ResourceContext & context) const;
     Windows::ApplicationModel::Resources::Core::ResourceMap GetSubtree(hstring_view reference) const;
 };

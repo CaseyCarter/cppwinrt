@@ -131,15 +131,15 @@ struct WINRT_EBO impl_IFileOpenPicker
 template <typename D>
 struct WINRT_EBO impl_IFileOpenPicker2
 {
-    Windows::Foundation::Collections::ValueSet ContinuationData() const;
-    void PickSingleFileAndContinue() const;
-    void PickMultipleFilesAndContinue() const;
+    [[deprecated("Instead, use PickSingleFileAsync/PickMultipleFilesAsync")]] Windows::Foundation::Collections::ValueSet ContinuationData() const;
+    [[deprecated("Instead, use PickSingleFileAsync")]] void PickSingleFileAndContinue() const;
+    [[deprecated("Instead, use PickMultipleFilesAsync")]] void PickMultipleFilesAndContinue() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IFileOpenPickerStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ResumePickSingleFileAsync() const;
+    [[deprecated("Instead, use PickSingleFileAsync")]] Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ResumePickSingleFileAsync() const;
 };
 
 template <typename D>
@@ -171,7 +171,7 @@ template <typename D>
 struct WINRT_EBO impl_IFileSavePicker2
 {
     Windows::Foundation::Collections::ValueSet ContinuationData() const;
-    void PickSaveFileAndContinue() const;
+    [[deprecated("Instead, use PickSaveFileAsync")]] void PickSaveFileAndContinue() const;
 };
 
 template <typename D>
@@ -200,7 +200,7 @@ template <typename D>
 struct WINRT_EBO impl_IFolderPicker2
 {
     Windows::Foundation::Collections::ValueSet ContinuationData() const;
-    void PickFolderAndContinue() const;
+    [[deprecated("Instead, use PickSingleFolderAsync")]] void PickFolderAndContinue() const;
 };
 
 }

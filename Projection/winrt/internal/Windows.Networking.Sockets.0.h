@@ -292,11 +292,11 @@ enum class SocketMessageType
 enum class SocketProtectionLevel
 {
     PlainSocket = 0,
-    Ssl = 1,
+    Ssl [[deprecated("Ssl may result in insecure connections and may be altered or unavailable for releases after Windows 8.1. Instead, use one of the TLS SocketProtectionLevel values.")]] = 1,
     SslAllowNullEncryption = 2,
     BluetoothEncryptionAllowNullAuthentication = 3,
     BluetoothEncryptionWithAuthentication = 4,
-    Ssl3AllowWeakEncryption = 5,
+    Ssl3AllowWeakEncryption [[deprecated("Ssl3AllowWeakEncryption may result in insecure connections and may be altered or unavailable for releases after Windows 8.1. Instead, use one of the TLS SocketProtectionLevel values.")]] = 5,
     Tls10 = 6,
     Tls11 = 7,
     Tls12 = 8,

@@ -365,8 +365,8 @@ struct WINRT_EBO impl_IConnectionProfile
     Windows::Networking::Connectivity::ConnectionCost GetConnectionCost() const;
     Windows::Networking::Connectivity::DataPlanStatus GetDataPlanStatus() const;
     Windows::Networking::Connectivity::NetworkAdapter NetworkAdapter() const;
-    Windows::Networking::Connectivity::DataUsage GetLocalUsage(const Windows::Foundation::DateTime & StartTime, const Windows::Foundation::DateTime & EndTime) const;
-    Windows::Networking::Connectivity::DataUsage GetLocalUsage(const Windows::Foundation::DateTime & StartTime, const Windows::Foundation::DateTime & EndTime, Windows::Networking::Connectivity::RoamingStates States) const;
+    [[deprecated("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")]] Windows::Networking::Connectivity::DataUsage GetLocalUsage(const Windows::Foundation::DateTime & StartTime, const Windows::Foundation::DateTime & EndTime) const;
+    [[deprecated("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")]] Windows::Networking::Connectivity::DataUsage GetLocalUsage(const Windows::Foundation::DateTime & StartTime, const Windows::Foundation::DateTime & EndTime, Windows::Networking::Connectivity::RoamingStates States) const;
     Windows::Networking::Connectivity::NetworkSecuritySettings NetworkSecuritySettings() const;
 };
 
@@ -459,8 +459,8 @@ struct WINRT_EBO impl_IDataPlanUsage
 template <typename D>
 struct WINRT_EBO impl_IDataUsage
 {
-    uint64_t BytesSent() const;
-    uint64_t BytesReceived() const;
+    [[deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")]] uint64_t BytesSent() const;
+    [[deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")]] uint64_t BytesReceived() const;
 };
 
 template <typename D>

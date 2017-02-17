@@ -220,62 +220,62 @@ struct WINRT_EBO impl_IMuteChangeRequestedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IPlayToConnection
 {
-    Windows::Media::PlayTo::PlayToConnectionState State() const;
-    event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> & handler) const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] Windows::Media::PlayTo::PlayToConnectionState State() const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> & handler) const;
     using StateChanged_revoker = event_revoker<IPlayToConnection>;
-    StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> & handler) const;
-    void StateChanged(event_token token) const;
-    event_token Transferred(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> & handler) const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> & handler) const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] void StateChanged(event_token token) const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] event_token Transferred(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> & handler) const;
     using Transferred_revoker = event_revoker<IPlayToConnection>;
-    Transferred_revoker Transferred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> & handler) const;
-    void Transferred(event_token token) const;
-    event_token Error(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> & handler) const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] Transferred_revoker Transferred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> & handler) const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] void Transferred(event_token token) const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] event_token Error(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> & handler) const;
     using Error_revoker = event_revoker<IPlayToConnection>;
-    Error_revoker Error(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> & handler) const;
-    void Error(event_token token) const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] Error_revoker Error(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> & handler) const;
+    [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] void Error(event_token token) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToConnectionErrorEventArgs
 {
-    Windows::Media::PlayTo::PlayToConnectionError Code() const;
-    hstring Message() const;
+    [[deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")]] Windows::Media::PlayTo::PlayToConnectionError Code() const;
+    [[deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")]] hstring Message() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToConnectionStateChangedEventArgs
 {
-    Windows::Media::PlayTo::PlayToConnectionState PreviousState() const;
-    Windows::Media::PlayTo::PlayToConnectionState CurrentState() const;
+    [[deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")]] Windows::Media::PlayTo::PlayToConnectionState PreviousState() const;
+    [[deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")]] Windows::Media::PlayTo::PlayToConnectionState CurrentState() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToConnectionTransferredEventArgs
 {
-    Windows::Media::PlayTo::PlayToSource PreviousSource() const;
-    Windows::Media::PlayTo::PlayToSource CurrentSource() const;
+    [[deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")]] Windows::Media::PlayTo::PlayToSource PreviousSource() const;
+    [[deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")]] Windows::Media::PlayTo::PlayToSource CurrentSource() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToManager
 {
-    event_token SourceRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] event_token SourceRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const;
     using SourceRequested_revoker = event_revoker<IPlayToManager>;
-    SourceRequested_revoker SourceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const;
-    void SourceRequested(event_token token) const;
-    event_token SourceSelected(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> & handler) const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] SourceRequested_revoker SourceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] void SourceRequested(event_token token) const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] event_token SourceSelected(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> & handler) const;
     using SourceSelected_revoker = event_revoker<IPlayToManager>;
-    SourceSelected_revoker SourceSelected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> & handler) const;
-    void SourceSelected(event_token token) const;
-    void DefaultSourceSelection(bool value) const;
-    bool DefaultSourceSelection() const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] SourceSelected_revoker SourceSelected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> & handler) const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] void SourceSelected(event_token token) const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] void DefaultSourceSelection(bool value) const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] bool DefaultSourceSelection() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToManagerStatics
 {
-    Windows::Media::PlayTo::PlayToManager GetForCurrentView() const;
-    void ShowPlayToUI() const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] Windows::Media::PlayTo::PlayToManager GetForCurrentView() const;
+    [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] void ShowPlayToUI() const;
 };
 
 template <typename D>
@@ -345,48 +345,48 @@ struct WINRT_EBO impl_IPlayToReceiver
 template <typename D>
 struct WINRT_EBO impl_IPlayToSource
 {
-    Windows::Media::PlayTo::PlayToConnection Connection() const;
-    Windows::Media::PlayTo::PlayToSource Next() const;
-    void Next(const Windows::Media::PlayTo::PlayToSource & value) const;
-    void PlayNext() const;
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] Windows::Media::PlayTo::PlayToConnection Connection() const;
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] Windows::Media::PlayTo::PlayToSource Next() const;
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] void Next(const Windows::Media::PlayTo::PlayToSource & value) const;
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] void PlayNext() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToSourceDeferral
 {
-    void Complete() const;
+    [[deprecated("PlayToSourceDeferral may be altered or unavailable for releases after Windows 10.")]] void Complete() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToSourceRequest
 {
-    Windows::Foundation::DateTime Deadline() const;
-    void DisplayErrorString(hstring_view errorString) const;
-    Windows::Media::PlayTo::PlayToSourceDeferral GetDeferral() const;
-    void SetSource(const Windows::Media::PlayTo::PlayToSource & value) const;
+    [[deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")]] Windows::Foundation::DateTime Deadline() const;
+    [[deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")]] void DisplayErrorString(hstring_view errorString) const;
+    [[deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")]] Windows::Media::PlayTo::PlayToSourceDeferral GetDeferral() const;
+    [[deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")]] void SetSource(const Windows::Media::PlayTo::PlayToSource & value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToSourceRequestedEventArgs
 {
-    Windows::Media::PlayTo::PlayToSourceRequest SourceRequest() const;
+    [[deprecated("PlayToSourceRequestedEventArgs may be altered or unavailable for releases after Windows 10.")]] Windows::Media::PlayTo::PlayToSourceRequest SourceRequest() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToSourceSelectedEventArgs
 {
-    hstring FriendlyName() const;
-    Windows::Storage::Streams::IRandomAccessStreamWithContentType Icon() const;
-    bool SupportsImage() const;
-    bool SupportsAudio() const;
-    bool SupportsVideo() const;
+    [[deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")]] hstring FriendlyName() const;
+    [[deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")]] Windows::Storage::Streams::IRandomAccessStreamWithContentType Icon() const;
+    [[deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")]] bool SupportsImage() const;
+    [[deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")]] bool SupportsAudio() const;
+    [[deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")]] bool SupportsVideo() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPlayToSourceWithPreferredSourceUri
 {
-    Windows::Foundation::Uri PreferredSourceUri() const;
-    void PreferredSourceUri(const Windows::Foundation::Uri & value) const;
+    [[deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] Windows::Foundation::Uri PreferredSourceUri() const;
+    [[deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] void PreferredSourceUri(const Windows::Foundation::Uri & value) const;
 };
 
 template <typename D>

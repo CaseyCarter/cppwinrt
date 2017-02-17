@@ -279,7 +279,7 @@ enum class HdrVideoMode
     Auto = 2,
 };
 
-enum class IsoSpeedPreset
+enum class [[deprecated("IsoSpeedPreset may not be available in future versions of Windows Phone. Starting with Windows Phone 8.1, use SetAutoAsync, Auto, SetValueAsync, and Value instead")]] IsoSpeedPreset
 {
     Auto = 0,
     Iso50 = 1,

@@ -1049,9 +1049,9 @@ struct WINRT_EBO impl_IAutomationPeer
     bool IsPassword() const;
     bool IsRequiredForForm() const;
     void SetFocus() const;
-    Windows::UI::Xaml::Automation::Peers::AutomationPeer GetParent() const;
+    [[deprecated("Consider using Navigate with AutomationNavigationDirection::Parent, which is an improved version of GetParent. For more info, see MSDN.")]] Windows::UI::Xaml::Automation::Peers::AutomationPeer GetParent() const;
     void InvalidatePeer() const;
-    Windows::UI::Xaml::Automation::Peers::AutomationPeer GetPeerFromPoint(const Windows::Foundation::Point & point) const;
+    [[deprecated("Consider using GetElementFromPoint, which is an improved version of GetPeerFromPoint. For more info, see MSDN.")]] Windows::UI::Xaml::Automation::Peers::AutomationPeer GetPeerFromPoint(const Windows::Foundation::Point & point) const;
     Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting GetLiveSetting() const;
 };
 

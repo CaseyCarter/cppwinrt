@@ -360,9 +360,9 @@ enum class ContactFieldType
 {
     Email = 0,
     PhoneNumber = 1,
-    Location = 2,
-    InstantMessage = 3,
-    Custom = 4,
+    Location [[deprecated("Location  may be altered or unavailable for releases after Windows 8.1. Instead, use Address.")]] = 2,
+    InstantMessage [[deprecated("InstantMessage  may be altered or unavailable for releases after Windows 8.1. Instead, use ConnectedServiceAccount.")]] = 3,
+    Custom [[deprecated("Custom may be altered or unavailable for releases after Windows 8.1. Instead, use one of the specific types.")]] = 4,
     ConnectedServiceAccount = 5,
     ImportantDate = 6,
     Address = 7,

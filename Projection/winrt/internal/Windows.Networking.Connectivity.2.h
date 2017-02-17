@@ -433,7 +433,7 @@ struct IDataPlanUsage :
     IDataPlanUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IDataUsage :
+struct [[deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")]] IDataUsage :
     Windows::IInspectable,
     impl::consume<IDataUsage>
 {

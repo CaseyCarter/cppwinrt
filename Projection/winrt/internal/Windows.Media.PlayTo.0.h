@@ -109,7 +109,7 @@ template <typename T> struct impl_IVolumeChangeRequestedEventArgs;
 
 namespace Windows::Media::PlayTo {
 
-enum class PlayToConnectionError
+enum class [[deprecated("PlayToConnectionError may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorStatus.")]] PlayToConnectionError
 {
     None = 0,
     DeviceNotResponding = 1,
@@ -118,7 +118,7 @@ enum class PlayToConnectionError
     ProtectedPlaybackFailed = 4,
 };
 
-enum class PlayToConnectionState
+enum class [[deprecated("PlayToConnectionState may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionState.")]] PlayToConnectionState
 {
     Disconnected = 0,
     Connected = 1,

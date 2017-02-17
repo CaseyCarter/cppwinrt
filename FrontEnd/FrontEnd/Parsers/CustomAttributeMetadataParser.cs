@@ -33,10 +33,23 @@ namespace Microsoft.Wcl.Parsers
 
     internal class CustomAttributeInfo
     {
+        static public CustomAttributeInfo Empty;
+
         public string FullTypeName;
         public string Namespace;
         public EntityHandle Constructor;
         public BlobHandle BlobHandle;
+        public string Text;
+
+        public static implicit operator bool(CustomAttributeInfo info)
+        {
+            return (info != null) && !ReferenceEquals(info, Empty);
+        }
+
+        public static implicit operator string(CustomAttributeInfo info)
+        {
+            return info ? info.Text : null;
+        }
     }
 
     internal class CustomAttributeMetadataParser
@@ -81,11 +94,17 @@ namespace Microsoft.Wcl.Parsers
             return list;
         }
 
-        public static bool FindAttribute(MetadataReader assembly, IList<CustomAttributeInfo> attributes, CustomAttributeKind attributeType)
+        public static CustomAttributeInfo FindAttribute(MetadataReader assembly, IList<CustomAttributeInfo> attributes, CustomAttributeKind attributeType)
         {
             CustomAttributeInfo output = null;
-            return FindAttribute(assembly, attributes, attributeType, out output);
+            return FindAttribute(assembly, attributes, attributeType, out output) ? output : CustomAttributeInfo.Empty;
         }
+
+        //public static string FindAttributeText(MetadataReader assembly, IList<CustomAttributeInfo> attributes, CustomAttributeKind attributeType)
+        //{
+        //    CustomAttributeInfo output = null;
+        //    return FindAttribute(assembly, attributes, attributeType, out output) ? output.BlobHandle.ToString() : "";
+        //}
 
         public static bool FindAttribute(MetadataReader assembly, IList<CustomAttributeInfo> attributes, CustomAttributeKind attributeType, out CustomAttributeInfo output)
         {
@@ -159,6 +178,16 @@ namespace Microsoft.Wcl.Parsers
                 }
                 else if (attributeType == CustomAttributeKind.Deprecated && attribute.FullTypeName == FullTypeNameConstants.Windows_Foundation_Metadata_DeprecatedAttribute)
                 {
+                    TypeHolderInfo typeHolderInfo;
+                    var memberReferenceHandle = (MemberReferenceHandle)attribute.Constructor;
+                    var memberReference = assembly.GetMemberReference(memberReferenceHandle);
+                    CustomAttributeMetadataParser.GetDeferedCustomAttributes(assembly, memberReference.Signature, attribute.BlobHandle, out typeHolderInfo);
+                    if ((typeHolderInfo.Items.Count > 0) &&
+                        (typeHolderInfo.Items[0].SignatureTypeCode == SignatureTypeCode.String))
+                    {
+                        attribute.Text = (string)MetadataParserHelpers.GetValueForSignatureTypeCode<string>(assembly, ref typeHolderInfo.BlobReader, typeHolderInfo.Items[0].SignatureTypeCode, typeHolderInfo.Items[0].Handle);
+                    }
+
                     output = attribute;
                     return true;
                 }

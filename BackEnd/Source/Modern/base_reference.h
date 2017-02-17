@@ -255,7 +255,7 @@ struct WINRT_EBO IReference :
 
     IReference<T>(T const & val)
     {
-        this->m_ptr = detach_abi((impl::reference_traits<T>::make(val)).as<abi<IReference<T>>>());
+        this->m_ptr = detach_abi((impl::reference_traits<T>::make(val)).template as<abi<IReference<T>>>());
     }
 };
 

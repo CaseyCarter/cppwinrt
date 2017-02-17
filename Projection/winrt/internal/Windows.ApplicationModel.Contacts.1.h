@@ -1363,12 +1363,12 @@ struct WINRT_EBO impl_IFullContactCardOptions
 template <typename D>
 struct WINRT_EBO impl_IKnownContactFieldStatics
 {
-    hstring Email() const;
-    hstring PhoneNumber() const;
-    hstring Location() const;
-    hstring InstantMessage() const;
-    Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(hstring_view name) const;
-    hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type) const;
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring Email() const;
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring PhoneNumber() const;
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring Location() const;
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring InstantMessage() const;
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(hstring_view name) const;
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type) const;
 };
 
 }

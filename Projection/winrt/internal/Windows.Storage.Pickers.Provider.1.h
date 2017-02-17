@@ -114,10 +114,10 @@ struct WINRT_EBO impl_IFileOpenPickerUI
     hstring SettingsIdentifier() const;
     hstring Title() const;
     void Title(hstring_view value) const;
-    event_token FileRemoved(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> & handler) const;
+    [[deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]] event_token FileRemoved(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> & handler) const;
     using FileRemoved_revoker = event_revoker<IFileOpenPickerUI>;
-    FileRemoved_revoker FileRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> & handler) const;
-    void FileRemoved(event_token token) const;
+    [[deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]] FileRemoved_revoker FileRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> & handler) const;
+    [[deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]] void FileRemoved(event_token token) const;
     event_token Closing(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::PickerClosingEventArgs> & handler) const;
     using Closing_revoker = event_revoker<IFileOpenPickerUI>;
     Closing_revoker Closing(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::PickerClosingEventArgs> & handler) const;
@@ -127,7 +127,7 @@ struct WINRT_EBO impl_IFileOpenPickerUI
 template <typename D>
 struct WINRT_EBO impl_IFileRemovedEventArgs
 {
-    hstring Id() const;
+    [[deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]] hstring Id() const;
 };
 
 template <typename D>

@@ -16,7 +16,7 @@ struct WINRT_EBO ResourceLoader :
     ResourceLoader(std::nullptr_t) noexcept {}
     ResourceLoader();
     ResourceLoader(hstring_view name);
-    static hstring GetStringForReference(const Windows::Foundation::Uri & uri);
+    [[deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")]] static hstring GetStringForReference(const Windows::Foundation::Uri & uri);
     static Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView();
     static Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView(hstring_view name);
     static Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse();

@@ -1,5 +1,5 @@
 
-struct % :
+struct %% :
     Windows::IInspectable,
     impl::consume<%>%
 {

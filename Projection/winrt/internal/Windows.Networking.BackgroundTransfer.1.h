@@ -333,7 +333,7 @@ template <typename D>
 struct WINRT_EBO impl_IBackgroundDownloaderStaticMethods
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(hstring_view group) const;
+    [[deprecated("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")]] Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(hstring_view group) const;
 };
 
 template <typename D>
@@ -345,7 +345,7 @@ struct WINRT_EBO impl_IBackgroundDownloaderStaticMethods2
 template <typename D>
 struct WINRT_EBO impl_IBackgroundDownloaderUserConsent
 {
-    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedDownloadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> & operations) const;
+    [[deprecated("RequestUnconstrainedDownloadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedDownloadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> & operations) const;
 };
 
 template <typename D>
@@ -358,8 +358,8 @@ struct WINRT_EBO impl_IBackgroundTransferBase
     void ProxyCredential(const Windows::Security::Credentials::PasswordCredential & credential) const;
     hstring Method() const;
     void Method(hstring_view value) const;
-    hstring Group() const;
-    void Group(hstring_view value) const;
+    [[deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")]] hstring Group() const;
+    [[deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")]] void Group(hstring_view value) const;
     Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy CostPolicy() const;
     void CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) const;
 };
@@ -420,7 +420,7 @@ struct WINRT_EBO impl_IBackgroundTransferOperation
     GUID Guid() const;
     Windows::Foundation::Uri RequestedUri() const;
     hstring Method() const;
-    hstring Group() const;
+    [[deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")]] hstring Group() const;
     Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy CostPolicy() const;
     void CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) const;
     Windows::Storage::Streams::IInputStream GetResultStreamAt(uint64_t position) const;
@@ -475,7 +475,7 @@ template <typename D>
 struct WINRT_EBO impl_IBackgroundUploaderStaticMethods
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(hstring_view group) const;
+    [[deprecated("GetCurrentUploadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentUploadsForTransferGroupAsync.")]] Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(hstring_view group) const;
 };
 
 template <typename D>
@@ -487,7 +487,7 @@ struct WINRT_EBO impl_IBackgroundUploaderStaticMethods2
 template <typename D>
 struct WINRT_EBO impl_IBackgroundUploaderUserConsent
 {
-    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedUploadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> & operations) const;
+    [[deprecated("RequestUnconstrainedUploadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedUploadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> & operations) const;
 };
 
 template <typename D>
@@ -533,7 +533,7 @@ struct WINRT_EBO impl_IResponseInformation
 template <typename D>
 struct WINRT_EBO impl_IUnconstrainedTransferRequestResult
 {
-    bool IsUnconstrained() const;
+    [[deprecated("IsUnconstrained is deprecated and may not work on all platforms. For more info, see MSDN.")]] bool IsUnconstrained() const;
 };
 
 template <typename D>

@@ -147,7 +147,7 @@ struct IAudioRenderEffectsManager :
     IAudioRenderEffectsManager(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IAudioRenderEffectsManager2 :
+struct [[deprecated("Not supported starting in windows 10")]] IAudioRenderEffectsManager2 :
     Windows::IInspectable,
     impl::consume<IAudioRenderEffectsManager2>
 {

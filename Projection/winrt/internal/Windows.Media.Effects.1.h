@@ -233,9 +233,9 @@ struct WINRT_EBO impl_IAudioRenderEffectsManager
 template <typename D>
 struct WINRT_EBO impl_IAudioRenderEffectsManager2
 {
-    Windows::Storage::Streams::IRandomAccessStreamWithContentType EffectsProviderThumbnail() const;
-    hstring EffectsProviderSettingsLabel() const;
-    void ShowSettingsUI() const;
+    [[deprecated("Not supported starting in windows 10")]] Windows::Storage::Streams::IRandomAccessStreamWithContentType EffectsProviderThumbnail() const;
+    [[deprecated("Not supported starting in windows 10")]] hstring EffectsProviderSettingsLabel() const;
+    [[deprecated("Not supported starting in windows 10")]] void ShowSettingsUI() const;
 };
 
 template <typename D>

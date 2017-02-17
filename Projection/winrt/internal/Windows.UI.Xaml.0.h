@@ -833,7 +833,7 @@ enum class TextLineBounds
 
 enum class TextReadingOrder
 {
-    Default = 0,
+    Default [[deprecated("Consider using UseFlowDirection, which is an improved version of Default. For more info, see MSDN.")]] = 0,
     UseFlowDirection = 0,
     DetectFromContent = 1,
 };

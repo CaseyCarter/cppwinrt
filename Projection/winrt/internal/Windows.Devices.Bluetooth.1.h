@@ -247,7 +247,7 @@ struct WINRT_EBO impl_IBluetoothDevice
     hstring Name() const;
     Windows::Devices::Bluetooth::BluetoothClassOfDevice ClassOfDevice() const;
     Windows::Foundation::Collections::IVectorView<Windows::Storage::Streams::IBuffer> SdpRecords() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> RfcommServices() const;
+    [[deprecated("Use GetRfcommServicesAsync instead of RfcommServices.  For more info, see MSDN.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> RfcommServices() const;
     Windows::Devices::Bluetooth::BluetoothConnectionStatus ConnectionStatus() const;
     uint64_t BluetoothAddress() const;
     event_token NameChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const;

@@ -23,14 +23,14 @@ struct IResourceLoader2 :
     IResourceLoader2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IResourceLoaderFactory :
+struct [[deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")]] IResourceLoaderFactory :
     Windows::IInspectable,
     impl::consume<IResourceLoaderFactory>
 {
     IResourceLoaderFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IResourceLoaderStatics :
+struct [[deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")]] IResourceLoaderStatics :
     Windows::IInspectable,
     impl::consume<IResourceLoaderStatics>
 {

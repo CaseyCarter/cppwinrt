@@ -211,7 +211,7 @@ struct WINRT_EBO impl_ICurrentApp
     Windows::Foundation::Uri LinkUri() const;
     GUID AppId() const;
     Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt) const;
-    Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt) const;
+    [[deprecated("RequestProductPurchaseAsync(productId, includeReceipt) may be altered or unavailable for releases after Windows 8.1. Instead, use RequestProductPurchaseAsync(productId).")]] Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_view productId) const;
@@ -231,7 +231,7 @@ struct WINRT_EBO impl_ICurrentAppSimulator
     Windows::Foundation::Uri LinkUri() const;
     GUID AppId() const;
     Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt) const;
-    Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt) const;
+    [[deprecated("RequestProductPurchaseAsync(productId, includeReceipt) may be altered or unavailable for releases after Windows 8.1. Instead, use RequestProductPurchaseAsync(productId).")]] Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_view productId, bool includeReceipt) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_view productId) const;

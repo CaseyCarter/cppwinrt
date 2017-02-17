@@ -265,9 +265,9 @@ struct WINRT_EBO GridViewItemPresenter :
     static Windows::UI::Xaml::DependencyProperty DisabledOpacityProperty();
     static Windows::UI::Xaml::DependencyProperty DragOpacityProperty();
     static Windows::UI::Xaml::DependencyProperty ReorderHintOffsetProperty();
-    static Windows::UI::Xaml::DependencyProperty GridViewItemPresenterHorizontalContentAlignmentProperty();
-    static Windows::UI::Xaml::DependencyProperty GridViewItemPresenterVerticalContentAlignmentProperty();
-    static Windows::UI::Xaml::DependencyProperty GridViewItemPresenterPaddingProperty();
+    [[deprecated("Use ContentPresenter.HorizontalContentAlignment instead of GridViewItemPresenterHorizontalContentAlignment. For more info, see MSDN.")]] static Windows::UI::Xaml::DependencyProperty GridViewItemPresenterHorizontalContentAlignmentProperty();
+    [[deprecated("Use ContentPresenter.VerticalContentAlignment instead of GridViewItemPresenterVerticalContentAlignment. For more info, see MSDN.")]] static Windows::UI::Xaml::DependencyProperty GridViewItemPresenterVerticalContentAlignmentProperty();
+    [[deprecated("Use ContentPresenter.Padding instead of GridViewItemPresenterPadding. For more info, see MSDN.")]] static Windows::UI::Xaml::DependencyProperty GridViewItemPresenterPaddingProperty();
     static Windows::UI::Xaml::DependencyProperty PointerOverBackgroundMarginProperty();
     static Windows::UI::Xaml::DependencyProperty ContentMarginProperty();
 };
@@ -340,9 +340,9 @@ struct WINRT_EBO ListViewItemPresenter :
     static Windows::UI::Xaml::DependencyProperty DisabledOpacityProperty();
     static Windows::UI::Xaml::DependencyProperty DragOpacityProperty();
     static Windows::UI::Xaml::DependencyProperty ReorderHintOffsetProperty();
-    static Windows::UI::Xaml::DependencyProperty ListViewItemPresenterHorizontalContentAlignmentProperty();
-    static Windows::UI::Xaml::DependencyProperty ListViewItemPresenterVerticalContentAlignmentProperty();
-    static Windows::UI::Xaml::DependencyProperty ListViewItemPresenterPaddingProperty();
+    [[deprecated("Use ContentPresenter.HorizontalContentAlignment instead of ListViewItemPresenterHorizontalContentAlignment. For more info, see MSDN.")]] static Windows::UI::Xaml::DependencyProperty ListViewItemPresenterHorizontalContentAlignmentProperty();
+    [[deprecated("Use ContentPresenter.VerticalContentAlignment instead of ListViewItemPresenterVerticalContentAlignment. For more info, see MSDN.")]] static Windows::UI::Xaml::DependencyProperty ListViewItemPresenterVerticalContentAlignmentProperty();
+    [[deprecated("Use ContentPresenter.Padding instead of GridViewItemPresenterPadding. For more info, see MSDN.")]] static Windows::UI::Xaml::DependencyProperty ListViewItemPresenterPaddingProperty();
     static Windows::UI::Xaml::DependencyProperty PointerOverBackgroundMarginProperty();
     static Windows::UI::Xaml::DependencyProperty ContentMarginProperty();
     static Windows::UI::Xaml::DependencyProperty SelectedPressedBackgroundProperty();

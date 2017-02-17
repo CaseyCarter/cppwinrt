@@ -24,6 +24,7 @@ template <typename T> void GetEnumerations(T callback)
         Settings::EnumerationName = s.GetString(1);
         Settings::Namespace = s.GetString(2);
         Settings::EnumerationFlag = s.GetBool(3);
+        Settings::Deprecated = s.GetString(4);
 
         callback();
     }
@@ -52,6 +53,7 @@ template <typename T> void GetEnumerators(T callback)
     {
         Settings::EnumeratorName = s.GetString(0);
         Settings::EnumeratorValue = s.GetString(1);
+        Settings::Deprecated = s.GetString(2);
 
         callback();
     }
@@ -67,6 +69,7 @@ template <typename T> void GetStructures(T callback)
         Settings::StructureId = s.GetInt(0);
         Settings::StructureName = s.GetString(1);
         Settings::Namespace = s.GetString(2);
+        Settings::Deprecated = s.GetString(3);
 
         callback();
     }
@@ -82,6 +85,7 @@ template <typename T> void GetAbiStructures(T callback)
         Settings::StructureId = s.GetInt(0);
         Settings::StructureName = s.GetString(1);
         Settings::Namespace = s.GetString(2);
+        Settings::Deprecated = s.GetString(3);
 
         callback();
     }
@@ -112,6 +116,7 @@ template <typename T> void GetFields(T callback)
         Settings::FieldName = s.GetString(0);
         Settings::FieldType = s.GetString(1);
         Settings::FieldCategory = static_cast<TypeCategory>(s.GetInt(2));
+        Settings::Deprecated = s.GetString(3);
 
         callback();
     }
@@ -286,6 +291,7 @@ template <typename T> void GetClasses(T callback)
         Settings::Namespace = s.GetString(2);
         Settings::ClassDefaultInterface = s.GetString(3);
         Settings::ClassActivatable = s.GetBool(4);
+        Settings::Deprecated = s.GetString(5);
 
         callback();
     }
@@ -317,6 +323,7 @@ template <typename T> void GetDelegateDefinitions(T callback)
         Settings::InterfaceName = s.GetString(1);
         Settings::Namespace = s.GetString(2);
         Settings::MethodId = s.GetInt(3);
+        Settings::Deprecated = s.GetString(4);
         GetParameters();
 
         callback();
@@ -333,6 +340,7 @@ template <typename T> void GetInterfaceDefinitions(T callback)
         Settings::InterfaceId = s.GetInt(0);
         Settings::InterfaceName = s.GetString(1);
         Settings::Namespace = s.GetString(2);
+        Settings::Deprecated = s.GetString(3);
 
         callback();
     }
@@ -416,21 +424,7 @@ template <typename T> void GetInterfaceMethods(T callback)
         Settings::MethodId = s.GetInt(0);
         Settings::MethodName = s.GetString(1);
         Settings::MethodAbi = s.GetString(2);
-        GetParameters();
-
-        callback();
-    }
-}
-
-template <typename T> void GetConstructorMethods(T callback)
-{
-    static Statement s = Prepare(Strings::DatabaseGetConstructorMethods);
-    s.Reset(Settings::InterfaceId);
-
-    while (s.Step())
-    {
-        Settings::MethodId = s.GetInt(0);
-        Settings::MethodName = s.GetString(1);
+        Settings::Deprecated = s.GetString(3);
         GetParameters();
 
         callback();
@@ -544,21 +538,8 @@ template <typename T> void GetStaticMethodDeclarations(T callback)
         Settings::MethodId = s.GetInt(2);
         Settings::MethodName = s.GetString(3);
         Settings::MethodAbi = s.GetString(4);
+        Settings::Deprecated = s.GetString(5);
         GetParameters();
-
-        callback();
-    }
-}
-
-template <typename T> void GetStaticInterfaces(T callback)
-{
-    static Statement s = Prepare(Strings::DatabaseGetStaticInterfaces);
-    s.Reset(Settings::ClassId);
-
-    while (s.Step())
-    {
-        Settings::InterfaceId = s.GetInt(0);
-        Settings::InterfaceName = s.GetString(1);
 
         callback();
     }

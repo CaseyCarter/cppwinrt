@@ -381,7 +381,7 @@ struct IMediaBreakStartedEventArgs :
     IMediaBreakStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IMediaEnginePlaybackSource :
+struct [[deprecated("Use MediaPlayer instead of MediaEngine. For more info, see MSDN.")]] IMediaEnginePlaybackSource :
     Windows::IInspectable,
     impl::consume<IMediaEnginePlaybackSource>
 {

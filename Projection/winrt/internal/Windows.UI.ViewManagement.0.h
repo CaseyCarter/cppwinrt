@@ -149,7 +149,7 @@ enum class ApplicationViewOrientation
     Portrait = 1,
 };
 
-enum class ApplicationViewState
+enum class [[deprecated("ApplicationViewState may be altered or unavailable for releases after Windows 8.1. Instead, query for window layout sizes directly.")]] ApplicationViewState
 {
     FullScreenLandscape = 0,
     Filled = 1,

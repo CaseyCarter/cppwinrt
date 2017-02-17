@@ -34,7 +34,7 @@ template <> struct __declspec(uuid("398c4183-793d-5b00-819b-4aef92485e94")) __de
 
 namespace Windows::Graphics::Display {
 
-struct DisplayPropertiesEventHandler : Windows::IUnknown
+struct [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] DisplayPropertiesEventHandler : Windows::IUnknown
 {
     DisplayPropertiesEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DisplayPropertiesEventHandler(L lambda);
@@ -79,7 +79,7 @@ struct IDisplayInformationStatics :
     IDisplayInformationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IDisplayPropertiesStatics :
+struct [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] IDisplayPropertiesStatics :
     Windows::IInspectable,
     impl::consume<IDisplayPropertiesStatics>
 {

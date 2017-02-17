@@ -7454,10 +7454,10 @@ struct WINRT_EBO impl_IGroupStyle
 {
     Windows::UI::Xaml::Controls::ItemsPanelTemplate Panel() const;
     void Panel(const Windows::UI::Xaml::Controls::ItemsPanelTemplate & value) const;
-    Windows::UI::Xaml::Style ContainerStyle() const;
-    void ContainerStyle(const Windows::UI::Xaml::Style & value) const;
-    Windows::UI::Xaml::Controls::StyleSelector ContainerStyleSelector() const;
-    void ContainerStyleSelector(const Windows::UI::Xaml::Controls::StyleSelector & value) const;
+    [[deprecated("ContainerStyle may be altered or unavailable for releases after Windows 8.1, and is not supported for ItemsControl.GroupStyle.")]] Windows::UI::Xaml::Style ContainerStyle() const;
+    [[deprecated("ContainerStyle may be altered or unavailable for releases after Windows 8.1, and is not supported for ItemsControl.GroupStyle.")]] void ContainerStyle(const Windows::UI::Xaml::Style & value) const;
+    [[deprecated("ContainerStyleSelector may be altered or unavailable for releases after Windows 8.1, and is not supported for ItemsControl.GroupStyle.")]] Windows::UI::Xaml::Controls::StyleSelector ContainerStyleSelector() const;
+    [[deprecated("ContainerStyleSelector may be altered or unavailable for releases after Windows 8.1, and is not supported for ItemsControl.GroupStyle.")]] void ContainerStyleSelector(const Windows::UI::Xaml::Controls::StyleSelector & value) const;
     Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
     void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
     Windows::UI::Xaml::Controls::DataTemplateSelector HeaderTemplateSelector() const;
@@ -7620,7 +7620,7 @@ struct WINRT_EBO impl_IImage
     void Stretch(Windows::UI::Xaml::Media::Stretch value) const;
     Windows::UI::Xaml::Thickness NineGrid() const;
     void NineGrid(const Windows::UI::Xaml::Thickness & value) const;
-    Windows::Media::PlayTo::PlayToSource PlayToSource() const;
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")]] Windows::Media::PlayTo::PlayToSource PlayToSource() const;
     event_token ImageFailed(const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const;
     using ImageFailed_revoker = event_revoker<IImage>;
     ImageFailed_revoker ImageFailed(auto_revoke_t, const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const;
@@ -7649,7 +7649,7 @@ struct WINRT_EBO impl_IImageStatics
     Windows::UI::Xaml::DependencyProperty SourceProperty() const;
     Windows::UI::Xaml::DependencyProperty StretchProperty() const;
     Windows::UI::Xaml::DependencyProperty NineGridProperty() const;
-    Windows::UI::Xaml::DependencyProperty PlayToSourceProperty() const;
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")]] Windows::UI::Xaml::DependencyProperty PlayToSourceProperty() const;
 };
 
 template <typename D>
@@ -7945,10 +7945,10 @@ struct WINRT_EBO impl_IItemContainerGenerator
     using ItemsChanged_revoker = event_revoker<IItemContainerGenerator>;
     ItemsChanged_revoker ItemsChanged(auto_revoke_t, const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventHandler & value) const;
     void ItemsChanged(event_token token) const;
-    Windows::IInspectable ItemFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
-    Windows::UI::Xaml::DependencyObject ContainerFromItem(const Windows::IInspectable & item) const;
-    int32_t IndexFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
-    Windows::UI::Xaml::DependencyObject ContainerFromIndex(int32_t index) const;
+    [[deprecated("ItemFromContainer may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ItemFromContainer.")]] Windows::IInspectable ItemFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+    [[deprecated("ContainerFromItem may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ContainerFromItem.")]] Windows::UI::Xaml::DependencyObject ContainerFromItem(const Windows::IInspectable & item) const;
+    [[deprecated("IndexFromContainer may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.IndexFromContainer.")]] int32_t IndexFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+    [[deprecated("ContainerFromIndex may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ContainerFromIndex.")]] Windows::UI::Xaml::DependencyObject ContainerFromIndex(int32_t index) const;
     Windows::UI::Xaml::Controls::ItemContainerGenerator GetItemContainerGeneratorForPanel(const Windows::UI::Xaml::Controls::Panel & panel) const;
     void StartAt(const Windows::UI::Xaml::Controls::Primitives::GeneratorPosition & position, Windows::UI::Xaml::Controls::Primitives::GeneratorDirection direction, bool allowStartAtRealizedItem) const;
     void Stop() const;
@@ -8520,7 +8520,7 @@ struct WINRT_EBO impl_IMediaElement
     void PlaybackRate(double value) const;
     bool IsLooping() const;
     void IsLooping(bool value) const;
-    Windows::Media::PlayTo::PlayToSource PlayToSource() const;
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")]] Windows::Media::PlayTo::PlayToSource PlayToSource() const;
     double DefaultPlaybackRate() const;
     void DefaultPlaybackRate(double value) const;
     int32_t AspectRatioWidth() const;
@@ -8600,8 +8600,8 @@ struct WINRT_EBO impl_IMediaElement2
     bool IsFullWindow() const;
     void IsFullWindow(bool value) const;
     void SetMediaStreamSource(const Windows::Media::Core::IMediaSource & source) const;
-    Windows::Foundation::Uri PlayToPreferredSourceUri() const;
-    void PlayToPreferredSourceUri(const Windows::Foundation::Uri & value) const;
+    [[deprecated("PlayToPreferredSourceUri may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource().PreferredSourceUri.")]] Windows::Foundation::Uri PlayToPreferredSourceUri() const;
+    [[deprecated("PlayToPreferredSourceUri may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource().PreferredSourceUri.")]] void PlayToPreferredSourceUri(const Windows::Foundation::Uri & value) const;
 };
 
 template <typename D>
@@ -8641,7 +8641,7 @@ struct WINRT_EBO impl_IMediaElementStatics
     Windows::UI::Xaml::DependencyProperty AudioStreamIndexProperty() const;
     Windows::UI::Xaml::DependencyProperty PlaybackRateProperty() const;
     Windows::UI::Xaml::DependencyProperty IsLoopingProperty() const;
-    Windows::UI::Xaml::DependencyProperty PlayToSourceProperty() const;
+    [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")]] Windows::UI::Xaml::DependencyProperty PlayToSourceProperty() const;
     Windows::UI::Xaml::DependencyProperty DefaultPlaybackRateProperty() const;
     Windows::UI::Xaml::DependencyProperty AspectRatioWidthProperty() const;
     Windows::UI::Xaml::DependencyProperty AspectRatioHeightProperty() const;
@@ -8661,7 +8661,7 @@ struct WINRT_EBO impl_IMediaElementStatics2
     Windows::UI::Xaml::DependencyProperty AreTransportControlsEnabledProperty() const;
     Windows::UI::Xaml::DependencyProperty StretchProperty() const;
     Windows::UI::Xaml::DependencyProperty IsFullWindowProperty() const;
-    Windows::UI::Xaml::DependencyProperty PlayToPreferredSourceUriProperty() const;
+    [[deprecated("PlayToPreferredSourceUri may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource().PreferredSourceUri.")]] Windows::UI::Xaml::DependencyProperty PlayToPreferredSourceUriProperty() const;
 };
 
 template <typename D>
@@ -9034,8 +9034,8 @@ struct WINRT_EBO impl_IPasswordBox
     void Password(hstring_view value) const;
     hstring PasswordChar() const;
     void PasswordChar(hstring_view value) const;
-    bool IsPasswordRevealButtonEnabled() const;
-    void IsPasswordRevealButtonEnabled(bool value) const;
+    [[deprecated("IsPasswordRevealButtonEnabledProperty may be altered or unavailable for releases after Windows 10.0. Instead, use PasswordRevealModeProperty.")]] bool IsPasswordRevealButtonEnabled() const;
+    [[deprecated("IsPasswordRevealButtonEnabledProperty may be altered or unavailable for releases after Windows 10.0. Instead, use PasswordRevealModeProperty.")]] void IsPasswordRevealButtonEnabled(bool value) const;
     int32_t MaxLength() const;
     void MaxLength(int32_t value) const;
     event_token PasswordChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
@@ -9084,7 +9084,7 @@ struct WINRT_EBO impl_IPasswordBoxStatics
 {
     Windows::UI::Xaml::DependencyProperty PasswordProperty() const;
     Windows::UI::Xaml::DependencyProperty PasswordCharProperty() const;
-    Windows::UI::Xaml::DependencyProperty IsPasswordRevealButtonEnabledProperty() const;
+    [[deprecated("IsPasswordRevealButtonEnabledProperty may be altered or unavailable for releases after Windows 10.0. Instead, use PasswordRevealModeProperty.")]] Windows::UI::Xaml::DependencyProperty IsPasswordRevealButtonEnabledProperty() const;
     Windows::UI::Xaml::DependencyProperty MaxLengthProperty() const;
 };
 
@@ -9816,9 +9816,9 @@ struct WINRT_EBO impl_IScrollViewer
     using ViewChanged_revoker = event_revoker<IScrollViewer>;
     ViewChanged_revoker ViewChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs> & value) const;
     void ViewChanged(event_token token) const;
-    void ScrollToHorizontalOffset(double offset) const;
-    void ScrollToVerticalOffset(double offset) const;
-    void ZoomToFactor(float factor) const;
+    [[deprecated("ScrollToHorizontalOffset may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")]] void ScrollToHorizontalOffset(double offset) const;
+    [[deprecated("ScrollToVerticalOffset may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")]] void ScrollToVerticalOffset(double offset) const;
+    [[deprecated("ZoomToFactor may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")]] void ZoomToFactor(float factor) const;
     void InvalidateScrollInfo() const;
     bool IsDeferredScrollingEnabled() const;
     void IsDeferredScrollingEnabled(bool value) const;
@@ -11076,22 +11076,22 @@ struct WINRT_EBO impl_IWebView
 {
     Windows::Foundation::Uri Source() const;
     void Source(const Windows::Foundation::Uri & value) const;
-    Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> AllowedScriptNotifyUris() const;
-    void AllowedScriptNotifyUris(const Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> & value) const;
-    Windows::ApplicationModel::DataTransfer::DataPackage DataTransferPackage() const;
-    event_token LoadCompleted(const Windows::UI::Xaml::Navigation::LoadCompletedEventHandler & value) const;
+    [[deprecated("AllowedScriptNotifyUris is unavailable for releases beginning with Windows 8.1. Instead, list URIs under ApplicationContentUriRules in the package manifest. For more info, see the AllowedScriptNotifyUris documentation.")]] Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> AllowedScriptNotifyUris() const;
+    [[deprecated("AllowedScriptNotifyUris is unavailable for releases beginning with Windows 8.1. Instead, list URIs under ApplicationContentUriRules in the package manifest. For more info, see the AllowedScriptNotifyUris documentation.")]] void AllowedScriptNotifyUris(const Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> & value) const;
+    [[deprecated("Use CaptureSelectedContentToDataPackageAsync instead of DataTransferPackage. For more info, see MSDN.")]] Windows::ApplicationModel::DataTransfer::DataPackage DataTransferPackage() const;
+    [[deprecated("LoadCompleted may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")]] event_token LoadCompleted(const Windows::UI::Xaml::Navigation::LoadCompletedEventHandler & value) const;
     using LoadCompleted_revoker = event_revoker<IWebView>;
-    LoadCompleted_revoker LoadCompleted(auto_revoke_t, const Windows::UI::Xaml::Navigation::LoadCompletedEventHandler & value) const;
-    void LoadCompleted(event_token token) const;
+    [[deprecated("LoadCompleted may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")]] LoadCompleted_revoker LoadCompleted(auto_revoke_t, const Windows::UI::Xaml::Navigation::LoadCompletedEventHandler & value) const;
+    [[deprecated("LoadCompleted may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")]] void LoadCompleted(event_token token) const;
     event_token ScriptNotify(const Windows::UI::Xaml::Controls::NotifyEventHandler & value) const;
     using ScriptNotify_revoker = event_revoker<IWebView>;
     ScriptNotify_revoker ScriptNotify(auto_revoke_t, const Windows::UI::Xaml::Controls::NotifyEventHandler & value) const;
     void ScriptNotify(event_token token) const;
-    event_token NavigationFailed(const Windows::UI::Xaml::Controls::WebViewNavigationFailedEventHandler & value) const;
+    [[deprecated("NavigationFailed may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")]] event_token NavigationFailed(const Windows::UI::Xaml::Controls::WebViewNavigationFailedEventHandler & value) const;
     using NavigationFailed_revoker = event_revoker<IWebView>;
-    NavigationFailed_revoker NavigationFailed(auto_revoke_t, const Windows::UI::Xaml::Controls::WebViewNavigationFailedEventHandler & value) const;
-    void NavigationFailed(event_token token) const;
-    hstring InvokeScript(hstring_view scriptName, array_view<const hstring> arguments) const;
+    [[deprecated("NavigationFailed may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")]] NavigationFailed_revoker NavigationFailed(auto_revoke_t, const Windows::UI::Xaml::Controls::WebViewNavigationFailedEventHandler & value) const;
+    [[deprecated("NavigationFailed may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")]] void NavigationFailed(event_token token) const;
+    [[deprecated("Use InvokeScriptAsync instead of InvokeScript. For more info, see MSDN.")]] hstring InvokeScript(hstring_view scriptName, array_view<const hstring> arguments) const;
     void Navigate(const Windows::Foundation::Uri & source) const;
     void NavigateToString(hstring_view text) const;
 };
@@ -11319,10 +11319,10 @@ struct WINRT_EBO impl_IWebViewSettings
 template <typename D>
 struct WINRT_EBO impl_IWebViewStatics
 {
-    Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> AnyScriptNotifyUri() const;
+    [[deprecated("AnyScriptNotifyUri is unavailable for releases beginning with Windows 8.1. Instead, list URIs under ApplicationContentUriRules in the package manifest. For more info, see the AnyScriptNotifyUri documentation.")]] Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> AnyScriptNotifyUri() const;
     Windows::UI::Xaml::DependencyProperty SourceProperty() const;
-    Windows::UI::Xaml::DependencyProperty AllowedScriptNotifyUrisProperty() const;
-    Windows::UI::Xaml::DependencyProperty DataTransferPackageProperty() const;
+    [[deprecated("AllowedScriptNotifyUris is unavailable for releases beginning with Windows 8.1. Instead, list URIs under ApplicationContentUriRules in the package manifest. For more info, see the AllowedScriptNotifyUris documentation.")]] Windows::UI::Xaml::DependencyProperty AllowedScriptNotifyUrisProperty() const;
+    [[deprecated("Use CaptureSelectedContentToDataPackageAsync instead of DataTransferPackage. For more info, see MSDN.")]] Windows::UI::Xaml::DependencyProperty DataTransferPackageProperty() const;
 };
 
 template <typename D>

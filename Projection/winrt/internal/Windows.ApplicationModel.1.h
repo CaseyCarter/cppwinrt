@@ -446,7 +446,7 @@ struct WINRT_EBO impl_IPackageWithMetadata
 {
     Windows::Foundation::DateTime InstallDate() const;
     hstring GetThumbnailToken() const;
-    void Launch(hstring_view parameters) const;
+    [[deprecated("Launch may be altered or unavailable for releases after Windows 8.1. Instead, for SmartCardTrigger scenarios use SmartCardTriggerDetails.TryLaunchSelfAsync")]] void Launch(hstring_view parameters) const;
 };
 
 template <typename D>

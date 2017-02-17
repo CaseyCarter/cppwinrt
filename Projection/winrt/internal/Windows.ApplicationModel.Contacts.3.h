@@ -315,15 +315,15 @@ struct WINRT_EBO FullContactCardOptions :
     FullContactCardOptions();
 };
 
-struct KnownContactField
+struct [[deprecated("KnownContactField  may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] KnownContactField
 {
     KnownContactField() = delete;
-    static hstring Email();
-    static hstring PhoneNumber();
-    static hstring Location();
-    static hstring InstantMessage();
-    static Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(hstring_view name);
-    static hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type);
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] static hstring Email();
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] static hstring PhoneNumber();
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] static hstring Location();
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] static hstring InstantMessage();
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] static Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(hstring_view name);
+    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] static hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type);
 };
 
 }

@@ -247,7 +247,7 @@ struct IResourceContext :
     IResourceContext(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IResourceContextStatics :
+struct [[deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")]] IResourceContextStatics :
     Windows::IInspectable,
     impl::consume<IResourceContextStatics>
 {

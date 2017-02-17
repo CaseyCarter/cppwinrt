@@ -66,7 +66,7 @@ struct IFileOpenPickerUI :
     IFileOpenPickerUI(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IFileRemovedEventArgs :
+struct [[deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]] IFileRemovedEventArgs :
     Windows::IInspectable,
     impl::consume<IFileRemovedEventArgs>
 {

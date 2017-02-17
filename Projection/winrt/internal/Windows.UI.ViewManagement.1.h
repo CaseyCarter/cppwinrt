@@ -311,7 +311,7 @@ struct WINRT_EBO impl_IApplicationView
     Windows::UI::ViewManagement::ApplicationViewOrientation Orientation() const;
     bool AdjacentToLeftDisplayEdge() const;
     bool AdjacentToRightDisplayEdge() const;
-    bool IsFullScreen() const;
+    [[deprecated("To check full screen mode, use IsFullScreenMode. To check if the view is adjacent to both edges, use AdjacentToLeftDisplayEdge and AdjacentToRightDisplayEdge. For more info, see MSDN.")]] bool IsFullScreen() const;
     bool IsOnLockScreen() const;
     bool IsScreenCaptureEnabled() const;
     void IsScreenCaptureEnabled(bool value) const;
@@ -327,8 +327,8 @@ struct WINRT_EBO impl_IApplicationView
 template <typename D>
 struct WINRT_EBO impl_IApplicationView2
 {
-    bool SuppressSystemOverlays() const;
-    void SuppressSystemOverlays(bool value) const;
+    [[deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")]] bool SuppressSystemOverlays() const;
+    [[deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")]] void SuppressSystemOverlays(bool value) const;
     Windows::Foundation::Rect VisibleBounds() const;
     event_token VisibleBoundsChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> & handler) const;
     using VisibleBoundsChanged_revoker = event_revoker<IApplicationView2>;
@@ -361,7 +361,7 @@ struct WINRT_EBO impl_IApplicationViewConsolidatedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IApplicationViewFullscreenStatics
 {
-    bool TryUnsnapToFullscreen() const;
+    [[deprecated("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")]] bool TryUnsnapToFullscreen() const;
 };
 
 template <typename D>
@@ -385,8 +385,8 @@ struct WINRT_EBO impl_IApplicationViewScalingStatics
 template <typename D>
 struct WINRT_EBO impl_IApplicationViewStatics
 {
-    Windows::UI::ViewManagement::ApplicationViewState Value() const;
-    bool TryUnsnap() const;
+    [[deprecated("Value may be altered or unavailable for releases after Windows 8.1. Instead, query for window layout sizes directly.")]] Windows::UI::ViewManagement::ApplicationViewState Value() const;
+    [[deprecated("TryUnsnap may be altered or unavailable for releases after Windows 8.1. Apps can be continuously resized, but cannot be snapped, starting in Windows 8.1.")]] bool TryUnsnap() const;
 };
 
 template <typename D>

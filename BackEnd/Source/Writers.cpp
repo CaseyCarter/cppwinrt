@@ -16,6 +16,14 @@ bool StartsWith(std::string const & target, char const (&match)[Count]) noexcept
     return target.compare(0, Count - 1, match) == 0;
 }
 
+static void WriteDeprecatedAttribute(Output & out)
+{
+    if (!Settings::Deprecated.empty())
+    {
+        Write(out, "[[deprecated(\"%\")]] ", Settings::Deprecated);
+    }
+}
+
 static void WriteEnumeratorsFlag(Output & out)
 {
     GetEnumeratorsFlag([&]
@@ -34,6 +42,7 @@ static void WriteEnumerators(Output & out)
         Write(out, 
               Strings::WriteEnumerator,
               Settings::EnumeratorName,
+              Bind(WriteDeprecatedAttribute),
               Settings::EnumeratorValue);
     });
 }
@@ -44,6 +53,7 @@ static void WriteStructureFields(Output & out)
     {
         Write(out,
               Strings::WriteStructureField,
+              Bind(WriteDeprecatedAttribute),
               Settings::FieldType,
               Settings::FieldName);
     });
@@ -57,6 +67,7 @@ static void WriteAbiStructureFields(Output & out)
         {
             Write(out,
                   Strings::WriteStructureField,
+                  Bind(WriteDeprecatedAttribute),
                   "winrt::" + Settings::FieldType,
                   Settings::FieldName);
         }
@@ -64,6 +75,7 @@ static void WriteAbiStructureFields(Output & out)
         {
             Write(out,
                   Strings::WriteStructureField,
+                  Bind(WriteDeprecatedAttribute),
                   Settings::FieldType + " *",
                   Settings::FieldName);
         }
@@ -71,6 +83,7 @@ static void WriteAbiStructureFields(Output & out)
         {
             Write(out,
                   Strings::WriteStructureField,
+                  Bind(WriteDeprecatedAttribute),
                   Settings::FieldType,
                   Settings::FieldName);
         }
@@ -564,6 +577,7 @@ static void WriteInterfaceMethodDeclaration(Output & out)
 {
     Write(out,
           Strings::WriteInterfaceMethodDeclaration,
+          Bind(WriteDeprecatedAttribute),
           Settings::ParameterInfo.ReturnType,
           Settings::MethodName,
           Bind(WriteParameters));
@@ -574,6 +588,7 @@ static void WriteInterfaceMethodDeclaration(Output & out)
               Strings::WriteInterfaceEventMethodDeclaration,
               Settings::MethodName,
               Settings::InterfaceName,
+              Bind(WriteDeprecatedAttribute),
               Settings::MethodName,
               Settings::MethodName,
               Bind(WriteParameters));
@@ -673,6 +688,7 @@ static void WriteStaticMethodDeclaration(Output & out)
 {
     Write(out,
           Strings::WriteStaticMethodDeclaration,
+          Bind(WriteDeprecatedAttribute),
           Settings::ParameterInfo.ReturnType,
           Settings::MethodName,
           Bind(WriteParameters));
@@ -683,6 +699,7 @@ static void WriteStaticMethodDeclaration(Output & out)
               Strings::WriteStaticEventMethodDeclaration,
               Settings::MethodName,
               Settings::InterfaceName,
+              Bind(WriteDeprecatedAttribute),
               Settings::MethodName,
               Settings::MethodName,
               Bind(WriteParameters));
@@ -1029,6 +1046,7 @@ static void WriteClassDeclaration(Output & out)
 {
     Write(out,
           Strings::WriteClassDeclaration,
+          Bind(WriteDeprecatedAttribute),
           Settings::ClassName,
           Settings::ClassDefaultInterface,
           Bind(WriteBases),
@@ -1042,6 +1060,7 @@ static void WriteStaticClassDeclaration(Output & out)
 {
     Write(out,
           Strings::WriteStaticClassDeclaration,
+          Bind(WriteDeprecatedAttribute),
           Settings::ClassName,
           Settings::ClassName,
           Bind(WriteStaticMethodDeclarations));
@@ -1065,6 +1084,7 @@ void WriteEnumerations(Output & out)
         {
             Write(out,
                   Strings::WriteEnumeration,
+                  Bind(WriteDeprecatedAttribute),
                   Settings::EnumerationName,
                   Bind(WriteEnumerators));
         }
@@ -1079,6 +1099,7 @@ void WriteStructures(Output & out)
 
         Write(out,
               Strings::WriteStructure,
+              Bind(WriteDeprecatedAttribute),
               Settings::StructureName,
               Bind(WriteAbiStructureFields));
     });
@@ -1105,6 +1126,7 @@ void WriteStructures(Output & out)
 
         Write(out,
               Strings::WriteStructure,
+              Bind(WriteDeprecatedAttribute),
               Settings::StructureName,
               Bind(WriteStructureFields));
     });
@@ -1237,6 +1259,7 @@ void WriteInterfaceDefinitions(Output & out)
 
         Write(out,
               Strings::WriteDelegateDefinition,
+              Bind(WriteDeprecatedAttribute),
               Settings::InterfaceName,
               Settings::InterfaceName,
               Settings::InterfaceName,
@@ -1252,6 +1275,7 @@ void WriteInterfaceDefinitions(Output & out)
 
         Write(out,
               Strings::WriteInterfaceDefinition,
+              Bind(WriteDeprecatedAttribute),
               Settings::InterfaceName,
               Settings::InterfaceName,
               Bind(WriteRequiredInterfaces),

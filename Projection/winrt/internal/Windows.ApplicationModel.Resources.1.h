@@ -64,13 +64,13 @@ struct WINRT_EBO impl_IResourceLoader2
 template <typename D>
 struct WINRT_EBO impl_IResourceLoaderFactory
 {
-    Windows::ApplicationModel::Resources::ResourceLoader CreateResourceLoaderByName(hstring_view name) const;
+    [[deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")]] Windows::ApplicationModel::Resources::ResourceLoader CreateResourceLoaderByName(hstring_view name) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IResourceLoaderStatics
 {
-    hstring GetStringForReference(const Windows::Foundation::Uri & uri) const;
+    [[deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")]] hstring GetStringForReference(const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>

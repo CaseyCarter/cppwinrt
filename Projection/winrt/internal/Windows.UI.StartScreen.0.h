@@ -114,8 +114,8 @@ DEFINE_ENUM_FLAG_OPERATORS(TileOptions)
 enum class TileSize
 {
     Default = 0,
-    Square30x30 = 1,
-    Square70x70 = 2,
+    Square30x30 [[deprecated("TileSize.Square30x30 may be altered or unavailable for release after Windows 10.")]] = 1,
+    Square70x70 [[deprecated("TileSize.Square70x70 may be altered or unavailable for release after Windows Phone 8.1.")]] = 2,
     Square150x150 = 3,
     Wide310x150 = 4,
     Square310x310 = 5,

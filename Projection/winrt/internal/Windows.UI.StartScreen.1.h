@@ -234,26 +234,26 @@ struct WINRT_EBO impl_ISecondaryTile
     hstring TileId() const;
     void Arguments(hstring_view value) const;
     hstring Arguments() const;
-    void ShortName(hstring_view value) const;
-    hstring ShortName() const;
+    [[deprecated("ShortName may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayName.")]] void ShortName(hstring_view value) const;
+    [[deprecated("ShortName may be altered or unavailable for releases after Windows 8.1. Instead, use DisplayName.")]] hstring ShortName() const;
     void DisplayName(hstring_view value) const;
     hstring DisplayName() const;
-    void Logo(const Windows::Foundation::Uri & value) const;
-    Windows::Foundation::Uri Logo() const;
-    void SmallLogo(const Windows::Foundation::Uri & value) const;
-    Windows::Foundation::Uri SmallLogo() const;
-    void WideLogo(const Windows::Foundation::Uri & value) const;
-    Windows::Foundation::Uri WideLogo() const;
+    [[deprecated("Logo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square150x150Logo.")]] void Logo(const Windows::Foundation::Uri & value) const;
+    [[deprecated("Logo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square150x150Logo.")]] Windows::Foundation::Uri Logo() const;
+    [[deprecated("SmallLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square30x30Logo.")]] void SmallLogo(const Windows::Foundation::Uri & value) const;
+    [[deprecated("SmallLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square30x30Logo.")]] Windows::Foundation::Uri SmallLogo() const;
+    [[deprecated("WideLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Wide310x150Logo.")]] void WideLogo(const Windows::Foundation::Uri & value) const;
+    [[deprecated("WideLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Wide310x150Logo.")]] Windows::Foundation::Uri WideLogo() const;
     void LockScreenBadgeLogo(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri LockScreenBadgeLogo() const;
     void LockScreenDisplayBadgeAndTileText(bool value) const;
     bool LockScreenDisplayBadgeAndTileText() const;
-    void TileOptions(Windows::UI::StartScreen::TileOptions value) const;
-    Windows::UI::StartScreen::TileOptions TileOptions() const;
-    void ForegroundText(Windows::UI::StartScreen::ForegroundText value) const;
-    Windows::UI::StartScreen::ForegroundText ForegroundText() const;
-    void BackgroundColor(const Windows::UI::Color & value) const;
-    Windows::UI::Color BackgroundColor() const;
+    [[deprecated("TileOptions may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ShowNameOnSquare150x150Logo, VisualElements.ShowNameOnWide310x150Logo, and RoamingEnabled.")]] void TileOptions(Windows::UI::StartScreen::TileOptions value) const;
+    [[deprecated("TileOptions may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ShowNameOnSquare150x150Logo, VisualElements.ShowNameOnWide310x150Logo, and RoamingEnabled.")]] Windows::UI::StartScreen::TileOptions TileOptions() const;
+    [[deprecated("TileOptions may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ShowNameOnSquare150x150Logo, VisualElements.ShowNameOnWide310x150Logo, and RoamingEnabled.")]] void ForegroundText(Windows::UI::StartScreen::ForegroundText value) const;
+    [[deprecated("ForegroundText may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ForegroundText.")]] Windows::UI::StartScreen::ForegroundText ForegroundText() const;
+    [[deprecated("BackgroundColor may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.BackgroundColor.")]] void BackgroundColor(const Windows::UI::Color & value) const;
+    [[deprecated("BackgroundColor may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.BackgroundColor.")]] Windows::UI::Color BackgroundColor() const;
     Windows::Foundation::IAsyncOperation<bool> RequestCreateAsync() const;
     Windows::Foundation::IAsyncOperation<bool> RequestCreateAsync(const Windows::Foundation::Point & invocationPoint) const;
     Windows::Foundation::IAsyncOperation<bool> RequestCreateForSelectionAsync(const Windows::Foundation::Rect & selection) const;
@@ -282,8 +282,8 @@ struct WINRT_EBO impl_ISecondaryTile2
 template <typename D>
 struct WINRT_EBO impl_ISecondaryTileFactory
 {
-    Windows::UI::StartScreen::SecondaryTile CreateTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) const;
-    Windows::UI::StartScreen::SecondaryTile CreateWideTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) const;
+    [[deprecated("SecondaryTile(string, string, string, string, Windows.UI.StartScreen.TileOptions, Windows.Foundation.Uri) may be altered or unavailable for releases after Windows Phone 8.1. Instead, use SecondaryTile(string, string, string, Windows.Foundation.Uri, Windows.UI.StartScreen.TileSize).")]] Windows::UI::StartScreen::SecondaryTile CreateTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) const;
+    [[deprecated("SecondaryTile(string, string, string, string, Windows.UI.StartScreen.TileOptions, Windows.Foundation.Uri, Windows.Foundation.Uri) may be altered or unavailable for releases after Windows Phone 8.1. Instead, use SecondaryTile(string, string, string, Windows.Foundation.Uri, Windows.UI.StartScreen.TileSize).")]] Windows::UI::StartScreen::SecondaryTile CreateWideTile(hstring_view tileId, hstring_view shortName, hstring_view displayName, hstring_view arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) const;
     Windows::UI::StartScreen::SecondaryTile CreateWithId(hstring_view tileId) const;
 };
 
@@ -305,10 +305,10 @@ struct WINRT_EBO impl_ISecondaryTileStatics
 template <typename D>
 struct WINRT_EBO impl_ISecondaryTileVisualElements
 {
-    void Square30x30Logo(const Windows::Foundation::Uri & value) const;
-    Windows::Foundation::Uri Square30x30Logo() const;
-    void Square70x70Logo(const Windows::Foundation::Uri & value) const;
-    Windows::Foundation::Uri Square70x70Logo() const;
+    [[deprecated("SecondaryTileVisualElements.Square30x30Logo may be altered or unavailable for release after Windows 10.")]] void Square30x30Logo(const Windows::Foundation::Uri & value) const;
+    [[deprecated("SecondaryTileVisualElements.Square30x30Logo may be altered or unavailable for release after Windows 10.")]] Windows::Foundation::Uri Square30x30Logo() const;
+    [[deprecated("SecondaryTileVisualElements.Square70x70Logo may be altered or unavailable for release after Windows Phone 8.1.")]] void Square70x70Logo(const Windows::Foundation::Uri & value) const;
+    [[deprecated("SecondaryTileVisualElements.Square70x70Logo may be altered or unavailable for release after Windows Phone 8.1.")]] Windows::Foundation::Uri Square70x70Logo() const;
     void Square150x150Logo(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri Square150x150Logo() const;
     void Wide310x150Logo(const Windows::Foundation::Uri & value) const;

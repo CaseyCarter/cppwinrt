@@ -333,7 +333,7 @@ enum class MediaPlayerError
     SourceNotSupported = 4,
 };
 
-enum class MediaPlayerState
+enum class [[deprecated("Use MediaPlaybackState instead of MediaPlayerState.  For more info, see MSDN.")]] MediaPlayerState
 {
     Closed = 0,
     Opening = 1,

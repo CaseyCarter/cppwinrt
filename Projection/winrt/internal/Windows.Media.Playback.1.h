@@ -722,8 +722,8 @@ struct WINRT_EBO impl_IMediaBreakStartedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IMediaEnginePlaybackSource
 {
-    Windows::Media::Playback::MediaPlaybackItem CurrentItem() const;
-    void SetPlaybackSource(const Windows::Media::Playback::IMediaPlaybackSource & source) const;
+    [[deprecated("Use MediaPlayer instead of MediaEngine. For more info, see MSDN.")]] Windows::Media::Playback::MediaPlaybackItem CurrentItem() const;
+    [[deprecated("Use MediaPlayer instead of MediaEngine. For more info, see MSDN.")]] void SetPlaybackSource(const Windows::Media::Playback::IMediaPlaybackSource & source) const;
 };
 
 template <typename D>
@@ -1087,23 +1087,23 @@ struct WINRT_EBO impl_IMediaPlayer
 {
     bool AutoPlay() const;
     void AutoPlay(bool value) const;
-    Windows::Foundation::TimeSpan NaturalDuration() const;
-    Windows::Foundation::TimeSpan Position() const;
-    void Position(const Windows::Foundation::TimeSpan & value) const;
-    double BufferingProgress() const;
-    Windows::Media::Playback::MediaPlayerState CurrentState() const;
-    bool CanSeek() const;
-    bool CanPause() const;
+    [[deprecated("Use PlaybackSession.NaturalDuration instead of NaturalDuration.  For more info, see MSDN.")]] Windows::Foundation::TimeSpan NaturalDuration() const;
+    [[deprecated("Use PlaybackSession.Position instead of Position.  For more info, see MSDN.")]] Windows::Foundation::TimeSpan Position() const;
+    [[deprecated("Use PlaybackSession.Position instead of Position.  For more info, see MSDN.")]] void Position(const Windows::Foundation::TimeSpan & value) const;
+    [[deprecated("Use PlaybackSession.BufferingProgress instead of BufferingProgress.  For more info, see MSDN.")]] double BufferingProgress() const;
+    [[deprecated("Use PlaybackSession.State instead of CurrentState.  For more info, see MSDN.")]] Windows::Media::Playback::MediaPlayerState CurrentState() const;
+    [[deprecated("Use PlaybackSession.CanSeek instead of CanSeek.  For more info, see MSDN.")]] bool CanSeek() const;
+    [[deprecated("Use PlaybackSession.CanPause instead of CanPause.  For more info, see MSDN.")]] bool CanPause() const;
     bool IsLoopingEnabled() const;
     void IsLoopingEnabled(bool value) const;
-    bool IsProtected() const;
+    [[deprecated("Use PlaybackSession.IsProtected instead of IsProtected.  For more info, see MSDN.")]] bool IsProtected() const;
     bool IsMuted() const;
     void IsMuted(bool value) const;
-    double PlaybackRate() const;
-    void PlaybackRate(double value) const;
+    [[deprecated("Use PlaybackSession.PlaybackRate instead of PlaybackRate.  For more info, see MSDN.")]] double PlaybackRate() const;
+    [[deprecated("Use PlaybackSession.PlaybackRate instead of PlaybackRate.  For more info, see MSDN.")]] void PlaybackRate(double value) const;
     double Volume() const;
     void Volume(double value) const;
-    Windows::Media::Playback::PlaybackMediaMarkerSequence PlaybackMediaMarkers() const;
+    [[deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]] Windows::Media::Playback::PlaybackMediaMarkerSequence PlaybackMediaMarkers() const;
     event_token MediaOpened(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
     using MediaOpened_revoker = event_revoker<IMediaPlayer>;
     MediaOpened_revoker MediaOpened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
@@ -1116,37 +1116,37 @@ struct WINRT_EBO impl_IMediaPlayer
     using MediaFailed_revoker = event_revoker<IMediaPlayer>;
     MediaFailed_revoker MediaFailed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerFailedEventArgs> & value) const;
     void MediaFailed(event_token token) const;
-    event_token CurrentStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]] event_token CurrentStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
     using CurrentStateChanged_revoker = event_revoker<IMediaPlayer>;
-    CurrentStateChanged_revoker CurrentStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
-    void CurrentStateChanged(event_token token) const;
-    event_token PlaybackMediaMarkerReached(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs> & value) const;
+    [[deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]] CurrentStateChanged_revoker CurrentStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]] void CurrentStateChanged(event_token token) const;
+    [[deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]] event_token PlaybackMediaMarkerReached(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs> & value) const;
     using PlaybackMediaMarkerReached_revoker = event_revoker<IMediaPlayer>;
-    PlaybackMediaMarkerReached_revoker PlaybackMediaMarkerReached(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs> & value) const;
-    void PlaybackMediaMarkerReached(event_token token) const;
-    event_token MediaPlayerRateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerRateChangedEventArgs> & value) const;
+    [[deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]] PlaybackMediaMarkerReached_revoker PlaybackMediaMarkerReached(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs> & value) const;
+    [[deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]] void PlaybackMediaMarkerReached(event_token token) const;
+    [[deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]] event_token MediaPlayerRateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerRateChangedEventArgs> & value) const;
     using MediaPlayerRateChanged_revoker = event_revoker<IMediaPlayer>;
-    MediaPlayerRateChanged_revoker MediaPlayerRateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerRateChangedEventArgs> & value) const;
-    void MediaPlayerRateChanged(event_token token) const;
+    [[deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]] MediaPlayerRateChanged_revoker MediaPlayerRateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerRateChangedEventArgs> & value) const;
+    [[deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]] void MediaPlayerRateChanged(event_token token) const;
     event_token VolumeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
     using VolumeChanged_revoker = event_revoker<IMediaPlayer>;
     VolumeChanged_revoker VolumeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
     void VolumeChanged(event_token token) const;
-    event_token SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]] event_token SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
     using SeekCompleted_revoker = event_revoker<IMediaPlayer>;
-    SeekCompleted_revoker SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
-    void SeekCompleted(event_token token) const;
-    event_token BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]] SeekCompleted_revoker SeekCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]] void SeekCompleted(event_token token) const;
+    [[deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]] event_token BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
     using BufferingStarted_revoker = event_revoker<IMediaPlayer>;
-    BufferingStarted_revoker BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
-    void BufferingStarted(event_token token) const;
-    event_token BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]] BufferingStarted_revoker BufferingStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]] void BufferingStarted(event_token token) const;
+    [[deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]] event_token BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
     using BufferingEnded_revoker = event_revoker<IMediaPlayer>;
-    BufferingEnded_revoker BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
-    void BufferingEnded(event_token token) const;
+    [[deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]] BufferingEnded_revoker BufferingEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
+    [[deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]] void BufferingEnded(event_token token) const;
     void Play() const;
     void Pause() const;
-    void SetUriSource(const Windows::Foundation::Uri & value) const;
+    [[deprecated("Use Source instead of SetUriSource.  For more info, see MSDN.")]] void SetUriSource(const Windows::Foundation::Uri & value) const;
 };
 
 template <typename D>
@@ -1235,9 +1235,9 @@ struct WINRT_EBO impl_IMediaPlayerSource
 {
     Windows::Media::Protection::MediaProtectionManager ProtectionManager() const;
     void ProtectionManager(const Windows::Media::Protection::MediaProtectionManager & value) const;
-    void SetFileSource(const Windows::Storage::IStorageFile & file) const;
-    void SetStreamSource(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
-    void SetMediaSource(const Windows::Media::Core::IMediaSource & source) const;
+    [[deprecated("Use Source instead of SetFileSource.  For more info, see MSDN.")]] void SetFileSource(const Windows::Storage::IStorageFile & file) const;
+    [[deprecated("Use Source instead of SetStreamSource.  For more info, see MSDN.")]] void SetStreamSource(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
+    [[deprecated("Use Source instead of SetMediaSource.  For more info, see MSDN.")]] void SetMediaSource(const Windows::Media::Core::IMediaSource & source) const;
 };
 
 template <typename D>

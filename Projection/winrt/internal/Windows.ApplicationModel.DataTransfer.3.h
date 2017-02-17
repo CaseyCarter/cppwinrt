@@ -138,7 +138,7 @@ struct StandardDataFormats
 {
     StandardDataFormats() = delete;
     static hstring Text();
-    static hstring Uri();
+    [[deprecated("Uri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use WebLink or ApplicationLink.")]] static hstring Uri();
     static hstring Html();
     static hstring Rtf();
     static hstring Bitmap();

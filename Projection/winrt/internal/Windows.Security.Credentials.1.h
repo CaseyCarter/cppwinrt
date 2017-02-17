@@ -245,7 +245,7 @@ struct WINRT_EBO impl_IWebAccountProvider
 {
     hstring Id() const;
     hstring DisplayName() const;
-    Windows::Foundation::Uri IconUri() const;
+    [[deprecated("IconUri may be altered or unavailable for releases after Windows 8.2. Instead, use Icon.")]] Windows::Foundation::Uri IconUri() const;
 };
 
 template <typename D>

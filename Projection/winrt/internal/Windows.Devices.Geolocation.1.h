@@ -285,9 +285,9 @@ struct WINRT_EBO impl_IGeocircleFactory
 template <typename D>
 struct WINRT_EBO impl_IGeocoordinate
 {
-    double Latitude() const;
-    double Longitude() const;
-    Windows::Foundation::IReference<double> Altitude() const;
+    [[deprecated("Latitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Latitude")]] double Latitude() const;
+    [[deprecated("Longitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Longitude")]] double Longitude() const;
+    [[deprecated("Altitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Altitude")]] Windows::Foundation::IReference<double> Altitude() const;
     double Accuracy() const;
     Windows::Foundation::IReference<double> AltitudeAccuracy() const;
     Windows::Foundation::IReference<double> Heading() const;

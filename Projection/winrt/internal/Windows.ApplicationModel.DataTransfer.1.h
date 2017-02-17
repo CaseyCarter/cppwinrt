@@ -305,7 +305,7 @@ struct WINRT_EBO impl_IDataPackage
     void SetData(hstring_view formatId, const Windows::IInspectable & value) const;
     void SetDataProvider(hstring_view formatId, const Windows::ApplicationModel::DataTransfer::DataProviderHandler & delayRenderer) const;
     void SetText(hstring_view value) const;
-    void SetUri(const Windows::Foundation::Uri & value) const;
+    [[deprecated("SetUri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use SetWebLink or SetApplicationLink.")]] void SetUri(const Windows::Foundation::Uri & value) const;
     void SetHtmlFormat(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, Windows::Storage::Streams::RandomAccessStreamReference> ResourceMap() const;
     void SetRtf(hstring_view value) const;
@@ -397,7 +397,7 @@ struct WINRT_EBO impl_IDataPackageView
     Windows::Foundation::IAsyncOperation<Windows::IInspectable> GetDataAsync(hstring_view formatId) const;
     Windows::Foundation::IAsyncOperation<hstring> GetTextAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetTextAsync(hstring_view formatId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> GetUriAsync() const;
+    [[deprecated("GetUriAsync may be altered or unavailable for releases after Windows 8.1. Instead, use GetWebLinkAsync or GetApplicationLinkAsync.")]] Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> GetUriAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetHtmlFormatAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::RandomAccessStreamReference>> GetResourceMapAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetRtfAsync() const;
@@ -447,7 +447,7 @@ struct WINRT_EBO impl_IDataRequest
     Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
     void Data(const Windows::ApplicationModel::DataTransfer::DataPackage & value) const;
     Windows::Foundation::DateTime Deadline() const;
-    void FailWithDisplayText(hstring_view value) const;
+    [[deprecated("FailWithDisplayText is deprecated and might not work on all platforms. For more info, see MSDN.")]] void FailWithDisplayText(hstring_view value) const;
     Windows::ApplicationModel::DataTransfer::DataRequestDeferral GetDeferral() const;
 };
 
@@ -520,7 +520,7 @@ template <typename D>
 struct WINRT_EBO impl_IStandardDataFormatsStatics
 {
     hstring Text() const;
-    hstring Uri() const;
+    [[deprecated("Uri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use WebLink or ApplicationLink.")]] hstring Uri() const;
     hstring Html() const;
     hstring Rtf() const;
     hstring Bitmap() const;

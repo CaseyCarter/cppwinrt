@@ -23,7 +23,7 @@ struct WINRT_EBO FileOpenPicker :
     FileOpenPicker();
     using impl_IFileOpenPicker::PickSingleFileAsync;
     using impl_IFileOpenPickerWithOperationId::PickSingleFileAsync;
-    static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ResumePickSingleFileAsync();
+    [[deprecated("Instead, use PickSingleFileAsync")]] static Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ResumePickSingleFileAsync();
 };
 
 struct WINRT_EBO FilePickerFileTypesOrderedMap :

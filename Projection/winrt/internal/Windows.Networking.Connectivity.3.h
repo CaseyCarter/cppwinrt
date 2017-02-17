@@ -98,7 +98,7 @@ struct WINRT_EBO DataPlanUsage :
     DataPlanUsage(std::nullptr_t) noexcept {}
 };
 
-struct WINRT_EBO DataUsage :
+struct [[deprecated("DataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use NetworkUsage.")]] WINRT_EBO DataUsage :
     Windows::Networking::Connectivity::IDataUsage
 {
     DataUsage(std::nullptr_t) noexcept {}

@@ -307,7 +307,7 @@ struct IBackgroundDownloaderStaticMethods2 :
     IBackgroundDownloaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IBackgroundDownloaderUserConsent :
+struct [[deprecated("IBackgroundDownloaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundDownloaderUserConsent :
     Windows::IInspectable,
     impl::consume<IBackgroundDownloaderUserConsent>
 {
@@ -427,7 +427,7 @@ struct IBackgroundUploaderStaticMethods2 :
     IBackgroundUploaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IBackgroundUploaderUserConsent :
+struct [[deprecated("IBackgroundUploaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundUploaderUserConsent :
     Windows::IInspectable,
     impl::consume<IBackgroundUploaderUserConsent>
 {
@@ -470,7 +470,7 @@ struct IResponseInformation :
     IResponseInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct IUnconstrainedTransferRequestResult :
+struct [[deprecated("IUnconstrainedTransferRequestResult is deprecated and may not work on all platforms. For more info, see MSDN.")]] IUnconstrainedTransferRequestResult :
     Windows::IInspectable,
     impl::consume<IUnconstrainedTransferRequestResult>
 {

@@ -17,7 +17,7 @@ HRESULT __stdcall DllGetActivationFactory(HSTRING classId, abi<IActivationFactor
 
         if (0 == wcscmp(name, L"Microsoft.Sample.Hen"))
         {
-            *factory = detach(make<Microsoft::Sample::HenFactory>());
+            *factory = detach_abi(make<Microsoft::Sample::HenFactory>());
         }
         else
         {

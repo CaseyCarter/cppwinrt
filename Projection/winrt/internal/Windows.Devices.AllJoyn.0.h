@@ -195,10 +195,10 @@ namespace Windows::Devices::AllJoyn {
 enum class AllJoynAuthenticationMechanism
 {
     None = 0,
-    SrpAnonymous = 1,
-    SrpLogon = 2,
+    SrpAnonymous [[deprecated("SrpAnonymous is deprecated and might not work on all platforms. For more info, see MSDN.")]] = 1,
+    SrpLogon [[deprecated("SrpLogon is deprecated and might not work on all platforms. For more info, see MSDN.")]] = 2,
     EcdheNull = 3,
-    EcdhePsk = 4,
+    EcdhePsk [[deprecated("EcdhePsk is deprecated and might not work on all platforms. For more info, see MSDN.")]] = 4,
     EcdheEcdsa = 5,
     EcdheSpeke = 6,
 };

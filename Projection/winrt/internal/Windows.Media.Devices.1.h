@@ -630,9 +630,9 @@ template <typename D>
 struct WINRT_EBO impl_IIsoSpeedControl
 {
     bool Supported() const;
-    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::IsoSpeedPreset> SupportedPresets() const;
-    Windows::Media::Devices::IsoSpeedPreset Preset() const;
-    Windows::Foundation::IAsyncAction SetPresetAsync(Windows::Media::Devices::IsoSpeedPreset preset) const;
+    [[deprecated("SupportedPresets may not be available in future versions of Windows Phone. Starting with Windows Phone 8.1, use SetAutoAsync, Auto, SetValueAsync, and Value instead")]] Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::IsoSpeedPreset> SupportedPresets() const;
+    [[deprecated("Preset may not be available in future versions of Windows Phone. Starting with Windows Phone 8.1, use SetAutoAsync, Auto, SetValueAsync, and Value instead")]] Windows::Media::Devices::IsoSpeedPreset Preset() const;
+    [[deprecated("SetPresetAsync may not be available in future versions of Windows Phone. Starting with Windows Phone 8.1, use SetAutoAsync, Auto, SetValueAsync, and Value instead")]] Windows::Foundation::IAsyncAction SetPresetAsync(Windows::Media::Devices::IsoSpeedPreset preset) const;
 };
 
 template <typename D>
