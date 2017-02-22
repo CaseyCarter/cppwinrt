@@ -9,6 +9,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -69,6 +74,11 @@ template <> struct __declspec(uuid("bf66b962-702d-5c07-a2d5-15f21583c43a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_10c47202_47ab_58bc_91de_d5000f1a74c0
+#define WINRT_GENERIC_10c47202_47ab_58bc_91de_d5000f1a74c0
+template <> struct __declspec(uuid("10c47202-47ab-58bc-91de-d5000f1a74c0")) __declspec(novtable) IVector<Windows::UI::Input::Inking::InkPoint> : impl_IVector<Windows::UI::Input::Inking::InkPoint> {};
+#endif
+
 #ifndef WINRT_GENERIC_f39ea41d_4714_5d80_87de_973dd26da269
 #define WINRT_GENERIC_f39ea41d_4714_5d80_87de_973dd26da269
 template <> struct __declspec(uuid("f39ea41d-4714-5d80-87de-973dd26da269")) __declspec(novtable) IVectorView<Windows::UI::Input::Inking::InkStrokeRenderingSegment> : impl_IVectorView<Windows::UI::Input::Inking::InkStrokeRenderingSegment> {};
@@ -119,6 +129,11 @@ template <> struct __declspec(uuid("bbc11401-89d0-5305-a3b3-36c887714b9b")) __de
 template <> struct __declspec(uuid("8eadfa4f-27ef-5a5d-b0b8-7fd5c0ce6b39")) __declspec(novtable) IVectorView<Windows::UI::Input::Inking::InkRecognizer> : impl_IVectorView<Windows::UI::Input::Inking::InkRecognizer> {};
 #endif
 
+#ifndef WINRT_GENERIC_c0d513a9_ec4a_5a5d_b6d5_b707defdb9f7
+#define WINRT_GENERIC_c0d513a9_ec4a_5a5d_b6d5_b707defdb9f7
+template <> struct __declspec(uuid("c0d513a9-ec4a-5a5d-b6d5-b707defdb9f7")) __declspec(novtable) IVector<Windows::Foundation::Point> : impl_IVector<Windows::Foundation::Point> {};
+#endif
+
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
@@ -144,6 +159,11 @@ template <> struct __declspec(uuid("1e466dc5-840f-54f9-b877-5e3a9f4b6c74")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_2640111c_bc3f_564b_b931_b7a378933f58
+#define WINRT_GENERIC_2640111c_bc3f_564b_b931_b7a378933f58
+template <> struct __declspec(uuid("2640111c-bc3f-564b-b931-b7a378933f58")) __declspec(novtable) IVector<Windows::UI::Input::Inking::InkStroke> : impl_IVector<Windows::UI::Input::Inking::InkStroke> {};
+#endif
+
 #ifndef WINRT_GENERIC_5608d5a9_e7e4_5a0b_941f_b7fed76b35bf
 #define WINRT_GENERIC_5608d5a9_e7e4_5a0b_941f_b7fed76b35bf
 template <> struct __declspec(uuid("5608d5a9-e7e4-5a0b-941f-b7fed76b35bf")) __declspec(novtable) IIterator<Windows::UI::Input::Inking::InkStroke> : impl_IIterator<Windows::UI::Input::Inking::InkStroke> {};
@@ -154,6 +174,11 @@ template <> struct __declspec(uuid("5608d5a9-e7e4-5a0b-941f-b7fed76b35bf")) __de
 template <> struct __declspec(uuid("47415452-db79-567e-84d5-e9912330f944")) __declspec(novtable) IIterator<Windows::UI::Input::Inking::InkPoint> : impl_IIterator<Windows::UI::Input::Inking::InkPoint> {};
 #endif
 
+#ifndef WINRT_GENERIC_e73bb64c_17fc_5766_8fb3_472ed2857148
+#define WINRT_GENERIC_e73bb64c_17fc_5766_8fb3_472ed2857148
+template <> struct __declspec(uuid("e73bb64c-17fc-5766-8fb3-472ed2857148")) __declspec(novtable) IVector<Windows::UI::Input::Inking::InkStrokeRenderingSegment> : impl_IVector<Windows::UI::Input::Inking::InkStrokeRenderingSegment> {};
+#endif
+
 #ifndef WINRT_GENERIC_d7d8c317_6f3f_5192_9210_65a263baf8d1
 #define WINRT_GENERIC_d7d8c317_6f3f_5192_9210_65a263baf8d1
 template <> struct __declspec(uuid("d7d8c317-6f3f-5192-9210-65a263baf8d1")) __declspec(novtable) IIterator<Windows::UI::Input::Inking::InkStrokeRenderingSegment> : impl_IIterator<Windows::UI::Input::Inking::InkStrokeRenderingSegment> {};
@@ -162,6 +187,11 @@ template <> struct __declspec(uuid("d7d8c317-6f3f-5192-9210-65a263baf8d1")) __de
 #ifndef WINRT_GENERIC_27000f47_2885_5da9_8923_16a3a58b7a55
 #define WINRT_GENERIC_27000f47_2885_5da9_8923_16a3a58b7a55
 template <> struct __declspec(uuid("27000f47-2885-5da9-8923-16a3a58b7a55")) __declspec(novtable) IIterable<Windows::UI::Input::Inking::InkStrokeRenderingSegment> : impl_IIterable<Windows::UI::Input::Inking::InkStrokeRenderingSegment> {};
+#endif
+
+#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
 #endif
 
 #ifndef WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
@@ -189,6 +219,11 @@ template <> struct __declspec(uuid("e6ff857b-f160-571a-a934-2c61f98c862d")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_fc323914_cb64_5562_9b25_f9db4260373d
+#define WINRT_GENERIC_fc323914_cb64_5562_9b25_f9db4260373d
+template <> struct __declspec(uuid("fc323914-cb64-5562-9b25-f9db4260373d")) __declspec(novtable) IVector<Windows::UI::Input::Inking::InkRecognitionResult> : impl_IVector<Windows::UI::Input::Inking::InkRecognitionResult> {};
+#endif
+
 #ifndef WINRT_GENERIC_9abc247f_0223_5f44_8fa1_0d6d691bf9af
 #define WINRT_GENERIC_9abc247f_0223_5f44_8fa1_0d6d691bf9af
 template <> struct __declspec(uuid("9abc247f-0223-5f44-8fa1-0d6d691bf9af")) __declspec(novtable) IIterator<Windows::UI::Input::Inking::InkRecognitionResult> : impl_IIterator<Windows::UI::Input::Inking::InkRecognitionResult> {};
@@ -197,6 +232,11 @@ template <> struct __declspec(uuid("9abc247f-0223-5f44-8fa1-0d6d691bf9af")) __de
 #ifndef WINRT_GENERIC_e29b658b_7cc1_561c_9912_001dbca86651
 #define WINRT_GENERIC_e29b658b_7cc1_561c_9912_001dbca86651
 template <> struct __declspec(uuid("e29b658b-7cc1-561c-9912-001dbca86651")) __declspec(novtable) IIterable<Windows::UI::Input::Inking::InkRecognitionResult> : impl_IIterable<Windows::UI::Input::Inking::InkRecognitionResult> {};
+#endif
+
+#ifndef WINRT_GENERIC_77d6d09c_f85a_5805_b162_90eccee97b5d
+#define WINRT_GENERIC_77d6d09c_f85a_5805_b162_90eccee97b5d
+template <> struct __declspec(uuid("77d6d09c-f85a-5805-b162-90eccee97b5d")) __declspec(novtable) IVector<Windows::UI::Input::Inking::InkRecognizer> : impl_IVector<Windows::UI::Input::Inking::InkRecognizer> {};
 #endif
 
 #ifndef WINRT_GENERIC_f8bd3097_5262_5e7a_a19d_13c029d2d7e5

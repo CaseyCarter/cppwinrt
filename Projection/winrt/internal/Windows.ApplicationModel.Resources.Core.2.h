@@ -24,6 +24,11 @@ template <> struct __declspec(uuid("60310303-49c5-52e6-abc6-a9b36eccc716")) __de
 template <> struct __declspec(uuid("1e036276-2f60-55f6-b7f3-f86079e6900b")) __declspec(novtable) IObservableMap<hstring, hstring> : impl_IObservableMap<hstring, hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -149,9 +154,34 @@ template <> struct __declspec(uuid("e521c894-2c26-5946-9e61-2b5e188d01ed")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_05c98cda_6582_5e32_b0a8_ec00eecbbcbe
+#define WINRT_GENERIC_05c98cda_6582_5e32_b0a8_ec00eecbbcbe
+template <> struct __declspec(uuid("05c98cda-6582-5e32-b0a8-ec00eecbbcbe")) __declspec(novtable) IMap<hstring, Windows::ApplicationModel::Resources::Core::ResourceMap> : impl_IMap<hstring, Windows::ApplicationModel::Resources::Core::ResourceMap> {};
+#endif
+
+#ifndef WINRT_GENERIC_021a3f69_ad1e_5fb9_978a_056984ae2b2d
+#define WINRT_GENERIC_021a3f69_ad1e_5fb9_978a_056984ae2b2d
+template <> struct __declspec(uuid("021a3f69-ad1e-5fb9-978a-056984ae2b2d")) __declspec(novtable) IVector<Windows::Storage::IStorageFile> : impl_IVector<Windows::Storage::IStorageFile> {};
+#endif
+
+#ifndef WINRT_GENERIC_4296b6e8_e219_5e74_8dde_196f57200a82
+#define WINRT_GENERIC_4296b6e8_e219_5e74_8dde_196f57200a82
+template <> struct __declspec(uuid("4296b6e8-e219-5e74-8dde-196f57200a82")) __declspec(novtable) IVectorView<Windows::Storage::IStorageFile> : impl_IVectorView<Windows::Storage::IStorageFile> {};
+#endif
+
 #ifndef WINRT_GENERIC_314d2318_74ee_535c_b361_2144dbc573a0
 #define WINRT_GENERIC_314d2318_74ee_535c_b361_2144dbc573a0
 template <> struct __declspec(uuid("314d2318-74ee-535c-b361-2144dbc573a0")) __declspec(novtable) IIterator<Windows::Storage::IStorageFile> : impl_IIterator<Windows::Storage::IStorageFile> {};
+#endif
+
+#ifndef WINRT_GENERIC_23e390c1_267d_526b_80b2_61e2f92c8a0c
+#define WINRT_GENERIC_23e390c1_267d_526b_80b2_61e2f92c8a0c
+template <> struct __declspec(uuid("23e390c1-267d-526b-80b2-61e2f92c8a0c")) __declspec(novtable) IMap<hstring, Windows::ApplicationModel::Resources::Core::NamedResource> : impl_IMap<hstring, Windows::ApplicationModel::Resources::Core::NamedResource> {};
+#endif
+
+#ifndef WINRT_GENERIC_1c1ba78d_0af4_5167_a2e4_ce440213720b
+#define WINRT_GENERIC_1c1ba78d_0af4_5167_a2e4_ce440213720b
+template <> struct __declspec(uuid("1c1ba78d-0af4-5167-a2e4-ce440213720b")) __declspec(novtable) IVector<Windows::ApplicationModel::Resources::Core::NamedResource> : impl_IVector<Windows::ApplicationModel::Resources::Core::NamedResource> {};
 #endif
 
 #ifndef WINRT_GENERIC_0c5a605f_a7f1_5030_a179_9fd363caf3b5
@@ -164,6 +194,11 @@ template <> struct __declspec(uuid("0c5a605f-a7f1-5030-a179-9fd363caf3b5")) __de
 template <> struct __declspec(uuid("e80d3d9d-96c9-579e-8e42-d550700de925")) __declspec(novtable) IIterable<Windows::ApplicationModel::Resources::Core::NamedResource> : impl_IIterable<Windows::ApplicationModel::Resources::Core::NamedResource> {};
 #endif
 
+#ifndef WINRT_GENERIC_4b7199f7_ace8_54e4_95f3_408d1d30f042
+#define WINRT_GENERIC_4b7199f7_ace8_54e4_95f3_408d1d30f042
+template <> struct __declspec(uuid("4b7199f7-ace8-54e4-95f3-408d1d30f042")) __declspec(novtable) IVector<Windows::ApplicationModel::Resources::Core::ResourceMap> : impl_IVector<Windows::ApplicationModel::Resources::Core::ResourceMap> {};
+#endif
+
 #ifndef WINRT_GENERIC_3dedcae6_d048_5eaa_afa2_fb4a7970ef68
 #define WINRT_GENERIC_3dedcae6_d048_5eaa_afa2_fb4a7970ef68
 template <> struct __declspec(uuid("3dedcae6-d048-5eaa-afa2-fb4a7970ef68")) __declspec(novtable) IIterator<Windows::ApplicationModel::Resources::Core::ResourceMap> : impl_IIterator<Windows::ApplicationModel::Resources::Core::ResourceMap> {};
@@ -174,9 +209,19 @@ template <> struct __declspec(uuid("3dedcae6-d048-5eaa-afa2-fb4a7970ef68")) __de
 template <> struct __declspec(uuid("8bbe1154-19aa-53e7-9d6e-dc7d358580f4")) __declspec(novtable) IIterable<Windows::ApplicationModel::Resources::Core::ResourceMap> : impl_IIterable<Windows::ApplicationModel::Resources::Core::ResourceMap> {};
 #endif
 
+#ifndef WINRT_GENERIC_4f4b75ee_9915_5467_983c_ed51df0eb704
+#define WINRT_GENERIC_4f4b75ee_9915_5467_983c_ed51df0eb704
+template <> struct __declspec(uuid("4f4b75ee-9915-5467-983c-ed51df0eb704")) __declspec(novtable) IVector<Windows::ApplicationModel::Resources::Core::ResourceQualifier> : impl_IVector<Windows::ApplicationModel::Resources::Core::ResourceQualifier> {};
+#endif
+
 #ifndef WINRT_GENERIC_fedb74db_e74f_597a_b9bf_704b0dadca38
 #define WINRT_GENERIC_fedb74db_e74f_597a_b9bf_704b0dadca38
 template <> struct __declspec(uuid("fedb74db-e74f-597a-b9bf-704b0dadca38")) __declspec(novtable) IIterator<Windows::ApplicationModel::Resources::Core::ResourceQualifier> : impl_IIterator<Windows::ApplicationModel::Resources::Core::ResourceQualifier> {};
+#endif
+
+#ifndef WINRT_GENERIC_720cd1d8_86ae_5df8_8cc6_f6152fe75c56
+#define WINRT_GENERIC_720cd1d8_86ae_5df8_8cc6_f6152fe75c56
+template <> struct __declspec(uuid("720cd1d8-86ae-5df8-8cc6-f6152fe75c56")) __declspec(novtable) IVector<Windows::ApplicationModel::Resources::Core::ResourceCandidate> : impl_IVector<Windows::ApplicationModel::Resources::Core::ResourceCandidate> {};
 #endif
 
 #ifndef WINRT_GENERIC_e151bd8c_a286_57ab_bcea_79b7bc2687a1

@@ -69,6 +69,11 @@ template <> struct __declspec(uuid("92c3102f-a327-5318-a6c1-76f6b2a0abfb")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_156b7b9d_7c0f_53b1_8844_e2ea9a083882
+#define WINRT_GENERIC_156b7b9d_7c0f_53b1_8844_e2ea9a083882
+template <> struct __declspec(uuid("156b7b9d-7c0f-53b1-8844-e2ea9a083882")) __declspec(novtable) IVector<Windows::Storage::AccessCache::AccessListEntry> : impl_IVector<Windows::Storage::AccessCache::AccessListEntry> {};
+#endif
+
 #ifndef WINRT_GENERIC_d1a0a6c4_889d_519b_8508_26241b329b7e
 #define WINRT_GENERIC_d1a0a6c4_889d_519b_8508_26241b329b7e
 template <> struct __declspec(uuid("d1a0a6c4-889d-519b-8508-26241b329b7e")) __declspec(novtable) IIterator<Windows::Storage::AccessCache::AccessListEntry> : impl_IIterator<Windows::Storage::AccessCache::AccessListEntry> {};

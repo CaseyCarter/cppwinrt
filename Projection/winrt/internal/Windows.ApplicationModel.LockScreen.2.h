@@ -19,6 +19,11 @@ template <> struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -67,6 +72,11 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_1840bc4f_1baf_541f_87df_26070306a9b7
+#define WINRT_GENERIC_1840bc4f_1baf_541f_87df_26070306a9b7
+template <> struct __declspec(uuid("1840bc4f-1baf-541f-87df-26070306a9b7")) __declspec(novtable) IVector<Windows::ApplicationModel::LockScreen::LockScreenBadge> : impl_IVector<Windows::ApplicationModel::LockScreen::LockScreenBadge> {};
 #endif
 
 #ifndef WINRT_GENERIC_8d38f924_154d_5705_8f0b_ed61353f6ce2

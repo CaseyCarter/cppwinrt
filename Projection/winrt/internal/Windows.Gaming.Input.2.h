@@ -94,6 +94,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("684b9e5a-2dc2-54fc-adf5-5ca8f6871425")) __declspec(novtable) IVectorView<Windows::Gaming::Input::UINavigationController> : impl_IVectorView<Windows::Gaming::Input::UINavigationController> {};
 #endif
 
+#ifndef WINRT_GENERIC_150d833c_0be2_5025_baf3_1c2f20f1670d
+#define WINRT_GENERIC_150d833c_0be2_5025_baf3_1c2f20f1670d
+template <> struct __declspec(uuid("150d833c-0be2-5025-baf3-1c2f20f1670d")) __declspec(novtable) IVector<Windows::Gaming::Input::ArcadeStick> : impl_IVector<Windows::Gaming::Input::ArcadeStick> {};
+#endif
+
 #ifndef WINRT_GENERIC_d30629af_cc9d_52e1_8b1f_0ffa9629afee
 #define WINRT_GENERIC_d30629af_cc9d_52e1_8b1f_0ffa9629afee
 template <> struct __declspec(uuid("d30629af-cc9d-52e1-8b1f-0ffa9629afee")) __declspec(novtable) IIterator<Windows::Gaming::Input::ArcadeStick> : impl_IIterator<Windows::Gaming::Input::ArcadeStick> {};
@@ -102,6 +107,11 @@ template <> struct __declspec(uuid("d30629af-cc9d-52e1-8b1f-0ffa9629afee")) __de
 #ifndef WINRT_GENERIC_9376f457_2da5_544a_a409_c636f5d81c35
 #define WINRT_GENERIC_9376f457_2da5_544a_a409_c636f5d81c35
 template <> struct __declspec(uuid("9376f457-2da5-544a-a409-c636f5d81c35")) __declspec(novtable) IIterable<Windows::Gaming::Input::ArcadeStick> : impl_IIterable<Windows::Gaming::Input::ArcadeStick> {};
+#endif
+
+#ifndef WINRT_GENERIC_152bec39_0a47_5466_b253_64e2bb68d744
+#define WINRT_GENERIC_152bec39_0a47_5466_b253_64e2bb68d744
+template <> struct __declspec(uuid("152bec39-0a47-5466-b253-64e2bb68d744")) __declspec(novtable) IVector<Windows::Gaming::Input::Gamepad> : impl_IVector<Windows::Gaming::Input::Gamepad> {};
 #endif
 
 #ifndef WINRT_GENERIC_246737e8_12bc_5c64_af52_06db4b13fa2f
@@ -114,6 +124,11 @@ template <> struct __declspec(uuid("246737e8-12bc-5c64-af52-06db4b13fa2f")) __de
 template <> struct __declspec(uuid("47132ba0-6b17-5cd2-a8bd-b5d3443ccb13")) __declspec(novtable) IIterable<Windows::Gaming::Input::Gamepad> : impl_IIterable<Windows::Gaming::Input::Gamepad> {};
 #endif
 
+#ifndef WINRT_GENERIC_e21d3be8_b215_5c0f_af72_339f41af734d
+#define WINRT_GENERIC_e21d3be8_b215_5c0f_af72_339f41af734d
+template <> struct __declspec(uuid("e21d3be8-b215-5c0f-af72-339f41af734d")) __declspec(novtable) IVector<Windows::Gaming::Input::RacingWheel> : impl_IVector<Windows::Gaming::Input::RacingWheel> {};
+#endif
+
 #ifndef WINRT_GENERIC_23d735b8_4d36_5377_a245_69df97c9fcd9
 #define WINRT_GENERIC_23d735b8_4d36_5377_a245_69df97c9fcd9
 template <> struct __declspec(uuid("23d735b8-4d36-5377-a245-69df97c9fcd9")) __declspec(novtable) IIterator<Windows::Gaming::Input::RacingWheel> : impl_IIterator<Windows::Gaming::Input::RacingWheel> {};
@@ -122,6 +137,11 @@ template <> struct __declspec(uuid("23d735b8-4d36-5377-a245-69df97c9fcd9")) __de
 #ifndef WINRT_GENERIC_9a7c3830_9a87_5287_a1e2_8a2af29cf68c
 #define WINRT_GENERIC_9a7c3830_9a87_5287_a1e2_8a2af29cf68c
 template <> struct __declspec(uuid("9a7c3830-9a87-5287-a1e2-8a2af29cf68c")) __declspec(novtable) IIterable<Windows::Gaming::Input::RacingWheel> : impl_IIterable<Windows::Gaming::Input::RacingWheel> {};
+#endif
+
+#ifndef WINRT_GENERIC_19bce09a_1f81_5505_bf9b_7d3560eba198
+#define WINRT_GENERIC_19bce09a_1f81_5505_bf9b_7d3560eba198
+template <> struct __declspec(uuid("19bce09a-1f81-5505-bf9b-7d3560eba198")) __declspec(novtable) IVector<Windows::Gaming::Input::UINavigationController> : impl_IVector<Windows::Gaming::Input::UINavigationController> {};
 #endif
 
 #ifndef WINRT_GENERIC_c10b2696_64a3_5262_bc4f_b741e5d5afab

@@ -49,6 +49,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("7c65d286-7285-5d63-bdea-5ef951bdf618")) __declspec(novtable) IVectorView<Windows::Devices::WiFi::WiFiAvailableNetwork> : impl_IVectorView<Windows::Devices::WiFi::WiFiAvailableNetwork> {};
 #endif
 
+#ifndef WINRT_GENERIC_703a2e06_1dd6_55f9_9b7c_88a231c75fe2
+#define WINRT_GENERIC_703a2e06_1dd6_55f9_9b7c_88a231c75fe2
+template <> struct __declspec(uuid("703a2e06-1dd6-55f9-9b7c-88a231c75fe2")) __declspec(novtable) IVector<Windows::Devices::WiFi::WiFiAdapter> : impl_IVector<Windows::Devices::WiFi::WiFiAdapter> {};
+#endif
+
 #ifndef WINRT_GENERIC_144136c6_b502_5a52_90fc_22a09318f932
 #define WINRT_GENERIC_144136c6_b502_5a52_90fc_22a09318f932
 template <> struct __declspec(uuid("144136c6-b502-5a52-90fc-22a09318f932")) __declspec(novtable) IIterator<Windows::Devices::WiFi::WiFiAdapter> : impl_IIterator<Windows::Devices::WiFi::WiFiAdapter> {};
@@ -83,6 +88,11 @@ template <> struct __declspec(uuid("f380eb8d-1e52-5350-a288-861c963a84f0")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_627fff07_05e6_5d9f_9457_82f0a657000e
+#define WINRT_GENERIC_627fff07_05e6_5d9f_9457_82f0a657000e
+template <> struct __declspec(uuid("627fff07-05e6-5d9f-9457-82f0a657000e")) __declspec(novtable) IVector<Windows::Devices::WiFi::WiFiAvailableNetwork> : impl_IVector<Windows::Devices::WiFi::WiFiAvailableNetwork> {};
+#endif
 
 #ifndef WINRT_GENERIC_468677c4_ebb9_5196_836d_72faa9fe673e
 #define WINRT_GENERIC_468677c4_ebb9_5196_836d_72faa9fe673e

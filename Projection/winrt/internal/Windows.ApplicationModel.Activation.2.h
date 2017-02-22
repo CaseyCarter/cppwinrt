@@ -59,14 +59,29 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("2b23baa9-1d54-5440-bd32-86ed70f15c9e")) __declspec(novtable) IVectorView<Windows::UI::Notifications::ShownTileNotification> : impl_IVectorView<Windows::UI::Notifications::ShownTileNotification> {};
 #endif
 
+#ifndef WINRT_GENERIC_802508e2_9c2c_5b91_89a8_39bcf7223344
+#define WINRT_GENERIC_802508e2_9c2c_5b91_89a8_39bcf7223344
+template <> struct __declspec(uuid("802508e2-9c2c-5b91-89a8-39bcf7223344")) __declspec(novtable) IVector<Windows::Storage::IStorageItem> : impl_IVector<Windows::Storage::IStorageItem> {};
+#endif
+
 #ifndef WINRT_GENERIC_05b487c2_3830_5d3c_98da_25fa11542dbd
 #define WINRT_GENERIC_05b487c2_3830_5d3c_98da_25fa11542dbd
 template <> struct __declspec(uuid("05b487c2-3830-5d3c-98da-25fa11542dbd")) __declspec(novtable) IIterator<Windows::Storage::IStorageItem> : impl_IIterator<Windows::Storage::IStorageItem> {};
 #endif
 
+#ifndef WINRT_GENERIC_fcbc8b8b_6103_5b4e_ba00_4bc2cedb6a35
+#define WINRT_GENERIC_fcbc8b8b_6103_5b4e_ba00_4bc2cedb6a35
+template <> struct __declspec(uuid("fcbc8b8b-6103-5b4e-ba00-4bc2cedb6a35")) __declspec(novtable) IVector<Windows::Storage::StorageFile> : impl_IVector<Windows::Storage::StorageFile> {};
+#endif
+
 #ifndef WINRT_GENERIC_43e29f53_0298_55aa_a6c8_4edd323d9598
 #define WINRT_GENERIC_43e29f53_0298_55aa_a6c8_4edd323d9598
 template <> struct __declspec(uuid("43e29f53-0298-55aa-a6c8-4edd323d9598")) __declspec(novtable) IIterator<Windows::Storage::StorageFile> : impl_IIterator<Windows::Storage::StorageFile> {};
+#endif
+
+#ifndef WINRT_GENERIC_b4bad011_41fa_5704_92ed_a697af1f1d7c
+#define WINRT_GENERIC_b4bad011_41fa_5704_92ed_a697af1f1d7c
+template <> struct __declspec(uuid("b4bad011-41fa-5704-92ed-a697af1f1d7c")) __declspec(novtable) IVector<Windows::UI::Notifications::ShownTileNotification> : impl_IVector<Windows::UI::Notifications::ShownTileNotification> {};
 #endif
 
 #ifndef WINRT_GENERIC_04d8d70b_7c15_5f60_9894_b21366b427c2

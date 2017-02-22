@@ -39,6 +39,11 @@ template <> struct __declspec(uuid("fc6aa329-b586-5ebb-9e85-3f6b84ebdf18")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_2734b989_796e_59b3_b526_d17232589088
+#define WINRT_GENERIC_2734b989_796e_59b3_b526_d17232589088
+template <> struct __declspec(uuid("2734b989-796e-59b3-b526-d17232589088")) __declspec(novtable) IVector<Windows::Devices::Radios::Radio> : impl_IVector<Windows::Devices::Radios::Radio> {};
+#endif
+
 #ifndef WINRT_GENERIC_cf37ede7_eaec_5b8f_ad31_4d51abd9db05
 #define WINRT_GENERIC_cf37ede7_eaec_5b8f_ad31_4d51abd9db05
 template <> struct __declspec(uuid("cf37ede7-eaec-5b8f-ad31-4d51abd9db05")) __declspec(novtable) IIterator<Windows::Devices::Radios::Radio> : impl_IIterator<Windows::Devices::Radios::Radio> {};

@@ -204,6 +204,11 @@ template <> struct __declspec(uuid("57e35198-1b41-54da-adaf-50ef1e93fded")) __de
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_6c8b9662_38be_596d_b84d_92f8a6e6d804
+#define WINRT_GENERIC_6c8b9662_38be_596d_b84d_92f8a6e6d804
+template <> struct __declspec(uuid("6c8b9662-38be-596d-b84d-92f8a6e6d804")) __declspec(novtable) IVector<Windows::ApplicationModel::Appointments::Appointment> : impl_IVector<Windows::ApplicationModel::Appointments::Appointment> {};
+#endif
+
 #ifndef WINRT_GENERIC_386a5922_49fc_53b6_8bed_4c9ff9fe6e01
 #define WINRT_GENERIC_386a5922_49fc_53b6_8bed_4c9ff9fe6e01
 template <> struct __declspec(uuid("386a5922-49fc-53b6-8bed-4c9ff9fe6e01")) __declspec(novtable) IIterator<Windows::ApplicationModel::Appointments::Appointment> : impl_IIterator<Windows::ApplicationModel::Appointments::Appointment> {};
@@ -212,6 +217,11 @@ template <> struct __declspec(uuid("386a5922-49fc-53b6-8bed-4c9ff9fe6e01")) __de
 #ifndef WINRT_GENERIC_b9802bba_ff53_5d37_8cd7_e56162f12156
 #define WINRT_GENERIC_b9802bba_ff53_5d37_8cd7_e56162f12156
 template <> struct __declspec(uuid("b9802bba-ff53-5d37-8cd7-e56162f12156")) __declspec(novtable) IIterable<Windows::ApplicationModel::Appointments::Appointment> : impl_IIterable<Windows::ApplicationModel::Appointments::Appointment> {};
+#endif
+
+#ifndef WINRT_GENERIC_7a634408_5d3d_5f17_b587_16dbe5fa808b
+#define WINRT_GENERIC_7a634408_5d3d_5f17_b587_16dbe5fa808b
+template <> struct __declspec(uuid("7a634408-5d3d-5f17-b587-16dbe5fa808b")) __declspec(novtable) IVector<Windows::ApplicationModel::Appointments::AppointmentException> : impl_IVector<Windows::ApplicationModel::Appointments::AppointmentException> {};
 #endif
 
 #ifndef WINRT_GENERIC_e58c63db_d9d5_5fa5_8790_29846de54fa4
@@ -239,6 +249,11 @@ template <> struct __declspec(uuid("b640ed04-9331-5b28-9247-0146bcf5b72a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_87314be6_9abe_5099_83e1_a14ae65df915
+#define WINRT_GENERIC_87314be6_9abe_5099_83e1_a14ae65df915
+template <> struct __declspec(uuid("87314be6-9abe-5099-83e1-a14ae65df915")) __declspec(novtable) IVector<Windows::ApplicationModel::Appointments::AppointmentStoreChange> : impl_IVector<Windows::ApplicationModel::Appointments::AppointmentStoreChange> {};
+#endif
+
 #ifndef WINRT_GENERIC_16a427bf_e5b0_5662_9279_caa8ed8481a6
 #define WINRT_GENERIC_16a427bf_e5b0_5662_9279_caa8ed8481a6
 template <> struct __declspec(uuid("16a427bf-e5b0-5662-9279-caa8ed8481a6")) __declspec(novtable) IIterator<Windows::ApplicationModel::Appointments::AppointmentStoreChange> : impl_IIterator<Windows::ApplicationModel::Appointments::AppointmentStoreChange> {};
@@ -263,6 +278,11 @@ template <> struct __declspec(uuid("6d9cb651-5af6-51b0-9cd3-45dd51f17949")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_b8ab13d3_e9e7_5713_ab22_6d32014bee4b
+#define WINRT_GENERIC_b8ab13d3_e9e7_5713_ab22_6d32014bee4b
+template <> struct __declspec(uuid("b8ab13d3-e9e7-5713-ab22-6d32014bee4b")) __declspec(novtable) IVector<Windows::ApplicationModel::Appointments::AppointmentCalendar> : impl_IVector<Windows::ApplicationModel::Appointments::AppointmentCalendar> {};
+#endif
 
 #ifndef WINRT_GENERIC_f40a879d_b6b7_5f92_beb1_6a8e7ce54120
 #define WINRT_GENERIC_f40a879d_b6b7_5f92_beb1_6a8e7ce54120

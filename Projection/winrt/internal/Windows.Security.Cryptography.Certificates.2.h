@@ -149,6 +149,11 @@ template <> struct __declspec(uuid("4c3f50e9-90e3-5a30-9015-4aa0376904f3")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_87975fee_1e75_5b1b_b60b_01ba232e1051
+#define WINRT_GENERIC_87975fee_1e75_5b1b_b60b_01ba232e1051
+template <> struct __declspec(uuid("87975fee-1e75-5b1b-b60b-01ba232e1051")) __declspec(novtable) IVector<Windows::Security::Cryptography::Certificates::CmsSignerInfo> : impl_IVector<Windows::Security::Cryptography::Certificates::CmsSignerInfo> {};
+#endif
+
 #ifndef WINRT_GENERIC_ba691628_d419_5e0a_b924_03ebc236b11e
 #define WINRT_GENERIC_ba691628_d419_5e0a_b924_03ebc236b11e
 template <> struct __declspec(uuid("ba691628-d419-5e0a-b924-03ebc236b11e")) __declspec(novtable) IIterator<Windows::Security::Cryptography::Certificates::CmsSignerInfo> : impl_IIterator<Windows::Security::Cryptography::Certificates::CmsSignerInfo> {};

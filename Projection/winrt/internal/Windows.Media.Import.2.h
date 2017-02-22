@@ -30,6 +30,11 @@ template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -145,6 +150,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_3985e1bf_da0b_5ca9_b05b_01ab87d4bdff
+#define WINRT_GENERIC_3985e1bf_da0b_5ca9_b05b_01ab87d4bdff
+template <> struct __declspec(uuid("3985e1bf-da0b-5ca9-b05b-01ab87d4bdff")) __declspec(novtable) IVector<Windows::Media::Import::PhotoImportSource> : impl_IVector<Windows::Media::Import::PhotoImportSource> {};
+#endif
+
 #ifndef WINRT_GENERIC_7d70f831_6ee4_5130_a7b8_253a21154e82
 #define WINRT_GENERIC_7d70f831_6ee4_5130_a7b8_253a21154e82
 template <> struct __declspec(uuid("7d70f831-6ee4-5130-a7b8-253a21154e82")) __declspec(novtable) IIterator<Windows::Media::Import::PhotoImportSource> : impl_IIterator<Windows::Media::Import::PhotoImportSource> {};
@@ -153,6 +163,11 @@ template <> struct __declspec(uuid("7d70f831-6ee4-5130-a7b8-253a21154e82")) __de
 #ifndef WINRT_GENERIC_40e01d62_b413_5b43_ab07_ab28b23fc886
 #define WINRT_GENERIC_40e01d62_b413_5b43_ab07_ab28b23fc886
 template <> struct __declspec(uuid("40e01d62-b413-5b43-ab07-ab28b23fc886")) __declspec(novtable) IIterable<Windows::Media::Import::PhotoImportSource> : impl_IIterable<Windows::Media::Import::PhotoImportSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_1c228117_7ec4_5d29_9c4f_3323af0ec207
+#define WINRT_GENERIC_1c228117_7ec4_5d29_9c4f_3323af0ec207
+template <> struct __declspec(uuid("1c228117-7ec4-5d29-9c4f-3323af0ec207")) __declspec(novtable) IVector<Windows::Media::Import::PhotoImportOperation> : impl_IVector<Windows::Media::Import::PhotoImportOperation> {};
 #endif
 
 #ifndef WINRT_GENERIC_7c9dde1a_a8a1_5957_8e0d_c401d19c9237
@@ -210,6 +225,11 @@ template <> struct __declspec(uuid("dc38b22a-872e-53f8-8e97-45ed85df0d23")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_abf69fcb_873f_54f8_b31e_0ad798779b8e
+#define WINRT_GENERIC_abf69fcb_873f_54f8_b31e_0ad798779b8e
+template <> struct __declspec(uuid("abf69fcb-873f-54f8-b31e-0ad798779b8e")) __declspec(novtable) IVector<Windows::Media::Import::PhotoImportStorageMedium> : impl_IVector<Windows::Media::Import::PhotoImportStorageMedium> {};
+#endif
+
 #ifndef WINRT_GENERIC_985cb948_9769_55dc_85d9_125a5d03d6bb
 #define WINRT_GENERIC_985cb948_9769_55dc_85d9_125a5d03d6bb
 template <> struct __declspec(uuid("985cb948-9769-55dc-85d9-125a5d03d6bb")) __declspec(novtable) IIterator<Windows::Media::Import::PhotoImportStorageMedium> : impl_IIterator<Windows::Media::Import::PhotoImportStorageMedium> {};
@@ -218,6 +238,11 @@ template <> struct __declspec(uuid("985cb948-9769-55dc-85d9-125a5d03d6bb")) __de
 #ifndef WINRT_GENERIC_3233cbfe_f9ee_560f_bd0f_e36abe6cda7f
 #define WINRT_GENERIC_3233cbfe_f9ee_560f_bd0f_e36abe6cda7f
 template <> struct __declspec(uuid("3233cbfe-f9ee-560f-bd0f-e36abe6cda7f")) __declspec(novtable) IIterable<Windows::Media::Import::PhotoImportStorageMedium> : impl_IIterable<Windows::Media::Import::PhotoImportStorageMedium> {};
+#endif
+
+#ifndef WINRT_GENERIC_5daff4d9_93c7_561a_987f_58daade2b3ec
+#define WINRT_GENERIC_5daff4d9_93c7_561a_987f_58daade2b3ec
+template <> struct __declspec(uuid("5daff4d9-93c7-561a-987f-58daade2b3ec")) __declspec(novtable) IVector<Windows::Media::Import::PhotoImportSidecar> : impl_IVector<Windows::Media::Import::PhotoImportSidecar> {};
 #endif
 
 #ifndef WINRT_GENERIC_aef5ebf0_1363_593a_86d5_f92bc230bfd6
@@ -230,6 +255,11 @@ template <> struct __declspec(uuid("aef5ebf0-1363-593a-86d5-f92bc230bfd6")) __de
 template <> struct __declspec(uuid("2b7f92ad-e596-5669-b622-fbfbc7040e89")) __declspec(novtable) IIterable<Windows::Media::Import::PhotoImportSidecar> : impl_IIterable<Windows::Media::Import::PhotoImportSidecar> {};
 #endif
 
+#ifndef WINRT_GENERIC_0ec325a2_d5c2_5806_996a_18ee534279ad
+#define WINRT_GENERIC_0ec325a2_d5c2_5806_996a_18ee534279ad
+template <> struct __declspec(uuid("0ec325a2-d5c2-5806-996a-18ee534279ad")) __declspec(novtable) IVector<Windows::Media::Import::PhotoImportVideoSegment> : impl_IVector<Windows::Media::Import::PhotoImportVideoSegment> {};
+#endif
+
 #ifndef WINRT_GENERIC_c4c16a75_3310_5ab9_9307_78755ab1094d
 #define WINRT_GENERIC_c4c16a75_3310_5ab9_9307_78755ab1094d
 template <> struct __declspec(uuid("c4c16a75-3310-5ab9-9307-78755ab1094d")) __declspec(novtable) IIterator<Windows::Media::Import::PhotoImportVideoSegment> : impl_IIterator<Windows::Media::Import::PhotoImportVideoSegment> {};
@@ -238,6 +268,11 @@ template <> struct __declspec(uuid("c4c16a75-3310-5ab9-9307-78755ab1094d")) __de
 #ifndef WINRT_GENERIC_94dd3b44_da03_5d79_bbfb_1beaf2ede482
 #define WINRT_GENERIC_94dd3b44_da03_5d79_bbfb_1beaf2ede482
 template <> struct __declspec(uuid("94dd3b44-da03-5d79-bbfb-1beaf2ede482")) __declspec(novtable) IIterable<Windows::Media::Import::PhotoImportVideoSegment> : impl_IIterable<Windows::Media::Import::PhotoImportVideoSegment> {};
+#endif
+
+#ifndef WINRT_GENERIC_a0698898_7959_56b9_81b7_129dc6bf039b
+#define WINRT_GENERIC_a0698898_7959_56b9_81b7_129dc6bf039b
+template <> struct __declspec(uuid("a0698898-7959-56b9-81b7-129dc6bf039b")) __declspec(novtable) IVector<Windows::Media::Import::PhotoImportItem> : impl_IVector<Windows::Media::Import::PhotoImportItem> {};
 #endif
 
 #ifndef WINRT_GENERIC_d04d6068_b5a3_508e_bc6b_1dcdfcfb0d08

@@ -37,6 +37,11 @@ template <> struct __declspec(uuid("50bcd975-67ba-53b7-a5a7-1fb59f04bbb3")) __de
 template <> struct __declspec(uuid("506f1329-dbdc-5a37-91d5-b047cb24276d")) __declspec(novtable) IVectorView<Windows::Storage::BulkAccess::FolderInformation> : impl_IVectorView<Windows::Storage::BulkAccess::FolderInformation> {};
 #endif
 
+#ifndef WINRT_GENERIC_a6803e57_6a67_5414_be92_9f4585c4323c
+#define WINRT_GENERIC_a6803e57_6a67_5414_be92_9f4585c4323c
+template <> struct __declspec(uuid("a6803e57-6a67-5414-be92-9f4585c4323c")) __declspec(novtable) IVector<Windows::Storage::BulkAccess::IStorageItemInformation> : impl_IVector<Windows::Storage::BulkAccess::IStorageItemInformation> {};
+#endif
+
 #ifndef WINRT_GENERIC_3da6401d_1279_55a1_962c_25cd23b99b27
 #define WINRT_GENERIC_3da6401d_1279_55a1_962c_25cd23b99b27
 template <> struct __declspec(uuid("3da6401d-1279-55a1-962c-25cd23b99b27")) __declspec(novtable) IIterator<Windows::Storage::BulkAccess::IStorageItemInformation> : impl_IIterator<Windows::Storage::BulkAccess::IStorageItemInformation> {};
@@ -47,6 +52,11 @@ template <> struct __declspec(uuid("3da6401d-1279-55a1-962c-25cd23b99b27")) __de
 template <> struct __declspec(uuid("43bc252e-a3d6-5f00-a12c-b088d3b912d4")) __declspec(novtable) IIterable<Windows::Storage::BulkAccess::IStorageItemInformation> : impl_IIterable<Windows::Storage::BulkAccess::IStorageItemInformation> {};
 #endif
 
+#ifndef WINRT_GENERIC_cecb2ba9_b6b2_56e7_82f9_785c800edd62
+#define WINRT_GENERIC_cecb2ba9_b6b2_56e7_82f9_785c800edd62
+template <> struct __declspec(uuid("cecb2ba9-b6b2-56e7-82f9-785c800edd62")) __declspec(novtable) IVector<Windows::Storage::BulkAccess::FileInformation> : impl_IVector<Windows::Storage::BulkAccess::FileInformation> {};
+#endif
+
 #ifndef WINRT_GENERIC_bf2f6543_230e_50bf_9c57_9e4ba8635903
 #define WINRT_GENERIC_bf2f6543_230e_50bf_9c57_9e4ba8635903
 template <> struct __declspec(uuid("bf2f6543-230e-50bf-9c57-9e4ba8635903")) __declspec(novtable) IIterator<Windows::Storage::BulkAccess::FileInformation> : impl_IIterator<Windows::Storage::BulkAccess::FileInformation> {};
@@ -55,6 +65,11 @@ template <> struct __declspec(uuid("bf2f6543-230e-50bf-9c57-9e4ba8635903")) __de
 #ifndef WINRT_GENERIC_dd96d7e9_892b_5932_b677_5bc32588008f
 #define WINRT_GENERIC_dd96d7e9_892b_5932_b677_5bc32588008f
 template <> struct __declspec(uuid("dd96d7e9-892b-5932-b677-5bc32588008f")) __declspec(novtable) IIterable<Windows::Storage::BulkAccess::FileInformation> : impl_IIterable<Windows::Storage::BulkAccess::FileInformation> {};
+#endif
+
+#ifndef WINRT_GENERIC_b1c3f115_a630_5d47_b46c_65ed10887f28
+#define WINRT_GENERIC_b1c3f115_a630_5d47_b46c_65ed10887f28
+template <> struct __declspec(uuid("b1c3f115-a630-5d47-b46c-65ed10887f28")) __declspec(novtable) IVector<Windows::Storage::BulkAccess::FolderInformation> : impl_IVector<Windows::Storage::BulkAccess::FolderInformation> {};
 #endif
 
 #ifndef WINRT_GENERIC_ff68b5b6_caad_553a_9808_95eea700c9de

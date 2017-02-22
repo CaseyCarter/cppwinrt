@@ -9,6 +9,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -88,6 +93,16 @@ template <> struct __declspec(uuid("3a0b522d-98d0-5d34-ace6-2c7346613f1d")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_6874a925_e651_5eae_88a7_63df5b999205
+#define WINRT_GENERIC_6874a925_e651_5eae_88a7_63df5b999205
+template <> struct __declspec(uuid("6874a925-e651-5eae-88a7-63df5b999205")) __declspec(novtable) IVector<Windows::System::RemoteSystems::IRemoteSystemFilter> : impl_IVector<Windows::System::RemoteSystems::IRemoteSystemFilter> {};
+#endif
+
+#ifndef WINRT_GENERIC_d2810ae1_cff2_5636_8feb_054c5d3a1ae2
+#define WINRT_GENERIC_d2810ae1_cff2_5636_8feb_054c5d3a1ae2
+template <> struct __declspec(uuid("d2810ae1-cff2-5636-8feb-054c5d3a1ae2")) __declspec(novtable) IVectorView<Windows::System::RemoteSystems::IRemoteSystemFilter> : impl_IVectorView<Windows::System::RemoteSystems::IRemoteSystemFilter> {};
+#endif
 
 #ifndef WINRT_GENERIC_6a2c5aef_9f30_58ae_a6cb_9ac9c8092a41
 #define WINRT_GENERIC_6a2c5aef_9f30_58ae_a6cb_9ac9c8092a41

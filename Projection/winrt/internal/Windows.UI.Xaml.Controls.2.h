@@ -41,6 +41,11 @@ template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -696,6 +701,11 @@ template <> struct __declspec(uuid("1c157d0f-5efe-5cec-bbd6-0c6ce9af07a5")) __de
 template <> struct __declspec(uuid("44a94f2d-04f8-5091-b336-be7892dd10be")) __declspec(novtable) IIterator<Windows::Foundation::IInspectable> : impl_IIterator<Windows::Foundation::IInspectable> {};
 #endif
 
+#ifndef WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
+#define WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
+template <> struct __declspec(uuid("f3864c10-14a4-5516-b1d9-63b6579429b1")) __declspec(novtable) IVectorView<Windows::UI::Xaml::UIElement> : impl_IVectorView<Windows::UI::Xaml::UIElement> {};
+#endif
+
 #ifndef WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
 #define WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
 template <> struct __declspec(uuid("1d1f9d60-d53b-57f7-b144-8f7c487846e8")) __declspec(novtable) IIterator<Windows::UI::Xaml::UIElement> : impl_IIterator<Windows::UI::Xaml::UIElement> {};
@@ -724,11 +734,6 @@ template <> struct __declspec(uuid("2655d45d-38c6-53f0-8719-f3c3a739c1f9")) __de
 #ifndef WINRT_GENERIC_27b5c835_b5ac_5f58_a770_c739f9e6665c
 #define WINRT_GENERIC_27b5c835_b5ac_5f58_a770_c739f9e6665c
 template <> struct __declspec(uuid("27b5c835-b5ac-5f58-a770-c739f9e6665c")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Controls::RowDefinition> : impl_IVectorView<Windows::UI::Xaml::Controls::RowDefinition> {};
-#endif
-
-#ifndef WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
-#define WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
-template <> struct __declspec(uuid("f3864c10-14a4-5516-b1d9-63b6579429b1")) __declspec(novtable) IVectorView<Windows::UI::Xaml::UIElement> : impl_IVectorView<Windows::UI::Xaml::UIElement> {};
 #endif
 
 #ifndef WINRT_GENERIC_2caa8225_b3d4_5725_b0cf_5e6e61453b23
@@ -770,6 +775,11 @@ template <> struct __declspec(uuid("10fb738b-a63b-506e-9ed7-2eab37915221")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_df5c71ac_057b_57e5_9b09_34bcc1aad724
+#define WINRT_GENERIC_df5c71ac_057b_57e5_9b09_34bcc1aad724
+template <> struct __declspec(uuid("df5c71ac-057b-57e5-9b09-34bcc1aad724")) __declspec(novtable) IVector<Windows::UI::Xaml::Data::ItemIndexRange> : impl_IVector<Windows::UI::Xaml::Data::ItemIndexRange> {};
+#endif
 
 #ifndef WINRT_GENERIC_9c223a26_0c81_59f6_a909_ba4966b4cf24
 #define WINRT_GENERIC_9c223a26_0c81_59f6_a909_ba4966b4cf24
@@ -854,6 +864,16 @@ template <> struct __declspec(uuid("3981a977-da6c-5450-823e-7dd23b91f2bc")) __de
 #ifndef WINRT_GENERIC_2065ae49_5ad7_5a34_9f78_bad1308f4e5d
 #define WINRT_GENERIC_2065ae49_5ad7_5a34_9f78_bad1308f4e5d
 template <> struct __declspec(uuid("2065ae49-5ad7-5a34-9f78-bad1308f4e5d")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest> : impl_IVectorView<Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest> {};
+#endif
+
+#ifndef WINRT_GENERIC_ad6fed25_2cde_5266_8ff1_be4b3239ece7
+#define WINRT_GENERIC_ad6fed25_2cde_5266_8ff1_be4b3239ece7
+template <> struct __declspec(uuid("ad6fed25-2cde-5266-8ff1-be4b3239ece7")) __declspec(novtable) IVector<Windows::UI::Color> : impl_IVector<Windows::UI::Color> {};
+#endif
+
+#ifndef WINRT_GENERIC_1ee85f74_807a_5704_9c7c_c2e4247ff96d
+#define WINRT_GENERIC_1ee85f74_807a_5704_9c7c_c2e4247ff96d
+template <> struct __declspec(uuid("1ee85f74-807a-5704-9c7c-c2e4247ff96d")) __declspec(novtable) IVectorView<Windows::UI::Color> : impl_IVectorView<Windows::UI::Color> {};
 #endif
 
 #ifndef WINRT_GENERIC_c4310b12_7ac2_5e5b_b511_e546eea473b4

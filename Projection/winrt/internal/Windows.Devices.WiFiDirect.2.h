@@ -121,6 +121,11 @@ template <> struct __declspec(uuid("794f12da-2dc6-5277-82dc-b0781610537b")) __de
 template <> struct __declspec(uuid("61a32670-04d3-551d-ad66-bd04e9ef5c78")) __declspec(novtable) IVectorView<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> : impl_IVectorView<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> {};
 #endif
 
+#ifndef WINRT_GENERIC_f996138f_a866_5ca4_ba46_09fcb2de7013
+#define WINRT_GENERIC_f996138f_a866_5ca4_ba46_09fcb2de7013
+template <> struct __declspec(uuid("f996138f-a866-5ca4-ba46-09fcb2de7013")) __declspec(novtable) IVector<Windows::Networking::EndpointPair> : impl_IVector<Windows::Networking::EndpointPair> {};
+#endif
+
 #ifndef WINRT_GENERIC_c899ff9f_e6f5_5673_810c_04e2ff98704f
 #define WINRT_GENERIC_c899ff9f_e6f5_5673_810c_04e2ff98704f
 template <> struct __declspec(uuid("c899ff9f-e6f5-5673-810c-04e2ff98704f")) __declspec(novtable) IIterator<Windows::Networking::EndpointPair> : impl_IIterator<Windows::Networking::EndpointPair> {};

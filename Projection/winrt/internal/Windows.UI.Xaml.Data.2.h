@@ -87,6 +87,11 @@ template <> struct __declspec(uuid("10fb738b-a63b-506e-9ed7-2eab37915221")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_df5c71ac_057b_57e5_9b09_34bcc1aad724
+#define WINRT_GENERIC_df5c71ac_057b_57e5_9b09_34bcc1aad724
+template <> struct __declspec(uuid("df5c71ac-057b-57e5-9b09-34bcc1aad724")) __declspec(novtable) IVector<Windows::UI::Xaml::Data::ItemIndexRange> : impl_IVector<Windows::UI::Xaml::Data::ItemIndexRange> {};
+#endif
+
 #ifndef WINRT_GENERIC_9c223a26_0c81_59f6_a909_ba4966b4cf24
 #define WINRT_GENERIC_9c223a26_0c81_59f6_a909_ba4966b4cf24
 template <> struct __declspec(uuid("9c223a26-0c81-59f6-a909-ba4966b4cf24")) __declspec(novtable) IIterator<Windows::UI::Xaml::Data::ItemIndexRange> : impl_IIterator<Windows::UI::Xaml::Data::ItemIndexRange> {};

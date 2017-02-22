@@ -37,9 +37,29 @@ template <> struct __declspec(uuid("17c50e21-cb70-5a2b-b797-a8dc01a99113")) __de
 template <> struct __declspec(uuid("9a245c40-aae6-59fb-87f5-4bb05599f0b1")) __declspec(novtable) IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> : impl_IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> {};
 #endif
 
+#ifndef WINRT_GENERIC_99acf1e7_8cae_514e_8b8f_68448de96a97
+#define WINRT_GENERIC_99acf1e7_8cae_514e_8b8f_68448de96a97
+template <> struct __declspec(uuid("99acf1e7-8cae-514e-8b8f-68448de96a97")) __declspec(novtable) IVector<Windows::UI::Composition::Interactions::ICompositionInteractionSource> : impl_IVector<Windows::UI::Composition::Interactions::ICompositionInteractionSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_c0ed6dd8_03b5_5f88_8594_91898819e72e
+#define WINRT_GENERIC_c0ed6dd8_03b5_5f88_8594_91898819e72e
+template <> struct __declspec(uuid("c0ed6dd8-03b5-5f88-8594-91898819e72e")) __declspec(novtable) IVectorView<Windows::UI::Composition::Interactions::ICompositionInteractionSource> : impl_IVectorView<Windows::UI::Composition::Interactions::ICompositionInteractionSource> {};
+#endif
+
 #ifndef WINRT_GENERIC_20259ef3_9f4b_5257_8581_6d3eabbbd690
 #define WINRT_GENERIC_20259ef3_9f4b_5257_8581_6d3eabbbd690
 template <> struct __declspec(uuid("20259ef3-9f4b-5257-8581-6d3eabbbd690")) __declspec(novtable) IIterator<Windows::UI::Composition::Interactions::ICompositionInteractionSource> : impl_IIterator<Windows::UI::Composition::Interactions::ICompositionInteractionSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_642e8dff_1530_5e5e_86bc_b2e7c5f866f9
+#define WINRT_GENERIC_642e8dff_1530_5e5e_86bc_b2e7c5f866f9
+template <> struct __declspec(uuid("642e8dff-1530-5e5e-86bc-b2e7c5f866f9")) __declspec(novtable) IVector<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> : impl_IVector<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> {};
+#endif
+
+#ifndef WINRT_GENERIC_0a23d57a_af70_5fce_95a9_6667035932a6
+#define WINRT_GENERIC_0a23d57a_af70_5fce_95a9_6667035932a6
+template <> struct __declspec(uuid("0a23d57a-af70-5fce-95a9-6667035932a6")) __declspec(novtable) IVectorView<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> : impl_IVectorView<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> {};
 #endif
 
 #ifndef WINRT_GENERIC_46617d87_2cd2_5e31_9a30_ea86f8aa7ca1

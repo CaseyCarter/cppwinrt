@@ -59,6 +59,11 @@ template <> struct __declspec(uuid("a04902e8-f830-50ea-89ea-96e2a6fb9453")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_79370c1d_c422_5c0c_87cc_2c0111169d82
+#define WINRT_GENERIC_79370c1d_c422_5c0c_87cc_2c0111169d82
+template <> struct __declspec(uuid("79370c1d-c422-5c0c-87cc-2c0111169d82")) __declspec(novtable) IVector<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo> : impl_IVector<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo> {};
+#endif
+
 #ifndef WINRT_GENERIC_0eedbda6_2de0_50af_abc4_46073245fb2d
 #define WINRT_GENERIC_0eedbda6_2de0_50af_abc4_46073245fb2d
 template <> struct __declspec(uuid("0eedbda6-2de0-50af-abc4-46073245fb2d")) __declspec(novtable) IIterator<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo> : impl_IIterator<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo> {};

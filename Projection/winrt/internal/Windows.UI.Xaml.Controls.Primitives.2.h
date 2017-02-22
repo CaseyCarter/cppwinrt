@@ -59,6 +59,11 @@ template <> struct __declspec(uuid("092b849b-60b1-52be-a44a-6fe8e933cbe4")) __de
 template <> struct __declspec(uuid("7bca64fd-150c-5d50-b56b-9f4f474c5930")) __declspec(novtable) IVectorView<float> : impl_IVectorView<float> {};
 #endif
 
+#ifndef WINRT_GENERIC_61cf693f_db4c_579f_b905_5dd3d23cfd4d
+#define WINRT_GENERIC_61cf693f_db4c_579f_b905_5dd3d23cfd4d
+template <> struct __declspec(uuid("61cf693f-db4c-579f-b905-5dd3d23cfd4d")) __declspec(novtable) IVector<float> : impl_IVector<float> {};
+#endif
+
 
 }
 

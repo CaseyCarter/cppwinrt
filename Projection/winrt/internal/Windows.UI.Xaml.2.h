@@ -176,6 +176,21 @@ template <> struct __declspec(uuid("b01c8a21-de6f-5edd-8796-300e3fe66382")) __de
 template <> struct __declspec(uuid("c229f252-dede-5d42-a01a-8479d56a7d2f")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_c0d513a9_ec4a_5a5d_b6d5_b707defdb9f7
+#define WINRT_GENERIC_c0d513a9_ec4a_5a5d_b6d5_b707defdb9f7
+template <> struct __declspec(uuid("c0d513a9-ec4a-5a5d-b6d5-b707defdb9f7")) __declspec(novtable) IVector<Windows::Foundation::Point> : impl_IVector<Windows::Foundation::Point> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_add21d46_17df_5a43_a685_3262fce84643
 #define WINRT_GENERIC_add21d46_17df_5a43_a685_3262fce84643
 template <> struct __declspec(uuid("add21d46-17df-5a43-a685-3262fce84643")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> : impl_AsyncOperationCompletedHandler<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> {};
@@ -185,6 +200,11 @@ template <> struct __declspec(uuid("add21d46-17df-5a43-a685-3262fce84643")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
+#endif
 
 #ifndef WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
 #define WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
@@ -254,6 +274,11 @@ template <> struct __declspec(uuid("36ce8ed8-c1a9-55b7-86dc-b41b8ed8edf4")) __de
 #ifndef WINRT_GENERIC_efe76d10_cb60_50ad_8a4f_6885cd6212a1
 #define WINRT_GENERIC_efe76d10_cb60_50ad_8a4f_6885cd6212a1
 template <> struct __declspec(uuid("efe76d10-cb60-50ad-8a4f-6885cd6212a1")) __declspec(novtable) IMapView<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> : impl_IMapView<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> {};
+#endif
+
+#ifndef WINRT_GENERIC_85f308db_71bd_50ec_805b_3559cf5716b5
+#define WINRT_GENERIC_85f308db_71bd_50ec_805b_3559cf5716b5
+template <> struct __declspec(uuid("85f308db-71bd-50ec-805b-3559cf5716b5")) __declspec(novtable) IVector<Windows::UI::Xaml::Input::Pointer> : impl_IVector<Windows::UI::Xaml::Input::Pointer> {};
 #endif
 
 #ifndef WINRT_GENERIC_8cb1347d_8888_5fb3_bffd_e6caf61b4f03
@@ -339,6 +364,16 @@ template <> struct __declspec(uuid("ae44597e-d411-5b7f-bbec-6a96c94a107a")) __de
 #ifndef WINRT_GENERIC_31e55e8a_0f05_52fd_90d3_b04aa331aaa4
 #define WINRT_GENERIC_31e55e8a_0f05_52fd_90d3_b04aa331aaa4
 template <> struct __declspec(uuid("31e55e8a-0f05-52fd-90d3-b04aa331aaa4")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>> {};
+#endif
+
+#ifndef WINRT_GENERIC_d9438c7d_d796_5b14_98d3_ea042b8973ba
+#define WINRT_GENERIC_d9438c7d_d796_5b14_98d3_ea042b8973ba
+template <> struct __declspec(uuid("d9438c7d-d796-5b14-98d3-ea042b8973ba")) __declspec(novtable) IVector<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>> : impl_IVector<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>> {};
+#endif
+
+#ifndef WINRT_GENERIC_6688bc48_8198_5638_be9c_bbf06b42f7e8
+#define WINRT_GENERIC_6688bc48_8198_5638_be9c_bbf06b42f7e8
+template <> struct __declspec(uuid("6688bc48-8198-5638-be9c-bbf06b42f7e8")) __declspec(novtable) IVectorView<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>> : impl_IVectorView<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>> {};
 #endif
 
 #ifndef WINRT_GENERIC_377f6162_6e4d_574e_bf01_77f4fd021d0e

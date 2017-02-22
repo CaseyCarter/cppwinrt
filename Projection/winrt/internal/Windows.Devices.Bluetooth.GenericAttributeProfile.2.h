@@ -75,6 +75,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("cb3ab3ae-b561-504f-a808-599deceb2df4")) __declspec(novtable) IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> : impl_IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> {};
 #endif
 
+#ifndef WINRT_GENERIC_534cdf69_a258_5232_8dd3_ce94d8c256b0
+#define WINRT_GENERIC_534cdf69_a258_5232_8dd3_ce94d8c256b0
+template <> struct __declspec(uuid("534cdf69-a258-5232-8dd3-ce94d8c256b0")) __declspec(novtable) IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> : impl_IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> {};
+#endif
+
 #ifndef WINRT_GENERIC_8beb3a26_73ca_50f3_a1d3_418c60a9f3b2
 #define WINRT_GENERIC_8beb3a26_73ca_50f3_a1d3_418c60a9f3b2
 template <> struct __declspec(uuid("8beb3a26-73ca-50f3-a1d3-418c60a9f3b2")) __declspec(novtable) IIterator<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> : impl_IIterator<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> {};
@@ -100,6 +105,11 @@ template <> struct __declspec(uuid("2dbcf64a-262b-5708-adb1-c3b8750bd680")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_f8aca3dd_66b1_5fa6_a586_35ae7121f676
+#define WINRT_GENERIC_f8aca3dd_66b1_5fa6_a586_35ae7121f676
+template <> struct __declspec(uuid("f8aca3dd-66b1-5fa6-a586-35ae7121f676")) __declspec(novtable) IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> : impl_IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> {};
+#endif
+
 #ifndef WINRT_GENERIC_3d8df436_cefb_5ffb_858c_4882ce1da079
 #define WINRT_GENERIC_3d8df436_cefb_5ffb_858c_4882ce1da079
 template <> struct __declspec(uuid("3d8df436-cefb-5ffb-858c-4882ce1da079")) __declspec(novtable) IIterator<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> : impl_IIterator<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> {};
@@ -108,6 +118,11 @@ template <> struct __declspec(uuid("3d8df436-cefb-5ffb-858c-4882ce1da079")) __de
 #ifndef WINRT_GENERIC_30e2ffc4_3aa3_5219_9a18_ca2d0b6562e8
 #define WINRT_GENERIC_30e2ffc4_3aa3_5219_9a18_ca2d0b6562e8
 template <> struct __declspec(uuid("30e2ffc4-3aa3-5219-9a18-ca2d0b6562e8")) __declspec(novtable) IIterable<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> : impl_IIterable<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> {};
+#endif
+
+#ifndef WINRT_GENERIC_cba635ef_1c70_5412_8ede_7316276b9ee4
+#define WINRT_GENERIC_cba635ef_1c70_5412_8ede_7316276b9ee4
+template <> struct __declspec(uuid("cba635ef-1c70-5412-8ede-7316276b9ee4")) __declspec(novtable) IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat> : impl_IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat> {};
 #endif
 
 #ifndef WINRT_GENERIC_20006c53_5dda_5319_91b1_c6f28fe65933
@@ -144,6 +159,11 @@ template <> struct __declspec(uuid("98f9a6f3-4d29-5351-8b12-751dc977a331")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_693c8447_2b8e_5e3c_8749_a4de166e1070
+#define WINRT_GENERIC_693c8447_2b8e_5e3c_8749_a4de166e1070
+template <> struct __declspec(uuid("693c8447-2b8e-5e3c-8749-a4de166e1070")) __declspec(novtable) IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> : impl_IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> {};
+#endif
 
 #ifndef WINRT_GENERIC_1ffc4777_4346_5564_b7a5_59eae385f4f6
 #define WINRT_GENERIC_1ffc4777_4346_5564_b7a5_59eae385f4f6

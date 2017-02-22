@@ -69,6 +69,11 @@ template <> struct __declspec(uuid("65178d50-e6a2-5d16-b244-65e9725e5a0c")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_dd153cd9_8ee7_556b_bee4_0c0b8b080106
+#define WINRT_GENERIC_dd153cd9_8ee7_556b_bee4_0c0b8b080106
+template <> struct __declspec(uuid("dd153cd9-8ee7-556b-bee4-0c0b8b080106")) __declspec(novtable) IVector<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo> : impl_IVector<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo> {};
+#endif
+
 #ifndef WINRT_GENERIC_b6f9b421_7f54_5d26_9c37_9f9d7ac893eb
 #define WINRT_GENERIC_b6f9b421_7f54_5d26_9c37_9f9d7ac893eb
 template <> struct __declspec(uuid("b6f9b421-7f54-5d26-9c37-9f9d7ac893eb")) __declspec(novtable) IIterator<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo> : impl_IIterator<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo> {};
@@ -94,6 +99,11 @@ template <> struct __declspec(uuid("b1ea16e7-8268-51ff-8129-dcefd493f35f")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_961229cc_34b1_5c6f_af21_80149a07ace1
+#define WINRT_GENERIC_961229cc_34b1_5c6f_af21_80149a07ace1
+template <> struct __declspec(uuid("961229cc-34b1-5c6f-af21-80149a07ace1")) __declspec(novtable) IVector<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo> : impl_IVector<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo> {};
+#endif
+
 #ifndef WINRT_GENERIC_3fb16dec_73f1_5cfa_80e6_67fa232d1bef
 #define WINRT_GENERIC_3fb16dec_73f1_5cfa_80e6_67fa232d1bef
 template <> struct __declspec(uuid("3fb16dec-73f1-5cfa-80e6-67fa232d1bef")) __declspec(novtable) IIterator<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo> : impl_IIterator<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo> {};
@@ -102,6 +112,11 @@ template <> struct __declspec(uuid("3fb16dec-73f1-5cfa-80e6-67fa232d1bef")) __de
 #ifndef WINRT_GENERIC_a9cb4860_67d1_53c2_a621_3074b0344d49
 #define WINRT_GENERIC_a9cb4860_67d1_53c2_a621_3074b0344d49
 template <> struct __declspec(uuid("a9cb4860-67d1-53c2-a621-3074b0344d49")) __declspec(novtable) IIterable<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo> : impl_IIterable<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo> {};
+#endif
+
+#ifndef WINRT_GENERIC_4e414afb_6e1e_58bc_80e6_010b40e05093
+#define WINRT_GENERIC_4e414afb_6e1e_58bc_80e6_010b40e05093
+template <> struct __declspec(uuid("4e414afb-6e1e-58bc-80e6-010b40e05093")) __declspec(novtable) IVector<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> : impl_IVector<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> {};
 #endif
 
 #ifndef WINRT_GENERIC_d0455b2d_d8aa_557e_89a3_63c33e8cee99

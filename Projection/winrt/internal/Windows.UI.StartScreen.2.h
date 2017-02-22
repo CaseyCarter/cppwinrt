@@ -99,6 +99,11 @@ template <> struct __declspec(uuid("3c047c6a-c55b-5485-b673-8d4bd7c342e2")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_7746d0eb_48b1_54ea_b91a_e0c303ac208a
+#define WINRT_GENERIC_7746d0eb_48b1_54ea_b91a_e0c303ac208a
+template <> struct __declspec(uuid("7746d0eb-48b1-54ea-b91a-e0c303ac208a")) __declspec(novtable) IVector<Windows::UI::StartScreen::SecondaryTile> : impl_IVector<Windows::UI::StartScreen::SecondaryTile> {};
+#endif
+
 #ifndef WINRT_GENERIC_391f7579_a90e_5352_9d01_fda995d7912f
 #define WINRT_GENERIC_391f7579_a90e_5352_9d01_fda995d7912f
 template <> struct __declspec(uuid("391f7579-a90e-5352-9d01-fda995d7912f")) __declspec(novtable) IIterator<Windows::UI::StartScreen::SecondaryTile> : impl_IIterator<Windows::UI::StartScreen::SecondaryTile> {};
@@ -107,6 +112,11 @@ template <> struct __declspec(uuid("391f7579-a90e-5352-9d01-fda995d7912f")) __de
 #ifndef WINRT_GENERIC_75651af0_014a_5593_bc48_836ba3d1d5d4
 #define WINRT_GENERIC_75651af0_014a_5593_bc48_836ba3d1d5d4
 template <> struct __declspec(uuid("75651af0-014a-5593-bc48-836ba3d1d5d4")) __declspec(novtable) IIterable<Windows::UI::StartScreen::SecondaryTile> : impl_IIterable<Windows::UI::StartScreen::SecondaryTile> {};
+#endif
+
+#ifndef WINRT_GENERIC_ed460c68_6b09_55f2_829a_4bd7525eb780
+#define WINRT_GENERIC_ed460c68_6b09_55f2_829a_4bd7525eb780
+template <> struct __declspec(uuid("ed460c68-6b09-55f2-829a-4bd7525eb780")) __declspec(novtable) IVector<Windows::UI::StartScreen::SecondaryTileVisualElements> : impl_IVector<Windows::UI::StartScreen::SecondaryTileVisualElements> {};
 #endif
 
 #ifndef WINRT_GENERIC_bbc6e16c_cace_5230_8804_2298375168ac

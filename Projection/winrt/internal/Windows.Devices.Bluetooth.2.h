@@ -95,6 +95,11 @@ template <> struct __declspec(uuid("b2e8cdd1-66aa-5892-85a3-8f0b165e43fc")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_308fe894_cc06_5007_bc85_cbe94ac1a70c
+#define WINRT_GENERIC_308fe894_cc06_5007_bc85_cbe94ac1a70c
+template <> struct __declspec(uuid("308fe894-cc06-5007-bc85-cbe94ac1a70c")) __declspec(novtable) IVector<Windows::Storage::Streams::IBuffer> : impl_IVector<Windows::Storage::Streams::IBuffer> {};
+#endif
+
 #ifndef WINRT_GENERIC_afee38e0_f882_5f10_9655_1fc98cc8cce5
 #define WINRT_GENERIC_afee38e0_f882_5f10_9655_1fc98cc8cce5
 template <> struct __declspec(uuid("afee38e0-f882-5f10-9655-1fc98cc8cce5")) __declspec(novtable) IIterator<Windows::Storage::Streams::IBuffer> : impl_IIterator<Windows::Storage::Streams::IBuffer> {};
@@ -103,6 +108,11 @@ template <> struct __declspec(uuid("afee38e0-f882-5f10-9655-1fc98cc8cce5")) __de
 #ifndef WINRT_GENERIC_902972bf_a984_5443_b1c5_2f04a99e1fca
 #define WINRT_GENERIC_902972bf_a984_5443_b1c5_2f04a99e1fca
 template <> struct __declspec(uuid("902972bf-a984-5443-b1c5-2f04a99e1fca")) __declspec(novtable) IIterable<Windows::Storage::Streams::IBuffer> : impl_IIterable<Windows::Storage::Streams::IBuffer> {};
+#endif
+
+#ifndef WINRT_GENERIC_75f127ec_2256_5b20_8b38_8ac3f3d11819
+#define WINRT_GENERIC_75f127ec_2256_5b20_8b38_8ac3f3d11819
+template <> struct __declspec(uuid("75f127ec-2256-5b20-8b38-8ac3f3d11819")) __declspec(novtable) IVector<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> : impl_IVector<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> {};
 #endif
 
 #ifndef WINRT_GENERIC_64ab0132_c64c_5a87_8113_613ef356924c
@@ -134,6 +144,11 @@ template <> struct __declspec(uuid("522c25d1-866b-5de4-bd8e-1feb5ae60d47")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_534cdf69_a258_5232_8dd3_ce94d8c256b0
+#define WINRT_GENERIC_534cdf69_a258_5232_8dd3_ce94d8c256b0
+template <> struct __declspec(uuid("534cdf69-a258-5232-8dd3-ce94d8c256b0")) __declspec(novtable) IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> : impl_IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> {};
+#endif
 
 #ifndef WINRT_GENERIC_8beb3a26_73ca_50f3_a1d3_418c60a9f3b2
 #define WINRT_GENERIC_8beb3a26_73ca_50f3_a1d3_418c60a9f3b2

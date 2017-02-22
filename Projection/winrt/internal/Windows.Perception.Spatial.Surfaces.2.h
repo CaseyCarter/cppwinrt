@@ -74,6 +74,11 @@ template <> struct __declspec(uuid("6ced54c8-7689-525a-80e1-956a9d85cd83")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_478b3e4a_c22c_56b8_b339_ee50a00df6f5
+#define WINRT_GENERIC_478b3e4a_c22c_56b8_b339_ee50a00df6f5
+template <> struct __declspec(uuid("478b3e4a-c22c-56b8-b339-ee50a00df6f5")) __declspec(novtable) IVector<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> : impl_IVector<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> {};
+#endif
+
 #ifndef WINRT_GENERIC_ea016190_ac80_5840_8f58_ff434c7b2907
 #define WINRT_GENERIC_ea016190_ac80_5840_8f58_ff434c7b2907
 template <> struct __declspec(uuid("ea016190-ac80-5840-8f58-ff434c7b2907")) __declspec(novtable) IIterator<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> : impl_IIterator<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> {};
@@ -102,6 +107,21 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_a6bdf94a_2697_5ff2_89dc_a17cecdcda6c
 #define WINRT_GENERIC_a6bdf94a_2697_5ff2_89dc_a17cecdcda6c
 template <> struct __declspec(uuid("a6bdf94a-2697-5ff2-89dc-a17cecdcda6c")) __declspec(novtable) IKeyValuePair<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> : impl_IKeyValuePair<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> {};
+#endif
+
+#ifndef WINRT_GENERIC_de61472e_8b1a_5a54_934e_76cf63f5cdcc
+#define WINRT_GENERIC_de61472e_8b1a_5a54_934e_76cf63f5cdcc
+template <> struct __declspec(uuid("de61472e-8b1a-5a54-934e-76cf63f5cdcc")) __declspec(novtable) IMap<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> : impl_IMap<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> {};
+#endif
+
+#ifndef WINRT_GENERIC_4b5527fb_87ff_5e78_ae2f_9cea8f8f52b5
+#define WINRT_GENERIC_4b5527fb_87ff_5e78_ae2f_9cea8f8f52b5
+template <> struct __declspec(uuid("4b5527fb-87ff-5e78-ae2f-9cea8f8f52b5")) __declspec(novtable) IVector<Windows::Perception::Spatial::SpatialBoundingVolume> : impl_IVector<Windows::Perception::Spatial::SpatialBoundingVolume> {};
+#endif
+
+#ifndef WINRT_GENERIC_471d0048_3cd1_5b72_a118_8d5a48bfe0df
+#define WINRT_GENERIC_471d0048_3cd1_5b72_a118_8d5a48bfe0df
+template <> struct __declspec(uuid("471d0048-3cd1-5b72-a118-8d5a48bfe0df")) __declspec(novtable) IVectorView<Windows::Perception::Spatial::SpatialBoundingVolume> : impl_IVectorView<Windows::Perception::Spatial::SpatialBoundingVolume> {};
 #endif
 
 #ifndef WINRT_GENERIC_eb8385c5_0775_5415_8f76_327e6e388ac5

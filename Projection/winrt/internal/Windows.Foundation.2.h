@@ -34,6 +34,11 @@ template <> struct __declspec(uuid("f4637d4a-0760-5431-bfc0-24eb1d4f6c4f")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_2f5fb6d3_231f_57a1_9f2a_daa7e43bf075
+#define WINRT_GENERIC_2f5fb6d3_231f_57a1_9f2a_daa7e43bf075
+template <> struct __declspec(uuid("2f5fb6d3-231f-57a1-9f2a-daa7e43bf075")) __declspec(novtable) IVector<Windows::Foundation::IWwwFormUrlDecoderEntry> : impl_IVector<Windows::Foundation::IWwwFormUrlDecoderEntry> {};
+#endif
+
 #ifndef WINRT_GENERIC_32e54295_373c_50cb_80a1_468a990ca780
 #define WINRT_GENERIC_32e54295_373c_50cb_80a1_468a990ca780
 template <> struct __declspec(uuid("32e54295-373c-50cb-80a1-468a990ca780")) __declspec(novtable) IIterator<Windows::Foundation::IWwwFormUrlDecoderEntry> : impl_IIterator<Windows::Foundation::IWwwFormUrlDecoderEntry> {};

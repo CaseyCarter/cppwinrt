@@ -80,6 +80,11 @@ template <> struct __declspec(uuid("6ee5cc44-49ad-5138-ab47-f5c075a2bc34")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_534832ed_2a03_5604_890d_5a928cd427b9
+#define WINRT_GENERIC_534832ed_2a03_5604_890d_5a928cd427b9
+template <> struct __declspec(uuid("534832ed-2a03-5604-890d-5a928cd427b9")) __declspec(novtable) IVector<uint32_t> : impl_IVector<uint32_t> {};
+#endif
+
 #ifndef WINRT_GENERIC_f06a2739_9443_5ef0_b284_dc5aff3e7d10
 #define WINRT_GENERIC_f06a2739_9443_5ef0_b284_dc5aff3e7d10
 template <> struct __declspec(uuid("f06a2739-9443-5ef0-b284-dc5aff3e7d10")) __declspec(novtable) IIterator<uint32_t> : impl_IIterator<uint32_t> {};

@@ -20,6 +20,11 @@ template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -225,9 +230,19 @@ template <> struct __declspec(uuid("9dd0a063-6153-5afd-8288-8770ddcff2db")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_90c71c29_a9b5_5267_a5ad_8b756736317c
+#define WINRT_GENERIC_90c71c29_a9b5_5267_a5ad_8b756736317c
+template <> struct __declspec(uuid("90c71c29-a9b5-5267-a5ad-8b756736317c")) __declspec(novtable) IVector<Windows::Networking::HostName> : impl_IVector<Windows::Networking::HostName> {};
+#endif
+
 #ifndef WINRT_GENERIC_9e5f3ed0_cf1c_5d38_832c_acea6164bf5c
 #define WINRT_GENERIC_9e5f3ed0_cf1c_5d38_832c_acea6164bf5c
 template <> struct __declspec(uuid("9e5f3ed0-cf1c-5d38-832c-acea6164bf5c")) __declspec(novtable) IIterable<Windows::Networking::HostName> : impl_IIterable<Windows::Networking::HostName> {};
+#endif
+
+#ifndef WINRT_GENERIC_534832ed_2a03_5604_890d_5a928cd427b9
+#define WINRT_GENERIC_534832ed_2a03_5604_890d_5a928cd427b9
+template <> struct __declspec(uuid("534832ed-2a03-5604-890d-5a928cd427b9")) __declspec(novtable) IVector<uint32_t> : impl_IVector<uint32_t> {};
 #endif
 
 
@@ -250,6 +265,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_d0a5c969_441b_594c_8891_6fda42d8283f
+#define WINRT_GENERIC_d0a5c969_441b_594c_8891_6fda42d8283f
+template <> struct __declspec(uuid("d0a5c969-441b-594c-8891-6fda42d8283f")) __declspec(novtable) IVector<Windows::Networking::Connectivity::ConnectionProfile> : impl_IVector<Windows::Networking::Connectivity::ConnectionProfile> {};
+#endif
+
 #ifndef WINRT_GENERIC_89913732_a08b_5cb2_af16_bbbb2223839e
 #define WINRT_GENERIC_89913732_a08b_5cb2_af16_bbbb2223839e
 template <> struct __declspec(uuid("89913732-a08b-5cb2-af16-bbbb2223839e")) __declspec(novtable) IIterator<Windows::Networking::Connectivity::ConnectionProfile> : impl_IIterator<Windows::Networking::Connectivity::ConnectionProfile> {};
@@ -258,6 +278,11 @@ template <> struct __declspec(uuid("89913732-a08b-5cb2-af16-bbbb2223839e")) __de
 #ifndef WINRT_GENERIC_34dabef9_87d0_5b1c_a7ac_9d290adeb0c8
 #define WINRT_GENERIC_34dabef9_87d0_5b1c_a7ac_9d290adeb0c8
 template <> struct __declspec(uuid("34dabef9-87d0-5b1c-a7ac-9d290adeb0c8")) __declspec(novtable) IIterable<Windows::Networking::Connectivity::ConnectionProfile> : impl_IIterable<Windows::Networking::Connectivity::ConnectionProfile> {};
+#endif
+
+#ifndef WINRT_GENERIC_cba61194_67a5_59a7_a551_544f81088916
+#define WINRT_GENERIC_cba61194_67a5_59a7_a551_544f81088916
+template <> struct __declspec(uuid("cba61194-67a5-59a7-a551-544f81088916")) __declspec(novtable) IVector<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> : impl_IVector<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> {};
 #endif
 
 #ifndef WINRT_GENERIC_4bb2066f_1b75_57cf_a722_1e58bfc5ae50
@@ -290,6 +315,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("557bf83c-a428-5dbd-a0fe-05f6ee543d45")) __declspec(novtable) IIterator<Windows::Networking::HostName> : impl_IIterator<Windows::Networking::HostName> {};
 #endif
 
+#ifndef WINRT_GENERIC_60c9dc73_6fd2_58cb_b984_b03ffd47bdbf
+#define WINRT_GENERIC_60c9dc73_6fd2_58cb_b984_b03ffd47bdbf
+template <> struct __declspec(uuid("60c9dc73-6fd2-58cb-b984-b03ffd47bdbf")) __declspec(novtable) IVector<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> : impl_IVector<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> {};
+#endif
+
 #ifndef WINRT_GENERIC_5653d065_c708_5341_bc05_d3b9cecd2ac7
 #define WINRT_GENERIC_5653d065_c708_5341_bc05_d3b9cecd2ac7
 template <> struct __declspec(uuid("5653d065-c708-5341-bc05-d3b9cecd2ac7")) __declspec(novtable) IIterator<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> : impl_IIterator<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> {};
@@ -298,6 +328,11 @@ template <> struct __declspec(uuid("5653d065-c708-5341-bc05-d3b9cecd2ac7")) __de
 #ifndef WINRT_GENERIC_4762ecb3_af48_5b63_89b7_78a42056549f
 #define WINRT_GENERIC_4762ecb3_af48_5b63_89b7_78a42056549f
 template <> struct __declspec(uuid("4762ecb3-af48-5b63-89b7-78a42056549f")) __declspec(novtable) IIterable<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> : impl_IIterable<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> {};
+#endif
+
+#ifndef WINRT_GENERIC_143299e9_9056_50dd_9e98_920019b4bf2c
+#define WINRT_GENERIC_143299e9_9056_50dd_9e98_920019b4bf2c
+template <> struct __declspec(uuid("143299e9-9056-50dd-9e98-920019b4bf2c")) __declspec(novtable) IVector<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation> : impl_IVector<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation> {};
 #endif
 
 #ifndef WINRT_GENERIC_d8d776f6_4692_5461_9155_816e63bac874
@@ -324,6 +359,11 @@ template <> struct __declspec(uuid("c11e0649-8237-5c93-bbdb-2eda5216fd3f")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_5eb36a5d_f0b3_5435_b839_ff4a0b114ac1
+#define WINRT_GENERIC_5eb36a5d_f0b3_5435_b839_ff4a0b114ac1
+template <> struct __declspec(uuid("5eb36a5d-f0b3-5435-b839-ff4a0b114ac1")) __declspec(novtable) IVector<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinType> : impl_IVector<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinType> {};
+#endif
 
 #ifndef WINRT_GENERIC_23efcf0c_1f8e_5bd9_8b57_f0850121201c
 #define WINRT_GENERIC_23efcf0c_1f8e_5bd9_8b57_f0850121201c
@@ -385,6 +425,11 @@ template <> struct __declspec(uuid("b81892b3-4ca9-5ec4-8971-2fbc19b56ca9")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_5d69e663_e64e_5d4b_b50f_f6f34bdd9015
+#define WINRT_GENERIC_5d69e663_e64e_5d4b_b50f_f6f34bdd9015
+template <> struct __declspec(uuid("5d69e663-e64e-5d4b-b50f-f6f34bdd9015")) __declspec(novtable) IVector<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> : impl_IVector<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> {};
+#endif
+
 #ifndef WINRT_GENERIC_9cb0f858_e589_57a7_9d01_2c6291567cc7
 #define WINRT_GENERIC_9cb0f858_e589_57a7_9d01_2c6291567cc7
 template <> struct __declspec(uuid("9cb0f858-e589-57a7-9d01-2c6291567cc7")) __declspec(novtable) IIterator<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> : impl_IIterator<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> {};
@@ -395,6 +440,11 @@ template <> struct __declspec(uuid("9cb0f858-e589-57a7-9d01-2c6291567cc7")) __de
 template <> struct __declspec(uuid("0b90bb30-660c-51c6-9b8c-31dd8486e10e")) __declspec(novtable) IIterable<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> : impl_IIterable<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> {};
 #endif
 
+#ifndef WINRT_GENERIC_6eb2f385_5242_55ef_a303_8b04c7eb8d50
+#define WINRT_GENERIC_6eb2f385_5242_55ef_a303_8b04c7eb8d50
+template <> struct __declspec(uuid("6eb2f385-5242-55ef-a303-8b04c7eb8d50")) __declspec(novtable) IVector<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> : impl_IVector<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> {};
+#endif
+
 #ifndef WINRT_GENERIC_c088cec3_08e5_5f35_a2b9_0900d028c83b
 #define WINRT_GENERIC_c088cec3_08e5_5f35_a2b9_0900d028c83b
 template <> struct __declspec(uuid("c088cec3-08e5-5f35-a2b9-0900d028c83b")) __declspec(novtable) IIterator<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> : impl_IIterator<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> {};
@@ -403,6 +453,11 @@ template <> struct __declspec(uuid("c088cec3-08e5-5f35-a2b9-0900d028c83b")) __de
 #ifndef WINRT_GENERIC_c385adaa_574c_5ad8_98c2_61309525132d
 #define WINRT_GENERIC_c385adaa_574c_5ad8_98c2_61309525132d
 template <> struct __declspec(uuid("c385adaa-574c-5ad8-98c2-61309525132d")) __declspec(novtable) IIterable<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> : impl_IIterable<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> {};
+#endif
+
+#ifndef WINRT_GENERIC_29932318_9b61_5ced_842c_56e99cc2dc71
+#define WINRT_GENERIC_29932318_9b61_5ced_842c_56e99cc2dc71
+template <> struct __declspec(uuid("29932318-9b61-5ced-842c-56e99cc2dc71")) __declspec(novtable) IVector<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange> : impl_IVector<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange> {};
 #endif
 
 #ifndef WINRT_GENERIC_e61b479f_7bd9_5550_bc69_f9c2f71c6a05

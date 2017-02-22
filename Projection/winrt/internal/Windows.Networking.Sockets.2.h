@@ -117,6 +117,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("d7ec83c4-a17b-51bf-8997-aa33b9102dc9")) __declspec(novtable) IIterable<Windows::Networking::EndpointPair> : impl_IIterable<Windows::Networking::EndpointPair> {};
 #endif
 
+#ifndef WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+#define WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+template <> struct __declspec(uuid("36282c0f-2f1f-57f4-b2b1-867af90c3d13")) __declspec(novtable) IVector<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVector<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
+
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
@@ -137,6 +142,11 @@ template <> struct __declspec(uuid("8bcad2b7-0e3b-5eae-bf69-e1f6d9c888f8")) __de
 template <> struct __declspec(uuid("2628f58f-3f02-54f2-808f-e1117709d6d0")) __declspec(novtable) IIterable<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> : impl_IIterable<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> {};
 #endif
 
+#ifndef WINRT_GENERIC_f996138f_a866_5ca4_ba46_09fcb2de7013
+#define WINRT_GENERIC_f996138f_a866_5ca4_ba46_09fcb2de7013
+template <> struct __declspec(uuid("f996138f-a866-5ca4-ba46-09fcb2de7013")) __declspec(novtable) IVector<Windows::Networking::EndpointPair> : impl_IVector<Windows::Networking::EndpointPair> {};
+#endif
+
 #ifndef WINRT_GENERIC_c899ff9f_e6f5_5673_810c_04e2ff98704f
 #define WINRT_GENERIC_c899ff9f_e6f5_5673_810c_04e2ff98704f
 template <> struct __declspec(uuid("c899ff9f-e6f5-5673-810c-04e2ff98704f")) __declspec(novtable) IIterator<Windows::Networking::EndpointPair> : impl_IIterator<Windows::Networking::EndpointPair> {};
@@ -145,6 +155,11 @@ template <> struct __declspec(uuid("c899ff9f-e6f5-5673-810c-04e2ff98704f")) __de
 #ifndef WINRT_GENERIC_7e4bda2c_0125_587d_8806_1285060f3b2d
 #define WINRT_GENERIC_7e4bda2c_0125_587d_8806_1285060f3b2d
 template <> struct __declspec(uuid("7e4bda2c-0125-587d-8806-1285060f3b2d")) __declspec(novtable) IKeyValuePair<hstring, Windows::Networking::Sockets::SocketActivityInformation> : impl_IKeyValuePair<hstring, Windows::Networking::Sockets::SocketActivityInformation> {};
+#endif
+
+#ifndef WINRT_GENERIC_4420dd78_f60c_57f8_863c_c716e0fdccc3
+#define WINRT_GENERIC_4420dd78_f60c_57f8_863c_c716e0fdccc3
+template <> struct __declspec(uuid("4420dd78-f60c-57f8-863c-c716e0fdccc3")) __declspec(novtable) IMap<hstring, Windows::Networking::Sockets::SocketActivityInformation> : impl_IMap<hstring, Windows::Networking::Sockets::SocketActivityInformation> {};
 #endif
 
 

@@ -175,6 +175,16 @@ template <> struct __declspec(uuid("1aa752b3-dc11-5bce-b2b9-cd1bf8f235be")) __de
 template <> struct __declspec(uuid("b91a7342-3fcb-512b-aef1-fda4712e5817")) __declspec(novtable) IVectorView<Windows::UI::Input::RadialControllerMenuItem> : impl_IVectorView<Windows::UI::Input::RadialControllerMenuItem> {};
 #endif
 
+#ifndef WINRT_GENERIC_be61f6bf_0d38_5a33_8ae6_43498ec7ce92
+#define WINRT_GENERIC_be61f6bf_0d38_5a33_8ae6_43498ec7ce92
+template <> struct __declspec(uuid("be61f6bf-0d38-5a33-8ae6-43498ec7ce92")) __declspec(novtable) IVector<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> : impl_IVector<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> {};
+#endif
+
+#ifndef WINRT_GENERIC_dd29cfe2_a92f_5266_be5f_5d4407fd8580
+#define WINRT_GENERIC_dd29cfe2_a92f_5266_be5f_5d4407fd8580
+template <> struct __declspec(uuid("dd29cfe2-a92f-5266-be5f-5d4407fd8580")) __declspec(novtable) IVectorView<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> : impl_IVectorView<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> {};
+#endif
+
 #ifndef WINRT_GENERIC_3fbc1858_a43e_54dc_b0e2_8b098bddacf6
 #define WINRT_GENERIC_3fbc1858_a43e_54dc_b0e2_8b098bddacf6
 template <> struct __declspec(uuid("3fbc1858-a43e-54dc-b0e2-8b098bddacf6")) __declspec(novtable) IIterator<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> : impl_IIterator<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> {};

@@ -355,6 +355,11 @@ template <> struct __declspec(uuid("a572c173-800a-58bb-ab24-179959df2813")) __de
 template <> struct __declspec(uuid("63319996-7e0f-552e-872b-7b9adb1f4997")) __declspec(novtable) IIterable<Windows::ApplicationModel::Contacts::Contact> : impl_IIterable<Windows::ApplicationModel::Contacts::Contact> {};
 #endif
 
+#ifndef WINRT_GENERIC_c7e0c300_8d7c_5b61_860b_0ace85847adf
+#define WINRT_GENERIC_c7e0c300_8d7c_5b61_860b_0ace85847adf
+template <> struct __declspec(uuid("c7e0c300-8d7c-5b61-860b-0ace85847adf")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactAnnotation> : impl_IVector<Windows::ApplicationModel::Contacts::ContactAnnotation> {};
+#endif
+
 #ifndef WINRT_GENERIC_77bc5ee1_7130_5876_9d30_1f9306cc226a
 #define WINRT_GENERIC_77bc5ee1_7130_5876_9d30_1f9306cc226a
 template <> struct __declspec(uuid("77bc5ee1-7130-5876-9d30-1f9306cc226a")) __declspec(novtable) IIterator<Windows::ApplicationModel::Contacts::ContactAnnotation> : impl_IIterator<Windows::ApplicationModel::Contacts::ContactAnnotation> {};
@@ -380,6 +385,11 @@ template <> struct __declspec(uuid("b2478ee7-dc89-5b7d-b4a3-b3be2952209f")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_7890cd8b_6733_521f_bbf4_bb9a9f9b2ca8
+#define WINRT_GENERIC_7890cd8b_6733_521f_bbf4_bb9a9f9b2ca8
+template <> struct __declspec(uuid("7890cd8b-6733-521f-bbf4-bb9a9f9b2ca8")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactAnnotationList> : impl_IVector<Windows::ApplicationModel::Contacts::ContactAnnotationList> {};
+#endif
+
 #ifndef WINRT_GENERIC_3d7b4ad2_bb54_5e21_a92e_6b80264ccc50
 #define WINRT_GENERIC_3d7b4ad2_bb54_5e21_a92e_6b80264ccc50
 template <> struct __declspec(uuid("3d7b4ad2-bb54-5e21-a92e-6b80264ccc50")) __declspec(novtable) IIterator<Windows::ApplicationModel::Contacts::ContactAnnotationList> : impl_IIterator<Windows::ApplicationModel::Contacts::ContactAnnotationList> {};
@@ -404,6 +414,11 @@ template <> struct __declspec(uuid("23c8c9ed-8920-5d9e-b052-c35e31fc2343")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_7ab0bfba_495a_5b9b_bc64_524fd77e919c
+#define WINRT_GENERIC_7ab0bfba_495a_5b9b_bc64_524fd77e919c
+template <> struct __declspec(uuid("7ab0bfba-495a-5b9b-bc64-524fd77e919c")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactList> : impl_IVector<Windows::ApplicationModel::Contacts::ContactList> {};
+#endif
 
 #ifndef WINRT_GENERIC_ee69382d_887d_5964_83b4_47ee9ded6f05
 #define WINRT_GENERIC_ee69382d_887d_5964_83b4_47ee9ded6f05
@@ -565,6 +580,11 @@ template <> struct __declspec(uuid("4b03c203-989e-5b97-8fcb-67d661defe76")) __de
 template <> struct __declspec(uuid("f677e62f-39c5-57c0-b642-26b143309871")) __declspec(novtable) IVectorView<Windows::ApplicationModel::Contacts::ContactWebsite> : impl_IVectorView<Windows::ApplicationModel::Contacts::ContactWebsite> {};
 #endif
 
+#ifndef WINRT_GENERIC_346c816a_e2fc_5b5c_928a_a8d59bab5930
+#define WINRT_GENERIC_346c816a_e2fc_5b5c_928a_a8d59bab5930
+template <> struct __declspec(uuid("346c816a-e2fc-5b5c-928a-a8d59bab5930")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactChange> : impl_IVector<Windows::ApplicationModel::Contacts::ContactChange> {};
+#endif
+
 #ifndef WINRT_GENERIC_cd1a34ad_16df_572c_b5cd_526eb3044fce
 #define WINRT_GENERIC_cd1a34ad_16df_572c_b5cd_526eb3044fce
 template <> struct __declspec(uuid("cd1a34ad-16df-572c-b5cd-526eb3044fce")) __declspec(novtable) IIterator<Windows::ApplicationModel::Contacts::ContactChange> : impl_IIterator<Windows::ApplicationModel::Contacts::ContactChange> {};
@@ -590,6 +610,11 @@ template <> struct __declspec(uuid("dc49c74d-1ac7-5754-82e9-25180c4dd888")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_71a58125_0296_5ad1_b0cd_3e8645e60b27
+#define WINRT_GENERIC_71a58125_0296_5ad1_b0cd_3e8645e60b27
+template <> struct __declspec(uuid("71a58125-0296-5ad1-b0cd-3e8645e60b27")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactMatchReason> : impl_IVector<Windows::ApplicationModel::Contacts::ContactMatchReason> {};
+#endif
+
 #ifndef WINRT_GENERIC_4ae36741_bbde_5bd6_9d4f_0d57b1410e4e
 #define WINRT_GENERIC_4ae36741_bbde_5bd6_9d4f_0d57b1410e4e
 template <> struct __declspec(uuid("4ae36741-bbde-5bd6-9d4f-0d57b1410e4e")) __declspec(novtable) IIterator<Windows::ApplicationModel::Contacts::ContactMatchReason> : impl_IIterator<Windows::ApplicationModel::Contacts::ContactMatchReason> {};
@@ -598,6 +623,11 @@ template <> struct __declspec(uuid("4ae36741-bbde-5bd6-9d4f-0d57b1410e4e")) __de
 #ifndef WINRT_GENERIC_0a8c1bd9_2402_5c98_be6e_63a4808047ba
 #define WINRT_GENERIC_0a8c1bd9_2402_5c98_be6e_63a4808047ba
 template <> struct __declspec(uuid("0a8c1bd9-2402-5c98-be6e-63a4808047ba")) __declspec(novtable) IIterable<Windows::ApplicationModel::Contacts::ContactMatchReason> : impl_IIterable<Windows::ApplicationModel::Contacts::ContactMatchReason> {};
+#endif
+
+#ifndef WINRT_GENERIC_66b1a575_7c1a_5dfc_92f3_e8a49e92f109
+#define WINRT_GENERIC_66b1a575_7c1a_5dfc_92f3_e8a49e92f109
+template <> struct __declspec(uuid("66b1a575-7c1a-5dfc-92f3-e8a49e92f109")) __declspec(novtable) IVector<Windows::Data::Text::TextSegment> : impl_IVector<Windows::Data::Text::TextSegment> {};
 #endif
 
 #ifndef WINRT_GENERIC_645a39b4_f001_5272_9015_fb4a327179ae
@@ -610,6 +640,11 @@ template <> struct __declspec(uuid("645a39b4-f001-5272-9015-fb4a327179ae")) __de
 template <> struct __declspec(uuid("5498f4f3-cee4-5b72-9729-815c4ad7b9dc")) __declspec(novtable) IIterable<Windows::Data::Text::TextSegment> : impl_IIterable<Windows::Data::Text::TextSegment> {};
 #endif
 
+#ifndef WINRT_GENERIC_b2f8f683_bce7_50bc_ab1d_47a946d39788
+#define WINRT_GENERIC_b2f8f683_bce7_50bc_ab1d_47a946d39788
+template <> struct __declspec(uuid("b2f8f683-bce7-50bc-ab1d-47a946d39788")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactField> : impl_IVector<Windows::ApplicationModel::Contacts::ContactField> {};
+#endif
+
 #ifndef WINRT_GENERIC_aa226af5_faa5_5353_871c_538099b7c836
 #define WINRT_GENERIC_aa226af5_faa5_5353_871c_538099b7c836
 template <> struct __declspec(uuid("aa226af5-faa5-5353-871c-538099b7c836")) __declspec(novtable) IIterator<Windows::ApplicationModel::Contacts::ContactField> : impl_IIterator<Windows::ApplicationModel::Contacts::ContactField> {};
@@ -620,6 +655,11 @@ template <> struct __declspec(uuid("aa226af5-faa5-5353-871c-538099b7c836")) __de
 template <> struct __declspec(uuid("3b012111-c82b-541e-a0c1-37713ed83541")) __declspec(novtable) IIterable<Windows::ApplicationModel::Contacts::ContactField> : impl_IIterable<Windows::ApplicationModel::Contacts::ContactField> {};
 #endif
 
+#ifndef WINRT_GENERIC_d732491a_0c09_5497_8ba2_12a54095b4d3
+#define WINRT_GENERIC_d732491a_0c09_5497_8ba2_12a54095b4d3
+template <> struct __declspec(uuid("d732491a-0c09-5497-8ba2-12a54095b4d3")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactLocationField> : impl_IVector<Windows::ApplicationModel::Contacts::ContactLocationField> {};
+#endif
+
 #ifndef WINRT_GENERIC_a20407d7_6980_5c4f_b993_f1da03994105
 #define WINRT_GENERIC_a20407d7_6980_5c4f_b993_f1da03994105
 template <> struct __declspec(uuid("a20407d7-6980-5c4f-b993-f1da03994105")) __declspec(novtable) IIterator<Windows::ApplicationModel::Contacts::ContactLocationField> : impl_IIterator<Windows::ApplicationModel::Contacts::ContactLocationField> {};
@@ -628,6 +668,11 @@ template <> struct __declspec(uuid("a20407d7-6980-5c4f-b993-f1da03994105")) __de
 #ifndef WINRT_GENERIC_2a0a41a6_da96_50a5_b8df_e4a8c4fcf86b
 #define WINRT_GENERIC_2a0a41a6_da96_50a5_b8df_e4a8c4fcf86b
 template <> struct __declspec(uuid("2a0a41a6-da96-50a5-b8df-e4a8c4fcf86b")) __declspec(novtable) IIterable<Windows::ApplicationModel::Contacts::ContactLocationField> : impl_IIterable<Windows::ApplicationModel::Contacts::ContactLocationField> {};
+#endif
+
+#ifndef WINRT_GENERIC_0c503917_0c6e_5b50_874b_6d19df7fb314
+#define WINRT_GENERIC_0c503917_0c6e_5b50_874b_6d19df7fb314
+template <> struct __declspec(uuid("0c503917-0c6e-5b50-874b-6d19df7fb314")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactInstantMessageField> : impl_IVector<Windows::ApplicationModel::Contacts::ContactInstantMessageField> {};
 #endif
 
 #ifndef WINRT_GENERIC_65e069e6_28d1_5d57_9fe1_80ff64850e67
@@ -654,6 +699,11 @@ template <> struct __declspec(uuid("c94b8021-508b-589b-93b3-2556cbc73a2f")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_68c0a843_f174_5ff3_8820_1cc30cec1a6a
+#define WINRT_GENERIC_68c0a843_f174_5ff3_8820_1cc30cec1a6a
+template <> struct __declspec(uuid("68c0a843-f174-5ff3-8820-1cc30cec1a6a")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactInformation> : impl_IVector<Windows::ApplicationModel::Contacts::ContactInformation> {};
+#endif
 
 #ifndef WINRT_GENERIC_7b77b895_abee_5501_94db_ce4e48a9a34f
 #define WINRT_GENERIC_7b77b895_abee_5501_94db_ce4e48a9a34f

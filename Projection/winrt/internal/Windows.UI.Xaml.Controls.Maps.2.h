@@ -208,6 +208,16 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_7f3bcfac_925d_5d3d_a7e7_e456b9f88e1d
+#define WINRT_GENERIC_7f3bcfac_925d_5d3d_a7e7_e456b9f88e1d
+template <> struct __declspec(uuid("7f3bcfac-925d-5d3d-a7e7-e456b9f88e1d")) __declspec(novtable) IVector<Windows::Devices::Geolocation::Geopoint> : impl_IVector<Windows::Devices::Geolocation::Geopoint> {};
+#endif
+
+#ifndef WINRT_GENERIC_cf6bdbc6_e87d_5cd2_88fa_9dab16dfee80
+#define WINRT_GENERIC_cf6bdbc6_e87d_5cd2_88fa_9dab16dfee80
+template <> struct __declspec(uuid("cf6bdbc6-e87d-5cd2-88fa-9dab16dfee80")) __declspec(novtable) IVectorView<Windows::Devices::Geolocation::Geopoint> : impl_IVectorView<Windows::Devices::Geolocation::Geopoint> {};
+#endif
+
 #ifndef WINRT_GENERIC_88225b39_8be9_5c03_9714_8f1642d8a43f
 #define WINRT_GENERIC_88225b39_8be9_5c03_9714_8f1642d8a43f
 template <> struct __declspec(uuid("88225b39-8be9-5c03-9714-8f1642d8a43f")) __declspec(novtable) IIterator<Windows::Devices::Geolocation::Geopoint> : impl_IIterator<Windows::Devices::Geolocation::Geopoint> {};

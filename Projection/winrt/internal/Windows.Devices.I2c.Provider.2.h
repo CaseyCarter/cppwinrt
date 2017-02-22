@@ -15,6 +15,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("511f8a39-98ca-550d-af25-1df2c1193c01")) __declspec(novtable) IVectorView<Windows::Devices::I2c::Provider::II2cControllerProvider> : impl_IVectorView<Windows::Devices::I2c::Provider::II2cControllerProvider> {};
 #endif
 
+#ifndef WINRT_GENERIC_0a45aa70_8d1f_5e65_85d6_d7eb247ea425
+#define WINRT_GENERIC_0a45aa70_8d1f_5e65_85d6_d7eb247ea425
+template <> struct __declspec(uuid("0a45aa70-8d1f-5e65-85d6-d7eb247ea425")) __declspec(novtable) IVector<Windows::Devices::I2c::Provider::II2cControllerProvider> : impl_IVector<Windows::Devices::I2c::Provider::II2cControllerProvider> {};
+#endif
+
 #ifndef WINRT_GENERIC_f6232961_c660_50a1_82e8_12892fcd91f7
 #define WINRT_GENERIC_f6232961_c660_50a1_82e8_12892fcd91f7
 template <> struct __declspec(uuid("f6232961-c660-50a1-82e8-12892fcd91f7")) __declspec(novtable) IIterator<Windows::Devices::I2c::Provider::II2cControllerProvider> : impl_IIterator<Windows::Devices::I2c::Provider::II2cControllerProvider> {};

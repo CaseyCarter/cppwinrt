@@ -89,6 +89,11 @@ template <> struct __declspec(uuid("112fb01d-260a-51c6-9198-5db3e6e9ef3d")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_4466e64e_b903_53bb_9563_2b94cf787681
+#define WINRT_GENERIC_4466e64e_b903_53bb_9563_2b94cf787681
+template <> struct __declspec(uuid("4466e64e-b903-53bb-9563-2b94cf787681")) __declspec(novtable) IVector<Windows::UI::Text::Core::CoreTextCompositionSegment> : impl_IVector<Windows::UI::Text::Core::CoreTextCompositionSegment> {};
+#endif
+
 #ifndef WINRT_GENERIC_39b4528d_2370_57fa_b5d4_b5a2079a7cea
 #define WINRT_GENERIC_39b4528d_2370_57fa_b5d4_b5a2079a7cea
 template <> struct __declspec(uuid("39b4528d-2370-57fa-b5d4-b5a2079a7cea")) __declspec(novtable) IIterator<Windows::UI::Text::Core::CoreTextCompositionSegment> : impl_IIterator<Windows::UI::Text::Core::CoreTextCompositionSegment> {};

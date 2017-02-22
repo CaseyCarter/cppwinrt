@@ -25,6 +25,11 @@ template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -205,6 +210,11 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 template <> struct __declspec(uuid("0e89a311-437a-5957-9593-8ed64511545b")) __declspec(novtable) IKeyValuePair<hstring, Windows::Services::Store::StoreProduct> : impl_IKeyValuePair<hstring, Windows::Services::Store::StoreProduct> {};
 #endif
 
+#ifndef WINRT_GENERIC_69dcba22_dd49_5d07_b71d_6c4f69fd3c5e
+#define WINRT_GENERIC_69dcba22_dd49_5d07_b71d_6c4f69fd3c5e
+template <> struct __declspec(uuid("69dcba22-dd49-5d07-b71d-6c4f69fd3c5e")) __declspec(novtable) IMap<hstring, Windows::Services::Store::StoreProduct> : impl_IMap<hstring, Windows::Services::Store::StoreProduct> {};
+#endif
+
 
 }
 
@@ -225,6 +235,16 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("33eefc64-ef0c-5c8d-b620-476edf7df799")) __declspec(novtable) IKeyValuePair<hstring, Windows::Services::Store::StoreLicense> : impl_IKeyValuePair<hstring, Windows::Services::Store::StoreLicense> {};
 #endif
 
+#ifndef WINRT_GENERIC_dd453174_59a3_584b_9be7_96648e030b66
+#define WINRT_GENERIC_dd453174_59a3_584b_9be7_96648e030b66
+template <> struct __declspec(uuid("dd453174-59a3-584b-9be7-96648e030b66")) __declspec(novtable) IMap<hstring, Windows::Services::Store::StoreLicense> : impl_IMap<hstring, Windows::Services::Store::StoreLicense> {};
+#endif
+
+#ifndef WINRT_GENERIC_46791413_8997_5b9f_9c19_64e961f6bbf5
+#define WINRT_GENERIC_46791413_8997_5b9f_9c19_64e961f6bbf5
+template <> struct __declspec(uuid("46791413-8997-5b9f-9c19-64e961f6bbf5")) __declspec(novtable) IVector<Windows::Services::Store::StoreImage> : impl_IVector<Windows::Services::Store::StoreImage> {};
+#endif
+
 #ifndef WINRT_GENERIC_fbe076f6_c3d2_5df7_839f_012ac0f951c5
 #define WINRT_GENERIC_fbe076f6_c3d2_5df7_839f_012ac0f951c5
 template <> struct __declspec(uuid("fbe076f6-c3d2-5df7-839f-012ac0f951c5")) __declspec(novtable) IIterator<Windows::Services::Store::StoreImage> : impl_IIterator<Windows::Services::Store::StoreImage> {};
@@ -235,6 +255,11 @@ template <> struct __declspec(uuid("fbe076f6-c3d2-5df7-839f-012ac0f951c5")) __de
 template <> struct __declspec(uuid("b2da6de8-ad55-56ce-8754-2c96f4fe1c2e")) __declspec(novtable) IIterable<Windows::Services::Store::StoreImage> : impl_IIterable<Windows::Services::Store::StoreImage> {};
 #endif
 
+#ifndef WINRT_GENERIC_05b10fd9_7c7b_504e_ae83_7ee5ba7fc850
+#define WINRT_GENERIC_05b10fd9_7c7b_504e_ae83_7ee5ba7fc850
+template <> struct __declspec(uuid("05b10fd9-7c7b-504e-ae83-7ee5ba7fc850")) __declspec(novtable) IVector<Windows::Services::Store::StoreVideo> : impl_IVector<Windows::Services::Store::StoreVideo> {};
+#endif
+
 #ifndef WINRT_GENERIC_91b0b554_a537_5e22_b39f_6a935d0bef45
 #define WINRT_GENERIC_91b0b554_a537_5e22_b39f_6a935d0bef45
 template <> struct __declspec(uuid("91b0b554-a537-5e22-b39f-6a935d0bef45")) __declspec(novtable) IIterator<Windows::Services::Store::StoreVideo> : impl_IIterator<Windows::Services::Store::StoreVideo> {};
@@ -243,6 +268,11 @@ template <> struct __declspec(uuid("91b0b554-a537-5e22-b39f-6a935d0bef45")) __de
 #ifndef WINRT_GENERIC_46be61e4_7173_565e_aed5_4a2152f1ce69
 #define WINRT_GENERIC_46be61e4_7173_565e_aed5_4a2152f1ce69
 template <> struct __declspec(uuid("46be61e4-7173-565e-aed5-4a2152f1ce69")) __declspec(novtable) IIterable<Windows::Services::Store::StoreVideo> : impl_IIterable<Windows::Services::Store::StoreVideo> {};
+#endif
+
+#ifndef WINRT_GENERIC_b0f78d63_dea1_5b3b_aaae_8dc6e38fa07f
+#define WINRT_GENERIC_b0f78d63_dea1_5b3b_aaae_8dc6e38fa07f
+template <> struct __declspec(uuid("b0f78d63-dea1-5b3b-aaae-8dc6e38fa07f")) __declspec(novtable) IVector<Windows::Services::Store::StoreSku> : impl_IVector<Windows::Services::Store::StoreSku> {};
 #endif
 
 #ifndef WINRT_GENERIC_365cde92_7fe3_59d5_b8f8_8f05acf50947
@@ -269,6 +299,11 @@ template <> struct __declspec(uuid("1d9f89ee-2fce-54e6-a0a9-52d00c52cc3a")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_af77fb57_6782_506a_94e7_d706ce611fd9
+#define WINRT_GENERIC_af77fb57_6782_506a_94e7_d706ce611fd9
+template <> struct __declspec(uuid("af77fb57-6782-506a-94e7-d706ce611fd9")) __declspec(novtable) IVector<Windows::Services::Store::StoreAvailability> : impl_IVector<Windows::Services::Store::StoreAvailability> {};
+#endif
 
 #ifndef WINRT_GENERIC_50511ccb_089e_5b73_bb4a_4d1ef77b8f0f
 #define WINRT_GENERIC_50511ccb_089e_5b73_bb4a_4d1ef77b8f0f
@@ -320,6 +355,11 @@ template <> struct __declspec(uuid("6987c97c-2c19-5f44-b5ac-37393f3c1a4a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_dee155f9_68cc_518f_ba9f_0db0382fefa2
+#define WINRT_GENERIC_dee155f9_68cc_518f_ba9f_0db0382fefa2
+template <> struct __declspec(uuid("dee155f9-68cc-518f-ba9f-0db0382fefa2")) __declspec(novtable) IVector<Windows::Services::Store::StorePackageUpdate> : impl_IVector<Windows::Services::Store::StorePackageUpdate> {};
+#endif
+
 #ifndef WINRT_GENERIC_b75dd77b_87ca_5956_8902_84e9ffc97d83
 #define WINRT_GENERIC_b75dd77b_87ca_5956_8902_84e9ffc97d83
 template <> struct __declspec(uuid("b75dd77b-87ca-5956-8902-84e9ffc97d83")) __declspec(novtable) IIterator<Windows::Services::Store::StorePackageUpdate> : impl_IIterator<Windows::Services::Store::StorePackageUpdate> {};
@@ -344,6 +384,11 @@ template <> struct __declspec(uuid("b3be0c8b-ef1d-56dc-8547-4da06ea563df")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_8227823b_636c_5c86_a2bf_6edbdb048a16
+#define WINRT_GENERIC_8227823b_636c_5c86_a2bf_6edbdb048a16
+template <> struct __declspec(uuid("8227823b-636c-5c86-a2bf-6edbdb048a16")) __declspec(novtable) IVector<Windows::Services::Store::StorePackageUpdateStatus> : impl_IVector<Windows::Services::Store::StorePackageUpdateStatus> {};
+#endif
 
 #ifndef WINRT_GENERIC_6181d84f_f731_57b8_9a6b_8a12fcd58d04
 #define WINRT_GENERIC_6181d84f_f731_57b8_9a6b_8a12fcd58d04

@@ -100,6 +100,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_057e6bc9_7bb8_5816_988b_8e9b3fb1bff4
+#define WINRT_GENERIC_057e6bc9_7bb8_5816_988b_8e9b3fb1bff4
+template <> struct __declspec(uuid("057e6bc9-7bb8-5816-988b-8e9b3fb1bff4")) __declspec(novtable) IVector<Windows::Media::IMediaMarker> : impl_IVector<Windows::Media::IMediaMarker> {};
+#endif
+
 #ifndef WINRT_GENERIC_f464661e_88bc_5cea_93cd_0c123f17d258
 #define WINRT_GENERIC_f464661e_88bc_5cea_93cd_0c123f17d258
 template <> struct __declspec(uuid("f464661e-88bc-5cea-93cd-0c123f17d258")) __declspec(novtable) IIterator<Windows::Media::IMediaMarker> : impl_IIterator<Windows::Media::IMediaMarker> {};

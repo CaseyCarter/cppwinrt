@@ -35,6 +35,11 @@ template <> struct __declspec(uuid("44ba689b-7d42-5374-add9-ab41e877a34b")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_ada84338_13b1_5367_9692_57b066badd6c
+#define WINRT_GENERIC_ada84338_13b1_5367_9692_57b066badd6c
+template <> struct __declspec(uuid("ada84338-13b1-5367-9692-57b066badd6c")) __declspec(novtable) IVector<Windows::Devices::Gpio::GpioController> : impl_IVector<Windows::Devices::Gpio::GpioController> {};
+#endif
+
 #ifndef WINRT_GENERIC_67944db0_6c56_5a2f_9e7b_63ca1aa8c411
 #define WINRT_GENERIC_67944db0_6c56_5a2f_9e7b_63ca1aa8c411
 template <> struct __declspec(uuid("67944db0-6c56-5a2f-9e7b-63ca1aa8c411")) __declspec(novtable) IIterator<Windows::Devices::Gpio::GpioController> : impl_IIterator<Windows::Devices::Gpio::GpioController> {};

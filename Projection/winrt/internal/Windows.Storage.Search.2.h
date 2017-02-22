@@ -79,6 +79,11 @@ template <> struct __declspec(uuid("35aff6f9-ef75-5280-bb84-a2bf8317cf35")) __de
 template <> struct __declspec(uuid("f4512416-6bb8-5c6f-b83a-bf8a2788ce9f")) __declspec(novtable) IVectorView<Windows::Storage::Search::IIndexableContent> : impl_IVectorView<Windows::Storage::Search::IIndexableContent> {};
 #endif
 
+#ifndef WINRT_GENERIC_6c26b7be_5f01_5a60_9dd7_fd17be3a9dd6
+#define WINRT_GENERIC_6c26b7be_5f01_5a60_9dd7_fd17be3a9dd6
+template <> struct __declspec(uuid("6c26b7be-5f01-5a60-9dd7-fd17be3a9dd6")) __declspec(novtable) IVector<Windows::Storage::StorageFolder> : impl_IVector<Windows::Storage::StorageFolder> {};
+#endif
+
 #ifndef WINRT_GENERIC_80646519_5e2a_595d_a8cd_2a24b4067f1b
 #define WINRT_GENERIC_80646519_5e2a_595d_a8cd_2a24b4067f1b
 template <> struct __declspec(uuid("80646519-5e2a-595d-a8cd-2a24b4067f1b")) __declspec(novtable) IVectorView<Windows::Storage::StorageFile> : impl_IVectorView<Windows::Storage::StorageFile> {};
@@ -119,9 +124,19 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("9ac00304-83ea-5688-87b6-ae38aab65d0b")) __declspec(novtable) IIterable<Windows::Storage::StorageFile> : impl_IIterable<Windows::Storage::StorageFile> {};
 #endif
 
+#ifndef WINRT_GENERIC_802508e2_9c2c_5b91_89a8_39bcf7223344
+#define WINRT_GENERIC_802508e2_9c2c_5b91_89a8_39bcf7223344
+template <> struct __declspec(uuid("802508e2-9c2c-5b91-89a8-39bcf7223344")) __declspec(novtable) IVector<Windows::Storage::IStorageItem> : impl_IVector<Windows::Storage::IStorageItem> {};
+#endif
+
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_66b1a575_7c1a_5dfc_92f3_e8a49e92f109
+#define WINRT_GENERIC_66b1a575_7c1a_5dfc_92f3_e8a49e92f109
+template <> struct __declspec(uuid("66b1a575-7c1a-5dfc-92f3-e8a49e92f109")) __declspec(novtable) IVector<Windows::Data::Text::TextSegment> : impl_IVector<Windows::Data::Text::TextSegment> {};
 #endif
 
 #ifndef WINRT_GENERIC_645a39b4_f001_5272_9015_fb4a327179ae
@@ -154,9 +169,19 @@ template <> struct __declspec(uuid("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_823c7604_b37b_5465_a169_29497893cdb9
+#define WINRT_GENERIC_823c7604_b37b_5465_a169_29497893cdb9
+template <> struct __declspec(uuid("823c7604-b37b-5465-a169-29497893cdb9")) __declspec(novtable) IVectorView<Windows::Storage::Search::SortEntry> : impl_IVectorView<Windows::Storage::Search::SortEntry> {};
+#endif
+
 #ifndef WINRT_GENERIC_520434a2_acf7_58c9_b47a_2741f2fac2c2
 #define WINRT_GENERIC_520434a2_acf7_58c9_b47a_2741f2fac2c2
 template <> struct __declspec(uuid("520434a2-acf7-58c9-b47a-2741f2fac2c2")) __declspec(novtable) IIterator<Windows::Storage::Search::SortEntry> : impl_IIterator<Windows::Storage::Search::SortEntry> {};
+#endif
+
+#ifndef WINRT_GENERIC_d44eaa11_4871_50c5_8e70_ab765b5bb332
+#define WINRT_GENERIC_d44eaa11_4871_50c5_8e70_ab765b5bb332
+template <> struct __declspec(uuid("d44eaa11-4871-50c5-8e70-ab765b5bb332")) __declspec(novtable) IVector<Windows::Storage::Search::IIndexableContent> : impl_IVector<Windows::Storage::Search::IIndexableContent> {};
 #endif
 
 #ifndef WINRT_GENERIC_6cdb32ba_2361_57a8_a39d_be1df041bdb8
@@ -179,14 +204,14 @@ template <> struct __declspec(uuid("5aac96fb-b3b9-5a7f-a920-4b5a8df81168")) __de
 template <> struct __declspec(uuid("4669befc-ae5c-52b1-8a97-5466ce61e94e")) __declspec(novtable) IIterable<Windows::Storage::StorageFolder> : impl_IIterable<Windows::Storage::StorageFolder> {};
 #endif
 
+#ifndef WINRT_GENERIC_fcbc8b8b_6103_5b4e_ba00_4bc2cedb6a35
+#define WINRT_GENERIC_fcbc8b8b_6103_5b4e_ba00_4bc2cedb6a35
+template <> struct __declspec(uuid("fcbc8b8b-6103-5b4e-ba00-4bc2cedb6a35")) __declspec(novtable) IVector<Windows::Storage::StorageFile> : impl_IVector<Windows::Storage::StorageFile> {};
+#endif
+
 #ifndef WINRT_GENERIC_43e29f53_0298_55aa_a6c8_4edd323d9598
 #define WINRT_GENERIC_43e29f53_0298_55aa_a6c8_4edd323d9598
 template <> struct __declspec(uuid("43e29f53-0298-55aa-a6c8-4edd323d9598")) __declspec(novtable) IIterator<Windows::Storage::StorageFile> : impl_IIterator<Windows::Storage::StorageFile> {};
-#endif
-
-#ifndef WINRT_GENERIC_823c7604_b37b_5465_a169_29497893cdb9
-#define WINRT_GENERIC_823c7604_b37b_5465_a169_29497893cdb9
-template <> struct __declspec(uuid("823c7604-b37b-5465-a169-29497893cdb9")) __declspec(novtable) IVectorView<Windows::Storage::Search::SortEntry> : impl_IVectorView<Windows::Storage::Search::SortEntry> {};
 #endif
 
 
@@ -288,6 +313,11 @@ template <> struct __declspec(uuid("89981889-1207-5ae6-9b28-ccc58f3aac6e")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_9ac5167a_7c19_53d6_85b8_1e479a971d1e
+#define WINRT_GENERIC_9ac5167a_7c19_53d6_85b8_1e479a971d1e
+template <> struct __declspec(uuid("9ac5167a-7c19-53d6-85b8-1e479a971d1e")) __declspec(novtable) IVector<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> : impl_IVector<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> {};
+#endif
 
 #ifndef WINRT_GENERIC_53a2e825_9bf1_5083_8a7b_9d94f312dade
 #define WINRT_GENERIC_53a2e825_9bf1_5083_8a7b_9d94f312dade

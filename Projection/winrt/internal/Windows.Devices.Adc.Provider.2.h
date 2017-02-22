@@ -14,6 +14,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("7c4789c0-8445-5757-aab7-659cbf50aaa7")) __declspec(novtable) IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> : impl_IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> {};
 #endif
 
+#ifndef WINRT_GENERIC_a4980c03_cdb8_5ddc_9bc0_395260a35409
+#define WINRT_GENERIC_a4980c03_cdb8_5ddc_9bc0_395260a35409
+template <> struct __declspec(uuid("a4980c03-cdb8-5ddc-9bc0-395260a35409")) __declspec(novtable) IVector<Windows::Devices::Adc::Provider::IAdcControllerProvider> : impl_IVector<Windows::Devices::Adc::Provider::IAdcControllerProvider> {};
+#endif
+
 #ifndef WINRT_GENERIC_b43acf15_a24a_5b00_b710_1737ba550a18
 #define WINRT_GENERIC_b43acf15_a24a_5b00_b710_1737ba550a18
 template <> struct __declspec(uuid("b43acf15-a24a-5b00-b710-1737ba550a18")) __declspec(novtable) IIterator<Windows::Devices::Adc::Provider::IAdcControllerProvider> : impl_IIterator<Windows::Devices::Adc::Provider::IAdcControllerProvider> {};

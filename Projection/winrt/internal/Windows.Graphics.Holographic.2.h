@@ -44,6 +44,11 @@ template <> struct __declspec(uuid("17c5dfb1-6e87-5a17-a791-ac07f8ee9292")) __de
 template <> struct __declspec(uuid("01d6c0ae-ada5-50b0-8562-41fb1205bb4a")) __declspec(novtable) IVectorView<Windows::Graphics::Holographic::HolographicCamera> : impl_IVectorView<Windows::Graphics::Holographic::HolographicCamera> {};
 #endif
 
+#ifndef WINRT_GENERIC_b1989e83_9a2d_5c6f_b252_c2cb208581c4
+#define WINRT_GENERIC_b1989e83_9a2d_5c6f_b252_c2cb208581c4
+template <> struct __declspec(uuid("b1989e83-9a2d-5c6f-b252-c2cb208581c4")) __declspec(novtable) IVector<Windows::Graphics::Holographic::HolographicCameraPose> : impl_IVector<Windows::Graphics::Holographic::HolographicCameraPose> {};
+#endif
+
 #ifndef WINRT_GENERIC_93e27fb4_332b_591e_ae6b_6192fa0a1009
 #define WINRT_GENERIC_93e27fb4_332b_591e_ae6b_6192fa0a1009
 template <> struct __declspec(uuid("93e27fb4-332b-591e-ae6b-6192fa0a1009")) __declspec(novtable) IIterator<Windows::Graphics::Holographic::HolographicCameraPose> : impl_IIterator<Windows::Graphics::Holographic::HolographicCameraPose> {};
@@ -52,6 +57,11 @@ template <> struct __declspec(uuid("93e27fb4-332b-591e-ae6b-6192fa0a1009")) __de
 #ifndef WINRT_GENERIC_92111aff_8dcc_538e_ae3d_31fd252a0ad5
 #define WINRT_GENERIC_92111aff_8dcc_538e_ae3d_31fd252a0ad5
 template <> struct __declspec(uuid("92111aff-8dcc-538e-ae3d-31fd252a0ad5")) __declspec(novtable) IIterable<Windows::Graphics::Holographic::HolographicCameraPose> : impl_IIterable<Windows::Graphics::Holographic::HolographicCameraPose> {};
+#endif
+
+#ifndef WINRT_GENERIC_aa40dc08_03d6_51ab_8f19_49ef87d0a69c
+#define WINRT_GENERIC_aa40dc08_03d6_51ab_8f19_49ef87d0a69c
+template <> struct __declspec(uuid("aa40dc08-03d6-51ab-8f19-49ef87d0a69c")) __declspec(novtable) IVector<Windows::Graphics::Holographic::HolographicCamera> : impl_IVector<Windows::Graphics::Holographic::HolographicCamera> {};
 #endif
 
 #ifndef WINRT_GENERIC_6acc8576_2fea_561d_84dd_4a1ab05fc7ed

@@ -9,6 +9,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -57,6 +62,11 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_5fb049e0_d8ae_5ce7_9164_d6747d7888dc
+#define WINRT_GENERIC_5fb049e0_d8ae_5ce7_9164_d6747d7888dc
+template <> struct __declspec(uuid("5fb049e0-d8ae-5ce7-9164-d6747d7888dc")) __declspec(novtable) IVector<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> : impl_IVector<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> {};
 #endif
 
 #ifndef WINRT_GENERIC_fd6d2ade_0fd3_5cd0_b86e_d24ad9a2092c

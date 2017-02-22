@@ -64,6 +64,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("e7617fc9-2cc7-5bd1-bc5a-f47260834ed8")) __declspec(novtable) IIterable<Windows::Devices::Geolocation::Geopoint> : impl_IIterable<Windows::Devices::Geolocation::Geopoint> {};
 #endif
 
+#ifndef WINRT_GENERIC_a8b77ef5_e194_5b6b_876a_2dd6f47da7e3
+#define WINRT_GENERIC_a8b77ef5_e194_5b6b_876a_2dd6f47da7e3
+template <> struct __declspec(uuid("a8b77ef5-e194-5b6b-876a-2dd6f47da7e3")) __declspec(novtable) IVector<Windows::Services::Maps::MapLocation> : impl_IVector<Windows::Services::Maps::MapLocation> {};
+#endif
+
 #ifndef WINRT_GENERIC_2a704d9a_3997_5f1e_8641_883eba408726
 #define WINRT_GENERIC_2a704d9a_3997_5f1e_8641_883eba408726
 template <> struct __declspec(uuid("2a704d9a-3997-5f1e-8641-883eba408726")) __declspec(novtable) IIterator<Windows::Services::Maps::MapLocation> : impl_IIterator<Windows::Services::Maps::MapLocation> {};
@@ -72,6 +77,11 @@ template <> struct __declspec(uuid("2a704d9a-3997-5f1e-8641-883eba408726")) __de
 #ifndef WINRT_GENERIC_77da6151_0763_508a_9041_3310baace575
 #define WINRT_GENERIC_77da6151_0763_508a_9041_3310baace575
 template <> struct __declspec(uuid("77da6151-0763-508a-9041-3310baace575")) __declspec(novtable) IIterable<Windows::Services::Maps::MapLocation> : impl_IIterable<Windows::Services::Maps::MapLocation> {};
+#endif
+
+#ifndef WINRT_GENERIC_ac11f763_bda9_5e83_8f08_f1b684be5c48
+#define WINRT_GENERIC_ac11f763_bda9_5e83_8f08_f1b684be5c48
+template <> struct __declspec(uuid("ac11f763-bda9-5e83-8f08-f1b684be5c48")) __declspec(novtable) IVector<Windows::Services::Maps::MapRouteManeuver> : impl_IVector<Windows::Services::Maps::MapRouteManeuver> {};
 #endif
 
 #ifndef WINRT_GENERIC_a7ab048b_a6dc_5e4c_9321_71b0e465dfe8
@@ -84,6 +94,11 @@ template <> struct __declspec(uuid("a7ab048b-a6dc-5e4c-9321-71b0e465dfe8")) __de
 template <> struct __declspec(uuid("de9015fb-91d7-556e-bb4d-200b6f58fad4")) __declspec(novtable) IIterable<Windows::Services::Maps::MapRouteManeuver> : impl_IIterable<Windows::Services::Maps::MapRouteManeuver> {};
 #endif
 
+#ifndef WINRT_GENERIC_ad459e89_b1e4_5f5f_a11f_c9f070944cb0
+#define WINRT_GENERIC_ad459e89_b1e4_5f5f_a11f_c9f070944cb0
+template <> struct __declspec(uuid("ad459e89-b1e4-5f5f-a11f-c9f070944cb0")) __declspec(novtable) IVector<Windows::Services::Maps::MapRouteLeg> : impl_IVector<Windows::Services::Maps::MapRouteLeg> {};
+#endif
+
 #ifndef WINRT_GENERIC_dd1be7d2_de62_5752_b2e0_a2b08723b787
 #define WINRT_GENERIC_dd1be7d2_de62_5752_b2e0_a2b08723b787
 template <> struct __declspec(uuid("dd1be7d2-de62-5752-b2e0-a2b08723b787")) __declspec(novtable) IIterator<Windows::Services::Maps::MapRouteLeg> : impl_IIterator<Windows::Services::Maps::MapRouteLeg> {};
@@ -92,6 +107,11 @@ template <> struct __declspec(uuid("dd1be7d2-de62-5752-b2e0-a2b08723b787")) __de
 #ifndef WINRT_GENERIC_8ff98759_78cd_56e8_877b_83ce846d6f8b
 #define WINRT_GENERIC_8ff98759_78cd_56e8_877b_83ce846d6f8b
 template <> struct __declspec(uuid("8ff98759-78cd-56e8-877b-83ce846d6f8b")) __declspec(novtable) IIterable<Windows::Services::Maps::MapRouteLeg> : impl_IIterable<Windows::Services::Maps::MapRouteLeg> {};
+#endif
+
+#ifndef WINRT_GENERIC_770b613e_c739_5fbc_98d2_51479e8d773d
+#define WINRT_GENERIC_770b613e_c739_5fbc_98d2_51479e8d773d
+template <> struct __declspec(uuid("770b613e-c739-5fbc-98d2-51479e8d773d")) __declspec(novtable) IVector<Windows::Services::Maps::MapRoute> : impl_IVector<Windows::Services::Maps::MapRoute> {};
 #endif
 
 #ifndef WINRT_GENERIC_97e8485a_79c0_5343_93d1_47cdfb55246b
@@ -123,6 +143,16 @@ template <> struct __declspec(uuid("6e7a2b4f-811c-54c3-8938-6795f4e67009")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_7f3bcfac_925d_5d3d_a7e7_e456b9f88e1d
+#define WINRT_GENERIC_7f3bcfac_925d_5d3d_a7e7_e456b9f88e1d
+template <> struct __declspec(uuid("7f3bcfac-925d-5d3d-a7e7-e456b9f88e1d")) __declspec(novtable) IVector<Windows::Devices::Geolocation::Geopoint> : impl_IVector<Windows::Devices::Geolocation::Geopoint> {};
+#endif
+
+#ifndef WINRT_GENERIC_cf6bdbc6_e87d_5cd2_88fa_9dab16dfee80
+#define WINRT_GENERIC_cf6bdbc6_e87d_5cd2_88fa_9dab16dfee80
+template <> struct __declspec(uuid("cf6bdbc6-e87d-5cd2-88fa-9dab16dfee80")) __declspec(novtable) IVectorView<Windows::Devices::Geolocation::Geopoint> : impl_IVectorView<Windows::Devices::Geolocation::Geopoint> {};
+#endif
 
 #ifndef WINRT_GENERIC_88225b39_8be9_5c03_9714_8f1642d8a43f
 #define WINRT_GENERIC_88225b39_8be9_5c03_9714_8f1642d8a43f

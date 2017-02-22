@@ -19,6 +19,16 @@ template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_70f4b32e_f91e_55bb_9a92_0246da734bb0
+#define WINRT_GENERIC_70f4b32e_f91e_55bb_9a92_0246da734bb0
+template <> struct __declspec(uuid("70f4b32e-f91e-55bb-9a92-0246da734bb0")) __declspec(novtable) IVector<Windows::ApplicationModel::Appointments::AppointmentInvitee> : impl_IVector<Windows::ApplicationModel::Appointments::AppointmentInvitee> {};
+#endif
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_fb9718a9_f059_52b0_a904_1a65e4281e40
 #define WINRT_GENERIC_fb9718a9_f059_52b0_a904_1a65e4281e40
 template <> struct __declspec(uuid("fb9718a9-f059-52b0-a904-1a65e4281e40")) __declspec(novtable) IIterable<Windows::ApplicationModel::Appointments::AppointmentInvitee> : impl_IIterable<Windows::ApplicationModel::Appointments::AppointmentInvitee> {};

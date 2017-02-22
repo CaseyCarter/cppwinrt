@@ -49,6 +49,11 @@ template <> struct __declspec(uuid("ce697733-595c-51c0-ad5f-324af5cdf2dd")) __de
 template <> struct __declspec(uuid("d8039aca-1a45-5d13-8cfd-4900c22b8ef1")) __declspec(novtable) IVectorView<Windows::Devices::Geolocation::Geofencing::Geofence> : impl_IVectorView<Windows::Devices::Geolocation::Geofencing::Geofence> {};
 #endif
 
+#ifndef WINRT_GENERIC_058200da_5162_5e3f_99c8_e915d8ca8462
+#define WINRT_GENERIC_058200da_5162_5e3f_99c8_e915d8ca8462
+template <> struct __declspec(uuid("058200da-5162-5e3f-99c8-e915d8ca8462")) __declspec(novtable) IVector<Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport> : impl_IVector<Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport> {};
+#endif
+
 #ifndef WINRT_GENERIC_eaff2de4_6650_544a_b7ac_6d5b819d4698
 #define WINRT_GENERIC_eaff2de4_6650_544a_b7ac_6d5b819d4698
 template <> struct __declspec(uuid("eaff2de4-6650-544a-b7ac-6d5b819d4698")) __declspec(novtable) IIterator<Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport> : impl_IIterator<Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport> {};

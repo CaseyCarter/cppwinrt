@@ -10,6 +10,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
+#define WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
+template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __declspec(novtable) IMap<hstring, Windows::Foundation::IInspectable> : impl_IMap<hstring, Windows::Foundation::IInspectable> {};
+#endif
+
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
@@ -220,6 +225,11 @@ template <> struct __declspec(uuid("687fef67-8871-56fe-8e7e-1d2929cc6f42")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_421b0502_797a_5f5d_a1ac_584dd6fb1f54
+#define WINRT_GENERIC_421b0502_797a_5f5d_a1ac_584dd6fb1f54
+template <> struct __declspec(uuid("421b0502-797a-5f5d-a1ac-584dd6fb1f54")) __declspec(novtable) IVector<Windows::Devices::Perception::PerceptionInfraredFrameSource> : impl_IVector<Windows::Devices::Perception::PerceptionInfraredFrameSource> {};
+#endif
+
 #ifndef WINRT_GENERIC_b22b294f_a4d2_5726_a7fc_5e331432d9b4
 #define WINRT_GENERIC_b22b294f_a4d2_5726_a7fc_5e331432d9b4
 template <> struct __declspec(uuid("b22b294f-a4d2-5726-a7fc-5e331432d9b4")) __declspec(novtable) IIterator<Windows::Devices::Perception::PerceptionInfraredFrameSource> : impl_IIterator<Windows::Devices::Perception::PerceptionInfraredFrameSource> {};
@@ -250,6 +260,11 @@ template <> struct __declspec(uuid("62744ea4-3447-5722-ab5e-02567b4fceeb")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_1d13bae5_5379_594f_8b35_8042eadcb95f
+#define WINRT_GENERIC_1d13bae5_5379_594f_8b35_8042eadcb95f
+template <> struct __declspec(uuid("1d13bae5-5379-594f-8b35-8042eadcb95f")) __declspec(novtable) IVector<Windows::Devices::Perception::PerceptionDepthFrameSource> : impl_IVector<Windows::Devices::Perception::PerceptionDepthFrameSource> {};
+#endif
+
 #ifndef WINRT_GENERIC_20cff8c2_7844_54e5_ae4f_57e7768f9b69
 #define WINRT_GENERIC_20cff8c2_7844_54e5_ae4f_57e7768f9b69
 template <> struct __declspec(uuid("20cff8c2-7844-54e5-ae4f-57e7768f9b69")) __declspec(novtable) IIterator<Windows::Devices::Perception::PerceptionDepthFrameSource> : impl_IIterator<Windows::Devices::Perception::PerceptionDepthFrameSource> {};
@@ -275,6 +290,11 @@ template <> struct __declspec(uuid("b48cb886-3476-58d9-b76d-fda6b3e81f54")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_244bc9f3_ec93_53fb_9eed_bc159dc9c2ea
+#define WINRT_GENERIC_244bc9f3_ec93_53fb_9eed_bc159dc9c2ea
+template <> struct __declspec(uuid("244bc9f3-ec93-53fb-9eed-bc159dc9c2ea")) __declspec(novtable) IVector<Windows::Devices::Perception::PerceptionColorFrameSource> : impl_IVector<Windows::Devices::Perception::PerceptionColorFrameSource> {};
+#endif
+
 #ifndef WINRT_GENERIC_24089f00_ba6d_50d4_ac46_f288755e4181
 #define WINRT_GENERIC_24089f00_ba6d_50d4_ac46_f288755e4181
 template <> struct __declspec(uuid("24089f00-ba6d-50d4-ac46-f288755e4181")) __declspec(novtable) IIterator<Windows::Devices::Perception::PerceptionColorFrameSource> : impl_IIterator<Windows::Devices::Perception::PerceptionColorFrameSource> {};
@@ -299,6 +319,11 @@ template <> struct __declspec(uuid("3b56acc2-e275-54fb-be08-9fdc8f1a1e10")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_68767542_634a_56b6_b9ff_cbe4ed71ed62
+#define WINRT_GENERIC_68767542_634a_56b6_b9ff_cbe4ed71ed62
+template <> struct __declspec(uuid("68767542-634a-56b6-b9ff-cbe4ed71ed62")) __declspec(novtable) IVector<Windows::Devices::Perception::PerceptionVideoProfile> : impl_IVector<Windows::Devices::Perception::PerceptionVideoProfile> {};
+#endif
 
 #ifndef WINRT_GENERIC_38ce8062_7079_5d7b_841f_9aa4580fd5f1
 #define WINRT_GENERIC_38ce8062_7079_5d7b_841f_9aa4580fd5f1

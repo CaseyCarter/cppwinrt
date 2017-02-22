@@ -201,6 +201,11 @@ template <> struct __declspec(uuid("fb0594f4-93d9-5c2f-b8eb-90f1e9258fdc")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_407b00a8_8ef7_584e_8fc5_3327655132f9
+#define WINRT_GENERIC_407b00a8_8ef7_584e_8fc5_3327655132f9
+template <> struct __declspec(uuid("407b00a8-8ef7-584e-8fc5-3327655132f9")) __declspec(novtable) IVector<Windows::Devices::Sensors::ActivitySensorReading> : impl_IVector<Windows::Devices::Sensors::ActivitySensorReading> {};
+#endif
+
 #ifndef WINRT_GENERIC_d2dab535_0c94_547e_afe3_5527bcbeb9cc
 #define WINRT_GENERIC_d2dab535_0c94_547e_afe3_5527bcbeb9cc
 template <> struct __declspec(uuid("d2dab535-0c94-547e-afe3-5527bcbeb9cc")) __declspec(novtable) IIterator<Windows::Devices::Sensors::ActivitySensorReading> : impl_IIterator<Windows::Devices::Sensors::ActivitySensorReading> {};
@@ -236,6 +241,11 @@ template <> struct __declspec(uuid("40524281-a7c6-50b1-b6f5-0baa95d902c2")) __de
 template <> struct __declspec(uuid("2a04cdfa-5dfd-5178-8731-ade998e4a7f6")) __declspec(novtable) IIterable<winrt::Windows::Devices::Sensors::ActivityType> : impl_IIterable<winrt::Windows::Devices::Sensors::ActivityType> {};
 #endif
 
+#ifndef WINRT_GENERIC_52bbfffd_afc9_5ba3_ab51_bd9c68bfbed3
+#define WINRT_GENERIC_52bbfffd_afc9_5ba3_ab51_bd9c68bfbed3
+template <> struct __declspec(uuid("52bbfffd-afc9-5ba3-ab51-bd9c68bfbed3")) __declspec(novtable) IVector<Windows::Devices::Sensors::ActivitySensorReadingChangeReport> : impl_IVector<Windows::Devices::Sensors::ActivitySensorReadingChangeReport> {};
+#endif
+
 #ifndef WINRT_GENERIC_9c07034e_8333_59d5_8d60_0e3f0438ac12
 #define WINRT_GENERIC_9c07034e_8333_59d5_8d60_0e3f0438ac12
 template <> struct __declspec(uuid("9c07034e-8333-59d5-8d60-0e3f0438ac12")) __declspec(novtable) IIterator<Windows::Devices::Sensors::ActivitySensorReadingChangeReport> : impl_IIterator<Windows::Devices::Sensors::ActivitySensorReadingChangeReport> {};
@@ -261,6 +271,11 @@ template <> struct __declspec(uuid("a62dbe4e-51de-5a13-ba21-e76df3bc1396")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_3864b898_3fad_5f74_a341_b38351bf13b6
+#define WINRT_GENERIC_3864b898_3fad_5f74_a341_b38351bf13b6
+template <> struct __declspec(uuid("3864b898-3fad-5f74-a341-b38351bf13b6")) __declspec(novtable) IVector<Windows::Devices::Sensors::PedometerReading> : impl_IVector<Windows::Devices::Sensors::PedometerReading> {};
+#endif
+
 #ifndef WINRT_GENERIC_0ac70ed3_8553_5ef3_92f8_438609623087
 #define WINRT_GENERIC_0ac70ed3_8553_5ef3_92f8_438609623087
 template <> struct __declspec(uuid("0ac70ed3-8553-5ef3-92f8-438609623087")) __declspec(novtable) IIterator<Windows::Devices::Sensors::PedometerReading> : impl_IIterator<Windows::Devices::Sensors::PedometerReading> {};
@@ -274,6 +289,16 @@ template <> struct __declspec(uuid("bbb61a5c-98c3-5718-88fe-5392a7451e2d")) __de
 #ifndef WINRT_GENERIC_b270d3b8_3dd2_599f_a671_2de5035503da
 #define WINRT_GENERIC_b270d3b8_3dd2_599f_a671_2de5035503da
 template <> struct __declspec(uuid("b270d3b8-3dd2-599f-a671-2de5035503da")) __declspec(novtable) IKeyValuePair<winrt::Windows::Devices::Sensors::PedometerStepKind, Windows::Devices::Sensors::PedometerReading> : impl_IKeyValuePair<winrt::Windows::Devices::Sensors::PedometerStepKind, Windows::Devices::Sensors::PedometerReading> {};
+#endif
+
+#ifndef WINRT_GENERIC_9803e953_5204_5b34_a81c_18d4bb25c750
+#define WINRT_GENERIC_9803e953_5204_5b34_a81c_18d4bb25c750
+template <> struct __declspec(uuid("9803e953-5204-5b34-a81c-18d4bb25c750")) __declspec(novtable) IMap<winrt::Windows::Devices::Sensors::PedometerStepKind, Windows::Devices::Sensors::PedometerReading> : impl_IMap<winrt::Windows::Devices::Sensors::PedometerStepKind, Windows::Devices::Sensors::PedometerReading> {};
+#endif
+
+#ifndef WINRT_GENERIC_59585ac3_e921_5560_9f39_9c8a74ddad41
+#define WINRT_GENERIC_59585ac3_e921_5560_9f39_9c8a74ddad41
+template <> struct __declspec(uuid("59585ac3-e921-5560-9f39-9c8a74ddad41")) __declspec(novtable) IVector<Windows::Devices::Sensors::ProximitySensorReading> : impl_IVector<Windows::Devices::Sensors::ProximitySensorReading> {};
 #endif
 
 #ifndef WINRT_GENERIC_1d4f08df_7f49_573b_936a_6d4d4e610930

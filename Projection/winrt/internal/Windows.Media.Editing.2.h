@@ -144,6 +144,11 @@ template <> struct __declspec(uuid("607a20bf-32b4-5b8e-a793-3024f8d3582a")) __de
 template <> struct __declspec(uuid("de9e6a7f-d28e-5ef1-916a-efa880b489d1")) __declspec(novtable) IVectorView<Windows::Media::Effects::IAudioEffectDefinition> : impl_IVectorView<Windows::Media::Effects::IAudioEffectDefinition> {};
 #endif
 
+#ifndef WINRT_GENERIC_bbde1b0e_123b_5969_a942_8ae5b07da146
+#define WINRT_GENERIC_bbde1b0e_123b_5969_a942_8ae5b07da146
+template <> struct __declspec(uuid("bbde1b0e-123b-5969-a942-8ae5b07da146")) __declspec(novtable) IVector<Windows::Media::Editing::EmbeddedAudioTrack> : impl_IVector<Windows::Media::Editing::EmbeddedAudioTrack> {};
+#endif
+
 #ifndef WINRT_GENERIC_c9fa7f51_b52c_578e_99f9_012cd5641247
 #define WINRT_GENERIC_c9fa7f51_b52c_578e_99f9_012cd5641247
 template <> struct __declspec(uuid("c9fa7f51-b52c-578e-99f9-012cd5641247")) __declspec(novtable) IIterator<Windows::Media::Editing::EmbeddedAudioTrack> : impl_IIterator<Windows::Media::Editing::EmbeddedAudioTrack> {};
@@ -199,6 +204,11 @@ template <> struct __declspec(uuid("3fc05ba2-30f6-5219-9047-1197ffae8dba")) __de
 template <> struct __declspec(uuid("7fe52e32-867c-52a3-b3b7-d4dd4d573794")) __declspec(novtable) IVectorView<Windows::Media::Editing::BackgroundAudioTrack> : impl_IVectorView<Windows::Media::Editing::BackgroundAudioTrack> {};
 #endif
 
+#ifndef WINRT_GENERIC_1a73e4cd_a16a_5a80_95f7_0e372d4909ce
+#define WINRT_GENERIC_1a73e4cd_a16a_5a80_95f7_0e372d4909ce
+template <> struct __declspec(uuid("1a73e4cd-a16a-5a80-95f7-0e372d4909ce")) __declspec(novtable) IVector<Windows::Graphics::Imaging::ImageStream> : impl_IVector<Windows::Graphics::Imaging::ImageStream> {};
+#endif
+
 #ifndef WINRT_GENERIC_4a10752d_6b1a_5fec_a59c_70389bf162a2
 #define WINRT_GENERIC_4a10752d_6b1a_5fec_a59c_70389bf162a2
 template <> struct __declspec(uuid("4a10752d-6b1a-5fec-a59c-70389bf162a2")) __declspec(novtable) IIterator<Windows::Graphics::Imaging::ImageStream> : impl_IIterator<Windows::Graphics::Imaging::ImageStream> {};
@@ -207,6 +217,16 @@ template <> struct __declspec(uuid("4a10752d-6b1a-5fec-a59c-70389bf162a2")) __de
 #ifndef WINRT_GENERIC_034ea0c4_c20e_5c0c_ba31_64212f28e650
 #define WINRT_GENERIC_034ea0c4_c20e_5c0c_ba31_64212f28e650
 template <> struct __declspec(uuid("034ea0c4-c20e-5c0c-ba31-64212f28e650")) __declspec(novtable) IIterable<Windows::Graphics::Imaging::ImageStream> : impl_IIterable<Windows::Graphics::Imaging::ImageStream> {};
+#endif
+
+#ifndef WINRT_GENERIC_17f98625_6410_5440_9afe_434f7d515af2
+#define WINRT_GENERIC_17f98625_6410_5440_9afe_434f7d515af2
+template <> struct __declspec(uuid("17f98625-6410-5440-9afe-434f7d515af2")) __declspec(novtable) IVector<Windows::Foundation::TimeSpan> : impl_IVector<Windows::Foundation::TimeSpan> {};
+#endif
+
+#ifndef WINRT_GENERIC_6b5828d7_6b8d_58c4_ba3a_9f796710f53c
+#define WINRT_GENERIC_6b5828d7_6b8d_58c4_ba3a_9f796710f53c
+template <> struct __declspec(uuid("6b5828d7-6b8d-58c4-ba3a-9f796710f53c")) __declspec(novtable) IVectorView<Windows::Foundation::TimeSpan> : impl_IVectorView<Windows::Foundation::TimeSpan> {};
 #endif
 
 #ifndef WINRT_GENERIC_67e9eadb_324b_5661_a405_ded8445b1eea

@@ -30,6 +30,11 @@ template <> struct __declspec(uuid("0a288d41-1f20-5d16-85dd-52855b11569a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_37fa629e_a5d7_55ab_b2b5_b5014b31807e
+#define WINRT_GENERIC_37fa629e_a5d7_55ab_b2b5_b5014b31807e
+template <> struct __declspec(uuid("37fa629e-a5d7-55ab-b2b5-b5014b31807e")) __declspec(novtable) IVector<Windows::Devices::Pwm::PwmController> : impl_IVector<Windows::Devices::Pwm::PwmController> {};
+#endif
+
 #ifndef WINRT_GENERIC_599330bd_b0ca_533e_938f_5dd4242bf513
 #define WINRT_GENERIC_599330bd_b0ca_533e_938f_5dd4242bf513
 template <> struct __declspec(uuid("599330bd-b0ca-533e-938f-5dd4242bf513")) __declspec(novtable) IIterator<Windows::Devices::Pwm::PwmController> : impl_IIterator<Windows::Devices::Pwm::PwmController> {};

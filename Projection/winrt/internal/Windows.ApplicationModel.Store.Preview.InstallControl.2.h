@@ -54,6 +54,11 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_716f3357_fbe3_56e7_bbc0_75a8f7013a56
+#define WINRT_GENERIC_716f3357_fbe3_56e7_bbc0_75a8f7013a56
+template <> struct __declspec(uuid("716f3357-fbe3-56e7-bbc0-75a8f7013a56")) __declspec(novtable) IVector<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> : impl_IVector<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> {};
+#endif
+
 #ifndef WINRT_GENERIC_ccaca81b_6cf7_56f0_b7ff_8ac5191e79bf
 #define WINRT_GENERIC_ccaca81b_6cf7_56f0_b7ff_8ac5191e79bf
 template <> struct __declspec(uuid("ccaca81b-6cf7-56f0-b7ff-8ac5191e79bf")) __declspec(novtable) IIterator<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> : impl_IIterator<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> {};

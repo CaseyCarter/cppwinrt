@@ -34,6 +34,11 @@ template <> struct __declspec(uuid("b8cc25e1-409f-57f4-bbe4-3b95b74b86c8")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_a8794900_8517_56e7_bc36_c7480519135f
+#define WINRT_GENERIC_a8794900_8517_56e7_bc36_c7480519135f
+template <> struct __declspec(uuid("a8794900-8517-56e7-bc36-c7480519135f")) __declspec(novtable) IVector<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> : impl_IVector<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> {};
+#endif
+
 #ifndef WINRT_GENERIC_039feee7_0882_50e2_bc3f_4fac7e8c2769
 #define WINRT_GENERIC_039feee7_0882_50e2_bc3f_4fac7e8c2769
 template <> struct __declspec(uuid("039feee7-0882-50e2-bc3f-4fac7e8c2769")) __declspec(novtable) IIterator<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> : impl_IIterator<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> {};
@@ -42,6 +47,16 @@ template <> struct __declspec(uuid("039feee7-0882-50e2-bc3f-4fac7e8c2769")) __de
 #ifndef WINRT_GENERIC_809d1314_97ab_5544_9891_ddcdfadd1dbb
 #define WINRT_GENERIC_809d1314_97ab_5544_9891_ddcdfadd1dbb
 template <> struct __declspec(uuid("809d1314-97ab-5544-9891-ddcdfadd1dbb")) __declspec(novtable) IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> : impl_IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> {};
+#endif
+
+#ifndef WINRT_GENERIC_f6ed9226_b260_5f49_9b84_e89e43cbabc6
+#define WINRT_GENERIC_f6ed9226_b260_5f49_9b84_e89e43cbabc6
+template <> struct __declspec(uuid("f6ed9226-b260-5f49-9b84-e89e43cbabc6")) __declspec(novtable) IVector<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> : impl_IVector<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> {};
+#endif
+
+#ifndef WINRT_GENERIC_1a7c6c05_3fef_5eeb_aaff_625ee3ebc07c
+#define WINRT_GENERIC_1a7c6c05_3fef_5eeb_aaff_625ee3ebc07c
+template <> struct __declspec(uuid("1a7c6c05-3fef-5eeb-aaff-625ee3ebc07c")) __declspec(novtable) IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> : impl_IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> {};
 #endif
 
 #ifndef WINRT_GENERIC_b6a5c8e4_6e3c_5c37_92cf_cf9f1c383335

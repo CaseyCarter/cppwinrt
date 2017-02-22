@@ -79,6 +79,11 @@ template <> struct __declspec(uuid("e521c894-2c26-5946-9e61-2b5e188d01ed")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_fcbc8b8b_6103_5b4e_ba00_4bc2cedb6a35
+#define WINRT_GENERIC_fcbc8b8b_6103_5b4e_ba00_4bc2cedb6a35
+template <> struct __declspec(uuid("fcbc8b8b-6103-5b4e-ba00-4bc2cedb6a35")) __declspec(novtable) IVector<Windows::Storage::StorageFile> : impl_IVector<Windows::Storage::StorageFile> {};
+#endif
+
 #ifndef WINRT_GENERIC_43e29f53_0298_55aa_a6c8_4edd323d9598
 #define WINRT_GENERIC_43e29f53_0298_55aa_a6c8_4edd323d9598
 template <> struct __declspec(uuid("43e29f53-0298-55aa-a6c8-4edd323d9598")) __declspec(novtable) IIterator<Windows::Storage::StorageFile> : impl_IIterator<Windows::Storage::StorageFile> {};

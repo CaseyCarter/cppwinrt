@@ -9,6 +9,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_f6d1f700_49c2_52ae_8154_826f9908773c
+#define WINRT_GENERIC_f6d1f700_49c2_52ae_8154_826f9908773c
+template <> struct __declspec(uuid("f6d1f700-49c2-52ae-8154-826f9908773c")) __declspec(novtable) IMap<hstring, hstring> : impl_IMap<hstring, hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_60310303_49c5_52e6_abc6_a9b36eccc716
 #define WINRT_GENERIC_60310303_49c5_52e6_abc6_a9b36eccc716
 template <> struct __declspec(uuid("60310303-49c5-52e6-abc6-a9b36eccc716")) __declspec(novtable) IKeyValuePair<hstring, hstring> : impl_IKeyValuePair<hstring, hstring> {};
@@ -119,6 +124,11 @@ template <> struct __declspec(uuid("4bd6f1e5-ca89-5240-8f3d-7f1b54ae90a7")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_fe11c488_371a_5330_b7fa_282326fdfbda
+#define WINRT_GENERIC_fe11c488_371a_5330_b7fa_282326fdfbda
+template <> struct __declspec(uuid("fe11c488-371a-5330-b7fa-282326fdfbda")) __declspec(novtable) IVector<Windows::Security::Credentials::WebAccount> : impl_IVector<Windows::Security::Credentials::WebAccount> {};
+#endif
+
 #ifndef WINRT_GENERIC_bfb82cca_aebc_567c_95d9_eba25c365faa
 #define WINRT_GENERIC_bfb82cca_aebc_567c_95d9_eba25c365faa
 template <> struct __declspec(uuid("bfb82cca-aebc-567c-95d9-eba25c365faa")) __declspec(novtable) IIterator<Windows::Security::Credentials::WebAccount> : impl_IIterator<Windows::Security::Credentials::WebAccount> {};
@@ -142,6 +152,11 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_626bc177_8403_5030_a88c_7485cc89d730
 #define WINRT_GENERIC_626bc177_8403_5030_a88c_7485cc89d730
 template <> struct __declspec(uuid("626bc177-8403-5030-a88c-7485cc89d730")) __declspec(novtable) IIterator<Windows::Web::Http::HttpCookie> : impl_IIterator<Windows::Web::Http::HttpCookie> {};
+#endif
+
+#ifndef WINRT_GENERIC_43184ef9_2c17_599d_8fa3_48270f365492
+#define WINRT_GENERIC_43184ef9_2c17_599d_8fa3_48270f365492
+template <> struct __declspec(uuid("43184ef9-2c17-599d-8fa3-48270f365492")) __declspec(novtable) IVector<Windows::Security::Authentication::Web::Provider::WebAccountClientView> : impl_IVector<Windows::Security::Authentication::Web::Provider::WebAccountClientView> {};
 #endif
 
 #ifndef WINRT_GENERIC_a5984607_661d_5e9c_a0ba_5c7d5f41af1c

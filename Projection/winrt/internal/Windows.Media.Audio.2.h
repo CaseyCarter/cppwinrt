@@ -157,6 +157,11 @@ template <> struct __declspec(uuid("607a20bf-32b4-5b8e-a793-3024f8d3582a")) __de
 template <> struct __declspec(uuid("de9e6a7f-d28e-5ef1-916a-efa880b489d1")) __declspec(novtable) IVectorView<Windows::Media::Effects::IAudioEffectDefinition> : impl_IVectorView<Windows::Media::Effects::IAudioEffectDefinition> {};
 #endif
 
+#ifndef WINRT_GENERIC_60fadb4d_375d_5b4f_bacb_66ba0c9afe43
+#define WINRT_GENERIC_60fadb4d_375d_5b4f_bacb_66ba0c9afe43
+template <> struct __declspec(uuid("60fadb4d-375d-5b4f-bacb-66ba0c9afe43")) __declspec(novtable) IVector<Windows::Media::Audio::AudioGraphConnection> : impl_IVector<Windows::Media::Audio::AudioGraphConnection> {};
+#endif
+
 #ifndef WINRT_GENERIC_4af6a8fc_e7fb_5957_91c1_2df9600b22eb
 #define WINRT_GENERIC_4af6a8fc_e7fb_5957_91c1_2df9600b22eb
 template <> struct __declspec(uuid("4af6a8fc-e7fb-5957-91c1-2df9600b22eb")) __declspec(novtable) IIterator<Windows::Media::Audio::AudioGraphConnection> : impl_IIterator<Windows::Media::Audio::AudioGraphConnection> {};
@@ -181,6 +186,11 @@ template <> struct __declspec(uuid("c42ae2bf-e194-5179-b8ad-03b51c04e1da")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_e301003a_b80f_55c2_a9f6_f0be3a45d8b9
+#define WINRT_GENERIC_e301003a_b80f_55c2_a9f6_f0be3a45d8b9
+template <> struct __declspec(uuid("e301003a-b80f-55c2-a9f6-f0be3a45d8b9")) __declspec(novtable) IVector<Windows::Media::Audio::EqualizerBand> : impl_IVector<Windows::Media::Audio::EqualizerBand> {};
+#endif
 
 #ifndef WINRT_GENERIC_eb4f8b6a_7928_5f2f_b7f2_7b90c084356f
 #define WINRT_GENERIC_eb4f8b6a_7928_5f2f_b7f2_7b90c084356f

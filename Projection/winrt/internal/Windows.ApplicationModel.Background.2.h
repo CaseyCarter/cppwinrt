@@ -99,6 +99,21 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("5a1f6d75-8678-547c-8fd7-fbceb6ebf968")) __declspec(novtable) IKeyValuePair<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> : impl_IKeyValuePair<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> {};
 #endif
 
+#ifndef WINRT_GENERIC_6fe872bd_1090_50ef_aa1a_82b7f9bce2b8
+#define WINRT_GENERIC_6fe872bd_1090_50ef_aa1a_82b7f9bce2b8
+template <> struct __declspec(uuid("6fe872bd-1090-50ef-aa1a-82b7f9bce2b8")) __declspec(novtable) IMap<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> : impl_IMap<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> {};
+#endif
+
+#ifndef WINRT_GENERIC_753d0623_9a04_54a0_b3e2_8f5c15313194
+#define WINRT_GENERIC_753d0623_9a04_54a0_b3e2_8f5c15313194
+template <> struct __declspec(uuid("753d0623-9a04-54a0-b3e2-8f5c15313194")) __declspec(novtable) IVector<Windows::Storage::StorageLibrary> : impl_IVector<Windows::Storage::StorageLibrary> {};
+#endif
+
+#ifndef WINRT_GENERIC_4fcf1b1d_d3a7_577a_bdf9_060443bb7956
+#define WINRT_GENERIC_4fcf1b1d_d3a7_577a_bdf9_060443bb7956
+template <> struct __declspec(uuid("4fcf1b1d-d3a7-577a-bdf9-060443bb7956")) __declspec(novtable) IVectorView<Windows::Storage::StorageLibrary> : impl_IVectorView<Windows::Storage::StorageLibrary> {};
+#endif
+
 #ifndef WINRT_GENERIC_0a1c6409_fbd3_58c8_9af3_6262cc56e5b3
 #define WINRT_GENERIC_0a1c6409_fbd3_58c8_9af3_6262cc56e5b3
 template <> struct __declspec(uuid("0a1c6409-fbd3-58c8-9af3-6262cc56e5b3")) __declspec(novtable) IIterator<Windows::Storage::StorageLibrary> : impl_IIterator<Windows::Storage::StorageLibrary> {};

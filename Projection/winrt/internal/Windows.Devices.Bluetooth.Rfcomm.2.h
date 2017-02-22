@@ -60,6 +60,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("5d2591df-48c5-5734-9ef1-bd639b032007")) __declspec(novtable) IMap<uint32_t, Windows::Storage::Streams::IBuffer> : impl_IMap<uint32_t, Windows::Storage::Streams::IBuffer> {};
 #endif
 
+#ifndef WINRT_GENERIC_75f127ec_2256_5b20_8b38_8ac3f3d11819
+#define WINRT_GENERIC_75f127ec_2256_5b20_8b38_8ac3f3d11819
+template <> struct __declspec(uuid("75f127ec-2256-5b20-8b38-8ac3f3d11819")) __declspec(novtable) IVector<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> : impl_IVector<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> {};
+#endif
+
 #ifndef WINRT_GENERIC_64ab0132_c64c_5a87_8113_613ef356924c
 #define WINRT_GENERIC_64ab0132_c64c_5a87_8113_613ef356924c
 template <> struct __declspec(uuid("64ab0132-c64c-5a87-8113-613ef356924c")) __declspec(novtable) IIterator<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> : impl_IIterator<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> {};

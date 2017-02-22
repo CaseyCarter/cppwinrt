@@ -120,6 +120,11 @@ template <> struct __declspec(uuid("7331254f-6caf-587d-9c2a-018c66d312db")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_b11604f9_311d_5d64_8d83_9f1156bdcc53
+#define WINRT_GENERIC_b11604f9_311d_5d64_8d83_9f1156bdcc53
+template <> struct __declspec(uuid("b11604f9-311d-5d64-8d83-9f1156bdcc53")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbInterface> : impl_IVector<Windows::Devices::Usb::UsbInterface> {};
+#endif
+
 #ifndef WINRT_GENERIC_216b5a5f_63e3_5a9b_9c99_b09cbc0ff3b1
 #define WINRT_GENERIC_216b5a5f_63e3_5a9b_9c99_b09cbc0ff3b1
 template <> struct __declspec(uuid("216b5a5f-63e3-5a9b-9c99-b09cbc0ff3b1")) __declspec(novtable) IIterator<Windows::Devices::Usb::UsbInterface> : impl_IIterator<Windows::Devices::Usb::UsbInterface> {};
@@ -128,6 +133,11 @@ template <> struct __declspec(uuid("216b5a5f-63e3-5a9b-9c99-b09cbc0ff3b1")) __de
 #ifndef WINRT_GENERIC_f54037ed_92e9_590d_b904_3ad7bfa9a621
 #define WINRT_GENERIC_f54037ed_92e9_590d_b904_3ad7bfa9a621
 template <> struct __declspec(uuid("f54037ed-92e9-590d-b904-3ad7bfa9a621")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbInterface> : impl_IIterable<Windows::Devices::Usb::UsbInterface> {};
+#endif
+
+#ifndef WINRT_GENERIC_35e50c94_ae54_53ac_b667_1c60e79ce168
+#define WINRT_GENERIC_35e50c94_ae54_53ac_b667_1c60e79ce168
+template <> struct __declspec(uuid("35e50c94-ae54-53ac-b667-1c60e79ce168")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbDescriptor> : impl_IVector<Windows::Devices::Usb::UsbDescriptor> {};
 #endif
 
 #ifndef WINRT_GENERIC_521598ed_0167_528e_990d_52abb712f072
@@ -140,6 +150,11 @@ template <> struct __declspec(uuid("521598ed-0167-528e-990d-52abb712f072")) __de
 template <> struct __declspec(uuid("989909a5-5a03-51fb-bd94-84da7bda8819")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbDescriptor> : impl_IIterable<Windows::Devices::Usb::UsbDescriptor> {};
 #endif
 
+#ifndef WINRT_GENERIC_5df81263_bfc2_5836_8158_60ac127dde57
+#define WINRT_GENERIC_5df81263_bfc2_5836_8158_60ac127dde57
+template <> struct __declspec(uuid("5df81263-bfc2-5836-8158-60ac127dde57")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbBulkInPipe> : impl_IVector<Windows::Devices::Usb::UsbBulkInPipe> {};
+#endif
+
 #ifndef WINRT_GENERIC_d7af2c5b_528d_5cbb_a997_d830ade704c7
 #define WINRT_GENERIC_d7af2c5b_528d_5cbb_a997_d830ade704c7
 template <> struct __declspec(uuid("d7af2c5b-528d-5cbb-a997-d830ade704c7")) __declspec(novtable) IIterator<Windows::Devices::Usb::UsbBulkInPipe> : impl_IIterator<Windows::Devices::Usb::UsbBulkInPipe> {};
@@ -148,6 +163,11 @@ template <> struct __declspec(uuid("d7af2c5b-528d-5cbb-a997-d830ade704c7")) __de
 #ifndef WINRT_GENERIC_2201a671_42d2_508d_a848_64b5447083c8
 #define WINRT_GENERIC_2201a671_42d2_508d_a848_64b5447083c8
 template <> struct __declspec(uuid("2201a671-42d2-508d-a848-64b5447083c8")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbBulkInPipe> : impl_IIterable<Windows::Devices::Usb::UsbBulkInPipe> {};
+#endif
+
+#ifndef WINRT_GENERIC_789d3470_2d41_57fe_8cfd_4529adf1a15b
+#define WINRT_GENERIC_789d3470_2d41_57fe_8cfd_4529adf1a15b
+template <> struct __declspec(uuid("789d3470-2d41-57fe-8cfd-4529adf1a15b")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbInterruptInPipe> : impl_IVector<Windows::Devices::Usb::UsbInterruptInPipe> {};
 #endif
 
 #ifndef WINRT_GENERIC_e3a7b1c0_74f6_5292_a22a_672aa2b49985
@@ -160,6 +180,11 @@ template <> struct __declspec(uuid("e3a7b1c0-74f6-5292-a22a-672aa2b49985")) __de
 template <> struct __declspec(uuid("39aef336-18aa-5be4-86d9-e332fe2632f3")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbInterruptInPipe> : impl_IIterable<Windows::Devices::Usb::UsbInterruptInPipe> {};
 #endif
 
+#ifndef WINRT_GENERIC_abd12a19_bca3_5a8e_badb_1ec177fc7683
+#define WINRT_GENERIC_abd12a19_bca3_5a8e_badb_1ec177fc7683
+template <> struct __declspec(uuid("abd12a19-bca3-5a8e-badb-1ec177fc7683")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbBulkOutPipe> : impl_IVector<Windows::Devices::Usb::UsbBulkOutPipe> {};
+#endif
+
 #ifndef WINRT_GENERIC_46dd2f6a_573b_5c45_b168_9223038491dd
 #define WINRT_GENERIC_46dd2f6a_573b_5c45_b168_9223038491dd
 template <> struct __declspec(uuid("46dd2f6a-573b-5c45-b168-9223038491dd")) __declspec(novtable) IIterator<Windows::Devices::Usb::UsbBulkOutPipe> : impl_IIterator<Windows::Devices::Usb::UsbBulkOutPipe> {};
@@ -168,6 +193,11 @@ template <> struct __declspec(uuid("46dd2f6a-573b-5c45-b168-9223038491dd")) __de
 #ifndef WINRT_GENERIC_9824caba_5ca6_5c2d_80cf_1949026d7857
 #define WINRT_GENERIC_9824caba_5ca6_5c2d_80cf_1949026d7857
 template <> struct __declspec(uuid("9824caba-5ca6-5c2d-80cf-1949026d7857")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbBulkOutPipe> : impl_IIterable<Windows::Devices::Usb::UsbBulkOutPipe> {};
+#endif
+
+#ifndef WINRT_GENERIC_e0c87662_93f3_5215_a566_906f9ba7c399
+#define WINRT_GENERIC_e0c87662_93f3_5215_a566_906f9ba7c399
+template <> struct __declspec(uuid("e0c87662-93f3-5215-a566-906f9ba7c399")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbInterruptOutPipe> : impl_IVector<Windows::Devices::Usb::UsbInterruptOutPipe> {};
 #endif
 
 #ifndef WINRT_GENERIC_cbd8d8a8_2286_5cbd_a6e4_962742ffd91a
@@ -180,6 +210,11 @@ template <> struct __declspec(uuid("cbd8d8a8-2286-5cbd-a6e4-962742ffd91a")) __de
 template <> struct __declspec(uuid("e61a011e-4abe-53f2-83b3-ed4a949d2e3f")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbInterruptOutPipe> : impl_IIterable<Windows::Devices::Usb::UsbInterruptOutPipe> {};
 #endif
 
+#ifndef WINRT_GENERIC_03594a06_d2d3_5450_9c08_668ab65475ab
+#define WINRT_GENERIC_03594a06_d2d3_5450_9c08_668ab65475ab
+template <> struct __declspec(uuid("03594a06-d2d3-5450-9c08-668ab65475ab")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbInterfaceSetting> : impl_IVector<Windows::Devices::Usb::UsbInterfaceSetting> {};
+#endif
+
 #ifndef WINRT_GENERIC_71267ec7_5697_5dea_b2f8_14cf698ec0ad
 #define WINRT_GENERIC_71267ec7_5697_5dea_b2f8_14cf698ec0ad
 template <> struct __declspec(uuid("71267ec7-5697-5dea-b2f8-14cf698ec0ad")) __declspec(novtable) IIterator<Windows::Devices::Usb::UsbInterfaceSetting> : impl_IIterator<Windows::Devices::Usb::UsbInterfaceSetting> {};
@@ -188,6 +223,11 @@ template <> struct __declspec(uuid("71267ec7-5697-5dea-b2f8-14cf698ec0ad")) __de
 #ifndef WINRT_GENERIC_1aaf5739_9c2c_533e_a0e9_d53fdb45d15d
 #define WINRT_GENERIC_1aaf5739_9c2c_533e_a0e9_d53fdb45d15d
 template <> struct __declspec(uuid("1aaf5739-9c2c-533e-a0e9-d53fdb45d15d")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbInterfaceSetting> : impl_IIterable<Windows::Devices::Usb::UsbInterfaceSetting> {};
+#endif
+
+#ifndef WINRT_GENERIC_fc953884_3db0_55ef_a0a9_28682dacb5e0
+#define WINRT_GENERIC_fc953884_3db0_55ef_a0a9_28682dacb5e0
+template <> struct __declspec(uuid("fc953884-3db0-55ef-a0a9-28682dacb5e0")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> : impl_IVector<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> {};
 #endif
 
 #ifndef WINRT_GENERIC_ea511030_89c4_503d_8caf_667f4230d2a9
@@ -200,6 +240,11 @@ template <> struct __declspec(uuid("ea511030-89c4-503d-8caf-667f4230d2a9")) __de
 template <> struct __declspec(uuid("101b1fd9-f1c9-5dda-9ad4-71176fa839b2")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> : impl_IIterable<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> {};
 #endif
 
+#ifndef WINRT_GENERIC_6d8fdb3a_ca37_5658_a756_815e267f5e2e
+#define WINRT_GENERIC_6d8fdb3a_ca37_5658_a756_815e267f5e2e
+template <> struct __declspec(uuid("6d8fdb3a-ca37-5658-a756-815e267f5e2e")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> : impl_IVector<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> {};
+#endif
+
 #ifndef WINRT_GENERIC_6717500f_ec1c_5b12_bf33_0e3e3d244587
 #define WINRT_GENERIC_6717500f_ec1c_5b12_bf33_0e3e3d244587
 template <> struct __declspec(uuid("6717500f-ec1c-5b12-bf33-0e3e3d244587")) __declspec(novtable) IIterator<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> : impl_IIterator<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> {};
@@ -210,6 +255,11 @@ template <> struct __declspec(uuid("6717500f-ec1c-5b12-bf33-0e3e3d244587")) __de
 template <> struct __declspec(uuid("8a7bac69-1f10-59c7-9837-72cfed7154a4")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> : impl_IIterable<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> {};
 #endif
 
+#ifndef WINRT_GENERIC_e0087bb6_6012_50a7_8a18_c48eb8858f26
+#define WINRT_GENERIC_e0087bb6_6012_50a7_8a18_c48eb8858f26
+template <> struct __declspec(uuid("e0087bb6-6012-50a7-8a18-c48eb8858f26")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> : impl_IVector<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> {};
+#endif
+
 #ifndef WINRT_GENERIC_a8b89ab3_883d_5361_9903_f489cc62bea5
 #define WINRT_GENERIC_a8b89ab3_883d_5361_9903_f489cc62bea5
 template <> struct __declspec(uuid("a8b89ab3-883d-5361-9903-f489cc62bea5")) __declspec(novtable) IIterator<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> : impl_IIterator<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> {};
@@ -218,6 +268,11 @@ template <> struct __declspec(uuid("a8b89ab3-883d-5361-9903-f489cc62bea5")) __de
 #ifndef WINRT_GENERIC_b80beb39_62b3_5f59_b3e7_882cc9c5b0c0
 #define WINRT_GENERIC_b80beb39_62b3_5f59_b3e7_882cc9c5b0c0
 template <> struct __declspec(uuid("b80beb39-62b3-5f59-b3e7-882cc9c5b0c0")) __declspec(novtable) IIterable<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> : impl_IIterable<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> {};
+#endif
+
+#ifndef WINRT_GENERIC_386b792a_6b7b_580a_8e7e_9ef9838c0e6f
+#define WINRT_GENERIC_386b792a_6b7b_580a_8e7e_9ef9838c0e6f
+template <> struct __declspec(uuid("386b792a-6b7b-580a-8e7e-9ef9838c0e6f")) __declspec(novtable) IVector<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor> : impl_IVector<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor> {};
 #endif
 
 #ifndef WINRT_GENERIC_4b6426db_db32_5b51_adad_04532ea94acd

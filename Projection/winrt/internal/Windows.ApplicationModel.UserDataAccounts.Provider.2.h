@@ -14,6 +14,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("b730f093-e2fb-5b20-9d9e-4f9defe647b0")) __declspec(novtable) IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> : impl_IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> {};
 #endif
 
+#ifndef WINRT_GENERIC_b856b7bb_4872_53ee_b4e0_11f4f729ad82
+#define WINRT_GENERIC_b856b7bb_4872_53ee_b4e0_11f4f729ad82
+template <> struct __declspec(uuid("b856b7bb-4872-53ee-b4e0-11f4f729ad82")) __declspec(novtable) IVector<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> : impl_IVector<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> {};
+#endif
+
 #ifndef WINRT_GENERIC_ac401b26_3ebf_5cbf_9643_c96a40ab40a2
 #define WINRT_GENERIC_ac401b26_3ebf_5cbf_9643_c96a40ab40a2
 template <> struct __declspec(uuid("ac401b26-3ebf-5cbf-9643-c96a40ab40a2")) __declspec(novtable) IIterator<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> : impl_IIterator<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> {};

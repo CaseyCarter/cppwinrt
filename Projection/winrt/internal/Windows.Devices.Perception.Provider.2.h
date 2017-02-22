@@ -10,6 +10,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -33,6 +38,11 @@ template <> struct __declspec(uuid("244cad66-afbe-5394-b7b7-43a61fcbfc6d")) __de
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_98fe92a5_2f0b_5a81_938f_b5173d2b1355
+#define WINRT_GENERIC_98fe92a5_2f0b_5a81_938f_b5173d2b1355
+template <> struct __declspec(uuid("98fe92a5-2f0b-5a81-938f-b5173d2b1355")) __declspec(novtable) IVector<Windows::Devices::Perception::Provider::PerceptionCorrelation> : impl_IVector<Windows::Devices::Perception::Provider::PerceptionCorrelation> {};
 #endif
 
 #ifndef WINRT_GENERIC_c4db1093_d705_5503_8bce_68535cd42ffa

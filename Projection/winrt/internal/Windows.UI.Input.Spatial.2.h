@@ -109,6 +109,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("dfdcf091-6e3c-5e5b-a193-03acc414c921")) __declspec(novtable) IVectorView<Windows::UI::Input::Spatial::SpatialInteractionSourceState> : impl_IVectorView<Windows::UI::Input::Spatial::SpatialInteractionSourceState> {};
 #endif
 
+#ifndef WINRT_GENERIC_9e0b64a3_c4fd_5cd8_848e_fa610f276b17
+#define WINRT_GENERIC_9e0b64a3_c4fd_5cd8_848e_fa610f276b17
+template <> struct __declspec(uuid("9e0b64a3-c4fd-5cd8-848e-fa610f276b17")) __declspec(novtable) IVector<Windows::UI::Input::Spatial::SpatialInteractionSourceState> : impl_IVector<Windows::UI::Input::Spatial::SpatialInteractionSourceState> {};
+#endif
+
 #ifndef WINRT_GENERIC_23f50032_907e_5d73_bbdc_f7563de655c4
 #define WINRT_GENERIC_23f50032_907e_5d73_bbdc_f7563de655c4
 template <> struct __declspec(uuid("23f50032-907e-5d73-bbdc-f7563de655c4")) __declspec(novtable) IIterator<Windows::UI::Input::Spatial::SpatialInteractionSourceState> : impl_IIterator<Windows::UI::Input::Spatial::SpatialInteractionSourceState> {};

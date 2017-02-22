@@ -174,6 +174,11 @@ template <> struct __declspec(uuid("03ed8267-9c90-5260-8bc0-6c3e3306c964")) __de
 template <> struct __declspec(uuid("f3ed4299-de36-5d82-993f-35fc677d8b72")) __declspec(novtable) IVectorView<Windows::Devices::Sms::SmsFilterRule> : impl_IVectorView<Windows::Devices::Sms::SmsFilterRule> {};
 #endif
 
+#ifndef WINRT_GENERIC_d14f6ec4_d2e2_5b57_ba0d_cb0bfac3ef13
+#define WINRT_GENERIC_d14f6ec4_d2e2_5b57_ba0d_cb0bfac3ef13
+template <> struct __declspec(uuid("d14f6ec4-d2e2-5b57-ba0d-cb0bfac3ef13")) __declspec(novtable) IVector<Windows::Devices::Sms::SmsMessageRegistration> : impl_IVector<Windows::Devices::Sms::SmsMessageRegistration> {};
+#endif
+
 #ifndef WINRT_GENERIC_ee1a0675_f3c9_5c12_93e0_f2b01bdce611
 #define WINRT_GENERIC_ee1a0675_f3c9_5c12_93e0_f2b01bdce611
 template <> struct __declspec(uuid("ee1a0675-f3c9-5c12-93e0-f2b01bdce611")) __declspec(novtable) IIterator<Windows::Devices::Sms::SmsMessageRegistration> : impl_IIterator<Windows::Devices::Sms::SmsMessageRegistration> {};

@@ -30,6 +30,11 @@ template <> struct __declspec(uuid("69420262-35c9-583f-a40e-c2694562c9e2")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_afcfb828_0184_5a38_a1da_7cd5fb4fd4f7
+#define WINRT_GENERIC_afcfb828_0184_5a38_a1da_7cd5fb4fd4f7
+template <> struct __declspec(uuid("afcfb828-0184-5a38-a1da-7cd5fb4fd4f7")) __declspec(novtable) IVector<Windows::Devices::Adc::AdcController> : impl_IVector<Windows::Devices::Adc::AdcController> {};
+#endif
+
 #ifndef WINRT_GENERIC_a10b62c1_a014_5335_8867_747fcab16005
 #define WINRT_GENERIC_a10b62c1_a014_5335_8867_747fcab16005
 template <> struct __declspec(uuid("a10b62c1-a014-5335-8867-747fcab16005")) __declspec(novtable) IIterator<Windows::Devices::Adc::AdcController> : impl_IIterator<Windows::Devices::Adc::AdcController> {};

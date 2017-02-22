@@ -104,6 +104,11 @@ template <> struct __declspec(uuid("8c2658d8-acaa-5a80-b259-1ba0697c6138")) __de
 template <> struct __declspec(uuid("0f6c3b8b-5818-5cbf-bf26-6616bfc308c4")) __declspec(novtable) IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties> : impl_IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties> {};
 #endif
 
+#ifndef WINRT_GENERIC_88a2f63c_712f_5c53_bfb6_647078adc0a4
+#define WINRT_GENERIC_88a2f63c_712f_5c53_bfb6_647078adc0a4
+template <> struct __declspec(uuid("88a2f63c-712f-5c53-bfb6-647078adc0a4")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::CaptureSceneMode> : impl_IVector<winrt::Windows::Media::Devices::CaptureSceneMode> {};
+#endif
+
 #ifndef WINRT_GENERIC_aafa6d7a_2f7f_5dd7_aa0a_265731a2b3b3
 #define WINRT_GENERIC_aafa6d7a_2f7f_5dd7_aa0a_265731a2b3b3
 template <> struct __declspec(uuid("aafa6d7a-2f7f-5dd7-aa0a-265731a2b3b3")) __declspec(novtable) IIterator<winrt::Windows::Media::Devices::CaptureSceneMode> : impl_IIterator<winrt::Windows::Media::Devices::CaptureSceneMode> {};
@@ -112,6 +117,11 @@ template <> struct __declspec(uuid("aafa6d7a-2f7f-5dd7-aa0a-265731a2b3b3")) __de
 #ifndef WINRT_GENERIC_16d26b98_2cbc_52f0_ab64_1723714418e9
 #define WINRT_GENERIC_16d26b98_2cbc_52f0_ab64_1723714418e9
 template <> struct __declspec(uuid("16d26b98-2cbc-52f0-ab64-1723714418e9")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::CaptureSceneMode> : impl_IIterable<winrt::Windows::Media::Devices::CaptureSceneMode> {};
+#endif
+
+#ifndef WINRT_GENERIC_9301e2e9_703e_5660_add3_b5b9dc229372
+#define WINRT_GENERIC_9301e2e9_703e_5660_add3_b5b9dc229372
+template <> struct __declspec(uuid("9301e2e9-703e-5660-add3-b5b9dc229372")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::IsoSpeedPreset> : impl_IVector<winrt::Windows::Media::Devices::IsoSpeedPreset> {};
 #endif
 
 #ifndef WINRT_GENERIC_1b33af76_980b_5348_916a_793f61b555a0
@@ -124,6 +134,11 @@ template <> struct __declspec(uuid("1b33af76-980b-5348-916a-793f61b555a0")) __de
 template <> struct __declspec(uuid("94839abe-9712-545a-a94d-a567a3e8dfb7")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::IsoSpeedPreset> : impl_IIterable<winrt::Windows::Media::Devices::IsoSpeedPreset> {};
 #endif
 
+#ifndef WINRT_GENERIC_d8ca4d10_f5c2_5c7b_8863_b48ab53a4214
+#define WINRT_GENERIC_d8ca4d10_f5c2_5c7b_8863_b48ab53a4214
+template <> struct __declspec(uuid("d8ca4d10-f5c2-5c7b-8863-b48ab53a4214")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::ZoomTransitionMode> : impl_IVector<winrt::Windows::Media::Devices::ZoomTransitionMode> {};
+#endif
+
 #ifndef WINRT_GENERIC_80eb468a_fdc4_5c89_99b8_8d476264e211
 #define WINRT_GENERIC_80eb468a_fdc4_5c89_99b8_8d476264e211
 template <> struct __declspec(uuid("80eb468a-fdc4-5c89-99b8-8d476264e211")) __declspec(novtable) IIterator<winrt::Windows::Media::Devices::ZoomTransitionMode> : impl_IIterator<winrt::Windows::Media::Devices::ZoomTransitionMode> {};
@@ -132,6 +147,11 @@ template <> struct __declspec(uuid("80eb468a-fdc4-5c89-99b8-8d476264e211")) __de
 #ifndef WINRT_GENERIC_db656915_8fac_5fb2_98e0_0e97421656c5
 #define WINRT_GENERIC_db656915_8fac_5fb2_98e0_0e97421656c5
 template <> struct __declspec(uuid("db656915-8fac-5fb2-98e0-0e97421656c5")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::ZoomTransitionMode> : impl_IIterable<winrt::Windows::Media::Devices::ZoomTransitionMode> {};
+#endif
+
+#ifndef WINRT_GENERIC_6e8bf2da_f19e_5e02_a96f_843db8a278b9
+#define WINRT_GENERIC_6e8bf2da_f19e_5e02_a96f_843db8a278b9
+template <> struct __declspec(uuid("6e8bf2da-f19e-5e02-a96f-843db8a278b9")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::FocusPreset> : impl_IVector<winrt::Windows::Media::Devices::FocusPreset> {};
 #endif
 
 #ifndef WINRT_GENERIC_d3ebc8e9_f0c5_51c0_bb86_bdea0a6946fb
@@ -144,6 +164,11 @@ template <> struct __declspec(uuid("d3ebc8e9-f0c5-51c0-bb86-bdea0a6946fb")) __de
 template <> struct __declspec(uuid("26ba711b-3a32-5216-bc34-61ecafbebdc1")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::FocusPreset> : impl_IIterable<winrt::Windows::Media::Devices::FocusPreset> {};
 #endif
 
+#ifndef WINRT_GENERIC_078fef36_21e9_563e_a8e1_5f4368935468
+#define WINRT_GENERIC_078fef36_21e9_563e_a8e1_5f4368935468
+template <> struct __declspec(uuid("078fef36-21e9-563e-a8e1-5f4368935468")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::FocusMode> : impl_IVector<winrt::Windows::Media::Devices::FocusMode> {};
+#endif
+
 #ifndef WINRT_GENERIC_f9a43cd4_b300_541f_af79_3de3400e16af
 #define WINRT_GENERIC_f9a43cd4_b300_541f_af79_3de3400e16af
 template <> struct __declspec(uuid("f9a43cd4-b300-541f-af79-3de3400e16af")) __declspec(novtable) IIterator<winrt::Windows::Media::Devices::FocusMode> : impl_IIterator<winrt::Windows::Media::Devices::FocusMode> {};
@@ -152,6 +177,11 @@ template <> struct __declspec(uuid("f9a43cd4-b300-541f-af79-3de3400e16af")) __de
 #ifndef WINRT_GENERIC_561bc21f_4ae2_580a_a216_0ad48f373a4c
 #define WINRT_GENERIC_561bc21f_4ae2_580a_a216_0ad48f373a4c
 template <> struct __declspec(uuid("561bc21f-4ae2-580a-a216-0ad48f373a4c")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::FocusMode> : impl_IIterable<winrt::Windows::Media::Devices::FocusMode> {};
+#endif
+
+#ifndef WINRT_GENERIC_24dd1947_113e_5bcd_b90f_58b37a4c9c64
+#define WINRT_GENERIC_24dd1947_113e_5bcd_b90f_58b37a4c9c64
+template <> struct __declspec(uuid("24dd1947-113e-5bcd-b90f-58b37a4c9c64")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::ManualFocusDistance> : impl_IVector<winrt::Windows::Media::Devices::ManualFocusDistance> {};
 #endif
 
 #ifndef WINRT_GENERIC_b02944e1_f649_511e_80dd_2e2b20379deb
@@ -164,6 +194,11 @@ template <> struct __declspec(uuid("b02944e1-f649-511e-80dd-2e2b20379deb")) __de
 template <> struct __declspec(uuid("cf8cbeb1-2a4c-522d-962f-84c31a598d68")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::ManualFocusDistance> : impl_IIterable<winrt::Windows::Media::Devices::ManualFocusDistance> {};
 #endif
 
+#ifndef WINRT_GENERIC_92a24d48_d5e6_5ee1_a2ca_5dfbc1253284
+#define WINRT_GENERIC_92a24d48_d5e6_5ee1_a2ca_5dfbc1253284
+template <> struct __declspec(uuid("92a24d48-d5e6-5ee1-a2ca-5dfbc1253284")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::AutoFocusRange> : impl_IVector<winrt::Windows::Media::Devices::AutoFocusRange> {};
+#endif
+
 #ifndef WINRT_GENERIC_07489ac5_3c71_59c6_b7dc_7f21341c2f71
 #define WINRT_GENERIC_07489ac5_3c71_59c6_b7dc_7f21341c2f71
 template <> struct __declspec(uuid("07489ac5-3c71-59c6-b7dc-7f21341c2f71")) __declspec(novtable) IIterator<winrt::Windows::Media::Devices::AutoFocusRange> : impl_IIterator<winrt::Windows::Media::Devices::AutoFocusRange> {};
@@ -174,9 +209,24 @@ template <> struct __declspec(uuid("07489ac5-3c71-59c6-b7dc-7f21341c2f71")) __de
 template <> struct __declspec(uuid("751664c6-f8d6-50a3-ab80-137c6d908c55")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::AutoFocusRange> : impl_IIterable<winrt::Windows::Media::Devices::AutoFocusRange> {};
 #endif
 
+#ifndef WINRT_GENERIC_e4c7e549_500a_5dc6_9f84_ce1b5cb7a99f
+#define WINRT_GENERIC_e4c7e549_500a_5dc6_9f84_ce1b5cb7a99f
+template <> struct __declspec(uuid("e4c7e549-500a-5dc6-9f84-ce1b5cb7a99f")) __declspec(novtable) IVector<Windows::Media::Devices::RegionOfInterest> : impl_IVector<Windows::Media::Devices::RegionOfInterest> {};
+#endif
+
+#ifndef WINRT_GENERIC_96f58abc_f7e2_5d6a_a404_3fb2f2624545
+#define WINRT_GENERIC_96f58abc_f7e2_5d6a_a404_3fb2f2624545
+template <> struct __declspec(uuid("96f58abc-f7e2-5d6a-a404-3fb2f2624545")) __declspec(novtable) IVectorView<Windows::Media::Devices::RegionOfInterest> : impl_IVectorView<Windows::Media::Devices::RegionOfInterest> {};
+#endif
+
 #ifndef WINRT_GENERIC_8eb80e4e_9691_594f_8b3d_f52ecc0f7837
 #define WINRT_GENERIC_8eb80e4e_9691_594f_8b3d_f52ecc0f7837
 template <> struct __declspec(uuid("8eb80e4e-9691-594f-8b3d-f52ecc0f7837")) __declspec(novtable) IIterator<Windows::Media::Devices::RegionOfInterest> : impl_IIterator<Windows::Media::Devices::RegionOfInterest> {};
+#endif
+
+#ifndef WINRT_GENERIC_3f30e32d_cd49_5a56_bb5c_5af641300e30
+#define WINRT_GENERIC_3f30e32d_cd49_5a56_bb5c_5af641300e30
+template <> struct __declspec(uuid("3f30e32d-cd49-5a56-bb5c-5af641300e30")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::HdrVideoMode> : impl_IVector<winrt::Windows::Media::Devices::HdrVideoMode> {};
 #endif
 
 #ifndef WINRT_GENERIC_3db61d13_0f30_5d2d_99cb_30c7b9009878
@@ -189,6 +239,11 @@ template <> struct __declspec(uuid("3db61d13-0f30-5d2d-99cb-30c7b9009878")) __de
 template <> struct __declspec(uuid("1d9679a7-2d06-5294-ac67-f9cd3561dcb8")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::HdrVideoMode> : impl_IIterable<winrt::Windows::Media::Devices::HdrVideoMode> {};
 #endif
 
+#ifndef WINRT_GENERIC_b05ee60a_2a05_5e8e_84c3_50210792e230
+#define WINRT_GENERIC_b05ee60a_2a05_5e8e_84c3_50210792e230
+template <> struct __declspec(uuid("b05ee60a-2a05-5e8e-84c3-50210792e230")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::AdvancedPhotoMode> : impl_IVector<winrt::Windows::Media::Devices::AdvancedPhotoMode> {};
+#endif
+
 #ifndef WINRT_GENERIC_e6d0bc9d_e1cb_5ed0_8ede_7d037bcc2e07
 #define WINRT_GENERIC_e6d0bc9d_e1cb_5ed0_8ede_7d037bcc2e07
 template <> struct __declspec(uuid("e6d0bc9d-e1cb-5ed0-8ede-7d037bcc2e07")) __declspec(novtable) IIterator<winrt::Windows::Media::Devices::AdvancedPhotoMode> : impl_IIterator<winrt::Windows::Media::Devices::AdvancedPhotoMode> {};
@@ -199,6 +254,11 @@ template <> struct __declspec(uuid("e6d0bc9d-e1cb-5ed0-8ede-7d037bcc2e07")) __de
 template <> struct __declspec(uuid("7d090784-70a9-570c-be82-0d0890318975")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::AdvancedPhotoMode> : impl_IIterable<winrt::Windows::Media::Devices::AdvancedPhotoMode> {};
 #endif
 
+#ifndef WINRT_GENERIC_2483d8d5_c001_5ba9_9bc0_a99b7bbfa0c6
+#define WINRT_GENERIC_2483d8d5_c001_5ba9_9bc0_a99b7bbfa0c6
+template <> struct __declspec(uuid("2483d8d5-c001-5ba9-9bc0-a99b7bbfa0c6")) __declspec(novtable) IVector<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> : impl_IVector<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> {};
+#endif
+
 #ifndef WINRT_GENERIC_4a165d46_cf19_5a03_bb54_63fc2b4ed39b
 #define WINRT_GENERIC_4a165d46_cf19_5a03_bb54_63fc2b4ed39b
 template <> struct __declspec(uuid("4a165d46-cf19-5a03-bb54-63fc2b4ed39b")) __declspec(novtable) IIterator<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> : impl_IIterator<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> {};
@@ -207,6 +267,11 @@ template <> struct __declspec(uuid("4a165d46-cf19-5a03-bb54-63fc2b4ed39b")) __de
 #ifndef WINRT_GENERIC_323d7734_94c2_544d_a560_56560fe68819
 #define WINRT_GENERIC_323d7734_94c2_544d_a560_56560fe68819
 template <> struct __declspec(uuid("323d7734-94c2-544d-a560-56560fe68819")) __declspec(novtable) IIterable<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> : impl_IIterable<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> {};
+#endif
+
+#ifndef WINRT_GENERIC_1142e844_f93c_5a3a_8f4e_42f16c3ea271
+#define WINRT_GENERIC_1142e844_f93c_5a3a_8f4e_42f16c3ea271
+template <> struct __declspec(uuid("1142e844-f93c-5a3a-8f4e-42f16c3ea271")) __declspec(novtable) IVector<Windows::Media::MediaProperties::IMediaEncodingProperties> : impl_IVector<Windows::Media::MediaProperties::IMediaEncodingProperties> {};
 #endif
 
 #ifndef WINRT_GENERIC_7c094aec_c8f3_5f49_99c7_b66d8414200e

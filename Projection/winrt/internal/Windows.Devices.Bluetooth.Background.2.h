@@ -14,6 +14,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("8aef9bca-fe7d-5966-9789-fede24cb41c4")) __declspec(novtable) IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> : impl_IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> {};
 #endif
 
+#ifndef WINRT_GENERIC_18b55e9e_757a_5f05_8f5d_850abf782d5d
+#define WINRT_GENERIC_18b55e9e_757a_5f05_8f5d_850abf782d5d
+template <> struct __declspec(uuid("18b55e9e-757a-5f05-8f5d-850abf782d5d")) __declspec(novtable) IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> : impl_IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> {};
+#endif
+
 #ifndef WINRT_GENERIC_096edbb8_ecef_5724_be62_240dcff6aca9
 #define WINRT_GENERIC_096edbb8_ecef_5724_be62_240dcff6aca9
 template <> struct __declspec(uuid("096edbb8-ecef-5724-be62-240dcff6aca9")) __declspec(novtable) IIterator<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> : impl_IIterator<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> {};

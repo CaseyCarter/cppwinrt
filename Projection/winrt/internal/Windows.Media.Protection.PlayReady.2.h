@@ -130,6 +130,36 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_6eebd6f3_f140_5e7b_be5e_6289bfbd46c0
+#define WINRT_GENERIC_6eebd6f3_f140_5e7b_be5e_6289bfbd46c0
+template <> struct __declspec(uuid("6eebd6f3-f140-5e7b-be5e-6289bfbd46c0")) __declspec(novtable) IVector<Windows::Media::Protection::PlayReady::IPlayReadyLicense> : impl_IVector<Windows::Media::Protection::PlayReady::IPlayReadyLicense> {};
+#endif
+
+#ifndef WINRT_GENERIC_a3e12cf0_52b5_5df0_b599_4c15668df9ee
+#define WINRT_GENERIC_a3e12cf0_52b5_5df0_b599_4c15668df9ee
+template <> struct __declspec(uuid("a3e12cf0-52b5-5df0-b599-4c15668df9ee")) __declspec(novtable) IVectorView<Windows::Media::Protection::PlayReady::IPlayReadyLicense> : impl_IVectorView<Windows::Media::Protection::PlayReady::IPlayReadyLicense> {};
+#endif
+
+#ifndef WINRT_GENERIC_c13c04e7_170c_5a9b_9b69_2aa49cbf11c9
+#define WINRT_GENERIC_c13c04e7_170c_5a9b_9b69_2aa49cbf11c9
+template <> struct __declspec(uuid("c13c04e7-170c-5a9b-9b69-2aa49cbf11c9")) __declspec(novtable) IVector<Windows::Media::Protection::PlayReady::IPlayReadyDomain> : impl_IVector<Windows::Media::Protection::PlayReady::IPlayReadyDomain> {};
+#endif
+
+#ifndef WINRT_GENERIC_34269440_6f14_5299_ad00_faf296ef438c
+#define WINRT_GENERIC_34269440_6f14_5299_ad00_faf296ef438c
+template <> struct __declspec(uuid("34269440-6f14-5299-ad00-faf296ef438c")) __declspec(novtable) IVectorView<Windows::Media::Protection::PlayReady::IPlayReadyDomain> : impl_IVectorView<Windows::Media::Protection::PlayReady::IPlayReadyDomain> {};
+#endif
+
+#ifndef WINRT_GENERIC_967ba019_22ac_56ea_b8b4_e0152fc6e9e4
+#define WINRT_GENERIC_967ba019_22ac_56ea_b8b4_e0152fc6e9e4
+template <> struct __declspec(uuid("967ba019-22ac-56ea-b8b4-e0152fc6e9e4")) __declspec(novtable) IVector<Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest> : impl_IVector<Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest> {};
+#endif
+
+#ifndef WINRT_GENERIC_87342d92_8dca_5a95_83d4_936fdaf84288
+#define WINRT_GENERIC_87342d92_8dca_5a95_83d4_936fdaf84288
+template <> struct __declspec(uuid("87342d92-8dca-5a95-83d4-936fdaf84288")) __declspec(novtable) IVectorView<Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest> : impl_IVectorView<Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest> {};
+#endif
+
 #ifndef WINRT_GENERIC_a61a11cd_b32e_518b_a6a7_5472cbe00e83
 #define WINRT_GENERIC_a61a11cd_b32e_518b_a6a7_5472cbe00e83
 template <> struct __declspec(uuid("a61a11cd-b32e-518b-a6a7-5472cbe00e83")) __declspec(novtable) IIterator<Windows::Media::Core::AudioStreamDescriptor> : impl_IIterator<Windows::Media::Core::AudioStreamDescriptor> {};

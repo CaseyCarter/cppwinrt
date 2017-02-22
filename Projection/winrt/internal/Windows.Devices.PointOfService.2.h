@@ -20,6 +20,11 @@ template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_f6d1f700_49c2_52ae_8154_826f9908773c
+#define WINRT_GENERIC_f6d1f700_49c2_52ae_8154_826f9908773c
+template <> struct __declspec(uuid("f6d1f700-49c2-52ae-8154-826f9908773c")) __declspec(novtable) IMap<hstring, hstring> : impl_IMap<hstring, hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_60310303_49c5_52e6_abc6_a9b36eccc716
 #define WINRT_GENERIC_60310303_49c5_52e6_abc6_a9b36eccc716
 template <> struct __declspec(uuid("60310303-49c5-52e6-abc6-a9b36eccc716")) __declspec(novtable) IKeyValuePair<hstring, hstring> : impl_IKeyValuePair<hstring, hstring> {};
@@ -39,6 +44,11 @@ template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
 
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
@@ -230,6 +240,21 @@ template <> struct __declspec(uuid("31424f6f-cfeb-5031-8a95-bea59b09e584")) __de
 template <> struct __declspec(uuid("db886581-2462-5c81-880c-06112ca70012")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_534832ed_2a03_5604_890d_5a928cd427b9
+#define WINRT_GENERIC_534832ed_2a03_5604_890d_5a928cd427b9
+template <> struct __declspec(uuid("534832ed-2a03-5604-890d-5a928cd427b9")) __declspec(novtable) IVector<uint32_t> : impl_IVector<uint32_t> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 #define WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __declspec(novtable) AsyncOperationCompletedHandler<bool> : impl_AsyncOperationCompletedHandler<bool> {};
@@ -289,6 +314,11 @@ template <> struct __declspec(uuid("946c2d64-22d4-552d-abfb-9eb341bd67f3")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_6e92e194_9a46_55b3_8db1_490661f27f9d
+#define WINRT_GENERIC_6e92e194_9a46_55b3_8db1_490661f27f9d
+template <> struct __declspec(uuid("6e92e194-9a46-55b3-8db1-490661f27f9d")) __declspec(novtable) IVector<winrt::Windows::Devices::PointOfService::PosPrinterRotation> : impl_IVector<winrt::Windows::Devices::PointOfService::PosPrinterRotation> {};
+#endif
 
 #ifndef WINRT_GENERIC_f687ef7c_b11e_56c3_9158_e6ba15bd521b
 #define WINRT_GENERIC_f687ef7c_b11e_56c3_9158_e6ba15bd521b

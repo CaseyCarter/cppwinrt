@@ -14,6 +14,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("74ab2473-9624-5a06-9025-6d91e622bf8e")) __declspec(novtable) IVectorView<Windows::System::Diagnostics::ProcessDiagnosticInfo> : impl_IVectorView<Windows::System::Diagnostics::ProcessDiagnosticInfo> {};
 #endif
 
+#ifndef WINRT_GENERIC_f62e2d01_c1dd_5b60_b5da_16518cba0bb0
+#define WINRT_GENERIC_f62e2d01_c1dd_5b60_b5da_16518cba0bb0
+template <> struct __declspec(uuid("f62e2d01-c1dd-5b60-b5da-16518cba0bb0")) __declspec(novtable) IVector<Windows::System::Diagnostics::ProcessDiagnosticInfo> : impl_IVector<Windows::System::Diagnostics::ProcessDiagnosticInfo> {};
+#endif
+
 #ifndef WINRT_GENERIC_a89b4418_4c3b_5f49_b957_785697c99abf
 #define WINRT_GENERIC_a89b4418_4c3b_5f49_b957_785697c99abf
 template <> struct __declspec(uuid("a89b4418-4c3b-5f49-b957-785697c99abf")) __declspec(novtable) IIterator<Windows::System::Diagnostics::ProcessDiagnosticInfo> : impl_IIterator<Windows::System::Diagnostics::ProcessDiagnosticInfo> {};

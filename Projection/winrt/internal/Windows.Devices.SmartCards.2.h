@@ -115,6 +115,11 @@ template <> struct __declspec(uuid("3d7e6ea9-e739-555c-9c02-07396c5321f5")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_ad813bf2_e608_5876_8f5f_bf672f49313f
+#define WINRT_GENERIC_ad813bf2_e608_5876_8f5f_bf672f49313f
+template <> struct __declspec(uuid("ad813bf2-e608-5876-8f5f-bf672f49313f")) __declspec(novtable) IVector<Windows::Devices::SmartCards::SmartCard> : impl_IVector<Windows::Devices::SmartCards::SmartCard> {};
+#endif
+
 #ifndef WINRT_GENERIC_86b29903_916e_5817_bc96_df324475e31a
 #define WINRT_GENERIC_86b29903_916e_5817_bc96_df324475e31a
 template <> struct __declspec(uuid("86b29903-916e-5817-bc96-df324475e31a")) __declspec(novtable) IIterator<Windows::Devices::SmartCards::SmartCard> : impl_IIterator<Windows::Devices::SmartCards::SmartCard> {};

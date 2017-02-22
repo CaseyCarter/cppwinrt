@@ -44,6 +44,11 @@ template <> struct __declspec(uuid("f09e843a-13cb-559b-a9fc-015722c2cd57")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_c3a1ccf9_15cc_5a3f_a7c1_b62c5c3fb20c
+#define WINRT_GENERIC_c3a1ccf9_15cc_5a3f_a7c1_b62c5c3fb20c
+template <> struct __declspec(uuid("c3a1ccf9-15cc-5a3f-a7c1-b62c5c3fb20c")) __declspec(novtable) IVector<Windows::UI::Notifications::UserNotification> : impl_IVector<Windows::UI::Notifications::UserNotification> {};
+#endif
+
 #ifndef WINRT_GENERIC_6ee1200d_dd13_5050_88cb_5352af113fd1
 #define WINRT_GENERIC_6ee1200d_dd13_5050_88cb_5352af113fd1
 template <> struct __declspec(uuid("6ee1200d-dd13-5050-88cb-5352af113fd1")) __declspec(novtable) IIterator<Windows::UI::Notifications::UserNotification> : impl_IIterator<Windows::UI::Notifications::UserNotification> {};

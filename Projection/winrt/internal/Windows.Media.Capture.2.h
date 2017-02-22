@@ -206,6 +206,11 @@ template <> struct __declspec(uuid("e521c894-2c26-5946-9e61-2b5e188d01ed")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_3850bc73_158f_5698_b1ad_3fbc81d37950
+#define WINRT_GENERIC_3850bc73_158f_5698_b1ad_3fbc81d37950
+template <> struct __declspec(uuid("3850bc73-158f-5698-b1ad-3fbc81d37950")) __declspec(novtable) IVector<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> : impl_IVector<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> {};
+#endif
+
 #ifndef WINRT_GENERIC_b3e8378f_710c_5126_a6c9_8f489f63e15e
 #define WINRT_GENERIC_b3e8378f_710c_5126_a6c9_8f489f63e15e
 template <> struct __declspec(uuid("b3e8378f-710c-5126-a6c9-8f489f63e15e")) __declspec(novtable) IIterator<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> : impl_IIterator<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> {};
@@ -214,6 +219,11 @@ template <> struct __declspec(uuid("b3e8378f-710c-5126-a6c9-8f489f63e15e")) __de
 #ifndef WINRT_GENERIC_0895e56d_fe1f_5364_ab67_c597d8970b89
 #define WINRT_GENERIC_0895e56d_fe1f_5364_ab67_c597d8970b89
 template <> struct __declspec(uuid("0895e56d-fe1f-5364-ab67-c597d8970b89")) __declspec(novtable) IIterable<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> : impl_IIterable<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> {};
+#endif
+
+#ifndef WINRT_GENERIC_b7b738b1_91a5_5d19_9a6d_87050a4ffb5b
+#define WINRT_GENERIC_b7b738b1_91a5_5d19_9a6d_87050a4ffb5b
+template <> struct __declspec(uuid("b7b738b1-91a5-5d19-9a6d-87050a4ffb5b")) __declspec(novtable) IVector<Windows::Media::Capture::MediaCaptureVideoProfile> : impl_IVector<Windows::Media::Capture::MediaCaptureVideoProfile> {};
 #endif
 
 #ifndef WINRT_GENERIC_a9bc95f8_b5c0_5108_b9ed_a902339366e9
@@ -284,6 +294,11 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_29f35a95_7eae_55a7_bc19_ed87baed4869
 #define WINRT_GENERIC_29f35a95_7eae_55a7_bc19_ed87baed4869
 template <> struct __declspec(uuid("29f35a95-7eae-55a7-bc19-ed87baed4869")) __declspec(novtable) IKeyValuePair<hstring, Windows::Media::Capture::Frames::MediaFrameSource> : impl_IKeyValuePair<hstring, Windows::Media::Capture::Frames::MediaFrameSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_f49d3251_0a96_5cae_90f4_632c03f1057b
+#define WINRT_GENERIC_f49d3251_0a96_5cae_90f4_632c03f1057b
+template <> struct __declspec(uuid("f49d3251-0a96-5cae-90f4-632c03f1057b")) __declspec(novtable) IMap<hstring, Windows::Media::Capture::Frames::MediaFrameSource> : impl_IMap<hstring, Windows::Media::Capture::Frames::MediaFrameSource> {};
 #endif
 
 

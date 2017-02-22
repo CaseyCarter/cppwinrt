@@ -235,6 +235,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("13624f8d-85cc-5780-a78d-64dba58f2c3c")) __declspec(novtable) IMapView<hstring, Windows::Storage::ApplicationDataContainer> : impl_IMapView<hstring, Windows::Storage::ApplicationDataContainer> {};
 #endif
 
+#ifndef WINRT_GENERIC_802508e2_9c2c_5b91_89a8_39bcf7223344
+#define WINRT_GENERIC_802508e2_9c2c_5b91_89a8_39bcf7223344
+template <> struct __declspec(uuid("802508e2-9c2c-5b91-89a8-39bcf7223344")) __declspec(novtable) IVector<Windows::Storage::IStorageItem> : impl_IVector<Windows::Storage::IStorageItem> {};
+#endif
+
 
 }
 
@@ -360,6 +365,11 @@ template <> struct __declspec(uuid("c8659aae-4926-52ad-8f60-d89fe5a8df5f")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_0e874d56_47fb_5e37_b05a_eea1bc5e4c80
+#define WINRT_GENERIC_0e874d56_47fb_5e37_b05a_eea1bc5e4c80
+template <> struct __declspec(uuid("0e874d56-47fb-5e37-b05a-eea1bc5e4c80")) __declspec(novtable) IVector<Windows::Storage::StorageLibraryChange> : impl_IVector<Windows::Storage::StorageLibraryChange> {};
+#endif
+
 #ifndef WINRT_GENERIC_c48a1103_56e6_5398_84fe_92edad7fc111
 #define WINRT_GENERIC_c48a1103_56e6_5398_84fe_92edad7fc111
 template <> struct __declspec(uuid("c48a1103-56e6-5398-84fe-92edad7fc111")) __declspec(novtable) IIterator<Windows::Storage::StorageLibraryChange> : impl_IIterator<Windows::Storage::StorageLibraryChange> {};
@@ -368,6 +378,11 @@ template <> struct __declspec(uuid("c48a1103-56e6-5398-84fe-92edad7fc111")) __de
 #ifndef WINRT_GENERIC_87c15dfc_0c5e_518b_9206_97d3d9823c61
 #define WINRT_GENERIC_87c15dfc_0c5e_518b_9206_97d3d9823c61
 template <> struct __declspec(uuid("87c15dfc-0c5e-518b-9206-97d3d9823c61")) __declspec(novtable) IIterable<Windows::Storage::StorageLibraryChange> : impl_IIterable<Windows::Storage::StorageLibraryChange> {};
+#endif
+
+#ifndef WINRT_GENERIC_fcbc8b8b_6103_5b4e_ba00_4bc2cedb6a35
+#define WINRT_GENERIC_fcbc8b8b_6103_5b4e_ba00_4bc2cedb6a35
+template <> struct __declspec(uuid("fcbc8b8b-6103-5b4e-ba00-4bc2cedb6a35")) __declspec(novtable) IVector<Windows::Storage::StorageFile> : impl_IVector<Windows::Storage::StorageFile> {};
 #endif
 
 #ifndef WINRT_GENERIC_43e29f53_0298_55aa_a6c8_4edd323d9598
@@ -413,6 +428,11 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_5adbc543_2170_5ad9_b35e_968cdb78fb30
 #define WINRT_GENERIC_5adbc543_2170_5ad9_b35e_968cdb78fb30
 template <> struct __declspec(uuid("5adbc543-2170-5ad9-b35e-968cdb78fb30")) __declspec(novtable) IKeyValuePair<hstring, Windows::Storage::ApplicationDataContainer> : impl_IKeyValuePair<hstring, Windows::Storage::ApplicationDataContainer> {};
+#endif
+
+#ifndef WINRT_GENERIC_b56241e6_507b_5cd7_b9c3_297bcbd5bcef
+#define WINRT_GENERIC_b56241e6_507b_5cd7_b9c3_297bcbd5bcef
+template <> struct __declspec(uuid("b56241e6-507b-5cd7-b9c3-297bcbd5bcef")) __declspec(novtable) IMap<hstring, Windows::Storage::ApplicationDataContainer> : impl_IMap<hstring, Windows::Storage::ApplicationDataContainer> {};
 #endif
 
 #ifndef WINRT_GENERIC_fe2f3d47_5d47_5499_8374_430c7cda0204

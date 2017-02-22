@@ -159,6 +159,21 @@ template <> struct __declspec(uuid("c4ac1ba2-7851-5a44-bc8d-3d7c713f1f41")) __de
 template <> struct __declspec(uuid("5e52f8ce-aced-5a42-95b4-f674dd84885e")) __declspec(novtable) IAsyncOperation<Windows::Storage::StorageFile> : impl_IAsyncOperation<Windows::Storage::StorageFile> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_802508e2_9c2c_5b91_89a8_39bcf7223344
+#define WINRT_GENERIC_802508e2_9c2c_5b91_89a8_39bcf7223344
+template <> struct __declspec(uuid("802508e2-9c2c-5b91-89a8-39bcf7223344")) __declspec(novtable) IVector<Windows::Storage::IStorageItem> : impl_IVector<Windows::Storage::IStorageItem> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
 #define WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
 template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __declspec(novtable) AsyncOperationCompletedHandler<hstring> : impl_AsyncOperationCompletedHandler<hstring> {};

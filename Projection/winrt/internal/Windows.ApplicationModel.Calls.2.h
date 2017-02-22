@@ -139,6 +139,11 @@ template <> struct __declspec(uuid("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_569f74f9_1abc_53ab_aa2c_2d97f04fcc12
+#define WINRT_GENERIC_569f74f9_1abc_53ab_aa2c_2d97f04fcc12
+template <> struct __declspec(uuid("569f74f9-1abc-53ab-aa2c-2d97f04fcc12")) __declspec(novtable) IVector<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> : impl_IVector<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> {};
+#endif
+
 #ifndef WINRT_GENERIC_c1cf3870_064a_54d5_afab_d1dc4ee26ccb
 #define WINRT_GENERIC_c1cf3870_064a_54d5_afab_d1dc4ee26ccb
 template <> struct __declspec(uuid("c1cf3870-064a-54d5-afab-d1dc4ee26ccb")) __declspec(novtable) IIterator<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> : impl_IIterator<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> {};

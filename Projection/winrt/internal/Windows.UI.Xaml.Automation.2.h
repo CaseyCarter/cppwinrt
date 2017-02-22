@@ -36,14 +36,14 @@ template <> struct __declspec(uuid("f66c6bd3-55b4-5bbb-b82a-6d9ce383091a")) __de
 template <> struct __declspec(uuid("73596c82-f6e5-5b57-8dc5-556cb7a8fbe6")) __declspec(novtable) IVector<Windows::UI::Xaml::Automation::AutomationAnnotation> : impl_IVector<Windows::UI::Xaml::Automation::AutomationAnnotation> {};
 #endif
 
-#ifndef WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
-#define WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
-template <> struct __declspec(uuid("1d1f9d60-d53b-57f7-b144-8f7c487846e8")) __declspec(novtable) IIterator<Windows::UI::Xaml::UIElement> : impl_IIterator<Windows::UI::Xaml::UIElement> {};
-#endif
-
 #ifndef WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
 #define WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
 template <> struct __declspec(uuid("f3864c10-14a4-5516-b1d9-63b6579429b1")) __declspec(novtable) IVectorView<Windows::UI::Xaml::UIElement> : impl_IVectorView<Windows::UI::Xaml::UIElement> {};
+#endif
+
+#ifndef WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
+#define WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
+template <> struct __declspec(uuid("1d1f9d60-d53b-57f7-b144-8f7c487846e8")) __declspec(novtable) IIterator<Windows::UI::Xaml::UIElement> : impl_IIterator<Windows::UI::Xaml::UIElement> {};
 #endif
 
 #ifndef WINRT_GENERIC_29f8d454_905d_587e_b9d8_bfd418805a65

@@ -9,6 +9,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
+#define WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
+template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __declspec(novtable) IMap<hstring, Windows::Foundation::IInspectable> : impl_IMap<hstring, Windows::Foundation::IInspectable> {};
+#endif
+
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
@@ -38,6 +43,16 @@ template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
 
 #ifndef WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
 #define WINRT_GENERIC_bb78502a_f79d_54fa_92c9_90c5039fdf7e
@@ -187,6 +202,21 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_144b0f3d_2d59_5dd2_b012_908ec3e06435
 #define WINRT_GENERIC_144b0f3d_2d59_5dd2_b012_908ec3e06435
 template <> struct __declspec(uuid("144b0f3d-2d59-5dd2-b012-908ec3e06435")) __declspec(novtable) IVectorView<Windows::Globalization::Language> : impl_IVectorView<Windows::Globalization::Language> {};
+#endif
+
+#ifndef WINRT_GENERIC_d7828cf7_4301_58d3_aab5_06e5eefcf79f
+#define WINRT_GENERIC_d7828cf7_4301_58d3_aab5_06e5eefcf79f
+template <> struct __declspec(uuid("d7828cf7-4301-58d3-aab5-06e5eefcf79f")) __declspec(novtable) IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> : impl_IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> {};
+#endif
+
+#ifndef WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+#define WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+template <> struct __declspec(uuid("36282c0f-2f1f-57f4-b2b1-867af90c3d13")) __declspec(novtable) IVector<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVector<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
+
+#ifndef WINRT_GENERIC_dcf2525a_42c0_501d_9fcb_471fae060396
+#define WINRT_GENERIC_dcf2525a_42c0_501d_9fcb_471fae060396
+template <> struct __declspec(uuid("dcf2525a-42c0-501d-9fcb-471fae060396")) __declspec(novtable) IVector<Windows::Globalization::Language> : impl_IVector<Windows::Globalization::Language> {};
 #endif
 
 #ifndef WINRT_GENERIC_48409a10_61b6_5db1_a69d_8abc46ac608a

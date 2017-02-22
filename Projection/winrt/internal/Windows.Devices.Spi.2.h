@@ -40,6 +40,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("35fec489-44a2-5543-8a0c-b52e2f9cf87c")) __declspec(novtable) IVectorView<Windows::Devices::Spi::SpiController> : impl_IVectorView<Windows::Devices::Spi::SpiController> {};
 #endif
 
+#ifndef WINRT_GENERIC_b939af5b_b45d_5489_9149_61442c1905fe
+#define WINRT_GENERIC_b939af5b_b45d_5489_9149_61442c1905fe
+template <> struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905fe")) __declspec(novtable) IVector<int32_t> : impl_IVector<int32_t> {};
+#endif
+
 #ifndef WINRT_GENERIC_bfea7f78_50c2_5f1d_a6ea_9e978d2699ff
 #define WINRT_GENERIC_bfea7f78_50c2_5f1d_a6ea_9e978d2699ff
 template <> struct __declspec(uuid("bfea7f78-50c2-5f1d-a6ea-9e978d2699ff")) __declspec(novtable) IIterator<int32_t> : impl_IIterator<int32_t> {};
@@ -69,6 +74,11 @@ template <> struct __declspec(uuid("5e94d949-a844-5b25-a3cc-afabeb18c1d2")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_53ba4bbb_1daf_5e2b_9086_c346aa909544
+#define WINRT_GENERIC_53ba4bbb_1daf_5e2b_9086_c346aa909544
+template <> struct __declspec(uuid("53ba4bbb-1daf-5e2b-9086-c346aa909544")) __declspec(novtable) IVector<Windows::Devices::Spi::SpiController> : impl_IVector<Windows::Devices::Spi::SpiController> {};
+#endif
 
 #ifndef WINRT_GENERIC_fd7d5997_544c_5be9_b0fa_1d0efbfc4a03
 #define WINRT_GENERIC_fd7d5997_544c_5be9_b0fa_1d0efbfc4a03

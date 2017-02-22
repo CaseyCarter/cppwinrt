@@ -85,6 +85,11 @@ template <> struct __declspec(uuid("26192073-a2c9-527d-9bd3-911c05e0011e")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_dcf2525a_42c0_501d_9fcb_471fae060396
+#define WINRT_GENERIC_dcf2525a_42c0_501d_9fcb_471fae060396
+template <> struct __declspec(uuid("dcf2525a-42c0-501d-9fcb-471fae060396")) __declspec(novtable) IVector<Windows::Globalization::Language> : impl_IVector<Windows::Globalization::Language> {};
+#endif
+
 #ifndef WINRT_GENERIC_48409a10_61b6_5db1_a69d_8abc46ac608a
 #define WINRT_GENERIC_48409a10_61b6_5db1_a69d_8abc46ac608a
 template <> struct __declspec(uuid("48409a10-61b6-5db1-a69d-8abc46ac608a")) __declspec(novtable) IIterable<Windows::Globalization::Language> : impl_IIterable<Windows::Globalization::Language> {};
@@ -98,6 +103,11 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 #ifndef WINRT_GENERIC_30e99ae6_f414_5243_8db2_aab38ea3f1f1
 #define WINRT_GENERIC_30e99ae6_f414_5243_8db2_aab38ea3f1f1
 template <> struct __declspec(uuid("30e99ae6-f414-5243-8db2-aab38ea3f1f1")) __declspec(novtable) IIterator<Windows::Globalization::Language> : impl_IIterator<Windows::Globalization::Language> {};
+#endif
+
+#ifndef WINRT_GENERIC_07035819_cc06_5409_96d9_7a4b7a383b93
+#define WINRT_GENERIC_07035819_cc06_5409_96d9_7a4b7a383b93
+template <> struct __declspec(uuid("07035819-cc06-5409-96d9-7a4b7a383b93")) __declspec(novtable) IVector<Windows::Media::SpeechRecognition::SpeechRecognitionResult> : impl_IVector<Windows::Media::SpeechRecognition::SpeechRecognitionResult> {};
 #endif
 
 #ifndef WINRT_GENERIC_20756dd2_6d3f_5409_846a_0f0f01d7bf9a
@@ -153,6 +163,11 @@ template <> struct __declspec(uuid("2843d34f-d3e5-5fca-9fdc-b568dd5c1e64")) __de
 #ifndef WINRT_GENERIC_bcde03ad_ea71_5077_a961_1c0ecff57202
 #define WINRT_GENERIC_bcde03ad_ea71_5077_a961_1c0ecff57202
 template <> struct __declspec(uuid("bcde03ad-ea71-5077-a961-1c0ecff57202")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::Collections::IVectorView<hstring>> : impl_IKeyValuePair<hstring, Windows::Foundation::Collections::IVectorView<hstring>> {};
+#endif
+
+#ifndef WINRT_GENERIC_b63397c9_5d89_530b_becf_2b843a15c4e4
+#define WINRT_GENERIC_b63397c9_5d89_530b_becf_2b843a15c4e4
+template <> struct __declspec(uuid("b63397c9-5d89-530b-becf-2b843a15c4e4")) __declspec(novtable) IMap<hstring, Windows::Foundation::Collections::IVectorView<hstring>> : impl_IMap<hstring, Windows::Foundation::Collections::IVectorView<hstring>> {};
 #endif
 
 #ifndef WINRT_GENERIC_643b6d83_457e_5a43_800f_b0449f91d96b

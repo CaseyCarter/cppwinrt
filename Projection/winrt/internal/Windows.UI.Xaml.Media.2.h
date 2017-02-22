@@ -36,6 +36,11 @@ template <> struct __declspec(uuid("42e26ae1-d357-57e8-bb48-f75c9ff69d91")) __de
 template <> struct __declspec(uuid("7d899fb2-4666-5a3e-b36c-9886bcbc4663")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> : impl_IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> {};
 #endif
 
+#ifndef WINRT_GENERIC_b4c1e3ac_8768_5b9d_a661_f63330b8507b
+#define WINRT_GENERIC_b4c1e3ac_8768_5b9d_a661_f63330b8507b
+template <> struct __declspec(uuid("b4c1e3ac-8768-5b9d-a661-f63330b8507b")) __declspec(novtable) IVector<Windows::UI::Xaml::UIElement> : impl_IVector<Windows::UI::Xaml::UIElement> {};
+#endif
+
 #ifndef WINRT_GENERIC_a8cd84e4_3edf_5172_8f77_10e910e5dc5d
 #define WINRT_GENERIC_a8cd84e4_3edf_5172_8f77_10e910e5dc5d
 template <> struct __declspec(uuid("a8cd84e4-3edf-5172-8f77-10e910e5dc5d")) __declspec(novtable) IVector<Windows::UI::Xaml::Media::Brush> : impl_IVector<Windows::UI::Xaml::Media::Brush> {};
@@ -121,14 +126,29 @@ template <> struct __declspec(uuid("11fdd506-b21d-564d-b6a8-ff991057b8f3")) __de
 template <> struct __declspec(uuid("37e2cb21-b9c9-5006-bed7-4c328981b551")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::PathSegment> : impl_IIterable<Windows::UI::Xaml::Media::PathSegment> {};
 #endif
 
+#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
+#endif
+
 #ifndef WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
 #define WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
 template <> struct __declspec(uuid("c602b59e-0a8e-5e99-b478-2b564585278d")) __declspec(novtable) IIterator<Windows::Foundation::Point> : impl_IIterator<Windows::Foundation::Point> {};
 #endif
 
+#ifndef WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
+#define WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
+template <> struct __declspec(uuid("f3864c10-14a4-5516-b1d9-63b6579429b1")) __declspec(novtable) IVectorView<Windows::UI::Xaml::UIElement> : impl_IVectorView<Windows::UI::Xaml::UIElement> {};
+#endif
+
 #ifndef WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
 #define WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
 template <> struct __declspec(uuid("1d1f9d60-d53b-57f7-b144-8f7c487846e8")) __declspec(novtable) IIterator<Windows::UI::Xaml::UIElement> : impl_IIterator<Windows::UI::Xaml::UIElement> {};
+#endif
+
+#ifndef WINRT_GENERIC_10debdae_bb66_541c_ae13_ee4f163b6bea
+#define WINRT_GENERIC_10debdae_bb66_541c_ae13_ee4f163b6bea
+template <> struct __declspec(uuid("10debdae-bb66-541c-ae13-ee4f163b6bea")) __declspec(novtable) IVector<Windows::UI::Xaml::Controls::Primitives::Popup> : impl_IVector<Windows::UI::Xaml::Controls::Primitives::Popup> {};
 #endif
 
 #ifndef WINRT_GENERIC_5bcb0970_5472_56e8_b184_d01fb81e408a
@@ -159,11 +179,6 @@ template <> struct __declspec(uuid("638a2cf4-f474-5318-9055-141cb909ac4b")) __de
 #ifndef WINRT_GENERIC_af7586a8_6b21_5f61_bff1_1b682293ad96
 #define WINRT_GENERIC_af7586a8_6b21_5f61_bff1_1b682293ad96
 template <> struct __declspec(uuid("af7586a8-6b21-5f61-bff1-1b682293ad96")) __declspec(novtable) IVectorView<double> : impl_IVectorView<double> {};
-#endif
-
-#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
-#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
-template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
 #endif
 
 #ifndef WINRT_GENERIC_63e1e513_fca3_51c0_8c2b_09db5f8f4c40

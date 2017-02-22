@@ -9,6 +9,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_f6d1f700_49c2_52ae_8154_826f9908773c
+#define WINRT_GENERIC_f6d1f700_49c2_52ae_8154_826f9908773c
+template <> struct __declspec(uuid("f6d1f700-49c2-52ae-8154-826f9908773c")) __declspec(novtable) IMap<hstring, hstring> : impl_IMap<hstring, hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_60310303_49c5_52e6_abc6_a9b36eccc716
 #define WINRT_GENERIC_60310303_49c5_52e6_abc6_a9b36eccc716
 template <> struct __declspec(uuid("60310303-49c5-52e6-abc6-a9b36eccc716")) __declspec(novtable) IKeyValuePair<hstring, hstring> : impl_IKeyValuePair<hstring, hstring> {};
@@ -149,9 +154,19 @@ template <> struct __declspec(uuid("4f52bfe8-9b0e-5b22-916b-834425b4ab97")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_2a820404_bef4_5fc3_971a_112da7c0eb3c
+#define WINRT_GENERIC_2a820404_bef4_5fc3_971a_112da7c0eb3c
+template <> struct __declspec(uuid("2a820404-bef4-5fc3-971a-112da7c0eb3c")) __declspec(novtable) IVector<Windows::Networking::BackgroundTransfer::DownloadOperation> : impl_IVector<Windows::Networking::BackgroundTransfer::DownloadOperation> {};
+#endif
+
 #ifndef WINRT_GENERIC_2ab61055_2d0a_59cb_8cbd_056f2d7fb454
 #define WINRT_GENERIC_2ab61055_2d0a_59cb_8cbd_056f2d7fb454
 template <> struct __declspec(uuid("2ab61055-2d0a-59cb-8cbd-056f2d7fb454")) __declspec(novtable) IIterator<Windows::Networking::BackgroundTransfer::DownloadOperation> : impl_IIterator<Windows::Networking::BackgroundTransfer::DownloadOperation> {};
+#endif
+
+#ifndef WINRT_GENERIC_25666665_a7f6_598f_91d5_d49550e93f3a
+#define WINRT_GENERIC_25666665_a7f6_598f_91d5_d49550e93f3a
+template <> struct __declspec(uuid("25666665-a7f6-598f-91d5-d49550e93f3a")) __declspec(novtable) IVector<Windows::Networking::BackgroundTransfer::UploadOperation> : impl_IVector<Windows::Networking::BackgroundTransfer::UploadOperation> {};
 #endif
 
 #ifndef WINRT_GENERIC_caa85133_73d7_5f96_ab2d_fbb4fa00f715
@@ -178,6 +193,16 @@ template <> struct __declspec(uuid("ead68818-0c38-5cde-aec1-c6a7618711f7")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_4f07f130_0804_57a0_bed8_47eeedbf4c14
+#define WINRT_GENERIC_4f07f130_0804_57a0_bed8_47eeedbf4c14
+template <> struct __declspec(uuid("4f07f130-0804-57a0-bed8-47eeedbf4c14")) __declspec(novtable) IVector<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> : impl_IVector<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> {};
+#endif
+
+#ifndef WINRT_GENERIC_33d569db_197c_5717_945d_87fdfc339302
+#define WINRT_GENERIC_33d569db_197c_5717_945d_87fdfc339302
+template <> struct __declspec(uuid("33d569db-197c-5717-945d-87fdfc339302")) __declspec(novtable) IVectorView<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> : impl_IVectorView<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> {};
+#endif
 
 #ifndef WINRT_GENERIC_07fbc351_781d_52c7_9558_a453e5703f29
 #define WINRT_GENERIC_07fbc351_781d_52c7_9558_a453e5703f29

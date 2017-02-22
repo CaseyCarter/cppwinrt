@@ -19,6 +19,11 @@ template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -84,6 +89,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_66b1a575_7c1a_5dfc_92f3_e8a49e92f109
+#define WINRT_GENERIC_66b1a575_7c1a_5dfc_92f3_e8a49e92f109
+template <> struct __declspec(uuid("66b1a575-7c1a-5dfc-92f3-e8a49e92f109")) __declspec(novtable) IVector<Windows::Data::Text::TextSegment> : impl_IVector<Windows::Data::Text::TextSegment> {};
+#endif
+
 #ifndef WINRT_GENERIC_645a39b4_f001_5272_9015_fb4a327179ae
 #define WINRT_GENERIC_645a39b4_f001_5272_9015_fb4a327179ae
 template <> struct __declspec(uuid("645a39b4-f001-5272-9015-fb4a327179ae")) __declspec(novtable) IIterator<Windows::Data::Text::TextSegment> : impl_IIterator<Windows::Data::Text::TextSegment> {};
@@ -92,6 +102,11 @@ template <> struct __declspec(uuid("645a39b4-f001-5272-9015-fb4a327179ae")) __de
 #ifndef WINRT_GENERIC_5498f4f3_cee4_5b72_9729_815c4ad7b9dc
 #define WINRT_GENERIC_5498f4f3_cee4_5b72_9729_815c4ad7b9dc
 template <> struct __declspec(uuid("5498f4f3-cee4-5b72-9729-815c4ad7b9dc")) __declspec(novtable) IIterable<Windows::Data::Text::TextSegment> : impl_IIterable<Windows::Data::Text::TextSegment> {};
+#endif
+
+#ifndef WINRT_GENERIC_b6104dde_f602_5778_be14_88a202c0ab7e
+#define WINRT_GENERIC_b6104dde_f602_5778_be14_88a202c0ab7e
+template <> struct __declspec(uuid("b6104dde-f602-5778-be14-88a202c0ab7e")) __declspec(novtable) IVector<Windows::Data::Text::AlternateWordForm> : impl_IVector<Windows::Data::Text::AlternateWordForm> {};
 #endif
 
 #ifndef WINRT_GENERIC_7f463f8a_e08f_516e_b4b8_81b5417bfb58
@@ -104,14 +119,29 @@ template <> struct __declspec(uuid("7f463f8a-e08f-516e-b4b8-81b5417bfb58")) __de
 template <> struct __declspec(uuid("ae838c29-60c1-5093-ae61-0ed22857db05")) __declspec(novtable) IIterable<Windows::Data::Text::AlternateWordForm> : impl_IIterable<Windows::Data::Text::AlternateWordForm> {};
 #endif
 
+#ifndef WINRT_GENERIC_3895c4cc_e9e2_56d3_900d_c284458c8cfe
+#define WINRT_GENERIC_3895c4cc_e9e2_56d3_900d_c284458c8cfe
+template <> struct __declspec(uuid("3895c4cc-e9e2-56d3-900d-c284458c8cfe")) __declspec(novtable) IVector<Windows::Data::Text::WordSegment> : impl_IVector<Windows::Data::Text::WordSegment> {};
+#endif
+
 #ifndef WINRT_GENERIC_aeb846b3_664b_545e_ab93_f5fc66d24e32
 #define WINRT_GENERIC_aeb846b3_664b_545e_ab93_f5fc66d24e32
 template <> struct __declspec(uuid("aeb846b3-664b-545e-ab93-f5fc66d24e32")) __declspec(novtable) IIterator<Windows::Data::Text::WordSegment> : impl_IIterator<Windows::Data::Text::WordSegment> {};
 #endif
 
+#ifndef WINRT_GENERIC_67c58aab_ab27_5d3f_a090_81e08d0ce4b4
+#define WINRT_GENERIC_67c58aab_ab27_5d3f_a090_81e08d0ce4b4
+template <> struct __declspec(uuid("67c58aab-ab27-5d3f-a090-81e08d0ce4b4")) __declspec(novtable) IVector<Windows::Data::Text::SelectableWordSegment> : impl_IVector<Windows::Data::Text::SelectableWordSegment> {};
+#endif
+
 #ifndef WINRT_GENERIC_a5842459_147d_5a88_8f23_a3398afd8a85
 #define WINRT_GENERIC_a5842459_147d_5a88_8f23_a3398afd8a85
 template <> struct __declspec(uuid("a5842459-147d-5a88-8f23-a3398afd8a85")) __declspec(novtable) IIterator<Windows::Data::Text::SelectableWordSegment> : impl_IIterator<Windows::Data::Text::SelectableWordSegment> {};
+#endif
+
+#ifndef WINRT_GENERIC_6cb92948_7b12_5d79_99be_4af6ca396b8e
+#define WINRT_GENERIC_6cb92948_7b12_5d79_99be_4af6ca396b8e
+template <> struct __declspec(uuid("6cb92948-7b12-5d79-99be-4af6ca396b8e")) __declspec(novtable) IVector<Windows::Data::Text::TextPhoneme> : impl_IVector<Windows::Data::Text::TextPhoneme> {};
 #endif
 
 #ifndef WINRT_GENERIC_36426c36_b5c4_5d1b_a468_aff3b48b7c3a

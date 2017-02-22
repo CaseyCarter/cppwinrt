@@ -144,6 +144,11 @@ template <> struct __declspec(uuid("88b0349f-503d-5786-a267-55bb37a8a1b1")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_50277fb0_2340_50c6_9dd9_206e0dd33d6a
+#define WINRT_GENERIC_50277fb0_2340_50c6_9dd9_206e0dd33d6a
+template <> struct __declspec(uuid("50277fb0-2340-50c6-9dd9-206e0dd33d6a")) __declspec(novtable) IVector<Windows::ApplicationModel::Wallet::WalletItem> : impl_IVector<Windows::ApplicationModel::Wallet::WalletItem> {};
+#endif
+
 #ifndef WINRT_GENERIC_e3ceb002_c2dd_5e63_913c_d7d577561e73
 #define WINRT_GENERIC_e3ceb002_c2dd_5e63_913c_d7d577561e73
 template <> struct __declspec(uuid("e3ceb002-c2dd-5e63-913c-d7d577561e73")) __declspec(novtable) IIterator<Windows::ApplicationModel::Wallet::WalletItem> : impl_IIterator<Windows::ApplicationModel::Wallet::WalletItem> {};

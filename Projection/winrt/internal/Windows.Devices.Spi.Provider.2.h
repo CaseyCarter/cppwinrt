@@ -15,6 +15,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("96a4919b-3229-5e41-8b10-c8198c44f10c")) __declspec(novtable) IVectorView<Windows::Devices::Spi::Provider::ISpiControllerProvider> : impl_IVectorView<Windows::Devices::Spi::Provider::ISpiControllerProvider> {};
 #endif
 
+#ifndef WINRT_GENERIC_f166f24e_07d2_5930_b104_7fc6dfc1ab4f
+#define WINRT_GENERIC_f166f24e_07d2_5930_b104_7fc6dfc1ab4f
+template <> struct __declspec(uuid("f166f24e-07d2-5930-b104-7fc6dfc1ab4f")) __declspec(novtable) IVector<Windows::Devices::Spi::Provider::ISpiControllerProvider> : impl_IVector<Windows::Devices::Spi::Provider::ISpiControllerProvider> {};
+#endif
+
 #ifndef WINRT_GENERIC_cf1d15d3_a6c8_56dd_80c8_e8d960262277
 #define WINRT_GENERIC_cf1d15d3_a6c8_56dd_80c8_e8d960262277
 template <> struct __declspec(uuid("cf1d15d3-a6c8-56dd-80c8-e8d960262277")) __declspec(novtable) IIterator<Windows::Devices::Spi::Provider::ISpiControllerProvider> : impl_IIterator<Windows::Devices::Spi::Provider::ISpiControllerProvider> {};

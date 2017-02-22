@@ -49,6 +49,16 @@ template <> struct __declspec(uuid("b0d63b78-78ad-5e31-b6d8-e32a0e16c447")) __de
 template <> struct __declspec(uuid("ac7f26f2-feb7-5b2a-8ac4-345bc62caede")) __declspec(novtable) IMapView<hstring, hstring> : impl_IMapView<hstring, hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_0d82bd8d_fe62_5d67_a7b9_7886dd75bc4e
+#define WINRT_GENERIC_0d82bd8d_fe62_5d67_a7b9_7886dd75bc4e
+template <> struct __declspec(uuid("0d82bd8d-fe62-5d67-a7b9-7886dd75bc4e")) __declspec(novtable) IVector<Windows::Foundation::Uri> : impl_IVector<Windows::Foundation::Uri> {};
+#endif
+
+#ifndef WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
+#define WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
+template <> struct __declspec(uuid("4b8385bd-a2cd-5ff1-bf74-7ea580423e50")) __declspec(novtable) IVectorView<Windows::Foundation::Uri> : impl_IVectorView<Windows::Foundation::Uri> {};
+#endif
+
 #ifndef WINRT_GENERIC_7f7d8ad7_b4d2_5a03_be6f_2b89875fb32d
 #define WINRT_GENERIC_7f7d8ad7_b4d2_5a03_be6f_2b89875fb32d
 template <> struct __declspec(uuid("7f7d8ad7-b4d2-5a03-be6f-2b89875fb32d")) __declspec(novtable) IVector<Windows::UI::Notifications::NotificationBinding> : impl_IVector<Windows::UI::Notifications::NotificationBinding> {};
@@ -119,6 +129,11 @@ template <> struct __declspec(uuid("e8d9489c-635e-5153-8ab7-389f2ee9faca")) __de
 template <> struct __declspec(uuid("9e4d0240-6d5c-582a-a29d-734e84750738")) __declspec(novtable) IVectorView<Windows::UI::Notifications::NotificationBinding> : impl_IVectorView<Windows::UI::Notifications::NotificationBinding> {};
 #endif
 
+#ifndef WINRT_GENERIC_13cf8eab_bcf0_5f03_a79b_fafde70516f3
+#define WINRT_GENERIC_13cf8eab_bcf0_5f03_a79b_fafde70516f3
+template <> struct __declspec(uuid("13cf8eab-bcf0-5f03-a79b-fafde70516f3")) __declspec(novtable) IVector<Windows::UI::Notifications::AdaptiveNotificationText> : impl_IVector<Windows::UI::Notifications::AdaptiveNotificationText> {};
+#endif
+
 #ifndef WINRT_GENERIC_18015daa_cbc3_5a51_9f4b_3c069135b0e0
 #define WINRT_GENERIC_18015daa_cbc3_5a51_9f4b_3c069135b0e0
 template <> struct __declspec(uuid("18015daa-cbc3-5a51-9f4b-3c069135b0e0")) __declspec(novtable) IIterator<Windows::UI::Notifications::AdaptiveNotificationText> : impl_IIterator<Windows::UI::Notifications::AdaptiveNotificationText> {};
@@ -127,6 +142,11 @@ template <> struct __declspec(uuid("18015daa-cbc3-5a51-9f4b-3c069135b0e0")) __de
 #ifndef WINRT_GENERIC_0343e8f2_ca4c_5f40_b8d1_3ff47047ce43
 #define WINRT_GENERIC_0343e8f2_ca4c_5f40_b8d1_3ff47047ce43
 template <> struct __declspec(uuid("0343e8f2-ca4c-5f40-b8d1-3ff47047ce43")) __declspec(novtable) IIterable<Windows::UI::Notifications::AdaptiveNotificationText> : impl_IIterable<Windows::UI::Notifications::AdaptiveNotificationText> {};
+#endif
+
+#ifndef WINRT_GENERIC_69272d2c_74a5_5cd9_b2c5_51af99fcc732
+#define WINRT_GENERIC_69272d2c_74a5_5cd9_b2c5_51af99fcc732
+template <> struct __declspec(uuid("69272d2c-74a5-5cd9-b2c5-51af99fcc732")) __declspec(novtable) IVector<Windows::UI::Notifications::ScheduledTileNotification> : impl_IVector<Windows::UI::Notifications::ScheduledTileNotification> {};
 #endif
 
 #ifndef WINRT_GENERIC_5665e491_6543_5036_935f_b5157950b359
@@ -139,6 +159,11 @@ template <> struct __declspec(uuid("5665e491-6543-5036-935f-b5157950b359")) __de
 template <> struct __declspec(uuid("4b60d1e5-52ae-5766-9720-be4ad086f952")) __declspec(novtable) IIterable<Windows::UI::Notifications::ScheduledTileNotification> : impl_IIterable<Windows::UI::Notifications::ScheduledTileNotification> {};
 #endif
 
+#ifndef WINRT_GENERIC_693ec648_d35a_5be9_a9c1_ba334c337b83
+#define WINRT_GENERIC_693ec648_d35a_5be9_a9c1_ba334c337b83
+template <> struct __declspec(uuid("693ec648-d35a-5be9-a9c1-ba334c337b83")) __declspec(novtable) IVector<Windows::UI::Notifications::ScheduledToastNotification> : impl_IVector<Windows::UI::Notifications::ScheduledToastNotification> {};
+#endif
+
 #ifndef WINRT_GENERIC_304238b6_888a_5dd2_96cd_bfca8927483b
 #define WINRT_GENERIC_304238b6_888a_5dd2_96cd_bfca8927483b
 template <> struct __declspec(uuid("304238b6-888a-5dd2-96cd-bfca8927483b")) __declspec(novtable) IIterator<Windows::UI::Notifications::ScheduledToastNotification> : impl_IIterator<Windows::UI::Notifications::ScheduledToastNotification> {};
@@ -147,6 +172,11 @@ template <> struct __declspec(uuid("304238b6-888a-5dd2-96cd-bfca8927483b")) __de
 #ifndef WINRT_GENERIC_7a7b2a51_c182_5846_a861_4f9c036f24ad
 #define WINRT_GENERIC_7a7b2a51_c182_5846_a861_4f9c036f24ad
 template <> struct __declspec(uuid("7a7b2a51-c182-5846-a861-4f9c036f24ad")) __declspec(novtable) IIterable<Windows::UI::Notifications::ScheduledToastNotification> : impl_IIterable<Windows::UI::Notifications::ScheduledToastNotification> {};
+#endif
+
+#ifndef WINRT_GENERIC_810f8c42_a267_5ba0_9538_48b9ecc433b8
+#define WINRT_GENERIC_810f8c42_a267_5ba0_9538_48b9ecc433b8
+template <> struct __declspec(uuid("810f8c42-a267-5ba0-9538-48b9ecc433b8")) __declspec(novtable) IVector<Windows::UI::Notifications::ToastNotification> : impl_IVector<Windows::UI::Notifications::ToastNotification> {};
 #endif
 
 #ifndef WINRT_GENERIC_fe1e726a_3aa9_5d98_b19b_97e3e17eec7b

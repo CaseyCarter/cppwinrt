@@ -14,6 +14,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("1a166093-1a7a-5e12-9d38-f892fec3ec66")) __declspec(novtable) IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider> : impl_IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider> {};
 #endif
 
+#ifndef WINRT_GENERIC_5356a8df_6d58_5457_87a4_5c714cc9e721
+#define WINRT_GENERIC_5356a8df_6d58_5457_87a4_5c714cc9e721
+template <> struct __declspec(uuid("5356a8df-6d58-5457-87a4-5c714cc9e721")) __declspec(novtable) IVector<Windows::Devices::Pwm::Provider::IPwmControllerProvider> : impl_IVector<Windows::Devices::Pwm::Provider::IPwmControllerProvider> {};
+#endif
+
 #ifndef WINRT_GENERIC_90389702_f036_56e1_a94f_6d99d52b9578
 #define WINRT_GENERIC_90389702_f036_56e1_a94f_6d99d52b9578
 template <> struct __declspec(uuid("90389702-f036-56e1-a94f-6d99d52b9578")) __declspec(novtable) IIterator<Windows::Devices::Pwm::Provider::IPwmControllerProvider> : impl_IIterator<Windows::Devices::Pwm::Provider::IPwmControllerProvider> {};

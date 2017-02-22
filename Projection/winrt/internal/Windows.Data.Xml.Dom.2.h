@@ -34,6 +34,11 @@ template <> struct __declspec(uuid("f858e239-1896-5982-8495-143168478eb8")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_2230c3dc_fa1c_500c_8e74_cbff945e4bf3
+#define WINRT_GENERIC_2230c3dc_fa1c_500c_8e74_cbff945e4bf3
+template <> struct __declspec(uuid("2230c3dc-fa1c-500c-8e74-cbff945e4bf3")) __declspec(novtable) IVector<Windows::Data::Xml::Dom::IXmlNode> : impl_IVector<Windows::Data::Xml::Dom::IXmlNode> {};
+#endif
+
 #ifndef WINRT_GENERIC_3833a35e_2c61_56bd_b093_3694165f8898
 #define WINRT_GENERIC_3833a35e_2c61_56bd_b093_3694165f8898
 template <> struct __declspec(uuid("3833a35e-2c61-56bd-b093-3694165f8898")) __declspec(novtable) IIterator<Windows::Data::Xml::Dom::IXmlNode> : impl_IIterator<Windows::Data::Xml::Dom::IXmlNode> {};

@@ -75,6 +75,11 @@ template <> struct __declspec(uuid("f3632f52-894a-5345-9be6-8389751c5189")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_6fdec6e8_71f2_5821_9955_238d32989f7c
+#define WINRT_GENERIC_6fdec6e8_71f2_5821_9955_238d32989f7c
+template <> struct __declspec(uuid("6fdec6e8-71f2-5821-9955-238d32989f7c")) __declspec(novtable) IVector<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> : impl_IVector<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> {};
+#endif
+
 #ifndef WINRT_GENERIC_bc0cca83_44e5_5544_ab5b_e09d66f5fd5f
 #define WINRT_GENERIC_bc0cca83_44e5_5544_ab5b_e09d66f5fd5f
 template <> struct __declspec(uuid("bc0cca83-44e5-5544-ab5b-e09d66f5fd5f")) __declspec(novtable) IIterator<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> : impl_IIterator<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> {};

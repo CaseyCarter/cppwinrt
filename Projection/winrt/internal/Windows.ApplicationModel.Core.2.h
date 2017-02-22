@@ -84,6 +84,11 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_8af29ecf_6cc4_5a34_99c6_cd9069809253
+#define WINRT_GENERIC_8af29ecf_6cc4_5a34_99c6_cd9069809253
+template <> struct __declspec(uuid("8af29ecf-6cc4-5a34-99c6-cd9069809253")) __declspec(novtable) IVector<Windows::ApplicationModel::Core::CoreApplicationView> : impl_IVector<Windows::ApplicationModel::Core::CoreApplicationView> {};
+#endif
+
 #ifndef WINRT_GENERIC_4f5f6944_264b_5868_809e_c7ac1ac5edad
 #define WINRT_GENERIC_4f5f6944_264b_5868_809e_c7ac1ac5edad
 template <> struct __declspec(uuid("4f5f6944-264b-5868-809e-c7ac1ac5edad")) __declspec(novtable) IIterator<Windows::ApplicationModel::Core::CoreApplicationView> : impl_IIterator<Windows::ApplicationModel::Core::CoreApplicationView> {};

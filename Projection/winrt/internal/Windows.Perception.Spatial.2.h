@@ -84,6 +84,21 @@ template <> struct __declspec(uuid("34bf236c-e5d6-501f-8693-bc1d8d431d7e")) __de
 template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __declspec(novtable) AsyncOperationCompletedHandler<bool> : impl_AsyncOperationCompletedHandler<bool> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_25298593_9baf_5a73_a1b6_cd5e40a5e834
+#define WINRT_GENERIC_25298593_9baf_5a73_a1b6_cd5e40a5e834
+template <> struct __declspec(uuid("25298593-9baf-5a73-a1b6-cd5e40a5e834")) __declspec(novtable) IMap<hstring, Windows::Perception::Spatial::SpatialAnchor> : impl_IMap<hstring, Windows::Perception::Spatial::SpatialAnchor> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_84c21a3a_037a_503f_8006_ab577b7f6f66
 #define WINRT_GENERIC_84c21a3a_037a_503f_8006_ab577b7f6f66
 template <> struct __declspec(uuid("84c21a3a-037a-503f-8006-ab577b7f6f66")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Perception::Spatial::SpatialAnchorStore> : impl_AsyncOperationCompletedHandler<Windows::Perception::Spatial::SpatialAnchorStore> {};

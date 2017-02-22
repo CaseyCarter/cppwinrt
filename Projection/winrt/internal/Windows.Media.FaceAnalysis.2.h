@@ -79,6 +79,11 @@ template <> struct __declspec(uuid("3224aec6-e785-5066-976f-79dd081b75a9")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_5732f426_2911_5e1d_9219_ca1157dfcd50
+#define WINRT_GENERIC_5732f426_2911_5e1d_9219_ca1157dfcd50
+template <> struct __declspec(uuid("5732f426-2911-5e1d-9219-ca1157dfcd50")) __declspec(novtable) IVector<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> : impl_IVector<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> {};
+#endif
+
 #ifndef WINRT_GENERIC_7fc2e293_1084_5d45_b8b8_93e10692bcc8
 #define WINRT_GENERIC_7fc2e293_1084_5d45_b8b8_93e10692bcc8
 template <> struct __declspec(uuid("7fc2e293-1084-5d45-b8b8-93e10692bcc8")) __declspec(novtable) IIterator<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> : impl_IIterator<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> {};

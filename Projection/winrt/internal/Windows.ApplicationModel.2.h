@@ -24,6 +24,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("69ad6aa7-0c49-5f27-a5eb-ef4d59467b6d")) __declspec(novtable) IIterable<Windows::ApplicationModel::Package> : impl_IIterable<Windows::ApplicationModel::Package> {};
 #endif
 
+#ifndef WINRT_GENERIC_d1bb509e_6989_5c69_b1ff_d1702fe8aca3
+#define WINRT_GENERIC_d1bb509e_6989_5c69_b1ff_d1702fe8aca3
+template <> struct __declspec(uuid("d1bb509e-6989-5c69-b1ff-d1702fe8aca3")) __declspec(novtable) IVector<Windows::ApplicationModel::Package> : impl_IVector<Windows::ApplicationModel::Package> {};
+#endif
+
 #ifndef WINRT_GENERIC_0263c4d4_195c_5dc5_a7ca_6806ceca420b
 #define WINRT_GENERIC_0263c4d4_195c_5dc5_a7ca_6806ceca420b
 template <> struct __declspec(uuid("0263c4d4-195c-5dc5-a7ca-6806ceca420b")) __declspec(novtable) IVectorView<Windows::ApplicationModel::Package> : impl_IVectorView<Windows::ApplicationModel::Package> {};
@@ -77,6 +82,11 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_0217f069_025c_5ee6_a87f_e782e3b623ae
 #define WINRT_GENERIC_0217f069_025c_5ee6_a87f_e782e3b623ae
 template <> struct __declspec(uuid("0217f069-025c-5ee6-a87f-e782e3b623ae")) __declspec(novtable) IIterator<Windows::ApplicationModel::Package> : impl_IIterator<Windows::ApplicationModel::Package> {};
+#endif
+
+#ifndef WINRT_GENERIC_b063023c_b4e2_50f8_92e2_db9f0e882366
+#define WINRT_GENERIC_b063023c_b4e2_50f8_92e2_db9f0e882366
+template <> struct __declspec(uuid("b063023c-b4e2-50f8-92e2-db9f0e882366")) __declspec(novtable) IVector<Windows::ApplicationModel::Core::AppListEntry> : impl_IVector<Windows::ApplicationModel::Core::AppListEntry> {};
 #endif
 
 #ifndef WINRT_GENERIC_b93e2028_50bc_599e_b3d9_427b61d26c01

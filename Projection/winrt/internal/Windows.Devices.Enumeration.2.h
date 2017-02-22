@@ -12,6 +12,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
+#define WINRT_GENERIC_1b0d3570_0877_5ec2_8a2c_3b9539506aca
+template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __declspec(novtable) IMap<hstring, Windows::Foundation::IInspectable> : impl_IMap<hstring, Windows::Foundation::IInspectable> {};
+#endif
+
 #ifndef WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 #define WINRT_GENERIC_09335560_6c6b_5a26_9348_97b781132b20
 template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
@@ -192,9 +197,24 @@ template <> struct __declspec(uuid("bb483df2-7bb6-5923-a28d-8342ec30046b")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_0fca458f_ad7f_5259_a74d_25e8fef48c1b
+#define WINRT_GENERIC_0fca458f_ad7f_5259_a74d_25e8fef48c1b
+template <> struct __declspec(uuid("0fca458f-ad7f-5259-a74d-25e8fef48c1b")) __declspec(novtable) IVector<Windows::Devices::Enumeration::DeviceInformation> : impl_IVector<Windows::Devices::Enumeration::DeviceInformation> {};
+#endif
+
 #ifndef WINRT_GENERIC_6f85d843_e8ab_5b46_85d7_327c58d18712
 #define WINRT_GENERIC_6f85d843_e8ab_5b46_85d7_327c58d18712
 template <> struct __declspec(uuid("6f85d843-e8ab-5b46-85d7-327c58d18712")) __declspec(novtable) IIterator<Windows::Devices::Enumeration::DeviceInformation> : impl_IIterator<Windows::Devices::Enumeration::DeviceInformation> {};
+#endif
+
+#ifndef WINRT_GENERIC_cde5ec02_6bdf_5b11_8674_99dc8a595207
+#define WINRT_GENERIC_cde5ec02_6bdf_5b11_8674_99dc8a595207
+template <> struct __declspec(uuid("cde5ec02-6bdf-5b11-8674-99dc8a595207")) __declspec(novtable) IVector<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> : impl_IVector<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> {};
+#endif
+
+#ifndef WINRT_GENERIC_fb7a93ea_caad_59be_8c31_18ebc3ace6cc
+#define WINRT_GENERIC_fb7a93ea_caad_59be_8c31_18ebc3ace6cc
+template <> struct __declspec(uuid("fb7a93ea-caad-59be-8c31-18ebc3ace6cc")) __declspec(novtable) IVectorView<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> : impl_IVectorView<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> {};
 #endif
 
 #ifndef WINRT_GENERIC_cb5ca9db_ccd6_5103_a93d_c925c908838d
@@ -231,6 +251,11 @@ template <> struct __declspec(uuid("9bbe6eb9-db2d-5160-a20c-f0c265f20d8e")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_c10dccd3_d015_5d85_9a63_862410844e4d
+#define WINRT_GENERIC_c10dccd3_d015_5d85_9a63_862410844e4d
+template <> struct __declspec(uuid("c10dccd3-d015-5d85-9a63-862410844e4d")) __declspec(novtable) IVector<Windows::Devices::Enumeration::DeviceWatcherEvent> : impl_IVector<Windows::Devices::Enumeration::DeviceWatcherEvent> {};
+#endif
 
 #ifndef WINRT_GENERIC_74f7d6cc_9c20_5bb9_bace_b2ffa38687f9
 #define WINRT_GENERIC_74f7d6cc_9c20_5bb9_bace_b2ffa38687f9

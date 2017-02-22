@@ -19,6 +19,11 @@ template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -57,6 +62,16 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_90aea8c5_68d3_5c6f_8f14_00477eed0ca8
+#define WINRT_GENERIC_90aea8c5_68d3_5c6f_8f14_00477eed0ca8
+template <> struct __declspec(uuid("90aea8c5-68d3-5c6f-8f14-00477eed0ca8")) __declspec(novtable) IVector<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> : impl_IVector<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> {};
+#endif
+
+#ifndef WINRT_GENERIC_583fa489_106e_5351_910e_567f271031a7
+#define WINRT_GENERIC_583fa489_106e_5351_910e_567f271031a7
+template <> struct __declspec(uuid("583fa489-106e-5351-910e-567f271031a7")) __declspec(novtable) IVectorView<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> : impl_IVectorView<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> {};
 #endif
 
 #ifndef WINRT_GENERIC_51705a87_8dcb_5971_8d6b_ca8ae6a955ad

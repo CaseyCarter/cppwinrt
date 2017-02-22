@@ -14,6 +14,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("3b631cbb-63f8-5eff-8815-69c822c09ce1")) __declspec(novtable) IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> : impl_IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> {};
 #endif
 
+#ifndef WINRT_GENERIC_f6e2d04c_76d7_5e74_81ec_76c48e9bd3a9
+#define WINRT_GENERIC_f6e2d04c_76d7_5e74_81ec_76c48e9bd3a9
+template <> struct __declspec(uuid("f6e2d04c-76d7-5e74-81ec-76c48e9bd3a9")) __declspec(novtable) IVector<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> : impl_IVector<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> {};
+#endif
+
 #ifndef WINRT_GENERIC_e3497259_1737_5fad_803b_9d2d29273e3b
 #define WINRT_GENERIC_e3497259_1737_5fad_803b_9d2d29273e3b
 template <> struct __declspec(uuid("e3497259-1737-5fad-803b-9d2d29273e3b")) __declspec(novtable) IIterator<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> : impl_IIterator<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo> {};

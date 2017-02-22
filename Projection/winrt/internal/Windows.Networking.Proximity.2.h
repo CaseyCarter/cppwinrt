@@ -74,6 +74,11 @@ template <> struct __declspec(uuid("fb3e3d3c-6fe5-5e27-a132-902247e2a93e")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_b595fba1_3f7d_5bde_8eeb_01d9fc42d137
+#define WINRT_GENERIC_b595fba1_3f7d_5bde_8eeb_01d9fc42d137
+template <> struct __declspec(uuid("b595fba1-3f7d-5bde-8eeb-01d9fc42d137")) __declspec(novtable) IVector<Windows::Networking::Proximity::PeerInformation> : impl_IVector<Windows::Networking::Proximity::PeerInformation> {};
+#endif
+
 #ifndef WINRT_GENERIC_eb6fe2c2_d6cd_5df0_a295_74c56ec58aab
 #define WINRT_GENERIC_eb6fe2c2_d6cd_5df0_a295_74c56ec58aab
 template <> struct __declspec(uuid("eb6fe2c2-d6cd-5df0-a295-74c56ec58aab")) __declspec(novtable) IIterator<Windows::Networking::Proximity::PeerInformation> : impl_IIterator<Windows::Networking::Proximity::PeerInformation> {};

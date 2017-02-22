@@ -11,6 +11,16 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 #define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
@@ -61,6 +71,16 @@ template <> struct __declspec(uuid("4eed7dce-e4ac-5891-9b52-799d70df47fe")) __de
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_8b1c1847_102e_5862_bca1_b6e4ebdf94d4
+#define WINRT_GENERIC_8b1c1847_102e_5862_bca1_b6e4ebdf94d4
+template <> struct __declspec(uuid("8b1c1847-102e-5862-bca1-b6e4ebdf94d4")) __declspec(novtable) IVector<Windows::UI::Composition::CompositionAnimation> : impl_IVector<Windows::UI::Composition::CompositionAnimation> {};
+#endif
+
+#ifndef WINRT_GENERIC_1418802f_dfe7_5ae3_949f_953e86ddbfda
+#define WINRT_GENERIC_1418802f_dfe7_5ae3_949f_953e86ddbfda
+template <> struct __declspec(uuid("1418802f-dfe7-5ae3-949f-953e86ddbfda")) __declspec(novtable) IVectorView<Windows::UI::Composition::CompositionAnimation> : impl_IVectorView<Windows::UI::Composition::CompositionAnimation> {};
+#endif
+
 #ifndef WINRT_GENERIC_98efbe55_0a66_556a_9adc_4ab59c696846
 #define WINRT_GENERIC_98efbe55_0a66_556a_9adc_4ab59c696846
 template <> struct __declspec(uuid("98efbe55-0a66-556a-9adc-4ab59c696846")) __declspec(novtable) IIterator<Windows::UI::Composition::CompositionAnimation> : impl_IIterator<Windows::UI::Composition::CompositionAnimation> {};
@@ -69,6 +89,16 @@ template <> struct __declspec(uuid("98efbe55-0a66-556a-9adc-4ab59c696846")) __de
 #ifndef WINRT_GENERIC_b65e6ece_d9af_5d4a_abaa_c08e34a5f815
 #define WINRT_GENERIC_b65e6ece_d9af_5d4a_abaa_c08e34a5f815
 template <> struct __declspec(uuid("b65e6ece-d9af-5d4a-abaa-c08e34a5f815")) __declspec(novtable) IMapView<hstring, Windows::UI::Composition::ICompositionAnimationBase> : impl_IMapView<hstring, Windows::UI::Composition::ICompositionAnimationBase> {};
+#endif
+
+#ifndef WINRT_GENERIC_9bbbc4fb_a71f_5505_9576_e92bfed0fe7a
+#define WINRT_GENERIC_9bbbc4fb_a71f_5505_9576_e92bfed0fe7a
+template <> struct __declspec(uuid("9bbbc4fb-a71f-5505-9576-e92bfed0fe7a")) __declspec(novtable) IVector<Windows::UI::Composition::Visual> : impl_IVector<Windows::UI::Composition::Visual> {};
+#endif
+
+#ifndef WINRT_GENERIC_639e64ec_106b_517d_8067_6d46b80b1827
+#define WINRT_GENERIC_639e64ec_106b_517d_8067_6d46b80b1827
+template <> struct __declspec(uuid("639e64ec-106b-517d-8067-6d46b80b1827")) __declspec(novtable) IVectorView<Windows::UI::Composition::Visual> : impl_IVectorView<Windows::UI::Composition::Visual> {};
 #endif
 
 #ifndef WINRT_GENERIC_eca15496_dcaa_5095_a898_f8602a40e10a

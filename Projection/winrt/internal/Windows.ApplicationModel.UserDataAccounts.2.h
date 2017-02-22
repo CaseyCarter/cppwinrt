@@ -94,6 +94,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_b8ab13d3_e9e7_5713_ab22_6d32014bee4b
+#define WINRT_GENERIC_b8ab13d3_e9e7_5713_ab22_6d32014bee4b
+template <> struct __declspec(uuid("b8ab13d3-e9e7-5713-ab22-6d32014bee4b")) __declspec(novtable) IVector<Windows::ApplicationModel::Appointments::AppointmentCalendar> : impl_IVector<Windows::ApplicationModel::Appointments::AppointmentCalendar> {};
+#endif
+
 #ifndef WINRT_GENERIC_f40a879d_b6b7_5f92_beb1_6a8e7ce54120
 #define WINRT_GENERIC_f40a879d_b6b7_5f92_beb1_6a8e7ce54120
 template <> struct __declspec(uuid("f40a879d-b6b7-5f92-beb1-6a8e7ce54120")) __declspec(novtable) IIterator<Windows::ApplicationModel::Appointments::AppointmentCalendar> : impl_IIterator<Windows::ApplicationModel::Appointments::AppointmentCalendar> {};
@@ -102,6 +107,11 @@ template <> struct __declspec(uuid("f40a879d-b6b7-5f92-beb1-6a8e7ce54120")) __de
 #ifndef WINRT_GENERIC_d3fb010b_b692_5130_9d16_2cfdabcb6dec
 #define WINRT_GENERIC_d3fb010b_b692_5130_9d16_2cfdabcb6dec
 template <> struct __declspec(uuid("d3fb010b-b692-5130-9d16-2cfdabcb6dec")) __declspec(novtable) IIterable<Windows::ApplicationModel::Appointments::AppointmentCalendar> : impl_IIterable<Windows::ApplicationModel::Appointments::AppointmentCalendar> {};
+#endif
+
+#ifndef WINRT_GENERIC_7890cd8b_6733_521f_bbf4_bb9a9f9b2ca8
+#define WINRT_GENERIC_7890cd8b_6733_521f_bbf4_bb9a9f9b2ca8
+template <> struct __declspec(uuid("7890cd8b-6733-521f-bbf4-bb9a9f9b2ca8")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactAnnotationList> : impl_IVector<Windows::ApplicationModel::Contacts::ContactAnnotationList> {};
 #endif
 
 #ifndef WINRT_GENERIC_3d7b4ad2_bb54_5e21_a92e_6b80264ccc50
@@ -114,6 +124,11 @@ template <> struct __declspec(uuid("3d7b4ad2-bb54-5e21-a92e-6b80264ccc50")) __de
 template <> struct __declspec(uuid("ae095a89-8b8b-5b8a-8f28-555aa490ad87")) __declspec(novtable) IIterable<Windows::ApplicationModel::Contacts::ContactAnnotationList> : impl_IIterable<Windows::ApplicationModel::Contacts::ContactAnnotationList> {};
 #endif
 
+#ifndef WINRT_GENERIC_7ab0bfba_495a_5b9b_bc64_524fd77e919c
+#define WINRT_GENERIC_7ab0bfba_495a_5b9b_bc64_524fd77e919c
+template <> struct __declspec(uuid("7ab0bfba-495a-5b9b-bc64-524fd77e919c")) __declspec(novtable) IVector<Windows::ApplicationModel::Contacts::ContactList> : impl_IVector<Windows::ApplicationModel::Contacts::ContactList> {};
+#endif
+
 #ifndef WINRT_GENERIC_ee69382d_887d_5964_83b4_47ee9ded6f05
 #define WINRT_GENERIC_ee69382d_887d_5964_83b4_47ee9ded6f05
 template <> struct __declspec(uuid("ee69382d-887d-5964-83b4-47ee9ded6f05")) __declspec(novtable) IIterator<Windows::ApplicationModel::Contacts::ContactList> : impl_IIterator<Windows::ApplicationModel::Contacts::ContactList> {};
@@ -124,6 +139,11 @@ template <> struct __declspec(uuid("ee69382d-887d-5964-83b4-47ee9ded6f05")) __de
 template <> struct __declspec(uuid("f9b0782c-bfe9-564e-bca2-97235fd64463")) __declspec(novtable) IIterable<Windows::ApplicationModel::Contacts::ContactList> : impl_IIterable<Windows::ApplicationModel::Contacts::ContactList> {};
 #endif
 
+#ifndef WINRT_GENERIC_2ae2ba7d_b7b9_5f33_884c_75a101e31265
+#define WINRT_GENERIC_2ae2ba7d_b7b9_5f33_884c_75a101e31265
+template <> struct __declspec(uuid("2ae2ba7d-b7b9-5f33-884c-75a101e31265")) __declspec(novtable) IVector<Windows::ApplicationModel::Email::EmailMailbox> : impl_IVector<Windows::ApplicationModel::Email::EmailMailbox> {};
+#endif
+
 #ifndef WINRT_GENERIC_312f8d4a_0e85_566e_b7aa_dbd40a0343ff
 #define WINRT_GENERIC_312f8d4a_0e85_566e_b7aa_dbd40a0343ff
 template <> struct __declspec(uuid("312f8d4a-0e85-566e-b7aa-dbd40a0343ff")) __declspec(novtable) IIterator<Windows::ApplicationModel::Email::EmailMailbox> : impl_IIterator<Windows::ApplicationModel::Email::EmailMailbox> {};
@@ -132,6 +152,11 @@ template <> struct __declspec(uuid("312f8d4a-0e85-566e-b7aa-dbd40a0343ff")) __de
 #ifndef WINRT_GENERIC_8fc76b2e_f800_5f1d_a023_de47e5f306e0
 #define WINRT_GENERIC_8fc76b2e_f800_5f1d_a023_de47e5f306e0
 template <> struct __declspec(uuid("8fc76b2e-f800-5f1d-a023-de47e5f306e0")) __declspec(novtable) IIterable<Windows::ApplicationModel::Email::EmailMailbox> : impl_IIterable<Windows::ApplicationModel::Email::EmailMailbox> {};
+#endif
+
+#ifndef WINRT_GENERIC_89258618_1fc4_5551_9343_e51c5f420551
+#define WINRT_GENERIC_89258618_1fc4_5551_9343_e51c5f420551
+template <> struct __declspec(uuid("89258618-1fc4-5551-9343-e51c5f420551")) __declspec(novtable) IVector<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> : impl_IVector<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> {};
 #endif
 
 #ifndef WINRT_GENERIC_e38246ab_df01_5d16_923a_17c88cdbac29

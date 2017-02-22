@@ -24,6 +24,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("f429355f-7a16-5dcf-a575-db7d2a20eced")) __declspec(novtable) IVectorView<Windows::Devices::Gpio::Provider::IGpioControllerProvider> : impl_IVectorView<Windows::Devices::Gpio::Provider::IGpioControllerProvider> {};
 #endif
 
+#ifndef WINRT_GENERIC_17da0b35_8115_5ef7_894a_0340c878c9f7
+#define WINRT_GENERIC_17da0b35_8115_5ef7_894a_0340c878c9f7
+template <> struct __declspec(uuid("17da0b35-8115-5ef7-894a-0340c878c9f7")) __declspec(novtable) IVector<Windows::Devices::Gpio::Provider::IGpioControllerProvider> : impl_IVector<Windows::Devices::Gpio::Provider::IGpioControllerProvider> {};
+#endif
+
 #ifndef WINRT_GENERIC_6ac0edb9_e3c9_5840_8aa8_1bc45366f6ca
 #define WINRT_GENERIC_6ac0edb9_e3c9_5840_8aa8_1bc45366f6ca
 template <> struct __declspec(uuid("6ac0edb9-e3c9-5840-8aa8-1bc45366f6ca")) __declspec(novtable) IIterator<Windows::Devices::Gpio::Provider::IGpioControllerProvider> : impl_IIterator<Windows::Devices::Gpio::Provider::IGpioControllerProvider> {};

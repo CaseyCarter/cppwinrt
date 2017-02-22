@@ -9,6 +9,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -74,6 +79,11 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 template <> struct __declspec(uuid("a932bfda-2ce5-5012-ae83-f397976e4a86")) __declspec(novtable) IKeyValuePair<hstring, Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition> : impl_IKeyValuePair<hstring, Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition> {};
 #endif
 
+#ifndef WINRT_GENERIC_c4c9b3e4_0df7_56af_8ead_52633456e8a1
+#define WINRT_GENERIC_c4c9b3e4_0df7_56af_8ead_52633456e8a1
+template <> struct __declspec(uuid("c4c9b3e4-0df7-56af-8ead-52633456e8a1")) __declspec(novtable) IMap<hstring, Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition> : impl_IMap<hstring, Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition> {};
+#endif
+
 
 }
 
@@ -99,14 +109,14 @@ template <> struct __declspec(uuid("46b96890-2942-5564-82d8-31a4851bd7b8")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_968d589c_0710_52f0_85ed_112fac4cff35
-#define WINRT_GENERIC_968d589c_0710_52f0_85ed_112fac4cff35
-template <> struct __declspec(uuid("968d589c-0710-52f0-85ed-112fac4cff35")) __declspec(novtable) IIterator<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> : impl_IIterator<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> {};
-#endif
-
 #ifndef WINRT_GENERIC_cb2c6693_1fc9_5b95_99b5_7239679619b9
 #define WINRT_GENERIC_cb2c6693_1fc9_5b95_99b5_7239679619b9
 template <> struct __declspec(uuid("cb2c6693-1fc9-5b95-99b5-7239679619b9")) __declspec(novtable) IVectorView<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> : impl_IVectorView<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> {};
+#endif
+
+#ifndef WINRT_GENERIC_968d589c_0710_52f0_85ed_112fac4cff35
+#define WINRT_GENERIC_968d589c_0710_52f0_85ed_112fac4cff35
+template <> struct __declspec(uuid("968d589c-0710-52f0-85ed-112fac4cff35")) __declspec(novtable) IIterator<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> : impl_IIterator<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> {};
 #endif
 
 #ifndef WINRT_GENERIC_2843d34f_d3e5_5fca_9fdc_b568dd5c1e64
@@ -127,6 +137,11 @@ template <> struct __declspec(uuid("67693dd1-ac45-5ef3-9ba6-4d78709d9ee0")) __de
 #ifndef WINRT_GENERIC_bcde03ad_ea71_5077_a961_1c0ecff57202
 #define WINRT_GENERIC_bcde03ad_ea71_5077_a961_1c0ecff57202
 template <> struct __declspec(uuid("bcde03ad-ea71-5077-a961-1c0ecff57202")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::Collections::IVectorView<hstring>> : impl_IKeyValuePair<hstring, Windows::Foundation::Collections::IVectorView<hstring>> {};
+#endif
+
+#ifndef WINRT_GENERIC_b63397c9_5d89_530b_becf_2b843a15c4e4
+#define WINRT_GENERIC_b63397c9_5d89_530b_becf_2b843a15c4e4
+template <> struct __declspec(uuid("b63397c9-5d89-530b-becf-2b843a15c4e4")) __declspec(novtable) IMap<hstring, Windows::Foundation::Collections::IVectorView<hstring>> : impl_IMap<hstring, Windows::Foundation::Collections::IVectorView<hstring>> {};
 #endif
 
 #ifndef WINRT_GENERIC_643b6d83_457e_5a43_800f_b0449f91d96b

@@ -10,6 +10,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -18,6 +23,11 @@ template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __de
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 #define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_72e456e4_0e52_52cb_b363_f3581327f033
+#define WINRT_GENERIC_72e456e4_0e52_52cb_b363_f3581327f033
+template <> struct __declspec(uuid("72e456e4-0e52-52cb-b363-f3581327f033")) __declspec(novtable) IVector<Windows::Web::Syndication::SyndicationCategory> : impl_IVector<Windows::Web::Syndication::SyndicationCategory> {};
 #endif
 
 #ifndef WINRT_GENERIC_a1ac007c_9d94_552e_840e_139f109a9b88
@@ -85,6 +95,11 @@ template <> struct __declspec(uuid("2a9228fa-b088-5690-bb38-b7044e0b502b")) __de
 template <> struct __declspec(uuid("d151f7d1-eabd-5300-b55c-149eb289cc71")) __declspec(novtable) IIterable<Windows::Web::Syndication::SyndicationCategory> : impl_IIterable<Windows::Web::Syndication::SyndicationCategory> {};
 #endif
 
+#ifndef WINRT_GENERIC_572a8cab_2af3_5c4f_bea7_de6852805b5b
+#define WINRT_GENERIC_572a8cab_2af3_5c4f_bea7_de6852805b5b
+template <> struct __declspec(uuid("572a8cab-2af3-5c4f-bea7-de6852805b5b")) __declspec(novtable) IVector<Windows::Web::AtomPub::ResourceCollection> : impl_IVector<Windows::Web::AtomPub::ResourceCollection> {};
+#endif
+
 #ifndef WINRT_GENERIC_2b175876_0920_52f0_80bf_dfe79744128d
 #define WINRT_GENERIC_2b175876_0920_52f0_80bf_dfe79744128d
 template <> struct __declspec(uuid("2b175876-0920-52f0-80bf-dfe79744128d")) __declspec(novtable) IIterator<Windows::Web::AtomPub::ResourceCollection> : impl_IIterator<Windows::Web::AtomPub::ResourceCollection> {};
@@ -93,6 +108,11 @@ template <> struct __declspec(uuid("2b175876-0920-52f0-80bf-dfe79744128d")) __de
 #ifndef WINRT_GENERIC_d4372a2d_7ab0_5d8e_bd5c_6e9c0a67a8d8
 #define WINRT_GENERIC_d4372a2d_7ab0_5d8e_bd5c_6e9c0a67a8d8
 template <> struct __declspec(uuid("d4372a2d-7ab0-5d8e-bd5c-6e9c0a67a8d8")) __declspec(novtable) IIterable<Windows::Web::AtomPub::ResourceCollection> : impl_IIterable<Windows::Web::AtomPub::ResourceCollection> {};
+#endif
+
+#ifndef WINRT_GENERIC_4477115d_e35c_5a07_b922_f897ce56333d
+#define WINRT_GENERIC_4477115d_e35c_5a07_b922_f897ce56333d
+template <> struct __declspec(uuid("4477115d-e35c-5a07-b922-f897ce56333d")) __declspec(novtable) IVector<Windows::Web::AtomPub::Workspace> : impl_IVector<Windows::Web::AtomPub::Workspace> {};
 #endif
 
 #ifndef WINRT_GENERIC_0cc8c426_d68a_5136_9741_de326764ca32

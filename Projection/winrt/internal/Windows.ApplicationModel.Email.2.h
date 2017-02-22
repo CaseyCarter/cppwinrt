@@ -284,6 +284,11 @@ template <> struct __declspec(uuid("cae3c1c4-c689-5787-976f-1a158ffdd16b")) __de
 template <> struct __declspec(uuid("7e326530-7449-51a7-b1bc-c43533a78e06")) __declspec(novtable) IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> : impl_IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> {};
 #endif
 
+#ifndef WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+#define WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+template <> struct __declspec(uuid("36282c0f-2f1f-57f4-b2b1-867af90c3d13")) __declspec(novtable) IVector<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVector<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
+
 
 }
 
@@ -318,6 +323,11 @@ template <> struct __declspec(uuid("ddb761d3-71b8-5c4b-ad8b-1e6522664921")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_2ae2ba7d_b7b9_5f33_884c_75a101e31265
+#define WINRT_GENERIC_2ae2ba7d_b7b9_5f33_884c_75a101e31265
+template <> struct __declspec(uuid("2ae2ba7d-b7b9-5f33-884c-75a101e31265")) __declspec(novtable) IVector<Windows::ApplicationModel::Email::EmailMailbox> : impl_IVector<Windows::ApplicationModel::Email::EmailMailbox> {};
+#endif
 
 #ifndef WINRT_GENERIC_312f8d4a_0e85_566e_b7aa_dbd40a0343ff
 #define WINRT_GENERIC_312f8d4a_0e85_566e_b7aa_dbd40a0343ff
@@ -394,9 +404,19 @@ template <> struct __declspec(uuid("dfc1275a-c7b0-5fe4-9370-32b94ad0ba8e")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_424ab511_833c_5b15_b349_89e3d7b8a3bb
+#define WINRT_GENERIC_424ab511_833c_5b15_b349_89e3d7b8a3bb
+template <> struct __declspec(uuid("424ab511-833c-5b15-b349-89e3d7b8a3bb")) __declspec(novtable) IVector<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> : impl_IVector<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> {};
+#endif
+
 #ifndef WINRT_GENERIC_5c040cd6_9593_5e74_9a5e_7284cd1b7200
 #define WINRT_GENERIC_5c040cd6_9593_5e74_9a5e_7284cd1b7200
 template <> struct __declspec(uuid("5c040cd6-9593-5e74-9a5e-7284cd1b7200")) __declspec(novtable) IIterator<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> : impl_IIterator<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> {};
+#endif
+
+#ifndef WINRT_GENERIC_da4181c7_ab26_5a16_ae74_21c07a4ff902
+#define WINRT_GENERIC_da4181c7_ab26_5a16_ae74_21c07a4ff902
+template <> struct __declspec(uuid("da4181c7-ab26-5a16-ae74-21c07a4ff902")) __declspec(novtable) IVector<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> : impl_IVector<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> {};
 #endif
 
 #ifndef WINRT_GENERIC_1cfe3d41_16a5_5026_a6fe_2cb0a303a605
@@ -434,6 +454,11 @@ template <> struct __declspec(uuid("52604da6-485b-5445-8e6f-64cc13056045")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_210b6128_9910_55d0_828b_3ef80c16c6a0
+#define WINRT_GENERIC_210b6128_9910_55d0_828b_3ef80c16c6a0
+template <> struct __declspec(uuid("210b6128-9910-55d0-828b-3ef80c16c6a0")) __declspec(novtable) IVector<Windows::ApplicationModel::Email::EmailFolder> : impl_IVector<Windows::ApplicationModel::Email::EmailFolder> {};
+#endif
+
 #ifndef WINRT_GENERIC_95ae5494_43bc_5f6b_a02b_b6956d0c7069
 #define WINRT_GENERIC_95ae5494_43bc_5f6b_a02b_b6956d0c7069
 template <> struct __declspec(uuid("95ae5494-43bc-5f6b-a02b-b6956d0c7069")) __declspec(novtable) IIterator<Windows::ApplicationModel::Email::EmailFolder> : impl_IIterator<Windows::ApplicationModel::Email::EmailFolder> {};
@@ -459,6 +484,11 @@ template <> struct __declspec(uuid("02c54220-ded8-5495-841d-d432c879b826")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_b20fa783_2339_5822_a89d_1df8893d354a
+#define WINRT_GENERIC_b20fa783_2339_5822_a89d_1df8893d354a
+template <> struct __declspec(uuid("b20fa783-2339-5822-a89d-1df8893d354a")) __declspec(novtable) IVector<Windows::ApplicationModel::Email::EmailMessage> : impl_IVector<Windows::ApplicationModel::Email::EmailMessage> {};
+#endif
+
 #ifndef WINRT_GENERIC_ca569bf8_d6d7_5411_9600_ab95ec065c72
 #define WINRT_GENERIC_ca569bf8_d6d7_5411_9600_ab95ec065c72
 template <> struct __declspec(uuid("ca569bf8-d6d7-5411-9600-ab95ec065c72")) __declspec(novtable) IIterator<Windows::ApplicationModel::Email::EmailMessage> : impl_IIterator<Windows::ApplicationModel::Email::EmailMessage> {};
@@ -467,6 +497,11 @@ template <> struct __declspec(uuid("ca569bf8-d6d7-5411-9600-ab95ec065c72")) __de
 #ifndef WINRT_GENERIC_a5fac823_8e6d_5bbe_ad16_8350aea446e0
 #define WINRT_GENERIC_a5fac823_8e6d_5bbe_ad16_8350aea446e0
 template <> struct __declspec(uuid("a5fac823-8e6d-5bbe-ad16-8350aea446e0")) __declspec(novtable) IIterable<Windows::ApplicationModel::Email::EmailMessage> : impl_IIterable<Windows::ApplicationModel::Email::EmailMessage> {};
+#endif
+
+#ifndef WINRT_GENERIC_957a0227_18a4_5340_85ce_949c8c68981c
+#define WINRT_GENERIC_957a0227_18a4_5340_85ce_949c8c68981c
+template <> struct __declspec(uuid("957a0227-18a4-5340-85ce-949c8c68981c")) __declspec(novtable) IVector<Windows::ApplicationModel::Email::EmailConversation> : impl_IVector<Windows::ApplicationModel::Email::EmailConversation> {};
 #endif
 
 #ifndef WINRT_GENERIC_fadada27_e629_5a34_b2e9_1d25c93544b5
@@ -512,6 +547,11 @@ template <> struct __declspec(uuid("26419311-1cd7-5bab-9c4a-e95884d5539c")) __de
 #ifndef WINRT_GENERIC_f7bdef91_beff_5be2_8ef9_2f8112e59a6f
 #define WINRT_GENERIC_f7bdef91_beff_5be2_8ef9_2f8112e59a6f
 template <> struct __declspec(uuid("f7bdef91-beff-5be2-8ef9-2f8112e59a6f")) __declspec(novtable) IVectorView<Windows::ApplicationModel::Email::EmailMailboxAction> : impl_IVectorView<Windows::ApplicationModel::Email::EmailMailboxAction> {};
+#endif
+
+#ifndef WINRT_GENERIC_a8faf394_fef2_5514_b092_8ec4c95a0fed
+#define WINRT_GENERIC_a8faf394_fef2_5514_b092_8ec4c95a0fed
+template <> struct __declspec(uuid("a8faf394-fef2-5514-b092-8ec4c95a0fed")) __declspec(novtable) IVector<Windows::ApplicationModel::Email::EmailMailboxChange> : impl_IVector<Windows::ApplicationModel::Email::EmailMailboxChange> {};
 #endif
 
 #ifndef WINRT_GENERIC_b2b91198_5f8b_5e4a_85f8_ddca82ba0b7f

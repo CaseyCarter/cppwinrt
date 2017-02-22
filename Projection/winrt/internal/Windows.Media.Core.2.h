@@ -29,6 +29,11 @@ template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_0dfd8e09_73f2_505c_a796_a8f031b4ede0
+#define WINRT_GENERIC_0dfd8e09_73f2_505c_a796_a8f031b4ede0
+template <> struct __declspec(uuid("0dfd8e09-73f2-505c-a796-a8f031b4ede0")) __declspec(novtable) IVector<Windows::Media::FaceAnalysis::DetectedFace> : impl_IVector<Windows::Media::FaceAnalysis::DetectedFace> {};
+#endif
+
 #ifndef WINRT_GENERIC_5ee3189c_7dbf_5998_ad07_5414fb82567c
 #define WINRT_GENERIC_5ee3189c_7dbf_5998_ad07_5414fb82567c
 template <> struct __declspec(uuid("5ee3189c-7dbf-5998-ad07-5414fb82567c")) __declspec(novtable) IMap<GUID, Windows::Foundation::IInspectable> : impl_IMap<GUID, Windows::Foundation::IInspectable> {};
@@ -42,6 +47,11 @@ template <> struct __declspec(uuid("3bda1540-d089-5a1a-8f0d-94eba8068e58")) __de
 #ifndef WINRT_GENERIC_e4d2c732_bbc1_5ef4_869f_5007ceb55f6e
 #define WINRT_GENERIC_e4d2c732_bbc1_5ef4_869f_5007ceb55f6e
 template <> struct __declspec(uuid("e4d2c732-bbc1-5ef4-869f-5007ceb55f6e")) __declspec(novtable) IMapView<GUID, Windows::Foundation::IInspectable> : impl_IMapView<GUID, Windows::Foundation::IInspectable> {};
+#endif
+
+#ifndef WINRT_GENERIC_1c8f8276_b89a_5093_a1ed_af49dfb72a89
+#define WINRT_GENERIC_1c8f8276_b89a_5093_a1ed_af49dfb72a89
+template <> struct __declspec(uuid("1c8f8276-b89a-5093-a1ed-af49dfb72a89")) __declspec(novtable) IVector<Windows::Media::Devices::Core::FrameController> : impl_IVector<Windows::Media::Devices::Core::FrameController> {};
 #endif
 
 
@@ -324,6 +334,11 @@ template <> struct __declspec(uuid("df7aacc9-a86c-5c7d-bf98-cc371c97c67b")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_875e4540_079c_59cf_9442_e608b0c5b852
+#define WINRT_GENERIC_875e4540_079c_59cf_9442_e608b0c5b852
+template <> struct __declspec(uuid("875e4540-079c-59cf-9442-e608b0c5b852")) __declspec(novtable) IVector<Windows::Media::Core::MseTimeRange> : impl_IVector<Windows::Media::Core::MseTimeRange> {};
+#endif
+
 #ifndef WINRT_GENERIC_92a36852_fbb3_5b48_b4ec_01dda0972a5c
 #define WINRT_GENERIC_92a36852_fbb3_5b48_b4ec_01dda0972a5c
 template <> struct __declspec(uuid("92a36852-fbb3-5b48-b4ec-01dda0972a5c")) __declspec(novtable) IIterator<Windows::Media::Core::MseTimeRange> : impl_IIterator<Windows::Media::Core::MseTimeRange> {};
@@ -332,6 +347,11 @@ template <> struct __declspec(uuid("92a36852-fbb3-5b48-b4ec-01dda0972a5c")) __de
 #ifndef WINRT_GENERIC_ed0c6e08_e22f_5ac2_ba14_e0ff1df3467f
 #define WINRT_GENERIC_ed0c6e08_e22f_5ac2_ba14_e0ff1df3467f
 template <> struct __declspec(uuid("ed0c6e08-e22f-5ac2-ba14-e0ff1df3467f")) __declspec(novtable) IIterable<Windows::Media::Core::MseTimeRange> : impl_IIterable<Windows::Media::Core::MseTimeRange> {};
+#endif
+
+#ifndef WINRT_GENERIC_645c522d_e120_58f7_92b6_46852058f593
+#define WINRT_GENERIC_645c522d_e120_58f7_92b6_46852058f593
+template <> struct __declspec(uuid("645c522d-e120-58f7-92b6-46852058f593")) __declspec(novtable) IVector<Windows::Media::Core::MseSourceBuffer> : impl_IVector<Windows::Media::Core::MseSourceBuffer> {};
 #endif
 
 #ifndef WINRT_GENERIC_53076581_01a9_51b9_98cc_5265504cd352
@@ -412,6 +432,11 @@ template <> struct __declspec(uuid("cee3ae43-c93c-56f7-8c55-9024ded72c76")) __de
 #ifndef WINRT_GENERIC_411a0e26_42e2_5e65_b9c4_980c4c3f31f7
 #define WINRT_GENERIC_411a0e26_42e2_5e65_b9c4_980c4c3f31f7
 template <> struct __declspec(uuid("411a0e26-42e2-5e65-b9c4-980c4c3f31f7")) __declspec(novtable) IVectorView<Windows::Media::Core::TimedTextSubformat> : impl_IVectorView<Windows::Media::Core::TimedTextSubformat> {};
+#endif
+
+#ifndef WINRT_GENERIC_be136c59_0332_52e1_8ab9_7b32aaf2cd05
+#define WINRT_GENERIC_be136c59_0332_52e1_8ab9_7b32aaf2cd05
+template <> struct __declspec(uuid("be136c59-0332-52e1-8ab9-7b32aaf2cd05")) __declspec(novtable) IVector<Windows::Media::Core::IMediaCue> : impl_IVector<Windows::Media::Core::IMediaCue> {};
 #endif
 
 #ifndef WINRT_GENERIC_1a594dc8_a64b_55ed_9b34_7b274e1d5c70

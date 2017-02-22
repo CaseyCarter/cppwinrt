@@ -261,9 +261,24 @@ template <> struct __declspec(uuid("40213c85-bf23-5f78-b9c4-e03f3be2b41c")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_81f47199_a2ff_54b0_8e80_6369c34f5667
+#define WINRT_GENERIC_81f47199_a2ff_54b0_8e80_6369c34f5667
+template <> struct __declspec(uuid("81f47199-a2ff-54b0-8e80-6369c34f5667")) __declspec(novtable) IVector<Windows::Media::Playback::PlaybackMediaMarker> : impl_IVector<Windows::Media::Playback::PlaybackMediaMarker> {};
+#endif
+
+#ifndef WINRT_GENERIC_234aa17c_f68f_59b3_a20f_a77be1ad387e
+#define WINRT_GENERIC_234aa17c_f68f_59b3_a20f_a77be1ad387e
+template <> struct __declspec(uuid("234aa17c-f68f-59b3-a20f-a77be1ad387e")) __declspec(novtable) IVectorView<Windows::Media::Playback::PlaybackMediaMarker> : impl_IVectorView<Windows::Media::Playback::PlaybackMediaMarker> {};
+#endif
+
 #ifndef WINRT_GENERIC_28607d6b_daa4_5eef_9f81_cc08a8297182
 #define WINRT_GENERIC_28607d6b_daa4_5eef_9f81_cc08a8297182
 template <> struct __declspec(uuid("28607d6b-daa4-5eef-9f81-cc08a8297182")) __declspec(novtable) IIterator<Windows::Media::Playback::PlaybackMediaMarker> : impl_IIterator<Windows::Media::Playback::PlaybackMediaMarker> {};
+#endif
+
+#ifndef WINRT_GENERIC_9954ccf0_5f93_5443_a369_c6071b14344e
+#define WINRT_GENERIC_9954ccf0_5f93_5443_a369_c6071b14344e
+template <> struct __declspec(uuid("9954ccf0-5f93-5443-a369-c6071b14344e")) __declspec(novtable) IVector<Windows::Media::Playback::MediaBreak> : impl_IVector<Windows::Media::Playback::MediaBreak> {};
 #endif
 
 #ifndef WINRT_GENERIC_9efd8746_f93c_524f_9f95_4b598acf8d25
@@ -281,9 +296,24 @@ template <> struct __declspec(uuid("04f000ec-c727-5dc0-9f7c-245c75c92f2f")) __de
 template <> struct __declspec(uuid("859354e5-077b-5d53-b297-1a07b97f09c3")) __declspec(novtable) IIterator<Windows::Media::Core::TimedMetadataTrack> : impl_IIterator<Windows::Media::Core::TimedMetadataTrack> {};
 #endif
 
+#ifndef WINRT_GENERIC_c46d9e34_ea11_5bb2_9744_1617417ef016
+#define WINRT_GENERIC_c46d9e34_ea11_5bb2_9744_1617417ef016
+template <> struct __declspec(uuid("c46d9e34-ea11-5bb2-9744-1617417ef016")) __declspec(novtable) IVector<Windows::Media::Core::TimedMetadataTrack> : impl_IVector<Windows::Media::Core::TimedMetadataTrack> {};
+#endif
+
+#ifndef WINRT_GENERIC_19988989_5c92_5775_88a9_6f2aeb984dc0
+#define WINRT_GENERIC_19988989_5c92_5775_88a9_6f2aeb984dc0
+template <> struct __declspec(uuid("19988989-5c92-5775-88a9-6f2aeb984dc0")) __declspec(novtable) IVector<Windows::Media::Core::AudioTrack> : impl_IVector<Windows::Media::Core::AudioTrack> {};
+#endif
+
 #ifndef WINRT_GENERIC_138064ef_8693_5303_8a75_eba494d06342
 #define WINRT_GENERIC_138064ef_8693_5303_8a75_eba494d06342
 template <> struct __declspec(uuid("138064ef-8693-5303-8a75-eba494d06342")) __declspec(novtable) IIterator<Windows::Media::Core::AudioTrack> : impl_IIterator<Windows::Media::Core::AudioTrack> {};
+#endif
+
+#ifndef WINRT_GENERIC_c8a62ec7_ef26_5754_a6b6_1fad5225de1e
+#define WINRT_GENERIC_c8a62ec7_ef26_5754_a6b6_1fad5225de1e
+template <> struct __declspec(uuid("c8a62ec7-ef26-5754-a6b6-1fad5225de1e")) __declspec(novtable) IVector<Windows::Media::Core::VideoTrack> : impl_IVector<Windows::Media::Core::VideoTrack> {};
 #endif
 
 #ifndef WINRT_GENERIC_a7c8d22c_b59d_5d7a_8d70_67f898a0b877

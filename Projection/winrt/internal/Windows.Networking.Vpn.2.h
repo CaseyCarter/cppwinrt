@@ -204,6 +204,11 @@ template <> struct __declspec(uuid("17781d03-ddcf-553f-aba8-d2e8155cb6b8")) __de
 template <> struct __declspec(uuid("c6ed05a9-4dc7-507d-9c92-7c78c2ef4786")) __declspec(novtable) IVectorView<Windows::Networking::Vpn::VpnNamespaceInfo> : impl_IVectorView<Windows::Networking::Vpn::VpnNamespaceInfo> {};
 #endif
 
+#ifndef WINRT_GENERIC_1e12154c_ade1_5aa1_8801_aa60e1f8fa1e
+#define WINRT_GENERIC_1e12154c_ade1_5aa1_8801_aa60e1f8fa1e
+template <> struct __declspec(uuid("1e12154c-ade1-5aa1-8801-aa60e1f8fa1e")) __declspec(novtable) IVector<Windows::Networking::Vpn::IVpnCustomPrompt> : impl_IVector<Windows::Networking::Vpn::IVpnCustomPrompt> {};
+#endif
+
 #ifndef WINRT_GENERIC_6fc7cfe8_1882_5ba1_8e5e_4c5e3a4fa86d
 #define WINRT_GENERIC_6fc7cfe8_1882_5ba1_8e5e_4c5e3a4fa86d
 template <> struct __declspec(uuid("6fc7cfe8-1882-5ba1-8e5e-4c5e3a4fa86d")) __declspec(novtable) IIterator<Windows::Networking::Vpn::IVpnCustomPrompt> : impl_IIterator<Windows::Networking::Vpn::IVpnCustomPrompt> {};
@@ -212,6 +217,11 @@ template <> struct __declspec(uuid("6fc7cfe8-1882-5ba1-8e5e-4c5e3a4fa86d")) __de
 #ifndef WINRT_GENERIC_8bac695c_70cb_54d6_8606_af6e3a25e3a1
 #define WINRT_GENERIC_8bac695c_70cb_54d6_8606_af6e3a25e3a1
 template <> struct __declspec(uuid("8bac695c-70cb-54d6-8606-af6e3a25e3a1")) __declspec(novtable) IIterable<Windows::Networking::Vpn::IVpnCustomPrompt> : impl_IIterable<Windows::Networking::Vpn::IVpnCustomPrompt> {};
+#endif
+
+#ifndef WINRT_GENERIC_ec30bc46_1770_5fa4_8d76_a5895abacee8
+#define WINRT_GENERIC_ec30bc46_1770_5fa4_8d76_a5895abacee8
+template <> struct __declspec(uuid("ec30bc46-1770-5fa4-8d76-a5895abacee8")) __declspec(novtable) IVector<Windows::Networking::Vpn::IVpnCustomPromptElement> : impl_IVector<Windows::Networking::Vpn::IVpnCustomPromptElement> {};
 #endif
 
 #ifndef WINRT_GENERIC_ee23ff21_51ba_5cc4_9856_625c79c28080
@@ -238,6 +248,16 @@ template <> struct __declspec(uuid("1c9c4504-4b75-57ea-837d-5338358bb762")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_d57e8927_8b24_504d_acfe_19ac51337faf
+#define WINRT_GENERIC_d57e8927_8b24_504d_acfe_19ac51337faf
+template <> struct __declspec(uuid("d57e8927-8b24-504d-acfe-19ac51337faf")) __declspec(novtable) IVector<Windows::Networking::Vpn::VpnPacketBuffer> : impl_IVector<Windows::Networking::Vpn::VpnPacketBuffer> {};
+#endif
+
+#ifndef WINRT_GENERIC_835ef1f0_2474_55dd_ab47_13c2233a0743
+#define WINRT_GENERIC_835ef1f0_2474_55dd_ab47_13c2233a0743
+template <> struct __declspec(uuid("835ef1f0-2474-55dd-ab47-13c2233a0743")) __declspec(novtable) IVectorView<Windows::Networking::Vpn::VpnPacketBuffer> : impl_IVectorView<Windows::Networking::Vpn::VpnPacketBuffer> {};
+#endif
 
 #ifndef WINRT_GENERIC_04c88ba5_05e9_53b2_8524_df458d2a9179
 #define WINRT_GENERIC_04c88ba5_05e9_53b2_8524_df458d2a9179
@@ -303,6 +323,11 @@ template <> struct __declspec(uuid("31229f8c-709d-5017-8629-57ef1289e616")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_aef18aea_34e7_59fa_ab70_d7590bf9b85c
+#define WINRT_GENERIC_aef18aea_34e7_59fa_ab70_d7590bf9b85c
+template <> struct __declspec(uuid("aef18aea-34e7-59fa-ab70-d7590bf9b85c")) __declspec(novtable) IVector<Windows::Networking::Vpn::IVpnProfile> : impl_IVector<Windows::Networking::Vpn::IVpnProfile> {};
+#endif
 
 #ifndef WINRT_GENERIC_91ccb492_ec28_530b_b45e_c431744ca9b5
 #define WINRT_GENERIC_91ccb492_ec28_530b_b45e_c431744ca9b5

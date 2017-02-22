@@ -74,6 +74,11 @@ template <> struct __declspec(uuid("c8cb498d-e0da-52a1-abf9-7198c7f5cb42")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_e0798d3d_2b4a_589a_ab12_02dccc158afc
+#define WINRT_GENERIC_e0798d3d_2b4a_589a_ab12_02dccc158afc
+template <> struct __declspec(uuid("e0798d3d-2b4a-589a-ab12-02dccc158afc")) __declspec(novtable) IVectorView<Windows::Security::Credentials::WebAccount> : impl_IVectorView<Windows::Security::Credentials::WebAccount> {};
+#endif
+
 #ifndef WINRT_GENERIC_199e065c_8195_55da_9c10_8aeaf9ac1062
 #define WINRT_GENERIC_199e065c_8195_55da_9c10_8aeaf9ac1062
 template <> struct __declspec(uuid("199e065c-8195-55da-9c10-8aeaf9ac1062")) __declspec(novtable) IVectorView<Windows::Security::Authentication::Web::Core::WebTokenResponse> : impl_IVectorView<Windows::Security::Authentication::Web::Core::WebTokenResponse> {};
@@ -104,9 +109,19 @@ template <> struct __declspec(uuid("9477622b-1340-5574-81fc-5013581f57c9")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_fe11c488_371a_5330_b7fa_282326fdfbda
+#define WINRT_GENERIC_fe11c488_371a_5330_b7fa_282326fdfbda
+template <> struct __declspec(uuid("fe11c488-371a-5330-b7fa-282326fdfbda")) __declspec(novtable) IVector<Windows::Security::Credentials::WebAccount> : impl_IVector<Windows::Security::Credentials::WebAccount> {};
+#endif
+
 #ifndef WINRT_GENERIC_bfb82cca_aebc_567c_95d9_eba25c365faa
 #define WINRT_GENERIC_bfb82cca_aebc_567c_95d9_eba25c365faa
 template <> struct __declspec(uuid("bfb82cca-aebc-567c-95d9-eba25c365faa")) __declspec(novtable) IIterator<Windows::Security::Credentials::WebAccount> : impl_IIterator<Windows::Security::Credentials::WebAccount> {};
+#endif
+
+#ifndef WINRT_GENERIC_58dc4e4c_a84d_5ad6_a6d9_6ee477329c9f
+#define WINRT_GENERIC_58dc4e4c_a84d_5ad6_a6d9_6ee477329c9f
+template <> struct __declspec(uuid("58dc4e4c-a84d-5ad6-a6d9-6ee477329c9f")) __declspec(novtable) IVector<Windows::Security::Authentication::Web::Core::WebTokenResponse> : impl_IVector<Windows::Security::Authentication::Web::Core::WebTokenResponse> {};
 #endif
 
 #ifndef WINRT_GENERIC_f080b0c9_a095_5b3a_a1dc_d17e7d2982c7

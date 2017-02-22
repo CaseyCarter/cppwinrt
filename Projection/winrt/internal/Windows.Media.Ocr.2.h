@@ -49,6 +49,11 @@ template <> struct __declspec(uuid("c7d7118e-ae36-59c0-ac76-7badee711c8b")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_dcf2525a_42c0_501d_9fcb_471fae060396
+#define WINRT_GENERIC_dcf2525a_42c0_501d_9fcb_471fae060396
+template <> struct __declspec(uuid("dcf2525a-42c0-501d-9fcb-471fae060396")) __declspec(novtable) IVector<Windows::Globalization::Language> : impl_IVector<Windows::Globalization::Language> {};
+#endif
+
 #ifndef WINRT_GENERIC_48409a10_61b6_5db1_a69d_8abc46ac608a
 #define WINRT_GENERIC_48409a10_61b6_5db1_a69d_8abc46ac608a
 template <> struct __declspec(uuid("48409a10-61b6-5db1-a69d-8abc46ac608a")) __declspec(novtable) IIterable<Windows::Globalization::Language> : impl_IIterable<Windows::Globalization::Language> {};
@@ -59,6 +64,11 @@ template <> struct __declspec(uuid("48409a10-61b6-5db1-a69d-8abc46ac608a")) __de
 template <> struct __declspec(uuid("30e99ae6-f414-5243-8db2-aab38ea3f1f1")) __declspec(novtable) IIterator<Windows::Globalization::Language> : impl_IIterator<Windows::Globalization::Language> {};
 #endif
 
+#ifndef WINRT_GENERIC_816ce87f_11b3_5e2b_ba1d_b251fe265b99
+#define WINRT_GENERIC_816ce87f_11b3_5e2b_ba1d_b251fe265b99
+template <> struct __declspec(uuid("816ce87f-11b3-5e2b-ba1d-b251fe265b99")) __declspec(novtable) IVector<Windows::Media::Ocr::OcrWord> : impl_IVector<Windows::Media::Ocr::OcrWord> {};
+#endif
+
 #ifndef WINRT_GENERIC_0ed4317a_9964_51c6_acbe_02512a069082
 #define WINRT_GENERIC_0ed4317a_9964_51c6_acbe_02512a069082
 template <> struct __declspec(uuid("0ed4317a-9964-51c6-acbe-02512a069082")) __declspec(novtable) IIterator<Windows::Media::Ocr::OcrWord> : impl_IIterator<Windows::Media::Ocr::OcrWord> {};
@@ -67,6 +77,11 @@ template <> struct __declspec(uuid("0ed4317a-9964-51c6-acbe-02512a069082")) __de
 #ifndef WINRT_GENERIC_a0ce663a_46d0_55e5_928e_251eb67a1e99
 #define WINRT_GENERIC_a0ce663a_46d0_55e5_928e_251eb67a1e99
 template <> struct __declspec(uuid("a0ce663a-46d0-55e5-928e-251eb67a1e99")) __declspec(novtable) IIterable<Windows::Media::Ocr::OcrWord> : impl_IIterable<Windows::Media::Ocr::OcrWord> {};
+#endif
+
+#ifndef WINRT_GENERIC_87a2feca_2afa_5da6_9e14_6f5d47877923
+#define WINRT_GENERIC_87a2feca_2afa_5da6_9e14_6f5d47877923
+template <> struct __declspec(uuid("87a2feca-2afa-5da6-9e14-6f5d47877923")) __declspec(novtable) IVector<Windows::Media::Ocr::OcrLine> : impl_IVector<Windows::Media::Ocr::OcrLine> {};
 #endif
 
 #ifndef WINRT_GENERIC_52ca0f8a_5788_5695_b905_46b8d8171d88

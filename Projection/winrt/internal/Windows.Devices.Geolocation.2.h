@@ -89,6 +89,11 @@ template <> struct __declspec(uuid("e4d5dda6-f57c-57cc-b67f-2939a901dabe")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_7ac34493_4a92_5e4b_84be_652731a1879b
+#define WINRT_GENERIC_7ac34493_4a92_5e4b_84be_652731a1879b
+template <> struct __declspec(uuid("7ac34493-4a92-5e4b-84be-652731a1879b")) __declspec(novtable) IVector<Windows::Devices::Geolocation::BasicGeoposition> : impl_IVector<Windows::Devices::Geolocation::BasicGeoposition> {};
+#endif
+
 #ifndef WINRT_GENERIC_1b4e26a1_88e4_5872_bb2d_4f31700828b2
 #define WINRT_GENERIC_1b4e26a1_88e4_5872_bb2d_4f31700828b2
 template <> struct __declspec(uuid("1b4e26a1-88e4-5872-bb2d-4f31700828b2")) __declspec(novtable) IIterator<Windows::Devices::Geolocation::BasicGeoposition> : impl_IIterator<Windows::Devices::Geolocation::BasicGeoposition> {};
@@ -113,6 +118,11 @@ template <> struct __declspec(uuid("f3524c93-e5c7-5b88-bedb-d3e637cff271")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_abd0b37a_0021_559e_962b_a141ded1a9e2
+#define WINRT_GENERIC_abd0b37a_0021_559e_962b_a141ded1a9e2
+template <> struct __declspec(uuid("abd0b37a-0021-559e-962b-a141ded1a9e2")) __declspec(novtable) IVector<Windows::Devices::Geolocation::Geoposition> : impl_IVector<Windows::Devices::Geolocation::Geoposition> {};
+#endif
 
 #ifndef WINRT_GENERIC_a99b4206_263e_5308_82f2_31315c65135c
 #define WINRT_GENERIC_a99b4206_263e_5308_82f2_31315c65135c

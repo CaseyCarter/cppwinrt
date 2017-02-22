@@ -36,6 +36,11 @@ template <> struct __declspec(uuid("df9d48ad-9cea-560c-9edc-cb8852cb55e3")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_057e6bc9_7bb8_5816_988b_8e9b3fb1bff4
+#define WINRT_GENERIC_057e6bc9_7bb8_5816_988b_8e9b3fb1bff4
+template <> struct __declspec(uuid("057e6bc9-7bb8-5816-988b-8e9b3fb1bff4")) __declspec(novtable) IVector<Windows::Media::IMediaMarker> : impl_IVector<Windows::Media::IMediaMarker> {};
+#endif
+
 #ifndef WINRT_GENERIC_f464661e_88bc_5cea_93cd_0c123f17d258
 #define WINRT_GENERIC_f464661e_88bc_5cea_93cd_0c123f17d258
 template <> struct __declspec(uuid("f464661e-88bc-5cea-93cd-0c123f17d258")) __declspec(novtable) IIterator<Windows::Media::IMediaMarker> : impl_IIterator<Windows::Media::IMediaMarker> {};
@@ -44,6 +49,11 @@ template <> struct __declspec(uuid("f464661e-88bc-5cea-93cd-0c123f17d258")) __de
 #ifndef WINRT_GENERIC_a1c0a397_0364_5e4c_9dca_7cd7011bd114
 #define WINRT_GENERIC_a1c0a397_0364_5e4c_9dca_7cd7011bd114
 template <> struct __declspec(uuid("a1c0a397-0364-5e4c-9dca-7cd7011bd114")) __declspec(novtable) IIterable<Windows::Media::IMediaMarker> : impl_IIterable<Windows::Media::IMediaMarker> {};
+#endif
+
+#ifndef WINRT_GENERIC_00bd028a_e2ad_57af_9829_f8b273d2717b
+#define WINRT_GENERIC_00bd028a_e2ad_57af_9829_f8b273d2717b
+template <> struct __declspec(uuid("00bd028a-e2ad-57af-9829-f8b273d2717b")) __declspec(novtable) IVector<Windows::Media::SpeechSynthesis::VoiceInformation> : impl_IVector<Windows::Media::SpeechSynthesis::VoiceInformation> {};
 #endif
 
 #ifndef WINRT_GENERIC_12d40a27_ae8d_5fb0_8fed_00165d59c6ab

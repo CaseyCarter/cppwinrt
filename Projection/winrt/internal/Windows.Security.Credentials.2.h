@@ -36,6 +36,11 @@ template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __de
 template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
+#ifndef WINRT_GENERIC_f6d1f700_49c2_52ae_8154_826f9908773c
+#define WINRT_GENERIC_f6d1f700_49c2_52ae_8154_826f9908773c
+template <> struct __declspec(uuid("f6d1f700-49c2-52ae-8154-826f9908773c")) __declspec(novtable) IMap<hstring, hstring> : impl_IMap<hstring, hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_60310303_49c5_52e6_abc6_a9b36eccc716
 #define WINRT_GENERIC_60310303_49c5_52e6_abc6_a9b36eccc716
 template <> struct __declspec(uuid("60310303-49c5-52e6-abc6-a9b36eccc716")) __declspec(novtable) IKeyValuePair<hstring, hstring> : impl_IKeyValuePair<hstring, hstring> {};
@@ -150,6 +155,11 @@ template <> struct __declspec(uuid("2c16e103-f783-5dd9-a5f3-3362bcbdaabd")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_1d0e801c_b8b4_5c03_a32c_45dcf65cc978
+#define WINRT_GENERIC_1d0e801c_b8b4_5c03_a32c_45dcf65cc978
+template <> struct __declspec(uuid("1d0e801c-b8b4-5c03-a32c-45dcf65cc978")) __declspec(novtable) IVector<Windows::Security::Credentials::PasswordCredential> : impl_IVector<Windows::Security::Credentials::PasswordCredential> {};
+#endif
 
 #ifndef WINRT_GENERIC_b01093d8_4f52_50f0_9aa4_e22639111162
 #define WINRT_GENERIC_b01093d8_4f52_50f0_9aa4_e22639111162

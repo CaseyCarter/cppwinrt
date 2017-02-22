@@ -45,6 +45,11 @@ template <> struct __declspec(uuid("2df5bb6a-5e73-5ae3-a0b2-22e1c9d8ef4d")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_b9013035_9451_514d_a5e4_42f35b34bf9a
+#define WINRT_GENERIC_b9013035_9451_514d_a5e4_42f35b34bf9a
+template <> struct __declspec(uuid("b9013035-9451-514d-a5e4-42f35b34bf9a")) __declspec(novtable) IVector<Windows::Devices::I2c::I2cController> : impl_IVector<Windows::Devices::I2c::I2cController> {};
+#endif
+
 #ifndef WINRT_GENERIC_8f6822fc_e4ea_5b35_939a_27f3b3d550d2
 #define WINRT_GENERIC_8f6822fc_e4ea_5b35_939a_27f3b3d550d2
 template <> struct __declspec(uuid("8f6822fc-e4ea-5b35-939a-27f3b3d550d2")) __declspec(novtable) IIterator<Windows::Devices::I2c::I2cController> : impl_IIterator<Windows::Devices::I2c::I2cController> {};

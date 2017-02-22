@@ -40,6 +40,11 @@ template <> struct __declspec(uuid("5c88455c-5b59-557c-8064-5e4f3d59a8ec")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_b32bdca4_5e52_5b27_bc5d_d66a1a268c2a
+#define WINRT_GENERIC_b32bdca4_5e52_5b27_bc5d_d66a1a268c2a
+template <> struct __declspec(uuid("b32bdca4-5e52-5b27-bc5d-d66a1a268c2a")) __declspec(novtable) IVector<Windows::Foundation::IInspectable> : impl_IVector<Windows::Foundation::IInspectable> {};
+#endif
+
 #ifndef WINRT_GENERIC_092b849b_60b1_52be_a44a_6fe8e933cbe4
 #define WINRT_GENERIC_092b849b_60b1_52be_a44a_6fe8e933cbe4
 template <> struct __declspec(uuid("092b849b-60b1-52be-a44a-6fe8e933cbe4")) __declspec(novtable) IIterable<Windows::Foundation::IInspectable> : impl_IIterable<Windows::Foundation::IInspectable> {};
@@ -53,6 +58,11 @@ template <> struct __declspec(uuid("44a94f2d-04f8-5091-b336-be7892dd10be")) __de
 #ifndef WINRT_GENERIC_f5d9c723_a4b1_5fc8_9f78_0b95b716720b
 #define WINRT_GENERIC_f5d9c723_a4b1_5fc8_9f78_0b95b716720b
 template <> struct __declspec(uuid("f5d9c723-a4b1-5fc8-9f78-0b95b716720b")) __declspec(novtable) IKeyValuePair<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> : impl_IKeyValuePair<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> {};
+#endif
+
+#ifndef WINRT_GENERIC_a41c770f_e80d_5075_936c_c796eedbb2ae
+#define WINRT_GENERIC_a41c770f_e80d_5075_936c_c796eedbb2ae
+template <> struct __declspec(uuid("a41c770f-e80d-5075-936c-c796eedbb2ae")) __declspec(novtable) IMap<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> : impl_IMap<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> {};
 #endif
 
 #ifndef WINRT_GENERIC_7bef6011_58a1_5523_8e2a_309f8cb1bd39

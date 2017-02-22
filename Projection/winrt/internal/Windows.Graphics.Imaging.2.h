@@ -12,6 +12,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
@@ -131,6 +136,11 @@ template <> struct __declspec(uuid("b699b653-33ed-5e2d-a75f-02bf90e32619")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_1817453d_ded6_5d5d_9623_1020a1a8d3b3
+#define WINRT_GENERIC_1817453d_ded6_5d5d_9623_1020a1a8d3b3
+template <> struct __declspec(uuid("1817453d-ded6-5d5d-9623-1020a1a8d3b3")) __declspec(novtable) IVector<Windows::Graphics::Imaging::BitmapCodecInformation> : impl_IVector<Windows::Graphics::Imaging::BitmapCodecInformation> {};
+#endif
 
 #ifndef WINRT_GENERIC_4ff2b2db_9326_537f_b8dc_4c93d77fbb84
 #define WINRT_GENERIC_4ff2b2db_9326_537f_b8dc_4c93d77fbb84
